@@ -2,30 +2,30 @@
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class su1 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ hh7 b;
+    public final /* synthetic */ ih7 b;
 
-    public /* synthetic */ su1(hh7 hh7Var, byte b) {
+    public /* synthetic */ su1(ih7 ih7Var, byte b) {
         this.a = b;
-        this.b = hh7Var;
+        this.b = ih7Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        hh7 hh7Var = this.b;
+        ih7 ih7Var = this.b;
         switch (b) {
             case 0:
-                hh7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ih7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                hh7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ih7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                hh7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ih7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

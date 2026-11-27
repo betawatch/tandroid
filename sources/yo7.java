@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yo7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -46,8 +46,8 @@ public final /* synthetic */ class yo7 implements Runnable {
                     if (hashMap.isEmpty()) {
                         zh6Var2.l(j);
                         ip7Var.E.remove(hp7Var);
-                        jf7 messagesStorage = ip7Var.getMessagesStorage();
-                        messagesStorage.a.c(new le7(messagesStorage, j, b2));
+                        kf7 messagesStorage = ip7Var.getMessagesStorage();
+                        messagesStorage.a.c(new me7(messagesStorage, j, b2));
                         z = true;
                         i = 0;
                         while (i < arrayList.size()) {
@@ -71,7 +71,7 @@ public final /* synthetic */ class yo7 implements Runnable {
                             break;
                         }
                     } else {
-                        jf7 messagesStorage2 = ip7Var.getMessagesStorage();
+                        kf7 messagesStorage2 = ip7Var.getMessagesStorage();
                         messagesStorage2.a.c(new t87(messagesStorage2, hp7Var, (byte) 24));
                     }
                 }
@@ -90,8 +90,8 @@ public final /* synthetic */ class yo7 implements Runnable {
                 if (hp7Var2 != null) {
                     zh6Var4.l(j);
                     ip7Var.E.remove(hp7Var2);
-                    jf7 messagesStorage3 = ip7Var.getMessagesStorage();
-                    messagesStorage3.a.c(new le7(messagesStorage3, j, b2));
+                    kf7 messagesStorage3 = ip7Var.getMessagesStorage();
+                    messagesStorage3.a.c(new me7(messagesStorage3, j, b2));
                     z2 = true;
                 } else {
                     z2 = false;

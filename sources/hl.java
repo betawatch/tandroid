@@ -136,7 +136,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class hl {
     public static final byte C;
@@ -3947,7 +3947,7 @@ public abstract class hl {
                         i2 = iArr2[0];
                     }
                 }
-            } else if (drawable instanceof hh7) {
+            } else if (drawable instanceof ih7) {
                 iArr[2] = 754974720;
                 iArr[0] = 754974720;
                 iArr[3] = 1023410176;

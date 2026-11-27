@@ -1,58 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
-public final class xbb implements r11 {
-    public final float[] a = new float[2];
-    public final /* synthetic */ ybb b;
+public final class xbb extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zbb b;
 
-    public xbb(ybb ybbVar) {
-        this.b = ybbVar;
+    public /* synthetic */ xbb(zbb zbbVar, byte b) {
+        this.a = b;
+        this.b = zbbVar;
     }
 
-    @Override // r11
-    public final boolean a() {
-        return true;
-    }
-
-    @Override // r11
-    public final boolean d() {
-        return true;
-    }
-
-    @Override // r11
-    public final int e(int i) {
-        lcb lcbVar = this.b.s0;
-        o68 w = lcbVar.w();
-        if (w == null) {
-            return 0;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        zbb zbbVar = this.b;
+        switch (b) {
+            case 0:
+                lcb lcbVar = zbbVar.s0;
+                lcbVar.Y = 0.0f;
+                lcbVar.V();
+                break;
+            default:
+                lcb lcbVar2 = zbbVar.s0;
+                lcbVar2.X = 0.0f;
+                lcbVar2.a0 = 0.0f;
+                lcbVar2.V();
+                break;
         }
-        t58 t58Var = w.M0;
-        ybb ybbVar = lcbVar.s;
-        float[] fArr = this.a;
-        hl.p1(t58Var, ybbVar, fArr);
-        return (int) (r3.getMeasuredHeight() - (fArr[1] + t58Var.getMeasuredHeight()));
-    }
-
-    @Override // r11
-    public final boolean f(int i) {
-        return false;
-    }
-
-    @Override // r11
-    public final int h(int i) {
-        return 0;
-    }
-
-    @Override // r11
-    public final void b(float f) {
-    }
-
-    @Override // r11
-    public final void c(v21 v21Var) {
-    }
-
-    @Override // r11
-    public final void g(v21 v21Var) {
     }
 }

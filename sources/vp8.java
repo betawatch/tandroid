@@ -33,7 +33,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class vp8 implements Runnable {
     public final /* synthetic */ byte a;
@@ -237,13 +237,13 @@ public final /* synthetic */ class vp8 implements Runnable {
                 return;
             case 7:
                 b19 b19Var = (b19) this.b;
-                jf7 jf7Var = (jf7) this.c;
+                kf7 kf7Var = (kf7) this.c;
                 a19 a19Var = (a19) this.d;
                 TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = (TLRPC.TL_messages_sendQuickReplyMessages) this.e;
                 ArrayList arrayList2 = new ArrayList();
                 try {
                     try {
-                        sQLiteCursor = jf7Var.b.queryFinalized("SELECT id FROM quick_replies_messages WHERE topic_id = ?", Integer.valueOf(a19Var.a));
+                        sQLiteCursor = kf7Var.b.queryFinalized("SELECT id FROM quick_replies_messages WHERE topic_id = ?", Integer.valueOf(a19Var.a));
                         while (sQLiteCursor.next()) {
                             arrayList2.add(Integer.valueOf(sQLiteCursor.intValue(0)));
                         }
@@ -361,8 +361,8 @@ public final /* synthetic */ class vp8 implements Runnable {
                     TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs = (TLRPC.TL_messages_savedDialogs) tLObject4;
                     uc7.s1(i4).j4(tL_messages_savedDialogs.users, false);
                     uc7.s1(i4).c4(tL_messages_savedDialogs.chats, false);
-                    jf7.Y(i4).j1(tL_messages_savedDialogs.users, tL_messages_savedDialogs.chats, true, true);
-                    jf7.Y(i4).g1(tL_messages_savedDialogs.messages, false, true, false, 0, false, 3, 0L);
+                    kf7.a0(i4).n1(tL_messages_savedDialogs.users, tL_messages_savedDialogs.chats, true, true);
+                    kf7.a0(i4).k1(tL_messages_savedDialogs.messages, false, true, false, 0, false, 3, 0L);
                     for (int i5 = 0; i5 < tL_messages_savedDialogs.dialogs.size(); i5++) {
                         mt9 b2 = mt9.b(i4, tL_messages_savedDialogs.dialogs.get(i5), tL_messages_savedDialogs.messages);
                         int i6 = 0;
@@ -399,8 +399,8 @@ public final /* synthetic */ class vp8 implements Runnable {
                     TLRPC.TL_messages_savedDialogsSlice tL_messages_savedDialogsSlice = (TLRPC.TL_messages_savedDialogsSlice) tLObject4;
                     uc7.s1(i4).j4(tL_messages_savedDialogsSlice.users, false);
                     uc7.s1(i4).c4(tL_messages_savedDialogsSlice.chats, false);
-                    jf7.Y(i4).j1(tL_messages_savedDialogsSlice.users, tL_messages_savedDialogsSlice.chats, true, true);
-                    jf7.Y(i4).g1(tL_messages_savedDialogsSlice.messages, false, true, false, 0, false, 3, 0L);
+                    kf7.a0(i4).n1(tL_messages_savedDialogsSlice.users, tL_messages_savedDialogsSlice.chats, true, true);
+                    kf7.a0(i4).k1(tL_messages_savedDialogsSlice.messages, false, true, false, 0, false, 3, 0L);
                     for (int i8 = 0; i8 < tL_messages_savedDialogsSlice.dialogs.size(); i8++) {
                         mt9 b3 = mt9.b(i4, tL_messages_savedDialogsSlice.dialogs.get(i8), tL_messages_savedDialogsSlice.messages);
                         int i9 = 0;
@@ -466,7 +466,7 @@ public final /* synthetic */ class vp8 implements Runnable {
                     }
                 }
                 if (nt9Var.b != z4) {
-                    uc7.s1(i4).X3.edit().putBoolean("savedMessagesUnsupported", nt9Var.b).apply();
+                    uc7.s1(i4).Y3.edit().putBoolean("savedMessagesUnsupported", nt9Var.b).apply();
                 }
                 nt9Var.d = false;
                 return;
@@ -475,7 +475,7 @@ public final /* synthetic */ class vp8 implements Runnable {
                 uj3 uj3Var = (uj3) this.c;
                 Activity activity2 = (Activity) this.d;
                 fu5 fu5Var2 = (fu5) this.e;
-                uj3Var.showDialog(new xd5(activity2, uj3Var.getResourceProvider(), new en9(gx9Var, uj3Var, b)));
+                uj3Var.showDialog(new xd5(activity2, uj3Var.getResourceProvider(), new dn9(gx9Var, uj3Var, (byte) 14)));
                 fu5Var2.u();
                 return;
             case 14:
@@ -485,7 +485,7 @@ public final /* synthetic */ class vp8 implements Runnable {
                 fu5 fu5Var3 = (fu5) this.e;
                 byte[] bArr = tL_sponsoredPeer.random_id;
                 vnb resourceProvider = uj3Var2.getResourceProvider();
-                en9 en9Var = new en9(gx9Var2, tL_sponsoredPeer, (byte) 12);
+                dn9 dn9Var = new dn9(gx9Var2, tL_sponsoredPeer, b);
                 int i14 = nb9.v1;
                 int currentAccount = uj3Var2.getCurrentAccount();
                 Activity parentActivity = uj3Var2.getParentActivity();
@@ -493,7 +493,7 @@ public final /* synthetic */ class vp8 implements Runnable {
                     TLRPC.TL_messages_reportSponsoredMessage tL_messages_reportSponsoredMessage = new TLRPC.TL_messages_reportSponsoredMessage();
                     tL_messages_reportSponsoredMessage.random_id = bArr;
                     tL_messages_reportSponsoredMessage.option = new byte[0];
-                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new rt(parentActivity, resourceProvider, bArr, uj3Var2, en9Var, currentAccount));
+                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new rt(parentActivity, resourceProvider, bArr, uj3Var2, dn9Var, currentAccount));
                 }
                 fu5Var3.u();
                 return;
@@ -547,7 +547,7 @@ public final /* synthetic */ class vp8 implements Runnable {
                     return;
                 }
                 if (c != 0) {
-                    r7aVar2.getMessagesStorage().o1(((d7a) arrayList8.get(0)).m.k, null, null, false);
+                    r7aVar2.getMessagesStorage().s1(((d7a) arrayList8.get(0)).m.k, null, null, false);
                 }
                 wx9 secretChatHelper = r7aVar2.getSecretChatHelper();
                 TLRPC.DecryptedMessage decryptedMessage = (TLRPC.DecryptedMessage) d7aVar2.d;
@@ -662,7 +662,7 @@ public final /* synthetic */ class vp8 implements Runnable {
                 da1Var.run();
                 return;
             case 22:
-                ((tba) this.b).d0((TLRPC.TL_error) this.c, (TLObject) this.d, (String) this.e);
+                ((uba) this.b).d0((TLRPC.TL_error) this.c, (TLObject) this.d, (String) this.e);
                 return;
             case 23:
                 TLObject tLObject9 = (TLObject) this.b;
@@ -777,7 +777,7 @@ public final /* synthetic */ class vp8 implements Runnable {
                 wuaVar5.m2 = true;
                 wuaVar5.q3 = null;
                 wuaVar5.d1(inputSavedStarGift, (TLRPC.Updates) tLObject12, new jra(wuaVar5, b));
-                Utilities.d.c(new ida((Object) wuaVar5, (Object) tLObject12, (byte) 14));
+                Utilities.d.c(new kba((Object) wuaVar5, (Object) tLObject12, (byte) 15));
                 return;
         }
     }

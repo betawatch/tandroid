@@ -45,9 +45,9 @@ import org.telegram.ui.ProfileActivity;
 import org.webrtc.NativeLifecycleLock;
 import org.webrtc.RtpReceiver;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class m88 implements p88, OnFailureListener, fd, hj, nu4, oj3, ita, ncc, CameraView.CameraViewDelegate, Continuation, s69, vt3, bj9, ti7, lz0, NativeLifecycleLock.NativePointerRunnable, bs9 {
+public final /* synthetic */ class m88 implements p88, OnFailureListener, fd, hj, nu4, oj3, ita, ncc, CameraView.CameraViewDelegate, Continuation, s69, vt3, bj9, ui7, lz0, NativeLifecycleLock.NativePointerRunnable, bs9 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -68,7 +68,7 @@ public final /* synthetic */ class m88 implements p88, OnFailureListener, fd, hj
         return false;
     }
 
-    @Override // ti7
+    @Override // ui7
     public final void a(Canvas canvas) {
         al9 al9Var = (al9) this.b;
         View view = (View) this.c;
@@ -208,7 +208,7 @@ public final /* synthetic */ class m88 implements p88, OnFailureListener, fd, hj
             if (obj instanceof TL_stars.StarGift) {
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
                 boolean z = G.s;
-                if (!TextUtils.isEmpty(starGift.gift_address) && md9Var.c2 && !uc7.s1(md9Var.a).k4.y.f) {
+                if (!TextUtils.isEmpty(starGift.gift_address) && md9Var.c2 && !uc7.s1(md9Var.a).l4.y.f) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, md9Var.J0, md9Var.getContext());
                     alertDialog$Builder.a.S = ob6.M0(2131749738, null);
                     alertDialog$Builder.a.U = ob6.M0(2131749739, null);
@@ -282,7 +282,7 @@ public final /* synthetic */ class m88 implements p88, OnFailureListener, fd, hj
     public final void i(int i, int i2) {
         o88 o88Var = (o88) this.b;
         p88 p88Var = (p88) this.c;
-        ki7 ki7Var = o88Var.e;
+        li7 li7Var = o88Var.e;
         p88Var.i(i, i2);
         TextView textView = o88Var.b;
         if (i2 > 0) {
@@ -291,8 +291,8 @@ public final /* synthetic */ class m88 implements p88, OnFailureListener, fd, hj
             textView.setText(String.valueOf(i2));
         }
         if (textView.getTag() != null) {
-            hl.r(ki7Var);
-            hl.d3(ki7Var, 1000L);
+            hl.r(li7Var);
+            hl.d3(li7Var, 1000L);
             return;
         }
         AnimatorSet animatorSet = o88Var.d;
@@ -351,10 +351,9 @@ public final /* synthetic */ class m88 implements p88, OnFailureListener, fd, hj
         v98 v98Var = (v98) this.b;
         Bitmap bitmap = (Bitmap) this.c;
         v98Var.D0 = false;
-        byte b = 1;
         cc4.g(exc, true);
-        if (Build.VERSION.SDK_INT >= 24 && (exc instanceof kg7) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && v98Var.isAttachedToWindow()) {
-            hl.d3(new h68(v98Var, bitmap, b), 2000L);
+        if (Build.VERSION.SDK_INT >= 24 && (exc instanceof lg7) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && v98Var.isAttachedToWindow()) {
+            hl.d3(new a58(v98Var, bitmap, (byte) 2), 2000L);
         } else {
             v98Var.E0 = true;
         }
@@ -367,7 +366,7 @@ public final /* synthetic */ class m88 implements p88, OnFailureListener, fd, hj
         wl8Var.getClass();
         long j = 0;
         for (int i3 = 0; i3 < arrayList.size(); i3++) {
-            j = ((if7) arrayList.get(i3)).a;
+            j = ((jf7) arrayList.get(i3)).a;
             wl8Var.r1.getSendMessagesHelper().q0(p7a.b(str, j, null, null, null, true, null, null, null, true, 0, 0, null, false));
         }
         uj3Var.finishFragment();
@@ -498,8 +497,8 @@ public final /* synthetic */ class m88 implements p88, OnFailureListener, fd, hj
                                 if (photoViewer2.y5 > 0) {
                                     uc7.s1(photoViewer2.U).j0(tL_inputPhoto);
                                 }
-                                jf7 Y = jf7.Y(photoViewer2.U);
-                                Y.a.c(new xd7(Y, photoViewer2.y5, photo.id, (byte) 0));
+                                kf7 a0 = kf7.a0(photoViewer2.U);
+                                a0.a.c(new yd7(a0, photoViewer2.y5, photo.id, (byte) 0));
                                 arrayList2.remove(photoViewer2.O4);
                                 photoViewer2.b7.remove(photoViewer2.O4);
                                 photoViewer2.a7.remove(photoViewer2.O4);
@@ -579,7 +578,7 @@ public final /* synthetic */ class m88 implements p88, OnFailureListener, fd, hj
                 tL_payments_clearSavedInfo.info = zArr2[0];
                 privacySettingsActivity.getUserConfig().y = null;
                 privacySettingsActivity.getUserConfig().u(false);
-                privacySettingsActivity.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new ol7(privacySettingsActivity, (wkb) obj, (byte) 11));
+                privacySettingsActivity.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new pl7(privacySettingsActivity, (wkb) obj, (byte) 11));
                 break;
             case 12:
                 RectF rectF = ProfileActivity.Z6;

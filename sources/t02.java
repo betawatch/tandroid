@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class t02 implements TextWatcher {
     public boolean a;
@@ -79,7 +79,7 @@ public final class t02 implements TextWatcher {
             n12Var.R2 = z;
             n12Var.F2.invalidate();
         }
-        if (!n12Var.f4 && !uc7.s1(i2).M3() && !yac.h(i2).p() && n12Var.F1 > uc7.s1(i2).k4.o1.f() && n12Var.F1 < uc7.s1(i2).k4.p1.f()) {
+        if (!n12Var.f4 && !uc7.s1(i2).M3() && !yac.h(i2).p() && n12Var.F1 > uc7.s1(i2).l4.o1.f() && n12Var.F1 < uc7.s1(i2).l4.p1.f()) {
             n12Var.f4 = true;
             n12Var.z1(this.c);
         }

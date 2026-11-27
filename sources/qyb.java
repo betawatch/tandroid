@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class qyb extends rf0 {
     public static final int[] w = new int[5];
@@ -55,7 +55,7 @@ public final class qyb extends rf0 {
                 f.closed = true;
             }
             D(j2, f, 44);
-            getMessagesStorage().c2(j2, f, 44);
+            getMessagesStorage().h2(j2, f, 44);
         }
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_editForumTopic, null);
     }
@@ -146,7 +146,7 @@ public final class qyb extends rf0 {
                         if (tL_forumTopic.pinned != z4 || (z4 && tL_forumTopic.pinnedOrder != indexOf)) {
                             tL_forumTopic.pinned = z4;
                             tL_forumTopic.pinnedOrder = indexOf;
-                            getMessagesStorage().c2(j, tL_forumTopic, 4);
+                            getMessagesStorage().h2(j, tL_forumTopic, 4);
                             z3 = true;
                         }
                     }
@@ -169,8 +169,8 @@ public final class qyb extends rf0 {
         tL_messages_deleteTopicHistory.peer = getMessagesController().j1(j2);
         tL_messages_deleteTopicHistory.top_msg_id = i;
         if (i2 == 0) {
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new xd7(messagesStorage, j2, i, (byte) 2));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new yd7(messagesStorage, j2, i, (byte) 2));
         }
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_deleteTopicHistory, new lyb(this, j, i));
     }
@@ -292,7 +292,7 @@ public final class qyb extends rf0 {
     }
 
     public final void m(final long j, final long j2, final o30 o30Var) {
-        jf7 messagesStorage = getMessagesStorage();
+        kf7 messagesStorage = getMessagesStorage();
         messagesStorage.a.c(new ue2((Object) messagesStorage, -j, (Object) new Consumer() { // from class: cyb
             @Override // java.util.function.Consumer
             /* renamed from: accept */
@@ -329,7 +329,7 @@ public final class qyb extends rf0 {
         }
         longSparseIntArray.put(j, 1);
         if (z) {
-            jf7 messagesStorage = getMessagesStorage();
+            kf7 messagesStorage = getMessagesStorage();
             messagesStorage.a.c(new ue2((Object) messagesStorage, -j, (Object) new Consumer() { // from class: hyb
                 @Override // java.util.function.Consumer
                 /* renamed from: accept */
@@ -475,7 +475,7 @@ public final class qyb extends rf0 {
                                 case 0:
                                     TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs2 = (TLRPC.TL_messages_savedDialogs) messages_saveddialogs;
                                     qyb qybVar2 = qybVar;
-                                    qybVar2.getMessagesStorage().j1(tL_messages_savedDialogs2.users, tL_messages_savedDialogs2.chats, true, true);
+                                    qybVar2.getMessagesStorage().n1(tL_messages_savedDialogs2.users, tL_messages_savedDialogs2.chats, true, true);
                                     qybVar2.getMessagesController().j4(tL_messages_savedDialogs2.users, false);
                                     qybVar2.getMessagesController().c4(tL_messages_savedDialogs2.chats, false);
                                     LongSparseIntArray longSparseIntArray2 = qybVar2.c;
@@ -487,8 +487,8 @@ public final class qyb extends rf0 {
                                     byte b4 = b;
                                     qybVar2.u(j7, m, zh6Var3, false, b4, size);
                                     qybVar2.y(j7, true);
-                                    qybVar2.getMessagesStorage().z1(qybVar2.getConnectionsManager().getCurrentTime(), -j7, (List) qybVar2.a.f(j7), true);
-                                    qybVar2.getMessagesStorage().g1(tL_messages_savedDialogs2.messages, false, true, false, 0, false, 0, 0L);
+                                    qybVar2.getMessagesStorage().D1(qybVar2.getConnectionsManager().getCurrentTime(), -j7, (List) qybVar2.a.f(j7), true);
+                                    qybVar2.getMessagesStorage().k1(tL_messages_savedDialogs2.messages, false, true, false, 0, false, 0, 0L);
                                     if (!tL_messages_savedDialogs2.dialogs.isEmpty() && b4 == 1) {
                                         TLRPC.TL_monoForumDialog tL_monoForumDialog = (TLRPC.TL_monoForumDialog) c00.g(1, tL_messages_savedDialogs2.dialogs);
                                         TLRPC.Message message2 = (TLRPC.Message) zh6Var3.f(tL_monoForumDialog.top_message);
@@ -503,7 +503,7 @@ public final class qyb extends rf0 {
                                 default:
                                     TLRPC.TL_messages_savedDialogsSlice tL_messages_savedDialogsSlice = (TLRPC.TL_messages_savedDialogsSlice) messages_saveddialogs;
                                     qyb qybVar3 = qybVar;
-                                    qybVar3.getMessagesStorage().j1(tL_messages_savedDialogsSlice.users, tL_messages_savedDialogsSlice.chats, true, true);
+                                    qybVar3.getMessagesStorage().n1(tL_messages_savedDialogsSlice.users, tL_messages_savedDialogsSlice.chats, true, true);
                                     qybVar3.getMessagesController().j4(tL_messages_savedDialogsSlice.users, false);
                                     qybVar3.getMessagesController().c4(tL_messages_savedDialogsSlice.chats, false);
                                     LongSparseIntArray longSparseIntArray3 = qybVar3.c;
@@ -515,8 +515,8 @@ public final class qyb extends rf0 {
                                     byte b5 = b;
                                     qybVar3.u(j8, m2, zh6Var4, false, b5, i4);
                                     qybVar3.y(j8, true);
-                                    qybVar3.getMessagesStorage().z1(qybVar3.getConnectionsManager().getCurrentTime(), -j8, (List) qybVar3.a.f(j8), true);
-                                    qybVar3.getMessagesStorage().g1(tL_messages_savedDialogsSlice.messages, false, true, false, 0, false, 0, 0L);
+                                    qybVar3.getMessagesStorage().D1(qybVar3.getConnectionsManager().getCurrentTime(), -j8, (List) qybVar3.a.f(j8), true);
+                                    qybVar3.getMessagesStorage().k1(tL_messages_savedDialogsSlice.messages, false, true, false, 0, false, 0, 0L);
                                     if (!tL_messages_savedDialogsSlice.dialogs.isEmpty() && b5 == 1) {
                                         TLRPC.TL_monoForumDialog tL_monoForumDialog2 = (TLRPC.TL_monoForumDialog) c00.g(1, tL_messages_savedDialogsSlice.dialogs);
                                         TLRPC.Message message3 = (TLRPC.Message) zh6Var4.f(tL_monoForumDialog2.top_message);
@@ -549,7 +549,7 @@ public final class qyb extends rf0 {
                                 case 0:
                                     TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs2 = (TLRPC.TL_messages_savedDialogs) messages_saveddialogs;
                                     qyb qybVar2 = qybVar;
-                                    qybVar2.getMessagesStorage().j1(tL_messages_savedDialogs2.users, tL_messages_savedDialogs2.chats, true, true);
+                                    qybVar2.getMessagesStorage().n1(tL_messages_savedDialogs2.users, tL_messages_savedDialogs2.chats, true, true);
                                     qybVar2.getMessagesController().j4(tL_messages_savedDialogs2.users, false);
                                     qybVar2.getMessagesController().c4(tL_messages_savedDialogs2.chats, false);
                                     LongSparseIntArray longSparseIntArray2 = qybVar2.c;
@@ -561,8 +561,8 @@ public final class qyb extends rf0 {
                                     byte b4 = b;
                                     qybVar2.u(j7, m, zh6Var3, false, b4, size);
                                     qybVar2.y(j7, true);
-                                    qybVar2.getMessagesStorage().z1(qybVar2.getConnectionsManager().getCurrentTime(), -j7, (List) qybVar2.a.f(j7), true);
-                                    qybVar2.getMessagesStorage().g1(tL_messages_savedDialogs2.messages, false, true, false, 0, false, 0, 0L);
+                                    qybVar2.getMessagesStorage().D1(qybVar2.getConnectionsManager().getCurrentTime(), -j7, (List) qybVar2.a.f(j7), true);
+                                    qybVar2.getMessagesStorage().k1(tL_messages_savedDialogs2.messages, false, true, false, 0, false, 0, 0L);
                                     if (!tL_messages_savedDialogs2.dialogs.isEmpty() && b4 == 1) {
                                         TLRPC.TL_monoForumDialog tL_monoForumDialog = (TLRPC.TL_monoForumDialog) c00.g(1, tL_messages_savedDialogs2.dialogs);
                                         TLRPC.Message message2 = (TLRPC.Message) zh6Var3.f(tL_monoForumDialog.top_message);
@@ -577,7 +577,7 @@ public final class qyb extends rf0 {
                                 default:
                                     TLRPC.TL_messages_savedDialogsSlice tL_messages_savedDialogsSlice2 = (TLRPC.TL_messages_savedDialogsSlice) messages_saveddialogs;
                                     qyb qybVar3 = qybVar;
-                                    qybVar3.getMessagesStorage().j1(tL_messages_savedDialogsSlice2.users, tL_messages_savedDialogsSlice2.chats, true, true);
+                                    qybVar3.getMessagesStorage().n1(tL_messages_savedDialogsSlice2.users, tL_messages_savedDialogsSlice2.chats, true, true);
                                     qybVar3.getMessagesController().j4(tL_messages_savedDialogsSlice2.users, false);
                                     qybVar3.getMessagesController().c4(tL_messages_savedDialogsSlice2.chats, false);
                                     LongSparseIntArray longSparseIntArray3 = qybVar3.c;
@@ -589,8 +589,8 @@ public final class qyb extends rf0 {
                                     byte b5 = b;
                                     qybVar3.u(j8, m2, zh6Var4, false, b5, i4);
                                     qybVar3.y(j8, true);
-                                    qybVar3.getMessagesStorage().z1(qybVar3.getConnectionsManager().getCurrentTime(), -j8, (List) qybVar3.a.f(j8), true);
-                                    qybVar3.getMessagesStorage().g1(tL_messages_savedDialogsSlice2.messages, false, true, false, 0, false, 0, 0L);
+                                    qybVar3.getMessagesStorage().D1(qybVar3.getConnectionsManager().getCurrentTime(), -j8, (List) qybVar3.a.f(j8), true);
+                                    qybVar3.getMessagesStorage().k1(tL_messages_savedDialogsSlice2.messages, false, true, false, 0, false, 0, 0L);
                                     if (!tL_messages_savedDialogsSlice2.dialogs.isEmpty() && b5 == 1) {
                                         TLRPC.TL_monoForumDialog tL_monoForumDialog2 = (TLRPC.TL_monoForumDialog) c00.g(1, tL_messages_savedDialogsSlice2.dialogs);
                                         TLRPC.Message message3 = (TLRPC.Message) zh6Var4.f(tL_monoForumDialog2.top_message);
@@ -608,7 +608,7 @@ public final class qyb extends rf0 {
                     return;
                 }
                 if (tLObject instanceof TLRPC.TL_messages_savedDialogsNotModified) {
-                    hl.c3(new z5b(qybVar, j6, (TLRPC.TL_messages_savedDialogsNotModified) tLObject, (byte) 5));
+                    hl.c3(new j5b(qybVar, j6, (TLRPC.TL_messages_savedDialogsNotModified) tLObject, (byte) 6));
                     return;
                 }
                 if (!(tLObject instanceof TLRPC.TL_messages_forumTopics)) {
@@ -624,9 +624,9 @@ public final class qyb extends rf0 {
                     @Override // java.lang.Runnable
                     public final void run() {
                         qyb qybVar2 = qyb.this;
-                        jf7 messagesStorage2 = qybVar2.getMessagesStorage();
+                        kf7 messagesStorage2 = qybVar2.getMessagesStorage();
                         TLRPC.TL_messages_forumTopics tL_messages_forumTopics2 = tL_messages_forumTopics;
-                        messagesStorage2.j1(tL_messages_forumTopics2.users, tL_messages_forumTopics2.chats, true, true);
+                        messagesStorage2.n1(tL_messages_forumTopics2.users, tL_messages_forumTopics2.chats, true, true);
                         qybVar2.getMessagesController().j4(tL_messages_forumTopics2.users, false);
                         qybVar2.getMessagesController().c4(tL_messages_forumTopics2.chats, false);
                         LongSparseIntArray longSparseIntArray2 = qybVar2.c;
@@ -644,8 +644,8 @@ public final class qyb extends rf0 {
                         byte b4 = b;
                         qybVar2.u(j7, arrayList2, zh6Var3, false, b4, i4);
                         qybVar2.y(j7, true);
-                        qybVar2.getMessagesStorage().z1(qybVar2.getConnectionsManager().getCurrentTime(), -j7, (List) qybVar2.a.f(j7), true);
-                        qybVar2.getMessagesStorage().g1(tL_messages_forumTopics3.messages, false, true, false, 0, false, 0, 0L);
+                        qybVar2.getMessagesStorage().D1(qybVar2.getConnectionsManager().getCurrentTime(), -j7, (List) qybVar2.a.f(j7), true);
+                        qybVar2.getMessagesStorage().k1(tL_messages_forumTopics3.messages, false, true, false, 0, false, 0, 0L);
                         if (!tL_messages_forumTopics3.topics.isEmpty() && b4 == 1) {
                             TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) c00.g(1, tL_messages_forumTopics3.topics);
                             TLRPC.Message message2 = (TLRPC.Message) zh6Var3.f(tL_forumTopic2.top_message);
@@ -683,7 +683,7 @@ public final class qyb extends rf0 {
         zh6Var3.k(tL_forumTopic.id, tL_forumTopic);
         arrayList.add(tL_forumTopic);
         if (z) {
-            getMessagesStorage().z1(getConnectionsManager().getCurrentTime(), j, Collections.singletonList(tL_forumTopic), false);
+            getMessagesStorage().D1(getConnectionsManager().getCurrentTime(), j, Collections.singletonList(tL_forumTopic), false);
         }
         y(j2, true);
     }
@@ -715,13 +715,13 @@ public final class qyb extends rf0 {
             return;
         }
         D(j, tL_forumTopic, i);
-        getMessagesStorage().c2(j, tL_forumTopic, i);
+        getMessagesStorage().h2(j, tL_forumTopic, i);
     }
 
     public final void s(long j, long j2) {
         ArrayList arrayList = new ArrayList(1);
-        arrayList.add(if7.a(-j, j2));
-        hl.c3(new bcb((Object) this, (Object) arrayList, (byte) 13));
+        arrayList.add(jf7.a(-j, j2));
+        hl.c3(new hab((Object) this, (Object) arrayList, (byte) 14));
     }
 
     public final void t(long j, int i, boolean z, e eVar) {
@@ -841,7 +841,7 @@ public final class qyb extends rf0 {
                         boolean z4 = tL_forumTopic2.closed;
                         if (z3 != z4) {
                             tL_forumTopic.closed = z4;
-                            getMessagesStorage().c2(-j, tL_forumTopic2, 8);
+                            getMessagesStorage().h2(-j, tL_forumTopic2, 8);
                             z2 = true;
                         }
                         if (!z) {
@@ -877,7 +877,7 @@ public final class qyb extends rf0 {
                                 i5 |= 32;
                             }
                             if (i5 != 0) {
-                                getMessagesStorage().c2(-j, tL_forumTopic2, i5);
+                                getMessagesStorage().h2(-j, tL_forumTopic2, i5);
                             } else {
                                 i6 = i4 + 1;
                                 arrayList5 = arrayList;
@@ -941,9 +941,9 @@ public final class qyb extends rf0 {
                     i12++;
                 }
             }
-            jf7 messagesStorage = getMessagesStorage();
+            kf7 messagesStorage = getMessagesStorage();
             arrayList4 = arrayList6;
-            messagesStorage.a.c(new se7(messagesStorage, arrayList2, j, (byte) 5));
+            messagesStorage.a.c(new te7(messagesStorage, arrayList2, j, (byte) 5));
         }
         if (arrayList3 == null || i == 2) {
             if (i != 0 || z) {
@@ -1017,7 +1017,7 @@ public final class qyb extends rf0 {
             tL_messages_getForumTopicsByID2.peer = getMessagesController().j1(j2);
             tL_messages_getForumTopicsByID = tL_messages_getForumTopicsByID2;
         }
-        getConnectionsManager().sendRequest(tL_messages_getForumTopicsByID, new rs0((Object) this, B2, j, (Object) hashSet, (Object) o30Var, (byte) 6));
+        getConnectionsManager().sendRequest(tL_messages_getForumTopicsByID, new rs0((Object) this, B2, j, (Object) hashSet, (Object) o30Var, (byte) 5));
     }
 
     public final void w(ArrayList arrayList, long j) {
@@ -1060,7 +1060,7 @@ public final class qyb extends rf0 {
         zh6 zh6Var = (zh6) this.b.f(j);
         if (zh6Var != null && (tL_forumTopic = (TLRPC.TL_forumTopic) zh6Var.f(i)) != null) {
             tL_forumTopic.closed = z;
-            getMessagesStorage().c2(j2, tL_forumTopic, 8);
+            getMessagesStorage().h2(j2, tL_forumTopic, 8);
         }
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_editForumTopic, new myb());
     }

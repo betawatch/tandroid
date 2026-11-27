@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class jp9 {
     public boolean A;
@@ -68,7 +68,7 @@ public final class jp9 {
     public int b0 = 1;
     public float v = 1.0f;
     public long M = 1;
-    public final ki7 Y = new ki7(this, 21);
+    public final li7 Y = new li7(this, 21);
 
     public jp9(ap9 ap9Var) {
         byte b = 1;
@@ -563,10 +563,10 @@ public final class jp9 {
         }
         this.z = z;
         Handler handler = this.i;
-        ki7 ki7Var = this.Y;
-        handler.removeCallbacks(ki7Var);
+        li7 li7Var = this.Y;
+        handler.removeCallbacks(li7Var);
         if (z) {
-            handler.post(ki7Var);
+            handler.post(li7Var);
         }
         this.d.getClass();
         o();

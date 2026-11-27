@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ac7 {
     public static int q = 10;
@@ -66,7 +66,7 @@ public final class ac7 {
                         } else if (j < 0 && (M0 = s1.M0(Long.valueOf(-j))) != null) {
                             if (xc2.Y(M0)) {
                                 int i2 = this.g;
-                                int i3 = uc7.s5;
+                                int i3 = uc7.t5;
                                 if ((i2 & i3) == i3) {
                                 }
                             } else if (xc2.X(i, M0) || (!xc2.T(M0) || M0.megagroup ? (this.g & 4) == 0 : (this.g & 8) == 0)) {
@@ -82,7 +82,7 @@ public final class ac7 {
 
     public final boolean c() {
         int i = this.g;
-        int i2 = uc7.r5;
+        int i2 = uc7.s5;
         return (i & 512) > 0;
     }
 
@@ -95,7 +95,7 @@ public final class ac7 {
             return false;
         }
         int i = this.g;
-        int i2 = uc7.r5;
+        int i2 = uc7.s5;
         return (i & 1024) > 0;
     }
 }

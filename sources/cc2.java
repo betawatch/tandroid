@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cc2 {
     public int A;
@@ -2421,7 +2421,7 @@ public final class cc2 {
             wb2Var.x3 = null;
         }
         wb2Var.Z2(r47Var2);
-        e(z24 ? 30 : uc7.s1(i20).k4.R.f());
+        e(z24 ? 30 : uc7.s1(i20).l4.R.f());
         if (!z2 || (pollResults = ((TLRPC.TL_messageMediaPoll) n1).results) == null) {
             lc0 lc0Var = this.I;
             if (lc0Var != null) {
@@ -2858,7 +2858,7 @@ public final class cc2 {
             ArrayList arrayList16 = arrayList;
             int i50 = height;
             rb2 rb2Var = wb2Var.eb;
-            if (rb2Var == null || !rb2Var.Z() || !tL_messageMediaPoll3.poll.open_answers || wb2Var.X4 || r47Var2.r1 || r47Var2.j3() || tL_messageMediaPoll3.poll.answers.size() >= uc7.s1(i49).k4.R.f()) {
+            if (rb2Var == null || !rb2Var.Z() || !tL_messageMediaPoll3.poll.open_answers || wb2Var.X4 || r47Var2.r1 || r47Var2.j3() || tL_messageMediaPoll3.poll.answers.size() >= uc7.s1(i49).l4.R.f()) {
                 height = i50;
             } else {
                 if (this.l == null) {

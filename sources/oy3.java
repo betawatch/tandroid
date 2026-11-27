@@ -3,7 +3,7 @@
 import android.media.VolumeProvider;
 import android.os.Build;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class oy3 {
     public byte a;
@@ -23,24 +23,24 @@ public final class oy3 {
     }
 
     public final int a(int i) {
-        ag7 ag7Var = (ag7) ((ag7) this.e).a.get(i);
+        bg7 bg7Var = (bg7) ((bg7) this.e).a.get(i);
         int i2 = 1;
         int i3 = 2;
         if (this.a == 2) {
-            if (ag7Var != null) {
-                this.e = ag7Var;
+            if (bg7Var != null) {
+                this.e = bg7Var;
                 this.c++;
             } else if (i == 65038) {
                 c();
             } else if (i != 65039) {
-                ag7 ag7Var2 = (ag7) this.e;
-                if (ag7Var2.b != null) {
+                bg7 bg7Var2 = (bg7) this.e;
+                if (bg7Var2.b != null) {
                     i3 = 3;
                     if (this.c != 1) {
-                        this.f = ag7Var2;
+                        this.f = bg7Var2;
                         c();
                     } else if (d()) {
-                        this.f = (ag7) this.e;
+                        this.f = (bg7) this.e;
                         c();
                     } else {
                         c();
@@ -50,11 +50,11 @@ public final class oy3 {
                 }
             }
             i2 = i3;
-        } else if (ag7Var == null) {
+        } else if (bg7Var == null) {
             c();
         } else {
             this.a = (byte) 2;
-            this.e = ag7Var;
+            this.e = bg7Var;
             this.c = 1;
             i2 = i3;
         }
@@ -78,19 +78,19 @@ public final class oy3 {
 
     public final void c() {
         this.a = (byte) 1;
-        this.e = (ag7) this.d;
+        this.e = (bg7) this.d;
         this.c = 0;
     }
 
     public final boolean d() {
-        xf7 b = ((ag7) this.e).b.b();
+        yf7 b = ((bg7) this.e).b.b();
         int a = b.a(6);
         return !(a == 0 || b.b.get(a + b.a) == 0) || this.b == 65039;
     }
 
-    public oy3(ag7 ag7Var) {
+    public oy3(bg7 bg7Var) {
         this.a = (byte) 1;
-        this.d = ag7Var;
-        this.e = ag7Var;
+        this.d = bg7Var;
+        this.e = bg7Var;
     }
 }

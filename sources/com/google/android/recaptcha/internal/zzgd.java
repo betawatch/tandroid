@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 final class zzgd extends yfb implements is4 {
     Object zza;
@@ -26,7 +26,7 @@ final class zzgd extends yfb implements is4 {
 
     @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzgd) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
+        return ((zzgd) create((zzhk) obj, (zw2) obj2)).invokeSuspend(g9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x00bb, code lost:
@@ -57,7 +57,7 @@ final class zzgd extends yfb implements is4 {
         zzfp zzfpVar2;
         zzds zzdsVar2;
         int i = this.zzc;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         vx2 vx2Var = vx2.a;
         try {
             if (i == 0) {
@@ -87,7 +87,7 @@ final class zzgd extends yfb implements is4 {
                         return vx2Var;
                     }
                 }
-                return f9cVar;
+                return g9cVar;
             }
             if (i == 1) {
                 d = this.zzb;
@@ -111,7 +111,7 @@ final class zzgd extends yfb implements is4 {
                     zzge zzgeVar3 = this.zzd;
                     zzdsVar2 = zzdv.zzb;
                     zzgeVar3.zzb = zzdsVar2;
-                    return f9cVar;
+                    return g9cVar;
                 }
                 zzhkVar3 = (zzhk) this.zzf;
                 ixe.b(obj);

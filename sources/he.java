@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class he implements Runnable {
     public final /* synthetic */ byte a;
@@ -195,7 +195,7 @@ public final /* synthetic */ class he implements Runnable {
                         break;
                     } else if (xc2.T(chat)) {
                         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-                        tL_channels_getParticipants.limit = uc7.s1(i4).k4.V0.f();
+                        tL_channels_getParticipants.limit = uc7.s1(i4).l4.V0.f();
                         tL_channels_getParticipants.offset = 0;
                         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
                         tL_channels_getParticipants.channel = uc7.s1(i4).h1(chat.id);
@@ -467,7 +467,7 @@ public final /* synthetic */ class he implements Runnable {
                 }
                 break;
             case 4:
-                ((ts8) this.f).c((TLObject) this.e, (jf7) this.d, this.c, this.b, (ArrayList) this.h);
+                ((ts8) this.f).c((TLObject) this.e, (kf7) this.d, this.c, this.b, (ArrayList) this.h);
                 break;
             case 5:
                 ((hja) this.e).k((ArrayList) this.f, Integer.valueOf(this.b), Long.valueOf(this.c), (ArrayList) this.d, (ArrayList) this.h);
@@ -493,8 +493,8 @@ public final /* synthetic */ class he implements Runnable {
                 message.voiceTranscriptionOpen = true;
                 message.voiceTranscriptionId = 0L;
                 u2c.q(r47Var);
-                jf7 Y = jf7.Y(i9);
-                Y.a.c(new wy((Object) Y, r47Var.e1(), j10, (Object) message, (Object) str3, (byte) 6));
+                kf7 a0 = kf7.a0(i9);
+                a0.a.c(new wy((Object) a0, r47Var.e1(), j10, (Object) message, (Object) str3, (byte) 6));
                 jn7 f = jn7.f(i9);
                 Boolean bool2 = Boolean.TRUE;
                 f.k(jn7.A1, r47Var, null, null, bool2, bool2);
@@ -512,11 +512,11 @@ public final /* synthetic */ class he implements Runnable {
         this.d = chat;
     }
 
-    public /* synthetic */ he(ts8 ts8Var, TLObject tLObject, jf7 jf7Var, long j, int i, ArrayList arrayList) {
+    public /* synthetic */ he(ts8 ts8Var, TLObject tLObject, kf7 kf7Var, long j, int i, ArrayList arrayList) {
         this.a = (byte) 4;
         this.f = ts8Var;
         this.e = tLObject;
-        this.d = jf7Var;
+        this.d = kf7Var;
         this.c = j;
         this.b = i;
         this.h = arrayList;

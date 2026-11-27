@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class v92 extends e implements fn7 {
     public LinearLayout E;
@@ -28,7 +28,7 @@ public final class v92 extends e implements fn7 {
     public i56 H;
     public skb I;
     public ilb J;
-    public rca K;
+    public sca K;
     public u92 L;
     public boolean M;
     public ArrayList N;
@@ -55,7 +55,7 @@ public final class v92 extends e implements fn7 {
     public mf5 e;
     public boolean e0;
     public mf5 f;
-    public rca f0;
+    public sca f0;
     public ArrayList g0;
     public p92 h;
     public ua6 h0;
@@ -258,9 +258,9 @@ public final class v92 extends e implements fn7 {
         }
         this.s.addView(this.w, tre.o(-1, -2));
         this.w.setOnClickListener(new l92(this, (byte) 2));
-        rca rcaVar = new rca(context, (uh9) null);
-        this.K = rcaVar;
-        this.n.addView(rcaVar, tre.o(-1, -2));
+        sca scaVar = new sca(context, (uh9) null);
+        this.K = scaVar;
+        this.n.addView(scaVar, tre.o(-1, -2));
         if (z) {
             this.x.setVisibility(8);
             this.w.setVisibility(8);
@@ -339,9 +339,9 @@ public final class v92 extends e implements fn7 {
         this.y = linearLayout5;
         linearLayout5.setOrientation(1);
         this.n.addView(this.y, tre.o(-1, -2));
-        rca rcaVar2 = new rca(context, (uh9) null);
-        this.f0 = rcaVar2;
-        this.n.addView(rcaVar2, tre.o(-1, -2));
+        sca scaVar2 = new sca(context, (uh9) null);
+        this.f0 = scaVar2;
+        this.n.addView(scaVar2, tre.o(-1, -2));
         u1 u1Var = this.n;
         u92 u92Var = new u92(this, context);
         this.L = u92Var;
@@ -431,14 +431,14 @@ public final class v92 extends e implements fn7 {
             final byte b3 = 2;
             if (!K.equals(obj)) {
                 if (!xc2.T(this.Y)) {
-                    getMessagesController().R(getParentActivity(), this.a0, this, new ef7(this) { // from class: j92
+                    getMessagesController().R(getParentActivity(), this.a0, this, new ff7(this) { // from class: j92
                         public final /* synthetic */ v92 b;
 
                         {
                             this.b = this;
                         }
 
-                        @Override // ef7
+                        @Override // ff7
                         public final void run(long j) {
                             byte b4 = b;
                             v92 v92Var = this.b;
@@ -516,14 +516,14 @@ public final class v92 extends e implements fn7 {
                 if (chat.noforwards != this.c0) {
                     if (!xc2.T(chat)) {
                         f0(true);
-                        getMessagesController().R(getParentActivity(), this.a0, this, new ef7(this) { // from class: j92
+                        getMessagesController().R(getParentActivity(), this.a0, this, new ff7(this) { // from class: j92
                             public final /* synthetic */ v92 b;
 
                             {
                                 this.b = this;
                             }
 
-                            @Override // ef7
+                            @Override // ff7
                             public final void run(long j2) {
                                 byte b4 = b3;
                                 v92 v92Var = this.b;
@@ -577,14 +577,14 @@ public final class v92 extends e implements fn7 {
                     if (!this.b0 && !xc2.T(this.Y)) {
                         r92 r92Var = this.V;
                         if (r92Var.f || r92Var.h) {
-                            getMessagesController().R(getParentActivity(), this.a0, this, new ef7(this) { // from class: j92
+                            getMessagesController().R(getParentActivity(), this.a0, this, new ff7(this) { // from class: j92
                                 public final /* synthetic */ v92 b;
 
                                 {
                                     this.b = this;
                                 }
 
-                                @Override // ef7
+                                @Override // ff7
                                 public final void run(long j22) {
                                     byte b4 = b2;
                                     v92 v92Var = this.b;
@@ -707,11 +707,11 @@ public final class v92 extends e implements fn7 {
             ilbVar.setTag(Integer.valueOf(i2));
             yob.X(this.d.getTextView(), i2, null);
             boolean z = this.o0;
-            rca rcaVar = this.K;
+            sca scaVar = this.K;
             if (z) {
-                rcaVar.setVisibility(8);
+                scaVar.setVisibility(8);
             } else {
-                rcaVar.setVisibility(0);
+                scaVar.setVisibility(0);
             }
             this.f0.setVisibility(8);
             this.y.setVisibility(8);
@@ -838,13 +838,13 @@ public final class v92 extends e implements fn7 {
         TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(this.a0));
         this.Y = M0;
         if (M0 == null) {
-            TLRPC.Chat O = getMessagesStorage().O(this.a0);
-            this.Y = O;
-            if (O != null) {
+            TLRPC.Chat Q = getMessagesStorage().Q(this.a0);
+            this.Y = Q;
+            if (Q != null) {
                 getMessagesController().a4(this.Y, true);
                 if (this.Z == null) {
-                    TLRPC.ChatFull C0 = getMessagesStorage().C0(this.a0, xc2.T(this.Y), new CountDownLatch(1), false, false, 0);
-                    this.Z = C0;
+                    TLRPC.ChatFull F0 = getMessagesStorage().F0(this.a0, xc2.T(this.Y), new CountDownLatch(1), false, false, 0);
+                    this.Z = F0;
                 }
             }
             return false;

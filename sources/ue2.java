@@ -29,7 +29,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ue2 implements Runnable {
     public final /* synthetic */ byte a;
@@ -277,7 +277,7 @@ public final /* synthetic */ class ue2 implements Runnable {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         j16 j16Var = (j16) this.d;
         String str = LaunchActivity.C1;
-        hl.c3(new ls5((Object) launchActivity, (Object) jf7.Y(launchActivity.P).g0(this.b), (Object) j16Var, (byte) 10));
+        hl.c3(new ls5((Object) launchActivity, (Object) kf7.a0(launchActivity.P).i0(this.b), (Object) j16Var, (byte) 10));
     }
 
     private final void m() {
@@ -294,7 +294,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                 }
                 i++;
             }
-            uc6Var.getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+            uc6Var.getMessagesStorage().n1(messages_messages.users, messages_messages.chats, true, true);
             uc6Var.getMessagesController().j4(messages_messages.users, false);
             uc6Var.getMessagesController().c4(messages_messages.chats, false);
             zh6 zh6Var = uc6Var.getLocationController().c;
@@ -356,7 +356,7 @@ public final /* synthetic */ class ue2 implements Runnable {
         int i2;
         ArrayList arrayList3;
         Boolean bool;
-        byte b2 = 6;
+        byte b2 = 7;
         int i3 = 2;
         int i4 = 1;
         ?? r9 = 0;
@@ -378,7 +378,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                     }
                     i5++;
                 }
-                id6Var.getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+                id6Var.getMessagesStorage().n1(messages_messages.users, messages_messages.chats, true, true);
                 id6Var.getMessagesController().j4(messages_messages.users, false);
                 id6Var.getMessagesController().c4(messages_messages.chats, false);
                 id6Var.c.k(j, messages_messages.messages);
@@ -422,13 +422,13 @@ public final /* synthetic */ class ue2 implements Runnable {
                 jj.f(uc7Var3.currentAccount, uc7Var3.M0(Long.valueOf(j5)), tL_messages_invitedUsers);
                 return;
             case 5:
-                jf7 jf7Var = (jf7) this.c;
+                kf7 kf7Var = (kf7) this.c;
                 long j6 = this.b;
                 Consumer consumer2 = (Consumer) this.d;
                 String str7 = ")";
                 String str8 = " AND mid IN (";
                 try {
-                    SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase = kf7Var.b;
                     Locale locale = Locale.US;
                     SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT top_message, data, topic_message, unread_count, max_read_id, unread_mentions, unread_reactions, read_outbox, pinned, total_messages_count, nopaid_messages_exception, unread_poll_votes FROM topics WHERE did = " + j6 + " ORDER BY pinned ASC", new Object[0]);
                     arrayList2 = null;
@@ -451,7 +451,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                                             z = i4;
                                             arrayList = arrayList4;
                                             try {
-                                                jf7Var.n(e, z);
+                                                kf7Var.p(e, z);
                                                 if (sQLiteCursor != null) {
                                                 }
                                                 arrayList2 = arrayList;
@@ -524,7 +524,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                                         arrayList = arrayList2;
                                         sQLiteCursor = queryFinalized2;
                                         z = i2;
-                                        jf7Var.n(e, z);
+                                        kf7Var.p(e, z);
                                         if (sQLiteCursor != null) {
                                         }
                                         arrayList2 = arrayList;
@@ -561,7 +561,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                         consumer = consumer2;
                         sQLiteCursor2 = queryFinalized2;
                     } else {
-                        SQLiteDatabase sQLiteDatabase2 = jf7Var.b;
+                        SQLiteDatabase sQLiteDatabase2 = kf7Var.b;
                         StringBuilder sb = new StringBuilder();
                         sb.append("SELECT mid, data, replydata FROM messages_v2 WHERE uid = ");
                         sb.append(j6);
@@ -588,7 +588,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                                                     if (TLdeserialize2 != null) {
                                                         str3 = str7;
                                                         str4 = str8;
-                                                        TLdeserialize2.readAttachPath(byteBufferValue4, yac.h(jf7Var.currentAccount).n);
+                                                        TLdeserialize2.readAttachPath(byteBufferValue4, yac.h(kf7Var.currentAccount).n);
                                                     } else {
                                                         str3 = str7;
                                                         str4 = str8;
@@ -602,14 +602,14 @@ public final /* synthetic */ class ue2 implements Runnable {
                                                             ((TLRPC.TL_forumTopic) arrayList8.get(i10)).topMessage = TLdeserialize2;
                                                         }
                                                     }
-                                                    jf7.d(TLdeserialize2, arrayList6, arrayList7, null);
+                                                    kf7.d(TLdeserialize2, arrayList6, arrayList7, null);
                                                     try {
                                                         messageReplyHeader = TLdeserialize2.reply_to;
                                                     } catch (Exception e6) {
                                                         e = e6;
                                                         hashSet2 = hashSet5;
                                                     }
-                                                    if (messageReplyHeader != null && messageReplyHeader.reply_to_msg_id != 0 && jf7.s0(TLdeserialize2.action)) {
+                                                    if (messageReplyHeader != null && messageReplyHeader.reply_to_msg_id != 0 && kf7.v0(TLdeserialize2.action)) {
                                                         if (queryFinalized.isNull(2) || (byteBufferValue = queryFinalized.byteBufferValue(2)) == null) {
                                                             hashSet2 = hashSet5;
                                                         } else {
@@ -617,15 +617,15 @@ public final /* synthetic */ class ue2 implements Runnable {
                                                             TLdeserialize2.replyMessage = TLdeserialize3;
                                                             hashSet2 = hashSet5;
                                                             try {
-                                                                TLdeserialize3.readAttachPath(byteBufferValue, jf7Var.getUserConfig().n);
+                                                                TLdeserialize3.readAttachPath(byteBufferValue, kf7Var.getUserConfig().n);
                                                                 byteBufferValue.reuse();
                                                                 TLRPC.Message message = TLdeserialize2.replyMessage;
                                                                 if (message != null) {
-                                                                    jf7.d(message, arrayList6, arrayList7, null);
+                                                                    kf7.d(message, arrayList6, arrayList7, null);
                                                                 }
                                                             } catch (Exception e7) {
                                                                 e = e7;
-                                                                jf7Var.n(e, true);
+                                                                kf7Var.p(e, true);
                                                                 sparseArray4 = sparseArray2;
                                                                 hashSet5 = hashSet2;
                                                                 arrayList2 = arrayList;
@@ -636,7 +636,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                                                             }
                                                         }
                                                         if (TLdeserialize2.replyMessage == null) {
-                                                            jf7.c(TLdeserialize2, zh6Var2, zh6Var3);
+                                                            kf7.c(TLdeserialize2, zh6Var2, zh6Var3);
                                                         }
                                                         sparseArray4 = sparseArray2;
                                                         hashSet5 = hashSet2;
@@ -650,7 +650,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                                                     e = e8;
                                                     sQLiteCursor = sQLiteCursor2;
                                                     z = 1;
-                                                    jf7Var.n(e, z);
+                                                    kf7Var.p(e, z);
                                                     if (sQLiteCursor != null) {
                                                     }
                                                     arrayList2 = arrayList;
@@ -676,7 +676,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                                             arrayList = arrayList2;
                                             sQLiteCursor = sQLiteCursor2;
                                             z = 1;
-                                            jf7Var.n(e, z);
+                                            kf7Var.p(e, z);
                                             if (sQLiteCursor != null) {
                                             }
                                             arrayList2 = arrayList;
@@ -694,7 +694,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                                     arrayList = arrayList2;
                                     z = 1;
                                     sQLiteCursor = sQLiteCursor2;
-                                    jf7Var.n(e, z);
+                                    kf7Var.p(e, z);
                                     if (sQLiteCursor != null) {
                                         sQLiteCursor.dispose();
                                     }
@@ -706,7 +706,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                                     queryFinalized.dispose();
                                     if (!hashSet.isEmpty()) {
                                         ?? r8 = 0;
-                                        SQLiteCursor queryFinalized3 = jf7Var.b.queryFinalized("SELECT mid, data FROM messages_topics WHERE uid = " + j6 + str2 + TextUtils.join(",", hashSet) + str, new Object[0]);
+                                        SQLiteCursor queryFinalized3 = kf7Var.b.queryFinalized("SELECT mid, data FROM messages_topics WHERE uid = " + j6 + str2 + TextUtils.join(",", hashSet) + str, new Object[0]);
                                         while (queryFinalized3.next()) {
                                             try {
                                                 int intValue4 = queryFinalized3.intValue(r8);
@@ -716,24 +716,24 @@ public final /* synthetic */ class ue2 implements Runnable {
                                                     if (TLdeserialize4 != null) {
                                                         zh6Var = zh6Var3;
                                                         try {
-                                                            TLdeserialize4.readAttachPath(byteBufferValue5, yac.h(jf7Var.currentAccount).n);
+                                                            TLdeserialize4.readAttachPath(byteBufferValue5, yac.h(kf7Var.currentAccount).n);
                                                         } catch (Exception e11) {
                                                             e = e11;
-                                                            jf7Var.n(e, true);
+                                                            kf7Var.p(e, true);
                                                             size = arrayList.size();
                                                             i = 0;
                                                             while (i < size) {
                                                             }
                                                             arrayList2 = arrayList;
-                                                            jf7Var.H0(zh6Var2, zh6Var, arrayList6, arrayList7, 0);
+                                                            kf7Var.K0(zh6Var2, zh6Var, arrayList6, arrayList7, 0);
                                                             ArrayList arrayList9 = new ArrayList();
                                                             ArrayList arrayList10 = new ArrayList();
                                                             if (!arrayList7.isEmpty()) {
                                                             }
                                                             if (arrayList6.isEmpty()) {
                                                             }
-                                                            hl.c3(new ud7(jf7Var, arrayList10, arrayList9, b));
-                                                            jf7Var.G0(arrayList2, j6);
+                                                            hl.c3(new ee7(kf7Var, arrayList10, arrayList9, b));
+                                                            kf7Var.J0(arrayList2, j6);
                                                             sQLiteCursor2.dispose();
                                                             consumer.x(arrayList2);
                                                             return;
@@ -743,7 +743,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                                                     }
                                                     byteBufferValue5.reuse();
                                                     hashSet.remove(Integer.valueOf(intValue4));
-                                                    jf7.d(TLdeserialize4, arrayList6, arrayList7, null);
+                                                    kf7.d(TLdeserialize4, arrayList6, arrayList7, null);
                                                     ArrayList arrayList11 = (ArrayList) sparseArray.get(intValue4);
                                                     if (arrayList11 != null) {
                                                         for (int i11 = 0; i11 < arrayList11.size(); i11++) {
@@ -781,25 +781,25 @@ public final /* synthetic */ class ue2 implements Runnable {
                                         arrayList = arrayList12;
                                     }
                                     arrayList2 = arrayList;
-                                    jf7Var.H0(zh6Var2, zh6Var, arrayList6, arrayList7, 0);
+                                    kf7Var.K0(zh6Var2, zh6Var, arrayList6, arrayList7, 0);
                                     ArrayList arrayList92 = new ArrayList();
                                     ArrayList arrayList102 = new ArrayList();
                                     if (!arrayList7.isEmpty()) {
-                                        jf7Var.P(TextUtils.join(",", arrayList7), arrayList92);
+                                        kf7Var.R(TextUtils.join(",", arrayList7), arrayList92);
                                     }
                                     if (arrayList6.isEmpty()) {
                                         b = 0;
-                                        jf7Var.k0(arrayList6, arrayList102, false);
+                                        kf7Var.m0(arrayList6, arrayList102, false);
                                     } else {
                                         b = 0;
                                     }
-                                    hl.c3(new ud7(jf7Var, arrayList102, arrayList92, b));
-                                    jf7Var.G0(arrayList2, j6);
+                                    hl.c3(new ee7(kf7Var, arrayList102, arrayList92, b));
+                                    kf7Var.J0(arrayList2, j6);
                                 } catch (Exception e13) {
                                     e = e13;
                                     z = 1;
                                     sQLiteCursor = sQLiteCursor2;
-                                    jf7Var.n(e, z);
+                                    kf7Var.p(e, z);
                                     if (sQLiteCursor != null) {
                                     }
                                     arrayList2 = arrayList;
@@ -835,7 +835,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                 long j7 = this.b;
                 tp8 tp8Var = (tp8) this.d;
                 HashSet hashSet6 = new HashSet();
-                Iterator<Map.Entry<String, ?>> it = uc7.s1(ip7Var.currentAccount).W3.getAll().entrySet().iterator();
+                Iterator<Map.Entry<String, ?>> it = uc7.s1(ip7Var.currentAccount).X3.getAll().entrySet().iterator();
                 while (it.hasNext()) {
                     String key = it.next().getKey();
                     if (key.startsWith("notify2_" + j7)) {
@@ -846,7 +846,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                         }
                     }
                 }
-                hl.c3(new pl7(tp8Var, hashSet6, b2));
+                hl.c3(new ql7(tp8Var, hashSet6, b2));
                 return;
             case 7:
                 wx9 wx9Var = (wx9) this.c;
@@ -854,7 +854,7 @@ public final /* synthetic */ class ue2 implements Runnable {
                 long j8 = this.b;
                 wx9Var.getClass();
                 if (tL_dialog.folder_id == 1) {
-                    SharedPreferences.Editor edit = uc7.s1(wx9Var.currentAccount).W3.edit();
+                    SharedPreferences.Editor edit = uc7.s1(wx9Var.currentAccount).X3.edit();
                     edit.putBoolean("dialog_bar_archived" + j8, true);
                     edit.commit();
                 }

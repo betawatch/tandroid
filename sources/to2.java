@@ -9,7 +9,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class to2 extends v79 {
     public final /* synthetic */ byte a;
@@ -154,7 +154,7 @@ public final class to2 extends v79 {
                 break;
             case 28:
                 if (i == 1) {
-                    hl.t1(((pi7) obj).T1.getEditText());
+                    hl.t1(((qi7) obj).T1.getEditText());
                     break;
                 }
                 break;
@@ -202,8 +202,8 @@ public final class to2 extends v79 {
                 df3 df3Var = (df3) obj;
                 hy0 hy0Var = df3Var.t1;
                 if (hy0Var != null) {
-                    cl7 cl7Var = hy0Var.i0;
-                    if (cl7Var != null && cl7Var.getTop() == hy0Var.k0) {
+                    dl7 dl7Var = hy0Var.i0;
+                    if (dl7Var != null && dl7Var.getTop() == hy0Var.k0) {
                         z = true;
                     }
                     df3Var.v1 = !z;

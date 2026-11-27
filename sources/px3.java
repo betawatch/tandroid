@@ -2,7 +2,7 @@
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class px3 {
     public static final ThreadLocal d = new ThreadLocal();
@@ -16,7 +16,7 @@ public final class px3 {
     }
 
     public final int a(int i) {
-        xf7 b = b();
+        yf7 b = b();
         int a = b.a(16);
         if (a == 0) {
             return 0;
@@ -26,33 +26,33 @@ public final class px3 {
         return byteBuffer.getInt(byteBuffer.getInt(i2) + i2 + 4 + (i << 2));
     }
 
-    public final xf7 b() {
+    public final yf7 b() {
         ThreadLocal threadLocal = d;
-        xf7 xf7Var = (xf7) threadLocal.get();
-        if (xf7Var == null) {
-            xf7Var = new xf7();
-            threadLocal.set(xf7Var);
+        yf7 yf7Var = (yf7) threadLocal.get();
+        if (yf7Var == null) {
+            yf7Var = new yf7();
+            threadLocal.set(yf7Var);
         }
-        yf7 yf7Var = (yf7) this.b.a;
-        int a = yf7Var.a(6);
+        zf7 zf7Var = (zf7) this.b.a;
+        int a = zf7Var.a(6);
         if (a != 0) {
-            int i = a + yf7Var.a;
-            int i2 = yf7Var.b.getInt(i) + i + 4 + (this.a << 2);
-            int i3 = yf7Var.b.getInt(i2) + i2;
-            ByteBuffer byteBuffer = yf7Var.b;
-            xf7Var.b = byteBuffer;
+            int i = a + zf7Var.a;
+            int i2 = zf7Var.b.getInt(i) + i + 4 + (this.a << 2);
+            int i3 = zf7Var.b.getInt(i2) + i2;
+            ByteBuffer byteBuffer = zf7Var.b;
+            yf7Var.b = byteBuffer;
             if (byteBuffer != null) {
-                xf7Var.a = i3;
+                yf7Var.a = i3;
                 int i4 = i3 - byteBuffer.getInt(i3);
-                xf7Var.c = i4;
-                xf7Var.d = xf7Var.b.getShort(i4);
-                return xf7Var;
+                yf7Var.c = i4;
+                yf7Var.d = yf7Var.b.getShort(i4);
+                return yf7Var;
             }
-            xf7Var.a = 0;
-            xf7Var.c = 0;
-            xf7Var.d = 0;
+            yf7Var.a = 0;
+            yf7Var.c = 0;
+            yf7Var.d = 0;
         }
-        return xf7Var;
+        return yf7Var;
     }
 
     public final String toString() {
@@ -60,11 +60,11 @@ public final class px3 {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
         sb.append(", id:");
-        xf7 b = b();
+        yf7 b = b();
         int a = b.a(4);
         sb.append(Integer.toHexString(a != 0 ? b.b.getInt(a + b.a) : 0));
         sb.append(", codepoints:");
-        xf7 b2 = b();
+        yf7 b2 = b();
         int a2 = b2.a(16);
         if (a2 != 0) {
             int i2 = a2 + b2.a;

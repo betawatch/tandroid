@@ -11,7 +11,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class bl2 extends Drawable {
     public final /* synthetic */ byte a = 1;
@@ -239,7 +239,7 @@ public final class bl2 extends Drawable {
         this.d = paint2;
         Paint paint3 = new Paint(1);
         this.e = paint3;
-        this.g = new mm(new fe7(this, (byte) 1), 320L, k43.h, 0);
+        this.g = new mm(new ge7(this, (byte) 1), 320L, k43.h, 0);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
         paint.setColor(-1);

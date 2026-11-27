@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.WearReplyReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ga7 implements Runnable {
     public final /* synthetic */ byte a = 1;
@@ -78,13 +78,13 @@ public final /* synthetic */ class ga7 implements Runnable {
                         long j7 = -j;
                         Integer num2 = (Integer) concurrentHashMap2.get(Long.valueOf(j7));
                         if (num2 == null) {
-                            num2 = Integer.valueOf(uc7Var2.getMessagesStorage().S(j7, false));
+                            num2 = Integer.valueOf(uc7Var2.getMessagesStorage().U(j7, false));
                             concurrentHashMap2.put(Long.valueOf(j7), num2);
                         }
                         Integer num3 = num2;
                         Integer num4 = (Integer) concurrentHashMap.get(Long.valueOf(j7));
                         if (num4 == null) {
-                            num4 = Integer.valueOf(uc7Var2.getMessagesStorage().S(j7, true));
+                            num4 = Integer.valueOf(uc7Var2.getMessagesStorage().U(j7, true));
                             concurrentHashMap.put(Long.valueOf(j7), num4);
                         }
                         Integer num5 = num4;
@@ -162,18 +162,18 @@ public final /* synthetic */ class ga7 implements Runnable {
                     }
                     z = true;
                     uc7Var.P3(1, j);
-                    jf7 messagesStorage = uc7Var.getMessagesStorage();
-                    messagesStorage.a.c(new gd7(messagesStorage, updates_channeldifference.pts, j, (byte) 5));
+                    kf7 messagesStorage = uc7Var.getMessagesStorage();
+                    messagesStorage.a.c(new id7(messagesStorage, updates_channeldifference.pts, j, (byte) 5));
                 } else if (updates_channeldifference instanceof TLRPC.TL_updates_channelDifferenceTooLong) {
                     long j8 = -j6;
                     Integer num7 = (Integer) concurrentHashMap2.get(Long.valueOf(j8));
                     if (num7 == null) {
-                        num7 = Integer.valueOf(uc7Var2.getMessagesStorage().S(j8, false));
+                        num7 = Integer.valueOf(uc7Var2.getMessagesStorage().U(j8, false));
                         concurrentHashMap2.put(Long.valueOf(j8), num7);
                     }
                     Integer num8 = (Integer) concurrentHashMap.get(Long.valueOf(j8));
                     if (num8 == null) {
-                        num8 = Integer.valueOf(uc7Var2.getMessagesStorage().S(j8, true));
+                        num8 = Integer.valueOf(uc7Var2.getMessagesStorage().U(j8, true));
                         concurrentHashMap.put(Long.valueOf(j8), num8);
                     }
                     for (int i3 = 0; i3 < updates_channeldifference.messages.size(); i3++) {
@@ -188,7 +188,7 @@ public final /* synthetic */ class ga7 implements Runnable {
                         z3 = false;
                         message3.unread = z3;
                     }
-                    jf7 messagesStorage2 = uc7Var2.getMessagesStorage();
+                    kf7 messagesStorage2 = uc7Var2.getMessagesStorage();
                     t77 t77Var = new t77(uc7Var2, j6, (byte) 15);
                     to3 to3Var = messagesStorage2.a;
                     wy wyVar = new wy((Object) messagesStorage2, j6, this.b, updates_channeldifference, (Object) t77Var, (byte) 7);
@@ -218,7 +218,7 @@ public final /* synthetic */ class ga7 implements Runnable {
                     cc4.b("new_messages = " + updates_channeldifference.new_messages.size() + " messages = " + updates_channeldifference.messages.size() + " users = " + updates_channeldifference.users.size() + " chats = " + updates_channeldifference.chats.size() + " other updates = " + updates_channeldifference.other_updates.size());
                 }
                 if (j2 != 0) {
-                    uc7Var.getMessagesStorage().n1(j2);
+                    uc7Var.getMessagesStorage().r1(j2);
                 }
                 if (z) {
                     hl.c3(new t77(uc7Var, j, (byte) 4));
@@ -229,7 +229,7 @@ public final /* synthetic */ class ga7 implements Runnable {
                 zu1 zu1Var = (zu1) obj3;
                 vnb vnbVar = (vnb) obj;
                 ((fu5) obj4).u();
-                SharedPreferences sharedPreferences = uc7.s1(this.b).W3;
+                SharedPreferences sharedPreferences = uc7.s1(this.b).X3;
                 StringBuilder sb = new StringBuilder("sound_enabled_");
                 long j9 = this.c;
                 sb.append(ip7.p(j9, j5, false));
@@ -246,15 +246,15 @@ public final /* synthetic */ class ga7 implements Runnable {
                 r7a r7aVar = (r7a) obj4;
                 TLRPC.Message message4 = (TLRPC.Message) obj2;
                 r47 r47Var2 = (r47) obj;
-                jf7 messagesStorage3 = r7aVar.getMessagesStorage();
+                kf7 messagesStorage3 = r7aVar.getMessagesStorage();
                 int i4 = this.b;
                 Integer valueOf = Integer.valueOf(i4);
                 int i5 = message4.id;
                 int i6 = message4.date;
                 long j10 = this.c;
                 long j11 = this.d;
-                messagesStorage3.X1(j10, j11, valueOf, i5, i6, 0, 0);
-                r7aVar.getMessagesStorage().g1((ArrayList) obj3, true, false, false, 0, false, 0, 0L);
+                messagesStorage3.c2(j10, j11, valueOf, i5, i6, 0, 0);
+                r7aVar.getMessagesStorage().k1((ArrayList) obj3, true, false, false, 0, false, 0, 0L);
                 hl.c3(new wy(r7aVar, r47Var2, message4, j11, i4));
                 break;
             case 3:

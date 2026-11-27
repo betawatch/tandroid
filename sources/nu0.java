@@ -26,7 +26,7 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.b;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class nu0 implements icc {
     public final /* synthetic */ byte a;
@@ -762,14 +762,14 @@ public final /* synthetic */ class nu0 implements icc {
                 }
             case 16:
                 boolean[] zArr = (boolean[]) this.b;
-                jl7[] jl7VarArr = (jl7[]) this.c;
+                kl7[] kl7VarArr = (kl7[]) this.c;
                 vnb vnbVar3 = (vnb) this.d;
                 tpa tpaVar = (tpa) this.e;
                 String str20 = (String) obj;
                 String str21 = (String) obj2;
                 zArr[0] = false;
                 if (str21 != null) {
-                    new d31(jl7VarArr[0].F, vnbVar3).f0(str21, false);
+                    new d31(kl7VarArr[0].F, vnbVar3).f0(str21, false);
                     return;
                 }
                 tpaVar.setPadding(hl.L(19.0f), hl.L(9.0f), hl.L(15.0f), hl.L(8.0f));

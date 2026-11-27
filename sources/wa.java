@@ -3,7 +3,7 @@
 import android.app.Activity;
 import android.content.Context;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wa extends q9c {
     public final /* synthetic */ byte n3 = 3;
@@ -40,7 +40,7 @@ public final class wa extends q9c {
     public final void L1() {
         switch (this.n3) {
             case 2:
-                hl.d0(((nab) this.o3).b, new ii7(this, (byte) 2));
+                hl.d0(((oab) this.o3).b, new ji7(this, (byte) 2));
                 break;
         }
     }
@@ -94,9 +94,9 @@ public final class wa extends q9c {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wa(nab nabVar, Activity activity, int i, hj7 hj7Var, bm6 bm6Var, x53 x53Var) {
-        super(activity, i, 0, false, hj7Var, bm6Var, null, x53Var, -1, 0);
-        this.o3 = nabVar;
+    public wa(oab oabVar, Activity activity, int i, ij7 ij7Var, bm6 bm6Var, x53 x53Var) {
+        super(activity, i, 0, false, ij7Var, bm6Var, null, x53Var, -1, 0);
+        this.o3 = oabVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

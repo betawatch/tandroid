@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class t56 extends zt3 {
     public boolean F;
@@ -30,9 +30,9 @@ public final class t56 extends zt3 {
         }
         try {
             long parseLong = Long.parseLong(editable.toString());
-            if (parseLong > this.G.getMessagesController().k4.H2.f()) {
+            if (parseLong > this.G.getMessagesController().l4.H2.f()) {
                 this.F = true;
-                parseLong = this.G.getMessagesController().k4.H2.f();
+                parseLong = this.G.getMessagesController().l4.H2.f();
                 setText(Long.toString(parseLong));
                 this.F = false;
             }
@@ -41,7 +41,7 @@ public final class t56 extends zt3 {
             int i2 = v56Var.getConnectionsManager().isTestBackend() ? 2131745879 : 2131745882;
             di0 h = di0.h();
             i = ((e) this.G).currentAccount;
-            textView.setText(ob6.a0(null, null, i2, h.e((long) ((parseLong / 1000.0d) * uc7.s1(i).k4.A3.i), "USD")));
+            textView.setText(ob6.a0(null, null, i2, h.e((long) ((parseLong / 1000.0d) * uc7.s1(i).l4.A3.i), "USD")));
         } catch (Exception e) {
             cc4.g(e, true);
         }

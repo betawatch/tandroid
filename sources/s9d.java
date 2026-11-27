@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s9d implements tq2, OnSuccessListener, OnFailureListener {
     public final /* synthetic */ byte a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class s9d implements tq2, OnSuccessListener, OnFail
     public final Object b0(am2 am2Var) {
         switch (this.a) {
             case 0:
-                return new rg7((byte) 0);
+                return new sg7((byte) 0);
             default:
                 return new y99(am2Var.N(x99.class));
         }

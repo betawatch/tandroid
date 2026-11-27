@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class d48 extends View implements snb {
     public final vnb a;
@@ -241,7 +241,7 @@ public final class d48 extends View implements snb {
         int size = View.MeasureSpec.getSize(i);
         uc7 s1 = uc7.s1(this.d);
         byte b = this.c;
-        lc7 lc7Var = b == 1 ? s1.E3 : s1.F3;
+        lc7 lc7Var = b == 1 ? s1.F3 : s1.G3;
         int size2 = lc7Var == null ? 0 : lc7Var.c.size();
         int i4 = 8;
         byte b2 = 2;
@@ -341,7 +341,7 @@ public final class d48 extends View implements snb {
         }
         uc7 s1 = uc7.s1(this.d);
         byte b = this.c;
-        lc7 lc7Var = b == 1 ? s1.E3 : s1.F3;
+        lc7 lc7Var = b == 1 ? s1.F3 : s1.G3;
         int i2 = 0;
         while (true) {
             c48[] c48VarArr = this.f;

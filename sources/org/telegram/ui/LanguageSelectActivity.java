@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class LanguageSelectActivity extends org.telegram.ui.ActionBar.e implements fn7 {
     public nz5 a;
@@ -133,11 +133,11 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.e implemen
     }
 
     public final boolean e0() {
-        return getMessagesController().i4.t();
+        return getMessagesController().j4.t();
     }
 
     public final boolean f0() {
-        return getMessagesController().i4.r();
+        return getMessagesController().j4.r();
     }
 
     public final void g0() {
@@ -171,8 +171,8 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.e implemen
                 int i3 = jn7.D1;
                 if (i == i2) {
                     boolean z2 = !f0();
-                    a5c a5cVar = getMessagesController().i4;
-                    SharedPreferences.Editor edit = a5cVar.n.X3.edit();
+                    a5c a5cVar = getMessagesController().j4;
+                    SharedPreferences.Editor edit = a5cVar.n.Y3.edit();
                     a5cVar.s = Boolean.valueOf(z2);
                     edit.putBoolean("translate_button", z2).apply();
                     ((wkb) view).setChecked(z2);
@@ -184,8 +184,8 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.e implemen
                         showDialog(new xk8((org.telegram.ui.ActionBar.e) this, 13, false));
                         return;
                     }
-                    a5c a5cVar2 = getMessagesController().i4;
-                    SharedPreferences.Editor edit2 = a5cVar2.n.X3.edit();
+                    a5c a5cVar2 = getMessagesController().j4;
+                    SharedPreferences.Editor edit2 = a5cVar2.n.Y3.edit();
                     a5cVar2.r = Boolean.valueOf(z3);
                     edit2.putBoolean("translate_chat_button", z3).apply();
                     jn7.f(this.currentAccount).k(i3, new Object[0]);
@@ -248,7 +248,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.e implemen
                 if (!z5) {
                     idVar.q(500L);
                 }
-                a5c a5cVar3 = getMessagesController().i4;
+                a5c a5cVar3 = getMessagesController().j4;
                 a5cVar3.c.clear();
                 a5cVar3.e.clear();
                 int c = ob6.D0().c(mb6Var2, true, false, false, true, this.currentAccount, new ds6((Object) this, (Object) idVar, z5, (byte) 26));
@@ -266,8 +266,8 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.e implemen
                     hashSet.add(str);
                 }
                 ee9.e0(hashSet, Boolean.FALSE);
-                uc7.s1(this.currentAccount).i4.f();
-                uc7.s1(this.currentAccount).i4.h();
+                uc7.s1(this.currentAccount).j4.f();
+                uc7.s1(this.currentAccount).j4.h();
                 a5c.P = null;
             }
         } catch (Exception e) {
@@ -400,7 +400,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.e implemen
         byte b = 0;
         jz5 jz5Var = new jz5(this, b);
         String j0 = ob6.j0();
-        if (uc7.s1(i).k4.B1.f() > 0) {
+        if (uc7.s1(i).l4.B1.f() > 0) {
             if (uc7.e1().getBoolean("langpack_patched" + j0, false) || D0.Q) {
                 return;
             }

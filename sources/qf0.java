@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class qf0 implements zw2, wx2, Serializable {
     private final zw2 completion;
@@ -56,20 +56,20 @@ public abstract class qf0 implements zw2, wx2, Serializable {
             i = -1;
         }
         int i2 = i >= 0 ? g93Var.l()[i] : -1;
-        yg7 yg7Var = mfd.b;
-        yg7 yg7Var2 = mfd.a;
-        if (yg7Var == null) {
+        zg7 zg7Var = mfd.b;
+        zg7 zg7Var2 = mfd.a;
+        if (zg7Var == null) {
             try {
-                yg7 yg7Var3 = new yg7(Class.class.getDeclaredMethod("getModule", null), getClass().getClassLoader().loadClass("java.lang.Module").getDeclaredMethod("getDescriptor", null), getClass().getClassLoader().loadClass("java.lang.module.ModuleDescriptor").getDeclaredMethod("name", null));
-                mfd.b = yg7Var3;
-                yg7Var = yg7Var3;
+                zg7 zg7Var3 = new zg7(Class.class.getDeclaredMethod("getModule", null), getClass().getClassLoader().loadClass("java.lang.Module").getDeclaredMethod("getDescriptor", null), getClass().getClassLoader().loadClass("java.lang.module.ModuleDescriptor").getDeclaredMethod("name", null));
+                mfd.b = zg7Var3;
+                zg7Var = zg7Var3;
             } catch (Exception unused2) {
-                mfd.b = yg7Var2;
-                yg7Var = yg7Var2;
+                mfd.b = zg7Var2;
+                zg7Var = zg7Var2;
             }
         }
-        if (yg7Var != yg7Var2 && (method = yg7Var.a) != null && (invoke = method.invoke(getClass(), null)) != null && (method2 = yg7Var.b) != null && (invoke2 = method2.invoke(invoke, null)) != null) {
-            Method method3 = yg7Var.c;
+        if (zg7Var != zg7Var2 && (method = zg7Var.a) != null && (invoke = method.invoke(getClass(), null)) != null && (method2 = zg7Var.b) != null && (invoke2 = method2.invoke(invoke, null)) != null) {
+            Method method3 = zg7Var.c;
             Object invoke3 = method3 != null ? method3.invoke(invoke2, null) : null;
             if (invoke3 instanceof String) {
                 str2 = (String) invoke3;
@@ -85,7 +85,7 @@ public abstract class qf0 implements zw2, wx2, Serializable {
 
     public Object invokeSuspend(Object obj) {
         ixe.b(obj);
-        return f9c.a;
+        return g9c.a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

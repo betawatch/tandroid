@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class dpa extends yye {
     public final ey7 a = new ey7();
@@ -13,14 +13,14 @@ public final class dpa extends yye {
     public usb c;
 
     @Override // yye
-    public final uf7 b(wf7 wf7Var, ByteBuffer byteBuffer) {
-        sf7 fpaVar;
+    public final vf7 b(xf7 xf7Var, ByteBuffer byteBuffer) {
+        tf7 fpaVar;
         long j;
         usb usbVar = this.c;
-        if (usbVar == null || wf7Var.r != usbVar.e()) {
-            usb usbVar2 = new usb(wf7Var.e);
+        if (usbVar == null || xf7Var.r != usbVar.e()) {
+            usb usbVar2 = new usb(xf7Var.e);
             this.c = usbVar2;
-            usbVar2.a(wf7Var.e - wf7Var.r);
+            usbVar2.a(xf7Var.e - xf7Var.r);
         }
         byte[] array = byteBuffer.array();
         int limit = byteBuffer.limit();
@@ -72,7 +72,7 @@ public final class dpa extends yye {
                     ey7Var.A();
                     ey7Var.A();
                 }
-                arrayList.add(new i09(arrayList2));
+                arrayList.add(new j09(arrayList2));
             }
             fpaVar = new gpa(arrayList);
         } else if (f3 == 5) {
@@ -115,6 +115,6 @@ public final class dpa extends yye {
             long d2 = wn8.d(f, ey7Var);
             fpaVar = new wn8(d2, usbVar4.b(d2), (byte) 1);
         }
-        return fpaVar == null ? new uf7(new sf7[0]) : new uf7(fpaVar);
+        return fpaVar == null ? new vf7(new tf7[0]) : new vf7(fpaVar);
     }
 }

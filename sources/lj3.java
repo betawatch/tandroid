@@ -11,7 +11,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class lj3 implements ag4 {
     public final /* synthetic */ Context a;
@@ -165,7 +165,7 @@ public final class lj3 implements ag4 {
                                 if (!ac7Var2.c()) {
                                     if (ac7Var2.i.isEmpty()) {
                                         int i8 = ac7Var2.g;
-                                        int i9 = uc7.r5;
+                                        int i9 = uc7.s5;
                                     }
                                     i6 = 0;
                                     if (i6 != 0) {

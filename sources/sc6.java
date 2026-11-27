@@ -13,11 +13,11 @@ import java.util.LinkedHashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
-public final class sc6 extends wma implements bl7 {
+public final class sc6 extends wma implements cl7 {
     public final /* synthetic */ byte g0 = 0;
-    public final l09 h0;
+    public final m09 h0;
     public boolean i0;
     public final /* synthetic */ e j0;
 
@@ -26,7 +26,7 @@ public final class sc6 extends wma implements bl7 {
         super(context, null);
         this.j0 = uc6Var;
         this.i0 = true;
-        this.h0 = new l09((byte) 3);
+        this.h0 = new m09((byte) 3);
     }
 
     public final void X() {
@@ -343,19 +343,19 @@ public final class sc6 extends wma implements bl7 {
         }
     }
 
-    @Override // al7
+    @Override // bl7
     public final void k(int i, View view) {
         byte b = this.g0;
-        l09 l09Var = this.h0;
+        m09 m09Var = this.h0;
         switch (b) {
             case 0:
-                l09Var.b = 0;
+                m09Var.b = 0;
                 break;
             default:
                 if (i == 1) {
-                    l09Var.c = 0;
+                    m09Var.c = 0;
                 } else {
-                    l09Var.b = 0;
+                    m09Var.b = 0;
                 }
                 qqc qqcVar = ((uqc) this.j0).t0;
                 if (qqcVar != null) {
@@ -371,7 +371,7 @@ public final class sc6 extends wma implements bl7 {
         }
     }
 
-    @Override // bl7
+    @Override // cl7
     public final void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
         nc6 nc6Var;
         q9c q0;
@@ -413,7 +413,7 @@ public final class sc6 extends wma implements bl7 {
         }
     }
 
-    @Override // al7
+    @Override // bl7
     public final void m(View view, int i, int i2, int i3, int i4, int i5) {
         switch (this.g0) {
             case 0:
@@ -424,7 +424,7 @@ public final class sc6 extends wma implements bl7 {
         }
     }
 
-    @Override // al7
+    @Override // bl7
     public final boolean n(View view, View view2, int i, int i2) {
         switch (this.g0) {
             case 0:
@@ -512,19 +512,19 @@ public final class sc6 extends wma implements bl7 {
         }
     }
 
-    @Override // al7
+    @Override // bl7
     public final void q(View view, View view2, int i, int i2) {
         switch (this.g0) {
             case 0:
                 this.h0.b = i;
                 break;
             default:
-                l09 l09Var = this.h0;
+                m09 m09Var = this.h0;
                 if (i2 != 1) {
-                    l09Var.b = i;
+                    m09Var.b = i;
                     break;
                 } else {
-                    l09Var.c = i;
+                    m09Var.c = i;
                     break;
                 }
         }
@@ -532,7 +532,7 @@ public final class sc6 extends wma implements bl7 {
 
     /* JADX WARN: Removed duplicated region for block: B:46:0x0078  */
     /* JADX WARN: Removed duplicated region for block: B:69:0x00c3  */
-    @Override // al7
+    @Override // bl7
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -626,7 +626,7 @@ public final class sc6 extends wma implements bl7 {
     public sc6(uqc uqcVar, Context context) {
         super(context, null);
         this.j0 = uqcVar;
-        this.h0 = new l09((byte) 3);
+        this.h0 = new m09((byte) 3);
     }
 
     private final void Z(View view) {

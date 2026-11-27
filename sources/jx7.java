@@ -3,27 +3,27 @@
 import android.animation.ValueAnimator;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class jx7 implements Runnable {
     public final /* synthetic */ byte a;
     public final /* synthetic */ nx7 b;
-    public final /* synthetic */ tca c;
+    public final /* synthetic */ uca c;
 
-    public /* synthetic */ jx7(nx7 nx7Var, tca tcaVar, byte b) {
+    public /* synthetic */ jx7(nx7 nx7Var, uca ucaVar, byte b) {
         this.a = b;
         this.b = nx7Var;
-        this.c = tcaVar;
+        this.c = ucaVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        tca tcaVar = this.c;
+        uca ucaVar = this.c;
         nx7 nx7Var = this.b;
         switch (b) {
             case 0:
-                nx7Var.c = tcaVar;
+                nx7Var.c = ucaVar;
                 RectF rectF = nx7Var.h;
                 if (rectF == null) {
                     rectF = new RectF();
@@ -37,13 +37,13 @@ public final /* synthetic */ class jx7 implements Runnable {
                 }
                 break;
             default:
-                if (tcaVar != null && nx7Var.q == 0) {
+                if (ucaVar != null && nx7Var.q == 0) {
                     nx7Var.q = ymb.b(nx7Var.g);
                 }
                 byte b2 = 0;
-                if (nx7Var.H == (tcaVar != null)) {
-                    if (tcaVar != nx7Var.d) {
-                        nx7Var.d = tcaVar;
+                if (nx7Var.H == (ucaVar != null)) {
+                    if (ucaVar != nx7Var.d) {
+                        nx7Var.d = ucaVar;
                         xh4 xh4Var2 = nx7Var.a;
                         if (xh4Var2 != null) {
                             xh4Var2.v();
@@ -51,7 +51,7 @@ public final /* synthetic */ class jx7 implements Runnable {
                         }
                     }
                 } else {
-                    nx7Var.H = tcaVar != null;
+                    nx7Var.H = ucaVar != null;
                     ValueAnimator valueAnimator = nx7Var.K;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
@@ -63,7 +63,7 @@ public final /* synthetic */ class jx7 implements Runnable {
                     nx7Var.K.addListener(new mx7(nx7Var, b2));
                     nx7Var.K.setInterpolator(k43.h);
                     nx7Var.K.start();
-                    nx7Var.d = tcaVar;
+                    nx7Var.d = ucaVar;
                     xh4 xh4Var3 = nx7Var.a;
                     if (xh4Var3 != null) {
                         xh4Var3.v();

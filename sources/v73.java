@@ -2,7 +2,7 @@
 
 import android.util.Log;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class v73 extends yfb implements is4 {
     public final /* synthetic */ byte a;
@@ -34,15 +34,15 @@ public final class v73 extends yfb implements is4 {
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         switch (b) {
             case 0:
-                return ((v73) create((i0b) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((v73) create((i0b) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             case 1:
-                ((v73) create((String) obj, (zw2) obj2)).invokeSuspend(f9cVar);
-                return f9cVar;
+                ((v73) create((String) obj, (zw2) obj2)).invokeSuspend(g9cVar);
+                return g9cVar;
             default:
-                return ((v73) create((l9a) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((v73) create((l9a) obj, (zw2) obj2)).invokeSuspend(g9cVar);
         }
     }
 
@@ -55,7 +55,7 @@ public final class v73 extends yfb implements is4 {
             case 1:
                 ixe.b(obj);
                 Log.e("FirebaseSessions", "Error failed to fetch the remote configs: " + ((String) this.b));
-                return f9c.a;
+                return g9c.a;
             default:
                 ixe.b(obj);
                 return (l9a) this.b;

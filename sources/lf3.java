@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class lf3 {
     public long a;
@@ -34,7 +34,7 @@ public final class lf3 {
 
     /* JADX WARN: Code restructure failed: missing block: B:50:0x010c, code lost:
     
-        if (uc7.s1(r2).g4.e(-r1.I0) != false) goto L58;
+        if (uc7.s1(r2).h4.e(-r1.I0) != false) goto L58;
      */
     /* JADX WARN: Code restructure failed: missing block: B:60:0x014b, code lost:
     
@@ -95,7 +95,7 @@ public final class lf3 {
         int hashCode = r47Var == null ? 0 : of3Var.g1.hashCode() + r47Var.e1();
         long j4 = dialog.read_inbox_max_id + (dialog.read_outbox_max_id << 8) + ((dialog.unread_count + (dialog.unread_mark ? -1 : 0)) << 16) + (dialog.unread_reactions_count > 0 ? 262144 : 0) + (dialog.unread_mentions_count > 0 ? TLObject.FLAG_19 : 0) + (dialog.unread_poll_votes_count > 0 ? TLObject.FLAG_21 : 0);
         if (of3Var.Y()) {
-            uc7.s1(i2).g4.h(-of3Var.I0);
+            uc7.s1(i2).h4.h(-of3Var.I0);
             int[] iArr = qyb.w;
             if (iArr[2] > 0) {
                 j4 |= 1048576;
@@ -115,7 +115,7 @@ public final class lf3 {
                 num = s12.D1(j6, topicId4);
                 int measuredWidth = of3Var.getMeasuredWidth() + (of3Var.getMeasuredHeight() << 16);
                 if (of3Var.Y()) {
-                    ArrayList l = uc7.s1(i2).g4.l(-of3Var.I0);
+                    ArrayList l = uc7.s1(i2).h4.l(-of3Var.I0);
                     i = l == null ? -1 : l.size();
                     if (i == -1) {
                     }
@@ -130,7 +130,7 @@ public final class lf3 {
                             TLRPC.Chat chat = of3Var.h2;
                             if (chat == null) {
                             }
-                            A = uc7.s1(i2).i4.A(of3Var.I0);
+                            A = uc7.s1(i2).j4.A(of3Var.I0);
                             if (this.h != measuredWidth) {
                             }
                             if (this.a != of3Var.I0) {
@@ -157,7 +157,7 @@ public final class lf3 {
                         TLRPC.Chat chat2 = of3Var.h2;
                         if (chat2 == null) {
                         }
-                        A = uc7.s1(i2).i4.A(of3Var.I0);
+                        A = uc7.s1(i2).j4.A(of3Var.I0);
                         if (this.h != measuredWidth) {
                         }
                         if (this.a != of3Var.I0) {
@@ -203,7 +203,7 @@ public final class lf3 {
                     }
                     TLRPC.Chat chat22 = of3Var.h2;
                     z3 = (chat22 == null && chat22.call_active && chat22.call_not_empty) ? true : z;
-                    A = uc7.s1(i2).i4.A(of3Var.I0);
+                    A = uc7.s1(i2).j4.A(of3Var.I0);
                     if (this.h != measuredWidth && this.b == hashCode && this.c == A && this.a == of3Var.I0 && this.d == dialog.isFolder && this.e == j && Objects.equals(this.g, num) && this.i == i && r5 == this.f && this.j == of3Var.B3 && this.k == z3 && of3Var.l2 == z2) {
                         return z;
                     }

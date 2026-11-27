@@ -23,9 +23,9 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class faf implements tq2, una, y2c, m51, uq2, m1a, yba, q30, f73, um6, g84, rb2, pu9, lr7, al1 {
+public final class faf implements tq2, una, y2c, m51, uq2, m1a, zba, q30, f73, um6, g84, rb2, pu9, lr7, al1 {
     public static faf F;
     public static faf b;
     public final /* synthetic */ byte a;
@@ -226,14 +226,14 @@ public final class faf implements tq2, una, y2c, m51, uq2, m1a, yba, q30, f73, u
     public final Object b0(am2 am2Var) {
         switch (this.a) {
             case 1:
-                Object h2 = am2Var.h(new h09(ok0.class, Executor.class));
+                Object h2 = am2Var.h(new i09(ok0.class, Executor.class));
                 h2.getClass();
                 return new p54((Executor) h2);
             case 2:
             default:
                 return new asd((ayd) am2Var.a(ayd.class), (q54) am2Var.a(q54.class));
             case 3:
-                return new byd((jg7) am2Var.a(jg7.class));
+                return new byd((kg7) am2Var.a(kg7.class));
         }
     }
 
@@ -408,7 +408,7 @@ public final class faf implements tq2, una, y2c, m51, uq2, m1a, yba, q30, f73, u
         m01.u(wb2Var.getContext(), str);
     }
 
-    @Override // yba
+    @Override // zba
     public final hba v0(z3f z3fVar, JSONObject jSONObject) {
         return z0(z3fVar);
     }

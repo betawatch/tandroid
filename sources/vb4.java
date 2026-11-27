@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class vb4 {
     public final /* synthetic */ Object a;
@@ -89,7 +89,7 @@ public final class vb4 {
             lq3 downloadController = xb4Var.getDownloadController();
             r47 r47Var = (r47) obj;
             downloadController.getClass();
-            hl.c3(new ze7((Object) downloadController, (Object) r47Var, i2, (byte) 22));
+            hl.c3(new bf7((Object) downloadController, (Object) r47Var, i2, (byte) 22));
             downloadController.getMessagesStorage().a.c(new gq3(downloadController, r47Var, (byte) 0));
         }
     }

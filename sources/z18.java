@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class z18 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -134,9 +134,9 @@ public final /* synthetic */ class z18 implements View.OnClickListener {
                     JSONObject put = new JSONObject().put("apiVersion", 2).put("apiVersionMinor", 0);
                     JSONObject c0 = p.c0();
                     if (pVar.L0 == null || pVar.N0 != null) {
-                        c0.put("tokenizationSpecification", new pf7(pVar, (byte) 4));
+                        c0.put("tokenizationSpecification", new qf7(pVar, (byte) 4));
                     } else {
-                        c0.put("tokenizationSpecification", new pf7(pVar, (byte) 2));
+                        c0.put("tokenizationSpecification", new qf7(pVar, (byte) 2));
                     }
                     put.put("allowedPaymentMethods", new JSONArray().put(c0));
                     JSONObject jSONObject = new JSONObject();
@@ -162,7 +162,7 @@ public final /* synthetic */ class z18 implements View.OnClickListener {
                     qa4 qa4Var = pVar.e;
                     qa4Var.getClass();
                     wjb b2 = xjb.b();
-                    b2.a = new k09(v18Var, (byte) 25);
+                    b2.a = new l09(v18Var, (byte) 25);
                     b2.c = new a94[]{qod.a};
                     b2.b = true;
                     b2.d = (char) 23707;

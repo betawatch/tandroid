@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.ui.Components.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class qpb implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -29,8 +29,8 @@ public final class qpb implements View.OnClickListener {
                 fqb fqbVar = fqbVarArr[0];
                 if (fqbVar != null) {
                     Drawable background = fqbVar.getBackground();
-                    if (background instanceof hh7) {
-                        ((hh7) background).v(false);
+                    if (background instanceof ih7) {
+                        ((ih7) background).v(false);
                     } else {
                         ynb ynbVar = pqbVar.w;
                         if (pqbVar.b == 2) {
@@ -59,8 +59,8 @@ public final class qpb implements View.OnClickListener {
                 fqb fqbVar2 = fqbVarArr[1];
                 if (fqbVar2 != null) {
                     Drawable background2 = fqbVar2.getBackground();
-                    if (background2 instanceof hh7) {
-                        ((hh7) background2).v(false);
+                    if (background2 instanceof ih7) {
+                        ((ih7) background2).v(false);
                         break;
                     }
                 }

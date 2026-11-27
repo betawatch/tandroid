@@ -28,7 +28,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class lp implements oi0, ws4, aea {
     public final /* synthetic */ byte a;
@@ -305,7 +305,7 @@ public class lp implements oi0, ws4, aea {
     @Override // aea
     public final boolean E() {
         lm7 lm7Var = (lm7) this.d;
-        lm7Var.F0(lm7Var.n0(this.b, (r47) this.c, "forward", "copy_link"));
+        lm7Var.D0(lm7Var.m0(this.b, (r47) this.c, "forward", "copy_link"));
         return false;
     }
 
@@ -527,7 +527,7 @@ public class lp implements oi0, ws4, aea {
                     sb.append(((int[]) this.d)[i2]);
                     sb.append("]");
                 }
-            } else if (obj != rg7.c) {
+            } else if (obj != sg7.c) {
                 sb.append("['");
                 sb.append(obj);
                 sb.append("']");

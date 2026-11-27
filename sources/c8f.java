@@ -2,7 +2,7 @@
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class c8f extends ljf {
     private static final c8f zzb;
@@ -109,7 +109,7 @@ public final class c8f extends ljf {
             return (byte) 1;
         }
         if (i2 == 2) {
-            return new ilf(zzb, "\u0001\u000f\u0000\u0001\u0001\u000f\u000f\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဇ\u0001\u0003စ\u0002\u0004ဆ\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007င\u0006\bင\u0007\tဉ\b\n᠌\t\u000bင\n\fဇ\u000b\rင\f\u000eင\r\u000fဇ\u000e", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi", z3f.n, "zzj", sae.f, "zzk", "zzl", "zzm", "zzn", rg7.r, "zzo", "zzp", "zzq", "zzr", "zzs"});
+            return new ilf(zzb, "\u0001\u000f\u0000\u0001\u0001\u000f\u000f\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဇ\u0001\u0003စ\u0002\u0004ဆ\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007င\u0006\bင\u0007\tဉ\b\n᠌\t\u000bင\n\fဇ\u000b\rင\f\u000eင\r\u000fဇ\u000e", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi", z3f.n, "zzj", sae.f, "zzk", "zzl", "zzm", "zzn", sg7.r, "zzo", "zzp", "zzq", "zzr", "zzs"});
         }
         if (i2 == 3) {
             return new c8f();

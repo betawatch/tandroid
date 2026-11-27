@@ -5,7 +5,7 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ii1 extends yfb implements is4 {
     public final /* synthetic */ byte a;
@@ -64,26 +64,26 @@ public final class ii1 extends yfb implements is4 {
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         switch (b) {
             case 0:
-                return ((ii1) create((so8) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((ii1) create((so8) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             case 1:
-                return ((ii1) create((nm4) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((ii1) create((nm4) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             case 2:
-                return ((ii1) create((ux2) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((ii1) create((ux2) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             case 3:
-                return ((ii1) create((r73) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((ii1) create((r73) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             case 4:
-                return ((ii1) create((ux2) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((ii1) create((ux2) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             case 5:
-                return ((ii1) create((k37) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((ii1) create((k37) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             case 6:
-                return ((ii1) create((ux2) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((ii1) create((ux2) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             case 7:
-                return ((ii1) create((JSONObject) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((ii1) create((JSONObject) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             default:
-                return ((ii1) create(obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((ii1) create(obj, (zw2) obj2)).invokeSuspend(g9cVar);
         }
     }
 
@@ -121,7 +121,7 @@ public final class ii1 extends yfb implements is4 {
         Double d2;
         Boolean bool2;
         byte b = this.a;
-        Object obj2 = f9c.a;
+        Object obj2 = g9c.a;
         Object obj3 = this.d;
         byte b2 = 1;
         vx2 vx2Var = vx2.a;
@@ -255,7 +255,7 @@ public final class ii1 extends yfb implements is4 {
                         }
                         ixe.b(obj);
                         a = obj;
-                        return (rj7) a;
+                        return (sj7) a;
                     }
                     ixe.b(obj);
                     Object obj5 = threadLocal.get();
@@ -272,7 +272,7 @@ public final class ii1 extends yfb implements is4 {
                     if (a == vx2Var) {
                         return vx2Var;
                     }
-                    return (rj7) a;
+                    return (sj7) a;
                 } finally {
                     threadLocal.set(Boolean.FALSE);
                 }
@@ -312,13 +312,13 @@ public final class ii1 extends yfb implements is4 {
                                     d = d2;
                                     bool = bool2;
                                     num3 = num4;
-                                    xba xbaVar = aa9Var.e;
+                                    yba ybaVar = aa9Var.e;
                                     if (num3 == 0) {
                                     }
                                     aa9Var.a.getClass();
                                     l9a l9aVar = new l9a(bool, d, num, new Integer(r4), new Long(srb.a().c));
                                     this.b = true;
-                                    if (xbaVar.c(l9aVar, this) != vx2Var) {
+                                    if (ybaVar.c(l9aVar, this) != vx2Var) {
                                     }
                                 }
                             } catch (JSONException e2) {
@@ -345,12 +345,12 @@ public final class ii1 extends yfb implements is4 {
                     d = null;
                     num = null;
                 }
-                xba xbaVar2 = aa9Var.e;
+                yba ybaVar2 = aa9Var.e;
                 int intValue = num3 == 0 ? num3.intValue() : aa9.g;
                 aa9Var.a.getClass();
                 l9a l9aVar2 = new l9a(bool, d, num, new Integer(intValue), new Long(srb.a().c));
                 this.b = true;
-                return xbaVar2.c(l9aVar2, this) != vx2Var ? vx2Var : obj2;
+                return ybaVar2.c(l9aVar2, this) != vx2Var ? vx2Var : obj2;
             default:
                 boolean z9 = this.b;
                 if (!z9) {

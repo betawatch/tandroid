@@ -3,7 +3,7 @@
 import android.graphics.Color;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class dtd {
     public static ol0 a(vnb vnbVar) {
@@ -49,10 +49,10 @@ public abstract class dtd {
     public static boolean d(int i, vnb vnbVar) {
         boolean a = vnbVar != null ? vnbVar.a() : aob.I.o();
         boolean f = xea.f();
-        if (f && !a && uc7.s1(i).k4.M.f) {
+        if (f && !a && uc7.s1(i).l4.M.f) {
             f = false;
         }
-        if (f && a && uc7.s1(i).k4.N.f) {
+        if (f && a && uc7.s1(i).l4.N.f) {
             return false;
         }
         return f;

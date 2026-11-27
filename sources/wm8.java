@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class wm8 implements AutoCloseable {
     public long e;
@@ -175,7 +175,7 @@ public final class wm8 implements AutoCloseable {
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(vm8Var);
             this.d.put(um8Var, arrayList2);
-            this.b.execute(new h68(this, um8Var, (byte) 21));
+            this.b.execute(new a58(this, um8Var, (byte) 22));
             return vm8Var;
         }
     }

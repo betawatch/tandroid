@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Parcelable;
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class h8d extends h05 {
     public static final zn m = new zn("Auth.Api.Identity.SignIn.API", new rr5(8), new xn());

@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class r9b extends FrameLayout implements View.OnClickListener, fn7 {
     public final p55 E;
@@ -92,7 +92,7 @@ public final class r9b extends FrameLayout implements View.OnClickListener, fn7 
         d79Var.setClipToPadding(false);
         d79Var.setTranslateSelector(true);
         byte b = 2;
-        n9b n9bVar = new n9b(this, context, w9bVar.J0, l9bVar, new b68(w9bVar, b));
+        n9b n9bVar = new n9b(this, context, w9bVar.J0, l9bVar, new c68(w9bVar, b));
         this.n = n9bVar;
         d79Var.setAdapter(n9bVar);
         n9bVar.h = d79Var;
@@ -1097,7 +1097,7 @@ public final class r9b extends FrameLayout implements View.OnClickListener, fn7 
                             Iterator it4 = hashSet.iterator();
                             while (it4.hasNext()) {
                                 Iterator it5 = it4;
-                                v5b b = uc7.s1(w9bVar.a).O1().A(m, true).b(((Integer) it4.next()).intValue());
+                                w5b b = uc7.s1(w9bVar.a).O1().A(m, true).b(((Integer) it4.next()).intValue());
                                 if (b != null) {
                                     if (sb.length() != 0) {
                                         sb.append(", ");

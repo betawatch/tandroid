@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class zu8 extends e implements fn7 {
     public int E;
@@ -121,7 +121,7 @@ public final class zu8 extends e implements fn7 {
                 this.simpleActionBar.setTitle(lv2.m(0, X1.first_name, X1.last_name));
             }
         } else if (j2 != 0) {
-            TLRPC.TL_forumTopic f = getMessagesController().g4.f(-j, j2);
+            TLRPC.TL_forumTopic f = getMessagesController().h4.f(-j, j2);
             ro4.q(this.w.getAvatarImageView(), f, false, true, vnbVar);
             this.simpleActionBar.setTitle(f.title);
         } else {
@@ -193,7 +193,7 @@ public final class zu8 extends e implements fn7 {
 
     public final void l0(String str) {
         this.c0 = true;
-        uc7.s1(this.currentAccount).W3.edit().putBoolean("custom_" + str, false).remove("notify2_" + str).apply();
+        uc7.s1(this.currentAccount).X3.edit().putBoolean("custom_" + str, false).remove("notify2_" + str).apply();
         finishFragment();
         yu8 yu8Var = this.s;
         if (yu8Var != null) {
@@ -202,7 +202,7 @@ public final class zu8 extends e implements fn7 {
     }
 
     public final void m0(int i, int i2, String str) {
-        uc7.s1(this.currentAccount).W3.edit().putInt("smart_max_count_" + str, i).putInt("smart_delay_" + str, i2).apply();
+        uc7.s1(this.currentAccount).X3.edit().putInt("smart_max_count_" + str, i).putInt("smart_delay_" + str, i2).apply();
         xu8 xu8Var = this.c;
         if (xu8Var != null) {
             xu8Var.g(this.J);
@@ -251,7 +251,7 @@ public final class zu8 extends e implements fn7 {
                     intent.putExtra("android.intent.extra.ringtone.SHOW_DEFAULT", true);
                     intent.putExtra("android.intent.extra.ringtone.SHOW_SILENT", true);
                     intent.putExtra("android.intent.extra.ringtone.DEFAULT_URI", RingtoneManager.getDefaultUri(1));
-                    SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).W3;
+                    SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).X3;
                     Uri uri = Settings.System.DEFAULT_NOTIFICATION_URI;
                     String path = uri != null ? uri.getPath() : null;
                     String string = sharedPreferences.getString("ringtone_path_" + str, path);
@@ -364,7 +364,7 @@ public final class zu8 extends e implements fn7 {
             if (i == this.G) {
                 wkb wkbVar2 = (wkb) view;
                 Switch r3 = wkbVar2.e;
-                uc7.s1(this.currentAccount).W3.edit().putBoolean(c00.i("content_preview_", str), !r3.h).apply();
+                uc7.s1(this.currentAccount).X3.edit().putBoolean(c00.i("content_preview_", str), !r3.h).apply();
                 wkbVar2.setChecked(!r3.h);
                 return;
             }
@@ -511,7 +511,7 @@ public final class zu8 extends e implements fn7 {
                     return;
                 }
                 if (i == this.N) {
-                    uc7.s1(this.currentAccount).W3.edit().putInt("popup_" + str, 1).apply();
+                    uc7.s1(this.currentAccount).X3.edit().putInt("popup_" + str, 1).apply();
                     ((i29) view).a(true, true);
                     View findViewWithTag = this.b.findViewWithTag(2);
                     if (findViewWithTag != null) {
@@ -521,7 +521,7 @@ public final class zu8 extends e implements fn7 {
                     return;
                 }
                 if (i == this.O) {
-                    uc7.s1(this.currentAccount).W3.edit().putInt("popup_" + str, 2).apply();
+                    uc7.s1(this.currentAccount).X3.edit().putInt("popup_" + str, 2).apply();
                     ((i29) view).a(true, true);
                     View findViewWithTag2 = this.b.findViewWithTag(1);
                     if (findViewWithTag2 != null) {
@@ -535,7 +535,7 @@ public final class zu8 extends e implements fn7 {
                     boolean z2 = wkbVar3.e.h;
                     boolean z3 = !z2;
                     wkbVar3.setChecked(z3);
-                    SharedPreferences.Editor edit = uc7.s1(this.currentAccount).W3.edit();
+                    SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
                     if (!this.b0 || z2) {
                         edit.putBoolean("stories_" + str, z3);
                     } else {
@@ -548,7 +548,7 @@ public final class zu8 extends e implements fn7 {
                 return;
             }
             if (getParentActivity() != null) {
-                SharedPreferences sharedPreferences2 = uc7.s1(this.currentAccount).W3;
+                SharedPreferences sharedPreferences2 = uc7.s1(this.currentAccount).X3;
                 int g = qu6.g("smart_max_count_", str, sharedPreferences2, 2);
                 int g2 = qu6.g("smart_delay_", str, sharedPreferences2, jn7.J2);
                 r9 = g != 0 ? g : (byte) 2;
@@ -658,7 +658,7 @@ public final class zu8 extends e implements fn7 {
             str = i == 13 ? uri.equals(Settings.System.DEFAULT_RINGTONE_URI) ? ob6.M0(2131751564, null) : ringtone.getTitle(getParentActivity()) : uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI) ? ob6.M0(2131745008, null) : ringtone.getTitle(getParentActivity());
             ringtone.stop();
         }
-        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).W3.edit();
+        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
         String p = ip7.p(this.f, this.h, false);
         if (i == 12) {
             if (str != null) {
@@ -810,7 +810,7 @@ public final class zu8 extends e implements fn7 {
                 }
                 boolean x = ip7.n(this.currentAccount).x(this.f, null, false, false);
                 if (z2) {
-                    SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).W3;
+                    SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).X3;
                     String p = ip7.p(j, j2, false);
                     boolean contains = sharedPreferences.contains("notify2_" + p);
                     int g = qu6.g("notify2_", p, sharedPreferences, 0);
@@ -863,7 +863,7 @@ public final class zu8 extends e implements fn7 {
         super.onFragmentDestroy();
         if (!this.c0) {
             String p = ip7.p(this.f, this.h, false);
-            uc7.s1(this.currentAccount).W3.edit().putBoolean("custom_" + p, true).apply();
+            uc7.s1(this.currentAccount).X3.edit().putBoolean("custom_" + p, true).apply();
         }
         jn7.f(this.currentAccount).n(this, jn7.f0);
     }

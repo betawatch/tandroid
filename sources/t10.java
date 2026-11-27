@@ -11,7 +11,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class t10 implements r11 {
     public final /* synthetic */ byte a;
@@ -85,7 +85,7 @@ public final class t10 implements r11 {
         k68 k68Var;
         switch (this.a) {
             case 14:
-                if (v21Var.a == 2 && (k68Var = ((t58) this.b).y.A1) != null) {
+                if (v21Var.a == 2 && (k68Var = ((u58) this.b).y.A1) != null) {
                     lcb lcbVar = ((ccb) k68Var).d;
                     lcbVar.Y0 = false;
                     lcbVar.U();
@@ -165,9 +165,9 @@ public final class t10 implements r11 {
                 break;
             case 13:
                 lm7 lm7Var = (lm7) obj;
-                return hl.L((lm7Var.s0() ? 60 : 0) + 72) + lm7Var.G;
+                return hl.L((lm7Var.r0() ? 60 : 0) + 72) + lm7Var.G;
             case 14:
-                if (((t58) obj).y.h2) {
+                if (((u58) obj).y.h2) {
                     return 0;
                 }
                 return hl.L(64.0f);
@@ -224,7 +224,7 @@ public final class t10 implements r11 {
                 }
                 return 0;
             case 21:
-                i3 = ((rbb) obj).d1.getEditTextHeight();
+                i3 = ((sbb) obj).d1.getEditTextHeight();
                 i2 = hl.L(12.0f);
                 break;
             default:
@@ -321,7 +321,7 @@ public final class t10 implements r11 {
                 z11Var2.setCustomBackground(c3);
                 break;
             case 14:
-                if (v21Var.a == 2 && (k68Var = ((t58) obj).y.A1) != null) {
+                if (v21Var.a == 2 && (k68Var = ((u58) obj).y.A1) != null) {
                     lcb lcbVar = ((ccb) k68Var).d;
                     lcbVar.Y0 = true;
                     lcbVar.U();

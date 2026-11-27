@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class g41 extends n9c implements fn7 {
     public String E;
@@ -147,7 +147,7 @@ public final class g41 extends n9c implements fn7 {
         d41Var.setImageDrawable(mm8.d(null, this.currentAccount, getUserConfig().e(), aob.I.o()));
         this.h.addView(d41Var, tre.e(-1, -1, jn7.D1));
         this.h.addView(this.n, tre.d(-2, -2.0f, 17, 42.0f, 18.0f, 42.0f, 18.0f));
-        e41 e41Var = new e41(this, context, ob6.M0(2131752699, null), getMessagesController().k4.s2.f(), this.resourceProvider, (byte) 0);
+        e41 e41Var = new e41(this, context, ob6.M0(2131752699, null), getMessagesController().l4.s2.f(), this.resourceProvider, (byte) 0);
         this.s = e41Var;
         e41Var.r = true;
         e41Var.setShowLimitOnFocus(true);
@@ -162,7 +162,7 @@ public final class g41 extends n9c implements fn7 {
         yt3Var.setImeOptions(6);
         byte b2 = 2;
         yt3Var.setOnEditorActionListener(new vx1(i72Var, b2));
-        e41 e41Var4 = new e41(this, context, ob6.M0(2131752703, null), getMessagesController().k4.t2.f(), this.resourceProvider, (byte) 1);
+        e41 e41Var4 = new e41(this, context, ob6.M0(2131752703, null), getMessagesController().l4.t2.f(), this.resourceProvider, (byte) 1);
         this.w = e41Var4;
         e41Var4.setShowLimitOnFocus(true);
         yob.h(i2, getResourceProvider(), this.w);
@@ -369,7 +369,7 @@ public final class g41 extends n9c implements fn7 {
             Y1.business_intro = null;
         }
         getConnectionsManager().sendRequest(updatebusinessintro, new ye(this, (byte) 9));
-        getMessagesStorage().g2(Y1, false);
+        getMessagesStorage().l2(Y1, false);
     }
 
     public final void k0() {

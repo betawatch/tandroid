@@ -89,7 +89,7 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
     public static final float[] Id = new float[8];
@@ -280,7 +280,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
     public int M9;
     public dm Ma;
     public float Mb;
-    public ui7 Mc;
+    public vi7 Mc;
     public boolean N;
     public float N0;
     public TLRPC.Document N1;
@@ -532,7 +532,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
     public final Path ed;
     public boolean f;
     public byb f0;
-    public r3b f1;
+    public s3b f1;
     public int f2;
     public int f3;
     public TLRPC.PhotoSize f4;
@@ -1081,7 +1081,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
             return ob6.T(r47Var2.k.date) + ", " + ob6.D0().o0().format(r47Var2.k.date * 1000);
         }
         if (z) {
-            if (uc7.s1(r47Var.K1).k4.f0.f) {
+            if (uc7.s1(r47Var.K1).l4.f0.f) {
                 if (i == 0 && r47Var.Y2()) {
                     i = ConnectionsManager.getInstance(r47Var.K1).getCurrentTime();
                 }
@@ -4664,7 +4664,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
     }
 
     public final void J0(Canvas canvas, float f) {
-        ui7 ui7Var;
+        vi7 vi7Var;
         r47 r47Var = this.Q5;
         if (r47Var != null && !r47Var.q4()) {
             float f2 = this.u0;
@@ -4675,7 +4675,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                 f2 = (f2 * f4) + ((1.0f - f4) * f3);
             }
             float f5 = f2;
-            if (dc2Var.L1 == 1.0f || !dc2Var.H0 || ((ui7Var = this.Mc) != null && ui7Var.h)) {
+            if (dc2Var.L1 == 1.0f || !dc2Var.H0 || ((vi7Var = this.Mc) != null && vi7Var.h)) {
                 float f6 = this.o0;
                 r47 r47Var2 = this.Q5;
                 I0(f6, f5, canvas, r47Var2.B2, this.Ma, true, f, r47Var2.x2, false);
@@ -8730,13 +8730,13 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
             if (this.Q5.O3()) {
                 return;
             }
-            gi7 gi7Var = aob.E3;
+            hi7 hi7Var = aob.E3;
             if (I3()) {
                 v0 = aob.v0(aob.kd, this.cc);
             } else {
                 v0 = aob.v0(z3 ? aob.Fb : aob.kd, this.cc);
             }
-            gi7Var.a(v0);
+            hi7Var.a(v0);
             if (I3()) {
                 f6 = (getPhotoBottom() + this.w0) - hl.L(9.0f);
             } else {
@@ -8747,14 +8747,14 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                     f6 = L2 - ((1.0f - getVideoTranscriptionProgress()) * (x49Var.i(dc2Var.L1) + hl.L(this.K ? 4.0f : 5.0f)));
                 }
             }
-            jf0.w(gi7Var, f4 + (this.Q5.r1 ? 0 : hl.L(11.0f)), f6 - hl.L(12.0f));
-            gi7Var.setAlpha((int) (f8 * 255.0f));
+            jf0.w(hi7Var, f4 + (this.Q5.r1 ? 0 : hl.L(11.0f)), f6 - hl.L(12.0f));
+            hi7Var.setAlpha((int) (f8 * 255.0f));
             if (z4) {
                 canvas.save();
-                canvas.scale(f7, f7, gi7Var.getBounds().centerX(), gi7Var.getBounds().centerY());
+                canvas.scale(f7, f7, hi7Var.getBounds().centerX(), hi7Var.getBounds().centerY());
             }
-            gi7Var.draw(canvas);
-            gi7Var.setAlpha(jn7.d4);
+            hi7Var.draw(canvas);
+            hi7Var.setAlpha(jn7.d4);
             invalidate();
             if (z4) {
                 canvas.restore();
@@ -10047,7 +10047,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
             TLRPC.Document F0 = r47Var.F0();
             int i = this.a6;
             uo3 uo3Var = ve8.a;
-            if (uc7.s1(i).k4.D0.f || F0 == null) {
+            if (uc7.s1(i).l4.D0.f || F0 == null) {
                 return;
             }
             if ("application/vnd.apple.pkpass".equalsIgnoreCase(F0.mime_type) || ((B = xb4.B(F0)) != null && B.toLowerCase(Locale.ROOT).endsWith(".pkpass"))) {
@@ -12295,8 +12295,8 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                                         canvas2.restore();
                                                     }
                                                     canvas2.restore();
-                                                    ui7 ui7Var = wb2Var.Mc;
-                                                    if (ui7Var != null && ui7Var.h) {
+                                                    vi7 vi7Var = wb2Var.Mc;
+                                                    if (vi7Var != null && vi7Var.h) {
                                                         wb2Var.invalidate();
                                                         wb2Var.r2();
                                                     }
@@ -14258,7 +14258,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
         TLRPC.Document F0 = r47Var.F0();
         if (F0 != null) {
             final long j = F0.id;
-            if (uc7.s1(i).k4.D0.f || ve8.b.get(Long.valueOf(j)) != null || ve8.c.containsKey(Long.valueOf(j))) {
+            if (uc7.s1(i).l4.D0.f || ve8.b.get(Long.valueOf(j)) != null || ve8.c.containsKey(Long.valueOf(j))) {
                 return;
             }
             HashMap hashMap = ve8.d;
@@ -14403,7 +14403,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                     r47 r47Var3 = this.Q5;
                     if (!r47Var3.j2 && ((!r47Var3.O3() || this.Q5.p4()) && (!u2c.j(this.Q5) || u2c.A(this.Q5)))) {
                         if (!yac.h(this.a6).p() && !u2c.i(this.Q5) && !u2c.A(this.Q5)) {
-                            if (uc7.s1(this.a6).G3 > 0 && this.Q5.L0() <= uc7.s1(this.a6).k4.X1.f()) {
+                            if (uc7.s1(this.a6).H3 > 0 && this.Q5.L0() <= uc7.s1(this.a6).l4.X1.f()) {
                                 r47 r47Var4 = this.Q5;
                                 TLRPC.Message message2 = r47Var4.k;
                                 if (message2 != null) {
@@ -14412,9 +14412,9 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                     }
                                 }
                                 u2c.e(r47Var4);
-                            } else if (uc7.s1(this.a6).G3 <= 0) {
+                            } else if (uc7.s1(this.a6).H3 <= 0) {
                                 if (!uc7.s1(this.a6).M3()) {
-                                    if (uc7.s1(this.a6).a4 < 2) {
+                                    if (uc7.s1(this.a6).b4 < 2) {
                                         if (!this.Q5.O3()) {
                                             r47 r47Var5 = this.Q5;
                                             TLRPC.Message message3 = r47Var5.k;
@@ -14617,7 +14617,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
         int i20;
         float f12;
         boolean z10;
-        ui7 ui7Var;
+        vi7 vi7Var;
         boolean z11;
         r47 r47Var;
         hmb hmbVar;
@@ -14648,7 +14648,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
         }
         int i24 = size;
         int i25 = this.a6;
-        a5c a5cVar = uc7.s1(i25).i4;
+        a5c a5cVar = uc7.s1(i25).j4;
         boolean z12 = a5cVar.z(this.Q5);
         r47 r47Var2 = this.Q5;
         ?? r3 = r47Var2 != null && a5c.x(r47Var2) && a5cVar.A(r47.B0(this.Q5.k));
@@ -15084,8 +15084,8 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                                         }
                                                     }
                                                     pv3.m = -this.Uc;
-                                                    ui7Var = this.Mc;
-                                                    if (ui7Var != null) {
+                                                    vi7Var = this.Mc;
+                                                    if (vi7Var != null) {
                                                         try {
                                                         } catch (Exception e2) {
                                                             e = e2;
@@ -15105,13 +15105,13 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                                             i9 = i12;
                                                             f14 = f11;
                                                         }
-                                                        if (ui7Var.h) {
-                                                            if (ui7Var.i(o47Var2)) {
+                                                        if (vi7Var.h) {
+                                                            if (vi7Var.i(o47Var2)) {
                                                                 if (this.Mc.g(o47Var2)) {
-                                                                    ui7 ui7Var2 = this.Mc;
-                                                                    int i37 = ui7Var2.g(o47Var2) ? ui7Var2.e : -1;
-                                                                    ui7 ui7Var3 = this.Mc;
-                                                                    ui7.b(canvas2, o47Var2.e, i37, ui7Var3.g(o47Var2) ? ui7Var3.f : 0.0f, null);
+                                                                    vi7 vi7Var2 = this.Mc;
+                                                                    int i37 = vi7Var2.g(o47Var2) ? vi7Var2.e : -1;
+                                                                    vi7 vi7Var3 = this.Mc;
+                                                                    vi7.b(canvas2, o47Var2.e, i37, vi7Var3.g(o47Var2) ? vi7Var3.f : 0.0f, null);
                                                                 } else {
                                                                     z11 = true;
                                                                     invalidate();
@@ -15240,8 +15240,8 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                                 z9 = false;
                                                 dc2Var = dc2Var2;
                                                 pv3.m = -this.Uc;
-                                                ui7Var = this.Mc;
-                                                if (ui7Var != null) {
+                                                vi7Var = this.Mc;
+                                                if (vi7Var != null) {
                                                 }
                                                 z11 = true;
                                                 r47Var = this.Q5;
@@ -15324,8 +15324,8 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                                 if (z4) {
                                                 }
                                                 pv3.m = -this.Uc;
-                                                ui7Var = this.Mc;
-                                                if (ui7Var != null) {
+                                                vi7Var = this.Mc;
+                                                if (vi7Var != null) {
                                                 }
                                                 z11 = true;
                                                 r47Var = this.Q5;
@@ -15350,8 +15350,8 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                             z9 = false;
                                             dc2Var = dc2Var2;
                                             pv3.m = -this.Uc;
-                                            ui7Var = this.Mc;
-                                            if (ui7Var != null) {
+                                            vi7Var = this.Mc;
+                                            if (vi7Var != null) {
                                             }
                                             z11 = true;
                                             r47Var = this.Q5;
@@ -15387,8 +15387,8 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                         z9 = false;
                                         dc2Var = dc2Var2;
                                         pv3.m = -this.Uc;
-                                        ui7Var = this.Mc;
-                                        if (ui7Var != null) {
+                                        vi7Var = this.Mc;
+                                        if (vi7Var != null) {
                                         }
                                         z11 = true;
                                         r47Var = this.Q5;
@@ -15641,8 +15641,8 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                     canvas.clipRect(hl.L(4.0f) + bounds.left, hl.L(4.0f) + bounds.top, bounds.right - hl.L(10.0f), bounds.bottom - hl.L(4.0f));
                 }
             }
-            ui7 ui7Var = this.Mc;
-            if (ui7Var == null || !ui7Var.h) {
+            vi7 vi7Var = this.Mc;
+            if (vi7Var == null || !vi7Var.h) {
                 f1(this.o0, f, canvas, dc2Var.I0, dc2Var.O0, false, 1.0f - dc2Var.L1, true, false, false, false);
                 float f6 = this.o0;
                 r47 r47Var2 = this.Q5;
@@ -17450,7 +17450,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                         if (i24 < 7) {
                             aob.W2.setColor(a2(aob.r8[i24]));
                         } else {
-                            lc7 lc7Var = uc7.s1(i2).E3;
+                            lc7 lc7Var = uc7.s1(i2).F3;
                             kc7 d = lc7Var != null ? lc7Var.d(i24) : null;
                             if (d != null) {
                                 aob.W2.setColor(d.e(0, this.cc));
@@ -18117,7 +18117,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                             if (f31 >= 7) {
                                 aob.X2.setColor(a2(aob.r8[f31]));
                             } else {
-                                lc7 lc7Var2 = uc7.s1(i2).E3;
+                                lc7 lc7Var2 = uc7.s1(i2).F3;
                                 kc7 d2 = lc7Var2 != null ? lc7Var2.d(f31) : null;
                                 if (d2 != null) {
                                     aob.X2.setColor(d2.e(0, this.cc));
@@ -19401,7 +19401,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                     if (i11 < 7) {
                                         e = aob.v0(aob.r8[i11], this.cc);
                                     } else {
-                                        lc7 lc7Var = uc7.s1(this.a6).E3;
+                                        lc7 lc7Var = uc7.s1(this.a6).F3;
                                         kc7 d = lc7Var != null ? lc7Var.d(i11) : null;
                                         e = d != null ? d.e(0, this.cc) : aob.v0(aob.Fd, this.cc);
                                     }
@@ -20864,12 +20864,12 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
             if (j > 0) {
                 long j8 = j + 100;
                 y99Var.a(ib2Var2);
-                h68 h68Var = new h68(y99Var, ib2Var2, (byte) 16);
-                y99Var.a.put(ib2Var2, h68Var);
+                a58 a58Var = new a58(y99Var, ib2Var2, (byte) 17);
+                y99Var.a.put(ib2Var2, a58Var);
                 if (j8 > 0) {
-                    hl.d3(h68Var, j8);
+                    hl.d3(a58Var, j8);
                 } else {
-                    hl.c3(h68Var);
+                    hl.c3(a58Var);
                 }
             }
         }
@@ -21851,10 +21851,10 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                 ((lj1) arrayList4.get(i5)).a();
             }
         }
-        r3b r3bVar = wb2Var.f1;
-        if (r3bVar != null) {
-            for (int i6 = 0; i6 < r3bVar.b; i6++) {
-                r3bVar.c[i6].b(wb2Var);
+        s3b s3bVar = wb2Var.f1;
+        if (s3bVar != null) {
+            for (int i6 = 0; i6 < s3bVar.b; i6++) {
+                s3bVar.c[i6].b(wb2Var);
             }
         }
     }
@@ -21966,9 +21966,9 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
             }
             this.G3 = false;
         }
-        r3b r3bVar = this.f1;
-        if (r3bVar != null) {
-            r3bVar.a(this);
+        s3b s3bVar = this.f1;
+        if (s3bVar != null) {
+            s3bVar.a(this);
         }
         lq3.q(this.a6).v(this);
         if (getDelegate() != null && getDelegate().l2() != null) {
@@ -23804,7 +23804,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                                     if (a29Var2.V0 != null) {
                                                         int i4 = a29Var2.V0.a[1];
                                                     }
-                                                    hl.c3(new me7(a29Var2, i3, (byte) 12));
+                                                    hl.c3(new oe7(a29Var2, i3, (byte) 12));
                                                     break;
                                                 } else {
                                                     hl.c3(new Runnable() { // from class: z19
@@ -23876,7 +23876,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                         lq3.q(this.a6).v(this);
                     }
                     if (D0 >= 0 && D0 < o0.documents.size()) {
-                        if (!z && this.Q5.N3() && (ec7Var = (ec7) uc7.s1(this.a6).A3.get(C0)) != null && ec7Var.b == D0) {
+                        if (!z && this.Q5.N3() && (ec7Var = (ec7) uc7.s1(this.a6).B3.get(C0)) != null && ec7Var.b == D0) {
                             a29Var.N(ec7Var.a, this.Bb);
                         }
                         TLRPC.Document document2 = o0.documents.get(Math.max(D0, 0));
@@ -23910,7 +23910,7 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                                                     if (a29Var2.V0 != null) {
                                                         int i4 = a29Var2.V0.a[1];
                                                     }
-                                                    hl.c3(new me7(a29Var2, i3, (byte) 12));
+                                                    hl.c3(new oe7(a29Var2, i3, (byte) 12));
                                                     break;
                                                 } else {
                                                     hl.c3(new Runnable() { // from class: z19
@@ -24437,9 +24437,9 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
 
     public final void q3(Drawable drawable, int i, int i2, int i3, int i4) {
         if (drawable != null) {
-            ui7 ui7Var = this.Mc;
+            vi7 vi7Var = this.Mc;
             dc2 dc2Var = this.ub;
-            if (ui7Var == null || !ui7Var.h) {
+            if (vi7Var == null || !vi7Var.h) {
                 this.Uc = ((i2 + i4) + dc2Var.j0) - ((int) r0);
             } else {
                 this.Uc = 0.0f;
@@ -29445,24 +29445,24 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
         float L4 = (r47Var2 == null || !r47Var2.M2()) ? 0.0f : hl.L(-6.0f);
         float f10 = 22.0f;
         if (z3) {
-            gi7 gi7Var = aob.E3;
+            hi7 hi7Var = aob.E3;
             if (I3()) {
                 if (this.Q5.O5()) {
                     f5 = 1.0f;
                     v0 = aob.v0(aob.Zc, this.cc);
                     int L5 = this.d7 - hl.L(z5 ? 24.0f : 22.0f);
-                    gi7Var.getClass();
+                    hi7Var.getClass();
                     f7 = 4.0f;
-                    jf0.w(gi7Var, (L5 - hl.L(12.0f)) + L4, (L3 - hl.L(12.0f)) + f2);
-                    gi7Var.setAlpha((int) (this.k4 * 255.0f * f9));
+                    jf0.w(hi7Var, (L5 - hl.L(12.0f)) + L4, (L3 - hl.L(12.0f)) + f2);
+                    hi7Var.setAlpha((int) (this.k4 * 255.0f * f9));
                 } else {
                     f5 = 1.0f;
                     f7 = 4.0f;
                     v0 = aob.v0(aob.kd, this.cc);
                     int L6 = this.d7 - hl.L(z5 ? 24.0f : 22.0f);
-                    gi7Var.getClass();
-                    jf0.w(gi7Var, (L6 - hl.L(12.0f)) + L4, (L3 - hl.L(12.0f)) + f2);
-                    gi7Var.setAlpha((int) (f9 * 255.0f));
+                    hi7Var.getClass();
+                    jf0.w(hi7Var, (L6 - hl.L(12.0f)) + L4, (L3 - hl.L(12.0f)) + f2);
+                    hi7Var.setAlpha((int) (f9 * 255.0f));
                 }
                 f6 = 18.5f;
             } else {
@@ -29470,18 +29470,18 @@ public class wb2 extends jf0 implements qy9, on5, jq3, hmb, fn7, s84, pk5, eu5 {
                 f7 = 4.0f;
                 v0 = aob.v0(aob.Eb, this.cc);
                 int L7 = this.d7 - hl.L(18.5f);
-                gi7Var.getClass();
+                hi7Var.getClass();
                 f6 = 18.5f;
-                jf0.w(gi7Var, L7 - hl.L(12.0f), ((f3 - hl.L(8.5f)) - hl.L(12.0f)) + f2);
-                gi7Var.setAlpha((int) (f9 * 255.0f));
+                jf0.w(hi7Var, L7 - hl.L(12.0f), ((f3 - hl.L(8.5f)) - hl.L(12.0f)) + f2);
+                hi7Var.setAlpha((int) (f9 * 255.0f));
             }
-            gi7Var.a(v0);
+            hi7Var.a(v0);
             if (z8) {
                 canvas.save();
-                canvas.scale(f8, f8, gi7Var.getBounds().centerX(), gi7Var.getBounds().centerY());
+                canvas.scale(f8, f8, hi7Var.getBounds().centerX(), hi7Var.getBounds().centerY());
             }
-            gi7Var.draw(canvas);
-            gi7Var.setAlpha(jn7.d4);
+            hi7Var.draw(canvas);
+            hi7Var.setAlpha(jn7.d4);
             if (z8) {
                 canvas.restore();
             }

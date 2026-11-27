@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class xw3 extends View {
     public final Paint a;
@@ -66,7 +66,7 @@ public final class xw3 extends View {
             sb.append(vwcVar == null ? wwc.a() ? "24°C" : "72°F" : vwcVar.a());
             CharSequence m = pv3.m(sb.toString(), textPaint.getFontMetricsInt(), false, null, 0);
             CharSequence charSequence = m;
-            if (uc7.s1(zw3Var.a).k4.D2.f) {
+            if (uc7.s1(zw3Var.a).l4.D2.f) {
                 charSequence = m;
                 charSequence = m;
                 if (jve.d("android.permission.ACCESS_COARSE_LOCATION") && vwcVar == null) {

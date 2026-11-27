@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qe implements Runnable {
     public final /* synthetic */ byte a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class qe implements Runnable {
                         break;
                     } else {
                         a55Var.g = w45Var;
-                        if (!"sendTransaction".equals(str2) || w45Var.f == null || !uc7.s1(a55Var.a).X3.contains(a55.k(j, i).concat(".transfer"))) {
+                        if (!"sendTransaction".equals(str2) || w45Var.f == null || !uc7.s1(a55Var.a).Y3.contains(a55.k(j, i).concat(".transfer"))) {
                             if (w45Var.l >= 0 || "disconnect".equals(str2)) {
                                 c35Var.close();
                                 a55Var.e(w45Var, false, new pcc() { // from class: u35
@@ -195,10 +195,10 @@ public final /* synthetic */ class qe implements Runnable {
                         }
                     }
                     if (!tL_messages_messages.messages.isEmpty()) {
-                        jf7 messagesStorage = uc7Var2.getMessagesStorage();
+                        kf7 messagesStorage = uc7Var2.getMessagesStorage();
                         int i4 = this.c;
                         long j4 = this.b;
-                        messagesStorage.e1(-2, 0, i4, j4, 0L, tL_messages_messages, false);
+                        messagesStorage.i1(-2, 0, i4, j4, 0L, tL_messages_messages, false);
                         uc7Var2.getNotificationCenter().k(50, Long.valueOf(j4), arrayList2);
                         break;
                     }

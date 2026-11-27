@@ -21,7 +21,7 @@ import org.telegram.messenger.beta.R;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class qqb extends BitmapDrawable {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -43,7 +43,7 @@ public final class qqb extends BitmapDrawable {
         BitmapDrawable bitmapDrawable;
         int i4;
         t37[] t37VarArr;
-        hh7 hh7Var;
+        ih7 ih7Var;
         int i5;
         Bitmap bitmap;
         int i6;
@@ -96,7 +96,7 @@ public final class qqb extends BitmapDrawable {
             i15 = i;
         }
         if (i12 != 0) {
-            hh7Var = new hh7(i10, i11, i12, i13, true, false);
+            ih7Var = new ih7(i10, i11, i12, i13, true, false);
             i2 = i10;
             i3 = i11;
             i4 = 120;
@@ -116,7 +116,7 @@ public final class qqb extends BitmapDrawable {
             Bitmap createBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
             Utilities.drawDitheredGradient(createBitmap, new int[]{i2, i3}, d.left, d.top, d.right, d.bottom);
             bitmapDrawable = new BitmapDrawable(resources, createBitmap);
-            hh7Var = null;
+            ih7Var = null;
             i5 = createBitmap;
         }
         int U0 = hl.U0(hl.w0(i2, i3), false);
@@ -261,10 +261,10 @@ public final class qqb extends BitmapDrawable {
                 decodeFile = BitmapFactory.decodeFile(file.getAbsolutePath(), options);
             }
             if (decodeFile != null) {
-                if (hh7Var != null) {
-                    hh7Var.r((int) (kp3Var.d.p * 100.0f), decodeFile);
-                    hh7Var.setBounds(0, jn7.E1, a.getWidth(), a.getHeight() - jn7.E1);
-                    hh7Var.draw(canvas);
+                if (ih7Var != null) {
+                    ih7Var.r((int) (kp3Var.d.p * 100.0f), decodeFile);
+                    ih7Var.setBounds(0, jn7.E1, a.getWidth(), a.getHeight() - jn7.E1);
+                    ih7Var.draw(canvas);
                 } else {
                     Paint paint2 = new Paint(i);
                     if (kp3Var.d.p >= 0.0f) {
@@ -284,12 +284,12 @@ public final class qqb extends BitmapDrawable {
         } else {
             bitmap = null;
         }
-        if (bitmap == null || hh7Var == null) {
+        if (bitmap == null || ih7Var == null) {
             i6 = 0;
         } else {
             i6 = 0;
-            hh7Var.setBounds(0, jn7.E1, a.getWidth(), a.getHeight() - jn7.E1);
-            hh7Var.draw(canvas);
+            ih7Var.setBounds(0, jn7.E1, a.getWidth(), a.getHeight() - jn7.E1);
+            ih7Var.draw(canvas);
         }
         paint.setColor(G0);
         canvas.drawRect(0.0f, 0.0f, a.getWidth(), 120.0f, paint);

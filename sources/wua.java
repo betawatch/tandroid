@@ -52,7 +52,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class wua extends ny0 implements fn7 {
     public TL_stars.SavedStarGift A2;
@@ -433,7 +433,7 @@ public class wua extends ny0 implements fn7 {
         if (!it7.n(starGift)) {
             return false;
         }
-        if (!uc7.s1(i).k4.v0.f) {
+        if (!uc7.s1(i).l4.v0.f) {
             return true;
         }
         if (((TL_stars.TL_starGiftUnique) starGift).fixed_sale) {
@@ -1265,7 +1265,7 @@ public class wua extends ny0 implements fn7 {
                     d31 j3 = j();
                     vnb vnbVar = this.J0;
                     TL_stars.TL_starGiftUnique B1 = B1();
-                    ArrayList arrayList2 = new ArrayList(uc7.s1(i2).k4.y0.f);
+                    ArrayList arrayList2 = new ArrayList(uc7.s1(i2).l4.y0.f);
                     if (arrayList2.isEmpty()) {
                         return;
                     }
@@ -1437,7 +1437,7 @@ public class wua extends ny0 implements fn7 {
         if (B1 == null) {
             return;
         }
-        if (!TextUtils.isEmpty(B1.gift_address) && !uc7.s1(this.a).k4.y.f) {
+        if (!TextUtils.isEmpty(B1.gift_address) && !uc7.s1(this.a).l4.y.f) {
             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, this.J0, getContext());
             alertDialog$Builder2.a.S = ob6.M0(2131749738, null);
             alertDialog$Builder2.a.U = ob6.M0(2131749739, null);
@@ -1540,7 +1540,7 @@ public class wua extends ny0 implements fn7 {
         if (i1()) {
             pt7[] pt7VarArr = new pt7[1];
             pt7VarArr[0] = new pt7(this.a, this.J0, new sra(this, pt7VarArr, B1, (byte) 0), getContext());
-            hr hrVar = uc7.s1(this.a).k4;
+            hr hrVar = uc7.s1(this.a).l4;
             pt7 pt7Var = pt7VarArr[0];
             boolean z = (B1 == null || !B1.onchain_sale) ? hrVar.t.f : B1.fixed_sale;
             pt7Var.x1 = z;
@@ -1561,7 +1561,7 @@ public class wua extends ny0 implements fn7 {
             c51 c51Var = this.f2;
             Objects.requireNonNull(c51Var);
             byte b = 7;
-            ii7 ii7Var = new ii7(c51Var, b);
+            ji7 ji7Var = new ji7(c51Var, b);
             d31 j = j();
             jra jraVar = new jra(this, b);
             HashMap hashMap = it7.a;
@@ -1570,7 +1570,7 @@ public class wua extends ny0 implements fn7 {
             }
             TL_stars.cancelStarGiftOnchainSale cancelstargiftonchainsale = new TL_stars.cancelStarGiftOnchainSale();
             cancelstargiftonchainsale.slug = B1.slug;
-            it7.q(context, i, cancelstargiftonchainsale, Boolean.valueOf(B1.fixed_sale), vnbVar, ii7Var, j, new b55(B1, context, i, vnbVar, it7.i(B1), jraVar));
+            it7.q(context, i, cancelstargiftonchainsale, Boolean.valueOf(B1.fixed_sale), vnbVar, ji7Var, j, new b55(B1, context, i, vnbVar, it7.i(B1), jraVar));
         }
     }
 
@@ -2105,12 +2105,12 @@ public class wua extends ny0 implements fn7 {
             TLRPC.MessageAction messageAction = r47Var.k.action;
             if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
                 TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction;
-                return ((!(tL_messageActionStarGift.peer != null) && (!r47Var.O3() || ((r47.B0(this.C2.k) > yac.h(this.a).e() ? 1 : (r47.B0(this.C2.k) == yac.h(this.a).e() ? 0 : -1)) == 0))) || ((peer = tL_messageActionStarGift.peer) != null && H1(this.a, wf3.n(peer)))) && !tL_messageActionStarGift.converted && tL_messageActionStarGift.convert_stars > 0 && ((int) uc7.s1(this.a).k4.D3.g(timeUnit)) - (ConnectionsManager.getInstance(this.a).getCurrentTime() - this.C2.k.date) > 0;
+                return ((!(tL_messageActionStarGift.peer != null) && (!r47Var.O3() || ((r47.B0(this.C2.k) > yac.h(this.a).e() ? 1 : (r47.B0(this.C2.k) == yac.h(this.a).e() ? 0 : -1)) == 0))) || ((peer = tL_messageActionStarGift.peer) != null && H1(this.a, wf3.n(peer)))) && !tL_messageActionStarGift.converted && tL_messageActionStarGift.convert_stars > 0 && ((int) uc7.s1(this.a).l4.D3.g(timeUnit)) - (ConnectionsManager.getInstance(this.a).getCurrentTime() - this.C2.k.date) > 0;
             }
         } else {
             TL_stars.SavedStarGift savedStarGift = this.A2;
             if (savedStarGift != null) {
-                int g = ((int) uc7.s1(this.a).k4.D3.g(timeUnit)) - (ConnectionsManager.getInstance(this.a).getCurrentTime() - savedStarGift.date);
+                int g = ((int) uc7.s1(this.a).l4.D3.g(timeUnit)) - (ConnectionsManager.getInstance(this.a).getCurrentTime() - savedStarGift.date);
                 int i = this.a;
                 long j = this.S1;
                 if (H1(i, j)) {
@@ -2398,7 +2398,7 @@ public class wua extends ny0 implements fn7 {
         if (this.a3 == null && !I1(B1) && !F1(B1) && (!it7.y(B1) || !G1(this.a, wf3.n(B1.owner_id)))) {
             return false;
         }
-        hr hrVar = uc7.s1(this.a).k4;
+        hr hrVar = uc7.s1(this.a).l4;
         if (hrVar.v0.f) {
             return hrVar.s.f || hrVar.t.f || I1(B1);
         }
@@ -2494,7 +2494,7 @@ public class wua extends ny0 implements fn7 {
             }
             jxa v = jxa.v(this.a, false);
             if (!v.e) {
-                v.o(new y09((Object) this, (Object) v, j, (Object) pccVar, (byte) 3));
+                v.o(new z09((Object) this, (Object) v, j, (Object) pccVar, (byte) 3));
                 return;
             }
             TLRPC.TL_inputInvoiceStarGiftTransfer tL_inputInvoiceStarGiftTransfer = new TLRPC.TL_inputInvoiceStarGiftTransfer();
@@ -2558,7 +2558,7 @@ public class wua extends ny0 implements fn7 {
             }
             jxa v = jxa.v(this.a, false);
             if (!v.e) {
-                v.o(new ida((Object) this, (Object) v, (byte) 12));
+                v.o(new kba((Object) this, (Object) v, (byte) 13));
                 return;
             }
             TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
@@ -3074,7 +3074,7 @@ public class wua extends ny0 implements fn7 {
                                     r47.B0(this.C2.k);
                                     yac.h(this.a).e();
                                     z9 = z10;
-                                    int g = ((int) uc7.s1(this.a).k4.D3.g(timeUnit)) - (ConnectionsManager.getInstance(this.a).getCurrentTime() - this.C2.k.date);
+                                    int g = ((int) uc7.s1(this.a).l4.D3.g(timeUnit)) - (ConnectionsManager.getInstance(this.a).getCurrentTime() - this.C2.k.date);
                                     if (z32) {
                                         TLRPC.Peer peer9 = tL_messageActionStarGift2.peer;
                                         if (peer9 != null) {
@@ -3132,7 +3132,7 @@ public class wua extends ny0 implements fn7 {
                                 tL_textWithEntities3 = tL_textWithEntities7;
                                 TL_stars.SavedStarGift savedStarGift = this.A2;
                                 if (savedStarGift != null) {
-                                    int g2 = ((int) uc7.s1(this.a).k4.D3.g(timeUnit)) - (ConnectionsManager.getInstance(this.a).getCurrentTime() - savedStarGift.date);
+                                    int g2 = ((int) uc7.s1(this.a).l4.D3.g(timeUnit)) - (ConnectionsManager.getInstance(this.a).getCurrentTime() - savedStarGift.date);
                                     if (H1(this.a, j4)) {
                                         int i8 = this.A2.flags;
                                         if (((j4 < 0 ? 2048 : 8) & i8) != 0) {
@@ -3521,7 +3521,7 @@ public class wua extends ny0 implements fn7 {
         String s = wf3.s(j2);
         long n = wf3.n(savedStarGift.from_id);
         boolean v = lbc.v(uc7.s1(this.a).X1(Long.valueOf(n)));
-        int g = ((int) uc7.s1(this.a).k4.D3.g(TimeUnit.SECONDS)) - (ConnectionsManager.getInstance(this.a).getCurrentTime() - savedStarGift.date);
+        int g = ((int) uc7.s1(this.a).l4.D3.g(TimeUnit.SECONDS)) - (ConnectionsManager.getInstance(this.a).getCurrentTime() - savedStarGift.date);
         long e = yac.h(this.a).e();
         if ((savedStarGift.flags & 2) == 0) {
             n = 2666000;
@@ -4885,7 +4885,7 @@ public class wua extends ny0 implements fn7 {
             idVar.q(500L);
             TL_stars.getUniqueStarGift getuniquestargift2 = new TL_stars.getUniqueStarGift();
             getuniquestargift2.slug = this.D2;
-            ConnectionsManager.getInstance(this.a).sendRequest(getuniquestargift2, new ol7(this, idVar, (byte) 28));
+            ConnectionsManager.getInstance(this.a).sendRequest(getuniquestargift2, new pl7(this, idVar, (byte) 28));
         } else if (this.A2 == null && (r47Var = this.C2) != null && (message = r47Var.k) != null) {
             TLRPC.MessageAction messageAction = message.action;
             if (messageAction instanceof TLRPC.TL_messageActionStarGift) {

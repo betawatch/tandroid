@@ -1,9 +1,9 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class xe3 {
-    public static final xe3 c = new xe3(new rg7(18));
+    public static final xe3 c = new xe3(new sg7(18));
     public static final String d;
     public static final String e;
     public final int a = 0;
@@ -15,7 +15,7 @@ public final class xe3 {
         e = "2";
     }
 
-    public xe3(rg7 rg7Var) {
+    public xe3(sg7 sg7Var) {
     }
 
     public final boolean equals(Object obj) {

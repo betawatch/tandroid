@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class n2a extends la {
     public final vnb d;
@@ -30,8 +30,8 @@ public final class n2a extends la {
         this.x = z;
         this.d = vnbVar;
         sh9 sh9Var = new sh9(this, (byte) 4);
-        jf7 Y = jf7.Y(yac.t0);
-        Y.a.c(new a30(Y, sh9Var, (byte) 8));
+        kf7 a0 = kf7.a0(yac.t0);
+        a0.a.c(new a30(a0, sh9Var, (byte) 8));
     }
 
     @Override // c79

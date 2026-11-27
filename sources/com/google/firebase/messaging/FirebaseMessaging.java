@@ -18,10 +18,10 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
-    public static i09 l;
+    public static j09 l;
     public static vw8 m = new vq2((byte) 5);
     public static ScheduledThreadPoolExecutor n;
     public final ji4 a;
@@ -32,22 +32,22 @@ public class FirebaseMessaging {
     public final vh4 f;
     public final ScheduledThreadPoolExecutor g;
     public final ThreadPoolExecutor h;
-    public final tf7 i;
+    public final uf7 i;
     public final ri4 j;
     public boolean k;
 
     public FirebaseMessaging(ji4 ji4Var, vw8 vw8Var, vw8 vw8Var2, ri4 ri4Var, vw8 vw8Var3, feb febVar) {
         ji4Var.a();
         Context context = ji4Var.a;
-        tf7 tf7Var = new tf7();
+        uf7 uf7Var = new uf7();
         final byte b = 0;
-        tf7Var.a = (byte) 0;
-        tf7Var.d = context;
+        uf7Var.a = (byte) 0;
+        uf7Var.d = context;
         ji4Var.a();
         up9 up9Var = new up9(ji4Var.a);
         fp fpVar = new fp();
         fpVar.a = ji4Var;
-        fpVar.b = tf7Var;
+        fpVar.b = uf7Var;
         fpVar.c = up9Var;
         fpVar.d = vw8Var;
         fpVar.e = vw8Var2;
@@ -67,10 +67,10 @@ public class FirebaseMessaging {
         Context context2 = ji4Var.a;
         this.b = context2;
         z84 z84Var = new z84();
-        this.i = tf7Var;
+        this.i = uf7Var;
         this.c = fpVar;
         this.j = ri4Var;
-        am2 am2Var = new am2(context2, ji4Var, ri4Var, fpVar, tf7Var);
+        am2 am2Var = new am2(context2, ji4Var, ri4Var, fpVar, uf7Var);
         this.d = am2Var;
         this.e = new ym4(newSingleThreadExecutor);
         this.g = scheduledThreadPoolExecutor;
@@ -141,7 +141,7 @@ public class FirebaseMessaging {
             }
         });
         ScheduledThreadPoolExecutor scheduledThreadPoolExecutor2 = new ScheduledThreadPoolExecutor(1, new kq7("Firebase-Messaging-Topics-Io"));
-        Tasks.call(scheduledThreadPoolExecutor2, new p0c(context2, scheduledThreadPoolExecutor2, tf7Var, ji4Var, this, ri4Var, (byte) 0)).addOnSuccessListener(scheduledThreadPoolExecutor, new wi4(this, b));
+        Tasks.call(scheduledThreadPoolExecutor2, new p0c(context2, scheduledThreadPoolExecutor2, uf7Var, ji4Var, this, ri4Var, (byte) 0)).addOnSuccessListener(scheduledThreadPoolExecutor, new wi4(this, b));
         scheduledThreadPoolExecutor.execute(new Runnable(this) { // from class: vi4
             public final /* synthetic */ FirebaseMessaging b;
 
@@ -206,16 +206,16 @@ public class FirebaseMessaging {
         }
     }
 
-    public static synchronized i09 c(Context context) {
-        i09 i09Var;
+    public static synchronized j09 c(Context context) {
+        j09 j09Var;
         synchronized (FirebaseMessaging.class) {
-            i09Var = l;
-            if (i09Var == null) {
-                i09Var = new i09(context);
-                l = i09Var;
+            j09Var = l;
+            if (j09Var == null) {
+                j09Var = new j09(context);
+                l = j09Var;
             }
         }
-        return i09Var;
+        return j09Var;
     }
 
     @Deprecated
@@ -234,7 +234,7 @@ public class FirebaseMessaging {
         if (!j(d)) {
             return (String) d.b;
         }
-        String b = tf7.b(this.a);
+        String b = uf7.b(this.a);
         ym4 ym4Var = this.e;
         synchronized (ym4Var) {
             task = (Task) ((qs) ym4Var.c).get(b);
@@ -258,11 +258,11 @@ public class FirebaseMessaging {
 
     public final n20 d() {
         n20 c;
-        i09 c2 = c(this.b);
+        j09 c2 = c(this.b);
         ji4 ji4Var = this.a;
         ji4Var.a();
         String d = "[DEFAULT]".equals(ji4Var.b) ? "" : ji4Var.d();
-        String b = tf7.b(this.a);
+        String b = uf7.b(this.a);
         synchronized (c2) {
             c = n20.c(((SharedPreferences) c2.b).getString(d + "|T|" + b + "|*", null));
         }

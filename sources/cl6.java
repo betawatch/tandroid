@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class cl6 {
     public static final Pattern a = Pattern.compile("^\\[\\^([^\\]]+)\\]:[ \\t]*(.*)$");
@@ -907,7 +907,7 @@ public abstract class cl6 {
         Pattern pattern = gl6.j;
         ArrayList arrayList2 = new ArrayList(3);
         ArrayList arrayList3 = new ArrayList(3);
-        arrayList2.addAll(Arrays.asList(new ua0(), new ae0(), new be0(), new ke0((byte) 0), new qj2(), new b44(), new gi5(), new ul7(), new ke0((byte) 1)));
+        arrayList2.addAll(Arrays.asList(new ua0(), new ae0(), new be0(), new ke0((byte) 0), new qj2(), new b44(), new gi5(), new vl7(), new ke0((byte) 1)));
         arrayList3.addAll(Arrays.asList(new mx((byte) 0), new mx((byte) 1)));
         hl.L(18.0f);
         Executors.newCachedThreadPool();

@@ -2,7 +2,7 @@
 
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class oz9 {
     public final /* synthetic */ byte a;
@@ -59,8 +59,8 @@ public final class oz9 {
                     }
                     jo4 jo4Var = new jo4();
                     jo4Var.a = str2;
-                    jo4Var.r = dg7.n("video/mp2t");
-                    jo4Var.s = dg7.n(str);
+                    jo4Var.r = eg7.n("video/mp2t");
+                    jo4Var.s = eg7.n(str);
                     jo4Var.e = ko4Var.e;
                     jo4Var.d = ko4Var.d;
                     jo4Var.S = ko4Var.T;
@@ -80,8 +80,8 @@ public final class oz9 {
                     jo4 jo4Var2 = new jo4();
                     l6cVar.b();
                     jo4Var2.a = l6cVar.e;
-                    jo4Var2.r = dg7.n("video/mp2t");
-                    jo4Var2.s = dg7.n(str3);
+                    jo4Var2.r = eg7.n("video/mp2t");
+                    jo4Var2.s = eg7.n(str3);
                     jo4Var2.e = ko4Var2.e;
                     jo4Var2.d = ko4Var2.d;
                     jo4Var2.S = ko4Var2.T;

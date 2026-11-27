@@ -2,20 +2,20 @@
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class fv9 {
     public static final fv9 b;
     public final bp5 a;
 
     static {
-        k09 k09Var = new k09((byte) 7);
-        k09Var.b = bp5.p(2, 1, 5);
-        b = new fv9(k09Var);
+        l09 l09Var = new l09((byte) 7);
+        l09Var.b = bp5.p(2, 1, 5);
+        b = new fv9(l09Var);
     }
 
-    public fv9(k09 k09Var) {
-        this.a = (bp5) k09Var.b;
+    public fv9(l09 l09Var) {
+        this.a = (bp5) l09Var.b;
     }
 
     public final boolean equals(Object obj) {

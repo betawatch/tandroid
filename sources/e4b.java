@@ -5,16 +5,16 @@ import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class e4b implements n7, hf7 {
+public final /* synthetic */ class e4b implements n7, if7 {
     public final /* synthetic */ s4b a;
 
     public /* synthetic */ e4b(s4b s4bVar) {
         this.a = s4bVar;
     }
 
-    @Override // hf7
+    @Override // if7
     public final void a(String str) {
         s4b s4bVar = this.a;
         new ep5(s4bVar.getContext(), s4bVar.i2, null, s4bVar.J0).show();

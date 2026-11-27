@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class u32 extends f12 {
     public final t32 E;
@@ -103,9 +103,9 @@ public final class u32 extends f12 {
                             long j2 = query.getLong(i2);
                             String string = query.getString(4);
                             cursor = query;
-                            if (j <= uc7.s1(yac.t0).k4.a1.f() * 1000) {
+                            if (j <= uc7.s1(yac.t0).l4.a1.f() * 1000) {
                                 try {
-                                    if (j2 <= uc7.s1(yac.t0).k4.Z0.f() && (TextUtils.isEmpty(string) || "audio/mpeg".equals(string) || !"audio/mpeg4".equals(string))) {
+                                    if (j2 <= uc7.s1(yac.t0).l4.Z0.f() && (TextUtils.isEmpty(string) || "audio/mpeg".equals(string) || !"audio/mpeg4".equals(string))) {
                                         n32 n32Var = new n32();
                                         n32Var.b = file.getName();
                                         n32Var.f = file;
@@ -447,8 +447,8 @@ public final class u32 extends f12 {
             new d31(this.b.c, null).u(ob6.a0("InvalidFormatError", null, 2131748935, new Object[0]), ob6.M0(2131751068, null), null).j();
             return false;
         }
-        if (file.length() > uc7.s1(yac.t0).k4.Z0.f()) {
-            new d31(this.b.c, null).u(ob6.a0("TooLargeError", null, 2131743696, new Object[0]), ob6.a0("ErrorRingtoneSizeTooBig", null, 2131751067, Integer.valueOf(uc7.s1(yac.t0).k4.Z0.f() / 1024)), null).j();
+        if (file.length() > uc7.s1(yac.t0).l4.Z0.f()) {
+            new d31(this.b.c, null).u(ob6.a0("TooLargeError", null, 2131743696, new Object[0]), ob6.a0("ErrorRingtoneSizeTooBig", null, 2131751067, Integer.valueOf(uc7.s1(yac.t0).l4.Z0.f() / 1024)), null).j();
             return false;
         }
         try {
@@ -458,10 +458,10 @@ public final class u32 extends f12 {
         } catch (Exception unused) {
             i = ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
-        if (i <= uc7.s1(yac.t0).k4.a1.f() * 1000) {
+        if (i <= uc7.s1(yac.t0).l4.a1.f() * 1000) {
             return true;
         }
-        new d31(this.b.c, null).u(ob6.a0("TooLongError", null, 2131743695, new Object[0]), ob6.a0("ErrorRingtoneDurationTooLong", null, 2131751069, Integer.valueOf(uc7.s1(yac.t0).k4.a1.f())), null).j();
+        new d31(this.b.c, null).u(ob6.a0("TooLongError", null, 2131743695, new Object[0]), ob6.a0("ErrorRingtoneDurationTooLong", null, 2131751069, Integer.valueOf(uc7.s1(yac.t0).l4.a1.f())), null).j();
         return false;
     }
 
@@ -492,11 +492,11 @@ public final class u32 extends f12 {
             if (n12Var.E3 == null || n12Var.E1 - n12Var.F1 >= 0) {
                 this.R.z();
                 return;
-            } else if (uc7.s1(i3).M3() || uc7.s1(i3).k4.p1.f() <= n12Var.F1) {
+            } else if (uc7.s1(i3).M3() || uc7.s1(i3).l4.p1.f() <= n12Var.F1) {
                 new d31(a12Var, n12Var.J0).t(ob6.M0(2131743695, null), n12Var.J0).j();
                 return;
             } else {
-                new d31(a12Var, n12Var.J0).f(uc7.s1(i3).k4.p1.f(), new vq0(n12Var, (byte) 5)).j();
+                new d31(a12Var, n12Var.J0).f(uc7.s1(i3).l4.p1.f(), new vq0(n12Var, (byte) 5)).j();
                 return;
             }
         }
@@ -1120,8 +1120,8 @@ public final class u32 extends f12 {
         int i = aob.A5;
         i32 i32Var = this.r;
         arrayList.add(new apb(i32Var, 32768, (Class[]) null, (Paint) null, (Drawable[]) null, (zob) null, i));
-        arrayList.add(new apb(i32Var, 32, new Class[]{rca.class}, (Paint) null, (Drawable[]) null, (zob) null, aob.b7));
-        arrayList.add(new apb(i32Var, 48, new Class[]{rca.class}, (Paint) null, (Drawable[]) null, (zob) null, aob.a7));
+        arrayList.add(new apb(i32Var, 32, new Class[]{sca.class}, (Paint) null, (Drawable[]) null, (zob) null, aob.b7));
+        arrayList.add(new apb(i32Var, 48, new Class[]{sca.class}, (Paint) null, (Drawable[]) null, (zob) null, aob.a7));
         arrayList.add(new apb(i32Var, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (zob) null, aob.i6));
         arrayList.add(new apb(i32Var, 0, new Class[]{View.class}, aob.j0, (Drawable[]) null, (zob) null, aob.d7));
         arrayList.add(new apb(i32Var, 4, new Class[]{zea.class}, new String[]{"nameTextView"}, (Drawable[]) null, (zob) null, aob.G6));

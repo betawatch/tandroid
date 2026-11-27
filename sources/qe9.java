@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class qe9 extends ny0 {
     public final LinearLayout S1;
@@ -85,7 +85,7 @@ public final class qe9 extends ny0 {
         linearLayout.addView(m, tre.t(-2, -2, 1, 22, 8, 22, 0));
         linearLayout.addView(new ir8(this, context, R.drawable.menu_privacy, ob6.M0(z ? 2131745767 : 2131745768, null), ob6.M0(z ? 2131745769 : 2131745770, null)), tre.q(-1, -2, 0.0f, 0, 0, 20, 0, 0));
         linearLayout.addView(new ir8(this, context, R.drawable.menu_feature_split, ob6.M0(z ? 2131745763 : 2131745764, null), ob6.M0(z ? 2131745765 : 2131745766, null)), tre.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
-        String a0 = ob6.a0(null, null, z ? 2131745761 : 2131745762, Integer.valueOf(uc7.s1(yac.t0).k4.b2.f()));
+        String a0 = ob6.a0(null, null, z ? 2131745761 : 2131745762, Integer.valueOf(uc7.s1(yac.t0).l4.b2.f()));
         int i4 = aob.Xc;
         linearLayout.addView(new ir8(this, context, R.drawable.menu_feature_noads, ob6.M0(2131745760, null), hl.N2(a0, i4, 0, new Runnable(this) { // from class: pe9
             public final /* synthetic */ qe9 b;

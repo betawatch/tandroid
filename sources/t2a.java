@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class t2a extends ny0 {
     public final c51 S1;
@@ -51,7 +51,7 @@ public final class t2a extends ny0 {
     public zm0 n2;
     public int o2;
     public cn0 p2;
-    public final ki7 q2;
+    public final li7 q2;
 
     public t2a(e eVar, long j) {
         super(eVar, false);
@@ -69,7 +69,7 @@ public final class t2a extends ny0 {
         this.g2 = new LinkedHashMap();
         this.k2 = hl.L(134.0f);
         byte b = 25;
-        this.q2 = new ki7(this, b);
+        this.q2 = new li7(this, b);
         this.u0 = 0;
         this.l2 = uc7.s1(this.a).M0(Long.valueOf(-j));
         ((ViewGroup) this.o1.getParent()).removeView(this.o1);

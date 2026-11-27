@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class tte {
     public static jo a(ey7 ey7Var) {
@@ -86,30 +86,30 @@ public abstract class tte {
         return null;
     }
 
-    public static void f(int i, uf7 uf7Var, jo4 jo4Var, uf7 uf7Var2, uf7... uf7VarArr) {
-        if (uf7Var2 == null) {
-            uf7Var2 = new uf7(new sf7[0]);
+    public static void f(int i, vf7 vf7Var, jo4 jo4Var, vf7 vf7Var2, vf7... vf7VarArr) {
+        if (vf7Var2 == null) {
+            vf7Var2 = new vf7(new tf7[0]);
         }
-        if (uf7Var != null) {
+        if (vf7Var != null) {
             mo5 p = po5.p();
-            for (sf7 sf7Var : uf7Var.a) {
-                if (xl6.class.isAssignableFrom(sf7Var.getClass())) {
-                    p.c((sf7) xl6.class.cast(sf7Var));
+            for (tf7 tf7Var : vf7Var.a) {
+                if (xl6.class.isAssignableFrom(tf7Var.getClass())) {
+                    p.c((tf7) xl6.class.cast(tf7Var));
                 }
             }
             no5 listIterator = p.f().listIterator(0);
             while (listIterator.hasNext()) {
                 xl6 xl6Var = (xl6) listIterator.next();
                 if (!xl6Var.a.equals("com.android.capture.fps") || i == 2) {
-                    uf7Var2 = uf7Var2.a(xl6Var);
+                    vf7Var2 = vf7Var2.a(xl6Var);
                 }
             }
         }
-        for (uf7 uf7Var3 : uf7VarArr) {
-            uf7Var2 = uf7Var2.b(uf7Var3);
+        for (vf7 vf7Var3 : vf7VarArr) {
+            vf7Var2 = vf7Var2.b(vf7Var3);
         }
-        if (uf7Var2.a.length > 0) {
-            jo4Var.l = uf7Var2;
+        if (vf7Var2.a.length > 0) {
+            jo4Var.l = vf7Var2;
         }
     }
 }

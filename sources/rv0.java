@@ -65,7 +65,7 @@ import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class rv0 extends FrameLayout implements fn7, snb {
     public static boolean R0 = true;
@@ -230,7 +230,7 @@ public abstract class rv0 extends FrameLayout implements fn7, snb {
             sb.append(split[i].replaceAll("\\-", "-h"));
         }
         sb.append(".");
-        sb.append(uc7.s1(yac.t0).k4.B2.f);
+        sb.append(uc7.s1(yac.t0).l4.B2.f);
         return sb.toString();
     }
 
@@ -298,7 +298,7 @@ public abstract class rv0 extends FrameLayout implements fn7, snb {
             return str;
         }
         StringBuilder sb = new StringBuilder(".");
-        sb.append(uc7.s1(yac.t0).k4.B2.f);
+        sb.append(uc7.s1(yac.t0).l4.B2.f);
         return (!J0.endsWith(sb.toString()) || (str2 = (String) T0.get(J0)) == null) ? str : m01.x(Uri.parse(str), "tonsite", null, str2, null);
     }
 
@@ -948,7 +948,7 @@ public abstract class rv0 extends FrameLayout implements fn7, snb {
                         JSONObject jSONObject2 = new JSONObject(str2);
                         Uri parse = Uri.parse(jSONObject2.optString("url"));
                         String optString = jSONObject2.optString("try_browser");
-                        if (uc7.s1(this.N).J3 != null && uc7.s1(this.N).J3.contains(parse.getScheme())) {
+                        if (uc7.s1(this.N).K3 != null && uc7.s1(this.N).K3.contains(parse.getScheme())) {
                             E(parse, optString, jSONObject2.optBoolean("try_instant_view"), true, false);
                             break;
                         }
@@ -1244,7 +1244,7 @@ public abstract class rv0 extends FrameLayout implements fn7, snb {
                             u(pv0Var, "emoji_status_failed", x("UNKNOWN_ERROR", "error"));
                             break;
                         } else {
-                            oca.f(this.N, user, j4, i2, new yt0(this, pv0Var, (byte) 4));
+                            pca.f(this.N, user, j4, i2, new yt0(this, pv0Var, (byte) 4));
                             break;
                         }
                     }
@@ -1418,7 +1418,7 @@ public abstract class rv0 extends FrameLayout implements fn7, snb {
                     break;
                 case 17:
                     if (this.V != null && System.currentTimeMillis() - this.Q <= 10000) {
-                        oca.a(this.N, this.V.id, new yt0(this, pv0Var, (byte) 0));
+                        pca.a(this.N, this.V.id, new yt0(this, pv0Var, (byte) 0));
                         break;
                     }
                     break;
@@ -2630,7 +2630,7 @@ public abstract class rv0 extends FrameLayout implements fn7, snb {
                     return;
                 }
                 ezc c = zyc.c(nv0Var3);
-                nv0Var3.T = new i09(py0.a(ScriptHandlerBoundaryInterface.class, c.a.addDocumentStartJavaScript("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};", (String[]) singleton.toArray(new String[0]))), (byte) 9);
+                nv0Var3.T = new j09(py0.a(ScriptHandlerBoundaryInterface.class, c.a.addDocumentStartJavaScript("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};", (String[]) singleton.toArray(new String[0]))), (byte) 9);
             }
         }
     }
@@ -2702,7 +2702,7 @@ public abstract class rv0 extends FrameLayout implements fn7, snb {
                 } else {
                     nv0Var2.setBackgroundColor(h(aob.d6));
                 }
-                if (!uc7.s1(this.N).k4.N1.f) {
+                if (!uc7.s1(this.N).l4.N1.f) {
                     this.a.setLayerType(2, null);
                 }
                 this.a.f(this, this.d);
@@ -2819,7 +2819,7 @@ public abstract class rv0 extends FrameLayout implements fn7, snb {
         this.a = nv0Var2;
         if (this.p0) {
         }
-        if (!uc7.s1(this.N).k4.N1.f) {
+        if (!uc7.s1(this.N).l4.N1.f) {
         }
         this.a.f(this, this.d);
         this.a.setCloseListener(this.E0);

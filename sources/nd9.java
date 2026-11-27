@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class nd9 extends e implements s84 {
     public static final ArrayList c0 = new ArrayList();
@@ -1111,7 +1111,7 @@ public class nd9 extends e implements s84 {
             ed9 ed9Var = this.e;
             ArrayList arrayList = new ArrayList(ed9Var.b);
             if (!arrayList.contains(Long.valueOf(j))) {
-                int f = uc7.s1(this.currentAccount).k4.w.f();
+                int f = uc7.s1(this.currentAccount).l4.w.f();
                 if (arrayList.size() >= f) {
                     hl.A3(-3.0f, view, null);
                     d31.b0(this).Q(R.raw.chats_infotip, 36, ob6.H(',', "Gift2ResaleCollectionsLimit", f)).j();

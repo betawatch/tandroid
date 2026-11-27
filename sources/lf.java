@@ -13,9 +13,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class lf implements fd, b86, on5, mz6, pz6, hf7, ot2 {
+public final /* synthetic */ class lf implements fd, b86, on5, mz6, pz6, if7, ot2 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ long b;
     public final /* synthetic */ int c;
@@ -28,7 +28,7 @@ public final /* synthetic */ class lf implements fd, b86, on5, mz6, pz6, hf7, ot
         this.b = j;
     }
 
-    @Override // hf7
+    @Override // if7
     public final void a(String str) {
         ((eja) this.d).F0(this.c, str, this.b);
     }
@@ -191,7 +191,7 @@ public final /* synthetic */ class lf implements fd, b86, on5, mz6, pz6, hf7, ot
                 break;
             default:
                 Runnable runnable = (Runnable) obj;
-                SharedPreferences.Editor edit = uc7.s1(yac.t0).W3.edit();
+                SharedPreferences.Editor edit = uc7.s1(yac.t0).X3.edit();
                 if (j != 0) {
                     edit.putInt("color_" + j, 0);
                 } else if (i2 == 1) {

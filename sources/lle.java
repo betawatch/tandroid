@@ -2,11 +2,11 @@
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class lle {
-    public static uf7 a(cb3 cb3Var, boolean z, boolean z2) {
-        uf7 c0 = new aj3((byte) 12).c0(cb3Var, !z ? vl5.b : z2 ? vl5.c : null, 0);
+    public static vf7 a(cb3 cb3Var, boolean z, boolean z2) {
+        vf7 c0 = new aj3((byte) 12).c0(cb3Var, !z ? vl5.b : z2 ? vl5.c : null, 0);
         if (c0 == null || c0.a.length == 0) {
             return null;
         }

@@ -1,30 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class mca implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ nca b;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.messenger.a;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
 
-    public /* synthetic */ mca(nca ncaVar, byte b) {
-        this.a = b;
-        this.b = ncaVar;
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes.dex */
+public final class mca extends e {
+    @Override // org.telegram.ui.ActionBar.e
+    public final Context getContext() {
+        return hl.W(LaunchActivity.H1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        nca ncaVar = this.b;
-        switch (b) {
-            case 0:
-                if (ncaVar.x) {
-                    ncaVar.d();
-                    break;
-                }
-                break;
-            default:
-                ncaVar.invalidateSelf();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.e
+    public final int getCurrentAccount() {
+        return this.currentAccount;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final Activity getParentActivity() {
+        Activity W = hl.W(a.b);
+        return W == null ? LaunchActivity.H1 : W;
     }
 }

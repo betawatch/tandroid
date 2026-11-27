@@ -2,16 +2,16 @@
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class r73 {
-    public final /* synthetic */ uj7 a;
+    public final /* synthetic */ vj7 a;
     public final /* synthetic */ m89 b;
     public final /* synthetic */ p89 c;
     public final /* synthetic */ o83 d;
 
-    public r73(uj7 uj7Var, m89 m89Var, p89 p89Var, o83 o83Var) {
-        this.a = uj7Var;
+    public r73(vj7 vj7Var, m89 m89Var, p89 p89Var, o83 o83Var) {
+        this.a = vj7Var;
         this.b = m89Var;
         this.c = p89Var;
         this.d = o83Var;
@@ -28,7 +28,7 @@ public final class r73 {
     /* JADX WARN: Removed duplicated region for block: B:45:0x00cc A[Catch: all -> 0x00d4, TRY_ENTER, TryCatch #0 {all -> 0x00d4, blocks: (B:40:0x0086, B:42:0x008a, B:45:0x00cc, B:46:0x00d3), top: B:39:0x0086 }] */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0067  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
-    /* JADX WARN: Type inference failed for: r4v3, types: [uj7] */
+    /* JADX WARN: Type inference failed for: r4v3, types: [vj7] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -38,10 +38,10 @@ public final class r73 {
         m89 m89Var;
         p89 p89Var;
         o83 o83Var;
-        wj7 wj7Var;
+        xj7 xj7Var;
         is4 is4Var;
-        uj7 uj7Var;
-        uj7 uj7Var2;
+        vj7 vj7Var;
+        vj7 vj7Var2;
         p89 p89Var2;
         Object obj;
         try {
@@ -56,8 +56,8 @@ public final class r73 {
                     if (i != 0) {
                         ixe.b(obj2);
                         q73Var.a = y63Var;
-                        uj7 uj7Var3 = this.a;
-                        q73Var.b = uj7Var3;
+                        vj7 vj7Var3 = this.a;
+                        q73Var.b = vj7Var3;
                         m89Var = this.b;
                         q73Var.c = m89Var;
                         p89Var = this.c;
@@ -65,7 +65,7 @@ public final class r73 {
                         o83Var = this.d;
                         q73Var.e = o83Var;
                         q73Var.n = 1;
-                        wj7Var = (wj7) uj7Var3;
+                        xj7Var = (xj7) vj7Var3;
                         is4Var = y63Var;
                     } else {
                         if (i != 1) {
@@ -76,65 +76,65 @@ public final class r73 {
                                 }
                                 obj = q73Var.c;
                                 p89Var2 = (p89) q73Var.b;
-                                uj7Var = (uj7) q73Var.a;
+                                vj7Var = (vj7) q73Var.a;
                                 try {
                                     ixe.b(obj2);
                                     p89Var2.a = obj;
                                     Object obj3 = p89Var2.a;
-                                    ((wj7) uj7Var).f(null);
+                                    ((xj7) vj7Var).f(null);
                                     return obj3;
                                 } catch (Throwable th) {
                                     th = th;
-                                    ((wj7) uj7Var).f(null);
+                                    ((xj7) vj7Var).f(null);
                                     throw th;
                                 }
                             }
                             o83Var = (o83) q73Var.c;
                             p89Var2 = (p89) q73Var.b;
-                            uj7Var2 = (uj7) q73Var.a;
+                            vj7Var2 = (vj7) q73Var.a;
                             try {
                                 ixe.b(obj2);
                                 if (!ur5.a(obj2, p89Var2.a)) {
-                                    uj7Var = uj7Var2;
+                                    vj7Var = vj7Var2;
                                     Object obj32 = p89Var2.a;
-                                    ((wj7) uj7Var).f(null);
+                                    ((xj7) vj7Var).f(null);
                                     return obj32;
                                 }
-                                q73Var.a = uj7Var2;
+                                q73Var.a = vj7Var2;
                                 q73Var.b = p89Var2;
                                 q73Var.c = obj2;
                                 q73Var.n = 3;
                                 if (o83Var.i(obj2, false, q73Var) != vx2Var) {
                                     obj = obj2;
-                                    uj7Var = uj7Var2;
+                                    vj7Var = vj7Var2;
                                     p89Var2.a = obj;
                                     Object obj322 = p89Var2.a;
-                                    ((wj7) uj7Var).f(null);
+                                    ((xj7) vj7Var).f(null);
                                     return obj322;
                                 }
                                 return vx2Var;
                             } catch (Throwable th2) {
                                 th = th2;
-                                uj7Var = uj7Var2;
-                                ((wj7) uj7Var).f(null);
+                                vj7Var = vj7Var2;
+                                ((xj7) vj7Var).f(null);
                                 throw th;
                             }
                         }
                         o83Var = q73Var.e;
                         p89 p89Var3 = q73Var.d;
                         m89Var = (m89) q73Var.c;
-                        ?? r4 = (uj7) q73Var.b;
+                        ?? r4 = (vj7) q73Var.b;
                         is4 is4Var2 = (is4) q73Var.a;
                         ixe.b(obj2);
                         p89Var = p89Var3;
                         is4Var = is4Var2;
-                        wj7Var = r4;
+                        xj7Var = r4;
                     }
                     if (!m89Var.a) {
                         throw new IllegalStateException("InitializerApi.updateData should not be called after initialization is complete.");
                     }
                     Object obj4 = p89Var.a;
-                    q73Var.a = wj7Var;
+                    q73Var.a = xj7Var;
                     q73Var.b = p89Var;
                     q73Var.c = o83Var;
                     q73Var.d = null;
@@ -142,7 +142,7 @@ public final class r73 {
                     q73Var.n = 2;
                     Object invoke = is4Var.invoke(obj4, q73Var);
                     if (invoke != vx2Var) {
-                        uj7Var2 = wj7Var;
+                        vj7Var2 = xj7Var;
                         obj2 = invoke;
                         p89Var2 = p89Var;
                         if (!ur5.a(obj2, p89Var2.a)) {
@@ -155,8 +155,8 @@ public final class r73 {
             }
         } catch (Throwable th3) {
             th = th3;
-            uj7Var = wj7Var;
-            ((wj7) uj7Var).f(null);
+            vj7Var = xj7Var;
+            ((xj7) vj7Var).f(null);
             throw th;
         }
         q73Var = new q73(this, ax2Var);

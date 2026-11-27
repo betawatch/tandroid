@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 final class zzfe extends yfb implements is4 {
     final /* synthetic */ zzyg zza;
@@ -23,7 +23,7 @@ final class zzfe extends yfb implements is4 {
 
     @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfe) create((zzgr) obj, (zw2) obj2)).invokeSuspend(f9c.a);
+        return ((zzfe) create((zzgr) obj, (zw2) obj2)).invokeSuspend(g9c.a);
     }
 
     @Override // qf0
@@ -43,7 +43,7 @@ final class zzfe extends yfb implements is4 {
             zzfp zzfpVar = this.zzb;
             zzfp.zze(zzfpVar).zzb(linkedHashMap);
             zzfp.zzb(zzfpVar).zze(zzygVar);
-            return f9c.a;
+            return g9c.a;
         } catch (zzcg e) {
             throw e;
         } catch (Exception e2) {

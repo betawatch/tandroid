@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v48 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class v48 implements View.OnClickListener {
         o68 o68Var = this.b;
         switch (b) {
             case 0:
-                t58 t58Var = o68Var.M0;
+                u58 u58Var = o68Var.M0;
                 TL_stories.StoryItem storyItem = o68Var.y1.a;
                 if (storyItem != null) {
                     if (o68Var.m1) {
@@ -55,7 +55,7 @@ public final /* synthetic */ class v48 implements View.OnClickListener {
                             kg5Var.r0 = new u48(o68Var, (byte) 9);
                             o68Var.p0 = kg5Var;
                             kg5Var.setPadding(hl.L(8.0f), 0, hl.L(8.0f), 0);
-                            t58Var.addView(o68Var.p0, tre.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
+                            u58Var.addView(o68Var.p0, tre.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
                         }
                         TLRPC.User X1 = uc7.s1(o68Var.m2).X1(Long.valueOf(o68Var.l1));
                         if (X1 != null) {
@@ -73,9 +73,9 @@ public final /* synthetic */ class v48 implements View.OnClickListener {
                                 z = false;
                                 CharSequence m = pv3.m(S2, o68Var.p0.getTextPaint().getFontMetricsInt(), false, null, 0);
                                 kg5 kg5Var2 = o68Var.p0;
-                                kg5Var2.h = !z ? kg5.a(m, kg5Var2.getTextPaint()) : t58Var.getMeasuredWidth();
+                                kg5Var2.h = !z ? kg5.a(m, kg5Var2.getTextPaint()) : u58Var.getMeasuredWidth();
                                 o68Var.p0.t(m);
-                                o68Var.p0.n(1.0f, (-(t58Var.getWidth() - o68Var.m0.getCenterX())) / hl.p);
+                                o68Var.p0.n(1.0f, (-(u58Var.getWidth() - o68Var.m0.getCenterX())) / hl.p);
                                 lcb lcbVar = ((ccb) o68Var.A1).d;
                                 lcbVar.i1 = true;
                                 lcbVar.U();
@@ -91,9 +91,9 @@ public final /* synthetic */ class v48 implements View.OnClickListener {
                             z = true;
                             CharSequence m2 = pv3.m(S2, o68Var.p0.getTextPaint().getFontMetricsInt(), false, null, 0);
                             kg5 kg5Var22 = o68Var.p0;
-                            kg5Var22.h = !z ? kg5.a(m2, kg5Var22.getTextPaint()) : t58Var.getMeasuredWidth();
+                            kg5Var22.h = !z ? kg5.a(m2, kg5Var22.getTextPaint()) : u58Var.getMeasuredWidth();
                             o68Var.p0.t(m2);
-                            o68Var.p0.n(1.0f, (-(t58Var.getWidth() - o68Var.m0.getCenterX())) / hl.p);
+                            o68Var.p0.n(1.0f, (-(u58Var.getWidth() - o68Var.m0.getCenterX())) / hl.p);
                             lcb lcbVar2 = ((ccb) o68Var.A1).d;
                             lcbVar2.i1 = true;
                             lcbVar2.U();
@@ -105,18 +105,18 @@ public final /* synthetic */ class v48 implements View.OnClickListener {
                 }
                 break;
             case 1:
-                y58 y58Var = o68Var.u0;
-                boolean z2 = y58Var.v0;
-                jmb jmbVar = y58Var.W;
+                z58 z58Var = o68Var.u0;
+                boolean z2 = z58Var.v0;
+                jmb jmbVar = z58Var.W;
                 if (!z2) {
                     o68Var.R2 = true;
-                    y58Var.E(false);
+                    z58Var.E(false);
                     break;
                 } else if (!jmbVar.w()) {
-                    y58Var.D();
+                    z58Var.D();
                     break;
-                } else if (jmbVar.w() && Math.abs(y58Var.g0 - y58Var.i0) < hl.e && Math.abs(y58Var.h0 - y58Var.j0) < hl.e) {
-                    mmb mmbVar = jmbVar.m(y58Var.getContext()).r;
+                } else if (jmbVar.w() && Math.abs(z58Var.g0 - z58Var.i0) < hl.e && Math.abs(z58Var.h0 - z58Var.j0) < hl.e) {
+                    mmb mmbVar = jmbVar.m(z58Var.getContext()).r;
                     mmbVar.k();
                     if (!mmbVar.i && mmbVar.e) {
                         mmbVar.e(false);
@@ -172,7 +172,7 @@ public final /* synthetic */ class v48 implements View.OnClickListener {
             case 8:
                 lcb lcbVar3 = o68Var.t0;
                 lcbVar3.m();
-                hl.d3(new x58(lcbVar3, (byte) 1), 30L);
+                hl.d3(new y58(lcbVar3, (byte) 1), 30L);
                 break;
             case 9:
                 w96 w96Var = w96.N;
@@ -184,18 +184,18 @@ public final /* synthetic */ class v48 implements View.OnClickListener {
                 }
                 break;
             case 10:
-                b58 b58Var = o68Var.v0;
+                c58 c58Var = o68Var.v0;
                 if (!o68Var.v0(false)) {
                     jxa v = jxa.v(o68Var.m2, false);
                     if (v.e && v.f.amount <= 0) {
-                        b58Var.j(o68Var.v0(false));
+                        c58Var.j(o68Var.v0(false));
                         break;
                     } else {
-                        b58Var.o();
+                        c58Var.o();
                         break;
                     }
                 } else {
-                    b58Var.j(o68Var.v0(false));
+                    c58Var.j(o68Var.v0(false));
                     break;
                 }
                 break;

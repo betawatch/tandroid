@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class voa extends FrameLayout {
     public final uj4 E;
@@ -57,7 +57,7 @@ public final class voa extends FrameLayout {
     public final String[] g0;
     public final nm3 h;
     public final View h0;
-    public ida i0;
+    public kba i0;
     public final og2 n;
     public final TextPaint r;
     public final Paint s;
@@ -687,15 +687,15 @@ public final class voa extends FrameLayout {
 
     @Override // android.view.View
     public final boolean performAccessibilityAction(int i, Bundle bundle) {
-        ida idaVar;
+        kba kbaVar;
         if (i == R.id.acc_action_speech_update && this.c0) {
             b();
             return true;
         }
-        if (i != R.id.acc_action_speech_variants || this.h0 == null || (idaVar = this.i0) == null) {
+        if (i != R.id.acc_action_speech_variants || this.h0 == null || (kbaVar = this.i0) == null) {
             return super.performAccessibilityAction(i, bundle);
         }
-        idaVar.run();
+        kbaVar.run();
         return true;
     }
 }

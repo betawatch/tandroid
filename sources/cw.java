@@ -12,9 +12,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class cw implements kmb, si7, rib {
+public final class cw implements kmb, ti7, rib {
     public SpannableStringBuilder E;
     public int F = -1;
     public int G = -1;
@@ -119,7 +119,7 @@ public final class cw implements kmb, si7, rib {
         this.c = false;
     }
 
-    @Override // si7
+    @Override // ti7
     public final View e() {
         View view = this.M;
         return view != null ? view : this.b;

@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class rt implements RequestDelegate {
     public final /* synthetic */ byte a = 6;
@@ -62,24 +62,24 @@ public final /* synthetic */ class rt implements RequestDelegate {
                 vnb vnbVar = (vnb) obj4;
                 byte[] bArr = (byte[]) obj3;
                 e eVar = (e) obj2;
-                en9 en9Var = (en9) obj;
+                dn9 dn9Var = (dn9) obj;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        hl.d3(new fb9(eVar, context, vnbVar, en9Var, (byte) 1), 200L);
+                        hl.d3(new fb9(eVar, context, vnbVar, dn9Var, (byte) 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            hl.d3(new a39(eVar, i, en9Var, (byte) 1), 200L);
+                            hl.d3(new a39(eVar, i, dn9Var, (byte) 1), 200L);
                             break;
                         }
                     } else {
-                        hl.d3(new fb9(eVar, context, vnbVar, en9Var, (byte) 0), 200L);
+                        hl.d3(new fb9(eVar, context, vnbVar, dn9Var, (byte) 0), 200L);
                         break;
                     }
                 } else {
-                    hl.c3(new z87(tLObject, (Object) context, (Object) vnbVar, (Object) bArr, (Object) eVar, (Object) en9Var, (byte) 22));
+                    hl.c3(new z87(tLObject, (Object) context, (Object) vnbVar, (Object) bArr, (Object) eVar, (Object) dn9Var, (byte) 22));
                     break;
                 }
                 break;
@@ -122,12 +122,12 @@ public final /* synthetic */ class rt implements RequestDelegate {
         this.e = str;
     }
 
-    public /* synthetic */ rt(Context context, vnb vnbVar, byte[] bArr, e eVar, en9 en9Var, int i) {
+    public /* synthetic */ rt(Context context, vnb vnbVar, byte[] bArr, e eVar, dn9 dn9Var, int i) {
         this.c = context;
         this.d = vnbVar;
         this.e = bArr;
         this.f = eVar;
-        this.g = en9Var;
+        this.g = dn9Var;
         this.b = i;
     }
 

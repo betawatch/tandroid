@@ -16,7 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class rdd {
     public static final String v;
@@ -27,7 +27,7 @@ public final class rdd {
     public long e;
     public j07 f;
     public Long g;
-    public i09 h;
+    public j09 h;
     public int i;
     public final ned j;
     public final ned k;
@@ -188,9 +188,9 @@ public final class rdd {
     }
 
     public final void f() {
-        i09 i09Var = this.h;
-        if (i09Var != null) {
-            v99 v99Var = (v99) i09Var.b;
+        j09 j09Var = this.h;
+        if (j09Var != null) {
+            v99 v99Var = (v99) j09Var.b;
             Iterator it = v99Var.h.iterator();
             if (it.hasNext()) {
                 throw qu6.l(it);
@@ -203,9 +203,9 @@ public final class rdd {
     }
 
     public final void g() {
-        i09 i09Var = this.h;
-        if (i09Var != null) {
-            v99 v99Var = (v99) i09Var.b;
+        j09 j09Var = this.h;
+        if (j09Var != null) {
+            v99 v99Var = (v99) j09Var.b;
             Iterator it = v99Var.h.iterator();
             if (it.hasNext()) {
                 throw qu6.l(it);
@@ -218,9 +218,9 @@ public final class rdd {
     }
 
     public final void h() {
-        i09 i09Var = this.h;
-        if (i09Var != null) {
-            v99 v99Var = (v99) i09Var.b;
+        j09 j09Var = this.h;
+        if (j09Var != null) {
+            v99 v99Var = (v99) j09Var.b;
             Iterator it = v99Var.h.iterator();
             if (it.hasNext()) {
                 throw qu6.l(it);
@@ -233,9 +233,9 @@ public final class rdd {
     }
 
     public final void i() {
-        i09 i09Var = this.h;
-        if (i09Var != null) {
-            v99 v99Var = (v99) i09Var.b;
+        j09 j09Var = this.h;
+        if (j09Var != null) {
+            v99 v99Var = (v99) j09Var.b;
             Iterator it = v99Var.j.values().iterator();
             if (!it.hasNext()) {
                 Iterator it2 = v99Var.h.iterator();

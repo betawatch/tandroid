@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class mo2 implements ncc, nr7, occ {
     public final /* synthetic */ byte a;
@@ -147,7 +147,7 @@ public final /* synthetic */ class mo2 implements ncc, nr7, occ {
                                     eVar.presentFragment(new zu1(bundle));
                                 } else if (xc2.a(chat)) {
                                     zu1 zu1Var2 = new zu1(bundle);
-                                    ro4.a(zu1Var2, if7.a(j, uc7.s1(xo2Var.a).X3.getLong(qu6.n(chat.id, "forumlasttopic"), 1L)));
+                                    ro4.a(zu1Var2, jf7.a(j, uc7.s1(xo2Var.a).Y3.getLong(qu6.n(chat.id, "forumlasttopic"), 1L)));
                                     eVar.presentFragment(zu1Var2);
                                 } else {
                                     eVar.presentFragment(new tzb(bundle));

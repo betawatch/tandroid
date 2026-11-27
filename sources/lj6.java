@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class lj6 extends FrameLayout implements snb {
     public TLRPC.FileLocation E;
@@ -206,7 +206,7 @@ public final class lj6 extends FrameLayout implements snb {
                     TLRPC.ChatPhoto chatPhoto = chat.photo;
                     TLRPC.FileLocation fileLocation3 = chatPhoto != null ? chatPhoto.photo_small : null;
                     if (i != 0) {
-                        int i2 = uc7.r5;
+                        int i2 = uc7.s5;
                         boolean z3 = (i & 2) != 0 && ((fileLocation = this.E) == null ? fileLocation3 != null : !(fileLocation3 != null && fileLocation.volume_id == fileLocation3.volume_id && fileLocation.local_id == fileLocation3.local_id));
                         if (z3 || this.s != null || (r10 = this.x) == null || (i & 1) == 0) {
                             str = null;
@@ -263,7 +263,7 @@ public final class lj6 extends FrameLayout implements snb {
             TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
             TLRPC.FileLocation fileLocation4 = userProfilePhoto != null ? userProfilePhoto.photo_small : null;
             if (i != 0) {
-                int i4 = uc7.r5;
+                int i4 = uc7.s5;
                 boolean z4 = (i & 2) != 0 && ((fileLocation2 = this.E) == null ? fileLocation4 != null : !(fileLocation4 != null && fileLocation2.volume_id == fileLocation4.volume_id && fileLocation2.local_id == fileLocation4.local_id));
                 if (!z4 && (i & 4) != 0) {
                     TLRPC.UserStatus userStatus2 = user.status;

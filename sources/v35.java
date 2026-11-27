@@ -32,7 +32,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class v35 implements pcc {
     public final /* synthetic */ byte a;
@@ -45,6 +45,7 @@ public final /* synthetic */ class v35 implements pcc {
         this.c = obj2;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:106:0x02f7  */
     /* JADX WARN: Removed duplicated region for block: B:109:0x030d  */
     /* JADX WARN: Removed duplicated region for block: B:112:0x032f  */
@@ -73,6 +74,7 @@ public final /* synthetic */ class v35 implements pcc {
         byte b2 = 9;
         byte b3 = 3;
         int i2 = 0;
+        Object[] objArr = 0;
         Object obj2 = this.c;
         Object obj3 = this.b;
         switch (b) {
@@ -140,26 +142,26 @@ public final /* synthetic */ class v35 implements pcc {
                 }
                 break;
             case 8:
-                pi7 pi7Var = (pi7) obj3;
+                qi7 qi7Var = (qi7) obj3;
                 String str = (String) obj2;
                 List<TLRPC.User> list = (List) obj;
                 HashSet hashSet = new HashSet();
-                ArrayList arrayList2 = pi7Var.a2;
+                ArrayList arrayList2 = qi7Var.a2;
                 arrayList2.clear();
                 if (list != null) {
                     for (TLRPC.User user2 : list) {
-                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && pi7Var.Z0(user2)) {
+                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && qi7Var.Z0(user2)) {
                             arrayList2.add(user2);
                             hashSet.add(Long.valueOf(user2.id));
                         }
                     }
                 }
-                Boolean bool = pi7Var.m2;
+                Boolean bool = qi7Var.m2;
                 if (bool == null || !bool.booleanValue()) {
-                    pi7Var.c1(true, true);
+                    qi7Var.c1(true, true);
                     break;
                 } else {
-                    v35 v35Var = new v35(pi7Var, hashSet, b2);
+                    v35 v35Var = new v35(qi7Var, hashSet, b2);
                     uc7 s1 = uc7.s1(yac.t0);
                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(yac.t0);
                     if (str == null || str.isEmpty()) {
@@ -170,44 +172,44 @@ public final /* synthetic */ class v35 implements pcc {
                         tL_contacts_search.limit = 50;
                         i2 = connectionsManager.sendRequest(tL_contacts_search, new ql(s1, v35Var, b3));
                     }
-                    pi7Var.h2 = i2;
+                    qi7Var.h2 = i2;
                     break;
                 }
                 break;
             case 9:
-                pi7 pi7Var2 = (pi7) obj3;
+                qi7 qi7Var2 = (qi7) obj3;
                 HashSet hashSet2 = (HashSet) obj2;
                 List<TLRPC.User> list2 = (List) obj;
                 if (list2 != null) {
                     for (TLRPC.User user3 : list2) {
-                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && pi7Var2.Z0(user3)) {
-                            pi7Var2.a2.add(user3);
+                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && qi7Var2.Z0(user3)) {
+                            qi7Var2.a2.add(user3);
                             hashSet2.add(Long.valueOf(user3.id));
                         }
                     }
                 }
-                pi7Var2.c1(true, true);
+                qi7Var2.c1(true, true);
                 break;
             case 10:
-                rl7 rl7Var = (rl7) obj3;
+                sl7 sl7Var = (sl7) obj3;
                 String str2 = (String) obj2;
                 TLRPC.User user4 = (TLRPC.User) obj;
                 if (user4 == null) {
-                    rl7Var.K1.setImageDrawable(null);
-                    rl7Var.t1.setText(hl.E2(hl.N2(ob6.M0(2131748032, null), -1, 0, new t87(rl7Var, str2, (byte) 28), null), true, hl.L(2.6666667f), hl.L(1.0f)));
+                    sl7Var.K1.setImageDrawable(null);
+                    sl7Var.t1.setText(hl.E2(hl.N2(ob6.M0(2131748032, null), -1, 0, new t87(sl7Var, str2, (byte) 29), null), true, hl.L(2.6666667f), hl.L(1.0f)));
                 } else {
-                    Drawable mutate = rl7Var.getContext().getResources().getDrawable(R.drawable.msg_text_check).mutate();
-                    yob.x(rl7Var.K1, mutate, aob.v6, rl7Var.J0, PorterDuff.Mode.SRC_IN);
-                    rl7Var.K1.setImageDrawable(mutate);
+                    Drawable mutate = sl7Var.getContext().getResources().getDrawable(R.drawable.msg_text_check).mutate();
+                    yob.x(sl7Var.K1, mutate, aob.v6, sl7Var.J0, PorterDuff.Mode.SRC_IN);
+                    sl7Var.K1.setImageDrawable(mutate);
                     boolean z2 = user4.contact;
-                    p66 p66Var = rl7Var.t1;
+                    p66 p66Var = sl7Var.t1;
                     if (z2) {
-                        p66Var.setText(hl.E2(hl.N2(ob6.M0(2131748033, null), -1, 0, new t87(rl7Var, user4, (byte) 29), null), true, hl.L(2.6666667f), hl.L(1.0f)));
+                        p66Var.setText(hl.E2(hl.N2(ob6.M0(2131748033, null), -1, 0, new ql7(sl7Var, user4, objArr == true ? 1 : 0), null), true, hl.L(2.6666667f), hl.L(1.0f)));
                     } else {
                         p66Var.setText(ob6.M0(2131748031, null));
                     }
                 }
-                rl7Var.J0(false);
+                sl7Var.J0(false);
                 break;
             case 11:
                 ArrayList arrayList3 = (ArrayList) obj3;
@@ -250,91 +252,91 @@ public final /* synthetic */ class v35 implements pcc {
                 ((vt7) obj3).f0((View) obj2, (String) obj);
                 break;
             case 15:
-                vab vabVar = (vab) obj3;
-                qbb qbbVar = (qbb) obj2;
-                int max = Math.max(0, Math.max(((Integer) obj).intValue() - qbbVar.getBottomPadding2(), vabVar.h2 - qbbVar.getPaddingUnderContainer()));
-                vabVar.R();
+                wab wabVar = (wab) obj3;
+                rbb rbbVar = (rbb) obj2;
+                int max = Math.max(0, Math.max(((Integer) obj).intValue() - rbbVar.getBottomPadding2(), wabVar.h2 - rbbVar.getPaddingUnderContainer()));
+                wabVar.R();
                 if (max > 0) {
-                    h44 h44Var = vabVar.t0;
+                    h44 h44Var = wabVar.t0;
                     if ((h44Var instanceof rlb) && ((rlb) h44Var).getEditText().isFocused()) {
                         z = true;
-                        animatorSet = vabVar.x1;
+                        animatorSet = wabVar.x1;
                         if (animatorSet != null) {
                             animatorSet.cancel();
                         }
-                        vabVar.x1 = new AnimatorSet();
+                        wabVar.x1 = new AnimatorSet();
                         arrayList = new ArrayList();
-                        gx7 gx7Var = vabVar.N0;
+                        gx7 gx7Var = wabVar.N0;
                         Property property = View.TRANSLATION_Y;
                         arrayList.add(ObjectAnimator.ofFloat(gx7Var, (Property<gx7, Float>) property, max <= 0 ? Math.min(0.0f, ((-max) / 2.0f) - hl.L(8.0f)) : 0.0f));
-                        arrayList.add(ObjectAnimator.ofFloat(vabVar.D0, (Property<ax7, Float>) property, max <= 0 ? Math.min(0, hl.L(40.0f) + (-max)) : 0));
-                        g7 g7Var = vabVar.G0;
+                        arrayList.add(ObjectAnimator.ofFloat(wabVar.D0, (Property<ax7, Float>) property, max <= 0 ? Math.min(0, hl.L(40.0f) + (-max)) : 0));
+                        g7 g7Var = wabVar.G0;
                         Property property2 = View.ALPHA;
                         arrayList.add(ObjectAnimator.ofFloat(g7Var, (Property<g7, Float>) property2, !z ? 0.0f : 1.0f));
-                        arrayList.add(ObjectAnimator.ofFloat(vabVar.l0, (Property<iv7, Float>) property2, (z || vabVar.l1) ? 1.0f : 0.0f));
-                        dv7 dv7Var = vabVar.k0;
-                        if (z && !vabVar.l1) {
+                        arrayList.add(ObjectAnimator.ofFloat(wabVar.l0, (Property<iv7, Float>) property2, (z || wabVar.l1) ? 1.0f : 0.0f));
+                        dv7 dv7Var = wabVar.k0;
+                        if (z && !wabVar.l1) {
                             f = 0.0f;
                         }
                         arrayList.add(ObjectAnimator.ofFloat(dv7Var, (Property<dv7, Float>) property2, f));
-                        vabVar.S0();
-                        vabVar.x1.playTogether(arrayList);
-                        AnimatorSet animatorSet2 = vabVar.x1;
+                        wabVar.S0();
+                        wabVar.x1.playTogether(arrayList);
+                        AnimatorSet animatorSet2 = wabVar.x1;
                         if (z) {
                             animatorSet2.setDuration(350L);
-                            vabVar.x1.setInterpolator(k43.h);
+                            wabVar.x1.setInterpolator(k43.h);
                         } else {
                             animatorSet2.setDuration(250L);
-                            vabVar.x1.setInterpolator(hb.w);
+                            wabVar.x1.setInterpolator(hb.w);
                         }
-                        vabVar.x1.start();
+                        wabVar.x1.start();
                         for (i = 0; i < arrayList.size(); i++) {
                             ((Animator) arrayList.get(i)).setDuration(z ? 350L : 250L);
                             ((Animator) arrayList.get(i)).setInterpolator(z ? k43.h : hb.w);
                             ((Animator) arrayList.get(i)).start();
                         }
                         if (!z) {
-                            vabVar.O0(false);
+                            wabVar.O0(false);
                         }
-                        if (vabVar.R1 != z) {
-                            vabVar.c0();
+                        if (wabVar.R1 != z) {
+                            wabVar.c0();
                         }
-                        vabVar.R1 = z;
+                        wabVar.R1 = z;
                         break;
                     }
                 }
                 z = false;
-                animatorSet = vabVar.x1;
+                animatorSet = wabVar.x1;
                 if (animatorSet != null) {
                 }
-                vabVar.x1 = new AnimatorSet();
+                wabVar.x1 = new AnimatorSet();
                 arrayList = new ArrayList();
-                gx7 gx7Var2 = vabVar.N0;
+                gx7 gx7Var2 = wabVar.N0;
                 Property property3 = View.TRANSLATION_Y;
                 arrayList.add(ObjectAnimator.ofFloat(gx7Var2, (Property<gx7, Float>) property3, max <= 0 ? Math.min(0.0f, ((-max) / 2.0f) - hl.L(8.0f)) : 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(vabVar.D0, (Property<ax7, Float>) property3, max <= 0 ? Math.min(0, hl.L(40.0f) + (-max)) : 0));
-                g7 g7Var2 = vabVar.G0;
+                arrayList.add(ObjectAnimator.ofFloat(wabVar.D0, (Property<ax7, Float>) property3, max <= 0 ? Math.min(0, hl.L(40.0f) + (-max)) : 0));
+                g7 g7Var2 = wabVar.G0;
                 Property property22 = View.ALPHA;
                 arrayList.add(ObjectAnimator.ofFloat(g7Var2, (Property<g7, Float>) property22, !z ? 0.0f : 1.0f));
-                arrayList.add(ObjectAnimator.ofFloat(vabVar.l0, (Property<iv7, Float>) property22, (z || vabVar.l1) ? 1.0f : 0.0f));
-                dv7 dv7Var2 = vabVar.k0;
+                arrayList.add(ObjectAnimator.ofFloat(wabVar.l0, (Property<iv7, Float>) property22, (z || wabVar.l1) ? 1.0f : 0.0f));
+                dv7 dv7Var2 = wabVar.k0;
                 if (z) {
                     f = 0.0f;
                 }
                 arrayList.add(ObjectAnimator.ofFloat(dv7Var2, (Property<dv7, Float>) property22, f));
-                vabVar.S0();
-                vabVar.x1.playTogether(arrayList);
-                AnimatorSet animatorSet22 = vabVar.x1;
+                wabVar.S0();
+                wabVar.x1.playTogether(arrayList);
+                AnimatorSet animatorSet22 = wabVar.x1;
                 if (z) {
                 }
-                vabVar.x1.start();
+                wabVar.x1.start();
                 while (i < arrayList.size()) {
                 }
                 if (!z) {
                 }
-                if (vabVar.R1 != z) {
+                if (wabVar.R1 != z) {
                 }
-                vabVar.R1 = z;
+                wabVar.R1 = z;
                 break;
             case 16:
                 dx7 dx7Var = (dx7) obj3;
@@ -407,12 +409,12 @@ public final /* synthetic */ class v35 implements pcc {
                 profileActivity2.getClass();
                 ((id) obj2).dismiss();
                 if (((Boolean) obj).booleanValue()) {
-                    rbb C = rbb.C(profileActivity2.getParentActivity(), profileActivity2.getCurrentAccount());
+                    sbb C = sbb.C(profileActivity2.getParentActivity(), profileActivity2.getCurrentAccount());
                     long a2 = profileActivity2.a();
                     C.O = a2;
-                    hbb hbbVar = C.d1;
-                    if (hbbVar != null) {
-                        hbbVar.setDialogId(a2);
+                    ibb ibbVar = C.d1;
+                    if (ibbVar != null) {
+                        ibbVar.setDialogId(a2);
                     }
                     C.Q(null);
                     break;
@@ -463,11 +465,11 @@ public final /* synthetic */ class v35 implements pcc {
                 cgaVar.f(true);
                 break;
             case 24:
-                f09 f09Var = (f09) obj3;
-                c09 c09Var = (c09) obj2;
+                g09 g09Var = (g09) obj3;
+                d09 d09Var = (d09) obj2;
                 Bitmap bitmap2 = (Bitmap) obj;
-                if (!c09Var.G && c09Var.e == null) {
-                    f09Var.E0(c09Var, bitmap2);
+                if (!d09Var.G && d09Var.e == null) {
+                    g09Var.E0(d09Var, bitmap2);
                     break;
                 }
                 break;
@@ -476,12 +478,12 @@ public final /* synthetic */ class v35 implements pcc {
                 break;
             case 26:
                 dg9 dg9Var = (dg9) obj3;
-                nl6 nl6Var = (nl6) obj2;
+                Object obj4 = (nl6) obj2;
                 String str7 = (String) obj;
                 if (!TextUtils.isEmpty(str7)) {
                     Editable text = dg9Var.getText();
-                    int spanStart = text.getSpanStart(nl6Var);
-                    int spanEnd = text.getSpanEnd(nl6Var);
+                    int spanStart = text.getSpanStart(obj4);
+                    int spanEnd = text.getSpanEnd(obj4);
                     if (spanStart >= 0 && spanEnd >= 0 && (a = nl6.a(str7, dg9Var.getCurrentTextColor(), hl.L(xea.S0 + 4))) != null) {
                         boolean z3 = dg9Var.n2;
                         if (z3) {

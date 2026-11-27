@@ -15,7 +15,7 @@ import com.google.android.gms.tasks.Task;
 import java.lang.reflect.Field;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class md1 extends v8a {
     public static final he6 m = new he6("CastSession", null);
@@ -44,7 +44,7 @@ public final class md1 extends v8a {
         if (f != null) {
             try {
                 ycdVar = mbd.b(context).Z(ld1Var, f, kadVar);
-            } catch (RemoteException | zg7 e) {
+            } catch (ah7 | RemoteException e) {
                 mbd.a.a(e, "Unable to call %s on %s.", "newCastSessionImpl", hcd.class.getSimpleName());
             }
         }

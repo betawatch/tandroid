@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cc extends m15 implements fn7 {
     public final long S;
@@ -107,9 +107,9 @@ public final class cc extends m15 implements fn7 {
         arrayList.add(ac.i(R.drawable.menu_feature_links2, ob6.M0(2131753140, null), ob6.M0(2131753141, null)));
         arrayList.add(b8c.B(1, null));
         arrayList.add(b8c.u(ob6.M0(2131754337, null)));
-        int f = getMessagesController().k4.L2.f();
+        int f = getMessagesController().l4.L2.f();
         int i = this.b0.commission_permille;
-        int f2 = getMessagesController().k4.M2.f();
+        int f2 = getMessagesController().l4.M2.f();
         sb sbVar = new sb((byte) 0);
         ob obVar = new ob(this, (byte) 1);
         b8c b8cVar2 = new b8c(15);
@@ -183,7 +183,7 @@ public final class cc extends m15 implements fn7 {
 
     public final TL_payments.starRefProgram E0() {
         TL_payments.starRefProgram starrefprogram = new TL_payments.starRefProgram();
-        starrefprogram.commission_permille = Utilities.j(50, getMessagesController().k4.M2.f(), getMessagesController().k4.L2.f());
+        starrefprogram.commission_permille = Utilities.j(50, getMessagesController().l4.M2.f(), getMessagesController().l4.L2.f());
         starrefprogram.duration_months = 1;
         return starrefprogram;
     }
@@ -203,7 +203,7 @@ public final class cc extends m15 implements fn7 {
         TLRPC.UserFull Y1 = messagesController.Y1(j);
         if (Y1 != null) {
             Y1.starref_program = starrefprogram;
-            getMessagesStorage().g2(Y1, false);
+            getMessagesStorage().l2(Y1, false);
             jn7.f(this.currentAccount).k(jn7.E0, Long.valueOf(j), Y1);
         }
         C0(false);
@@ -297,7 +297,7 @@ public final class cc extends m15 implements fn7 {
             starrefprogram2.flags |= 2;
             starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? jn7.W4 : 86400);
             Y1.starref_program = starrefprogram;
-            getMessagesStorage().g2(Y1, false);
+            getMessagesStorage().l2(Y1, false);
             jn7.f(this.currentAccount).k(jn7.E0, Long.valueOf(j), Y1);
         }
         C0(true);

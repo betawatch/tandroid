@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class axa implements bxa {
     public final int a;
@@ -72,7 +72,7 @@ public final class axa implements bxa {
                 getsavedstargifts2.peer = uc7.s1(i).j1(j2);
             }
             getsavedstargifts2.offset = z ? "" : this.k;
-            getsavedstargifts2.limit = z ? Math.max(uc7.s1(i).k4.R1.f(), 15) : 30;
+            getsavedstargifts2.limit = z ? Math.max(uc7.s1(i).l4.R1.f(), 15) : 30;
             getsavedstargifts = getsavedstargifts2;
             if (this.c) {
                 getsavedstargifts2.flags |= 64;
@@ -374,13 +374,13 @@ public final class axa implements bxa {
                     return z3;
                 }
             } else if (z) {
-                if (i.size() + 1 <= uc7.s1(i2).k4.R1.f()) {
+                if (i.size() + 1 <= uc7.s1(i2).l4.R1.f()) {
                     z3 = false;
                 } else {
                     if (!z2) {
                         return true;
                     }
-                    while (i.size() > 0 && i.size() + 1 > uc7.s1(i2).k4.R1.f()) {
+                    while (i.size() > 0 && i.size() + 1 > uc7.s1(i2).l4.R1.f()) {
                         ((TL_stars.SavedStarGift) qd4.l(1, i)).pinned_to_top = false;
                     }
                     z3 = true;

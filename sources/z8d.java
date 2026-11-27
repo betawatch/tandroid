@@ -35,7 +35,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, rb2, hj, y17, s84, rv9, a43, ra6 {
     public static z8d c;
@@ -75,7 +75,7 @@ public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, r
             case 24:
                 break;
             case 26:
-                this.b = new k09(lu4.l, b2);
+                this.b = new l09(lu4.l, b2);
                 break;
             default:
                 ow8 ow8Var = ow8.c;
@@ -312,12 +312,12 @@ public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, r
                 Log.w("BiometricFragment", "Failure not sent to client. Client is not awaiting a result.");
             }
             mj0 mj0Var2 = bj0Var.m0;
-            qj7 qj7Var = mj0Var2.s;
-            if (qj7Var == null) {
-                qj7Var = new qj7();
-                mj0Var2.s = qj7Var;
+            rj7 rj7Var = mj0Var2.s;
+            if (rj7Var == null) {
+                rj7Var = new rj7();
+                mj0Var2.s = rj7Var;
             }
-            mj0.f(qj7Var, Boolean.FALSE);
+            mj0.f(rj7Var, Boolean.FALSE);
         }
     }
 
@@ -378,7 +378,7 @@ public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, r
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final v93 X0(vh4 vh4Var) {
-        pg7 pg7Var;
+        qg7 qg7Var;
         r44 r44Var;
         int i;
         int f;
@@ -557,7 +557,7 @@ public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, r
                 iArr2[i50] = bArr3[i50] & 255;
             }
             try {
-                int n2 = ((k09) this.b).n2(iArr2, bArr3.length - b3);
+                int n2 = ((l09) this.b).n2(iArr2, bArr3.length - b3);
                 for (int i51 = 0; i51 < b3; i51++) {
                     bArr3[i51] = (byte) iArr2[i51];
                 }
@@ -590,32 +590,32 @@ public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, r
         while (true) {
             try {
                 int d2 = sj0Var.d();
-                pg7 pg7Var2 = pg7.c;
+                qg7 qg7Var2 = qg7.c;
                 if (d2 < 4 || (f2 = sj0Var.f(4)) == 0) {
-                    pg7Var = pg7Var2;
+                    qg7Var = qg7Var2;
                 } else if (f2 == 1) {
-                    pg7Var = pg7.d;
+                    qg7Var = qg7.d;
                 } else if (f2 == 2) {
-                    pg7Var = pg7.e;
+                    qg7Var = qg7.e;
                 } else if (f2 == 3) {
-                    pg7Var = pg7.f;
+                    qg7Var = qg7.f;
                 } else if (f2 == 4) {
-                    pg7Var = pg7.h;
+                    qg7Var = qg7.h;
                 } else if (f2 == 5) {
-                    pg7Var = pg7.s;
+                    qg7Var = qg7.s;
                 } else if (f2 == 7) {
-                    pg7Var = pg7.n;
+                    qg7Var = qg7.n;
                 } else if (f2 == 8) {
-                    pg7Var = pg7.r;
+                    qg7Var = qg7.r;
                 } else if (f2 == 9) {
-                    pg7Var = pg7.w;
+                    qg7Var = qg7.w;
                 } else {
                     if (f2 != 13) {
                         throw new IllegalArgumentException();
                     }
-                    pg7Var = pg7.x;
+                    qg7Var = qg7.x;
                 }
-                int ordinal = pg7Var.ordinal();
+                int ordinal = qg7Var.ordinal();
                 if (ordinal != 0) {
                     if (ordinal == 3) {
                         r44Var = r44Var2;
@@ -658,8 +658,8 @@ public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, r
                         z3 = true;
                         z4 = true;
                     } else if (ordinal != 9) {
-                        int f4 = sj0Var.f(pg7Var.a(B));
-                        int ordinal2 = pg7Var.ordinal();
+                        int f4 = sj0Var.f(qg7Var.a(B));
+                        int ordinal2 = qg7Var.ordinal();
                         r44Var = r44Var2;
                         if (ordinal2 == 1) {
                             wm7.e(sj0Var, sb, f4);
@@ -676,13 +676,13 @@ public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, r
                     } else {
                         r44Var = r44Var2;
                         int f5 = sj0Var.f(4);
-                        int f6 = sj0Var.f(pg7Var.a(B));
+                        int f6 = sj0Var.f(qg7Var.a(B));
                         i = 1;
                         if (f5 == 1) {
                             wm7.c(sj0Var, sb, f6);
                         }
                     }
-                    if (pg7Var != pg7Var2) {
+                    if (qg7Var != qg7Var2) {
                         v93 v93Var = new v93(bArr2, sb.toString(), arrayList.isEmpty() ? null : arrayList, r44Var.toString(), i54, i55, jk1Var != null ? z2 ? 4 : z4 ? 6 : 2 : z2 ? 3 : z4 ? 5 : i);
                         v93Var.d = Integer.valueOf(i47);
                         return v93Var;
@@ -692,7 +692,7 @@ public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, r
                     r44Var = r44Var2;
                 }
                 i = 1;
-                if (pg7Var != pg7Var2) {
+                if (qg7Var != qg7Var2) {
                 }
             } catch (IllegalArgumentException unused2) {
                 throw lo4.a();
@@ -1004,12 +1004,12 @@ public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, r
     }
 
     @Override // hcb
-    public final void x(long j, int i, x58 x58Var) {
+    public final void x(long j, int i, y58 y58Var) {
         j81 j81Var = (j81) this.b;
         if (j81Var.b == null) {
-            x58Var.run();
+            y58Var.run();
         }
-        j81Var.b.post(x58Var);
+        j81Var.b.post(y58Var);
     }
 
     @Override // v76
@@ -1212,7 +1212,7 @@ public final class z8d implements ka1, v76, uv2, be8, cr7, bv9, l12, hcb, jc1, r
     }
 
     @Override // ka1
-    public final void p0(ei7 ei7Var) {
+    public final void p0(fi7 fi7Var) {
     }
 
     @Override // a43

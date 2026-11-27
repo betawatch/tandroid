@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ed9 implements bxa {
     public boolean A;
@@ -90,11 +90,11 @@ public final class ed9 implements bxa {
     }
 
     public final boolean f() {
-        return (this.y || this.w || l() || !uc7.s1(this.a).k4.s.f || !uc7.s1(this.a).k4.v0.f) ? false : true;
+        return (this.y || this.w || l() || !uc7.s1(this.a).l4.s.f || !uc7.s1(this.a).l4.v0.f) ? false : true;
     }
 
     public final boolean g() {
-        return !"hidden".equals(hr.a(uc7.s1(this.a).k4.u));
+        return !"hidden".equals(hr.a(uc7.s1(this.a).l4.u));
     }
 
     @Override // bxa
@@ -103,7 +103,7 @@ public final class ed9 implements bxa {
     }
 
     public final boolean h() {
-        hr hrVar = uc7.s1(this.a).k4;
+        hr hrVar = uc7.s1(this.a).l4;
         return hrVar.v0.f && !"hidden".equals(hr.a(hrVar.v));
     }
 
@@ -121,7 +121,7 @@ public final class ed9 implements bxa {
     }
 
     public final void j() {
-        hr hrVar = uc7.s1(this.a).k4;
+        hr hrVar = uc7.s1(this.a).l4;
         this.s = "default".equals(hr.a(hrVar.u));
         this.t = "default".equals(hr.a(hrVar.v)) && h();
         boolean f = f();
@@ -303,7 +303,7 @@ public final class ed9 implements bxa {
                 k(getresalestargiftsmerged.attributes, !(arrayList5.size() > 1));
                 getresalestargifts = getresalestargiftsmerged;
             }
-            this.B = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new ol7(this, str, (byte) 17));
+            this.B = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new pl7(this, str, (byte) 17));
         }
     }
 

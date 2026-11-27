@@ -21,9 +21,9 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 import org.xml.sax.Attributes;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class rj2 implements lx2, fzc, tq2, h4e, y2c, e30, xy1, j30, tw8, rb2, up5, mu8, bl0, yba, d23 {
+public final class rj2 implements lx2, fzc, tq2, h4e, y2c, e30, xy1, j30, tw8, rb2, up5, mu8, bl0, zba, d23 {
     public final /* synthetic */ byte a;
     public static final /* synthetic */ rj2 b = new rj2(1);
     public static final String[] c = new String[0];
@@ -558,7 +558,7 @@ public final class rj2 implements lx2, fzc, tq2, h4e, y2c, e30, xy1, j30, tw8, r
         m01.u(wb2Var.getContext(), str);
     }
 
-    @Override // yba
+    @Override // zba
     public final hba v0(z3f z3fVar, JSONObject jSONObject) {
         jSONObject.optInt("settings_version", 0);
         int optInt = jSONObject.optInt("cache_duration", 3600);

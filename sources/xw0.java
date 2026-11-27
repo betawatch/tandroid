@@ -41,7 +41,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class xw0 extends Dialog implements fn7, dy0 {
     public static final HashSet b1 = new HashSet();
@@ -203,7 +203,7 @@ public final class xw0 extends Dialog implements fn7, dy0 {
         yp0Var.setAlpha(0.0f);
         byte b3 = 8;
         yp0Var.setVisibility(8);
-        boolean z = !uc7.s1(this.I).k4.N1.f && xea.o() >= 2;
+        boolean z = !uc7.s1(this.I).l4.N1.f && xea.o() >= 2;
         this.g0 = z;
         yp0Var.setParentRenderNode(z ? ow0Var.getRenderNode() : null);
         ww0Var.addView(yp0Var, tre.e(-1, -1, jn7.D1));
@@ -367,7 +367,7 @@ public final class xw0 extends Dialog implements fn7, dy0 {
             return;
         }
         this.f0 = z;
-        this.g0 = z3 && !uc7.s1(this.I).k4.N1.f && xea.o() >= 2;
+        this.g0 = z3 && !uc7.s1(this.I).l4.N1.f && xea.o() >= 2;
         ValueAnimator valueAnimator = this.W0;
         if (valueAnimator != null) {
             valueAnimator.cancel();

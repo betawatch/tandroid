@@ -5,7 +5,7 @@ import java.math.BigInteger;
 import java.math.MathContext;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class oj {
     public final pj a;
@@ -45,10 +45,10 @@ public final class oj {
     public static oj k(double d, pj pjVar) {
         pj pjVar2 = pj.b;
         if (pjVar == pjVar2) {
-            return new oj((long) ((d / uc7.s1(yac.t0).k4.k.i) * 1.0E9d), pjVar2).o(2);
+            return new oj((long) ((d / uc7.s1(yac.t0).l4.k.i) * 1.0E9d), pjVar2).o(2);
         }
         pj pjVar3 = pj.a;
-        return pjVar == pjVar3 ? new oj((long) (((d * 100000.0d) / uc7.s1(yac.t0).k4.z3.i) * 1.0E9d), pjVar3).o(0) : h(0L, pjVar);
+        return pjVar == pjVar3 ? new oj((long) (((d * 100000.0d) / uc7.s1(yac.t0).l4.z3.i) * 1.0E9d), pjVar3).o(0) : h(0L, pjVar);
     }
 
     public static oj m(TL_stars.StarsAmount starsAmount) {
@@ -114,10 +114,10 @@ public final class oj {
     public final double f() {
         pj pjVar = this.a;
         if (pjVar == pj.a) {
-            return ((c() / 1000.0d) * uc7.s1(yac.t0).k4.z3.i) / 100.0d;
+            return ((c() / 1000.0d) * uc7.s1(yac.t0).l4.z3.i) / 100.0d;
         }
         if (pjVar == pj.b) {
-            return c() * uc7.s1(yac.t0).k4.k.i;
+            return c() * uc7.s1(yac.t0).l4.k.i;
         }
         return 0.0d;
     }

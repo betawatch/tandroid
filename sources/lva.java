@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class lva extends View {
     public float E;
@@ -36,7 +36,7 @@ public final class lva extends View {
     public final mm s;
     public final hn w;
     public boolean x;
-    public final ida y;
+    public final kba y;
 
     public lva(zu1 zu1Var) {
         super(zu1Var.getParentActivity());
@@ -60,7 +60,7 @@ public final class lva extends View {
         hnVar.u(-1);
         hnVar.b = 17;
         this.I = new kva(this, (byte) 0);
-        this.y = new ida((Object) this, (Object) zu1Var, (byte) 21);
+        this.y = new kba((Object) this, (Object) zu1Var, (byte) 22);
     }
 
     private r47 getMessageObject() {
@@ -95,7 +95,7 @@ public final class lva extends View {
                 TLRPC.Chat M0 = zu1Var.getMessagesController().M0(Long.valueOf(-a));
                 str = M0 == null ? "" : M0.title;
             }
-            new dza(zu1Var.getParentActivity(), zu1Var.getResourceProvider(), B, 5, str, new y09((Object) this, (Object) v, (Object) messageObject, B, (byte) 6), 0L).show();
+            new dza(zu1Var.getParentActivity(), zu1Var.getResourceProvider(), B, 5, str, new z09((Object) this, (Object) v, (Object) messageObject, B, (byte) 6), 0L).show();
         }
     }
 
@@ -385,7 +385,7 @@ public final class lva extends View {
             return false;
         }
         int action = motionEvent.getAction();
-        ida idaVar = this.y;
+        kba kbaVar = this.y;
         if (action == 0) {
             if (this.h.contains(motionEvent.getX(), motionEvent.getY())) {
                 this.x = true;
@@ -393,8 +393,8 @@ public final class lva extends View {
                 if (l != null) {
                     l.X.c(true);
                 }
-                hl.r(idaVar);
-                hl.d3(idaVar, ViewConfiguration.getLongPressTimeout());
+                hl.r(kbaVar);
+                hl.d3(kbaVar, ViewConfiguration.getLongPressTimeout());
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
             u49 l2 = reactionsLayoutInBubble.l("stars");
@@ -405,7 +405,7 @@ public final class lva extends View {
                 l2.X.c(false);
             }
             this.x = false;
-            hl.r(idaVar);
+            hl.r(kbaVar);
         }
         return this.x;
     }

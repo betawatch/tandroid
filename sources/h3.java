@@ -6,15 +6,15 @@ import java.util.NavigableSet;
 import java.util.SortedMap;
 import java.util.SortedSet;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class h3 extends k3 implements NavigableSet {
-    public final /* synthetic */ fj7 e;
+    public final /* synthetic */ gj7 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h3(fj7 fj7Var, NavigableMap navigableMap) {
-        super(fj7Var, navigableMap);
-        this.e = fj7Var;
+    public h3(gj7 gj7Var, NavigableMap navigableMap) {
+        super(gj7Var, navigableMap);
+        this.e = gj7Var;
     }
 
     @Override // java.util.NavigableSet

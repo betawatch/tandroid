@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a3f implements vw8 {
     public final /* synthetic */ byte a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class a3f implements vw8 {
             case 0:
                 return f5cVar.a("FIREBASE_ML_SDK", new n34("json"), z3f.y);
             case 1:
-                return f5cVar.a("FIREBASE_ML_SDK", new n34("proto"), rg7.x);
+                return f5cVar.a("FIREBASE_ML_SDK", new n34("proto"), sg7.x);
             case 2:
                 return f5cVar.a("FIREBASE_ML_SDK", new n34("json"), uif.y);
             case 3:
@@ -31,7 +31,7 @@ public final /* synthetic */ class a3f implements vw8 {
             case 6:
                 return f5cVar.a("FIREBASE_ML_SDK", new n34("json"), sae.y);
             default:
-                return f5cVar.a("FIREBASE_ML_SDK", new n34("proto"), rg7.E);
+                return f5cVar.a("FIREBASE_ML_SDK", new n34("proto"), sg7.E);
         }
     }
 }

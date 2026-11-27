@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class pq8 implements be8, mu8, iz8, ifc, hj, on5, uw8, rfc, tw8, dia, bl0, aea, fx7, lm6, ty9, jx9, v78, s99, p6d {
     public final /* synthetic */ byte a;
@@ -59,9 +59,9 @@ public class pq8 implements be8, mu8, iz8, ifc, hj, on5, uw8, rfc, tw8, dia, bl0
         if (rz8Var.G == jz8Var) {
             rz8Var.G = null;
         }
-        f09 f09Var = rz8Var.d;
-        if (f09Var != null) {
-            f09Var.setScanHidden(false);
+        g09 g09Var = rz8Var.d;
+        if (g09Var != null) {
+            g09Var.setScanHidden(false);
         }
     }
 

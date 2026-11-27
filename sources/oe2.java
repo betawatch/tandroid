@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class oe2 extends nx0 implements fn7 {
     public static final /* synthetic */ int f2 = 0;
@@ -319,7 +319,7 @@ public final class oe2 extends nx0 implements fn7 {
         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.Y1;
         byte b = 1;
         zu1 zu1Var = this.u1;
-        if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < zu1Var.getMessagesController().k4.n2.f()) {
+        if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < zu1Var.getMessagesController().l4.n2.f()) {
             zu1Var.getMessagesController().G0().b(zu1Var.a(), this.Y1, new yd2(this, b));
             return;
         }
@@ -1075,7 +1075,7 @@ public final class oe2 extends nx0 implements fn7 {
         ne2 ne2Var = this.F1;
         if (ne2Var == null || (ez3Var = ne2Var.a) == null || !ez3Var.a) {
             inVar.setText(ob6.M0(2131752212, null));
-            if (chat != null && (tL_premium_boostsStatus = this.Y1) != null && tL_premium_boostsStatus.level < zu1Var.getMessagesController().k4.n2.f()) {
+            if (chat != null && (tL_premium_boostsStatus = this.Y1) != null && tL_premium_boostsStatus.level < zu1Var.getMessagesController().l4.n2.f()) {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
                 wm2 wm2Var = this.V1;
                 if (wm2Var == null) {
@@ -1085,7 +1085,7 @@ public final class oe2 extends nx0 implements fn7 {
                 }
                 spannableStringBuilder.setSpan(wm2Var, 0, 1, 33);
                 r17 = 1;
-                spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ob6.G(zu1Var.getMessagesController().k4.n2.f(), "ReactionLevelRequiredBtn", new Object[0]));
+                spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ob6.G(zu1Var.getMessagesController().l4.n2.f(), "ReactionLevelRequiredBtn", new Object[0]));
                 r10.setText(spannableStringBuilder);
                 z2 = true;
                 z3 = (z || inVar.getAlpha() <= 0.8f) ? false : r17;

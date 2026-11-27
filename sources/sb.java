@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.json.TLJsonParser;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class sb implements qcc {
     public final /* synthetic */ byte a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class sb implements qcc {
                 return Boolean.valueOf(r1);
             case 10:
                 View view = (View) obj;
-                return Boolean.valueOf(((view instanceof ilb) || (view instanceof rca) || (view instanceof fh4) || (view instanceof p55) || (view instanceof ll2) || Objects.equals(view.getTag(), -33024)) ? false : true);
+                return Boolean.valueOf(((view instanceof ilb) || (view instanceof sca) || (view instanceof fh4) || (view instanceof p55) || (view instanceof ll2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             case 11:
                 return TLRPC.TL_textWithEntities.TLJsonDeserialize((TLJsonParser) obj);
             case 12:

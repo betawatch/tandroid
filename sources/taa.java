@@ -8,7 +8,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class taa extends UndoView {
     public final /* synthetic */ SessionsActivity k0;
@@ -27,7 +27,7 @@ public final class taa extends UndoView {
             TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
             resetauthorization.hash = tL_authorization.hash;
             i2 = ((e) this.k0).currentAccount;
-            ConnectionsManager.getInstance(i2).sendRequest(resetauthorization, new ol7(this, tL_authorization, (byte) 22));
+            ConnectionsManager.getInstance(i2).sendRequest(resetauthorization, new pl7(this, tL_authorization, (byte) 22));
         }
         super.d(i, z);
     }

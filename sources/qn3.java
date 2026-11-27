@@ -21,7 +21,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class qn3 {
     public static ArrayList a;
@@ -82,7 +82,7 @@ public abstract class qn3 {
         int i;
         int i2;
         int i3;
-        ze7 ze7Var;
+        bf7 bf7Var;
         File file2;
         BufferedInputStream bufferedInputStream;
         int i4 = 0;
@@ -129,8 +129,8 @@ public abstract class qn3 {
                                 }
                                 i4 = i3;
                             } catch (InterruptedException unused) {
-                                ze7Var = new ze7(k, (Object) iArr, (Object) on3Var, (byte) 21);
-                                hl.c3(ze7Var);
+                                bf7Var = new bf7(k, (Object) iArr, (Object) on3Var, (byte) 21);
+                                hl.c3(bf7Var);
                                 File file3 = fileArr[i3];
                                 if (file3 == null) {
                                 }
@@ -138,15 +138,15 @@ public abstract class qn3 {
                                 }
                             }
                         } catch (Throwable th) {
-                            hl.c3(new ze7(k, (Object) iArr, (Object) on3Var, (byte) 21));
+                            hl.c3(new bf7(k, (Object) iArr, (Object) on3Var, (byte) 21));
                             throw th;
                         }
                     } catch (InterruptedException unused2) {
                         i3 = i4;
                     }
                 }
-                ze7Var = new ze7(k, (Object) iArr, (Object) on3Var, (byte) 21);
-                hl.c3(ze7Var);
+                bf7Var = new bf7(k, (Object) iArr, (Object) on3Var, (byte) 21);
+                hl.c3(bf7Var);
                 File file32 = fileArr[i3];
                 file2 = (file32 == null && file32.exists()) ? fileArr[i3] : null;
             }

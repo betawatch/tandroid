@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class xc4 extends rf0 {
     public static volatile xc4[] s = new xc4[4];
@@ -298,20 +298,20 @@ public final class xc4 extends rf0 {
         TLRPC.Message message;
         TLRPC.MessageFwdHeader messageFwdHeader;
         TLRPC.Peer peer;
-        if (obj instanceof n5b) {
-            n5b n5bVar = (n5b) obj;
-            if (n5bVar.a == null) {
+        if (obj instanceof o5b) {
+            o5b o5bVar = (o5b) obj;
+            if (o5bVar.a == null) {
                 cc4.b("failed request reference can't find list in botpreview");
                 return null;
             }
-            TLRPC.MessageMedia messageMedia = n5bVar.media;
+            TLRPC.MessageMedia messageMedia = o5bVar.media;
             if (messageMedia.document != null) {
-                return "botstory_doc_" + n5bVar.media.document.id;
+                return "botstory_doc_" + o5bVar.media.document.id;
             }
             if (messageMedia.photo != null) {
-                return "botstory_photo_" + n5bVar.media.photo.id;
+                return "botstory_photo_" + o5bVar.media.photo.id;
             }
-            return "botstory_" + n5bVar.id;
+            return "botstory_" + o5bVar.id;
         }
         if (obj instanceof TL_stories.StoryItem) {
             TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
@@ -395,20 +395,20 @@ public final class xc4 extends rf0 {
         if (z2 && (((TL_ephemeral.TL_sendMessage) obj2).media instanceof TLRPC.TL_inputMediaPoll) && (obj instanceof ArrayList)) {
             return null;
         }
-        if (obj2 instanceof n5b) {
-            n5b n5bVar = (n5b) obj2;
-            TLRPC.MessageMedia messageMedia = n5bVar.media;
+        if (obj2 instanceof o5b) {
+            o5b o5bVar = (o5b) obj2;
+            TLRPC.MessageMedia messageMedia = o5bVar.media;
             if (messageMedia.document != null) {
                 TLRPC.TL_inputDocumentFileLocation tL_inputDocumentFileLocation = new TLRPC.TL_inputDocumentFileLocation();
-                tL_inputDocumentFileLocation.id = n5bVar.media.document.id;
-                return new Pair(tL_inputDocumentFileLocation, "botstory_doc_" + n5bVar.media.document.id);
+                tL_inputDocumentFileLocation.id = o5bVar.media.document.id;
+                return new Pair(tL_inputDocumentFileLocation, "botstory_doc_" + o5bVar.media.document.id);
             }
             if (messageMedia.photo == null) {
-                return new Pair(new TLRPC.TL_inputDocumentFileLocation(), "botstory_" + n5bVar.id);
+                return new Pair(new TLRPC.TL_inputDocumentFileLocation(), "botstory_" + o5bVar.id);
             }
             TLRPC.TL_inputPhotoFileLocation tL_inputPhotoFileLocation = new TLRPC.TL_inputPhotoFileLocation();
-            tL_inputPhotoFileLocation.id = n5bVar.media.photo.id;
-            return new Pair(tL_inputPhotoFileLocation, "botstory_photo_" + n5bVar.media.photo.id);
+            tL_inputPhotoFileLocation.id = o5bVar.media.photo.id;
+            return new Pair(tL_inputPhotoFileLocation, "botstory_photo_" + o5bVar.media.photo.id);
         }
         if (obj2 instanceof TL_stories.TL_storyItem) {
             TL_stories.TL_storyItem tL_storyItem = (TL_stories.TL_storyItem) obj2;
@@ -921,8 +921,8 @@ public final class xc4 extends rf0 {
                 inputFileLocationArr[0] = (TLRPC.InputFileLocation) obj;
             }
         }
-        if (tLObject instanceof n5b) {
-            TLRPC.MessageMedia messageMedia3 = ((n5b) tLObject).media;
+        if (tLObject instanceof o5b) {
+            TLRPC.MessageMedia messageMedia3 = ((o5b) tLObject).media;
             TLRPC.Document document2 = messageMedia3.document;
             if (document2 != null) {
                 bArr = e(document2, messageMedia3.alt_documents, inputFileLocation, zArr, inputFileLocationArr);
@@ -968,7 +968,7 @@ public final class xc4 extends rf0 {
                     }
                 }
                 if (bArr == null) {
-                    getMessagesStorage().o1(messages_messages.messages.get(0), messages_messages.users, messages_messages.chats, true);
+                    getMessagesStorage().s1(messages_messages.messages.get(0), messages_messages.users, messages_messages.chats, true);
                     boolean z2 = f11.a;
                     cc4.b("file ref not found in messages, replacing message");
                 }
@@ -1012,7 +1012,7 @@ public final class xc4 extends rf0 {
             TLRPC.UserFull userFull = tL_users_userFull.full_user;
             TL_bots.BotInfo botInfo = userFull.bot_info;
             if (botInfo != null) {
-                getMessagesStorage().g2(userFull, true);
+                getMessagesStorage().l2(userFull, true);
                 if (bArr == null) {
                     bArr = e(botInfo.description_document, null, inputFileLocation, zArr, inputFileLocationArr);
                 }
@@ -1403,8 +1403,8 @@ public final class xc4 extends rf0 {
                                 z4 = true;
                             }
                             vc4Var3.d = z4;
-                            if (tLObject instanceof n5b) {
-                                TLRPC.MessageMedia messageMedia2 = ((n5b) tLObject).media;
+                            if (tLObject instanceof o5b) {
+                                TLRPC.MessageMedia messageMedia2 = ((o5b) tLObject).media;
                                 arrayList2 = arrayList;
                                 TLRPC.Document document3 = messageMedia2.document;
                                 if (document3 != null) {
@@ -1477,7 +1477,7 @@ public final class xc4 extends rf0 {
                                             if (bArr != null) {
                                                 if (z) {
                                                     i6 = 0;
-                                                    getMessagesStorage().o1(message, messages_messages.users, messages_messages.chats, false);
+                                                    getMessagesStorage().s1(message, messages_messages.users, messages_messages.chats, false);
                                                 } else {
                                                     i6 = 0;
                                                 }
@@ -1490,7 +1490,7 @@ public final class xc4 extends rf0 {
                                             }
                                         }
                                         if (bArr == null) {
-                                            getMessagesStorage().o1(messages_messages.messages.get(i5), messages_messages.users, messages_messages.chats, true);
+                                            getMessagesStorage().s1(messages_messages.messages.get(i5), messages_messages.users, messages_messages.chats, true);
                                             boolean z9 = f11.a;
                                             cc4.b("file ref not found in messages, replacing message");
                                         }
@@ -1540,7 +1540,7 @@ public final class xc4 extends rf0 {
                                             TLRPC.UserFull userFull = tL_users_userFull.full_user;
                                             TL_bots.BotInfo botInfo = userFull.bot_info;
                                             if (botInfo != null) {
-                                                getMessagesStorage().g2(userFull, true);
+                                                getMessagesStorage().l2(userFull, true);
                                                 bArr = e(botInfo.description_document, null, vc4Var3.a, zArr2, inputFileLocationArr);
                                                 if (bArr != null) {
                                                     i2 = i10;
@@ -1658,7 +1658,7 @@ public final class xc4 extends rf0 {
                                                         bArr = e7;
                                                     }
                                                     if (bArr != null && z) {
-                                                        getMessagesStorage().m1(1, tL_wallPapers.wallpapers);
+                                                        getMessagesStorage().q1(1, tL_wallPapers.wallpapers);
                                                     }
                                                 } else {
                                                     if (tLObject instanceof TLRPC.TL_wallPaper) {
@@ -1667,7 +1667,7 @@ public final class xc4 extends rf0 {
                                                         if (e != null && z) {
                                                             ArrayList arrayList9 = new ArrayList();
                                                             arrayList9.add(tL_wallPaper);
-                                                            getMessagesStorage().m1(0, arrayList9);
+                                                            getMessagesStorage().q1(0, arrayList9);
                                                         }
                                                     } else if (tLObject instanceof TLRPC.TL_theme) {
                                                         TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) tLObject;
@@ -1697,7 +1697,7 @@ public final class xc4 extends rf0 {
                                                                         arrayList10.add(user);
                                                                         i3 = size8;
                                                                         i4 = i19;
-                                                                        getMessagesStorage().j1(arrayList10, null, true, true);
+                                                                        getMessagesStorage().n1(arrayList10, null, true, true);
                                                                         hl.c3(new vx3(this, user, (byte) 23));
                                                                     }
                                                                     bArr = h;
@@ -1710,7 +1710,7 @@ public final class xc4 extends rf0 {
                                                                         if (z && d != null) {
                                                                             ArrayList arrayList11 = new ArrayList();
                                                                             arrayList11.add(chat);
-                                                                            getMessagesStorage().j1(null, arrayList11, true, true);
+                                                                            getMessagesStorage().n1(null, arrayList11, true, true);
                                                                             final byte b = 0;
                                                                             hl.c3(new Runnable(this) { // from class: oc4
                                                                                 public final /* synthetic */ xc4 b;
@@ -1762,7 +1762,7 @@ public final class xc4 extends rf0 {
                                                                     ArrayList arrayList12 = new ArrayList();
                                                                     arrayList12.add(chat2);
                                                                     final byte b2 = 1;
-                                                                    getMessagesStorage().j1(null, arrayList12, true, true);
+                                                                    getMessagesStorage().n1(null, arrayList12, true, true);
                                                                     hl.c3(new Runnable(this) { // from class: oc4
                                                                         public final /* synthetic */ xc4 b;
 
@@ -3062,24 +3062,24 @@ public final class xc4 extends rf0 {
                     }
                     byte b3 = 10;
                     final byte b4 = 17;
-                    if (!(obj3 instanceof n5b)) {
-                        n5b n5bVar = (n5b) obj3;
-                        o5b o5bVar = n5bVar.a;
-                        if (o5bVar == null) {
+                    if (!(obj3 instanceof o5b)) {
+                        o5b o5bVar = (o5b) obj3;
+                        p5b p5bVar = o5bVar.a;
+                        if (p5bVar == null) {
                             v(objArr);
                             return;
                         }
-                        pwa pwaVar = new pwa(o5bVar, n5bVar, new gt(this, str7, str8, b4), b3);
-                        if (o5bVar.F != 0) {
-                            ConnectionsManager.getInstance(o5bVar.c).cancelRequest(o5bVar.F, true);
+                        pwa pwaVar = new pwa(p5bVar, o5bVar, new gt(this, str7, str8, b4), b3);
+                        if (p5bVar.F != 0) {
+                            ConnectionsManager.getInstance(p5bVar.c).cancelRequest(p5bVar.F, true);
                             z = false;
-                            o5bVar.F = 0;
+                            p5bVar.F = 0;
                         } else {
                             z = false;
                         }
-                        o5bVar.C = z;
-                        o5bVar.D = z;
-                        o5bVar.H(pwaVar);
+                        p5bVar.C = z;
+                        p5bVar.D = z;
+                        p5bVar.H(pwaVar);
                         return;
                     }
                     if (obj3 instanceof TL_stories.StoryItem) {
@@ -5788,7 +5788,7 @@ public final class xc4 extends rf0 {
                 }
                 byte b32 = 10;
                 final byte b42 = 17;
-                if (!(obj3 instanceof n5b)) {
+                if (!(obj3 instanceof o5b)) {
                 }
             }
         }

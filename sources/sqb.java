@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class sqb extends LinearLayout {
     public final s8b E;
@@ -295,7 +295,7 @@ public class sqb extends LinearLayout {
                     int i10 = i6;
                     wb2VarArr[i5] = new rqb(this, context, i7, vnbVar2, context, i10);
                     byte b2 = b;
-                    this.n[i5].setDelegate(new k09(this, b2));
+                    this.n[i5].setDelegate(new l09(this, b2));
                     wb2 wb2Var = this.n[i5];
                     wb2Var.f6 = (i10 == 2 || i10 == i9) ? 1 : i3;
                     wb2Var.setFullyDraw(true);
@@ -438,7 +438,7 @@ public class sqb extends LinearLayout {
                 int i2 = (i != 1 || this.d == null || (wk5Var == null && !this.G)) ? jn7.d4 : (int) (255.0f * e);
                 if (i2 > 0) {
                     drawable3.setAlpha(i2);
-                    if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof hh7)) {
+                    if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof ih7)) {
                         drawable3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                         if (drawable3 instanceof yd0) {
                             this.a = ((yd0) drawable3).b(canvas, this);

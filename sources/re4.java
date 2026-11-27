@@ -28,7 +28,7 @@ import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class re4 implements Runnable {
     public final /* synthetic */ byte a;
@@ -147,7 +147,7 @@ public final /* synthetic */ class re4 implements Runnable {
                     }
                 }
                 filtersSetupActivity.getMessagesController().s4(ac7Var);
-                jf7 messagesStorage = filtersSetupActivity.getMessagesStorage();
+                kf7 messagesStorage = filtersSetupActivity.getMessagesStorage();
                 messagesStorage.a.c(new t87(messagesStorage, ac7Var, b2));
                 break;
             case 5:
@@ -258,7 +258,7 @@ public final /* synthetic */ class re4 implements Runnable {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject3;
                     uc7Var.j4(tL_contacts_resolvedPeer.users, false);
                     uc7Var.c4(tL_contacts_resolvedPeer.chats, false);
-                    jf7.Y(vt4Var.x.a).j1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
+                    kf7.a0(vt4Var.x.a).n1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
                     vt4Var.E();
                     break;
                 }

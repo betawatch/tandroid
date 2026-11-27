@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class rv2 extends pg0 {
     public final int F;
@@ -54,7 +54,7 @@ public final class rv2 extends pg0 {
             String str = ko4Var.s;
             int i = ko4Var.V;
             int i2 = ko4Var.W;
-            if (dg7.k(str) && ((i > 1 || i2 > 1) && i != -1 && i2 != -1)) {
+            if (eg7.k(str) && ((i > 1 || i2 > 1) && i != -1 && i2 != -1)) {
                 x1c V = lh2Var.V(4);
                 int i3 = i * i2;
                 long j5 = (this.n - this.h) / i3;

@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class v8b extends FrameLayout implements View.OnClickListener {
     public final mm E;
@@ -43,7 +43,7 @@ public abstract class v8b extends FrameLayout implements View.OnClickListener {
     public final FrameLayout d;
     public final Matrix e;
     public final float[] f;
-    public final t58 h;
+    public final u58 h;
     public final x53 n;
     public ArrayList r;
     public final Rect s;
@@ -51,7 +51,7 @@ public abstract class v8b extends FrameLayout implements View.OnClickListener {
     public final Paint x;
     public final mm y;
 
-    public v8b(Context context, t58 t58Var, x53 x53Var) {
+    public v8b(Context context, u58 u58Var, x53 x53Var) {
         super(context);
         this.a = null;
         this.b = null;
@@ -66,10 +66,10 @@ public abstract class v8b extends FrameLayout implements View.OnClickListener {
         paint.setColor(-1);
         this.F = new Path();
         this.H = false;
-        this.h = t58Var;
+        this.h = u58Var;
         this.n = x53Var;
-        this.y = new mm(t58Var, 0L, 120L, new LinearInterpolator());
-        this.E = new mm(t58Var, 0L, 360L, k43.h);
+        this.y = new mm(u58Var, 0L, 120L, new LinearInterpolator());
+        this.E = new mm(u58Var, 0L, 360L, k43.h);
         setClipChildren(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
@@ -209,7 +209,7 @@ public abstract class v8b extends FrameLayout implements View.OnClickListener {
             if ((z || d2 > 0.0f) && this.a != null) {
                 Bitmap bitmap = this.G;
                 if (bitmap == null) {
-                    bitmap = ((r58) this).J.getPlayingBitmap();
+                    bitmap = ((s58) this).J.getPlayingBitmap();
                     this.G = bitmap;
                 }
                 if (bitmap != null) {
@@ -315,7 +315,7 @@ public abstract class v8b extends FrameLayout implements View.OnClickListener {
             if (view instanceof aab) {
                 aab aabVar = (aab) view;
                 TL_stories.MediaArea mediaArea = aabVar.b;
-                o68 o68Var = ((r58) this).J;
+                o68 o68Var = ((s58) this).J;
                 boolean z4 = o68Var.m1;
                 n68 n68Var = o68Var.y1;
                 if (!z4 && n68Var.a != null) {
@@ -434,7 +434,7 @@ public abstract class v8b extends FrameLayout implements View.OnClickListener {
                     Bundle bundle = new Bundle();
                     bundle.putLong("chat_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).channel_id);
                     bundle.putInt("message_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).msg_id);
-                    ((r58) this).I.L(new zu1(bundle));
+                    ((s58) this).I.L(new zu1(bundle));
                     this.b = null;
                     invalidate();
                     return;
@@ -480,7 +480,7 @@ public abstract class v8b extends FrameLayout implements View.OnClickListener {
                 }
                 yq8Var.V0 = false;
                 yq8Var.G0(new r47(yac.t0, tL_message, false, false));
-                ((r58) this).I.L(yq8Var);
+                ((s58) this).I.L(yq8Var);
                 this.b = null;
                 invalidate();
                 return;
@@ -544,7 +544,7 @@ public abstract class v8b extends FrameLayout implements View.OnClickListener {
                     }
                     hl.G2(spannableStringBuilder, spannableString, ">");
                     kg5Var2.t(spannableStringBuilder);
-                    kg5Var2.r0 = new z3b(this, kg5Var2, (byte) 24);
+                    kg5Var2.r0 = new n3b(this, kg5Var2, (byte) 25);
                     float f11 = !z ? 100 : 50;
                     z2 = this.b.getTranslationY() - ((float) hl.L(f11)) < ((float) hl.L(100.0f));
                     kg5Var2.a = z2 ? (byte) 1 : (byte) 3;
@@ -588,7 +588,7 @@ public abstract class v8b extends FrameLayout implements View.OnClickListener {
             }
             hl.G2(spannableStringBuilder, spannableString3, ">");
             kg5Var2.t(spannableStringBuilder);
-            kg5Var2.r0 = new z3b(this, kg5Var2, (byte) 24);
+            kg5Var2.r0 = new n3b(this, kg5Var2, (byte) 25);
             float f112 = !z ? 100 : 50;
             if (this.b.getTranslationY() - ((float) hl.L(f112)) < ((float) hl.L(100.0f))) {
             }

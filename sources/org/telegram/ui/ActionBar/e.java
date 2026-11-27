@@ -31,7 +31,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class e {
     protected a actionBar;
@@ -107,7 +107,7 @@ public abstract class e {
         lcb lastStoryViewer = getLastStoryViewer();
         if (lastStoryViewer != null) {
             lastStoryViewer.w0 = ag0Var;
-            ag0Var.n(new x58(lastStoryViewer, (byte) 3));
+            ag0Var.n(new y58(lastStoryViewer, (byte) 3));
         }
         this.sheetsStack.add(ag0Var);
         updateSheetsVisibility();
@@ -532,8 +532,8 @@ public abstract class e {
         return uc7.s1(getAccountInstance().a);
     }
 
-    public jf7 getMessagesStorage() {
-        return jf7.Y(getAccountInstance().a);
+    public kf7 getMessagesStorage() {
+        return kf7.a0(getAccountInstance().a);
     }
 
     public int getNavigationBarColor() {
@@ -920,7 +920,7 @@ public abstract class e {
 
     public void onFragmentDestroy() {
         getConnectionsManager().cancelRequestsForGuid(this.classGuid);
-        getMessagesStorage().j(this.classGuid);
+        getMessagesStorage().k(this.classGuid);
         this.isFinished = true;
         a aVar = this.actionBar;
         if (aVar != null) {

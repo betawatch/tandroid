@@ -3,12 +3,12 @@
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class kma implements nr5 {
-    public final wj7 a = new wj7();
+    public final xj7 a = new xj7();
     public final z8d b = new z8d((byte) 7);
-    public final k09 c = new k09(new jma(2, null), 6);
+    public final l09 c = new l09(new jma(2, null), 6);
 
     public kma(String str) {
     }
@@ -40,7 +40,7 @@ public final class kma implements nr5 {
     /* JADX WARN: Removed duplicated region for block: B:9:0x0023  */
     /* JADX WARN: Type inference failed for: r6v0, types: [kma] */
     /* JADX WARN: Type inference failed for: r6v1 */
-    /* JADX WARN: Type inference failed for: r6v6, types: [wj7] */
+    /* JADX WARN: Type inference failed for: r6v6, types: [xj7] */
     @Override // nr5
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -62,18 +62,18 @@ public final class kma implements nr5 {
                     if (i != 0) {
                         ixe.b(obj3);
                         hmaVar.a = ur4Var;
-                        wj7 wj7Var = this.a;
-                        hmaVar.b = wj7Var;
+                        xj7 xj7Var = this.a;
+                        hmaVar.b = xj7Var;
                         hmaVar.e = 1;
-                        Object d = wj7Var.d(hmaVar);
-                        obj = wj7Var;
+                        Object d = xj7Var.d(hmaVar);
+                        obj = xj7Var;
                     } else {
                         if (i != 1) {
                             if (i != 2) {
                                 grb.i("call to 'resume' before 'invoke' with coroutine");
                                 return null;
                             }
-                            Object obj4 = (uj7) hmaVar.a;
+                            Object obj4 = (vj7) hmaVar.a;
                             ixe.b(obj3);
                             obj2 = obj4;
                             return obj3;
@@ -98,7 +98,7 @@ public final class kma implements nr5 {
             obj3 = ur4Var.invoke(hmaVar);
             obj2 = obj;
         } finally {
-            ((wj7) this).f(null);
+            ((xj7) this).f(null);
         }
         hmaVar = new hma(this, zw2Var);
         Object obj32 = hmaVar.c;
@@ -122,7 +122,7 @@ public final class kma implements nr5 {
     public final Object e(is4 is4Var, zw2 zw2Var) {
         ima imaVar;
         int i;
-        wj7 wj7Var;
+        xj7 xj7Var;
         boolean z;
         Throwable th;
         if (zw2Var instanceof ima) {
@@ -134,11 +134,11 @@ public final class kma implements nr5 {
                 i = imaVar.e;
                 if (i != 0) {
                     ixe.b(obj);
-                    wj7 wj7Var2 = this.a;
-                    boolean e = wj7Var2.e();
+                    xj7 xj7Var2 = this.a;
+                    boolean e = xj7Var2.e();
                     try {
                         Object valueOf = Boolean.valueOf(e);
-                        imaVar.a = wj7Var2;
+                        imaVar.a = xj7Var2;
                         imaVar.b = e;
                         imaVar.e = 1;
                         Object invoke = is4Var.invoke(valueOf, imaVar);
@@ -146,15 +146,15 @@ public final class kma implements nr5 {
                         if (invoke == obj2) {
                             return obj2;
                         }
-                        wj7Var = wj7Var2;
+                        xj7Var = xj7Var2;
                         z = e;
                         obj = invoke;
                     } catch (Throwable th2) {
-                        wj7Var = wj7Var2;
+                        xj7Var = xj7Var2;
                         z = e;
                         th = th2;
                         if (z) {
-                            wj7Var.f(null);
+                            xj7Var.f(null);
                         }
                         throw th;
                     }
@@ -164,7 +164,7 @@ public final class kma implements nr5 {
                         return null;
                     }
                     z = imaVar.b;
-                    wj7Var = imaVar.a;
+                    xj7Var = imaVar.a;
                     try {
                         ixe.b(obj);
                     } catch (Throwable th3) {
@@ -175,7 +175,7 @@ public final class kma implements nr5 {
                     }
                 }
                 if (z) {
-                    wj7Var.f(null);
+                    xj7Var.f(null);
                 }
                 return obj;
             }

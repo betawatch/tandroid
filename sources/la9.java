@@ -3,7 +3,7 @@
 import android.graphics.SurfaceTexture;
 import android.view.TextureView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class la9 implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ tl0 a;
@@ -40,7 +40,7 @@ public final class la9 implements TextureView.SurfaceTextureListener {
         pa9 pa9Var = this.b;
         if (pa9Var.d != null && !pa9Var.E) {
             nx7 nx7Var = pa9Var.c;
-            nx7Var.f.f(new pl7(nx7Var, new ka9(this, (byte) 2), (byte) 14));
+            nx7Var.f.f(new ql7(nx7Var, new ka9(this, (byte) 2), (byte) 15));
         }
         return true;
     }

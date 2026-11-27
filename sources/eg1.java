@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class eg1 implements Runnable {
     public final /* synthetic */ byte a = 0;
@@ -160,7 +160,7 @@ public final /* synthetic */ class eg1 implements Runnable {
                         t32Var.H = messages_messages.next_rate;
                         int i5 = k5Var.a;
                         i32 i32Var2 = i32Var;
-                        jf7.Y(i5).j1(messages_messages.users, messages_messages.chats, true, true);
+                        kf7.a0(i5).n1(messages_messages.users, messages_messages.chats, true, true);
                         uc7.s1(i5).j4(messages_messages.users, false);
                         uc7.s1(i5).c4(messages_messages.chats, false);
                         if (!z) {

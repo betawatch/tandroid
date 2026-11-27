@@ -47,7 +47,7 @@ import org.telegram.ui.Wallet.c;
 import org.telegram.ui.WallpapersListActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class e66 {
     public static final Pattern k = Pattern.compile("^[a-z0-9_]{1,32}$");
@@ -392,7 +392,7 @@ public final class e66 {
     /* JADX WARN: Type inference failed for: r1v34, types: [int] */
     /* JADX WARN: Type inference failed for: r1v40 */
     /* JADX WARN: Type inference failed for: r1v51 */
-    /* JADX WARN: Type inference failed for: r2v56, types: [oab, y8b] */
+    /* JADX WARN: Type inference failed for: r2v56, types: [pab, y8b] */
     public final boolean g(Uri uri) {
         String str;
         Uri s;
@@ -485,7 +485,7 @@ public final class e66 {
             }
             if (!"tg".equalsIgnoreCase(scheme)) {
                 if ("ton".equalsIgnoreCase(scheme)) {
-                    if (uc7.s1(this.b).k4.v0.f && (pathSegments = (s = s(uri2)).getPathSegments()) != null) {
+                    if (uc7.s1(this.b).l4.v0.f && (pathSegments = (s = s(uri2)).getPathSegments()) != null) {
                         ArrayList arrayList = new ArrayList(pathSegments);
                         String authority = s.getAuthority();
                         if (TextUtils.isEmpty(authority)) {
@@ -610,7 +610,7 @@ public final class e66 {
                                 return true;
                             }
                             if ("contact".equalsIgnoreCase(str8)) {
-                                new rl7(LaunchActivity.S(), launchActivity).show();
+                                new sl7(LaunchActivity.S(), launchActivity).show();
                                 return true;
                             }
                             if (!"channel".equalsIgnoreCase(str8)) {
@@ -628,7 +628,7 @@ public final class e66 {
                             if ("live".equalsIgnoreCase(str8)) {
                                 r1 = -1;
                             }
-                            rbb C = rbb.C(launchActivity, this.b);
+                            sbb C = sbb.C(launchActivity, this.b);
                             if (C.P1 == r1) {
                                 z = true;
                             } else {
@@ -650,7 +650,7 @@ public final class e66 {
                         }
                         if ("contacts".equalsIgnoreCase(str7)) {
                             if ("new".equalsIgnoreCase(str8)) {
-                                new rl7(LaunchActivity.S(), launchActivity).show();
+                                new sl7(LaunchActivity.S(), launchActivity).show();
                                 return true;
                             }
                             Bundle bundle = new Bundle();
@@ -741,7 +741,7 @@ public final class e66 {
     public final boolean l(Uri uri) {
         Uri uri2;
         long j;
-        if (!uc7.s1(this.b).k4.v0.f) {
+        if (!uc7.s1(this.b).l4.v0.f) {
             return false;
         }
         String queryParameter = uri.getQueryParameter("startapp");
@@ -824,7 +824,7 @@ public final class e66 {
         }
         byte b = 1;
         if (list.isEmpty()) {
-            t(new tba());
+            t(new uba());
             return true;
         }
         String str3 = (String) list.get(0);
@@ -1205,7 +1205,7 @@ public final class e66 {
                                     return true;
                                 }
                             }
-                        } else if (uc7.s1(i4).k4.T0.f() || !"archive-and-mute".equalsIgnoreCase(str4)) {
+                        } else if (uc7.s1(i4).l4.T0.f() || !"archive-and-mute".equalsIgnoreCase(str4)) {
                             t(new PrivacySettingsActivity());
                             if ("blocked".equalsIgnoreCase(str4)) {
                                 x("blockedRow");
@@ -1584,7 +1584,7 @@ public final class e66 {
                             m01.u(launchActivity, ob6.L0(2131746510));
                             return true;
                         }
-                        t(new tba());
+                        t(new uba());
                         return true;
                     }
                     q86 q86Var = new q86();

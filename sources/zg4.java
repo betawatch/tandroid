@@ -31,7 +31,7 @@ import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ProxyListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class zg4 implements r69 {
     public final /* synthetic */ byte a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class zg4 implements r69 {
                 ArrayList E0 = ah4.E0(uj3Var, ac7Var2, arrayList2, true, false);
                 if (!z4) {
                     int size = E0.size() + (ac7Var2 != null ? ac7Var2.h.size() : 0);
-                    if ((size > uj3Var.getMessagesController().k4.j1.f() && !uj3Var.getUserConfig().p()) || size > uj3Var.getMessagesController().k4.k1.f()) {
+                    if ((size > uj3Var.getMessagesController().l4.j1.f() && !uj3Var.getUserConfig().p()) || size > uj3Var.getMessagesController().l4.k1.f()) {
                         Context context = uj3Var.fragmentView.getContext();
                         i2 = ((e) uj3Var).currentAccount;
                         uj3Var.showDialog(new l46(4, i2, null, context, uj3Var));
@@ -351,18 +351,18 @@ public final /* synthetic */ class zg4 implements r69 {
                 a78Var.e = true;
                 return;
             case 15:
-                vab vabVar = (vab) obj;
+                wab wabVar = (wab) obj;
                 xv7 xv7Var2 = (xv7) xv7.a().get(i);
-                vabVar.V0.setTypeface(xv7Var2.a);
-                a78 e4 = a78.e(vabVar.p1);
+                wabVar.V0.setTypeface(xv7Var2.a);
+                a78 e4 = a78.e(wabVar.p1);
                 String str3 = xv7Var2.a;
                 e4.j = str3;
                 e4.a.edit().putString("typeface", str3).apply();
-                h44 h44Var2 = vabVar.t0;
+                h44 h44Var2 = wabVar.t0;
                 if (h44Var2 instanceof rlb) {
                     ((rlb) h44Var2).setTypeface(xv7Var2);
                 }
-                vabVar.O0(false);
+                wabVar.O0(false);
                 return;
             case 16:
                 ((PasscodeActivity) obj).r0(i, view);
@@ -736,25 +736,25 @@ public final /* synthetic */ class zg4 implements r69 {
                     rz8 rz8Var = oz8Var.a;
                     if (rz8Var.d != null) {
                         if (!rz8Var.getUserConfig().p() && ((pz8Var = rz8Var.h) == null || !pz8Var.I.contains(Long.valueOf(j2)))) {
-                            f09 f09Var = rz8Var.d;
-                            f09Var.getClass();
-                            f09Var.d1(0, ob6.M0(2131746202, null), ob6.M0(2131746200, null));
-                            f09Var.i0();
+                            g09 g09Var = rz8Var.d;
+                            g09Var.getClass();
+                            g09Var.d1(0, ob6.M0(2131746202, null), ob6.M0(2131746200, null));
+                            g09Var.i0();
                             return;
                         }
-                        f09 f09Var2 = rz8Var.d;
-                        f09Var2.getClass();
+                        g09 g09Var2 = rz8Var.d;
+                        g09Var2.getClass();
                         String str5 = "c:" + j2;
-                        HashMap hashMap = f09Var2.K;
+                        HashMap hashMap = g09Var2.K;
                         if (!hashMap.containsKey(str5)) {
-                            wl l3 = wl.l(f09Var2.b, 2, document);
-                            l3.b(f09Var2);
+                            wl l3 = wl.l(g09Var2.b, 2, document);
+                            l3.b(g09Var2);
                             hashMap.put(str5, l3);
                         }
                         if (!str5.startsWith("c:")) {
                             str5 = str5.replace("️", "");
                         }
-                        ArrayList arrayList10 = f09Var2.J;
+                        ArrayList arrayList10 = g09Var2.J;
                         int indexOf2 = arrayList10.indexOf(str5);
                         if (indexOf2 >= 0) {
                             arrayList10.remove(indexOf2);
@@ -764,8 +764,8 @@ public final /* synthetic */ class zg4 implements r69 {
                             }
                             arrayList10.add(str5);
                         }
-                        f09Var2.c();
-                        f09Var2.i0();
+                        g09Var2.c();
+                        g09Var2.i0();
                         pz8 pz8Var2 = rz8Var.h;
                         if (pz8Var2 != null) {
                             ArrayList a = pz8Var2.a();
@@ -781,7 +781,7 @@ public final /* synthetic */ class zg4 implements r69 {
                                 }
                                 sb.append(a.get(i24));
                             }
-                            uc7.s1(pz8Var2.a).X3.edit().putString("qrAppliedEmoji", sb.toString()).apply();
+                            uc7.s1(pz8Var2.a).Y3.edit().putString("qrAppliedEmoji", sb.toString()).apply();
                             pz8Var2.K = true;
                             return;
                         }

@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cw4 extends wma {
     public final /* synthetic */ hw4 g0;
@@ -28,8 +28,8 @@ public final class cw4 extends wma {
 
     @Override // wma
     public final void T(Drawable drawable) {
-        if (drawable instanceof hh7) {
-            ((hh7) drawable).o();
+        if (drawable instanceof ih7) {
+            ((ih7) drawable).o();
         }
         hw4 hw4Var = this.g0;
         hw4Var.n1.a = hw4Var.m1.c(drawable);

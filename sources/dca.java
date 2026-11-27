@@ -1,94 +1,30 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.style.ImageSpan;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class dca extends ImageSpan {
-    public static t2c b;
-    public final /* synthetic */ byte a = 1;
+public final class dca extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public dca() {
-        super(r0, 0);
-        t2c t2cVar = b;
-        if (t2cVar == null) {
-            t2cVar = new t2c(aob.o2);
-            b = t2cVar;
-        }
-        float textSize = aob.o2.getTextSize() * 0.89f;
-        int i = (int) (0.02f * textSize);
-        getDrawable().setBounds(0, i, (int) textSize, ((int) (textSize * 1.25f)) + i);
+    static {
+        a8c.h(new dca());
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        switch (this.a) {
-            case 0:
-                Drawable drawable = getDrawable();
-                canvas.save();
-                int i6 = paint.getFontMetricsInt().descent;
-                canvas.translate(f, ((i4 + i6) - ((i6 - r3.ascent) / 2)) - ((drawable.getBounds().bottom - drawable.getBounds().top) / 2));
-                if (ob6.a0) {
-                    canvas.scale(-1.0f, 1.0f, drawable.getIntrinsicWidth() / 2, drawable.getIntrinsicHeight() / 2);
-                }
-                drawable.draw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
-                break;
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        Object obj = b8cVar.H;
+        if (obj instanceof es8) {
+            es8 es8Var = (es8) obj;
+            ((fca) view).b(b8cVar.m, es8Var.d, es8Var.e, z);
+        } else if (obj instanceof hc7) {
+            ((fca) view).a(b8cVar.m, ((hc7) obj).b, true, z);
         }
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                Rect bounds = getDrawable().getBounds();
-                if (fontMetricsInt != null) {
-                    Paint.FontMetricsInt fontMetricsInt2 = paint.getFontMetricsInt();
-                    int i3 = fontMetricsInt2.descent;
-                    int i4 = fontMetricsInt2.ascent;
-                    int i5 = ((i3 - i4) / 2) + i4;
-                    int i6 = (bounds.bottom - bounds.top) / 2;
-                    int i7 = i5 - i6;
-                    fontMetricsInt.ascent = i7;
-                    fontMetricsInt.top = i7;
-                    int i8 = i5 + i6;
-                    fontMetricsInt.bottom = i8;
-                    fontMetricsInt.descent = i8;
-                }
-                return bounds.right;
-            default:
-                return super.getSize(paint, charSequence, i, i2, fontMetricsInt);
-        }
-    }
-
-    @Override // android.text.style.ReplacementSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 1:
-                float textSize = textPaint.getTextSize() * 0.89f;
-                int i = (int) (0.02f * textSize);
-                getDrawable().setBounds(0, i, (int) textSize, ((int) (textSize * 1.25f)) + i);
-                super.updateDrawState(textPaint);
-                break;
-            default:
-                super.updateDrawState(textPaint);
-                break;
-        }
-    }
-
-    public /* synthetic */ dca(Drawable drawable) {
-        super(drawable);
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new fca(context);
     }
 }

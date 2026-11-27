@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class sa implements pcc {
     public final /* synthetic */ byte a;
@@ -95,9 +95,9 @@ public final /* synthetic */ class sa implements pcc {
             case 4:
                 o68 o68Var = (o68) this.c;
                 boolean z4 = this.b;
-                t58 t58Var = o68Var.M0;
+                u58 u58Var = o68Var.M0;
                 x53 x53Var = o68Var.l0;
-                new d31(t58Var, x53Var).o(z4 ? c31.h : c31.e, x53Var).j();
+                new d31(u58Var, x53Var).o(z4 ? c31.h : c31.e, x53Var).j();
                 break;
             case 5:
                 cr8 cr8Var = (cr8) this.c;
@@ -172,7 +172,7 @@ public final /* synthetic */ class sa implements pcc {
                             int[] iArr2 = new int[1];
                             uc7 s1 = uc7.s1(yac.t0);
                             ConnectionsManager connectionsManager = ConnectionsManager.getInstance(yac.t0);
-                            String str2 = s1.k4.C2.f;
+                            String str2 = s1.l4.C2.f;
                             Object c2 = s1.c2(str2);
                             TLRPC.User[] userArr = {c2 instanceof TLRPC.User ? (TLRPC.User) c2 : null};
                             twc twcVar = new twc(s1, userArr, latitude, longitude, iArr2, connectionsManager, e52Var, str);
@@ -185,7 +185,7 @@ public final /* synthetic */ class sa implements pcc {
                                 iArr = iArr2;
                                 twcVar.run();
                             }
-                            r3 = new vlc(iArr, connectionsManager, (byte) 28);
+                            r3 = new slc(iArr, connectionsManager, (byte) 29);
                         } else {
                             e52Var.a(wwc.b);
                         }

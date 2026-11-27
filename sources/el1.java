@@ -8,9 +8,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class el1 implements x92, fd, bf7, xq5, br5, l39, ry4, oz1, w41, x41, ResultCallback, t69, lc5, bu2, ev1, kk4 {
+public final /* synthetic */ class el1 implements x92, fd, cf7, xq5, br5, l39, ry4, oz1, w41, x41, ResultCallback, t69, lc5, bu2, ev1, kk4 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ zu1 b;
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class el1 implements x92, fd, bf7, xq5, br5, l39, r
         this.b = zu1Var;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         zu1 zu1Var = this.b;
         jn7 notificationCenter = zu1Var.getNotificationCenter();

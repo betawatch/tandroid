@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class thb extends m15 implements fn7 {
     public FrameLayout S;
@@ -140,7 +140,7 @@ public final class thb extends m15 implements fn7 {
     public final void F0() {
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
         jxa v = jxa.v(this.currentAccount, true);
-        double d = getMessagesController().k4.k.i;
+        double d = getMessagesController().l4.k.i;
         TL_stars.StarsAmount m = v.m();
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) this.k0);

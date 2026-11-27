@@ -16,7 +16,7 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ea2 implements Runnable {
     public final /* synthetic */ byte a;
@@ -155,9 +155,9 @@ public final /* synthetic */ class ea2 implements Runnable {
                 return;
             case 17:
                 dg2 dg2Var = (dg2) this.b;
-                me7 me7Var = (me7) this.c;
+                oe7 oe7Var = (oe7) this.c;
                 y31.a(dg2Var.a).b();
-                me7Var.run();
+                oe7Var.run();
                 dg2Var.dismiss();
                 return;
             case 18:
@@ -231,7 +231,7 @@ public final /* synthetic */ class ea2 implements Runnable {
                 }
                 lv2Var.d(true);
                 jn7 notificationCenter = lv2Var.getNotificationCenter();
-                int i4 = uc7.r5;
+                int i4 = uc7.s5;
                 notificationCenter.k(2, 1);
                 lv2Var.getNotificationCenter().k(25, new Object[0]);
                 return;
@@ -274,8 +274,8 @@ public final /* synthetic */ class ea2 implements Runnable {
                     accountManager.addAccountExplicitly(account2, "", null);
                 } catch (Exception unused2) {
                 }
-                lv2Var2.getMessagesStorage().W0(new HashMap(), false, true);
-                lv2Var2.getMessagesStorage().Z0(new ArrayList(), true);
+                lv2Var2.getMessagesStorage().a1(new HashMap(), false, true);
+                lv2Var2.getMessagesStorage().d1(new ArrayList(), true);
                 lv2Var2.b0.clear();
                 lv2Var2.f0.clear();
                 lv2Var2.g0.clear();

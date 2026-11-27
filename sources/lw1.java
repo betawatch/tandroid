@@ -3,7 +3,7 @@
 import android.content.DialogInterface;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class lw1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ byte a;
@@ -31,11 +31,11 @@ public final /* synthetic */ class lw1 implements DialogInterface.OnDismissListe
                     break;
                 }
             default:
-                rbb rbbVar = (rbb) fn7Var;
-                rbbVar.A2 = false;
-                rbbVar.Y0.x(7, true);
+                sbb sbbVar = (sbb) fn7Var;
+                sbbVar.A2 = false;
+                sbbVar.Y0.x(7, true);
                 if (z) {
-                    rbbVar.o(true);
+                    sbbVar.o(true);
                     break;
                 }
                 break;

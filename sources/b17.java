@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class b17 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -65,8 +65,8 @@ public final class b17 extends AnimatorListenerAdapter {
                     }
                     for (int i3 = 0; i3 < oobVar.getChildCount(); i3++) {
                         View childAt = oobVar.getChildAt(i3);
-                        if (childAt instanceof u3b) {
-                            ((u3b) childAt).setExpanded(false);
+                        if (childAt instanceof v3b) {
+                            ((v3b) childAt).setExpanded(false);
                         }
                         childAt.getLayoutParams().width = hl.L(33.0f);
                     }

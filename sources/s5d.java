@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class s5d implements Parcelable.Creator {
     public final /* synthetic */ byte a;
@@ -69,7 +69,7 @@ public final class s5d implements Parcelable.Creator {
                     } else if (c != 2) {
                         aye.y(parcel, readInt);
                     } else {
-                        arrayList = aye.l(parcel, readInt, bg7.CREATOR);
+                        arrayList = aye.l(parcel, readInt, cg7.CREATOR);
                     }
                 }
                 aye.m(parcel, z5);
@@ -85,7 +85,7 @@ public final class s5d implements Parcelable.Creator {
                     }
                 }
                 aye.m(parcel, z6);
-                return new wg7(pendingIntent2);
+                return new xg7(pendingIntent2);
             case 2:
                 int z7 = aye.z(parcel);
                 int i8 = 0;
@@ -201,7 +201,7 @@ public final class s5d implements Parcelable.Creator {
                     }
                 }
                 aye.m(parcel, z11);
-                return new xg7(i6, z12);
+                return new yg7(i6, z12);
             case 6:
                 int z13 = aye.z(parcel);
                 String str12 = null;
@@ -435,7 +435,7 @@ public final class s5d implements Parcelable.Creator {
                     }
                 }
                 aye.m(parcel, z23);
-                return new bg7(i20, i21, i22, j3, j4, str18, str19, i23, i19);
+                return new cg7(i20, i21, i22, j3, j4, str18, str19, i23, i19);
             case 14:
                 int z24 = aye.z(parcel);
                 int i24 = 0;
@@ -848,7 +848,7 @@ public final class s5d implements Parcelable.Creator {
             case 0:
                 return new ikb[i];
             case 1:
-                return new wg7[i];
+                return new xg7[i];
             case 2:
                 return new r5d[i];
             case 3:
@@ -856,7 +856,7 @@ public final class s5d implements Parcelable.Creator {
             case 4:
                 return new e6d[i];
             case 5:
-                return new xg7[i];
+                return new yg7[i];
             case 6:
                 return new fo[i];
             case 7:
@@ -872,7 +872,7 @@ public final class s5d implements Parcelable.Creator {
             case 12:
                 return new t7d[i];
             case 13:
-                return new bg7[i];
+                return new cg7[i];
             case 14:
                 return new a8d[i];
             case 15:

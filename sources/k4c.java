@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k4c implements Runnable {
     public final /* synthetic */ byte a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class k4c implements Runnable {
                         if (r47Var == null || r47Var.k == null) {
                             arrayList2.add(null);
                         } else {
-                            arrayList2.add(a5cVar.getMessagesStorage().c0(r47Var.e1(), r47.B0(r47Var.k)));
+                            arrayList2.add(a5cVar.getMessagesStorage().e0(r47Var.e1(), r47.B0(r47Var.k)));
                         }
                     }
                     hl.c3(new es6((Object) a5cVar, (Object) arrayList2, (Object) arrayList, (byte) 5));

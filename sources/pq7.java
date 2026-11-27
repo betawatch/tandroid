@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class pq7 implements pcc {
     public final /* synthetic */ byte a = 1;
@@ -120,13 +120,13 @@ public final /* synthetic */ class pq7 implements pcc {
                         if (ms7.Z0(context2, i4, vnbVar2, j4, 2131749576)) {
                             l01 g = idVar3.g(i3, true, true);
                             g.d();
-                            fd7 fd7Var = new fd7(new boolean[1], g, idVar3, (byte) 15);
+                            gd7 gd7Var = new gd7(new boolean[1], g, idVar3, (byte) 15);
                             zArr[0] = true;
                             HashSet hashSet = vs7.b;
                             long j5 = j3;
                             hashSet.add(Long.valueOf(j5));
                             vs7.j(j5, 300000L);
-                            c.C(i4).p0(a35Var2, new dg1(j5, fd7Var, context2, i4, vnbVar2, d31Var), new p4c((Object) fd7Var, j5, (TLObject) tL_messageActionStarGiftOnchainOffer, (byte) 5), new kt(j5, fd7Var, (byte) 22));
+                            c.C(i4).p0(a35Var2, new dg1(j5, gd7Var, context2, i4, vnbVar2, d31Var), new p4c((Object) gd7Var, j5, (TLObject) tL_messageActionStarGiftOnchainOffer, (byte) 5), new kt(j5, gd7Var, (byte) 22));
                         }
                     }
                 });

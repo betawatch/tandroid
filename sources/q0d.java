@@ -8,7 +8,7 @@ import java.util.Locale;
 import org.json.JSONObject;
 import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class q0d {
     public long A;
@@ -208,8 +208,8 @@ public final class q0d {
                 int max2 = Math.max(50, Math.min(600, k0d.e(this.h)));
                 boolean z3 = this.k;
                 if (e > 0 && g.f == 0 && !g.k && !g.o && k0d.k(g.a()).a(e, max2, z3)) {
-                    jf7 Y = jf7.Y(g.b);
-                    Y.a.c(new zc7(Y, g.c, g.d, e, max2, z3 ? 1 : 0, (byte) 2));
+                    kf7 a0 = kf7.a0(g.b);
+                    a0.a.c(new ad7(a0, g.c, g.d, e, max2, z3 ? 1 : 0, (byte) 2));
                 }
                 nm9 nm9Var = g.w;
                 if (nm9Var != null) {

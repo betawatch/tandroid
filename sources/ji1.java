@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ji1 implements vs4 {
     public final mx2 a;
@@ -61,7 +61,7 @@ public final class ji1 implements vs4 {
 
     public final Object a(nm4 nm4Var, zw2 zw2Var) {
         Object b = xde.b(new hi1(nm4Var, this, null, (byte) 0), zw2Var);
-        return b == vx2.a ? b : f9c.a;
+        return b == vx2.a ? b : g9c.a;
     }
 
     public final String b() {
@@ -90,7 +90,7 @@ public final class ji1 implements vs4 {
             case 1:
                 int i = this.b;
                 vx2 vx2Var = vx2.a;
-                f9c f9cVar = f9c.a;
+                g9c g9cVar = g9c.a;
                 if (i == -3) {
                     mx2 context = zw2Var.getContext();
                     Boolean bool = Boolean.FALSE;
@@ -100,10 +100,10 @@ public final class ji1 implements vs4 {
                     if (ur5.a(plus, context)) {
                         a = ((mm4) this.e).k(nm4Var, zw2Var);
                         if (a != vx2Var) {
-                            a = f9cVar;
+                            a = g9cVar;
                         }
                         if (a != vx2Var) {
-                            return f9cVar;
+                            return g9cVar;
                         }
                     } else {
                         rj2 rj2Var = rj2.b;
@@ -114,7 +114,7 @@ public final class ji1 implements vs4 {
                             }
                             a = jvd.a(plus, nm4Var, xhd.b(plus), new ii1(this, null, (byte) 1), zw2Var);
                             if (a != vx2Var) {
-                                return f9cVar;
+                                return g9cVar;
                             }
                         }
                     }
@@ -122,7 +122,7 @@ public final class ji1 implements vs4 {
                 }
                 a = a(nm4Var, zw2Var);
                 if (a != vx2Var) {
-                    return f9cVar;
+                    return g9cVar;
                 }
                 return a;
             default:

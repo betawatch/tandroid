@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class i70 implements zq7 {
     public static final i70 a = new i70();
@@ -8,6 +8,6 @@ public final class i70 implements zq7 {
 
     @Override // l34
     public final void a(Object obj, Object obj2) {
-        ((ar7) obj2).a(b, ((of7) obj).a);
+        ((ar7) obj2).a(b, ((pf7) obj).a);
     }
 }

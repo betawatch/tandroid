@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class c7 implements TextWatcher {
     public final /* synthetic */ byte a;
@@ -192,7 +192,7 @@ public final class c7 implements TextWatcher {
                 if (!TextUtils.isEmpty(((x12) this.b).E)) {
                     x12 x12Var4 = (x12) this.b;
                     String str2 = x12Var4.E;
-                    x12Var4.n0 = (str2 == null || str2.length() < 3 || TextUtils.isEmpty(uc7.s1(((x12) this.b).b.G3).k4.Q.f)) ? false : true;
+                    x12Var4.n0 = (str2 == null || str2.length() < 3 || TextUtils.isEmpty(uc7.s1(((x12) this.b).b.G3).l4.Q.f)) ? false : true;
                     x12 x12Var5 = (x12) this.b;
                     if (!TextUtils.equals(x12Var5.f0, x12Var5.E)) {
                         ((x12) this.b).N.clear();

@@ -3,7 +3,7 @@
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ns3 implements av3 {
     public final /* synthetic */ byte a;
@@ -177,8 +177,8 @@ public final class ns3 implements av3 {
                     jo4 jo4Var = new jo4();
                     l6cVar.b();
                     jo4Var.a = l6cVar.e;
-                    jo4Var.r = dg7.n("video/mp2t");
-                    jo4Var.s = dg7.n("application/dvbsubs");
+                    jo4Var.r = eg7.n("video/mp2t");
+                    jo4Var.s = eg7.n("application/dvbsubs");
                     jo4Var.v = Collections.singletonList(k6cVar.b);
                     jo4Var.d = k6cVar.a;
                     xnb.v(jo4Var, e0);
@@ -193,8 +193,8 @@ public final class ns3 implements av3 {
                 jo4 jo4Var2 = new jo4();
                 l6cVar.b();
                 jo4Var2.a = l6cVar.e;
-                jo4Var2.r = dg7.n("video/mp2t");
-                jo4Var2.s = dg7.n("application/id3");
+                jo4Var2.r = eg7.n("video/mp2t");
+                jo4Var2.s = eg7.n("application/id3");
                 xnb.v(jo4Var2, e02);
                 break;
         }

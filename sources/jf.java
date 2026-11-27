@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.c;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class jf implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class jf implements View.OnClickListener {
                 AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) obj2;
                 lp7 lp7Var = (lp7) obj;
                 iArr[0] = ((Integer) view.getTag()).intValue();
-                SharedPreferences.Editor edit = uc7.s1(yac.t0).W3.edit();
+                SharedPreferences.Editor edit = uc7.s1(yac.t0).X3.edit();
                 if (i == 1) {
                     edit.putInt("popupAll", iArr[0]);
                 } else if (i == 0) {

@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bq6 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -93,9 +93,9 @@ public final /* synthetic */ class bq6 implements RequestDelegate {
                                 Object[] objArr = new Object[1];
                                 objArr[c] = arrayList2;
                                 notificationCenter.k(jn7.q1, objArr);
-                                jf7 messagesStorage = ls6Var2.getMessagesStorage();
+                                kf7 messagesStorage = ls6Var2.getMessagesStorage();
                                 messagesStorage.getClass();
-                                Utilities.d.c(new q41(messagesStorage, arrayList2, (byte) 17));
+                                Utilities.d.c(new q41(messagesStorage, arrayList2, (byte) 16));
                                 break;
                             default:
                                 ls6 ls6Var3 = ls6Var;
@@ -185,9 +185,9 @@ public final /* synthetic */ class bq6 implements RequestDelegate {
                                 Object[] objArr = new Object[1];
                                 objArr[c] = arrayList2;
                                 notificationCenter.k(jn7.q1, objArr);
-                                jf7 messagesStorage = ls6Var2.getMessagesStorage();
+                                kf7 messagesStorage = ls6Var2.getMessagesStorage();
                                 messagesStorage.getClass();
-                                Utilities.d.c(new q41(messagesStorage, arrayList2, (byte) 17));
+                                Utilities.d.c(new q41(messagesStorage, arrayList2, (byte) 16));
                                 break;
                             default:
                                 ls6 ls6Var3 = ls6Var;

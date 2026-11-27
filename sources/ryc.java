@@ -11,11 +11,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ryc {
     public final xna a;
-    public final l09 b;
+    public final m09 b;
     public final u8a c;
     public final vh4 d;
     public final ee8 e;
@@ -38,10 +38,10 @@ public final class ryc {
 
     public ryc(boolean z, String str, String str2, String str3, xna xnaVar) {
         this.a = xnaVar;
-        l09 l09Var = new l09((byte) 6);
-        l09Var.c = 1;
-        l09Var.b = 1;
-        this.b = l09Var;
+        m09 m09Var = new m09((byte) 6);
+        m09Var.c = 1;
+        m09Var.b = 1;
+        this.b = m09Var;
         u8a u8aVar = new u8a();
         u8aVar.a = str;
         u8aVar.b = str2;
@@ -85,11 +85,11 @@ public final class ryc {
 
     public final void b() {
         synchronized (this.b) {
-            l09 l09Var = this.b;
-            if (l09Var.b != 1) {
+            m09 m09Var = this.b;
+            if (m09Var.b != 1) {
                 throw new syc(1, "The current state of the WebSocket is not CREATED.");
             }
-            l09Var.b = 2;
+            m09Var.b = 2;
         }
         this.d.e();
         try {
@@ -152,10 +152,10 @@ public final class ryc {
                 if (F != 2) {
                     return;
                 }
-                l09 l09Var = this.b;
-                l09Var.b = 4;
-                if (l09Var.c == 1) {
-                    l09Var.c = 3;
+                m09 m09Var = this.b;
+                m09Var.b = 4;
+                if (m09Var.c == 1) {
+                    m09Var.c = 3;
                 }
                 g(vyc.a(1000, null));
                 this.d.e();
@@ -284,7 +284,7 @@ public final class ryc {
             try {
                 wyc wycVar = new wyc(new BufferedOutputStream(socket.getOutputStream()));
                 byte[] bArr = new byte[16];
-                hg7.a.nextBytes(bArr);
+                ig7.a.nextBytes(bArr);
                 String a = e31.a(bArr);
                 u8a u8aVar = this.c;
                 u8aVar.d = a;
@@ -297,7 +297,7 @@ public final class ryc {
                 arrayList.add(new String[]{"Sec-WebSocket-Key", (String) u8aVar.d});
                 String str2 = (String) u8aVar.a;
                 if (str2 != null && str2.length() != 0) {
-                    arrayList.add(new String[]{"Authorization", "Basic " + e31.a(hg7.a(str2))});
+                    arrayList.add(new String[]{"Authorization", "Basic " + e31.a(ig7.a(str2))});
                 }
                 StringBuilder l = c00.l(y, "\r\n");
                 int size = arrayList.size();
@@ -331,11 +331,11 @@ public final class ryc {
                     }
                 }
                 try {
-                    wycVar.write(hg7.a(sb));
+                    wycVar.write(ig7.a(sb));
                     wycVar.flush();
                     aj3 aj3Var = new aj3((Object) this, (byte) 11);
                     try {
-                        String b2 = hg7.b(pi6Var);
+                        String b2 = ig7.b(pi6Var);
                         if (b2 == null || b2.length() == 0) {
                             throw new syc(6, "The status line of the opening handshake response is empty.");
                         }
@@ -345,7 +345,7 @@ public final class ryc {
                             StringBuilder sb2 = null;
                             while (true) {
                                 try {
-                                    String b3 = hg7.b(pi6Var);
+                                    String b3 = ig7.b(pi6Var);
                                     if (b3 == null || b3.length() == 0) {
                                         break;
                                     }
@@ -406,7 +406,7 @@ public final class ryc {
                                                         throw new tt7(14, "The opening handshake response does not contain 'Sec-WebSocket-Accept' header.", pi5Var);
                                                     }
                                                     try {
-                                                        if (!e31.a(MessageDigest.getInstance("SHA-1").digest(hg7.a(qd4.o(a, "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")))).equals((String) list3.get(0))) {
+                                                        if (!e31.a(MessageDigest.getInstance("SHA-1").digest(ig7.a(qd4.o(a, "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")))).equals((String) list3.get(0))) {
                                                             throw new tt7(15, "The value of 'Sec-WebSocket-Accept' header is different from the expected one.", pi5Var);
                                                         }
                                                     } catch (Exception unused5) {

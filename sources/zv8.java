@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class zv8 implements oa6 {
     public final /* synthetic */ cw8 E;
@@ -71,8 +71,8 @@ public final class zv8 implements oa6 {
                 this.d.X(z63Var, this.b, this.c.a.getResponseHeaders(), j, j2, this.e);
                 if (this.E.K != null && (e84Var = (e84) this.d.c) != null) {
                     e84 a = e84Var.a();
-                    if (a instanceof qh7) {
-                        ((qh7) a).t = true;
+                    if (a instanceof rh7) {
+                        ((rh7) a).t = true;
                     }
                 }
                 if (this.r) {

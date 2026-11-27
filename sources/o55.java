@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class o55 {
     public static final ArrayList a = new ArrayList();
@@ -46,12 +46,12 @@ public abstract class o55 {
         linearLayout.addView(a55.g(context, "@" + p, vnbVar), tre.t(-2, -2, 1, 36, 6, 36, 12));
     }
 
-    public static void b(sk7 sk7Var, n55 n55Var) {
-        sk7Var.d0 = false;
-        sk7Var.z0 = new ut(n55Var, (byte) 2);
-        sk7Var.setOnDismissListener(new o1(n55Var, (byte) 22));
-        sk7Var.show();
-        hl.d3(new se4(n55Var, sk7Var, (byte) 19), 700L);
+    public static void b(tk7 tk7Var, n55 n55Var) {
+        tk7Var.d0 = false;
+        tk7Var.z0 = new ut(n55Var, (byte) 2);
+        tk7Var.setOnDismissListener(new o1(n55Var, (byte) 22));
+        tk7Var.show();
+        hl.d3(new se4(n55Var, tk7Var, (byte) 19), 700L);
     }
 
     public static void c(Context context, final int i, final TLRPC.User user, final JSONObject jSONObject, final String str, final byte[] bArr, final vnb vnbVar, l55 l55Var) {
@@ -59,8 +59,8 @@ public abstract class o55 {
         int i2;
         final c C = c.C(i);
         boolean equals = "text".equals(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
-        final sk7 sk7Var = new sk7(context, vnbVar, new View[0]);
-        sk7Var.F0(aob.v0(aob.a7, vnbVar));
+        final tk7 tk7Var = new tk7(context, vnbVar, new View[0]);
+        tk7Var.F0(aob.v0(aob.a7, vnbVar));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         a(context, linearLayout, user, ob6.V(null, null, 2131742847, lbc.r(user)), vnbVar);
@@ -93,9 +93,9 @@ public abstract class o55 {
         k55 k55Var = new k55(context, jn7.q5);
         k55Var.addView(j);
         linearLayout.addView(k55Var, tre.k(12.0f, 4.0f, 12.0f, 0.0f, -1, -2));
-        rk7 rk7Var = new rk7(context);
-        rk7Var.getContent().addView(linearLayout, tre.c(-2.0f, -1));
-        sk7Var.E0(rk7Var);
+        sk7 sk7Var = new sk7(context);
+        sk7Var.getContent().addView(linearLayout, tre.c(-2.0f, -1));
+        tk7Var.E0(sk7Var);
         LinearLayout j2 = uh9.j(context, 1);
         if (equals) {
             TextView v3 = a55.v(context, ob6.M0(2131742660, null), 14, vnbVar);
@@ -114,8 +114,8 @@ public abstract class o55 {
         linearLayout2.addView(c51Var, tre.m(1.0f, 0, 44, 0, 6, 0));
         linearLayout2.addView(i4, tre.m(1.0f, 0, 44, 6, 0, 0));
         j2.addView(linearLayout2);
-        sk7Var.G0(j2);
-        final n55 n55Var = new n55(sk7Var, l55Var);
+        tk7Var.G0(j2);
+        final n55 n55Var = new n55(tk7Var, l55Var);
         final re4 re4Var = new re4(n55Var, i4, c51Var, (byte) 21);
         n55Var.g = re4Var;
         c51Var.setOnClickListener(new d55(n55Var, (byte) 1));
@@ -132,7 +132,7 @@ public abstract class o55 {
                 final re4 re4Var2 = re4Var;
                 re4Var2.run();
                 final int i5 = i;
-                final sk7 sk7Var2 = sk7Var;
+                final tk7 tk7Var2 = tk7Var;
                 final vnb vnbVar2 = vnbVar;
                 final String str2 = str;
                 final JSONObject jSONObject2 = jSONObject;
@@ -144,7 +144,7 @@ public abstract class o55 {
                     public final void a(Object obj, Object obj2) {
                         n55 n55Var3 = n55Var2;
                         c51 c51Var3 = c51Var2;
-                        sk7 sk7Var3 = sk7Var2;
+                        tk7 tk7Var3 = tk7Var2;
                         vnb vnbVar3 = vnbVar2;
                         re4 re4Var3 = re4Var2;
                         c cVar2 = cVar;
@@ -162,7 +162,7 @@ public abstract class o55 {
                             n55Var3.d = false;
                             c51Var3.setLoading(false);
                             if (str4 != null) {
-                                d31.d0(str4, sk7Var3.F, vnbVar3);
+                                d31.d0(str4, tk7Var3.F, vnbVar3);
                             }
                             re4Var3.run();
                             return;
@@ -185,15 +185,15 @@ public abstract class o55 {
                 });
             }
         });
-        b(sk7Var, n55Var);
+        b(tk7Var, n55Var);
         re4Var.run();
     }
 
     public static void d(final Context context, final int i, final TLRPC.User user, final z45 z45Var, final String str, final byte[] bArr, final vnb vnbVar, l55 l55Var) {
         final c C = c.C(i);
         char c = 0;
-        final sk7 sk7Var = new sk7(context, vnbVar, new View[0]);
-        sk7Var.F0(aob.v0(aob.a7, vnbVar));
+        final tk7 tk7Var = new tk7(context, vnbVar, new View[0]);
+        tk7Var.F0(aob.v0(aob.a7, vnbVar));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         a(context, linearLayout, user, ob6.V(null, null, 2131742846, lbc.r(user)), vnbVar);
@@ -221,9 +221,9 @@ public abstract class o55 {
         k55 k55Var = new k55(context, jn7.O3);
         k55Var.addView(linearLayout3);
         linearLayout.addView(k55Var, tre.k(12.0f, 6.0f, 12.0f, 0.0f, -1, -2));
-        rk7 rk7Var = new rk7(context);
-        rk7Var.getContent().addView(linearLayout, tre.c(-2.0f, -1));
-        sk7Var.E0(rk7Var);
+        sk7 sk7Var = new sk7(context);
+        sk7Var.getContent().addView(linearLayout, tre.c(-2.0f, -1));
+        tk7Var.E0(sk7Var);
         LinearLayout j2 = uh9.j(context, 1);
         TextView v = a55.v(context, null, 14, vnbVar);
         yob.X(v, aob.z6, vnbVar);
@@ -239,8 +239,8 @@ public abstract class o55 {
         i2.setText(ob6.M0(2131742819, null));
         linearLayout4.addView(i2, tre.m(1.0f, 0, 44, 6, 0, 0));
         j2.addView(linearLayout4);
-        sk7Var.G0(j2);
-        final n55 n55Var = new n55(sk7Var, l55Var);
+        tk7Var.G0(j2);
+        final n55 n55Var = new n55(tk7Var, l55Var);
         final int[] iArr = {0};
         final ao1 ao1Var = new ao1(n55Var, i2, iArr, c51Var, (byte) 29);
         final Runnable[] runnableArr = {new z87((Object) n55Var, (Object) iArr, (Object) v, (Object) ao1Var, (Object) C, (Object) z45Var, (byte) 14)};
@@ -293,8 +293,8 @@ public abstract class o55 {
                     c51Var2.setLoading(true);
                     ao1 ao1Var2 = ao1Var;
                     ao1Var2.run();
-                    final sk7 sk7Var2 = sk7Var;
-                    final hu0 hu0Var = new hu0(n55Var2, c51Var2, sk7Var2, vnbVar2, ao1Var2, (byte) 7);
+                    final tk7 tk7Var2 = tk7Var;
+                    final hu0 hu0Var = new hu0(n55Var2, c51Var2, tk7Var2, vnbVar2, ao1Var2, (byte) 7);
                     final c cVar = C;
                     final String str2 = str;
                     final byte[] bArr2 = bArr;
@@ -310,7 +310,7 @@ public abstract class o55 {
                             final z45 z45Var3 = z45Var2;
                             final TLRPC.User user3 = user2;
                             final int i5 = i4;
-                            final sk7 sk7Var3 = sk7Var2;
+                            final tk7 tk7Var3 = tk7Var2;
                             final vnb vnbVar3 = vnbVar2;
                             c35 c35Var = (c35) obj;
                             String str4 = (String) obj2;
@@ -341,7 +341,7 @@ public abstract class o55 {
                                             final TLRPC.User user4 = user3;
                                             final int i6 = i5;
                                             final c cVar3 = cVar2;
-                                            final sk7 sk7Var4 = sk7Var3;
+                                            final tk7 tk7Var4 = tk7Var3;
                                             final vnb vnbVar4 = vnbVar3;
                                             hl.c3(new Runnable() { // from class: i55
                                                 @Override // java.lang.Runnable
@@ -353,14 +353,14 @@ public abstract class o55 {
                                                     TLRPC.User user5 = user4;
                                                     int i7 = i6;
                                                     c cVar4 = cVar3;
-                                                    sk7 sk7Var5 = sk7Var4;
+                                                    tk7 tk7Var5 = tk7Var4;
                                                     String str6 = str5;
                                                     byte[] bArr5 = bArr4;
                                                     byte[] bArr6 = f;
                                                     vnb vnbVar5 = vnbVar4;
                                                     try {
                                                         if (!n55Var5.e) {
-                                                            walletEngine23.prepareTonConnectTransfer(c35Var3, z45Var5, "widget:" + user5.id + ":" + Utilities.b.nextLong(), new b55(i7, cVar4, sk7Var5, n55Var5, str6, bArr5, bArr6, vnbVar5));
+                                                            walletEngine23.prepareTonConnectTransfer(c35Var3, z45Var5, "widget:" + user5.id + ":" + Utilities.b.nextLong(), new b55(i7, cVar4, tk7Var5, n55Var5, str6, bArr5, bArr6, vnbVar5));
                                                         }
                                                     } finally {
                                                         c35Var3.close();
@@ -387,7 +387,7 @@ public abstract class o55 {
                 }
             }
         });
-        b(sk7Var, n55Var);
+        b(tk7Var, n55Var);
         runnableArr[0].run();
     }
 

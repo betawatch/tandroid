@@ -2,7 +2,7 @@
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class z73 implements nm4 {
     public final /* synthetic */ byte a;
@@ -24,7 +24,7 @@ public final class z73 implements nm4 {
         int i;
         Object g;
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         vx2 vx2Var = vx2.a;
         Object obj2 = this.b;
         switch (b) {
@@ -46,7 +46,7 @@ public final class z73 implements nm4 {
                             if (i0bVar instanceof k63) {
                                 Object obj4 = ((k63) i0bVar).b;
                                 y73Var.b = 1;
-                                return nm4Var.c(obj4, y73Var) == vx2Var ? vx2Var : f9cVar;
+                                return nm4Var.c(obj4, y73Var) == vx2Var ? vx2Var : g9cVar;
                             }
                             if (!(i0bVar instanceof sh4 ? true : i0bVar instanceof n8c)) {
                                 throw new zp2();
@@ -55,7 +55,7 @@ public final class z73 implements nm4 {
                         } else {
                             if (i == 1) {
                                 ixe.b(obj3);
-                                return f9cVar;
+                                return g9cVar;
                             }
                             grb.i("call to 'resume' before 'invoke' with coroutine");
                         }
@@ -70,7 +70,7 @@ public final class z73 implements nm4 {
                 return null;
             case 1:
                 o83 o83Var = (o83) obj2;
-                return ((o83Var.h.r() instanceof sh4) || (g = o83Var.g(true, zw2Var)) != vx2Var) ? f9cVar : g;
+                return ((o83Var.h.r() instanceof sh4) || (g = o83Var.g(true, zw2Var)) != vx2Var) ? g9cVar : g;
             default:
                 o9a o9aVar = (o9a) obj;
                 yja yjaVar = (yja) obj2;
@@ -81,7 +81,7 @@ public final class z73 implements nm4 {
                     yjaVar.b();
                 }
                 Object e = yjaVar.e(o9aVar.a.a, vja.a, zw2Var);
-                return e == vx2Var ? e : f9cVar;
+                return e == vx2Var ? e : g9cVar;
         }
     }
 }

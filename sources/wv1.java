@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class wv1 implements pcc {
     public final /* synthetic */ byte a = 2;
@@ -17,8 +17,8 @@ public final /* synthetic */ class wv1 implements pcc {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ wv1(q58 q58Var, boolean z, w49 w49Var, View view) {
-        this.c = q58Var;
+    public /* synthetic */ wv1(r58 r58Var, boolean z, w49 w49Var, View view) {
+        this.c = r58Var;
         this.b = z;
         this.d = w49Var;
         this.e = view;
@@ -47,11 +47,11 @@ public final /* synthetic */ class wv1 implements pcc {
                 yx4Var.show();
                 break;
             case 1:
-                q58 q58Var = (q58) obj4;
+                r58 r58Var = (r58) obj4;
                 w49 w49Var = (w49) obj3;
                 View view = (View) obj2;
                 Long l = (Long) obj;
-                o68 o68Var = q58Var.a;
+                o68 o68Var = r58Var.a;
                 if (!z || w49Var.f == null) {
                     s49Var = new s49(view.getContext(), null, o68Var.P1, null, view, o68Var.getMeasuredWidth() / 2.0f, o68Var.getMeasuredHeight() / 2.0f, w49Var, o68Var.m2, 2, true);
                 } else {
@@ -100,7 +100,7 @@ public final /* synthetic */ class wv1 implements pcc {
                     }
                 }
                 if (l.longValue() <= 0) {
-                    v21 r = new d31(o68Var.M0, o68Var.l0).r(document, ob6.M0(2131746116, null), ob6.M0(2131743204, null), new x38(q58Var, (byte) 1));
+                    v21 r = new d31(o68Var.M0, o68Var.l0).r(document, ob6.M0(2131746116, null), ob6.M0(2131743204, null), new x38(r58Var, (byte) 1));
                     r.j = 5000;
                     r.j();
                 }
@@ -113,14 +113,14 @@ public final /* synthetic */ class wv1 implements pcc {
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
                 x53 x53Var = (x53) obj2;
                 o68 o68Var2 = ((j68) obj4).x;
-                t58 t58Var = o68Var2.M0;
+                u58 u58Var = o68Var2.M0;
                 if (((Boolean) obj).booleanValue()) {
                     storyItem.pinned = z;
                     boolean z2 = o68Var2.m1;
                     i = R.raw.chats_archived;
                     int i5 = R.raw.contact_check;
                     if (z2) {
-                        d31 d31Var2 = new d31(t58Var, x53Var);
+                        d31 d31Var2 = new d31(u58Var, x53Var);
                         if (z) {
                             str = ob6.M0(2131744236, null);
                         } else {
@@ -131,14 +131,14 @@ public final /* synthetic */ class wv1 implements pcc {
                         d31Var2.Q(i5, 36, str).j();
                         break;
                     } else if (z) {
-                        new d31(t58Var, x53Var).I(R.raw.contact_check, ob6.M0(2131744238, null), ob6.M0(2131744237, null)).j();
+                        new d31(u58Var, x53Var).I(R.raw.contact_check, ob6.M0(2131744238, null), ob6.M0(2131744237, null)).j();
                         break;
                     } else {
-                        d31Var = new d31(t58Var, x53Var);
+                        d31Var = new d31(u58Var, x53Var);
                         i2 = 2131744108;
                     }
                 } else {
-                    d31Var = new d31(t58Var, x53Var);
+                    d31Var = new d31(u58Var, x53Var);
                     i = R.raw.error;
                     i2 = 2131743534;
                 }

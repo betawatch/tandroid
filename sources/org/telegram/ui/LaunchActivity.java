@@ -102,7 +102,7 @@ import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.o;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
     public static final String C1 = UUID.randomUUID().toString();
@@ -1322,7 +1322,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                             }
                             TL_stories.TL_stories_getPeerStories tL_stories_getPeerStories = new TL_stories.TL_stories_getPeerStories();
                             tL_stories_getPeerStories.peer = uc7.s1(i18).j1(longValue2);
-                            ConnectionsManager.getInstance(i18).sendRequest(tL_stories_getPeerStories, new l5b(O1, j2, wz5Var));
+                            ConnectionsManager.getInstance(i18).sendRequest(tL_stories_getPeerStories, new m5b(O1, j2, wz5Var));
                             return;
                         }
                         final int i20 = i4;
@@ -1336,9 +1336,9 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                             long longValue3 = l5.longValue();
                             zo2 zo2Var = new zo2((Object) launchActivity3, (Object) tg5Var8, (Object) l5, i21, (byte) 3);
                             int i22 = O12.a;
-                            q5b A = O12.A(longValue3, false);
+                            r5b A = O12.A(longValue3, false);
                             if (A != null) {
-                                v5b b8 = A.b(i21);
+                                w5b b8 = A.b(i21);
                                 if (b8 != null) {
                                     TL_stories.TL_storyAlbum tL_storyAlbum = new TL_stories.TL_storyAlbum();
                                     tL_storyAlbum.album_id = b8.a;
@@ -1809,7 +1809,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                                                             } else if (o.F() && o.u().W) {
                                                                 o.u().l(false, true);
                                                             }
-                                                            rbb.v();
+                                                            sbb.v();
                                                             j95 j95Var = j95.s5;
                                                             if (j95Var != null) {
                                                                 j95Var.dismiss();
@@ -1943,7 +1943,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                                                                                         int i34 = i28;
                                                                                         uc7.s1(i34).j4(tL_messages_chatFull.users, false);
                                                                                         uc7.s1(i34).c4(tL_messages_chatFull.chats, false);
-                                                                                        jf7.Y(i34).j1(tL_messages_chatFull.users, tL_messages_chatFull.chats, false, true);
+                                                                                        kf7.a0(i34).n1(tL_messages_chatFull.users, tL_messages_chatFull.chats, false, true);
                                                                                         if (uc7.s1(i34).M0(Long.valueOf(chat2.linked_monoforum_id)) == null) {
                                                                                             try {
                                                                                                 tg5Var11.run();
@@ -2673,7 +2673,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                     return;
                 }
                 String string = uc7.e1().getString("language_showed2", "");
-                final String str = uc7.s1(this.P).s3;
+                final String str = uc7.s1(this.P).t3;
                 if (string.equals(str)) {
                     if (f11.a) {
                         cc4.b("alert already showed for ".concat(string));
@@ -3118,7 +3118,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
         } else if (o.F() && o.u().W) {
             o.u().l(false, true);
         }
-        rbb.v();
+        sbb.v();
         r47 r47Var = MediaController.z().v0;
         if (r47Var != null && r47Var.g4()) {
             MediaController.z().m(true, true, false, false);
@@ -3689,17 +3689,17 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                         if (obj3 instanceof uj3) {
                             uj3 uj3Var2 = (uj3) obj3;
                             if (uj3Var2.J3()) {
-                                if7 if7Var = uj3Var2.r2;
-                                if7Var.a = j2;
-                                if7Var.b = j;
+                                jf7 jf7Var = uj3Var2.r2;
+                                jf7Var.a = j2;
+                                jf7Var.b = j;
                                 tj3[] tj3VarArr = uj3Var2.f0;
                                 if (tj3VarArr != null) {
                                     for (tj3 tj3Var : tj3VarArr) {
                                         if (tj3Var.a() && hl.O1()) {
-                                            tj3Var.d.s = if7Var.a;
+                                            tj3Var.d.s = jf7Var.a;
                                         }
                                     }
-                                    int i3 = uc7.r5;
+                                    int i3 = uc7.s5;
                                     uj3Var2.G5(512, true);
                                 }
                             }
@@ -4242,7 +4242,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                 return;
             }
             if (i == jn7.i5) {
-                uc7.s1(this.P).X3.edit().remove("transcribeButtonPressed").apply();
+                uc7.s1(this.P).Y3.edit().remove("transcribeButtonPressed").apply();
                 return;
             }
             if (i == jn7.q5) {
@@ -4915,7 +4915,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
         } else if (o.F() && o.u().W) {
             o.u().l(false, true);
         }
-        rbb.v();
+        sbb.v();
         j95 j95Var = j95.s5;
         if (j95Var != null) {
             j95Var.dismiss();
@@ -5802,7 +5802,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                                                 this.p0.b(-1, G0);
                                             }
                                         }
-                                        ro4.a(zu1Var, if7.a(-j3, j2));
+                                        ro4.a(zu1Var, jf7.a(-j3, j2));
                                     }
                                     if (this.p0.b(-1, zu1Var)) {
                                         zu1Var.n8 = bundle.getString("path");
@@ -5842,7 +5842,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                                 break;
                             case 1523894383:
                                 if (string.equals("settings2")) {
-                                    this.p0.b(-1, new tba(null));
+                                    this.p0.b(-1, new uba(null));
                                     break;
                                 }
                                 break;
@@ -6327,16 +6327,16 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                 }
             }
         }
-        rbb rbbVar = rbb.G2;
-        if (rbbVar != null) {
-            rbbVar.t(false);
-            hbb hbbVar = rbbVar.d1;
-            if (hbbVar != null) {
-                hbbVar.f.r();
+        sbb sbbVar = sbb.G2;
+        if (sbbVar != null) {
+            sbbVar.t(false);
+            ibb ibbVar = sbbVar.d1;
+            if (ibbVar != null) {
+                ibbVar.f.r();
             }
-            gbb gbbVar = rbbVar.Y0;
-            if (gbbVar != null) {
-                gbbVar.x(0, true);
+            hbb hbbVar = sbbVar.Y0;
+            if (hbbVar != null) {
+                hbbVar.x(0, true);
             }
         }
         dlc.a(this);
@@ -6475,27 +6475,27 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                 }
             }
             mkc.h(iArr, i);
-            rbb rbbVar = rbb.G2;
+            sbb sbbVar = sbb.G2;
             byte b = 2;
             byte b2 = 0;
-            if (rbbVar != null) {
-                x53 x53Var = rbbVar.a;
-                Activity activity = rbbVar.b;
+            if (sbbVar != null) {
+                x53 x53Var = sbbVar.a;
+                Activity activity = sbbVar.b;
                 boolean z = iArr != null && iArr.length == 1 && iArr[0] == 0;
                 if (i == 111) {
-                    rbbVar.t2 = !z;
-                    if (z && rbbVar.g0 == 0) {
-                        rbbVar.B0.setCameraThumb(null);
+                    sbbVar.t2 = !z;
+                    if (z && sbbVar.g0 == 0) {
+                        sbbVar.B0.setCameraThumb(null);
                         if (CameraController.getInstance().isCameraInitied()) {
-                            rbbVar.p();
+                            sbbVar.p();
                         } else {
-                            CameraController.getInstance().initCamera(new bab(rbbVar, b2));
+                            CameraController.getInstance().initCamera(new bab(sbbVar, b2));
                         }
                     }
                 } else if (i == 114) {
                     if (z) {
                         MediaController.R(0);
-                        rbbVar.c(true);
+                        sbbVar.c(true);
                     } else {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, x53Var, activity);
                         int i2 = aob.L5;
@@ -6504,7 +6504,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                         SpannableStringBuilder S2 = hl.S2(ob6.M0(2131747026, null));
                         id idVar = alertDialog$Builder.a;
                         idVar.U = S2;
-                        alertDialog$Builder.j(ob6.M0(2131747027, null), new jab(rbbVar, b));
+                        alertDialog$Builder.j(ob6.M0(2131747027, null), new kab(sbbVar, b));
                         alertDialog$Builder.g(ob6.M0(2131751737, null), null);
                         idVar.show();
                     }
@@ -6517,13 +6517,13 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                         SpannableStringBuilder S22 = hl.S2(ob6.M0(2131747036, null));
                         id idVar2 = alertDialog$Builder2.a;
                         idVar2.U = S22;
-                        alertDialog$Builder2.j(ob6.M0(2131747027, null), new jab(rbbVar, (byte) 3));
+                        alertDialog$Builder2.j(ob6.M0(2131747027, null), new kab(sbbVar, (byte) 3));
                         alertDialog$Builder2.g(ob6.M0(2131751737, null), null);
                         idVar2.show();
                     }
                 } else if (i == 115) {
                     if (z) {
-                        hl3 hl3Var = rbbVar.z2;
+                        hl3 hl3Var = sbbVar.z2;
                         if (hl3Var != null) {
                             hl3Var.run();
                         }
@@ -6535,11 +6535,11 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                         SpannableStringBuilder S23 = hl.S2(ob6.M0(2131747040, null));
                         id idVar3 = alertDialog$Builder3.a;
                         idVar3.U = S23;
-                        alertDialog$Builder3.j(ob6.M0(2131747027, null), new jab(rbbVar, (byte) 5));
+                        alertDialog$Builder3.j(ob6.M0(2131747027, null), new kab(sbbVar, (byte) 5));
                         alertDialog$Builder3.g(ob6.M0(2131751737, null), null);
                         idVar3.show();
                     }
-                    rbbVar.z2 = null;
+                    sbbVar.z2 = null;
                 }
             }
             jn7.e().k(jn7.g5, Integer.valueOf(i), strArr, iArr);
@@ -6667,7 +6667,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
             ad8 ad8Var = q0.f0;
             if (ad8Var != null) {
                 ad8Var.invalidate();
-                hl.d3(new me7((Object) q0, (int) b, (byte) 6), 100L);
+                hl.d3(new oe7((Object) q0, (int) b, (byte) 6), 100L);
             }
             kfc kfcVar = q0.G2;
             if (kfcVar != null) {
@@ -6681,9 +6681,9 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                 na9Var.postRunnable(na9Var.x);
             }
         }
-        rbb rbbVar = rbb.G2;
-        if (rbbVar != null) {
-            rbbVar.O();
+        sbb sbbVar = sbb.G2;
+        if (sbbVar != null) {
+            sbbVar.O();
         }
         if (yac.h(yac.t0).a0 != null) {
             int i5 = yac.t0;
@@ -6841,7 +6841,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
             J1 = null;
         }
         uc7 s1 = uc7.s1(this.P);
-        if (s1.u3.contains("SETUP_LOGIN_EMAIL") || s1.u3.contains("SETUP_LOGIN_EMAIL_NOSKIP")) {
+        if (s1.v3.contains("SETUP_LOGIN_EMAIL") || s1.v3.contains("SETUP_LOGIN_EMAIL_NOSKIP")) {
             Utilities.d.c(new pa7(uc7.s1(this.P), (byte) 9));
         }
     }
@@ -6896,7 +6896,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                     } else if ((eVar instanceof gi1) && arguments != null && arguments.getInt("step") == 0) {
                         bundle.putBundle("args", arguments);
                         bundle.putString("fragment", "channel");
-                    } else if (eVar instanceof tba) {
+                    } else if (eVar instanceof uba) {
                         bundle.putString("fragment", "settings2");
                     }
                     eVar.saveSelfArgs(bundle);
@@ -7219,7 +7219,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
         if (uri != null) {
             ArrayList arrayList6 = launchActivity4.X != null ? new ArrayList(launchActivity4.X) : null;
             id idVar = new id(3, null, launchActivity4);
-            r7a.B(currentAccount).P(((if7) arrayList5.get(0)).a, launchActivity4.Y, launchActivity4.X, new e16(launchActivity4, currentAccount, uj3Var, z, arrayList6, uri, idVar));
+            r7a.B(currentAccount).P(((jf7) arrayList5.get(0)).a, launchActivity4.Y, launchActivity4.X, new e16(launchActivity4, currentAccount, uj3Var, z, arrayList6, uri, idVar));
             try {
                 idVar.q(300L);
             } catch (Exception unused) {
@@ -7232,7 +7232,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
             int i7 = i != 0 ? i : uj3Var2 == null ? 0 : uj3Var2.M2;
             boolean z13 = uj3Var2 != null && uj3Var2.O2;
             if (arrayList5.size() <= 1) {
-                long j3 = ((if7) arrayList5.get(0)).a;
+                long j3 = ((jf7) arrayList5.get(0)).a;
                 Bundle l = bs2.l("scrollToTopOnResume", true);
                 if (!hl.O1()) {
                     jn7.f(currentAccount).k(jn7.s, new Object[0]);
@@ -7246,7 +7246,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                 }
                 if (uc7.s1(currentAccount).C(l, uj3Var2, null, null)) {
                     zu1 zu1Var4 = new zu1(l);
-                    ro4.a(zu1Var4, (if7) arrayList5.get(0));
+                    ro4.a(zu1Var4, (jf7) arrayList5.get(0));
                     zu1Var = zu1Var4;
                 }
                 return false;
@@ -7276,7 +7276,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                 size2++;
             }
             for (int i8 = 0; i8 < arrayList5.size(); i8++) {
-                if (jj.h(launchActivity4, launchActivity4.P, ((if7) arrayList5.get(i8)).a, size2 > 1)) {
+                if (jj.h(launchActivity4, launchActivity4.P, ((jf7) arrayList5.get(i8)).a, size2 > 1)) {
                     return false;
                 }
             }
@@ -7309,9 +7309,9 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                                 if (i12 >= arrayList13.size()) {
                                     return;
                                 }
-                                long j5 = ((if7) arrayList13.get(i12)).a;
-                                long j6 = ((if7) arrayList13.get(i12)).b;
-                                if (j6 == 0 || (f = uc7.s1(i11).g4.f(-j5, j6)) == null || (message2 = f.topicStartMessage) == null) {
+                                long j5 = ((jf7) arrayList13.get(i12)).a;
+                                long j6 = ((jf7) arrayList13.get(i12)).b;
+                                if (j6 == 0 || (f = uc7.s1(i11).h4.f(-j5, j6)) == null || (message2 = f.topicStartMessage) == null) {
                                     r47Var2 = null;
                                 } else {
                                     r47Var2 = new r47(i11, message2, false, false);
@@ -7426,13 +7426,13 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
             CharSequence charSequence15 = null;
             int i12 = 0;
             while (i12 < arrayList5.size()) {
-                long j4 = ((if7) arrayList5.get(i12)).a;
-                long j5 = ((if7) arrayList5.get(i12)).b;
+                long j4 = ((jf7) arrayList5.get(i12)).a;
+                long j5 = ((jf7) arrayList5.get(i12)).b;
                 k5 a = k5.a(yac.t0);
                 int i13 = a.a;
                 if (j5 != 0) {
                     z3 = z17;
-                    TLRPC.TL_forumTopic f = uc7.s1(i13).g4.f(-j4, j5);
+                    TLRPC.TL_forumTopic f = uc7.s1(i13).h4.f(-j4, j5);
                     if (f != null && (message = f.topicStartMessage) != null) {
                         r47 r47Var2 = new r47(i13, message, false, false);
                         r47Var2.p = true;
@@ -7801,8 +7801,8 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
 
     public final void q0(final int i, final long j, final boolean z) {
         TL_stories.StoryItem storyItem;
-        u5b u5bVar;
-        u5b z2;
+        v5b v5bVar;
+        v5b z2;
         r47 f;
         r47 f2;
         TL_stories.StoryItem storyItem2;
@@ -7850,19 +7850,19 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
             storyItem = null;
         }
         if (storyItem == null) {
-            u5b z3 = O1.z(0, -1, j, true);
+            v5b z3 = O1.z(0, -1, j, true);
             if (z3 == null || (f2 = z3.f(i)) == null) {
                 z3 = null;
             } else {
                 storyItem = f2.l;
             }
             if (storyItem != null || (z2 = O1.z(1, -1, j, true)) == null || (f = z2.f(i)) == null) {
-                u5bVar = z3;
+                v5bVar = z3;
             } else {
                 storyItem = f.l;
-                u5bVar = z2;
+                v5bVar = z2;
             }
-            if (storyItem != null && u5bVar != null) {
+            if (storyItem != null && v5bVar != null) {
                 storyItem.dialogId = j;
                 org.telegram.ui.ActionBar.e Q2 = Q();
                 if (Q2 == null) {
@@ -7881,7 +7881,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                 if (z) {
                     Q2.getOrCreateStoryViewer().w1 = true;
                 }
-                Q2.getOrCreateStoryViewer().K(this, storyItem, arrayList2, 0, u5bVar, null, l6bVar3, false);
+                Q2.getOrCreateStoryViewer().K(this, storyItem, arrayList2, 0, v5bVar, null, l6bVar3, false);
                 return;
             }
         }
@@ -7971,7 +7971,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
         }
         l.o = true;
         l.M = false;
-        rbb.C(this, this.P).R(null, l, 0L);
+        sbb.C(this, this.P).R(null, l, 0L);
         uj3Var.finishFragment();
         this.V = null;
         this.S = null;
@@ -7996,7 +7996,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
         ArrayList arrayList2;
         if (tL_forumTopic == null) {
             i6 = i2;
-            tL_forumTopic2 = uc7.s1(i).g4.f(chat.id, i6);
+            tL_forumTopic2 = uc7.s1(i).h4.f(chat.id, i6);
         } else {
             i6 = i2;
             tL_forumTopic2 = tL_forumTopic;
@@ -8034,10 +8034,10 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                                 int i13 = i7;
                                 uc7.s1(i13).j4(tL_messages_forumTopics.users, false);
                                 uc7.s1(i13).c4(tL_messages_forumTopics.chats, false);
-                                qyb qybVar = uc7.s1(i13).g4;
+                                qyb qybVar = uc7.s1(i13).h4;
                                 TLRPC.Chat chat3 = chat2;
                                 qybVar.u(chat3.id, tL_messages_forumTopics.topics, zh6Var, false, 2, -1);
-                                qyb qybVar2 = uc7.s1(i13).g4;
+                                qyb qybVar2 = uc7.s1(i13).h4;
                                 long j = chat3.id;
                                 int i14 = i8;
                                 LaunchActivity.this.s0(i13, i14, chat3, i9, qybVar2.f(j, i14), runnable2, str3, num2, bArr2, i10, arrayList3, i11);
@@ -8142,7 +8142,7 @@ public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
                     j16Var.a(X1);
                     return;
                 } else {
-                    jf7.Y(this.P).a.c(new ue2((Object) this, j, (Object) j16Var, (byte) 27));
+                    kf7.a0(this.P).a.c(new ue2((Object) this, j, (Object) j16Var, (byte) 27));
                     return;
                 }
             }

@@ -32,7 +32,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class gl9 implements kmb, rib {
     public static Paint U;
@@ -390,7 +390,7 @@ public final class gl9 implements kmb, rib {
         float f = hl9Var.V;
         if (f > 0.0f) {
             r47 r47Var = hl9Var.b;
-            boolean z = hl9Var.O || (r47Var != null && uc7.s1(hl9Var.a).i4.z(r47Var));
+            boolean z = hl9Var.O || (r47Var != null && uc7.s1(hl9Var.a).j4.z(r47Var));
             if (this.I == null) {
                 va6 va6Var = new va6();
                 this.I = va6Var;
@@ -682,7 +682,7 @@ public final class gl9 implements kmb, rib {
         int v0 = aob.v0(D ? aob.Wc : aob.Vc, hl9Var.D);
         textPaint.setColor(v0);
         textPaint.linkColor = aob.v0(hl9Var.D() ? aob.Yc : aob.Xc, hl9Var.D);
-        ui7.b(canvas, this.b, i, f, new bf((Object) this, (Object) this.T, v0, (byte) 14));
+        vi7.b(canvas, this.b, i, f, new bf((Object) this, (Object) this.T, v0, (byte) 14));
         canvas.restore();
     }
 

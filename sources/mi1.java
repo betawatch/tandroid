@@ -2,7 +2,7 @@
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class mi1 implements ska, fd, ncc {
     public final /* synthetic */ ij1 a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class mi1 implements ska, fd, ncc {
                 ij1Var.m0.presentFragment(new ng1(j));
             }
         } else {
-            if (ij1Var.r0 >= uc7.s1(i).k4.b2.f()) {
+            if (ij1Var.r0 >= uc7.s1(i).l4.b2.f()) {
                 ij1Var.j1 = !ij1Var.j1;
                 hl.r(ni1Var);
                 hl.d3(ni1Var, 1000L);

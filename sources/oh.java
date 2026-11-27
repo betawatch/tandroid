@@ -31,7 +31,7 @@ import org.telegram.ui.d0;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class oh implements DialogInterface.OnClickListener {
     public final /* synthetic */ byte a;
@@ -256,7 +256,7 @@ public final /* synthetic */ class oh implements DialogInterface.OnClickListener
                         synchronized (kr5Var) {
                             kr5Var.b = i6;
                             kr5Var.a = true;
-                            zba.a.edit().putInt("round_video_video_bitrate", i6).apply();
+                            aca.a.edit().putInt("round_video_video_bitrate", i6).apply();
                             break;
                         }
                 }
@@ -268,28 +268,28 @@ public final /* synthetic */ class oh implements DialogInterface.OnClickListener
                 new d31(f9aVar.c, null).i(ob6.M0(2131743847, null)).j();
                 return;
             case 12:
-                xca xcaVar = (xca) this.c;
+                yca ycaVar = (yca) this.c;
                 ArrayList arrayList4 = (ArrayList) this.b;
-                SharedPreferences sharedPreferences = xcaVar.g;
-                ArrayList arrayList5 = xcaVar.c;
+                SharedPreferences sharedPreferences = ycaVar.g;
+                ArrayList arrayList5 = ycaVar.c;
                 if (i != 0) {
-                    wca wcaVar = new wca();
-                    wcaVar.a = i - 1;
-                    wcaVar.b = arrayList4;
-                    arrayList5.add(wcaVar);
+                    xca xcaVar = new xca();
+                    xcaVar.a = i - 1;
+                    xcaVar.b = arrayList4;
+                    arrayList5.add(xcaVar);
                     String string = sharedPreferences.getString("moretemplates", null);
                     if (string == null) {
-                        sb = String.valueOf(wcaVar.a);
+                        sb = String.valueOf(xcaVar.a);
                     } else {
                         StringBuilder l = c00.l(string, "|");
-                        l.append(wcaVar.a);
+                        l.append(xcaVar.a);
                         sb = l.toString();
                     }
                     for (int i7 = 0; i7 < arrayList4.size(); i7++) {
                         StringBuilder l2 = c00.l(sb, ",");
-                        l2.append(Math.round(((vca) arrayList4.get(i7)).a));
+                        l2.append(Math.round(((wca) arrayList4.get(i7)).a));
                         l2.append(",");
-                        l2.append(Math.round(((vca) arrayList4.get(i7)).b));
+                        l2.append(Math.round(((wca) arrayList4.get(i7)).b));
                         sb = l2.toString();
                     }
                     sharedPreferences.edit().putString("moretemplates", sb).apply();
@@ -297,26 +297,26 @@ public final /* synthetic */ class oh implements DialogInterface.OnClickListener
                 }
                 StringBuilder sb2 = new StringBuilder("[");
                 for (int i8 = 0; i8 < arrayList5.size(); i8++) {
-                    wca wcaVar2 = (wca) arrayList5.get(i8);
+                    xca xcaVar2 = (xca) arrayList5.get(i8);
                     if (i8 > 0) {
                         sb2.append(",\n");
                     }
                     sb2.append("\t{\n\t\t\"shape\": ");
-                    sb2.append(wcaVar2.a);
+                    sb2.append(xcaVar2.a);
                     sb2.append(",\n\t\t\"points\": [");
-                    for (int i9 = 0; i9 < wcaVar2.b.size(); i9++) {
+                    for (int i9 = 0; i9 < xcaVar2.b.size(); i9++) {
                         if (i9 > 0) {
                             sb2.append(",");
                         }
-                        vca vcaVar = (vca) wcaVar2.b.get(i9);
+                        wca wcaVar = (wca) xcaVar2.b.get(i9);
                         sb2.append("[");
-                        sb2.append(Math.round(vcaVar.a));
+                        sb2.append(Math.round(wcaVar.a));
                         sb2.append(",");
-                        sb2.append(Math.round(vcaVar.b));
+                        sb2.append(Math.round(wcaVar.b));
                         sb2.append("]");
                     }
                     sb2.append("],\n\t\t\"freq\": ");
-                    sb2.append(Math.round(((wcaVar2.c / xcaVar.a) * 100.0f) * 100.0f) / 100.0f);
+                    sb2.append(Math.round(((xcaVar2.c / ycaVar.a) * 100.0f) * 100.0f) / 100.0f);
                     sb2.append("\n\t}");
                 }
                 sb2.append("\n]");

@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class h62 implements r69 {
     public final /* synthetic */ byte a = 0;
@@ -75,7 +75,7 @@ public final /* synthetic */ class h62 implements r69 {
                             rsb a = rsb.a(i6);
                             int i7 = aob.F8;
                             yob.x(a72Var, a, i7, vnbVar, PorterDuff.Mode.SRC_IN);
-                            G.a(0, a, ob6.G(i6 / 3600, "Hours", new Object[0]), null, i7, aob.E8, new ze7((Object) a72Var, i6, (Object) view, (byte) 16));
+                            G.a(0, a, ob6.G(i6 / 3600, "Hours", new Object[0]), null, i7, aob.E8, new bf7((Object) a72Var, i6, (Object) view, (byte) 16));
                             i5++;
                         }
                     }

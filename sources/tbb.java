@@ -1,13 +1,11 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.SurfaceView;
-import org.telegram.messenger.ImageReceiver;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
-public final class tbb extends AnimatorListenerAdapter {
+public final /* synthetic */ class tbb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
     public final /* synthetic */ lcb b;
 
@@ -16,133 +14,55 @@ public final class tbb extends AnimatorListenerAdapter {
         this.b = lcbVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        o68 w;
-        g29 g29Var;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
         lcb lcbVar = this.b;
-        byte b2 = 1;
         switch (b) {
             case 0:
-                super.onAnimationEnd(animator);
-                icb icbVar = lcbVar.t0;
-                zbb zbbVar = lcbVar.w;
-                if (zbbVar != null) {
-                    zbbVar.a(true);
-                }
+                lcbVar.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 lcbVar.l();
-                lcbVar.J0.e();
-                g6b g6bVar = lcbVar.u1;
-                if (g6bVar != null) {
-                    g6bVar.b();
-                    hl.B2(lcbVar.u1);
-                    lcbVar.u1 = null;
+                zbb zbbVar = lcbVar.s;
+                if (zbbVar != null) {
+                    zbbVar.invalidate();
                 }
-                ImageReceiver imageReceiver = icbVar.b;
-                if (imageReceiver != null) {
-                    imageReceiver.v0(true, true);
-                    icbVar.b = null;
-                }
-                ImageReceiver imageReceiver2 = icbVar.c;
-                if (imageReceiver2 != null) {
-                    imageReceiver2.setAlpha(1.0f);
-                    icbVar.c.v0(true, true);
-                }
-                if (icbVar.d != null && (w = lcbVar.w()) != null && (g29Var = w.Y0.d) != null) {
-                    g29 g29Var2 = icbVar.d;
-                    g29Var2.getClass();
-                    g29Var2.c = g29Var.c;
-                    g29Var2.f = g29Var.f;
-                    g29Var2.b = g29Var.b;
-                    g29Var2.a = System.currentTimeMillis();
-                    g29Var2.c();
-                }
-                d30 d30Var = lcbVar.G0;
-                if (d30Var != null) {
-                    d30Var.m();
-                }
-                SurfaceView surfaceView = lcbVar.D0;
-                if (surfaceView != null) {
-                    surfaceView.setVisibility(4);
-                }
-                lcbVar.M();
-                try {
-                    hl.c3(new s8b(this, (byte) 7));
-                } catch (Exception unused) {
-                }
-                lcbVar.n0 = false;
-                lcbVar.d = false;
-                x58 x58Var = lcbVar.o1;
-                if (x58Var != null) {
-                    x58Var.run();
-                    lcbVar.o1 = null;
+                w96 w96Var = lcbVar.B0;
+                if (w96Var != null) {
+                    w96Var.F((1.0f - lcbVar.W) * lcbVar.V);
                     break;
                 }
                 break;
             case 1:
-                lcbVar.I = null;
-                lcbVar.a0 = 0.0f;
-                lcbVar.e0 = 0.0f;
-                acb acbVar = lcbVar.o0;
-                o68 currentPeerView = acbVar != null ? acbVar.getCurrentPeerView() : null;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lcbVar.V = floatValue;
+                acb acbVar = lcbVar.w;
+                if (acbVar != null && floatValue > 0.6f && si5.c && acbVar.a) {
+                    acbVar.a(false);
+                }
+                w96 w96Var2 = lcbVar.B0;
+                if (w96Var2 != null) {
+                    w96Var2.F((1.0f - lcbVar.W) * lcbVar.V);
+                }
+                lcbVar.l();
+                zbb zbbVar2 = lcbVar.s;
+                if (zbbVar2 != null) {
+                    zbbVar2.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                lcbVar.a0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lcbVar.e0 = Utilities.i(lcbVar.a0 / hl.L(200.0f), 1.0f, 0.0f);
+                bcb bcbVar = lcbVar.o0;
+                o68 currentPeerView = bcbVar == null ? null : bcbVar.getCurrentPeerView();
                 if (currentPeerView != null) {
                     currentPeerView.invalidate();
                     break;
                 }
                 break;
             default:
-                icb icbVar2 = lcbVar.t0;
-                lcbVar.V = 1.0f;
-                lcbVar.l();
-                lcb.x1 = false;
-                zbb zbbVar2 = lcbVar.w;
-                if (zbbVar2 != null) {
-                    zbbVar2.a(true);
-                }
-                ybb ybbVar = lcbVar.s;
-                if (ybbVar != null) {
-                    ybbVar.invalidate();
-                }
-                ImageReceiver imageReceiver3 = icbVar2.b;
-                if (imageReceiver3 != null && !lcbVar.d) {
-                    imageReceiver3.v0(true, true);
-                    icbVar2.b = null;
-                }
-                ImageReceiver imageReceiver4 = icbVar2.c;
-                if (imageReceiver4 != null && !lcbVar.d) {
-                    imageReceiver4.setAlpha(1.0f);
-                    icbVar2.c.v0(true, true);
-                    icbVar2.c = null;
-                }
-                o68 w2 = lcbVar.w();
-                if (w2 != null) {
-                    w2.c1(false);
-                }
-                w96 w96Var = lcbVar.B0;
-                if (w96Var != null) {
-                    w96Var.F((1.0f - lcbVar.W) * lcbVar.V);
-                }
-                if (lcbVar.w1) {
-                    lcbVar.w1 = false;
-                    lcbVar.m();
-                    hl.d3(new x58(lcbVar, b2), 30L);
-                } else if (!xea.T) {
-                    if (lcbVar.u1 == null && lcbVar.w != null) {
-                        g6b g6bVar2 = new g6b(lcbVar.w.getContext(), lcbVar.s);
-                        lcbVar.u1 = g6bVar2;
-                        g6bVar2.setAlpha(0.0f);
-                        lcbVar.w.addView(lcbVar.u1);
-                    }
-                    g6b g6bVar3 = lcbVar.u1;
-                    if (g6bVar3 != null) {
-                        g6bVar3.setOnClickListener(new kla(this, (byte) 16));
-                        lcbVar.u1.animate().alpha(1.0f).setDuration(150L).setListener(new ecb(this, b2)).start();
-                    }
-                    xea.F(true);
-                }
-                lcbVar.U();
-                lcbVar.J0.e();
+                lcbVar.f0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lcbVar.w.invalidate();
                 break;
         }
     }

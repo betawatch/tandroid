@@ -14,7 +14,7 @@ import android.view.ViewConfiguration;
 import android.widget.OverScroller;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ok9 extends dk9 {
     public final TL_iv.pageBlockMath X;
@@ -34,12 +34,12 @@ public final class ok9 extends dk9 {
     public int l0;
     public VelocityTracker m0;
     public OverScroller n0;
-    public final ki7 o0;
+    public final li7 o0;
 
     public ok9(hl9 hl9Var, Rect rect, int i, TL_iv.pageBlockMath pageblockmath) {
         super(hl9Var, rect, i);
         this.j0 = new Paint(3);
-        this.o0 = new ki7(this, (byte) 18);
+        this.o0 = new li7(this, (byte) 18);
         this.X = pageblockmath;
         int i2 = this.c;
         this.b0 = i2;

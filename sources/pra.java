@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class pra implements pcc {
     public final /* synthetic */ wua a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class pra implements pcc {
         int i = wuaVar.a;
         HashMap hashMap = it7.a;
         if (!TextUtils.isEmpty(tL_starGiftUnique.slug) && !tL_starGiftUnique.resale_ton_only && !it7.n(tL_starGiftUnique) && !tL_starGiftUnique.onchain_sale && !tL_starGiftUnique.fixed_sale && j >= 0) {
-            hr hrVar = uc7.s1(i).k4;
+            hr hrVar = uc7.s1(i).l4;
             if (hrVar.x.f && hrVar.v0.f && tL_starGiftUnique.getResellAmount(pj.a).a() > 0) {
                 buaVar.k = new us0(wuaVar, tL_starGiftUnique, j, tL_textWithEntities, z, hw4Var, (byte) 7);
             }

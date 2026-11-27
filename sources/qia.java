@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class qia extends c79 {
     public int F;
@@ -156,8 +156,8 @@ public final class qia extends c79 {
             a39Var.run();
             return;
         }
-        jf7 Y = jf7.Y(i);
-        Y.a.c(new xe7(Y, this.x, 0L, this.y.g(), 100, this.n.size(), false, new k25(this, a39Var, (byte) 2)));
+        kf7 a0 = kf7.a0(i);
+        a0.a.c(new ze7(a0, this.x, 0L, this.y.g(), 100, this.n.size(), false, new k25(this, a39Var, (byte) 2)));
     }
 
     public final void G(boolean z) {

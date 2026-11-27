@@ -26,9 +26,9 @@ import org.telegram.messenger.a;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class nh2 extends nk7 {
+public final class nh2 extends ok7 {
     public static final ph2 l;
     public static final HashMap m;
     public final ExtendedDefaultDataSourceFactory e;
@@ -86,12 +86,12 @@ public final class nh2 extends nk7 {
         return qd4.y("http://", str, str2);
     }
 
-    @Override // nk7
-    public final lk7 d(jk7 jk7Var) {
+    @Override // ok7
+    public final mk7 d(kk7 kk7Var) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
         StringBuilder m2 = uh9.m(incrementAndGet, "Request ", " ");
-        switch (jk7Var.g) {
+        switch (kk7Var.g) {
             case 1:
                 str = "GET";
                 break;
@@ -146,11 +146,11 @@ public final class nh2 extends nk7 {
         }
         m2.append(str);
         m2.append(" ");
-        m2.append(jk7Var.f);
+        m2.append(kk7Var.f);
         m2.append(" ");
-        bs2.x(m2, (String) jk7Var.i.get("range"), "CAST_SERVER");
+        bs2.x(m2, (String) kk7Var.i.get("range"), "CAST_SERVER");
         try {
-            lk7 j = j(jk7Var);
+            mk7 j = j(kk7Var);
             fz1 fz1Var = j.e;
             fz1Var.put("Access-Control-Allow-Origin", "*");
             fz1Var.put("Access-Control-Max-Age", "3628800");
@@ -159,7 +159,7 @@ public final class nh2 extends nk7 {
             return j;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
-            lk7 b = nk7.b(29, "text/plain", "Error reading file");
+            mk7 b = ok7.b(29, "text/plain", "Error reading file");
             fz1 fz1Var2 = b.e;
             fz1Var2.put("Access-Control-Allow-Origin", "*");
             fz1Var2.put("Access-Control-Max-Age", "3628800");
@@ -187,23 +187,23 @@ public final class nh2 extends nk7 {
         }
         if (z) {
             try {
-                nk7.c(this.a);
+                ok7.c(this.a);
                 ArrayList arrayList = new ArrayList((List) this.c.c);
                 int size = arrayList.size();
                 int i = 0;
                 while (i < size) {
                     Object obj = arrayList.get(i);
                     i++;
-                    gk7 gk7Var = (gk7) obj;
-                    nk7.c(gk7Var.a);
-                    nk7.c(gk7Var.b);
+                    hk7 hk7Var = (hk7) obj;
+                    ok7.c(hk7Var.a);
+                    ok7.c(hk7Var.b);
                 }
                 Thread thread = this.b;
                 if (thread != null) {
                     thread.join();
                 }
             } catch (Exception e2) {
-                nk7.d.log(Level.SEVERE, "Could not stop all connections", (Throwable) e2);
+                ok7.d.log(Level.SEVERE, "Could not stop all connections", (Throwable) e2);
             }
             this.j = false;
         }
@@ -216,21 +216,21 @@ public final class nh2 extends nk7 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final lk7 j(jk7 jk7Var) {
+    public final mk7 j(kk7 kk7Var) {
         String str;
         ry0 ry0Var;
         long j;
         long j2;
-        lk7 b;
+        mk7 b;
         long parseLong;
         long j3;
         long j4;
-        String str2 = (String) jk7Var.i.get("host");
+        String str2 = (String) kk7Var.i.get("host");
         StringBuilder l2 = c00.l("http://", str2);
-        l2.append(jk7Var.f);
+        l2.append(kk7Var.f);
         String path = Uri.parse(l2.toString()).getPath();
-        if (ik8.c(6, jk7Var.g)) {
-            return nk7.b(2, "text/plain", "");
+        if (ik8.c(6, kk7Var.g)) {
+            return ok7.b(2, "text/plain", "");
         }
         boolean equals = TextUtils.equals(path, "/");
         HashMap hashMap = this.h;
@@ -270,7 +270,7 @@ public final class nh2 extends nk7 {
                 }
                 i++;
             }
-            return nk7.b(2, "text/plain", sb.toString());
+            return ok7.b(2, "text/plain", sb.toString());
         }
         ph2 ph2Var = (ph2) hashMap2.get(path);
         if (ph2Var == null) {
@@ -279,13 +279,13 @@ public final class nh2 extends nk7 {
         if (ph2Var == null) {
             Pair pair = this.i;
             File file = (pair == null || !((String) pair.first).equalsIgnoreCase(path)) ? null : (File) this.i.second;
-            return file != null ? new lk7(2, "image/jpeg", new BufferedInputStream(new FileInputStream(file)), file.length()) : nk7.b(16, "text/plain", "file not found");
+            return file != null ? new mk7(2, "image/jpeg", new BufferedInputStream(new FileInputStream(file)), file.length()) : ok7.b(16, "text/plain", "file not found");
         }
         Uri uri = ph2Var.c;
-        String str3 = (String) jk7Var.i.get("host");
+        String str3 = (String) kk7Var.i.get("host");
         String str4 = ph2Var.a;
         if (uri.toString().startsWith("data:application/x-mpegurl;base64,")) {
-            return nk7.b(2, str4, new String(Base64.decode(uri.toString().substring(34), 0)).replaceAll("mtproto:", i(str3, "/mtproto_")));
+            return ok7.b(2, str4, new String(Base64.decode(uri.toString().substring(34), 0)).replaceAll("mtproto:", i(str3, "/mtproto_")));
         }
         h73 createDataSource = (uri.toString().startsWith("file://") ? uri.toString().startsWith("file:///android_asset/") ? this.f : this.g : this.e).createDataSource();
         Map map = Collections.EMPTY_MAP;
@@ -295,7 +295,7 @@ public final class nh2 extends nk7 {
         createDataSource.close();
         boolean equals2 = TextUtils.equals(str4, "application/x-mpegURL");
         if (!equals2) {
-            String str5 = (String) jk7Var.i.get("range");
+            String str5 = (String) kk7Var.i.get("range");
             if (!TextUtils.isEmpty(str5)) {
                 String substring = str5.trim().substring(6);
                 if (substring.startsWith("-")) {
@@ -331,20 +331,20 @@ public final class nh2 extends nk7 {
                     createDataSource.open(new n73(uri, 1, null, map, j5, j6, null, 0));
                     createDataSource.read(bArr, 0, i2);
                     createDataSource.close();
-                    return nk7.b(2, str4, new String(bArr).replaceAll("mtproto:", i(str3, "/mtproto_")));
+                    return ok7.b(2, str4, new String(bArr).replaceAll("mtproto:", i(str3, "/mtproto_")));
                 }
                 if (j != 0) {
                     j2 = open;
-                    b = new lk7(ry0Var != null ? 6 : 2, ph2Var.a, new mh2(createDataSource, new n73(uri, 1, null, map, j5, j6, null, 0)), j);
+                    b = new mk7(ry0Var != null ? 6 : 2, ph2Var.a, new mh2(createDataSource, new n73(uri, 1, null, map, j5, j6, null, 0)), j);
                 } else {
                     j2 = open;
-                    b = nk7.b(5, str4, str);
+                    b = ok7.b(5, str4, str);
                 }
-                lk7 lk7Var = b;
+                mk7 mk7Var = b;
                 if (ry0Var != null) {
-                    lk7Var.e.put("Content-Range", "bytes " + ry0Var.a + "-" + ry0Var.b + "/" + j2);
+                    mk7Var.e.put("Content-Range", "bytes " + ry0Var.a + "-" + ry0Var.b + "/" + j2);
                 }
-                return lk7Var;
+                return mk7Var;
             }
         }
         str = "";

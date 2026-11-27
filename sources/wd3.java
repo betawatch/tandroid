@@ -21,7 +21,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class wd3 implements Runnable {
     public final /* synthetic */ byte a;
@@ -117,7 +117,7 @@ public final /* synthetic */ class wd3 implements Runnable {
                     TLRPC.Dialog dialog2 = (TLRPC.Dialog) arrayList.get(i2);
                     if (uj3Var4.getMessagesController().v2(j2) || uj3Var4.getMessagesController().C2(j2)) {
                         uc7 messagesController = uj3Var4.getMessagesController();
-                        jf7 messagesStorage = messagesController.getMessagesStorage();
+                        kf7 messagesStorage = messagesController.getMessagesStorage();
                         j = j2;
                         messagesStorage.a.c(new ue2((Object) messagesStorage, j, (Object) new y97(messagesController, j2), (byte) 5));
                     } else {
@@ -140,7 +140,7 @@ public final /* synthetic */ class wd3 implements Runnable {
                 if (tLObject instanceof TL_bots.popularAppBots) {
                     TL_bots.popularAppBots popularappbots = (TL_bots.popularAppBots) tLObject;
                     uc7.s1(i4).j4(popularappbots.users, false);
-                    jf7.Y(i4).j1(popularappbots.users, null, false, true);
+                    kf7.a0(i4).n1(popularappbots.users, null, false, true);
                     arrayList2.addAll(popularappbots.users);
                     String str = popularappbots.next_offset;
                     mk3Var.g = str;
@@ -157,8 +157,8 @@ public final /* synthetic */ class wd3 implements Runnable {
                         ArrayList arrayList3 = new ArrayList();
                         for (int i5 = 0; i5 < arrayList2.size(); i5 = dze.c(i5, 1, ((TLRPC.User) arrayList2.get(i5)).id, arrayList3)) {
                         }
-                        jf7 Y = jf7.Y(i4);
-                        Y.a.c(new da7((Object) mk3Var, (Object) Y, (Object) arrayList3, currentTimeMillis, (Object) str3, (byte) 5));
+                        kf7 a0 = kf7.a0(i4);
+                        a0.a.c(new da7((Object) mk3Var, (Object) a0, (Object) arrayList3, currentTimeMillis, (Object) str3, (byte) 5));
                     }
                     mk3Var.c = false;
                     ik3Var.run();
@@ -207,7 +207,7 @@ public final /* synthetic */ class wd3 implements Runnable {
                 gx9Var2.getClass();
                 try {
                     sb.insert(0, "DELETE FROM search_recent WHERE ");
-                    jf7.Y(gx9Var2.t0).b.executeFast(sb.toString()).stepThis().dispose();
+                    kf7.a0(gx9Var2.t0).b.executeFast(sb.toString()).stepThis().dispose();
                     break;
                 } catch (Exception e2) {
                     cc4.g(e2, true);
@@ -348,7 +348,7 @@ public final /* synthetic */ class wd3 implements Runnable {
                     int i12 = zw3.C1;
                     uc7.s1(zw3Var.a).j4(tL_contacts_resolvedPeer.users, false);
                     uc7.s1(zw3Var.a).c4(tL_contacts_resolvedPeer.chats, false);
-                    jf7.Y(zw3Var.a).j1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
+                    kf7.a0(zw3Var.a).n1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
                 }
                 fw3Var.n = true;
                 fw3Var.F();

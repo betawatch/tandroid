@@ -23,7 +23,7 @@ import org.telegram.messenger.a;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class x49 {
     public static int W;
@@ -40,7 +40,7 @@ public final class x49 {
     public float O;
     public u49 P;
     public boolean Q;
-    public z09 R;
+    public yz8 R;
     public float a;
     public int b;
     public int c;
@@ -343,15 +343,15 @@ public final class x49 {
                     this.N = motionEvent.getX();
                     this.O = paddingTop;
                     this.P = (u49) arrayList.get(i);
-                    z09 z09Var = this.R;
-                    if (z09Var != null) {
-                        hl.r(z09Var);
+                    yz8 yz8Var = this.R;
+                    if (yz8Var != null) {
+                        hl.r(yz8Var);
                         this.R = null;
                     }
                     this.P.X.c(true);
-                    z09 z09Var2 = new z09(this, this.P, (byte) 6);
-                    this.R = z09Var2;
-                    hl.d3(z09Var2, ViewConfiguration.getLongPressTimeout());
+                    yz8 yz8Var2 = new yz8(this, this.P, (byte) 7);
+                    this.R = yz8Var2;
+                    hl.d3(yz8Var2, ViewConfiguration.getLongPressTimeout());
                     this.Q = true;
                 }
             }
@@ -365,16 +365,16 @@ public final class x49 {
                     u49Var.X.c(false);
                 }
                 this.P = null;
-                z09 z09Var3 = this.R;
-                if (z09Var3 != null) {
-                    hl.r(z09Var3);
+                yz8 yz8Var3 = this.R;
+                if (yz8Var3 != null) {
+                    hl.r(yz8Var3);
                     this.R = null;
                 }
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            z09 z09Var4 = this.R;
-            if (z09Var4 != null) {
-                hl.r(z09Var4);
+            yz8 yz8Var4 = this.R;
+            if (yz8Var4 != null) {
+                hl.r(yz8Var4);
                 this.R = null;
             }
             if (this.Q && this.P != null && motionEvent.getAction() == 1) {

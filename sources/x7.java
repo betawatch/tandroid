@@ -29,7 +29,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class x7 extends FrameLayout implements snb {
     public final Paint E;
@@ -324,7 +324,7 @@ public abstract class x7 extends FrameLayout implements snb {
                 v0 = ((ColorDrawable) r0).getColor();
             } else {
                 Pair pair = null;
-                Bitmap bitmap = r0 instanceof hh7 ? ((hh7) r0).k : r0 instanceof BitmapDrawable ? ((BitmapDrawable) r0).getBitmap() : null;
+                Bitmap bitmap = r0 instanceof ih7 ? ((ih7) r0).k : r0 instanceof BitmapDrawable ? ((BitmapDrawable) r0).getBitmap() : null;
                 if (bitmap != null) {
                     int i6 = iArr[0];
                     Point point = hl.q;

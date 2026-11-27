@@ -6,7 +6,7 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class g61 implements Runnable {
     public final /* synthetic */ byte a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class g61 implements Runnable {
                         i = 0;
                     }
                     try {
-                        z61Var.getMessagesStorage().k0(arrayList, arrayList4, false);
+                        z61Var.getMessagesStorage().m0(arrayList, arrayList4, false);
                     } catch (Exception e2) {
                         e = e2;
                         cc4.g(e, true);
@@ -79,7 +79,7 @@ public final /* synthetic */ class g61 implements Runnable {
                 }
                 if (!arrayList2.isEmpty()) {
                     try {
-                        z61Var.getMessagesStorage().P(TextUtils.join(",", arrayList2), arrayList5);
+                        z61Var.getMessagesStorage().R(TextUtils.join(",", arrayList2), arrayList5);
                     } catch (Exception e3) {
                         cc4.g(e3, true);
                     }

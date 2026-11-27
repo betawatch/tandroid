@@ -18,7 +18,7 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.b;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d25 implements Runnable {
     public final /* synthetic */ pcc E;
@@ -388,7 +388,7 @@ public final /* synthetic */ class d25 implements Runnable {
                                     r47Var2.X1 = true;
                                     ArrayList arrayList3 = new ArrayList();
                                     arrayList3.add(tL_messageService);
-                                    B222.getMessagesStorage().g1(arrayList3, false, true, false, 0, false, 0, 0L);
+                                    B222.getMessagesStorage().k1(arrayList3, false, true, false, 0, false, 0, 0L);
                                     B222.getMessagesController().z5(0, user2.id, qd4.t(r47Var2));
                                     B222.getNotificationCenter().k(3, new Object[0]);
                                     B222.e0(tL_messageService, false);

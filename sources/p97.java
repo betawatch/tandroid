@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class p97 implements RequestDelegate {
     public final /* synthetic */ byte a = 1;
@@ -23,11 +23,11 @@ public final /* synthetic */ class p97 implements RequestDelegate {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object i;
 
-    public /* synthetic */ p97(uc7 uc7Var, Context context, id idVar, ef7 ef7Var, long j, ea2 ea2Var, e eVar, TLRPC.TL_messages_migrateChat tL_messages_migrateChat) {
+    public /* synthetic */ p97(uc7 uc7Var, Context context, id idVar, ff7 ff7Var, long j, ea2 ea2Var, e eVar, TLRPC.TL_messages_migrateChat tL_messages_migrateChat) {
         this.d = uc7Var;
         this.c = context;
         this.e = idVar;
-        this.f = ef7Var;
+        this.f = ff7Var;
         this.b = j;
         this.g = ea2Var;
         this.h = eVar;
@@ -47,7 +47,7 @@ public final /* synthetic */ class p97 implements RequestDelegate {
             case 0:
                 uc7 uc7Var = (uc7) obj6;
                 id idVar = (id) obj5;
-                ef7 ef7Var = (ef7) obj4;
+                ff7 ff7Var = (ff7) obj4;
                 ea2 ea2Var = (ea2) obj3;
                 e eVar = (e) obj2;
                 TLRPC.TL_messages_migrateChat tL_messages_migrateChat = (TLRPC.TL_messages_migrateChat) obj;
@@ -56,7 +56,7 @@ public final /* synthetic */ class p97 implements RequestDelegate {
                     if (ea2Var != null) {
                         ea2Var.run();
                     }
-                    hl.c3(new ra7((Object) uc7Var, (Object) ef7Var, (Object) context, (Object) idVar, (Object) tL_error, (Object) eVar, (Object) tL_messages_migrateChat, (byte) 0));
+                    hl.c3(new ra7((Object) uc7Var, (Object) ff7Var, (Object) context, (Object) idVar, (Object) tL_error, (Object) eVar, (Object) tL_messages_migrateChat, (byte) 0));
                     break;
                 } else {
                     if (context != null) {
@@ -64,7 +64,7 @@ public final /* synthetic */ class p97 implements RequestDelegate {
                     }
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
                     uc7Var.Y3(updates, false);
-                    hl.c3(new cq6((Object) ef7Var, (Object) updates, this.b, (byte) 6));
+                    hl.c3(new cq6((Object) ff7Var, (Object) updates, this.b, (byte) 6));
                     break;
                 }
             default:

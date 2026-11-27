@@ -1,62 +1,32 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.view.View;
+import android.graphics.drawable.Drawable;
+import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
-public final class bbb extends View {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ Canvas b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ Paint f;
-    public final /* synthetic */ Bitmap h;
-    public final /* synthetic */ Paint n;
-    public final /* synthetic */ float r;
-    public final /* synthetic */ float s;
-    public final /* synthetic */ rbb w;
+public final class bbb extends ImageSpan {
+    public final /* synthetic */ Drawable a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bbb(rbb rbbVar, Context context, boolean z, Canvas canvas, float f, float f2, float f3, Paint paint, Bitmap bitmap, Paint paint2, float f4, float f5) {
-        super(context);
-        this.w = rbbVar;
-        this.a = z;
-        this.b = canvas;
-        this.c = f;
-        this.d = f2;
-        this.e = f3;
-        this.f = paint;
-        this.h = bitmap;
-        this.n = paint2;
-        this.r = f4;
-        this.s = f5;
+    public bbb(Drawable drawable, Drawable drawable2) {
+        super(drawable);
+        this.a = drawable2;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        rbb rbbVar = this.w;
-        float f = rbbVar.E2;
-        Paint paint = this.n;
-        float f2 = this.e;
-        float f3 = this.d;
-        float f4 = this.c;
-        if (this.a) {
-            if (f > 0.0f) {
-                this.b.drawCircle(f4, f3, f2 * f, this.f);
-            }
-            canvas.drawBitmap(this.h, 0.0f, 0.0f, paint);
-        } else {
-            canvas.drawCircle(f4, f3, (1.0f - f) * f2, paint);
-        }
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
         canvas.save();
-        canvas.translate(this.r, this.s);
-        rbbVar.j1.draw(canvas);
+        canvas.translate(0.0f, hl.L(1.0f) + ((i5 - i3) / 2));
+        this.a.setAlpha(paint.getAlpha());
+        super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
         canvas.restore();
+    }
+
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
+        return (super.getSize(paint, charSequence, i, i2, fontMetricsInt) / 3) << 1;
     }
 }

@@ -11,7 +11,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class sv9 {
     public rv9 a;
@@ -66,7 +66,7 @@ public class sv9 {
                 z = true;
             }
             if (z) {
-                jf7.Y(this.m).a.c(new en9(this, this.q, (byte) 11));
+                kf7.a0(this.m).a.c(new dn9(this, this.q, (byte) 12));
             }
         }
     }
@@ -80,7 +80,7 @@ public class sv9 {
     public final void c() {
         this.q = new ArrayList();
         this.r = new HashMap();
-        jf7.Y(this.m).a.c(new pv9(this, (byte) 1));
+        kf7.a0(this.m).a.c(new pv9(this, (byte) 1));
     }
 
     public boolean d(TLObject tLObject) {
@@ -405,7 +405,7 @@ public class sv9 {
                         arrayList12.clear();
                         uc7.s1(i8).c4(tL_contacts_found2.chats, false);
                         uc7.s1(i8).j4(tL_contacts_found2.users, false);
-                        jf7.Y(i8).j1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
+                        kf7.a0(i8).n1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
                         zh6 zh6Var8 = new zh6();
                         zh6 zh6Var9 = new zh6();
                         for (int i9 = 0; i9 < tL_contacts_found2.chats.size(); i9++) {

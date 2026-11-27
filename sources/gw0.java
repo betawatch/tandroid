@@ -23,7 +23,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gw0 implements Runnable {
     public final /* synthetic */ byte a;
@@ -175,7 +175,7 @@ public final /* synthetic */ class gw0 implements Runnable {
                 return;
             case 4:
                 try {
-                    jf7.Y(this.b).b.executeFast("DELETE FROM search_recent WHERE 1").stepThis().dispose();
+                    kf7.a0(this.b).b.executeFast("DELETE FROM search_recent WHERE 1").stepThis().dispose();
                     return;
                 } catch (Exception e) {
                     cc4.g(e, true);
@@ -187,7 +187,7 @@ public final /* synthetic */ class gw0 implements Runnable {
                 a.F = true;
                 a.H = 0L;
                 if (VoIPService.getSharedInstance() == null) {
-                    uc7.s1(i16).Z3 = false;
+                    uc7.s1(i16).a4 = false;
                     return;
                 }
                 return;

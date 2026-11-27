@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
 import org.webrtc.EglBase;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public class VideoFileRenderer implements VideoSink {
     private static final String TAG = "VideoFileRenderer";
@@ -119,12 +119,12 @@ public class VideoFileRenderer implements VideoSink {
     @Override // org.webrtc.VideoSink
     public void onFrame(VideoFrame videoFrame) {
         videoFrame.retain();
-        this.renderThreadHandler.post(new g9c(this, videoFrame, (byte) 10));
+        this.renderThreadHandler.post(new c9c(this, videoFrame, (byte) 11));
     }
 
     public void release() {
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.renderThreadHandler.post(new g9c(this, countDownLatch, (byte) 11));
+        this.renderThreadHandler.post(new c9c(this, countDownLatch, (byte) 12));
         ThreadUtils.awaitUninterruptibly(countDownLatch);
         this.fileThreadHandler.post(new azb(this, (byte) 13));
         try {

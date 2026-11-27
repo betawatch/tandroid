@@ -56,7 +56,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class of3 extends jf0 implements i6b, snb {
     public boolean A0;
@@ -1473,7 +1473,7 @@ public class of3 extends jf0 implements i6b, snb {
                                                                                                     }
                                                                                                     charSequence27 = charSequence11;
                                                                                                     if (r47Var14.i2[0] instanceof oo4) {
-                                                                                                        TLRPC.TL_forumTopic f9 = uc7.s1(this.G0).g4.f(-this.g1.A0(), r47.a2(this.G0, this.g1.k, true));
+                                                                                                        TLRPC.TL_forumTopic f9 = uc7.s1(this.G0).h4.f(-this.g1.A0(), r47.a2(this.G0, this.g1.k, true));
                                                                                                         charSequence27 = charSequence11;
                                                                                                         if (f9 != null) {
                                                                                                             ((oo4) this.g1.i2[0]).b(f9.icon_color);
@@ -1735,7 +1735,7 @@ public class of3 extends jf0 implements i6b, snb {
                                                                                 String U3 = hl.U(U2);
                                                                                 TLRPC.Chat chat9 = this.h2;
                                                                                 if (chat9 != null && chat9.forum && !this.Q && !this.P) {
-                                                                                    CharSequence i24 = uc7.s1(this.G0).g4.i(this.h2, this.g1, this.b0);
+                                                                                    CharSequence i24 = uc7.s1(this.G0).h4.i(this.h2, this.g1, this.b0);
                                                                                     if (!TextUtils.isEmpty(i24)) {
                                                                                         SpannableStringBuilder spannableStringBuilder8 = new SpannableStringBuilder("-");
                                                                                         wm2 wm2Var2 = new wm2(a.b.getDrawable(R.drawable.msg_mini_forumarrow).mutate());
@@ -2374,7 +2374,7 @@ public class of3 extends jf0 implements i6b, snb {
                                                         r6 = drawableArr2;
                                                     }
                                                     r6[0] = str3;
-                                                    k = uc7.s1(this.G0).g4.j(this.h2, this.g1, this.b0, this.i0);
+                                                    k = uc7.s1(this.G0).h4.j(this.h2, this.g1, this.b0, this.i0);
                                                     if (k == null) {
                                                         str18 = L0;
                                                         U = "";
@@ -5120,7 +5120,7 @@ public class of3 extends jf0 implements i6b, snb {
                 valueOf = Q(i, charSequence5, charSequence);
                 if (this.g1.i2[0] instanceof oo4) {
                     int i2 = this.G0;
-                    TLRPC.TL_forumTopic f = uc7.s1(i2).g4.f(-r47.B0(this.g1.k), r47.b2(i2, this.g1.k, true, false));
+                    TLRPC.TL_forumTopic f = uc7.s1(i2).h4.f(-r47.B0(this.g1.k), r47.b2(i2, this.g1.k, true, false));
                     if (f != null) {
                         ((oo4) this.g1.i2[0]).b(f.icon_color);
                     }
@@ -6001,7 +6001,7 @@ public class of3 extends jf0 implements i6b, snb {
                         if (M02 == null || !(M02.forum || (M02.monoforum && xc2.A(i19, M02, 24)))) {
                             i2 = i19;
                             if (dialog instanceof TLRPC.TL_dialogFolder) {
-                                this.T0 = jf7.Y(i2).M;
+                                this.T0 = kf7.a0(i2).M;
                                 this.V0 = 0;
                                 this.W0 = 0;
                                 this.X0 = 0;
@@ -6044,7 +6044,7 @@ public class of3 extends jf0 implements i6b, snb {
                             }
                         } else {
                             i2 = i19;
-                            uc7.s1(i19).g4.h(M02.id);
+                            uc7.s1(i19).h4.h(M02.id);
                             this.T0 = iArr[0];
                             this.V0 = iArr[1];
                             this.W0 = iArr[2];
@@ -6116,7 +6116,7 @@ public class of3 extends jf0 implements i6b, snb {
                 uc7 s1 = uc7.s1(i2);
                 imageReceiver = imageReceiver5;
                 ac7[] ac7VarArr = s1.N;
-                if (s1.l4 && yac.h(a.a).p()) {
+                if (s1.m4 && yac.h(a.a).p()) {
                     ArrayList arrayList4 = s1.G0;
                     if (i24 == 7) {
                         ac7Var = ac7VarArr[0];
@@ -6211,7 +6211,7 @@ public class of3 extends jf0 implements i6b, snb {
                                 z6 = z2;
                             }
                         }
-                        int i30 = uc7.r5;
+                        int i30 = uc7.s5;
                         if ((524288 & i) != 0) {
                             TLRPC.User user3 = this.g2;
                             ul ulVar = this.o4;
@@ -6310,7 +6310,7 @@ public class of3 extends jf0 implements i6b, snb {
                                     TLRPC.Chat M05 = dialog2 == null ? null : uc7.s1(i5).M0(Long.valueOf(-dialog2.id));
                                     if (M05 == null || !(M05.forum || (M05.monoforum && xc2.A(i5, M05, 24)))) {
                                         if (dialog2 instanceof TLRPC.TL_dialogFolder) {
-                                            i12 = jf7.Y(i5).M;
+                                            i12 = kf7.a0(i5).M;
                                             z8 = z5;
                                         } else if (dialog2 instanceof TLRPC.TL_dialogCommunity) {
                                             ga6 Q02 = uc7.s1(i5).Q0(-dialog2.id);
@@ -6342,7 +6342,7 @@ public class of3 extends jf0 implements i6b, snb {
                                         i14 = 0;
                                         i13 = 0;
                                     } else {
-                                        uc7.s1(i5).g4.h(M05.id);
+                                        uc7.s1(i5).h4.h(M05.id);
                                         i12 = iArr[0];
                                         i15 = iArr[1];
                                         i14 = iArr[2];
@@ -6639,7 +6639,7 @@ public class of3 extends jf0 implements i6b, snb {
                         L = hl.L(12.0f);
                     } else {
                         TLRPC.Chat chat4 = this.h2;
-                        L = ((chat4 == null || !chat4.forum || this.K0 != 0 || this.P) && (this.s0 || (user = this.g2) == null || !user.self || !uc7.s1(i5).P3)) ? hl.L(28.0f) : hl.L(16.0f);
+                        L = ((chat4 == null || !chat4.forum || this.K0 != 0 || this.P) && (this.s0 || (user = this.g2) == null || !user.self || !uc7.s1(i5).Q3)) ? hl.L(28.0f) : hl.L(16.0f);
                     }
                     imageReceiver2.q0(L);
                     z13 = z18;

@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.TextureView;
 import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hl2 implements Runnable {
     public final /* synthetic */ byte a;
@@ -48,18 +48,18 @@ public final /* synthetic */ class hl2 implements Runnable {
                 }
                 return;
             case 1:
-                jf7 jf7Var = (jf7) obj;
+                kf7 kf7Var = (kf7) obj;
                 SQLitePreparedStatement sQLitePreparedStatement = null;
                 try {
                     try {
-                        sQLitePreparedStatement = jf7Var.b.executeFast("REPLACE INTO messages_seq VALUES(?, ?, ?)");
+                        sQLitePreparedStatement = kf7Var.b.executeFast("REPLACE INTO messages_seq VALUES(?, ?, ?)");
                         sQLitePreparedStatement.requery();
                         sQLitePreparedStatement.bindInteger(1, i3);
                         sQLitePreparedStatement.bindInteger(2, i2);
                         sQLitePreparedStatement.bindInteger(3, i);
                         sQLitePreparedStatement.step();
                     } catch (Exception e) {
-                        jf7Var.n(e, true);
+                        kf7Var.p(e, true);
                         if (sQLitePreparedStatement == null) {
                             return;
                         }

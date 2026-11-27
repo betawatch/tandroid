@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class PasscodeActivity extends org.telegram.ui.ActionBar.e implements fn7 {
     public boolean E;
@@ -494,7 +494,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.e implements fn7
             bf6 bf6Var = this.n;
             ok2[] ok2VarArr = bf6Var.f;
             if (i >= ok2VarArr.length) {
-                bf6Var.postDelayed(new pl7(this, runnable, (byte) 15), (ok2VarArr.length * 75) + 350);
+                bf6Var.postDelayed(new ql7(this, runnable, (byte) 16), (ok2VarArr.length * 75) + 350);
                 return;
             } else {
                 ok2 ok2Var = ok2VarArr[i];
@@ -967,7 +967,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.e implements fn7
         this.autoLockRow = i2;
         this.Q = i2 + 2;
         this.I = i2 + 1;
-        if (getMessagesController().k4.v0.f) {
+        if (getMessagesController().l4.v0.f) {
             int i3 = this.Q;
             this.J = i3;
             this.Q = i3 + 2;

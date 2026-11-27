@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class sae implements s99, y2c, mi0, l12, bl0, qhc, dc4, d23, j30, pj2 {
     public static sae E;
@@ -158,28 +158,28 @@ public class sae implements s99, y2c, mi0, l12, bl0, qhc, dc4, d23, j30, pj2 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object h(FileOutputStream fileOutputStream, zw2 zw2Var) {
-        vi7 vi7Var;
+        wi7 wi7Var;
         int i;
         FileOutputStream fileOutputStream2;
         long j;
-        vi7 vi7Var2;
-        if (zw2Var instanceof vi7) {
-            vi7Var = (vi7) zw2Var;
-            int i2 = vi7Var.e;
+        wi7 wi7Var2;
+        if (zw2Var instanceof wi7) {
+            wi7Var = (wi7) zw2Var;
+            int i2 = wi7Var.e;
             if ((i2 & TLObject.FLAG_31) != 0) {
-                vi7Var.e = i2 - TLObject.FLAG_31;
-                Object obj = vi7Var.c;
-                i = vi7Var.e;
+                wi7Var.e = i2 - TLObject.FLAG_31;
+                Object obj = wi7Var.c;
+                i = wi7Var.e;
                 if (i == 0) {
                     if (i != 1) {
                         grb.i("call to 'resume' before 'invoke' with coroutine");
                         return null;
                     }
-                    j = vi7Var.b;
-                    FileOutputStream fileOutputStream3 = vi7Var.a;
+                    j = wi7Var.b;
+                    FileOutputStream fileOutputStream3 = wi7Var.a;
                     ixe.b(obj);
                     fileOutputStream2 = fileOutputStream3;
-                    vi7Var2 = vi7Var;
+                    wi7Var2 = wi7Var;
                     j <<= 1;
                     if (j <= 60000) {
                         FileLock lock = fileOutputStream2.getChannel().lock(0L, Long.MAX_VALUE, false);
@@ -192,10 +192,10 @@ public class sae implements s99, y2c, mi0, l12, bl0, qhc, dc4, d23, j30, pj2 {
                         if (message == null || ddb.f(0, 2, message, "Resource deadlock would occur") < 0) {
                             throw e2;
                         }
-                        vi7Var2.a = fileOutputStream2;
-                        vi7Var2.b = j;
-                        vi7Var2.e = 1;
-                        Object a2 = aie.a(j, vi7Var2);
+                        wi7Var2.a = fileOutputStream2;
+                        wi7Var2.b = j;
+                        wi7Var2.e = 1;
+                        Object a2 = aie.a(j, wi7Var2);
                         vx2 vx2Var = vx2.a;
                         if (a2 == vx2Var) {
                             return vx2Var;
@@ -208,14 +208,14 @@ public class sae implements s99, y2c, mi0, l12, bl0, qhc, dc4, d23, j30, pj2 {
                 ixe.b(obj);
                 fileOutputStream2 = fileOutputStream;
                 j = 10;
-                vi7Var2 = vi7Var;
+                wi7Var2 = wi7Var;
                 if (j <= 60000) {
                 }
             }
         }
-        vi7Var = new vi7(this, zw2Var);
-        Object obj2 = vi7Var.c;
-        i = vi7Var.e;
+        wi7Var = new wi7(this, zw2Var);
+        Object obj2 = wi7Var.c;
+        i = wi7Var.e;
         if (i == 0) {
         }
     }

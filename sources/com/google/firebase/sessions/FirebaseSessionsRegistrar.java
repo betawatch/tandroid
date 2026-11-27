@@ -4,20 +4,20 @@ import android.content.Context;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
 
     @Deprecated
     public static final String LIBRARY_NAME = "fire-sessions";
     private static final oj4 Companion = new oj4();
-    private static final h09 appContext = h09.a(Context.class);
-    private static final h09 firebaseApp = h09.a(ji4.class);
-    private static final h09 firebaseInstallationsApi = h09.a(ri4.class);
-    private static final h09 backgroundDispatcher = new h09(od0.class, px2.class);
-    private static final h09 blockingDispatcher = new h09(ok0.class, px2.class);
-    private static final h09 transportFactory = h09.a(e5c.class);
-    private static final h09 firebaseSessionsComponent = h09.a(jj4.class);
+    private static final i09 appContext = i09.a(Context.class);
+    private static final i09 firebaseApp = i09.a(ji4.class);
+    private static final i09 firebaseInstallationsApi = i09.a(ri4.class);
+    private static final i09 backgroundDispatcher = new i09(od0.class, px2.class);
+    private static final i09 blockingDispatcher = new i09(ok0.class, px2.class);
+    private static final i09 transportFactory = i09.a(e5c.class);
+    private static final i09 firebaseSessionsComponent = i09.a(jj4.class);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final gj4 getComponents$lambda$0(qq2 qq2Var) {
@@ -57,7 +57,7 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         t53Var.k = a;
         t53Var.l = pp3.a(new um4((Object) t53Var.d, (Object) a, (byte) 27));
         t53Var.m = pp3.a(new am2(t53Var.a, t53Var.e, t53Var.j, pp3.a(new y44(aj3.Q(g), 0 == true ? 1 : 0)), t53Var.i, (byte) 15));
-        t53Var.n = pp3.a(new pm3(t53Var.b, t53Var.g, pp3.a(new k09(t53Var.l, (byte) 8)), b));
+        t53Var.n = pp3.a(new pm3(t53Var.b, t53Var.g, pp3.a(new l09(t53Var.l, (byte) 8)), b));
         tw8 a2 = pp3.a(new lo8(t53Var.b, t53Var.k));
         tw8 tw8Var = t53Var.j;
         tw8 tw8Var2 = t53Var.l;

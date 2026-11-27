@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ou1 {
     public r47 a;
@@ -54,7 +54,7 @@ public final class ou1 {
         if (message.message == null && (message == null || message.rich_message == null)) {
             return null;
         }
-        return b(0, Math.min(uc7.s1(r47Var.K1).k4.V1.f(), d(r47Var)), r47Var);
+        return b(0, Math.min(uc7.s1(r47Var.K1).l4.V1.f(), d(r47Var)), r47Var);
     }
 
     public static int d(r47 r47Var) {
@@ -122,7 +122,7 @@ public final class ou1 {
                 }
             }
             this.b = 0;
-            this.c = Math.min(uc7.s1(r47Var.K1).k4.V1.f(), d(r47Var));
+            this.c = Math.min(uc7.s1(r47Var.K1).l4.V1.f(), d(r47Var));
             this.f = true;
             return;
         }

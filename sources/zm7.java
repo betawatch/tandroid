@@ -28,7 +28,7 @@ import org.telegram.messenger.NotificationBadge$XiaomiHomeBadger;
 import org.telegram.messenger.NotificationBadge$ZukHomeBadger;
 import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class zm7 {
     public static final LinkedList a;
@@ -129,7 +129,7 @@ public abstract class zm7 {
                                 intent2.putExtra("android.intent.extra.update_application_component_name", zm7.d.getPackageName() + "/" + zm7.d.getClassName());
                                 intent2.putExtra("android.intent.extra.update_application_message_text", String.valueOf(i2 != 0 ? Integer.valueOf(i2) : ""));
                                 if (zm7.a(intent2)) {
-                                    hl.c3(new ki7(intent2, (byte) 2));
+                                    hl.c3(new li7(intent2, (byte) 2));
                                 }
                             }
                         }

@@ -22,7 +22,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class u2c {
     public static HashMap O;
@@ -245,10 +245,10 @@ public abstract class u2c {
         if (i(r47Var)) {
             return true;
         }
-        if (s1.G3 <= 0 || r47Var.L0() > s1.k4.X1.f()) {
+        if (s1.H3 <= 0 || r47Var.L0() > s1.l4.X1.f()) {
             return false;
         }
-        return s1.H3 == 0 || connectionsManager.getCurrentTime() > s1.H3 || s1.I3 > 0;
+        return s1.I3 == 0 || connectionsManager.getCurrentTime() > s1.I3 || s1.J3 > 0;
     }
 
     public static boolean f(r47 r47Var, long j, String str) {
@@ -264,8 +264,8 @@ public abstract class u2c {
                 message.voiceTranscriptionFinal = true;
                 message.voiceTranscriptionLocal = false;
                 message.voiceTranscriptionWords = null;
-                jf7 Y = jf7.Y(r47Var2.K1);
-                Y.a.c(new wy((Object) Y, r47Var2.e1(), r47.B0(r47Var2.k), (Object) r47Var2.k, (Object) str, (byte) 6));
+                kf7 a0 = kf7.a0(r47Var2.K1);
+                a0.a.c(new wy((Object) a0, r47Var2.e1(), r47.B0(r47Var2.k), (Object) r47Var2.k, (Object) str, (byte) 6));
                 hl.c3(new n2c(r47Var2, j, str, (byte) 0));
                 return true;
             }
@@ -277,10 +277,10 @@ public abstract class u2c {
     public static int g(int i) {
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i);
         uc7 s1 = uc7.s1(i);
-        if (s1.G3 <= 0) {
+        if (s1.H3 <= 0) {
             return 0;
         }
-        return (s1.H3 == 0 || connectionsManager.getCurrentTime() > s1.H3) ? s1.G3 : s1.I3;
+        return (s1.I3 == 0 || connectionsManager.getCurrentTime() > s1.I3) ? s1.H3 : s1.J3;
     }
 
     public static boolean i(r47 r47Var) {
@@ -289,7 +289,7 @@ public abstract class u2c {
         }
         uc7 s1 = uc7.s1(r47Var.K1);
         TLRPC.Chat M0 = s1.M0(Long.valueOf(r47Var.x0()));
-        return xc2.n0(M0) && M0.level >= s1.k4.h2.f();
+        return xc2.n0(M0) && M0.level >= s1.l4.h2.f();
     }
 
     public static boolean j(r47 r47Var) {
@@ -372,9 +372,9 @@ public abstract class u2c {
         TLRPC.Message message = r47Var.k;
         if (message != null) {
             message.voiceTranscriptionForce = true;
-            jf7 Y = jf7.Y(r47Var.K1);
+            kf7 a0 = kf7.a0(r47Var.K1);
             long B0 = r47.B0(r47Var.k);
-            Y.a.c(new r77(Y, r47Var.e1(), B0, (TLObject) r47Var.k, (byte) 11));
+            a0.a.c(new r77(a0, r47Var.e1(), B0, (TLObject) r47Var.k, (byte) 11));
             if (z) {
                 hl.c3(new bt1(r47Var, (byte) 4));
             }
@@ -389,7 +389,7 @@ public abstract class u2c {
             }
             ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i);
             uc7 s1 = uc7.s1(i);
-            if (!yac.h(i).p() && s1.H3 != 0 && connectionsManager.getCurrentTime() <= s1.H3 && s1.I3 <= 0) {
+            if (!yac.h(i).p() && s1.I3 != 0 && connectionsManager.getCurrentTime() <= s1.I3 && s1.J3 <= 0) {
                 return true;
             }
         }
@@ -463,8 +463,8 @@ public abstract class u2c {
                 hashMap.remove(Integer.valueOf(r(r47Var)));
             }
             r47Var.k.voiceTranscriptionOpen = false;
-            jf7 Y = jf7.Y(i);
-            Y.a.c(new r77(Y, i2, m, (TLObject) r47Var.k, (byte) 11));
+            kf7 a0 = kf7.a0(i);
+            a0.a.c(new r77(a0, i2, m, (TLObject) r47Var.k, (byte) 11));
             hl.c3(new Runnable() { // from class: o2c
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -488,8 +488,8 @@ public abstract class u2c {
         if (message.voiceTranscription != null && message.voiceTranscriptionFinal && (!message.voiceTranscriptionLocal || A(r47Var))) {
             q(r47Var);
             r47Var.k.voiceTranscriptionOpen = true;
-            jf7 Y2 = jf7.Y(i);
-            Y2.a.c(new r77(Y2, i2, m, (TLObject) r47Var.k, (byte) 11));
+            kf7 a02 = kf7.a0(i);
+            a02.a.c(new r77(a02, i2, m, (TLObject) r47Var.k, (byte) 11));
             hl.c3(new Runnable() { // from class: o2c
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -553,18 +553,18 @@ public abstract class u2c {
                         if ((tL_messages_transcribedAudio.flags & 2) != 0) {
                             uc7 s1 = uc7.s1(i3);
                             int i4 = tL_messages_transcribedAudio.trial_remains_num;
-                            if (i4 != s1.I3) {
-                                s1.I3 = i4;
-                                s1.X3.edit().putInt("transcribeAudioTrialCurrentNumber", s1.I3).apply();
+                            if (i4 != s1.J3) {
+                                s1.J3 = i4;
+                                s1.Y3.edit().putInt("transcribeAudioTrialCurrentNumber", s1.J3).apply();
                             }
                             uc7 s12 = uc7.s1(i3);
                             int i5 = tL_messages_transcribedAudio.trial_remains_until_date;
-                            if (i5 != s12.H3) {
-                                s12.H3 = i5;
-                                s12.X3.edit().putInt("transcribeAudioTrialCooldownUntil", s12.H3).apply();
+                            if (i5 != s12.I3) {
+                                s12.I3 = i5;
+                                s12.Y3.edit().putInt("transcribeAudioTrialCooldownUntil", s12.I3).apply();
                                 hl.c3(new l87(s12, b2));
                             }
-                            hl.c3(new bcb((Object) rb2Var2, (Object) tL_messages_transcribedAudio, (byte) 19));
+                            hl.c3(new hab((Object) rb2Var2, (Object) tL_messages_transcribedAudio, (byte) 20));
                         }
                         HashMap hashMap3 = u2c.O;
                         if (hashMap3 == null) {
@@ -577,15 +577,15 @@ public abstract class u2c {
                     } else {
                         if (tL_error != null && (str = tL_error.text) != null && str.startsWith("FLOOD_WAIT_")) {
                             uc7 s13 = uc7.s1(i3);
-                            if (s13.I3 != 0) {
-                                s13.I3 = 0;
-                                s13.X3.edit().putInt("transcribeAudioTrialCurrentNumber", s13.I3).apply();
+                            if (s13.J3 != 0) {
+                                s13.J3 = 0;
+                                s13.Y3.edit().putInt("transcribeAudioTrialCurrentNumber", s13.J3).apply();
                             }
                             uc7 s14 = uc7.s1(i3);
                             int intValue = Utilities.z(tL_error.text).intValue() + ConnectionsManager.getInstance(i3).getCurrentTime();
-                            if (intValue != s14.H3) {
-                                s14.H3 = intValue;
-                                s14.X3.edit().putInt("transcribeAudioTrialCooldownUntil", s14.H3).apply();
+                            if (intValue != s14.I3) {
+                                s14.I3 = intValue;
+                                s14.Y3.edit().putInt("transcribeAudioTrialCooldownUntil", s14.I3).apply();
                                 hl.c3(new l87(s14, b2));
                             }
                             hl.c3(new a39(r47Var2, rb2Var2, i3, (byte) 28));
@@ -604,9 +604,9 @@ public abstract class u2c {
                     if (f11.a) {
                         cc4.b("Transcription request sent, received final=" + z2 + " id=" + j + " text=" + str2);
                     }
-                    jf7 Y3 = jf7.Y(i3);
+                    kf7 a03 = kf7.a0(i3);
                     String str4 = str2;
-                    Y3.a.c(new wy((Object) Y3, i2, m, (Object) r47Var2.k, (Object) str4, (byte) 6));
+                    a03.a.c(new wy((Object) a03, i2, m, (Object) r47Var2.k, (Object) str4, (byte) 6));
                     if (z2) {
                         hl.d3(new n2c(r47Var2, j, str4, (byte) 1), Math.max(0L, 350 - elapsedRealtime2));
                     }
@@ -638,7 +638,7 @@ public abstract class u2c {
         r2c r2cVar = new r2c(r, f, r47Var, rb2Var);
         f.a(r2cVar, jn7.Y1);
         f.a(r2cVar, jn7.Z1);
-        S.put(valueOf, new bcb((Object) f, (Object) r2cVar, (byte) 20));
+        S.put(valueOf, new hab((Object) f, (Object) r2cVar, (byte) 21));
         xb4.G(i3).X(r47Var.F0(), r47Var, 3, 0);
     }
 
@@ -683,7 +683,7 @@ public abstract class u2c {
                 } else if (e(wb2Var.getMessageObject()) || A(wb2Var.getMessageObject()) || !(wb2Var.getMessageObject() == null || wb2Var.getMessageObject().k == null || TextUtils.isEmpty(wb2Var.getMessageObject().k.voiceTranscription))) {
                     z(wb2Var.getMessageObject(), z3, wb2Var.getDelegate());
                 } else if (wb2Var.getDelegate() != null) {
-                    if (uc7.s1(wb2Var.a6).G3 > 0) {
+                    if (uc7.s1(wb2Var.a6).H3 > 0) {
                         wb2Var.getDelegate().Y(3);
                     } else {
                         wb2Var.getDelegate().Y(0);

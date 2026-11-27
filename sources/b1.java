@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class b1 extends ny0 implements fn7 {
     public final c51 A2;
@@ -138,7 +138,7 @@ public final class b1 extends ny0 implements fn7 {
         frameLayout.addView(a1Var, tre.d(-1, -1.0f, jn7.D1, 12.0f, 0.0f, 12.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.w2 = frameLayout2;
-        zt3 zt3Var = new zt3(context, ob6.M0(2131754051, null), true, false, uc7.s1(this.a).k4.c0.f(), vnbVar);
+        zt3 zt3Var = new zt3(context, ob6.M0(2131754051, null), true, false, uc7.s1(this.a).l4.c0.f(), vnbVar);
         this.x2 = zt3Var;
         yt3 yt3Var = zt3Var.d;
         yt3Var.setImeOptions(6);
@@ -383,7 +383,7 @@ public final class b1 extends ny0 implements fn7 {
         if (d31Var.X() == null) {
             return;
         }
-        hr hrVar = uc7.s1(i).k4;
+        hr hrVar = uc7.s1(i).l4;
         boolean p = yac.h(i).p();
         d31Var.I(!p ? R.raw.star_premium_2 : R.raw.error, ob6.M0(2131754973, null), hl.N2(!p ? ob6.a0(null, null, 2131754974, Integer.valueOf(hrVar.d0.f()), Integer.valueOf(hrVar.e0.f())) : ob6.a0(null, null, 2131754975, Integer.valueOf(hrVar.e0.f())), -1, 0, new i(d31Var, (byte) 0), null)).j();
     }

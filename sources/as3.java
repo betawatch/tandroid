@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class as3 extends CameraView {
     public static final int[] b0 = {1893745684, -215458996, -862041025, -1258375037, -1320049076, -215749424, 1901578030, -215451421, 1908491424, -1321491332, -1155551678, 1908524435, 976847578, -1489198134, 1910814392, -713271737, -2010722764, 1407170066, -821405251, -1394190955, -1394190055, 1407170066, 1407159934, 1407172057, 1231389747, -2076538925, 41497626, 846150482, -1198092731, -251277614, -2073158771, 1273004781};
@@ -126,7 +126,7 @@ public abstract class as3 extends CameraView {
     public static void j0(boolean z) {
         byte b = 0;
         boolean f0 = f0(a.b, false);
-        if (uc7.s1(yac.t0).k4.s3.f) {
+        if (uc7.s1(yac.t0).l4.s3.f) {
             try {
                 TLRPC.TL_help_saveAppLog tL_help_saveAppLog = new TLRPC.TL_help_saveAppLog();
                 TLRPC.TL_inputAppEvent tL_inputAppEvent = new TLRPC.TL_inputAppEvent();
@@ -521,8 +521,8 @@ public abstract class as3 extends CameraView {
                     boolean z7 = Math.max(f36, (this.U / 2.0f) + f36) > ((float) (getHeight() - hl.L(66.0f)));
                     if (this.G != z6) {
                         this.G = z6;
-                        rbb rbbVar = ((wab) this).c0;
-                        rbbVar.p1.a(true, z6, rbbVar.j0);
+                        sbb sbbVar = ((xab) this).c0;
+                        sbbVar.p1.a(true, z6, sbbVar.j0);
                     }
                     if (this.H != z7) {
                         this.H = z7;
@@ -537,8 +537,8 @@ public abstract class as3 extends CameraView {
                     this.s = false;
                     if (this.G) {
                         this.G = false;
-                        rbb rbbVar2 = ((wab) this).c0;
-                        rbbVar2.p1.a(true, false, rbbVar2.j0);
+                        sbb sbbVar2 = ((xab) this).c0;
+                        sbbVar2.p1.a(true, false, sbbVar2.j0);
                     }
                     if (this.H) {
                         this.H = false;
@@ -548,8 +548,8 @@ public abstract class as3 extends CameraView {
                     this.s = false;
                     if (this.G) {
                         this.G = false;
-                        rbb rbbVar3 = ((wab) this).c0;
-                        rbbVar3.p1.a(true, false, rbbVar3.j0);
+                        sbb sbbVar3 = ((xab) this).c0;
+                        sbbVar3.p1.a(true, false, sbbVar3.j0);
                     }
                     if (this.H) {
                         this.H = false;
@@ -595,13 +595,13 @@ public abstract class as3 extends CameraView {
     public final void onDualCameraSuccess() {
         l0();
         if (this.I) {
-            wab wabVar = (wab) this;
+            xab xabVar = (xab) this;
             if (uc7.e1().getInt("storysvddualhint", 0) < 2) {
-                hl.d3(new s8b(wabVar, (byte) 5), 340L);
+                hl.d3(new s8b(xabVar, (byte) 5), 340L);
             }
-            rbb rbbVar = wabVar.c0;
-            rbbVar.G0.setValue(wabVar.isDual());
-            rbbVar.G0.setContentDescription(ob6.M0(wabVar.isDual() ? 2131754882 : 2131754883, null));
+            sbb sbbVar = xabVar.c0;
+            sbbVar.G0.setValue(xabVar.isDual());
+            sbbVar.G0.setContentDescription(ob6.M0(xabVar.isDual() ? 2131754882 : 2131754883, null));
         }
         j0(true);
     }

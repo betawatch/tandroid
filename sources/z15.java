@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class z15 {
     public static final boolean[] a = new boolean[4];
@@ -46,7 +46,7 @@ public abstract class z15 {
     }
 
     public static boolean c(int i) {
-        return uc7.s1(i).k4.v0.f;
+        return uc7.s1(i).l4.v0.f;
     }
 
     public static void d(y15 y15Var) {
@@ -72,7 +72,7 @@ public abstract class z15 {
     public static HashSet e(int i) {
         HashSet[] hashSetArr = c;
         if (hashSetArr[i] == null) {
-            hashSetArr[i] = new HashSet(uc7.s1(i).X3.getStringSet("gram_earnings_wallet_withdraws", Collections.EMPTY_SET));
+            hashSetArr[i] = new HashSet(uc7.s1(i).Y3.getStringSet("gram_earnings_wallet_withdraws", Collections.EMPTY_SET));
         }
         return hashSetArr[i];
     }

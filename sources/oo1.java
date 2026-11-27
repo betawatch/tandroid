@@ -19,7 +19,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class oo1 implements fd, s69, gw4 {
     public final /* synthetic */ byte a;
@@ -172,7 +172,7 @@ public final /* synthetic */ class oo1 implements fd, s69, gw4 {
                             final int i3 = currentAccount;
                             final TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
                             idVar2.b(200L);
-                            final boolean z2 = uc7Var.k4.l.f && !TextUtils.isEmpty(uc7Var.k4.X2.f);
+                            final boolean z2 = uc7Var.l4.l.f && !TextUtils.isEmpty(uc7Var.l4.X2.f);
                             boolean z3 = (contentsettings == null || !contentsettings.sensitive_can_change) && z2;
                             final boolean[] zArr = new boolean[1];
                             FrameLayout frameLayout = new FrameLayout(context2);
@@ -274,7 +274,7 @@ public final /* synthetic */ class oo1 implements fd, s69, gw4 {
                 fu5 G = fu5.G(ggaVar, vnbVar, wb2Var);
                 G.i0 = true;
                 G.W(messageObject3.O3() ? 5 : 3);
-                G.b(R.drawable.msg_message, ob6.M0(2131754873, null), new cq6((Object) ejaVar, j2, (Object) messageObject3, (byte) 24), false);
+                G.b(R.drawable.msg_message, ob6.M0(2131754873, null), new cq6((Object) ejaVar, j2, (Object) messageObject3, (byte) 25), false);
                 if (messageObject3.D == 17) {
                     TLRPC.MessageMedia n1 = r47.n1(messageObject3.k);
                     if (n1 instanceof TLRPC.TL_messageMediaPoll) {
@@ -371,7 +371,7 @@ public final /* synthetic */ class oo1 implements fd, s69, gw4 {
                     if (i2 >= size) {
                         l1cVar.l0.addAll(hashSet);
                         l1cVar.n();
-                        d31.b0(l1cVar.s).U(ob6.J0(hashSet.size(), "TopicsDeleted"), false, new y09((Object) l1cVar, (Object) hashSet, (Object) arrayList, j, (byte) 17), new bcb(l1cVar, arrayList, kcVar)).j();
+                        d31.b0(l1cVar.s).U(ob6.J0(hashSet.size(), "TopicsDeleted"), false, new z09((Object) l1cVar, (Object) hashSet, (Object) arrayList, j, (byte) 17), new hab(l1cVar, arrayList, kcVar)).j();
                         idVar.dismiss();
                         break;
                     } else {

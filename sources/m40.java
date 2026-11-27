@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m40 implements mfb {
     public final /* synthetic */ byte a;
@@ -24,10 +24,10 @@ public final /* synthetic */ class m40 implements mfb {
                 return Boolean.valueOf(Build.VERSION.SDK_INT > 37 && Objects.equals(gcc.J("persist.audio.compressed_offload_implicit_aac"), "false"));
             case 1:
                 ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor();
-                if (newSingleThreadExecutor instanceof ah7) {
-                    return (ah7) newSingleThreadExecutor;
+                if (newSingleThreadExecutor instanceof bh7) {
+                    return (bh7) newSingleThreadExecutor;
                 }
-                return newSingleThreadExecutor instanceof ScheduledExecutorService ? new dh7((ScheduledExecutorService) newSingleThreadExecutor) : new ah7(newSingleThreadExecutor);
+                return newSingleThreadExecutor instanceof ScheduledExecutorService ? new eh7((ScheduledExecutorService) newSingleThreadExecutor) : new bh7(newSingleThreadExecutor);
             case 2:
                 byte[] bArr = new byte[12];
                 nc3.i.nextBytes(bArr);

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cs6 implements Runnable {
     public final /* synthetic */ byte a = 2;
@@ -25,12 +25,12 @@ public final /* synthetic */ class cs6 implements Runnable {
         this.d = arrayList;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0100, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0106, code lost:
     
-        if (r2 == null) goto L31;
+        if (r2 != null) goto L32;
      */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0112 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0127 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0118 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x012d A[SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -38,14 +38,18 @@ public final /* synthetic */ class cs6 implements Runnable {
     public final void run() {
         char c;
         int i;
+        int min;
         int i2;
         Bitmap G;
+        int i3;
+        int i4;
         TLRPC.PhotoSize T;
+        fi7 fi7Var;
         RandomAccessFile randomAccessFile;
         boolean z;
         boolean z2;
-        ei7 ei7Var;
-        ei7 i3;
+        fi7 i5;
+        fi7 j;
         byte b = this.a;
         boolean z3 = this.c;
         byte b2 = this.e;
@@ -55,7 +59,7 @@ public final /* synthetic */ class cs6 implements Runnable {
         switch (b) {
             case 0:
                 ls6 ls6Var = (ls6) obj;
-                SharedPreferences.Editor edit = uc7.s1(ls6Var.currentAccount).Y3.edit();
+                SharedPreferences.Editor edit = uc7.s1(ls6Var.currentAccount).Z3.edit();
                 if (z3) {
                     ls6Var.k0 = false;
                     ls6Var.l0 = true;
@@ -119,27 +123,33 @@ public final /* synthetic */ class cs6 implements Runnable {
                 b18 b18Var = (b18) obj;
                 byte b3 = b18Var.T0;
                 i = 4;
-                int min = Math.min((b3 == 0 || b3 == 4) ? 20 : 1, arrayList.size());
+                min = Math.min((b3 == 0 || b3 == 4) ? 20 : 1, arrayList.size());
                 i2 = 0;
                 boolean z5 = false;
                 while (i2 < min) {
                     q7a q7aVar = (q7a) arrayList.get(i2);
                     G = in5.G(q7aVar.c, q7aVar.a, 2048.0f, 2048.0f, z4);
-                    if (G != null && (T = in5.T(G, 2048.0f, 2048.0f, 89, jn7.q5, jn7.q5)) != null) {
+                    if (G == null || (T = in5.T(G, 2048.0f, 2048.0f, 89, jn7.q5, jn7.q5)) == null) {
+                        i3 = i;
+                        i4 = min;
+                    } else {
                         TLRPC.TL_secureFile tL_secureFile = new TLRPC.TL_secureFile();
+                        i3 = i;
+                        i4 = min;
                         tL_secureFile.dc_id = (int) T.location.volume_id;
                         tL_secureFile.id = r0.local_id;
                         tL_secureFile.date = (int) (System.currentTimeMillis() / 1000);
                         j08 j08Var = b18Var.C1;
                         j08Var.getClass();
                         StringBuilder sb = new StringBuilder();
-                        sb.append(xb4.z(i));
+                        sb.append(xb4.z(i3));
                         sb.append("/");
                         sb.append(tL_secureFile.dc_id);
                         sb.append("_");
                         String p = qu6.p(sb, tL_secureFile.id, ".jpg");
                         b18 b18Var2 = j08Var.d;
                         byte[] bArr = new byte[(int) new File(p).length()];
+                        fi7Var = null;
                         try {
                             randomAccessFile = new RandomAccessFile(p, "rws");
                             try {
@@ -162,17 +172,18 @@ public final /* synthetic */ class cs6 implements Runnable {
                         if (z3 && !z5) {
                             try {
                                 z2 = b18Var.G.type instanceof TLRPC.TL_secureValueTypeDriverLicense;
-                                if (!z2 || (ei7Var = MrzRecognizer.i(G)) == null) {
+                                if (!z2 || (j = MrzRecognizer.i(G)) == null) {
                                     try {
-                                        ei7Var = MrzRecognizer.j(G);
+                                        j = MrzRecognizer.j(G);
                                         break;
                                     } catch (Exception unused4) {
                                         break;
                                     }
                                 }
-                                if (ei7Var == null) {
+                                fi7Var = j;
+                                if (fi7Var == null) {
                                     try {
-                                        hl.c3(new pl7(b18Var, ei7Var, (byte) 19));
+                                        hl.c3(new ql7(b18Var, fi7Var, (byte) 20));
                                         z5 = true;
                                     } catch (Throwable th) {
                                         th = th;
@@ -180,8 +191,9 @@ public final /* synthetic */ class cs6 implements Runnable {
                                         z5 = true;
                                         cc4.g(th, z);
                                         i2++;
-                                        i = 4;
                                         z4 = false;
+                                        i = i3;
+                                        min = i4;
                                     }
                                 }
                             } catch (Throwable th2) {
@@ -191,19 +203,23 @@ public final /* synthetic */ class cs6 implements Runnable {
                         }
                     }
                     i2++;
-                    i = 4;
                     z4 = false;
+                    i = i3;
+                    min = i4;
                 }
                 xea.x();
                 break;
         }
         return;
-        ei7Var = (z2 || (i3 = MrzRecognizer.i(G)) == null) ? null : i3;
-        if (ei7Var == null) {
+        if (!z2 && (i5 = MrzRecognizer.i(G)) != null) {
+            fi7Var = i5;
+        }
+        if (fi7Var == null) {
         }
         i2++;
-        i = 4;
         z4 = false;
+        i = i3;
+        min = i4;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

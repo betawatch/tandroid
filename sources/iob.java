@@ -7,7 +7,7 @@ import java.util.Locale;
 import org.telegram.messenger.a;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class iob implements Runnable {
     public final /* synthetic */ byte a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class iob implements Runnable {
                     }
                 } catch (Exception unused) {
                 }
-                hl.c3(new bcb((Object) themeActivity, (Object) str, (byte) 4));
+                hl.c3(new hab((Object) themeActivity, (Object) str, (byte) 5));
                 break;
         }
     }

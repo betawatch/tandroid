@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class dxc extends FrameLayout {
     public final ywc A0;
@@ -170,7 +170,7 @@ public abstract class dxc extends FrameLayout {
         imageView3.setImageResource(R.drawable.ic_ab_other);
         imageView3.setColorFilter(new PorterDuffColorFilter(0, PorterDuff.Mode.SRC_IN));
         final Object[] objArr4 = objArr2 == true ? 1 : 0;
-        imageView3.setOnClickListener(new View.OnClickListener() { // from class: axc
+        imageView3.setOnClickListener(new View.OnClickListener() { // from class: bxc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 byte b2 = objArr4;
@@ -215,36 +215,34 @@ public abstract class dxc extends FrameLayout {
                                 G.b(R.drawable.msg_search, ob6.M0(2131745564, null), (Runnable) p12Var.a(1), false);
                                 G.k(R.drawable.msg_share, ob6.M0(2131745187, null), (Runnable) p12Var.a(2), !xtVar2.r0);
                                 G.b(R.drawable.msg_settings_old, ob6.M0(2131745223, null), (Runnable) p12Var.a(4), false);
-                            } else {
-                                if (i4 == 1) {
-                                    if (!xtVar2.q0) {
-                                        G.b(R.drawable.msg_openin, ob6.M0(2131747523, null), (Runnable) p12Var.a(3), false);
-                                        G.j();
-                                    }
-                                    if (xtVar2.p0) {
-                                        G.b(R.drawable.msg_arrow_forward, ob6.M0(2131742552, null), (Runnable) p12Var.a(9), false);
-                                    }
-                                    pxc instantViewLoader = xtVar2.getInstantViewLoader();
-                                    if (instantViewLoader != null && (((!instantViewLoader.g || !instantViewLoader.i) && instantViewLoader.h == null && instantViewLoader.j == null && !instantViewLoader.c) || instantViewLoader.b() != null)) {
-                                        G.b(R.drawable.menu_instant_view, ob6.M0(2131747515, null), (Runnable) p12Var.a(10), false);
-                                        b8 z2 = G.z();
-                                        z2.setEnabled(instantViewLoader.b() != null);
-                                        z2.setAlpha(z2.isEnabled() ? 1.0f : 0.5f);
-                                        cxc cxcVar = new cxc(z2, instantViewLoader, (byte) 0);
-                                        instantViewLoader.m.add(cxcVar);
-                                        G.p = new cxc(instantViewLoader, (Object) cxcVar, (byte) 3);
-                                    }
-                                    G.b(R.drawable.msg_reset, ob6.M0(2131746067, null), (Runnable) p12Var.a(5), false);
-                                    G.b(R.drawable.msg_search, ob6.M0(2131745564, null), (Runnable) p12Var.a(1), false);
-                                    G.b(R.drawable.msg_saved, ob6.M0(2131742573, null), (Runnable) p12Var.a(6), false);
-                                    G.b(R.drawable.msg_share, ob6.M0(2131745187, null), (Runnable) p12Var.a(2), false);
+                            } else if (i4 == 1) {
+                                if (!xtVar2.q0) {
+                                    G.b(R.drawable.msg_openin, ob6.M0(2131747523, null), (Runnable) p12Var.a(3), false);
                                     G.j();
-                                    if (!ptd.a(null).isEmpty()) {
-                                        G.b(R.drawable.menu_views_recent, ob6.M0(2131742551, null), (Runnable) p12Var.a(8), false);
-                                    }
-                                    G.b(R.drawable.menu_browser_bookmarks, ob6.M0(2131742570, null), (Runnable) p12Var.a(7), false);
-                                    G.b(R.drawable.msg_settings_old, ob6.M0(2131745223, null), (Runnable) p12Var.a(4), false);
                                 }
+                                if (xtVar2.p0) {
+                                    G.b(R.drawable.msg_arrow_forward, ob6.M0(2131742552, null), (Runnable) p12Var.a(9), false);
+                                }
+                                pxc instantViewLoader = xtVar2.getInstantViewLoader();
+                                if (instantViewLoader != null && (((!instantViewLoader.g || !instantViewLoader.i) && instantViewLoader.h == null && instantViewLoader.j == null && !instantViewLoader.c) || instantViewLoader.b() != null)) {
+                                    G.b(R.drawable.menu_instant_view, ob6.M0(2131747515, null), (Runnable) p12Var.a(10), false);
+                                    b8 z2 = G.z();
+                                    z2.setEnabled(instantViewLoader.b() != null);
+                                    z2.setAlpha(z2.isEnabled() ? 1.0f : 0.5f);
+                                    zwc zwcVar = new zwc(z2, instantViewLoader, (byte) 1);
+                                    instantViewLoader.m.add(zwcVar);
+                                    G.p = new zwc(instantViewLoader, zwcVar, (byte) 4);
+                                }
+                                G.b(R.drawable.msg_reset, ob6.M0(2131746067, null), (Runnable) p12Var.a(5), false);
+                                G.b(R.drawable.msg_search, ob6.M0(2131745564, null), (Runnable) p12Var.a(1), false);
+                                G.b(R.drawable.msg_saved, ob6.M0(2131742573, null), (Runnable) p12Var.a(6), false);
+                                G.b(R.drawable.msg_share, ob6.M0(2131745187, null), (Runnable) p12Var.a(2), false);
+                                G.j();
+                                if (!ptd.a(null).isEmpty()) {
+                                    G.b(R.drawable.menu_views_recent, ob6.M0(2131742551, null), (Runnable) p12Var.a(8), false);
+                                }
+                                G.b(R.drawable.menu_browser_bookmarks, ob6.M0(2131742570, null), (Runnable) p12Var.a(7), false);
+                                G.b(R.drawable.msg_settings_old, ob6.M0(2131745223, null), (Runnable) p12Var.a(4), false);
                             }
                             G.p = new osa(xtVar2);
                             G.a0();
@@ -279,7 +277,7 @@ public abstract class dxc extends FrameLayout {
         xs0Var.setImeOptions(33554435);
         xs0Var.setTextIsSelectable(false);
         final Object[] objArr5 = objArr == true ? 1 : 0;
-        xs0Var.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: bxc
+        xs0Var.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: cxc
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
                 byte b2 = objArr5;
@@ -321,7 +319,7 @@ public abstract class dxc extends FrameLayout {
         xs0Var2.setInputType(xs0Var2.getInputType() | TLObject.FLAG_19);
         xs0Var2.setImeOptions(33554434);
         xs0Var2.setTextIsSelectable(false);
-        xs0Var2.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: bxc
+        xs0Var2.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: cxc
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
                 byte b2 = b;
@@ -357,7 +355,7 @@ public abstract class dxc extends FrameLayout {
         imageView4.setBackground(f04);
         imageView4.setVisibility(8);
         imageView4.setAlpha(0.0f);
-        imageView4.setOnClickListener(new View.OnClickListener() { // from class: axc
+        imageView4.setOnClickListener(new View.OnClickListener() { // from class: bxc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 byte b2 = b;
@@ -402,36 +400,34 @@ public abstract class dxc extends FrameLayout {
                                 G.b(R.drawable.msg_search, ob6.M0(2131745564, null), (Runnable) p12Var.a(1), false);
                                 G.k(R.drawable.msg_share, ob6.M0(2131745187, null), (Runnable) p12Var.a(2), !xtVar2.r0);
                                 G.b(R.drawable.msg_settings_old, ob6.M0(2131745223, null), (Runnable) p12Var.a(4), false);
-                            } else {
-                                if (i4 == 1) {
-                                    if (!xtVar2.q0) {
-                                        G.b(R.drawable.msg_openin, ob6.M0(2131747523, null), (Runnable) p12Var.a(3), false);
-                                        G.j();
-                                    }
-                                    if (xtVar2.p0) {
-                                        G.b(R.drawable.msg_arrow_forward, ob6.M0(2131742552, null), (Runnable) p12Var.a(9), false);
-                                    }
-                                    pxc instantViewLoader = xtVar2.getInstantViewLoader();
-                                    if (instantViewLoader != null && (((!instantViewLoader.g || !instantViewLoader.i) && instantViewLoader.h == null && instantViewLoader.j == null && !instantViewLoader.c) || instantViewLoader.b() != null)) {
-                                        G.b(R.drawable.menu_instant_view, ob6.M0(2131747515, null), (Runnable) p12Var.a(10), false);
-                                        b8 z2 = G.z();
-                                        z2.setEnabled(instantViewLoader.b() != null);
-                                        z2.setAlpha(z2.isEnabled() ? 1.0f : 0.5f);
-                                        cxc cxcVar = new cxc(z2, instantViewLoader, (byte) 0);
-                                        instantViewLoader.m.add(cxcVar);
-                                        G.p = new cxc(instantViewLoader, (Object) cxcVar, (byte) 3);
-                                    }
-                                    G.b(R.drawable.msg_reset, ob6.M0(2131746067, null), (Runnable) p12Var.a(5), false);
-                                    G.b(R.drawable.msg_search, ob6.M0(2131745564, null), (Runnable) p12Var.a(1), false);
-                                    G.b(R.drawable.msg_saved, ob6.M0(2131742573, null), (Runnable) p12Var.a(6), false);
-                                    G.b(R.drawable.msg_share, ob6.M0(2131745187, null), (Runnable) p12Var.a(2), false);
+                            } else if (i4 == 1) {
+                                if (!xtVar2.q0) {
+                                    G.b(R.drawable.msg_openin, ob6.M0(2131747523, null), (Runnable) p12Var.a(3), false);
                                     G.j();
-                                    if (!ptd.a(null).isEmpty()) {
-                                        G.b(R.drawable.menu_views_recent, ob6.M0(2131742551, null), (Runnable) p12Var.a(8), false);
-                                    }
-                                    G.b(R.drawable.menu_browser_bookmarks, ob6.M0(2131742570, null), (Runnable) p12Var.a(7), false);
-                                    G.b(R.drawable.msg_settings_old, ob6.M0(2131745223, null), (Runnable) p12Var.a(4), false);
                                 }
+                                if (xtVar2.p0) {
+                                    G.b(R.drawable.msg_arrow_forward, ob6.M0(2131742552, null), (Runnable) p12Var.a(9), false);
+                                }
+                                pxc instantViewLoader = xtVar2.getInstantViewLoader();
+                                if (instantViewLoader != null && (((!instantViewLoader.g || !instantViewLoader.i) && instantViewLoader.h == null && instantViewLoader.j == null && !instantViewLoader.c) || instantViewLoader.b() != null)) {
+                                    G.b(R.drawable.menu_instant_view, ob6.M0(2131747515, null), (Runnable) p12Var.a(10), false);
+                                    b8 z2 = G.z();
+                                    z2.setEnabled(instantViewLoader.b() != null);
+                                    z2.setAlpha(z2.isEnabled() ? 1.0f : 0.5f);
+                                    zwc zwcVar = new zwc(z2, instantViewLoader, (byte) 1);
+                                    instantViewLoader.m.add(zwcVar);
+                                    G.p = new zwc(instantViewLoader, zwcVar, (byte) 4);
+                                }
+                                G.b(R.drawable.msg_reset, ob6.M0(2131746067, null), (Runnable) p12Var.a(5), false);
+                                G.b(R.drawable.msg_search, ob6.M0(2131745564, null), (Runnable) p12Var.a(1), false);
+                                G.b(R.drawable.msg_saved, ob6.M0(2131742573, null), (Runnable) p12Var.a(6), false);
+                                G.b(R.drawable.msg_share, ob6.M0(2131745187, null), (Runnable) p12Var.a(2), false);
+                                G.j();
+                                if (!ptd.a(null).isEmpty()) {
+                                    G.b(R.drawable.menu_views_recent, ob6.M0(2131742551, null), (Runnable) p12Var.a(8), false);
+                                }
+                                G.b(R.drawable.menu_browser_bookmarks, ob6.M0(2131742570, null), (Runnable) p12Var.a(7), false);
+                                G.b(R.drawable.msg_settings_old, ob6.M0(2131745223, null), (Runnable) p12Var.a(4), false);
                             }
                             G.p = new osa(xtVar2);
                             G.a0();
@@ -556,7 +552,7 @@ public abstract class dxc extends FrameLayout {
             final float f3 = hl.B(i) > 0.721f ? 0.0f : 1.0f;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.l0 = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: zwc
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: axc
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                     float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();

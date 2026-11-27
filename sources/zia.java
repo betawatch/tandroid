@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class zia extends hjc {
     public final /* synthetic */ bja h;
@@ -48,9 +48,9 @@ public final class zia extends hjc {
     @Override // hjc
     public final boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
         TL_stories.StoryItem storyItem;
-        u5b u5bVar = this.h.s;
+        v5b v5bVar = this.h.s;
         ArrayList<TL_stories.StoryViews> arrayList2 = tL_stories_storyViews.views;
-        u5bVar.getClass();
+        v5bVar.getClass();
         if (arrayList != null && arrayList2 != null) {
             boolean z = false;
             for (int i = 0; i < arrayList.size(); i++) {
@@ -60,14 +60,14 @@ public final class zia extends hjc {
                     break;
                 }
                 TL_stories.StoryViews storyViews = arrayList2.get(i);
-                r47 r47Var = (r47) u5bVar.j.get(num);
+                r47 r47Var = (r47) v5bVar.j.get(num);
                 if (r47Var != null && (storyItem = r47Var.l) != null) {
                     storyItem.views = storyViews;
                     z = true;
                 }
             }
             if (z) {
-                u5bVar.x();
+                v5bVar.x();
             }
         }
         return true;

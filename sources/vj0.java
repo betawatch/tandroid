@@ -8,7 +8,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class vj0 implements im6, fx3 {
     public final Context a;
@@ -46,7 +46,7 @@ public final class vj0 implements im6, fx3 {
     */
     public static int e(ko4 ko4Var) {
         String str = ko4Var.t;
-        if (str == null || !dg7.k(str)) {
+        if (str == null || !eg7.k(str)) {
             return qu6.a(0, 0, 0, 0);
         }
         String str2 = ko4Var.t;
@@ -67,9 +67,9 @@ public final class vj0 implements im6, fx3 {
         Context context;
         int i = Build.VERSION.SDK_INT;
         if (i < 31 && ((context = this.a) == null || i < 28 || !context.getPackageManager().hasSystemFeature("com.amazon.hardware.tv_screen"))) {
-            return new rg7((byte) 27).a(fpVar);
+            return new sg7((byte) 27).a(fpVar);
         }
-        int h = dg7.h(((ko4) fpVar.c).t);
+        int h = eg7.h(((ko4) fpVar.c).t);
         efd.e("DMCodecAdapterFactory", "Creating an asynchronous MediaCodec adapter for track type ".concat(gcc.K(h)));
         rx rxVar = new rx(new qx(h, (byte) 0), new qx(h, (byte) 1));
         rxVar.b = true;

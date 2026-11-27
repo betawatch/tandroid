@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cia extends FrameLayout implements snb {
     public final vnb a;
@@ -52,7 +52,7 @@ public final class cia extends FrameLayout implements snb {
         yob.G(p66Var, aob.n6, vnbVar);
         p66Var.setLineSpacing(hl.L(3.0f), 1.0f);
         SpannableStringBuilder N2 = hl.N2(ob6.M0(z ? 2131748082 : 2131748080, null), -1, 2, new ux9(ux9Var, (byte) 24), null);
-        SpannableString spannableString2 = new SpannableString(String.valueOf(uc7.s1(i).k4.Z1.f()));
+        SpannableString spannableString2 = new SpannableString(String.valueOf(uc7.s1(i).l4.Z1.f()));
         spannableString2.setSpan(new y7c(hl.o()), 0, spannableString2.length(), 33);
         p66Var.setText(hl.G2(N2, spannableString2, "%s"));
         addView(p66Var, tre.d(-1, -2.0f, 49, 24.0f, 96.0f, 24.0f, 12.0f));

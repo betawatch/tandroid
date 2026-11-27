@@ -13,7 +13,7 @@ import org.telegram.messenger.a;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vo7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -204,8 +204,8 @@ public final /* synthetic */ class vo7 implements Runnable {
                     i7++;
                     z4 = z4;
                 }
-                jf7 messagesStorage = ip7Var.getMessagesStorage();
-                messagesStorage.a.c(new be7(messagesStorage, (byte) 14));
+                kf7 messagesStorage = ip7Var.getMessagesStorage();
+                messagesStorage.a.c(new hd7(messagesStorage, (byte) 16));
                 if (z4) {
                     ip7Var.Z(false);
                     break;
@@ -219,8 +219,8 @@ public final /* synthetic */ class vo7 implements Runnable {
                 boolean isEmpty = arrayList4.isEmpty();
                 arrayList4.clear();
                 ip7Var.F.b();
-                jf7 messagesStorage2 = ip7Var.getMessagesStorage();
-                messagesStorage2.a.c(new be7(messagesStorage2, (byte) 13));
+                kf7 messagesStorage2 = ip7Var.getMessagesStorage();
+                messagesStorage2.a.c(new hd7(messagesStorage2, (byte) 15));
                 if (!isEmpty) {
                     ip7Var.Z(false);
                     break;
@@ -254,12 +254,12 @@ public final /* synthetic */ class vo7 implements Runnable {
                     }
                     if (z5) {
                         if (hp7Var.c.isEmpty()) {
-                            jf7 messagesStorage3 = ip7Var.getMessagesStorage();
-                            messagesStorage3.a.c(new le7(messagesStorage3, hp7Var.a, (byte) 2));
+                            kf7 messagesStorage3 = ip7Var.getMessagesStorage();
+                            messagesStorage3.a.c(new me7(messagesStorage3, hp7Var.a, (byte) 2));
                             arrayList5.remove(i9);
                             i9--;
                         } else {
-                            jf7 messagesStorage4 = ip7Var.getMessagesStorage();
+                            kf7 messagesStorage4 = ip7Var.getMessagesStorage();
                             messagesStorage4.a.c(new t87(messagesStorage4, hp7Var, (byte) 24));
                         }
                     }

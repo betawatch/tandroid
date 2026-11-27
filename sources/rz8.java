@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class rz8 extends e {
     public boolean E;
@@ -68,7 +68,7 @@ public class rz8 extends e {
     public int b0;
     public xh4 c;
     public int c0;
-    public f09 d;
+    public g09 d;
     public int d0;
     public vz8 e;
     public float e0;
@@ -180,8 +180,8 @@ public class rz8 extends e {
     }
 
     public final void b0() {
-        f09 f09Var;
-        if (this.h == null || (f09Var = this.d) == null || f09Var.getWidth() == 0) {
+        g09 g09Var;
+        if (this.h == null || (g09Var = this.d) == null || g09Var.getWidth() == 0) {
             return;
         }
         int max = Math.max(1, (int) (this.d.a1() - ((int) this.d.H0())));
@@ -219,9 +219,9 @@ public class rz8 extends e {
             this.e = null;
         }
         super.clearViews();
-        f09 f09Var = this.d;
-        if (f09Var != null) {
-            f09Var.O0();
+        g09 g09Var = this.d;
+        if (g09Var != null) {
+            g09Var.O0();
             this.d = null;
         }
         this.f = null;
@@ -367,8 +367,8 @@ public class rz8 extends e {
                     }
                     j4 = 0;
                 }
-                TLRPC.TL_exportedContactToken tL_exportedContactToken = s1.M4;
-                TLRPC.TL_exportedContactToken tL_exportedContactToken2 = (tL_exportedContactToken == null || ((long) tL_exportedContactToken.expires) <= System.currentTimeMillis() / 1000) ? null : s1.M4;
+                TLRPC.TL_exportedContactToken tL_exportedContactToken = s1.N4;
+                TLRPC.TL_exportedContactToken tL_exportedContactToken2 = (tL_exportedContactToken == null || ((long) tL_exportedContactToken.expires) <= System.currentTimeMillis() / 1000) ? null : s1.N4;
                 String str4 = tL_exportedContactToken2 != null ? tL_exportedContactToken2.url : null;
                 j = j4;
                 tz8Var = new tz8(str4, X1 != null ? lbc.r(X1) : str, false, true, true, j2, true);
@@ -389,9 +389,9 @@ public class rz8 extends e {
             }
         }
         this.f = new FrameLayout(context);
-        f09 f09Var = new f09(context, this.currentAccount, tz8Var2.a, tz8Var2.b, tz8Var2.c, new v34(this, (byte) 29));
-        this.d = f09Var;
-        this.f.addView(f09Var, tre.c(-1.0f, -1));
+        g09 g09Var = new g09(context, this.currentAccount, tz8Var2.a, tz8Var2.b, tz8Var2.c, new v34(this, (byte) 29));
+        this.d = g09Var;
+        this.f.addView(g09Var, tre.c(-1.0f, -1));
         this.d.setImmediateOnOpen(this.E);
         this.d.setRevealOpening(true);
         if (this.H) {
@@ -399,12 +399,12 @@ public class rz8 extends e {
             this.f.postDelayed(this.I, 680L);
         } else {
             boolean O1 = hl.O1();
-            f09 f09Var2 = this.d;
+            g09 g09Var2 = this.d;
             if (O1) {
-                f09Var2.setReveal(1.0f);
-                f09Var2.S4 = false;
+                g09Var2.setReveal(1.0f);
+                g09Var2.S4 = false;
             } else {
-                f09Var2.setReveal(0.0f);
+                g09Var2.setReveal(0.0f);
             }
         }
         this.fragmentView = this.f;
@@ -413,12 +413,12 @@ public class rz8 extends e {
             vz8Var.l();
         }
         int i5 = this.currentAccount;
-        f09 f09Var3 = this.d;
-        vz8 vz8Var2 = new vz8(i5, f09Var3, tz8Var2);
+        g09 g09Var3 = this.d;
+        vz8 vz8Var2 = new vz8(i5, g09Var3, tz8Var2);
         this.e = vz8Var2;
         boolean z2 = tz8Var2.d;
-        f09Var3.setTimerOnly(z2);
-        f09Var3.setTemporaryLink(z2);
+        g09Var3.setTimerOnly(z2);
+        g09Var3.setTemporaryLink(z2);
         LongSparseArray h = vz8.h(i5);
         long j5 = tz8Var2.f;
         uz8 uz8Var = (uz8) h.get(j5);
@@ -447,33 +447,33 @@ public class rz8 extends e {
             }
         }
         if (shareTheme != null) {
-            f09Var3.setInstantTheme(true);
+            g09Var3.setInstantTheme(true);
             vz8Var2.a(shareTheme);
-            f09Var3.setInstantTheme(false);
+            g09Var3.setInstantTheme(false);
         }
         boolean z3 = tz8Var2.g;
-        f09Var3.setThemeEditable(z3);
+        g09Var3.setThemeEditable(z3);
         if (z3) {
-            f09Var3.setGiftsOwner(j5);
+            g09Var3.setGiftsOwner(j5);
         }
         if (tz8Var2.e) {
             jn7.f(i5).b(vz8Var2, jn7.k0);
             if (z2) {
                 uc7 s13 = uc7.s1(i5);
-                TLRPC.TL_exportedContactToken tL_exportedContactToken3 = s13.M4;
-                TLRPC.TL_exportedContactToken tL_exportedContactToken4 = (tL_exportedContactToken3 == null || ((long) tL_exportedContactToken3.expires) <= System.currentTimeMillis() / 1000) ? null : s13.M4;
+                TLRPC.TL_exportedContactToken tL_exportedContactToken3 = s13.N4;
+                TLRPC.TL_exportedContactToken tL_exportedContactToken4 = (tL_exportedContactToken3 == null || ((long) tL_exportedContactToken3.expires) <= System.currentTimeMillis() / 1000) ? null : s13.N4;
                 vz8Var2.r = tL_exportedContactToken4;
                 if (tL_exportedContactToken4 == null) {
                     vz8Var2.m();
                 } else {
-                    f09Var3.setLinkExpires(tL_exportedContactToken4.expires);
+                    g09Var3.setLinkExpires(tL_exportedContactToken4.expires);
                 }
             }
             vz8Var2.r();
             vz8Var2.g();
             vz8Var2.p();
         } else {
-            f09Var3.setFeeStars(j);
+            g09Var3.setFeeStars(j);
             vz8Var2.g();
         }
         return this.f;
@@ -529,7 +529,7 @@ public class rz8 extends e {
         this.G = jz8Var;
         jz8Var.setButtonLabel(ob6.M0(2131746197, null));
         jz8 jz8Var2 = this.G;
-        jz8Var2.setOnGallery(new hp8(this, jz8Var2, (byte) 26));
+        jz8Var2.setOnGallery(new ep8(this, jz8Var2, (byte) 27));
         this.f.addView(this.G, tre.c(-1.0f, -1));
     }
 
@@ -587,8 +587,8 @@ public class rz8 extends e {
             this.y.setVisibility(0);
         }
         int t0 = this.d.t0();
-        d09 d09Var = this.d.n;
-        int i4 = t0 ^ (d09Var != null ? d09Var.h : 872415231);
+        e09 e09Var = this.d.n;
+        int i4 = t0 ^ (e09Var != null ? e09Var.h : 872415231);
         if (this.h.getTranslationY() != f || i4 != this.J) {
             this.h.setTranslationY(f);
             this.J = i4;
@@ -597,14 +597,14 @@ public class rz8 extends e {
         this.h.invalidateOutline();
         this.h.setAlpha(f2);
         pz8 pz8Var3 = this.h;
-        f09 f09Var = this.d;
-        d09 d09Var2 = f09Var.n;
-        int i5 = d09Var2 != null ? d09Var2.b : -16777216;
-        if (i5 != f09Var.b2) {
-            f09Var.b2 = i5;
-            f09Var.c2 = (vm2.f(0.13f, -1, f09.D0(0.75f, 1.3f, 0.16f, i5)) & 16777215) | (-1728053248);
+        g09 g09Var = this.d;
+        e09 e09Var2 = g09Var.n;
+        int i5 = e09Var2 != null ? e09Var2.b : -16777216;
+        if (i5 != g09Var.b2) {
+            g09Var.b2 = i5;
+            g09Var.c2 = (vm2.f(0.13f, -1, g09.D0(0.75f, 1.3f, 0.16f, i5)) & 16777215) | (-1728053248);
         }
-        pz8Var3.setHeaderColor(f09Var.c2);
+        pz8Var3.setHeaderColor(g09Var.c2);
         if (this.h.getVisibility() != 0) {
             pz8 pz8Var4 = this.h;
             if (pz8Var4.K) {
@@ -620,9 +620,9 @@ public class rz8 extends e {
     }
 
     public final void g0() {
-        f09 f09Var;
+        g09 g09Var;
         Activity parentActivity = getParentActivity();
-        if (parentActivity == null || (f09Var = this.d) == null || f09Var.getCurrentLink() == null) {
+        if (parentActivity == null || (g09Var = this.d) == null || g09Var.getCurrentLink() == null) {
             return;
         }
         if ((Build.VERSION.SDK_INT <= 28 || f11.b) && parentActivity.checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0) {
@@ -631,7 +631,7 @@ public class rz8 extends e {
         } else {
             Bitmap T0 = this.d.T0();
             if (T0 != null) {
-                Utilities.e.c(new hp8(this, T0, (byte) 25));
+                Utilities.e.c(new ep8(this, T0, (byte) 26));
             }
         }
     }
@@ -642,8 +642,8 @@ public class rz8 extends e {
     }
 
     public final void h0(String str) {
-        f09 f09Var;
-        if (getParentActivity() == null || (f09Var = this.d) == null || f09Var.getCurrentLink() == null) {
+        g09 g09Var;
+        if (getParentActivity() == null || (g09Var = this.d) == null || g09Var.getCurrentLink() == null) {
             return;
         }
         Bitmap T0 = this.d.T0();
@@ -751,12 +751,12 @@ public class rz8 extends e {
     }
 
     public final void l0() {
-        f09 f09Var;
+        g09 g09Var;
         yy8 yy8Var = this.a0;
-        if (yy8Var == null || (f09Var = this.d) == null) {
+        if (yy8Var == null || (g09Var = this.d) == null) {
             return;
         }
-        int L = hl.L(f09Var.J.isEmpty() ? 12.0f : 73.0f);
+        int L = hl.L(g09Var.J.isEmpty() ? 12.0f : 73.0f);
         if (yy8Var.getPaddingBottom() != L) {
             yy8Var.setPadding(yy8Var.getPaddingLeft(), yy8Var.getPaddingTop(), yy8Var.getPaddingRight(), L);
         }
@@ -771,15 +771,15 @@ public class rz8 extends e {
             }
             return false;
         }
-        f09 f09Var = this.d;
-        if (f09Var != null) {
-            float f = f09Var.l1;
-            if (f > 0.5f || f09Var.g1 > 0.5f) {
+        g09 g09Var = this.d;
+        if (g09Var != null) {
+            float f = g09Var.l1;
+            if (f > 0.5f || g09Var.g1 > 0.5f) {
                 if (z) {
                     if (f > 0.5f) {
-                        f09Var.m1 = 0.0f;
-                    } else if (f09Var.g1 > 0.5f) {
-                        f09Var.h1 = 0.0f;
+                        g09Var.m1 = 0.0f;
+                    } else if (g09Var.g1 > 0.5f) {
+                        g09Var.h1 = 0.0f;
                     }
                 }
                 return false;
@@ -802,13 +802,14 @@ public class rz8 extends e {
             f = 0.0f;
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(f2, f);
-        ofFloat.addUpdateListener(new pv7(this, (byte) 25));
+        byte b = 25;
+        ofFloat.addUpdateListener(new pv7(this, b));
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(ofFloat);
         animatorSet.setDuration(z ? 860L : 200L);
         animatorSet.setInterpolator(new LinearInterpolator());
         animatorSet.addListener(new rw((Object) this, z, (Object) runnable, (byte) 9));
-        hl.c3(new hp8(this, animatorSet, (byte) 24));
+        hl.c3(new ep8(this, animatorSet, b));
         return animatorSet;
     }
 
@@ -852,9 +853,9 @@ public class rz8 extends e {
             vz8Var.l();
             this.e = null;
         }
-        f09 f09Var = this.d;
-        if (f09Var != null) {
-            f09Var.O0();
+        g09 g09Var = this.d;
+        if (g09Var != null) {
+            g09Var.O0();
         }
     }
 
@@ -872,9 +873,9 @@ public class rz8 extends e {
             if (this.G == jz8Var2) {
                 this.G = null;
             }
-            f09 f09Var = this.d;
-            if (f09Var != null) {
-                f09Var.setScanHidden(false);
+            g09 g09Var = this.d;
+            if (g09Var != null) {
+                g09Var.setScanHidden(false);
             }
         }
         Activity parentActivity = getParentActivity();
@@ -927,9 +928,9 @@ public class rz8 extends e {
         super.onTransitionAnimationEnd(z, z2);
         if (z) {
             this.H = true;
-            f09 f09Var = this.d;
-            if (f09Var != null) {
-                f09Var.setReveal(1.0f);
+            g09 g09Var = this.d;
+            if (g09Var != null) {
+                g09Var.setReveal(1.0f);
             }
         }
         if (!z || z2 || this.f == null) {

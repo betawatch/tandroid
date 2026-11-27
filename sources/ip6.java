@@ -6,7 +6,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ip6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -193,10 +193,10 @@ public final /* synthetic */ class ip6 implements Runnable {
                             arrayList = arrayList14;
                         } else {
                             arrayList = arrayList14;
-                            ls6Var3.getMessagesStorage().k0(arrayList11, arrayList, false);
+                            ls6Var3.getMessagesStorage().m0(arrayList11, arrayList, false);
                         }
                         if (!arrayList12.isEmpty()) {
-                            ls6Var3.getMessagesStorage().P(TextUtils.join(",", arrayList12), arrayList10);
+                            ls6Var3.getMessagesStorage().R(TextUtils.join(",", arrayList12), arrayList10);
                         }
                         hl.c3(new ra7((Object) ls6Var3, (Object) arrayList, (Object) arrayList10, (Object) arrayList5, (Object) arrayList6, (Object) arrayList7, (Object) arrayList8, (byte) 15));
                         return;
@@ -335,7 +335,7 @@ public final /* synthetic */ class ip6 implements Runnable {
                                     for (int i10 = 0; i10 < tL_attachMenuBots.bots.size(); i10++) {
                                         arrayList15.add(Long.valueOf(tL_attachMenuBots.bots.get(i10).bot_id));
                                     }
-                                    tL_attachMenuBots.users.addAll(ls6Var5.getMessagesStorage().i0(arrayList15));
+                                    tL_attachMenuBots.users.addAll(ls6Var5.getMessagesStorage().k0(arrayList15));
                                 } catch (Exception e11) {
                                     e = e11;
                                     sQLiteCursor = queryFinalized3;

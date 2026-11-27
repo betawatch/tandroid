@@ -3,25 +3,25 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class xte {
-    public static fh7 a(float[] fArr, float[] fArr2, float f, float f2, int[] iArr, float f3) {
+    public static gh7 a(float[] fArr, float[] fArr2, float f, float f2, int[] iArr, float f3) {
         int[][] iArr2;
         float f4;
         float f5;
         int[][] iArr3;
         int length = fArr.length;
-        fh7 fh7Var = new fh7();
+        gh7 gh7Var = new gh7();
         float f6 = 0.0f;
         if (length == 0) {
-            fh7Var.a = Math.max(f, Math.min(f2, f3 > 0.0f ? f3 : 1.0f));
-            fh7Var.b = new float[0];
-            fh7Var.c = new int[0];
-            fh7Var.e = new int[0];
-            return fh7Var;
+            gh7Var.a = Math.max(f, Math.min(f2, f3 > 0.0f ? f3 : 1.0f));
+            gh7Var.b = new float[0];
+            gh7Var.c = new int[0];
+            gh7Var.e = new int[0];
+            return gh7Var;
         }
-        fh7Var.f = Float.MAX_VALUE;
+        gh7Var.f = Float.MAX_VALUE;
         Integer[] numArr = new Integer[length];
         for (int i = 0; i < length; i++) {
             numArr[i] = Integer.valueOf(i);
@@ -112,8 +112,8 @@ public abstract class xte {
         for (int i17 = 0; i17 < length; i17++) {
             fArr4[i17] = fArr2[i17];
         }
-        eh7 eh7Var = new eh7(fArr, fArr4, f, f2, f3);
-        eh7 eh7Var2 = new eh7(fArr3, fArr4, f5 / f2, f5 / f, f3 > f4 ? f5 / f3 : f4);
+        fh7 fh7Var = new fh7(fArr, fArr4, f, f2, f3);
+        fh7 fh7Var2 = new fh7(fArr3, fArr4, f5 / f2, f5 / f, f3 > f4 ? f5 / f3 : f4);
         int length2 = iArr7.length;
         int i18 = 0;
         while (i18 < length2) {
@@ -129,23 +129,23 @@ public abstract class xte {
             int i21 = 0;
             while (i21 < length3) {
                 int[] iArr12 = iArr3[i21];
-                eh7 eh7Var3 = eh7Var;
+                fh7 fh7Var3 = fh7Var;
                 int[] iArr13 = iArr11;
                 float f10 = f9;
-                fh7 fh7Var2 = fh7Var;
-                eh7Var3.a(iArr13, iArr12, f10, fh7Var2, false);
+                gh7 gh7Var2 = gh7Var;
+                fh7Var3.a(iArr13, iArr12, f10, gh7Var2, false);
                 if (iArr12.length > 1) {
-                    eh7Var2.a(iArr13, iArr12, f10, fh7Var2, true);
+                    fh7Var2.a(iArr13, iArr12, f10, gh7Var2, true);
                 }
                 i21++;
-                fh7Var = fh7Var2;
-                eh7Var = eh7Var3;
+                gh7Var = gh7Var2;
+                fh7Var = fh7Var3;
                 iArr11 = iArr13;
                 f9 = f10;
             }
             i18++;
-            eh7Var = eh7Var;
+            fh7Var = fh7Var;
         }
-        return fh7Var;
+        return gh7Var;
     }
 }

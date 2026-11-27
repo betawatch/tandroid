@@ -79,7 +79,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class j95 extends nx0 implements fn7, VoIPService.StateListener, s84 {
     public static j95 s5;
@@ -360,7 +360,7 @@ public final class j95 extends nx0 implements fn7, VoIPService.StateListener, s8
         j95Var.J0 = new w53();
         j95Var.Q0 = true;
         j95Var.R0 = true;
-        j95Var.W1 = uc7.s1(j95Var.a).k4.D.f();
+        j95Var.W1 = uc7.s1(j95Var.a).l4.D.f();
         j95Var.V = true;
         v5 = false;
         u5 = false;
@@ -4800,7 +4800,7 @@ public final class j95 extends nx0 implements fn7, VoIPService.StateListener, s8
         }
         if (i == 2) {
             int intValue = ((Integer) objArr[0]).intValue();
-            int i7 = uc7.r5;
+            int i7 = uc7.s5;
             if ((intValue & 16) != 0) {
                 E0(true);
             } else if ((intValue & TLObject.FLAG_19) == 0) {

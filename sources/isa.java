@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class isa implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class isa implements RequestDelegate {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0214  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x020b  */
     @Override // org.telegram.tgnet.RequestDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -41,9 +41,8 @@ public final /* synthetic */ class isa implements RequestDelegate {
         JSONException jSONException;
         long[] jArr;
         byte b = this.a;
-        byte b2 = 7;
-        byte b3 = 28;
-        byte b4 = 1;
+        byte b2 = 28;
+        byte b3 = 1;
         Object obj = this.c;
         Object obj2 = this.b;
         switch (b) {
@@ -58,7 +57,7 @@ public final /* synthetic */ class isa implements RequestDelegate {
                 hl.c3(new vp8((Object) wuaVar, (Object) tL_error, (Object) tLObject, (Object) inputSavedStarGift, (byte) 29));
                 break;
             case 1:
-                hl.c3(new jr9(tLObject, (f) obj2, (String) obj, b3));
+                hl.c3(new jr9(tLObject, (f) obj2, (String) obj, b2));
                 break;
             case 2:
                 hl.c3(new jr9(obj2, (Object) tLObject, obj, (byte) 29));
@@ -69,15 +68,15 @@ public final /* synthetic */ class isa implements RequestDelegate {
             case 4:
                 i1b i1bVar = (i1b) obj2;
                 hcc hccVar = (hcc) obj;
-                byte b5 = i1bVar.i;
+                byte b4 = i1bVar.i;
                 String str4 = null;
                 if (tL_error == null) {
                     if (tLObject instanceof TL_stats.TL_statsGraph) {
                         try {
-                            ok1 e0 = w1b.e0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), b5, i1bVar.m);
+                            ok1 e0 = w1b.e0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), b4, i1bVar.m);
                             try {
                                 str4 = ((TL_stats.TL_statsGraph) tLObject).zoom_token;
-                                if (b5 == 4 && (jArr = e0.a) != null && jArr.length > 0) {
+                                if (b4 == 4 && (jArr = e0.a) != null && jArr.length > 0) {
                                     long j = jArr[jArr.length - 1];
                                     i1bVar.e = new iqa(e0, j);
                                     i1bVar.c = j;
@@ -129,12 +128,12 @@ public final /* synthetic */ class isa implements RequestDelegate {
                 y4b y4bVar = (y4b) obj2;
                 TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets = (TLRPC.TL_messages_searchStickerSets) obj;
                 if (tLObject instanceof TLRPC.TL_messages_foundStickerSets) {
-                    hl.c3(new pwa(y4bVar, tL_messages_searchStickerSets, (TLRPC.TL_messages_foundStickerSets) tLObject, b2));
+                    hl.c3(new pwa(y4bVar, tL_messages_searchStickerSets, (TLRPC.TL_messages_foundStickerSets) tLObject, (byte) 7));
                     break;
                 }
                 break;
             case 9:
-                hl.c3(new pwa((o5b) obj2, tLObject, (Runnable) obj, (byte) 9));
+                hl.c3(new pwa((p5b) obj2, tLObject, (Runnable) obj, (byte) 9));
                 break;
             case 10:
                 hl.c3(new kta(obj2, (Object) tLObject, obj, (Object) tL_error, (byte) 7));
@@ -159,14 +158,14 @@ public final /* synthetic */ class isa implements RequestDelegate {
                     hl.c3(new pwa(xqbVar, tL_error, updatetheme, (byte) 21));
                     break;
                 } else {
-                    hl.c3(new bcb(xqbVar, (TLRPC.TL_theme) tLObject, b2));
+                    hl.c3(new hab((Object) xqbVar, tLObject, (byte) 8));
                     break;
                 }
             case 16:
                 hl.c3(new pwa((wsb) obj2, tLObject, (SharedPreferences) obj, (byte) 24));
                 break;
             case 17:
-                hl.c3(new pwa((ozb) obj2, (String) obj, tLObject, b3));
+                hl.c3(new pwa((ozb) obj2, (String) obj, tLObject, b2));
                 break;
             case 18:
                 hl.c3(new kta(obj2, (Object) tL_error, (Object) tLObject, obj, (byte) 15));
@@ -181,7 +180,7 @@ public final /* synthetic */ class isa implements RequestDelegate {
                     hl.c3(new k7c(o7cVar, tL_error, (byte) 3));
                     break;
                 } else {
-                    hl.c3(new i7c(o7cVar, bArr, b4));
+                    hl.c3(new i7c(o7cVar, bArr, b3));
                     break;
                 }
             case 21:
@@ -206,7 +205,7 @@ public final /* synthetic */ class isa implements RequestDelegate {
                 hl.c3(new ipc((lvc) obj2, tLObject, (kvc) obj, tL_error, (byte) 6));
                 break;
             default:
-                hl.c3(new vlc((wvc) obj2, (int[]) obj, (byte) 25));
+                hl.c3(new slc((wvc) obj2, (int[]) obj, (byte) 26));
                 break;
         }
     }

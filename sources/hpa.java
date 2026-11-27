@@ -3,19 +3,19 @@
 import java.util.Iterator;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class hpa implements Iterator {
     public String b;
     public final CharSequence c;
     public final zj1 d;
-    public final /* synthetic */ k09 h;
+    public final /* synthetic */ l09 h;
     public int a = 2;
     public int e = 0;
     public int f = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
-    public hpa(k09 k09Var, um4 um4Var, CharSequence charSequence) {
-        this.h = k09Var;
+    public hpa(l09 l09Var, um4 um4Var, CharSequence charSequence) {
+        this.h = l09Var;
         this.d = (zj1) um4Var.b;
         this.c = charSequence;
     }

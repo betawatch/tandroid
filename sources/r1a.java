@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class r1a extends ny0 implements fn7, jq3, s84 {
     public int A2;
@@ -153,7 +153,7 @@ public final class r1a extends ny0 implements fn7, jq3, s84 {
                         } catch (Exception e2) {
                             cc4.g(e2, true);
                         }
-                        hl.c3(new en9(r1aVar2, arrayList, (byte) 20));
+                        hl.c3(new dn9(r1aVar2, arrayList, (byte) 21));
                         return;
                     case 1:
                         this.b.d1();
@@ -243,7 +243,7 @@ public final class r1a extends ny0 implements fn7, jq3, s84 {
                         } catch (Exception e2) {
                             cc4.g(e2, true);
                         }
-                        hl.c3(new en9(r1aVar2, arrayList, (byte) 20));
+                        hl.c3(new dn9(r1aVar2, arrayList, (byte) 21));
                         return;
                     case 1:
                         this.b.d1();
@@ -396,7 +396,7 @@ public final class r1a extends ny0 implements fn7, jq3, s84 {
                                 } catch (Exception e2) {
                                     cc4.g(e2, true);
                                 }
-                                hl.c3(new en9(r1aVar2, arrayList, (byte) 20));
+                                hl.c3(new dn9(r1aVar2, arrayList, (byte) 21));
                                 return;
                             case 1:
                                 this.b.d1();
@@ -564,7 +564,7 @@ public final class r1a extends ny0 implements fn7, jq3, s84 {
 
     public final void c1() {
         String str;
-        String str2 = uc7.s1(this.a).k4.Q.f;
+        String str2 = uc7.s1(this.a).l4.Q.f;
         if (TextUtils.isEmpty(str2)) {
             return;
         }

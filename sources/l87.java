@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l87 implements Runnable {
     public final /* synthetic */ byte a;
@@ -37,10 +37,10 @@ public final /* synthetic */ class l87 implements Runnable {
                 ob6.D0().j(uc7Var.currentAccount);
                 break;
             case 2:
-                i61 i61Var = uc7Var.v4;
+                i61 i61Var = uc7Var.w4;
                 if (i61Var != null) {
                     i61Var.a(Boolean.TRUE);
-                    uc7Var.v4 = null;
+                    uc7Var.w4 = null;
                     break;
                 }
                 break;
@@ -48,18 +48,18 @@ public final /* synthetic */ class l87 implements Runnable {
                 uc7Var.getNotificationCenter().k(jn7.O2, new Object[0]);
                 break;
             case 4:
-                i61 i61Var2 = uc7Var.v4;
+                i61 i61Var2 = uc7Var.w4;
                 if (i61Var2 != null) {
                     i61Var2.a(Boolean.TRUE);
-                    uc7Var.v4 = null;
+                    uc7Var.w4 = null;
                     break;
                 }
                 break;
             case 5:
-                i61 i61Var3 = uc7Var.v4;
+                i61 i61Var3 = uc7Var.w4;
                 if (i61Var3 != null) {
                     i61Var3.a(Boolean.FALSE);
-                    uc7Var.v4 = null;
+                    uc7Var.w4 = null;
                     break;
                 }
                 break;
@@ -77,9 +77,9 @@ public final /* synthetic */ class l87 implements Runnable {
                 uc7Var.getNotificationCenter().a(messagesController, 49);
                 break;
             case 8:
-                l87 l87Var = uc7Var.x4;
+                l87 l87Var = uc7Var.y4;
                 hl.r(l87Var);
-                long currentTime = uc7Var.H3 - uc7Var.getConnectionsManager().getCurrentTime();
+                long currentTime = uc7Var.I3 - uc7Var.getConnectionsManager().getCurrentTime();
                 if (currentTime > 0) {
                     hl.d3(l87Var, currentTime);
                     break;
@@ -107,7 +107,7 @@ public final /* synthetic */ class l87 implements Runnable {
                 }
                 break;
             case 13:
-                if (uc7Var.k4.A0.f) {
+                if (uc7Var.l4.A0.f) {
                     ConcurrentHashMap concurrentHashMap = k0d.a;
                     hl.c3(new osa((byte) 23));
                     break;
@@ -129,7 +129,7 @@ public final /* synthetic */ class l87 implements Runnable {
                 uc7Var.getNotificationsController().g(2);
                 break;
             case 19:
-                SharedPreferences sharedPreferences = uc7Var.W3;
+                SharedPreferences sharedPreferences = uc7Var.X3;
                 sharedPreferences.getBoolean("EnableContactJoined", true);
                 uc7Var.y2 = sharedPreferences.getInt("nextTosCheckTime", 0);
                 break;
@@ -146,7 +146,7 @@ public final /* synthetic */ class l87 implements Runnable {
                 uc7Var.getNotificationCenter().k(jn7.b3, new Object[0]);
                 break;
             case 24:
-                HashSet hashSet = uc7Var.T4;
+                HashSet hashSet = uc7Var.U4;
                 if (!hashSet.isEmpty()) {
                     TL_account.getRequirementsToContact getrequirementstocontact = new TL_account.getRequirementsToContact();
                     ArrayList arrayList = new ArrayList();
@@ -166,7 +166,7 @@ public final /* synthetic */ class l87 implements Runnable {
                 break;
             case 25:
                 zh6 zh6Var = new zh6();
-                HashSet hashSet2 = uc7Var.e5;
+                HashSet hashSet2 = uc7Var.f5;
                 Iterator it2 = hashSet2.iterator();
                 while (it2.hasNext()) {
                     Pair pair = (Pair) it2.next();

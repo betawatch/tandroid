@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class ContactsActivity extends org.telegram.ui.ActionBar.e implements s84, fn7, ej6, i1d {
     public boolean E;
@@ -430,7 +430,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.e implements s84
             return;
         }
         int intValue = ((Integer) objArr[0]).intValue();
-        int i5 = uc7.r5;
+        int i5 = uc7.s5;
         if (((intValue & 2) != 0 || (intValue & 1) != 0 || (intValue & 4) != 0) && (d79Var = this.d) != null) {
             int childCount = d79Var.getChildCount();
             for (int i6 = 0; i6 < childCount; i6++) {
@@ -440,7 +440,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.e implements s84
                 }
             }
         }
-        int i7 = uc7.r5;
+        int i7 = uc7.s5;
         if ((intValue & 4) == 0 || this.r || this.b == null || this.g0) {
             return;
         }
@@ -676,9 +676,9 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.e implements s84
                     i5.b(this.currentAccount);
                     return;
                 }
-                rl7 rl7Var = new rl7(this, getParentActivity());
-                rl7Var.I0(str, true);
-                rl7Var.show();
+                sl7 sl7Var = new sl7(this, getParentActivity());
+                sl7Var.I0(str, true);
+                sl7Var.show();
                 return;
             }
             TLRPC.User user = (TLRPC.User) E;
@@ -692,7 +692,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.e implements s84
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(user);
                 getMessagesController().j4(arrayList, false);
-                jf7.Y(this.currentAccount).j1(arrayList, null, false, true);
+                kf7.a0(this.currentAccount).n1(arrayList, null, false, true);
             }
             if (this.J) {
                 g0(user, true, null);
@@ -828,7 +828,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.e implements s84
         if (uc7.s1(this.currentAccount).x2()) {
             i5.b(this.currentAccount);
         } else {
-            new rl7(this, getParentActivity()).show();
+            new sl7(this, getParentActivity()).show();
         }
     }
 

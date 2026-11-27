@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class kt8 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -47,8 +47,8 @@ public final /* synthetic */ class kt8 implements View.OnClickListener {
                 eja ejaVar = (eja) frameLayout;
                 e eVar = ejaVar.y1;
                 if (!z) {
-                    eVar.getMessagesController().X3.edit().putBoolean("story_keep", true).apply();
-                    rbb.C(eVar.getParentActivity(), eVar.getCurrentAccount()).Q(null);
+                    eVar.getMessagesController().Y3.edit().putBoolean("story_keep", true).apply();
+                    sbb.C(eVar.getParentActivity(), eVar.getCurrentAccount()).Q(null);
                     break;
                 } else {
                     ejaVar.U0(this.c, ejaVar.m1, eVar);

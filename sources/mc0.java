@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class mc0 {
     public final ArrayList a;
@@ -74,7 +74,7 @@ public final class mc0 {
                 arrayList.add(bArr4);
             }
             if (A2 > 0) {
-                fk7 k = rfd.k(4, ((byte[]) arrayList.get(0)).length, (byte[]) arrayList.get(0));
+                gk7 k = rfd.k(4, ((byte[]) arrayList.get(0)).length, (byte[]) arrayList.get(0));
                 int i13 = k.e;
                 int i14 = k.f;
                 int i15 = k.h + 8;

@@ -12,21 +12,21 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ae7 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ jf7 b;
+    public final /* synthetic */ kf7 b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
 
-    public /* synthetic */ ae7(jf7 jf7Var, long j, int i, long j2) {
-        this.a = (byte) 1;
-        this.b = jf7Var;
+    public /* synthetic */ ae7(kf7 kf7Var, long j, int i, long j2) {
+        this.a = (byte) 2;
+        this.b = kf7Var;
         this.c = j;
-        this.d = i;
-        this.e = j2;
+        this.e = i;
+        this.d = j2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -54,8 +54,8 @@ public final /* synthetic */ class ae7 implements Runnable {
         SQLitePreparedStatement executeFast;
         boolean z2;
         boolean z3;
-        jf7 jf7Var = this.b;
-        jf7Var.getClass();
+        kf7 kf7Var = this.b;
+        kf7Var.getClass();
         try {
             try {
                 SparseArray sparseArray = new SparseArray();
@@ -66,8 +66,8 @@ public final /* synthetic */ class ae7 implements Runnable {
                     if (i2 >= 2) {
                         break;
                     }
-                    SQLiteDatabase sQLiteDatabase3 = jf7Var.b;
-                    int i3 = this.d;
+                    SQLiteDatabase sQLiteDatabase3 = kf7Var.b;
+                    int i3 = this.e;
                     if (i3 != 0) {
                         if (i2 == 0) {
                             sQLiteCursor2 = sQLiteDatabase3.queryFinalized("SELECT data FROM messages_v2 WHERE uid = " + j + " AND mid = " + i3, new Object[i]);
@@ -89,7 +89,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                                     if (byteBufferValue != 0) {
                                         TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r3), r3);
                                         if (TLdeserialize != null) {
-                                            TLdeserialize.readAttachPath(byteBufferValue, jf7Var.getUserConfig().n);
+                                            TLdeserialize.readAttachPath(byteBufferValue, kf7Var.getUserConfig().n);
                                             TLRPC.TL_messageReactions tL_messageReactions = TLdeserialize.reactions;
                                             if (tL_messageReactions == null || tL_messageReactions.recent_reactions == null) {
                                                 z3 = false;
@@ -100,7 +100,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                                                 while (i4 < TLdeserialize.reactions.recent_reactions.size()) {
                                                     TLRPC.MessagePeerReaction messagePeerReaction = TLdeserialize.reactions.recent_reactions.get(i4);
                                                     boolean z5 = true;
-                                                    if (r47.B1(messagePeerReaction.peer_id) == this.e) {
+                                                    if (r47.B1(messagePeerReaction.peer_id) == this.d) {
                                                         try {
                                                             TLdeserialize.reactions.recent_reactions.remove(i4);
                                                             i4--;
@@ -126,8 +126,8 @@ public final /* synthetic */ class ae7 implements Runnable {
                                                                         z = z2;
                                                                         sQLitePreparedStatement = null;
                                                                         try {
-                                                                            jf7Var.n(e, z);
-                                                                            sQLiteDatabase2 = jf7Var.b;
+                                                                            kf7Var.p(e, z);
+                                                                            sQLiteDatabase2 = kf7Var.b;
                                                                             if (sQLiteDatabase2 != null) {
                                                                                 sQLiteDatabase2.commitTransaction();
                                                                             }
@@ -141,7 +141,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                                                                             return;
                                                                         } catch (Throwable th) {
                                                                             th = th;
-                                                                            sQLiteDatabase = jf7Var.b;
+                                                                            sQLiteDatabase = kf7Var.b;
                                                                             if (sQLiteDatabase != null) {
                                                                             }
                                                                             if (sQLiteCursor != null) {
@@ -178,14 +178,14 @@ public final /* synthetic */ class ae7 implements Runnable {
                             boolean z6 = true;
                             sQLiteCursor2.dispose();
                             if (!arrayList.isEmpty()) {
-                                jf7Var.b.beginTransaction();
+                                kf7Var.b.beginTransaction();
                                 int size = arrayList.size();
                                 int i7 = 0;
                                 while (i7 < size) {
                                     Object obj = arrayList.get(i7);
                                     i7++;
                                     TLRPC.Message message = (TLRPC.Message) obj;
-                                    SQLiteDatabase sQLiteDatabase4 = jf7Var.b;
+                                    SQLiteDatabase sQLiteDatabase4 = kf7Var.b;
                                     if (i2 == 0) {
                                         try {
                                             executeFast = sQLiteDatabase4.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
@@ -194,8 +194,8 @@ public final /* synthetic */ class ae7 implements Runnable {
                                             z = z6;
                                             sQLiteCursor = null;
                                             sQLitePreparedStatement = null;
-                                            jf7Var.n(e, z);
-                                            sQLiteDatabase2 = jf7Var.b;
+                                            kf7Var.p(e, z);
+                                            sQLiteDatabase2 = kf7Var.b;
                                             if (sQLiteDatabase2 != null) {
                                             }
                                             if (sQLiteCursor != null) {
@@ -224,8 +224,8 @@ public final /* synthetic */ class ae7 implements Runnable {
                                         sQLitePreparedStatement = sQLitePreparedStatement2;
                                         z = true;
                                         sQLiteCursor = null;
-                                        jf7Var.n(e, z);
-                                        sQLiteDatabase2 = jf7Var.b;
+                                        kf7Var.p(e, z);
+                                        sQLiteDatabase2 = kf7Var.b;
                                         if (sQLiteDatabase2 != null) {
                                         }
                                         if (sQLiteCursor != null) {
@@ -236,7 +236,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                                         th = th2;
                                         sQLitePreparedStatement = sQLitePreparedStatement2;
                                         sQLiteCursor = null;
-                                        sQLiteDatabase = jf7Var.b;
+                                        sQLiteDatabase = kf7Var.b;
                                         if (sQLiteDatabase != null) {
                                         }
                                         if (sQLiteCursor != null) {
@@ -246,7 +246,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                                         throw th;
                                     }
                                 }
-                                jf7Var.b.commitTransaction();
+                                kf7Var.b.commitTransaction();
                             }
                             i2++;
                             i = 0;
@@ -254,7 +254,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                             th = th3;
                             sQLiteCursor = sQLiteCursor2;
                             sQLitePreparedStatement = null;
-                            sQLiteDatabase = jf7Var.b;
+                            sQLiteDatabase = kf7Var.b;
                             if (sQLiteDatabase != null) {
                                 sQLiteDatabase.commitTransaction();
                             }
@@ -272,8 +272,8 @@ public final /* synthetic */ class ae7 implements Runnable {
                         z = true;
                     }
                 }
-                hl.c3(new cq6((Object) jf7Var, (Object) sparseArray, j, (byte) 19));
-                SQLiteDatabase sQLiteDatabase5 = jf7Var.b;
+                hl.c3(new cq6((Object) kf7Var, (Object) sparseArray, j, (byte) 20));
+                SQLiteDatabase sQLiteDatabase5 = kf7Var.b;
                 if (sQLiteDatabase5 != null) {
                     sQLiteDatabase5.commitTransaction();
                 }
@@ -288,11 +288,11 @@ public final /* synthetic */ class ae7 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0326  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0321  */
     /* JADX WARN: Removed duplicated region for block: B:102:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x032d  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0328  */
     /* JADX WARN: Removed duplicated region for block: B:145:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x016c  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x018c  */
     /* JADX WARN: Type inference failed for: r0v38, types: [org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.NativeByteBuffer] */
     /* JADX WARN: Type inference failed for: r12v10, types: [org.telegram.SQLite.SQLiteCursor] */
     /* JADX WARN: Type inference failed for: r12v12 */
@@ -323,17 +323,17 @@ public final /* synthetic */ class ae7 implements Runnable {
         SQLiteCursor sQLiteCursor;
         byte b = this.a;
         long j = this.c;
-        long j2 = this.e;
-        int i = this.d;
-        jf7 jf7Var = this.b;
+        long j2 = this.d;
+        int i = this.e;
+        kf7 kf7Var = this.b;
         switch (b) {
             case 0:
                 long j3 = this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase = kf7Var.b;
                     Locale locale = Locale.US;
                     sQLiteDatabase.executeFast("UPDATE messages_v2 SET read_state = read_state | 2 WHERE mid = " + i + " AND uid = " + j3).stepThis().dispose();
-                    SQLiteDatabase sQLiteDatabase2 = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase2 = kf7Var.b;
                     StringBuilder sb = new StringBuilder("SELECT unread_count_i FROM dialogs WHERE did = ");
                     sb.append(j2);
                     ?? queryFinalized = sQLiteDatabase2.queryFinalized(sb.toString(), new Object[0]);
@@ -347,7 +347,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                                     r12 = queryFinalized;
                                     z = true;
                                     try {
-                                        jf7Var.n(e, z);
+                                        kf7Var.p(e, z);
                                         if (r12 != 0) {
                                             r12.dispose();
                                             return;
@@ -365,19 +365,19 @@ public final /* synthetic */ class ae7 implements Runnable {
                                 max = 0;
                             }
                             queryFinalized.dispose();
-                            jf7Var.b.executeFast("UPDATE dialogs SET unread_count_i = " + max + " WHERE did = " + j2).stepThis().dispose();
+                            kf7Var.b.executeFast("UPDATE dialogs SET unread_count_i = " + max + " WHERE did = " + j2).stepThis().dispose();
                             LongSparseIntArray longSparseIntArray3 = new LongSparseIntArray(1);
                             longSparseIntArray3.put(j2, max);
                             if (max == 0) {
                                 longSparseIntArray = null;
                                 try {
-                                    jf7Var.T1(null, longSparseIntArray3, true);
+                                    kf7Var.Y1(null, longSparseIntArray3, true);
                                 } catch (Exception e2) {
                                     e = e2;
                                     longSparseIntArray2 = longSparseIntArray;
                                     z = true;
                                     r12 = longSparseIntArray2;
-                                    jf7Var.n(e, z);
+                                    kf7Var.p(e, z);
                                     if (r12 != 0) {
                                     }
                                 } catch (Throwable th2) {
@@ -390,10 +390,10 @@ public final /* synthetic */ class ae7 implements Runnable {
                             } else {
                                 longSparseIntArray = null;
                             }
-                            jf7Var.getMessagesController().R3(longSparseIntArray, longSparseIntArray3);
-                            jf7Var.b.executeFast("UPDATE messages_topics SET read_state = read_state | 2 WHERE mid = " + i + " AND uid = " + j3).stepThis().dispose();
+                            kf7Var.getMessagesController().R3(longSparseIntArray, longSparseIntArray3);
+                            kf7Var.b.executeFast("UPDATE messages_topics SET read_state = read_state | 2 WHERE mid = " + i + " AND uid = " + j3).stepThis().dispose();
                             ?? r8 = 0;
-                            ?? queryFinalized2 = jf7Var.b.queryFinalized("SELECT data FROM messages_topics WHERE mid = " + i + " AND uid = " + j3, new Object[0]);
+                            ?? queryFinalized2 = kf7Var.b.queryFinalized("SELECT data FROM messages_topics WHERE mid = " + i + " AND uid = " + j3, new Object[0]);
                             long j4 = 0;
                             while (queryFinalized2.next()) {
                                 try {
@@ -401,7 +401,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                                     if (byteBufferValue != 0) {
                                         TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r8), r8);
                                         byteBufferValue.reuse();
-                                        j4 = r47.Z1(jf7Var.currentAccount, TLdeserialize, jf7Var.X(j3));
+                                        j4 = r47.Z1(kf7Var.currentAccount, TLdeserialize, kf7Var.Z(j3));
                                     }
                                     r8 = 0;
                                 } catch (Exception e3) {
@@ -409,7 +409,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                                     longSparseIntArray2 = queryFinalized2;
                                     z = true;
                                     r12 = longSparseIntArray2;
-                                    jf7Var.n(e, z);
+                                    kf7Var.p(e, z);
                                     if (r12 != 0) {
                                     }
                                 } catch (Throwable th3) {
@@ -422,13 +422,13 @@ public final /* synthetic */ class ae7 implements Runnable {
                             }
                             queryFinalized2.dispose();
                             if (j4 != 0) {
-                                SQLiteDatabase sQLiteDatabase3 = jf7Var.b;
+                                SQLiteDatabase sQLiteDatabase3 = kf7Var.b;
                                 Locale locale2 = Locale.US;
                                 queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT unread_mentions FROM topics WHERE did = " + j2 + " AND topic_id = " + j4, new Object[0]);
                                 int max2 = queryFinalized2.next() ? Math.max(0, queryFinalized2.intValue(0) - 1) : 0;
                                 queryFinalized2.dispose();
-                                jf7Var.b.executeFast("UPDATE topics SET unread_mentions = " + max2 + " WHERE did = " + j3 + " AND topic_id = " + j4).stepThis().dispose();
-                                qyb qybVar = jf7Var.getMessagesController().g4;
+                                kf7Var.b.executeFast("UPDATE topics SET unread_mentions = " + max2 + " WHERE did = " + j3 + " AND topic_id = " + j4).stepThis().dispose();
+                                qyb qybVar = kf7Var.getMessagesController().h4;
                                 qybVar.getClass();
                                 hl.c3(new m30((rf0) qybVar, j3, j4, max2, (byte) 5));
                                 return;
@@ -450,14 +450,8 @@ public final /* synthetic */ class ae7 implements Runnable {
                     longSparseIntArray = null;
                 }
             case 1:
-                jf7Var.getMessagesController().J0(this.c, this.d, this.e, null);
-                return;
-            case 2:
-                jf7Var.getMessagesController().o0(this.c, this.d, this.e);
-                return;
-            case 3:
                 try {
-                    SQLiteDatabase sQLiteDatabase4 = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase4 = kf7Var.b;
                     if (j != 0) {
                         Locale locale3 = Locale.US;
                         sQLiteDatabase4.executeFast("UPDATE topics SET unread_mentions = " + i + " WHERE did = " + j2 + " AND topic_id = " + j).stepThis().dispose();
@@ -467,7 +461,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                         nybVar.j = true;
                         nybVar.d = i;
                         nybVar.e = -1;
-                        qyb qybVar2 = jf7Var.getMessagesController().g4;
+                        qyb qybVar2 = kf7Var.getMessagesController().h4;
                         List singletonList = Collections.singletonList(nybVar);
                         qybVar2.getClass();
                         hl.c3(new ve2(qybVar2, singletonList, (byte) 13));
@@ -481,18 +475,18 @@ public final /* synthetic */ class ae7 implements Runnable {
                             return;
                         }
                         if (i == 0) {
-                            SQLiteDatabase sQLiteDatabase5 = jf7Var.b;
+                            SQLiteDatabase sQLiteDatabase5 = kf7Var.b;
                             Locale locale4 = Locale.US;
                             sQLiteDatabase5.executeFast("UPDATE messages_v2 SET read_state = read_state | 2 WHERE uid = " + j2 + " AND mention = 1 AND read_state IN(0, 1)").stepThis().dispose();
                         }
-                        SQLiteDatabase sQLiteDatabase6 = jf7Var.b;
+                        SQLiteDatabase sQLiteDatabase6 = kf7Var.b;
                         Locale locale5 = Locale.US;
                         sQLiteDatabase6.executeFast("UPDATE dialogs SET unread_count_i = " + i + " WHERE did = " + j2).stepThis().dispose();
                         LongSparseIntArray longSparseIntArray4 = new LongSparseIntArray(1);
                         longSparseIntArray4.put(j2, i);
-                        jf7Var.getMessagesController().R3(null, longSparseIntArray4);
+                        kf7Var.getMessagesController().R3(null, longSparseIntArray4);
                         if (i == 0) {
-                            jf7Var.T1(null, longSparseIntArray4, true);
+                            kf7Var.Y1(null, longSparseIntArray4, true);
                             return;
                         }
                         return;
@@ -500,7 +494,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                         e = e6;
                         sQLiteCursor = queryFinalized3;
                         try {
-                            jf7Var.n(e, true);
+                            kf7Var.p(e, true);
                             if (sQLiteCursor != null) {
                                 sQLiteCursor.dispose();
                                 return;
@@ -527,9 +521,15 @@ public final /* synthetic */ class ae7 implements Runnable {
                     th = th8;
                     sQLiteCursor = null;
                 }
+            case 2:
+                kf7Var.getMessagesController().J0(this.c, this.e, this.d, null);
+                return;
+            case 3:
+                kf7Var.getMessagesController().o0(this.c, this.e, this.d);
+                return;
             case 4:
                 try {
-                    sQLitePreparedStatement = jf7Var.b.executeFast("UPDATE messages_topics SET topic_id = ? WHERE uid = ? AND mid = ?");
+                    sQLitePreparedStatement = kf7Var.b.executeFast("UPDATE messages_topics SET topic_id = ? WHERE uid = ? AND mid = ?");
                     try {
                         try {
                             sQLitePreparedStatement.requery();
@@ -541,7 +541,7 @@ public final /* synthetic */ class ae7 implements Runnable {
                             return;
                         } catch (Exception e8) {
                             e = e8;
-                            jf7Var.n(e, true);
+                            kf7Var.p(e, true);
                             if (sQLitePreparedStatement != null) {
                                 sQLitePreparedStatement.dispose();
                                 return;
@@ -569,27 +569,27 @@ public final /* synthetic */ class ae7 implements Runnable {
                 a();
                 return;
             case 6:
-                this.b.L0("poll_votes_mentions", "poll_votes_mentions_topics", this.c, this.e, this.d, false);
+                this.b.O0("poll_votes_mentions", "poll_votes_mentions_topics", this.c, this.d, this.e, false);
                 return;
             default:
-                this.b.L0("reaction_mentions", "reaction_mentions_topics", this.c, this.e, this.d, true);
+                this.b.O0("reaction_mentions", "reaction_mentions_topics", this.c, this.d, this.e, true);
                 return;
         }
     }
 
-    public /* synthetic */ ae7(jf7 jf7Var, int i, long j, long j2, byte b) {
+    public /* synthetic */ ae7(kf7 kf7Var, int i, long j, long j2, byte b) {
         this.a = b;
-        this.b = jf7Var;
-        this.d = i;
+        this.b = kf7Var;
+        this.e = i;
         this.c = j;
-        this.e = j2;
+        this.d = j2;
     }
 
-    public /* synthetic */ ae7(jf7 jf7Var, long j, long j2, int i, byte b) {
+    public /* synthetic */ ae7(kf7 kf7Var, long j, long j2, int i, byte b) {
         this.a = b;
-        this.b = jf7Var;
+        this.b = kf7Var;
         this.c = j;
-        this.e = j2;
-        this.d = i;
+        this.d = j2;
+        this.e = i;
     }
 }

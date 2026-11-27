@@ -1,68 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+import java.util.LinkedHashMap;
+
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class pj7 {
-    public int[] a;
-    public int b;
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof pj7) {
-            pj7 pj7Var = (pj7) obj;
-            int i = pj7Var.b;
-            int i2 = this.b;
-            if (i == i2) {
-                int[] iArr = this.a;
-                int[] iArr2 = pj7Var.a;
-                ir5 a = bxe.a(0, i2);
-                int i3 = a.a;
-                int i4 = a.b;
-                if (i3 > i4) {
-                    return true;
-                }
-                while (iArr[i3] == iArr2[i3]) {
-                    if (i3 == i4) {
-                        return true;
-                    }
-                    i3++;
-                }
-                return false;
-            }
-        }
-        return false;
+public final class pj7 extends e23 {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pj7(e23 e23Var) {
+        super((byte) 0);
+        e23Var.getClass();
+        ((LinkedHashMap) this.a).putAll((LinkedHashMap) e23Var.a);
     }
 
-    public final int hashCode() {
-        int[] iArr = this.a;
-        int i = this.b;
-        int i2 = 0;
-        for (int i3 = 0; i3 < i; i3++) {
-            i2 += iArr[i3] * 31;
-        }
-        return i2;
+    @Override // e23
+    public final Object b(d23 d23Var) {
+        return ((LinkedHashMap) this.a).get(d23Var);
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("[");
-        int[] iArr = this.a;
-        int i = this.b;
-        int i2 = 0;
-        while (true) {
-            if (i2 >= i) {
-                sb.append((CharSequence) "]");
-                break;
-            }
-            int i3 = iArr[i2];
-            if (i2 == -1) {
-                sb.append((CharSequence) "...");
-                break;
-            }
-            if (i2 != 0) {
-                sb.append((CharSequence) ", ");
-            }
-            sb.append(i3);
-            i2++;
-        }
-        return sb.toString();
+    public pj7() {
+        this(c23.b);
     }
 }

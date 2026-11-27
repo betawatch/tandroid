@@ -12,7 +12,7 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class wg5 implements xt6, oh5 {
     public final boolean E;
@@ -37,11 +37,11 @@ public final class wg5 implements xt6, oh5 {
     public final rx6 r;
     public final IdentityHashMap s;
     public final pq8 w;
-    public final rg7 x;
+    public final sg7 x;
     public final boolean y;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public wg5(ib3 ib3Var, mb3 mb3Var, z8d z8dVar, v2c v2cVar, pr3 pr3Var, mr3 mr3Var, z6f z6fVar, lp lpVar, rx6 rx6Var, rg7 rg7Var, boolean z, int i, ig8 ig8Var) {
+    public wg5(ib3 ib3Var, mb3 mb3Var, z8d z8dVar, v2c v2cVar, pr3 pr3Var, mr3 mr3Var, z6f z6fVar, lp lpVar, rx6 rx6Var, sg7 sg7Var, boolean z, int i, ig8 ig8Var) {
         this.a = ib3Var;
         this.b = mb3Var;
         this.c = z8dVar;
@@ -51,11 +51,11 @@ public final class wg5 implements xt6, oh5 {
         this.h = z6fVar;
         this.n = lpVar;
         this.r = rx6Var;
-        this.x = rg7Var;
+        this.x = sg7Var;
         this.y = z;
         this.E = i;
         this.F = ig8Var;
-        rg7Var.getClass();
+        sg7Var.getClass();
         no5 no5Var = po5.b;
         j99 j99Var = j99.e;
         this.N = new er2(j99Var, j99Var);
@@ -67,7 +67,7 @@ public final class wg5 implements xt6, oh5 {
     }
 
     public static ko4 g(ko4 ko4Var, ko4 ko4Var2, boolean z) {
-        uf7 uf7Var;
+        vf7 vf7Var;
         int i;
         String str;
         String str2;
@@ -81,7 +81,7 @@ public final class wg5 implements xt6, oh5 {
         int i5 = -1;
         if (ko4Var2 != null) {
             str2 = ko4Var2.l;
-            uf7Var = ko4Var2.m;
+            vf7Var = ko4Var2.m;
             i2 = ko4Var2.N;
             i = ko4Var2.e;
             i3 = ko4Var2.f;
@@ -90,7 +90,7 @@ public final class wg5 implements xt6, oh5 {
             po5Var = ko4Var2.c;
         } else {
             String w = gcc.w(1, ko4Var.l);
-            uf7Var = ko4Var.m;
+            vf7Var = ko4Var.m;
             if (z) {
                 i2 = ko4Var.N;
                 i = ko4Var.e;
@@ -109,7 +109,7 @@ public final class wg5 implements xt6, oh5 {
                 str3 = null;
             }
         }
-        String d = dg7.d(str2);
+        String d = eg7.d(str2);
         if (z) {
             int i6 = ko4Var.i;
             i5 = ko4Var.j;
@@ -121,10 +121,10 @@ public final class wg5 implements xt6, oh5 {
         jo4Var.a = ko4Var.a;
         jo4Var.b = str3;
         jo4Var.c = po5.q(po5Var);
-        jo4Var.r = dg7.n(ko4Var.s);
-        jo4Var.s = dg7.n(d);
+        jo4Var.r = eg7.n(ko4Var.s);
+        jo4Var.s = eg7.n(d);
         jo4Var.k = str2;
-        jo4Var.l = uf7Var;
+        jo4Var.l = vf7Var;
         jo4Var.i = i4;
         jo4Var.j = i5;
         jo4Var.M = i2;
@@ -922,13 +922,13 @@ public final class wg5 implements xt6, oh5 {
                         ko4 ko4Var3 = ko4VarArr[i12];
                         ko4[] ko4VarArr3 = ko4VarArr;
                         String w = gcc.w(2, ko4Var3.l);
-                        String d = dg7.d(w);
+                        String d = eg7.d(w);
                         jo4 jo4Var = new jo4();
                         jo4Var.a = ko4Var3.a;
                         jo4Var.b = ko4Var3.b;
                         jo4Var.c = po5.q(ko4Var3.c);
-                        jo4Var.r = dg7.n(ko4Var3.s);
-                        jo4Var.s = dg7.n(d);
+                        jo4Var.r = eg7.n(ko4Var3.s);
+                        jo4Var.s = eg7.n(d);
                         jo4Var.k = w;
                         jo4Var.l = ko4Var3.m;
                         jo4Var.i = ko4Var3.i;
@@ -973,7 +973,7 @@ public final class wg5 implements xt6, oh5 {
                 jo4 jo4Var2 = new jo4();
                 str = "ID3";
                 jo4Var2.a = str;
-                jo4Var2.s = dg7.n("application/id3");
+                jo4Var2.s = eg7.n("application/id3");
                 jo4Var2.m = "main";
                 t1c t1cVar = new t1c("main:id3", new ko4(jo4Var2));
                 arrayList4.add(t1cVar);
@@ -1018,7 +1018,7 @@ public final class wg5 implements xt6, oh5 {
                     String concat2 = concat.concat(":id3");
                     jo4 jo4Var3 = new jo4();
                     jo4Var3.a = str;
-                    jo4Var3.s = dg7.n("application/id3");
+                    jo4Var3.s = eg7.n("application/id3");
                     jo4Var3.m = concat;
                     f2.C(new t1c[]{new t1c(concat, (ko4[]) arrayList2.toArray(new ko4[0])), new t1c(concat2, new ko4(jo4Var3))}, 1);
                 }

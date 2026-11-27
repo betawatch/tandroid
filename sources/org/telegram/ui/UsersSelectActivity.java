@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class UsersSelectActivity extends org.telegram.ui.ActionBar.e implements fn7, View.OnClickListener {
     public int E;
@@ -193,34 +193,34 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.e implements 
                 } else {
                     if (this.K) {
                         if (i == 1) {
-                            int i4 = uc7.r5;
+                            int i4 = uc7.s5;
                             i2 = 1;
                             j = Long.MIN_VALUE;
                         } else if (i == 2) {
-                            int i5 = uc7.r5;
+                            int i5 = uc7.s5;
                             i2 = 2;
                         } else if (i == 3) {
-                            int i6 = uc7.r5;
+                            int i6 = uc7.s5;
                             j = -9223372036854775806L;
                             i2 = 4;
                         } else if (i == 4) {
-                            int i7 = uc7.r5;
+                            int i7 = uc7.s5;
                             j = -9223372036854775805L;
                         } else {
-                            int i8 = uc7.r5;
+                            int i8 = uc7.s5;
                             i2 = 16;
                             j = -9223372036854775804L;
                         }
                     } else if (i == 1) {
-                        int i9 = uc7.r5;
+                        int i9 = uc7.s5;
                         i2 = 32;
                         j = -9223372036854775803L;
                     } else if (i == 2) {
-                        int i10 = uc7.r5;
+                        int i10 = uc7.s5;
                         i2 = 64;
                         j = -9223372036854775802L;
                     } else {
-                        int i11 = uc7.r5;
+                        int i11 = uc7.s5;
                         i2 = 128;
                         j = -9223372036854775801L;
                     }
@@ -247,7 +247,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.e implements 
             boolean z3 = zh6Var.h(j) >= 0;
             if (z3) {
                 this.b.b((zc5) zh6Var.f(j));
-            } else if ((!z2 && !getUserConfig().p() && this.x >= uc7.s1(this.currentAccount).k4.j1.f()) || this.x >= uc7.s1(this.currentAccount).k4.k1.f()) {
+            } else if ((!z2 && !getUserConfig().p() && this.x >= uc7.s1(this.currentAccount).l4.j1.f()) || this.x >= uc7.s1(this.currentAccount).l4.k1.f()) {
                 l46 l46Var = new l46(4, this.currentAccount, null, context, this);
                 l46Var.r2 = this.x;
                 showDialog(l46Var);
@@ -317,7 +317,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.e implements 
     public final void c0() {
         byte b = this.y;
         if (b == 0) {
-            int f = (getUserConfig().p() ? getMessagesController().k4.k1 : getMessagesController().k4.j1).f();
+            int f = (getUserConfig().p() ? getMessagesController().l4.k1 : getMessagesController().l4.j1).f();
             int i = this.x;
             org.telegram.ui.ActionBar.a aVar = this.actionBar;
             if (i == 0) {
@@ -556,35 +556,35 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.e implements 
                 }
             } else if (z2) {
                 if (i7 == 1) {
-                    int i8 = uc7.r5;
+                    int i8 = uc7.s5;
                     i = 1;
                     str = "contacts";
                 } else if (i7 == 2) {
-                    int i9 = uc7.r5;
+                    int i9 = uc7.s5;
                     i = 2;
                 } else if (i7 == 3) {
-                    int i10 = uc7.r5;
+                    int i10 = uc7.s5;
                     str = "groups";
                     i = 4;
                 } else if (i7 == 4) {
-                    int i11 = uc7.r5;
+                    int i11 = uc7.s5;
                     str = "channels";
                     i = 8;
                 } else {
-                    int i12 = uc7.r5;
+                    int i12 = uc7.s5;
                     str = "bots";
                     i = 16;
                 }
             } else if (i7 == 1) {
-                int i13 = uc7.r5;
+                int i13 = uc7.s5;
                 str = "muted";
                 i = 32;
             } else if (i7 == 2) {
-                int i14 = uc7.r5;
+                int i14 = uc7.s5;
                 str = "read";
                 i = 64;
             } else {
-                int i15 = uc7.r5;
+                int i15 = uc7.s5;
                 str = "archived";
                 i = 128;
             }
@@ -632,7 +632,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.e implements 
         } else if (this.d != null) {
             int intValue = ((Integer) objArr[0]).intValue();
             int childCount = this.d.getChildCount();
-            int i3 = uc7.r5;
+            int i3 = uc7.s5;
             if ((intValue & 2) == 0 && (intValue & 1) == 0 && (intValue & 4) == 0) {
                 return;
             }
@@ -694,35 +694,35 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.e implements 
             }
         } else if (zc5Var.getUid() == Long.MIN_VALUE) {
             int i = this.L;
-            int i2 = uc7.r5;
+            int i2 = uc7.s5;
             this.L = i & (-2);
         } else if (zc5Var.getUid() == -9223372036854775807L) {
             int i3 = this.L;
-            int i4 = uc7.r5;
+            int i4 = uc7.s5;
             this.L = i3 & (-3);
         } else if (zc5Var.getUid() == -9223372036854775806L) {
             int i5 = this.L;
-            int i6 = uc7.r5;
+            int i6 = uc7.s5;
             this.L = i5 & (-5);
         } else if (zc5Var.getUid() == -9223372036854775805L) {
             int i7 = this.L;
-            int i8 = uc7.r5;
+            int i8 = uc7.s5;
             this.L = i7 & (-9);
         } else if (zc5Var.getUid() == -9223372036854775804L) {
             int i9 = this.L;
-            int i10 = uc7.r5;
+            int i10 = uc7.s5;
             this.L = i9 & (-17);
         } else if (zc5Var.getUid() == -9223372036854775803L) {
             int i11 = this.L;
-            int i12 = uc7.r5;
+            int i12 = uc7.s5;
             this.L = i11 & (-33);
         } else if (zc5Var.getUid() == -9223372036854775802L) {
             int i13 = this.L;
-            int i14 = uc7.r5;
+            int i14 = uc7.s5;
             this.L = i13 & (-65);
         } else if (zc5Var.getUid() == -9223372036854775801L) {
             int i15 = this.L;
-            int i16 = uc7.r5;
+            int i16 = uc7.s5;
             this.L = i15 & (-129);
         }
         c0();

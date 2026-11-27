@@ -8,7 +8,7 @@ import java.nio.charset.CharsetEncoder;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class tc1 implements ys3 {
     public static final tc1 c = new tc1(new int[]{1, 2});
@@ -35,23 +35,23 @@ public final class tc1 implements ys3 {
             return;
         }
         int length = str.length();
-        eg7[][] eg7VarArr = (eg7[][]) Array.newInstance((Class<?>) eg7.class, length + 1, charsetEncoderArr.length);
-        c(str, xs3Var, eg7VarArr, 0, null);
+        fg7[][] fg7VarArr = (fg7[][]) Array.newInstance((Class<?>) fg7.class, length + 1, charsetEncoderArr.length);
+        c(str, xs3Var, fg7VarArr, 0, null);
         for (int i4 = 1; i4 <= length; i4++) {
             for (int i5 = 0; i5 < charsetEncoderArr.length; i5++) {
-                eg7 eg7Var = eg7VarArr[i4][i5];
-                if (eg7Var != null && i4 < length) {
-                    c(str, xs3Var, eg7VarArr, i4, eg7Var);
+                fg7 fg7Var = fg7VarArr[i4][i5];
+                if (fg7Var != null && i4 < length) {
+                    c(str, xs3Var, fg7VarArr, i4, fg7Var);
                 }
             }
             for (int i6 = 0; i6 < charsetEncoderArr.length; i6++) {
-                eg7VarArr[i4 - 1][i6] = null;
+                fg7VarArr[i4 - 1][i6] = null;
             }
         }
         int i7 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         for (int i8 = 0; i8 < charsetEncoderArr.length; i8++) {
-            eg7 eg7Var2 = eg7VarArr[length][i8];
-            if (eg7Var2 != null && (i = eg7Var2.d) < i7) {
+            fg7 fg7Var2 = fg7VarArr[length][i8];
+            if (fg7Var2 != null && (i = fg7Var2.d) < i7) {
                 i3 = i8;
                 i7 = i;
             }
@@ -61,11 +61,11 @@ public final class tc1 implements ys3 {
             throw null;
         }
         ArrayList arrayList = new ArrayList();
-        eg7 eg7Var3 = eg7VarArr[length][i3];
-        while (eg7Var3 != null) {
-            eg7 eg7Var4 = eg7Var3.c;
-            int i9 = eg7Var3.b;
-            char c2 = eg7Var3.a;
+        fg7 fg7Var3 = fg7VarArr[length][i3];
+        while (fg7Var3 != null) {
+            fg7 fg7Var4 = fg7Var3.c;
+            int i9 = fg7Var3.b;
+            char c2 = fg7Var3.a;
             if (c2 == 1000) {
                 arrayList.add(0, 1000);
             } else {
@@ -74,10 +74,10 @@ public final class tc1 implements ys3 {
                     arrayList.add(0, Integer.valueOf(bytes[length2] & 255));
                 }
             }
-            if ((eg7Var4 == null ? 0 : eg7Var4.b) != i9) {
+            if ((fg7Var4 == null ? 0 : fg7Var4.b) != i9) {
                 arrayList.add(0, Integer.valueOf(jk1.a(charsetEncoderArr[i9].charset()).a[0] + 256));
             }
-            eg7Var3 = eg7Var4;
+            fg7Var3 = fg7Var4;
         }
         int size = arrayList.size();
         int[] iArr2 = new int[size];
@@ -88,7 +88,7 @@ public final class tc1 implements ys3 {
         this.b = iArr2;
     }
 
-    public static void c(String str, xs3 xs3Var, eg7[][] eg7VarArr, int i, eg7 eg7Var) {
+    public static void c(String str, xs3 xs3Var, fg7[][] fg7VarArr, int i, fg7 fg7Var) {
         char charAt = str.charAt(i);
         CharsetEncoder[] charsetEncoderArr = xs3Var.a;
         int length = charsetEncoderArr.length;
@@ -100,11 +100,11 @@ public final class tc1 implements ys3 {
         }
         while (i2 < length) {
             if (charAt == 65535 || charsetEncoderArr[i2].canEncode(String.valueOf(charAt))) {
-                eg7 eg7Var2 = new eg7(charAt, xs3Var, i2, eg7Var);
-                eg7[] eg7VarArr2 = eg7VarArr[i + 1];
-                eg7 eg7Var3 = eg7VarArr2[i2];
-                if (eg7Var3 == null || eg7Var3.d > eg7Var2.d) {
-                    eg7VarArr2[i2] = eg7Var2;
+                fg7 fg7Var2 = new fg7(charAt, xs3Var, i2, fg7Var);
+                fg7[] fg7VarArr2 = fg7VarArr[i + 1];
+                fg7 fg7Var3 = fg7VarArr2[i2];
+                if (fg7Var3 == null || fg7Var3.d > fg7Var2.d) {
+                    fg7VarArr2[i2] = fg7Var2;
                 }
             }
             i2++;

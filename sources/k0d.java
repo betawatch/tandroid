@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class k0d {
     public static boolean i;
@@ -149,7 +149,7 @@ public abstract class k0d {
     }
 
     public static boolean G(h0d h0dVar) {
-        return h0dVar.i && !h0dVar.k && uc7.s1(h0dVar.b).k4.v0.f;
+        return h0dVar.i && !h0dVar.k && uc7.s1(h0dVar.b).l4.v0.f;
     }
 
     public static void a(h0d h0dVar, String str, String str2) {
@@ -348,8 +348,8 @@ public abstract class k0d {
             JSONObject jSONObject = (JSONObject) c.get(h0dVar.a());
             JSONObject optJSONObject = jSONObject != null ? jSONObject.optJSONObject("local") : null;
             String jSONObject2 = (optJSONObject == null || optJSONObject.length() == 0) ? "" : optJSONObject.toString();
-            jf7 Y = jf7.Y(h0dVar.b);
-            Y.a.c(new r77((Object) Y, (Object) jSONObject2, h0dVar.c, h0dVar.d, (byte) 14));
+            kf7 a0 = kf7.a0(h0dVar.b);
+            a0.a.c(new r77((Object) a0, (Object) jSONObject2, h0dVar.c, h0dVar.d, (byte) 14));
         }
         hashMap.clear();
     }
@@ -656,7 +656,7 @@ public abstract class k0d {
             TLRPC.TL_error tL_error = new TLRPC.TL_error();
             tL_error.code = 400;
             tL_error.text = "WIDGET_QUERY_TYPE_UNSUPPORTED";
-            hl.c3(new cxc((Object) am3Var, (Object) tL_error, (byte) 10));
+            hl.c3(new zwc(am3Var, tL_error, (byte) 11));
             return;
         }
         if (h0dVar.o) {

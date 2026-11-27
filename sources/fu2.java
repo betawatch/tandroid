@@ -49,7 +49,7 @@ import org.webrtc.RtpSender;
 import org.webrtc.RtpTransceiver;
 import org.webrtc.StatsObserver;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class fu2 implements fd, Continuation, OnFailureListener, sgb, id3, scc, pn3, is6, SuccessContinuation, s69, nx, ot2, NativeLifecycleLock.NativeCallable, NativeLifecycleLock.NativeRunnable {
     public final /* synthetic */ byte a;
@@ -468,7 +468,7 @@ public final /* synthetic */ class fu2 implements fd, Continuation, OnFailureLis
         String str = (String) this.c;
         n20 n20Var = (n20) this.d;
         String str2 = (String) obj;
-        i09 c = FirebaseMessaging.c(firebaseMessaging.b);
+        j09 c = FirebaseMessaging.c(firebaseMessaging.b);
         ji4 ji4Var = firebaseMessaging.a;
         ji4Var.a();
         String d = "[DEFAULT]".equals(ji4Var.b) ? "" : ji4Var.d();
@@ -578,7 +578,7 @@ public final /* synthetic */ class fu2 implements fd, Continuation, OnFailureLis
                 TLRPC.User user2 = (TLRPC.User) obj2;
                 ((boolean[]) obj)[0] = true;
                 if (user2 != null) {
-                    uc7.s1(r17Var.f).W3.edit().putBoolean("inlinegeo_" + user2.id, true).commit();
+                    uc7.s1(r17Var.f).X3.edit().putBoolean("inlinegeo_" + user2.id, true).commit();
                     r17Var.G();
                     break;
                 }

@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fd6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class fd6 implements Runnable {
     public final /* synthetic */ Object f;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ fd6(jf7 jf7Var, String str, int i, Object[] objArr, CountDownLatch countDownLatch) {
+    public /* synthetic */ fd6(kf7 kf7Var, String str, int i, Object[] objArr, CountDownLatch countDownLatch) {
         this.a = (byte) 2;
-        this.c = jf7Var;
+        this.c = kf7Var;
         this.d = str;
         this.b = i;
         this.e = objArr;
@@ -848,7 +848,7 @@ public final /* synthetic */ class fd6 implements Runnable {
                 ls6Var.getNotificationCenter().k(61, Integer.valueOf(b2), Boolean.TRUE);
                 return;
             case 2:
-                jf7 jf7Var = (jf7) this.c;
+                kf7 kf7Var = (kf7) this.c;
                 String str30 = (String) this.d;
                 byte b3 = this.b;
                 Object[] objArr = (Object[]) this.e;
@@ -857,7 +857,7 @@ public final /* synthetic */ class fd6 implements Runnable {
                     try {
                         String a = Utilities.a(str30);
                         if (a != null) {
-                            SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                            SQLiteDatabase sQLiteDatabase = kf7Var.b;
                             Locale locale4 = Locale.US;
                             SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT data, parent FROM sent_files_v2 WHERE uid = '" + a + "' AND type = " + ((int) b3), new Object[0]);
                             if (queryFinalized.next() && (byteBufferValue = queryFinalized.byteBufferValue(0)) != null) {
@@ -878,11 +878,11 @@ public final /* synthetic */ class fd6 implements Runnable {
                         countDownLatch.countDown();
                     }
                 } catch (Exception e) {
-                    jf7Var.n(e, true);
+                    kf7Var.p(e, true);
                 }
                 return;
             default:
-                jf7 jf7Var2 = (jf7) this.c;
+                kf7 kf7Var2 = (kf7) this.c;
                 String str31 = (String) this.d;
                 TLObject tLObject = (TLObject) this.e;
                 byte b4 = this.b;
@@ -904,7 +904,7 @@ public final /* synthetic */ class fd6 implements Runnable {
                         if (messageMedia == null) {
                             return;
                         }
-                        sQLitePreparedStatement = jf7Var2.b.executeFast("REPLACE INTO sent_files_v2 VALUES(?, ?, ?, ?)");
+                        sQLitePreparedStatement = kf7Var2.b.executeFast("REPLACE INTO sent_files_v2 VALUES(?, ?, ?, ?)");
                         try {
                             try {
                                 sQLitePreparedStatement.requery();
@@ -918,7 +918,7 @@ public final /* synthetic */ class fd6 implements Runnable {
                                 nativeByteBuffer.reuse();
                             } catch (Exception e2) {
                                 e = e2;
-                                jf7Var2.n(e, true);
+                                kf7Var2.p(e, true);
                                 if (sQLitePreparedStatement == null) {
                                     return;
                                 }

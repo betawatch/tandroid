@@ -8,14 +8,14 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class hr9 extends FrameLayout {
     public final hmc a;
     public boolean b;
     public boolean c;
     public final long d;
-    public final ki7 e;
+    public final li7 e;
     public final /* synthetic */ ir9 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -24,7 +24,7 @@ public final class hr9 extends FrameLayout {
         this.f = ir9Var;
         this.c = true;
         this.d = SystemClock.elapsedRealtime();
-        this.e = new ki7(this, (byte) 23);
+        this.e = new li7(this, (byte) 23);
         setBackgroundColor(-16777216);
         l91 l91Var = new l91(launchActivity);
         addView(l91Var, tre.c(-1.0f, -1));

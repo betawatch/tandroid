@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class m08 extends d6 {
     public final /* synthetic */ b18 a;
@@ -92,8 +92,8 @@ public final class m08 extends d6 {
                 b18Var.K1[b18Var.J1].h(null);
                 return;
             }
-            fe7 fe7Var = new fe7(this, (byte) 22);
-            um4 um4Var = new um4(this, fe7Var, false, (byte) 17);
+            ge7 ge7Var = new ge7(this, (byte) 22);
+            um4 um4Var = new um4(this, ge7Var, false, (byte) 17);
             if (i6 == 4) {
                 if (b18Var.f) {
                     obj = b18Var.e1;
@@ -102,7 +102,7 @@ public final class m08 extends d6 {
                 } else {
                     obj = b18Var.Z[0].getText().toString();
                 }
-                b18Var.C1.c(b18Var.F, obj, null, null, null, null, null, null, null, null, fe7Var, um4Var);
+                b18Var.C1.c(b18Var.F, obj, null, null, null, null, null, null, null, null, ge7Var, um4Var);
             } else if (i6 == 3) {
                 if (b18Var.f) {
                     i5 = ((e) b18Var).currentAccount;
@@ -113,7 +113,7 @@ public final class m08 extends d6 {
                     }
                     str = b18Var.Z[1].getText().toString() + b18Var.Z[2].getText().toString();
                 }
-                b18Var.C1.c(b18Var.F, str, null, null, null, null, null, null, null, null, fe7Var, um4Var);
+                b18Var.C1.c(b18Var.F, str, null, null, null, null, null, null, null, null, ge7Var, um4Var);
             } else if (i6 == 2) {
                 if (!b18Var.p1.isEmpty() || b18Var.Q0()) {
                     return;
@@ -142,7 +142,7 @@ public final class m08 extends d6 {
                     if (hashMap2 != null) {
                         hashMap2.clear();
                     }
-                    b18Var.C1.c(b18Var.F, null, jSONObject != null ? jSONObject.toString() : null, b18Var.G, null, b18Var.j1, b18Var.k1, b18Var.l1, null, null, fe7Var, um4Var);
+                    b18Var.C1.c(b18Var.F, null, jSONObject != null ? jSONObject.toString() : null, b18Var.G, null, b18Var.j1, b18Var.k1, b18Var.l1, null, null, ge7Var, um4Var);
                 }
                 jSONObject = null;
                 hashMap = b18Var.x1;
@@ -151,9 +151,9 @@ public final class m08 extends d6 {
                 hashMap2 = b18Var.y1;
                 if (hashMap2 != null) {
                 }
-                b18Var.C1.c(b18Var.F, null, jSONObject != null ? jSONObject.toString() : null, b18Var.G, null, b18Var.j1, b18Var.k1, b18Var.l1, null, null, fe7Var, um4Var);
+                b18Var.C1.c(b18Var.F, null, jSONObject != null ? jSONObject.toString() : null, b18Var.G, null, b18Var.j1, b18Var.k1, b18Var.l1, null, null, ge7Var, um4Var);
             } else if (i6 == 1) {
-                if (!c(fe7Var, um4Var)) {
+                if (!c(ge7Var, um4Var)) {
                     return;
                 }
             } else if (i6 == 6) {
@@ -163,7 +163,7 @@ public final class m08 extends d6 {
                 tL_emailVerificationCode.code = b18Var.Z[0].getText().toString();
                 verifyemail.verification = tL_emailVerificationCode;
                 i2 = ((e) b18Var).currentAccount;
-                int sendRequest = ConnectionsManager.getInstance(i2).sendRequest(verifyemail, new au0(this, fe7Var, um4Var, verifyemail, (byte) 13));
+                int sendRequest = ConnectionsManager.getInstance(i2).sendRequest(verifyemail, new au0(this, ge7Var, um4Var, verifyemail, (byte) 13));
                 i3 = ((e) b18Var).currentAccount;
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i3);
                 i4 = ((e) b18Var).classGuid;
@@ -192,7 +192,7 @@ public final class m08 extends d6 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean c(fe7 fe7Var, um4 um4Var) {
+    public final boolean c(ge7 ge7Var, um4 um4Var) {
         ?? r16;
         int i;
         char c;
@@ -251,7 +251,7 @@ public final class m08 extends d6 {
                             c3 = c5;
                             i3 = i5;
                             z = r15;
-                            alertDialog$Builder.j(ob6.M0(2131751319, null), new kh(this, S0, S02, S03, fe7Var, um4Var, (byte) 4));
+                            alertDialog$Builder.j(ob6.M0(2131751319, null), new kh(this, S0, S02, S03, ge7Var, um4Var, (byte) 4));
                             alertDialog$Builder.g(ob6.M0(2131751300, null), new wg(this, i3, (byte) 17));
                             b18Var.showDialog(idVar);
                         }
@@ -381,7 +381,7 @@ public final class m08 extends d6 {
             if (linearLayout != null && linearLayout.getVisibility() == 0) {
                 oy9Var = b18Var.n1;
             }
-            j08Var.c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, oy9Var2, arrayList3, oy9Var3, oy9Var, fe7Var, um4Var);
+            j08Var.c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, oy9Var2, arrayList3, oy9Var3, oy9Var, ge7Var, um4Var);
             return r17;
         }
         jSONObject2 = null;
@@ -405,7 +405,7 @@ public final class m08 extends d6 {
         if (linearLayout != null) {
             oy9Var = b18Var.n1;
         }
-        j08Var2.c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, oy9Var22, arrayList32, oy9Var32, oy9Var, fe7Var, um4Var);
+        j08Var2.c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, oy9Var22, arrayList32, oy9Var32, oy9Var, ge7Var, um4Var);
         return r17;
     }
 }

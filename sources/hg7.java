@@ -1,54 +1,61 @@
 // default package
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.security.SecureRandom;
-
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public abstract class hg7 {
-    public static final SecureRandom a = new SecureRandom();
+public final class hg7 {
+    public final qg7 a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final /* synthetic */ pm3 e;
 
-    public static byte[] a(String str) {
-        if (str == null) {
-            return null;
-        }
-        try {
-            return str.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException unused) {
-            return null;
-        }
+    public hg7(pm3 pm3Var, qg7 qg7Var, int i, int i2, int i3) {
+        this.e = pm3Var;
+        this.a = qg7Var;
+        this.b = i;
+        this.c = i2;
+        this.d = i3;
     }
 
-    public static String b(InputStream inputStream) {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        while (true) {
-            int read = inputStream.read();
-            if (read == -1) {
-                if (byteArrayOutputStream.size() == 0) {
-                    return null;
-                }
-            } else {
-                if (read == 10) {
-                    break;
-                }
-                if (read != 13) {
-                    byteArrayOutputStream.write(read);
+    public final int a() {
+        qg7 qg7Var = this.a;
+        qg7 qg7Var2 = qg7.h;
+        int i = this.d;
+        if (qg7Var != qg7Var2) {
+            return i;
+        }
+        vh4 vh4Var = (vh4) this.e.c;
+        xs3 xs3Var = (xs3) vh4Var.c;
+        String str = (String) vh4Var.b;
+        int i2 = this.b;
+        return str.substring(i2, i + i2).getBytes(xs3Var.a[this.c].charset()).length;
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder();
+        qg7 qg7Var = this.a;
+        sb.append(qg7Var);
+        sb.append('(');
+        vh4 vh4Var = (vh4) this.e.c;
+        if (qg7Var == qg7.n) {
+            xs3 xs3Var = (xs3) vh4Var.c;
+            sb.append(xs3Var.a[this.c].charset().displayName());
+        } else {
+            String str = (String) vh4Var.b;
+            int i = this.d;
+            int i2 = this.b;
+            String substring = str.substring(i2, i + i2);
+            StringBuilder sb2 = new StringBuilder();
+            for (int i3 = 0; i3 < substring.length(); i3++) {
+                if (substring.charAt(i3) < ' ' || substring.charAt(i3) > '~') {
+                    sb2.append('.');
                 } else {
-                    int read2 = inputStream.read();
-                    if (read2 == -1) {
-                        byteArrayOutputStream.write(read);
-                        break;
-                    }
-                    if (read2 == 10) {
-                        break;
-                    }
-                    byteArrayOutputStream.write(read);
-                    byteArrayOutputStream.write(read2);
+                    sb2.append(substring.charAt(i3));
                 }
             }
+            sb.append(sb2.toString());
         }
-        return byteArrayOutputStream.toString("UTF-8");
+        sb.append(')');
+        return sb.toString();
     }
 }

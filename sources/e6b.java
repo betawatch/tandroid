@@ -3,18 +3,18 @@
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class e6b implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ TextView a;
-    public final /* synthetic */ ybb b;
+    public final /* synthetic */ zbb b;
     public final /* synthetic */ TextView c;
     public final /* synthetic */ g6b d;
 
-    public e6b(g6b g6bVar, TextView textView, ybb ybbVar, TextView textView2) {
+    public e6b(g6b g6bVar, TextView textView, zbb zbbVar, TextView textView2) {
         this.d = g6bVar;
         this.a = textView;
-        this.b = ybbVar;
+        this.b = zbbVar;
         this.c = textView2;
     }
 

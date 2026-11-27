@@ -4,28 +4,28 @@ import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y7b implements Runnable {
     public final /* synthetic */ byte a;
     public final /* synthetic */ c8b b;
-    public final /* synthetic */ ii7 c;
+    public final /* synthetic */ ji7 c;
 
-    public /* synthetic */ y7b(c8b c8bVar, ii7 ii7Var, byte b) {
+    public /* synthetic */ y7b(c8b c8bVar, ji7 ji7Var, byte b) {
         this.a = b;
         this.b = c8bVar;
-        this.c = ii7Var;
+        this.c = ji7Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         y7b y7bVar;
         byte b = this.a;
-        ii7 ii7Var = this.c;
+        ji7 ji7Var = this.c;
         c8b c8bVar = this.b;
         switch (b) {
             case 0:
-                ii7Var.a(c8bVar.d1);
+                ji7Var.a(c8bVar.d1);
                 return;
             default:
                 c8bVar.getClass();
@@ -52,17 +52,17 @@ public final /* synthetic */ class y7b implements Runnable {
                             trackFormat.getInteger("color-range");
                         }
                         c8bVar.d1 = c8bVar.d1;
-                        y7bVar = new y7b(c8bVar, ii7Var, b2);
+                        y7bVar = new y7b(c8bVar, ji7Var, b2);
                     } catch (Exception e) {
                         cc4.g(e, true);
                         c8bVar.d1 = c8bVar.d1;
-                        y7bVar = new y7b(c8bVar, ii7Var, b2);
+                        y7bVar = new y7b(c8bVar, ji7Var, b2);
                     }
                     hl.c3(y7bVar);
                     return;
                 } catch (Throwable th) {
                     c8bVar.d1 = c8bVar.d1;
-                    hl.c3(new y7b(c8bVar, ii7Var, b2));
+                    hl.c3(new y7b(c8bVar, ji7Var, b2));
                     throw th;
                 }
         }

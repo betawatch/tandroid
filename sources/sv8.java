@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class sv8 extends Dialog {
     public final RectF E;
@@ -78,7 +78,7 @@ public final class sv8 extends Dialog {
         final byte b = 1;
         boolean z = user != null && user.id == yac.h(eVar.getCurrentAccount()).e();
         this.e = z;
-        boolean z2 = (user == null || z || !uc7.s1(eVar.getCurrentAccount()).k4.v0.f) ? false : true;
+        boolean z2 = (user == null || z || !uc7.s1(eVar.getCurrentAccount()).l4.v0.f) ? false : true;
         this.c = z2;
         this.d = (user == null || z || z2) ? false : true;
         js8Var.getLocationOnScreen(new int[2]);

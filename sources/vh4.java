@@ -36,7 +36,7 @@ import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class vh4 implements f73, j98, g84 {
     public static final uh4 e = new uh4();
@@ -62,10 +62,10 @@ public final class vh4 implements f73, j98, g84 {
         return (d2 * d2) + (d * d);
     }
 
-    public static void a(fg7[][][] fg7VarArr, int i, fg7 fg7Var) {
-        fg7[] fg7VarArr2 = fg7VarArr[i + fg7Var.d][fg7Var.c];
-        pg7 pg7Var = fg7Var.a;
-        int ordinal = pg7Var.ordinal();
+    public static void a(gg7[][][] gg7VarArr, int i, gg7 gg7Var) {
+        gg7[] gg7VarArr2 = gg7VarArr[i + gg7Var.d][gg7Var.c];
+        qg7 qg7Var = gg7Var.a;
+        int ordinal = qg7Var.ordinal();
         char c = 2;
         if (ordinal != 1) {
             if (ordinal == 2) {
@@ -74,20 +74,20 @@ public final class vh4 implements f73, j98, g84 {
                 c = 3;
             } else {
                 if (ordinal != 6) {
-                    xi4.k(pg7Var, "Illegal mode ");
+                    xi4.k(qg7Var, "Illegal mode ");
                     return;
                 }
                 c = 0;
             }
         }
-        fg7 fg7Var2 = fg7VarArr2[c];
-        if (fg7Var2 == null || fg7Var2.f > fg7Var.f) {
-            fg7VarArr2[c] = fg7Var;
+        gg7 gg7Var2 = gg7VarArr2[c];
+        if (gg7Var2 == null || gg7Var2.f > gg7Var.f) {
+            gg7VarArr2[c] = gg7Var;
         }
     }
 
-    public static boolean g(pg7 pg7Var, char c) {
-        int ordinal = pg7Var.ordinal();
+    public static boolean g(qg7 qg7Var, char c) {
+        int ordinal = qg7Var.ordinal();
         if (ordinal != 1) {
             if (ordinal == 2) {
                 if ((c < '`' ? k34.a[c] : -1) == -1) {
@@ -404,15 +404,15 @@ public final class vh4 implements f73, j98, g84 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(xdc xdcVar, fg7[][][] fg7VarArr, int i, fg7 fg7Var) {
+    public final void b(xdc xdcVar, gg7[][][] gg7VarArr, int i, gg7 gg7Var) {
         int i2;
         int i3;
         char charAt;
-        pg7 pg7Var;
+        qg7 qg7Var;
         char charAt2;
-        pg7 pg7Var2;
+        qg7 qg7Var2;
         char charAt3;
-        pg7 pg7Var3;
+        qg7 qg7Var3;
         int i4;
         String str = (String) this.b;
         xs3 xs3Var = (xs3) this.c;
@@ -425,38 +425,38 @@ public final class vh4 implements f73, j98, g84 {
                 i2 = length;
                 for (i3 = i5; i3 < i2; i3++) {
                     if (charsetEncoderArr[i3].canEncode(String.valueOf(str.charAt(i)))) {
-                        a(fg7VarArr, i, new fg7(this, pg7.h, i, i3, 1, fg7Var, xdcVar));
+                        a(gg7VarArr, i, new gg7(this, qg7.h, i, i3, 1, gg7Var, xdcVar));
                     }
                 }
                 charAt = str.charAt(i);
-                pg7Var = pg7.r;
-                if (g(pg7Var, charAt)) {
-                    a(fg7VarArr, i, new fg7(this, pg7Var, i, 0, 1, fg7Var, xdcVar));
+                qg7Var = qg7.r;
+                if (g(qg7Var, charAt)) {
+                    a(gg7VarArr, i, new gg7(this, qg7Var, i, 0, 1, gg7Var, xdcVar));
                 }
                 int length2 = str.length();
                 charAt2 = str.charAt(i);
-                pg7Var2 = pg7.e;
+                qg7Var2 = qg7.e;
                 int i6 = 2;
-                if (g(pg7Var2, charAt2)) {
+                if (g(qg7Var2, charAt2)) {
                     int i7 = i + 1;
-                    a(fg7VarArr, i, new fg7(this, pg7Var2, i, 0, (i7 >= length2 || !g(pg7Var2, str.charAt(i7))) ? 1 : 2, fg7Var, xdcVar));
+                    a(gg7VarArr, i, new gg7(this, qg7Var2, i, 0, (i7 >= length2 || !g(qg7Var2, str.charAt(i7))) ? 1 : 2, gg7Var, xdcVar));
                 }
                 charAt3 = str.charAt(i);
-                pg7Var3 = pg7.d;
-                if (g(pg7Var3, charAt3)) {
+                qg7Var3 = qg7.d;
+                if (g(qg7Var3, charAt3)) {
                     return;
                 }
                 int i8 = i + 1;
-                if (i8 >= length2 || !g(pg7Var3, str.charAt(i8))) {
+                if (i8 >= length2 || !g(qg7Var3, str.charAt(i8))) {
                     i4 = 1;
                 } else {
                     int i9 = i + 2;
-                    if (i9 < length2 && g(pg7Var3, str.charAt(i9))) {
+                    if (i9 < length2 && g(qg7Var3, str.charAt(i9))) {
                         i6 = 3;
                     }
                     i4 = i6;
                 }
-                a(fg7VarArr, i, new fg7(this, pg7Var3, i, 0, i4, fg7Var, xdcVar));
+                a(gg7VarArr, i, new gg7(this, qg7Var3, i, 0, i4, gg7Var, xdcVar));
                 return;
             }
         }
@@ -465,18 +465,18 @@ public final class vh4 implements f73, j98, g84 {
         while (i3 < i2) {
         }
         charAt = str.charAt(i);
-        pg7Var = pg7.r;
-        if (g(pg7Var, charAt)) {
+        qg7Var = qg7.r;
+        if (g(qg7Var, charAt)) {
         }
         int length22 = str.length();
         charAt2 = str.charAt(i);
-        pg7Var2 = pg7.e;
+        qg7Var2 = qg7.e;
         int i62 = 2;
-        if (g(pg7Var2, charAt2)) {
+        if (g(qg7Var2, charAt2)) {
         }
         charAt3 = str.charAt(i);
-        pg7Var3 = pg7.d;
-        if (g(pg7Var3, charAt3)) {
+        qg7Var3 = qg7.d;
+        if (g(qg7Var3, charAt3)) {
         }
     }
 
@@ -589,14 +589,14 @@ public final class vh4 implements f73, j98, g84 {
         String str = (String) this.b;
         int length = str.length();
         CharsetEncoder[] charsetEncoderArr = ((xs3) this.c).a;
-        fg7[][][] fg7VarArr = (fg7[][][]) Array.newInstance((Class<?>) fg7.class, length + 1, charsetEncoderArr.length, 4);
-        b(xdcVar, fg7VarArr, 0, null);
+        gg7[][][] gg7VarArr = (gg7[][][]) Array.newInstance((Class<?>) gg7.class, length + 1, charsetEncoderArr.length, 4);
+        b(xdcVar, gg7VarArr, 0, null);
         for (int i2 = 1; i2 <= length; i2++) {
             for (int i3 = 0; i3 < charsetEncoderArr.length; i3++) {
                 for (int i4 = 0; i4 < 4; i4++) {
-                    fg7 fg7Var = fg7VarArr[i2][i3][i4];
-                    if (fg7Var != null && i2 < length) {
-                        b(xdcVar, fg7VarArr, i2, fg7Var);
+                    gg7 gg7Var = gg7VarArr[i2][i3][i4];
+                    if (gg7Var != null && i2 < length) {
+                        b(xdcVar, gg7VarArr, i2, gg7Var);
                     }
                 }
             }
@@ -606,8 +606,8 @@ public final class vh4 implements f73, j98, g84 {
         int i7 = -1;
         for (int i8 = 0; i8 < charsetEncoderArr.length; i8++) {
             for (int i9 = 0; i9 < 4; i9++) {
-                fg7 fg7Var2 = fg7VarArr[length][i8][i9];
-                if (fg7Var2 != null && (i = fg7Var2.f) < i6) {
+                gg7 gg7Var2 = gg7VarArr[length][i8][i9];
+                if (gg7Var2 != null && (i = gg7Var2.f) < i6) {
                     i5 = i8;
                     i7 = i9;
                     i6 = i;
@@ -615,7 +615,7 @@ public final class vh4 implements f73, j98, g84 {
             }
         }
         if (i5 >= 0) {
-            return new pm3(this, xdcVar, fg7VarArr[length][i5][i7]);
+            return new pm3(this, xdcVar, gg7VarArr[length][i5][i7]);
         }
         throw new w30(qd4.y("Internal error: failed to encode \"", str, "\""));
     }

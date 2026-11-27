@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Paint;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class qx1 extends ap0 {
     public boolean s;
@@ -18,7 +18,7 @@ public final class qx1 extends ap0 {
         Paint paint = new Paint(1);
         this.d = paint;
         this.f = true;
-        this.b = new l09((byte) 3);
+        this.b = new m09((byte) 3);
         gu guVar = new gu((byte) 1, context, (Object) this);
         this.c = guVar;
         guVar.setOverScrollMode(2);

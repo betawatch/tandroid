@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class zy0 {
     public static final byte[] a;
@@ -309,7 +309,7 @@ public abstract class zy0 {
                         ey7Var.N(zd1Var.d());
                         jo4 jo4Var = new jo4();
                         jo4Var.a = num;
-                        jo4Var.s = dg7.n("audio/ac3");
+                        jo4Var.s = eg7.n("audio/ac3");
                         jo4Var.M = i43;
                         jo4Var.O = i42;
                         jo4Var.w = hr3Var2;
@@ -354,7 +354,7 @@ public abstract class zy0 {
                                 ey7Var.N(zd1Var2.d());
                                 jo4 jo4Var2 = new jo4();
                                 jo4Var2.a = num2;
-                                jo4Var2.s = dg7.n(str7);
+                                jo4Var2.s = eg7.n(str7);
                                 jo4Var2.M = i46;
                                 jo4Var2.O = i45;
                                 jo4Var2.w = hr3Var2;
@@ -371,7 +371,7 @@ public abstract class zy0 {
                         ey7Var.N(zd1Var2.d());
                         jo4 jo4Var22 = new jo4();
                         jo4Var22.a = num2;
-                        jo4Var22.s = dg7.n(str7);
+                        jo4Var22.s = eg7.n(str7);
                         jo4Var22.M = i46;
                         jo4Var22.O = i45;
                         jo4Var22.w = hr3Var2;
@@ -525,12 +525,12 @@ public abstract class zy0 {
                                                         int i55 = 0;
                                                         if (i31 == 0) {
                                                             while (i55 < 2) {
-                                                                ok7.f(zd1Var3, i4Var);
+                                                                pk7.f(zd1Var3, i4Var);
                                                                 i55++;
                                                             }
                                                         } else {
                                                             for (int i56 = 2; i55 < i56; i56 = 2) {
-                                                                ok7.g(zd1Var3, i4Var);
+                                                                pk7.g(zd1Var3, i4Var);
                                                                 i55++;
                                                             }
                                                         }
@@ -538,12 +538,12 @@ public abstract class zy0 {
                                                         int i57 = 0;
                                                         if (i31 == 0) {
                                                             while (i57 < 3) {
-                                                                ok7.f(zd1Var3, i4Var);
+                                                                pk7.f(zd1Var3, i4Var);
                                                                 i57++;
                                                             }
                                                         } else {
                                                             for (int i58 = 3; i57 < i58; i58 = 3) {
-                                                                ok7.g(zd1Var3, i4Var);
+                                                                pk7.g(zd1Var3, i4Var);
                                                                 i57++;
                                                             }
                                                         }
@@ -553,17 +553,17 @@ public abstract class zy0 {
                                                             zd1Var3.n(8);
                                                         }
                                                     } else if (i31 == 0) {
-                                                        ok7.f(zd1Var3, i4Var);
+                                                        pk7.f(zd1Var3, i4Var);
                                                     } else {
                                                         int f14 = zd1Var3.f(3);
                                                         for (int i60 = 0; i60 < f14 + 2; i60++) {
-                                                            ok7.g(zd1Var3, i4Var);
+                                                            pk7.g(zd1Var3, i4Var);
                                                         }
                                                     }
                                                 } else if (i31 != 0) {
-                                                    ok7.f(zd1Var3, i4Var);
+                                                    pk7.f(zd1Var3, i4Var);
                                                 } else {
-                                                    ok7.g(zd1Var3, i4Var);
+                                                    pk7.g(zd1Var3, i4Var);
                                                 }
                                                 zd1Var3.m();
                                                 e = zd1Var3.e();
@@ -723,7 +723,7 @@ public abstract class zy0 {
                                 String format2 = String.format(Locale.US, "ac-4.%02d.%02d.%02d", objArr3);
                                 jo4 jo4Var3 = new jo4();
                                 jo4Var3.a = num3;
-                                jo4Var3.s = dg7.n("audio/ac4");
+                                jo4Var3.s = eg7.n("audio/ac4");
                                 jo4Var3.M = i25;
                                 jo4Var3.O = i48;
                                 jo4Var3.w = hr3Var2;
@@ -763,7 +763,7 @@ public abstract class zy0 {
                                 i13 = i68;
                                 jo4 jo4Var4 = new jo4();
                                 jo4Var4.a = Integer.toString(i4);
-                                jo4Var4.s = dg7.n(str6);
+                                jo4Var4.s = eg7.n(str6);
                                 i17 = i70;
                                 jo4Var4.M = i17;
                                 i18 = i69;
@@ -1078,7 +1078,7 @@ public abstract class zy0 {
         }
         jo4 jo4Var5 = new jo4();
         jo4Var5.a = Integer.toString(i4);
-        jo4Var5.s = dg7.n(str19);
+        jo4Var5.s = eg7.n(str19);
         jo4Var5.k = str18;
         jo4Var5.M = i86;
         jo4Var5.O = i84;
@@ -1117,7 +1117,7 @@ public abstract class zy0 {
         }
         ey7Var.O(1);
         d(ey7Var);
-        String e = dg7.e(ey7Var.A());
+        String e = eg7.e(ey7Var.A());
         if ("audio/mpeg".equals(e) || "audio/vnd.dts".equals(e) || "audio/vnd.dts.hd".equals(e)) {
             return new ty0(e, null, -1L, -1L);
         }
@@ -1168,10 +1168,10 @@ public abstract class zy0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static uf7 f(uh7 uh7Var) {
-        vh7 v = uh7Var.v(1751411826);
-        vh7 v2 = uh7Var.v(1801812339);
-        vh7 v3 = uh7Var.v(1768715124);
+    public static vf7 f(vh7 vh7Var) {
+        wh7 v = vh7Var.v(1751411826);
+        wh7 v2 = vh7Var.v(1801812339);
+        wh7 v3 = vh7Var.v(1768715124);
         if (v == null || v2 == null || v3 == null) {
             return null;
         }
@@ -1222,10 +1222,10 @@ public abstract class zy0 {
         if (arrayList.isEmpty()) {
             return null;
         }
-        return new uf7(arrayList);
+        return new vf7(arrayList);
     }
 
-    public static ai7 g(ey7 ey7Var) {
+    public static bi7 g(ey7 ey7Var) {
         long u;
         long u2;
         ey7Var.N(8);
@@ -1236,7 +1236,7 @@ public abstract class zy0 {
             u = ey7Var.u();
             u2 = ey7Var.u();
         }
-        return new ai7(u, u2, ey7Var.C());
+        return new bi7(u, u2, ey7Var.C());
     }
 
     public static Pair h(ey7 ey7Var, int i, int i2) {
@@ -2093,7 +2093,7 @@ public abstract class zy0 {
                     } else {
                         jo4 jo4Var = new jo4();
                         jo4Var.a = Integer.toString(i4);
-                        jo4Var.s = dg7.n(str5);
+                        jo4Var.s = eg7.n(str5);
                         jo4Var.k = str4;
                         jo4Var.z = H;
                         jo4Var.A = H2;
@@ -2256,7 +2256,7 @@ public abstract class zy0 {
                         if (str23 != null) {
                             jo4 jo4Var2 = new jo4();
                             jo4Var2.a = Integer.toString(i22);
-                            jo4Var2.s = dg7.n(str23);
+                            jo4Var2.s = eg7.n(str23);
                             jo4Var2.d = str11;
                             jo4Var2.x = j2;
                             jo4Var2.v = j99Var;
@@ -2291,7 +2291,7 @@ public abstract class zy0 {
                         if (v != null) {
                             jo4 jo4Var3 = new jo4();
                             jo4Var3.a = Integer.toString(i22);
-                            jo4Var3.s = dg7.n(v);
+                            jo4Var3.s = eg7.n(v);
                             vy0Var.d = new ko4(jo4Var3);
                         }
                     } else if (m3 == 1769222965) {
@@ -2300,14 +2300,14 @@ public abstract class zy0 {
                         ey7Var2.k(0, A17, bArr13);
                         jo4 jo4Var4 = new jo4();
                         jo4Var4.a = Integer.toString(i22);
-                        jo4Var4.s = dg7.n("application/x-itut-t35");
+                        jo4Var4.s = eg7.n("application/x-itut-t35");
                         jo4Var4.v = po5.u(bArr13);
                         vy0Var.d = new ko4(jo4Var4);
                     }
                 } else if (m3 == 1667329389) {
                     jo4 jo4Var5 = new jo4();
                     jo4Var5.a = Integer.toString(i22);
-                    jo4Var5.s = dg7.n("application/x-camera-motion");
+                    jo4Var5.s = eg7.n("application/x-camera-motion");
                     vy0Var.d = new ko4(jo4Var5);
                 }
                 i2 = i24;
@@ -2362,7 +2362,7 @@ public abstract class zy0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ArrayList j(uh7 uh7Var, du4 du4Var, long j, hr3 hr3Var, boolean z, boolean z2, es4 es4Var, boolean z3) {
+    public static ArrayList j(vh7 vh7Var, du4 du4Var, long j, hr3 hr3Var, boolean z, boolean z2, es4 es4Var, boolean z3) {
         int i;
         long j2;
         long j3;
@@ -2382,10 +2382,10 @@ public abstract class zy0 {
         int i6;
         int i7;
         String str;
-        vh7 v;
+        wh7 v;
         int i8;
         long j8;
-        uh7 uh7Var2;
+        vh7 vh7Var2;
         long j9;
         int i9;
         String str2;
@@ -2394,12 +2394,12 @@ public abstract class zy0 {
         ko4 ko4Var;
         p1c p1cVar;
         es4 es4Var2;
-        uh7 u;
+        vh7 u;
         Pair create;
         long[] jArr;
         int i10;
         long m;
-        vh7 v2;
+        wh7 v2;
         int i11;
         int i12;
         uy0 wy0Var;
@@ -2452,22 +2452,22 @@ public abstract class zy0 {
         long b02;
         ArrayList arrayList6;
         y1c y1cVar2;
-        uh7 uh7Var3 = uh7Var;
-        ArrayList arrayList7 = uh7Var3.g;
+        vh7 vh7Var3 = vh7Var;
+        ArrayList arrayList7 = vh7Var3.g;
         ArrayList arrayList8 = new ArrayList();
         int i26 = 0;
         while (i26 < arrayList7.size()) {
-            uh7 uh7Var4 = (uh7) arrayList7.get(i26);
-            if (uh7Var4.b != 1953653099) {
+            vh7 vh7Var4 = (vh7) arrayList7.get(i26);
+            if (vh7Var4.b != 1953653099) {
                 arrayList = arrayList7;
                 arrayList6 = arrayList8;
                 i = i26;
             } else {
-                vh7 v3 = uh7Var3.v(1836476516);
+                wh7 v3 = vh7Var3.v(1836476516);
                 v3.getClass();
-                uh7 u2 = uh7Var4.u(1835297121);
+                vh7 u2 = vh7Var4.u(1835297121);
                 u2.getClass();
-                vh7 v4 = u2.v(1751411826);
+                wh7 v4 = u2.v(1751411826);
                 v4.getClass();
                 ey7 ey7Var3 = v4.e;
                 ey7Var3.N(16);
@@ -2479,13 +2479,13 @@ public abstract class zy0 {
                     es4Var2 = es4Var;
                     arrayList = arrayList7;
                     arrayList3 = arrayList8;
-                    uh7Var2 = uh7Var4;
+                    vh7Var2 = vh7Var4;
                     str2 = "BoxParsers";
                     p1cVar = null;
                     j2 = 0;
                 } else {
                     j2 = 0;
-                    vh7 v5 = uh7Var4.v(1953196132);
+                    wh7 v5 = vh7Var4.v(1953196132);
                     v5.getClass();
                     ey7 ey7Var4 = v5.e;
                     ey7Var4.N(8);
@@ -2538,11 +2538,11 @@ public abstract class zy0 {
                             b0 = gcc.b0(j5, 1000000L, j14, RoundingMode.DOWN);
                             j6 = j14;
                         }
-                        uh7 u3 = u2.u(1835626086);
+                        vh7 u3 = u2.u(1835626086);
                         u3.getClass();
-                        uh7 u4 = u3.u(1937007212);
+                        vh7 u4 = u3.u(1937007212);
                         u4.getClass();
-                        vh7 v6 = u2.v(1835296868);
+                        wh7 v6 = u2.v(1835296868);
                         v6.getClass();
                         ey7 ey7Var5 = v6.e;
                         ey7Var5.N(8);
@@ -2598,27 +2598,27 @@ public abstract class zy0 {
                         if (v != null) {
                             efd.f("BoxParsers", "Ignoring track where sample table (stbl) box is missing a sample description (stsd).");
                             es4Var2 = es4Var;
-                            uh7Var2 = uh7Var4;
+                            vh7Var2 = vh7Var4;
                             str2 = "BoxParsers";
                         } else {
                             vy0 i34 = i(v.e, xy0Var, str, hr3Var, z2);
-                            uh7 u5 = uh7Var4.u(1953654118);
+                            vh7 u5 = vh7Var4.u(1953654118);
                             if (u5 != null && (v2 = u5.v(1667785072)) != null) {
                                 ey7 ey7Var6 = v2.e;
                                 ey7Var6.N(8);
                                 if (ey7Var6.a() >= 4) {
                                     i8 = ey7Var6.m();
-                                    if (!z || (u = uh7Var4.u(1701082227)) == null) {
+                                    if (!z || (u = vh7Var4.u(1701082227)) == null) {
                                         j8 = j15;
-                                        uh7Var2 = uh7Var4;
+                                        vh7Var2 = vh7Var4;
                                         j9 = b0;
                                         i9 = i8;
                                         str2 = "BoxParsers";
                                     } else {
-                                        vh7 v7 = u.v(1701606260);
+                                        wh7 v7 = u.v(1701606260);
                                         if (v7 == null) {
                                             j8 = j15;
-                                            uh7Var2 = uh7Var4;
+                                            vh7Var2 = vh7Var4;
                                             j9 = b0;
                                             i9 = i8;
                                             str2 = "BoxParsers";
@@ -2629,7 +2629,7 @@ public abstract class zy0 {
                                             int e3 = e(ey7Var7.m());
                                             str2 = "BoxParsers";
                                             int E = ey7Var7.E();
-                                            uh7Var2 = uh7Var4;
+                                            vh7Var2 = vh7Var4;
                                             i9 = i8;
                                             yve.c(E, "Invalid initialCapacity: %s", E >= 0);
                                             long[] jArr10 = new long[E];
@@ -2719,10 +2719,10 @@ public abstract class zy0 {
                                             } else {
                                                 int i44 = xy0Var.b;
                                                 if (i44 != 0) {
-                                                    th7 th7Var = new th7(i44);
+                                                    uh7 uh7Var = new uh7(i44);
                                                     jo4 a2 = ko4Var.a();
-                                                    uf7 uf7Var = ((ko4) i34.d).m;
-                                                    a2.l = uf7Var != null ? uf7Var.a(th7Var) : new uf7(th7Var);
+                                                    vf7 vf7Var = ((ko4) i34.d).m;
+                                                    a2.l = vf7Var != null ? vf7Var.a(uh7Var) : new vf7(uh7Var);
                                                     ko4Var = new ko4(a2);
                                                 }
                                                 boolean z8 = !Objects.equals(ko4Var.t, "text/x-unknown");
@@ -2760,7 +2760,7 @@ public abstract class zy0 {
                             if (z) {
                             }
                             j8 = j15;
-                            uh7Var2 = uh7Var4;
+                            vh7Var2 = vh7Var4;
                             j9 = b0;
                             i9 = i8;
                             str2 = "BoxParsers";
@@ -2782,11 +2782,11 @@ public abstract class zy0 {
                     long j142 = g(v3.e).c;
                     if (j5 != -9223372036854775807L) {
                     }
-                    uh7 u32 = u2.u(1835626086);
+                    vh7 u32 = u2.u(1835626086);
                     u32.getClass();
-                    uh7 u42 = u32.u(1937007212);
+                    vh7 u42 = u32.u(1937007212);
                     u42.getClass();
-                    vh7 v62 = u2.v(1835296868);
+                    wh7 v62 = u2.v(1835296868);
                     v62.getClass();
                     ey7 ey7Var52 = v62.e;
                     ey7Var52.N(8);
@@ -2826,17 +2826,17 @@ public abstract class zy0 {
                     arrayList6 = arrayList3;
                 } else {
                     ko4 ko4Var2 = p1cVar2.g;
-                    uh7 u6 = uh7Var2.u(1835297121);
+                    vh7 u6 = vh7Var2.u(1835297121);
                     u6.getClass();
-                    uh7 u7 = u6.u(1835626086);
+                    vh7 u7 = u6.u(1835626086);
                     u7.getClass();
-                    uh7 u8 = u7.u(1937007212);
+                    vh7 u8 = u7.u(1937007212);
                     u8.getClass();
-                    vh7 v8 = u8.v(1937011578);
+                    wh7 v8 = u8.v(1937011578);
                     if (v8 != null) {
                         wy0Var = new sj0(v8, ko4Var2);
                     } else {
-                        vh7 v9 = u8.v(1937013298);
+                        wh7 v9 = u8.v(1937013298);
                         if (v9 == null) {
                             throw hy7.a("Track has no sample table size information", null);
                         }
@@ -2859,7 +2859,7 @@ public abstract class zy0 {
                             }
                         }
                         ko4 ko4Var4 = p1cVar2.g;
-                        vh7 v10 = u8.v(1937007471);
+                        wh7 v10 = u8.v(1937007471);
                         if (v10 == null) {
                             v10 = u8.v(1668232756);
                             v10.getClass();
@@ -2868,15 +2868,15 @@ public abstract class zy0 {
                             z4 = false;
                         }
                         ey7 ey7Var8 = v10.e;
-                        vh7 v11 = u8.v(1937011555);
+                        wh7 v11 = u8.v(1937011555);
                         v11.getClass();
                         ey7 ey7Var9 = v11.e;
-                        vh7 v12 = u8.v(1937011827);
+                        wh7 v12 = u8.v(1937011827);
                         v12.getClass();
                         ey7 ey7Var10 = v12.e;
-                        vh7 v13 = u8.v(1937011571);
+                        wh7 v13 = u8.v(1937011571);
                         ey7 ey7Var11 = v13 != null ? v13.e : null;
-                        vh7 v14 = u8.v(1668576371);
+                        wh7 v14 = u8.v(1668576371);
                         ey7 ey7Var12 = v14 != null ? v14.e : null;
                         sy0 sy0Var = new sy0(ey7Var9, ey7Var8, z4);
                         ey7Var10.N(12);
@@ -3411,7 +3411,7 @@ public abstract class zy0 {
                 }
             }
             i26 = i + 1;
-            uh7Var3 = uh7Var;
+            vh7Var3 = vh7Var;
             arrayList8 = arrayList6;
             arrayList7 = arrayList;
         }
@@ -3635,7 +3635,7 @@ public abstract class zy0 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:172:0x02cc, code lost:
     
-        r12 = new uf7(r6);
+        r12 = new vf7(r6);
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x005e, code lost:
     
@@ -3882,17 +3882,17 @@ public abstract class zy0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static uf7 k(vh7 vh7Var, boolean z) {
+    public static vf7 k(wh7 wh7Var, boolean z) {
         int i;
-        uf7 uf7Var;
-        uf7 b;
-        uf7 uf7Var2;
-        uf7 uf7Var3;
+        vf7 vf7Var;
+        vf7 b;
+        vf7 vf7Var2;
+        vf7 vf7Var3;
         int i2;
-        ey7 ey7Var = vh7Var.e;
+        ey7 ey7Var = wh7Var.e;
         int i3 = 8;
         ey7Var.N(8);
-        uf7 uf7Var4 = new uf7(new sf7[0]);
+        vf7 vf7Var4 = new vf7(new tf7[0]);
         while (ey7Var.a() >= i3) {
             int i4 = ey7Var.b;
             int m = ey7Var.m();
@@ -3918,8 +3918,8 @@ public abstract class zy0 {
                     z2 = true;
                     str = null;
                 }
-                uf7 uf7Var5 = null;
-                uf7Var4 = uf7Var4.b(uf7Var5);
+                vf7 vf7Var5 = null;
+                vf7Var4 = vf7Var4.b(vf7Var5);
                 i = 8;
             } else {
                 if (m2 == 1936553057) {
@@ -3936,7 +3936,7 @@ public abstract class zy0 {
                         if (ey7Var.m() != 1935766900) {
                             ey7Var.N(i8 + m4);
                         } else if (m4 < 16) {
-                            uf7Var3 = null;
+                            vf7Var3 = null;
                             i = 8;
                         } else {
                             ey7Var.O(4);
@@ -3965,7 +3965,7 @@ public abstract class zy0 {
                                     if (m5 >= 12 && m6 == 1936877170) {
                                         i2 = ey7Var.B();
                                         if (i2 != -2147483647) {
-                                            uf7Var3 = new uf7(new sna(i2, i10));
+                                            vf7Var3 = new vf7(new sna(i2, i10));
                                         }
                                     }
                                 }
@@ -3978,8 +3978,8 @@ public abstract class zy0 {
                             }
                         }
                     }
-                    uf7Var3 = null;
-                    b = uf7Var4.b(uf7Var3);
+                    vf7Var3 = null;
+                    b = vf7Var4.b(vf7Var3);
                 } else {
                     i = 8;
                     if (m2 == -1451722374) {
@@ -3988,11 +3988,11 @@ public abstract class zy0 {
                         String y = ey7Var.y(x, StandardCharsets.UTF_8);
                         int max = Math.max(y.lastIndexOf(43), y.lastIndexOf(45));
                         try {
-                            uf7Var2 = new uf7(new zh7(Float.parseFloat(y.substring(0, max)), Float.parseFloat(y.substring(max, y.length() - 1))));
+                            vf7Var2 = new vf7(new ai7(Float.parseFloat(y.substring(0, max)), Float.parseFloat(y.substring(max, y.length() - 1))));
                         } catch (IndexOutOfBoundsException | NumberFormatException unused) {
-                            uf7Var2 = null;
+                            vf7Var2 = null;
                         }
-                        b = uf7Var4.b(uf7Var2);
+                        b = vf7Var4.b(vf7Var2);
                     } else if (m2 == 1667788908) {
                         try {
                             ey7Var.O(5);
@@ -4003,27 +4003,27 @@ public abstract class zy0 {
                                 if (u < 0) {
                                     u = -9223372036854775807L;
                                 }
-                                uf7Var = null;
+                                vf7Var = null;
                                 try {
                                     arrayList.add(new tj1(u, -9223372036854775807L, false, new xy5(null, ey7Var.y(ey7Var.A(), StandardCharsets.UTF_8))));
                                 } catch (IndexOutOfBoundsException unused2) {
                                 }
                             }
-                            uf7Var = null;
+                            vf7Var = null;
                             if (!arrayList.isEmpty()) {
-                                uf7Var = new uf7(arrayList);
+                                vf7Var = new vf7(arrayList);
                             }
                         } catch (IndexOutOfBoundsException unused3) {
-                            uf7Var = null;
+                            vf7Var = null;
                         }
-                        b = uf7Var4.b(uf7Var);
+                        b = vf7Var4.b(vf7Var);
                     }
                 }
-                uf7Var4 = b;
+                vf7Var4 = b;
             }
             ey7Var.N(i4 + m);
             i3 = i;
         }
-        return uf7Var4;
+        return vf7Var4;
     }
 }

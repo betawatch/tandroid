@@ -17,27 +17,27 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class ro4 {
     public static final /* synthetic */ int a = 0;
 
-    public static void a(zu1 zu1Var, if7 if7Var) {
+    public static void a(zu1 zu1Var, jf7 jf7Var) {
         TLRPC.TL_forumTopic f;
-        if (if7Var.b == 0 || (f = zu1Var.getMessagesController().g4.f(-if7Var.a, if7Var.b)) == null) {
+        if (jf7Var.b == 0 || (f = zu1Var.getMessagesController().h4.f(-jf7Var.a, jf7Var.b)) == null) {
             return;
         }
-        if (if7Var.a > 0) {
-            if (lbc.w(zu1Var.getMessagesController().X1(Long.valueOf(if7Var.a)))) {
+        if (jf7Var.a > 0) {
+            if (lbc.w(zu1Var.getMessagesController().X1(Long.valueOf(jf7Var.a)))) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(new r47(zu1Var.getCurrentAccount(), f.topicStartMessage, false, false));
                 zu1Var.Ob(arrayList, null, f.id, f.read_inbox_max_id, f.read_outbox_max_id, f);
-                zu1Var.getMessagesController().X4(-if7Var.a, if7Var.b);
+                zu1Var.getMessagesController().X4(-jf7Var.a, jf7Var.b);
                 return;
             }
             return;
         }
-        TLRPC.Chat M0 = zu1Var.getMessagesController().M0(Long.valueOf(-if7Var.a));
+        TLRPC.Chat M0 = zu1Var.getMessagesController().M0(Long.valueOf(-jf7Var.a));
         if (M0 == null) {
             return;
         }
@@ -56,14 +56,14 @@ public abstract class ro4 {
             zu1Var.zd(false);
             zu1Var.Pc(false);
         }
-        zu1Var.getMessagesController().X4(-if7Var.a, if7Var.b);
+        zu1Var.getMessagesController().X4(-jf7Var.a, jf7Var.b);
     }
 
     public static void b(r47 r47Var) {
         TLRPC.TL_forumTopic f;
         TLRPC.Message message = r47Var.k;
         int i = r47Var.K1;
-        if (r47.B0(message) > 0 || (f = uc7.s1(i).g4.f(-r47.B0(r47Var.k), r47.b2(i, r47Var.k, true, false))) == null) {
+        if (r47.B0(message) > 0 || (f = uc7.s1(i).h4.f(-r47.B0(r47Var.k), r47.b2(i, r47Var.k, true, false))) == null) {
             return;
         }
         Drawable drawable = r47Var.i2[0];
@@ -180,7 +180,7 @@ public abstract class ro4 {
         bundle.putBoolean("historyPreloaded", false);
         zu1 zu1Var = new zu1(bundle);
         TLRPC.Message message = tL_forumTopic.topicStartMessage;
-        if (message != null || (f = eVar.getMessagesController().g4.f(j, tL_forumTopic.id)) == null) {
+        if (message != null || (f = eVar.getMessagesController().h4.f(j, tL_forumTopic.id)) == null) {
             tL_forumTopic2 = tL_forumTopic;
         } else {
             message = f.topicStartMessage;

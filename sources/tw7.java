@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Build;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class tw7 extends zw3 {
     public final /* synthetic */ int D1;
@@ -28,10 +28,10 @@ public final class tw7 extends zw3 {
                     i++;
                 }
             }
-            int f = uc7.s1(this.a).k4.F1.f();
+            int f = uc7.s1(this.a).l4.F1.f();
             ex0 ex0Var = this.c;
             if (i >= f && !yac.h(this.a).p()) {
-                String G = ob6.G(uc7.s1(this.a).k4.G1.f(), "StoryPremiumWidgets2", new Object[0]);
+                String G = ob6.G(uc7.s1(this.a).l4.G1.f(), "StoryPremiumWidgets2", new Object[0]);
                 try {
                     ex0Var.performHapticFeedback(3);
                 } catch (Exception unused) {
@@ -39,12 +39,12 @@ public final class tw7 extends zw3 {
                 new d31(ex0Var, this.J0).I(R.raw.star_premium_2, ob6.M0(2131748953, null), hl.N2(G, aob.Xc, 0, new zg3(this, (byte) 28), this.J0)).k(true);
                 return false;
             }
-            if (i >= uc7.s1(this.a).k4.G1.f()) {
+            if (i >= uc7.s1(this.a).l4.G1.f()) {
                 try {
                     ex0Var.performHapticFeedback(3);
                 } catch (Exception unused2) {
                 }
-                new d31(ex0Var, this.J0).I(R.raw.chats_infotip, ob6.M0(2131748732, "LimitReached"), ob6.G(uc7.s1(this.a).k4.G1.f(), "StoryReactionsWidgetLimit2", new Object[0])).k(true);
+                new d31(ex0Var, this.J0).I(R.raw.chats_infotip, ob6.M0(2131748732, "LimitReached"), ob6.G(uc7.s1(this.a).l4.G1.f(), "StoryReactionsWidgetLimit2", new Object[0])).k(true);
                 return false;
             }
         }
@@ -85,8 +85,8 @@ public final class tw7 extends zw3 {
 
     @Override // zw3
     public final boolean G0(Runnable runnable) {
-        rbb rbbVar = ((vab) this.E1).o2;
-        Activity activity = rbbVar.b;
+        sbb sbbVar = ((wab) this.E1).o2;
+        Activity activity = sbbVar.b;
         if (activity == null) {
             return true;
         }
@@ -95,14 +95,14 @@ public final class tw7 extends zw3 {
                 return true;
             }
             activity.requestPermissions(new String[]{"android.permission.READ_MEDIA_AUDIO"}, jn7.z1);
-            rbbVar.z2 = (hl3) runnable;
+            sbbVar.z2 = (hl3) runnable;
             return false;
         }
         if (activity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") == 0) {
             return true;
         }
         activity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, jn7.z1);
-        rbbVar.z2 = (hl3) runnable;
+        sbbVar.z2 = (hl3) runnable;
         return false;
     }
 

@@ -52,7 +52,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.LanguageSelectActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wf1 extends e implements fn7 {
     public static int Q0 = 10;
@@ -539,7 +539,7 @@ public final class wf1 extends e implements fn7 {
             }
             if (tL_channelAdminLogEvent2 != null) {
                 num4 = 4;
-                if ((!(tL_channelAdminLogEvent2.action instanceof TLRPC.TL_channelAdminLogEventActionDeleteMessage) || tL_channelAdminLogEvent2.user_id != wf1Var.getMessagesController().L3) && !(tL_channelAdminLogEvent2.action instanceof TLRPC.TL_channelAdminLogEventActionToggleAntiSpam)) {
+                if ((!(tL_channelAdminLogEvent2.action instanceof TLRPC.TL_channelAdminLogEventActionDeleteMessage) || tL_channelAdminLogEvent2.user_id != wf1Var.getMessagesController().M3) && !(tL_channelAdminLogEvent2.action instanceof TLRPC.TL_channelAdminLogEventActionToggleAntiSpam)) {
                     tL_channelAdminLogEvent = tL_channelAdminLogEvent2;
                 } else {
                     if (view instanceof dl1) {
@@ -1307,9 +1307,9 @@ public final class wf1 extends e implements fn7 {
             TLRPC.Chat chat = this.f;
             if (chat != null && (N0 = getMessagesController().N0(chat.id)) != null && N0.antispam) {
                 jf1 jf1Var = new jf1();
-                jf1Var.user_id = getMessagesController().L3;
+                jf1Var.user_id = getMessagesController().M3;
                 jf1Var.peer = getMessagesController().y1(jf1Var.user_id);
-                long j = getMessagesController().L3;
+                long j = getMessagesController().M3;
                 if (getMessagesController().X1(Long.valueOf(j)) == null) {
                     TLRPC.TL_users_getUsers tL_users_getUsers = new TLRPC.TL_users_getUsers();
                     TLRPC.TL_inputUser tL_inputUser = new TLRPC.TL_inputUser();

@@ -1,29 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ bf7 b;
+    public final /* synthetic */ cf7 b;
 
-    public /* synthetic */ ue(bf7 bf7Var, byte b) {
+    public /* synthetic */ ue(cf7 cf7Var, byte b) {
         this.a = b;
-        this.b = bf7Var;
+        this.b = cf7Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        bf7 bf7Var = this.b;
+        cf7 cf7Var = this.b;
         switch (b) {
             case 0:
-                bf7Var.A(false);
+                cf7Var.A(false);
                 break;
             case 1:
-                bf7Var.A(false);
+                cf7Var.A(false);
                 break;
             default:
-                bf7Var.A(true);
+                cf7Var.A(true);
                 break;
         }
     }

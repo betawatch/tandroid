@@ -24,7 +24,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.SaveToGallerySettingsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ae implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class ae implements View.OnClickListener {
         View view2;
         int S;
         byte b = this.a;
-        byte b2 = 4;
+        byte b2 = 5;
         byte b3 = 2;
         boolean z = false;
         byte b4 = 1;
@@ -68,7 +68,7 @@ public final /* synthetic */ class ae implements View.OnClickListener {
                 if (view.isEnabled() && !xi1Var.R && !ij1Var.A0.R) {
                     int currentTime = ConnectionsManager.getInstance(i3).getCurrentTime();
                     if (ij1Var.B0 <= currentTime) {
-                        if (ij1Var.N0 >= uc7.s1(i3).k4.y2.f()) {
+                        if (ij1Var.N0 >= uc7.s1(i3).l4.y2.f()) {
                             TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
                             pi1 pi1Var = new pi1(ij1Var, twoStepVerificationActivity, b3);
                             twoStepVerificationActivity.a0 = (byte) 1;
@@ -77,7 +77,7 @@ public final /* synthetic */ class ae implements View.OnClickListener {
                             twoStepVerificationActivity.x0(new qi1(ij1Var, w1bVar, twoStepVerificationActivity, b3));
                             break;
                         } else {
-                            d31.b0(w1bVar).M(ij1Var.getContext().getResources().getDrawable(R.drawable.star_small_inner).mutate(), hl.N2(ob6.G((int) uc7.s1(i3).k4.y2.f(), "BotStarsWithdrawMinLimit", new Object[0]), -1, 0, new oi1(ij1Var, i3, b4), null)).j();
+                            d31.b0(w1bVar).M(ij1Var.getContext().getResources().getDrawable(R.drawable.star_small_inner).mutate(), hl.N2(ob6.G((int) uc7.s1(i3).l4.y2.f(), "BotStarsWithdrawMinLimit", new Object[0]), -1, 0, new oi1(ij1Var, i3, b4), null)).j();
                             break;
                         }
                     } else {
@@ -110,7 +110,7 @@ public final /* synthetic */ class ae implements View.OnClickListener {
                 vnb vnbVar = (vnb) obj;
                 fu5 G = fu5.G(h42Var, vnbVar, h42Var.y);
                 G.W = true;
-                G.b(R.drawable.msg_addbot, ob6.M0(2131742788, null), new ze7((Object) h42Var, i3, (Object) vnbVar, (byte) 15), false);
+                G.b(R.drawable.msg_addbot, ob6.M0(2131742788, null), new bf7((Object) h42Var, i3, (Object) vnbVar, (byte) 15), false);
                 G.b(R.drawable.menu_comments, ob6.M0(2131742856, null), new a42(h42Var, r6), false);
                 G.s = (short) 0;
                 G.b0(0.0f, -hl.L(48.0f));
@@ -158,7 +158,7 @@ public final /* synthetic */ class ae implements View.OnClickListener {
                 zh5Var.n = i3;
                 zh5Var.b.e(false, view.getLeft());
                 zh5Var.c.e(false, view.getRight());
-                ((df7) obj).a(i3);
+                ((ef7) obj).a(i3);
                 zh5Var.invalidate();
                 break;
             case 9:
@@ -269,7 +269,7 @@ public final /* synthetic */ class ae implements View.OnClickListener {
                 TL_stars.toggleChatStarGiftNotifications togglechatstargiftnotifications = new TL_stars.toggleChatStarGiftNotifications();
                 togglechatstargiftnotifications.peer = uc7.s1(i3).j1(cgaVar.c);
                 togglechatstargiftnotifications.enabled = z3;
-                ConnectionsManager.getInstance(i3).sendRequest(togglechatstargiftnotifications, new ol7(cgaVar, eVar2, (byte) 16));
+                ConnectionsManager.getInstance(i3).sendRequest(togglechatstargiftnotifications, new pl7(cgaVar, eVar2, (byte) 16));
                 break;
             case 14:
                 SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj2;
@@ -324,7 +324,7 @@ public final /* synthetic */ class ae implements View.OnClickListener {
                     ejaVar.y();
                 }
                 eVar3.getNotificationCenter().k(jn7.h3, Long.valueOf(-ejaVar.m1));
-                eVar3.getMessagesController().k(chat.id, eVar3.getUserConfig().f(), null, eVar3, false, new ida(qhaVar, chat, b2), null);
+                eVar3.getMessagesController().k(chat.id, eVar3.getUserConfig().f(), null, eVar3, false, new kba(qhaVar, chat, b2), null);
                 break;
             case 17:
                 m01.u((Context) obj2, "https://" + uc7.s1(i3).N2 + "/nft/" + ((TL_stars.TL_starGiftUnique) obj).slug);

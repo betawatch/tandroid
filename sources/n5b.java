@@ -1,27 +1,24 @@
 // default package
 
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes2.dex */
-public final class n5b extends TL_stories.StoryItem {
-    public final o5b a;
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes.dex */
+public final class n5b implements RequestDelegate {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ pcc b;
+    public final /* synthetic */ c6b c;
 
-    public n5b(o5b o5bVar, long j, TL_bots.botPreviewMedia botpreviewmedia) {
-        this.a = o5bVar;
-        this.dialogId = j;
-        TLRPC.MessageMedia messageMedia = botpreviewmedia.media;
-        this.media = messageMedia;
-        TLRPC.Document document = messageMedia.document;
-        if (document != null) {
-            document.date = botpreviewmedia.date;
-            return;
-        }
-        TLRPC.Photo photo = messageMedia.photo;
-        if (photo != null) {
-            photo.date = botpreviewmedia.date;
-        }
+    public n5b(c6b c6bVar, long j, pcc pccVar) {
+        this.c = c6bVar;
+        this.a = j;
+        this.b = pccVar;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        hl.c3(new z09((Object) this, (Object) tLObject, this.a, (Object) this.b, (byte) 12));
     }
 }

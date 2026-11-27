@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class iw0 implements ps3 {
     public final /* synthetic */ byte a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class iw0 implements ps3 {
                 lm7 lm7Var = km7Var.d;
                 km7 km7Var2 = lm7Var.U;
                 if (!lm7Var.h) {
-                    lm7Var.A0();
+                    lm7Var.y0();
                     if (!km7Var2.b()) {
                         Iterator it = lm7Var.V.values().iterator();
                         while (it.hasNext()) {

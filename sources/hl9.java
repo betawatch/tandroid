@@ -32,7 +32,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class hl9 {
     public int A;
@@ -77,7 +77,7 @@ public final class hl9 {
     public final ArrayList o;
     public final ArrayList p;
     public CharSequence q;
-    public ui7 r;
+    public vi7 r;
     public boolean s;
     public float t;
     public boolean u;
@@ -693,8 +693,8 @@ public final class hl9 {
     }
 
     public final boolean E() {
-        ui7 ui7Var = this.r;
-        return ui7Var == null || !ui7Var.h;
+        vi7 vi7Var = this.r;
+        return vi7Var == null || !vi7Var.h;
     }
 
     public final boolean F() {
@@ -1074,15 +1074,15 @@ public final class hl9 {
         }
     }
 
-    public final void V(ui7 ui7Var) {
-        this.r = ui7Var;
+    public final void V(vi7 vi7Var) {
+        this.r = vi7Var;
         int i = 0;
         while (true) {
             ArrayList arrayList = this.g;
             if (i >= arrayList.size()) {
                 return;
             }
-            ((dk9) arrayList.get(i)).L = ui7Var;
+            ((dk9) arrayList.get(i)).L = vi7Var;
             arrayList.get(i);
             ((dk9) arrayList.get(i)).getClass();
             i++;
@@ -1508,7 +1508,7 @@ public final class hl9 {
             f9 = 1.0f;
         }
         r47 r47Var = this.b;
-        boolean z3 = this.O || (r47Var != null && uc7.s1(this.a).i4.z(r47Var));
+        boolean z3 = this.O || (r47Var != null && uc7.s1(this.a).j4.z(r47Var));
         if (z3 || this.U != null) {
             mm mmVar = this.U;
             if (mmVar == null) {
@@ -2380,7 +2380,7 @@ public final class hl9 {
             ((dk9) arrayList.get(i)).o(arrayList2);
         }
         for (int i2 = 0; i2 < arrayList2.size(); i2++) {
-            ((si7) arrayList2.get(i2)).getClass();
+            ((ti7) arrayList2.get(i2)).getClass();
         }
         return arrayList2;
     }

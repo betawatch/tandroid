@@ -11,7 +11,7 @@ import android.view.animation.PathInterpolator;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class quc {
     public final n12 a;
@@ -367,7 +367,7 @@ public final class quc {
             }
         }
         this.g.run();
-        hl.d3(new vlc(this, viewGroup, (byte) 24), 650L);
+        hl.d3(new slc(this, viewGroup, (byte) 25), 650L);
     }
 
     public final void c(float f, float f2, float f3) {

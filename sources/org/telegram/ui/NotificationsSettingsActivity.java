@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e implements fn7 {
     public int E;
@@ -99,7 +99,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
     public final void A0() {
         getMessagesController().getClass();
         this.b = false;
-        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).W3.edit();
+        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
         edit.clear();
         edit.commit();
         this.e.clear();
@@ -108,8 +108,8 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
         if (getParentActivity() != null) {
             Toast.makeText(getParentActivity(), ob6.M0(2131745821, "ResetNotificationsText"), 0).show();
         }
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new be7(messagesStorage, (byte) 10));
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new hd7(messagesStorage, (byte) 12));
     }
 
     public final /* synthetic */ void B0() {
@@ -121,7 +121,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
     }
 
     public final void C0(int i, int i2) {
-        uc7.s1(this.currentAccount).W3.edit().putInt("repeat_messages", i2 != 1 ? i2 == 2 ? 10 : i2 == 3 ? 30 : i2 == 4 ? 60 : i2 == 5 ? jn7.E1 : i2 == 6 ? jn7.O3 : 0 : 5).commit();
+        uc7.s1(this.currentAccount).X3.edit().putInt("repeat_messages", i2 != 1 ? i2 == 2 ? 10 : i2 == 3 ? 30 : i2 == 4 ? 60 : i2 == 5 ? jn7.E1 : i2 == 6 ? jn7.O3 : 0 : 5).commit();
         this.Y = true;
         this.c.g(i);
     }
@@ -199,7 +199,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
         ArrayList arrayList22 = new ArrayList();
         ArrayList arrayList23 = new ArrayList();
         long j = yac.h(this.currentAccount).n;
-        SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).W3;
+        SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).X3;
         Map<String, ?> all = sharedPreferences.getAll();
         Iterator<Map.Entry<String, ?>> it = all.entrySet().iterator();
         while (true) {
@@ -392,7 +392,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                     try {
                         arrayList5 = arrayList30;
                         try {
-                            jf7.Y(this.currentAccount).T(TextUtils.join(",", arrayList20), arrayList5, arrayList18);
+                            kf7.a0(this.currentAccount).V(TextUtils.join(",", arrayList20), arrayList5, arrayList18);
                         } catch (Exception e) {
                             e = e;
                             arrayList3 = arrayList2;
@@ -459,7 +459,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                         hl.c3(new o77(this, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList6, arrayList32, av2Var));
                     }
                     try {
-                        jf7.Y(this.currentAccount).k0(arrayList18, arrayList4, false);
+                        kf7.a0(this.currentAccount).m0(arrayList18, arrayList4, false);
                     } catch (Exception e5) {
                         e = e5;
                         arrayList3 = arrayList2;
@@ -485,11 +485,11 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                 if (arrayList19.isEmpty()) {
                     arrayList3 = arrayList2;
                 } else {
-                    jf7 Y = jf7.Y(this.currentAccount);
+                    kf7 a0 = kf7.a0(this.currentAccount);
                     String join = TextUtils.join(",", arrayList19);
                     arrayList3 = arrayList2;
                     try {
-                        Y.P(join, arrayList3);
+                        a0.R(join, arrayList3);
                     } catch (Exception e6) {
                         e = e6;
                         z2 = true;
@@ -587,7 +587,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
 
     public final void F0(av2 av2Var) {
         ls6.d0(this.currentAccount).O0(true);
-        jf7.Y(this.currentAccount).a.c(new fd7((Object) this, (Object) new ArrayList(ls6.d0(this.currentAccount).j1), (Object) av2Var, (byte) 13));
+        kf7.a0(this.currentAccount).a.c(new gd7((Object) this, (Object) new ArrayList(ls6.d0(this.currentAccount).j1), (Object) av2Var, (byte) 13));
     }
 
     @Override // org.telegram.ui.ActionBar.e
@@ -679,7 +679,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                 str = i == this.J ? uri.equals(Settings.System.DEFAULT_RINGTONE_URI) ? ob6.M0(2131751564, "DefaultRingtone") : ringtone.getTitle(getParentActivity()) : uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI) ? ob6.M0(2131745008, "SoundDefault") : ringtone.getTitle(getParentActivity());
                 ringtone.stop();
             }
-            SharedPreferences.Editor edit = uc7.s1(this.currentAccount).W3.edit();
+            SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
             if (i == this.J) {
                 if (str == null || uri == null) {
                     edit.putString("CallsRingtone", "NoSound");
@@ -778,7 +778,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x05c6  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x05c8  */
     /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -809,7 +809,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
         if (i != i3 && i != this.groupRow && i != this.channelsRow && i != this.storiesRow && i != this.reactionsRow) {
             if (i == this.J) {
                 try {
-                    SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).W3;
+                    SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).X3;
                     Intent intent = new Intent("android.intent.action.RINGTONE_PICKER");
                     intent.putExtra("android.intent.extra.ringtone.TYPE", 1);
                     intent.putExtra("android.intent.extra.ringtone.SHOW_DEFAULT", true);
@@ -839,25 +839,25 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                     yob.X(textView, aob.q7, null);
                 }
             } else if (i == this.inappSoundRow) {
-                SharedPreferences sharedPreferences2 = uc7.s1(this.currentAccount).W3;
+                SharedPreferences sharedPreferences2 = uc7.s1(this.currentAccount).X3;
                 SharedPreferences.Editor edit = sharedPreferences2.edit();
                 z = sharedPreferences2.getBoolean("EnableInAppSounds", true);
                 edit.putBoolean("EnableInAppSounds", !z);
                 edit.commit();
             } else if (i == this.inappVibrateRow) {
-                SharedPreferences sharedPreferences3 = uc7.s1(this.currentAccount).W3;
+                SharedPreferences sharedPreferences3 = uc7.s1(this.currentAccount).X3;
                 SharedPreferences.Editor edit2 = sharedPreferences3.edit();
                 z = sharedPreferences3.getBoolean("EnableInAppVibrate", true);
                 edit2.putBoolean("EnableInAppVibrate", !z);
                 edit2.commit();
             } else if (i == this.inappPreviewRow) {
-                SharedPreferences sharedPreferences4 = uc7.s1(this.currentAccount).W3;
+                SharedPreferences sharedPreferences4 = uc7.s1(this.currentAccount).X3;
                 SharedPreferences.Editor edit3 = sharedPreferences4.edit();
                 z = sharedPreferences4.getBoolean("EnableInAppPreview", true);
                 edit3.putBoolean("EnableInAppPreview", !z);
                 edit3.commit();
             } else if (i == this.inchatSoundRow) {
-                SharedPreferences sharedPreferences5 = uc7.s1(this.currentAccount).W3;
+                SharedPreferences sharedPreferences5 = uc7.s1(this.currentAccount).X3;
                 SharedPreferences.Editor edit4 = sharedPreferences5.edit();
                 z = sharedPreferences5.getBoolean("EnableInChatSound", true);
                 boolean z2 = !z;
@@ -865,13 +865,13 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                 edit4.commit();
                 getNotificationsController().N = z2;
             } else if (i == this.inappPriorityRow) {
-                SharedPreferences sharedPreferences6 = uc7.s1(this.currentAccount).W3;
+                SharedPreferences sharedPreferences6 = uc7.s1(this.currentAccount).X3;
                 SharedPreferences.Editor edit5 = sharedPreferences6.edit();
                 z = sharedPreferences6.getBoolean("EnableInAppPopup", true);
                 edit5.putBoolean("EnableInAppPopup", !z);
                 edit5.commit();
             } else if (i == this.contactJoinedRow) {
-                SharedPreferences sharedPreferences7 = uc7.s1(this.currentAccount).W3;
+                SharedPreferences sharedPreferences7 = uc7.s1(this.currentAccount).X3;
                 SharedPreferences.Editor edit6 = sharedPreferences7.edit();
                 boolean z3 = sharedPreferences7.getBoolean("EnableContactJoined", true);
                 uc7.s1(this.currentAccount);
@@ -882,13 +882,13 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                 ConnectionsManager.getInstance(this.currentAccount).sendRequest(setcontactsignupnotification, new xe2(z ? (byte) 1 : (byte) 0));
                 z = z3;
             } else if (i == this.pinnedMessageRow) {
-                SharedPreferences sharedPreferences8 = uc7.s1(this.currentAccount).W3;
+                SharedPreferences sharedPreferences8 = uc7.s1(this.currentAccount).X3;
                 SharedPreferences.Editor edit7 = sharedPreferences8.edit();
                 z = sharedPreferences8.getBoolean("PinnedMessages", true);
                 edit7.putBoolean("PinnedMessages", !z);
                 edit7.commit();
             } else if (i == this.Q) {
-                SharedPreferences sharedPreferences9 = uc7.s1(this.currentAccount).W3;
+                SharedPreferences sharedPreferences9 = uc7.s1(this.currentAccount).X3;
                 SharedPreferences.Editor edit8 = sharedPreferences9.edit();
                 z = sharedPreferences9.getBoolean("EnableAutoNotifications", false);
                 edit8.putBoolean("EnableAutoNotifications", !z);
@@ -896,7 +896,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
             } else {
                 byte b3 = 10;
                 if (i == this.badgeNumberShowRow) {
-                    SharedPreferences.Editor edit9 = uc7.s1(this.currentAccount).W3.edit();
+                    SharedPreferences.Editor edit9 = uc7.s1(this.currentAccount).X3.edit();
                     z = getNotificationsController().S;
                     getNotificationsController().S = !z;
                     edit9.putBoolean("badgeNumber", getNotificationsController().S);
@@ -905,7 +905,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                     notificationsController.getClass();
                     ip7.l0.c(new vo7(notificationsController, b3));
                 } else if (i == this.badgeNumberMutedRow) {
-                    SharedPreferences.Editor edit10 = uc7.s1(this.currentAccount).W3.edit();
+                    SharedPreferences.Editor edit10 = uc7.s1(this.currentAccount).X3.edit();
                     z = getNotificationsController().T;
                     getNotificationsController().T = !z;
                     edit10.putBoolean("badgeNumberMuted", getNotificationsController().T);
@@ -913,10 +913,10 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                     ip7 notificationsController2 = getNotificationsController();
                     notificationsController2.getClass();
                     ip7.l0.c(new vo7(notificationsController2, b3));
-                    jf7 messagesStorage = getMessagesStorage();
-                    messagesStorage.a.c(new be7(messagesStorage, b3));
+                    kf7 messagesStorage = getMessagesStorage();
+                    messagesStorage.a.c(new hd7(messagesStorage, (byte) 12));
                 } else if (i == this.badgeNumberMessagesRow) {
-                    SharedPreferences.Editor edit11 = uc7.s1(this.currentAccount).W3.edit();
+                    SharedPreferences.Editor edit11 = uc7.s1(this.currentAccount).X3.edit();
                     z = getNotificationsController().U;
                     getNotificationsController().U = !z;
                     edit11.putBoolean("badgeNumberMessages", getNotificationsController().U);
@@ -925,8 +925,8 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                     notificationsController3.getClass();
                     ip7.l0.c(new vo7(notificationsController3, b3));
                 } else if (i == this.x) {
-                    SharedPreferences sharedPreferences10 = uc7.s1(this.currentAccount).W3;
-                    boolean z4 = sharedPreferences10.getBoolean("pushConnection", getMessagesController().k4.H3.f);
+                    SharedPreferences sharedPreferences10 = uc7.s1(this.currentAccount).X3;
+                    boolean z4 = sharedPreferences10.getBoolean("pushConnection", getMessagesController().l4.H3.f);
                     SharedPreferences.Editor edit12 = sharedPreferences10.edit();
                     edit12.putBoolean("pushConnection", !z4);
                     edit12.commit();
@@ -955,8 +955,8 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                         }
                     }
                 } else if (i == this.w) {
-                    SharedPreferences sharedPreferences11 = uc7.s1(this.currentAccount).W3;
-                    z = sharedPreferences11.getBoolean("pushService", getMessagesController().k4.G3.f);
+                    SharedPreferences sharedPreferences11 = uc7.s1(this.currentAccount).X3;
+                    z = sharedPreferences11.getBoolean("pushService", getMessagesController().l4.G3.f);
                     SharedPreferences.Editor edit14 = sharedPreferences11.edit();
                     edit14.putBoolean("pushService", !z);
                     edit14.commit();
@@ -965,7 +965,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.e i
                     if (getParentActivity() == null) {
                         return;
                     } else {
-                        showDialog(jj.V(getParentActivity(), 0L, 0L, i == this.I ? "vibrate_calls" : null, new me7(this, i, b), null));
+                        showDialog(jj.V(getParentActivity(), 0L, 0L, i == this.I ? "vibrate_calls" : null, new oe7(this, i, b), null));
                     }
                 } else if (i == this.R) {
                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getParentActivity());

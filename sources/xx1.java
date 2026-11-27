@@ -7,7 +7,7 @@ import android.text.style.ImageSpan;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xx1 implements TextWatcher {
     public boolean a;
@@ -114,7 +114,7 @@ public final class xx1 implements TextWatcher {
                     qx1Var.c();
                 }
                 chatActivityEnterView.I();
-                if (chatActivityEnterView.P2 && !chatActivityEnterView.p0 && !uc7.s1(chatActivityEnterView.R).M3() && !yac.h(chatActivityEnterView.R).p() && chatActivityEnterView.e0 > uc7.s1(chatActivityEnterView.R).k4.o1.f() && chatActivityEnterView.e0 < uc7.s1(chatActivityEnterView.R).k4.p1.f()) {
+                if (chatActivityEnterView.P2 && !chatActivityEnterView.p0 && !uc7.s1(chatActivityEnterView.R).M3() && !yac.h(chatActivityEnterView.R).p() && chatActivityEnterView.e0 > uc7.s1(chatActivityEnterView.R).l4.o1.f() && chatActivityEnterView.e0 < uc7.s1(chatActivityEnterView.R).l4.p1.f()) {
                     chatActivityEnterView.p0 = true;
                     if (this.e) {
                         chatActivityEnterView.f2();

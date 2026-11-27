@@ -7,7 +7,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.b;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements icc {
     public final /* synthetic */ byte a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class d0 implements icc {
                     }
                     l9cVar.U();
                     if (z) {
-                        long f = uqcVar.getMessagesController().k4.x0.f();
+                        long f = uqcVar.getMessagesController().l4.x0.f();
                         if (f > 0) {
                             arrayList.add(b8c.C(ob6.V(null, null, 2131742748, c.w(f, false))));
                             break;

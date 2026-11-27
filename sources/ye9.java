@@ -31,9 +31,9 @@ import org.webrtc.RtpReceiver;
 import org.webrtc.RtpSender;
 import org.webrtc.RtpTransceiver;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ye9 implements vt3, lf9, ncc, oj3, fd, qy9, yl9, cg0, nl0, on5, NativeLifecycleLock.NativePointerRunnable, NativeLifecycleLock.NativePointerCallable, NativeLifecycleLock.NativeDisposer, t69, ta9, s69, k6b, pg2, hf7 {
+public final /* synthetic */ class ye9 implements vt3, lf9, ncc, oj3, fd, qy9, yl9, cg0, nl0, on5, NativeLifecycleLock.NativePointerRunnable, NativeLifecycleLock.NativePointerCallable, NativeLifecycleLock.NativeDisposer, t69, ta9, s69, k6b, pg2, if7 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
 
@@ -53,7 +53,7 @@ public final /* synthetic */ class ye9 implements vt3, lf9, ncc, oj3, fd, qy9, y
         return false;
     }
 
-    @Override // hf7
+    @Override // if7
     public final void a(String str) {
         c6b storiesController;
         eja ejaVar = ((ega) this.b).d;
@@ -282,9 +282,9 @@ public final /* synthetic */ class ye9 implements vt3, lf9, ncc, oj3, fd, qy9, y
                 }
                 break;
             default:
-                u5b u5bVar = (u5b) obj;
+                v5b v5bVar = (v5b) obj;
                 if (z) {
-                    u5bVar.p(30, false);
+                    v5bVar.p(30, false);
                     break;
                 }
                 break;
@@ -303,7 +303,7 @@ public final /* synthetic */ class ye9 implements vt3, lf9, ncc, oj3, fd, qy9, y
 
     @Override // lf9
     public final fu5 i(dg9 dg9Var) {
-        return fu5.I((yg9) ((i09) this.b).b, dg9Var);
+        return fu5.I((yg9) ((j09) this.b).b, dg9Var);
     }
 
     public final void j(int i) {
@@ -373,10 +373,10 @@ public final /* synthetic */ class ye9 implements vt3, lf9, ncc, oj3, fd, qy9, y
         switch (b) {
             case 4:
                 bj9 bj9Var = (bj9) obj;
-                if (arrayList.isEmpty() || ((if7) arrayList.get(0)).a <= 0) {
+                if (arrayList.isEmpty() || ((jf7) arrayList.get(0)).a <= 0) {
                     return false;
                 }
-                bj9Var.run(((if7) arrayList.get(0)).a);
+                bj9Var.run(((jf7) arrayList.get(0)).a);
                 uj3Var.finishFragment();
                 return true;
             default:
@@ -390,9 +390,9 @@ public final /* synthetic */ class ye9 implements vt3, lf9, ncc, oj3, fd, qy9, y
                 }
                 hashMap.clear();
                 bj3Var.S(false);
-                if (arrayList.size() > 1 || ((if7) arrayList.get(0)).a == yac.h(k5.a(i3).a).e() || charSequence != null) {
+                if (arrayList.size() > 1 || ((jf7) arrayList.get(0)).a == yac.h(k5.a(i3).a).e() || charSequence != null) {
                     for (int i4 = 0; i4 < arrayList.size(); i4++) {
-                        long j2 = ((if7) arrayList.get(i4)).a;
+                        long j2 = ((jf7) arrayList.get(i4)).a;
                         if (charSequence != null) {
                             j = j2;
                             r7a.B(k5.a(i3).a).q0(p7a.b(charSequence.toString(), j, null, null, null, true, null, null, null, true, 0, 0, null, false));
@@ -403,7 +403,7 @@ public final /* synthetic */ class ye9 implements vt3, lf9, ncc, oj3, fd, qy9, y
                     }
                     uj3Var.finishFragment();
                 } else {
-                    long j3 = ((if7) arrayList.get(0)).a;
+                    long j3 = ((jf7) arrayList.get(0)).a;
                     Bundle l = bs2.l("scrollToTopOnResume", true);
                     if (!wf3.B(j3)) {
                         if (wf3.D(j3)) {

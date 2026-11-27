@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class w81 extends wma {
     public final /* synthetic */ byte g0;
@@ -78,13 +78,13 @@ public final class w81 extends wma {
         vy4 vy4Var;
         switch (this.g0) {
             case 8:
-                tba tbaVar = (tba) this.h0;
-                tbaVar.o0();
+                uba ubaVar = (uba) this.h0;
+                ubaVar.o0();
                 super.dispatchDraw(canvas);
-                vy4Var = ((e) tbaVar).glassEngine;
+                vy4Var = ((e) ubaVar).glassEngine;
                 vy4Var.g();
-                if (!tbaVar.O) {
-                    hl.O(canvas, this, tbaVar.getThemedColor(aob.d6), tbaVar.d0, 1.0f);
+                if (!ubaVar.O) {
+                    hl.O(canvas, this, ubaVar.getThemedColor(aob.d6), ubaVar.d0, 1.0f);
                     break;
                 }
                 break;
@@ -430,7 +430,7 @@ public final class w81 extends wma {
         switch (this.g0) {
             case 8:
                 try {
-                    ((tba) this.h0).p0();
+                    ((uba) this.h0).p0();
                     break;
                 } catch (Exception e) {
                     cc4.g(e, true);

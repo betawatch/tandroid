@@ -4,7 +4,7 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class oi1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -31,13 +31,13 @@ public final /* synthetic */ class oi1 implements Runnable {
                 oi1 oi1Var = ij1Var.f1;
                 xs0 xs0Var = ij1Var.O0;
                 v21.e();
-                if (ij1Var.D0.amount < uc7.s1(i).k4.y2.f()) {
+                if (ij1Var.D0.amount < uc7.s1(i).l4.y2.f()) {
                     ij1Var.M0 = true;
                     f = ij1Var.D0.amount;
                     ij1Var.N0 = f;
                 } else {
                     ij1Var.M0 = false;
-                    f = uc7.s1(i).k4.y2.f();
+                    f = uc7.s1(i).l4.y2.f();
                     ij1Var.N0 = f;
                 }
                 ij1Var.L0 = true;

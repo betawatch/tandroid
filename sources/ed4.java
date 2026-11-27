@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ed4 implements tj2 {
     public final File a;
@@ -14,7 +14,7 @@ public final class ed4 implements tj2 {
     public final nr5 c;
     public final ad4 d;
     public final AtomicBoolean e;
-    public final wj7 f;
+    public final xj7 f;
 
     public ed4(File file, s8a s8aVar, nr5 nr5Var, ad4 ad4Var) {
         s8aVar.getClass();
@@ -24,7 +24,7 @@ public final class ed4 implements tj2 {
         this.c = nr5Var;
         this.d = ad4Var;
         this.e = new AtomicBoolean(false);
-        this.f = new wj7();
+        this.f = new xj7();
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(11:0|1|(2:3|(7:5|6|(1:(3:9|10|11)(2:42|43))(2:44|(7:46|47|48|49|50|51|(1:53)(1:54))(2:58|59))|12|13|14|(2:(1:17)|18)(2:20|21)))|60|6|(0)(0)|12|13|14|(0)(0)|(2:(0)|(1:40))) */
@@ -160,7 +160,7 @@ public final class ed4 implements tj2 {
         int i;
         vx2 vx2Var;
         File file;
-        uj7 uj7Var;
+        vj7 vj7Var;
         is4 is4Var;
         pd4 pd4Var;
         Throwable th;
@@ -196,11 +196,11 @@ public final class ed4 implements tj2 {
                                     }
                                     dd4Var.a = this;
                                     dd4Var.b = n83Var;
-                                    wj7 wj7Var = this.f;
-                                    dd4Var.c = wj7Var;
+                                    xj7 xj7Var = this.f;
+                                    dd4Var.c = xj7Var;
                                     dd4Var.h = 1;
-                                    if (wj7Var.d(dd4Var) != vx2Var) {
-                                        uj7Var = wj7Var;
+                                    if (xj7Var.d(dd4Var) != vx2Var) {
+                                        vj7Var = xj7Var;
                                         is4Var = n83Var;
                                     }
                                     return vx2Var;
@@ -212,7 +212,7 @@ public final class ed4 implements tj2 {
                                     }
                                     pd4Var2 = dd4Var.d;
                                     file2 = (File) dd4Var.c;
-                                    uj7Var = (uj7) dd4Var.b;
+                                    vj7Var = (vj7) dd4Var.b;
                                     ed4Var = dd4Var.a;
                                     try {
                                         ixe.b(obj);
@@ -231,8 +231,8 @@ public final class ed4 implements tj2 {
                                                 throw new IOException("Unable to rename " + file2 + " to " + ed4Var.a + ". This likely means that there are multiple instances of DataStore for this file. Ensure that you are only creating a single instance of datastore for this file.");
                                             }
                                         }
-                                        ((wj7) uj7Var).f(null);
-                                        return f9c.a;
+                                        ((xj7) vj7Var).f(null);
+                                        return g9c.a;
                                     } catch (Throwable th3) {
                                         th = th3;
                                         try {
@@ -243,11 +243,11 @@ public final class ed4 implements tj2 {
                                         throw th;
                                     }
                                 }
-                                uj7 uj7Var2 = (uj7) dd4Var.c;
+                                vj7 vj7Var2 = (vj7) dd4Var.c;
                                 is4 is4Var2 = (is4) dd4Var.b;
                                 ed4 ed4Var2 = dd4Var.a;
                                 ixe.b(obj);
-                                uj7Var = uj7Var2;
+                                vj7Var = vj7Var2;
                                 this = ed4Var2;
                                 is4Var = is4Var2;
                                 file = new File(this.a.getAbsolutePath() + ".tmp");
@@ -255,7 +255,7 @@ public final class ed4 implements tj2 {
                                 s8aVar.getClass();
                                 pd4Var = new pd4(file, s8aVar);
                                 dd4Var.a = this;
-                                dd4Var.b = uj7Var;
+                                dd4Var.b = vj7Var;
                                 dd4Var.c = file;
                                 dd4Var.d = pd4Var;
                                 dd4Var.h = 2;
@@ -272,7 +272,7 @@ public final class ed4 implements tj2 {
                             }
                         }
                         dd4Var.a = this;
-                        dd4Var.b = uj7Var;
+                        dd4Var.b = vj7Var;
                         dd4Var.c = file;
                         dd4Var.d = pd4Var;
                         dd4Var.h = 2;
@@ -297,7 +297,7 @@ public final class ed4 implements tj2 {
                 }
                 file = new File(this.a.getAbsolutePath() + ".tmp");
             } catch (Throwable th6) {
-                ((wj7) uj7Var).f(null);
+                ((xj7) vj7Var).f(null);
                 throw th6;
             }
             if (i != 0) {

@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class gu extends d79 {
     public final /* synthetic */ byte f3;
@@ -206,9 +206,9 @@ public final class gu extends d79 {
                 }
                 break;
             case 24:
-                b58 b58Var = (b58) obj;
+                c58 c58Var = (c58) obj;
                 int i12 = -1;
-                if (!b58Var.g0) {
+                if (!c58Var.g0) {
                     int i13 = 0;
                     while (true) {
                         if (i13 < getChildCount()) {
@@ -221,11 +221,11 @@ public final class gu extends d79 {
                         }
                     }
                 }
-                if (i12 > b58Var.G) {
-                    b58Var.G = i12;
-                    dn2 dn2Var = b58Var.j0.H1;
+                if (i12 > c58Var.G) {
+                    c58Var.G = i12;
+                    dn2 dn2Var = c58Var.j0.H1;
                     if (dn2Var != null) {
-                        dn2Var.setCount(b58Var.getUnreadMessagesCount());
+                        dn2Var.setCount(c58Var.getUnreadMessagesCount());
                     }
                 }
                 super.dispatchDraw(canvas);
@@ -524,7 +524,7 @@ public final class gu extends d79 {
                 }
                 break;
             case 24:
-                if (!((b58) obj).g0) {
+                if (!((c58) obj).g0) {
                     break;
                 }
                 break;
@@ -718,7 +718,7 @@ public final class gu extends d79 {
                 break;
             case 24:
                 super.invalidate();
-                ((b58) obj).invalidate();
+                ((c58) obj).invalidate();
                 break;
             case 27:
                 super.invalidate();

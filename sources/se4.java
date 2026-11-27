@@ -24,7 +24,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class se4 implements Runnable {
     public final /* synthetic */ byte a;
@@ -185,7 +185,7 @@ public final /* synthetic */ class se4 implements Runnable {
                                             }
                                         }
                                     }
-                                    uc7.s1(i).X3.edit().putStringSet("gram_earnings_wallet_withdraws", new HashSet(e2)).apply();
+                                    uc7.s1(i).Y3.edit().putStringSet("gram_earnings_wallet_withdraws", new HashSet(e2)).apply();
                                 }
                             }
                             jxa v = jxa.v(i, true);
@@ -269,9 +269,9 @@ public final /* synthetic */ class se4 implements Runnable {
                 break;
             case 19:
                 n55 n55Var = (n55) obj2;
-                sk7 sk7Var = (sk7) obj;
+                tk7 tk7Var = (tk7) obj;
                 if (!n55Var.e) {
-                    sk7Var.d0 = true;
+                    tk7Var.d0 = true;
                     Runnable runnable = n55Var.g;
                     if (runnable != null) {
                         runnable.run();

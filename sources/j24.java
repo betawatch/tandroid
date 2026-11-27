@@ -16,7 +16,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class j24 extends c79 {
     public boolean E;
@@ -344,12 +344,12 @@ public final class j24 extends c79 {
             }
         }
         if (i2 == 2) {
-            t3b t3bVar = (t3b) view;
+            u3b u3bVar = (u3b) view;
             Object obj2 = sparseArray.get(i);
             if (!(obj2 instanceof TLRPC.TL_messages_stickerSet)) {
                 if (obj2 instanceof String) {
-                    t3bVar.a(0, (String) obj2);
-                    t3bVar.c(0, null);
+                    u3bVar.a(0, (String) obj2);
+                    u3bVar.c(0, null);
                     return;
                 }
                 return;
@@ -358,17 +358,17 @@ public final class j24 extends c79 {
             if (!TextUtils.isEmpty(this.O) && this.G.containsKey(tL_messages_stickerSet)) {
                 TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
                 if (stickerSet != null) {
-                    t3bVar.a(0, stickerSet.title);
+                    u3bVar.a(0, stickerSet.title);
                 }
-                t3bVar.c(this.O.length(), tL_messages_stickerSet.set.short_name);
+                u3bVar.c(this.O.length(), tL_messages_stickerSet.set.short_name);
                 return;
             }
             Integer num2 = (Integer) this.H.get(tL_messages_stickerSet);
             TLRPC.StickerSet stickerSet2 = tL_messages_stickerSet.set;
             if (stickerSet2 != null && num2 != null) {
-                t3bVar.b(stickerSet2.title, 0, null, num2.intValue(), !TextUtils.isEmpty(this.O) ? this.O.length() : 0);
+                u3bVar.b(stickerSet2.title, 0, null, num2.intValue(), !TextUtils.isEmpty(this.O) ? this.O.length() : 0);
             }
-            t3bVar.c(0, null);
+            u3bVar.c(0, null);
             return;
         }
         if (i2 == 3) {
@@ -415,7 +415,7 @@ public final class j24 extends c79 {
                 view = new t24(context);
                 break;
             case 2:
-                view = new t3b(this.h, false, false, o24Var.a2, o24Var.j2);
+                view = new u3b(this.h, false, false, o24Var.a2, o24Var.j2);
                 break;
             case 3:
                 h94 h94Var = new h94(17, o24Var.a2, this.h, false, true);

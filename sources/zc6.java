@@ -7,7 +7,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zc6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class zc6 implements Runnable {
                         if (byteBufferValue != null) {
                             r47 r47Var = new r47(id6Var2.currentAccount, TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false), false, false);
                             hd6Var.h = r47Var;
-                            jf7.d(r47Var.k, arrayList4, arrayList5, null);
+                            kf7.d(r47Var.k, arrayList4, arrayList5, null);
                             byteBufferValue.reuse();
                         }
                         arrayList.add(hd6Var);
@@ -62,9 +62,9 @@ public final /* synthetic */ class zc6 implements Runnable {
                     }
                     queryFinalized.dispose();
                     if (!arrayList5.isEmpty()) {
-                        id6Var2.getMessagesStorage().P(TextUtils.join(",", arrayList5), arrayList3);
+                        id6Var2.getMessagesStorage().R(TextUtils.join(",", arrayList5), arrayList3);
                     }
-                    id6Var2.getMessagesStorage().k0(arrayList4, arrayList2, false);
+                    id6Var2.getMessagesStorage().m0(arrayList4, arrayList2, false);
                 } catch (Exception e) {
                     cc4.g(e, true);
                 }

@@ -33,9 +33,9 @@ import org.webrtc.MediaSource;
 import org.webrtc.MediaStream;
 import org.webrtc.NativeLifecycleLock;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, mz6, NativeLifecycleLock.NativeDisposer, t69, hj, ti7, rk6, ncc, on5, nr7, rv9, fd, z8c, ic1, nu4 {
+public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, mz6, NativeLifecycleLock.NativeDisposer, t69, hj, ui7, rk6, ncc, on5, nr7, rv9, fd, z8c, ic1, nu4 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
 
@@ -62,8 +62,8 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
         lm7Var.G = H0.d;
         lm7Var.P = l2dVar.a.f(8).d;
         view.setPadding(H0.a, view.getPaddingTop(), H0.c, 0);
-        lm7Var.M0(false);
-        view.post(new vl7(lm7Var, (byte) 2));
+        lm7Var.K0(false);
+        view.post(new wl7(lm7Var, (byte) 1));
         return l2d.b;
     }
 
@@ -72,7 +72,7 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
         return null;
     }
 
-    @Override // ti7
+    @Override // ui7
     public final void a(Canvas canvas) {
         ((Layout) this.b).draw(canvas);
     }
@@ -99,7 +99,7 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
 
     @Override // rk6
     public final Object c(Object obj, Object obj2) {
-        return ose.b((List) ((Collection) obj2), new nk6(((gj7) this.b).f, obj));
+        return ose.b((List) ((Collection) obj2), new nk6(((hj7) this.b).f, obj));
     }
 
     @Override // mz6
@@ -202,10 +202,10 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
 
     @Override // z8c
     public final void f() {
-        vab vabVar = (vab) this.b;
-        TextView textView = vabVar.Y0;
-        boolean a = vabVar.n0.a();
-        ImageView imageView = vabVar.X0;
+        wab wabVar = (wab) this.b;
+        TextView textView = wabVar.Y0;
+        boolean a = wabVar.n0.a();
+        ImageView imageView = wabVar.X0;
         imageView.animate().cancel();
         imageView.animate().alpha(a ? 1.0f : 0.6f).translationY(0.0f).setDuration(150L).start();
         imageView.setClickable(a);
@@ -274,29 +274,29 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
         Object obj3 = this.b;
         switch (b) {
             case 15:
-                nab nabVar = (nab) obj3;
+                oab oabVar = (oab) obj3;
                 b8c b8cVar = (b8c) obj;
                 int i2 = b8cVar.d;
                 c8b c8bVar = (c8b) b8cVar.H;
-                nabVar.c(false, true);
-                rbb rbbVar = nabVar.P;
-                if (c8bVar != rbbVar.L1 && !rbbVar.Y1) {
-                    rbbVar.e1.setSelected(i2);
-                    rbbVar.Y1 = true;
-                    me7 me7Var = new me7((Object) rbbVar, i2, (byte) 21);
-                    vab vabVar = rbbVar.w1;
-                    c8b c8bVar2 = rbbVar.L1;
-                    if (vabVar != null && c8bVar2 != null) {
-                        if (vabVar.r0()) {
+                oabVar.c(false, true);
+                sbb sbbVar = oabVar.P;
+                if (c8bVar != sbbVar.L1 && !sbbVar.Y1) {
+                    sbbVar.e1.setSelected(i2);
+                    sbbVar.Y1 = true;
+                    oe7 oe7Var = new oe7((Object) sbbVar, i2, (byte) 21);
+                    wab wabVar = sbbVar.w1;
+                    c8b c8bVar2 = sbbVar.L1;
+                    if (wabVar != null && c8bVar2 != null) {
+                        if (wabVar.r0()) {
                             c8bVar2.f();
-                            Utilities.g.c(new b6a(rbbVar, vabVar, c8bVar2.i0, c8bVar2.j0, c8bVar2, vabVar.y0.getPainting().E, vabVar.r0(), me7Var, (byte) 2));
+                            Utilities.g.c(new b6a(sbbVar, wabVar, c8bVar2.i0, c8bVar2.j0, c8bVar2, wabVar.y0.getPainting().E, wabVar.r0(), oe7Var, (byte) 2));
                             break;
                         } else {
-                            me7Var.run();
+                            oe7Var.run();
                             break;
                         }
                     } else {
-                        me7Var.run();
+                        oe7Var.run();
                         break;
                     }
                 }
@@ -348,8 +348,8 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
                             }
                         }
                         xt7 xt7Var = new xt7(charSequence, arrayList, max, i10, 28 - i11);
-                        xt7Var.f = new fe7(vt7Var, (byte) 15);
-                        xt7Var.h = new pl7(vt7Var, b8cVar2, (byte) 11);
+                        xt7Var.f = new ge7(vt7Var, (byte) 15);
+                        xt7Var.h = new ql7(vt7Var, b8cVar2, (byte) 12);
                         vt7Var.presentFragment(xt7Var);
                         break;
                     } else {
@@ -388,9 +388,9 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
                     boolean z3 = xt7Var2.r;
                     wkbVar.b(aob.w0(null, z3 ? aob.f6 : aob.e6, false), z3);
                     xt7Var2.n.g3.O(true);
-                    fe7 fe7Var = xt7Var2.f;
-                    if (fe7Var != null) {
-                        fe7Var.run();
+                    ge7 ge7Var = xt7Var2.f;
+                    if (ge7Var != null) {
+                        ge7Var.run();
                         break;
                     }
                 } else if (i15 == -2) {
@@ -405,9 +405,9 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
                         int j2 = Utilities.j(i16 + 30, i14 - 1, i13);
                         arrayList3.add(new ut7(j2, Utilities.j((i16 + 1560) / 2, i14, j2 + 1)));
                     }
-                    fe7 fe7Var2 = xt7Var2.f;
-                    if (fe7Var2 != null) {
-                        fe7Var2.run();
+                    ge7 ge7Var2 = xt7Var2.f;
+                    if (ge7Var2 != null) {
+                        ge7Var2.run();
                     }
                     xt7Var2.n.g3.O(true);
                     break;
@@ -444,9 +444,9 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
                                         if (Z != xt7Var3.Z()) {
                                             xt7Var3.n.g3.O(true);
                                         }
-                                        fe7 fe7Var3 = xt7Var3.f;
-                                        if (fe7Var3 != null) {
-                                            fe7Var3.run();
+                                        ge7 ge7Var3 = xt7Var3.f;
+                                        if (ge7Var3 != null) {
+                                            ge7Var3.run();
                                             break;
                                         }
                                         break;
@@ -458,9 +458,9 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
                                         if (Z2 != xt7Var3.Z()) {
                                             xt7Var3.n.g3.O(true);
                                         }
-                                        fe7 fe7Var4 = xt7Var3.f;
-                                        if (fe7Var4 != null) {
-                                            fe7Var4.run();
+                                        ge7 ge7Var4 = xt7Var3.f;
+                                        if (ge7Var4 != null) {
+                                            ge7Var4.run();
                                             break;
                                         }
                                         break;
@@ -493,9 +493,9 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
                                         if (Z != xt7Var3.Z()) {
                                             xt7Var3.n.g3.O(true);
                                         }
-                                        fe7 fe7Var3 = xt7Var3.f;
-                                        if (fe7Var3 != null) {
-                                            fe7Var3.run();
+                                        ge7 ge7Var3 = xt7Var3.f;
+                                        if (ge7Var3 != null) {
+                                            ge7Var3.run();
                                             break;
                                         }
                                         break;
@@ -507,9 +507,9 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
                                         if (Z2 != xt7Var3.Z()) {
                                             xt7Var3.n.g3.O(true);
                                         }
-                                        fe7 fe7Var4 = xt7Var3.f;
-                                        if (fe7Var4 != null) {
-                                            fe7Var4.run();
+                                        ge7 ge7Var4 = xt7Var3.f;
+                                        if (ge7Var4 != null) {
+                                            ge7Var4.run();
                                             break;
                                         }
                                         break;
@@ -523,9 +523,9 @@ public final /* synthetic */ class bm6 implements s84, xj4, a8b, xx6, ot2, pz6, 
                             arrayList3.add(new ut7(0, 1439));
                         }
                         xt7Var2.n.g3.O(true);
-                        fe7 fe7Var3 = xt7Var2.f;
-                        if (fe7Var3 != null) {
-                            fe7Var3.run();
+                        ge7 ge7Var3 = xt7Var2.f;
+                        if (ge7Var3 != null) {
+                            ge7Var3.run();
                             break;
                         }
                     }

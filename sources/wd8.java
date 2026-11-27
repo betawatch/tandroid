@@ -16,7 +16,7 @@ import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wd8 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -259,16 +259,16 @@ public final class wd8 extends AnimatorListenerAdapter {
                     ((WindowManager) obj2).removeViewImmediate(b8aVar.B);
                 } catch (Exception unused) {
                 }
-                en9 en9Var = b8aVar.C;
-                if (en9Var != null) {
-                    hl.r(en9Var);
+                dn9 dn9Var = b8aVar.C;
+                if (dn9Var != null) {
+                    hl.r(dn9Var);
                     break;
                 }
                 break;
             case 17:
-                u3b u3bVar = (u3b) obj;
-                u3bVar.b = 0.0f;
-                u3bVar.invalidate();
+                v3b v3bVar = (v3b) obj;
+                v3bVar.b = 0.0f;
+                v3bVar.invalidate();
                 ((xu9) obj2).invalidate();
                 break;
             case 18:

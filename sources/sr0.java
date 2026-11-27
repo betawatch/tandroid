@@ -13,7 +13,7 @@ import org.json.JSONObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class sr0 extends FrameLayout implements u0d, yi5 {
     public boolean E;
@@ -294,8 +294,8 @@ public final class sr0 extends FrameLayout implements u0d, yi5 {
             if (h0dVar == null) {
                 h0d h0dVar2 = new h0d(sb2, i, j, tL_botProfileWidget);
                 concurrentHashMap2.put(sb2, h0dVar2);
-                jf7 Y = jf7.Y(h0dVar2.b);
-                Y.a.c(new cxc((Object) Y, (Object) h0dVar2, (byte) 11));
+                kf7 a0 = kf7.a0(h0dVar2.b);
+                a0.a.c(new zwc(a0, h0dVar2, (byte) 12));
             } else {
                 h0dVar.s = tL_botProfileWidget.public_data_hash;
                 k0d.a(h0dVar, k0d.D(tL_botProfileWidget.chat_data), k0d.D(tL_botProfileWidget.public_data));

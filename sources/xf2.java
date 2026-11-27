@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xf2 extends c79 {
     public final Context c;
@@ -494,7 +494,7 @@ public final class xf2 extends c79 {
                                         break;
                                     }
                                 } else {
-                                    ilbVar.setText(ob6.a0(null, null, 2131749177, cc.J0(bg2Var.getMessagesController().k4.Q1.f()), String.valueOf(((int) (bg2Var.getMessagesController().k4.A3.i * ((bg2Var.A1 * (bg2Var.getMessagesController().k4.Q1.f() / 1000.0f)) / 1000.0d))) / 100.0d)));
+                                    ilbVar.setText(ob6.a0(null, null, 2131749177, cc.J0(bg2Var.getMessagesController().l4.Q1.f()), String.valueOf(((int) (bg2Var.getMessagesController().l4.A3.i * ((bg2Var.A1 * (bg2Var.getMessagesController().l4.Q1.f() / 1000.0f)) / 1000.0d))) / 100.0d)));
                                     break;
                                 }
                             } else {
@@ -765,7 +765,7 @@ public final class xf2 extends c79 {
                         }
                     } else {
                         Switch checkBox2 = skbVar.getCheckBox();
-                        if (xc2.y(2, bg2Var.n) && ((chatFull = bg2Var.r) == null || chatFull.participants_hidden || bg2Var.l0() >= bg2Var.getMessagesController().k4.z1.f())) {
+                        if (xc2.y(2, bg2Var.n) && ((chatFull = bg2Var.r) == null || chatFull.participants_hidden || bg2Var.l0() >= bg2Var.getMessagesController().l4.z1.f())) {
                             i7 = 0;
                         }
                         checkBox2.setIcon(i7);
@@ -776,7 +776,7 @@ public final class xf2 extends c79 {
                     }
                 } else {
                     Switch checkBox3 = skbVar.getCheckBox();
-                    if (xc2.y(13, bg2Var.n) && ((chatFull2 = bg2Var.r) == null || chatFull2.antispam || bg2Var.l0() >= bg2Var.getMessagesController().k4.y1.f())) {
+                    if (xc2.y(13, bg2Var.n) && ((chatFull2 = bg2Var.r) == null || chatFull2.antispam || bg2Var.l0() >= bg2Var.getMessagesController().l4.y1.f())) {
                         i7 = 0;
                     }
                     checkBox3.setIcon(i7);
@@ -870,8 +870,8 @@ public final class xf2 extends c79 {
             case 17:
                 bna bnaVar = (bna) view;
                 if (i == bg2Var.q0) {
-                    int[] a = bna.a(new int[]{1, 10, 50, 100, jn7.d3, jn7.Y3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, (int) bg2Var.getMessagesController().k4.P1.f());
-                    int k = (int) Utilities.k(bg2Var.A1, bg2Var.getMessagesController().k4.P1.f(), 1L);
+                    int[] a = bna.a(new int[]{1, 10, 50, 100, jn7.d3, jn7.Y3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, (int) bg2Var.getMessagesController().l4.P1.f());
+                    int k = (int) Utilities.k(bg2Var.A1, bg2Var.getMessagesController().l4.P1.f(), 1L);
                     c22 c22Var = new c22((byte) 8);
                     ana anaVar = new ana();
                     anaVar.c = a;
@@ -907,7 +907,7 @@ public final class xf2 extends c79 {
                 view = new ij6(context);
                 break;
             case 3:
-                view = new rca(context, (uh9) null);
+                view = new sca(context, (uh9) null);
                 break;
             case 4:
                 ilb ilbVar = new ilb(context);

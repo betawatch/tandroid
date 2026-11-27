@@ -5,7 +5,7 @@ import android.content.Context;
 import java.util.WeakHashMap;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class f41 extends n12 {
     public final /* synthetic */ byte H4;
@@ -133,8 +133,8 @@ public final class f41 extends n12 {
                 if (f41Var5 != null) {
                     f41Var5.w0(false);
                 }
-                g58 g58Var = o68Var.L1;
-                if (g58Var != null && g58Var.getEditField() != null) {
+                h58 h58Var = o68Var.L1;
+                if (h58Var != null && h58Var.getEditField() != null) {
                     o68Var.L1.getEditField().requestFocus();
                     break;
                 }

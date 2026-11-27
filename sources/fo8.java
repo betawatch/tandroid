@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class fo8 extends FrameLayout implements VoIPService.StateListener {
     public float E;
@@ -43,8 +43,8 @@ public abstract class fo8 extends FrameLayout implements VoIPService.StateListen
     public final boolean P;
     public final fp Q;
     public final fp R;
-    public final hh7 S;
-    public final hh7 T;
+    public final ih7 S;
+    public final ih7 T;
     public final GestureDetector U;
     public ValueAnimator V;
     public boolean a;
@@ -74,8 +74,8 @@ public abstract class fo8 extends FrameLayout implements VoIPService.StateListen
         this.O = new Matrix();
         this.Q = new fp(80, 80);
         this.R = new fp(80, 80);
-        this.S = new hh7(-10497967, -16730994, -5649306, -10833593, false, true);
-        this.T = new hh7(-16735258, -14061833, -15151390, -12602625, false, true);
+        this.S = new ih7(-10497967, -16730994, -5649306, -10833593, false, true);
+        this.T = new ih7(-16735258, -14061833, -15151390, -12602625, false, true);
         this.J = f;
         this.K = f2;
         byte b = 3;
@@ -147,7 +147,7 @@ public abstract class fo8 extends FrameLayout implements VoIPService.StateListen
         }
         d26 d26Var2 = this.b;
         FrameLayout frameLayout = new FrameLayout(getContext());
-        frameLayout.setBackground(new hh7(-14602694, -13935795, -14395293, -14203560, true, false));
+        frameLayout.setBackground(new ih7(-14602694, -13935795, -14395293, -14203560, true, false));
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.screencast_big);

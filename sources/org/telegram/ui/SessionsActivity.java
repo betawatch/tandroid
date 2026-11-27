@@ -28,7 +28,7 @@ import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class SessionsActivity extends org.telegram.ui.ActionBar.e implements fn7 {
     public int E;
@@ -328,7 +328,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.e implements fn7
                 return;
             }
             int i9 = i - this.M;
-            new dg2(getParentActivity(), (TL_account.TL_connectedBot) this.f.get(i9), new me7(this, i9, b2), this.resourceProvider).show();
+            new dg2(getParentActivity(), (TL_account.TL_connectedBot) this.f.get(i9), new oe7(this, i9, b2), this.resourceProvider).show();
             return;
         }
         if (((i < this.K || i >= this.L) && ((i < this.G || i >= this.H) && i != this.y)) || getParentActivity() == null) {
@@ -1058,7 +1058,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.e implements fn7
         this.T = -1;
         this.ttlRow = -1;
         this.U = -1;
-        if (!this.w && getMessagesController().k4.R0.f) {
+        if (!this.w && getMessagesController().l4.R0.f) {
             int i = this.S;
             this.Q = i;
             this.S = i + 2;

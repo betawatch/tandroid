@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class d6c extends FrameLayout implements fn7 {
     public v79 E;
@@ -198,10 +198,10 @@ public final class d6c extends FrameLayout implements fn7 {
         int childCount = s5cVar.getChildCount();
         for (int i = 0; i < childCount; i++) {
             View childAt = s5cVar.getChildAt(i);
-            if (childAt instanceof t3b) {
-                t3b t3bVar = (t3b) childAt;
-                t3bVar.d();
-                t3bVar.e();
+            if (childAt instanceof u3b) {
+                u3b u3bVar = (u3b) childAt;
+                u3bVar.d();
+                u3bVar.e();
             }
         }
     }

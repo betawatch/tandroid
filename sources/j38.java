@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class j38 extends View implements snb {
     public boolean E;
@@ -40,7 +40,7 @@ public final class j38 extends View implements snb {
         this.n = new Paint(1);
         this.s = -1;
         uc7 s1 = uc7.s1(i);
-        hr hrVar = s1.k4;
+        hr hrVar = s1.l4;
         TLRPC.Chat M0 = s1.M0(Long.valueOf(-j));
         this.a = i;
         boolean z = j < 0;
@@ -52,14 +52,14 @@ public final class j38 extends View implements snb {
         this.e = e;
         yob.x(this, e, aob.q6, vnbVar, PorterDuff.Mode.SRC_IN);
         String M02 = ob6.M0(z ? z2 ? 2131752527 : 2131752532 : 2131752511, null);
-        if (z && !z2 && uc7.s1(i).X3.getInt("boostingappearance", 0) < 3) {
-            lc7 lc7Var = s1.E3;
+        if (z && !z2 && uc7.s1(i).Y3.getInt("boostingappearance", 0) < 3) {
+            lc7 lc7Var = s1.F3;
             int i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             if (lc7Var != null) {
                 int min = Math.min(ConnectionsManager.DEFAULT_DATACENTER_ID, lc7Var.e(false));
-                int max = Math.max(0, s1.E3.e(false));
-                int min2 = Math.min(min, s1.E3.f());
-                int max2 = Math.max(max, s1.E3.f());
+                int max = Math.max(0, s1.F3.e(false));
+                int min2 = Math.min(min, s1.F3.f());
+                int max2 = Math.max(max, s1.F3.f());
                 i3 = min2;
                 i2 = max2;
             } else {
@@ -72,12 +72,12 @@ public final class j38 extends View implements snb {
             ds2 ds2Var5 = hrVar.e2;
             int min3 = Math.min(i3, ds2Var.f());
             int min4 = Math.min(i2, hrVar.d2.f());
-            lc7 lc7Var2 = s1.F3;
+            lc7 lc7Var2 = s1.G3;
             if (lc7Var2 != null) {
                 int min5 = Math.min(min3, lc7Var2.e(false));
-                int max3 = Math.max(min4, s1.F3.e(false));
-                min3 = Math.min(min5, s1.F3.f());
-                min4 = Math.max(max3, s1.F3.f());
+                int max3 = Math.max(min4, s1.G3.e(false));
+                min3 = Math.min(min5, s1.G3.f());
+                min4 = Math.max(max3, s1.G3.f());
             }
             int min6 = Math.min(min3, ds2Var5.f());
             int max4 = Math.max(min4, ds2Var5.f());
@@ -231,7 +231,7 @@ public final class j38 extends View implements snb {
             this.s = i5;
             v0 = aob.v0(i5, vnbVar);
         } else {
-            lc7 lc7Var = uc7.s1(yac.t0).E3;
+            lc7 lc7Var = uc7.s1(yac.t0).F3;
             kc7 d = lc7Var != null ? lc7Var.d(f) : null;
             if (d != null) {
                 this.s = -1;

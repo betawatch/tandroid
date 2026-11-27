@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class iy5 implements Runnable {
     public final /* synthetic */ byte a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class iy5 implements Runnable {
                                 }
                                 break;
                             default:
-                                ((v3b) h44Var2).r(true);
+                                ((w3b) h44Var2).r(true);
                                 n8 n8Var2 = wy5Var2.B1;
                                 if (n8Var2 != null && n8Var2.isShowing()) {
                                     wy5Var2.B1.d(true);
@@ -88,7 +88,7 @@ public final /* synthetic */ class iy5 implements Runnable {
                     textView2.setOnClickListener(new xx5(wy5Var, (byte) 2));
                     linearLayout.addView(textView2, tre.o(-2, 48));
                 }
-                if (h44Var instanceof v3b) {
+                if (h44Var instanceof w3b) {
                     TextView textView3 = new TextView(wy5Var.getContext());
                     yob.X(textView3, i, yx5Var);
                     textView3.setBackgroundDrawable(aob.L0(false));
@@ -114,7 +114,7 @@ public final /* synthetic */ class iy5 implements Runnable {
                                     }
                                     break;
                                 default:
-                                    ((v3b) h44Var2).r(true);
+                                    ((w3b) h44Var2).r(true);
                                     n8 n8Var2 = wy5Var2.B1;
                                     if (n8Var2 != null && n8Var2.isShowing()) {
                                         wy5Var2.B1.d(true);

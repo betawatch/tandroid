@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class an1 implements vh8, oj3 {
     public final /* synthetic */ boolean a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class an1 implements vh8, oj3 {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         String str = (String) this.d;
         String str2 = LaunchActivity.C1;
-        long j = ((if7) arrayList.get(0)).a;
+        long j = ((jf7) arrayList.get(0)).a;
         Bundle bundle = new Bundle();
         bundle.putBoolean("scrollToTopOnResume", true);
         bundle.putBoolean("hasUrl", this.a);

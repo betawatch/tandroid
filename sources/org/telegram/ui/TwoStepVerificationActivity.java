@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.e implements fn7 {
     public ScrollView E;
@@ -351,7 +351,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.e imp
         passwordinputsettings.new_algo = new TLRPC.TL_passwordKdfAlgoUnknown();
         updatepasswordsettings.new_settings.email = "";
         t0(false);
-        Utilities.e.c(new bcb((Object) this, (Object) updatepasswordsettings, (byte) 26));
+        Utilities.e.c(new hab((Object) this, (Object) updatepasswordsettings, (byte) 27));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x01fa  */
@@ -1262,7 +1262,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.e imp
                 a7cVar.f();
             }
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getPassword(), new k5b(this, z2, z, runnable), 10);
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getPassword(), new l5b(this, z2, z, runnable), 10);
     }
 
     public final void s0() {
@@ -1380,7 +1380,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.e imp
         }
         byte[] g1 = hl.g1(obj);
         t0(false);
-        Utilities.e.c(new bcb((Object) this, (Object) g1, (byte) 24));
+        Utilities.e.c(new hab((Object) this, (Object) g1, (byte) 25));
     }
 
     public final void z0() {

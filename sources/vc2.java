@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class vc2 {
     public static int R;
@@ -583,7 +583,7 @@ public final class vc2 {
             str = "";
         }
         getgroupparticipants.offset = str;
-        getgroupparticipants.limit = this.a ? uc7.s1(this.C.a).k4.E3.f() : 20;
+        getgroupparticipants.limit = this.a ? uc7.s1(this.C.a).l4.E3.f() : 20;
         ConnectionsManager.getInstance(this.C.a).sendRequest(getgroupparticipants, new vi1(this, z, getgroupparticipants, b));
     }
 

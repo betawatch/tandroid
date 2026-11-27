@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class g37 implements xt6, wt6 {
     public final xt6[] a;
@@ -18,7 +18,7 @@ public final class g37 implements xt6, wt6 {
     public xt6[] n;
     public er2 r;
 
-    public g37(rg7 rg7Var, long[] jArr, xt6... xt6VarArr) {
+    public g37(sg7 sg7Var, long[] jArr, xt6... xt6VarArr) {
         this.a = xt6VarArr;
         no5 no5Var = po5.b;
         j99 j99Var = j99.e;

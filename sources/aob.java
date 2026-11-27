@@ -75,7 +75,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class aob {
     public static int A;
@@ -175,7 +175,7 @@ public abstract class aob {
     public static TextPaint[] E0;
     public static int E1;
     public static TextPaint E2;
-    public static gi7 E3;
+    public static hi7 E3;
     public static Drawable E4;
     public static final int E5;
     public static final int E6;
@@ -581,7 +581,7 @@ public abstract class aob {
     public static final int Vk;
     public static final int Vl;
     public static int W;
-    public static gi7 W0;
+    public static hi7 W0;
     public static Paint W1;
     public static TextPaint W2;
     public static Drawable W3;
@@ -4945,8 +4945,8 @@ public abstract class aob {
             ((d2b) drawable).b(i10);
             return;
         }
-        if (drawable instanceof gi7) {
-            ((gi7) drawable).a(i10);
+        if (drawable instanceof hi7) {
+            ((hi7) drawable).a(i10);
             return;
         }
         if (drawable instanceof ShapeDrawable) {
@@ -5415,13 +5415,13 @@ public abstract class aob {
                     }
                     boolean z17 = (i16 == 0 && i16 != i13) || i15 != 0;
                     if (bitmap2 == null || z17) {
-                        hh7 hh7Var = new hh7(i13, i16, i15, i14, false, false);
-                        hh7Var.r(i11, bitmap2);
+                        ih7 ih7Var = new ih7(i13, i16, i15, i14, false, false);
+                        ih7Var.r(i11, bitmap2);
                         if (bitmap2 != null) {
-                            hh7Var.s(hh7Var.f());
+                            ih7Var.s(ih7Var.f());
                         }
-                        hh7Var.t(i12);
-                        am2Var.b = hh7Var;
+                        ih7Var.t(i12);
+                        am2Var.b = ih7Var;
                     } else {
                         am2Var.b = new ColorDrawable(i13);
                     }
@@ -5436,12 +5436,12 @@ public abstract class aob {
                 }
                 if (bitmap2 == null) {
                 }
-                hh7 hh7Var2 = new hh7(i13, i16, i15, i14, false, false);
-                hh7Var2.r(i11, bitmap2);
+                ih7 ih7Var2 = new ih7(i13, i16, i15, i14, false, false);
+                ih7Var2.r(i11, bitmap2);
                 if (bitmap2 != null) {
                 }
-                hh7Var2.t(i12);
-                am2Var.b = hh7Var2;
+                ih7Var2.t(i12);
+                am2Var.b = ih7Var2;
                 if (!TextUtils.isEmpty(str3)) {
                 }
                 am2Var.f = Boolean.TRUE;
@@ -5510,16 +5510,16 @@ public abstract class aob {
                                             } else if (bitmap == null && unbVar.e == 0) {
                                                 am2Var.b = new ColorDrawable(i17);
                                             } else {
-                                                hh7 hh7Var3 = new hh7(unbVar.d, unbVar.e, unbVar.f, unbVar.g, false, false);
-                                                hh7Var3.t(i12);
+                                                ih7 ih7Var3 = new ih7(unbVar.d, unbVar.e, unbVar.f, unbVar.g, false, false);
+                                                ih7Var3.t(i12);
                                                 if (bitmap != null) {
-                                                    hh7Var3.r((int) (unbVar.k * 100.0f), bitmap);
+                                                    ih7Var3.r((int) (unbVar.k * 100.0f), bitmap);
                                                     if (!z15) {
-                                                        hh7Var3.s(hh7Var3.f());
+                                                        ih7Var3.s(ih7Var3.f());
                                                     }
                                                     am2Var.f = Boolean.TRUE;
                                                 }
-                                                am2Var.b = hh7Var3;
+                                                am2Var.b = ih7Var3;
                                             }
                                         }
                                         z15 = false;
@@ -5570,16 +5570,16 @@ public abstract class aob {
         }
         if (!i86.e(32)) {
             Drawable drawable = (Drawable) am2Var.b;
-            if (drawable instanceof hh7) {
-                hh7 hh7Var4 = (hh7) drawable;
-                Bitmap bitmap4 = hh7Var4.u;
+            if (drawable instanceof ih7) {
+                ih7 ih7Var4 = (ih7) drawable;
+                Bitmap bitmap4 = ih7Var4.u;
                 if (bitmap4 == null) {
                     Point point = hl.q;
                     width = Math.min(point.x, point.y);
                     height = Math.max(point.x, point.y);
                 } else {
                     width = bitmap4.getWidth();
-                    height = hh7Var4.u.getHeight();
+                    height = ih7Var4.u.getHeight();
                 }
                 Bitmap createBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(createBitmap);
@@ -5686,7 +5686,7 @@ public abstract class aob {
             D3 = resources.getDrawable(R.drawable.msg_halfcheck).mutate();
             G3 = resources.getDrawable(R.drawable.msg_halfcheck_s).mutate();
             I3 = resources.getDrawable(R.drawable.msg_halfcheck_s).mutate();
-            E3 = new gi7();
+            E3 = new hi7();
             L3 = resources.getDrawable(R.drawable.ic_lock_header).mutate();
             M3 = resources.getDrawable(R.drawable.msg_views).mutate();
             N3 = resources.getDrawable(R.drawable.msg_views).mutate();
@@ -6397,10 +6397,10 @@ public abstract class aob {
         return drawable != null ? drawable : (Drawable) dm.get(str);
     }
 
-    public static hh7 R(int i10, int i11) {
+    public static ih7 R(int i10, int i11) {
         int i12;
         int i13;
-        hh7 hh7Var = new hh7(-2368069, -9722489, -2762611, -7817084, i10 != 0, false);
+        ih7 ih7Var = new ih7(-2368069, -9722489, -2762611, -7817084, i10 != 0, false);
         if (i10 <= 0 || i11 <= 0) {
             Point point = hl.q;
             int min = Math.min(point.x, point.y);
@@ -6416,9 +6416,9 @@ public abstract class aob {
         if (r1 == null) {
             r1 = hgb.c(1.0f, R.raw.default_pattern, i13, i12, -16777216, 2);
         }
-        hh7Var.r(34, r1);
-        hh7Var.s(hh7Var.f());
-        return hh7Var;
+        ih7Var.r(34, r1);
+        ih7Var.s(ih7Var.f());
+        return ih7Var;
     }
 
     public static SparseIntArray R0(File file, String str, String[] strArr) {
@@ -6588,7 +6588,7 @@ public abstract class aob {
             T0 = resources.getDrawable(R.drawable.minithumb_play).mutate();
             U0 = resources.getDrawable(R.drawable.list_check).mutate();
             V0 = resources.getDrawable(R.drawable.list_halfcheck);
-            W0 = new gi7();
+            W0 = new hi7();
             X0 = resources.getDrawable(R.drawable.list_warning_sign);
             Y0 = resources.getDrawable(R.drawable.list_reorder).mutate();
             b1 = resources.getDrawable(R.drawable.list_mute).mutate();
@@ -6746,12 +6746,12 @@ public abstract class aob {
             if (i12 == 0 && avcVar == null) {
                 return new ColorDrawable(i11);
             }
-            hh7 hh7Var = new hh7(i11, i12, i13, i14, true, false);
+            ih7 ih7Var = new ih7(i11, i12, i13, i14, true, false);
             if (avcVar != null) {
-                hh7Var.r((int) (i15.p * 100.0f), avcVar.a);
-                hh7Var.s(hh7Var.f());
+                ih7Var.r((int) (i15.p * 100.0f), avcVar.a);
+                ih7Var.s(ih7Var.f());
             }
-            return hh7Var;
+            return ih7Var;
         }
         if (f0 > 0) {
             znb znbVar = I;
@@ -7132,8 +7132,8 @@ public abstract class aob {
             return;
         }
         int i10 = lm.get(yd);
-        boolean z10 = (drawable instanceof hh7) && xea.o() != 0 && i10 == 0;
-        if (z10 && X != (bitmap = ((hh7) drawable).k)) {
+        boolean z10 = (drawable instanceof ih7) && xea.o() != 0 && i10 == 0;
+        if (z10 && X != (bitmap = ((ih7) drawable).k)) {
             X = bitmap;
             Bitmap bitmap2 = X;
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -7218,7 +7218,7 @@ public abstract class aob {
             int indexOfKey2 = lm.indexOfKey(dd);
             valueAt2 = indexOfKey2 >= 0 ? lm.valueAt(indexOfKey2) : a0;
         }
-        if (z11 || !((((z10 = drawable instanceof hh7)) || (drawable instanceof BitmapDrawable)) && xea.o() != 0 && i86.e(32))) {
+        if (z11 || !((((z10 = drawable instanceof ih7)) || (drawable instanceof BitmapDrawable)) && xea.o() != 0 && i86.e(32))) {
             X = null;
             Y = null;
             if (z11) {
@@ -7267,7 +7267,7 @@ public abstract class aob {
             }
         } else {
             if (z10) {
-                bitmap = ((hh7) drawable).k;
+                bitmap = ((ih7) drawable).k;
             } else {
                 if (drawable instanceof BitmapDrawable) {
                     WeakReference weakReference = Am;
@@ -7336,7 +7336,7 @@ public abstract class aob {
         }
         f2.setColor(valueAt);
         g2.setColor(valueAt2);
-        if (Y == null || !(lm.indexOfKey(i13) < 0 || (drawable instanceof hh7) || (drawable instanceof BitmapDrawable))) {
+        if (Y == null || !(lm.indexOfKey(i13) < 0 || (drawable instanceof ih7) || (drawable instanceof BitmapDrawable))) {
             f2.setColorFilter(null);
             f2.setShader(null);
             g2.setColorFilter(null);
@@ -7345,8 +7345,8 @@ public abstract class aob {
             return;
         }
         ColorMatrix colorMatrix2 = new ColorMatrix();
-        if (drawable instanceof hh7) {
-            if (((hh7) drawable).q >= 0.0f) {
+        if (drawable instanceof ih7) {
+            if (((ih7) drawable).q >= 0.0f) {
                 colorMatrix2.setSaturation(1.6f);
                 hl.l2(colorMatrix2, I.o() ? 0.97f : 0.92f);
                 hl.h(colorMatrix2, I.o() ? 0.12f : -0.06f);
@@ -8331,8 +8331,8 @@ public abstract class aob {
 
     public static void s1(boolean z10) {
         Drawable drawable = d0;
-        if (drawable instanceof hh7) {
-            S = ((hh7) drawable).i;
+        if (drawable instanceof ih7) {
+            S = ((ih7) drawable).i;
         } else {
             S = 0;
         }

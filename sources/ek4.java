@@ -3,12 +3,12 @@
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ek4 implements e84 {
     public g84 f;
     public x1c g;
-    public uf7 i;
+    public vf7 i;
     public gk4 j;
     public int k;
     public int l;
@@ -45,7 +45,7 @@ public final class ek4 implements e84 {
             ((cb3) f84Var).f = 0;
             cb3 cb3Var = (cb3) f84Var;
             long e = cb3Var.e();
-            uf7 a = lle.a(cb3Var, z3, z2);
+            vf7 a = lle.a(cb3Var, z3, z2);
             cb3Var.l((int) (cb3Var.e() - e), false);
             this.i = a;
             this.h = (byte) 1;
@@ -92,7 +92,7 @@ public final class ek4 implements e84 {
                         iy8.d();
                         return z4 ? 1 : 0;
                     }
-                    uf7 uf7Var = gk4Var2.l;
+                    vf7 vf7Var = gk4Var2.l;
                     if (f == i3) {
                         ey7 ey7Var2 = new ey7(f2);
                         cb3Var2.c(ey7Var2.a, z4 ? 1 : 0, f2, z4);
@@ -102,9 +102,9 @@ public final class ek4 implements e84 {
                             ey7 ey7Var3 = new ey7(f2);
                             cb3Var2.c(ey7Var3.a, 0, f2, false);
                             ey7Var3.O(i2);
-                            uf7 a2 = moc.a(Arrays.asList((String[]) s2f.b(ey7Var3, false, false).b));
-                            if (uf7Var != null) {
-                                a2 = uf7Var.b(a2);
+                            vf7 a2 = moc.a(Arrays.asList((String[]) s2f.b(ey7Var3, false, false).b));
+                            if (vf7Var != null) {
+                                a2 = vf7Var.b(a2);
                             }
                             gk4Var = new gk4(gk4Var2.a, gk4Var2.b, gk4Var2.c, gk4Var2.d, gk4Var2.e, gk4Var2.g, gk4Var2.h, gk4Var2.j, gk4Var2.k, a2);
                         } else {
@@ -118,11 +118,11 @@ public final class ek4 implements e84 {
                                 ey7 ey7Var4 = new ey7(f2);
                                 cb3Var2.c(ey7Var4.a, 0, f2, false);
                                 ey7Var4.O(4);
-                                uf7 uf7Var2 = new uf7(po5.u(rd8.d(ey7Var4)));
-                                if (uf7Var != null) {
-                                    uf7Var2 = uf7Var.b(uf7Var2);
+                                vf7 vf7Var2 = new vf7(po5.u(rd8.d(ey7Var4)));
+                                if (vf7Var != null) {
+                                    vf7Var2 = vf7Var.b(vf7Var2);
                                 }
-                                gk4Var = new gk4(gk4Var2.a, gk4Var2.b, gk4Var2.c, gk4Var2.d, gk4Var2.e, gk4Var2.g, gk4Var2.h, gk4Var2.j, gk4Var2.k, uf7Var2);
+                                gk4Var = new gk4(gk4Var2.a, gk4Var2.b, gk4Var2.c, gk4Var2.d, gk4Var2.e, gk4Var2.g, gk4Var2.h, gk4Var2.j, gk4Var2.k, vf7Var2);
                             }
                         }
                         gk4Var2 = gk4Var;
@@ -143,7 +143,7 @@ public final class ek4 implements e84 {
             x1c x1cVar = this.g;
             String str2 = gcc.a;
             jo4 a3 = c.a();
-            a3.r = dg7.n("audio/flac");
+            a3.r = eg7.n("audio/flac");
             xnb.v(a3, x1cVar);
             this.g.d(this.j.b());
             this.h = (byte) 4;

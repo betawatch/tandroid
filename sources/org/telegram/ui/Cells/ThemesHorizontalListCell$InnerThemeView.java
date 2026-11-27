@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
     public static final /* synthetic */ int c0 = 0;
@@ -120,9 +120,9 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             if (znbVar2.O != 0) {
                 int m2 = this.b.m();
                 znb znbVar3 = this.b;
-                hh7 hh7Var = new hh7(m2, znbVar3.N, znbVar3.O, znbVar3.P, true, false);
-                hh7Var.u(hl.L(6.0f));
-                this.P = hh7Var;
+                ih7 ih7Var = new ih7(m2, znbVar3.N, znbVar3.O, znbVar3.P, true, false);
+                ih7Var.u(hl.L(6.0f));
+                this.P = ih7Var;
                 dArr = hl.Z2(Color.red(this.b.m()), Color.green(this.b.m()), Color.blue(this.b.m()));
             } else {
                 GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{this.b.m(), this.b.N});
@@ -153,7 +153,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             this.S = true;
         }
         if (this.b.m() == 0 && this.b.U && this.P == null) {
-            hh7 R = aob.R(100, jn7.d3);
+            ih7 R = aob.R(100, jn7.d3);
             this.P = R;
             R.u(hl.L(6.0f));
         }

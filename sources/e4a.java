@@ -4,25 +4,25 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
-public final class e4a extends FrameLayout implements bl7 {
-    public final l09 a;
+public final class e4a extends FrameLayout implements cl7 {
+    public final m09 a;
     public final /* synthetic */ g4a b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public e4a(g4a g4aVar, Context context) {
         super(context);
         this.b = g4aVar;
-        this.a = new l09((byte) 3);
+        this.a = new m09((byte) 3);
     }
 
-    @Override // al7
+    @Override // bl7
     public final void k(int i, View view) {
         this.a.b = 0;
     }
 
-    @Override // bl7
+    @Override // cl7
     public final void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
         g4a g4aVar = this.b;
         lcb lcbVar = g4aVar.r;
@@ -40,23 +40,23 @@ public final class e4a extends FrameLayout implements bl7 {
         if (currentPeerView != null) {
             currentPeerView.invalidate();
         }
-        zbb zbbVar = lcbVar.w;
-        if (zbbVar != null) {
-            zbbVar.invalidate();
+        acb acbVar = lcbVar.w;
+        if (acbVar != null) {
+            acbVar.invalidate();
         }
     }
 
-    @Override // al7
+    @Override // bl7
     public final boolean n(View view, View view2, int i, int i2) {
         return this.b.y <= 0 && i == 2;
     }
 
-    @Override // al7
+    @Override // bl7
     public final void q(View view, View view2, int i, int i2) {
         this.a.b = i;
     }
 
-    @Override // al7
+    @Override // bl7
     public final void r(View view, int i, int i2, int[] iArr, int i3) {
         g4a g4aVar = this.b;
         lcb lcbVar = g4aVar.r;
@@ -77,14 +77,14 @@ public final class e4a extends FrameLayout implements bl7 {
             if (currentPeerView != null) {
                 currentPeerView.invalidate();
             }
-            zbb zbbVar = lcbVar.w;
-            if (zbbVar != null) {
-                zbbVar.invalidate();
+            acb acbVar = lcbVar.w;
+            if (acbVar != null) {
+                acbVar.invalidate();
             }
         }
     }
 
-    @Override // al7
+    @Override // bl7
     public final void m(View view, int i, int i2, int i3, int i4, int i5) {
     }
 }

@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class szb extends iu5 {
     public boolean e;
@@ -88,7 +88,7 @@ public final class szb extends iu5 {
                 arrayList2.add(Integer.valueOf(tL_forumTopic.id));
             }
         }
-        tzbVar.getMessagesController().g4.w(arrayList2, tzbVar.a);
+        tzbVar.getMessagesController().h4.w(arrayList2, tzbVar.a);
     }
 
     @Override // iu5
@@ -98,7 +98,7 @@ public final class szb extends iu5 {
             TLRPC.TL_forumTopic tL_forumTopic = qzbVar.O;
             tzb tzbVar = this.f;
             if (tL_forumTopic != null) {
-                qyb qybVar = tzbVar.getMessagesController().g4;
+                qyb qybVar = tzbVar.getMessagesController().h4;
                 long j = tzbVar.a;
                 TLRPC.TL_forumTopic tL_forumTopic2 = qzbVar.O;
                 qybVar.A(tL_forumTopic2.id, j, tL_forumTopic2.hidden);

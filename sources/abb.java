@@ -1,32 +1,22 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.style.ImageSpan;
-
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
-public final class abb extends ImageSpan {
-    public final /* synthetic */ Drawable a;
+public final class abb implements qk4 {
+    public final /* synthetic */ sbb a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public abb(Drawable drawable, Drawable drawable2) {
-        super(drawable);
-        this.a = drawable2;
+    public abb(sbb sbbVar) {
+        this.a = sbbVar;
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        canvas.save();
-        canvas.translate(0.0f, hl.L(1.0f) + ((i5 - i3) / 2));
-        this.a.setAlpha(paint.getAlpha());
-        super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
-        canvas.restore();
+    @Override // qk4
+    public final void setInvert(float f) {
+        sbb sbbVar = this.a;
+        hl.j3(sbbVar.n, f > 0.5f);
+        hl.m3(sbbVar.n, f > 0.5f);
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        return (super.getSize(paint, charSequence, i, i2, fontMetricsInt) / 3) << 1;
+    @Override // qk4
+    public final void invalidate() {
     }
 }

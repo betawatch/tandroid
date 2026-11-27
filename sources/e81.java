@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class e81 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ Context a;
@@ -280,29 +280,29 @@ public final class e81 extends GestureDetector.SimpleOnGestureListener {
         wk5 wk5Var5;
         h81 a;
         r47 r47Var;
-        k09 k09Var;
+        l09 l09Var;
         g81 g81Var = this.b;
         j81 j81Var = g81Var.y;
         wk5Var = ((e) j81Var).parentLayout;
         if (wk5Var != null) {
-            if (((j81Var.f0 == 1 && g81Var.n != null) || j81Var.g0 != null) && (a = a(motionEvent.getX(), motionEvent.getY())) != null && (r47Var = a.a) != null && (k09Var = j81Var.N) != null) {
+            if (((j81Var.f0 == 1 && g81Var.n != null) || j81Var.g0 != null) && (a = a(motionEvent.getX(), motionEvent.getY())) != null && (r47Var = a.a) != null && (l09Var = j81Var.N) != null) {
                 if (j81Var.g0 != null) {
                     lcb orCreateStoryViewer = j81Var.getOrCreateStoryViewer();
                     Context context = g81Var.getContext();
                     r47 r47Var2 = a.a;
                     TL_stories.StoryItem storyItem = r47Var2.l;
                     int e1 = r47Var2.e1();
-                    u5b u5bVar = j81Var.g0;
+                    v5b v5bVar = j81Var.g0;
                     z8d z8dVar = j81Var.h0;
                     orCreateStoryViewer.h = yac.t0;
                     ArrayList arrayList = new ArrayList();
-                    arrayList.add(Long.valueOf(u5bVar.d));
+                    arrayList.add(Long.valueOf(v5bVar.d));
                     orCreateStoryViewer.P0 = e1;
-                    orCreateStoryViewer.K(context, storyItem, arrayList, 0, u5bVar, null, z8dVar, true);
+                    orCreateStoryViewer.K(context, storyItem, arrayList, 0, v5bVar, null, z8dVar, true);
                 } else {
                     int e12 = r47Var.e1();
                     int i = a.c;
-                    eja ejaVar = (eja) k09Var.b;
+                    eja ejaVar = (eja) l09Var.b;
                     tia[] tiaVarArr = ejaVar.w1;
                     int i2 = -1;
                     for (int i3 = 0; i3 < tiaVarArr[0].a.size(); i3++) {

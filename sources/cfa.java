@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cfa extends FrameLayout implements snb {
     public boolean E;
@@ -60,7 +60,7 @@ public final class cfa extends FrameLayout implements snb {
     public StaticLayout b0;
     public int c;
     public r47 c0;
-    public ki7 d;
+    public li7 d;
     public final TextPaint d0;
     public final m66 e;
     public final TextPaint e0;
@@ -211,9 +211,9 @@ public final class cfa extends FrameLayout implements snb {
         if (gf0Var != null) {
             removeCallbacks(gf0Var);
         }
-        ki7 ki7Var = this.d;
-        if (ki7Var != null) {
-            removeCallbacks(ki7Var);
+        li7 li7Var = this.d;
+        if (li7Var != null) {
+            removeCallbacks(li7Var);
         }
         invalidate();
     }
@@ -1408,12 +1408,12 @@ public final class cfa extends FrameLayout implements snb {
                                     this.e.a(this.n, null);
                                     if (!this.a) {
                                         this.a = true;
-                                        ki7 ki7Var = this.d;
-                                        if (ki7Var == null) {
-                                            ki7Var = new ki7(this, (byte) 27);
-                                            this.d = ki7Var;
+                                        li7 li7Var = this.d;
+                                        if (li7Var == null) {
+                                            li7Var = new li7(this, (byte) 27);
+                                            this.d = li7Var;
                                         }
-                                        postDelayed(ki7Var, ViewConfiguration.getTapTimeout());
+                                        postDelayed(li7Var, ViewConfiguration.getTapTimeout());
                                     }
                                     try {
                                         b.e(staticLayout, 0, f2, this.G + i5);

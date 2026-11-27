@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class zu5 extends yfb implements is4 {
     public /* synthetic */ Object a;
@@ -23,18 +23,18 @@ public final class zu5 extends yfb implements is4 {
 
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
-        zu5 zu5Var = (zu5) create((rj7) obj, (zw2) obj2);
-        f9c f9cVar = f9c.a;
-        zu5Var.invokeSuspend(f9cVar);
-        return f9cVar;
+        zu5 zu5Var = (zu5) create((sj7) obj, (zw2) obj2);
+        g9c g9cVar = g9c.a;
+        zu5Var.invokeSuspend(g9cVar);
+        return g9cVar;
     }
 
     @Override // qf0
     public final Object invokeSuspend(Object obj) {
         ixe.b(obj);
-        rj7 rj7Var = (rj7) this.a;
-        rj7Var.getClass();
-        rj7Var.d(this.b, this.c);
-        return f9c.a;
+        sj7 sj7Var = (sj7) this.a;
+        sj7Var.getClass();
+        sj7Var.d(this.b, this.c);
+        return g9c.a;
     }
 }

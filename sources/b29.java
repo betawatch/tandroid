@@ -33,7 +33,7 @@ import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class b29 extends BitmapDrawable implements Animatable, ck0 {
     public static final AtomicInteger Q0 = new AtomicInteger();
@@ -110,7 +110,7 @@ public class b29 extends BitmapDrawable implements Animatable, ck0 {
     public final File s0;
     public final boolean t0;
     public Runnable u0;
-    public final tf7 v0;
+    public final uf7 v0;
     public final HashMap w;
     public final Runnable w0;
     public final HashMap x;
@@ -167,12 +167,12 @@ public class b29 extends BitmapDrawable implements Animatable, ck0 {
         this.o0 = str == null && bk0Var != null && bk0Var.b;
         boolean z5 = bk0Var != null && bk0Var.c;
         this.d0 = z5;
-        tf7 tf7Var = new tf7();
-        this.v0 = tf7Var;
-        tf7Var.e = file.getAbsoluteFile();
-        tf7Var.c = str;
-        tf7Var.d = null;
-        tf7Var.a = i3;
+        uf7 uf7Var = new uf7();
+        this.v0 = uf7Var;
+        uf7Var.e = file.getAbsoluteFile();
+        uf7Var.c = str;
+        uf7Var.d = null;
+        uf7Var.a = i3;
         getPaint().setFlags(2);
         if (str == null) {
             this.s0 = file;
@@ -184,7 +184,7 @@ public class b29 extends BitmapDrawable implements Animatable, ck0 {
             z3 = 0;
         }
         if (!z4) {
-            this.n0 = RLottieNative.a(file.getAbsolutePath(), str, iArr, (int[]) tf7Var.d, i3, hashMap);
+            this.n0 = RLottieNative.a(file.getAbsolutePath(), str, iArr, (int[]) uf7Var.d, i3, hashMap);
             if (this.n0 == null) {
                 cc4.b("RLottieDrawable nativePtr == 0 " + file.getAbsolutePath() + " remove file");
                 file.delete();
@@ -206,8 +206,8 @@ public class b29 extends BitmapDrawable implements Animatable, ck0 {
                 c = 1;
                 cc4.g(e, z3);
                 String absolutePath = file.getAbsolutePath();
-                tf7 tf7Var2 = this.v0;
-                a = RLottieNative.a(absolutePath, str, iArr, (int[]) tf7Var2.d, tf7Var2.a, this.x);
+                uf7 uf7Var2 = this.v0;
+                a = RLottieNative.a(absolutePath, str, iArr, (int[]) uf7Var2.d, uf7Var2.a, this.x);
                 if (a != null) {
                     a.d();
                 }
@@ -220,8 +220,8 @@ public class b29 extends BitmapDrawable implements Animatable, ck0 {
             e = e2;
             cc4.g(e, z3);
             String absolutePath2 = file.getAbsolutePath();
-            tf7 tf7Var22 = this.v0;
-            a = RLottieNative.a(absolutePath2, str, iArr, (int[]) tf7Var22.d, tf7Var22.a, this.x);
+            uf7 uf7Var22 = this.v0;
+            a = RLottieNative.a(absolutePath2, str, iArr, (int[]) uf7Var22.d, uf7Var22.a, this.x);
             if (a != null) {
             }
             if (this.c0) {
@@ -555,9 +555,9 @@ public class b29 extends BitmapDrawable implements Animatable, ck0 {
     @Override // ck0
     public final void b() {
         File file;
-        tf7 tf7Var = this.v0;
-        File file2 = (File) tf7Var.e;
-        RLottieNative a = RLottieNative.a(file2 != null ? file2.toString() : null, tf7Var.c, this.d0 ? this.e : null, (int[]) tf7Var.d, tf7Var.a, this.x);
+        uf7 uf7Var = this.v0;
+        File file2 = (File) uf7Var.e;
+        RLottieNative a = RLottieNative.a(file2 != null ? file2.toString() : null, uf7Var.c, this.d0 ? this.e : null, (int[]) uf7Var.d, uf7Var.a, this.x);
         this.K0 = a;
         this.D0 = 0;
         if (a != null || (file = this.s0) == null) {
@@ -974,22 +974,22 @@ public class b29 extends BitmapDrawable implements Animatable, ck0 {
                     if (iArr != null) {
                         this.v0.d = (int[]) iArr.clone();
                     }
-                    tf7 tf7Var = this.v0;
-                    File file = (File) tf7Var.e;
+                    uf7 uf7Var = this.v0;
+                    File file = (File) uf7Var.e;
                     if (file != null) {
                         String absolutePath = file.getAbsolutePath();
-                        tf7 tf7Var2 = this.v0;
-                        b = RLottieNative.a(absolutePath, tf7Var2.c, this.e, (int[]) tf7Var2.d, tf7Var2.a, this.x);
+                        uf7 uf7Var2 = this.v0;
+                        b = RLottieNative.a(absolutePath, uf7Var2.c, this.e, (int[]) uf7Var2.d, uf7Var2.a, this.x);
                     } else {
-                        int i = tf7Var.b;
-                        if (i == 0 || tf7Var.c != null) {
-                            b = RLottieNative.b(tf7Var.c, this.e, (int[]) tf7Var.d, this.x);
+                        int i = uf7Var.b;
+                        if (i == 0 || uf7Var.c != null) {
+                            b = RLottieNative.b(uf7Var.c, this.e, (int[]) uf7Var.d, this.x);
                         } else {
                             String v2 = hl.v2(null, i);
                             if (!TextUtils.isEmpty(v2)) {
-                                tf7 tf7Var3 = this.v0;
-                                tf7Var3.c = v2;
-                                b = RLottieNative.b(v2, this.e, (int[]) tf7Var3.d, this.x);
+                                uf7 uf7Var3 = this.v0;
+                                uf7Var3.c = v2;
+                                b = RLottieNative.b(v2, this.e, (int[]) uf7Var3.d, this.x);
                             }
                         }
                     }
@@ -1029,8 +1029,8 @@ public class b29 extends BitmapDrawable implements Animatable, ck0 {
             if (this.F0) {
                 if (this.n0 == null) {
                     String file2 = ((File) this.v0.e).toString();
-                    tf7 tf7Var4 = this.v0;
-                    this.n0 = RLottieNative.a(file2, tf7Var4.c, null, (int[]) tf7Var4.d, tf7Var4.a, this.x);
+                    uf7 uf7Var4 = this.v0;
+                    this.n0 = RLottieNative.a(file2, uf7Var4.c, null, (int[]) uf7Var4.d, uf7Var4.a, this.x);
                 }
                 if (this.n0 != null) {
                     c = this.n0.c(this.b0, bitmap, z);
@@ -1155,9 +1155,9 @@ public class b29 extends BitmapDrawable implements Animatable, ck0 {
         this.c = i3;
         this.L = (byte) 0;
         getPaint().setFlags(2);
-        tf7 tf7Var = new tf7();
-        this.v0 = tf7Var;
-        tf7Var.d = iArr == null ? null : (int[]) iArr.clone();
+        uf7 uf7Var = new uf7();
+        this.v0 = uf7Var;
+        uf7Var.d = iArr == null ? null : (int[]) iArr.clone();
         long[] jArr = ac9.a;
         int length = jArr.length - 1;
         int i4 = 0;
@@ -1195,9 +1195,9 @@ public class b29 extends BitmapDrawable implements Animatable, ck0 {
                 this.v0 = null;
                 return;
             } else {
-                tf7 tf7Var2 = this.v0;
-                tf7Var2.c = v2;
-                this.n0 = RLottieNative.b(v2, this.e, (int[]) tf7Var2.d, this.x);
+                uf7 uf7Var2 = this.v0;
+                uf7Var2.c = v2;
+                this.n0 = RLottieNative.b(v2, this.e, (int[]) uf7Var2.d, this.x);
             }
         }
         if (z2) {

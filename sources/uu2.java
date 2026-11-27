@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uu2 implements RequestDelegate {
     public final /* synthetic */ byte a = 0;
@@ -95,7 +95,7 @@ public final /* synthetic */ class uu2 implements RequestDelegate {
                         }
                     }
                     boolean z5 = z2;
-                    lv2Var.getMessagesStorage().j1(tL_contacts_importedContacts.users, null, z5, z5);
+                    lv2Var.getMessagesStorage().n1(tL_contacts_importedContacts.users, null, z5, z5);
                     ArrayList arrayList2 = new ArrayList();
                     int i4 = z ? 1 : 0;
                     while (i4 < tL_contacts_importedContacts.imported.size()) {
@@ -123,7 +123,7 @@ public final /* synthetic */ class uu2 implements RequestDelegate {
                 if (lv2Var.n0 == i) {
                     if (!hashMap.isEmpty()) {
                         boolean z7 = z;
-                        lv2Var.getMessagesStorage().W0(hashMap, z7, z7);
+                        lv2Var.getMessagesStorage().a1(hashMap, z7, z7);
                     }
                     Utilities.d.c(new oq6(lv2Var, hashMap3, hashMap2, z3, hashMap4, arrayList, hashMap5, zArr));
                     break;

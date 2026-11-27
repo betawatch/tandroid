@@ -16,7 +16,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class qx7 extends FrameLayout {
     public Bitmap a;
@@ -27,12 +27,12 @@ public final class qx7 extends FrameLayout {
     public boolean f;
     public px7 h;
     public boolean n;
-    public final ki7 r;
+    public final li7 r;
 
     public qx7(Context context) {
         super(context);
         this.e = true;
-        this.r = new ki7(this, (byte) 4);
+        this.r = new li7(this, (byte) 4);
     }
 
     public final void a() {
@@ -63,8 +63,8 @@ public final class qx7 extends FrameLayout {
         de0 de0Var;
         ?? r2 = 0;
         this.n = false;
-        ki7 ki7Var = this.r;
-        removeCallbacks(ki7Var);
+        li7 li7Var = this.r;
+        removeCallbacks(li7Var);
         setClipChildren(z3);
         a();
         this.b = new HashMap();
@@ -192,7 +192,7 @@ public final class qx7 extends FrameLayout {
         }
         if (this.n && isAttachedToWindow()) {
             d();
-            postOnAnimation(ki7Var);
+            postOnAnimation(li7Var);
         }
     }
 
@@ -261,10 +261,10 @@ public final class qx7 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ki7 ki7Var = this.r;
-        removeCallbacks(ki7Var);
+        li7 li7Var = this.r;
+        removeCallbacks(li7Var);
         if (this.n) {
-            postOnAnimation(ki7Var);
+            postOnAnimation(li7Var);
         }
     }
 

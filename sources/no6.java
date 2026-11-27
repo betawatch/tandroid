@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class no6 extends go6 {
     public static uo3 Z;
@@ -222,7 +222,7 @@ public final class no6 extends go6 {
         zg2 zg2Var;
         String str = this.I;
         long currentTimeMillis = System.currentTimeMillis();
-        mh7 mh7Var = null;
+        nh7 nh7Var = null;
         try {
             ry0Var = ry0.b(new File(str));
         } catch (Exception e) {
@@ -249,19 +249,19 @@ public final class no6 extends go6 {
                     }
                     if (zg2Var != null) {
                         j99 j99Var = (j99) zg2Var.c;
-                        mh7 mh7Var2 = null;
+                        nh7 nh7Var2 = null;
                         for (int i = 0; i < j99Var.d; i++) {
-                            mh7 mh7Var3 = (mh7) j99Var.get(i);
-                            String str2 = mh7Var3.b;
+                            nh7 nh7Var3 = (nh7) j99Var.get(i);
+                            String str2 = nh7Var3.b;
                             if ("Primary".equalsIgnoreCase(str2)) {
-                                mh7Var = mh7Var3;
+                                nh7Var = nh7Var3;
                             } else if ("MotionPhoto".equalsIgnoreCase(str2)) {
-                                mh7Var2 = mh7Var3;
+                                nh7Var2 = nh7Var3;
                             }
                         }
-                        if (mh7Var != null && mh7Var2 != null && mh7Var2.c > 0) {
+                        if (nh7Var != null && nh7Var2 != null && nh7Var2.c > 0) {
                             try {
-                                long length = new File(str).length() - mh7Var2.c;
+                                long length = new File(str).length() - nh7Var2.c;
                                 this.b = true;
                                 this.W = true;
                                 this.m = length;

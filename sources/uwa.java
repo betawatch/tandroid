@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class uwa implements Runnable {
     public final /* synthetic */ byte a;
@@ -207,7 +207,7 @@ public final /* synthetic */ class uwa implements Runnable {
                                 userFull.flags2 = i5 | 32;
                             }
                             userFull.birthday = tL_birthday;
-                            jf7.Y(uebVar.a).g2(userFull, false);
+                            kf7.a0(uebVar.a).l2(userFull, false);
                         }
                         if (tL_error3 != null && (str = tL_error3.text) != null && str.startsWith("FLOOD_WAIT_")) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(uebVar.b.getContext());
@@ -225,7 +225,7 @@ public final /* synthetic */ class uwa implements Runnable {
                 }
                 break;
             case 6:
-                ((ksb) obj5).e((ViewGroup) obj4, (vnb) obj3, (tl0) obj2, (ebb) obj);
+                ((ksb) obj5).e((ViewGroup) obj4, (vnb) obj3, (tl0) obj2, (fbb) obj);
                 break;
             case 7:
                 l1c l1cVar = (l1c) obj5;
@@ -251,7 +251,7 @@ public final /* synthetic */ class uwa implements Runnable {
                 String str5 = (String) obj3;
                 v11 v11Var = (v11) obj2;
                 r47Var.k.originalLanguage = str5;
-                a5cVar.getMessagesStorage().U1(v11Var.a, r47Var.k);
+                a5cVar.getMessagesStorage().Z1(v11Var.a, r47Var.k);
                 a5cVar.L.remove(v11Var);
                 ((zo2) obj).a(str5);
                 break;

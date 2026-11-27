@@ -21,7 +21,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ap8 extends View {
     public final HashSet E;
@@ -188,7 +188,7 @@ public final class ap8 extends View {
             m(0, arrayList);
             m(1, arrayList);
         }
-        hl.c3(new h68(this, arrayList, (byte) 27));
+        hl.c3(new a58(this, arrayList, (byte) 28));
     }
 
     public final void e() {
@@ -831,7 +831,7 @@ public final class ap8 extends View {
                             RectF rectF2 = ProfileActivity.Z6;
                             profileActivity.u2(f, f2, b);
                         } else {
-                            postDelayed(new h68(this, xo8Var5, (byte) 28), s);
+                            postDelayed(new a58(this, xo8Var5, (byte) 29), s);
                         }
                     }
                 }

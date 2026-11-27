@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j72 implements icc {
     public final /* synthetic */ byte a = 0;
@@ -81,7 +81,7 @@ public final /* synthetic */ class j72 implements icc {
                 boolean[] zArr2 = (boolean[]) obj5;
                 c cVar = (c) obj4;
                 TextView textView = (TextView) obj3;
-                sk7 sk7Var = (sk7) callback;
+                tk7 tk7Var = (tk7) callback;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str = (String) obj2;
                 if (!zArr[0] && !w45Var.m && !w45Var.n) {
@@ -93,7 +93,7 @@ public final /* synthetic */ class j72 implements icc {
                             str = ob6.M0(2131742617, null);
                             a55.m("preview", str);
                         }
-                        d31.d0(str, sk7Var.F, vnbVar);
+                        d31.d0(str, tk7Var.F, vnbVar);
                         break;
                     } else if (!z) {
                         SpannableStringBuilder r = c.r(wallettransaction.fee, true);
@@ -106,7 +106,7 @@ public final /* synthetic */ class j72 implements icc {
         }
     }
 
-    public /* synthetic */ j72(boolean[] zArr, w45 w45Var, boolean[] zArr2, c51 c51Var, boolean z, c cVar, TextView textView, sk7 sk7Var, vnb vnbVar) {
+    public /* synthetic */ j72(boolean[] zArr, w45 w45Var, boolean[] zArr2, c51 c51Var, boolean z, c cVar, TextView textView, tk7 tk7Var, vnb vnbVar) {
         this.b = zArr;
         this.f = w45Var;
         this.g = zArr2;
@@ -114,7 +114,7 @@ public final /* synthetic */ class j72 implements icc {
         this.d = z;
         this.h = cVar;
         this.i = textView;
-        this.j = sk7Var;
+        this.j = tk7Var;
         this.e = vnbVar;
     }
 }

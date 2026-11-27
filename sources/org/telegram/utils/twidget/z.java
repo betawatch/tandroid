@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class z {
     public static boolean g0;
@@ -88,7 +88,7 @@ public final class z {
 
     public static boolean a() {
         for (int i = 0; i < 4; i++) {
-            if (yac.h(i).o() && uc7.s1(i).k4.A0.f) {
+            if (yac.h(i).o() && uc7.s1(i).l4.A0.f) {
                 return true;
             }
         }
@@ -265,7 +265,7 @@ public final class z {
                         if (j != 0) {
                             w0d.a.execute(new pqa(this, j, (byte) 9));
                         }
-                        this.a.post(new cxc((Object) this, (Object) e, (byte) 17));
+                        this.a.post(new zwc(this, e, (byte) 18));
                         throw e;
                     }
                 }

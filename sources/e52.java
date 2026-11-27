@@ -20,7 +20,7 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class e52 implements pcc {
     public final /* synthetic */ byte a;
@@ -293,14 +293,14 @@ public final /* synthetic */ class e52 implements pcc {
                                 photoViewer.o5.W = true;
                                 Utilities.i.c(new ka8(photoViewer, b3, (byte) 3));
                                 y98 y98Var = new y98(photoViewer, (byte) 9);
-                                fd7 fd7Var = new fd7((Object) photoViewer, (Object) b3, (Object) y98Var, (byte) 28);
+                                gd7 gd7Var = new gd7((Object) photoViewer, (Object) b3, (Object) y98Var, (byte) 28);
                                 pg6 pg6Var = new pg6((byte) 14);
                                 fnb fnbVar = thanosEffect.a;
                                 if (fnbVar != null) {
-                                    fnbVar.c(matrix3, createBitmap, fd7Var, pg6Var);
+                                    fnbVar.c(matrix3, createBitmap, gd7Var, pg6Var);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new gnb(matrix3, createBitmap, fd7Var, pg6Var));
+                                    thanosEffect.c.add(new gnb(matrix3, createBitmap, gd7Var, pg6Var));
                                 }
                                 hl.d3(y98Var, 1200L);
                             }

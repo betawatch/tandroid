@@ -13,7 +13,7 @@ import org.telegram.ui.Components.e0;
 import org.telegram.ui.Components.g0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class kla implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -92,10 +92,10 @@ public final /* synthetic */ class kla implements View.OnClickListener {
                 hl.d3((ux9) obj, 100L);
                 break;
             case 11:
-                p3b p3bVar = (p3b) obj;
-                TextView textView = p3bVar.F;
-                TextView textView2 = p3bVar.E;
-                ok8 ok8Var = p3bVar.G;
+                q3b q3bVar = (q3b) obj;
+                TextView textView = q3bVar.F;
+                TextView textView2 = q3bVar.E;
+                ok8 ok8Var = q3bVar.G;
                 if (ok8Var.getVisibility() != 0 || !ok8Var.w.isEnabled()) {
                     if (textView2.getVisibility() == 0 && textView2.isEnabled()) {
                         textView2.performClick();
@@ -140,8 +140,8 @@ public final /* synthetic */ class kla implements View.OnClickListener {
                 }
                 break;
             case 16:
-                tbb tbbVar = (tbb) obj;
-                tbbVar.b.u1.animate().alpha(0.0f).setDuration(150L).setListener(new ecb(tbbVar, b2)).start();
+                ubb ubbVar = (ubb) obj;
+                ubbVar.b.u1.animate().alpha(0.0f).setDuration(150L).setListener(new ecb(ubbVar, b2)).start();
                 break;
             case 17:
                 ((shb) obj).dismiss();
@@ -204,10 +204,10 @@ public final /* synthetic */ class kla implements View.OnClickListener {
             case 25:
                 zu1 zu1Var = ((as1) obj).E;
                 if (zu1Var.getUserConfig().p() || ((chat = zu1Var.e) != null && chat.autotranslation)) {
-                    zu1Var.getMessagesController().i4.K(zu1Var.a(), !r8.A(r0));
+                    zu1Var.getMessagesController().j4.K(zu1Var.a(), !r8.A(r0));
                 } else {
                     i = ((e) zu1Var).currentAccount;
-                    uc7.s1(i).W3.edit().putInt("dialog_show_translate_count" + zu1Var.a(), 14).commit();
+                    uc7.s1(i).X3.edit().putInt("dialog_show_translate_count" + zu1Var.a(), 14).commit();
                     zu1Var.showDialog(new xk8((e) zu1Var, 13, false));
                 }
                 zu1Var.zd(true);

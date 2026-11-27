@@ -1,30 +1,28 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes.dex */
+public final class cca {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final yl5 e;
+    public final String f;
+    public final String g;
+    public final String h;
+    public final byte i;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes2.dex */
-public final class cca extends a8c {
-    public static final /* synthetic */ int b = 0;
-
-    static {
-        a8c.h(new cca());
-    }
-
-    @Override // a8c
-    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
-        Object obj = b8cVar.H;
-        if (obj instanceof es8) {
-            es8 es8Var = (es8) obj;
-            ((eca) view).b(b8cVar.m, es8Var.d, es8Var.e, z);
-        } else if (obj instanceof hc7) {
-            ((eca) view).a(b8cVar.m, ((hc7) obj).b, true, z);
-        }
-    }
-
-    @Override // a8c
-    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
-        return new eca(context);
+    /* JADX WARN: Multi-variable type inference failed */
+    public cca(String str, String str2, String str3, String str4, yl5 yl5Var, String str5, String str6, String str7, int i) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = str4;
+        this.e = yl5Var;
+        this.f = str5;
+        this.g = str6;
+        this.h = str7;
+        this.i = i;
     }
 }

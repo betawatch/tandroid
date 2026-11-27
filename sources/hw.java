@@ -21,7 +21,7 @@ import org.telegram.ui.ProxyListActivity;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class hw implements pt2 {
     public final /* synthetic */ byte a;
@@ -163,13 +163,13 @@ public final /* synthetic */ class hw implements pt2 {
                         sy5Var.getAdapter().f();
                         break;
                     default:
-                        vab vabVar = (vab) rxVar.d;
-                        vabVar.H0(false);
+                        wab wabVar = (wab) rxVar.d;
+                        wabVar.H0(false);
                         a78 a78Var2 = (a78) rxVar.c;
                         a78Var2.h(intValue, true);
                         a78Var2.g();
-                        vabVar.setNewColor(intValue);
-                        pw7 pw7Var = vabVar.g1;
+                        wabVar.setNewColor(intValue);
+                        pw7 pw7Var = wabVar.g1;
                         pw7Var.setSelectedColorIndex(a78Var2.d());
                         pw7Var.getAdapter().f();
                         break;
@@ -332,7 +332,7 @@ public final /* synthetic */ class hw implements pt2 {
                 hl.c3(new z56(zj3Var, i3 != 0 ? di0.i(i3) : null, (byte) 22));
                 break;
             case 11:
-                ((vab) obj2).w0((Integer) obj);
+                ((wab) obj2).w0((Integer) obj);
                 break;
             case 12:
                 yv1 yv1Var = (yv1) obj2;

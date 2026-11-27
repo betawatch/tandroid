@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ch4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
@@ -157,11 +157,11 @@ public final /* synthetic */ class ch4 implements ValueAnimator.AnimatorUpdateLi
                 v86Var.invalidateSelf();
                 break;
             case 20:
-                b58 b58Var = (b58) obj;
+                c58 c58Var = (c58) obj;
                 float floatValue7 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b58Var.c.setAlpha(floatValue7);
-                b58Var.a.setAlpha(hl.R1(0.0f, 0.5f, floatValue7));
-                b58Var.invalidate();
+                c58Var.c.setAlpha(floatValue7);
+                c58Var.a.setAlpha(hl.R1(0.0f, 0.5f, floatValue7));
+                c58Var.invalidate();
                 break;
             case 21:
                 ((o96) obj).invalidate();
@@ -193,12 +193,12 @@ public final /* synthetic */ class ch4 implements ValueAnimator.AnimatorUpdateLi
                 ((gc8) obj).L.f0.invalidate();
                 break;
             case 26:
-                ((mj7) obj).invalidate();
+                ((nj7) obj).invalidate();
                 break;
             case 27:
                 lm7 lm7Var = (lm7) obj;
                 lm7Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                lm7Var.P0();
+                lm7Var.N0();
                 break;
             case 28:
                 ro7 ro7Var = (ro7) obj;

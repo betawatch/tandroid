@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class d72 extends c79 {
     public final Context c;
@@ -53,7 +53,7 @@ public final class d72 extends c79 {
         if (f89Var.f != 0) {
             return;
         }
-        v09 v09Var = (v09) f89Var.a;
+        w09 w09Var = (w09) f89Var.a;
         boolean z = i != b() + (-2);
         int i2 = i - 1;
         if (i2 >= 0) {
@@ -64,8 +64,8 @@ public final class d72 extends c79 {
                     return;
                 }
                 a19 a19Var = (a19) obj;
-                v09Var.a(a19Var, this.e, z);
-                v09Var.d.a(this.f.x.contains(Integer.valueOf(a19Var.a)), false);
+                w09Var.a(a19Var, this.e, z);
+                w09Var.d.a(this.f.x.contains(Integer.valueOf(a19Var.a)), false);
                 return;
             }
         }
@@ -76,18 +76,18 @@ public final class d72 extends c79 {
 
     @Override // j79
     public final f89 x(ViewGroup viewGroup, int i) {
-        View v09Var;
+        View w09Var;
         Context context = this.c;
         if (i == 0) {
-            v09Var = new v09(this.f.a, context, false);
+            w09Var = new w09(this.f.a, context, false);
         } else if (i != 1) {
-            v09Var = new View(context);
-            v09Var.setTag(-33024);
+            w09Var = new View(context);
+            w09Var.setTag(-33024);
         } else {
-            v09Var = new View(context);
-            v09Var.setLayoutParams(new r79(-1, hl.L(56.0f)));
-            v09Var.setTag(-33024);
+            w09Var = new View(context);
+            w09Var.setLayoutParams(new r79(-1, hl.L(56.0f)));
+            w09Var.setTag(-33024);
         }
-        return new n69(v09Var);
+        return new n69(w09Var);
     }
 }

@@ -3,7 +3,7 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class du4 {
     public static final Pattern c = Pattern.compile("^ [0-9a-fA-F]{8} ([0-9a-fA-F]{8}) ([0-9a-fA-F]{8})");
@@ -38,27 +38,27 @@ public final class du4 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(uf7 uf7Var) {
-        sf7 sf7Var;
-        uf7Var.getClass();
+    public final void b(vf7 vf7Var) {
+        tf7 tf7Var;
+        vf7Var.getClass();
         mo5 p = po5.p();
-        sf7[] sf7VarArr = uf7Var.a;
-        int length = sf7VarArr.length;
+        tf7[] tf7VarArr = vf7Var.a;
+        int length = tf7VarArr.length;
         int i = 0;
         while (true) {
-            sf7 sf7Var2 = null;
+            tf7 tf7Var2 = null;
             if (i >= length) {
                 break;
             }
-            sf7 sf7Var3 = sf7VarArr[i];
-            if (en2.class.isAssignableFrom(sf7Var3.getClass())) {
-                sf7 sf7Var4 = (sf7) en2.class.cast(sf7Var3);
-                if (((en2) sf7Var4).c.equals("iTunSMPB")) {
-                    sf7Var2 = sf7Var4;
+            tf7 tf7Var3 = tf7VarArr[i];
+            if (en2.class.isAssignableFrom(tf7Var3.getClass())) {
+                tf7 tf7Var4 = (tf7) en2.class.cast(tf7Var3);
+                if (((en2) tf7Var4).c.equals("iTunSMPB")) {
+                    tf7Var2 = tf7Var4;
                 }
             }
-            if (sf7Var2 != null) {
-                p.c(sf7Var2);
+            if (tf7Var2 != null) {
+                p.c(tf7Var2);
             }
             i++;
         }
@@ -70,13 +70,13 @@ public final class du4 {
         }
         nb3 nb3Var = new nb3((byte) 2);
         mo5 p2 = po5.p();
-        for (sf7 sf7Var5 : uf7Var.a) {
-            if (qr5.class.isAssignableFrom(sf7Var5.getClass())) {
-                sf7Var = (sf7) qr5.class.cast(sf7Var5);
+        for (tf7 tf7Var5 : vf7Var.a) {
+            if (qr5.class.isAssignableFrom(tf7Var5.getClass())) {
+                tf7Var = (tf7) qr5.class.cast(tf7Var5);
             }
-            sf7Var = null;
-            if (sf7Var != null) {
-                p2.c(sf7Var);
+            tf7Var = null;
+            if (tf7Var != null) {
+                p2.c(tf7Var);
             }
         }
         no5 listIterator2 = p2.f().listIterator(0);

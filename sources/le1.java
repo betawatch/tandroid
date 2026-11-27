@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class le1 implements Runnable {
     public final /* synthetic */ byte a = 0;
@@ -105,9 +105,9 @@ public final /* synthetic */ class le1 implements Runnable {
                 break;
             default:
                 r7a r7aVar = (r7a) obj3;
-                jf7 messagesStorage = r7aVar.getMessagesStorage();
+                kf7 messagesStorage = r7aVar.getMessagesStorage();
                 boolean z4 = this.b;
-                messagesStorage.g1((ArrayList) serializable, true, false, false, 0, false, !z4 ? 1 : 0, 0L);
+                messagesStorage.k1((ArrayList) serializable, true, false, false, 0, false, !z4 ? 1 : 0, 0L);
                 hl.c3(new vo9(r7aVar, this.c, (TLRPC.Message) tLObject, (ArrayList) obj2, z4, (ArrayList) obj, this.d));
                 break;
         }

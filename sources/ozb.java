@@ -11,14 +11,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ozb extends vic implements xg4 {
     public final FrameLayout W;
     public final d79 a0;
     public final x46 b0;
     public final mzb c0;
-    public bcb d0;
+    public hab d0;
     public String e0;
     public final ArrayList f0;
     public final ArrayList g0;
@@ -126,9 +126,9 @@ public final class ozb extends vic implements xg4 {
             }
             return;
         }
-        bcb bcbVar = this.d0;
-        if (bcbVar != null) {
-            hl.r(bcbVar);
+        hab habVar = this.d0;
+        if (habVar != null) {
+            hl.r(habVar);
             this.d0 = null;
         }
         this.s0 = false;
@@ -141,9 +141,9 @@ public final class ozb extends vic implements xg4 {
             O();
             this.o0 = true;
             this.q0.e(true, true);
-            bcb bcbVar2 = new bcb((Object) this, (Object) str, (byte) 15);
-            this.d0 = bcbVar2;
-            hl.d3(bcbVar2, 200L);
+            hab habVar2 = new hab((Object) this, (Object) str, (byte) 16);
+            this.d0 = habVar2;
+            hl.d3(habVar2, 200L);
             return;
         }
         this.o0 = false;

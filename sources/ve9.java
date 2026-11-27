@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ve9 implements qy9, hj, hf9, cg9, aea, nr7, ifc, n7a, dia, j63, tka, keb, ty9, tic, WebMessageListenerBoundaryInterface, s99, caa, s9 {
     public final /* synthetic */ byte a;
@@ -698,7 +698,7 @@ public final class ve9 implements qy9, hj, hf9, cg9, aea, nr7, ifc, n7a, dia, j6
     }
 
     public final hba c0(JSONObject jSONObject) {
-        yba rj2Var;
+        zba rj2Var;
         int i = jSONObject.getInt("settings_version");
         if (i != 3) {
             Log.e("FirebaseCrashlytics", "Could not determine SettingsJsonTransform for settings version " + i + ". Using default settings values.", null);
@@ -978,12 +978,12 @@ public final class ve9 implements qy9, hj, hf9, cg9, aea, nr7, ifc, n7a, dia, j6
         rx rxVar2;
         WebMessageBoundaryInterface webMessageBoundaryInterface = (WebMessageBoundaryInterface) py0.a(WebMessageBoundaryInterface.class, invocationHandler);
         InvocationHandler[] ports = webMessageBoundaryInterface.getPorts();
-        i09[] i09VarArr = new i09[ports.length];
+        j09[] j09VarArr = new j09[ports.length];
         for (int i = 0; i < ports.length; i++) {
             InvocationHandler invocationHandler3 = ports[i];
-            i09 i09Var = new i09((byte) 23);
-            i09Var.b = (WebMessagePortBoundaryInterface) py0.a(WebMessagePortBoundaryInterface.class, invocationHandler3);
-            i09VarArr[i] = i09Var;
+            j09 j09Var = new j09((byte) 23);
+            j09Var.b = (WebMessagePortBoundaryInterface) py0.a(WebMessagePortBoundaryInterface.class, invocationHandler3);
+            j09VarArr[i] = j09Var;
         }
         if (czc.a.b()) {
             WebMessagePayloadBoundaryInterface webMessagePayloadBoundaryInterface = (WebMessagePayloadBoundaryInterface) py0.a(WebMessagePayloadBoundaryInterface.class, webMessageBoundaryInterface.getMessagePayload());

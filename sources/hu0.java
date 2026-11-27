@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class hu0 implements pcc {
     public final /* synthetic */ byte a;
@@ -194,7 +194,7 @@ public final /* synthetic */ class hu0 implements pcc {
                 ((e) obj3).finishFragment();
                 if (oj3Var != null) {
                     ArrayList arrayList = new ArrayList();
-                    arrayList.add(if7.a(-l2.longValue(), 0L));
+                    arrayList.add(jf7.a(-l2.longValue(), 0L));
                     oj3Var.q(uj3Var, arrayList, null, false, uj3Var.L2, uj3Var.M2, uj3Var.N2, null);
                     break;
                 }
@@ -250,14 +250,14 @@ public final /* synthetic */ class hu0 implements pcc {
                 }
                 break;
             case 7:
-                sk7 sk7Var = (sk7) obj4;
+                tk7 tk7Var = (tk7) obj4;
                 vnb vnbVar = (vnb) obj2;
                 ao1 ao1Var = (ao1) obj3;
                 String str7 = (String) obj;
                 ((n55) obj6).d = false;
                 ((c51) obj5).setLoading(false);
                 if (str7 != null) {
-                    d31.d0(str7, sk7Var.F, vnbVar);
+                    d31.d0(str7, tk7Var.F, vnbVar);
                 }
                 ao1Var.run();
                 break;

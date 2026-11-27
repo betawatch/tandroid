@@ -32,7 +32,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ij1 extends wka implements snb {
     public static ij1 t1;
@@ -167,7 +167,7 @@ public final class ij1 extends wka implements snb {
         TLRPC.Chat M05 = uc7.s1(i).M0(Long.valueOf(j2));
         byte b = 3;
         this.s0 = hl.D2(hl.N2(ob6.a0(null, null, 2131748153, 50), -1, 3, new tu0(w1bVar, activity, vnbVar, (byte) 21), vnbVar), true);
-        this.t0 = hl.D2(hl.N2(ob6.M0(uc7.s1(i).k4.b3.f ? 2131748159 : 2131748157, null), -1, 3, new ni1(this, (byte) 0), null), true);
+        this.t0 = hl.D2(hl.N2(ob6.M0(uc7.s1(i).l4.b3.f ? 2131748159 : 2131748157, null), -1, 3, new ni1(this, (byte) 0), null), true);
         byte b2 = 1;
         this.u0 = hl.D2(hl.N2(ob6.M0(z2 ? z ? 2131748133 : 2131748135 : 2131748131, null), -1, 3, new oi1(this, z2 ? z ? 2131748132 : 2131748134 : 2131748130, (byte) 0), vnbVar), true);
         this.v0 = hl.D2(hl.N2(ob6.M0(xc2.V(M05) ? 2131748126 : 2131748125, null), -1, 0, new ni1(this, b2), null), true);
@@ -201,7 +201,7 @@ public final class ij1 extends wka implements snb {
         c51 c51Var = new c51(vnbVar, activity, true);
         c51Var.setRoundRadius(24);
         this.A0 = c51Var;
-        c51Var.setEnabled(uc7.s1(i).k4.b3.f);
+        c51Var.setEnabled(uc7.s1(i).l4.b3.f);
         c51Var.i(ob6.M0(2131748105, null), false, true);
         c51Var.setVisibility(8);
         c51Var.setOnClickListener(new sb1((Object) this, (Object) w1bVar, (byte) 3));

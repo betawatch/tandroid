@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xu1 implements vnb, o57 {
     public Bitmap A;
@@ -346,7 +346,7 @@ public final class xu1 implements vnb, o57 {
         } else {
             f = 0.0f;
         }
-        boolean z2 = !U7 && ((drawable2 instanceof hh7) || (drawable2 instanceof BitmapDrawable)) && xea.o() != 0;
+        boolean z2 = !U7 && ((drawable2 instanceof ih7) || (drawable2 instanceof BitmapDrawable)) && xea.o() != 0;
         this.C = z2;
         ez3 ez3Var = this.f;
         if (ez3Var != null) {
@@ -391,7 +391,7 @@ public final class xu1 implements vnb, o57 {
                                 this.p = true;
                             } else {
                                 this.j = Bitmap.createBitmap(60, 80, Bitmap.Config.ARGB_8888);
-                                Bitmap bitmap3 = ((hh7) drawable2).k;
+                                Bitmap bitmap3 = ((ih7) drawable2).k;
                                 this.k = bitmap3;
                                 if (z) {
                                     this.k = Bitmap.createBitmap(bitmap3);
@@ -436,8 +436,8 @@ public final class xu1 implements vnb, o57 {
                             }
                             if (this.C) {
                                 ColorMatrix colorMatrix = new ColorMatrix();
-                                if (drawable2 instanceof hh7) {
-                                    if (((hh7) drawable2).q >= f2) {
+                                if (drawable2 instanceof ih7) {
+                                    if (((ih7) drawable2).q >= f2) {
                                         colorMatrix.setSaturation(1.6f);
                                         hl.l2(colorMatrix, this.q ? 0.97f : 0.92f);
                                         hl.h(colorMatrix, this.q ? 0.12f : -0.06f);
@@ -602,7 +602,7 @@ public final class xu1 implements vnb, o57 {
         ez3 ez3Var3 = this.f;
         if (ez3Var3 == null && this.g == null) {
             Drawable s0 = aob.s0();
-            this.C = s0 instanceof hh7;
+            this.C = s0 instanceof ih7;
             o(s0);
             this.v = this.C ? -1 : aob.w0(null, aob.Zc, false);
             this.w = this.C ? -1 : aob.w0(null, aob.ad, false);
@@ -611,8 +611,8 @@ public final class xu1 implements vnb, o57 {
         } else {
             if (this.C) {
                 Drawable drawable = this.h;
-                if (drawable instanceof hh7) {
-                    Bitmap bitmap = ((hh7) drawable).k;
+                if (drawable instanceof ih7) {
+                    Bitmap bitmap = ((ih7) drawable).k;
                     this.A = bitmap;
                     if (ez3Var3 != null) {
                         TLRPC.ChatTheme chatTheme = ez3Var3.d;
@@ -696,8 +696,8 @@ public final class xu1 implements vnb, o57 {
         this.f = ez3Var2;
         this.g = wallPaper;
         Drawable backgroundImage = zu1Var.fragmentView != null ? zu1Var.m1.getBackgroundImage() : null;
-        hh7 hh7Var = backgroundImage instanceof hh7 ? (hh7) backgroundImage : null;
-        int i5 = hh7Var != null ? hh7Var.i : 0;
+        ih7 ih7Var = backgroundImage instanceof ih7 ? (ih7) backgroundImage : null;
+        int i5 = ih7Var != null ? ih7Var.i : 0;
         if ((ez3Var2 == null || ez3Var2.a) && wallPaper == null && (indexOfKey = aob.lm.indexOfKey(aob.cd)) >= 0) {
             aob.lm.valueAt(indexOfKey);
         }
@@ -708,8 +708,8 @@ public final class xu1 implements vnb, o57 {
             this.b.clear();
             this.a.clear();
             Drawable s0 = aob.s0();
-            if (s0 instanceof hh7) {
-                ((hh7) s0).t(i5);
+            if (s0 instanceof ih7) {
+                ((ih7) s0).t(i5);
             }
             this.h = null;
             if (aob.I.o() == this.q) {
@@ -811,29 +811,29 @@ public final class xu1 implements vnb, o57 {
                 int h2 = h(aob.Fe);
                 int h3 = h(aob.Ge);
                 int h4 = h(aob.He);
-                hh7 hh7Var2 = new hh7();
-                hh7Var2.r(ez3Var2.j(this.q ? 1 : 0).settings.intensity, hh7Var2.u);
+                ih7 ih7Var2 = new ih7();
+                ih7Var2.r(ez3Var2.j(this.q ? 1 : 0).settings.intensity, ih7Var2.u);
                 TLRPC.Document e = ez3Var2.e();
-                if (hh7Var2.y == null) {
+                if (ih7Var2.y == null) {
                     ImageReceiver imageReceiver = new ImageReceiver(null);
-                    hh7Var2.y = imageReceiver;
+                    ih7Var2.y = imageReceiver;
                     imageReceiver.setAlpha(0.5f);
-                    WeakReference weakReference = hh7Var2.c;
+                    WeakReference weakReference = ih7Var2.c;
                     if (weakReference != null) {
-                        hh7Var2.y.p0((View) weakReference.get());
+                        ih7Var2.y.p0((View) weakReference.get());
                     }
-                    if (hh7Var2.T) {
-                        hh7Var2.y.I();
+                    if (ih7Var2.T) {
+                        ih7Var2.y.I();
                     }
                 }
-                hh7Var2.y.d0(jn5.b(e), "80_80", null, null, null, 0);
-                hh7Var2.y.N(1);
-                hh7Var2.y.M(1);
-                hh7Var2.n(true, h, h2, h3, h4);
-                hh7Var2.t(i5);
-                int f = hh7Var2.f();
+                ih7Var2.y.d0(jn5.b(e), "80_80", null, null, null, 0);
+                ih7Var2.y.N(1);
+                ih7Var2.y.M(1);
+                ih7Var2.n(true, h, h2, h3, h4);
+                ih7Var2.t(i5);
+                int f = ih7Var2.f();
                 boolean z4 = this.q;
-                h01 h01Var = new h01((Object) this, (Object) hh7Var2, (byte) 19);
+                h01 h01Var = new h01((Object) this, (Object) ih7Var2, (byte) 19);
                 dz3 dz3Var2 = (dz3) ez3Var2.f.get(z4 ? 1 : 0);
                 if (dz3Var2 == null || dz3Var2.c == null) {
                     z2 = z4 ? 1 : 0;
@@ -874,8 +874,8 @@ public final class xu1 implements vnb, o57 {
                     in5.z().I(imageReceiver2, null);
                 }
                 ez3Var2 = ez3Var;
-                ez3Var2.n(this.q ? 1 : 0, new tu1(this, ez3Var2, z2, hh7Var2, f));
-                drawable = hh7Var2;
+                ez3Var2.n(this.q ? 1 : 0, new tu1(this, ez3Var2, z2, ih7Var2, f));
+                drawable = ih7Var2;
             }
             this.h = drawable;
         }
@@ -885,20 +885,20 @@ public final class xu1 implements vnb, o57 {
         }
         if (z) {
             this.r = new AnimatorSet();
-            if (hh7Var != null) {
+            if (ih7Var != null) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
-                ofFloat.addUpdateListener(new su1(hh7Var, (byte) 0));
-                ofFloat.addListener(new vu1(hh7Var));
+                ofFloat.addUpdateListener(new su1(ih7Var, (byte) 0));
+                ofFloat.addListener(new vu1(ih7Var));
                 ofFloat.setDuration(200L);
                 this.r.playTogether(ofFloat);
             }
             Drawable drawable3 = this.h;
-            if (drawable3 instanceof hh7) {
-                hh7 hh7Var3 = (hh7) drawable3;
-                hh7Var3.q(0.0f);
+            if (drawable3 instanceof ih7) {
+                ih7 ih7Var3 = (ih7) drawable3;
+                ih7Var3.q(0.0f);
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat2.addUpdateListener(new su1(hh7Var3, (byte) 1));
-                ofFloat2.addListener(new wu1(hh7Var3));
+                ofFloat2.addUpdateListener(new su1(ih7Var3, (byte) 1));
+                ofFloat2.addListener(new wu1(ih7Var3));
                 ofFloat2.setDuration(250L);
                 this.r.playTogether(ofFloat2);
             }

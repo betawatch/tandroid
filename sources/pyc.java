@@ -27,7 +27,7 @@ import javax.crypto.spec.SecretKeySpec;
 import org.json.JSONObject;
 import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class pyc implements io4 {
     public static pyc A;
@@ -243,7 +243,7 @@ public final class pyc implements io4 {
                             oycVar.e = true;
                             n(1, andUpdate, null);
                         }
-                        this.j.execute(new cxc((Object) this, (Object) oycVar, (byte) 5));
+                        this.j.execute(new zwc(this, oycVar, (byte) 6));
                     }
                 }
             } catch (Exception e) {

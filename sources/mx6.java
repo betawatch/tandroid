@@ -15,7 +15,7 @@ import android.support.v4.media.session.PlaybackStateCompat;
 import androidx.versionedparcelable.ParcelImpl;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class mx6 implements Parcelable.Creator {
     public final /* synthetic */ byte a;
@@ -52,9 +52,9 @@ public final class mx6 implements Parcelable.Creator {
             case 3:
                 return new MediaSessionCompat$Token(parcel.readParcelable(null), null);
             case 4:
-                yk7 yk7Var = new yk7(parcel);
-                yk7Var.a = parcel.readInt();
-                return yk7Var;
+                zk7 zk7Var = new zk7(parcel);
+                zk7Var.a = parcel.readInt();
+                return zk7Var;
             case 5:
                 return new ParcelImpl(parcel);
             case 6:
@@ -292,7 +292,7 @@ public final class mx6 implements Parcelable.Creator {
                     }
                 }
                 aye.m(parcel, z17);
-                return new vg7(i9, z);
+                return new wg7(i9, z);
         }
     }
 
@@ -308,7 +308,7 @@ public final class mx6 implements Parcelable.Creator {
             case 3:
                 return new MediaSessionCompat$Token[i];
             case 4:
-                return new yk7[i];
+                return new zk7[i];
             case 5:
                 return new ParcelImpl[i];
             case 6:
@@ -358,7 +358,7 @@ public final class mx6 implements Parcelable.Creator {
             case 28:
                 return new fj2[i];
             default:
-                return new vg7[i];
+                return new wg7[i];
         }
     }
 }

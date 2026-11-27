@@ -79,7 +79,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ju1 implements rb2 {
     public final /* synthetic */ zu1 a;
@@ -737,12 +737,12 @@ public final class ju1 implements rb2 {
                         String sb2 = sb.toString();
                         str2 = null;
                         z = 0;
-                        G.b(R.drawable.msg_link, ob6.M0(2131751727, null), new bcb((Object) ktbVar3, (Object) sb2, (byte) 11), false);
+                        G.b(R.drawable.msg_link, ob6.M0(2131751727, null), new hab((Object) ktbVar3, (Object) sb2, (byte) 12), false);
                     } else {
                         str2 = null;
                         z = 0;
                     }
-                    G.b(R.drawable.msg_copy, ob6.M0(2131751732, str2), new bcb((Object) ktbVar3, (Object) todoItem2, (byte) 12), z);
+                    G.b(R.drawable.msg_copy, ob6.M0(2131751732, str2), new hab((Object) ktbVar3, (Object) todoItem2, (byte) 13), z);
                 }
                 if (ktbVar3.H.u(zu1Var2.e)) {
                     G.b(R.drawable.msg_edit, ob6.M0(2131743729, null), new Runnable() { // from class: dtb
@@ -829,7 +829,7 @@ public final class ju1 implements rb2 {
                             }
                             z3 = true;
                         }
-                        z4 = (!z2 || zu1Var2.X7() || zu1Var2.e == null || !r47Var2.O3() || !r47Var2.p4() || r47Var2.Y2() || r47Var2.n4() || r47Var2.m4() || r47Var2.k.media_unread || r47Var2.E4() || ConnectionsManager.getInstance(zu1Var2.getCurrentAccount()).getCurrentTime() - r47Var2.k.date >= zu1Var2.getMessagesController().k4.W0.f() || (!xc2.n0(zu1Var2.e) && xc2.T(zu1Var2.e)) || (chatFull = zu1Var2.r8) == null || chatFull.participants_count > zu1Var2.getMessagesController().k4.V0.f() || (r47Var2.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest) || zu1Var2.g4 == 3 || !r47Var2.z() || xc2.p0(zu1Var2.e)) ? false : true;
+                        z4 = (!z2 || zu1Var2.X7() || zu1Var2.e == null || !r47Var2.O3() || !r47Var2.p4() || r47Var2.Y2() || r47Var2.n4() || r47Var2.m4() || r47Var2.k.media_unread || r47Var2.E4() || ConnectionsManager.getInstance(zu1Var2.getCurrentAccount()).getCurrentTime() - r47Var2.k.date >= zu1Var2.getMessagesController().l4.W0.f() || (!xc2.n0(zu1Var2.e) && xc2.T(zu1Var2.e)) || (chatFull = zu1Var2.r8) == null || chatFull.participants_count > zu1Var2.getMessagesController().l4.V0.f() || (r47Var2.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest) || zu1Var2.g4 == 3 || !r47Var2.z() || xc2.p0(zu1Var2.e)) ? false : true;
                         if (zu1Var2.e == null && !r47Var2.N3() && xc2.p0(zu1Var2.e)) {
                             z5 = z3;
                             if (xc2.A(zu1Var2.getCurrentAccount(), zu1Var2.e, 24)) {
@@ -838,7 +838,7 @@ public final class ju1 implements rb2 {
                                 r47Var2.Z0();
                                 if (!z2 && zu1Var2.e == null && zu1Var2.h == null && (user = zu1Var2.f) != null && !lbc.D(user) && !lbc.B(zu1Var2.f) && !lbc.u(zu1Var2.f)) {
                                     user2 = zu1Var2.f;
-                                    if (!user2.bot && !lbc.C(user2.id) && (((userFull = zu1Var2.s8) == null || !userFull.read_dates_private) && !zu1Var2.X7() && r47Var2.O3() && r47Var2.p4() && !r47Var2.Y2() && !r47Var2.n4() && !r47Var2.m4() && !r47Var2.k.media_unread && !r47Var2.E4() && zu1Var2.getConnectionsManager().getCurrentTime() - r47Var2.k.date < zu1Var2.getMessagesController().k4.X0.f() && !(r47Var2.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
+                                    if (!user2.bot && !lbc.C(user2.id) && (((userFull = zu1Var2.s8) == null || !userFull.read_dates_private) && !zu1Var2.X7() && r47Var2.O3() && r47Var2.p4() && !r47Var2.Y2() && !r47Var2.n4() && !r47Var2.m4() && !r47Var2.k.media_unread && !r47Var2.E4() && zu1Var2.getConnectionsManager().getCurrentTime() - r47Var2.k.date < zu1Var2.getMessagesController().l4.X0.f() && !(r47Var2.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
                                         z6 = true;
                                         TLRPC.User user322 = zu1Var2.f;
                                         boolean z9 = ((user322 == null && (lbc.B(user322) || lbc.u(zu1Var2.f))) || zu1Var2.X7() || !r47Var2.X2() || (r47Var2.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest)) ? false : true;
@@ -1178,8 +1178,8 @@ public final class ju1 implements rb2 {
         messageObject.k.summarizedOpen = !r1.summarizedOpen;
         messageObject.f6(true);
         zu1 zu1Var = this.a;
-        zu1Var.getMessagesStorage().U1(r47.B0(messageObject.k), messageObject.k);
-        zu1Var.getMessagesController().i4.g(messageObject, true, false);
+        zu1Var.getMessagesStorage().Z1(r47.B0(messageObject.k), messageObject.k);
+        zu1Var.getMessagesController().j4.g(messageObject, true, false);
         f(wb2Var, true, false, true);
     }
 
@@ -1232,7 +1232,7 @@ public final class ju1 implements rb2 {
                 r7a r7aVar = r7a.this;
                 final boolean z2 = z;
                 if (tL_error == null) {
-                    final jf7 messagesStorage = r7aVar.getMessagesStorage();
+                    final kf7 messagesStorage = r7aVar.getMessagesStorage();
                     r47 r47Var = messageObject;
                     final long B0 = r47.B0(r47Var.k);
                     final int e1 = r47Var.e1();
@@ -1241,7 +1241,7 @@ public final class ju1 implements rb2 {
                     final int currentTime = messagesStorage.getConnectionsManager().getCurrentTime();
                     to3 to3Var = messagesStorage.a;
                     final long j = M;
-                    to3Var.c(new Runnable() { // from class: pe7
+                    to3Var.c(new Runnable() { // from class: qe7
                         /* JADX WARN: Removed duplicated region for block: B:104:0x01a7  */
                         /* JADX WARN: Removed duplicated region for block: B:106:0x01ac  */
                         /* JADX WARN: Removed duplicated region for block: B:31:0x01a0 A[ORIG_RETURN, RETURN] */
@@ -1265,7 +1265,7 @@ public final class ju1 implements rb2 {
                             SQLiteCursor queryFinalized;
                             NativeByteBuffer byteBufferValue;
                             NativeByteBuffer byteBufferValue2;
-                            jf7 jf7Var = jf7.this;
+                            kf7 kf7Var = kf7.this;
                             long j2 = B0;
                             int i4 = e1;
                             long j3 = e;
@@ -1275,7 +1275,7 @@ public final class ju1 implements rb2 {
                             int i6 = currentTime;
                             SQLiteCursor sQLiteCursor3 = null;
                             try {
-                                sQLiteCursor = jf7Var.b.queryFinalized("SELECT data FROM messages_v2 WHERE uid = " + j2 + " AND mid = " + i4, new Object[0]);
+                                sQLiteCursor = kf7Var.b.queryFinalized("SELECT data FROM messages_v2 WHERE uid = " + j2 + " AND mid = " + i4, new Object[0]);
                                 try {
                                     if (sQLiteCursor.next() && (byteBufferValue2 = sQLiteCursor.byteBufferValue(0)) != null) {
                                         TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), true);
@@ -1284,8 +1284,8 @@ public final class ju1 implements rb2 {
                                         sQLiteCursor.dispose();
                                         TLRPC.MessageMedia messageMedia = TLdeserialize.media;
                                         if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
-                                            r47.Y5(jf7Var.currentAccount, j4, (TLRPC.TL_messageMediaToDo) messageMedia, i5, z3, i6);
-                                            sQLitePreparedStatement = jf7Var.b.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
+                                            r47.Y5(kf7Var.currentAccount, j4, (TLRPC.TL_messageMediaToDo) messageMedia, i5, z3, i6);
+                                            sQLitePreparedStatement = kf7Var.b.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
                                             try {
                                                 sQLitePreparedStatement.requery();
                                                 NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(TLdeserialize.getObjectSize());
@@ -1310,11 +1310,11 @@ public final class ju1 implements rb2 {
                                                     if (sQLitePreparedStatement2 != null) {
                                                         sQLitePreparedStatement2.dispose();
                                                         sQLitePreparedStatement3 = null;
-                                                        if (jf7Var.r0(5, j2)) {
+                                                        if (kf7Var.u0(5, j2)) {
                                                         }
                                                     } else {
                                                         sQLitePreparedStatement3 = sQLitePreparedStatement2;
-                                                        if (jf7Var.r0(5, j2)) {
+                                                        if (kf7Var.u0(5, j2)) {
                                                         }
                                                     }
                                                 } catch (Throwable th) {
@@ -1362,11 +1362,11 @@ public final class ju1 implements rb2 {
                             }
                             sQLitePreparedStatement3 = null;
                             try {
-                                if (jf7Var.r0(5, j2)) {
+                                if (kf7Var.u0(5, j2)) {
                                     try {
                                         sQLiteCursor2 = sQLiteCursor;
                                         try {
-                                            queryFinalized = jf7Var.b.queryFinalized("SELECT data FROM messages_topics WHERE uid = " + j2 + " AND mid = " + i4, new Object[0]);
+                                            queryFinalized = kf7Var.b.queryFinalized("SELECT data FROM messages_topics WHERE uid = " + j2 + " AND mid = " + i4, new Object[0]);
                                             try {
                                             } catch (Exception e5) {
                                                 e = e5;
@@ -1406,10 +1406,10 @@ public final class ju1 implements rb2 {
                                         byteBufferValue.reuse();
                                         TLRPC.MessageMedia messageMedia2 = TLdeserialize2.media;
                                         if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
-                                            r47.Y5(jf7Var.currentAccount, j4, (TLRPC.TL_messageMediaToDo) messageMedia2, i5, z3, i6);
+                                            r47.Y5(kf7Var.currentAccount, j4, (TLRPC.TL_messageMediaToDo) messageMedia2, i5, z3, i6);
                                             queryFinalized.dispose();
                                             try {
-                                                SQLitePreparedStatement executeFast = jf7Var.b.executeFast("UPDATE messages_topics SET data = ? WHERE mid = ? AND uid = ?");
+                                                SQLitePreparedStatement executeFast = kf7Var.b.executeFast("UPDATE messages_topics SET data = ? WHERE mid = ? AND uid = ?");
                                                 try {
                                                     executeFast.requery();
                                                     NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(TLdeserialize2.getObjectSize());
@@ -2184,7 +2184,7 @@ public final class ju1 implements rb2 {
                         arrayList5.add(l);
                     }
                 }
-                i19 i19Var = new i19(j19Var2, wb2Var, arrayList5, new z09(j19Var2, b, (byte) 3));
+                i19 i19Var = new i19(j19Var2, wb2Var, arrayList5, new yz8(j19Var2, b, (byte) 4));
                 i19Var.setBounds(0, 0, j19Var2.getMeasuredWidth(), j19Var2.getMeasuredHeight());
                 i19Var.setCallback(j19Var2);
                 if (hashMap.containsKey(b)) {
@@ -2245,7 +2245,7 @@ public final class ju1 implements rb2 {
     public final void U(wb2 wb2Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
         dq1 dq1Var;
         int i;
-        me7 me7Var;
+        oe7 oe7Var;
         r47 messageObject = wb2Var.getMessageObject();
         byte b = 1;
         if (!(messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview)) {
@@ -2307,7 +2307,7 @@ public final class ju1 implements rb2 {
         }
         vnb F = jxa.F();
         if (messageObject == null || context == null) {
-            me7Var = null;
+            oe7Var = null;
         } else {
             long B0 = r47.B0(messageObject.k);
             int e1 = messageObject.e1();
@@ -2323,10 +2323,10 @@ public final class ju1 implements rb2 {
                 tL_payments_getPaymentForm.flags |= 1;
             }
             tL_payments_getPaymentForm.invoice = tL_inputInvoiceMessage;
-            me7Var = new me7((Object) v, ConnectionsManager.getInstance(v.a).sendRequest(tL_payments_getPaymentForm, new au0((Object) v, (Object) messageObject, (Object) tL_inputInvoiceMessage, (Object) go1Var, (byte) 22)), (byte) 18);
+            oe7Var = new oe7((Object) v, ConnectionsManager.getInstance(v.a).sendRequest(tL_payments_getPaymentForm, new au0((Object) v, (Object) messageObject, (Object) tL_inputInvoiceMessage, (Object) go1Var, (byte) 22)), (byte) 18);
         }
-        if (me7Var != null) {
-            dq1Var.b = me7Var;
+        if (oe7Var != null) {
+            dq1Var.b = oe7Var;
             dq1Var.d();
         }
     }
@@ -2545,8 +2545,8 @@ public final class ju1 implements rb2 {
                 return;
             }
             if (i == 1) {
-                String x = ob6.x(zu1Var.getMessagesController().H3, true);
-                if (zu1Var.getMessagesController().H3 > 0) {
+                String x = ob6.x(zu1Var.getMessagesController().I3, true);
+                if (zu1Var.getMessagesController().I3 > 0) {
                     i3 = ((e) zu1Var).currentAccount;
                     S2 = hl.S2(ob6.G(u2c.g(i3), "TranscriptionTrialLeftUntil", x));
                 } else {
@@ -2558,9 +2558,9 @@ public final class ju1 implements rb2 {
                 return;
             }
             if (i == 2 || i == 3) {
-                String x2 = ob6.x(zu1Var.getMessagesController().H3, true);
+                String x2 = ob6.x(zu1Var.getMessagesController().I3, true);
                 d31 b0 = d31.b0(zu1Var);
-                SpannableStringBuilder append = new SpannableStringBuilder().append((CharSequence) hl.S2(ob6.G(zu1Var.getMessagesController().G3, "TranscriptionTrialEnd", new Object[0]))).append((CharSequence) " ").append(i == 2 ? hl.N2(ob6.M0(2131743623, null), -1, 0, new st1(this, b2), null) : zu1Var.getMessagesController().H3 <= 0 ? "" : hl.N2(ob6.a0(null, null, 2131743622, x2), -1, 0, new st1(this, b), null));
+                SpannableStringBuilder append = new SpannableStringBuilder().append((CharSequence) hl.S2(ob6.G(zu1Var.getMessagesController().H3, "TranscriptionTrialEnd", new Object[0]))).append((CharSequence) " ").append(i == 2 ? hl.N2(ob6.M0(2131743623, null), -1, 0, new st1(this, b2), null) : zu1Var.getMessagesController().I3 <= 0 ? "" : hl.N2(ob6.a0(null, null, 2131743622, x2), -1, 0, new st1(this, b), null));
                 b0.getClass();
                 c21 c21Var = new c21(b0.X(), b0.c);
                 c21Var.g(R.raw.transcribe, 36, 36, new String[0]);
@@ -2824,7 +2824,7 @@ public final class ju1 implements rb2 {
         id idVar = new id(3, null, zu1Var.getParentActivity());
         TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
         getgroupcall.call = tL_inputGroupCallInviteMessage;
-        getgroupcall.limit = zu1Var.getMessagesController().k4.E3.f();
+        getgroupcall.limit = zu1Var.getMessagesController().l4.E3.f();
         idVar.setOnCancelListener(new gt0(this, zu1Var.getConnectionsManager().sendRequest(getgroupcall, new in0((Object) this, (Object) idVar, (Object) hashSet, (Object) tL_inputGroupCallInviteMessage, (Object) messageObject, (byte) 5)), (byte) 2));
         idVar.q(600L);
     }
@@ -3551,7 +3551,7 @@ public final class ju1 implements rb2 {
                         ky9Var2.x = kfcVar3;
                         kfcVar3.K = new ve9((Object) ky9Var2, (byte) 6);
                         if (ky9Var2.W != null) {
-                            kfcVar3.L = new i09((Object) ky9Var2, (byte) 10);
+                            kfcVar3.L = new j09((Object) ky9Var2, (byte) 10);
                         }
                         if (ky9Var2.T) {
                             kfcVar3.z0(ky9Var2.Q);
@@ -3739,7 +3739,7 @@ public final class ju1 implements rb2 {
     public final void k2() {
         zu1 zu1Var = this.a;
         if (!zu1Var.getUserConfig().p()) {
-            d31.b0(zu1Var).Q(R.raw.star_premium_2, 36, hl.N2(ob6.H(',', "UnlockSimilarChannelsPremium", zu1Var.getMessagesController().k4.Z1.f()), -1, 0, new st1(this, (byte) 4), null)).j();
+            d31.b0(zu1Var).Q(R.raw.star_premium_2, 36, hl.N2(ob6.H(',', "UnlockSimilarChannelsPremium", zu1Var.getMessagesController().l4.Z1.f()), -1, 0, new st1(this, (byte) 4), null)).j();
             return;
         }
         Bundle bundle = new Bundle();
@@ -4281,18 +4281,18 @@ public final class ju1 implements rb2 {
             }
             uc7 messagesController = this.a.getMessagesController();
             gt gtVar = new gt(this, messageObject, tt1Var, (byte) 11);
-            TLRPC.EmojiGameInfo emojiGameInfo = messagesController.l5;
+            TLRPC.EmojiGameInfo emojiGameInfo = messagesController.m5;
             if (emojiGameInfo != null) {
                 gtVar.a(Boolean.valueOf(emojiGameInfo instanceof TLRPC.TL_emojiGameDiceInfo));
                 return;
             }
-            ArrayList arrayList = messagesController.k5;
+            ArrayList arrayList = messagesController.l5;
             if (arrayList != null) {
                 arrayList.add(gtVar);
                 return;
             }
             ArrayList arrayList2 = new ArrayList();
-            messagesController.k5 = arrayList2;
+            messagesController.l5 = arrayList2;
             arrayList2.add(gtVar);
             messagesController.getConnectionsManager().sendRequestTyped(new TLRPC.TL_messages_getEmojiGameInfo(), new ic(b2), new f87(messagesController, (byte) 5));
             return;
@@ -4476,7 +4476,7 @@ public final class ju1 implements rb2 {
                         Activity parentActivity2 = this.a.getParentActivity();
                         Uri parse = Uri.parse(messageObject.T0);
                         zu1 zu1Var3 = this.a;
-                        m01.t(parentActivity2, parse, true, false, false, zu1Var3.pc, null, false, zu1Var3.getMessagesController().k4.I2.f, false, false);
+                        m01.t(parentActivity2, parse, true, false, false, zu1Var3.pc, null, false, zu1Var3.getMessagesController().l4.I2.f, false, false);
                         return;
                     }
                     return;
@@ -4883,7 +4883,7 @@ public final class ju1 implements rb2 {
                 Activity parentActivity2 = this.a.getParentActivity();
                 Uri parse = Uri.parse(messageObject.T0);
                 zu1 zu1Var4 = this.a;
-                m01.t(parentActivity2, parse, true, false, false, zu1Var4.pc, null, false, zu1Var4.getMessagesController().k4.I2.f, false, false);
+                m01.t(parentActivity2, parse, true, false, false, zu1Var4.pc, null, false, zu1Var4.getMessagesController().l4.I2.f, false, false);
                 return;
             }
             return;
@@ -5289,9 +5289,9 @@ public final class ju1 implements rb2 {
                         String sb2 = sb.toString();
                         str2 = null;
                         z8 = false;
-                        H.b(R.drawable.msg_link, ob6.M0(2131751727, null), new h68(ji8Var2, sb2, (byte) 13), false);
+                        H.b(R.drawable.msg_link, ob6.M0(2131751727, null), new a58(ji8Var2, sb2, (byte) 14), false);
                     }
-                    H.b(R.drawable.msg_copy, ob6.M0(2131751732, str2), new h68(ji8Var2, pollAnswer3, (byte) 14), z8);
+                    H.b(R.drawable.msg_copy, ob6.M0(2131751732, str2), new a58(ji8Var2, pollAnswer3, (byte) 15), z8);
                     TLRPC.Peer peer = pollAnswer3.added_by;
                     if (peer != null) {
                         long n = wf3.n(peer);
@@ -5299,18 +5299,18 @@ public final class ju1 implements rb2 {
                         ll0Var = ll0Var3;
                         long currentTime = ConnectionsManager.getInstance(ji8Var2.I.K1).getCurrentTime();
                         zu1 zu1Var4 = zu1Var;
-                        long g = uc7.s1(ji8Var2.I.K1).k4.V.g(TimeUnit.SECONDS) + pollAnswer3.date;
+                        long g = uc7.s1(ji8Var2.I.K1).l4.V.g(TimeUnit.SECONDS) + pollAnswer3.date;
                         if (!r47.l3(ji8Var2.I.k)) {
                             TLRPC.Poll poll2 = tL_messageMediaPoll.poll;
                             if (!poll2.closed && (poll2.creator || (n == e && currentTime < g))) {
-                                H.b(R.drawable.msg_delete, ob6.M0(2131751563, null), new h68(ji8Var2, bArr2, (byte) 15), true);
+                                H.b(R.drawable.msg_delete, ob6.M0(2131751563, null), new a58(ji8Var2, bArr2, (byte) 16), true);
                             }
                         }
                         H.j();
                         TLObject b22 = uc7.s1(ji8Var2.I.K1).b2(n);
                         SpannableStringBuilder R2 = hl.R2(ob6.V(null, null, 2131746908, wf3.t(b22), ob6.x(pollAnswer3.date, true)));
                         zu1Var = zu1Var4;
-                        cq6 cq6Var = new cq6((Object) ji8Var2, n, (Object) zu1Var, (byte) 22);
+                        cq6 cq6Var = new cq6((Object) ji8Var2, n, (Object) zu1Var, (byte) 23);
                         Context context = H.e;
                         FrameLayout frameLayout = new FrameLayout(context);
                         int i10 = aob.i6;
@@ -5386,7 +5386,7 @@ public final class ju1 implements rb2 {
                     z = false;
                 }
                 boolean z12 = z;
-                boolean z13 = (z11 || zu1Var.X7() || zu1Var.e == null || !r47Var5.O3() || !r47Var5.p4() || r47Var5.Y2() || r47Var5.n4() || r47Var5.m4() || r47Var5.k.media_unread || r47Var5.E4() || ConnectionsManager.getInstance(zu1Var.getCurrentAccount()).getCurrentTime() - r47Var5.k.date >= zu1Var.getMessagesController().k4.W0.f() || (!xc2.n0(zu1Var.e) && xc2.T(zu1Var.e)) || (chatFull = zu1Var.r8) == null || chatFull.participants_count > zu1Var.getMessagesController().k4.V0.f() || (r47Var5.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest) || zu1Var.g4 == 3 || !r47Var5.z() || xc2.p0(zu1Var.e)) ? false : true;
+                boolean z13 = (z11 || zu1Var.X7() || zu1Var.e == null || !r47Var5.O3() || !r47Var5.p4() || r47Var5.Y2() || r47Var5.n4() || r47Var5.m4() || r47Var5.k.media_unread || r47Var5.E4() || ConnectionsManager.getInstance(zu1Var.getCurrentAccount()).getCurrentTime() - r47Var5.k.date >= zu1Var.getMessagesController().l4.W0.f() || (!xc2.n0(zu1Var.e) && xc2.T(zu1Var.e)) || (chatFull = zu1Var.r8) == null || chatFull.participants_count > zu1Var.getMessagesController().l4.V0.f() || (r47Var5.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest) || zu1Var.g4 == 3 || !r47Var5.z() || xc2.p0(zu1Var.e)) ? false : true;
                 if (zu1Var.e == null || r47Var5.N3() || !xc2.p0(zu1Var.e) || !xc2.A(zu1Var.getCurrentAccount(), zu1Var.e, 24)) {
                     ll0Var2 = ll0Var4;
                 } else {
@@ -5396,7 +5396,7 @@ public final class ju1 implements rb2 {
                 }
                 if (!z11 && zu1Var.e == null && zu1Var.h == null && (user = zu1Var.f) != null && !lbc.D(user) && !lbc.B(zu1Var.f) && !lbc.u(zu1Var.f)) {
                     TLRPC.User user2 = zu1Var.f;
-                    if (!user2.bot && !lbc.C(user2.id) && (((userFull = zu1Var.s8) == null || !userFull.read_dates_private) && !zu1Var.X7() && r47Var5.O3() && r47Var5.p4() && !r47Var5.Y2() && !r47Var5.n4() && !r47Var5.m4() && !r47Var5.k.media_unread && !r47Var5.E4() && zu1Var.getConnectionsManager().getCurrentTime() - r47Var5.k.date < zu1Var.getMessagesController().k4.X0.f() && !(r47Var5.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
+                    if (!user2.bot && !lbc.C(user2.id) && (((userFull = zu1Var.s8) == null || !userFull.read_dates_private) && !zu1Var.X7() && r47Var5.O3() && r47Var5.p4() && !r47Var5.Y2() && !r47Var5.n4() && !r47Var5.m4() && !r47Var5.k.media_unread && !r47Var5.E4() && zu1Var.getConnectionsManager().getCurrentTime() - r47Var5.k.date < zu1Var.getMessagesController().l4.X0.f() && !(r47Var5.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
                         z2 = true;
                         TLRPC.User user3 = zu1Var.f;
                         boolean z14 = ((user3 == null && (lbc.B(user3) || lbc.u(zu1Var.f))) || zu1Var.X7() || !r47Var5.X2() || (r47Var5.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest)) ? false : true;
@@ -5769,7 +5769,7 @@ public final class ju1 implements rb2 {
             kl8Var.p2 = Integer.valueOf(zu1Var.getThemedColor(aob.r8[f]));
         } else {
             i2 = ((e) zu1Var).currentAccount;
-            lc7 lc7Var = uc7.s1(i2).E3;
+            lc7 lc7Var = uc7.s1(i2).F3;
             kc7 d = lc7Var != null ? lc7Var.d(f) : null;
             kl8Var.p2 = d != null ? Integer.valueOf(d.f()) : null;
         }

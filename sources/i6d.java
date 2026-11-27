@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class i6d implements q6d, k05 {
     public final ReentrantLock a;
@@ -45,7 +45,7 @@ public final class i6d implements q6d, k05 {
         }
         this.e = new b6d(this, looper, (byte) 1);
         this.b = reentrantLock.newCondition();
-        this.m = new k09(this, (byte) 21);
+        this.m = new l09(this, (byte) 21);
     }
 
     @Override // q6d
@@ -92,7 +92,7 @@ public final class i6d implements q6d, k05 {
     public final void h() {
         this.a.lock();
         try {
-            this.m = new k09(this, (byte) 21);
+            this.m = new l09(this, (byte) 21);
             this.m.H1();
             this.b.signalAll();
         } finally {

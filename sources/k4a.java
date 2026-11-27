@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class k4a {
     public static final /* synthetic */ AtomicLongFieldUpdater b;
@@ -50,23 +50,23 @@ public class k4a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(vj7 vj7Var) {
+    public final void a(wj7 wj7Var) {
         Object b2;
-        f9c f9cVar;
+        g9c g9cVar;
         long j;
         i4a i4aVar;
         long j2;
         long j3;
-        va1 va1Var = vj7Var.a;
-        wj7 wj7Var = vj7Var.b;
+        va1 va1Var = wj7Var.a;
+        xj7 xj7Var = wj7Var.b;
         while (true) {
             int andDecrement = d.getAndDecrement(this);
             if (andDecrement <= 1) {
                 byte b3 = 0;
-                f9c f9cVar2 = f9c.a;
+                g9c g9cVar2 = g9c.a;
                 if (andDecrement > 0) {
-                    wj7.h.set(wj7Var, null);
-                    va1Var.B(f9cVar2, va1Var.c, new ua1(new a2(wj7Var, vj7Var), b3));
+                    xj7.h.set(xj7Var, null);
+                    va1Var.B(g9cVar2, va1Var.c, new ua1(new a2(xj7Var, wj7Var), b3));
                     return;
                 }
                 Unsafe unsafe = fx.a;
@@ -78,13 +78,13 @@ public class k4a {
                 while (true) {
                     b2 = td3.b(m4aVar, j5, i4aVar2);
                     if (mye.b(b2)) {
-                        f9cVar = f9cVar2;
+                        g9cVar = g9cVar2;
                         break;
                     }
                     hz9 a = mye.a(b2);
                     while (true) {
                         hz9 hz9Var = (hz9) fx.a.getObjectVolatile(this, j4);
-                        f9cVar = f9cVar2;
+                        g9cVar = g9cVar2;
                         j = j4;
                         if (hz9Var.d >= a.d) {
                             break;
@@ -110,30 +110,30 @@ public class k4a {
                         j4 = j3;
                         i4aVar2 = i4aVar;
                         j5 = j2;
-                        f9cVar2 = f9cVar;
+                        g9cVar2 = g9cVar;
                     }
-                    f9cVar2 = f9cVar;
+                    g9cVar2 = g9cVar;
                     j4 = j;
                 }
                 m4a m4aVar2 = (m4a) mye.a(b2);
                 AtomicReferenceArray atomicReferenceArray = m4aVar2.g;
                 int i = (int) (andIncrement % l4a.f);
-                while (!atomicReferenceArray.compareAndSet(i, null, vj7Var)) {
+                while (!atomicReferenceArray.compareAndSet(i, null, wj7Var)) {
                     if (atomicReferenceArray.get(i) != null) {
                         ow5 ow5Var = l4a.b;
                         ow5 ow5Var2 = l4a.c;
                         while (!atomicReferenceArray.compareAndSet(i, ow5Var, ow5Var2)) {
-                            f9c f9cVar3 = f9cVar;
+                            g9c g9cVar3 = g9cVar;
                             if (atomicReferenceArray.get(i) == ow5Var) {
-                                f9cVar = f9cVar3;
+                                g9cVar = g9cVar3;
                             }
                         }
-                        wj7.h.set(wj7Var, null);
-                        va1Var.B(f9cVar, va1Var.c, new ua1((Object) new a2(wj7Var, vj7Var), (byte) 0));
+                        xj7.h.set(xj7Var, null);
+                        va1Var.B(g9cVar, va1Var.c, new ua1((Object) new a2(xj7Var, wj7Var), (byte) 0));
                         return;
                     }
                 }
-                vj7Var.a(m4aVar2, i);
+                wj7Var.a(m4aVar2, i);
                 return;
             }
         }
@@ -250,7 +250,7 @@ public class k4a {
                         return;
                     }
                     ta1 ta1Var = (ta1) andSet;
-                    ow5 b3 = ta1Var.b(f9c.a, k4aVar.a);
+                    ow5 b3 = ta1Var.b(g9c.a, k4aVar.a);
                     if (b3 != null) {
                         ta1Var.e(b3);
                     }

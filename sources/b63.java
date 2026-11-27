@@ -23,7 +23,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class b63 extends DefaultHandler implements iy7 {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -195,7 +195,7 @@ public final class b63 extends DefaultHandler implements iy7 {
                     } else {
                         String[] e0 = gcc.e0(str);
                         if (e0.length != 0) {
-                            List d0 = new um4(new k09(new ck1('.', (byte) 0), (byte) 12)).d0(jrd.c(e0[0].trim()));
+                            List d0 = new um4(new l09(new ck1('.', (byte) 0), (byte) 12)).d0(jrd.c(e0[0].trim()));
                             if (d0.size() == 4 && ((String) d0.get(0)).equals("ac-4")) {
                                 String str2 = (String) d0.get(3);
                                 str2.getClass();
@@ -1543,11 +1543,11 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                         str91 = str37;
                                                                                                         j35 = j18;
                                                                                                         str90 = str31;
-                                                                                                    } else if (dg7.i(str93)) {
+                                                                                                    } else if (eg7.i(str93)) {
                                                                                                         if (str32 != null) {
                                                                                                             for (String str110 : gcc.e0(str32)) {
-                                                                                                                d2 = dg7.d(str110);
-                                                                                                                if (d2 != null && dg7.i(d2)) {
+                                                                                                                d2 = eg7.d(str110);
+                                                                                                                if (d2 != null && eg7.i(d2)) {
                                                                                                                     str40 = d2;
                                                                                                                     str41 = str93;
                                                                                                                     if ("audio/eac3".equals(str40)) {
@@ -1575,7 +1575,7 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                                     }
                                                                                                                     str42 = str32;
                                                                                                                     str43 = str97;
-                                                                                                                    if (dg7.j(str42, str43)) {
+                                                                                                                    if (eg7.j(str42, str43)) {
                                                                                                                         bm2 x = gcc.x(str42, str43, str99);
                                                                                                                         String str113 = str43 != null ? str43 : str42;
                                                                                                                         bm2Var = x;
@@ -1731,8 +1731,8 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                                                     }
                                                                                                                                     jo4 jo4Var = new jo4();
                                                                                                                                     jo4Var.a = attributeValue24;
-                                                                                                                                    jo4Var.r = dg7.n(str116);
-                                                                                                                                    jo4Var.s = dg7.n(str40);
+                                                                                                                                    jo4Var.r = eg7.n(str116);
+                                                                                                                                    jo4Var.s = eg7.n(str40);
                                                                                                                                     jo4Var.k = str42;
                                                                                                                                     jo4Var.j = i6;
                                                                                                                                     jo4Var.e = i29;
@@ -1742,17 +1742,17 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                                                     jo4Var.d = str120;
                                                                                                                                     jo4Var.U = pair != null ? ((Integer) pair.first).intValue() : -1;
                                                                                                                                     jo4Var.V = pair != null ? ((Integer) pair.second).intValue() : -1;
-                                                                                                                                    if (dg7.m(str40)) {
+                                                                                                                                    if (eg7.m(str40)) {
                                                                                                                                         jo4Var.z = parseInt;
                                                                                                                                         jo4Var.A = parseInt2;
                                                                                                                                         jo4Var.a(j41);
                                                                                                                                     } else {
                                                                                                                                         int i38 = parseInt;
                                                                                                                                         int i39 = parseInt2;
-                                                                                                                                        if (dg7.i(str40)) {
+                                                                                                                                        if (eg7.i(str40)) {
                                                                                                                                             jo4Var.M = i8;
                                                                                                                                             jo4Var.O = i5;
-                                                                                                                                        } else if (dg7.l(str40)) {
+                                                                                                                                        } else if (eg7.l(str40)) {
                                                                                                                                             if ("application/cea-608".equals(str40)) {
                                                                                                                                                 int i40 = i3;
                                                                                                                                                 while (i40 < arrayList64.size()) {
@@ -1795,7 +1795,7 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                                                             }
                                                                                                                                             j33 = j7;
                                                                                                                                             str6 = str2;
-                                                                                                                                        } else if (dg7.k(str40)) {
+                                                                                                                                        } else if (eg7.k(str40)) {
                                                                                                                                             jo4Var.z = i38;
                                                                                                                                             jo4Var.A = i39;
                                                                                                                                         }
@@ -1803,11 +1803,11 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                                                     ko4 ko4Var = new ko4(jo4Var);
                                                                                                                                     nz9 mz9Var = nz9Var3 != null ? nz9Var3 : new mz9(null, 1L, 0L, 0L, 0L);
                                                                                                                                     String str125 = ko4Var.s;
-                                                                                                                                    if (str125 != null && dg7.l(str125) && mz9Var.c != 0) {
+                                                                                                                                    if (str125 != null && eg7.l(str125) && mz9Var.c != 0) {
                                                                                                                                         mz9Var = mz9Var.a();
                                                                                                                                     }
                                                                                                                                     a63 a63Var = new a63(ko4Var, !arrayList19.isEmpty() ? arrayList19 : arrayList18, mz9Var, str39, arrayList20, arrayList53, arrayList24, arrayList23);
-                                                                                                                                    i21 = dg7.h(ko4Var.t);
+                                                                                                                                    i21 = eg7.h(ko4Var.t);
                                                                                                                                     int i42 = i7;
                                                                                                                                     if (i42 != -1) {
                                                                                                                                         if (i21 != -1) {
@@ -1843,7 +1843,7 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                         }
                                                                                                         str42 = str32;
                                                                                                         str43 = str97;
-                                                                                                        if (dg7.j(str42, str43)) {
+                                                                                                        if (eg7.j(str42, str43)) {
                                                                                                         }
                                                                                                         i9 = 0;
                                                                                                         int i292 = 0;
@@ -1856,18 +1856,18 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                             str41 = str114;
                                                                                                             j14 = j19;
                                                                                                         }
-                                                                                                    } else if (dg7.m(str93)) {
+                                                                                                    } else if (eg7.m(str93)) {
                                                                                                         if (str32 != null) {
                                                                                                             for (String str126 : gcc.e0(str32)) {
-                                                                                                                d2 = dg7.d(str126);
-                                                                                                                if (d2 != null && dg7.m(d2)) {
+                                                                                                                d2 = eg7.d(str126);
+                                                                                                                if (d2 != null && eg7.m(d2)) {
                                                                                                                     str40 = d2;
                                                                                                                     str41 = str93;
                                                                                                                     if ("audio/eac3".equals(str40)) {
                                                                                                                     }
                                                                                                                     str42 = str32;
                                                                                                                     str43 = str97;
-                                                                                                                    if (dg7.j(str42, str43)) {
+                                                                                                                    if (eg7.j(str42, str43)) {
                                                                                                                     }
                                                                                                                     i9 = 0;
                                                                                                                     int i2922 = 0;
@@ -1890,7 +1890,7 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                         }
                                                                                                         str42 = str32;
                                                                                                         str43 = str97;
-                                                                                                        if (dg7.j(str42, str43)) {
+                                                                                                        if (eg7.j(str42, str43)) {
                                                                                                         }
                                                                                                         i9 = 0;
                                                                                                         int i29222 = 0;
@@ -1904,13 +1904,13 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                             j14 = j19;
                                                                                                         }
                                                                                                     } else {
-                                                                                                        if (dg7.l(str93) || dg7.k(str93)) {
+                                                                                                        if (eg7.l(str93) || eg7.k(str93)) {
                                                                                                             str40 = str93;
                                                                                                             str41 = str40;
                                                                                                         } else {
                                                                                                             str41 = str93;
                                                                                                             if ("application/mp4".equals(str41)) {
-                                                                                                                str40 = dg7.d(str32);
+                                                                                                                str40 = eg7.d(str32);
                                                                                                                 if ("text/vtt".equals(str40)) {
                                                                                                                     str40 = "application/x-mp4-vtt";
                                                                                                                 }
@@ -1922,7 +1922,7 @@ public final class b63 extends DefaultHandler implements iy7 {
                                                                                                         }
                                                                                                         str42 = str32;
                                                                                                         str43 = str97;
-                                                                                                        if (dg7.j(str42, str43)) {
+                                                                                                        if (eg7.j(str42, str43)) {
                                                                                                         }
                                                                                                         i9 = 0;
                                                                                                         int i292222 = 0;

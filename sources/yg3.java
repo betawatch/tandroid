@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class yg3 implements r69 {
     public final /* synthetic */ byte a;
@@ -25,11 +25,11 @@ public final /* synthetic */ class yg3 implements r69 {
             case 0:
                 Object obj = uj3Var.D0.y0.G(i).H;
                 if (!(obj instanceof r47)) {
-                    if (obj instanceof p5b) {
-                        p5b p5bVar = (p5b) obj;
+                    if (obj instanceof q5b) {
+                        q5b q5bVar = (q5b) obj;
                         Bundle j = qu6.j(3, TeXSymbolParser.TYPE_ATTR);
-                        j.putString("hashtag", p5bVar.C);
-                        j.putInt("storiesCount", p5bVar.J);
+                        j.putString("hashtag", q5bVar.C);
+                        j.putInt("storiesCount", q5bVar.J);
                         uj3Var.presentFragment(new em6(j, null));
                         break;
                     }

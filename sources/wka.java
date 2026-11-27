@@ -12,9 +12,9 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public class wka extends FrameLayout implements bl7 {
+public class wka extends FrameLayout implements cl7 {
     public final g79 E;
     public d79 F;
     public RecyclerView G;
@@ -50,23 +50,23 @@ public class wka extends FrameLayout implements bl7 {
     public long h;
     public boolean h0;
     public boolean i0;
-    public final i09 j0;
+    public final j09 j0;
     public final e98 k0;
     public final es1 l0;
     public int n;
     public int r;
     public final RectF s;
     public final d26 w;
-    public final l09 x;
+    public final m09 x;
     public final int[] y;
 
     public wka(Context context) {
         super(context);
         this.s = new RectF();
-        this.x = new l09((byte) 3);
+        this.x = new m09((byte) 3);
         this.y = new int[2];
         this.E = new g79();
-        this.j0 = new i09((Object) this, (byte) 13);
+        this.j0 = new j09((Object) this, (byte) 13);
         this.k0 = new e98(this, (byte) 22);
         this.l0 = new es1(this, (byte) 5);
         setClipChildren(false);
@@ -549,18 +549,18 @@ public class wka extends FrameLayout implements bl7 {
         wkaVar.w.invalidate();
     }
 
-    @Override // al7
+    @Override // bl7
     public final void k(int i, View view) {
         f(i == 0 ? "NESTED_STOP_TOUCH" : "NESTED_STOP_NON_TOUCH", view, 0, 0, true);
-        l09 l09Var = this.x;
+        m09 m09Var = this.x;
         if (i == 1) {
-            l09Var.c = 0;
+            m09Var.c = 0;
         } else {
-            l09Var.b = 0;
+            m09Var.b = 0;
         }
     }
 
-    @Override // bl7
+    @Override // cl7
     public final void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
         d79 d79Var;
         if (this.R != 0 || (view != (d79Var = this.F) && view != this.G)) {
@@ -574,17 +574,17 @@ public class wka extends FrameLayout implements bl7 {
         }
         this.Q = view;
         try {
-            i09 i09Var = this.j0;
+            j09 j09Var = this.j0;
             int i6 = 0;
             boolean z = view == d79Var;
             if (z && i2 > 0 && i4 > 0) {
-                wka wkaVar = (wka) i09Var.b;
+                wka wkaVar = (wka) j09Var.b;
                 ska skaVar = wkaVar.O;
                 if (skaVar != null && skaVar.c() != -1) {
                     i6 = wkaVar.u(wkaVar.G, i4);
                 }
             } else if (!z && i4 < 0) {
-                wka wkaVar2 = (wka) i09Var.b;
+                wka wkaVar2 = (wka) j09Var.b;
                 i6 = wkaVar2.u(wkaVar2.F, i4);
             }
             iArr[1] = iArr[1] + i6;
@@ -595,7 +595,7 @@ public class wka extends FrameLayout implements bl7 {
         }
     }
 
-    @Override // al7
+    @Override // bl7
     public final void m(View view, int i, int i2, int i3, int i4, int i5) {
         int[] iArr = this.y;
         iArr[1] = 0;
@@ -603,7 +603,7 @@ public class wka extends FrameLayout implements bl7 {
         l(view, i, i2, i3, i4, i5, iArr);
     }
 
-    @Override // al7
+    @Override // bl7
     public final boolean n(View view, View view2, int i, int i2) {
         boolean z = false;
         boolean z2 = (i & 2) != 0;
@@ -694,13 +694,13 @@ public class wka extends FrameLayout implements bl7 {
         return (q79.y(m) + this.F.getTop()) - ((ViewGroup.MarginLayoutParams) ((r79) m.getLayoutParams())).topMargin;
     }
 
-    @Override // al7
+    @Override // bl7
     public final void q(View view, View view2, int i, int i2) {
-        l09 l09Var = this.x;
+        m09 m09Var = this.x;
         if (i2 == 1) {
-            l09Var.c = i;
+            m09Var.c = i;
         } else {
-            l09Var.b = i;
+            m09Var.b = i;
         }
     }
 
@@ -708,7 +708,7 @@ public class wka extends FrameLayout implements bl7 {
     
         if (r9 <= 0.5f) goto L21;
      */
-    @Override // al7
+    @Override // bl7
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -725,29 +725,29 @@ public class wka extends FrameLayout implements bl7 {
         }
         this.Q = view;
         try {
-            i09 i09Var = this.j0;
+            j09 j09Var = this.j0;
             int i4 = 0;
             if (view == d79Var) {
                 if (i2 >= 0) {
-                    wka wkaVar = (wka) i09Var.b;
+                    wka wkaVar = (wka) j09Var.b;
                     float p = wkaVar.p();
                     if (!Float.isInfinite(p)) {
                         p = Math.max(0.0f, p - wkaVar.V);
                     }
                 }
-                wka wkaVar2 = (wka) i09Var.b;
+                wka wkaVar2 = (wka) j09Var.b;
                 ska skaVar = wkaVar2.O;
                 if (skaVar != null && skaVar.c() != -1) {
                     i4 = wkaVar2.u(wkaVar2.G, i2);
                 }
             } else if (i2 > 0) {
-                wka wkaVar3 = (wka) i09Var.b;
+                wka wkaVar3 = (wka) j09Var.b;
                 float p2 = wkaVar3.p();
                 if (!Float.isInfinite(p2)) {
                     p2 = Math.max(0.0f, p2 - wkaVar3.V);
                 }
                 int min = Float.isInfinite(p2) ? i2 : Math.min(i2, Math.max(0, Math.round(p2)));
-                wka wkaVar4 = (wka) i09Var.b;
+                wka wkaVar4 = (wka) j09Var.b;
                 i4 = wkaVar4.u(wkaVar4.F, min);
             }
             iArr[1] = iArr[1] + i4;

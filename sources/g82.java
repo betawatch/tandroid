@@ -16,7 +16,7 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class g82 extends Drawable {
     public final boolean a;
@@ -24,7 +24,7 @@ public final class g82 extends Drawable {
     public int c = jn7.d4;
     public final float d;
     public final nl e;
-    public final hh7 f;
+    public final ih7 f;
     public final TLRPC.WallPaper g;
     public boolean h;
     public boolean i;
@@ -45,10 +45,10 @@ public final class g82 extends Drawable {
             this.d = wallPaperSettings2.intensity / 100.0f;
         }
         if ((z3 || wallPaper.document == null) && (wallPaperSettings = wallPaper.settings) != null && wallPaperSettings.background_color != 0) {
-            hh7 hh7Var = new hh7();
-            this.f = hh7Var;
+            ih7 ih7Var = new ih7();
+            this.f = ih7Var;
             TLRPC.WallPaperSettings wallPaperSettings3 = wallPaper.settings;
-            hh7Var.n(true, wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
+            ih7Var.n(true, wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
             if (wallPaper.document != null) {
                 ez3.o(yac.t0, wallPaper.id, new rx1((Object) this, (Object) wallPaper, (byte) 7), wallPaper);
                 return;
@@ -128,9 +128,9 @@ public final class g82 extends Drawable {
                     int o3 = vm2.o(wallPaper.settings.third_background_color, jn7.d4);
                     int i3 = wallPaper.settings.fourth_background_color;
                     int o4 = i3 != 0 ? vm2.o(i3, jn7.d4) : 0;
-                    hh7 hh7Var = new hh7();
-                    hh7Var.n(true, o, o2, o3, o4);
-                    a = new BitmapDrawable(hh7Var.k);
+                    ih7 ih7Var = new ih7();
+                    ih7Var.n(true, o, o2, o3, o4);
+                    a = new BitmapDrawable(ih7Var.k);
                 }
             }
         }
@@ -159,9 +159,9 @@ public final class g82 extends Drawable {
 
     public final Drawable c(boolean z) {
         Drawable drawable;
-        hh7 hh7Var = this.f;
-        if (hh7Var != null) {
-            return hh7Var;
+        ih7 ih7Var = this.f;
+        if (ih7Var != null) {
+            return ih7Var;
         }
         nl nlVar = this.e;
         if (z && (drawable = nlVar.n0) != null) {
@@ -173,11 +173,11 @@ public final class g82 extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        hh7 hh7Var = this.f;
-        if (hh7Var != null) {
-            hh7Var.setBounds(getBounds());
-            hh7Var.setAlpha(this.c);
-            hh7Var.draw(canvas);
+        ih7 ih7Var = this.f;
+        if (ih7Var != null) {
+            ih7Var.setBounds(getBounds());
+            ih7Var.setAlpha(this.c);
+            ih7Var.draw(canvas);
             return;
         }
         nl nlVar = this.e;
@@ -214,9 +214,9 @@ public final class g82 extends Drawable {
             this.i = false;
             nlVar.K();
         }
-        hh7 hh7Var = this.f;
-        if (hh7Var != null) {
-            hh7Var.k();
+        ih7 ih7Var = this.f;
+        if (ih7Var != null) {
+            ih7Var.k();
         }
     }
 
@@ -232,9 +232,9 @@ public final class g82 extends Drawable {
             this.i = false;
             nlVar.K();
         }
-        hh7 hh7Var = this.f;
-        if (hh7Var != null) {
-            hh7Var.l();
+        ih7 ih7Var = this.f;
+        if (ih7Var != null) {
+            ih7Var.l();
         }
     }
 

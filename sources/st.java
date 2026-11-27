@@ -33,7 +33,7 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.o;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class st implements Runnable {
     public final /* synthetic */ byte a;
@@ -56,12 +56,12 @@ public final /* synthetic */ class st implements Runnable {
         this.n = do6Var3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x03f6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:140:0x03fc, code lost:
     
         if (r14.chat.has_geo != false) goto L122;
      */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x04f1  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x04fb  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x04f7  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x0501  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -80,11 +80,11 @@ public final /* synthetic */ class st implements Runnable {
         int i2;
         byte b = this.a;
         byte b2 = 3;
+        byte b3 = 2;
         int i3 = this.d;
-        byte b3 = 0;
+        byte b4 = 0;
         char c = 1;
         char c2 = 1;
-        char c3 = 1;
         Object obj = this.n;
         Object obj2 = this.h;
         Object obj3 = this.b;
@@ -277,13 +277,12 @@ public final /* synthetic */ class st implements Runnable {
                     h = a55.h("encrypt response", e2);
                     jSONObject = null;
                 }
-                if (!uc7.s1(a55Var.a).X3.edit().putString(a55.k(tonconnectsession.id, w45Var.b), put.toString()).commit()) {
+                if (!uc7.s1(a55Var.a).Y3.edit().putString(a55.k(tonconnectsession.id, w45Var.b), put.toString()).commit()) {
                     throw new IllegalStateException("Could not save TON Connect response");
                 }
                 jSONObject = put;
                 h = null;
                 hl.c3(new tw4((Object) a55Var, (Object) jSONObject, (Object) pccVar, (Object) h, (Object) w45Var, (byte) 4));
-                break;
                 break;
             case 7:
                 boolean[] zArr = (boolean[]) obj6;
@@ -396,7 +395,7 @@ public final /* synthetic */ class st implements Runnable {
                     if (tLObject6 instanceof TLRPC.TL_payments_paymentFormStars) {
                         r4a r4aVar = launchActivity4.Y0;
                         launchActivity4.Y0 = null;
-                        jxa.v(launchActivity4.P, false).X(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject6, new b06(tg5Var2, c == true ? 1 : 0), new m06(r4aVar, b3));
+                        jxa.v(launchActivity4.P, false).X(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject6, new b06(tg5Var2, c == true ? 1 : 0), new m06(r4aVar, b4));
                         break;
                     } else {
                         if (tLObject6 instanceof TLRPC.PaymentForm) {
@@ -410,7 +409,7 @@ public final /* synthetic */ class st implements Runnable {
                             r4a r4aVar2 = launchActivity4.Y0;
                             if (r4aVar2 != null) {
                                 launchActivity4.Y0 = null;
-                                pVar.a1 = new n06(r4aVar2, b3);
+                                pVar.a1 = new n06(r4aVar2, b4);
                             }
                             launchActivity4.t0(pVar);
                         }
@@ -464,7 +463,7 @@ public final /* synthetic */ class st implements Runnable {
                             uc7.s1(i3).a4(chatInvite.chat, false);
                             ArrayList arrayList7 = new ArrayList();
                             arrayList7.add(chatInvite.chat);
-                            jf7.Y(i3).j1(null, arrayList7, false, true);
+                            kf7.a0(i3).n1(null, arrayList7, false, true);
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", chatInvite.chat.id);
                             if (arrayList6.isEmpty() || uc7.s1(i3).C(bundle, (e) c00.g(1, arrayList6), null, null)) {
@@ -563,7 +562,6 @@ public final /* synthetic */ class st implements Runnable {
                     new d31(qh6Var.a0, null).H(R.raw.error, ob6.a0(null, null, 2131743533, "PRODUCT_NOT_FOUND"));
                     break;
                 }
-                break;
             case 14:
                 ArrayList arrayList8 = (ArrayList) obj6;
                 ArrayList arrayList9 = (ArrayList) obj4;
@@ -592,6 +590,7 @@ public final /* synthetic */ class st implements Runnable {
                     hl.d3(stVar2, 1000L);
                     break;
                 }
+                break;
             case 15:
                 ArrayList arrayList10 = (ArrayList) obj4;
                 zh6 zh6Var = (zh6) obj3;
@@ -715,7 +714,7 @@ public final /* synthetic */ class st implements Runnable {
                     if (!ls6.d0(i3).D0(tL_messages_stickerSet.set.id, true)) {
                         ls6.d0(i3).h2(null, tLObject10, 2, null, false, false);
                     }
-                    hl.d3(new z3b(tLObject10, document2, c3 == true ? 1 : 0), 250L);
+                    hl.d3(new n3b(tLObject10, document2, b3), 250L);
                     break;
                 } else if (tL_error6 != null) {
                     if (xc4.r(tL_error6.text)) {

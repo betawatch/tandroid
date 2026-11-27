@@ -18,9 +18,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class l15 extends dl7 {
+public final class l15 extends el7 {
     public boolean m0;
     public boolean n0;
     public boolean o0;
@@ -271,7 +271,7 @@ public final class l15 extends dl7 {
     /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0068  */
     /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
-    @Override // dl7, android.widget.FrameLayout, android.view.View
+    @Override // el7, android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

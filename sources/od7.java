@@ -1,85 +1,147 @@
 // default package
 
+import android.util.Pair;
 import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class od7 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ jf7 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ kf7 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ od7(jf7 jf7Var, ArrayList arrayList, int i, long j) {
-        this.a = (byte) 2;
-        this.b = jf7Var;
-        this.d = arrayList;
-        this.c = i;
-        this.e = j;
+    public /* synthetic */ od7(kf7 kf7Var, long j, long j2, String str, byte b) {
+        this.a = b;
+        this.b = kf7Var;
+        this.c = j;
+        this.d = j2;
+        this.e = str;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0122, code lost:
+    
+        if (r12 != 0) goto L33;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v0 */
+    /* JADX WARN: Type inference failed for: r5v2, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r5v9 */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        byte b = this.a;
-        long j = this.e;
-        int i = this.c;
-        ArrayList arrayList = this.d;
-        jf7 jf7Var = this.b;
-        switch (b) {
+        long j;
+        SQLiteCursor sQLiteCursor;
+        long j2;
+        ?? r5 = 0;
+        switch (this.a) {
             case 0:
-                jf7Var.getMessagesController().x4(i, j, arrayList);
-                return;
-            case 1:
-                jf7Var.getMessagesController().c(null, this.c, -1, this.d, this.e);
-                return;
-            default:
-                SQLiteDatabase sQLiteDatabase = jf7Var.b;
-                SQLitePreparedStatement sQLitePreparedStatement = null;
+                kf7 kf7Var = this.b;
+                long j3 = this.c;
+                long j4 = this.d;
+                String str = this.e;
+                ArrayList arrayList = new ArrayList();
+                SQLiteCursor sQLiteCursor2 = 0;
+                sQLiteCursor2 = 0;
                 try {
                     try {
-                        sQLiteDatabase.executeFast("DELETE FROM star_gifts2").stepThis().dispose();
-                        if (arrayList != null) {
-                            sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO star_gifts2 VALUES(?, ?, ?, ?, ?)");
-                            for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                                TL_stars.StarGift starGift = (TL_stars.StarGift) arrayList.get(i2);
-                                sQLitePreparedStatement.requery();
-                                sQLitePreparedStatement.bindLong(1, starGift.id);
-                                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(starGift.getObjectSize());
-                                starGift.serializeToStream(nativeByteBuffer);
-                                sQLitePreparedStatement.bindByteBuffer(2, nativeByteBuffer);
-                                sQLitePreparedStatement.bindLong(3, i);
-                                sQLitePreparedStatement.bindLong(4, j);
-                                sQLitePreparedStatement.bindInteger(5, i2);
-                                sQLitePreparedStatement.step();
-                                nativeByteBuffer.reuse();
+                        SQLiteDatabase sQLiteDatabase = kf7Var.b;
+                        Locale locale = Locale.US;
+                        sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT mid, data FROM messages_v2 WHERE uid = " + j3 + " ORDER BY date DESC LIMIT 20", new Object[0]);
+                        while (sQLiteCursor2.next()) {
+                            try {
+                                int intValue = sQLiteCursor2.intValue(r5);
+                                NativeByteBuffer byteBufferValue = sQLiteCursor2.byteBufferValue(1);
+                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r5), r5);
+                                if (TLdeserialize != null) {
+                                    j2 = j3;
+                                    try {
+                                        TLdeserialize.readAttachPath(byteBufferValue, yac.h(kf7Var.currentAccount).n);
+                                    } catch (Exception e) {
+                                        e = e;
+                                        j = j2;
+                                        cc4.g(e, true);
+                                        sQLiteCursor = sQLiteCursor2;
+                                        break;
+                                    }
+                                } else {
+                                    j2 = j3;
+                                }
+                                if (wf3.n(TLdeserialize.from_id) == j4) {
+                                    TLdeserialize.flags2 |= TLObject.FLAG_12;
+                                    TLdeserialize.from_rank = str;
+                                    arrayList.add(new Pair(Integer.valueOf(intValue), TLdeserialize));
+                                }
+                                j3 = j2;
+                                r5 = 0;
+                            } catch (Exception e2) {
+                                e = e2;
+                                j2 = j3;
+                                j = j2;
+                                cc4.g(e, true);
+                                sQLiteCursor = sQLiteCursor2;
                             }
                         }
-                        if (sQLitePreparedStatement == null) {
-                            return;
+                        j2 = j3;
+                        sQLiteCursor2.dispose();
+                        int i = 0;
+                        while (i < arrayList.size()) {
+                            int intValue2 = ((Integer) ((Pair) arrayList.get(i)).first).intValue();
+                            TLRPC.Message message = (TLRPC.Message) ((Pair) arrayList.get(i)).second;
+                            SQLitePreparedStatement executeFast = kf7Var.b.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
+                            executeFast.requery();
+                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
+                            r47.p5(message);
+                            message.serializeToStream(nativeByteBuffer);
+                            executeFast.bindByteBuffer(1, nativeByteBuffer);
+                            executeFast.bindInteger(2, intValue2);
+                            j = j2;
+                            try {
+                                executeFast.bindLong(3, j);
+                                executeFast.step();
+                                executeFast.dispose();
+                                nativeByteBuffer.reuse();
+                                i++;
+                                j2 = j;
+                            } catch (Exception e3) {
+                                e = e3;
+                                cc4.g(e, true);
+                                sQLiteCursor = sQLiteCursor2;
+                            }
                         }
-                    } catch (Exception e) {
-                        cc4.g(e, true);
-                        if (sQLitePreparedStatement == null) {
-                            return;
-                        }
+                        j = j2;
+                        sQLiteCursor = sQLiteCursor2;
+                    } catch (Exception e4) {
+                        e = e4;
+                        j = j3;
                     }
-                    sQLitePreparedStatement.dispose();
+                    sQLiteCursor.dispose();
+                    if (arrayList.size() > 0) {
+                        hl.c3(new od7(kf7Var, j, j4, str, (byte) 1));
+                        return;
+                    }
                     return;
-                } finally {
+                } catch (Throwable th) {
+                    if (sQLiteCursor2 != 0) {
+                        sQLiteCursor2.dispose();
+                    }
+                    throw th;
                 }
+            default:
+                kf7 kf7Var2 = this.b;
+                jn7.f(kf7Var2.currentAccount).k(2, 0);
+                jn7.f(kf7Var2.currentAccount).k(jn7.Z3, Long.valueOf(-this.c), Long.valueOf(this.d), this.e);
+                return;
         }
-    }
-
-    public /* synthetic */ od7(jf7 jf7Var, int i, ArrayList arrayList, long j, byte b) {
-        this.a = b;
-        this.b = jf7Var;
-        this.c = i;
-        this.d = arrayList;
-        this.e = j;
     }
 }

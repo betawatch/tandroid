@@ -1,64 +1,53 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes2.dex */
-public final class m58 extends kea {
-    public final /* synthetic */ o68 U2;
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes3.dex */
+public final class m58 implements k32 {
+    public final /* synthetic */ o68 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m58(o68 o68Var, Context context, String str, String str2, boolean z, pu0 pu0Var) {
-        super(context, null, null, str, null, false, str2, null, false, false, z, null, pu0Var);
-        this.U2 = o68Var;
+    public m58(o68 o68Var) {
+        this.a = o68Var;
     }
 
-    @Override // kea, nx0
-    public final void H() {
-        super.H();
-        this.U2.J2 = null;
+    @Override // k32
+    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, long j2) {
+        k5 accountInstance;
+        o68 o68Var = this.a;
+        TL_stories.StoryItem storyItem = o68Var.y1.a;
+        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
+            return;
+        }
+        accountInstance = o68Var.getAccountInstance();
+        r7a.U(i, o68Var.l1, 0L, j2, 0L, accountInstance, null, null, null, null, null, null, null, null, str, null, arrayList, arrayList, null, null, null, null, storyItem, z, false);
+        o68Var.a0(j2 <= 0);
     }
 
-    @Override // kea
-    public final void M0(zh6 zh6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
-        if (z) {
-            o68 o68Var = this.U2;
-            d31 d31Var = new d31(o68Var.M0, this.J0);
-            if (zh6Var.m() == 1) {
-                long j = zh6Var.j(0);
-                if (j == yac.h(this.a).n) {
-                    v21 G = d31Var.G(R.raw.saved_messages, 5000, hl.S2(ob6.a0(null, null, 2131744117, new Object[0])));
-                    G.s = false;
-                    G.j();
-                } else {
-                    int i2 = this.a;
-                    if (j < 0) {
-                        v21 G2 = d31Var.G(R.raw.forward, 5000, hl.S2(ob6.a0(null, null, 2131744130, tL_forumTopic != null ? tL_forumTopic.title : uc7.s1(i2).M0(Long.valueOf(-j)).title)));
-                        G2.s = false;
-                        G2.j();
-                    } else {
-                        v21 G3 = d31Var.G(R.raw.forward, 5000, hl.S2(ob6.a0(null, null, 2131744130, uc7.s1(i2).X1(Long.valueOf(j)).first_name)));
-                        G3.s = false;
-                        G3.j();
-                    }
-                }
-            } else {
-                v21 Q = d31Var.Q(R.raw.forward, 36, hl.S2(ob6.G(zh6Var.m(), "StorySharedToManyChats", Integer.valueOf(zh6Var.m()))));
-                Q.s = false;
-                Q.j();
+    @Override // k32
+    public final void z() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
+            intent.setType("*/*");
+            e eVar = this.a.t0.f;
+            if (eVar.getParentActivity() == null) {
+                return;
             }
-            try {
-                o68Var.performHapticFeedback(3);
-            } catch (Exception unused) {
-            }
+            eVar.getParentActivity().startActivityForResult(intent, 21);
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
     }
 
-    @Override // kea
-    public final void N0(View view) {
-        this.U2.b1();
+    @Override // k32
+    public final void S() {
+    }
+
+    @Override // k32
+    public final void m(ArrayList arrayList, boolean z, int i, long j) {
     }
 }

@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class v7f extends ljf {
     private static final v7f zzb;
@@ -33,7 +33,7 @@ public final class v7f extends ljf {
             return (byte) 1;
         }
         if (i2 == 2) {
-            return new ilf(zzb, "\u0001\u0007\u0000\u0001\u0001\t\u0007\u0000\u0002\u0000\u0001᠌\u0000\u0002ဇ\u0001\u0003᠌\u0002\u0004ဇ\u0003\u0007\u001b\b\u001b\tဈ\u0004", new Object[]{"zzd", "zze", rg7.h, "zzf", "zzg", rj2.r, "zzh", "zzi", odf.class, "zzj", odf.class, "zzk"});
+            return new ilf(zzb, "\u0001\u0007\u0000\u0001\u0001\t\u0007\u0000\u0002\u0000\u0001᠌\u0000\u0002ဇ\u0001\u0003᠌\u0002\u0004ဇ\u0003\u0007\u001b\b\u001b\tဈ\u0004", new Object[]{"zzd", "zze", sg7.h, "zzf", "zzg", rj2.r, "zzh", "zzi", odf.class, "zzj", odf.class, "zzk"});
         }
         if (i2 == 3) {
             return new v7f();

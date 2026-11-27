@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ny3 extends View {
     public static final long g0 = System.currentTimeMillis();
@@ -274,35 +274,35 @@ public final class ny3 extends View {
                                     f7 = f5;
                                 }
                                 xh4 xh4Var = ny3Var.a;
-                                f09 f09Var = ((rz8) xh4Var.b).d;
+                                g09 g09Var = ((rz8) xh4Var.b).d;
                                 int[] iArr3 = ny3Var.Q;
-                                f09Var.getLocationOnScreen(iArr3);
+                                g09Var.getLocationOnScreen(iArr3);
                                 float f24 = 1.0f / f7;
                                 canvas2.scale(f24, f24);
                                 canvas2.translate(-L, -L2);
                                 float f25 = iArr2[0] - iArr3[0];
                                 float f26 = iArr2[1] - iArr3[1];
-                                f09 f09Var2 = ((rz8) xh4Var.b).d;
-                                if (!f09Var2.j0(canvas2) && f09Var2.Z2 != null) {
+                                g09 g09Var2 = ((rz8) xh4Var.b).d;
+                                if (!g09Var2.j0(canvas2) && g09Var2.Z2 != null) {
                                     canvas2.save();
                                     canvas2.translate(-f25, -f26);
-                                    Bitmap bitmap = f09Var2.Z2;
+                                    Bitmap bitmap = g09Var2.Z2;
                                     if (bitmap != null) {
-                                        f09Var2.y(canvas2, bitmap);
+                                        g09Var2.y(canvas2, bitmap);
                                     }
                                     canvas2.restore();
-                                } else if (zz.o() && f09Var2.j0(canvas2)) {
+                                } else if (zz.o() && g09Var2.j0(canvas2)) {
                                     canvas2.save();
                                     canvas2.translate(-f25, -f26);
-                                    Object obj = f09Var2.I1;
+                                    Object obj = g09Var2.I1;
                                     canvas2.save();
                                     canvas2.scale(9.0f, 9.0f);
                                     zz.h(canvas2, obj);
                                     canvas2.restore();
                                     canvas2.restore();
                                 } else {
-                                    d09 d09Var = f09Var2.n;
-                                    canvas2.drawColor(vm2.o(d09Var != null ? vm2.f(0.5f, d09Var.b, d09Var.c) : -12947803, jn7.A3));
+                                    e09 e09Var = g09Var2.n;
+                                    canvas2.drawColor(vm2.o(e09Var != null ? vm2.f(0.5f, e09Var.b, e09Var.c) : -12947803, jn7.A3));
                                 }
                                 canvas2.translate(L, L2);
                                 canvas2.scale(f7, f7);
@@ -722,8 +722,8 @@ public final class ny3 extends View {
                 float f25 = f6;
                 rectF.set(width2 - f23, height - f24, f23 + width2, height + f24);
                 float height2 = rectF.height() / f;
-                d09 d09Var = rz8Var2.d.n;
-                paint.setColor(d09Var == null ? d09Var.h : 872415231);
+                e09 e09Var = rz8Var2.d.n;
+                paint.setColor(e09Var == null ? e09Var.h : 872415231);
                 paint.setAlpha((int) (Color.alpha(rz8Var2.d.n == null ? r3.h : 872415231) * f11));
                 canvas.drawRoundRect(rectF, height2, height2, paint);
                 paint.setColor(872415231);
@@ -841,8 +841,8 @@ public final class ny3 extends View {
         float f252 = f6;
         rectF.set(width22 - f232, height3 - f242, f232 + width22, height3 + f242);
         float height22 = rectF.height() / f;
-        d09 d09Var2 = rz8Var2.d.n;
-        paint.setColor(d09Var2 == null ? d09Var2.h : 872415231);
+        e09 e09Var2 = rz8Var2.d.n;
+        paint.setColor(e09Var2 == null ? e09Var2.h : 872415231);
         paint.setAlpha((int) (Color.alpha(rz8Var2.d.n == null ? r3.h : 872415231) * f11));
         canvas.drawRoundRect(rectF, height22, height22, paint);
         paint.setColor(872415231);
@@ -894,12 +894,12 @@ public final class ny3 extends View {
                         my3 my3Var = (my3) arrayList.get(i);
                         if (!my3Var.d) {
                             if (Math.abs(motionEvent.getX() - my3Var.b) < hl.L(34.0f) / 2.0f) {
-                                f09 f09Var = ((rz8) this.a.b).d;
-                                ArrayList arrayList2 = f09Var.J;
+                                g09 g09Var = ((rz8) this.a.b).d;
+                                ArrayList arrayList2 = g09Var.J;
                                 if (i2 >= 0 && i2 < arrayList2.size()) {
                                     arrayList2.remove(i2);
-                                    f09Var.c();
-                                    f09Var.i0();
+                                    g09Var.c();
+                                    g09Var.i0();
                                 }
                                 invalidate();
                                 return true;

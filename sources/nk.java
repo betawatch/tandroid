@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class nk implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
@@ -123,7 +123,7 @@ public final /* synthetic */ class nk implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 4:
                 boolean[] zArr = (boolean[]) obj;
-                o68 o68Var = ((s58) obj3).a;
+                o68 o68Var = ((t58) obj3).a;
                 o68Var.f3 = ((Float) ((ValueAnimator) obj2).getAnimatedValue()).floatValue();
                 o68Var.invalidate();
                 if (o68Var.f3 > 0.8f && !zArr[0]) {

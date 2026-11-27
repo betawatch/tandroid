@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.e;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class bt implements Runnable {
     public final /* synthetic */ byte a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class bt implements Runnable {
             case 3:
                 nc2 nc2Var = (nc2) obj;
                 if (i3 != 0) {
-                    SharedPreferences sharedPreferences = uc7.s1(i2).W3;
+                    SharedPreferences sharedPreferences = uc7.s1(i2).X3;
                     sharedPreferences.edit().putInt("last_selected_mute_until_time", i3).putInt("last_selected_mute_until_time2", sharedPreferences.getInt("last_selected_mute_until_time", 0)).apply();
                 }
                 nc2Var.q(i3);
@@ -74,7 +74,7 @@ public final /* synthetic */ class bt implements Runnable {
             case 4:
                 hc2 hc2Var = (hc2) obj;
                 if (i3 != 0) {
-                    SharedPreferences sharedPreferences2 = uc7.s1(i2).W3;
+                    SharedPreferences sharedPreferences2 = uc7.s1(i2).X3;
                     sharedPreferences2.edit().putInt("last_selected_mute_until_time", i3).putInt("last_selected_mute_until_time2", sharedPreferences2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
                 hc2Var.a(Integer.valueOf(i3));
@@ -85,7 +85,7 @@ public final /* synthetic */ class bt implements Runnable {
             case 6:
                 rl3 rl3Var = (rl3) obj;
                 try {
-                    SQLiteCursor queryFinalized = jf7.Y(i3).b.queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
+                    SQLiteCursor queryFinalized = kf7.a0(i3).b.queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = new ArrayList();
                     ArrayList arrayList3 = new ArrayList();
@@ -136,7 +136,7 @@ public final /* synthetic */ class bt implements Runnable {
                     ArrayList arrayList5 = new ArrayList();
                     if (!arrayList3.isEmpty()) {
                         ArrayList arrayList6 = new ArrayList();
-                        jf7.Y(i3).T(TextUtils.join(",", arrayList3), arrayList6, arrayList);
+                        kf7.a0(i3).V(TextUtils.join(",", arrayList3), arrayList6, arrayList);
                         for (int i5 = 0; i5 < arrayList6.size(); i5++) {
                             sl3 sl3Var3 = (sl3) zh6Var.f(wf3.E(((TLRPC.EncryptedChat) arrayList6.get(i5)).id));
                             if (sl3Var3 != null) {
@@ -146,7 +146,7 @@ public final /* synthetic */ class bt implements Runnable {
                     }
                     if (!arrayList2.isEmpty()) {
                         ArrayList arrayList7 = new ArrayList();
-                        jf7.Y(i3).P(TextUtils.join(",", arrayList2), arrayList7);
+                        kf7.a0(i3).R(TextUtils.join(",", arrayList2), arrayList7);
                         for (int i6 = 0; i6 < arrayList7.size(); i6++) {
                             TLRPC.Chat chat = (TLRPC.Chat) arrayList7.get(i6);
                             long j2 = -chat.id;
@@ -165,7 +165,7 @@ public final /* synthetic */ class bt implements Runnable {
                         }
                     }
                     if (!arrayList.isEmpty()) {
-                        jf7.Y(i3).k0(arrayList, arrayList5, false);
+                        kf7.a0(i3).m0(arrayList, arrayList5, false);
                         while (i < arrayList5.size()) {
                             TLRPC.User user = (TLRPC.User) arrayList5.get(i);
                             sl3 sl3Var6 = (sl3) zh6Var.f(user.id);

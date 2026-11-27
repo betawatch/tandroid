@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class pg3 extends FrameLayout implements fn7, s84 {
     public Paint A0;
@@ -280,9 +280,9 @@ public abstract class pg3 extends FrameLayout implements fn7, s84 {
                     jg3Var.setVisibility(0);
                     jg3Var2.setVisibility(4);
                     this.T.g1(0, 0);
-                    me7 me7Var = uc7.s1(i3).O1().K;
-                    hl.r(me7Var);
-                    me7Var.run();
+                    oe7 oe7Var = uc7.s1(i3).O1().K;
+                    hl.r(oe7Var);
+                    oe7Var.run();
                     pv0 pv0Var = this.s0;
                     if (pv0Var != null) {
                         pv0Var.a();
@@ -931,7 +931,7 @@ public abstract class pg3 extends FrameLayout implements fn7, s84 {
             return;
         }
         if (j == 0) {
-            rbb.C(uj3Var.getParentActivity(), i).Q(mbb.c(og3Var));
+            sbb.C(uj3Var.getParentActivity(), i).Q(nbb.c(og3Var));
             return;
         }
         vnb resourceProvider = uj3Var != null ? uj3Var.getResourceProvider() : null;

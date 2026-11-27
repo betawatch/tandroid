@@ -57,9 +57,9 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public class lh2 implements caa, ty9, xj0, bf7, ni9, f73, l71, vt3, iy7 {
+public class lh2 implements caa, ty9, xj0, cf7, ni9, f73, l71, vt3, iy7 {
     public static volatile lh2 d;
     public static final int[] e = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
     public static final sae f = new sae();
@@ -199,7 +199,7 @@ public class lh2 implements caa, ty9, xj0, bf7, ni9, f73, l71, vt3, iy7 {
         return lh2Var;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         g81 g81Var = ((e81) this.c).b;
         g81Var.y.finishFragment();
@@ -796,7 +796,7 @@ public class lh2 implements caa, ty9, xj0, bf7, ni9, f73, l71, vt3, iy7 {
         return arrayList2;
     }
 
-    public final ui7 r(int i, long j, boolean z) {
+    public final vi7 r(int i, long j, boolean z) {
         zm9 zm9Var = (zm9) this.b;
         if (i > 0) {
             i = ((SparseIntArray) this.c).get(i, 0);
@@ -806,13 +806,13 @@ public class lh2 implements caa, ty9, xj0, bf7, ni9, f73, l71, vt3, iy7 {
         }
         long j2 = i;
         LongSparseArray H0 = zm9Var.H0(j, 0L);
-        ui7 ui7Var = (ui7) (H0 != null ? H0.get(j2) : null);
-        if (ui7Var != null || !z) {
-            return ui7Var;
+        vi7 vi7Var = (vi7) (H0 != null ? H0.get(j2) : null);
+        if (vi7Var != null || !z) {
+            return vi7Var;
         }
-        ui7 ui7Var2 = new ui7();
-        zm9Var.N0(j, 0L, j2, ui7Var2);
-        return ui7Var2;
+        vi7 vi7Var2 = new vi7();
+        zm9Var.N0(j, 0L, j2, vi7Var2);
+        return vi7Var2;
     }
 
     public final e84 s(Object... objArr) {

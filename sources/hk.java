@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hk implements Runnable {
     public final /* synthetic */ byte a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class hk implements Runnable {
                             String stringExtra2 = intent.getStringExtra("com.google.android.voicesearch.extra.RECIPIENT_CONTACT_URI");
                             long parseLong = Long.parseLong(intent.getStringExtra("com.google.android.voicesearch.extra.RECIPIENT_CONTACT_CHAT_ID"));
                             TLRPC.User X1 = uc7.s1(i).X1(Long.valueOf(parseLong));
-                            if (X1 == null && (X1 = jf7.Y(i).h0(parseLong)) != null) {
+                            if (X1 == null && (X1 = kf7.a0(i).j0(parseLong)) != null) {
                                 uc7.s1(i).i4(X1, true, false);
                             }
                             if (X1 != null) {

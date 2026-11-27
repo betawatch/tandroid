@@ -25,7 +25,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class yfc extends FrameLayout implements wu7, fn7 {
     public static final float[] V = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -120,7 +120,7 @@ public final class yfc extends FrameLayout implements wu7, fn7 {
                 this.n.d0(null, null, xfcVar, null, tL_help_premiumPromo, 1);
                 xb4.G(this.s).X(document, tL_help_premiumPromo, 3, 0);
                 this.S = document;
-                Utilities.e.c(new g9c(this, document, (byte) 20));
+                Utilities.e.c(new c9c(this, document, (byte) 21));
                 if (i2 != 1) {
                     ia iaVar = new ia(b);
                     iaVar.c = new RectF();

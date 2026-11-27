@@ -2,41 +2,41 @@
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vb1 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ hbb b;
+    public final /* synthetic */ ibb b;
 
-    public /* synthetic */ vb1(hbb hbbVar, byte b) {
+    public /* synthetic */ vb1(ibb ibbVar, byte b) {
         this.a = b;
-        this.b = hbbVar;
+        this.b = ibbVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        hbb hbbVar = this.b;
+        ibb ibbVar = this.b;
         switch (b) {
             case 0:
-                hbbVar.n();
+                ibbVar.n();
                 break;
             case 1:
-                hbbVar.K0 = false;
-                hbbVar.L0 = TLObject.FLAG_31;
-                hbbVar.invalidate();
-                hbbVar.S0.setVisibility(0);
-                hbbVar.T0.setVisibility(0);
+                ibbVar.K0 = false;
+                ibbVar.L0 = TLObject.FLAG_31;
+                ibbVar.invalidate();
+                ibbVar.S0.setVisibility(0);
+                ibbVar.T0.setVisibility(0);
                 break;
             default:
-                rbb rbbVar = hbbVar.S1;
-                gbb gbbVar = rbbVar.Y0;
-                if (gbbVar != null) {
-                    gbbVar.P = false;
-                    gbbVar.b();
-                    gbb gbbVar2 = rbbVar.Y0;
-                    gbbVar2.m(0L);
-                    ksb ksbVar = gbbVar2.G;
+                sbb sbbVar = ibbVar.S1;
+                hbb hbbVar = sbbVar.Y0;
+                if (hbbVar != null) {
+                    hbbVar.P = false;
+                    hbbVar.b();
+                    hbb hbbVar2 = sbbVar.Y0;
+                    hbbVar2.m(0L);
+                    ksb ksbVar = hbbVar2.G;
                     if (ksbVar != null) {
                         ksbVar.setProgress(0L);
                         break;

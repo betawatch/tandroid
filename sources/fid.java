@@ -4,10 +4,10 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class fid extends BasePendingResult {
-    public k09 o;
+    public l09 o;
     public final boolean p;
     public final /* synthetic */ v99 q;
 
@@ -26,13 +26,13 @@ public abstract class fid extends BasePendingResult {
     public abstract void n();
 
     public final ydd o() {
-        k09 k09Var = this.o;
-        if (k09Var != null) {
-            return k09Var;
+        l09 l09Var = this.o;
+        if (l09Var != null) {
+            return l09Var;
         }
-        k09 k09Var2 = new k09(this, (byte) 26);
-        this.o = k09Var2;
-        return k09Var2;
+        l09 l09Var2 = new l09(this, (byte) 26);
+        this.o = l09Var2;
+        return l09Var2;
     }
 
     public final void p() {

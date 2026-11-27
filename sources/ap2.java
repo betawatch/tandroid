@@ -3,9 +3,9 @@
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ap2 implements ef7, bf7 {
+public final /* synthetic */ class ap2 implements ff7, cf7 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ boolean c;
@@ -20,14 +20,14 @@ public final /* synthetic */ class ap2 implements ef7, bf7 {
         this.c = z;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         uj3 uj3Var = (uj3) this.d;
         TLRPC.Chat chat = (TLRPC.Chat) this.e;
         uj3Var.Z3(this.a, this.b, chat, this.c, z);
     }
 
-    @Override // ef7
+    @Override // ff7
     public final void run(long j) {
         id idVar = (id) this.d;
         e eVar = (e) this.e;

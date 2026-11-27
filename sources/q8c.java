@@ -8,7 +8,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q8c implements Runnable {
     public final /* synthetic */ byte a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class q8c implements Runnable {
                 u8cVar.d();
                 return;
             case 1:
-                SQLiteDatabase sQLiteDatabase = jf7.Y(u8cVar.a).b;
+                SQLiteDatabase sQLiteDatabase = kf7.a0(u8cVar.a).b;
                 try {
                     try {
                         sQLiteDatabase.executeFast("DELETE FROM unconfirmed_auth WHERE 1").stepThis().dispose();
@@ -99,7 +99,7 @@ public final /* synthetic */ class q8c implements Runnable {
                 ArrayList arrayList5 = new ArrayList();
                 u8c u8cVar2 = this.b;
                 int i2 = u8cVar2.a;
-                SQLiteDatabase sQLiteDatabase2 = jf7.Y(i2).b;
+                SQLiteDatabase sQLiteDatabase2 = kf7.a0(i2).b;
                 try {
                     try {
                         Locale locale = Locale.US;
@@ -120,7 +120,7 @@ public final /* synthetic */ class q8c implements Runnable {
                                 }
                             }
                         }
-                        jf7.Y(i2).k0(arrayList4, arrayList3, false);
+                        kf7.a0(i2).m0(arrayList4, arrayList3, false);
                     } catch (Exception e3) {
                         cc4.g(e3, true);
                         break;

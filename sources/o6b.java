@@ -16,11 +16,11 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class o6b {
     public int a;
-    public jf7 b;
+    public kf7 b;
 
     public static void a(int i, long j, r47 r47Var, TL_stories.StoryItem storyItem) {
         TLRPC.WebPage webPage;
@@ -208,8 +208,8 @@ public final class o6b {
         int i2;
         int i3;
         TLRPC.Peer peer;
-        jf7 jf7Var = this.b;
-        SQLiteDatabase sQLiteDatabase2 = jf7Var.b;
+        kf7 kf7Var = this.b;
+        SQLiteDatabase sQLiteDatabase2 = kf7Var.b;
         ArrayList<TL_stories.PeerStories> arrayList = new ArrayList<>();
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
@@ -265,7 +265,7 @@ public final class o6b {
                                 TLdeserialize.dialogId = keyAt;
                                 TL_stories.StoryFwdHeader storyFwdHeader = TLdeserialize.fwd_from;
                                 if (storyFwdHeader != null && (peer = storyFwdHeader.from) != null) {
-                                    jf7.b(peer, arrayList2, arrayList3);
+                                    kf7.b(peer, arrayList2, arrayList3);
                                 }
                                 int i7 = 0;
                                 while (i7 < TLdeserialize.media_areas.size()) {
@@ -286,7 +286,7 @@ public final class o6b {
                                 i = i4;
                                 TLRPC.Peer peer2 = TLdeserialize.from_id;
                                 if (peer2 != null) {
-                                    jf7.b(peer2, arrayList2, arrayList3);
+                                    kf7.b(peer2, arrayList2, arrayList3);
                                 }
                                 w7b.a(TLdeserialize, byteBufferValue2);
                                 arrayList4.add(TLdeserialize);
@@ -331,13 +331,13 @@ public final class o6b {
                 int i9 = i4;
                 TL_stories.TL_stories_allStories tL_stories_allStories = new TL_stories.TL_stories_allStories();
                 tL_stories_allStories.peer_stories = arrayList;
-                tL_stories_allStories.users = jf7Var.i0(arrayList2);
+                tL_stories_allStories.users = kf7Var.k0(arrayList2);
                 ArrayList<TLRPC.Chat> arrayList5 = new ArrayList<>();
                 try {
-                    jf7Var.P(TextUtils.join(",", arrayList3), arrayList5);
+                    kf7Var.R(TextUtils.join(",", arrayList3), arrayList5);
                 } catch (Exception e) {
                     arrayList5.clear();
-                    jf7Var.n(e, true);
+                    kf7Var.p(e, true);
                 }
                 tL_stories_allStories.chats = arrayList5;
                 int i10 = 0;
@@ -346,14 +346,14 @@ public final class o6b {
                     ArrayList<TL_stories.PeerStories> arrayList6 = tL_stories_allStories.peer_stories;
                     if (i10 >= size) {
                         Collections.sort(arrayList6, Comparator$-CC.comparingInt(new nm((byte) 21)));
-                        hl.c3(new z3b(h5bVar, tL_stories_allStories, (byte) 15));
+                        hl.c3(new n3b(h5bVar, tL_stories_allStories, (byte) 16));
                         return;
                     }
                     TL_stories.PeerStories peerStories = arrayList6.get(i10);
                     long n = wf3.n(peerStories.peer);
                     ArrayList<TL_stories.StoryItem> arrayList7 = peerStories.stories;
                     int currentTime = ConnectionsManager.getInstance(i9).getCurrentTime();
-                    SQLiteDatabase sQLiteDatabase4 = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase4 = kf7Var.b;
                     int i11 = 0;
                     ArrayList arrayList8 = null;
                     ArrayList arrayList9 = null;
@@ -465,28 +465,28 @@ public final class o6b {
     public final void i(int i, long j) {
         TL_stories.PeerStories peerStories;
         TL_stories.PeerStories peerStories2;
-        jf7 jf7Var = this.b;
+        kf7 kf7Var = this.b;
         int i2 = this.a;
         if (j > 0) {
             TLRPC.UserFull Y1 = uc7.s1(i2).Y1(j);
             if (Y1 != null && (peerStories2 = Y1.stories) != null) {
                 peerStories2.max_read_id = i;
-                jf7Var.g2(Y1, false);
+                kf7Var.l2(Y1, false);
             }
         } else {
             TLRPC.ChatFull N0 = uc7.s1(i2).N0(-j);
             if (N0 != null && (peerStories = N0.stories) != null) {
                 peerStories.max_read_id = i;
-                jf7Var.K1(N0, false);
+                kf7Var.P1(N0, false);
             }
         }
-        jf7Var.a.c(new m6b(this, j, i, (byte) 1));
+        kf7Var.a.c(new m6b(this, j, i, (byte) 1));
     }
 
     public final void j(List list) {
-        jf7 jf7Var = this.b;
+        kf7 kf7Var = this.b;
         try {
-            SQLiteDatabase sQLiteDatabase = jf7Var.b;
+            SQLiteDatabase sQLiteDatabase = kf7Var.b;
             if (list.isEmpty()) {
                 return;
             }
@@ -529,7 +529,7 @@ public final class o6b {
             executeFast3.dispose();
             executeFast4.dispose();
         } catch (Throwable th) {
-            jf7Var.n(th, true);
+            kf7Var.p(th, true);
         }
     }
 
@@ -537,7 +537,7 @@ public final class o6b {
         if (j == 0) {
             return;
         }
-        this.b.a.c(new z5b(this, j, storyItem, (byte) 1));
+        this.b.a.c(new j5b((Object) this, j, (Object) storyItem, (byte) 2));
     }
 
     public final void l(long j, TL_stories.StoryItem storyItem) {

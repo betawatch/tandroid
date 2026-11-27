@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class g6b extends FrameLayout {
     public final ArrayList a;
@@ -25,7 +25,7 @@ public final class g6b extends FrameLayout {
     public int d;
     public final uoa e;
 
-    public g6b(Context context, ybb ybbVar) {
+    public g6b(Context context, zbb zbbVar) {
         super(context);
         this.c = -1;
         int i = 0;
@@ -59,7 +59,7 @@ public final class g6b extends FrameLayout {
         arrayList.add(new f6b(context, R.raw.stories_intro_pause, ob6.M0(2131744419, null), ob6.M0(2131744418, null)));
         arrayList.add(new f6b(context, R.raw.stories_intro_go_back, ob6.M0(2131744426, null), ob6.M0(2131744425, null)));
         arrayList.add(new f6b(context, R.raw.stories_intro_go_to_next, ob6.M0(2131744422, null), ob6.M0(2131744421, null)));
-        int measuredWidth = ybbVar.getMeasuredWidth() - hl.L(100.0f);
+        int measuredWidth = zbbVar.getMeasuredWidth() - hl.L(100.0f);
         int size = arrayList.size();
         int i2 = 0;
         while (i2 < size) {
@@ -80,7 +80,7 @@ public final class g6b extends FrameLayout {
                 measuredWidth = max;
             }
         }
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(hl.L(8.0f) + measuredWidth > ybbVar.getMeasuredWidth() ? ybbVar.getMeasuredWidth() - hl.L(8.0f) : measuredWidth, hl.L(64.0f));
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(hl.L(8.0f) + measuredWidth > zbbVar.getMeasuredWidth() ? zbbVar.getMeasuredWidth() - hl.L(8.0f) : measuredWidth, hl.L(64.0f));
         layoutParams.setMargins(0, hl.L(5.0f), 0, hl.L(5.0f));
         ArrayList arrayList2 = this.a;
         int size2 = arrayList2.size();
@@ -96,10 +96,10 @@ public final class g6b extends FrameLayout {
         textView3.setTextSize(1, 14.0f);
         linearLayout.addView(textView3, tre.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
         addView(linearLayout, tre.e(-1, -2, 17));
-        BitmapDrawable bitmapDrawable = new BitmapDrawable(getContext().getResources(), hl.h2(12.0f, 10, ybbVar));
+        BitmapDrawable bitmapDrawable = new BitmapDrawable(getContext().getResources(), hl.h2(12.0f, 10, zbbVar));
         bitmapDrawable.setColorFilter(new PorterDuffColorFilter(-587202560, PorterDuff.Mode.DST_OVER));
         imageView.setImageDrawable(bitmapDrawable);
-        getViewTreeObserver().addOnGlobalLayoutListener(new e6b(this, textView3, ybbVar, textView2));
+        getViewTreeObserver().addOnGlobalLayoutListener(new e6b(this, textView3, zbbVar, textView2));
     }
 
     public final void a(boolean z) {

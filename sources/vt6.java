@@ -29,7 +29,7 @@ import java.util.Iterator;
 import java.util.UUID;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class vt6 implements vj {
     public e64 F;
@@ -190,8 +190,8 @@ public final class vt6 implements vj {
         byte b4;
         byte b5;
         byte b6;
-        l09 l09Var;
-        l09 l09Var2;
+        m09 m09Var;
+        m09 m09Var2;
         byte b7;
         byte b8;
         byte b9;
@@ -306,7 +306,7 @@ public final class vt6 implements vj {
             Context context = this.a;
             boolean z2 = this.N == 4;
             if (i8 == 1001) {
-                l09Var = new l09(20, 0, (byte) 1);
+                m09Var = new m09(20, 0, (byte) 1);
             } else {
                 if (e64Var instanceof e64) {
                     z = e64Var.d == 1;
@@ -326,14 +326,14 @@ public final class vt6 implements vj {
                     b5 = 9;
                     if (z) {
                         if (i == 0 || i == 1) {
-                            l09Var = new l09(35, 0, (byte) 1);
+                            m09Var = new m09(35, 0, (byte) 1);
                         } else if (i == 3) {
-                            l09Var = new l09(15, 0, (byte) 1);
+                            m09Var = new m09(15, 0, (byte) 1);
                         } else if (i == 2) {
-                            l09Var = new l09(23, 0, (byte) 1);
+                            m09Var = new m09(23, 0, (byte) 1);
                         }
                         b6 = 13;
-                        final PlaybackErrorEvent build = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(l09Var.b).setSubErrorCode(l09Var.c).setException(e64Var).build();
+                        final PlaybackErrorEvent build = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(m09Var.b).setSubErrorCode(m09Var.c).setException(e64Var).build();
                         this.b.execute(new Runnable() { // from class: st6
                             @Override // java.lang.Runnable
                             public final void run() {
@@ -346,17 +346,17 @@ public final class vt6 implements vj {
                     }
                     if (cause instanceof om6) {
                         b6 = 13;
-                        l09Var2 = new l09(13, gcc.B(((om6) cause).d), (byte) 1);
+                        m09Var2 = new m09(13, gcc.B(((om6) cause).d), (byte) 1);
                     } else {
                         b6 = 13;
                         if (cause instanceof mm6) {
-                            l09Var = new l09(14, ((mm6) cause).a, (byte) 1);
+                            m09Var = new m09(14, ((mm6) cause).a, (byte) 1);
                         } else if (cause instanceof OutOfMemoryError) {
-                            l09Var = new l09(14, 0, (byte) 1);
+                            m09Var = new m09(14, 0, (byte) 1);
                         } else if (cause instanceof u30) {
-                            l09Var = new l09(17, 0, (byte) 1);
+                            m09Var = new m09(17, 0, (byte) 1);
                         } else if (cause instanceof x30) {
-                            l09Var2 = new l09(18, ((x30) cause).a, (byte) 1);
+                            m09Var2 = new m09(18, ((x30) cause).a, (byte) 1);
                         } else if (cause instanceof MediaCodec.CryptoException) {
                             int errorCode = ((MediaCodec.CryptoException) cause).getErrorCode();
                             switch (gcc.A(errorCode)) {
@@ -375,11 +375,11 @@ public final class vt6 implements vj {
                                     i9 = 27;
                                     break;
                             }
-                            l09Var2 = new l09(i9, errorCode, (byte) 1);
+                            m09Var2 = new m09(i9, errorCode, (byte) 1);
                         } else {
-                            l09Var = new l09(22, 0, (byte) 1);
+                            m09Var = new m09(22, 0, (byte) 1);
                         }
-                        final PlaybackErrorEvent build2 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(l09Var.b).setSubErrorCode(l09Var.c).setException(e64Var).build();
+                        final PlaybackErrorEvent build2 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(m09Var.b).setSubErrorCode(m09Var.c).setException(e64Var).build();
                         this.b.execute(new Runnable() { // from class: st6
                             @Override // java.lang.Runnable
                             public final void run() {
@@ -390,8 +390,8 @@ public final class vt6 implements vj {
                         this.F = null;
                         i3 = 2;
                     }
-                    l09Var = l09Var2;
-                    final PlaybackErrorEvent build22 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(l09Var.b).setSubErrorCode(l09Var.c).setException(e64Var).build();
+                    m09Var = m09Var2;
+                    final PlaybackErrorEvent build22 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(m09Var.b).setSubErrorCode(m09Var.c).setException(e64Var).build();
                     this.b.execute(new Runnable() { // from class: st6
                         @Override // java.lang.Runnable
                         public final void run() {
@@ -402,7 +402,7 @@ public final class vt6 implements vj {
                     this.F = null;
                     i3 = 2;
                 } else if (cause instanceof ni5) {
-                    l09Var = new l09(5, ((ni5) cause).c, (byte) 1);
+                    m09Var = new m09(5, ((ni5) cause).c, (byte) 1);
                 } else {
                     if ((cause instanceof mi5) || (cause instanceof hy7)) {
                         b7 = 9;
@@ -410,17 +410,17 @@ public final class vt6 implements vj {
                         b9 = 6;
                         b10 = 4;
                         b11 = 8;
-                        l09Var = new l09(z2 ? 10 : 11, 0, (byte) 1);
+                        m09Var = new m09(z2 ? 10 : 11, 0, (byte) 1);
                     } else {
                         boolean z3 = cause instanceof li5;
                         if (z3 || (cause instanceof j8c)) {
                             b7 = 9;
                             if (yv2.g(context).h() == 1) {
-                                l09Var = new l09(3, 0, (byte) 1);
+                                m09Var = new m09(3, 0, (byte) 1);
                             } else {
                                 Throwable cause2 = cause.getCause();
                                 if (cause2 instanceof UnknownHostException) {
-                                    l09Var = new l09(6, 0, (byte) 1);
+                                    m09Var = new m09(6, 0, (byte) 1);
                                     b5 = 9;
                                     b4 = 6;
                                     b6 = 13;
@@ -430,7 +430,7 @@ public final class vt6 implements vj {
                                 } else {
                                     b9 = 6;
                                     if (cause2 instanceof SocketTimeoutException) {
-                                        l09Var = new l09(7, 0, (byte) 1);
+                                        m09Var = new m09(7, 0, (byte) 1);
                                         b5 = 9;
                                         b3 = 7;
                                         b4 = 6;
@@ -440,7 +440,7 @@ public final class vt6 implements vj {
                                     } else {
                                         b8 = 7;
                                         if (z3 && ((li5) cause).b == 1) {
-                                            l09Var = new l09(4, 0, (byte) 1);
+                                            m09Var = new m09(4, 0, (byte) 1);
                                             b5 = 9;
                                             b3 = 7;
                                             b4 = 6;
@@ -450,11 +450,11 @@ public final class vt6 implements vj {
                                         } else {
                                             b10 = 4;
                                             b11 = 8;
-                                            l09Var = new l09(8, 0, (byte) 1);
+                                            m09Var = new m09(8, 0, (byte) 1);
                                         }
                                     }
                                 }
-                                final PlaybackErrorEvent build222 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(l09Var.b).setSubErrorCode(l09Var.c).setException(e64Var).build();
+                                final PlaybackErrorEvent build222 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(m09Var.b).setSubErrorCode(m09Var.c).setException(e64Var).build();
                                 this.b.execute(new Runnable() { // from class: st6
                                     @Override // java.lang.Runnable
                                     public final void run() {
@@ -466,7 +466,7 @@ public final class vt6 implements vj {
                                 i3 = 2;
                             }
                         } else if (i8 == 1002) {
-                            l09Var = new l09(21, 0, (byte) 1);
+                            m09Var = new m09(21, 0, (byte) 1);
                         } else if (cause instanceof ir3) {
                             Throwable cause3 = cause.getCause();
                             cause3.getClass();
@@ -489,18 +489,18 @@ public final class vt6 implements vj {
                                         i2 = 27;
                                         break;
                                 }
-                                l09Var = new l09(i2, B, (byte) 1);
+                                m09Var = new m09(i2, B, (byte) 1);
                             } else {
-                                l09Var = cause3 instanceof MediaDrmResetException ? new l09(27, 0, (byte) 1) : cause3 instanceof NotProvisionedException ? new l09(24, 0, (byte) 1) : cause3 instanceof DeniedByServerException ? new l09(29, 0, (byte) 1) : cause3 instanceof gac ? new l09(23, 0, (byte) 1) : cause3 instanceof ua3 ? new l09(28, 0, (byte) 1) : new l09(30, 0, (byte) 1);
+                                m09Var = cause3 instanceof MediaDrmResetException ? new m09(27, 0, (byte) 1) : cause3 instanceof NotProvisionedException ? new m09(24, 0, (byte) 1) : cause3 instanceof DeniedByServerException ? new m09(29, 0, (byte) 1) : cause3 instanceof gac ? new m09(23, 0, (byte) 1) : cause3 instanceof ua3 ? new m09(28, 0, (byte) 1) : new m09(30, 0, (byte) 1);
                             }
                         } else if ((cause instanceof va4) && (cause.getCause() instanceof FileNotFoundException)) {
                             Throwable cause4 = cause.getCause();
                             cause4.getClass();
                             Throwable cause5 = cause4.getCause();
-                            l09Var = ((cause5 instanceof ErrnoException) && ((ErrnoException) cause5).errno == OsConstants.EACCES) ? new l09(32, 0, (byte) 1) : new l09(31, 0, (byte) 1);
+                            m09Var = ((cause5 instanceof ErrnoException) && ((ErrnoException) cause5).errno == OsConstants.EACCES) ? new m09(32, 0, (byte) 1) : new m09(31, 0, (byte) 1);
                         } else {
                             b7 = 9;
-                            l09Var = new l09(9, 0, (byte) 1);
+                            m09Var = new m09(9, 0, (byte) 1);
                         }
                         b5 = b7;
                         b6 = 13;
@@ -508,7 +508,7 @@ public final class vt6 implements vj {
                         b2 = 4;
                         b3 = 7;
                         b4 = 6;
-                        final PlaybackErrorEvent build2222 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(l09Var.b).setSubErrorCode(l09Var.c).setException(e64Var).build();
+                        final PlaybackErrorEvent build2222 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(m09Var.b).setSubErrorCode(m09Var.c).setException(e64Var).build();
                         this.b.execute(new Runnable() { // from class: st6
                             @Override // java.lang.Runnable
                             public final void run() {
@@ -525,7 +525,7 @@ public final class vt6 implements vj {
                     b2 = b10;
                     b = b11;
                     b6 = 13;
-                    final PlaybackErrorEvent build22222 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(l09Var.b).setSubErrorCode(l09Var.c).setException(e64Var).build();
+                    final PlaybackErrorEvent build22222 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(m09Var.b).setSubErrorCode(m09Var.c).setException(e64Var).build();
                     this.b.execute(new Runnable() { // from class: st6
                         @Override // java.lang.Runnable
                         public final void run() {
@@ -543,7 +543,7 @@ public final class vt6 implements vj {
             b3 = 7;
             b4 = 6;
             b5 = 9;
-            final PlaybackErrorEvent build222222 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(l09Var.b).setSubErrorCode(l09Var.c).setException(e64Var).build();
+            final PlaybackErrorEvent build222222 = new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(m09Var.b).setSubErrorCode(m09Var.c).setException(e64Var).build();
             this.b.execute(new Runnable() { // from class: st6
                 @Override // java.lang.Runnable
                 public final void run() {

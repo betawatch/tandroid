@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implements fn7, yn5 {
     public TLRPC.Photo A0;
@@ -168,7 +168,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
                 this.N = 10L;
                 this.M = 10L;
             } else {
-                long k = Utilities.k(globalPrivacySettings.noncontact_peers_paid_stars, getMessagesController().k4.P1.f(), 1L);
+                long k = Utilities.k(globalPrivacySettings.noncontact_peers_paid_stars, getMessagesController().l4.P1.f(), 1L);
                 this.N = k;
                 this.M = k;
                 this.K = (byte) 3;
@@ -520,7 +520,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
         uc7.s1(this.currentAccount).j4(privacyrules.users, false);
         uc7.s1(this.currentAccount).c4(privacyrules.chats, false);
         lv2.r(this.currentAccount).M(13, privacyrules.rules);
-        hl.c3(new h68(this, zArr, (byte) 23));
+        hl.c3(new a58(this, zArr, (byte) 24));
     }
 
     public final void E0(TLRPC.TL_error tL_error, TLObject tLObject, AtomicInteger atomicInteger) {
@@ -558,7 +558,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
         }
         Y1.flags &= -4194305;
         Y1.fallback_photo = null;
-        getMessagesStorage().g2(Y1, true);
+        getMessagesStorage().l2(Y1, true);
         N0();
         Q0(true);
         TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
@@ -600,7 +600,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
             return;
         }
         byte b5 = 2;
-        if (this.E == 10 && i == this.Q && !getMessagesController().k4.v2.f && !getUserConfig().p()) {
+        if (this.E == 10 && i == this.Q && !getMessagesController().l4.v2.f && !getUserConfig().p()) {
             d31.b0(this).L(R.raw.star_premium_2, ob6.M0(2131747498, null), hl.S2(ob6.M0(2131747499, null)), ob6.M0(2131747500, null), new cn8(this, b5)).j();
             yw0Var.a();
             int i2 = -this.Q0;
@@ -892,7 +892,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
             TLRPC.UserFull Y1 = getMessagesController().Y1(getUserConfig().n);
             Y1.flags |= TLObject.FLAG_22;
             Y1.fallback_photo = tL_photos_photo.photo;
-            getMessagesStorage().g2(Y1, true);
+            getMessagesStorage().l2(Y1, true);
             jn7.f(this.currentAccount).k(jn7.c0, new Object[0]);
             TLRPC.PhotoSize w = xb4.w(tL_photos_photo.photo.sizes, 100, false, null, false);
             TLRPC.PhotoSize w2 = xb4.w(tL_photos_photo.photo.sizes, 1000, false, null, false);
@@ -1126,7 +1126,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
             this.t0 = i6 + 4;
             this.nobodyRow = i7;
         }
-        if (getMessagesController().k4.S1.f && this.E == 10) {
+        if (getMessagesController().l4.S1.f && this.E == 10) {
             int i8 = this.t0;
             this.t0 = i8 + 1;
             this.i0 = i8;
@@ -1589,7 +1589,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
                         setprivacy.rules.add(tL_inputPrivacyValueAllowUsers);
                         setprivacy.rules.add(tL_inputPrivacyValueAllowChatParticipants);
                     }
-                    getConnectionsManager().sendRequest(setprivacy, new ol7(this, zArr, b2));
+                    getConnectionsManager().sendRequest(setprivacy, new pl7(this, zArr, b2));
                 }
             }
             TL_account.setGlobalPrivacySettings setglobalprivacysettings = new TL_account.setGlobalPrivacySettings();
@@ -1888,7 +1888,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
                                         default:
                                             if (globalPrivacySettings7.display_gifts_button != setglobalprivacysettings4.settings.display_gifts_button && (Y1 = privacyControlActivity2.getMessagesController().Y1(privacyControlActivity2.getUserConfig().e())) != null) {
                                                 Y1.display_gifts_button = setglobalprivacysettings4.settings.display_gifts_button;
-                                                privacyControlActivity2.getMessagesStorage().g2(Y1, false);
+                                                privacyControlActivity2.getMessagesStorage().l2(Y1, false);
                                             }
                                             boolean z2 = setglobalprivacysettings4.settings.display_gifts_button;
                                             privacyControlActivity2.E0 = z2;
@@ -1954,7 +1954,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
                                         default:
                                             if (globalPrivacySettings72.display_gifts_button != setglobalprivacysettings42.settings.display_gifts_button && (Y1 = privacyControlActivity22.getMessagesController().Y1(privacyControlActivity22.getUserConfig().e())) != null) {
                                                 Y1.display_gifts_button = setglobalprivacysettings42.settings.display_gifts_button;
-                                                privacyControlActivity22.getMessagesStorage().g2(Y1, false);
+                                                privacyControlActivity22.getMessagesStorage().l2(Y1, false);
                                             }
                                             boolean z2 = setglobalprivacysettings42.settings.display_gifts_button;
                                             privacyControlActivity22.E0 = z2;
@@ -2058,7 +2058,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
                                         default:
                                             if (globalPrivacySettings72.display_gifts_button != setglobalprivacysettings42.settings.display_gifts_button && (Y1 = privacyControlActivity22.getMessagesController().Y1(privacyControlActivity22.getUserConfig().e())) != null) {
                                                 Y1.display_gifts_button = setglobalprivacysettings42.settings.display_gifts_button;
-                                                privacyControlActivity22.getMessagesStorage().g2(Y1, false);
+                                                privacyControlActivity22.getMessagesStorage().l2(Y1, false);
                                             }
                                             boolean z2 = setglobalprivacysettings42.settings.display_gifts_button;
                                             privacyControlActivity22.E0 = z2;
@@ -2124,7 +2124,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.e implemen
                                         default:
                                             if (globalPrivacySettings722.display_gifts_button != setglobalprivacysettings42.settings.display_gifts_button && (Y1 = privacyControlActivity22.getMessagesController().Y1(privacyControlActivity22.getUserConfig().e())) != null) {
                                                 Y1.display_gifts_button = setglobalprivacysettings42.settings.display_gifts_button;
-                                                privacyControlActivity22.getMessagesStorage().g2(Y1, false);
+                                                privacyControlActivity22.getMessagesStorage().l2(Y1, false);
                                             }
                                             boolean z2 = setglobalprivacysettings42.settings.display_gifts_button;
                                             privacyControlActivity22.E0 = z2;

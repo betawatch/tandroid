@@ -13,7 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class rpb implements vnb {
     public vnb a;
@@ -141,11 +141,11 @@ public final class rpb implements vnb {
         if (drawable == null) {
             drawable = drawable2;
         }
-        boolean z = drawable instanceof hh7;
+        boolean z = drawable instanceof ih7;
         TextPaint textPaint = this.g;
         TextPaint textPaint2 = this.f;
         if ((z || (drawable instanceof BitmapDrawable)) && xea.o() != 0 && i86.e(32)) {
-            Bitmap bitmap = z ? ((hh7) drawable).k : drawable instanceof BitmapDrawable ? ((BitmapDrawable) drawable).getBitmap() : null;
+            Bitmap bitmap = z ? ((ih7) drawable).k : drawable instanceof BitmapDrawable ? ((BitmapDrawable) drawable).getBitmap() : null;
             if (this.i != bitmap) {
                 this.i = bitmap;
                 Bitmap bitmap2 = this.i;
@@ -180,7 +180,7 @@ public final class rpb implements vnb {
         }
         ColorMatrix colorMatrix = new ColorMatrix();
         if (z) {
-            if (((hh7) drawable).q >= 0.0f) {
+            if (((ih7) drawable).q >= 0.0f) {
                 colorMatrix.setSaturation(1.6f);
                 hl.l2(colorMatrix, a() ? 0.97f : 0.92f);
                 hl.h(colorMatrix, a() ? 0.12f : -0.06f);
@@ -195,7 +195,7 @@ public final class rpb implements vnb {
             hl.h(colorMatrix, a() ? -0.04f : 0.06f);
         }
         if (z) {
-            float f2 = ((hh7) drawable).q;
+            float f2 = ((ih7) drawable).q;
             if (f != null) {
                 f2 = f.floatValue();
             }

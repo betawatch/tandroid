@@ -13,7 +13,7 @@ import java.io.File;
 import org.telegram.messenger.a;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class gb5 extends vu7 {
     public final /* synthetic */ byte c;
@@ -224,7 +224,7 @@ public final class gb5 extends vu7 {
                 boolean z2 = zn8Var.E;
                 if (z2 && i == 0) {
                     ?? frameLayout = new FrameLayout(zn8Var.getContext());
-                    frameLayout.setBackground(new hh7(-14602694, -13935795, -14395293, -14203560, true, false));
+                    frameLayout.setBackground(new ih7(-14602694, -13935795, -14395293, -14203560, true, false));
                     ImageView imageView2 = new ImageView(zn8Var.getContext());
                     imageView2.setScaleType(ImageView.ScaleType.CENTER);
                     imageView2.setImageResource(R.drawable.screencast_big);

@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class s10 extends iu5 {
     public final /* synthetic */ byte e;
@@ -250,8 +250,8 @@ public final class s10 extends iu5 {
                     int b4 = f89Var.b();
                     int b5 = f89Var2.b();
                     ArrayList arrayList2 = br0Var.n;
-                    o5b o5bVar = br0Var.e;
-                    if (o5bVar != null && b4 >= 0 && b4 < o5bVar.i.size() && b5 >= 0 && b5 < br0Var.e.i.size()) {
+                    p5b p5bVar = br0Var.e;
+                    if (p5bVar != null && b4 >= 0 && b4 < p5bVar.i.size() && b5 >= 0 && b5 < br0Var.e.i.size()) {
                         if (ik8.A(br0Var.e)) {
                             arrayList = new ArrayList();
                             for (int i5 = 0; i5 < br0Var.e.i.size(); i5++) {

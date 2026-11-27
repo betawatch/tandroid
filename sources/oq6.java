@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class oq6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -161,7 +161,7 @@ public final /* synthetic */ class oq6 implements Runnable {
                 TLObject tLObject = (TLObject) this.e;
                 TLRPC.User user = (TLRPC.User) this.f;
                 String str3 = (String) this.h;
-                jf7 jf7Var = (jf7) this.n;
+                kf7 kf7Var = (kf7) this.n;
                 String str4 = (String) this.r;
                 w17 w17Var = r17Var.W;
                 if (str2.equals(r17Var.s0)) {
@@ -174,7 +174,7 @@ public final /* synthetic */ class oq6 implements Runnable {
                     if (tLObject instanceof TLRPC.TL_messages_botResults) {
                         TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
                         if (!z6 && tL_messages_botResults.cache_time != 0) {
-                            jf7Var.s1(str4, tL_messages_botResults);
+                            kf7Var.w1(str4, tL_messages_botResults);
                         }
                         r17Var.t0 = tL_messages_botResults.next_offset;
                         if (r17Var.U == null) {

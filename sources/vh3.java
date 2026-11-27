@@ -4,7 +4,7 @@ import android.graphics.Point;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class vh3 implements wc5, u69 {
     public final /* synthetic */ uj3 a;
@@ -16,7 +16,7 @@ public final class vh3 implements wc5, u69 {
     @Override // wc5
     public final void a(xc5 xc5Var, long j) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(if7.a(-j, 0L));
+        arrayList.add(jf7.a(-j, 0L));
         uj3 uj3Var = this.a;
         oj3 oj3Var = uj3Var.E2;
         if (uj3Var.D2) {

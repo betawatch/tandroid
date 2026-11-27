@@ -25,7 +25,7 @@ import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 class WebRtcAudioRecord {
     private static final int AUDIO_RECORD_START = 0;
@@ -61,7 +61,7 @@ class WebRtcAudioRecord {
     private final JavaAudioDeviceModule.AudioRecordStateCallback stateCallback;
     private final ThreadUtils.ThreadChecker threadChecker;
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private class AudioRecordThread extends Thread {
         private volatile boolean keepAlive;
 
@@ -115,7 +115,7 @@ class WebRtcAudioRecord {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     interface Natives {
         void cacheDirectBufferAddress(long j, WebRtcAudioRecord webRtcAudioRecord, ByteBuffer byteBuffer);
 

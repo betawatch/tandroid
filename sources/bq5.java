@@ -11,7 +11,7 @@ import java.util.Vector;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class bq5 {
     public static final k43 B = new k43(0.0d, 0.5d, 0.0d, 1.0d);
@@ -33,7 +33,7 @@ public final class bq5 {
     public double p;
     public double q;
     public ValueAnimator r;
-    public final xca s;
+    public final yca s;
     public Matrix t;
     public long v;
     public float w;
@@ -43,20 +43,20 @@ public final class bq5 {
     public final float[] u = new float[2];
     public final yp5 y = new yp5(this, (byte) 1);
 
-    /* JADX WARN: Type inference failed for: r3v6, types: [uca] */
+    /* JADX WARN: Type inference failed for: r3v6, types: [vca] */
     public bq5(pa9 pa9Var) {
         final byte b = 1;
         this.a = pa9Var;
         Context context = pa9Var.getContext();
         zj3 zj3Var = new zj3(this, (byte) 19);
-        final xca xcaVar = new xca();
-        xcaVar.b = new ArrayList();
-        xcaVar.c = new ArrayList();
-        xcaVar.i = null;
+        final yca ycaVar = new yca();
+        ycaVar.b = new ArrayList();
+        ycaVar.c = new ArrayList();
+        ycaVar.i = null;
         final byte b2 = 0;
-        xcaVar.j = new AtomicBoolean(false);
-        xcaVar.k = new AtomicBoolean(false);
-        xcaVar.l = new Runnable() { // from class: uca
+        ycaVar.j = new AtomicBoolean(false);
+        ycaVar.k = new AtomicBoolean(false);
+        ycaVar.l = new Runnable() { // from class: vca
             /* JADX WARN: Removed duplicated region for block: B:133:0x042c  */
             /* JADX WARN: Removed duplicated region for block: B:23:0x00a4 A[Catch: Exception -> 0x0101, TryCatch #1 {Exception -> 0x0101, blocks: (B:5:0x000c, B:6:0x0018, B:8:0x001f, B:12:0x0045, B:14:0x0062, B:16:0x0085, B:18:0x0089, B:20:0x0094, B:21:0x00a1, B:23:0x00a4, B:25:0x00b5, B:26:0x00be, B:28:0x00c1, B:30:0x00dc, B:32:0x00fa, B:35:0x00fd), top: B:4:0x000c }] */
             @Override // java.lang.Runnable
@@ -64,7 +64,7 @@ public final class bq5 {
                 Code decompiled incorrectly, please refer to instructions dump.
             */
             public final void run() {
-                tca tcaVar;
+                uca ucaVar;
                 int e;
                 double d;
                 long j;
@@ -74,45 +74,45 @@ public final class bq5 {
                 int i;
                 switch (b2) {
                     case 0:
-                        xca xcaVar2 = xcaVar;
-                        if (xcaVar2.j.get()) {
+                        yca ycaVar2 = ycaVar;
+                        if (ycaVar2.j.get()) {
                             return;
                         }
-                        xcaVar2.k.set(false);
-                        xcaVar2.j.set(true);
+                        ycaVar2.k.set(false);
+                        ycaVar2.j.set(true);
                         long currentTimeMillis = System.currentTimeMillis();
-                        synchronized (xcaVar2) {
-                            if (xcaVar2.b.size() < 8) {
-                                xcaVar2.j.set(false);
+                        synchronized (ycaVar2) {
+                            if (ycaVar2.b.size() < 8) {
+                                ycaVar2.j.set(false);
                             } else {
-                                ArrayList f = xca.f(xcaVar2.b);
+                                ArrayList f = yca.f(ycaVar2.b);
                                 ArrayList arrayList2 = new ArrayList();
-                                arrayList2.add((vca) f.get(0));
+                                arrayList2.add((wca) f.get(0));
                                 double d2 = 0.0d;
                                 for (int i2 = 1; i2 < f.size(); i2++) {
-                                    vca vcaVar = (vca) f.get(i2 - 1);
-                                    vca vcaVar2 = (vca) f.get(i2);
-                                    vcaVar.getClass();
-                                    d2 += vcaVar.a(vcaVar2.a, vcaVar2.b);
+                                    wca wcaVar = (wca) f.get(i2 - 1);
+                                    wca wcaVar2 = (wca) f.get(i2);
+                                    wcaVar.getClass();
+                                    d2 += wcaVar.a(wcaVar2.a, wcaVar2.b);
                                 }
                                 double d3 = d2 / 47.0d;
                                 int i3 = 1;
                                 double d4 = 0.0d;
                                 while (i3 < f.size()) {
                                     int i4 = i3 - 1;
-                                    vca vcaVar3 = (vca) f.get(i4);
-                                    vca vcaVar4 = (vca) f.get(i3);
-                                    vcaVar3.getClass();
+                                    wca wcaVar3 = (wca) f.get(i4);
+                                    wca wcaVar4 = (wca) f.get(i3);
+                                    wcaVar3.getClass();
                                     ArrayList arrayList3 = arrayList2;
-                                    double a = vcaVar3.a(vcaVar4.a, vcaVar4.b);
+                                    double a = wcaVar3.a(wcaVar4.a, wcaVar4.b);
                                     double d5 = d4 + a;
                                     if (d5 >= d3) {
                                         double d6 = (d3 - d4) / a;
                                         j = currentTimeMillis;
-                                        vca vcaVar5 = new vca(((((vca) f.get(i3)).a - ((vca) f.get(i4)).a) * d6) + ((vca) f.get(i4)).a, ((((vca) f.get(i3)).b - ((vca) f.get(i4)).b) * d6) + ((vca) f.get(i4)).b);
+                                        wca wcaVar5 = new wca(((((wca) f.get(i3)).a - ((wca) f.get(i4)).a) * d6) + ((wca) f.get(i4)).a, ((((wca) f.get(i3)).b - ((wca) f.get(i4)).b) * d6) + ((wca) f.get(i4)).b);
                                         arrayList = arrayList3;
-                                        arrayList.add(vcaVar5);
-                                        f.add(i3, vcaVar5);
+                                        arrayList.add(wcaVar5);
+                                        f.add(i3, wcaVar5);
                                         d4 = 0.0d;
                                     } else {
                                         j = currentTimeMillis;
@@ -126,62 +126,62 @@ public final class bq5 {
                                 long j2 = currentTimeMillis;
                                 ArrayList arrayList4 = arrayList2;
                                 if (arrayList4.size() == 47) {
-                                    arrayList4.add((vca) c00.g(1, f));
+                                    arrayList4.add((wca) c00.g(1, f));
                                 }
-                                ArrayList f2 = xca.f(arrayList4);
-                                vca b3 = xca.b(f2);
-                                double atan2 = Math.atan2(b3.b - ((vca) f2.get(0)).b, b3.a - ((vca) f2.get(0)).a);
-                                vca b4 = xca.b(f2);
+                                ArrayList f2 = yca.f(arrayList4);
+                                wca b3 = yca.b(f2);
+                                double atan2 = Math.atan2(b3.b - ((wca) f2.get(0)).b, b3.a - ((wca) f2.get(0)).a);
+                                wca b4 = yca.b(f2);
                                 double cos = Math.cos(atan2);
                                 double sin = Math.sin(atan2);
                                 int i5 = 0;
                                 while (i5 < f2.size()) {
-                                    vca vcaVar6 = (vca) f2.get(i5);
-                                    double d7 = vcaVar6.a;
+                                    wca wcaVar6 = (wca) f2.get(i5);
+                                    double d7 = wcaVar6.a;
                                     double d8 = b4.a;
                                     double d9 = d7 - d8;
                                     double d10 = sin;
-                                    double d11 = vcaVar6.b;
+                                    double d11 = wcaVar6.b;
                                     double d12 = b4.b;
                                     double d13 = d11 - d12;
-                                    vcaVar6.b = (d13 * cos) + (d9 * d10) + d12;
-                                    vcaVar6.a = ((d9 * cos) - (d13 * d10)) + d8;
+                                    wcaVar6.b = (d13 * cos) + (d9 * d10) + d12;
+                                    wcaVar6.a = ((d9 * cos) - (d13 * d10)) + d8;
                                     i5++;
                                     sin = d10;
                                 }
-                                vca b5 = xca.b(f2);
+                                wca b5 = yca.b(f2);
                                 double d14 = -b5.a;
                                 double d15 = -b5.b;
                                 for (int i6 = 0; i6 < f2.size(); i6++) {
-                                    vca vcaVar7 = (vca) f2.get(i6);
-                                    vcaVar7.a += d14;
-                                    vcaVar7.b += d15;
+                                    wca wcaVar7 = (wca) f2.get(i6);
+                                    wcaVar7.a += d14;
+                                    wcaVar7.b += d15;
                                 }
-                                pz5 a2 = xca.a(f2);
+                                pz5 a2 = yca.a(f2);
                                 double d16 = a2.d - a2.b;
                                 double d17 = a2.e - a2.c;
                                 for (int i7 = 0; i7 < f2.size(); i7++) {
-                                    vca vcaVar8 = (vca) f2.get(i7);
-                                    vcaVar8.a = (250.0d / d16) * vcaVar8.a;
-                                    vcaVar8.b = (250.0d / d17) * vcaVar8.b;
+                                    wca wcaVar8 = (wca) f2.get(i7);
+                                    wcaVar8.a = (250.0d / d16) * wcaVar8.a;
+                                    wcaVar8.b = (250.0d / d17) * wcaVar8.b;
                                 }
-                                vca b6 = xca.b(f2);
+                                wca b6 = yca.b(f2);
                                 double d18 = Double.MAX_VALUE;
                                 int i8 = -1;
                                 int i9 = -1;
-                                for (int i10 = 0; i10 < xcaVar2.c.size(); i10++) {
-                                    ArrayList arrayList5 = ((wca) xcaVar2.c.get(i10)).b;
+                                for (int i10 = 0; i10 < ycaVar2.c.size(); i10++) {
+                                    ArrayList arrayList5 = ((xca) ycaVar2.c.get(i10)).b;
                                     double d19 = -0.37081471193057003d;
-                                    double d20 = xca.d(f2, b6, arrayList5, -0.37081471193057003d);
+                                    double d20 = yca.d(f2, b6, arrayList5, -0.37081471193057003d);
                                     double d21 = d18;
                                     double d22 = -1.5707963267948966d;
                                     double d23 = 1.5707963267948966d;
                                     double d24 = 0.37081471193057003d;
-                                    double d25 = xca.d(f2, b6, arrayList5, 0.37081471193057003d);
+                                    double d25 = yca.d(f2, b6, arrayList5, 0.37081471193057003d);
                                     while (Math.abs(d23 - d22) > 0.06981317007977318d) {
                                         if (d20 < d25) {
                                             double d26 = (0.3819660112501051d * d24) + (0.6180339887498949d * d22);
-                                            double d27 = xca.d(f2, b6, arrayList5, d26);
+                                            double d27 = yca.d(f2, b6, arrayList5, d26);
                                             d = d19;
                                             d19 = d26;
                                             d25 = d20;
@@ -189,7 +189,7 @@ public final class bq5 {
                                             d23 = d24;
                                         } else {
                                             double d28 = (0.6180339887498949d * d23) + (0.3819660112501051d * d19);
-                                            double d29 = xca.d(f2, b6, arrayList5, d28);
+                                            double d29 = yca.d(f2, b6, arrayList5, d28);
                                             d = d28;
                                             d20 = d25;
                                             d25 = d29;
@@ -200,90 +200,90 @@ public final class bq5 {
                                     }
                                     double min = Math.min(d20, d25);
                                     if (min < d21) {
-                                        i8 = ((wca) xcaVar2.c.get(i10)).a;
+                                        i8 = ((xca) ycaVar2.c.get(i10)).a;
                                         d18 = min;
                                         i9 = i10;
                                     } else {
                                         d18 = d21;
                                     }
                                 }
-                                int i11 = 1.0d - (d18 / xca.n) < 0.8d ? -1 : i8;
+                                int i11 = 1.0d - (d18 / yca.n) < 0.8d ? -1 : i8;
                                 if (i11 >= 0 && i11 < u01.c.size() && arrayList4.size() >= 1) {
-                                    tca tcaVar2 = new tca(u01.o(i11));
+                                    uca ucaVar2 = new uca(u01.o(i11));
                                     if (i11 == 4) {
-                                        int e2 = xca.e(0, arrayList4);
+                                        int e2 = yca.e(0, arrayList4);
                                         if (e2 > 0) {
                                             if (e2 > 10) {
                                                 e2 -= 2;
                                             }
-                                            vca vcaVar9 = (vca) arrayList4.get(e2);
-                                            vca vcaVar10 = (vca) arrayList4.get(e2 / 2);
-                                            vca vcaVar11 = (vca) arrayList4.get(0);
-                                            tcaVar2.b = (float) vcaVar9.a;
-                                            tcaVar2.c = (float) vcaVar9.b;
-                                            tcaVar2.i = (float) vcaVar10.a;
-                                            tcaVar2.j = (float) vcaVar10.b;
-                                            tcaVar2.d = (float) vcaVar11.a;
-                                            tcaVar2.e = (float) vcaVar11.b;
-                                            tcaVar2.k = 16.0f;
+                                            wca wcaVar9 = (wca) arrayList4.get(e2);
+                                            wca wcaVar10 = (wca) arrayList4.get(e2 / 2);
+                                            wca wcaVar11 = (wca) arrayList4.get(0);
+                                            ucaVar2.b = (float) wcaVar9.a;
+                                            ucaVar2.c = (float) wcaVar9.b;
+                                            ucaVar2.i = (float) wcaVar10.a;
+                                            ucaVar2.j = (float) wcaVar10.b;
+                                            ucaVar2.d = (float) wcaVar11.a;
+                                            ucaVar2.e = (float) wcaVar11.b;
+                                            ucaVar2.k = 16.0f;
                                         }
                                     } else {
-                                        vca b7 = xca.b(arrayList4);
-                                        tcaVar2.b = (float) b7.a;
-                                        tcaVar2.c = (float) b7.b;
-                                        pz5 a3 = xca.a(arrayList4);
-                                        tcaVar2.d = ((float) (a3.d - a3.b)) / 2.0f;
-                                        tcaVar2.e = ((float) (a3.e - a3.c)) / 2.0f;
-                                        if (i11 == 2 && (e = xca.e(1, arrayList4)) > 0) {
-                                            vca vcaVar12 = (vca) arrayList4.get(e);
-                                            tcaVar2.h = (float) Math.atan2(vcaVar12.b - tcaVar2.c, vcaVar12.a - tcaVar2.b);
+                                        wca b7 = yca.b(arrayList4);
+                                        ucaVar2.b = (float) b7.a;
+                                        ucaVar2.c = (float) b7.b;
+                                        pz5 a3 = yca.a(arrayList4);
+                                        ucaVar2.d = ((float) (a3.d - a3.b)) / 2.0f;
+                                        ucaVar2.e = ((float) (a3.e - a3.c)) / 2.0f;
+                                        if (i11 == 2 && (e = yca.e(1, arrayList4)) > 0) {
+                                            wca wcaVar12 = (wca) arrayList4.get(e);
+                                            ucaVar2.h = (float) Math.atan2(wcaVar12.b - ucaVar2.c, wcaVar12.a - ucaVar2.b);
                                         }
                                     }
-                                    tcaVar = tcaVar2;
+                                    ucaVar = ucaVar2;
                                     if (f11.a) {
                                         StringBuilder sb = new StringBuilder("took ");
                                         sb.append(System.currentTimeMillis() - j2);
                                         sb.append("ms to ");
-                                        sb.append(tcaVar != null ? "" : "not ");
+                                        sb.append(ucaVar != null ? "" : "not ");
                                         sb.append("detect a shape");
-                                        sb.append(tcaVar != null ? " (template#" + i9 + " shape#" + i11 + ")" : "");
+                                        sb.append(ucaVar != null ? " (template#" + i9 + " shape#" + i11 + ")" : "");
                                         Log.i("shapedetector", sb.toString());
                                     }
-                                    hl.c3(new y36(xcaVar2, tcaVar, i9, f2));
-                                    xcaVar2.j.set(false);
+                                    hl.c3(new y36(ycaVar2, ucaVar, i9, f2));
+                                    ycaVar2.j.set(false);
                                 }
-                                tcaVar = null;
+                                ucaVar = null;
                                 if (f11.a) {
                                 }
-                                hl.c3(new y36(xcaVar2, tcaVar, i9, f2));
-                                xcaVar2.j.set(false);
+                                hl.c3(new y36(ycaVar2, ucaVar, i9, f2));
+                                ycaVar2.j.set(false);
                             }
                         }
                         return;
                     default:
-                        xca xcaVar3 = xcaVar;
+                        yca ycaVar3 = ycaVar;
                         try {
                             InputStream open = a.b.getAssets().open("shapes.dat");
                             while (open.available() > 5) {
-                                wca wcaVar = new wca();
-                                wcaVar.a = open.read();
+                                xca xcaVar = new xca();
+                                xcaVar.a = open.read();
                                 int read = open.read();
                                 int read2 = open.read() - 64;
                                 int read3 = open.read() - 64;
                                 if (open.available() < (read << 1)) {
-                                    if (xcaVar3.h && (string = xcaVar3.g.getString("moretemplates", null)) != null) {
+                                    if (ycaVar3.h && (string = ycaVar3.g.getString("moretemplates", null)) != null) {
                                         split = string.split("\\|");
-                                        int size = xcaVar3.c.size();
+                                        int size = ycaVar3.c.size();
                                         for (i = 0; i < split.length; i++) {
-                                            wca wcaVar2 = new wca();
+                                            xca xcaVar2 = new xca();
                                             String[] split2 = split[i].split(",");
                                             if (split2.length > 1) {
-                                                wcaVar2.a = Integer.parseInt(split2[0]);
+                                                xcaVar2.a = Integer.parseInt(split2[0]);
                                                 for (int i12 = 1; i12 < split2.length; i12 += 2) {
-                                                    wcaVar2.b.add(new vca(Double.parseDouble(split2[i12]), Double.parseDouble(split2[i12 + 1])));
+                                                    xcaVar2.b.add(new wca(Double.parseDouble(split2[i12]), Double.parseDouble(split2[i12 + 1])));
                                                 }
-                                                wcaVar2.c = xcaVar3.g.getInt("score" + (size + i), 0);
-                                                xcaVar3.c.add(wcaVar2);
+                                                xcaVar2.c = ycaVar3.g.getInt("score" + (size + i), 0);
+                                                ycaVar3.c.add(xcaVar2);
                                             }
                                         }
                                     }
@@ -291,14 +291,14 @@ public final class bq5 {
                                     return;
                                 }
                                 for (int i13 = 0; i13 < read; i13++) {
-                                    wcaVar.b.add(new vca((open.read() - read2) - 127, (open.read() - read3) - 127));
+                                    xcaVar.b.add(new wca((open.read() - read2) - 127, (open.read() - read3) - 127));
                                 }
-                                wcaVar.c = xcaVar3.g.getInt("score" + xcaVar3.c.size(), 0);
-                                xcaVar3.c.add(wcaVar);
+                                xcaVar.c = ycaVar3.g.getInt("score" + ycaVar3.c.size(), 0);
+                                ycaVar3.c.add(xcaVar);
                             }
-                            if (xcaVar3.h) {
+                            if (ycaVar3.h) {
                                 split = string.split("\\|");
-                                int size2 = xcaVar3.c.size();
+                                int size2 = ycaVar3.c.size();
                                 while (i < split.length) {
                                 }
                             }
@@ -311,13 +311,13 @@ public final class bq5 {
                 }
             }
         };
-        xcaVar.f = context;
-        xcaVar.e = zj3Var;
+        ycaVar.f = context;
+        ycaVar.e = zj3Var;
         SharedPreferences sharedPreferences = context.getSharedPreferences("shapedetector_conf", 0);
-        xcaVar.g = sharedPreferences;
-        xcaVar.h = sharedPreferences.getBoolean("learning", false);
-        xcaVar.a = sharedPreferences.getInt("scoreall", 0);
-        xca.m.postRunnable(new Runnable() { // from class: uca
+        ycaVar.g = sharedPreferences;
+        ycaVar.h = sharedPreferences.getBoolean("learning", false);
+        ycaVar.a = sharedPreferences.getInt("scoreall", 0);
+        yca.m.postRunnable(new Runnable() { // from class: vca
             /* JADX WARN: Removed duplicated region for block: B:133:0x042c  */
             /* JADX WARN: Removed duplicated region for block: B:23:0x00a4 A[Catch: Exception -> 0x0101, TryCatch #1 {Exception -> 0x0101, blocks: (B:5:0x000c, B:6:0x0018, B:8:0x001f, B:12:0x0045, B:14:0x0062, B:16:0x0085, B:18:0x0089, B:20:0x0094, B:21:0x00a1, B:23:0x00a4, B:25:0x00b5, B:26:0x00be, B:28:0x00c1, B:30:0x00dc, B:32:0x00fa, B:35:0x00fd), top: B:4:0x000c }] */
             @Override // java.lang.Runnable
@@ -325,7 +325,7 @@ public final class bq5 {
                 Code decompiled incorrectly, please refer to instructions dump.
             */
             public final void run() {
-                tca tcaVar;
+                uca ucaVar;
                 int e;
                 double d;
                 long j;
@@ -335,45 +335,45 @@ public final class bq5 {
                 int i;
                 switch (b) {
                     case 0:
-                        xca xcaVar2 = xcaVar;
-                        if (xcaVar2.j.get()) {
+                        yca ycaVar2 = ycaVar;
+                        if (ycaVar2.j.get()) {
                             return;
                         }
-                        xcaVar2.k.set(false);
-                        xcaVar2.j.set(true);
+                        ycaVar2.k.set(false);
+                        ycaVar2.j.set(true);
                         long currentTimeMillis = System.currentTimeMillis();
-                        synchronized (xcaVar2) {
-                            if (xcaVar2.b.size() < 8) {
-                                xcaVar2.j.set(false);
+                        synchronized (ycaVar2) {
+                            if (ycaVar2.b.size() < 8) {
+                                ycaVar2.j.set(false);
                             } else {
-                                ArrayList f = xca.f(xcaVar2.b);
+                                ArrayList f = yca.f(ycaVar2.b);
                                 ArrayList arrayList2 = new ArrayList();
-                                arrayList2.add((vca) f.get(0));
+                                arrayList2.add((wca) f.get(0));
                                 double d2 = 0.0d;
                                 for (int i2 = 1; i2 < f.size(); i2++) {
-                                    vca vcaVar = (vca) f.get(i2 - 1);
-                                    vca vcaVar2 = (vca) f.get(i2);
-                                    vcaVar.getClass();
-                                    d2 += vcaVar.a(vcaVar2.a, vcaVar2.b);
+                                    wca wcaVar = (wca) f.get(i2 - 1);
+                                    wca wcaVar2 = (wca) f.get(i2);
+                                    wcaVar.getClass();
+                                    d2 += wcaVar.a(wcaVar2.a, wcaVar2.b);
                                 }
                                 double d3 = d2 / 47.0d;
                                 int i3 = 1;
                                 double d4 = 0.0d;
                                 while (i3 < f.size()) {
                                     int i4 = i3 - 1;
-                                    vca vcaVar3 = (vca) f.get(i4);
-                                    vca vcaVar4 = (vca) f.get(i3);
-                                    vcaVar3.getClass();
+                                    wca wcaVar3 = (wca) f.get(i4);
+                                    wca wcaVar4 = (wca) f.get(i3);
+                                    wcaVar3.getClass();
                                     ArrayList arrayList3 = arrayList2;
-                                    double a = vcaVar3.a(vcaVar4.a, vcaVar4.b);
+                                    double a = wcaVar3.a(wcaVar4.a, wcaVar4.b);
                                     double d5 = d4 + a;
                                     if (d5 >= d3) {
                                         double d6 = (d3 - d4) / a;
                                         j = currentTimeMillis;
-                                        vca vcaVar5 = new vca(((((vca) f.get(i3)).a - ((vca) f.get(i4)).a) * d6) + ((vca) f.get(i4)).a, ((((vca) f.get(i3)).b - ((vca) f.get(i4)).b) * d6) + ((vca) f.get(i4)).b);
+                                        wca wcaVar5 = new wca(((((wca) f.get(i3)).a - ((wca) f.get(i4)).a) * d6) + ((wca) f.get(i4)).a, ((((wca) f.get(i3)).b - ((wca) f.get(i4)).b) * d6) + ((wca) f.get(i4)).b);
                                         arrayList = arrayList3;
-                                        arrayList.add(vcaVar5);
-                                        f.add(i3, vcaVar5);
+                                        arrayList.add(wcaVar5);
+                                        f.add(i3, wcaVar5);
                                         d4 = 0.0d;
                                     } else {
                                         j = currentTimeMillis;
@@ -387,62 +387,62 @@ public final class bq5 {
                                 long j2 = currentTimeMillis;
                                 ArrayList arrayList4 = arrayList2;
                                 if (arrayList4.size() == 47) {
-                                    arrayList4.add((vca) c00.g(1, f));
+                                    arrayList4.add((wca) c00.g(1, f));
                                 }
-                                ArrayList f2 = xca.f(arrayList4);
-                                vca b3 = xca.b(f2);
-                                double atan2 = Math.atan2(b3.b - ((vca) f2.get(0)).b, b3.a - ((vca) f2.get(0)).a);
-                                vca b4 = xca.b(f2);
+                                ArrayList f2 = yca.f(arrayList4);
+                                wca b3 = yca.b(f2);
+                                double atan2 = Math.atan2(b3.b - ((wca) f2.get(0)).b, b3.a - ((wca) f2.get(0)).a);
+                                wca b4 = yca.b(f2);
                                 double cos = Math.cos(atan2);
                                 double sin = Math.sin(atan2);
                                 int i5 = 0;
                                 while (i5 < f2.size()) {
-                                    vca vcaVar6 = (vca) f2.get(i5);
-                                    double d7 = vcaVar6.a;
+                                    wca wcaVar6 = (wca) f2.get(i5);
+                                    double d7 = wcaVar6.a;
                                     double d8 = b4.a;
                                     double d9 = d7 - d8;
                                     double d10 = sin;
-                                    double d11 = vcaVar6.b;
+                                    double d11 = wcaVar6.b;
                                     double d12 = b4.b;
                                     double d13 = d11 - d12;
-                                    vcaVar6.b = (d13 * cos) + (d9 * d10) + d12;
-                                    vcaVar6.a = ((d9 * cos) - (d13 * d10)) + d8;
+                                    wcaVar6.b = (d13 * cos) + (d9 * d10) + d12;
+                                    wcaVar6.a = ((d9 * cos) - (d13 * d10)) + d8;
                                     i5++;
                                     sin = d10;
                                 }
-                                vca b5 = xca.b(f2);
+                                wca b5 = yca.b(f2);
                                 double d14 = -b5.a;
                                 double d15 = -b5.b;
                                 for (int i6 = 0; i6 < f2.size(); i6++) {
-                                    vca vcaVar7 = (vca) f2.get(i6);
-                                    vcaVar7.a += d14;
-                                    vcaVar7.b += d15;
+                                    wca wcaVar7 = (wca) f2.get(i6);
+                                    wcaVar7.a += d14;
+                                    wcaVar7.b += d15;
                                 }
-                                pz5 a2 = xca.a(f2);
+                                pz5 a2 = yca.a(f2);
                                 double d16 = a2.d - a2.b;
                                 double d17 = a2.e - a2.c;
                                 for (int i7 = 0; i7 < f2.size(); i7++) {
-                                    vca vcaVar8 = (vca) f2.get(i7);
-                                    vcaVar8.a = (250.0d / d16) * vcaVar8.a;
-                                    vcaVar8.b = (250.0d / d17) * vcaVar8.b;
+                                    wca wcaVar8 = (wca) f2.get(i7);
+                                    wcaVar8.a = (250.0d / d16) * wcaVar8.a;
+                                    wcaVar8.b = (250.0d / d17) * wcaVar8.b;
                                 }
-                                vca b6 = xca.b(f2);
+                                wca b6 = yca.b(f2);
                                 double d18 = Double.MAX_VALUE;
                                 int i8 = -1;
                                 int i9 = -1;
-                                for (int i10 = 0; i10 < xcaVar2.c.size(); i10++) {
-                                    ArrayList arrayList5 = ((wca) xcaVar2.c.get(i10)).b;
+                                for (int i10 = 0; i10 < ycaVar2.c.size(); i10++) {
+                                    ArrayList arrayList5 = ((xca) ycaVar2.c.get(i10)).b;
                                     double d19 = -0.37081471193057003d;
-                                    double d20 = xca.d(f2, b6, arrayList5, -0.37081471193057003d);
+                                    double d20 = yca.d(f2, b6, arrayList5, -0.37081471193057003d);
                                     double d21 = d18;
                                     double d22 = -1.5707963267948966d;
                                     double d23 = 1.5707963267948966d;
                                     double d24 = 0.37081471193057003d;
-                                    double d25 = xca.d(f2, b6, arrayList5, 0.37081471193057003d);
+                                    double d25 = yca.d(f2, b6, arrayList5, 0.37081471193057003d);
                                     while (Math.abs(d23 - d22) > 0.06981317007977318d) {
                                         if (d20 < d25) {
                                             double d26 = (0.3819660112501051d * d24) + (0.6180339887498949d * d22);
-                                            double d27 = xca.d(f2, b6, arrayList5, d26);
+                                            double d27 = yca.d(f2, b6, arrayList5, d26);
                                             d = d19;
                                             d19 = d26;
                                             d25 = d20;
@@ -450,7 +450,7 @@ public final class bq5 {
                                             d23 = d24;
                                         } else {
                                             double d28 = (0.6180339887498949d * d23) + (0.3819660112501051d * d19);
-                                            double d29 = xca.d(f2, b6, arrayList5, d28);
+                                            double d29 = yca.d(f2, b6, arrayList5, d28);
                                             d = d28;
                                             d20 = d25;
                                             d25 = d29;
@@ -461,90 +461,90 @@ public final class bq5 {
                                     }
                                     double min = Math.min(d20, d25);
                                     if (min < d21) {
-                                        i8 = ((wca) xcaVar2.c.get(i10)).a;
+                                        i8 = ((xca) ycaVar2.c.get(i10)).a;
                                         d18 = min;
                                         i9 = i10;
                                     } else {
                                         d18 = d21;
                                     }
                                 }
-                                int i11 = 1.0d - (d18 / xca.n) < 0.8d ? -1 : i8;
+                                int i11 = 1.0d - (d18 / yca.n) < 0.8d ? -1 : i8;
                                 if (i11 >= 0 && i11 < u01.c.size() && arrayList4.size() >= 1) {
-                                    tca tcaVar2 = new tca(u01.o(i11));
+                                    uca ucaVar2 = new uca(u01.o(i11));
                                     if (i11 == 4) {
-                                        int e2 = xca.e(0, arrayList4);
+                                        int e2 = yca.e(0, arrayList4);
                                         if (e2 > 0) {
                                             if (e2 > 10) {
                                                 e2 -= 2;
                                             }
-                                            vca vcaVar9 = (vca) arrayList4.get(e2);
-                                            vca vcaVar10 = (vca) arrayList4.get(e2 / 2);
-                                            vca vcaVar11 = (vca) arrayList4.get(0);
-                                            tcaVar2.b = (float) vcaVar9.a;
-                                            tcaVar2.c = (float) vcaVar9.b;
-                                            tcaVar2.i = (float) vcaVar10.a;
-                                            tcaVar2.j = (float) vcaVar10.b;
-                                            tcaVar2.d = (float) vcaVar11.a;
-                                            tcaVar2.e = (float) vcaVar11.b;
-                                            tcaVar2.k = 16.0f;
+                                            wca wcaVar9 = (wca) arrayList4.get(e2);
+                                            wca wcaVar10 = (wca) arrayList4.get(e2 / 2);
+                                            wca wcaVar11 = (wca) arrayList4.get(0);
+                                            ucaVar2.b = (float) wcaVar9.a;
+                                            ucaVar2.c = (float) wcaVar9.b;
+                                            ucaVar2.i = (float) wcaVar10.a;
+                                            ucaVar2.j = (float) wcaVar10.b;
+                                            ucaVar2.d = (float) wcaVar11.a;
+                                            ucaVar2.e = (float) wcaVar11.b;
+                                            ucaVar2.k = 16.0f;
                                         }
                                     } else {
-                                        vca b7 = xca.b(arrayList4);
-                                        tcaVar2.b = (float) b7.a;
-                                        tcaVar2.c = (float) b7.b;
-                                        pz5 a3 = xca.a(arrayList4);
-                                        tcaVar2.d = ((float) (a3.d - a3.b)) / 2.0f;
-                                        tcaVar2.e = ((float) (a3.e - a3.c)) / 2.0f;
-                                        if (i11 == 2 && (e = xca.e(1, arrayList4)) > 0) {
-                                            vca vcaVar12 = (vca) arrayList4.get(e);
-                                            tcaVar2.h = (float) Math.atan2(vcaVar12.b - tcaVar2.c, vcaVar12.a - tcaVar2.b);
+                                        wca b7 = yca.b(arrayList4);
+                                        ucaVar2.b = (float) b7.a;
+                                        ucaVar2.c = (float) b7.b;
+                                        pz5 a3 = yca.a(arrayList4);
+                                        ucaVar2.d = ((float) (a3.d - a3.b)) / 2.0f;
+                                        ucaVar2.e = ((float) (a3.e - a3.c)) / 2.0f;
+                                        if (i11 == 2 && (e = yca.e(1, arrayList4)) > 0) {
+                                            wca wcaVar12 = (wca) arrayList4.get(e);
+                                            ucaVar2.h = (float) Math.atan2(wcaVar12.b - ucaVar2.c, wcaVar12.a - ucaVar2.b);
                                         }
                                     }
-                                    tcaVar = tcaVar2;
+                                    ucaVar = ucaVar2;
                                     if (f11.a) {
                                         StringBuilder sb = new StringBuilder("took ");
                                         sb.append(System.currentTimeMillis() - j2);
                                         sb.append("ms to ");
-                                        sb.append(tcaVar != null ? "" : "not ");
+                                        sb.append(ucaVar != null ? "" : "not ");
                                         sb.append("detect a shape");
-                                        sb.append(tcaVar != null ? " (template#" + i9 + " shape#" + i11 + ")" : "");
+                                        sb.append(ucaVar != null ? " (template#" + i9 + " shape#" + i11 + ")" : "");
                                         Log.i("shapedetector", sb.toString());
                                     }
-                                    hl.c3(new y36(xcaVar2, tcaVar, i9, f2));
-                                    xcaVar2.j.set(false);
+                                    hl.c3(new y36(ycaVar2, ucaVar, i9, f2));
+                                    ycaVar2.j.set(false);
                                 }
-                                tcaVar = null;
+                                ucaVar = null;
                                 if (f11.a) {
                                 }
-                                hl.c3(new y36(xcaVar2, tcaVar, i9, f2));
-                                xcaVar2.j.set(false);
+                                hl.c3(new y36(ycaVar2, ucaVar, i9, f2));
+                                ycaVar2.j.set(false);
                             }
                         }
                         return;
                     default:
-                        xca xcaVar3 = xcaVar;
+                        yca ycaVar3 = ycaVar;
                         try {
                             InputStream open = a.b.getAssets().open("shapes.dat");
                             while (open.available() > 5) {
-                                wca wcaVar = new wca();
-                                wcaVar.a = open.read();
+                                xca xcaVar = new xca();
+                                xcaVar.a = open.read();
                                 int read = open.read();
                                 int read2 = open.read() - 64;
                                 int read3 = open.read() - 64;
                                 if (open.available() < (read << 1)) {
-                                    if (xcaVar3.h && (string = xcaVar3.g.getString("moretemplates", null)) != null) {
+                                    if (ycaVar3.h && (string = ycaVar3.g.getString("moretemplates", null)) != null) {
                                         split = string.split("\\|");
-                                        int size2 = xcaVar3.c.size();
+                                        int size2 = ycaVar3.c.size();
                                         for (i = 0; i < split.length; i++) {
-                                            wca wcaVar2 = new wca();
+                                            xca xcaVar2 = new xca();
                                             String[] split2 = split[i].split(",");
                                             if (split2.length > 1) {
-                                                wcaVar2.a = Integer.parseInt(split2[0]);
+                                                xcaVar2.a = Integer.parseInt(split2[0]);
                                                 for (int i12 = 1; i12 < split2.length; i12 += 2) {
-                                                    wcaVar2.b.add(new vca(Double.parseDouble(split2[i12]), Double.parseDouble(split2[i12 + 1])));
+                                                    xcaVar2.b.add(new wca(Double.parseDouble(split2[i12]), Double.parseDouble(split2[i12 + 1])));
                                                 }
-                                                wcaVar2.c = xcaVar3.g.getInt("score" + (size2 + i), 0);
-                                                xcaVar3.c.add(wcaVar2);
+                                                xcaVar2.c = ycaVar3.g.getInt("score" + (size2 + i), 0);
+                                                ycaVar3.c.add(xcaVar2);
                                             }
                                         }
                                     }
@@ -552,14 +552,14 @@ public final class bq5 {
                                     return;
                                 }
                                 for (int i13 = 0; i13 < read; i13++) {
-                                    wcaVar.b.add(new vca((open.read() - read2) - 127, (open.read() - read3) - 127));
+                                    xcaVar.b.add(new wca((open.read() - read2) - 127, (open.read() - read3) - 127));
                                 }
-                                wcaVar.c = xcaVar3.g.getInt("score" + xcaVar3.c.size(), 0);
-                                xcaVar3.c.add(wcaVar);
+                                xcaVar.c = ycaVar3.g.getInt("score" + ycaVar3.c.size(), 0);
+                                ycaVar3.c.add(xcaVar);
                             }
-                            if (xcaVar3.h) {
+                            if (ycaVar3.h) {
                                 split = string.split("\\|");
-                                int size22 = xcaVar3.c.size();
+                                int size22 = ycaVar3.c.size();
                                 while (i < split.length) {
                                 }
                             }
@@ -572,7 +572,7 @@ public final class bq5 {
                 }
             }
         });
-        this.s = xcaVar;
+        this.s = ycaVar;
     }
 
     public final void a(r01 r01Var, boolean z, ja9 ja9Var) {

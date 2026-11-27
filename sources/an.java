@@ -19,9 +19,9 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PasskeysActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class an implements fn, ci0, fd, bf7, ot2, yn5, fy8, t69 {
+public final /* synthetic */ class an implements fn, ci0, fd, cf7, ot2, yn5, fy8, t69 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ int c;
@@ -36,7 +36,7 @@ public final /* synthetic */ class an implements fn, ci0, fd, bf7, ot2, yn5, fy8
         this.e = zn5Var;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         uj3 uj3Var = (uj3) this.d;
         ArrayList arrayList = (ArrayList) this.b;

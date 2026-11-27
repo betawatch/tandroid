@@ -3,7 +3,7 @@
 import java.util.Locale;
 import org.telegram.SQLite.SQLiteDatabase;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m6b implements Runnable {
     public final /* synthetic */ byte a;
@@ -26,25 +26,25 @@ public final /* synthetic */ class m6b implements Runnable {
         o6b o6bVar = this.b;
         switch (b) {
             case 0:
-                jf7 jf7Var = o6bVar.b;
-                SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                kf7 kf7Var = o6bVar.b;
+                SQLiteDatabase sQLiteDatabase = kf7Var.b;
                 try {
                     Locale locale = Locale.US;
                     sQLiteDatabase.executeFast("DELETE FROM stories WHERE dialog_id = " + j + " AND story_id = " + i).stepThis().dispose();
                     break;
                 } catch (Throwable th) {
-                    jf7Var.n(th, true);
+                    kf7Var.p(th, true);
                     return;
                 }
             default:
-                jf7 jf7Var2 = o6bVar.b;
-                SQLiteDatabase sQLiteDatabase2 = jf7Var2.b;
+                kf7 kf7Var2 = o6bVar.b;
+                SQLiteDatabase sQLiteDatabase2 = kf7Var2.b;
                 try {
                     Locale locale2 = Locale.US;
                     sQLiteDatabase2.executeFast("REPLACE INTO stories_counter VALUES(" + j + ", 0, " + i + ")").stepThis().dispose();
                     break;
                 } catch (Throwable th2) {
-                    jf7Var2.n(th2, true);
+                    kf7Var2.p(th2, true);
                 }
         }
     }

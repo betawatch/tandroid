@@ -9,7 +9,7 @@ import java.util.Iterator;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class oa7 implements Runnable {
     public final /* synthetic */ uc7 a;
@@ -243,13 +243,13 @@ public final /* synthetic */ class oa7 implements Runnable {
                     ConcurrentHashMap concurrentHashMap3 = message3.out ? concurrentHashMap : concurrentHashMap2;
                     Integer num6 = (Integer) concurrentHashMap3.get(Long.valueOf(message3.dialog_id));
                     if (num6 == null) {
-                        num6 = Integer.valueOf(uc7Var.getMessagesStorage().S(message3.dialog_id, message3.out));
+                        num6 = Integer.valueOf(uc7Var.getMessagesStorage().U(message3.dialog_id, message3.out));
                         concurrentHashMap3.put(Long.valueOf(message3.dialog_id), num6);
                     }
                     message3.unread = num6.intValue() < message3.id;
                 }
             }
-            uc7Var.getMessagesStorage().a1(tL_messages_dialogs2, 0);
+            uc7Var.getMessagesStorage().e1(tL_messages_dialogs2, 0);
         }
         final byte b = this.e;
         final ArrayList arrayList9 = this.f;
@@ -273,7 +273,7 @@ public final /* synthetic */ class oa7 implements Runnable {
                 za7 za7Var = this;
                 uc7 uc7Var5 = uc7.this;
                 ArrayList arrayList12 = uc7Var5.y;
-                a5c a5cVar = uc7Var5.i4;
+                a5c a5cVar = uc7Var5.j4;
                 SparseArray sparseArray3 = uc7Var5.J0;
                 zh6 zh6Var5 = uc7Var5.S;
                 zh6 zh6Var6 = uc7Var5.T;
@@ -289,7 +289,7 @@ public final /* synthetic */ class oa7 implements Runnable {
                         ac7 ac7Var = (ac7) uc7Var5.G0.get(i14);
                         sparseArray3.put(ac7Var.a, ac7Var);
                     }
-                    Iterator it = uc7Var5.n4.iterator();
+                    Iterator it = uc7Var5.o4.iterator();
                     boolean z2 = false;
                     while (it.hasNext()) {
                         int intValue = ((Integer) it.next()).intValue();

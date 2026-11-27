@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class ChatsWidgetProvider extends AppWidgetProvider {
     public static void a(Context context, AppWidgetManager appWidgetManager, int i) {
@@ -40,7 +40,7 @@ public class ChatsWidgetProvider extends AppWidgetProvider {
             }
             ArrayList arrayList = new ArrayList();
             if (i5 >= 0) {
-                jf7.Y(k5.a(i5).a).n0(i, 0, arrayList, null, null, false);
+                kf7.a0(k5.a(i5).a).p0(i, 0, arrayList, null, null, false);
             }
             if (i3 != 1 && arrayList.size() > 1) {
                 i4 = (i3 == 2 || arrayList.size() <= 2) ? R.layout.shortcut_widget_layout_2 : (i3 == 3 || arrayList.size() <= 3) ? R.layout.shortcut_widget_layout_3 : R.layout.shortcut_widget_layout_4;
@@ -73,8 +73,8 @@ public class ChatsWidgetProvider extends AppWidgetProvider {
         for (int i = 0; i < iArr.length; i++) {
             int i2 = sharedPreferences.getInt("account" + iArr[i], -1);
             if (i2 >= 0) {
-                jf7 Y = jf7.Y(k5.a(i2).a);
-                Y.a.c(new ad7(Y, iArr[i], (byte) 1));
+                kf7 a0 = kf7.a0(k5.a(i2).a);
+                a0.a.c(new bd7(a0, iArr[i], (byte) 1));
             }
             edit.remove("account" + iArr[i]);
             edit.remove(TeXSymbolParser.TYPE_ATTR + iArr[i]);

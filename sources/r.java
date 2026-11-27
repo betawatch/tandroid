@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class r implements qcc {
     public final /* synthetic */ byte a;
@@ -161,17 +161,17 @@ public final /* synthetic */ class r implements qcc {
                 }
                 if (num.intValue() == 2) {
                     tw7Var.dismiss();
-                    rbb rbbVar = ((vab) dx7Var).o2;
-                    rbbVar.d1.M.b(true);
-                    rbbVar.u();
-                    rbbVar.r(true);
-                    rbbVar.c(true);
+                    sbb sbbVar = ((wab) dx7Var).o2;
+                    sbbVar.d1.M.b(true);
+                    sbbVar.u();
+                    sbbVar.r(true);
+                    sbbVar.c(true);
                     return Boolean.TRUE;
                 }
                 byte b3 = 3;
                 if (num.intValue() == 1) {
                     zArr[0] = false;
-                    r1a r1aVar = new r1a(dx7Var.getContext(), false, null, new ii7(dx7Var, (byte) 8), new x53());
+                    r1a r1aVar = new r1a(dx7Var.getContext(), false, null, new ji7(dx7Var, (byte) 8), new x53());
                     r1aVar.n(new iw7(dx7Var, b3));
                     r1aVar.show();
                     return Boolean.TRUE;

@@ -15,7 +15,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ks5 implements pcc {
     public final /* synthetic */ byte a;
@@ -77,7 +77,7 @@ public final /* synthetic */ class ks5 implements pcc {
                 final vnb resourceProvider = S == null ? null : S.getResourceProvider();
                 final boolean[] zArr = new boolean[1];
                 FrameLayout frameLayout = new FrameLayout(context);
-                boolean z = uc7Var.k4.l.f && !TextUtils.isEmpty(uc7Var.k4.X2.f);
+                boolean z = uc7Var.l4.l.f && !TextUtils.isEmpty(uc7Var.l4.X2.f);
                 boolean z2 = (contentsettings == null || !contentsettings.sensitive_can_change) && z;
                 if (!z) {
                     if (contentsettings != null && contentsettings.sensitive_can_change) {
@@ -111,7 +111,7 @@ public final /* synthetic */ class ks5 implements pcc {
                                         ThemeActivity.H0(uc7Var2.currentAccount, resourceProvider, new r4c(uc7Var2, j2, zArr3, nyVar2, (byte) 6), context);
                                         return;
                                     }
-                                    uc7Var2.K4.add(Long.valueOf(j2));
+                                    uc7Var2.L4.add(Long.valueOf(j2));
                                     zArr3[0] = true;
                                     nyVar2.run();
                                 }

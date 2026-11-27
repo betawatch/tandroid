@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class jq0 implements pcc {
     public final /* synthetic */ byte a;
@@ -75,17 +75,17 @@ public final /* synthetic */ class jq0 implements pcc {
                 s42Var.b.a(true);
                 break;
             case 2:
-                mj7 mj7Var = (mj7) obj2;
+                nj7 nj7Var = (nj7) obj2;
                 View view = (View) obj;
-                wa waVar = mj7Var.b;
-                if (view instanceof lj7) {
+                wa waVar = nj7Var.b;
+                if (view instanceof mj7) {
                     waVar.getClass();
                     int S = RecyclerView.S(view);
                     b8c G = waVar.g3.G(S);
                     if (G != null) {
-                        lj7 lj7Var = (lj7) view;
-                        lj7Var.setPosition(mj7Var.b(S));
-                        lj7Var.b(i3 == G.d, true);
+                        mj7 mj7Var = (mj7) view;
+                        mj7Var.setPosition(nj7Var.b(S));
+                        mj7Var.b(i3 == G.d, true);
                         view.setPressed(false);
                         break;
                     }
@@ -131,9 +131,9 @@ public final /* synthetic */ class jq0 implements pcc {
                 }
                 break;
             case 4:
-                w09 w09Var = (w09) ((rn8) obj2).b;
-                w09Var.d0();
-                i = ((e) w09Var).currentAccount;
+                x09 x09Var = (x09) ((rn8) obj2).b;
+                x09Var.d0();
+                i = ((e) x09Var).currentAccount;
                 b19.f(i).k(i3, (String) obj);
                 break;
             case 5:

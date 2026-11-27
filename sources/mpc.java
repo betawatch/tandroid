@@ -18,7 +18,7 @@ import org.telegram.ui.Wallet.c;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class mpc implements Runnable {
     public final /* synthetic */ byte a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class mpc implements Runnable {
                 int i2 = this.b;
                 String str = ((TL_wallet.walletTransaction[]) this.d)[0].tx_hash;
                 if (!TextUtils.isEmpty(str)) {
-                    String str2 = uc7.s1(i2).k4.O1.f;
+                    String str2 = uc7.s1(i2).l4.O1.f;
                     if (TextUtils.isEmpty(str2)) {
                         str2 = "https://tonviewer.com/";
                     } else if (!str2.endsWith("/")) {

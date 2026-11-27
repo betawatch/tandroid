@@ -50,7 +50,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicLong;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class ko9 implements op9, uw8, tw8, m7b, heb, OnCompleteListener, s99 {
     public static ko9 e;
@@ -248,7 +248,7 @@ public class ko9 implements op9, uw8, tw8, m7b, heb, OnCompleteListener, s99 {
             case 2:
                 return new pm3(((pq5) this.b).a, ((uw8) this.c).get(), ((z6f) this.d).get(), (byte) 12);
             case 3:
-                return new xba((mx2) ((aj3) this.b).b, (srb) ((tw8) this.c).get(), (o73) ((tw8) this.d).get());
+                return new yba((mx2) ((aj3) this.b).b, (srb) ((tw8) this.c).get(), (o73) ((tw8) this.d).get());
             default:
                 return new h5c(new sae(), new z6f((byte) 28), (rc3) ((am2) this.b).get(), (ba0) ((xq2) this.c).get(), (u8a) ((lyc) this.d).get());
         }
@@ -377,9 +377,9 @@ public class ko9 implements op9, uw8, tw8, m7b, heb, OnCompleteListener, s99 {
                 int i3 = typedValue.assetCookie;
                 ji6 ji6Var = r7c.b;
                 Typeface typeface = (Typeface) ji6Var.a(r7c.b(resources, resourceId, charSequence2, i3, i2));
-                byte b = 15;
+                byte b = 16;
                 if (typeface != null) {
-                    new Handler(Looper.getMainLooper()).post(new z09(jqVar, typeface, b));
+                    new Handler(Looper.getMainLooper()).post(new yz8(jqVar, typeface, b));
                     return typeface;
                 }
                 try {
@@ -390,7 +390,7 @@ public class ko9 implements op9, uw8, tw8, m7b, heb, OnCompleteListener, s99 {
                             Typeface d = r7c.a.d(context, resources, resourceId, charSequence2, i2);
                             if (d != null) {
                                 ji6Var.b(r7c.b(resources, resourceId, charSequence2, i4, i2), d);
-                                new Handler(Looper.getMainLooper()).post(new z09(jqVar2, d, b));
+                                new Handler(Looper.getMainLooper()).post(new yz8(jqVar2, d, b));
                             } else {
                                 jqVar2.b();
                             }
@@ -505,10 +505,10 @@ public class ko9 implements op9, uw8, tw8, m7b, heb, OnCompleteListener, s99 {
             nhcVar.getClass();
             return nhcVar;
         }
-        oj7 oj7Var = new oj7((e23) this.d);
-        ((LinkedHashMap) oj7Var.a).put(z3f.e, str);
+        pj7 pj7Var = new pj7((e23) this.d);
+        ((LinkedHashMap) pj7Var.a).put(z3f.e, str);
         try {
-            j = qhcVar.j(ki2Var, oj7Var);
+            j = qhcVar.j(ki2Var, pj7Var);
         } catch (Error unused) {
             j = qhcVar.j(ki2Var, c23.b);
         }

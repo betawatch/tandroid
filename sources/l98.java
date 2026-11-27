@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class l98 extends e implements fn7 {
     public int E;
@@ -386,7 +386,7 @@ public final class l98 extends e implements fn7 {
         TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
         uc7.s1(this.currentAccount).j4(tL_contacts_resolvedPeer.users, false);
         uc7.s1(this.currentAccount).c4(tL_contacts_resolvedPeer.chats, false);
-        jf7.Y(this.currentAccount).j1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
+        kf7.a0(this.currentAccount).n1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
         String str = this.H;
         this.H = null;
         h0(str, "", z, false);
@@ -466,7 +466,7 @@ public final class l98 extends e implements fn7 {
         this.r = true;
         uc7 s1 = uc7.s1(this.currentAccount);
         uc7 s12 = uc7.s1(this.currentAccount);
-        TLObject c2 = s1.c2(z ? s12.o3 : s12.p3);
+        TLObject c2 = s1.c2(z ? s12.p3 : s12.q3);
         if (!(c2 instanceof TLRPC.User)) {
             if (!z2 || this.G) {
                 return;
@@ -474,7 +474,7 @@ public final class l98 extends e implements fn7 {
             this.G = true;
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
             uc7 s13 = uc7.s1(this.currentAccount);
-            tL_contacts_resolveUsername.username = z ? s13.o3 : s13.p3;
+            tL_contacts_resolveUsername.username = z ? s13.p3 : s13.q3;
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_resolveUsername, new q81((byte) 10, this, z));
             return;
         }

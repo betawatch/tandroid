@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kh implements fd, fy8, ci0 {
     public final /* synthetic */ byte a;
@@ -143,11 +143,11 @@ public final /* synthetic */ class kh implements fd, fy8, ci0 {
                 r47 r47Var = (r47) obj2;
                 sg2[] sg2VarArr = (sg2[]) obj;
                 if (user != null) {
-                    jf7 Y = jf7.Y(k5Var.a);
-                    Y.a.c(new xd7(Y, zu1Var.a(), user.id, (byte) 3));
+                    kf7 a0 = kf7.a0(k5Var.a);
+                    a0.a.c(new yd7(a0, zu1Var.a(), user.id, (byte) 3));
                 } else {
-                    jf7 Y2 = jf7.Y(k5Var.a);
-                    Y2.a.c(new xd7(Y2, zu1Var.a(), -chat.id, (byte) 3));
+                    kf7 a02 = kf7.a0(k5Var.a);
+                    a02.a.c(new yd7(a02, zu1Var.a(), -chat.id, (byte) 3));
                 }
                 TLRPC.TL_contacts_blockFromReplies tL_contacts_blockFromReplies = new TLRPC.TL_contacts_blockFromReplies();
                 tL_contacts_blockFromReplies.msg_id = r47Var.e1();
@@ -172,7 +172,7 @@ public final /* synthetic */ class kh implements fd, fy8, ci0 {
                 b18Var.Z[1].setText((String) obj4);
                 b18Var.Z[2].setText((String) obj3);
                 b18Var.Q1(true, true);
-                m08Var.c((fe7) obj2, (um4) obj);
+                m08Var.c((ge7) obj2, (um4) obj);
                 break;
         }
     }

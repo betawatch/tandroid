@@ -2,59 +2,93 @@
 
 import android.util.SparseArray;
 
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v0 fl7, still in use, count: 1, list:
+  (r0v0 fl7) from 0x0128: INVOKE (r2v11 android.util.SparseArray), (0 int), (r0v0 fl7) VIRTUAL call: android.util.SparseArray.put(int, java.lang.Object):void A[MD:(int, E):void (c)] (LINE:297)
+	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
+	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
+	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:98)
+	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:252)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:180)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class fl7 {
-    public static final SparseArray a;
-    public static final /* synthetic */ fl7[] b;
-
     /* JADX INFO: Fake field, exist only in values array */
-    fl7 EF0;
+    EF0(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF3(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF5(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF7(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF11(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF13(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF15(8),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF14(9),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF12(10),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF10(11),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF8(12),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF6(13),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF4(14),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF2(15),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF6(16),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF4(17),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF2(18),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF6(19),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF236(100);
+
+    public static final SparseArray a;
 
     static {
-        fl7 fl7Var = new fl7("MOBILE", 0);
-        fl7 fl7Var2 = new fl7("WIFI", 1);
-        fl7 fl7Var3 = new fl7("MOBILE_MMS", 2);
-        fl7 fl7Var4 = new fl7("MOBILE_SUPL", 3);
-        fl7 fl7Var5 = new fl7("MOBILE_DUN", 4);
-        fl7 fl7Var6 = new fl7("MOBILE_HIPRI", 5);
-        fl7 fl7Var7 = new fl7("WIMAX", 6);
-        fl7 fl7Var8 = new fl7("BLUETOOTH", 7);
-        fl7 fl7Var9 = new fl7("DUMMY", 8);
-        fl7 fl7Var10 = new fl7("ETHERNET", 9);
-        fl7 fl7Var11 = new fl7("MOBILE_FOTA", 10);
-        fl7 fl7Var12 = new fl7("MOBILE_IMS", 11);
-        fl7 fl7Var13 = new fl7("MOBILE_CBS", 12);
-        fl7 fl7Var14 = new fl7("WIFI_P2P", 13);
-        fl7 fl7Var15 = new fl7("MOBILE_IA", 14);
-        fl7 fl7Var16 = new fl7("MOBILE_EMERGENCY", 15);
-        fl7 fl7Var17 = new fl7("PROXY", 16);
-        fl7 fl7Var18 = new fl7("VPN", 17);
-        fl7 fl7Var19 = new fl7("NONE", 18);
-        b = new fl7[]{fl7Var, fl7Var2, fl7Var3, fl7Var4, fl7Var5, fl7Var6, fl7Var7, fl7Var8, fl7Var9, fl7Var10, fl7Var11, fl7Var12, fl7Var13, fl7Var14, fl7Var15, fl7Var16, fl7Var17, fl7Var18, fl7Var19};
         SparseArray sparseArray = new SparseArray();
         a = sparseArray;
-        sparseArray.put(0, fl7Var);
-        sparseArray.put(1, fl7Var2);
-        sparseArray.put(2, fl7Var3);
-        sparseArray.put(3, fl7Var4);
-        sparseArray.put(4, fl7Var5);
-        sparseArray.put(5, fl7Var6);
-        sparseArray.put(6, fl7Var7);
-        sparseArray.put(7, fl7Var8);
-        sparseArray.put(8, fl7Var9);
-        sparseArray.put(9, fl7Var10);
-        sparseArray.put(10, fl7Var11);
-        sparseArray.put(11, fl7Var12);
-        sparseArray.put(12, fl7Var13);
-        sparseArray.put(13, fl7Var14);
-        sparseArray.put(14, fl7Var15);
-        sparseArray.put(15, fl7Var16);
-        sparseArray.put(16, fl7Var17);
-        sparseArray.put(17, fl7Var18);
-        sparseArray.put(-1, fl7Var19);
+        sparseArray.put(0, r0);
+        sparseArray.put(1, r1);
+        sparseArray.put(2, r3);
+        sparseArray.put(3, r5);
+        sparseArray.put(4, r7);
+        sparseArray.put(5, r9);
+        sparseArray.put(6, r11);
+        sparseArray.put(7, r13);
+        sparseArray.put(8, r15);
+        sparseArray.put(9, r14);
+        sparseArray.put(10, r12);
+        sparseArray.put(11, r10);
+        sparseArray.put(12, r8);
+        sparseArray.put(13, r6);
+        sparseArray.put(14, r4);
+        sparseArray.put(15, r2);
+        sparseArray.put(16, r6);
+        sparseArray.put(17, r4);
+        sparseArray.put(18, r2);
+        sparseArray.put(19, r6);
+    }
+
+    public fl7(int i) {
     }
 
     public static fl7 valueOf(String str) {

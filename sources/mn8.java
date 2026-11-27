@@ -16,7 +16,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.PrivacySettingsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class mn8 extends c79 {
     public final Context c;
@@ -411,9 +411,9 @@ public final class mn8 extends c79 {
                     } else if (i == privacyControlActivity6.h0) {
                         ilbVar.setText(ob6.M0(privacyControlActivity6.getUserConfig().p() ? 2131746540 : 2131746541, null));
                     } else if (i == privacyControlActivity6.l0) {
-                        float f = privacyControlActivity6.getMessagesController().k4.Q1.f() / 1000.0f;
+                        float f = privacyControlActivity6.getMessagesController().l4.Q1.f() / 1000.0f;
                         PrivacyControlActivity privacyControlActivity7 = this.d;
-                        ilbVar.setText(ob6.a0(null, null, 2131746474, cc.J0(this.d.getMessagesController().k4.Q1.f()), String.valueOf(((int) (((privacyControlActivity7.N * f) / 1000.0d) * privacyControlActivity7.getMessagesController().k4.A3.i)) / 100.0d)));
+                        ilbVar.setText(ob6.a0(null, null, 2131746474, cc.J0(this.d.getMessagesController().l4.Q1.f()), String.valueOf(((int) (((privacyControlActivity7.N * f) / 1000.0d) * privacyControlActivity7.getMessagesController().l4.A3.i)) / 100.0d)));
                     } else if (i == privacyControlActivity6.m0) {
                         SpannableString spannableString2 = new SpannableString("g");
                         wm2 wm2Var = new wm2(R.drawable.msg_input_gift, 0);
@@ -519,14 +519,14 @@ public final class mn8 extends c79 {
                     bna bnaVar = (bna) f89Var.a;
                     i14 = this.d.priceRow;
                     if (i == i14) {
-                        int[] a = bna.a(new int[]{1, 10, 50, 100, jn7.d3, jn7.Y3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, (int) this.d.getMessagesController().k4.P1.f());
+                        int[] a = bna.a(new int[]{1, 10, 50, 100, jn7.d3, jn7.Y3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, (int) this.d.getMessagesController().l4.P1.f());
                         jz7 jz7Var = new jz7(this, (byte) 15);
                         ana anaVar = new ana();
                         anaVar.c = a;
                         anaVar.d = (byte) 20;
                         anaVar.e = jz7Var;
                         PrivacyControlActivity privacyControlActivity9 = this.d;
-                        bnaVar.d((int) Utilities.k(privacyControlActivity9.N, privacyControlActivity9.getMessagesController().k4.P1.f(), 1L), anaVar, new ln8(this, r14 ? (byte) 1 : (byte) 0));
+                        bnaVar.d((int) Utilities.k(privacyControlActivity9.N, privacyControlActivity9.getMessagesController().l4.P1.f(), 1L), anaVar, new ln8(this, r14 ? (byte) 1 : (byte) 0));
                         return;
                     }
                     return;
@@ -624,7 +624,7 @@ public final class mn8 extends c79 {
             if (privacyControlActivity13.E != 8 || privacyControlActivity13.getUserConfig().p()) {
                 PrivacyControlActivity privacyControlActivity14 = this.d;
                 if (privacyControlActivity14.E == 10) {
-                    if (!privacyControlActivity14.getMessagesController().k4.v2.f) {
+                    if (!privacyControlActivity14.getMessagesController().l4.v2.f) {
                     }
                 }
                 i7 = this.d.E;
@@ -664,7 +664,7 @@ public final class mn8 extends c79 {
                 if (i28 != 8 || privacyControlActivity13.getUserConfig().p()) {
                     PrivacyControlActivity privacyControlActivity18 = this.d;
                     if (privacyControlActivity18.E == 10) {
-                        if (!privacyControlActivity18.getMessagesController().k4.v2.f) {
+                        if (!privacyControlActivity18.getMessagesController().l4.v2.f) {
                         }
                     }
                     if (this.d.E != 3) {
@@ -713,7 +713,7 @@ public final class mn8 extends c79 {
                 break;
             case 5:
             default:
-                view = new rca(context, (uh9) null);
+                view = new sca(context, (uh9) null);
                 break;
             case 6:
                 skb skbVar = new skb(privacyControlActivity.getParentActivity());

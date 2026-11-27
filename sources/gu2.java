@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ContactsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class gu2 implements t69, nr7, fd {
     public final /* synthetic */ ContactsActivity a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class gu2 implements t69, nr7, fd {
             }
             contactsController.d(false);
             jn7 notificationCenter = contactsController.getNotificationCenter();
-            int i4 = uc7.r5;
+            int i4 = uc7.s5;
             notificationCenter.k(2, 1);
             contactsController.getNotificationCenter().k(jn7.N, new Object[0]);
             n21 n21Var = new n21(parentActivity, contactsActivity.getResourceProvider());

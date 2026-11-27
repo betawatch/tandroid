@@ -23,7 +23,7 @@ import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class z98 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -109,7 +109,7 @@ public final /* synthetic */ class z98 implements View.OnClickListener {
                         if (context == null) {
                             context = photoViewer5.F;
                         }
-                        m01.t(context, Uri.parse(str), true, false, false, null, null, false, uc7.s1(photoViewer5.U).k4.I2.f, false, false);
+                        m01.t(context, Uri.parse(str), true, false, false, null, null, false, uc7.s1(photoViewer5.U).l4.I2.f, false, false);
                         break;
                     }
                 }
@@ -494,7 +494,7 @@ public final /* synthetic */ class z98 implements View.OnClickListener {
                     photoViewer21.X1 = f;
                     hl.A3(f, inVar, null);
                     yw0.E.a();
-                    if (!uc7.s1(photoViewer21.U).M3() && uc7.s1(photoViewer21.U).k4.p1.f() > photoViewer21.V1.getCodePointCount()) {
+                    if (!uc7.s1(photoViewer21.U).M3() && uc7.s1(photoViewer21.U).l4.p1.f() > photoViewer21.V1.getCodePointCount()) {
                         photoViewer21.c2(photoViewer21.f0);
                         break;
                     }

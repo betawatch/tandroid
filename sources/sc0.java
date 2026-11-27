@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class sc0 implements e84 {
     public final ey7 a;
@@ -141,14 +141,14 @@ public final class sc0 implements e84 {
                                     if (tcbVar != null) {
                                         a.b = tcbVar.a;
                                     }
-                                    int h = dg7.h(ko4Var.t);
+                                    int h = eg7.h(ko4Var.t);
                                     if (h == 1 || h == i6) {
                                         x1c e0 = this.f.e0(i9, h);
                                         ko4 ko4Var2 = new ko4(a);
                                         e0.g(ko4Var2);
                                         e0.d(b0);
                                         this.h = Math.max(this.h, b0);
-                                        uh2Var = new uh2(i9, uc0Var, e0, dg7.a(ko4Var2.t, ko4Var2.l));
+                                        uh2Var = new uh2(i9, uc0Var, e0, eg7.a(ko4Var2.t, ko4Var2.l));
                                         if (uh2Var != null) {
                                             arrayList.add(uh2Var);
                                         }

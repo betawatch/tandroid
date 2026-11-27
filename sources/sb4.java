@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sb4 implements Runnable {
     public final /* synthetic */ byte a;
@@ -243,18 +243,18 @@ public final /* synthetic */ class sb4 implements Runnable {
                 uc7Var.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
                 break;
             case 11:
-                jf7 jf7Var = (jf7) obj2;
-                jf7Var.b1((TLRPC.messages_Dialogs) obj, b4);
+                kf7 kf7Var = (kf7) obj2;
+                kf7Var.f1((TLRPC.messages_Dialogs) obj, b4);
                 try {
-                    jf7Var.a.c(new be7(jf7Var, (byte) 21));
+                    kf7Var.a.c(new hd7(kf7Var, (byte) 24));
                     break;
                 } catch (Exception e4) {
-                    jf7Var.n(e4, true);
+                    kf7Var.p(e4, true);
                     return;
                 }
             case 12:
                 ArrayList arrayList = (ArrayList) obj;
-                lq3 downloadController = ((jf7) obj2).getDownloadController();
+                lq3 downloadController = ((kf7) obj2).getDownloadController();
                 HashMap hashMap2 = downloadController.f;
                 if (!arrayList.isEmpty()) {
                     ArrayList arrayList2 = b4 == 1 ? downloadController.b : b4 == 2 ? downloadController.c : b4 == 4 ? downloadController.e : downloadController.d;

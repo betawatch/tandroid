@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o5a implements Runnable {
     public final /* synthetic */ TL_stories.StoryItem E;
@@ -133,12 +133,12 @@ public final /* synthetic */ class o5a implements Runnable {
             }
             final k5 k5Var = this.d;
             if (!B && !TextUtils.isEmpty(str3) && !z) {
-                Object[] e0 = jf7.Y(k5Var.a).e0(!B ? i : 4, str3);
-                if (e0 != null) {
-                    Object obj = e0[0];
+                Object[] g0 = kf7.a0(k5Var.a).g0(!B ? i : 4, str3);
+                if (g0 != null) {
+                    Object obj = g0[0];
                     if (obj instanceof TLRPC.TL_document) {
                         tL_document = (TLRPC.TL_document) obj;
-                        str = (String) e0[i];
+                        str = (String) g0[i];
                         r7a.v(k5Var, B, tL_document, str3, null, 0L, false);
                         if (tL_document == null) {
                             tL_document = (TLRPC.TL_document) r47Var2.k.media.document;

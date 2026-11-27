@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yb4 implements Runnable {
     public final /* synthetic */ byte a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class yb4 implements Runnable {
             default:
                 boolean z = zb4Var.b;
                 int i3 = zb4Var.a;
-                int f = (z ? uc7.s1(i3).k4.n3 : uc7.s1(i3).k4.o3).f();
+                int f = (z ? uc7.s1(i3).l4.n3 : uc7.s1(i3).l4.o3).f();
                 ((ArrayList) zb4Var.e).clear();
                 if (zb4Var.b && !((ArrayList) zb4Var.d).isEmpty()) {
                     hb4Var = (hb4) ((ArrayList) zb4Var.d).get(0);

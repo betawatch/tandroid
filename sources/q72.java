@@ -23,9 +23,9 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.webrtc.DataChannel;
 import org.webrtc.NativeLifecycleLock;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class q72 implements lf9, ef7, fd, b7c, m8, tm8, tq2, OnFailureListener, n0a, NativeLifecycleLock.NativeRunnable, NativeLifecycleLock.NativeCallable, s69, c86, b86, h84, t69 {
+public final /* synthetic */ class q72 implements lf9, ff7, fd, b7c, m8, tm8, tq2, OnFailureListener, n0a, NativeLifecycleLock.NativeRunnable, NativeLifecycleLock.NativeCallable, s69, c86, b86, h84, t69 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -240,7 +240,7 @@ public final /* synthetic */ class q72 implements lf9, ef7, fd, b7c, m8, tm8, tq
         }
     }
 
-    @Override // ef7
+    @Override // ff7
     public final void run(long j) {
         byte b = this.a;
         Object obj = this.c;
@@ -367,7 +367,7 @@ public final /* synthetic */ class q72 implements lf9, ef7, fd, b7c, m8, tm8, tq
                 uj3 uj3Var = ((lj3) obj2).b;
                 uj3Var.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, null);
                 uj3Var.getMessagesController().s4(ac7Var);
-                jf7 messagesStorage = uj3Var.getMessagesStorage();
+                kf7 messagesStorage = uj3Var.getMessagesStorage();
                 messagesStorage.a.c(new t87(messagesStorage, ac7Var, (byte) 20));
                 break;
             default:

@@ -4,7 +4,7 @@ import java.util.concurrent.CancellationException;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class va1 extends ap3 implements ta1, wx2, noc {
     public static final /* synthetic */ long f;
@@ -96,7 +96,7 @@ public class va1 extends ap3 implements ta1, wx2, noc {
     public final void C(px2 px2Var) {
         zw2 zw2Var = this.d;
         yo3 yo3Var = zw2Var instanceof yo3 ? (yo3) zw2Var : null;
-        B(f9c.a, (yo3Var != null ? yo3Var.d : null) == px2Var ? 4 : this.c, null);
+        B(g9c.a, (yo3Var != null ? yo3Var.d : null) == px2Var ? 4 : this.c, null);
     }
 
     public final ow5 E(Object obj, ks4 ks4Var) {

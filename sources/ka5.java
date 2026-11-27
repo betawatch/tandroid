@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ka5 extends FrameLayout implements qb5 {
     public ds6 A0;
@@ -143,7 +143,7 @@ public final class ka5 extends FrameLayout implements qb5 {
         int L3 = hl.L(400.0f);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
         StaticLayout staticLayout = new StaticLayout(M02, textPaint, L3, alignment, 1.0f, 0.0f, false);
-        StaticLayout staticLayout2 = new StaticLayout(ob6.a0("VoipVideoNotAvailable", null, 2131742878, ob6.G(uc7.s1(i).k4.U0.f(), "Participants", new Object[0])), textPaint, hl.L(400.0f), alignment, 1.0f, 0.0f, false);
+        StaticLayout staticLayout2 = new StaticLayout(ob6.a0("VoipVideoNotAvailable", null, 2131742878, ob6.G(uc7.s1(i).l4.U0.f(), "Participants", new Object[0])), textPaint, hl.L(400.0f), alignment, 1.0f, 0.0f, false);
         String M03 = ob6.M0(2131742874, null);
         ga5 ga5Var = new ga5(this, mb5Var.getContext(), vc2Var, mb5Var, textPaint, staticLayout2, textPaint2, M03, textPaint2.measureText(M03), staticLayout, j95Var, M0, textPaint.measureText(M0));
         this.a = ga5Var;
@@ -284,7 +284,7 @@ public final class ka5 extends FrameLayout implements qb5 {
                 boolean z2 = wc2Var2.a.self;
                 ImageReceiver imageReceiver = this.l0;
                 if (z2 && wc2Var2.b) {
-                    imageReceiver.g0(new hh7(-14602694, -13935795, -14395293, -14203560, true, false));
+                    imageReceiver.g0(new ih7(-14602694, -13935795, -14395293, -14203560, true, false));
                     return;
                 }
                 int i = this.L;
@@ -430,7 +430,7 @@ public final class ka5 extends FrameLayout implements qb5 {
             try {
                 d1 d1Var = anbVar.d;
                 if (d1Var != null) {
-                    d1Var.post(new g9c(anbVar, e05Var, (byte) 26));
+                    d1Var.post(new c9c(anbVar, e05Var, (byte) 27));
                 }
             } catch (Exception e) {
                 cc4.g(e, true);

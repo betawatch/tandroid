@@ -23,7 +23,7 @@ import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class rx1 implements pcc {
     public final /* synthetic */ byte a;
@@ -113,8 +113,8 @@ public final /* synthetic */ class rx1 implements pcc {
                 TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = new TLRPC.TL_messages_sendQuickReplyMessages();
                 tL_messages_sendQuickReplyMessages.peer = uc7.s1(i3).j1(W0);
                 tL_messages_sendQuickReplyMessages.shortcut_id = a19Var.a;
-                jf7 Y = jf7.Y(i3);
-                Y.a.c(new vp8((Object) f, (Object) Y, (Object) a19Var, (Object) tL_messages_sendQuickReplyMessages, (byte) 7));
+                kf7 a0 = kf7.a0(i3);
+                a0.a.c(new vp8((Object) f, (Object) a0, (Object) a19Var, (Object) tL_messages_sendQuickReplyMessages, (byte) 7));
                 n12Var3.dismiss();
                 return;
             case 6:
@@ -133,9 +133,9 @@ public final /* synthetic */ class rx1 implements pcc {
                 }
             case 7:
                 g82 g82Var = (g82) obj3;
-                hh7 hh7Var = g82Var.f;
-                hh7Var.r(((TLRPC.WallPaper) obj2).settings.intensity, ((avc) obj).a);
-                hh7Var.s(hh7Var.f());
+                ih7 ih7Var = g82Var.f;
+                ih7Var.r(((TLRPC.WallPaper) obj2).settings.intensity, ((avc) obj).a);
+                ih7Var.s(ih7Var.f());
                 View view = g82Var.b;
                 if (view != null) {
                     view.invalidate();

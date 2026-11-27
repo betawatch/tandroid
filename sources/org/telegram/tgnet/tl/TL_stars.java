@@ -8,25 +8,25 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class TL_stars {
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class CheckCanSendGiftResult extends TLObject {
         public static CheckCanSendGiftResult TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (CheckCanSendGiftResult) TLObject.TLdeserialize(CheckCanSendGiftResult.class, i != -706379148 ? i != 927967149 ? null : new checkCanSendGiftResultOk() : new checkCanSendGiftResultFail(), inputSerializedData, i, z);
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class InputSavedStarGift extends TLObject {
         public static InputSavedStarGift TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (InputSavedStarGift) TLObject.TLdeserialize(InputSavedStarGift.class, i != -251549057 ? i != 545636920 ? i != 1764202389 ? null : new TL_inputSavedStarGiftUser() : new TL_inputSavedStarGiftSlug() : new TL_inputSavedStarGiftChat(), inputSerializedData, i, z);
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static abstract class InputStarGiftAuction extends TLObject {
         public static InputStarGiftAuction TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (InputStarGiftAuction) TLObject.TLdeserialize(InputStarGiftAuction.class, fromConstructor(i), inputSerializedData, i, z);
@@ -43,7 +43,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class PaidReactionPrivacy extends TLObject {
         public TLRPC.InputPeer peer;
 
@@ -65,7 +65,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class SavedStarGift extends TLObject {
         public int can_craft_at;
         public int can_export_at;
@@ -127,7 +127,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarGift extends TLObject {
         public ArrayList<StarGiftAttribute> attributes = new ArrayList<>();
         public boolean auction;
@@ -295,7 +295,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarGiftAttribute extends TLObject {
         public boolean crafted;
         public int flags;
@@ -348,7 +348,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarGiftAttributeId extends TLObject {
         public int backdrop_id;
         public long document_id;
@@ -358,7 +358,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarGiftAttributeRarity extends TLObject {
         public static StarGiftAttributeRarity TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (StarGiftAttributeRarity) TLObject.TLdeserialize(StarGiftAttributeRarity.class, fromConstructor(i), inputSerializedData, i, z);
@@ -382,7 +382,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarGiftAuctionRound extends TLObject {
         public int current_window;
         public int duration;
@@ -394,7 +394,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static abstract class StarGiftAuctionState extends TLObject {
         public static StarGiftAuctionState TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (StarGiftAuctionState) TLObject.TLdeserialize(StarGiftAuctionState.class, fromConstructor(i), inputSerializedData, i, z);
@@ -414,7 +414,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarGiftCollections extends TLObject {
         public ArrayList<TL_starGiftCollection> collections = new ArrayList<>();
 
@@ -423,14 +423,14 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarGiftOnchainSalePayload extends TLObject {
         public static StarGiftOnchainSalePayload TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (StarGiftOnchainSalePayload) TLObject.TLdeserialize(StarGiftOnchainSalePayload.class, i != -2097560905 ? i != 1024677616 ? null : new TL_payments_starGiftOnchainSalePayload() : new TL_payments_starGiftOnchainFixedSalePayload(), inputSerializedData, i, z);
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarGiftUpgradePrice extends TLObject {
         public static final int constructor = -1712704739;
         public int date;
@@ -454,14 +454,14 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarGifts extends TLObject {
         public static StarGifts TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (StarGifts) TLObject.TLdeserialize(StarGifts.class, i != -1551326360 ? i != 785918357 ? null : new TL_starGifts() : new TL_starGiftsNotModified(), inputSerializedData, i, z);
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static abstract class StarsAmount extends TLObject {
         public long amount;
         public int nanos;
@@ -497,7 +497,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarsStatus extends TLObject {
         public int flags;
         public String next_offset;
@@ -514,7 +514,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarsSubscription extends TLObject {
         public boolean bot_canceled;
         public boolean can_refulfill;
@@ -535,7 +535,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarsTransaction extends TLObject {
         public int ads_proceeds_from_date;
         public int ads_proceeds_to_date;
@@ -616,7 +616,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class StarsTransactionPeer extends TLObject {
         public TLRPC.Peer peer;
 
@@ -655,7 +655,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_AuctionBidLevel extends TLObject {
         public static final int constructor = 822231244;
         public long amount;
@@ -682,7 +682,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_StarGiftActiveAuctionState extends TLObject {
         public static final int constructor = -753154979;
         public StarGift gift;
@@ -709,7 +709,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_StarGiftAuctionAcquiredGift extends TLObject {
         public static final int constructor = 1118831432;
         public long bid_amount;
@@ -766,7 +766,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_StarGiftAuctionUserState extends TLObject {
         public static final int constructor = 787403204;
         public int acquired_count;
@@ -811,7 +811,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_changeStarsSubscription extends TLObject {
         public static final int constructor = -948500360;
         public Boolean canceled;
@@ -838,7 +838,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_fulfillStarsSubscription extends TLObject {
         public static final int constructor = -866391117;
         public TLRPC.InputPeer peer;
@@ -857,7 +857,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_getStarsSubscriptions extends TLObject {
         public static final int constructor = 52761285;
         public int flags;
@@ -881,7 +881,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class TL_inputSavedStarGiftChat extends InputSavedStarGift {
         public static final int constructor = -251549057;
         public TLRPC.InputPeer peer;
@@ -901,7 +901,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class TL_inputSavedStarGiftSlug extends InputSavedStarGift {
         public static final int constructor = 545636920;
         public String slug;
@@ -918,7 +918,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class TL_inputSavedStarGiftUser extends InputSavedStarGift {
         public static final int constructor = 1764202389;
         public int msg_id;
@@ -935,7 +935,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_inputStarGiftAuction extends InputStarGiftAuction {
         public static final int constructor = 48327832;
         public long gift_id;
@@ -952,7 +952,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_inputStarGiftAuctionSlug extends InputStarGiftAuction {
         public static final int constructor = 2058715912;
         public String slug;
@@ -969,7 +969,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_getStarsGiftOptions extends TLObject {
         public static final int constructor = -741774392;
         public int flags;
@@ -990,7 +990,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_getStarsGiveawayOptions extends TLObject {
         public static final int constructor = -1122042562;
 
@@ -1005,7 +1005,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_getStarsStatus extends TLObject {
         public static final int constructor = 1319744447;
         public TLRPC.InputPeer peer;
@@ -1024,7 +1024,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_getStarsTopupOptions extends TLObject {
         public static final int constructor = -1072773165;
 
@@ -1039,7 +1039,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_getStarsTransactions extends TLObject {
         public static final int constructor = 1775912279;
         public boolean ascending;
@@ -1080,7 +1080,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class TL_payments_savedStarGifts extends TLObject {
         public static final int constructor = -1779201615;
         public boolean chat_notifications_enabled;
@@ -1127,7 +1127,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_starGiftOnchainFixedSalePayload extends StarGiftOnchainSalePayload {
         public static final int constructor = -2097560905;
         public int flags;
@@ -1160,7 +1160,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_starGiftOnchainOfferTx extends TLObject {
         public static final int constructor = -27885105;
         public long execution_allowance;
@@ -1226,7 +1226,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_starGiftOnchainOfferTxInitState extends TLObject {
         public static final int constructor = 148300917;
         public byte[] code;
@@ -1250,7 +1250,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_starGiftOnchainOfferTxMessage extends TLObject {
         public static final int constructor = -2003007979;
         public byte[] body;
@@ -1292,7 +1292,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_starGiftOnchainSalePayload extends StarGiftOnchainSalePayload {
         public static final int constructor = 1024677616;
         public long amount;
@@ -1323,7 +1323,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_starsStatus extends StarsStatus {
         public static final int constructor = 1822222573;
 
@@ -1376,7 +1376,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_starsStatus_layer194 extends TL_payments_starsStatus {
         public static final int constructor = -1141231252;
 
@@ -1429,7 +1429,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class TL_payments_uniqueStarGift extends TLObject {
         public static final int constructor = 1097619176;
         public StarGift gift;
@@ -1456,7 +1456,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_savedStarGift extends SavedStarGift {
         public static final int constructor = 1105150972;
 
@@ -1585,7 +1585,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_savedStarGift_layer202 extends TL_savedStarGift {
         public static final int constructor = 1616305061;
 
@@ -1669,7 +1669,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_savedStarGift_layer209 extends TL_savedStarGift {
         public static final int constructor = -539360103;
 
@@ -1765,7 +1765,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_savedStarGift_layer211 extends TL_savedStarGift {
         public static final int constructor = 514213599;
 
@@ -1867,7 +1867,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_savedStarGift_layer214 extends TL_savedStarGift {
         public static final int constructor = 430552434;
 
@@ -1978,7 +1978,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_savedStarGift_layer219 extends TL_savedStarGift {
         public static final int constructor = -1987861422;
 
@@ -2095,7 +2095,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_savedStarGift_layer221 extends TL_savedStarGift {
         public static final int constructor = -355041186;
 
@@ -2218,7 +2218,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_savedStarGift_layer221_2 extends TL_savedStarGift {
         public static final int constructor = 949728281;
 
@@ -2349,7 +2349,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGift extends StarGift {
         public static final int constructor = 825922887;
 
@@ -2485,7 +2485,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftAttributeRarity extends StarGiftAttributeRarity {
         public static final int constructor = 910391095;
         public int permille;
@@ -2502,7 +2502,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftAuctionRound extends StarGiftAuctionRound {
         public static final int constructor = 984483112;
 
@@ -2520,7 +2520,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftAuctionRoundExtendable extends StarGiftAuctionRound {
         public static final int constructor = 178266597;
 
@@ -2542,7 +2542,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftAuctionState extends StarGiftAuctionState {
         public static final int constructor = 1998212710;
         public int current_round;
@@ -2592,7 +2592,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftAuctionStateFinished extends StarGiftAuctionState {
         public static final int constructor = -1758614593;
         public long average_price;
@@ -2635,7 +2635,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftBackground extends TLObject {
         public static final int constructor = -1342872680;
         public int center_color;
@@ -2662,7 +2662,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftCollection extends TLObject {
         public static final int constructor = -1653926992;
         public int collection_id;
@@ -2702,7 +2702,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftCollections extends StarGiftCollections {
         public static final int constructor = -1977011469;
 
@@ -2718,7 +2718,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftCollectionsNotModified extends StarGiftCollections {
         public static final int constructor = -1598402793;
 
@@ -2728,7 +2728,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique extends StarGift {
         public static final int constructor = -2027863662;
 
@@ -2877,7 +2877,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer196 extends TL_starGiftUnique {
         public static final int constructor = 1779697613;
 
@@ -2907,7 +2907,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer197 extends TL_starGiftUnique {
         public static final int constructor = 880997154;
 
@@ -2951,7 +2951,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer198 extends TL_starGiftUnique {
         public static final int constructor = -218202550;
 
@@ -2999,7 +2999,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer202 extends TL_starGiftUnique {
         public static final int constructor = 1549979985;
 
@@ -3053,7 +3053,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer206 extends TL_starGiftUnique {
         public static final int constructor = 1678891913;
 
@@ -3115,7 +3115,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer210 extends TL_starGiftUnique {
         public static final int constructor = -164136786;
 
@@ -3187,7 +3187,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer211 extends TL_starGiftUnique {
         public static final int constructor = 975654224;
 
@@ -3264,7 +3264,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer213 extends TL_starGiftUnique {
         public static final int constructor = 648369470;
 
@@ -3351,7 +3351,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer214 extends TL_starGiftUnique {
         public static final int constructor = 468707429;
 
@@ -3447,7 +3447,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer215 extends TL_starGiftUnique {
         public static final int constructor = 973640632;
 
@@ -3549,7 +3549,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer219 extends TL_starGiftUnique {
         public static final int constructor = -1329630181;
 
@@ -3657,7 +3657,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer221 extends TL_starGiftUnique {
         public static final int constructor = 1453155529;
 
@@ -3773,7 +3773,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer233 extends TL_starGiftUnique {
         public static final int constructor = -2047825459;
 
@@ -3904,7 +3904,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftUnique_layer234_old extends TL_starGiftUnique {
         public static final int constructor = 1413083032;
 
@@ -4041,7 +4041,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGift_layer190 extends TL_starGift {
         public static final int constructor = -1365150482;
 
@@ -4078,7 +4078,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGift_layer195 extends TL_starGift {
         public static final int constructor = 1237678029;
 
@@ -4128,7 +4128,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGift_layer202 extends TL_starGift {
         public static final int constructor = 46953416;
 
@@ -4187,7 +4187,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGift_layer206 extends TL_starGift {
         public static final int constructor = -970274264;
 
@@ -4264,7 +4264,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGift_layer209 extends TL_starGift {
         public static final int constructor = 2139438098;
 
@@ -4347,7 +4347,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGift_layer212 extends TL_starGift {
         public static final int constructor = 12386139;
 
@@ -4444,7 +4444,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGift_layer217 extends TL_starGift {
         public static final int constructor = -2136190013;
 
@@ -4550,7 +4550,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGift_layer219 extends TL_starGift {
         public static final int constructor = 463097215;
 
@@ -4667,7 +4667,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGifts extends StarGifts {
         public static final int constructor = 785918357;
         public int hash;
@@ -4693,7 +4693,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsAmount extends StarsAmount {
         public static final int constructor = -1145654109;
 
@@ -4716,7 +4716,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsGiftOption extends TLObject {
         public static final int constructor = 1577421297;
         public long amount;
@@ -4760,7 +4760,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsGiveawayOption extends TLObject {
         public static final int constructor = -1798404822;
         public long amount;
@@ -4814,7 +4814,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsGiveawayWinnersOption extends TLObject {
         public static final int constructor = 1411605001;
         public int flags;
@@ -4846,7 +4846,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsSubscription extends StarsSubscription {
         public static final int constructor = 779004698;
 
@@ -4907,7 +4907,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsSubscriptionPricing extends TLObject {
         public static final int constructor = 88173912;
         public long amount;
@@ -4931,7 +4931,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsSubscription_layer193 extends StarsSubscription {
         public static final int constructor = 1401868056;
 
@@ -4971,7 +4971,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsSubscription_old extends TL_starsSubscription {
         public static final int constructor = -797707802;
 
@@ -5005,7 +5005,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTonAmount extends StarsAmount {
         public static final int constructor = 1957618656;
 
@@ -5026,7 +5026,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTopupOption extends TLObject {
         public static final int constructor = 198776256;
         public long amount;
@@ -5070,7 +5070,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction extends StarsTransaction {
         public static final int constructor = 325426864;
 
@@ -5251,7 +5251,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransactionPeer extends StarsTransactionPeer {
         public static final int constructor = -670195363;
 
@@ -5267,7 +5267,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction_layer181 extends StarsTransaction {
         public static final int constructor = -865044046;
 
@@ -5313,7 +5313,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction_layer182 extends TL_starsTransaction {
         public static final int constructor = -1442789224;
 
@@ -5373,7 +5373,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction_layer185 extends TL_starsTransaction {
         public static final int constructor = 766853519;
 
@@ -5454,7 +5454,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction_layer186 extends TL_starsTransaction {
         public static final int constructor = 1127934763;
 
@@ -5547,7 +5547,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction_layer188 extends TL_starsTransaction {
         public static final int constructor = -294313259;
 
@@ -5646,7 +5646,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction_layer191 extends TL_starsTransaction {
         public static final int constructor = 178185410;
 
@@ -5751,7 +5751,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction_layer194 extends TL_starsTransaction {
         public static final int constructor = 903148150;
 
@@ -5865,7 +5865,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction_layer199 extends TL_starsTransaction {
         public static final int constructor = 1692387622;
 
@@ -5999,7 +5999,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction_layer199_2 extends TL_starsTransaction {
         public static final int constructor = -321582812;
 
@@ -6142,7 +6142,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransaction_layer205 extends TL_starsTransaction {
         public static final int constructor = -1549805238;
 
@@ -6294,7 +6294,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class Tl_starsRating extends TLObject {
         public static final int constructor = 453922567;
         public long current_level_stars;
@@ -6331,7 +6331,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class UniqueStarGiftValueInfo extends TLObject {
         public static final int constructor = 1362093126;
         public long average_price;
@@ -6417,7 +6417,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class checkCanSendGift extends TLObject {
         public static final int constructor = -1060835895;
         public long gift_id;
@@ -6434,7 +6434,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class checkCanSendGiftResultFail extends CheckCanSendGiftResult {
         public static final int constructor = -706379148;
         public TLRPC.TL_textWithEntities reason;
@@ -6451,7 +6451,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class checkCanSendGiftResultOk extends CheckCanSendGiftResult {
         public static final int constructor = 927967149;
 
@@ -6461,7 +6461,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class convertStarGift extends TLObject {
         public static final int constructor = 1958676331;
         public InputSavedStarGift stargift;
@@ -6478,7 +6478,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class createStarGiftCollection extends TLObject {
         public static final int constructor = 524947079;
         public TLRPC.InputPeer peer;
@@ -6499,7 +6499,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class deleteStarGift extends TLObject {
         public static final int constructor = 1020983466;
         public InputSavedStarGift stargift;
@@ -6516,7 +6516,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class deleteStarGiftCollection extends TLObject {
         public static final int constructor = -1386854168;
         public int collection_id;
@@ -6535,7 +6535,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class getResaleStarGifts extends TLObject {
         public static final int constructor = 2053087798;
         public ArrayList<StarGiftAttributeId> attributes = new ArrayList<>();
@@ -6584,7 +6584,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class getResaleStarGiftsMerged extends TLObject {
         public static final int constructor = 1831727789;
         public long attributes_hash;
@@ -6644,7 +6644,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class getSavedStarGift extends TLObject {
         public static final int constructor = -1269456634;
         public ArrayList<InputSavedStarGift> stargift = new ArrayList<>();
@@ -6661,7 +6661,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class getStarGiftCollections extends TLObject {
         public static final int constructor = -1743023651;
         public long hash;
@@ -6680,7 +6680,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class getStarGiftUpgradePreview extends TLObject {
         public static final int constructor = -1667580751;
         public long gift_id;
@@ -6697,7 +6697,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class getStarGiftWithdrawalUrl extends TLObject {
         public static final int constructor = -926252677;
         public int flags;
@@ -6718,7 +6718,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class getStarGifts extends TLObject {
         public static final int constructor = -1000983152;
         public int hash;
@@ -6735,7 +6735,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class getUniqueStarGift extends TLObject {
         public static final int constructor = -1583919758;
         public String slug;
@@ -6752,7 +6752,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class getUniqueStarGiftValueInfo extends TLObject {
         public static final int constructor = 1130737515;
         public String slug;
@@ -6769,7 +6769,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class paidReactionPrivacyAnonymous extends PaidReactionPrivacy {
         public static final int constructor = 520887001;
 
@@ -6779,7 +6779,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class paidReactionPrivacyDefault extends PaidReactionPrivacy {
         public static final int constructor = 543872158;
 
@@ -6789,7 +6789,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class paidReactionPrivacyPeer extends PaidReactionPrivacy {
         public static final int constructor = -596837136;
 
@@ -6805,7 +6805,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class reorderStarGiftCollections extends TLObject {
         public static final int constructor = -1020594996;
         public ArrayList<Integer> order = new ArrayList<>();
@@ -6824,7 +6824,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class resaleStarGifts extends TLObject {
         public static final int constructor = -1803939105;
         public long attributes_hash;
@@ -6881,7 +6881,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class saveStarGift extends TLObject {
         public static final int constructor = 707422588;
         public int flags;
@@ -6903,7 +6903,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeBackdrop extends StarGiftAttribute {
         public static final int constructor = -1624963868;
         public int backdrop_id;
@@ -6936,7 +6936,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeBackdrop_layer202 extends starGiftAttributeBackdrop {
         public static final int constructor = -1809377438;
 
@@ -6969,7 +6969,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeBackdrop_layer221 extends starGiftAttributeBackdrop {
         public static final int constructor = -650279524;
 
@@ -7004,7 +7004,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeCounter extends TLObject {
         public static int constructor = 783398488;
         public StarGiftAttributeId attribute;
@@ -7028,7 +7028,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeIdBackdrop extends StarGiftAttributeId {
         public static final int constructor = 520210263;
 
@@ -7044,7 +7044,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeIdModel extends StarGiftAttributeId {
         public static final int constructor = 1219145276;
 
@@ -7060,7 +7060,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeIdPattern extends StarGiftAttributeId {
         public static final int constructor = 1242965043;
 
@@ -7076,7 +7076,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeModel extends StarGiftAttribute {
         public static final int constructor = 1448235490;
         public TLRPC.Document document;
@@ -7101,7 +7101,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeModel_layer221 extends starGiftAttributeModel {
         public static final int constructor = 970559507;
 
@@ -7128,7 +7128,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeOriginalDetails extends StarGiftAttribute {
         public static final int constructor = -524291476;
         public int date;
@@ -7166,7 +7166,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributeOriginalDetails_layer197 extends starGiftAttributeOriginalDetails {
         public static final int constructor = -1070837941;
 
@@ -7203,7 +7203,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributePattern extends StarGiftAttribute {
         public static final int constructor = 1315997162;
         public TLRPC.Document document;
@@ -7224,7 +7224,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftAttributePattern_layer221 extends starGiftAttributePattern {
         public static final int constructor = 330104601;
 
@@ -7251,7 +7251,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class starGiftDepositPayload extends TLObject {
         public static final int constructor = 1918612715;
         public long amount;
@@ -7278,7 +7278,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftUpgradeAttributes extends TLObject {
         public static final int constructor = 1187439471;
         public ArrayList<StarGiftAttribute> attributes = new ArrayList<>();
@@ -7299,7 +7299,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class starGiftUpgradePreview extends TLObject {
         public static final int constructor = 1038213101;
         public ArrayList<StarGiftAttribute> sample_attributes = new ArrayList<>();
@@ -7327,7 +7327,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class starGiftWithdrawalUrl extends TLObject {
         public static final int constructor = -2069218660;
         public String url;
@@ -7348,7 +7348,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class toggleChatStarGiftNotifications extends TLObject {
         public static final int constructor = 1626009505;
         public boolean enabled;
@@ -7370,7 +7370,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class toggleStarGiftsPinnedToTop extends TLObject {
         public static final int constructor = 353626032;
         public TLRPC.InputPeer peer;
@@ -7389,7 +7389,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class transferStarGift extends TLObject {
         public static final int constructor = 2132285290;
         public InputSavedStarGift stargift;
@@ -7408,7 +7408,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class updatePaidMessagesPrice extends TLObject {
         public static final int constructor = 1259483771;
         public TLRPC.InputChannel channel;
@@ -7432,7 +7432,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class updateStarGiftCollection extends TLObject {
         public static final int constructor = 1339932391;
         public int collection_id;
@@ -7469,7 +7469,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class upgradeStarGift extends TLObject {
         public static final int constructor = -1361648395;
         public int flags;
@@ -7491,7 +7491,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_payments_sendStarsForm extends TLMethod<TLRPC.payments_PaymentResult> {
         public static final int constructor = 2040056084;
         public long form_id;
@@ -7510,7 +7510,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class acceptStarGiftOnchainOffer extends TLMethod<TL_payments_starGiftOnchainOfferTx> {
         public static final int constructor = -71655714;
         public int offer_msg_id;
@@ -7527,7 +7527,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class buyStarGiftOnchain extends TLMethod<StarGiftOnchainSalePayload> {
         public static final int constructor = 1551278953;
         public long expected_amount;
@@ -7563,7 +7563,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class cancelStarGiftOnchainOffer extends TLMethod<TL_payments_starGiftOnchainOfferTx> {
         public static final int constructor = 470989500;
         public int offer_msg_id;
@@ -7580,7 +7580,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class cancelStarGiftOnchainSale extends TLMethod<StarGiftOnchainSalePayload> {
         public static final int constructor = -1571862214;
         public String slug;
@@ -7597,7 +7597,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class craftStarGift extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1325832113;
         public ArrayList<InputSavedStarGift> stargift = new ArrayList<>();
@@ -7614,7 +7614,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class declineStarGiftOnchainOffer extends TLMethod<TLRPC.Updates> {
         public static final int constructor = 1511098022;
         public int offer_msg_id;
@@ -7631,7 +7631,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class depositStarGift extends TLMethod<starGiftDepositPayload> {
         public static final int constructor = -1063064929;
         public int flags;
@@ -7655,7 +7655,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class displayStarGift extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1252389118;
         public int flags;
@@ -7681,7 +7681,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class getCraftStarGifts extends TLMethod<TL_payments_savedStarGifts> {
         public static final int constructor = -49947392;
         public long gift_id;
@@ -7702,7 +7702,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class getSavedStarGifts extends TLMethod<TL_payments_savedStarGifts> {
         public static final int constructor = -1558583959;
         public int collection_id;
@@ -7753,7 +7753,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class getStarGiftUpgradeAttributes extends TLMethod<starGiftUpgradeAttributes> {
         public static final int constructor = 1828948824;
         public long gift_id;
@@ -7770,7 +7770,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class sendStarGiftOnchainOffer extends TLMethod<TL_payments_starGiftOnchainOfferTx> {
         public static final int constructor = -1250062274;
         public long amount;
@@ -7793,7 +7793,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class updateStarGiftOnchainPrice extends TLMethod<StarGiftOnchainSalePayload> {
         public static final int constructor = -1035934769;
         public long amount;
@@ -7812,7 +7812,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class updateStarGiftPrice extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -306287413;
         public StarsAmount resell_amount;
@@ -7831,7 +7831,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class withdrawStarGift extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -333434706;
         public int flags;
@@ -7855,7 +7855,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftAttributeRarityEpic extends StarGiftAttributeRarity {
         public static final int constructor = 2029777832;
 
@@ -7869,7 +7869,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftAttributeRarityLegendary extends StarGiftAttributeRarity {
         public static final int constructor = -822614104;
 
@@ -7883,7 +7883,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftAttributeRarityRare extends StarGiftAttributeRarity {
         public static final int constructor = -259174037;
 
@@ -7897,7 +7897,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftAttributeRarityUncommon extends StarGiftAttributeRarity {
         public static final int constructor = -607231095;
 
@@ -7911,7 +7911,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftAuctionStateNotModified extends StarGiftAuctionState {
         public static final int constructor = -30197422;
 
@@ -7925,7 +7925,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starGiftsNotModified extends StarGifts {
         public static final int constructor = -1551326360;
 
@@ -7939,7 +7939,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransactionPeerAPI extends StarsTransactionPeer {
         public static final int constructor = -110658899;
 
@@ -7953,7 +7953,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransactionPeerAds extends StarsTransactionPeer {
         public static final int constructor = 1617438738;
 
@@ -7967,7 +7967,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransactionPeerAppStore extends StarsTransactionPeer {
         public static final int constructor = -1269320843;
 
@@ -7981,7 +7981,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransactionPeerFragment extends StarsTransactionPeer {
         public static final int constructor = -382740222;
 
@@ -7995,7 +7995,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransactionPeerPlayMarket extends StarsTransactionPeer {
         public static final int constructor = 2069236235;
 
@@ -8009,7 +8009,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransactionPeerPremiumBot extends StarsTransactionPeer {
         public static final int constructor = 621656824;
 
@@ -8023,7 +8023,7 @@ public class TL_stars {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_starsTransactionPeerUnsupported extends StarsTransactionPeer {
         public static final int constructor = -1779253276;
 

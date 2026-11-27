@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class tf3 extends gp4 implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
     public Handler l0;
@@ -257,12 +257,12 @@ public class tf3 extends gp4 implements DialogInterface.OnCancelListener, Dialog
     public final void y(Context context) {
         Object obj;
         super.y(context);
-        qj7 qj7Var = this.f0;
-        qj7Var.getClass();
-        qj7.a("observeForever");
+        rj7 rj7Var = this.f0;
+        rj7Var.getClass();
+        rj7.a("observeForever");
         ri6 ri6Var = this.v0;
-        p96 p96Var = new p96(qj7Var, ri6Var);
-        os9 os9Var = qj7Var.b;
+        p96 p96Var = new p96(rj7Var, ri6Var);
+        os9 os9Var = rj7Var.b;
         ls9 h = os9Var.h(ri6Var);
         if (h != null) {
             obj = h.b;

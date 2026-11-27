@@ -3,7 +3,7 @@
 import android.media.MediaFormat;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cc8 implements sec {
     public final /* synthetic */ PhotoViewer a;
@@ -19,6 +19,6 @@ public final class cc8 implements sec {
         if (!photoViewer.I4 || (kfcVar = photoViewer.G2) == null) {
             return;
         }
-        hl.c3(new h68(this, kfcVar, (byte) 8));
+        hl.c3(new a58(this, kfcVar, (byte) 9));
     }
 }

@@ -7,7 +7,7 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class igd extends b99 {
     public final /* synthetic */ hg0 a;
@@ -73,9 +73,9 @@ public final class igd extends b99 {
         }
         if (i4 == 6) {
             hg0Var.A(5, null);
-            i09 i09Var = hg0Var.t;
-            if (i09Var != null) {
-                ((k05) i09Var.b).onConnectionSuspended(message.arg2);
+            j09 j09Var = hg0Var.t;
+            if (j09Var != null) {
+                ((k05) j09Var.b).onConnectionSuspended(message.arg2);
             }
             hg0Var.t(message.arg2);
             hg0Var.y(5, 1, null);

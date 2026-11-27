@@ -3,7 +3,7 @@
 import android.view.View;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class cqc implements View.OnAttachStateChangeListener {
     public final /* synthetic */ cg5 a;
@@ -11,17 +11,17 @@ public final class cqc implements View.OnAttachStateChangeListener {
     public final /* synthetic */ bqc c;
     public final /* synthetic */ int d;
     public final /* synthetic */ icc e;
-    public final /* synthetic */ jl7[] f;
+    public final /* synthetic */ kl7[] f;
     public final /* synthetic */ String[] h;
     public final /* synthetic */ boolean[] n;
 
-    public cqc(cg5 cg5Var, TL_wallet.walletTransaction[] wallettransactionArr, bqc bqcVar, int i, icc iccVar, jl7[] jl7VarArr, String[] strArr, boolean[] zArr) {
+    public cqc(cg5 cg5Var, TL_wallet.walletTransaction[] wallettransactionArr, bqc bqcVar, int i, icc iccVar, kl7[] kl7VarArr, String[] strArr, boolean[] zArr) {
         this.a = cg5Var;
         this.b = wallettransactionArr;
         this.c = bqcVar;
         this.d = i;
         this.e = iccVar;
-        this.f = jl7VarArr;
+        this.f = kl7VarArr;
         this.h = strArr;
         this.n = zArr;
     }

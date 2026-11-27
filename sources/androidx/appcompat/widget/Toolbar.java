@@ -27,7 +27,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int E;
@@ -54,7 +54,7 @@ public class Toolbar extends ViewGroup {
     public tq b;
     public ArrayList b0;
     public tq c;
-    public final i09 c0;
+    public final j09 c0;
     public kp d;
     public jxb d0;
     public mp e;
@@ -82,7 +82,7 @@ public class Toolbar extends ViewGroup {
         this.W = new int[2];
         this.a0 = new pm3(new cxb(this, (byte) 1));
         this.b0 = new ArrayList();
-        this.c0 = new i09((Object) this, (byte) 20);
+        this.c0 = new j09((Object) this, (byte) 20);
         this.k0 = new bva((Object) this, (byte) 8);
         Context context2 = getContext();
         int[] iArr = w19.x;
@@ -345,9 +345,9 @@ public class Toolbar extends ViewGroup {
             actionMenuView.setPopupTheme(this.w);
             this.a.setOnMenuItemClickListener(this.c0);
             ActionMenuView actionMenuView2 = this.a;
-            k09 k09Var = new k09(this, (byte) 17);
+            l09 l09Var = new l09(this, (byte) 17);
             actionMenuView2.getClass();
-            actionMenuView2.L = k09Var;
+            actionMenuView2.L = l09Var;
             fxb h = h();
             h.a = (this.E & jn7.w1) | 8388613;
             this.a.setLayoutParams(h);

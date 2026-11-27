@@ -1,24 +1,27 @@
 // default package
 
-import android.os.Build;
-import java.lang.reflect.Method;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class yg7 {
-    public Method a;
-    public Method b;
-    public Method c;
+public final class yg7 extends c4 {
+    public static final Parcelable.Creator<yg7> CREATOR = new s5d((byte) 5);
+    public final int a;
+    public final boolean b;
 
-    public yg7(Method method, Method method2, Method method3) {
-        this.a = method;
-        this.b = method2;
-        this.c = method3;
+    public yg7(int i, boolean z) {
+        this.a = i;
+        this.b = z;
     }
 
-    public static void a() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            throw new UnsupportedClassVersionError("This function can only be used for API Level < 29.");
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        bye.s(parcel, r);
     }
 }

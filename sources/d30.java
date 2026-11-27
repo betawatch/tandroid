@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class d30 {
     public boolean a;
@@ -91,8 +91,8 @@ public final class d30 {
             if (fa3Var == null) {
                 this.g = new fa3(context);
             }
-            if (((rg7) this.e) == null) {
-                this.e = rg7.b;
+            if (((sg7) this.e) == null) {
+                this.e = sg7.b;
             }
             lyc lycVar = new lyc(context);
             sz szVar = context != null ? null : (sz) this.c;
@@ -102,14 +102,14 @@ public final class d30 {
             }
             fa3 fa3Var2 = (fa3) this.g;
             lycVar.c = fa3Var2;
-            lycVar.d = (rg7) this.e;
+            lycVar.d = (sg7) this.e;
             if (fa3Var2 == null) {
                 lycVar.c = new fa3(context2);
             }
             this.f = new n40(lycVar);
         } else {
             yve.p(fa3Var == null);
-            yve.p(((rg7) this.e) == null);
+            yve.p(((sg7) this.e) == null);
         }
         return new ja3(this);
     }

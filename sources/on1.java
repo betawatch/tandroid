@@ -27,7 +27,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class on1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -99,18 +99,18 @@ public final /* synthetic */ class on1 implements Runnable {
                 fu5 fu5Var = (fu5) this.d;
                 String str5 = (String) this.c;
                 fu5Var.u();
-                rl7 rl7Var = new rl7(zu1Var2, zu1Var2.getParentActivity());
-                rl7Var.I0(str5, false);
-                rl7Var.show();
+                sl7 sl7Var = new sl7(zu1Var2, zu1Var2.getParentActivity());
+                sl7Var.I0(str5, false);
+                sl7Var.show();
                 break;
             case 3:
                 ((zu1) this.b).v9((TLRPC.TL_error) this.d, (TLRPC.TL_messages_editMessage) this.c);
                 break;
             case 4:
                 zu1 zu1Var3 = (zu1) this.b;
-                jf7 jf7Var = (jf7) this.d;
+                kf7 kf7Var = (kf7) this.d;
                 CountDownLatch countDownLatch = (CountDownLatch) this.c;
-                zu1Var3.f = jf7Var.g0(zu1Var3.h.user_id);
+                zu1Var3.f = kf7Var.i0(zu1Var3.h.user_id);
                 countDownLatch.countDown();
                 break;
             case 5:
@@ -341,7 +341,7 @@ public final /* synthetic */ class on1 implements Runnable {
                 TLObject tLObject2 = (TLObject) this.d;
                 if (tL_error == null) {
                     g92Var.y0.invitesCount = ((TLRPC.TL_messages_exportedChatInvites) tLObject2).count;
-                    g92Var.getMessagesStorage().t1(g92Var.y0.invitesCount, g92Var.w0);
+                    g92Var.getMessagesStorage().x1(g92Var.y0.invitesCount, g92Var.w0);
                     g92Var.t0(false, false);
                     break;
                 }

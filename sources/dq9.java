@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class dq9 extends w96 implements AudioManager.OnAudioFocusChangeListener {
     public boolean O;
@@ -323,7 +323,7 @@ public final class dq9 extends w96 implements AudioManager.OnAudioFocusChangeLis
         NativeInstance.SsrcGroup[] J = J(tL_groupCallParticipantVideo);
         K(J);
         nativeInstance3.addIncomingVideoOutput(2, str, J, this.Q, wf3.n(this.y.peer));
-        hl.c3(new en9(this, this.y.video.endpoint, (byte) 5));
+        hl.c3(new dn9(this, this.y.video.endpoint, (byte) 6));
     }
 
     @Override // w96

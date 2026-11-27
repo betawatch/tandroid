@@ -13,7 +13,7 @@ import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.t;
 import org.telegram.ui.u;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class n88 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -46,7 +46,7 @@ public final class n88 extends AnimatorListenerAdapter {
         a aVar;
         switch (this.a) {
             case 0:
-                o88 o88Var = (o88) ((ki7) this.b).b;
+                o88 o88Var = (o88) ((li7) this.b).b;
                 if (animator.equals(o88Var.d)) {
                     o88Var.d = null;
                     break;

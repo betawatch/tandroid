@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.FiltersSetupActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ih4 extends la {
     public final Context d;
@@ -101,7 +101,7 @@ public final class ih4 extends la {
                             return;
                         }
                         wkb wkbVar = (wkb) view;
-                        wkbVar.f(gh4Var.c, filtersSetupActivity.getMessagesController().l4, z2);
+                        wkbVar.f(gh4Var.c, filtersSetupActivity.getMessagesController().m4, z2);
                         wkbVar.setCheckBoxIcon(filtersSetupActivity.getUserConfig().p() ? (byte) 0 : (byte) 2131232529);
                         return;
                     }
@@ -144,7 +144,7 @@ public final class ih4 extends la {
                 c = 1;
                 z = false;
             }
-            int i6 = filtersSetupActivity2.getMessagesController().l4 ? ac7Var.m : -1;
+            int i6 = filtersSetupActivity2.getMessagesController().m4 ? ac7Var.m : -1;
             if (i6 >= 0 && ac7Var.m != eh4Var.e) {
                 int L = hl.L(22.0f);
                 int[] iArr = aob.r8;
@@ -185,7 +185,7 @@ public final class ih4 extends la {
             StringBuilder sb = new StringBuilder();
             if (!ac7Var.d()) {
                 int i7 = ac7Var.g;
-                int i8 = uc7.s5;
+                int i8 = uc7.t5;
                 if ((i7 & i8) != i8) {
                     if ((i7 & 1) != 0) {
                         if (sb.length() != 0) {

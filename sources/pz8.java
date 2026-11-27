@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class pz8 extends dz8 {
     public final /* synthetic */ rz8 N;
@@ -34,14 +34,14 @@ public final class pz8 extends dz8 {
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         rz8 rz8Var = this.N;
-        f09 f09Var = rz8Var.d;
-        if (f09Var == null || (f09Var.m1 <= 0.5f && f09Var.l1 <= 0.5f)) {
+        g09 g09Var = rz8Var.d;
+        if (g09Var == null || (g09Var.m1 <= 0.5f && g09Var.l1 <= 0.5f)) {
             return super.dispatchTouchEvent(motionEvent);
         }
         if (motionEvent.getActionMasked() == 1) {
-            f09 f09Var2 = rz8Var.d;
-            f09Var2.m1 = 0.0f;
-            f09Var2.invalidate();
+            g09 g09Var2 = rz8Var.d;
+            g09Var2.m1 = 0.0f;
+            g09Var2.invalidate();
         }
         return true;
     }

@@ -11,7 +11,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class t14 extends c79 {
     public vx3 F;
@@ -76,7 +76,7 @@ public final class t14 extends c79 {
                 hashMap.put(str3, messages_botresults);
             }
             if (!z3 && messages_botresults.cache_time != 0) {
-                jf7.Y(o24Var.d1).s1(str3, messages_botresults);
+                kf7.a0(o24Var.d1).w1(str3, messages_botresults);
             }
             this.r = messages_botresults.next_offset;
             int i = 0;
@@ -152,7 +152,7 @@ public final class t14 extends c79 {
         if (v14Var != null) {
             v14Var.a(z2);
         }
-        TLObject c2 = uc7.s1(i).c2(uc7.s1(i).o3);
+        TLObject c2 = uc7.s1(i).c2(uc7.s1(i).p3);
         boolean z4 = c2 instanceof TLRPC.User;
         boolean z5 = this.d;
         if (!z4) {
@@ -160,7 +160,7 @@ public final class t14 extends c79 {
                 if (!this.G) {
                     this.G = true;
                     TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-                    tL_contacts_resolveUsername.username = uc7.s1(i).o3;
+                    tL_contacts_resolveUsername.username = uc7.s1(i).p3;
                     ConnectionsManager.getInstance(i).sendRequest(tL_contacts_resolveUsername, new ye(this, (byte) 24));
                 }
                 if (z5) {
@@ -213,7 +213,7 @@ public final class t14 extends c79 {
         }
         if (z3) {
             this.h = -1;
-            jf7.Y(i).L(q, requestDelegate);
+            kf7.a0(i).N(q, requestDelegate);
             return;
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
@@ -268,7 +268,7 @@ public final class t14 extends c79 {
         }
         int currentPosition = o24Var.q0.getCurrentPosition();
         if (currentPosition != o24Var.s0 && currentPosition != o24Var.t0) {
-            H((String) uc7.s1(i).x3.get(currentPosition - o24Var.u0));
+            H((String) uc7.s1(i).y3.get(currentPosition - o24Var.u0));
             return;
         }
         j79 adapter = rz3Var.getAdapter();
@@ -396,13 +396,13 @@ public final class t14 extends c79 {
                 view = this.e;
                 view.setLayoutParams(r79Var);
             } else {
-                t3b t3bVar = new t3b(this.c, false, false, o24Var.a2, o24Var.j2);
-                t3bVar.a(0, ob6.M0(2131750799, null));
+                u3b u3bVar = new u3b(this.c, false, false, o24Var.a2, o24Var.j2);
+                u3bVar.a(0, ob6.M0(2131750799, null));
                 r79 r79Var2 = new r79(-1, -2);
                 ((ViewGroup.MarginLayoutParams) r79Var2).topMargin = hl.L(2.5f);
                 ((ViewGroup.MarginLayoutParams) r79Var2).bottomMargin = hl.L(5.5f);
-                t3bVar.setLayoutParams(r79Var2);
-                view = t3bVar;
+                u3bVar.setLayoutParams(r79Var2);
+                view = u3bVar;
             }
         } else {
             vw2 vw2Var = new vw2(this.c);

@@ -23,7 +23,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ProxyListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class je3 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -174,10 +174,10 @@ public final /* synthetic */ class je3 implements View.OnClickListener {
                 break;
             case 10:
                 g24 g24Var = (g24) this.b;
-                t3b t3bVar = (t3b) this.c;
+                u3b u3bVar = (u3b) this.c;
                 o24 o24Var = g24Var.w;
                 wz3 wz3Var = o24Var.E0;
-                if (wz3Var.indexOfChild(t3bVar) != -1 && (U = wz3Var.U(t3bVar)) != null) {
+                if (wz3Var.indexOfChild(u3bVar) != -1 && (U = wz3Var.U(u3bVar)) != null) {
                     if (U.b() == o24Var.g1) {
                         if (o24Var.i1 != null) {
                             p14 p14Var = o24Var.u1;
@@ -186,7 +186,7 @@ public final /* synthetic */ class je3 implements View.OnClickListener {
                                 break;
                             }
                         } else {
-                            SharedPreferences.Editor edit = uc7.s1(o24Var.d1).Y3.edit();
+                            SharedPreferences.Editor edit = uc7.s1(o24Var.d1).Z3.edit();
                             String str = "group_hide_stickers_" + o24Var.K1.id;
                             TLRPC.StickerSet stickerSet = o24Var.K1.stickerset;
                             edit.putLong(str, stickerSet != null ? stickerSet.id : 0L).apply();
@@ -236,42 +236,42 @@ public final /* synthetic */ class je3 implements View.OnClickListener {
                     if (i2 >= 2) {
                         if (dialogFilter.groups) {
                             int i3 = ac7Var.g;
-                            int i4 = uc7.r5;
+                            int i4 = uc7.s5;
                             ac7Var.g = i3 | 4;
                         }
                         if (dialogFilter.bots) {
                             int i5 = ac7Var.g;
-                            int i6 = uc7.r5;
+                            int i6 = uc7.s5;
                             ac7Var.g = i5 | 16;
                         }
                         if (dialogFilter.contacts) {
                             int i7 = ac7Var.g;
-                            int i8 = uc7.r5;
+                            int i8 = uc7.s5;
                             ac7Var.g = i7 | 1;
                         }
                         if (dialogFilter.non_contacts) {
                             int i9 = ac7Var.g;
-                            int i10 = uc7.r5;
+                            int i10 = uc7.s5;
                             ac7Var.g = i9 | 2;
                         }
                         if (dialogFilter.broadcasts) {
                             int i11 = ac7Var.g;
-                            int i12 = uc7.r5;
+                            int i12 = uc7.s5;
                             ac7Var.g = i11 | 8;
                         }
                         if (dialogFilter.exclude_archived) {
                             int i13 = ac7Var.g;
-                            int i14 = uc7.r5;
+                            int i14 = uc7.s5;
                             ac7Var.g = i13 | 128;
                         }
                         if (dialogFilter.exclude_read) {
                             int i15 = ac7Var.g;
-                            int i16 = uc7.r5;
+                            int i16 = uc7.s5;
                             ac7Var.g = i15 | 64;
                         }
                         if (dialogFilter.exclude_muted) {
                             int i17 = ac7Var.g;
-                            int i18 = uc7.r5;
+                            int i18 = uc7.s5;
                             ac7Var.g = i17 | 32;
                         }
                         nf4.z0(ac7Var, ac7Var.g, ac7Var.b, ac7Var.c, ac7Var.n, ac7Var.m, ac7Var.h, ac7Var.i, ac7Var.j, true, true, true, true, true, ih4Var.e, new se4(ih4Var, suggestedFilter, b2));
@@ -547,17 +547,17 @@ public final /* synthetic */ class je3 implements View.OnClickListener {
                 break;
             case 21:
                 c51 c51Var = (c51) this.b;
-                jl7 jl7Var = (jl7) this.c;
+                kl7 kl7Var = (kl7) this.c;
                 if (!c51Var.R) {
-                    jl7Var.dismiss();
+                    kl7Var.dismiss();
                     break;
                 }
                 break;
             case 22:
                 w45 w45Var = (w45) this.b;
-                sk7 sk7Var = (sk7) this.c;
+                tk7 tk7Var = (tk7) this.c;
                 if (!w45Var.m) {
-                    sk7Var.dismiss();
+                    tk7Var.dismiss();
                     break;
                 }
                 break;

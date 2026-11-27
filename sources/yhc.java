@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Looper;
 import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class yhc {
     public static final yi a = new yi(20);
@@ -17,13 +17,13 @@ public abstract class yhc {
     public static Outline d;
     public static Rect e;
 
-    public static void a(Canvas canvas, u38 u38Var, ii7 ii7Var) {
+    public static void a(Canvas canvas, u38 u38Var, ji7 ji7Var) {
         Path path;
         Outline outline;
         Rect rect;
         ViewOutlineProvider outlineProvider = u38Var.getOutlineProvider();
         if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !u38Var.getClipToOutline() || outlineProvider == null) {
-            ii7Var.a(canvas);
+            ji7Var.a(canvas);
             return;
         }
         if (Looper.myLooper() == Looper.getMainLooper()) {
@@ -46,7 +46,7 @@ public abstract class yhc {
         outlineProvider.getOutline(u38Var, outline);
         path2.rewind();
         if (outline.isEmpty() || !outline.getRect(rect)) {
-            ii7Var.a(canvas);
+            ji7Var.a(canvas);
             return;
         }
         float radius = outline.getRadius();
@@ -59,7 +59,7 @@ public abstract class yhc {
         }
         int save = canvas.save();
         canvas.clipPath(path2);
-        ii7Var.a(canvas);
+        ji7Var.a(canvas);
         canvas.restoreToCount(save);
     }
 }

@@ -20,14 +20,14 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class z3a extends FrameLayout implements snb, fn7 {
     public static final /* synthetic */ int c0 = 0;
     public f4a E;
     public y3a F;
     public y3a G;
-    public w5b H;
+    public x5b H;
     public int I;
     public boolean J;
     public final i69 K;

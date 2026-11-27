@@ -37,7 +37,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class m01 {
     public static lh2 a;
@@ -372,7 +372,7 @@ public abstract class m01 {
         Typeface typeface = hl.a;
         String J0 = uri == null ? null : hl.J0(uri.toString(), false);
         String lowerCase = J0 != null ? J0.toLowerCase() : "";
-        if (!uc7.s1(yac.t0).k4.J3.f.contains(lowerCase)) {
+        if (!uc7.s1(yac.t0).l4.J3.f.contains(lowerCase)) {
             Matcher matcher = LaunchActivity.D1.matcher(lowerCase);
             if (matcher.find()) {
                 StringBuilder sb = new StringBuilder("https://t.me/");
@@ -856,9 +856,9 @@ public abstract class m01 {
                         }
                         boolean z15 = z10;
                         J02 = hl.J0(C.toString().toLowerCase(), z15);
-                        if (uc7.s1(k5.a(i).a).k4.K3.f.contains(J02)) {
+                        if (uc7.s1(k5.a(i).a).l4.K3.f.contains(J02)) {
                             try {
-                                C = C.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(uc7.s1(k5.a(yac.t0).a).z3, "UTF-8")).build();
+                                C = C.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(uc7.s1(k5.a(yac.t0).a).A3, "UTF-8")).build();
                             } catch (Exception e2) {
                                 e = e2;
                                 z13 = true;
@@ -940,7 +940,7 @@ public abstract class m01 {
                             if (!z14) {
                             }
                         } else {
-                            if (uc7.s1(i).k4.J3.f.contains(J02)) {
+                            if (uc7.s1(i).l4.J3.f.contains(J02)) {
                                 Intent intent2 = new Intent("android.intent.action.VIEW", C);
                                 intent2.addFlags(TLObject.FLAG_28);
                                 a.b.startActivity(intent2);
@@ -1045,7 +1045,7 @@ public abstract class m01 {
             C = C.normalizeScheme();
             boolean z152 = z10;
             J02 = hl.J0(C.toString().toLowerCase(), z152);
-            if (uc7.s1(k5.a(i).a).k4.K3.f.contains(J02)) {
+            if (uc7.s1(k5.a(i).a).l4.K3.f.contains(J02)) {
             }
             if (z11) {
             }
@@ -1080,7 +1080,7 @@ public abstract class m01 {
         C = C.normalizeScheme();
         boolean z1522 = z10;
         J02 = hl.J0(C.toString().toLowerCase(), z1522);
-        if (uc7.s1(k5.a(i).a).k4.K3.f.contains(J02)) {
+        if (uc7.s1(k5.a(i).a).l4.K3.f.contains(J02)) {
         }
         if (z11) {
         }

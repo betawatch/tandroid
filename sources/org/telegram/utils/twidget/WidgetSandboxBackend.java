@@ -29,7 +29,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 final class WidgetSandboxBackend implements s0d, wzc {
     private static final int MAX_CANVAS_WORDS = 2097152;
@@ -1199,8 +1199,9 @@ final class WidgetSandboxBackend implements s0d, wzc {
                 }
             } else {
                 if (i != 14) {
+                    byte b3 = 16;
                     if (i == 11) {
-                        zVar.a.post(new cxc((Object) zVar, (Object) text, (byte) 15));
+                        zVar.a.post(new zwc(zVar, text, b3));
                         return;
                     }
                     if (i == 18) {
@@ -1208,127 +1209,130 @@ final class WidgetSandboxBackend implements s0d, wzc {
                         zVar.S = new float[]{(float) jSONObject4.optDouble("receive"), (float) jSONObject4.optDouble("animate"), (float) jSONObject4.optDouble("paint"), (float) jSONObject4.optDouble("serialize"), 0.0f, 0.0f, (float) jSONObject4.optDouble("ticks"), (float) jSONObject4.optDouble("framesSent"), (float) jSONObject4.optDouble("opsLatency"), (float) jSONObject4.optDouble("validate", -1.0d), (float) jSONObject4.optDouble("hop", -1.0d)};
                         return;
                     }
-                    byte b3 = 16;
-                    if (i == 16 || i == 17 || i == 9) {
-                        return;
-                    }
-                    if (i == 3) {
-                        JSONObject jSONObject5 = new JSONObject(text);
-                        zVar.a.post(new qf4(zVar, jSONObject5.optBoolean("x"), jSONObject5.optBoolean("y"), jSONObject5.optBoolean("hold"), (byte) 1));
-                        return;
-                    }
-                    if (i == 4) {
-                        JSONObject jSONObject6 = new JSONObject(text);
-                        if (jSONObject6.optBoolean("loaded")) {
-                            zVar.B = true;
+                    if (i != 16) {
+                        byte b4 = 17;
+                        if (i == 17 || i == 9) {
+                            return;
                         }
-                        if (!zVar.f0 && jSONObject6.has("engine")) {
-                            zVar.f0 = true;
-                            if (f11.a) {
-                                cc4.b("widget engine: " + jSONObject6.optString("engine") + ", " + jSONObject6.optString("boot"));
+                        if (i == 3) {
+                            JSONObject jSONObject5 = new JSONObject(text);
+                            zVar.a.post(new qf4(zVar, jSONObject5.optBoolean("x"), jSONObject5.optBoolean("y"), jSONObject5.optBoolean("hold"), (byte) 1));
+                            return;
+                        }
+                        if (i == 4) {
+                            JSONObject jSONObject6 = new JSONObject(text);
+                            if (jSONObject6.optBoolean("loaded")) {
+                                zVar.B = true;
                             }
-                        }
-                        zVar.G = "bottom".equals(jSONObject6.optString("resizeAnchor"));
-                        if (jSONObject6.optBoolean("rendered") && !zVar.E) {
-                            double optDouble = jSONObject6.optDouble("height", -1.0d);
-                            double min = Math.min(zVar.e0 ? 4000.0f : 600.0f, Math.max(50.0f, zVar.t / zVar.l));
-                            if (zVar.u && optDouble > 0.0d && Math.abs(min - optDouble) <= 1.0d) {
-                                zVar.F = true;
-                                if (zVar.D == 0) {
-                                    zVar.D = SystemClock.uptimeMillis();
+                            if (!zVar.f0 && jSONObject6.has("engine")) {
+                                zVar.f0 = true;
+                                if (f11.a) {
+                                    cc4.b("widget engine: " + jSONObject6.optString("engine") + ", " + jSONObject6.optString("boot"));
                                 }
                             }
-                            zVar.E = true;
-                        }
-                        synchronized (zVar.s) {
-                            try {
-                                if (zVar.A) {
-                                    return;
-                                }
-                                zVar.P = jSONObject6;
-                                if (!zVar.Q) {
-                                    zVar.Q = true;
-                                    zVar.a.post(zVar.V);
-                                }
-                                return;
-                            } finally {
-                            }
-                        }
-                    }
-                    if (i == 5) {
-                        JSONObject jSONObject7 = new JSONObject(text);
-                        String optString2 = jSONObject7.optString("kind");
-                        if ("openLink".equals(optString2) || "openTelegramLink".equals(optString2)) {
-                            String optString3 = jSONObject7.optString("url");
-                            boolean equals = "openTelegramLink".equals(optString2);
-                            if (optString3 != null && optString3.length() <= 256 && optString3.length() >= 9 && optString3.regionMatches(true, 0, "https://", 0, 8)) {
-                                int i2 = 8;
-                                while (i2 < optString3.length() && "/?#".indexOf(optString3.charAt(i2)) < 0) {
-                                    i2++;
-                                }
-                                String substring = optString3.substring(8, i2);
-                                if (substring.indexOf(64) < 0) {
-                                    int indexOf = substring.indexOf(58);
-                                    if (indexOf >= 0) {
-                                        substring = substring.substring(0, indexOf);
+                            zVar.G = "bottom".equals(jSONObject6.optString("resizeAnchor"));
+                            if (jSONObject6.optBoolean("rendered") && !zVar.E) {
+                                double optDouble = jSONObject6.optDouble("height", -1.0d);
+                                double min = Math.min(zVar.e0 ? 4000.0f : 600.0f, Math.max(50.0f, zVar.t / zVar.l));
+                                if (zVar.u && optDouble > 0.0d && Math.abs(min - optDouble) <= 1.0d) {
+                                    zVar.F = true;
+                                    if (zVar.D == 0) {
+                                        zVar.D = SystemClock.uptimeMillis();
                                     }
-                                    if (!substring.isEmpty() && substring.length() <= 253) {
-                                        String[] split = substring.split("\\.", -1);
-                                        int length = split.length;
-                                        int i3 = 0;
-                                        loop1: while (true) {
-                                            if (i3 < length) {
-                                                String str = split[i3];
-                                                if (str.isEmpty() || str.length() > 63) {
-                                                    break;
-                                                }
-                                                z = false;
-                                                if (str.charAt(0) == '-' || str.charAt(str.length() - 1) == '-') {
-                                                    break;
-                                                }
-                                                for (int i4 = 0; i4 < str.length(); i4++) {
-                                                    char charAt = str.charAt(i4);
-                                                    if ((charAt < 'a' || charAt > 'z') && ((charAt < '0' || charAt > '9') && charAt != '-')) {
-                                                        break loop1;
+                                }
+                                zVar.E = true;
+                            }
+                            synchronized (zVar.s) {
+                                try {
+                                    if (zVar.A) {
+                                        return;
+                                    }
+                                    zVar.P = jSONObject6;
+                                    if (!zVar.Q) {
+                                        zVar.Q = true;
+                                        zVar.a.post(zVar.V);
+                                    }
+                                    return;
+                                } finally {
+                                }
+                            }
+                        }
+                        if (i == 5) {
+                            JSONObject jSONObject7 = new JSONObject(text);
+                            String optString2 = jSONObject7.optString("kind");
+                            if ("openLink".equals(optString2) || "openTelegramLink".equals(optString2)) {
+                                String optString3 = jSONObject7.optString("url");
+                                boolean equals = "openTelegramLink".equals(optString2);
+                                if (optString3 != null && optString3.length() <= 256 && optString3.length() >= 9 && optString3.regionMatches(true, 0, "https://", 0, 8)) {
+                                    int i2 = 8;
+                                    while (i2 < optString3.length() && "/?#".indexOf(optString3.charAt(i2)) < 0) {
+                                        i2++;
+                                    }
+                                    String substring = optString3.substring(8, i2);
+                                    if (substring.indexOf(64) < 0) {
+                                        int indexOf = substring.indexOf(58);
+                                        if (indexOf >= 0) {
+                                            substring = substring.substring(0, indexOf);
+                                        }
+                                        if (!substring.isEmpty() && substring.length() <= 253) {
+                                            String[] split = substring.split("\\.", -1);
+                                            int length = split.length;
+                                            int i3 = 0;
+                                            loop1: while (true) {
+                                                if (i3 < length) {
+                                                    String str = split[i3];
+                                                    if (str.isEmpty() || str.length() > 63) {
+                                                        break;
                                                     }
-                                                }
-                                                i3++;
-                                            } else {
-                                                z = false;
-                                                String[] strArr = e0d.m;
-                                                boolean z5 = false;
-                                                for (int i5 = 0; i5 < 3; i5++) {
-                                                    String str2 = strArr[i5];
-                                                    if (!substring.equals(str2)) {
-                                                        if (!substring.endsWith("." + str2)) {
-                                                            z4 = false;
-                                                            z5 |= z4;
+                                                    z = false;
+                                                    if (str.charAt(0) == '-' || str.charAt(str.length() - 1) == '-') {
+                                                        break;
+                                                    }
+                                                    for (int i4 = 0; i4 < str.length(); i4++) {
+                                                        char charAt = str.charAt(i4);
+                                                        if ((charAt < 'a' || charAt > 'z') && ((charAt < '0' || charAt > '9') && charAt != '-')) {
+                                                            break loop1;
                                                         }
                                                     }
-                                                    z4 = true;
-                                                    z5 |= z4;
-                                                }
-                                                if (z5 == equals && zVar.d.c(zVar.L)) {
-                                                    z2 = true;
+                                                    i3++;
+                                                } else {
+                                                    z = false;
+                                                    String[] strArr = e0d.m;
+                                                    boolean z5 = false;
+                                                    for (int i5 = 0; i5 < 3; i5++) {
+                                                        String str2 = strArr[i5];
+                                                        if (!substring.equals(str2)) {
+                                                            if (!substring.endsWith("." + str2)) {
+                                                                z4 = false;
+                                                                z5 |= z4;
+                                                            }
+                                                        }
+                                                        z4 = true;
+                                                        z5 |= z4;
+                                                    }
+                                                    if (z5 == equals && zVar.d.c(zVar.L)) {
+                                                        z2 = true;
+                                                    }
                                                 }
                                             }
+                                            z2 = z;
+                                            z3 = z2;
                                         }
+                                        z = false;
                                         z2 = z;
                                         z3 = z2;
                                     }
-                                    z = false;
-                                    z2 = z;
-                                    z3 = z2;
                                 }
+                                z = false;
+                                z2 = z;
+                                z3 = z2;
+                            } else {
+                                z3 = "haptic".equals(optString2) ? zVar.d.a(zVar.L) : "ready".equals(optString2);
                             }
-                            z = false;
-                            z2 = z;
-                            z3 = z2;
-                        } else {
-                            z3 = "haptic".equals(optString2) ? zVar.d.a(zVar.L) : "ready".equals(optString2);
-                        }
-                        if (z3) {
-                            zVar.a.post(new cxc(zVar, jSONObject7, b3));
+                            if (z3) {
+                                zVar.a.post(new zwc(zVar, jSONObject7, b4));
+                                return;
+                            }
                             return;
                         }
                         return;

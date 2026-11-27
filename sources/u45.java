@@ -1,31 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class u45 implements Runnable {
     public final /* synthetic */ byte a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ w45 c;
-    public final /* synthetic */ sk7 d;
+    public final /* synthetic */ tk7 d;
 
-    public /* synthetic */ u45(boolean[] zArr, w45 w45Var, sk7 sk7Var, byte b) {
+    public /* synthetic */ u45(boolean[] zArr, w45 w45Var, tk7 tk7Var, byte b) {
         this.a = b;
         this.b = zArr;
         this.c = w45Var;
-        this.d = sk7Var;
+        this.d = tk7Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        sk7 sk7Var = this.d;
+        tk7 tk7Var = this.d;
         w45 w45Var = this.c;
         boolean[] zArr = this.b;
         switch (b) {
             case 0:
                 if (!zArr[0]) {
                     if (!w45Var.m) {
-                        sk7Var.dismiss();
+                        tk7Var.dismiss();
                         break;
                     } else {
                         hl.d3(this, 1000L);
@@ -36,7 +36,7 @@ public final class u45 implements Runnable {
             default:
                 if (!zArr[0]) {
                     if (!w45Var.m) {
-                        sk7Var.dismiss();
+                        tk7Var.dismiss();
                         break;
                     } else {
                         hl.d3(this, 1000L);

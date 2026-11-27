@@ -3,7 +3,7 @@
 import java.lang.reflect.InvocationTargetException;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class dzc {
     public static final fzc a;
@@ -11,7 +11,7 @@ public abstract class dzc {
     static {
         fzc rj2Var;
         try {
-            rj2Var = new k09((WebViewProviderFactoryBoundaryInterface) py0.a(WebViewProviderFactoryBoundaryInterface.class, x2f.a()), (byte) 20);
+            rj2Var = new l09((WebViewProviderFactoryBoundaryInterface) py0.a(WebViewProviderFactoryBoundaryInterface.class, x2f.a()), (byte) 20);
         } catch (ClassNotFoundException unused) {
             rj2Var = new rj2((byte) 2);
         } catch (IllegalAccessException e) {

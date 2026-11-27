@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kb7 implements RequestDelegate {
     public final /* synthetic */ byte a = 1;
@@ -63,7 +63,7 @@ public final /* synthetic */ class kb7 implements RequestDelegate {
                     uc7Var.c4(tL_users_userFull.chats, false);
                     TLRPC.UserFull userFull2 = tL_users_userFull.full_user;
                     userFull2.user = uc7Var.X1(Long.valueOf(userFull2.id));
-                    uc7Var.getMessagesStorage().g2(userFull, false);
+                    uc7Var.getMessagesStorage().l2(userFull, false);
                     uc7Var.O1().p0(this.b, userFull.stories);
                     af2 e = af2.e(uc7Var.currentAccount);
                     TLRPC.UserFull userFull3 = tL_users_userFull.full_user;
@@ -78,14 +78,14 @@ public final /* synthetic */ class kb7 implements RequestDelegate {
             default:
                 ts8 ts8Var = (ts8) obj3;
                 ts8Var.getClass();
-                hl.c3(new he(ts8Var, tLObject, (jf7) obj2, this.b, this.c, (ArrayList) obj));
+                hl.c3(new he(ts8Var, tLObject, (kf7) obj2, this.b, this.c, (ArrayList) obj));
                 break;
         }
     }
 
-    public /* synthetic */ kb7(ts8 ts8Var, jf7 jf7Var, long j, int i, ArrayList arrayList) {
+    public /* synthetic */ kb7(ts8 ts8Var, kf7 kf7Var, long j, int i, ArrayList arrayList) {
         this.d = ts8Var;
-        this.e = jf7Var;
+        this.e = kf7Var;
         this.b = j;
         this.c = i;
         this.f = arrayList;

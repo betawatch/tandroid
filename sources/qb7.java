@@ -5,7 +5,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qb7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class qb7 implements Runnable {
             case 0:
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase = jf7.Y(r7).b;
+                        SQLiteDatabase sQLiteDatabase = kf7.a0(r7).b;
                         if (sQLiteDatabase != null) {
                             sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT data FROM app_config", new Object[0]);
                             try {
@@ -93,7 +93,7 @@ public final /* synthetic */ class qb7 implements Runnable {
             default:
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase2 = jf7.Y(r7).b;
+                        SQLiteDatabase sQLiteDatabase2 = kf7.a0(r7).b;
                         if (sQLiteDatabase2 != null) {
                             sQLiteCursor2 = sQLiteDatabase2.queryFinalized("SELECT data FROM effects", new Object[0]);
                             try {

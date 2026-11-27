@@ -24,7 +24,7 @@ import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class ThemeEditorView {
     public static volatile ThemeEditorView p;
@@ -44,7 +44,7 @@ public class ThemeEditorView {
     public final int g = hl.L(54.0f);
     public final int h = hl.L(54.0f);
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public class EditorAlert extends nx0 {
         public static final /* synthetic */ int G1 = 0;
         public int A1;

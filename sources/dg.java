@@ -16,7 +16,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class dg implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -73,11 +73,11 @@ public final /* synthetic */ class dg implements View.OnClickListener {
                                 chat.level = i2;
                                 g92Var2.getMessagesController().a4(g92Var2.x0, false);
                             }
-                            g92Var2.N.getCheckBox().setIcon(tL_premium_boostsStatus.level < g92Var2.getMessagesController().k4.c2.f() ? R.drawable.permission_locked : 0);
+                            g92Var2.N.getCheckBox().setIcon(tL_premium_boostsStatus.level < g92Var2.getMessagesController().l4.c2.f() ? R.drawable.permission_locked : 0);
                             boolean z2 = z;
                             boolean[] zArr2 = zArr;
                             id idVar2 = idVar;
-                            if (z2 && tL_premium_boostsStatus.level < g92Var2.getMessagesController().k4.c2.f()) {
+                            if (z2 && tL_premium_boostsStatus.level < g92Var2.getMessagesController().l4.c2.f()) {
                                 g92Var2.N.setChecked(false);
                                 zArr2[0] = false;
                                 xg1 G02 = g92Var2.getMessagesController().G0();

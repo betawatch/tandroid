@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v87 implements Runnable {
     public final /* synthetic */ byte a = 0;
@@ -48,7 +48,7 @@ public final /* synthetic */ class v87 implements Runnable {
                 if (X1 != null) {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(X1);
-                    uc7Var.getMessagesStorage().j1(arrayList, null, false, true);
+                    uc7Var.getMessagesStorage().n1(arrayList, null, false, true);
                     if (tL_photos_photo.photo instanceof TLRPC.TL_photo) {
                         TLRPC.TL_userProfilePhoto tL_userProfilePhoto = new TLRPC.TL_userProfilePhoto();
                         X1.photo = tL_userProfilePhoto;
@@ -65,14 +65,14 @@ public final /* synthetic */ class v87 implements Runnable {
                     TLRPC.UserFull Y1 = uc7Var.Y1(j);
                     if (Y1 != null) {
                         Y1.profile_photo = tL_photos_photo.photo;
-                        uc7Var.getMessagesStorage().g2(Y1, false);
+                        uc7Var.getMessagesStorage().l2(Y1, false);
                     }
                     uc7Var.getUserConfig().f().photo = X1.photo;
                     uc7Var.i4(X1, false, false);
                     uc7Var.getNotificationCenter().k(47, new Object[0]);
                     jn7 notificationCenter = uc7Var.getNotificationCenter();
-                    int i = uc7.r5;
-                    notificationCenter.k(2, Integer.valueOf(uc7.r5));
+                    int i = uc7.s5;
+                    notificationCenter.k(2, Integer.valueOf(uc7.s5));
                     uc7Var.getNotificationCenter().k(2, 2);
                     uc7Var.getUserConfig().u(true);
                     break;

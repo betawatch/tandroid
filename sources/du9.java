@@ -14,12 +14,12 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class du9 extends View {
     public boolean E;
     public cu9 F;
-    public fbb G;
+    public gbb G;
     public Object H;
     public a39 I;
     public String J;
@@ -269,7 +269,7 @@ public final class du9 extends View {
      */
     /* JADX WARN: Code restructure failed: missing block: B:36:0x00a5, code lost:
     
-        r3 = r0.a2().a(r2, r5, new v58((java.lang.Object) r1, (java.lang.Object) r0, (java.lang.Object) r10, (byte) 4));
+        r3 = r0.a2().a(r2, r5, new w58((java.lang.Object) r1, (java.lang.Object) r0, (java.lang.Object) r10, (byte) 4));
      */
     /* JADX WARN: Code restructure failed: missing block: B:41:0x00b4, code lost:
     

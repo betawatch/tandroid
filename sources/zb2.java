@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class zb2 {
     public final wb2 a;
@@ -38,7 +38,7 @@ public final class zb2 {
     public int n;
     public int o = 45;
     public LinearGradient p;
-    public hh7 q;
+    public ih7 q;
     public int r;
     public va6 s;
     public Path t;
@@ -583,11 +583,11 @@ public final class zb2 {
                                             aob.M2.setAlpha((int) (f4 * 255.0f));
                                         }
                                     } else if (this.q == null) {
-                                        hh7 hh7Var = new hh7(true, this.j, this.l, this.m, this.n);
-                                        this.q = hh7Var;
+                                        ih7 ih7Var = new ih7(true, this.j, this.l, this.m, this.n);
+                                        this.q = ih7Var;
                                         f12 = 0.0f;
                                         if (this.k < 0.0f) {
-                                            nlVar2.W(hh7Var.k);
+                                            nlVar2.W(ih7Var.k);
                                         }
                                         if (!nlVar2.D()) {
                                             this.q.u(hl.L(4.0f));
@@ -595,9 +595,9 @@ public final class zb2 {
                                     } else {
                                         f12 = 0.0f;
                                     }
-                                    hh7 hh7Var2 = this.q;
-                                    if (hh7Var2 != null) {
-                                        hh7Var2.setBounds((int) rectF5.left, (int) rectF5.top, (int) rectF5.right, (int) rectF5.bottom);
+                                    ih7 ih7Var2 = this.q;
+                                    if (ih7Var2 != null) {
+                                        ih7Var2.setBounds((int) rectF5.left, (int) rectF5.top, (int) rectF5.right, (int) rectF5.bottom);
                                         this.q.draw(canvas2);
                                         i19 = i10;
                                         i13 = i18;

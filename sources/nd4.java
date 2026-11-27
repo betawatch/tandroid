@@ -18,7 +18,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class nd4 {
     public byte[] A;
@@ -210,11 +210,11 @@ public final class nd4 {
                 if (!this.E && j > 10485760) {
                     this.D = true;
                 }
-                long f = uc7.s1(i2).k4.v3.f();
+                long f = uc7.s1(i2).l4.v3.f();
                 if (yac.h(k5.a(i2).a).p()) {
                     i3 = 1024;
                     if (this.t > 2097152000) {
-                        f = uc7.s1(i2).k4.w3.f();
+                        f = uc7.s1(i2).l4.w3.f();
                     }
                 } else {
                     i3 = 1024;

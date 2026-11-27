@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class gg implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -66,13 +66,13 @@ public final /* synthetic */ class gg implements RequestDelegate {
                     if (tL_messages_peerDialogs == null || tL_messages_peerDialogs.dialogs.isEmpty()) {
                         hl.c3(new l87(uc7Var, (byte) 29));
                     } else {
-                        uc7Var.getMessagesStorage().j1(tL_help_promoData.users, tL_help_promoData.chats, true, true);
+                        uc7Var.getMessagesStorage().n1(tL_help_promoData.users, tL_help_promoData.chats, true, true);
                         TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
                         tL_messages_dialogs.chats = tL_messages_peerDialogs.chats;
                         tL_messages_dialogs.users = tL_messages_peerDialogs.users;
                         tL_messages_dialogs.dialogs = tL_messages_peerDialogs.dialogs;
                         tL_messages_dialogs.messages = tL_messages_peerDialogs.messages;
-                        uc7Var.getMessagesStorage().a1(tL_messages_dialogs, 2);
+                        uc7Var.getMessagesStorage().e1(tL_messages_dialogs, 2);
                         hl.c3(new ba7((Object) uc7Var, (Object) tL_help_promoData, (Object) tL_messages_peerDialogs, this.c, (byte) 1));
                     }
                     uc7Var.n2 = false;

@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e implements fn7 {
     public mr0 A0;
@@ -216,15 +216,15 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e implemen
                 return;
             }
             uc7 s1 = uc7.s1(currentAccount);
-            if (TextUtils.isEmpty(s1.k4.M0.f)) {
-                if (TextUtils.isEmpty(s1.k4.O0.f)) {
+            if (TextUtils.isEmpty(s1.l4.M0.f)) {
+                if (TextUtils.isEmpty(s1.l4.O0.f)) {
                     return;
                 }
-                launchActivity.f0(new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/$" + s1.k4.O0.f)), null);
+                launchActivity.f0(new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/$" + s1.l4.O0.f)), null);
                 return;
             }
             launchActivity.X0 = true;
-            launchActivity.f0(new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/" + s1.k4.M0.f + "?start=" + str)), null);
+            launchActivity.f0(new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/" + s1.l4.M0.f + "?start=" + str)), null);
         }
     }
 
@@ -353,7 +353,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e implemen
     public static void q0(int i, ArrayList arrayList) {
         uc7 s1 = uc7.s1(i);
         String M0 = ob6.M0(2131746727, null);
-        hr hrVar = s1.k4;
+        hr hrVar = s1.l4;
         byte b = 4;
         arrayList.add(new sl8(0, R.drawable.msg_premium_limits, M0, ob6.a0(null, null, 2131746726, Integer.valueOf(hrVar.u3.f()), Integer.valueOf(hrVar.i1.f()), Integer.valueOf(hrVar.m1.f()), Integer.valueOf(hrVar.n1.f()), 4)));
         arrayList.add(new sl8(14, R.drawable.msg_filled_stories, ob6.M0(2131746703, null), ob6.a0(null, null, 2131746702, new Object[0])));
@@ -418,7 +418,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e implemen
                 i2 = z3 ? 2131743462 : 2131743463;
             } else {
                 if (z3) {
-                    if (uc7.s1(i).k4.c3.f) {
+                    if (uc7.s1(i).l4.c3.f) {
                         f = tl8Var.e();
                     } else {
                         f = tl8Var.d();
@@ -426,7 +426,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e implemen
                 } else if (!z2) {
                     f = tl8Var.e();
                 } else {
-                    if (!uc7.s1(i).k4.c3.f) {
+                    if (!uc7.s1(i).l4.c3.f) {
                         return ob6.a0(null, null, 2131744083, tl8Var.d(), ob6.G(tl8Var.a.months / 12, "Years", new Object[0]));
                     }
                     f = tl8Var.e();
@@ -466,7 +466,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e implemen
             if (tL_premiumSubscriptionOption.months != 12) {
                 e = di0.h().e(tL_premiumSubscriptionOption.amount, tL_premiumSubscriptionOption.currency);
             } else {
-                if (!uc7.s1(i).k4.c3.f) {
+                if (!uc7.s1(i).l4.c3.f) {
                     e = di0.h().e(tL_premiumSubscriptionOption.amount, tL_premiumSubscriptionOption.currency);
                     return ob6.a0(null, null, i2, e);
                 }
@@ -493,7 +493,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e implemen
                     if (uo8Var.d.equals("P1M")) {
                         str = uo8Var.a;
                     } else if (uo8Var.d.equals("P1Y")) {
-                        if (uc7.s1(i).k4.c3.f) {
+                        if (uc7.s1(i).l4.c3.f) {
                             di0.h();
                             str = di0.f(uo8Var.c, 6, uo8Var.b / 12, false);
                         } else {
@@ -976,7 +976,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e implemen
                     TL_account.toggleSponsoredMessages togglesponsoredmessages = new TL_account.toggleSponsoredMessages();
                     togglesponsoredmessages.enabled = Y1.sponsored_enabled;
                     getConnectionsManager().sendRequest(togglesponsoredmessages, new w15(this, (byte) 19));
-                    getMessagesStorage().g2(Y1, false);
+                    getMessagesStorage().l2(Y1, false);
                     return;
                 }
                 return;
@@ -1023,7 +1023,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e implemen
                     return;
                 }
                 if (b == 31) {
-                    presentFragment(new w09());
+                    presentFragment(new x09());
                     return;
                 }
                 if (b == 14) {

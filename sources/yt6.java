@@ -15,7 +15,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class yt6 {
     public final jl6 a;
@@ -600,11 +600,11 @@ public final class yt6 {
         }
         na.v(arrayList3, jArr4);
         awd.b(2, "expectedValuesPerKey");
-        TreeMap treeMap = new TreeMap(pk7.b);
-        ej7 ej7Var = new ej7();
+        TreeMap treeMap = new TreeMap(qk7.b);
+        fj7 fj7Var = new fj7();
         awd.b(2, "expectedValuesPerKey");
-        fj7 fj7Var = new fj7(treeMap);
-        fj7Var.h = ej7Var;
+        gj7 gj7Var = new gj7(treeMap);
+        gj7Var.h = fj7Var;
         int i45 = 0;
         loop13: while (true) {
             if (i45 < length4) {
@@ -648,20 +648,20 @@ public final class yt6 {
                         Double valueOf = Double.valueOf(d2 == 0.0d ? 1.0d : (((d3 + dArr[i49]) * 0.5d) - dArr[0]) / d2);
                         Integer valueOf2 = Integer.valueOf(i45);
                         long[][] jArr10 = jArr9;
-                        Map map = fj7Var.e;
+                        Map map = gj7Var.e;
                         double d4 = d2;
                         Collection collection = (Collection) map.get(valueOf);
                         if (collection == null) {
-                            Collection m = fj7Var.m();
+                            Collection m = gj7Var.m();
                             if (!m.add(valueOf2)) {
                                 hz6.e("New Collection violated the Collection spec");
                                 f2 = null;
                                 break loop13;
                             }
-                            fj7Var.f++;
+                            gj7Var.f++;
                             map.put(valueOf, m);
                         } else if (collection.add(valueOf2)) {
-                            fj7Var.f++;
+                            gj7Var.f++;
                         }
                         i48 = i49;
                         jArr9 = jArr10;
@@ -678,10 +678,10 @@ public final class yt6 {
                 la3Var = la3Var2;
                 int[] iArr22 = iArr21;
                 long[][] jArr11 = jArr2;
-                Collection collection2 = fj7Var.c;
+                Collection collection2 = gj7Var.c;
                 if (collection2 == null) {
-                    collection2 = new q3(fj7Var, (byte) 1);
-                    fj7Var.c = collection2;
+                    collection2 = new q3(gj7Var, (byte) 1);
+                    gj7Var.c = collection2;
                 }
                 po5 q = po5.q(collection2);
                 for (int i50 = 0; i50 < q.size(); i50++) {

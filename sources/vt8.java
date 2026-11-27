@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class vt8 implements ncc, occ {
     public final /* synthetic */ au8 a;
@@ -36,10 +36,10 @@ public final /* synthetic */ class vt8 implements ncc, occ {
         String str2;
         int i3;
         int i4;
+        String str3;
         String M0;
         int i5;
         sx4 sx4Var3;
-        LinearLayout linearLayout;
         boolean z3;
         TL_stars.SavedStarGift savedStarGift3;
         au8 au8Var3 = this.a;
@@ -67,12 +67,12 @@ public final /* synthetic */ class vt8 implements ncc, occ {
                         K.b(R.drawable.ic_ab_back, ob6.M0(2131753749, null), new vn1(J, b2), false);
                         K.j();
                         ti3 ti3Var = new ti3(au8Var3.getContext(), b);
-                        LinearLayout linearLayout2 = new LinearLayout(au8Var3.getContext());
-                        ti3Var.addView(linearLayout2);
-                        linearLayout2.setOrientation(1);
+                        LinearLayout linearLayout = new LinearLayout(au8Var3.getContext());
+                        ti3Var.addView(linearLayout);
+                        linearLayout.setOrientation(1);
                         boolean z5 = true;
                         K.q(ti3Var, tre.o(-1, -2));
-                        if (zwaVar.d().size() + 1 < uc7.s1(i6).k4.z.f()) {
+                        if (zwaVar.d().size() + 1 < uc7.s1(i6).l4.z.f()) {
                             b8 b8Var = new b8(0, au8Var3.c, au8Var3.getContext(), false, false);
                             b8Var.setPadding(hl.L(18.0f), 0, hl.L(18.0f), 0);
                             int i8 = aob.E8;
@@ -80,12 +80,12 @@ public final /* synthetic */ class vt8 implements ncc, occ {
                             b8Var.h(0.12f, i8);
                             b8Var.j(ob6.M0(2131750057, null), R.drawable.menu_folder_add, null);
                             b8Var.setOnClickListener(new lw4(au8Var3, J, savedStarGift4, (byte) 17));
-                            linearLayout2.addView(b8Var, tre.o(-1, -2));
+                            linearLayout.addView(b8Var, tre.o(-1, -2));
                         }
                         ArrayList d = zwaVar.d();
                         int size = d.size();
                         int i9 = 0;
-                        LinearLayout linearLayout3 = linearLayout2;
+                        LinearLayout linearLayout2 = linearLayout;
                         while (i9 < size) {
                             int i10 = i9 + 1;
                             TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) d.get(i9);
@@ -94,7 +94,6 @@ public final /* synthetic */ class vt8 implements ncc, occ {
                             while (true) {
                                 if (i7 >= size2) {
                                     sx4Var3 = sx4Var4;
-                                    linearLayout = linearLayout3;
                                     z3 = false;
                                     break;
                                 }
@@ -102,7 +101,6 @@ public final /* synthetic */ class vt8 implements ncc, occ {
                                 i7++;
                                 sx4Var3 = sx4Var4;
                                 if (jxa.h((TL_stars.SavedStarGift) obj2, savedStarGift4)) {
-                                    linearLayout = linearLayout3;
                                     z3 = z5;
                                     break;
                                 }
@@ -126,19 +124,20 @@ public final /* synthetic */ class vt8 implements ncc, occ {
                                 b8Var2.j(tL_starGiftCollection.title, R.drawable.msg_folders, null);
                             }
                             ArrayList arrayList2 = d;
-                            int i12 = size;
                             TL_stars.SavedStarGift savedStarGift5 = savedStarGift3;
-                            b8Var2.setOnClickListener(new e57(au8Var4, z3, tL_starGiftCollection, savedStarGift5, J, (byte) 1));
-                            linearLayout.addView(b8Var2, tre.o(-1, -2));
-                            linearLayout3 = linearLayout;
-                            au8Var3 = au8Var4;
+                            boolean z6 = z3;
+                            LinearLayout linearLayout3 = linearLayout2;
+                            b8Var2.setOnClickListener(new e57(au8Var4, z6, tL_starGiftCollection, savedStarGift5, J, (byte) 1));
+                            linearLayout3.addView(b8Var2, tre.o(-1, -2));
                             savedStarGift4 = savedStarGift5;
                             d = arrayList2;
-                            size = i12;
+                            size = size;
                             i9 = i10;
-                            sx4Var4 = sx4Var3;
                             z5 = true;
                             i7 = 0;
+                            au8Var3 = au8Var4;
+                            linearLayout2 = linearLayout3;
+                            sx4Var4 = sx4Var3;
                         }
                         au8Var = au8Var3;
                         savedStarGift = savedStarGift4;
@@ -164,21 +163,22 @@ public final /* synthetic */ class vt8 implements ncc, occ {
                             }
                         } else {
                             if (savedStarGift.pinned_to_top) {
-                                str = null;
+                                str3 = null;
                                 M0 = ob6.M0(2131749830, null);
                                 i5 = R.drawable.msg_unpin;
                             } else {
-                                str = null;
+                                str3 = null;
                                 M0 = ob6.M0(2131750036, null);
                                 i5 = R.drawable.msg_pin;
                             }
-                            au8 au8Var5 = au8Var;
-                            int i13 = i5;
-                            au8Var2 = au8Var5;
-                            savedStarGift2 = savedStarGift;
+                            int i12 = i5;
+                            TL_stars.SavedStarGift savedStarGift6 = savedStarGift;
+                            str = str3;
+                            savedStarGift2 = savedStarGift6;
+                            au8Var2 = au8Var;
                             sx4Var2 = sx4Var;
                             z2 = true;
-                            J.b(i13, M0, new vp8((Object) au8Var2, (Object) savedStarGift2, (Object) sx4Var2, (Object) view, (byte) 4), false);
+                            J.b(i12, M0, new vp8((Object) au8Var2, (Object) savedStarGift2, (Object) sx4Var2, (Object) view, (byte) 4), false);
                             J.k(R.drawable.tabs_reorder, ob6.M0(2131749991, str), new qt8(au8Var2, (byte) 0), savedStarGift2.pinned_to_top);
                         }
                         TL_stars.StarGift starGift = savedStarGift2.gift;
@@ -201,61 +201,61 @@ public final /* synthetic */ class vt8 implements ncc, occ {
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     byte b4 = b3;
-                                    TL_stars.SavedStarGift savedStarGift6 = savedStarGift2;
+                                    TL_stars.SavedStarGift savedStarGift7 = savedStarGift2;
                                     switch (b4) {
                                         case 0:
-                                            au8 au8Var6 = au8Var2;
-                                            zt8 zt8Var = new zt8(au8Var6, au8Var6.getContext(), au8Var6.b, au8Var6.a.c, au8Var6.c, (byte) 0);
-                                            zt8Var.o2(savedStarGift6, null);
+                                            au8 au8Var5 = au8Var2;
+                                            zt8 zt8Var = new zt8(au8Var5, au8Var5.getContext(), au8Var5.b, au8Var5.a.c, au8Var5.c, (byte) 0);
+                                            zt8Var.o2(savedStarGift7, null);
                                             zt8Var.B2(false);
                                             break;
                                         case 1:
-                                            au8 au8Var7 = au8Var2;
-                                            zt8 zt8Var2 = new zt8(au8Var7, au8Var7.getContext(), au8Var7.b, au8Var7.a.c, au8Var7.c, (byte) 1);
-                                            zt8Var2.o2(savedStarGift6, null);
+                                            au8 au8Var6 = au8Var2;
+                                            zt8 zt8Var2 = new zt8(au8Var6, au8Var6.getContext(), au8Var6.b, au8Var6.a.c, au8Var6.c, (byte) 1);
+                                            zt8Var2.o2(savedStarGift7, null);
                                             zt8Var2.O1();
                                             break;
                                         default:
-                                            au8 au8Var8 = au8Var2;
-                                            zt8 zt8Var3 = new zt8(au8Var8, au8Var8.getContext(), au8Var8.b, au8Var8.a.c, au8Var8.c, (byte) 2);
-                                            zt8Var3.o2(savedStarGift6, null);
+                                            au8 au8Var7 = au8Var2;
+                                            zt8 zt8Var3 = new zt8(au8Var7, au8Var7.getContext(), au8Var7.b, au8Var7.a.c, au8Var7.c, (byte) 2);
+                                            zt8Var3.o2(savedStarGift7, null);
                                             zt8Var3.b2();
                                             break;
                                     }
                                 }
                             }, false);
                         }
-                        J.k(R.drawable.msg_link2, ob6.M0(2131751727, str), new hp8(au8Var2, str2, (byte) 16), str2 != null ? z2 ? 1 : 0 : false);
-                        boolean z6 = str2 != null ? z2 ? 1 : 0 : false;
+                        J.k(R.drawable.msg_link2, ob6.M0(2131751727, str), new ep8(au8Var2, str2, (byte) 17), str2 != null ? z2 ? 1 : 0 : false);
+                        boolean z7 = str2 != null ? z2 ? 1 : 0 : false;
                         String M02 = ob6.M0(2131745187, str);
                         final byte b4 = z2 ? (byte) 1 : (byte) 0;
                         J.k(R.drawable.msg_share, M02, new Runnable() { // from class: rt8
                             @Override // java.lang.Runnable
                             public final void run() {
                                 byte b42 = b4;
-                                TL_stars.SavedStarGift savedStarGift6 = savedStarGift2;
+                                TL_stars.SavedStarGift savedStarGift7 = savedStarGift2;
                                 switch (b42) {
                                     case 0:
-                                        au8 au8Var6 = au8Var2;
-                                        zt8 zt8Var = new zt8(au8Var6, au8Var6.getContext(), au8Var6.b, au8Var6.a.c, au8Var6.c, (byte) 0);
-                                        zt8Var.o2(savedStarGift6, null);
+                                        au8 au8Var5 = au8Var2;
+                                        zt8 zt8Var = new zt8(au8Var5, au8Var5.getContext(), au8Var5.b, au8Var5.a.c, au8Var5.c, (byte) 0);
+                                        zt8Var.o2(savedStarGift7, null);
                                         zt8Var.B2(false);
                                         break;
                                     case 1:
-                                        au8 au8Var7 = au8Var2;
-                                        zt8 zt8Var2 = new zt8(au8Var7, au8Var7.getContext(), au8Var7.b, au8Var7.a.c, au8Var7.c, (byte) 1);
-                                        zt8Var2.o2(savedStarGift6, null);
+                                        au8 au8Var6 = au8Var2;
+                                        zt8 zt8Var2 = new zt8(au8Var6, au8Var6.getContext(), au8Var6.b, au8Var6.a.c, au8Var6.c, (byte) 1);
+                                        zt8Var2.o2(savedStarGift7, null);
                                         zt8Var2.O1();
                                         break;
                                     default:
-                                        au8 au8Var8 = au8Var2;
-                                        zt8 zt8Var3 = new zt8(au8Var8, au8Var8.getContext(), au8Var8.b, au8Var8.a.c, au8Var8.c, (byte) 2);
-                                        zt8Var3.o2(savedStarGift6, null);
+                                        au8 au8Var7 = au8Var2;
+                                        zt8 zt8Var3 = new zt8(au8Var7, au8Var7.getContext(), au8Var7.b, au8Var7.a.c, au8Var7.c, (byte) 2);
+                                        zt8Var3.o2(savedStarGift7, null);
                                         zt8Var3.b2();
                                         break;
                                 }
                             }
-                        }, z6);
+                        }, z7);
                     } else {
                         au8Var2 = au8Var;
                         savedStarGift2 = savedStarGift;
@@ -288,24 +288,24 @@ public final /* synthetic */ class vt8 implements ncc, occ {
                             @Override // java.lang.Runnable
                             public final void run() {
                                 byte b42 = b5;
-                                TL_stars.SavedStarGift savedStarGift6 = savedStarGift2;
+                                TL_stars.SavedStarGift savedStarGift7 = savedStarGift2;
                                 switch (b42) {
                                     case 0:
-                                        au8 au8Var6 = au8Var2;
-                                        zt8 zt8Var = new zt8(au8Var6, au8Var6.getContext(), au8Var6.b, au8Var6.a.c, au8Var6.c, (byte) 0);
-                                        zt8Var.o2(savedStarGift6, null);
+                                        au8 au8Var5 = au8Var2;
+                                        zt8 zt8Var = new zt8(au8Var5, au8Var5.getContext(), au8Var5.b, au8Var5.a.c, au8Var5.c, (byte) 0);
+                                        zt8Var.o2(savedStarGift7, null);
                                         zt8Var.B2(false);
                                         break;
                                     case 1:
-                                        au8 au8Var7 = au8Var2;
-                                        zt8 zt8Var2 = new zt8(au8Var7, au8Var7.getContext(), au8Var7.b, au8Var7.a.c, au8Var7.c, (byte) 1);
-                                        zt8Var2.o2(savedStarGift6, null);
+                                        au8 au8Var6 = au8Var2;
+                                        zt8 zt8Var2 = new zt8(au8Var6, au8Var6.getContext(), au8Var6.b, au8Var6.a.c, au8Var6.c, (byte) 1);
+                                        zt8Var2.o2(savedStarGift7, null);
                                         zt8Var2.O1();
                                         break;
                                     default:
-                                        au8 au8Var8 = au8Var2;
-                                        zt8 zt8Var3 = new zt8(au8Var8, au8Var8.getContext(), au8Var8.b, au8Var8.a.c, au8Var8.c, (byte) 2);
-                                        zt8Var3.o2(savedStarGift6, null);
+                                        au8 au8Var7 = au8Var2;
+                                        zt8 zt8Var3 = new zt8(au8Var7, au8Var7.getContext(), au8Var7.b, au8Var7.a.c, au8Var7.c, (byte) 2);
+                                        zt8Var3.o2(savedStarGift7, null);
                                         zt8Var3.b2();
                                         break;
                                 }
@@ -372,7 +372,7 @@ public final /* synthetic */ class vt8 implements ncc, occ {
                     ConnectionsManager.getInstance(i).sendRequest(savestargift, null, 64);
                 }
                 if (au8Var.e.q(savedStarGift, z2, true)) {
-                    d31.b0(cgaVar.a).Q(R.raw.chats_infotip, 36, ob6.H(',', "GiftsPinLimit", uc7.s1(i).k4.R1.f())).j();
+                    d31.b0(cgaVar.a).Q(R.raw.chats_infotip, 36, ob6.H(',', "GiftsPinLimit", uc7.s1(i).l4.R1.f())).j();
                 }
                 if (z) {
                     return;

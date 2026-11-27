@@ -19,7 +19,7 @@ import android.view.ViewConfiguration;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class k69 extends View implements snb {
     public float E;
@@ -57,7 +57,7 @@ public final class k69 extends View implements snb {
     public float h;
     public final boolean h0;
     public int i0;
-    public final ki7 j0;
+    public final li7 j0;
     public int k0;
     public float l0;
     public boolean m0;
@@ -89,7 +89,7 @@ public final class k69 extends View implements snb {
         this.L = new Path();
         this.M = new float[8];
         this.a0 = new int[2];
-        this.j0 = new ki7(this, (byte) 13);
+        this.j0 = new li7(this, (byte) 13);
         this.p0 = 1.0f;
         this.S = i;
         if (i == 0) {
@@ -228,9 +228,9 @@ public final class k69 extends View implements snb {
             this.V = true;
             invalidate();
         }
-        ki7 ki7Var = this.j0;
-        hl.r(ki7Var);
-        hl.d3(ki7Var, 2000L);
+        li7 li7Var = this.j0;
+        hl.r(li7Var);
+        hl.d3(li7Var, 2000L);
     }
 
     public final void d() {

@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class th6 extends e {
     public t20 a;
@@ -79,7 +79,7 @@ public final class th6 extends e {
         int i4 = this.currentAccount;
         z56 z56Var = new z56(this, idVar, (byte) 25);
         c[] cVarArr = c.T;
-        if (uc7.s1(i4).k4.v0.f) {
+        if (uc7.s1(i4).l4.v0.f) {
             hl.c3(new hl3(i4, z56Var, (byte) 11));
         } else {
             z56Var.run();
@@ -93,7 +93,7 @@ public final class th6 extends e {
     public final void Z(id idVar) {
         long j;
         idVar.dismiss();
-        if (uc7.s1(this.currentAccount).k4.v0.f) {
+        if (uc7.s1(this.currentAccount).l4.v0.f) {
             c C = c.C(this.currentAccount);
             if (C.z() > 0) {
                 TL_wallet.WalletState walletState = C.e;

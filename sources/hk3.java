@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class hk3 implements Runnable {
     public final /* synthetic */ byte a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class hk3 implements Runnable {
                     }
                     if (tLObject instanceof TLRPC.messages_Messages) {
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                        jf7.Y(i2).j1(messages_messages.users, messages_messages.chats, true, true);
+                        kf7.a0(i2).n1(messages_messages.users, messages_messages.chats, true, true);
                         uc7.s1(i2).j4(messages_messages.users, false);
                         uc7.s1(i2).c4(messages_messages.chats, false);
                         ArrayList<TLRPC.Message> arrayList4 = messages_messages.messages;
@@ -97,7 +97,7 @@ public final /* synthetic */ class hk3 implements Runnable {
                     }
                     if (tLObject2 instanceof TLRPC.messages_Messages) {
                         TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject2;
-                        jf7.Y(i4).j1(messages_messages2.users, messages_messages2.chats, true, true);
+                        kf7.a0(i4).n1(messages_messages2.users, messages_messages2.chats, true, true);
                         uc7.s1(i4).j4(messages_messages2.users, false);
                         uc7.s1(i4).c4(messages_messages2.chats, false);
                         ArrayList<TLRPC.Message> arrayList6 = messages_messages2.messages;
@@ -342,7 +342,7 @@ public final /* synthetic */ class hk3 implements Runnable {
                 }
                 if (document != null) {
                     imageReceiver.v0 = true;
-                    imageReceiver.h1 = new i09((Object) zArr, (byte) 16);
+                    imageReceiver.h1 = new j09((Object) zArr, (byte) 16);
                     ggb f = lp3.f(document, aob.a7, 0.3f, null);
                     TLRPC.PhotoSize w = xb4.w(document.thumbs, jn7.p2, true, null, true);
                     imageReceiver.M(0);

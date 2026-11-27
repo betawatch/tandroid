@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xzb extends la {
     public final /* synthetic */ zzb d;
@@ -52,7 +52,7 @@ public final class xzb extends la {
             uc7 s1 = uc7.s1(yac.t0);
             long j2 = tL_forumTopic.id;
             if (s1.getMessagesController().p2(j, j2, null)) {
-                int i2 = s1.W3.getInt("notifyuntil_" + ip7.p(j, j2, false), 0);
+                int i2 = s1.X3.getInt("notifyuntil_" + ip7.p(j, j2, false), 0);
                 M0 = i2 >= s1.getConnectionsManager().getCurrentTime() ? ob6.a0("NotificationsMutedForHint", null, 2131747627, ob6.c0(i2)) : ob6.M0(2131747628, null);
             } else {
                 M0 = ob6.M0(2131747583, null);
@@ -101,7 +101,7 @@ public final class xzb extends la {
                 }
                 return qu6.h(view2, view2, -1, -2);
             }
-            view = new rca(viewGroup.getContext(), (uh9) null);
+            view = new sca(viewGroup.getContext(), (uh9) null);
         }
         view2 = view;
         return qu6.h(view2, view2, -1, -2);

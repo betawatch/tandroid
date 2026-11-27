@@ -3,7 +3,7 @@
 import android.util.Log;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a2 implements ur4 {
     public final /* synthetic */ byte a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class a2 implements ur4 {
     public final Object invoke(Object obj) {
         byte b = this.a;
         byte b2 = 2;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         Object obj2 = this.b;
         switch (b) {
             case 0:
@@ -30,7 +30,7 @@ public final /* synthetic */ class a2 implements ur4 {
                 Executor executor = r13Var.g;
                 if (executor != null) {
                     executor.execute(new n13(r13Var, w03Var, (byte) 0));
-                    return f9cVar;
+                    return g9cVar;
                 }
                 ur5.e("executor");
                 throw null;
@@ -39,7 +39,7 @@ public final /* synthetic */ class a2 implements ur4 {
                 yu4 yu4Var = (yu4) obj;
                 yu4Var.getClass();
                 o23Var.f().execute(new n23(o23Var, yu4Var, b2));
-                return f9cVar;
+                return g9cVar;
             case 3:
                 v23 v23Var = (v23) obj2;
                 w03 w03Var2 = (w03) obj;
@@ -47,7 +47,7 @@ public final /* synthetic */ class a2 implements ur4 {
                 Executor executor2 = v23Var.g;
                 if (executor2 != null) {
                     executor2.execute(new u23(v23Var, w03Var2, b2));
-                    return f9cVar;
+                    return g9cVar;
                 }
                 ur5.e("executor");
                 throw null;
@@ -58,13 +58,13 @@ public final /* synthetic */ class a2 implements ur4 {
                 return new o9a(((p9a) obj2).a.a(null), null, null);
             case 5:
                 String str = (String) obj2;
-                rj7 rj7Var = (rj7) obj;
-                rj7Var.c(uf5.d, str);
-                uf5.f(rj7Var, str);
+                sj7 sj7Var = (sj7) obj;
+                sj7Var.c(uf5.d, str);
+                uf5.f(sj7Var, str);
                 return null;
             case 6:
-                ((wj7) obj2).f(null);
-                return f9cVar;
+                ((xj7) obj2).f(null);
+                return g9cVar;
             default:
                 ug8 ug8Var = (ug8) obj2;
                 int intValue = ((Integer) obj).intValue();
@@ -72,9 +72,9 @@ public final /* synthetic */ class a2 implements ur4 {
         }
     }
 
-    public /* synthetic */ a2(wj7 wj7Var, vj7 vj7Var) {
+    public /* synthetic */ a2(xj7 xj7Var, wj7 wj7Var) {
         this.a = (byte) 6;
-        this.b = wj7Var;
+        this.b = xj7Var;
     }
 
     public /* synthetic */ a2(Object obj, byte b) {

@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bb7 implements RequestDelegate {
     public final /* synthetic */ byte a = 2;
@@ -39,7 +39,7 @@ public final /* synthetic */ class bb7 implements RequestDelegate {
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj;
                 long j = this.c;
                 if (j != 0) {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                 }
                 if (tL_error == null) {
                     TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
@@ -49,8 +49,8 @@ public final /* synthetic */ class bb7 implements RequestDelegate {
                         uc7Var.W(j2, 0, this.d, this.e, this.g, inputPeer, 0L);
                     }
                     uc7Var.W3(tL_messages_affectedHistory.pts, -1, tL_messages_affectedHistory.pts_count);
-                    jf7 messagesStorage = uc7Var.getMessagesStorage();
-                    messagesStorage.a.c(new le7(messagesStorage, j2, (byte) 4));
+                    kf7 messagesStorage = uc7Var.getMessagesStorage();
+                    messagesStorage.a.c(new me7(messagesStorage, j2, (byte) 4));
                     break;
                 }
                 break;

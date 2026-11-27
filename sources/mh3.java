@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.FiltersSetupActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class mh3 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class mh3 implements View.OnClickListener {
                 o24 o24Var = y04Var.G;
                 ArrayList arrayList = o24Var.o1;
                 if (arrayList != null && !arrayList.isEmpty() && ((TLRPC.StickerSetCovered) arrayList.get(0)).set != null) {
-                    uc7.s1(o24Var.d1).Y3.edit().putLong("emoji_featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
+                    uc7.s1(o24Var.d1).Z3.edit().putLong("emoji_featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
                     y04 y04Var2 = o24Var.S;
                     if (y04Var2 != null) {
                         y04Var2.q(1, 3);

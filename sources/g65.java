@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class g65 implements Runnable {
     public final /* synthetic */ byte a;
@@ -272,7 +272,7 @@ public final /* synthetic */ class g65 implements Runnable {
                     uc7.s1(i6).U0(X1.id).f();
                     ArrayList arrayList9 = new ArrayList();
                     arrayList9.add(X1);
-                    jf7.Y(i6).j1(arrayList9, null, false, true);
+                    kf7.a0(i6).n1(arrayList9, null, false, true);
                     TLRPC.User X12 = uc7.s1(i6).X1(Long.valueOf(v85Var.e));
                     jn5 l3 = jn5.l(i6, 0, X12);
                     jn5 l4 = jn5.l(i6, 1, X12);
@@ -287,8 +287,8 @@ public final /* synthetic */ class g65 implements Runnable {
                     v85Var.a(1.0f);
                 }
                 jn7 f = jn7.f(k5Var2.a);
-                int i7 = uc7.r5;
-                f.k(2, Integer.valueOf(uc7.r5));
+                int i7 = uc7.s5;
+                f.k(2, Integer.valueOf(uc7.s5));
                 jn7.f(k5Var2.a).k(47, new Object[0]);
                 yac.h(k5Var2.a).u(true);
                 break;
@@ -768,7 +768,7 @@ public final /* synthetic */ class g65 implements Runnable {
                         }
                         TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
                         tL_messages_messages.messages.add(r47Var2.k);
-                        jf7.Y(i15).e1(-1, 0, r47Var.r1 ? 1 : 0, r47.B0(r47Var2.k), 0L, tL_messages_messages, false);
+                        kf7.a0(i15).i1(-1, 0, r47Var.r1 ? 1 : 0, r47.B0(r47Var2.k), 0L, tL_messages_messages, false);
                         jn7.f(i15).k(50, Long.valueOf(r47.B0(r47Var2.k)), qd4.t(r47Var2));
                         break;
                     }

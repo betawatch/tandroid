@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class be implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -161,7 +161,7 @@ public final /* synthetic */ class be implements View.OnClickListener {
                 vnb vnbVar2 = (vnb) obj4;
                 TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) obj2;
                 Context context = (Context) obj;
-                fu5 G = fu5.G(((jl7[]) obj5)[0].c, vnbVar2, (ImageView) obj3);
+                fu5 G = fu5.G(((kl7[]) obj5)[0].c, vnbVar2, (ImageView) obj3);
                 if (!TextUtils.isEmpty(wallettransactionArr[0].tx_hash)) {
                     G.b(R.drawable.msg_search, ob6.M0(2131742594, null), new mpc(context, i, wallettransactionArr, b3), false);
                 }

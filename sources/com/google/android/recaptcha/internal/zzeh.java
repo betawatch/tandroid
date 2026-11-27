@@ -3,11 +3,11 @@ package com.google.android.recaptcha.internal;
 import android.app.Application;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class zzeh {
     private final Application zza;
-    private final uj7 zzb = new wj7();
+    private final vj7 zzb = new xj7();
     private zzeq zzc;
     private final h26 zzd;
 
@@ -74,19 +74,19 @@ public final class zzeh {
                     vx2Var = vx2.a;
                     if (i != 0) {
                         ixe.b(obj);
-                        uj7 uj7Var = this.zzb;
+                        vj7 vj7Var = this.zzb;
                         str2 = str;
                         zzeaVar2.zza = str2;
                         zzeaVar2.zzb = null;
                         zzdqVar2 = zzdqVar;
                         zzeaVar2.zzh = zzdqVar2;
-                        zzeaVar2.zzc = uj7Var;
+                        zzeaVar2.zzc = vj7Var;
                         j2 = j;
                         zzeaVar2.zzd = j2;
                         zzeaVar2.zzg = 1;
-                        wj7 wj7Var = (wj7) uj7Var;
-                        if (wj7Var.d(zzeaVar2) != vx2Var) {
-                            obj2 = wj7Var;
+                        xj7 xj7Var = (xj7) vj7Var;
+                        if (xj7Var.d(zzeaVar2) != vx2Var) {
+                            obj2 = xj7Var;
                         }
                         return vx2Var;
                     }
@@ -95,20 +95,20 @@ public final class zzeh {
                             grb.i("call to 'resume' before 'invoke' with coroutine");
                             return null;
                         }
-                        obj3 = (uj7) zzeaVar2.zza;
+                        obj3 = (vj7) zzeaVar2.zza;
                         try {
                             ixe.b(obj);
                             zzeq zzeqVar = (zzeq) obj;
-                            ((wj7) obj3).f(null);
+                            ((xj7) obj3).f(null);
                             return zzeqVar;
                         } catch (Throwable th) {
                             th = th;
-                            ((wj7) obj3).f(null);
+                            ((xj7) obj3).f(null);
                             throw th;
                         }
                     }
                     long j3 = zzeaVar2.zzd;
-                    Object obj4 = (uj7) zzeaVar2.zzc;
+                    Object obj4 = (vj7) zzeaVar2.zzc;
                     zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
                     ixe.b(obj);
@@ -131,7 +131,7 @@ public final class zzeh {
                             if (obj != vx2Var) {
                                 obj3 = obj2;
                                 zzeq zzeqVar2 = (zzeq) obj;
-                                ((wj7) obj3).f(null);
+                                ((xj7) obj3).f(null);
                                 return zzeqVar2;
                             }
                             return vx2Var;
@@ -167,7 +167,7 @@ public final class zzeh {
         } catch (Throwable th2) {
             th = th2;
             obj3 = obj2;
-            ((wj7) obj3).f(null);
+            ((xj7) obj3).f(null);
             throw th;
         }
         zzeaVar = new zzea(this, zw2Var);

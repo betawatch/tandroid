@@ -59,7 +59,7 @@ import org.telegram.ui.Wallet.c;
 import org.telegram.utils.twidget.x;
 import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class r47 {
     public static Pattern m3;
@@ -219,7 +219,7 @@ public class r47 {
     public boolean i1;
     public final Drawable[] i2;
     public jfc i3;
-    public o5b j;
+    public p5b j;
     public int j0;
     public TLRPC.TL_forumTopic j1;
     public final boolean j2;
@@ -798,7 +798,7 @@ public class r47 {
                                     }
                                 } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionDeleteMessage) {
                                     message2 = ((TLRPC.TL_channelAdminLogEventActionDeleteMessage) channelAdminLogEventAction).message;
-                                    if (user == null || user.id != uc7.s1(i).L3) {
+                                    if (user == null || user.id != uc7.s1(i).M3) {
                                         this.v = D5(ob6.L0(2131751003), "un1", user);
                                     } else {
                                         this.v = ob6.L0(2131751003).replace("un1", lbc.r(user));
@@ -5400,8 +5400,8 @@ public class r47 {
                     }
                 }
                 if (((h0d) concurrentHashMap2.putIfAbsent(str, h0dVar)) == null) {
-                    jf7 Y = jf7.Y(h0dVar.b);
-                    Y.a.c(new cxc((Object) Y, (Object) h0dVar, (byte) 11));
+                    kf7 a0 = kf7.a0(h0dVar.b);
+                    a0.a.c(new zwc(a0, h0dVar, (byte) 12));
                 }
             }
             j = j2;
@@ -5411,7 +5411,7 @@ public class r47 {
             if (((h0d) concurrentHashMap2.putIfAbsent(str, h0dVar)) == null) {
             }
         } else if (h0dVar2.t != tL_messageMediaWidget) {
-            hl.c3(new cxc((Object) h0dVar2, (Object) tL_messageMediaWidget, (byte) 9));
+            hl.c3(new zwc(h0dVar2, tL_messageMediaWidget, (byte) 10));
         }
         TL_iv.RichMessage n = k0d.n(str);
         this.z2 = n;
@@ -5623,7 +5623,7 @@ public class r47 {
         }
         uc7 s1 = uc7.s1(i2);
         boolean p = s1.getUserConfig().p();
-        hr hrVar = s1.k4;
+        hr hrVar = s1.l4;
         int f = (p ? hrVar.v1 : hrVar.u1).f();
         if (!arrayList.isEmpty() && arrayList.contains(reactionCount)) {
             if (reactionCount != null) {
@@ -6145,7 +6145,7 @@ public class r47 {
             if (this.h1) {
                 this.U = 0;
                 this.D = 27;
-                this.i1 = uc7.s1(i3).X3.getBoolean("c" + B0(this.k) + "_rec", true);
+                this.i1 = uc7.s1(i3).Y3.getBoolean("c" + B0(this.k) + "_rec", true);
             } else {
                 TLRPC.Message message = this.k;
                 if (!(message instanceof TLRPC.TL_message) && !(message instanceof TLRPC.TL_messageForwarded_old2)) {
@@ -7000,7 +7000,7 @@ public class r47 {
             if (this.X2 == 0 && (message = this.k) != null) {
                 long B0 = B0(message);
                 if (B0 != 0) {
-                    this.X2 = (xea.D0 || (B0 > 0 && uc7.s1(this.K1).k4.z0.f.contains(Long.valueOf(B0)))) ? (byte) 2 : (byte) 1;
+                    this.X2 = (xea.D0 || (B0 > 0 && uc7.s1(this.K1).l4.z0.f.contains(Long.valueOf(B0)))) ? (byte) 2 : (byte) 1;
                 }
             }
             if (this.X2 != 2) {
@@ -7019,7 +7019,7 @@ public class r47 {
             return false;
         }
         int i = this.K1;
-        return ((long) (ConnectionsManager.getInstance(i).getCurrentTime() - this.k.date)) < uc7.s1(i).k4.h.g(TimeUnit.SECONDS);
+        return ((long) (ConnectionsManager.getInstance(i).getCurrentTime() - this.k.date)) < uc7.s1(i).l4.h.g(TimeUnit.SECONDS);
     }
 
     public final boolean P5() {
@@ -7079,12 +7079,12 @@ public class r47 {
                 TLRPC.TL_factCheck tL_factCheck3 = this.k.factcheck;
                 int i = b.a;
                 if (tL_factCheck3 != null) {
-                    jf7 Y = jf7.Y(i);
-                    Y.a.c(new vx3(Y, tL_factCheck3, (byte) 13));
+                    kf7 a0 = kf7.a0(i);
+                    a0.a.c(new vx3(a0, tL_factCheck3, (byte) 13));
                     if (!b.f) {
                         b.f = true;
-                        jf7 Y2 = jf7.Y(i);
-                        Y2.a.c(new be7(Y2, (byte) 6));
+                        kf7 a02 = kf7.a0(i);
+                        a02.a.c(new hd7(a02, (byte) 9));
                     }
                 }
             }
@@ -7465,7 +7465,7 @@ public class r47 {
 
     public final void X5() {
         boolean z = !this.i1;
-        SharedPreferences.Editor edit = uc7.s1(this.K1).X3.edit();
+        SharedPreferences.Editor edit = uc7.s1(this.K1).Y3.edit();
         String str = "c" + B0(this.k) + "_rec";
         this.i1 = z;
         edit.putBoolean(str, z).apply();
@@ -9519,7 +9519,7 @@ public class r47 {
     public final boolean f6(boolean z) {
         r47 r47Var = this.C;
         boolean z2 = (r47Var == null || r47Var == this || !r47Var.f6(z)) ? false : true;
-        a5c a5cVar = uc7.s1(this.K1).i4;
+        a5c a5cVar = uc7.s1(this.K1).j4;
         TLRPC.Message message = this.k;
         TLRPC.TL_textWithEntities tL_textWithEntities = message != null ? message.voiceTranscriptionOpen ? message.translatedVoiceTranscription : message.translatedText : null;
         TLRPC.TL_textWithEntities tL_textWithEntities2 = (message == null || !message.summarizedOpen) ? null : message.summaryText;
@@ -9644,9 +9644,9 @@ public class r47 {
         }
         if (z) {
             int i2 = this.K1;
-            jf7 Y = jf7.Y(i2);
+            kf7 a0 = kf7.a0(i2);
             TLRPC.Message message = this.k;
-            Y.H(new ae7(Y, message.dialog_id, b2(i2, message, false, false), this.k.id, (byte) 7));
+            a0.J(new ae7(a0, message.dialog_id, b2(i2, message, false, false), this.k.id, (byte) 7));
         }
     }
 
@@ -11569,7 +11569,7 @@ public class r47 {
             return false;
         }
         TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) n1;
-        if (tL_messageMediaToDo.todo.list.size() >= uc7.s1(this.K1).k4.F3.f()) {
+        if (tL_messageMediaToDo.todo.list.size() >= uc7.s1(this.K1).l4.F3.f()) {
             return false;
         }
         if (O3()) {
@@ -12651,7 +12651,7 @@ public class r47 {
                         return spannableStringBuilder;
                     }
                 } else {
-                    int g = (int) uc7.s1(i).k4.h.g(TimeUnit.HOURS);
+                    int g = (int) uc7.s1(i).l4.h.g(TimeUnit.HOURS);
                     int i2 = tL_messageActionSuggestedPostApproval.schedule_date;
                     if (i2 > 0) {
                         qu6.s(null, null, tL_messageActionSuggestedPostApproval.schedule_date > ConnectionsManager.getInstance(i).getCurrentTime() ? z3 ? 2131744018 : 2131744010 : z3 ? 2131744017 : 2131744009, new Object[]{str, ob6.x(i2, true)}, spannableStringBuilder);
@@ -12920,7 +12920,7 @@ public class r47 {
     }
 
     public final boolean v5() {
-        if (!R4() && F0() != null && wm9.i.contains(F0().mime_type) && F0().size < (uc7.s1(this.K1).k4.Z0.f() << 1)) {
+        if (!R4() && F0() != null && wm9.i.contains(F0().mime_type) && F0().size < (uc7.s1(this.K1).l4.Z0.f() << 1)) {
             for (int i = 0; i < F0().attributes.size(); i++) {
                 TLRPC.DocumentAttribute documentAttribute = F0().attributes.get(i);
                 if ((documentAttribute instanceof TLRPC.TL_documentAttributeAudio) && documentAttribute.duration < 5.0d) {

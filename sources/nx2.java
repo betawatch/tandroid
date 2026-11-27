@@ -9,7 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nx2 implements ur4 {
     public final /* synthetic */ byte a;
@@ -33,9 +33,9 @@ public final /* synthetic */ class nx2 implements ur4 {
                 Log.w("FirebaseSessions", "CorruptionException in session configs DataStore", zx2Var);
                 return sjf.e;
             default:
-                rj7 rj7Var = (rj7) obj;
-                Map a = rj7Var.a();
-                LinkedHashMap linkedHashMap = rj7Var.a;
+                sj7 sj7Var = (sj7) obj;
+                Map a = sj7Var.a();
+                LinkedHashMap linkedHashMap = sj7Var.a;
                 Iterator it = a.entrySet().iterator();
                 long j = 0;
                 while (true) {
@@ -51,14 +51,14 @@ public final /* synthetic */ class nx2 implements ur4 {
                                 Object obj2 = objArr[0];
                                 Objects.requireNonNull(obj2);
                                 if (hashSet.add(obj2)) {
-                                    rj7Var.c(zj8Var, DesugarCollections.unmodifiableSet(hashSet));
+                                    sj7Var.c(zj8Var, DesugarCollections.unmodifiableSet(hashSet));
                                     j++;
                                 } else {
                                     lq5.q(obj2, "duplicate element: ");
                                 }
                             } else {
                                 zj8Var.getClass();
-                                rj7Var.b();
+                                sj7Var.b();
                                 linkedHashMap.remove(zj8Var);
                             }
                         }
@@ -66,10 +66,10 @@ public final /* synthetic */ class nx2 implements ur4 {
                         zj8 zj8Var2 = uf5.c;
                         if (j == 0) {
                             zj8Var2.getClass();
-                            rj7Var.b();
+                            sj7Var.b();
                             linkedHashMap.remove(zj8Var2);
                         } else {
-                            rj7Var.c(zj8Var2, Long.valueOf(j));
+                            sj7Var.c(zj8Var2, Long.valueOf(j));
                         }
                     }
                 }

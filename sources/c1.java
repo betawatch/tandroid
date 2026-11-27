@@ -22,7 +22,7 @@ import org.telegram.ui.j;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -105,7 +105,7 @@ public final /* synthetic */ class c1 implements Runnable {
                 }
                 return;
             case 2:
-                ((ze7) this.b).run();
+                ((bf7) this.b).run();
                 return;
             case 3:
                 gp6 gp6Var = (gp6) this.b;
@@ -200,7 +200,7 @@ public final /* synthetic */ class c1 implements Runnable {
                 sl slVar = (sl) this.b;
                 ArrayList arrayList = new ArrayList(slVar.c);
                 slVar.c.clear();
-                jf7.Y(slVar.e).a.c(new ol(slVar, arrayList, (byte) 0));
+                kf7.a0(slVar.e).a.c(new ol(slVar, arrayList, (byte) 0));
                 slVar.d = null;
                 return;
             case 15:
@@ -317,7 +317,7 @@ public final /* synthetic */ class c1 implements Runnable {
                         i6 = 0;
                     }
                 }
-                hl.c3(new ze7(exVar, i12, iArr, iArr2));
+                hl.c3(new bf7(exVar, i12, iArr, iArr2));
                 return;
             case 26:
                 a();

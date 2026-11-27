@@ -8,7 +8,7 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ba9 extends yfb implements is4 {
     public byte a;
@@ -33,13 +33,13 @@ public final class ba9 extends yfb implements is4 {
 
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
-        return ((ba9) create((ux2) obj, (zw2) obj2)).invokeSuspend(f9c.a);
+        return ((ba9) create((ux2) obj, (zw2) obj2)).invokeSuspend(g9c.a);
     }
 
     @Override // qf0
     public final Object invokeSuspend(Object obj) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         v73 v73Var = this.e;
         vx2 vx2Var = vx2.a;
         try {
@@ -50,7 +50,7 @@ public final class ba9 extends yfb implements is4 {
             }
             this.a = (byte) 3;
             v73Var.invoke(message, this);
-            if (f9cVar == vx2Var) {
+            if (g9cVar == vx2Var) {
             }
         }
         if (b == 0) {
@@ -86,7 +86,7 @@ public final class ba9 extends yfb implements is4 {
             } else {
                 this.a = (byte) 2;
                 v73Var.invoke("Bad response code: " + responseCode, this);
-                if (f9cVar == vx2Var) {
+                if (g9cVar == vx2Var) {
                     return vx2Var;
                 }
             }
@@ -99,6 +99,6 @@ public final class ba9 extends yfb implements is4 {
             }
             ixe.b(obj);
         }
-        return f9cVar;
+        return g9cVar;
     }
 }

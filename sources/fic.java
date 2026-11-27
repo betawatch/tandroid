@@ -27,7 +27,7 @@ import java.util.Collections;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class fic extends ViewGroup {
     public static final int[] t0 = {R.attr.layout_gravity};
@@ -828,7 +828,7 @@ public class fic extends ViewGroup {
                 View childAt2 = getChildAt(i8);
                 if (!((cic) childAt2.getLayoutParams()).a) {
                     float left2 = (childAt2.getLeft() - scrollX2) / getClientWidth();
-                    acb acbVar = (acb) this.n0.b;
+                    bcb bcbVar = (bcb) this.n0.b;
                     w6b w6bVar = (w6b) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
                         w6bVar.a(false);
@@ -836,7 +836,7 @@ public class fic extends ViewGroup {
                     } else {
                         if (!w6bVar.d) {
                             w6bVar.a(true);
-                            ArrayList arrayList2 = acbVar.y0;
+                            ArrayList arrayList2 = bcbVar.y0;
                             o68 o68Var = w6bVar.a;
                             long j = w6bVar.b;
                             if (arrayList2 != null) {

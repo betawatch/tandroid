@@ -5,9 +5,9 @@ import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class xh5 implements sf7 {
+public final class xh5 implements tf7 {
     public final String a;
     public final String b;
     public final List c;
@@ -18,12 +18,12 @@ public final class xh5 implements sf7 {
         this.c = DesugarCollections.unmodifiableList(new ArrayList(list));
     }
 
-    @Override // sf7
+    @Override // tf7
     public final ko4 a() {
         return null;
     }
 
-    @Override // sf7
+    @Override // tf7
     public final byte[] c() {
         return null;
     }
@@ -53,7 +53,7 @@ public final class xh5 implements sf7 {
         return "HlsTrackMetadataEntry".concat(str != null ? c00.k(ik8.p(" [", str, ", "), this.b, "]") : "");
     }
 
-    @Override // sf7
+    @Override // tf7
     public final void b(lt6 lt6Var) {
     }
 }

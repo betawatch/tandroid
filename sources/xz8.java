@@ -2,16 +2,16 @@
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class xz8 implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ f09 b;
+    public final /* synthetic */ g09 b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ xz8(f09 f09Var, String str, byte b) {
+    public /* synthetic */ xz8(g09 g09Var, String str, byte b) {
         this.a = b;
-        this.b = f09Var;
+        this.b = g09Var;
         this.c = str;
     }
 
@@ -19,35 +19,35 @@ public final /* synthetic */ class xz8 implements pcc {
     public final void a(Object obj) {
         byte b = this.a;
         String str = this.c;
-        f09 f09Var = this.b;
+        g09 g09Var = this.b;
         ry8 ry8Var = (ry8) obj;
         switch (b) {
             case 0:
-                if (TextUtils.equals(f09Var.d, str)) {
-                    boolean z = f09Var.u0 == null;
-                    f09Var.u0 = ry8Var;
-                    if (!f09Var.w0) {
+                if (TextUtils.equals(g09Var.d, str)) {
+                    boolean z = g09Var.u0 == null;
+                    g09Var.u0 = ry8Var;
+                    if (!g09Var.w0) {
                         if (!z) {
-                            f09Var.i1(ry8Var);
+                            g09Var.i1(ry8Var);
                             break;
                         } else {
-                            f09Var.t0.a(ry8Var);
-                            f09Var.invalidate();
+                            g09Var.t0.a(ry8Var);
+                            g09Var.invalidate();
                             break;
                         }
                     }
                 }
                 break;
             default:
-                if (TextUtils.equals(f09Var.e, str)) {
-                    f09Var.v0 = ry8Var;
-                    if (f09Var.w0 && f09Var.x0 && f09Var.B0) {
-                        f09Var.B0 = false;
-                        f09Var.A0 = System.currentTimeMillis() + 60000;
-                        f09Var.B2 = -1;
+                if (TextUtils.equals(g09Var.e, str)) {
+                    g09Var.v0 = ry8Var;
+                    if (g09Var.w0 && g09Var.x0 && g09Var.B0) {
+                        g09Var.B0 = false;
+                        g09Var.A0 = System.currentTimeMillis() + 60000;
+                        g09Var.B2 = -1;
                     }
-                    if (f09Var.w0) {
-                        f09Var.i1(ry8Var);
+                    if (g09Var.w0) {
+                        g09Var.i1(ry8Var);
                         break;
                     }
                 }

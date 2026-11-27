@@ -49,7 +49,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class wy5 extends xma implements qv7, f44, lv7, vma, fn7 {
     public float A0;
@@ -155,7 +155,7 @@ public abstract class wy5 extends xma implements qv7, f44, lv7, vma, fn7 {
     /* JADX WARN: Type inference failed for: r32v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, lv7, qv7, vma, wma, wy5] */
     /* JADX WARN: Type inference failed for: r5v26, types: [android.view.View, v98] */
     /* JADX WARN: Type inference failed for: r5v27, types: [rlb] */
-    /* JADX WARN: Type inference failed for: r5v37, types: [android.view.View, ny5, v3b] */
+    /* JADX WARN: Type inference failed for: r5v37, types: [android.view.View, ny5, w3b] */
     /* JADX WARN: Type inference failed for: r5v4, types: [yx5] */
     public wy5(Context context, Activity activity, int i, Bitmap bitmap, Bitmap bitmap2, int i2, ArrayList arrayList, fo6 fo6Var, y98 y98Var, final vnb vnbVar) {
         super(context, activity);
@@ -1506,15 +1506,15 @@ public abstract class wy5 extends xma implements qv7, f44, lv7, vma, fn7 {
                         while (i5 < ry5Var.getChildCount()) {
                             View childAt = ry5Var.getChildAt(i5);
                             r88 r88Var3 = r88Var2;
-                            if (childAt instanceof v3b) {
-                                v3b v3bVar = (v3b) childAt;
-                                if (v3bVar.getAnchor() == i3) {
-                                    PointF position = v3bVar.getPosition();
+                            if (childAt instanceof w3b) {
+                                w3b w3bVar = (w3b) childAt;
+                                if (w3bVar.getAnchor() == i3) {
+                                    PointF position = w3bVar.getPosition();
                                     vy5Var3 = vy5Var4;
                                     i = size;
                                     f2 = f4;
                                     float hypot = (float) Math.hypot(position.x - r4.x, position.y - r4.y);
-                                    if ((j == v3bVar.getSticker().id || this.X0.size() > 1) && hypot < f2) {
+                                    if ((j == w3bVar.getSticker().id || this.X0.size() > 1) && hypot < f2) {
                                         break;
                                     }
                                     i5++;
@@ -1723,8 +1723,8 @@ public abstract class wy5 extends xma implements qv7, f44, lv7, vma, fn7 {
         ArrayList arrayList = null;
         for (int i = 0; i < childCount; i++) {
             View childAt = ry5Var.getChildAt(i);
-            if (childAt instanceof v3b) {
-                TLRPC.Document sticker = ((v3b) childAt).getSticker();
+            if (childAt instanceof w3b) {
+                TLRPC.Document sticker = ((w3b) childAt).getSticker();
                 if (arrayList == null) {
                     arrayList = new ArrayList();
                 }
@@ -1971,13 +1971,13 @@ public abstract class wy5 extends xma implements qv7, f44, lv7, vma, fn7 {
         if (h44Var2 != null) {
             PointF D0 = D0(h44Var2);
             h44 h44Var3 = this.C0;
-            boolean z = h44Var3 instanceof v3b;
+            boolean z = h44Var3 instanceof w3b;
             ry5 ry5Var = this.J0;
             if (z) {
-                v3b v3bVar = new v3b(getContext(), (v3b) this.C0, D0);
-                v3bVar.setDelegate(this);
-                ry5Var.addView(v3bVar);
-                h44Var = v3bVar;
+                w3b w3bVar = new w3b(getContext(), (w3b) this.C0, D0);
+                w3bVar.setDelegate(this);
+                ry5Var.addView(w3bVar);
+                h44Var = w3bVar;
             } else if (h44Var3 instanceof rlb) {
                 rlb rlbVar = new rlb(getContext(), (rlb) this.C0, D0);
                 rlbVar.setDelegate(this);

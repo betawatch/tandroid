@@ -4,7 +4,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ox9 implements Runnable {
     public final /* synthetic */ byte a;
@@ -34,8 +34,8 @@ public final /* synthetic */ class ox9 implements Runnable {
                     wx9Var.getMessagesController().S.l(dialog.id);
                 }
                 wx9Var.getMessagesStorage().a.c(new ox9(wx9Var, j2, b3));
-                jf7 messagesStorage = wx9Var.getMessagesStorage();
-                messagesStorage.a.c(new gd7(messagesStorage, 1, j2, (byte) 0));
+                kf7 messagesStorage = wx9Var.getMessagesStorage();
+                messagesStorage.a.c(new id7(messagesStorage, 1, j2, (byte) 0));
                 wx9Var.getNotificationCenter().k(3, new Object[0]);
                 wx9Var.getNotificationCenter().k(42, Long.valueOf(j2), Boolean.FALSE, null);
                 break;

@@ -33,7 +33,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class er9 extends Dialog implements fn7, VoIPService.StateListener {
     public static er9 Q0;
@@ -747,7 +747,7 @@ public final class er9 extends Dialog implements fn7, VoIPService.StateListener 
             TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
             vc2 vc2Var = this.c;
             exportgroupcallinvite.call = vc2Var.h(vc2Var.a);
-            ConnectionsManager.getInstance(i2).sendRequest(exportgroupcallinvite, new ol7(this, o, (byte) 18));
+            ConnectionsManager.getInstance(i2).sendRequest(exportgroupcallinvite, new pl7(this, o, (byte) 18));
             return;
         }
         if (!TextUtils.isEmpty(K)) {
@@ -761,7 +761,7 @@ public final class er9 extends Dialog implements fn7, VoIPService.StateListener 
         }
         TLRPC.TL_messages_exportChatInvite tL_messages_exportChatInvite = new TLRPC.TL_messages_exportChatInvite();
         tL_messages_exportChatInvite.peer = uc7.l1(this.d);
-        ConnectionsManager.getInstance(i2).sendRequest(tL_messages_exportChatInvite, new ol7(this, N0, (byte) 19));
+        ConnectionsManager.getInstance(i2).sendRequest(tL_messages_exportChatInvite, new pl7(this, N0, (byte) 19));
     }
 
     public final boolean g() {

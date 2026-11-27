@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class f7b extends View implements imb {
     public final boolean E;
@@ -611,7 +611,7 @@ public final class f7b extends View implements imb {
         r1.e.getSelectionPath(r9, r12, r13);
         r9 = r1.a;
         r6.W.e(false);
-        r4.postDelayed(new z3b(r1, r9, 19), android.view.ViewConfiguration.getLongPressTimeout());
+        r4.postDelayed(new n3b(r1, r9, 20), android.view.ViewConfiguration.getLongPressTimeout());
         r4 = true;
      */
     /* JADX WARN: Code restructure failed: missing block: B:51:0x016f, code lost:

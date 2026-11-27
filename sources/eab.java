@@ -13,15 +13,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eab implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ rbb b;
+    public final /* synthetic */ sbb b;
 
-    public /* synthetic */ eab(rbb rbbVar, byte b) {
+    public /* synthetic */ eab(sbb sbbVar, byte b) {
         this.a = b;
-        this.b = rbbVar;
+        this.b = sbbVar;
     }
 
     @Override // android.view.View.OnClickListener
@@ -30,74 +30,74 @@ public final /* synthetic */ class eab implements View.OnClickListener {
         byte b = this.a;
         byte b2 = 2;
         boolean z = false;
-        rbb rbbVar = this.b;
+        sbb sbbVar = this.b;
         switch (b) {
             case 0:
-                rbb rbbVar2 = this.b;
-                if (rbbVar2.L1 != null && rbbVar2.D2 == null && rbbVar2.j1 != null) {
-                    ValueAnimator valueAnimator = rbbVar2.F2;
+                sbb sbbVar2 = this.b;
+                if (sbbVar2.L1 != null && sbbVar2.D2 == null && sbbVar2.j1 != null) {
+                    ValueAnimator valueAnimator = sbbVar2.F2;
                     if (valueAnimator == null || !valueAnimator.isRunning()) {
-                        boolean z2 = rbbVar2.L1.y0;
-                        Bitmap createBitmap = Bitmap.createBitmap(rbbVar2.n.getWidth(), rbbVar2.n.getHeight(), Bitmap.Config.ARGB_8888);
+                        boolean z2 = sbbVar2.L1.y0;
+                        Bitmap createBitmap = Bitmap.createBitmap(sbbVar2.n.getWidth(), sbbVar2.n.getHeight(), Bitmap.Config.ARGB_8888);
                         Canvas canvas = new Canvas(createBitmap);
-                        rbbVar2.j1.setAlpha(0.0f);
-                        gbb gbbVar = rbbVar2.Y0;
-                        if (gbbVar != null) {
-                            gbbVar.h0 = true;
+                        sbbVar2.j1.setAlpha(0.0f);
+                        hbb hbbVar = sbbVar2.Y0;
+                        if (hbbVar != null) {
+                            hbbVar.h0 = true;
                         }
-                        vab vabVar = rbbVar2.w1;
-                        if (vabVar != null) {
-                            vabVar.s0 = true;
+                        wab wabVar = sbbVar2.w1;
+                        if (wabVar != null) {
+                            wabVar.s0 = true;
                         }
-                        rbbVar2.n.draw(canvas);
-                        gbb gbbVar2 = rbbVar2.Y0;
-                        if (gbbVar2 != null) {
-                            gbbVar2.h0 = false;
+                        sbbVar2.n.draw(canvas);
+                        hbb hbbVar2 = sbbVar2.Y0;
+                        if (hbbVar2 != null) {
+                            hbbVar2.h0 = false;
                         }
-                        vab vabVar2 = rbbVar2.w1;
-                        if (vabVar2 != null) {
-                            vabVar2.s0 = false;
+                        wab wabVar2 = sbbVar2.w1;
+                        if (wabVar2 != null) {
+                            wabVar2.s0 = false;
                         }
-                        rbbVar2.j1.setAlpha(1.0f);
+                        sbbVar2.j1.setAlpha(1.0f);
                         Paint paint = new Paint(1);
                         paint.setColor(-16777216);
                         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                         Paint paint2 = new Paint(1);
                         paint2.setFilterBitmap(true);
                         int[] iArr = new int[2];
-                        rbbVar2.j1.getLocationInWindow(iArr);
+                        sbbVar2.j1.getLocationInWindow(iArr);
                         float f = iArr[0];
                         float f2 = iArr[1];
                         float max = Math.max(createBitmap.getHeight(), createBitmap.getWidth()) + hl.n;
                         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                         paint2.setShader(new BitmapShader(createBitmap, tileMode, tileMode));
-                        bbb bbbVar = new bbb(rbbVar2, rbbVar2.b, z2, canvas, (rbbVar2.j1.getMeasuredWidth() / 2.0f) + f, (rbbVar2.j1.getMeasuredHeight() / 2.0f) + f2, max, paint, createBitmap, paint2, f, f2);
-                        rbbVar2.D2 = bbbVar;
-                        bbbVar.setOnTouchListener(new b02((byte) 27));
-                        rbbVar2.E2 = 0.0f;
+                        cbb cbbVar = new cbb(sbbVar2, sbbVar2.b, z2, canvas, (sbbVar2.j1.getMeasuredWidth() / 2.0f) + f, (sbbVar2.j1.getMeasuredHeight() / 2.0f) + f2, max, paint, createBitmap, paint2, f, f2);
+                        sbbVar2.D2 = cbbVar;
+                        cbbVar.setOnTouchListener(new b02((byte) 27));
+                        sbbVar2.E2 = 0.0f;
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                        rbbVar2.F2 = ofFloat;
-                        ofFloat.addUpdateListener(new hh1(rbbVar2, b2));
-                        rbbVar2.F2.addListener(new tab(rbbVar2, (byte) 2));
-                        rbbVar2.F2.setStartDelay(80L);
-                        rbbVar2.F2.setDuration(z2 ? 320L : 450L);
-                        rbbVar2.F2.setInterpolator(z2 ? k43.i : k43.h);
-                        rbbVar2.F2.start();
-                        rbbVar2.n.addView(rbbVar2.D2, new ViewGroup.LayoutParams(-1, -1));
-                        hl.c3(new bab(rbbVar2, (byte) 2));
+                        sbbVar2.F2 = ofFloat;
+                        ofFloat.addUpdateListener(new hh1(sbbVar2, b2));
+                        sbbVar2.F2.addListener(new uab(sbbVar2, (byte) 2));
+                        sbbVar2.F2.setStartDelay(80L);
+                        sbbVar2.F2.setDuration(z2 ? 320L : 450L);
+                        sbbVar2.F2.setInterpolator(z2 ? k43.i : k43.h);
+                        sbbVar2.F2.start();
+                        sbbVar2.n.addView(sbbVar2.D2, new ViewGroup.LayoutParams(-1, -1));
+                        hl.c3(new bab(sbbVar2, (byte) 2));
                         break;
                     }
                 }
                 break;
             case 1:
-                if (!rbbVar.T1) {
-                    rbbVar.K();
+                if (!sbbVar.T1) {
+                    sbbVar.K();
                     break;
                 }
                 break;
             case 2:
-                c8b c8bVar = rbbVar.L1;
-                if (c8bVar != null && !rbbVar.T1) {
+                c8b c8bVar = sbbVar.L1;
+                if (c8bVar != null && !sbbVar.T1) {
                     c8bVar.Y = !c8bVar.Y;
                     ArrayList arrayList = c8bVar.T;
                     if (arrayList != null) {
@@ -106,20 +106,20 @@ public final /* synthetic */ class eab implements View.OnClickListener {
                         while (i < size) {
                             Object obj = arrayList.get(i);
                             i++;
-                            ((c8b) obj).Y = rbbVar.L1.Y;
+                            ((c8b) obj).Y = sbbVar.L1.Y;
                         }
                     }
-                    boolean isEmpty = TextUtils.isEmpty(rbbVar.L1.y);
-                    c8b c8bVar2 = rbbVar.L1;
+                    boolean isEmpty = TextUtils.isEmpty(sbbVar.L1.y);
+                    c8b c8bVar2 = sbbVar.L1;
                     boolean z3 = c8bVar2.o0 != null;
-                    if (rbbVar.h0 == -1) {
-                        kg5 kg5Var = rbbVar.l1;
+                    if (sbbVar.h0 == -1) {
+                        kg5 kg5Var = sbbVar.l1;
                         if (c8bVar2.Y) {
                             M0 = ob6.M0((!isEmpty || z3) ? 2131744246 : 2131744114, null);
                         } else {
                             M0 = ob6.M0((!isEmpty || z3) ? 2131744245 : 2131744113, null);
                         }
-                        boolean z4 = rbbVar.l1.W;
+                        boolean z4 = sbbVar.l1.W;
                         if (kg5Var.getMeasuredWidth() < 0) {
                             kg5Var.H = M0;
                         } else {
@@ -129,109 +129,109 @@ public final /* synthetic */ class eab implements View.OnClickListener {
                             }
                             hnVar.t(M0, z, true);
                         }
-                        rbbVar.l1.v();
+                        sbbVar.l1.v();
                     }
-                    rbbVar.e0(rbbVar.L1.Y, true);
-                    rbbVar.Y0.b();
+                    sbbVar.e0(sbbVar.L1.Y, true);
+                    sbbVar.Y0.b();
                     break;
                 }
                 break;
             case 3:
-                boolean j = rbbVar.Y0.j();
-                rbbVar.Y0.x(-9982, j);
-                ((mf8) rbbVar.k1.c).a(!j, true);
+                boolean j = sbbVar.Y0.j();
+                sbbVar.Y0.x(-9982, j);
+                ((mf8) sbbVar.k1.c).a(!j, true);
                 break;
             case 4:
-                if (rbbVar.C0 != null && !rbbVar.T1) {
-                    String A = rbbVar.A();
-                    String D = rbbVar.D();
+                if (sbbVar.C0 != null && !sbbVar.T1) {
+                    String A = sbbVar.A();
+                    String D = sbbVar.D();
                     if (A != null && !A.equals(D)) {
-                        wab wabVar = rbbVar.C0;
-                        if (wabVar != null && wabVar.getCameraSession() != null) {
-                            if (!rbbVar.C0.isFrontface() || rbbVar.C0.getCameraSession().hasFlashModes()) {
-                                rbbVar.C0.getCameraSession().setCurrentFlashMode(D);
+                        xab xabVar = sbbVar.C0;
+                        if (xabVar != null && xabVar.getCameraSession() != null) {
+                            if (!sbbVar.C0.isFrontface() || sbbVar.C0.getCameraSession().hasFlashModes()) {
+                                sbbVar.C0.getCameraSession().setCurrentFlashMode(D);
                             } else {
-                                int indexOf = rbbVar.v2.indexOf(D);
+                                int indexOf = sbbVar.v2.indexOf(D);
                                 if (indexOf >= 0) {
-                                    rbbVar.u2 = indexOf;
-                                    uc7.e1().edit().putInt("frontflash", rbbVar.u2).apply();
+                                    sbbVar.u2 = indexOf;
+                                    uc7.e1().edit().putInt("frontflash", sbbVar.u2).apply();
                                 }
                             }
                         }
-                        rbbVar.d0(D);
+                        sbbVar.d0(D);
                         break;
                     }
                 }
                 break;
             case 5:
-                wab wabVar2 = rbbVar.C0;
-                if (wabVar2 != null && rbbVar.g0 == 0) {
-                    wabVar2.toggleDual();
-                    rbbVar.G0.setValue(rbbVar.C0.isDual());
-                    rbbVar.G0.setContentDescription(ob6.M0(rbbVar.C0.isDual() ? 2131754882 : 2131754883, null));
-                    rbbVar.m1.f(true);
+                xab xabVar2 = sbbVar.C0;
+                if (xabVar2 != null && sbbVar.g0 == 0) {
+                    xabVar2.toggleDual();
+                    sbbVar.G0.setValue(sbbVar.C0.isDual());
+                    sbbVar.G0.setContentDescription(ob6.M0(sbbVar.C0.isDual() ? 2131754882 : 2131754883, null));
+                    sbbVar.m1.f(true);
                     uc7.e1().edit().putInt("storydualhint", 2).apply();
-                    if (rbbVar.n1.W) {
+                    if (sbbVar.n1.W) {
                         uc7.e1().edit().putInt("storysvddualhint", 2).apply();
                     }
-                    rbbVar.n1.f(true);
+                    sbbVar.n1.f(true);
                     break;
                 }
                 break;
             case 6:
-                if (rbbVar.g0 == 0 && !rbbVar.b2) {
-                    wab wabVar3 = rbbVar.C0;
-                    if (wabVar3 != null && wabVar3.isDual()) {
-                        rbbVar.C0.toggleDual();
+                if (sbbVar.g0 == 0 && !sbbVar.b2) {
+                    xab xabVar3 = sbbVar.C0;
+                    if (xabVar3 != null && xabVar3.isDual()) {
+                        sbbVar.C0.toggleDual();
                     }
-                    if (!rbbVar.J0.e && !rbbVar.B0.i()) {
-                        rbbVar.B0.o(rbbVar.A0);
-                        rbbVar.J0.setSelected(rbbVar.A0);
-                        rbbVar.H0.a(new bl2(rbbVar.A0, false), true);
-                        rbbVar.H0.setSelected(true);
-                        wab wabVar4 = rbbVar.C0;
-                        if (wabVar4 != null) {
-                            wabVar4.recordHevc = !rbbVar.B0.i();
+                    if (!sbbVar.J0.e && !sbbVar.B0.i()) {
+                        sbbVar.B0.o(sbbVar.A0);
+                        sbbVar.J0.setSelected(sbbVar.A0);
+                        sbbVar.H0.a(new bl2(sbbVar.A0, false), true);
+                        sbbVar.H0.setSelected(true);
+                        xab xabVar4 = sbbVar.C0;
+                        if (xabVar4 != null) {
+                            xabVar4.recordHevc = !sbbVar.B0.i();
                         }
-                        zt4 zt4Var = rbbVar.N0;
+                        zt4 zt4Var = sbbVar.N0;
                         if (zt4Var != null) {
-                            zt4Var.setMultipleOnClick(rbbVar.B0.i());
-                            rbbVar.N0.setMaxCount(Math.min(10, al2.b() - rbbVar.B0.getFilledCount()));
+                            zt4Var.setMultipleOnClick(sbbVar.B0.i());
+                            sbbVar.N0.setMaxCount(Math.min(10, al2.b() - sbbVar.B0.getFilledCount()));
                         }
                     }
-                    rbbVar.J0.a(!r0.e, true);
-                    rbbVar.l0(true);
+                    sbbVar.J0.a(!r0.e, true);
+                    sbbVar.l0(true);
                     break;
                 }
                 break;
             case 7:
-                rbbVar.B0.o(null);
-                rbbVar.B0.b();
-                rbbVar.J0.setSelected((al2) null);
-                wab wabVar5 = rbbVar.C0;
-                if (wabVar5 != null) {
-                    wabVar5.recordHevc = !rbbVar.B0.i();
+                sbbVar.B0.o(null);
+                sbbVar.B0.b();
+                sbbVar.J0.setSelected((al2) null);
+                xab xabVar5 = sbbVar.C0;
+                if (xabVar5 != null) {
+                    xabVar5.recordHevc = !sbbVar.B0.i();
                 }
-                rbbVar.J0.a(false, true);
-                rbbVar.l0(true);
-                zt4 zt4Var2 = rbbVar.N0;
+                sbbVar.J0.a(false, true);
+                sbbVar.l0(true);
+                zt4 zt4Var2 = sbbVar.N0;
                 if (zt4Var2 != null) {
-                    zt4Var2.setMultipleOnClick(rbbVar.B0.i());
-                    rbbVar.N0.setMaxCount(Math.min(10, al2.b() - rbbVar.B0.getFilledCount()));
+                    zt4Var2.setMultipleOnClick(sbbVar.B0.i());
+                    sbbVar.N0.setMaxCount(Math.min(10, al2.b() - sbbVar.B0.getFilledCount()));
                     break;
                 }
                 break;
             case 8:
-                rbbVar.j0();
+                sbbVar.j0();
                 break;
             case 9:
-                wab wabVar6 = rbbVar.C0;
-                if (wabVar6 != null && !rbbVar.T1 && !rbbVar.Q1 && wabVar6.isInited() && rbbVar.g0 == 0) {
-                    rbbVar.C0.switchCamera();
-                    rbbVar.P0.d(180.0f);
-                    uc7.e1().edit().putBoolean("stories_camera", rbbVar.C0.isFrontface()).apply();
-                    boolean p0 = rbbVar.p0();
-                    rk4 rk4Var = rbbVar.s;
+                xab xabVar6 = sbbVar.C0;
+                if (xabVar6 != null && !sbbVar.T1 && !sbbVar.Q1 && xabVar6.isInited() && sbbVar.g0 == 0) {
+                    sbbVar.C0.switchCamera();
+                    sbbVar.P0.d(180.0f);
+                    uc7.e1().edit().putBoolean("stories_camera", sbbVar.C0.isFrontface()).apply();
+                    boolean p0 = sbbVar.p0();
+                    rk4 rk4Var = sbbVar.s;
                     if (!p0) {
                         rk4Var.d();
                         break;
@@ -242,32 +242,32 @@ public final /* synthetic */ class eab implements View.OnClickListener {
                 }
                 break;
             case 10:
-                rbbVar.j0();
+                sbbVar.j0();
                 break;
             case 11:
-                c8b c8bVar3 = rbbVar.L1;
+                c8b c8bVar3 = sbbVar.L1;
                 if (c8bVar3 != null) {
                     c8bVar3.f0 = true;
-                    c8bVar3.e0 = rbbVar.N1;
-                    rbbVar.W();
-                    c8b c8bVar4 = rbbVar.L1;
+                    c8bVar3.e0 = sbbVar.N1;
+                    sbbVar.W();
+                    c8b c8bVar4 = sbbVar.L1;
                     if (c8bVar4 != null && !c8bVar4.b0) {
-                        hl.d3(new bab(rbbVar, (byte) 23), 400L);
+                        hl.d3(new bab(sbbVar, (byte) 23), 400L);
                         break;
                     }
                 }
                 break;
             case 12:
-                if (rbbVar.t2) {
-                    rbbVar.Z(true);
+                if (sbbVar.t2) {
+                    sbbVar.Z(true);
                     break;
                 }
                 break;
             case 13:
-                rbbVar.k0(-1, false, true);
+                sbbVar.k0(-1, false, true);
                 break;
             default:
-                rbbVar.k0(-1, false, true);
+                sbbVar.k0(-1, false, true);
                 break;
         }
     }

@@ -129,7 +129,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class PhotoViewer implements fn7, qu4, pu4, s84 {
     public static Drawable[] d9;
@@ -648,13 +648,13 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
     public long z8;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     class BackgroundDrawable extends ColorDrawable {
         public static final /* synthetic */ int g = 0;
         public final RectF a;
         public final RectF b;
         public final Paint c;
-        public h68 d;
+        public a58 d;
         public boolean e;
 
         public BackgroundDrawable() {
@@ -706,7 +706,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
 
         @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
         public final void draw(Canvas canvas) {
-            h68 h68Var;
+            a58 a58Var;
             fd8 fd8Var;
             Drawable[] drawableArr = PhotoViewer.d9;
             PhotoViewer photoViewer = PhotoViewer.this;
@@ -744,10 +744,10 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                     }
                 }
             }
-            if (getAlpha() == 0 || (h68Var = this.d) == null) {
+            if (getAlpha() == 0 || (a58Var = this.d) == null) {
                 return;
             }
-            hl.c3(h68Var);
+            hl.c3(a58Var);
             this.d = null;
         }
 
@@ -776,7 +776,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class CounterView extends View {
         public StaticLayout a;
         public final TextPaint b;
@@ -1223,10 +1223,10 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
     /* JADX WARN: Removed duplicated region for block: B:144:0x02e0  */
     /* JADX WARN: Removed duplicated region for block: B:147:0x02f7  */
     /* JADX WARN: Removed duplicated region for block: B:150:0x0300  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x07f3  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x07f2  */
     /* JADX WARN: Removed duplicated region for block: B:163:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:164:0x031d  */
-    /* JADX WARN: Removed duplicated region for block: B:331:0x01d1  */
+    /* JADX WARN: Removed duplicated region for block: B:330:0x01d1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1237,11 +1237,11 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
         float f4;
         ed8 ed8Var;
         ed8 ed8Var2;
-        byte b;
-        fd8 M;
         int i;
+        fd8 M;
         int i2;
-        byte b2;
+        int i3;
+        byte b;
         float f5;
         nc8 nc8Var;
         zu1 zu1Var;
@@ -1249,7 +1249,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
         VelocityTracker velocityTracker;
         float f6;
         float[][] fArr;
-        int i3;
+        byte b2;
         RectF rectF;
         float min;
         boolean z3;
@@ -1308,7 +1308,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
             H2(true);
         }
         byte b5 = this.t4;
-        byte b6 = 5;
+        byte b6 = 6;
         if (b5 != 0) {
             if (b5 == 2) {
                 this.J1.c();
@@ -1327,7 +1327,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                 ad8 ad8Var = this.f0;
                 if (ad8Var != null) {
                     ad8Var.invalidate();
-                    this.f0.post(new h68(this, this.O1, b6));
+                    this.f0.post(new a58(this, this.O1, b6));
                 } else {
                     gc8 gc8Var = this.O1;
                     gc8Var.e.h();
@@ -1401,20 +1401,20 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                 ed8Var2 = this.d;
                 if (ed8Var2 != null) {
                     M = null;
-                    b = 5;
+                    i = 6;
                 } else {
                     r47 r47Var = this.S4;
-                    b = 5;
+                    i = 6;
                     jn5 jn5Var = this.Y4;
                     M = ed8Var2.M(r47Var, jn5Var == null ? null : jn5Var.f, this.O4, true, true);
                 }
                 float f7 = 0.0f;
                 if (this.G2 != null || M == null) {
-                    i = 2;
-                    i2 = 4;
-                    b2 = 11;
+                    i2 = 2;
+                    i3 = 4;
+                    b = 11;
                 } else {
-                    b2 = 11;
+                    b = 11;
                     lm m2 = M.a.m();
                     if (m2 != null) {
                         f5 = f;
@@ -1427,12 +1427,12 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                         if (this.G2.R() == null) {
                             r47 r47Var2 = this.S4;
                             if (r47Var2 == null) {
-                                i2 = 4;
+                                i3 = 4;
                                 document = null;
                                 if (this.H3 || (m = m2.m()) == null) {
-                                    i = 2;
+                                    i2 = 2;
                                 } else {
-                                    i = 2;
+                                    i2 = 2;
                                     if (!this.E2) {
                                         try {
                                             Bitmap bitmap = this.C2.getBitmap(m.getWidth(), m.getHeight());
@@ -1518,9 +1518,10 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                                                     layoutParams.width = (int) rectF.width();
                                                     layoutParams.height = (int) rectF.height();
                                                     ImageReceiver imageReceiver2 = M.a;
+                                                    b2 = 5;
                                                     int i6 = imageReceiver2.V;
                                                     lm m3 = imageReceiver2.m();
-                                                    int i7 = m3 != null ? m3.d[i] : 0;
+                                                    int i7 = m3 != null ? m3.d[i2] : 0;
                                                     if (i7 != 0) {
                                                         i6 = i7;
                                                     }
@@ -1530,9 +1531,8 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                                                         clippingImageView2.f = i8;
                                                         clippingImageView2.setImageBitmap(M.e);
                                                     }
-                                                    i3 = 6;
                                                 } else {
-                                                    i3 = 6;
+                                                    b2 = 5;
                                                     ImageReceiver imageReceiver3 = this.B4;
                                                     layoutParams.width = (int) imageReceiver3.N0;
                                                     layoutParams.height = (int) imageReceiver3.O0;
@@ -1580,7 +1580,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                                                     if (M.a.S0) {
                                                         abs = 0;
                                                     }
-                                                    int[] iArr = new int[i];
+                                                    int[] iArr = new int[i2];
                                                     M.d.getLocationInWindow(iArr);
                                                     float f13 = iArr[1];
                                                     float f14 = M.c;
@@ -1601,14 +1601,14 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                                                     fArr[0][2] = this.i0.getTranslationX();
                                                     fArr[0][3] = this.i0.getTranslationY();
                                                     float[] fArr2 = fArr[0];
-                                                    fArr2[i2] = f6;
-                                                    fArr2[b] = f6;
                                                     fArr2[i3] = f6;
+                                                    fArr2[b2] = f6;
+                                                    fArr2[i] = f6;
                                                     fArr2[7] = f6;
                                                     fArr2[8] = f6;
                                                     fArr2[9] = f6;
                                                     fArr2[10] = f6;
-                                                    fArr2[b2] = f6;
+                                                    fArr2[b] = f6;
                                                     fArr2[12] = f6;
                                                     float[] fArr3 = fArr[1];
                                                     float f17 = M.k;
@@ -1617,17 +1617,17 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                                                     fArr3[2] = (rectF.left * f17) + M.b;
                                                     fArr3[3] = (rectF.top * f17) + M.c;
                                                     float f18 = abs;
-                                                    fArr3[i2] = f18 * f17;
-                                                    fArr3[b] = max * f17;
-                                                    fArr3[i3] = max2 * f17;
+                                                    fArr3[i3] = f18 * f17;
+                                                    fArr3[b2] = max * f17;
+                                                    fArr3[i] = max2 * f17;
                                                     int i15 = 0;
-                                                    for (int i16 = i2; i15 < i16; i16 = 4) {
+                                                    for (int i16 = i3; i15 < i16; i16 = 4) {
                                                         fArr[1][i15 + 7] = M.h != null ? r11[i15] : f6;
                                                         i15++;
                                                     }
                                                     float[] fArr4 = fArr[1];
                                                     float f19 = M.k;
-                                                    fArr4[b2] = abs2 * f19;
+                                                    fArr4[b] = abs2 * f19;
                                                     fArr4[12] = f18 * f19;
                                                     ArrayList arrayList2 = new ArrayList((this.d2 == 1 ? 3 : 2) + b0.length + (b0.length > 1 ? 1 : 0));
                                                     for (int i17 = 0; i17 < b0.length; i17++) {
@@ -1653,7 +1653,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                                                 } else {
                                                     int i18 = hl.q.y + (!this.s ? hl.m : 0);
                                                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                                                    ofFloat2.addUpdateListener(new w98(this, b2));
+                                                    ofFloat2.addUpdateListener(new w98(this, b));
                                                     ObjectAnimator ofInt = ObjectAnimator.ofInt(backgroundDrawable, sn.d, 0);
                                                     ClippingImageView clippingImageView4 = this.i0;
                                                     Property property2 = View.ALPHA;
@@ -1666,13 +1666,13 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                                                     ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(clippingImageView5, (Property<ClippingImageView, Float>) property3, i18);
                                                     ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(this.f0, (Property<ad8, Float>) property2, f6);
                                                     ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(this.k0, (Property<View, Float>) property2, f6);
-                                                    Animator[] animatorArr = new Animator[i3];
+                                                    Animator[] animatorArr = new Animator[i];
                                                     animatorArr[0] = ofFloat2;
                                                     animatorArr[1] = ofInt;
                                                     animatorArr[2] = ofFloat3;
                                                     animatorArr[3] = ofFloat4;
                                                     animatorArr[4] = ofFloat5;
-                                                    animatorArr[b] = ofFloat6;
+                                                    animatorArr[b2] = ofFloat6;
                                                     animatorSet.playTogether(animatorArr);
                                                 }
                                                 ed8 ed8Var3 = this.d;
@@ -1681,7 +1681,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                                                 }
                                                 this.o4 = new ba8(this, M, (byte) 1);
                                                 animatorSet.setDuration(200L);
-                                                animatorSet.addListener(new wb8(this, b));
+                                                animatorSet.addListener(new wb8(this, b2));
                                                 if (zArr[0]) {
                                                     if (M == null || M.s) {
                                                         z3 = true;
@@ -1700,7 +1700,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                                                 }
                                             } else {
                                                 AnimatorSet animatorSet2 = new AnimatorSet();
-                                                float[] fArr5 = new float[i];
+                                                float[] fArr5 = new float[i2];
                                                 // fill-array-data instruction
                                                 fArr5[0] = 0.0f;
                                                 fArr5[1] = 1.0f;
@@ -1798,11 +1798,11 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                         } else {
                             R = this.G2.R();
                         }
-                        i2 = 4;
+                        i3 = 4;
                         document = R;
                         if (this.H3) {
                         }
-                        i = 2;
+                        i2 = 2;
                         z4 = true;
                         if (document != null) {
                         }
@@ -1830,8 +1830,8 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                         if (eVar == null) {
                         }
                     } else {
-                        i = 2;
-                        i2 = 4;
+                        i2 = 2;
+                        i3 = 4;
                     }
                 }
                 f5 = f;
@@ -1870,9 +1870,9 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
         float f72 = 0.0f;
         if (this.G2 != null) {
         }
-        i = 2;
-        i2 = 4;
-        b2 = 11;
+        i2 = 2;
+        i3 = 4;
+        b = 11;
         f5 = f;
         nc8Var = this.g0;
         if (nc8Var != null) {
@@ -2410,7 +2410,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
         if (!z2 && (zu1Var = this.k4) != null) {
             TLRPC.Chat chat2 = zu1Var.e;
             if (zu1Var.h() != null || ((xc2.T(chat2) && chat2.megagroup) || !xc2.T(chat2))) {
-                uc7.s1(this.U).W3.edit().putBoolean("silent_" + this.k4.a(), !z).commit();
+                uc7.s1(this.U).X3.edit().putBoolean("silent_" + this.k4.a(), !z).commit();
             }
         }
         oec k0 = k0();
@@ -2864,7 +2864,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
             }
             nc8Var.f.setVisibility(0);
             nc8Var.f.setKeepScreenOn(true);
-            if (nc8Var.x != null && "disabled".equals(uc7.s1(nc8Var.a).k4.Q0.f)) {
+            if (nc8Var.x != null && "disabled".equals(uc7.s1(nc8Var.a).l4.Q0.f)) {
                 nc8Var.r.setVisibility(8);
             }
             this.g0.setPlaybackSpeed(this.u1);
@@ -8282,7 +8282,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                 arrayList3 = arrayList2;
             } else {
                 z4 = z2;
-                a5c a5cVar2 = uc7.s1(photoViewer.U).i4;
+                a5c a5cVar2 = uc7.s1(photoViewer.U).j4;
                 if (i20 != photoViewer.P4) {
                     photoViewer.m5 = false;
                     photoViewer.n5 = null;
@@ -13208,7 +13208,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
         if (!(eVar instanceof zu1) || !xc2.V(((zu1) eVar).e)) {
             return false;
         }
-        v21 f = new d31(frameLayout, this.w2).f(uc7.s1(this.U).k4.p1.f(), new na8(this, (byte) 3));
+        v21 f = new d31(frameLayout, this.w2).f(uc7.s1(this.U).l4.p1.f(), new na8(this, (byte) 3));
         f.w = new na8(this, (byte) 4);
         this.s7 = f.j();
         return true;
@@ -15036,27 +15036,27 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                                                 i5 = i14;
                                                 ry5Var = ry5Var2;
                                                 pointF = position;
-                                                if (h44Var2 instanceof v3b) {
+                                                if (h44Var2 instanceof w3b) {
                                                     mecVar.a = (byte) 0;
-                                                    v3b v3bVar = (v3b) h44Var2;
-                                                    qma baseSize = v3bVar.getBaseSize();
+                                                    w3b w3bVar = (w3b) h44Var2;
+                                                    qma baseSize = w3bVar.getBaseSize();
                                                     mecVar.f = baseSize.a;
                                                     mecVar.g = baseSize.b;
-                                                    mecVar.B = v3bVar.getSticker();
-                                                    mecVar.C = v3bVar.getParentObject();
-                                                    TLRPC.Document sticker = v3bVar.getSticker();
+                                                    mecVar.B = w3bVar.getSticker();
+                                                    mecVar.C = w3bVar.getParentObject();
+                                                    TLRPC.Document sticker = w3bVar.getSticker();
                                                     xb4.G(yac.t0);
                                                     mecVar.j = xb4.J(sticker, null, true, true).getAbsolutePath();
                                                     if (r47.K2(sticker, true) || r47.N4(sticker)) {
                                                         boolean K22 = r47.K2(sticker, true);
                                                         mecVar.b = (byte) (mecVar.b | (K22 ? (byte) 1 : (byte) 4));
-                                                        long duration = K22 ? v3bVar.getDuration() : 5000L;
+                                                        long duration = K22 ? w3bVar.getDuration() : 5000L;
                                                         if (duration != 0) {
                                                             BigInteger valueOf2 = BigInteger.valueOf(duration);
                                                             hc8Var.Z0 = hc8Var.Z0.multiply(valueOf2).divide(hc8Var.Z0.gcd(valueOf2));
                                                         }
                                                     }
-                                                    if (v3bVar.v0) {
+                                                    if (w3bVar.v0) {
                                                         mecVar.b = (byte) (mecVar.b | 2);
                                                     }
                                                 } else if (h44Var2 instanceof v98) {
@@ -16236,7 +16236,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                 if (context == null) {
                     context = this.F;
                 }
-                m01.t(context, Uri.parse(str), true, false, false, null, null, false, uc7.s1(this.U).k4.I2.f, false, false);
+                m01.t(context, Uri.parse(str), true, false, false, null, null, false, uc7.s1(this.U).l4.I2.f, false, false);
                 return true;
             }
         }
@@ -17379,7 +17379,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
         tb8 tb8Var = new tb8(this, this.E, this.k4, arrayList, str, valueOf, ad8Var, z);
         tb8Var.w0(false);
         tb8Var.getWindow().setSoftInputMode(48);
-        hl.d3(new h68(this, tb8Var, (byte) 3), 250L);
+        hl.d3(new a58(this, tb8Var, (byte) 4), 250L);
         tb8Var.show();
     }
 
@@ -19713,7 +19713,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0226  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0221  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -19724,7 +19724,6 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
         AnimatorSet animatorSet;
         char c;
         ra8 ra8Var;
-        char c2;
         boolean z;
         zu1 zu1Var;
         if (this.G2 == null || !this.H3 || this.F3 || this.L3 || this.J3) {
@@ -19742,7 +19741,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
         this.f = false;
         hl.r(this.y2);
         fd8 fd8Var = this.c5;
-        byte b2 = 6;
+        byte b2 = 7;
         if (fd8Var != null) {
             ImageReceiver imageReceiver = fd8Var.a;
             if (!imageReceiver.R0) {
@@ -19754,7 +19753,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                         try {
                             if (this.E2) {
                                 Bitmap createBitmap = Bitmap.createBitmap(m2);
-                                hl.z0(this.D2, createBitmap, new h68(m, createBitmap, b2));
+                                hl.z0(this.D2, createBitmap, new a58(m, createBitmap, b2));
                             } else {
                                 Bitmap bitmap = this.C2.getBitmap(m2.getWidth(), m2.getHeight());
                                 new Canvas(m2).drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
@@ -19804,7 +19803,6 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                 Bitmap.Config config = Bitmap.Config.ARGB_8888;
                 Bitmap a = lc1.a(width2, height);
                 boolean[] zArr = new boolean[1];
-                c2 = 6;
                 SurfaceView surfaceView = this.D2;
                 animatorSet = animatorSet2;
                 c = 4;
@@ -19862,7 +19860,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
                 animatorArr[3] = ofFloat5;
                 animatorArr[c] = ofFloat6;
                 animatorArr[5] = ofInt;
-                animatorArr[c2] = ofFloat;
+                animatorArr[6] = ofFloat;
                 AnimatorSet animatorSet3 = animatorSet;
                 animatorSet3.playTogether(animatorArr);
                 animatorSet3.setInterpolator(new DecelerateInterpolator());
@@ -19886,14 +19884,12 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
             animatorSet = animatorSet2;
             c = 4;
             ra8Var = ra8Var2;
-            c2 = 6;
             this.x3.setVisibility(0);
             this.D2.setVisibility(4);
         } else {
             animatorSet = animatorSet2;
             c = 4;
             ra8Var = ra8Var2;
-            c2 = 6;
         }
         z = false;
         ra8 ra8Var32 = ra8Var;
@@ -19945,7 +19941,7 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
         animatorArr2[3] = ofFloat52;
         animatorArr2[c] = ofFloat62;
         animatorArr2[5] = ofInt2;
-        animatorArr2[c2] = ofFloat;
+        animatorArr2[6] = ofFloat;
         AnimatorSet animatorSet32 = animatorSet;
         animatorSet32.playTogether(animatorArr2);
         animatorSet32.setInterpolator(new DecelerateInterpolator());
@@ -21358,10 +21354,10 @@ public class PhotoViewer implements fn7, qu4, pu4, s84 {
             if (this.Q0.getVisibility() == 0) {
             }
         }
-        if (uc7.s1(this.U).X3.getInt("movecaptionhint", 0) >= 24) {
+        if (uc7.s1(this.U).Y3.getInt("movecaptionhint", 0) >= 24) {
             boolean z3 = f11.a;
         } else {
-            SharedPreferences sharedPreferences = uc7.s1(this.U).X3;
+            SharedPreferences sharedPreferences = uc7.s1(this.U).Y3;
             sharedPreferences.edit().putInt("movecaptionhint", sharedPreferences.getInt("movecaptionhint", 0) + 1).apply();
             d31 d31Var = new d31(z2 ? this.S0 : this.R0, new x53());
             if (z2) {

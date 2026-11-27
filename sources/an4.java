@@ -2,7 +2,7 @@
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class an4 implements nm4 {
     public final /* synthetic */ byte a = 0;
@@ -33,7 +33,7 @@ public final class an4 implements nm4 {
         Object obj2;
         int i;
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         vx2 vx2Var = vx2.a;
         yfb yfbVar = this.d;
         Object obj3 = this.c;
@@ -59,7 +59,7 @@ public final class an4 implements nm4 {
                                 }
                             }
                             ixe.b(obj2);
-                            return f9cVar;
+                            return g9cVar;
                         }
                         ixe.b(obj2);
                         if (!((m89) obj4).a) {
@@ -71,12 +71,12 @@ public final class an4 implements nm4 {
                         } else {
                             zm4Var.e = 1;
                             if (((nm4) obj3).c(obj, zm4Var) != vx2Var) {
-                                return f9cVar;
+                                return g9cVar;
                             }
                         }
                         return vx2Var;
                         if (!((Boolean) obj2).booleanValue()) {
-                            return f9cVar;
+                            return g9cVar;
                         }
                         ((m89) this.b).a = true;
                         nm4 nm4Var = (nm4) this.c;
@@ -84,7 +84,7 @@ public final class an4 implements nm4 {
                         zm4Var.b = null;
                         zm4Var.e = 3;
                         if (nm4Var.c(obj, zm4Var) != vx2Var) {
-                            return f9cVar;
+                            return g9cVar;
                         }
                         return vx2Var;
                     }
@@ -98,7 +98,7 @@ public final class an4 implements nm4 {
                 }
             default:
                 Object a = jvd.a((mx2) obj4, obj, obj3, (ii1) yfbVar, zw2Var);
-                return a == vx2Var ? a : f9cVar;
+                return a == vx2Var ? a : g9cVar;
         }
     }
 

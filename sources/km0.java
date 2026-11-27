@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class km0 extends la {
     public final vnb d;
@@ -31,8 +31,8 @@ public final class km0 extends la {
     public km0(vnb vnbVar) {
         this.d = vnbVar;
         te2 te2Var = new te2(this, (byte) 5);
-        jf7 Y = jf7.Y(yac.t0);
-        Y.a.c(new a30(Y, te2Var, (byte) 8));
+        kf7 a0 = kf7.a0(yac.t0);
+        a0.a.c(new a30(a0, te2Var, (byte) 8));
     }
 
     @Override // c79
@@ -327,9 +327,9 @@ public final class km0 extends la {
                 break;
             case 4:
                 int i2 = aob.a7;
-                View rcaVar = new rca(context, aob.v0(i2, vnbVar), 0);
-                yob.h(i2, vnbVar, rcaVar);
-                view = rcaVar;
+                View scaVar = new sca(context, aob.v0(i2, vnbVar), 0);
+                yob.h(i2, vnbVar, scaVar);
+                view = scaVar;
                 break;
             case 5:
                 view = new dna(context, vnbVar);

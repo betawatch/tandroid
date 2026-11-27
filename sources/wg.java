@@ -33,9 +33,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class wg implements dq7, on5, lz0, bf7, hj, s69, ln3, b86, qc6, fd, o69, ot2, occ {
+public final /* synthetic */ class wg implements dq7, on5, lz0, cf7, hj, s69, ln3, b86, qc6, fd, o69, ot2, occ {
     public final /* synthetic */ byte a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -46,7 +46,7 @@ public final /* synthetic */ class wg implements dq7, on5, lz0, bf7, hj, s69, ln
         this.b = i;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         zu1 zu1Var = ((oq1) this.c).b;
         int i = this.b;
@@ -234,9 +234,9 @@ public final /* synthetic */ class wg implements dq7, on5, lz0, bf7, hj, s69, ln
                 ((ContactsActivity) obj).k0(view, i2, i);
                 break;
             default:
-                pi7 pi7Var = (pi7) obj;
-                mi7 mi7Var = pi7Var.T1;
-                HashSet hashSet = pi7Var.Y1;
+                qi7 qi7Var = (qi7) obj;
+                ni7 ni7Var = qi7Var.T1;
+                HashSet hashSet = qi7Var.Y1;
                 if (view instanceof e3a) {
                     TLRPC.User user = ((e3a) view).getUser();
                     long j = user.id;
@@ -244,23 +244,23 @@ public final /* synthetic */ class wg implements dq7, on5, lz0, bf7, hj, s69, ln
                         hashSet.remove(Long.valueOf(j));
                     } else {
                         hashSet.add(Long.valueOf(j));
-                        pi7Var.d2.put(Long.valueOf(j), user);
+                        qi7Var.d2.put(Long.valueOf(j), user);
                     }
                     if (hashSet.size() != i2 + 1) {
-                        mi7Var.b(true, hashSet, new hi7(pi7Var, (byte) 2), null);
-                        pi7Var.c1(true, false);
-                        if (!TextUtils.isEmpty(pi7Var.e2)) {
-                            pi7Var.e2 = null;
-                            mi7Var.setText("");
-                            hl.r(pi7Var.o2);
-                            pi7Var.b1(true, true);
+                        ni7Var.b(true, hashSet, new ii7(qi7Var, (byte) 2), null);
+                        qi7Var.c1(true, false);
+                        if (!TextUtils.isEmpty(qi7Var.e2)) {
+                            qi7Var.e2 = null;
+                            ni7Var.setText("");
+                            hl.r(qi7Var.o2);
+                            qi7Var.b1(true, true);
                             break;
                         }
                     } else {
                         hashSet.remove(Long.valueOf(j));
-                        String G = ob6.G(pi7Var.k2, "BotMultiContactsSelectorLimit", new Object[0]);
-                        ex0 ex0Var = pi7Var.c;
-                        new d31(ex0Var, pi7Var.J0).Q(R.raw.chats_infotip, 36, G).k(true);
+                        String G = ob6.G(qi7Var.k2, "BotMultiContactsSelectorLimit", new Object[0]);
+                        ex0 ex0Var = qi7Var.c;
+                        new d31(ex0Var, qi7Var.J0).Q(R.raw.chats_infotip, 36, G).k(true);
                         try {
                             ex0Var.performHapticFeedback(3, 2);
                             break;
@@ -275,7 +275,7 @@ public final /* synthetic */ class wg implements dq7, on5, lz0, bf7, hj, s69, ln
 
     @Override // occ
     public final Boolean e(b8c b8cVar, View view, Integer num, Float f, Float f2) {
-        final lm7 lm7Var = (lm7) this.c;
+        lm7 lm7Var = (lm7) this.c;
         Object obj = b8cVar.H;
         if (!(obj instanceof r47) || !(view instanceof v94)) {
             return Boolean.FALSE;
@@ -285,83 +285,42 @@ public final /* synthetic */ class wg implements dq7, on5, lz0, bf7, hj, s69, ln
         ArrayList arrayList = (ArrayList) b8cVar.I;
         HashMap hashMap = lm7Var.V;
         int i = this.b;
-        km7 km7Var = (km7) hashMap.get(lm7.B0(i, r47Var));
+        km7 km7Var = (km7) hashMap.get(lm7.z0(i, r47Var));
         if (km7Var == null) {
             km7Var = lm7Var.U;
         }
         if (!km7Var.b() && lm7Var.fragmentView != null) {
-            final byte b = 0;
+            byte b = 1;
+            byte b2 = 0;
             int i2 = i != 1 ? 1 : 0;
             if (arrayList == null || arrayList.isEmpty()) {
                 arrayList = new ArrayList(Collections.singletonList(r47Var));
             }
-            final TLRPC.Chat M0 = lm7Var.getMessagesController().M0(Long.valueOf(-r47.B0(r47Var.k)));
-            boolean V = xc2.V(M0);
-            boolean z = V && M0.in_news;
-            boolean z2 = (!V || z || xc2.r0(M0)) ? false : true;
             fu5 I = fu5.I(lm7Var, v94Var);
             if (i2 != 0) {
-                I.b(R.drawable.msg_rate_up, ob6.M0(2131747991, null), new yl7(lm7Var, i, r47Var, b), false);
-                b8 z3 = I.z();
-                if (z3 != null && z3.getImageView() != null) {
-                    z3.getImageView().setScaleX(1.25f);
-                    z3.getImageView().setScaleY(1.25f);
+                I.b(R.drawable.msg_rate_up, ob6.M0(2131747991, null), new zl7(lm7Var, i, r47Var, b2), false);
+                b8 z = I.z();
+                if (z != null && z.getImageView() != null) {
+                    z.getImageView().setScaleX(1.25f);
+                    z.getImageView().setScaleY(1.25f);
                 }
-                I.b(R.drawable.msg_rate_down, ob6.M0(2131747986, null), new yl7(lm7Var, i, r47Var, (byte) 1), false);
-                b8 z4 = I.z();
-                if (z4 != null && z4.getImageView() != null) {
-                    z4.getImageView().setScaleX(1.25f);
-                    z4.getImageView().setScaleY(1.25f);
+                I.b(R.drawable.msg_rate_down, ob6.M0(2131747986, null), new zl7(lm7Var, i, r47Var, b), false);
+                b8 z2 = I.z();
+                if (z2 != null && z2.getImageView() != null) {
+                    z2.getImageView().setScaleX(1.25f);
+                    z2.getImageView().setScaleY(1.25f);
                 }
                 I.j();
             }
-            I.b(R.drawable.msg_link2, ob6.M0(2131751727, null), new yl7(i, r47Var, lm7Var), false);
+            I.b(R.drawable.msg_link2, ob6.M0(2131751727, null), new zl7(i, r47Var, lm7Var), false);
             I.b(R.drawable.msg_forward, ob6.M0(2131750547, null), new y36(lm7Var, i, r47Var, arrayList), false);
-            if (V && !z2) {
-                I.j();
-                I.b(R.drawable.msg_msgbubble3, ob6.M0(2131752504, null), new Runnable() { // from class: zl7
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b2 = b;
-                        TLRPC.Chat chat = M0;
-                        lm7 lm7Var2 = lm7Var;
-                        switch (b2) {
-                            case 0:
-                                lm7Var2.d0(chat, false);
-                                break;
-                            default:
-                                lm7Var2.d0(chat, true);
-                                break;
-                        }
-                    }
-                }, false);
-                if (!z) {
-                    final byte b2 = 1;
-                    I.b(R.drawable.news_menu_plus, ob6.M0(2131752502, null), new Runnable() { // from class: zl7
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            byte b22 = b2;
-                            TLRPC.Chat chat = M0;
-                            lm7 lm7Var2 = lm7Var;
-                            switch (b22) {
-                                case 0:
-                                    lm7Var2.d0(chat, false);
-                                    break;
-                                default:
-                                    lm7Var2.d0(chat, true);
-                                    break;
-                            }
-                        }
-                    }, false);
-                }
-            }
-            int L = hl.L(16.0f) + uh9.y(8.0f, i2 + ((!V || z2) ? 0 : 1), hl.L(48.0f) * ((i2 != 0 ? 2 : 0) + 2 + ((!V || z2) ? 0 : z ? 1 : 2)));
+            int L = hl.L(16.0f) + uh9.y(8.0f, i2, hl.L(48.0f) * ((i2 != 0 ? 2 : 0) + 2));
             int[] iArr = new int[2];
             lm7Var.fragmentView.getLocationInWindow(iArr);
-            int p0 = lm7Var.p0() + iArr[1];
+            int o0 = lm7Var.o0() + iArr[1];
             int L2 = hl.L(72.0f) + ((lm7Var.fragmentView.getRootView().getHeight() - iArr[1]) - lm7Var.fragmentView.getHeight()) + lm7Var.G;
-            int height = (lm7Var.fragmentView.getRootView().getHeight() - p0) - L2;
-            float w = qu6.w((height - L) - hl.L(32.0f), v94Var.getHeight(), (r7 - hl.L(32.0f)) / v94Var.getWidth(), 0.3f);
+            int height = (lm7Var.fragmentView.getRootView().getHeight() - o0) - L2;
+            float w = qu6.w((height - L) - hl.L(32.0f), v94Var.getHeight(), (r3 - hl.L(32.0f)) / v94Var.getWidth(), 0.3f);
             float L3 = hl.L(20.0f) / w;
             I.X(new gm7(lm7Var.getThemedColor(aob.d6), L3));
             I.l = (int) L3;
@@ -371,7 +330,7 @@ public final /* synthetic */ class wg implements dq7, on5, lz0, bf7, hj, s69, ln
             I.L = true;
             I.U = w;
             I.T = true;
-            I.P = p0;
+            I.P = o0;
             I.Q = L2;
             I.c0 = true;
             I.V = true;
@@ -467,7 +426,7 @@ public final /* synthetic */ class wg implements dq7, on5, lz0, bf7, hj, s69, ln
                 if (Y1 != null) {
                     Y1.flags2 &= -4194305;
                     Y1.note = null;
-                    profileActivity.getMessagesStorage().g2(Y1, true);
+                    profileActivity.getMessagesStorage().l2(Y1, true);
                 }
                 TLRPC.TL_updateContactNote tL_updateContactNote = new TLRPC.TL_updateContactNote();
                 tL_updateContactNote.id = profileActivity.getMessagesController().o1(profileActivity.e1);

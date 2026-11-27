@@ -8,7 +8,7 @@ import android.util.Log;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class hxe {
     public static void a(int i, int i2, Intent intent, Executor executor, h23 h23Var, CancellationSignal cancellationSignal) {
@@ -54,7 +54,7 @@ public abstract class hxe {
             if (d33.a(cancellationSignal)) {
                 return;
             }
-            executor.execute(new z09(h23Var, bv4Var, (byte) 16));
+            executor.execute(new yz8(h23Var, bv4Var, (byte) 17));
             return;
         }
         if (i3 >= 34) {

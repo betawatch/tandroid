@@ -41,7 +41,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class ri6 implements nr7, rq, cr7, ty9, ka1, y17, s69, tka, ar5, hj, h49, SuccessContinuation, l1a, la6, tf4 {
     public static ri6 d;
@@ -372,12 +372,12 @@ public class ri6 implements nr7, rq, cr7, ty9, ka1, y17, s69, tka, ar5, hj, h49,
                         bj0Var.X(charSequence);
                     }
                     mj0 mj0Var = bj0Var.m0;
-                    qj7 qj7Var = mj0Var.q;
-                    if (qj7Var == null) {
-                        qj7Var = new qj7();
-                        mj0Var.q = qj7Var;
+                    rj7 rj7Var = mj0Var.q;
+                    if (rj7Var == null) {
+                        rj7Var = new rj7();
+                        mj0Var.q = rj7Var;
                     }
-                    mj0.f(qj7Var, null);
+                    mj0.f(rj7Var, null);
                     break;
                 }
                 break;
@@ -902,7 +902,7 @@ public class ri6 implements nr7, rq, cr7, ty9, ka1, y17, s69, tka, ar5, hj, h49,
     }
 
     @Override // ka1
-    public final void p0(ei7 ei7Var) {
+    public final void p0(fi7 fi7Var) {
     }
 
     @Override // y17

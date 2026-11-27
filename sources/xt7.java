@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xt7 extends e {
     public final CharSequence a;
@@ -15,8 +15,8 @@ public final class xt7 extends e {
     public final int c;
     public final int d;
     public final int e;
-    public fe7 f;
-    public pl7 h;
+    public ge7 f;
+    public ql7 h;
     public q9c n;
     public boolean r;
 
@@ -71,9 +71,9 @@ public final class xt7 extends e {
 
     @Override // org.telegram.ui.ActionBar.e
     public final void onBecomeFullyHidden() {
-        pl7 pl7Var = this.h;
-        if (pl7Var != null) {
-            pl7Var.run();
+        ql7 ql7Var = this.h;
+        if (ql7Var != null) {
+            ql7Var.run();
         }
         super.onBecomeFullyHidden();
     }
@@ -89,9 +89,9 @@ public final class xt7 extends e {
             return;
         }
         arrayList.clear();
-        fe7 fe7Var = this.f;
-        if (fe7Var != null) {
-            fe7Var.run();
+        ge7 ge7Var = this.f;
+        if (ge7Var != null) {
+            ge7Var.run();
         }
     }
 

@@ -1,49 +1,33 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes2.dex */
-public final class s58 implements h49 {
-    public final /* synthetic */ o68 a;
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes3.dex */
+public final class s58 extends v8b {
+    public final /* synthetic */ lcb I;
+    public final /* synthetic */ o68 J;
 
-    public s58(o68 o68Var) {
-        this.a = o68Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s58(o68 o68Var, Context context, u58 u58Var, x53 x53Var, lcb lcbVar) {
+        super(context, u58Var, x53Var);
+        this.J = o68Var;
+        this.I = lcbVar;
     }
 
-    @Override // h49
-    public final void e(View view, w49 w49Var, boolean z, boolean z2) {
-        fd7 fd7Var = new fd7(this, w49Var, view, (byte) 24);
-        if (z) {
-            fd7Var.run();
-        } else {
-            this.a.d0(fd7Var);
+    @Override // v8b
+    public final void b(boolean z) {
+        k68 k68Var = this.J.A1;
+        if (k68Var != null) {
+            lcb lcbVar = ((ccb) k68Var).d;
+            lcbVar.i1 = z;
+            lcbVar.U();
         }
     }
 
-    @Override // h49
-    public final boolean j() {
-        return true;
-    }
-
-    @Override // h49
-    public final boolean k() {
-        ((ccb) this.a.A1).b(false);
-        return false;
-    }
-
-    @Override // h49
-    public final boolean p() {
-        return false;
-    }
-
-    @Override // h49
-    public final void n() {
-    }
-
-    @Override // h49
-    public final void m(Canvas canvas, RectF rectF, float f, float f2, float f3, int i, boolean z) {
+    @Override // v8b
+    public final Bitmap getPlayingBitmap() {
+        return this.J.getPlayingBitmap();
     }
 }

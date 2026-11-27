@@ -9,7 +9,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class zz5 implements oj3, fd {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class zz5 implements oj3, fd {
         final String str2 = (String) this.e;
         final uj3 uj3Var2 = (uj3) this.f;
         String str3 = LaunchActivity.C1;
-        final long j = ((if7) arrayList.get(0)).a;
+        final long j = ((jf7) arrayList.get(0)).a;
         final TLRPC.Chat M0 = uc7.s1(launchActivity.P).M0(Long.valueOf(-j));
         final int i3 = this.a;
         if (M0 == null || (!M0.creator && ((tL_chatAdminRights = M0.admin_rights) == null || !tL_chatAdminRights.add_admins))) {

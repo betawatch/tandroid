@@ -3,7 +3,7 @@
 import java.io.File;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class a83 extends yfb implements is4 {
     public final /* synthetic */ byte a;
@@ -38,12 +38,12 @@ public final class a83 extends yfb implements is4 {
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         switch (b) {
             case 0:
-                return ((a83) create((nm4) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((a83) create((nm4) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             default:
-                return ((a83) create((so8) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((a83) create((so8) obj, (zw2) obj2)).invokeSuspend(g9cVar);
         }
     }
 
@@ -82,7 +82,7 @@ public final class a83 extends yfb implements is4 {
         byte b2 = 1;
         switch (this.a) {
             case 0:
-                f9c f9cVar = f9c.a;
+                g9c g9cVar = g9c.a;
                 o83 o83Var = (o83) this.e;
                 vx2 vx2Var = vx2.a;
                 byte b3 = this.b;
@@ -106,7 +106,7 @@ public final class a83 extends yfb implements is4 {
                     if (b3 != 2) {
                         if (b3 == 3) {
                             ixe.b(obj);
-                            return f9cVar;
+                            return g9cVar;
                         }
                         grb.i("call to 'resume' before 'invoke' with coroutine");
                         return null;
@@ -123,7 +123,7 @@ public final class a83 extends yfb implements is4 {
                     }
                     Object k = rm4Var.k(nm4Var, this);
                     if (k != vx2Var) {
-                        k = f9cVar;
+                        k = g9cVar;
                         break;
                     }
                 }
@@ -160,33 +160,33 @@ public final class a83 extends yfb implements is4 {
                     ixe.b(obj);
                     so8Var = (so8) this.c;
                     File file = (File) this.e;
-                    cj7 cj7Var = new cj7(file, so8Var, (byte) 0);
-                    Object obj4 = dj7.b;
+                    dj7 dj7Var = new dj7(file, so8Var, (byte) 0);
+                    Object obj4 = ej7.b;
                     File parentFile = file.getParentFile();
                     parentFile.getClass();
                     String path = parentFile.getCanonicalFile().getPath();
-                    synchronized (dj7.b) {
-                        LinkedHashMap linkedHashMap = dj7.c;
+                    synchronized (ej7.b) {
+                        LinkedHashMap linkedHashMap = ej7.c;
                         path.getClass();
                         Object obj5 = linkedHashMap.get(path);
                         Object obj6 = obj5;
                         if (obj5 == null) {
-                            dj7 dj7Var = new dj7(path);
-                            linkedHashMap.put(path, dj7Var);
-                            obj6 = dj7Var;
+                            ej7 ej7Var = new ej7(path);
+                            linkedHashMap.put(path, ej7Var);
+                            obj6 = ej7Var;
                         }
-                        dj7 dj7Var2 = (dj7) obj6;
-                        dj7Var2.a.add(cj7Var);
-                        if (dj7Var2.a.size() == 1) {
-                            dj7Var2.startWatching();
+                        ej7 ej7Var2 = (ej7) obj6;
+                        ej7Var2.a.add(dj7Var);
+                        if (ej7Var2.a.size() == 1) {
+                            ej7Var2.startWatching();
                         }
                     }
-                    ke5 ke5Var2 = new ke5(path, cj7Var, (byte) 1);
-                    f9c f9cVar2 = f9c.a;
+                    ke5 ke5Var2 = new ke5(path, dj7Var, (byte) 1);
+                    g9c g9cVar2 = g9c.a;
                     this.c = so8Var;
                     this.d = ke5Var2;
                     this.b = (byte) 1;
-                    if (so8Var.e.a(this, f9cVar2) != vx2Var2) {
+                    if (so8Var.e.a(this, g9cVar2) != vx2Var2) {
                         ke5Var = ke5Var2;
                     }
                     return vx2Var2;
@@ -194,7 +194,7 @@ public final class a83 extends yfb implements is4 {
                 if (b4 != 1) {
                     if (b4 == 2) {
                         ixe.b(obj);
-                        return f9c.a;
+                        return g9c.a;
                     }
                     grb.i("call to 'resume' before 'invoke' with coroutine");
                     return null;

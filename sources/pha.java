@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class pha extends iu5 {
     public jga e;
@@ -48,7 +48,7 @@ public final class pha extends iu5 {
 
     @Override // iu5
     public final boolean o(RecyclerView recyclerView, f89 f89Var, f89 f89Var2) {
-        u5b u5bVar;
+        v5b v5bVar;
         ArrayList arrayList;
         j79 adapter = recyclerView.getAdapter();
         bja bjaVar = adapter instanceof bja ? (bja) adapter : null;
@@ -58,8 +58,8 @@ public final class pha extends iu5 {
         int b = f89Var.b();
         int b2 = f89Var2.b();
         ArrayList arrayList2 = bjaVar.E;
-        if (!bjaVar.h && (u5bVar = bjaVar.s) != null && b >= 0 && b < u5bVar.i.size() && b2 >= 0 && b2 < bjaVar.s.i.size()) {
-            if ((bjaVar.s instanceof o5b) || bjaVar.n > 0) {
+        if (!bjaVar.h && (v5bVar = bjaVar.s) != null && b >= 0 && b < v5bVar.i.size() && b2 >= 0 && b2 < bjaVar.s.i.size()) {
+            if ((bjaVar.s instanceof p5b) || bjaVar.n > 0) {
                 arrayList = new ArrayList();
                 for (int i = 0; i < bjaVar.s.i.size(); i++) {
                     arrayList.add(Integer.valueOf(((r47) bjaVar.s.i.get(i)).e1()));
@@ -83,7 +83,7 @@ public final class pha extends iu5 {
 
     @Override // iu5
     public final void q(f89 f89Var, int i) {
-        u5b u5bVar;
+        v5b v5bVar;
         ArrayList arrayList;
         jga jgaVar = this.e;
         if (jgaVar != null && f89Var != null) {
@@ -103,14 +103,14 @@ public final class pha extends iu5 {
         if (jgaVar2 != null && (jgaVar2.getAdapter() instanceof bja)) {
             bja bjaVar = (bja) this.e.getAdapter();
             ArrayList arrayList2 = bjaVar.E;
-            if (!bjaVar.h && (u5bVar = bjaVar.s) != null && bjaVar.F) {
-                if ((u5bVar instanceof o5b) || bjaVar.n > 0) {
+            if (!bjaVar.h && (v5bVar = bjaVar.s) != null && bjaVar.F) {
+                if ((v5bVar instanceof p5b) || bjaVar.n > 0) {
                     arrayList = new ArrayList();
                     for (int i2 = 0; i2 < bjaVar.s.i.size(); i2++) {
                         arrayList.add(Integer.valueOf(((r47) bjaVar.s.i.get(i2)).e1()));
                     }
                 } else {
-                    arrayList = u5bVar.g;
+                    arrayList = v5bVar.g;
                 }
                 boolean z = arrayList2.size() != arrayList.size();
                 if (!z) {

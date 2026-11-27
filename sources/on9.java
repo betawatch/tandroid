@@ -26,7 +26,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class on9 {
     public CameraCaptureSession A;
@@ -112,9 +112,9 @@ public final class on9 {
     public final pk1 j1;
     public final pq8 k;
     public boolean k0;
-    public final dn9 k1;
+    public final en9 k1;
     public boolean l0;
-    public final dn9 l1;
+    public final en9 l1;
     public HandlerThread m;
     public boolean m0;
     public final wr5 m1;
@@ -157,8 +157,8 @@ public final class on9 {
         byte b = 1;
         pk1 pk1Var = new pk1(this, (byte) 5);
         this.j1 = pk1Var;
-        this.k1 = new dn9(this, (byte) 7);
-        this.l1 = new dn9(this, (byte) 8);
+        this.k1 = new en9(this, (byte) 7);
+        this.l1 = new en9(this, (byte) 8);
         this.m1 = new wr5(this, (byte) 2);
         byte b2 = 0;
         this.n1 = new in9(this, b2);
@@ -604,8 +604,8 @@ public final class on9 {
     }
 
     public final void K() {
+        byte b = 1;
         this.t0 = true;
-        byte b = 0;
         this.U = false;
         this.c.setSurfaceTextureListener(null);
         this.c.removeOnLayoutChangeListener(this.j1);
@@ -616,7 +616,7 @@ public final class on9 {
         if (handler == null || handlerThread == null) {
             return;
         }
-        handler.post(new en9(this, handlerThread, b));
+        handler.post(new dn9(this, handlerThread, b));
     }
 
     public final void L(IllegalStateException illegalStateException) {
@@ -1187,7 +1187,7 @@ public final class on9 {
         this.c.setSurfaceTextureListener(this.m1);
         Handler handler = this.n;
         if (this.U && handler != null && this.c.isAvailable()) {
-            handler.post(new dn9(this, b));
+            handler.post(new en9(this, b));
         }
     }
 
@@ -1200,7 +1200,7 @@ public final class on9 {
         this.Y = true;
         this.Z = false;
         this.j.b("camera segment stop requested");
-        handler.post(new dn9(this, b));
+        handler.post(new en9(this, b));
         return true;
     }
 
@@ -1249,7 +1249,7 @@ public final class on9 {
         this.P = false;
         this.M = 0.0f;
         pq8 pq8Var = this.k;
-        ((jp9) pq8Var.b).i.post(new en9(pq8Var, cp9Var, (byte) 3));
+        ((jp9) pq8Var.b).i.post(new dn9(pq8Var, cp9Var, (byte) 4));
         this.F0 = SystemClock.elapsedRealtimeNanos();
         this.j.b("camera device switch started: from=" + this.F + ", to=" + cp9Var);
         if (Z(cp9Var)) {
@@ -1340,7 +1340,7 @@ public final class on9 {
             this.X = false;
             N();
             this.j.b("camera switch path: DUAL_ACTIVE, activeId=" + this.y.getId() + ", standbyId=" + this.o0.getId() + ", input=" + (this.n0 ? 1 : 0) + ", elapsedMs=" + x(this.F0));
-            this.c.post(new dn9(this, (byte) 4));
+            this.c.post(new en9(this, (byte) 4));
             pq8 pq8Var = this.k;
             ((jp9) pq8Var.b).i.post(new yn6((Object) pq8Var, (Object) new ln9(this.F, this.H, this.I, this.q, this.N, E()), z, (byte) 20));
             return true;
@@ -1434,10 +1434,10 @@ public final class on9 {
         if (this.Z) {
             this.c.setTransform(new Matrix());
             if (w() != this.B0) {
-                dn9 dn9Var = new dn9(this, (byte) 3);
+                en9 en9Var = new en9(this, (byte) 3);
                 Handler handler = this.n;
                 if (handler != null) {
-                    handler.post(dn9Var);
+                    handler.post(en9Var);
                 }
             }
         }
@@ -1630,8 +1630,7 @@ public final class on9 {
         gn9 gn9Var = new gn9(pq8Var, (byte) 0);
         pq8 pq8Var2 = this.k;
         Objects.requireNonNull(pq8Var2);
-        byte b2 = 1;
-        rn9 rn9Var = new rn9(bo9Var, j, s, i, b, sn9Var, gn9Var, new gn9(pq8Var2, b2));
+        rn9 rn9Var = new rn9(bo9Var, j, s, i, b, sn9Var, gn9Var, new gn9(pq8Var2, (byte) 1));
         this.w = rn9Var;
         synchronized (rn9Var) {
             if (rn9Var.D) {
@@ -1664,16 +1663,17 @@ public final class on9 {
         rn9 rn9Var2 = this.w;
         pq8 pq8Var3 = this.k;
         Objects.requireNonNull(pq8Var3);
-        xn9 xn9Var = new xn9(size, surface3, surface4, z, s2, i2, C, z2, sn9Var2, rn9Var2, new gn9(pq8Var3, (byte) 2));
+        byte b2 = 2;
+        xn9 xn9Var = new xn9(size, surface3, surface4, z, s2, i2, C, z2, sn9Var2, rn9Var2, new gn9(pq8Var3, b2));
         this.v = xn9Var;
-        xn9Var.u0 = new dn9(this, (byte) 5);
+        xn9Var.u0 = new en9(this, (byte) 5);
         int w = w();
         this.B0 = w;
         xn9 xn9Var2 = this.v;
         xn9Var2.s0 = w;
         Handler handler = xn9Var2.u;
         if (xn9Var2.r0 && handler != null) {
-            handler.post(new me7((Object) xn9Var2, w, (byte) 15));
+            handler.post(new oe7((Object) xn9Var2, w, (byte) 15));
         }
         xn9 xn9Var3 = this.v;
         if (!xn9Var3.r0) {
@@ -1702,7 +1702,7 @@ public final class on9 {
             sn9Var3.b(sb.toString());
             Handler handler2 = new Handler(xn9Var3.t.getLooper());
             xn9Var3.u = handler2;
-            handler2.post(new en9(xn9Var3, countDownLatch, b2));
+            handler2.post(new dn9(xn9Var3, countDownLatch, b2));
             try {
                 countDownLatch.await();
                 if (xn9Var3.x0 != null) {
@@ -2067,7 +2067,7 @@ public final class on9 {
             if (!this.U || handler == null) {
                 return;
             }
-            handler.post(new dn9(this, (byte) 2));
+            handler.post(new en9(this, (byte) 2));
         } catch (Exception e) {
             M(e);
         }

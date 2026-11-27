@@ -15,7 +15,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class vg5 extends fm6 {
     public static final AtomicInteger d0 = new AtomicInteger();
@@ -238,8 +238,8 @@ public final class vg5 extends fm6 {
         int i7;
         int i8;
         ?? r30;
-        e84 qh7Var;
-        sf7 sf7Var;
+        e84 rh7Var;
+        tf7 tf7Var;
         long j5 = this.h;
         usb usbVar = this.L;
         long open = h73Var.open(n73Var);
@@ -273,27 +273,27 @@ public final class vg5 extends fm6 {
                         System.arraycopy(bArr, 0, ey7Var.a, 0, 10);
                     }
                     cb3Var2.d(ey7Var.a, 10, z2, false);
-                    uf7 c = this.P.c(z2, ey7Var.a);
+                    vf7 c = this.P.c(z2, ey7Var.a);
                     if (c != null) {
-                        sf7[] sf7VarArr = c.a;
-                        int length = sf7VarArr.length;
+                        tf7[] tf7VarArr = c.a;
+                        int length = tf7VarArr.length;
                         int i11 = 0;
                         while (true) {
                             if (i11 >= length) {
-                                sf7Var = null;
+                                tf7Var = null;
                                 break;
                             }
-                            sf7 sf7Var2 = sf7VarArr[i11];
-                            if (ym8.class.isAssignableFrom(sf7Var2.getClass())) {
-                                sf7Var = (sf7) ym8.class.cast(sf7Var2);
+                            tf7 tf7Var2 = tf7VarArr[i11];
+                            if (ym8.class.isAssignableFrom(tf7Var2.getClass())) {
+                                tf7Var = (tf7) ym8.class.cast(tf7Var2);
                             }
-                            sf7Var = null;
-                            if (sf7Var != null) {
+                            tf7Var = null;
+                            if (tf7Var != null) {
                                 break;
                             }
                             i11++;
                         }
-                        ym8 ym8Var = (ym8) sf7Var;
+                        ym8 ym8Var = (ym8) tf7Var;
                         if (ym8Var != null) {
                             System.arraycopy(ym8Var.c, 0, ey7Var.a, 0, 8);
                             ey7Var.N(0);
@@ -317,21 +317,21 @@ public final class vg5 extends fm6 {
                         return cb3Var;
                     }
                     if (e84Var instanceof szc) {
-                        qh7Var = new szc(((ko4) q31Var3.c).d, usbVar2, (uif) q31Var3.e, q31Var3.a);
+                        rh7Var = new szc(((ko4) q31Var3.c).d, usbVar2, (uif) q31Var3.e, q31Var3.a);
                     } else if (e84Var instanceof lb) {
-                        qh7Var = new lb(0);
+                        rh7Var = new lb(0);
                     } else if (e84Var instanceof f4) {
-                        qh7Var = new f4();
+                        rh7Var = new f4();
                     } else if (e84Var instanceof h4) {
-                        qh7Var = new h4();
+                        rh7Var = new h4();
                     } else {
-                        if (!(e84Var instanceof qh7)) {
+                        if (!(e84Var instanceof rh7)) {
                             grb.i("Unexpected extractor type for recreation: ".concat(e84Var.getClass().getSimpleName()));
                             return cb3Var;
                         }
-                        qh7Var = new qh7(0);
+                        rh7Var = new rh7(0);
                     }
-                    q31Var2 = new q31(qh7Var, (ko4) q31Var3.c, usbVar2, (uif) q31Var3.e, q31Var3.a);
+                    q31Var2 = new q31(rh7Var, (ko4) q31Var3.c, usbVar2, (uif) q31Var3.e, q31Var3.a);
                     j3 = j5;
                     i = 0;
                     j4 = 0;
@@ -410,7 +410,7 @@ public final class vg5 extends fm6 {
                                         i8 = 48;
                                     } else {
                                         jo4 jo4Var = new jo4();
-                                        jo4Var.s = dg7.n("application/cea-608");
+                                        jo4Var.s = eg7.n("application/cea-608");
                                         list2 = Collections.singletonList(new ko4(jo4Var));
                                         i8 = 16;
                                     }
@@ -419,11 +419,11 @@ public final class vg5 extends fm6 {
                                         r30 = z4;
                                     } else {
                                         boolean z5 = z4;
-                                        if (dg7.b(str, "audio/mp4a-latm") == null) {
+                                        if (eg7.b(str, "audio/mp4a-latm") == null) {
                                             i8 |= 2;
                                         }
                                         r30 = z5;
-                                        if (dg7.b(str, "video/avc") == null) {
+                                        if (eg7.b(str, "video/avc") == null) {
                                             i8 |= 4;
                                             r30 = z5;
                                         }
@@ -514,7 +514,7 @@ public final class vg5 extends fm6 {
                             arrayList = arrayList2;
                             i5 = i14;
                             j4 = 0;
-                            f4Var = new qh7(0, 0L);
+                            f4Var = new rh7(0, 0L);
                         }
                         r5 = f4Var;
                         r5.getClass();
@@ -529,7 +529,7 @@ public final class vg5 extends fm6 {
                 q31 q31Var4 = q31Var2;
                 this.T = q31Var4;
                 e84 a4 = ((e84) q31Var4.b).a();
-                if ((a4 instanceof lb) || (a4 instanceof f4) || (a4 instanceof h4) || (a4 instanceof qh7)) {
+                if ((a4 instanceof lb) || (a4 instanceof f4) || (a4 instanceof h4) || (a4 instanceof rh7)) {
                     vh5 vh5Var = this.U;
                     long b3 = j2 != j ? usbVar.b(j2) : j3;
                     if (vh5Var.n0 != b3) {

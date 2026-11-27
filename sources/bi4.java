@@ -6,7 +6,7 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class bi4 extends FingerprintManager.AuthenticationCallback {
     public final /* synthetic */ z8d a;
@@ -27,12 +27,12 @@ public final class bi4 extends FingerprintManager.AuthenticationCallback {
             return;
         }
         mj0 mj0Var = (mj0) weakReference.get();
-        qj7 qj7Var = mj0Var.s;
-        if (qj7Var == null) {
-            qj7Var = new qj7();
-            mj0Var.s = qj7Var;
+        rj7 rj7Var = mj0Var.s;
+        if (rj7Var == null) {
+            rj7Var = new rj7();
+            mj0Var.s = rj7Var;
         }
-        mj0.f(qj7Var, Boolean.TRUE);
+        mj0.f(rj7Var, Boolean.TRUE);
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
@@ -40,12 +40,12 @@ public final class bi4 extends FingerprintManager.AuthenticationCallback {
         WeakReference weakReference = ((w40) this.a.b).c.a;
         if (weakReference.get() != null) {
             mj0 mj0Var = (mj0) weakReference.get();
-            qj7 qj7Var = mj0Var.r;
-            if (qj7Var == null) {
-                qj7Var = new qj7();
-                mj0Var.r = qj7Var;
+            rj7 rj7Var = mj0Var.r;
+            if (rj7Var == null) {
+                rj7Var = new rj7();
+                mj0Var.r = rj7Var;
             }
-            mj0.f(qj7Var, charSequence);
+            mj0.f(rj7Var, charSequence);
         }
     }
 

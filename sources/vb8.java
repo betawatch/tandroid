@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class vb8 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -29,7 +29,7 @@ public final class vb8 extends AnimatorListenerAdapter {
             case 0:
                 photoViewer.B3 = false;
                 photoViewer.i4.run();
-                hl.d3(new h68(this, view, (byte) 7), 100L);
+                hl.d3(new a58(this, view, (byte) 8), 100L);
                 break;
             default:
                 photoViewer.B3 = false;

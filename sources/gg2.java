@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class gg2 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class gg2 implements RequestDelegate {
                 String str = (String) this.f;
                 if (tL_error == null) {
                     lv2Var.getMessagesController().Y3((TLRPC.Updates) tLObject, false);
-                    jf7 messagesStorage = lv2Var.getMessagesStorage();
+                    kf7 messagesStorage = lv2Var.getMessagesStorage();
                     messagesStorage.getClass();
                     if (!arrayList2.isEmpty()) {
                         messagesStorage.a.c(new q41(messagesStorage, arrayList2, (byte) 18));
@@ -118,7 +118,7 @@ public final /* synthetic */ class gg2 implements RequestDelegate {
                             }
                         }
                     }
-                    hl.c3(new en9(r7aVar, r47Var, (byte) 23));
+                    hl.c3(new dn9(r7aVar, r47Var, (byte) 24));
                     if (eVar != null) {
                         hl.c3(new z6a(r7aVar, tL_error, eVar, tL_messages_editMessage, (byte) 0));
                         break;

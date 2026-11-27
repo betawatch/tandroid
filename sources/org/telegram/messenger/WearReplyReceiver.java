@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.WearReplyReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class WearReplyReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -46,9 +46,9 @@ public class WearReplyReceiver extends BroadcastReceiver {
             while (i3 < length) {
                 i3 = qd4.g(iArr[i3], i3, 1, arrayList);
             }
-            jf7 Y = jf7.Y(i2);
+            kf7 a0 = kf7.a0(i2);
             if (!arrayList.isEmpty()) {
-                Y.a.c(new se7(Y, arrayList, j, (byte) 0));
+                a0.a.c(new te7(a0, arrayList, j, (byte) 0));
             }
         }
         if (j2 == 0) {
@@ -90,16 +90,16 @@ public class WearReplyReceiver extends BroadcastReceiver {
                                 case 0:
                                     int i = WearReplyReceiver.a;
                                     k5 k5Var = a2;
-                                    jf7 Y = jf7.Y(k5Var.a);
+                                    kf7 a0 = kf7.a0(k5Var.a);
                                     long j = longExtra;
-                                    hl.c3(new ga7(this.b, k5Var, Y.h0(j), charSequence, j, longExtra2, intExtra, intArrayExtra));
+                                    hl.c3(new ga7(this.b, k5Var, a0.j0(j), charSequence, j, longExtra2, intExtra, intArrayExtra));
                                     break;
                                 default:
                                     int i2 = WearReplyReceiver.a;
                                     k5 k5Var2 = a2;
-                                    jf7 Y2 = jf7.Y(k5Var2.a);
+                                    kf7 a02 = kf7.a0(k5Var2.a);
                                     long j2 = longExtra;
-                                    hl.c3(new ga7(this.b, k5Var2, Y2.O(-j2), charSequence, j2, longExtra2, intExtra, intArrayExtra));
+                                    hl.c3(new ga7(this.b, k5Var2, a02.Q(-j2), charSequence, j2, longExtra2, intExtra, intArrayExtra));
                                     break;
                             }
                         }
@@ -121,16 +121,16 @@ public class WearReplyReceiver extends BroadcastReceiver {
                             case 0:
                                 int i = WearReplyReceiver.a;
                                 k5 k5Var = a2;
-                                jf7 Y = jf7.Y(k5Var.a);
+                                kf7 a0 = kf7.a0(k5Var.a);
                                 long j = longExtra;
-                                hl.c3(new ga7(this.b, k5Var, Y.h0(j), charSequence, j, longExtra2, intExtra, intArrayExtra));
+                                hl.c3(new ga7(this.b, k5Var, a0.j0(j), charSequence, j, longExtra2, intExtra, intArrayExtra));
                                 break;
                             default:
                                 int i2 = WearReplyReceiver.a;
                                 k5 k5Var2 = a2;
-                                jf7 Y2 = jf7.Y(k5Var2.a);
+                                kf7 a02 = kf7.a0(k5Var2.a);
                                 long j2 = longExtra;
-                                hl.c3(new ga7(this.b, k5Var2, Y2.O(-j2), charSequence, j2, longExtra2, intExtra, intArrayExtra));
+                                hl.c3(new ga7(this.b, k5Var2, a02.Q(-j2), charSequence, j2, longExtra2, intExtra, intArrayExtra));
                                 break;
                         }
                     }

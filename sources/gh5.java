@@ -9,12 +9,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class gh5 extends rg0 {
     public final ib3 i;
     public final z8d j;
-    public final rg7 k;
+    public final sg7 k;
     public final pr3 l;
     public final z6f m;
     public final boolean n;
@@ -30,12 +30,12 @@ public final class gh5 extends rg0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public gh5(ft6 ft6Var, z8d z8dVar, ib3 ib3Var, rg7 rg7Var, pr3 pr3Var, z6f z6fVar, mb3 mb3Var, long j, boolean z, int i) {
+    public gh5(ft6 ft6Var, z8d z8dVar, ib3 ib3Var, sg7 sg7Var, pr3 pr3Var, z6f z6fVar, mb3 mb3Var, long j, boolean z, int i) {
         this.t = ft6Var;
         this.r = ft6Var.c;
         this.j = z8dVar;
         this.i = ib3Var;
-        this.k = rg7Var;
+        this.k = sg7Var;
         this.l = pr3Var;
         this.m = z6fVar;
         this.p = mb3Var;

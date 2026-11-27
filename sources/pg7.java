@@ -1,30 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+import com.google.android.gms.tasks.CancellationTokenSource;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.io.Closeable;
+import java.util.concurrent.Executor;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public enum pg7 {
-    c(new int[]{0, 0, 0}, 0),
-    d(new int[]{10, 12, 14}, 1),
-    e(new int[]{9, 11, 13}, 2),
-    f(new int[]{0, 0, 0}, 3),
-    h(new int[]{8, 16, 16}, 4),
-    n(new int[]{0, 0, 0}, 7),
-    r(new int[]{8, 10, 12}, 8),
-    s(new int[]{0, 0, 0}, 5),
-    w(new int[]{0, 0, 0}, 9),
-    x(new int[]{8, 10, 12}, 13);
+public abstract class pg7 implements Closeable, h36 {
+    public static final j5 e = new j5("MobileVisionBase", "", (byte) 2);
+    public final AtomicBoolean a = new AtomicBoolean(false);
+    public final qi6 b;
+    public final CancellationTokenSource c;
+    public final Executor d;
 
-    public final int[] a;
-    public final byte b;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    pg7(int[] iArr, int i) {
-        this.a = iArr;
-        this.b = i;
+    public pg7(qi6 qi6Var, Executor executor) {
+        this.b = qi6Var;
+        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+        this.c = cancellationTokenSource;
+        this.d = executor;
+        qi6Var.b.incrementAndGet();
+        qi6Var.a(executor, fgd.a, cancellationTokenSource.getToken()).addOnFailureListener(z6f.f);
     }
 
-    public final int a(xdc xdcVar) {
-        byte b = xdcVar.a;
-        return this.a[b <= 9 ? (char) 0 : b <= 26 ? (char) 1 : (char) 2];
+    public final synchronized Task c(jq5 jq5Var) {
+        if (this.a.get()) {
+            return Tasks.forException(new lg7("This detector is already closed!", 14));
+        }
+        if (jq5Var.b < 32 || jq5Var.c < 32) {
+            return Tasks.forException(new lg7("InputImage width and height should be at least 32!", 3));
+        }
+        return this.b.a(this.d, new lka(this, jq5Var), this.c.getToken());
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    @es7(y26.ON_DESTROY)
+    public synchronized void close() {
+        if (!this.a.getAndSet(true)) {
+            this.c.cancel();
+            this.b.d(this.d);
+        }
     }
 }

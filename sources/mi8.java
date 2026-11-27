@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class mi8 {
     public static int a(r47 r47Var) {
@@ -34,7 +34,7 @@ public abstract class mi8 {
                 if (arrayList == null || arrayList.isEmpty()) {
                     return i2;
                 }
-                return !tL_messageMediaPoll.poll.countries_iso2.contains(uc7.s1(i).k4.Z.f) ? i2 | 4 : i2;
+                return !tL_messageMediaPoll.poll.countries_iso2.contains(uc7.s1(i).l4.Z.f) ? i2 | 4 : i2;
             }
         }
         return 0;

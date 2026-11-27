@@ -33,7 +33,7 @@ import org.telegram.ui.Wallet.b;
 import org.telegram.ui.Wallet.c;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class p implements icc {
     public final /* synthetic */ byte a;
@@ -68,9 +68,8 @@ public final /* synthetic */ class p implements icc {
         z41 z41Var2;
         String str2;
         String str3;
-        byte b = 18;
-        byte b2 = 17;
-        byte b3 = 7;
+        byte b = 7;
+        byte b2 = 18;
         str = "NULL_ERROR";
         TL_toncenter.onrampProviderInfo onrampproviderinfo = null;
         int i = 0;
@@ -242,9 +241,9 @@ public final /* synthetic */ class p implements icc {
                 pcc pccVar = new pcc() { // from class: jh3
                     @Override // pcc
                     public final void a(Object obj3) {
-                        byte b4 = objArr6;
+                        byte b3 = objArr6;
                         Long l2 = l;
-                        switch (b4) {
+                        switch (b3) {
                             case 0:
                                 Runnable runnable = (Runnable) obj3;
                                 uj3 uj3Var2 = uj3Var;
@@ -274,13 +273,13 @@ public final /* synthetic */ class p implements icc {
                         }
                     }
                 };
-                final byte b4 = r2 ? (byte) 1 : (byte) 0;
+                final byte b3 = r2 ? (byte) 1 : (byte) 0;
                 Utilities.u(0, ku0Var, gtVar, pccVar, new pcc() { // from class: jh3
                     @Override // pcc
                     public final void a(Object obj3) {
-                        byte b42 = b4;
+                        byte b32 = b3;
                         Long l2 = l;
-                        switch (b42) {
+                        switch (b32) {
                             case 0:
                                 Runnable runnable = (Runnable) obj3;
                                 uj3 uj3Var2 = uj3Var;
@@ -367,11 +366,11 @@ public final /* synthetic */ class p implements icc {
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
                 int i3 = cVar.a;
                 if (useraddresses == null || useraddresses.addresses.size() <= 0) {
-                    cVar.l0(new gt(cVar, iccVar, str5, b), str5);
+                    cVar.l0(new gt(cVar, iccVar, str5, b2), str5);
                     break;
                 } else {
                     uc7.s1(i3).j4(useraddresses.users, false);
-                    jf7.Y(i3).j1(useraddresses.users, null, true, true);
+                    kf7.a0(i3).n1(useraddresses.users, null, true, true);
                     TL_wallet.walletUserAddress walletuseraddress = useraddresses.addresses.get(0);
                     long j3 = walletuseraddress.user_id;
                     if (j3 != 0) {
@@ -434,16 +433,16 @@ public final /* synthetic */ class p implements icc {
                 break;
             case 15:
                 c cVar4 = (c) this.b;
-                v58 v58Var = (v58) this.c;
+                w58 w58Var = (w58) this.c;
                 String str7 = (String) this.d;
                 TL_wallet.walletTransactions wallettransactions = (TL_wallet.walletTransactions) obj;
                 if (wallettransactions != null && !wallettransactions.transactions.isEmpty()) {
                     TL_wallet.walletTransaction wallettransaction = wallettransactions.transactions.get(0);
                     cVar4.N.put(str7, wallettransaction);
-                    v58Var.a(wallettransaction);
+                    w58Var.a(wallettransaction);
                     break;
                 } else {
-                    v58Var.a(null);
+                    w58Var.a(null);
                     break;
                 }
                 break;
@@ -523,7 +522,7 @@ public final /* synthetic */ class p implements icc {
                             break;
                         } else {
                             try {
-                                c35 b5 = z25Var.b.b();
+                                c35 b4 = z25Var.b.b();
                                 b G = cVar6.G();
                                 TL_wallet.walletTransaction wallettransaction2 = new TL_wallet.walletTransaction();
                                 wallettransaction2.key_change = true;
@@ -536,7 +535,7 @@ public final /* synthetic */ class p implements icc {
                                 TL_wallet.walletTransactionPeerAddress wallettransactionpeeraddress = new TL_wallet.walletTransactionPeerAddress();
                                 wallettransactionpeeraddress.address = x2;
                                 wallettransaction2.peer = wallettransactionpeeraddress;
-                                ao1 ao1Var = new ao1(cVar6, b5, wallettransaction2, G, (byte) 23);
+                                ao1 ao1Var = new ao1(cVar6, b4, wallettransaction2, G, (byte) 23);
                                 TL_wallet.sendTransfer sendtransfer = z25Var.a;
                                 wallettransaction2.gasless = sendtransfer.data_gasless != null;
                                 wallettransaction2.random_id = sendtransfer.random_id;
@@ -548,7 +547,7 @@ public final /* synthetic */ class p implements icc {
                                 cVar6.a0();
                                 dtcVar.a(null);
                                 c.P("disable backup: prepared sendTransfer, sending");
-                                ConnectionsManager.getInstance(i4).sendRequestTyped(z25Var.a, new ic(objArr3 == true ? 1 : 0), new pm1(cVar6, ao1Var, z25Var, b5, wallettransaction2, (byte) 3));
+                                ConnectionsManager.getInstance(i4).sendRequestTyped(z25Var.a, new ic(objArr3 == true ? 1 : 0), new pm1(cVar6, ao1Var, z25Var, b4, wallettransaction2, (byte) 3));
                                 break;
                             } catch (IllegalStateException unused) {
                                 dtcVar.a("CANCELLED");
@@ -571,7 +570,7 @@ public final /* synthetic */ class p implements icc {
                 Arrays.fill(x45Var.b, (byte) 0);
                 v35Var.a((tL_error6 == null && (bool3 instanceof TLRPC.TL_boolTrue)) ? null : a55.z(tL_error6, "submitConnectResult"));
                 if (a55Var.e < 0) {
-                    a55Var.e = a55Var.f.sendRequestTyped(new TL_wallet.tonConnectGetSessions(), new ic(objArr4 == true ? 1 : 0), new yt4(a55Var, b3));
+                    a55Var.e = a55Var.f.sendRequestTyped(new TL_wallet.tonConnectGetSessions(), new ic(objArr4 == true ? 1 : 0), new yt4(a55Var, b));
                     break;
                 }
                 break;
@@ -587,12 +586,12 @@ public final /* synthetic */ class p implements icc {
                 break;
             case 22:
                 boolean[] zArr2 = (boolean[]) this.b;
-                fd7 fd7Var = (fd7) this.c;
+                gd7 gd7Var = (gd7) this.c;
                 pq7 pq7Var = (pq7) this.d;
                 TL_wallet.walletTransaction wallettransaction4 = (TL_wallet.walletTransaction) obj;
                 if (!zArr2[0]) {
                     zArr2[0] = true;
-                    hl.r(fd7Var);
+                    hl.r(gd7Var);
                     if (wallettransaction4 != null) {
                         long j6 = wallettransaction4.fee;
                         if (j6 > 0) {
@@ -660,7 +659,7 @@ public final /* synthetic */ class p implements icc {
                     if (S2 != null) {
                         PasskeysActivity passkeysActivity = new PasskeysActivity(passkeys.passkeys);
                         S2.presentFragment(passkeysActivity);
-                        hl.d3(new pl7(passkeysActivity, passkey, b2), 150L);
+                        hl.d3(new ql7(passkeysActivity, passkey, b2), 150L);
                         break;
                     }
                 } else if (tL_error8 != null) {
@@ -815,7 +814,7 @@ public final /* synthetic */ class p implements icc {
                         textView.setPadding(hl.L(16.0f), hl.L(12.0f), hl.L(16.0f), hl.L(12.0f));
                         textView.setText(l2.longValue() > 0 ? ob6.V(null, null, 2131742598, c.r(l2.longValue(), false), cVar8.q(l2.longValue(), true)) : ob6.M0(2131742599, null));
                         textView.setVisibility(8);
-                        sg2Var.setOnClickListener(new jjb(sg2Var, textView, b));
+                        sg2Var.setOnClickListener(new jjb(sg2Var, textView, b2));
                         LinearLayout m = bs2.m(parentActivity, 1);
                         m.addView(sg2Var, tre.t(-1, -2, 83, 8, 0, 8, 0));
                         m.addView(textView, tre.k(16.0f, 8.0f, 16.0f, 16.0f, -1, -2));

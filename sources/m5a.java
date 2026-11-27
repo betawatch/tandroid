@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m5a implements Runnable {
     public final /* synthetic */ byte a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class m5a implements Runnable {
                     int ceil = (int) Math.ceil(G.length() / t1);
                     char c = 0;
                     int i4 = 1;
-                    if (j == 0 || (f = uc7.s1(i3).g4.f(-j2, j)) == null || (message = f.topicStartMessage) == null) {
+                    if (j == 0 || (f = uc7.s1(i3).h4.f(-j2, j)) == null || (message = f.topicStartMessage) == null) {
                         r47Var = null;
                     } else {
                         r47Var = new r47(i3, message, false, false);

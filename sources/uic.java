@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class uic extends FrameLayout implements snb {
     public static final /* synthetic */ int t0 = 0;
@@ -229,7 +229,7 @@ public class uic extends FrameLayout implements snb {
         this.O = i;
         gw9 gw9Var = this.w;
         if (gw9Var.getVisibility() == 8 || gw9Var.getMeasuredWidth() == 0) {
-            hl.d3(new me7((Object) this, i, (byte) 25), 100L);
+            hl.d3(new oe7((Object) this, i, (byte) 25), 100L);
         } else {
             gw9Var.A0(i);
         }

@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class fj4 extends yfb implements is4 {
     public final /* synthetic */ byte a;
@@ -41,12 +41,12 @@ public final class fj4 extends yfb implements is4 {
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         ux2 ux2Var = (ux2) obj;
         zw2 zw2Var = (zw2) obj2;
         switch (b) {
         }
-        return ((fj4) create(ux2Var, zw2Var)).invokeSuspend(f9cVar);
+        return ((fj4) create(ux2Var, zw2Var)).invokeSuspend(g9cVar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:125:0x01d5, code lost:
@@ -85,7 +85,7 @@ public final class fj4 extends yfb implements is4 {
     */
     public final Object invokeSuspend(Object obj) {
         Object b;
-        f9c f9cVar;
+        g9c g9cVar;
         ii1 ii1Var;
         Object obj2;
         z01 z01Var;
@@ -93,7 +93,7 @@ public final class fj4 extends yfb implements is4 {
         qj1 qj1Var;
         byte b2 = this.a;
         Object obj3 = this.d;
-        f9c f9cVar2 = f9c.a;
+        g9c g9cVar2 = g9c.a;
         vx2 vx2Var = vx2.a;
         byte b3 = 1;
         switch (b2) {
@@ -123,7 +123,7 @@ public final class fj4 extends yfb implements is4 {
                         } else {
                             mtd.a(Log.d("FirebaseSessions", "Sessions SDK disabled. Not listening to lifecycle events."));
                         }
-                        return f9cVar2;
+                        return g9cVar2;
                     }
                     ixe.b(obj);
                     b = obj;
@@ -139,7 +139,7 @@ public final class fj4 extends yfb implements is4 {
                     }
                 }
                 mtd.a(Log.d("FirebaseSessions", "No Sessions subscribers. Not listening to lifecycle events."));
-                return f9cVar2;
+                return g9cVar2;
             case 1:
                 o9a o9aVar = (o9a) obj3;
                 yja yjaVar = (yja) this.c;
@@ -167,14 +167,14 @@ public final class fj4 extends yfb implements is4 {
                     if (b6 != 1) {
                         if (b6 == 2) {
                             ixe.b(obj);
-                            return f9cVar2;
+                            return g9cVar2;
                         }
                         grb.i("call to 'resume' before 'invoke' with coroutine");
                         return null;
                     }
                     ixe.b(obj);
                 }
-                return f9cVar2;
+                return g9cVar2;
             default:
                 lyc lycVar = (lyc) obj3;
                 byte b7 = this.b;
@@ -203,17 +203,17 @@ public final class fj4 extends yfb implements is4 {
                     ii1 ii1Var3 = (ii1) this.c;
                     ixe.b(obj);
                     ii1Var = ii1Var3;
-                    f9cVar = f9cVar2;
+                    g9cVar = g9cVar2;
                     obj2 = obj;
                     this.c = null;
                     this.b = (byte) 2;
                 } else {
                     if (b7 == 2) {
                         ixe.b(obj);
-                        f9cVar = f9cVar2;
-                        f9cVar2 = f9cVar;
+                        g9cVar = g9cVar2;
+                        g9cVar2 = g9cVar;
                         if (((AtomicInteger) ((z8d) lycVar.e).b).decrementAndGet() == 0) {
-                            return f9cVar2;
+                            return g9cVar2;
                         }
                         b3 = 1;
                         gqe.a(((ux2) lycVar.b).c());
@@ -252,7 +252,7 @@ public final class fj4 extends yfb implements is4 {
                                 ii1 ii1Var4 = ii1Var22;
                                 ow5 ow5Var2 = b11.o;
                                 if (C != ow5Var2) {
-                                    f9cVar = f9cVar2;
+                                    g9cVar = g9cVar2;
                                     if (C == b11.n) {
                                         va1 a2 = yud.a(xpe.a(this));
                                         try {

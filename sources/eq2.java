@@ -3,7 +3,7 @@
 import java.util.Collections;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class eq2 {
     public String a = null;
@@ -21,10 +21,10 @@ public final class eq2 {
         this.d = (byte) 0;
         this.e = false;
         this.g = new HashSet();
-        hashSet.add(h09.a(cls));
+        hashSet.add(i09.a(cls));
         for (Class cls2 : clsArr) {
             bwe.a(cls2, "Null interface");
-            this.b.add(h09.a(cls2));
+            this.b.add(i09.a(cls2));
         }
     }
 
@@ -53,17 +53,17 @@ public final class eq2 {
         }
     }
 
-    public eq2(h09 h09Var, h09... h09VarArr) {
+    public eq2(i09 i09Var, i09... i09VarArr) {
         HashSet hashSet = new HashSet();
         this.b = hashSet;
         this.c = new HashSet();
         this.d = (byte) 0;
         this.e = false;
         this.g = new HashSet();
-        hashSet.add(h09Var);
-        for (h09 h09Var2 : h09VarArr) {
-            bwe.a(h09Var2, "Null interface");
+        hashSet.add(i09Var);
+        for (i09 i09Var2 : i09VarArr) {
+            bwe.a(i09Var2, "Null interface");
         }
-        Collections.addAll(this.b, h09VarArr);
+        Collections.addAll(this.b, i09VarArr);
     }
 }

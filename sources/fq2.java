@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class fq2 {
     public final String a;
@@ -27,8 +27,8 @@ public final class fq2 {
         this.g = DesugarCollections.unmodifiableSet(set3);
     }
 
-    public static eq2 a(h09 h09Var) {
-        return new eq2(h09Var, new h09[0]);
+    public static eq2 a(i09 i09Var) {
+        return new eq2(i09Var, new i09[0]);
     }
 
     public static eq2 b(Class cls) {
@@ -39,10 +39,10 @@ public final class fq2 {
         HashSet hashSet = new HashSet();
         HashSet hashSet2 = new HashSet();
         HashSet hashSet3 = new HashSet();
-        hashSet.add(h09.a(cls));
+        hashSet.add(i09.a(cls));
         for (Class cls2 : clsArr) {
             bwe.a(cls2, "Null interface");
-            hashSet.add(h09.a(cls2));
+            hashSet.add(i09.a(cls2));
         }
         return new fq2(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new dq2(obj, (byte) 0), hashSet3);
     }

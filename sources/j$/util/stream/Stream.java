@@ -19,7 +19,7 @@ import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 import java.util.stream.DoubleStream;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes4.dex */
 public interface Stream<T> extends BaseStream<T, Stream<T>> {
     boolean allMatch(Predicate predicate);
@@ -92,7 +92,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     f0 u(j$.time.v vVar);
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public final /* synthetic */ class VivifiedWrapper implements Stream {
         public final /* synthetic */ java.util.stream.Stream a;
 
@@ -335,7 +335,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public final /* synthetic */ class Wrapper implements java.util.stream.Stream {
         public /* synthetic */ Wrapper() {
         }

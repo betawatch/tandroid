@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class t82 extends e implements fn7 {
     public final Paint E;
@@ -74,7 +74,7 @@ public final class t82 extends e implements fn7 {
         this.J = new ArrayList();
         this.K = new LinkedHashMap();
         this.L = new ArrayList();
-        this.O = getMessagesController().k4.a2.f();
+        this.O = getMessagesController().l4.a2.f();
         this.P = false;
         this.Z = -1;
         this.b0 = new l82(this, (byte) 6);
@@ -296,7 +296,7 @@ public final class t82 extends e implements fn7 {
         this.n = new bna(context, this.resourceProvider);
         TLRPC.ChatFull chatFull = this.S;
         if (!(chatFull instanceof TLRPC.TL_chatFull) ? (chatFull.flags2 & TLObject.FLAG_13) != 0 : (chatFull.flags & TLObject.FLAG_20) != 0) {
-            i = getMessagesController().k4.r3.f();
+            i = getMessagesController().l4.r3.f();
             this.V = i;
             this.U = i;
         } else {
@@ -305,7 +305,7 @@ public final class t82 extends e implements fn7 {
             this.U = i;
         }
         bna bnaVar = this.n;
-        int f = getMessagesController().k4.r3.f();
+        int f = getMessagesController().l4.r3.f();
         ana anaVar = new ana();
         anaVar.a = 1;
         anaVar.b = f;
@@ -912,9 +912,9 @@ public final class t82 extends e implements fn7 {
         this.W = M0;
         byte b = 0;
         if (M0 == null) {
-            TLRPC.Chat O = jf7.Y(this.currentAccount).O(j);
-            this.W = O;
-            if (O != null) {
+            TLRPC.Chat Q = kf7.a0(this.currentAccount).Q(j);
+            this.W = Q;
+            if (Q != null) {
                 getMessagesController().a4(this.W, true);
             }
             return false;

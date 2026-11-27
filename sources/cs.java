@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cs extends la {
     public final /* synthetic */ ds d;
@@ -76,7 +76,7 @@ public final class cs extends la {
                 }
                 ds dsVar = this.d;
                 boolean z3 = dsVar.d.archive_and_mute_new_noncontact_peers;
-                if (!dsVar.getUserConfig().p() && !this.d.getMessagesController().k4.T0.f) {
+                if (!dsVar.getUserConfig().p() && !this.d.getMessagesController().l4.T0.f) {
                     i3 = R.drawable.permission_locked;
                 }
                 wkbVar.setCheckBoxIcon(i3);

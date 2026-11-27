@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.util.Size;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class jn9 extends CameraCaptureSession.StateCallback {
     public final /* synthetic */ byte a;
@@ -185,7 +185,7 @@ public final class jn9 extends CameraCaptureSession.StateCallback {
                             sb.append(str);
                             sn9Var.b(sb.toString());
                             on9 on9Var8 = this.b;
-                            on9Var8.c.post(new dn9(on9Var8, (byte) 4));
+                            on9Var8.c.post(new en9(on9Var8, (byte) 4));
                             on9 on9Var9 = this.b;
                             pq8 pq8Var = on9Var9.k;
                             cp9 cp9Var = on9Var9.F;

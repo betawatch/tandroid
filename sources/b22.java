@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class b22 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class b22 implements RequestDelegate {
         Object obj = this.c;
         switch (b) {
             case 0:
-                hl.c3(new ze7((j22) obj, tLObject, i, b2));
+                hl.c3(new bf7((j22) obj, tLObject, i, b2));
                 break;
             case 1:
                 hl.c3(new gp6(obj, (Object) tL_error, (Object) tLObject, this.b, (byte) 17));
@@ -77,17 +77,17 @@ public final /* synthetic */ class b22 implements RequestDelegate {
                 hl.c3(new a39((Object) tLObject, i, obj, (byte) 19));
                 break;
             case 8:
-                u5b u5bVar = (u5b) obj;
+                v5b v5bVar = (v5b) obj;
                 if (tLObject instanceof TL_stories.TL_stories_stories) {
                     ArrayList arrayList = new ArrayList();
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
                     for (int i3 = 0; i3 < tL_stories_stories.stories.size(); i3++) {
-                        arrayList.add(u5bVar.y(tL_stories_stories.stories.get(i3)));
+                        arrayList.add(v5bVar.y(tL_stories_stories.stories.get(i3)));
                     }
-                    hl.c3(new efa((Object) u5bVar, (Object) arrayList, (Object) tL_stories_stories, this.b, (byte) 6));
+                    hl.c3(new efa((Object) v5bVar, (Object) arrayList, (Object) tL_stories_stories, this.b, (byte) 6));
                     break;
                 } else {
-                    hl.c3(new r5b(u5bVar, (byte) 0));
+                    hl.c3(new s5b(v5bVar, (byte) 0));
                     break;
                 }
             case 9:

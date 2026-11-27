@@ -43,7 +43,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class l77 implements Runnable {
     public final /* synthetic */ byte a;
@@ -93,7 +93,7 @@ public final /* synthetic */ class l77 implements Runnable {
                 l.putInt("dialogsType", 11);
             } else {
                 String uri2 = uri.toString();
-                Iterator it = uc7.s1(i).k4.N3.f.iterator();
+                Iterator it = uc7.s1(i).l4.N3.f.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         z = false;
@@ -105,7 +105,7 @@ public final /* synthetic */ class l77 implements Runnable {
                     }
                 }
                 if (!z) {
-                    Iterator it2 = uc7.s1(i).k4.M3.f.iterator();
+                    Iterator it2 = uc7.s1(i).l4.M3.f.iterator();
                     while (true) {
                         if (!it2.hasNext()) {
                             break;
@@ -128,7 +128,7 @@ public final /* synthetic */ class l77 implements Runnable {
             } else if (o.F() && o.u().W) {
                 o.u().l(false, true);
             }
-            rbb.v();
+            sbb.v();
             j95 j95Var = j95.s5;
             if (j95Var != null) {
                 j95Var.dismiss();
@@ -493,7 +493,7 @@ public final /* synthetic */ class l77 implements Runnable {
         k3bVar.F = null;
         k3bVar.E = true;
         k3bVar.y = false;
-        hl.c3(new ida((Object) k3bVar, (Object) arrayList, (byte) 28));
+        hl.c3(new kba((Object) k3bVar, (Object) arrayList, (byte) 29));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -603,7 +603,7 @@ public final /* synthetic */ class l77 implements Runnable {
                 }
                 ArrayList arrayList4 = new ArrayList();
                 arrayList4.add(tL_help_support.user);
-                jf7.Y(i7).j1(arrayList4, null, z, z);
+                kf7.a0(i7).n1(arrayList4, null, z, z);
                 uc7.s1(i7).i4(tL_help_support.user, false, false);
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", tL_help_support.user.id);
@@ -1216,11 +1216,11 @@ public final /* synthetic */ class l77 implements Runnable {
                             z2 = z3;
                             j2 = j;
                         } else {
-                            jf7 Y = jf7.Y(i21);
+                            kf7 a0 = kf7.a0(i21);
                             z2 = z3;
                             j2 = j;
-                            Y.a.c(new ke7(Y, j2, new df7() { // from class: kl3
-                                @Override // df7
+                            a0.a.c(new le7(a0, j2, new ef7() { // from class: kl3
+                                @Override // ef7
                                 public final void a(int i24) {
                                     int i25 = tl3.this.t0;
                                     if (i24 != -1) {

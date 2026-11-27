@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class aw9 extends FrameLayout implements fn7 {
     public int E;
@@ -136,13 +136,13 @@ public final class aw9 extends FrameLayout implements fn7 {
             return;
         }
         long currentTimeMillis = System.currentTimeMillis();
-        if (currentTimeMillis - ConnectionsManager.lastPremiumFloodWaitShown >= uc7.s1(this.d).k4.r2.f() * 1000) {
+        if (currentTimeMillis - ConnectionsManager.lastPremiumFloodWaitShown >= uc7.s1(this.d).l4.r2.f() * 1000) {
             ConnectionsManager.lastPremiumFloodWaitShown = currentTimeMillis;
             if (yac.h(this.d).p() || uc7.s1(this.d).M3()) {
                 return;
             }
             int i = this.d;
-            SpannableString spannableString = new SpannableString(Double.toString(Math.round(((float) (z ? uc7.s1(i).k4.x3.i : uc7.s1(i).k4.y3.i)) * 10.0f) / 10.0d).replaceAll("\\.0$", ""));
+            SpannableString spannableString = new SpannableString(Double.toString(Math.round(((float) (z ? uc7.s1(i).l4.x3.i : uc7.s1(i).l4.y3.i)) * 10.0f) / 10.0d).replaceAll("\\.0$", ""));
             spannableString.setSpan(new y7c(hl.o()), 0, spannableString.length(), 33);
             if (this.H.hasStoryViewer()) {
                 return;

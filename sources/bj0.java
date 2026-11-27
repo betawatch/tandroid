@@ -19,7 +19,7 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class bj0 extends gp4 {
     public final Handler l0 = new Handler(Looper.getMainLooper());
@@ -236,12 +236,12 @@ public class bj0 extends gp4 {
         }
         this.m0.d(2);
         mj0 mj0Var = this.m0;
-        qj7 qj7Var = mj0Var.y;
-        if (qj7Var == null) {
-            qj7Var = new qj7();
-            mj0Var.y = qj7Var;
+        rj7 rj7Var = mj0Var.y;
+        if (rj7Var == null) {
+            rj7Var = new rj7();
+            mj0Var.y = rj7Var;
         }
-        mj0.f(qj7Var, charSequence);
+        mj0.f(rj7Var, charSequence);
     }
 
     public final void Y() {
@@ -466,48 +466,48 @@ public class bj0 extends gp4 {
         }
         mj0 mj0Var = (mj0) new pq8(k()).n(mj0.class);
         this.m0 = mj0Var;
-        qj7 qj7Var = mj0Var.p;
-        if (qj7Var == null) {
-            qj7Var = new qj7();
-            mj0Var.p = qj7Var;
+        rj7 rj7Var = mj0Var.p;
+        if (rj7Var == null) {
+            rj7Var = new rj7();
+            mj0Var.p = rj7Var;
         }
         byte b = 0;
-        qj7Var.d(this, new ti0(this, b));
+        rj7Var.d(this, new ti0(this, b));
         mj0 mj0Var2 = this.m0;
-        qj7 qj7Var2 = mj0Var2.q;
-        if (qj7Var2 == null) {
-            qj7Var2 = new qj7();
-            mj0Var2.q = qj7Var2;
+        rj7 rj7Var2 = mj0Var2.q;
+        if (rj7Var2 == null) {
+            rj7Var2 = new rj7();
+            mj0Var2.q = rj7Var2;
         }
-        qj7Var2.d(this, new ui0(this, b));
+        rj7Var2.d(this, new ui0(this, b));
         mj0 mj0Var3 = this.m0;
-        qj7 qj7Var3 = mj0Var3.r;
-        if (qj7Var3 == null) {
-            qj7Var3 = new qj7();
-            mj0Var3.r = qj7Var3;
+        rj7 rj7Var3 = mj0Var3.r;
+        if (rj7Var3 == null) {
+            rj7Var3 = new rj7();
+            mj0Var3.r = rj7Var3;
         }
-        qj7Var3.d(this, new ri6(this, (byte) 9));
+        rj7Var3.d(this, new ri6(this, (byte) 9));
         mj0 mj0Var4 = this.m0;
-        qj7 qj7Var4 = mj0Var4.s;
-        if (qj7Var4 == null) {
-            qj7Var4 = new qj7();
-            mj0Var4.s = qj7Var4;
+        rj7 rj7Var4 = mj0Var4.s;
+        if (rj7Var4 == null) {
+            rj7Var4 = new rj7();
+            mj0Var4.s = rj7Var4;
         }
-        qj7Var4.d(this, new z8d((Object) this, (byte) 10));
+        rj7Var4.d(this, new z8d((Object) this, (byte) 10));
         mj0 mj0Var5 = this.m0;
-        qj7 qj7Var5 = mj0Var5.t;
-        if (qj7Var5 == null) {
-            qj7Var5 = new qj7();
-            mj0Var5.t = qj7Var5;
+        rj7 rj7Var5 = mj0Var5.t;
+        if (rj7Var5 == null) {
+            rj7Var5 = new rj7();
+            mj0Var5.t = rj7Var5;
         }
         byte b2 = 1;
-        qj7Var5.d(this, new ti0(this, b2));
+        rj7Var5.d(this, new ti0(this, b2));
         mj0 mj0Var6 = this.m0;
-        qj7 qj7Var6 = mj0Var6.v;
-        if (qj7Var6 == null) {
-            qj7Var6 = new qj7();
-            mj0Var6.v = qj7Var6;
+        rj7 rj7Var6 = mj0Var6.v;
+        if (rj7Var6 == null) {
+            rj7Var6 = new rj7();
+            mj0Var6.v = rj7Var6;
         }
-        qj7Var6.d(this, new ui0(this, b2));
+        rj7Var6.d(this, new ui0(this, b2));
     }
 }

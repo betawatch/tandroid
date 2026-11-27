@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yg6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -149,10 +149,10 @@ public final /* synthetic */ class yg6 implements Runnable {
                 iq6 iq6Var = (iq6) obj;
                 for (int i8 = 0; i8 < arrayList4.size(); i8++) {
                     r47 r47Var = (r47) arrayList4.get(i8);
-                    TLRPC.TL_message c0 = ls6Var2.getMessagesStorage().c0(r47Var.e1(), r47.B0(r47Var.k));
+                    TLRPC.TL_message e0 = ls6Var2.getMessagesStorage().e0(r47Var.e1(), r47.B0(r47Var.k));
                     TLRPC.Message message = r47Var.k;
-                    message.translatedToLanguage = c0.translatedToLanguage;
-                    message.translatedText = c0.translatedText;
+                    message.translatedToLanguage = e0.translatedToLanguage;
+                    message.translatedText = e0.translatedText;
                     r47Var.f6(false);
                 }
                 iq6Var.run();
@@ -160,7 +160,7 @@ public final /* synthetic */ class yg6 implements Runnable {
             case 6:
                 ls6 ls6Var3 = (ls6) obj3;
                 ArrayList arrayList5 = (ArrayList) obj2;
-                if7 if7Var = (if7) obj;
+                jf7 jf7Var = (jf7) obj;
                 HashMap hashMap2 = ls6Var3.A1;
                 zh6 zh6Var = ls6Var3.B1;
                 zh6 zh6Var2 = ls6Var3.z1;
@@ -168,10 +168,10 @@ public final /* synthetic */ class yg6 implements Runnable {
                     for (int i9 = 0; i9 < arrayList5.size(); i9++) {
                         int intValue = ((Integer) arrayList5.get(i9)).intValue();
                         long j = intValue;
-                        if7 if7Var2 = (if7) zh6Var.f(j);
-                        if (if7Var2 != null) {
-                            hashMap2.remove(if7Var2);
-                            ArrayList arrayList6 = (ArrayList) zh6Var2.f(if7Var2.a);
+                        jf7 jf7Var2 = (jf7) zh6Var.f(j);
+                        if (jf7Var2 != null) {
+                            hashMap2.remove(jf7Var2);
+                            ArrayList arrayList6 = (ArrayList) zh6Var2.f(jf7Var2.a);
                             if (arrayList6 != null) {
                                 int i10 = 0;
                                 while (i10 < arrayList6.size()) {
@@ -183,18 +183,18 @@ public final /* synthetic */ class yg6 implements Runnable {
                                     i10++;
                                 }
                                 if (arrayList6.isEmpty()) {
-                                    zh6Var2.l(if7Var2.a);
+                                    zh6Var2.l(jf7Var2.a);
                                 }
                             }
                             zh6Var.l(j);
-                            ls6Var3.getNotificationCenter().k(70, null, if7Var2);
+                            ls6Var3.getNotificationCenter().k(70, null, jf7Var2);
                         }
                     }
                     break;
-                } else if (if7Var != null) {
-                    hashMap2.remove(if7Var);
-                    zh6Var2.l(if7Var.a);
-                    ls6Var3.getNotificationCenter().k(70, null, if7Var);
+                } else if (jf7Var != null) {
+                    hashMap2.remove(jf7Var);
+                    zh6Var2.l(jf7Var.a);
+                    ls6Var3.getNotificationCenter().k(70, null, jf7Var);
                     break;
                 }
                 break;
@@ -440,7 +440,7 @@ public final /* synthetic */ class yg6 implements Runnable {
                 uc7 uc7Var2 = (uc7) obj3;
                 TLObject tLObject5 = (TLObject) obj2;
                 ArrayList arrayList9 = (ArrayList) obj;
-                zh6 zh6Var3 = uc7Var2.S4;
+                zh6 zh6Var3 = uc7Var2.T4;
                 if (tLObject5 instanceof Vector) {
                     ArrayList<T> arrayList10 = ((Vector) tLObject5).objects;
                     z = false;
@@ -458,10 +458,10 @@ public final /* synthetic */ class yg6 implements Runnable {
                             }
                             TLRPC.UserFull Y1 = uc7Var2.Y1(longValue);
                             if (Y1 == null) {
-                                jf7 messagesStorage = uc7Var2.getMessagesStorage();
+                                kf7 messagesStorage = uc7Var2.getMessagesStorage();
                                 messagesStorage.a.c(new cq6((Object) messagesStorage, longValue, (Object) requirementToContact, (byte) 8));
                             } else if (lbc.a(Y1, requirementToContact)) {
-                                uc7Var2.getMessagesStorage().g2(Y1, true);
+                                uc7Var2.getMessagesStorage().l2(Y1, true);
                             }
                             z = true;
                         }
@@ -629,7 +629,7 @@ public final /* synthetic */ class yg6 implements Runnable {
                 if (!arrayList12.isEmpty()) {
                     hl.c3(new k77(uc7Var5, arrayList12, b2));
                 }
-                uc7Var5.getMessagesStorage().g1(updates_channeldifference.new_messages, true, false, false, uc7Var5.getDownloadController().l(), false, 0, 0L);
+                uc7Var5.getMessagesStorage().k1(updates_channeldifference.new_messages, true, false, false, uc7Var5.getDownloadController().l(), false, 0, 0L);
                 break;
             case 27:
                 ((uc7) obj3).getNotificationsController().K((ArrayList) obj2, !(((TLRPC.updates_Difference) obj) instanceof TLRPC.TL_updates_differenceSlice), false, null);
@@ -638,7 +638,7 @@ public final /* synthetic */ class yg6 implements Runnable {
                 uc7 uc7Var6 = (uc7) obj3;
                 TLRPC.ChatFull chatFull = (TLRPC.ChatFull) obj2;
                 chatFull.about = (String) obj;
-                uc7Var6.getMessagesStorage().K1(chatFull, false);
+                uc7Var6.getMessagesStorage().P1(chatFull, false);
                 jn7 notificationCenter4 = uc7Var6.getNotificationCenter();
                 Boolean bool2 = Boolean.FALSE;
                 notificationCenter4.k(31, chatFull, 0, bool2, bool2);

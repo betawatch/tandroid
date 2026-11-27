@@ -1,37 +1,29 @@
 // default package
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c68 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ w9b b;
 
-    public /* synthetic */ c68(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int i, byte b) {
+    public /* synthetic */ c68(w9b w9bVar, byte b) {
         this.a = b;
-        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.c = i;
+        this.b = w9bVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        int i = this.c;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.b;
+        w9b w9bVar = this.b;
         switch (b) {
             case 0:
-                if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(i);
-                    break;
-                }
+                w9bVar.dismiss();
+                break;
+            case 1:
+                w9bVar.dismiss();
                 break;
             default:
-                if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(i);
-                    break;
-                }
+                w9bVar.onBackPressed();
                 break;
         }
     }

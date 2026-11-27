@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class mb3 implements la6 {
     public static final da3 N = new da3((byte) 12);
@@ -193,7 +193,7 @@ public final class mb3 implements la6 {
             Uri parse = Uri.parse(str);
             jo4 jo4Var = new jo4();
             jo4Var.a = "0";
-            jo4Var.r = dg7.n("application/x-mpegURL");
+            jo4Var.r = eg7.n("application/x-mpegURL");
             List singletonList = Collections.singletonList(new ih5(parse, new ko4(jo4Var), null, null, null, null, null, null));
             List list = Collections.EMPTY_LIST;
             jh5Var = new jh5("", list, singletonList, list, list, list, list, null, null, false, Collections.EMPTY_MAP, list, null);

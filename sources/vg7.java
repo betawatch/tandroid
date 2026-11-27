@@ -1,27 +1,43 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.util.Log;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class vg7 extends c4 {
-    public static final Parcelable.Creator<vg7> CREATOR = new mx6((byte) 29);
-    public final boolean a;
-    public final int b;
+public final class vg7 extends FutureTask {
+    public final /* synthetic */ ox a;
 
-    public vg7(int i, boolean z) {
-        this.a = z;
-        this.b = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vg7(ox oxVar, ug7 ug7Var) {
+        super(ug7Var);
+        this.a = oxVar;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = bye.r(parcel, 20293);
-        bye.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        bye.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        bye.s(parcel, r);
+    @Override // java.util.concurrent.FutureTask
+    public final void done() {
+        ox oxVar = this.a;
+        AtomicBoolean atomicBoolean = oxVar.d;
+        try {
+            Object obj = get();
+            if (atomicBoolean.get()) {
+                return;
+            }
+            oxVar.b(obj);
+        } catch (InterruptedException e) {
+            Log.w("AsyncTask", e);
+        } catch (CancellationException unused) {
+            if (atomicBoolean.get()) {
+                return;
+            }
+            oxVar.b(null);
+        } catch (ExecutionException e2) {
+            grb.j("An error occurred while executing doInBackground()", e2.getCause());
+        } catch (Throwable th) {
+            grb.j("An error occurred while executing doInBackground()", th);
+        }
     }
 }

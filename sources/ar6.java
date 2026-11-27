@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ar6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -33,12 +33,12 @@ public final /* synthetic */ class ar6 implements Runnable {
                     zh6 zh6Var2 = new zh6();
                     for (int i = 0; i < arrayList.size(); i++) {
                         try {
-                            jf7.c((TLRPC.Message) arrayList.get(i), zh6Var, zh6Var2);
+                            kf7.c((TLRPC.Message) arrayList.get(i), zh6Var, zh6Var2);
                         } catch (Exception e) {
-                            ls6Var.getMessagesStorage().n(e, true);
+                            ls6Var.getMessagesStorage().p(e, true);
                         }
                     }
-                    ls6Var.getMessagesStorage().H0(zh6Var, zh6Var2, arrayList2, arrayList3, 0);
+                    ls6Var.getMessagesStorage().K0(zh6Var, zh6Var2, arrayList2, arrayList3, 0);
                     break;
                 } catch (Exception e2) {
                     cc4.g(e2, true);

@@ -38,7 +38,7 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.b;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ao1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -225,12 +225,12 @@ public final /* synthetic */ class ao1 implements Runnable {
         switch (b) {
             case 0:
                 zu1 zu1Var = (zu1) obj4;
-                jf7 jf7Var = (jf7) obj;
+                kf7 kf7Var = (kf7) obj;
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) ((TLObject) obj3);
                 if (((TLRPC.TL_error) obj2) == null && !messages_messages.messages.isEmpty()) {
                     int i7 = messages_messages.messages.get(0).id;
                     r47 r47Var = (r47) zu1Var.G6[0].get(i7);
-                    jf7Var.a.c(new gd7(jf7Var, i7, zu1Var.l6, (byte) 4));
+                    kf7Var.a.c(new id7(kf7Var, i7, zu1Var.l6, (byte) 4));
                     if (r47Var != null) {
                         TLRPC.Message message = r47Var.k;
                         message.media_unread = true;
@@ -244,7 +244,7 @@ public final /* synthetic */ class ao1 implements Runnable {
                 } else {
                     zu1Var.D6 = 0;
                 }
-                jf7Var.a.c(new ae7(jf7Var, zu1Var.c(), zu1Var.l6, zu1Var.D6, (byte) 3));
+                kf7Var.a.c(new ae7(kf7Var, zu1Var.c(), zu1Var.l6, zu1Var.D6, (byte) 1));
                 int i8 = zu1Var.D6;
                 if (i8 == 0) {
                     zu1Var.E6 = true;
@@ -516,7 +516,7 @@ public final /* synthetic */ class ao1 implements Runnable {
                 }
                 Pattern pattern = jj.a;
                 if (context != null) {
-                    final int g = (int) uc7.s1(yac.t0).k4.P.g(TimeUnit.SECONDS);
+                    final int g = (int) uc7.s1(yac.t0).l4.P.g(TimeUnit.SECONDS);
                     final z8d z8dVar = new z8d(context, vnbVar);
                     ((nx0) z8dVar.b).w0 = false;
                     final hq7 hq7Var = new hq7(context, vnbVar);
@@ -1000,7 +1000,7 @@ public final /* synthetic */ class ao1 implements Runnable {
                 }
                 return;
             case 19:
-                ((xc4) obj4).s((String) obj3, (String) obj2, (n5b) obj, null, true, false);
+                ((xc4) obj4).s((String) obj3, (String) obj2, (o5b) obj, null, true, false);
                 return;
             case 20:
                 a();

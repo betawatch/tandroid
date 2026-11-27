@@ -9,10 +9,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ss0 implements Runnable {
-    public final /* synthetic */ byte a = 5;
+    public final /* synthetic */ byte a = 4;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ long c;
     public final /* synthetic */ Object d;
@@ -107,9 +107,6 @@ public final /* synthetic */ class ss0 implements Runnable {
                 w07Var.run(tLObject, tL_error);
                 return;
             case 3:
-                ((lm7) this.d).w0((TLRPC.TL_error) this.e, (TLObject) this.n, (TLRPC.TL_channels_editChannelNews) this.f, this.c, this.b, (j61) this.h);
-                return;
-            case 4:
                 jxa jxaVar = (jxa) this.d;
                 icc iccVar = (icc) this.e;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) this.f;
@@ -201,16 +198,6 @@ public final /* synthetic */ class ss0 implements Runnable {
         this.b = z;
         this.c = j;
         this.h = w07Var;
-    }
-
-    public /* synthetic */ ss0(lm7 lm7Var, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_channels_editChannelNews tL_channels_editChannelNews, long j, boolean z, j61 j61Var) {
-        this.d = lm7Var;
-        this.e = tL_error;
-        this.n = tLObject;
-        this.f = tL_channels_editChannelNews;
-        this.c = j;
-        this.b = z;
-        this.h = j61Var;
     }
 
     public /* synthetic */ ss0(jxa jxaVar, icc iccVar, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z) {

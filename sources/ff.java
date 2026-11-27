@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ff implements fd, oj3, tm8, jrb, ResultCallback {
     public final /* synthetic */ byte a;
@@ -77,10 +77,10 @@ public final /* synthetic */ class ff implements fd, oj3, tm8, jrb, ResultCallba
             return;
         }
         Drawable drawable = ne2Var.b;
-        if (drawable instanceof hh7) {
-            hh7 hh7Var = (hh7) drawable;
-            hh7Var.r(this.b >= 0 ? 100 : -100, zqb.e((Bitmap) pair.second));
-            hh7Var.s(zqbVar.M);
+        if (drawable instanceof ih7) {
+            ih7 ih7Var = (ih7) drawable;
+            ih7Var.r(this.b >= 0 ? 100 : -100, zqb.e((Bitmap) pair.second));
+            ih7Var.s(zqbVar.M);
         }
         zqbVar.invalidate();
     }
@@ -99,7 +99,7 @@ public final /* synthetic */ class ff implements fd, oj3, tm8, jrb, ResultCallba
         if (arrayList.isEmpty()) {
             return false;
         }
-        final long j = ((if7) arrayList.get(0)).a;
+        final long j = ((jf7) arrayList.get(0)).a;
         Activity parentActivity = uj3Var2.getParentActivity();
         final int i3 = this.b;
         final qt0 qt0Var = new qt0(tzbVar, uj3Var2, j, i3);
@@ -192,7 +192,7 @@ public final /* synthetic */ class ff implements fd, oj3, tm8, jrb, ResultCallba
         jn7.i(textView2);
         textView2.setText(pv3.m(hl.S2(ob6.a0(null, null, 2131752903, str)), textView2.getPaint().getFontMetricsInt(), false, null, 0));
         m.addView(textView2, tre.k(24.0f, 0.0f, 24.0f, 22.0f, -1, -2));
-        final int f = uc7.s1(i3).k4.N2.f();
+        final int f = uc7.s1(i3).l4.N2.f();
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(activity);
         final lu7 lu7Var = new lu7(activity, null);
         lu7Var.setForceForceUseCenter(true);

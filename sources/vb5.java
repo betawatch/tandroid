@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class vb5 extends RadialProgressView {
     public final /* synthetic */ byte O = 1;
@@ -48,10 +48,10 @@ public final class vb5 extends RadialProgressView {
                 super.onDraw(canvas);
                 break;
             default:
-                tba tbaVar = (tba) obj;
-                de0 de0Var2 = tbaVar.H;
+                uba ubaVar = (uba) obj;
+                de0 de0Var2 = ubaVar.H;
                 if (de0Var2 != null && de0Var2.getImageReceiver().E()) {
-                    paint.setAlpha((int) (tbaVar.H.getImageReceiver().i1 * 85.0f));
+                    paint.setAlpha((int) (ubaVar.H.getImageReceiver().i1 * 85.0f));
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint);
                 }
                 super.onDraw(canvas);
@@ -60,9 +60,9 @@ public final class vb5 extends RadialProgressView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vb5(tba tbaVar, Context context) {
+    public vb5(uba ubaVar, Context context) {
         super(context, null);
-        this.Q = tbaVar;
+        this.Q = ubaVar;
         Paint paint = new Paint(1);
         this.P = paint;
         paint.setColor(1426063360);

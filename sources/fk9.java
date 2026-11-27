@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class fk9 extends dk9 {
     public final ek9[] X;
@@ -20,7 +20,7 @@ public final class fk9 extends dk9 {
     public fk9(hl9 hl9Var, Rect rect, int i, TL_iv.pageBlockButtonRow pageblockbuttonrow) {
         super(hl9Var, rect, i);
         this.Z = -1;
-        this.c0 = new dj2(new k09(this, (byte) 5));
+        this.c0 = new dj2(new l09(this, (byte) 5));
         this.X = new ek9[pageblockbuttonrow.buttons.size()];
         int size = pageblockbuttonrow.buttons.size();
         for (int i2 = 0; i2 < size; i2++) {

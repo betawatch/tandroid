@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class tra implements Runnable {
     public final /* synthetic */ byte a;
@@ -24,22 +24,22 @@ public final /* synthetic */ class tra implements Runnable {
             case 0:
                 wua wuaVar = this.b;
                 String str = this.c;
-                m01.w(wuaVar.getContext(), uc7.s1(wuaVar.a).k4.O1.f + str, false);
+                m01.w(wuaVar.getContext(), uc7.s1(wuaVar.a).l4.O1.f + str, false);
                 break;
             case 1:
                 wua wuaVar2 = this.b;
                 String str2 = this.c;
-                m01.w(wuaVar2.getContext(), uc7.s1(wuaVar2.a).k4.O1.f + str2, false);
+                m01.w(wuaVar2.getContext(), uc7.s1(wuaVar2.a).l4.O1.f + str2, false);
                 break;
             case 2:
                 wua wuaVar3 = this.b;
                 String str3 = this.c;
-                m01.w(wuaVar3.getContext(), uc7.s1(wuaVar3.a).k4.O1.f + str3, false);
+                m01.w(wuaVar3.getContext(), uc7.s1(wuaVar3.a).l4.O1.f + str3, false);
                 break;
             case 3:
                 wua wuaVar4 = this.b;
                 String str4 = this.c;
-                m01.w(wuaVar4.getContext(), uc7.s1(wuaVar4.a).k4.O1.f + str4, false);
+                m01.w(wuaVar4.getContext(), uc7.s1(wuaVar4.a).l4.O1.f + str4, false);
                 break;
             case 4:
                 wua wuaVar5 = this.b;
@@ -63,7 +63,7 @@ public final /* synthetic */ class tra implements Runnable {
                         f.k(6, valueOf, bool);
                         jn7.f(wuaVar5.a).k(5, Long.valueOf(j), bool);
                         zu1 ha = zu1.ha(j);
-                        ha.whenFullyVisible(new ida(wuaVar5, ha, (byte) 15));
+                        ha.whenFullyVisible(new kba(wuaVar5, ha, (byte) 16));
                         Q.presentFragment(ha);
                         break;
                     }
@@ -88,12 +88,12 @@ public final /* synthetic */ class tra implements Runnable {
             case 7:
                 wua wuaVar8 = this.b;
                 String str7 = this.c;
-                m01.w(wuaVar8.getContext(), uc7.s1(wuaVar8.a).k4.O1.f + str7, false);
+                m01.w(wuaVar8.getContext(), uc7.s1(wuaVar8.a).l4.O1.f + str7, false);
                 break;
             default:
                 wua wuaVar9 = this.b;
                 String str8 = this.c;
-                m01.w(wuaVar9.getContext(), uc7.s1(wuaVar9.a).k4.O1.f + str8, false);
+                m01.w(wuaVar9.getContext(), uc7.s1(wuaVar9.a).l4.O1.f + str8, false);
                 break;
         }
     }

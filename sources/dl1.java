@@ -68,7 +68,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class dl1 extends jf0 implements jq3, fn7, pk5 {
     public static final HashMap y2;
@@ -469,7 +469,7 @@ public class dl1 extends jf0 implements jq3, fn7, pk5 {
                             pj pjVar = n.a;
                             int i5 = this.I;
                             pj pjVar2 = pj.a;
-                            oj j2 = oj.j((n.b * (pjVar == pjVar2 ? uc7.s1(i5).k4.m.f() : uc7.s1(i5).k4.n.f())) / 1000, pjVar);
+                            oj j2 = oj.j((n.b * (pjVar == pjVar2 ? uc7.s1(i5).l4.m.f() : uc7.s1(i5).l4.n.f())) / 1000, pjVar);
                             TL_stars.StarGift starGift = tL_messageActionStarGiftPurchaseOffer.gift;
                             StringBuilder sb = new StringBuilder();
                             sb.append(starGift.title);
@@ -2115,7 +2115,7 @@ public class dl1 extends jf0 implements jq3, fn7, pk5 {
                     zocVar.j0.start();
                     zocVar.a.invalidate();
                     this.Q0.k.premiumEffectWasPlayed = true;
-                    jf7.Y(this.I).U1(r47.B0(this.Q0.k), this.Q0.k);
+                    kf7.a0(this.I).Z1(r47.B0(this.Q0.k), this.Q0.k);
                     return true;
                 }
             }
@@ -2517,7 +2517,7 @@ public class dl1 extends jf0 implements jq3, fn7, pk5 {
                             imageReceiver6.Z(jn5.i(w, photo), "150_150", jn5.f(photoSize2, r47Var4.n0), "50_50_b", r47Var4.I1, 0L, null, r47Var4, 0);
                         }
                         imageReceiver6.v0 = z3;
-                        zn5 zn5Var = (zn5) uc7.s1(i).m4.get(r47Var4.k.local_id);
+                        zn5 zn5Var = (zn5) uc7.s1(i).n4.get(r47Var4.k.local_id);
                         if (zn5Var == null || zn5Var.X == f) {
                             boolean z7 = !z5;
                             radialProgress2.o(z7, f);
@@ -2535,7 +2535,7 @@ public class dl1 extends jf0 implements jq3, fn7, pk5 {
                             TLRPC.MessageAction messageAction2 = r47Var4.k.action;
                             if (messageAction2 instanceof TLRPC.TL_messageActionNoForwardsRequest) {
                                 TLRPC.TL_messageActionNoForwardsRequest tL_messageActionNoForwardsRequest = (TLRPC.TL_messageActionNoForwardsRequest) messageAction2;
-                                long g = uc7.s1(i).k4.O.g(TimeUnit.SECONDS);
+                                long g = uc7.s1(i).l4.O.g(TimeUnit.SECONDS);
                                 if (tL_messageActionNoForwardsRequest.expired) {
                                     imageReceiver = imageReceiver6;
                                 } else {
@@ -4271,7 +4271,7 @@ public class dl1 extends jf0 implements jq3, fn7, pk5 {
                 dl1Var.x2.a();
                 canvas3.restore();
             }
-            zn5 zn5Var = (zn5) uc7.s1(i21).m4.get(r47Var.k.local_id);
+            zn5 zn5Var = (zn5) uc7.s1(i21).n4.get(r47Var.k.local_id);
             if (zn5Var != null) {
                 radialProgress22.o(true, zn5Var.X);
                 radialProgress22.setCircleRadius(((int) (imageReceiver.N0 * 0.5f)) + 1);
@@ -5076,8 +5076,8 @@ public class dl1 extends jf0 implements jq3, fn7, pk5 {
                                                             pq7 pq7Var = new pq7(context2, i6, tL_messageActionStarGiftOnchainOffer2, tL_payments_starGiftOnchainOfferTx, p, vnbVar2, d31Var);
                                                             int i7 = ms7.y2;
                                                             boolean[] zArr = new boolean[1];
-                                                            fd7 fd7Var = new fd7((Object) zArr, (Object) new Runnable[]{c.C(i6).k(p, new p((Object) zArr, (Object) fd7Var, (Object) pq7Var, (byte) 22))}, (Object) pq7Var, (byte) 14);
-                                                            hl.d3(fd7Var, 5000L);
+                                                            gd7 gd7Var = new gd7((Object) zArr, (Object) new Runnable[]{c.C(i6).k(p, new p((Object) zArr, (Object) gd7Var, (Object) pq7Var, (byte) 22))}, (Object) pq7Var, (byte) 14);
+                                                            hl.d3(gd7Var, 5000L);
                                                         }
                                                     });
                                                 }
@@ -5244,7 +5244,7 @@ public class dl1 extends jf0 implements jq3, fn7, pk5 {
                                                     }
                                                 }
                                             }
-                                            if (((zn5) uc7.s1(i4).m4.get(r47Var.k.local_id)) == null) {
+                                            if (((zn5) uc7.s1(i4).n4.get(r47Var.k.local_id)) == null) {
                                                 boolean z13 = this.z1;
                                                 al1 al1Var3 = this.g1;
                                                 if (z13) {
@@ -5300,7 +5300,7 @@ public class dl1 extends jf0 implements jq3, fn7, pk5 {
                                                 }
                                             }
                                         } else if (this.g1 != null) {
-                                            if (i8 != 21 || (zn5Var = (zn5) uc7.s1(i4).m4.get(r47Var.k.local_id)) == null) {
+                                            if (i8 != 21 || (zn5Var = (zn5) uc7.s1(i4).n4.get(r47Var.k.local_id)) == null) {
                                                 this.g1.o(this);
                                                 playSoundEffect(0);
                                             } else {
@@ -5644,7 +5644,7 @@ public class dl1 extends jf0 implements jq3, fn7, pk5 {
             } else {
                 al1 al1Var = this.g1;
                 if (al1Var != null && al1Var.c() == 0 && r47.D4(r47Var)) {
-                    charSequence = ro4.c(uc7.s1(i3).g4.f(-r47.B0(r47Var.k), r47.b2(i3, r47Var.k, true, false)), r47Var);
+                    charSequence = ro4.c(uc7.s1(i3).h4.f(-r47.B0(r47Var.k), r47.b2(i3, r47Var.k, true, false)), r47Var);
                 }
                 charSequence = null;
             }
@@ -5794,7 +5794,7 @@ public class dl1 extends jf0 implements jq3, fn7, pk5 {
                                         spannableStringBuilder.append((CharSequence) str).append((CharSequence) " #").append((CharSequence) ob6.E(tL_messageActionStarGift.gift_num, ','));
                                     }
                                 }
-                                boolean z6 = !((r47Var.O3() || z5) && tL_messageActionStarGift.converted) && tL_messageActionStarGift.convert_stars > 0 && ((int) uc7.s1(i3).k4.D3.g(TimeUnit.SECONDS)) - (ConnectionsManager.getInstance(i3).getCurrentTime() - r47Var.k.date) > 0 && !tL_messageActionStarGift.refunded;
+                                boolean z6 = !((r47Var.O3() || z5) && tL_messageActionStarGift.converted) && tL_messageActionStarGift.convert_stars > 0 && ((int) uc7.s1(i3).l4.D3.g(TimeUnit.SECONDS)) - (ConnectionsManager.getInstance(i3).getCurrentTime() - r47Var.k.date) > 0 && !tL_messageActionStarGift.refunded;
                                 if (tL_messageActionStarGift.refunded) {
                                     TLRPC.TL_textWithEntities tL_textWithEntities = tL_messageActionStarGift.message;
                                     if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {

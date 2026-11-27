@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class so7 extends nx0 implements fn7 {
     public final ro7 l1;
@@ -174,11 +174,11 @@ public final class so7 extends nx0 implements fn7 {
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
         if (i == 2) {
             int intValue = ((Integer) objArr[0]).intValue();
-            int i3 = uc7.r5;
+            int i3 = uc7.s5;
             if ((intValue & 256) >= 0) {
                 int i4 = 0;
                 for (int i5 = 0; i5 < 4; i5++) {
-                    i4 += jf7.Y(i5).L;
+                    i4 += kf7.a0(i5).L;
                 }
                 if (this.l1.a(i4)) {
                     e29 e29Var = this.m1;

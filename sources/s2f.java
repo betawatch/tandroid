@@ -2,7 +2,7 @@
 
 import java.nio.charset.StandardCharsets;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class s2f {
     public static int a(int i) {
@@ -14,7 +14,7 @@ public abstract class s2f {
         return i2;
     }
 
-    public static i09 b(ey7 ey7Var, boolean z, boolean z2) {
+    public static j09 b(ey7 ey7Var, boolean z, boolean z2) {
         if (z) {
             c(3, ey7Var, false);
         }
@@ -27,7 +27,7 @@ public abstract class s2f {
         if (z2 && (ey7Var.A() & 1) == 0) {
             throw hy7.a("framing bit expected to be set", null);
         }
-        return new i09(strArr, (byte) 22);
+        return new j09(strArr, (byte) 22);
     }
 
     public static boolean c(int i, ey7 ey7Var, boolean z) {

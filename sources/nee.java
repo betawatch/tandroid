@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class nee extends ljf {
     private static final nee zzb;
@@ -31,7 +31,7 @@ public final class nee extends ljf {
             return (byte) 1;
         }
         if (i2 == 2) {
-            return new ilf(zzb, "\u0001\f\u0000\u0001\u0001\f\f\u0000\u0000\u0000\u0001င\u0000\u0002င\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007᠌\u0006\b᠌\u0007\tင\b\nင\t\u000bင\n\fဇ\u000b", new Object[]{"zzd", "zze", "zzf", "zzg", z6f.h, "zzh", faf.h, "zzi", sae.e, "zzj", uif.f, "zzk", sjf.n, "zzl", rg7.f, "zzm", "zzn", "zzo", "zzp"});
+            return new ilf(zzb, "\u0001\f\u0000\u0001\u0001\f\f\u0000\u0000\u0000\u0001င\u0000\u0002င\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007᠌\u0006\b᠌\u0007\tင\b\nင\t\u000bင\n\fဇ\u000b", new Object[]{"zzd", "zze", "zzf", "zzg", z6f.h, "zzh", faf.h, "zzi", sae.e, "zzj", uif.f, "zzk", sjf.n, "zzl", sg7.f, "zzm", "zzn", "zzo", "zzp"});
         }
         if (i2 == 3) {
             return new nee();

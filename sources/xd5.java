@@ -17,14 +17,14 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xd5 extends ny0 {
     public final /* synthetic */ byte S1 = 1;
     public final LinearLayout T1;
     public l9c U1;
 
-    public xd5(Activity activity, vnb vnbVar, en9 en9Var) {
+    public xd5(Activity activity, vnb vnbVar, dn9 dn9Var) {
         super(activity, null, false, false, vnbVar);
         J();
         this.u1 = 0.2f;
@@ -63,7 +63,7 @@ public final class xd5 extends ny0 {
         linearLayout.addView(textView2, tre.t(-2, -2, 1, 22, 8, 22, 0));
         linearLayout.addView(new ir8(this, activity, R.drawable.menu_privacy, ob6.M0(2131745561, null), ob6.M0(2131745562, null)), tre.q(-1, -2, 0.0f, 0, 0, 20, 0, 0));
         boolean p = yac.h(this.a).p();
-        linearLayout.addView(new ir8(this, activity, R.drawable.menu_feature_noads, ob6.M0(2131745558, null), hl.D2(hl.N2(ob6.M0(p ? 2131745559 : 2131745560, null), -1, 0, new yn6((Object) this, p, (Object) en9Var, (byte) 21), null), true)), tre.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
+        linearLayout.addView(new ir8(this, activity, R.drawable.menu_feature_noads, ob6.M0(2131745558, null), hl.D2(hl.N2(ob6.M0(p ? 2131745559 : 2131745560, null), -1, 0, new yn6((Object) this, p, (Object) dn9Var, (byte) 21), null), true)), tre.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
         View view = new View(getContext());
         yob.h(aob.d7, vnbVar, view);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, 1);

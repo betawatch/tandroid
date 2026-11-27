@@ -19,7 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class v99 {
     public static final he6 k = new he6("RemoteMediaClient", null);
@@ -42,7 +42,7 @@ public final class v99 {
         ko9 ko9Var = new ko9(this);
         this.d = ko9Var;
         this.c = rddVar;
-        rddVar.h = new i09((Object) this, (byte) 29);
+        rddVar.h = new j09((Object) this, (byte) 29);
         rddVar.c = ko9Var;
         this.e = new bu6(this);
     }
@@ -384,9 +384,9 @@ public final class v99 {
                                 }
                                 if ((i & 32) != 0) {
                                     rddVar.e = SystemClock.elapsedRealtime();
-                                    i09 i09Var = rddVar.h;
-                                    if (i09Var != null) {
-                                        v99 v99Var = (v99) i09Var.b;
+                                    j09 j09Var = rddVar.h;
+                                    if (j09Var != null) {
+                                        v99 v99Var = (v99) j09Var.b;
                                         Iterator it11 = v99Var.h.iterator();
                                         if (it11.hasNext()) {
                                             throw qu6.l(it11);

@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wr8 extends c79 {
     public final Context c;
@@ -567,7 +567,7 @@ public final class wr8 extends c79 {
                         clbVar.setImageClickListener(null);
                     } else {
                         clbVar.b(drawable, ob6.L0(2131749469));
-                        clbVar.setImageClickListener(new fp8(profileActivity, (byte) 12));
+                        clbVar.setImageClickListener(new gp8(profileActivity, (byte) 12));
                     }
                 } else if (z) {
                     Drawable drawable2 = clbVar.getContext().getDrawable(R.drawable.header_qr_24);
@@ -576,7 +576,7 @@ public final class wr8 extends c79 {
                     drawable2.setColorFilter(new PorterDuffColorFilter(themedColor3, PorterDuff.Mode.MULTIPLY));
                     profileActivity.V6 = drawable2;
                     clbVar.b(drawable2, ob6.L0(2131750433));
-                    clbVar.setImageClickListener(new fp8(profileActivity, (byte) 12));
+                    clbVar.setImageClickListener(new gp8(profileActivity, (byte) 12));
                 } else {
                     clbVar.setImage(null);
                     clbVar.setImageClickListener(null);
@@ -1037,15 +1037,15 @@ public final class wr8 extends c79 {
                 view.requestLayout();
                 break;
             case 15:
-                gca gcaVar = (gca) view;
+                hca hcaVar = (hca) view;
                 if (i == profileActivity.d3) {
-                    gcaVar.setType(1);
+                    hcaVar.setType(1);
                     break;
                 } else if (i == profileActivity.b3) {
-                    gcaVar.setType(0);
+                    hcaVar.setType(0);
                     break;
                 } else if (i == profileActivity.Z2) {
-                    gcaVar.setType(2);
+                    hcaVar.setType(2);
                     break;
                 }
                 break;
@@ -1123,7 +1123,7 @@ public final class wr8 extends c79 {
                             spannableStringBuilder4.append("</>");
                             spannableStringBuilder4.setSpan(new wm2(R.drawable.managed_bot), length, spannableStringBuilder4.length(), 33);
                             spannableStringBuilder4.append(" ");
-                            spannableStringBuilder4.append(hl.M2(ob6.Z(2131746436, lbc.p(X1)), aob.Xc, profileActivity.A0, new hp8(this, valueOf, (byte) 10), false));
+                            spannableStringBuilder4.append(hl.M2(ob6.Z(2131746436, lbc.p(X1)), aob.Xc, profileActivity.A0, new ep8(this, valueOf, (byte) 11), false));
                         }
                         if (X16 != null || X17 != null) {
                             if (spannableStringBuilder4.length() > 0) {
@@ -1289,7 +1289,7 @@ public final class wr8 extends c79 {
                 mf5Var = new rr8(context, 18, 70, false, profileActivity.A0);
                 break;
             case 7:
-                mf5Var = new rca(context, (uh9) null);
+                mf5Var = new sca(context, (uh9) null);
                 break;
             case 8:
                 view = new vac(profileActivity.z4 == -1 ? 9 : 6, 0, profileActivity.A0, this.c, true, false);

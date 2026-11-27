@@ -2,7 +2,7 @@
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class aga extends bja {
     public final /* synthetic */ eja H;
@@ -23,8 +23,8 @@ public final class aga extends bja {
         }
         if (P != null) {
             vga vgaVar = P.w;
-            u5b u5bVar = this.s;
-            vgaVar.e(u5bVar != null && (u5bVar.k() || (ejaVar.d0() && this.s.g() > 0)), true);
+            v5b v5bVar = this.s;
+            vgaVar.e(v5bVar != null && (v5bVar.k() || (ejaVar.d0() && this.s.g() > 0)), true);
         }
     }
 }

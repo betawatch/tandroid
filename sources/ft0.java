@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ft0 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -15,12 +15,12 @@ public final /* synthetic */ class ft0 implements RequestDelegate {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ ft0(id idVar, long j, k5 k5Var, bf7 bf7Var) {
+    public /* synthetic */ ft0(id idVar, long j, k5 k5Var, cf7 cf7Var) {
         this.a = (byte) 2;
         this.d = idVar;
         this.b = j;
         this.c = k5Var;
-        this.e = bf7Var;
+        this.e = cf7Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -54,8 +54,8 @@ public final /* synthetic */ class ft0 implements RequestDelegate {
                         uc7Var.g0(j, iArr[0], inputPeer);
                     }
                     uc7Var.W3(tL_messages_affectedHistory.pts, -1, tL_messages_affectedHistory.pts_count);
-                    jf7 messagesStorage = uc7Var.getMessagesStorage();
-                    messagesStorage.a.c(new le7(messagesStorage, j, (byte) 4));
+                    kf7 messagesStorage = uc7Var.getMessagesStorage();
+                    messagesStorage.a.c(new me7(messagesStorage, j, (byte) 4));
                     break;
                 }
                 break;

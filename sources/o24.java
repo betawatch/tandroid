@@ -44,7 +44,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
     public static final /* synthetic */ int U2 = 0;
@@ -2247,7 +2247,7 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
         this.u0 = i + 1;
         Typeface typeface = hl.a;
         int i4 = this.d1;
-        ArrayList arrayList = uc7.s1(i4).x3;
+        ArrayList arrayList = uc7.s1(i4).y3;
         int size = arrayList.size();
         int i5 = 0;
         while (i5 < size) {
@@ -2258,28 +2258,28 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
                 String k = uh9.k(i5 + 3, "tab");
                 int i6 = w04Var.y;
                 w04Var.y = i6 + 1;
-                u3b u3bVar = (u3b) w04Var.n.get(k);
-                if (u3bVar != null) {
-                    w04Var.g(k, u3bVar, i6);
+                v3b v3bVar = (v3b) w04Var.n.get(k);
+                if (v3bVar != null) {
+                    w04Var.g(k, v3bVar, i6);
                     i2 = currentPosition;
                     z = z3;
                 } else {
                     i2 = currentPosition;
                     z = z3;
-                    u3bVar = new u3b(w04Var.getContext(), 2);
-                    u3bVar.setFocusable(true);
-                    u3bVar.setOnClickListener(new jn8(w04Var, (byte) 15));
-                    u3bVar.setExpanded(w04Var.g0);
-                    u3bVar.a(w04Var.j0);
-                    w04Var.e.addView(u3bVar, i6);
+                    v3bVar = new v3b(w04Var.getContext(), 2);
+                    v3bVar.setFocusable(true);
+                    v3bVar.setOnClickListener(new jn8(w04Var, (byte) 15));
+                    v3bVar.setExpanded(w04Var.g0);
+                    v3bVar.a(w04Var.j0);
+                    w04Var.e.addView(v3bVar, i6);
                 }
-                u3bVar.d = false;
-                u3bVar.setTag(R.id.index_tag, Integer.valueOf(i6));
-                u3bVar.setTag(R.id.parent_tag, g);
-                u3bVar.setTag(R.id.object_tag, V);
-                u3bVar.setSelected(i6 == w04Var.E);
-                w04Var.h.put(k, u3bVar);
-                u3bVar.setContentDescription(str);
+                v3bVar.d = false;
+                v3bVar.setTag(R.id.index_tag, Integer.valueOf(i6));
+                v3bVar.setTag(R.id.parent_tag, g);
+                v3bVar.setTag(R.id.object_tag, V);
+                v3bVar.setSelected(i6 == w04Var.E);
+                w04Var.h.put(k, v3bVar);
+                v3bVar.setContentDescription(str);
             } else {
                 i2 = currentPosition;
                 z = z3;
@@ -2358,7 +2358,7 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
             b04Var.d((getParent() == null || getVisibility() != 0 || (this.z1.size() == 0 && this.A1.size() == 0)) ? false : true);
             int i = this.d1;
             ls6 d0 = ls6.d0(i);
-            SharedPreferences sharedPreferences = uc7.s1(i).Y3;
+            SharedPreferences sharedPreferences = uc7.s1(i).Z3;
             ArrayList arrayList3 = this.n1;
             arrayList3.clear();
             ArrayList arrayList4 = d0.t0[0];
@@ -2379,7 +2379,7 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
             vnb vnbVar2 = null;
             if (!isEmpty && (arrayList3.isEmpty() || sharedPreferences.getLong("featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList4.get(0)).set.id)) {
                 int i3 = d0.v0[0].isEmpty() ? 2 : 3;
-                u3b c = b04Var.c(i3, drawableArr[i3]);
+                v3b c = b04Var.c(i3, drawableArr[i3]);
                 c.h.setText(ob6.M0(2131750796, null));
                 c.setContentDescription(ob6.M0(2131750798, null));
                 int i4 = this.F1;
@@ -2390,7 +2390,7 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
                 int i5 = this.F1;
                 this.H1 = i5;
                 this.F1 = i5 + 1;
-                u3b c2 = b04Var.c(1, drawableArr[1]);
+                v3b c2 = b04Var.c(1, drawableArr[1]);
                 c2.h.setText(ob6.M0(2131750803, null));
                 c2.setContentDescription(ob6.M0(2131750806, null));
             }
@@ -2398,7 +2398,7 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
                 int i6 = this.F1;
                 this.G1 = i6;
                 this.F1 = i6 + 1;
-                u3b c3 = b04Var.c(0, drawableArr[0]);
+                v3b c3 = b04Var.c(0, drawableArr[0]);
                 c3.h.setText(ob6.M0(2131746090, null));
                 c3.setContentDescription(ob6.M0(2131746091, null));
             }
@@ -2451,7 +2451,7 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
                 }
             }
             if (this.K1 != null) {
-                long j4 = uc7.s1(i).Y3.getLong("group_hide_stickers_" + this.K1.id, -1L);
+                long j4 = uc7.s1(i).Z3.getLong("group_hide_stickers_" + this.K1.id, -1L);
                 TLRPC.Chat M0 = uc7.s1(i).M0(Long.valueOf(this.K1.id));
                 if (M0 == null || this.K1.stickerset == null || !xc2.N(M0)) {
                     this.h1 = j4 != -1;
@@ -2505,13 +2505,13 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
                         String str = "chat" + M02.id;
                         int i10 = b04Var.y;
                         b04Var.y = i10 + 1;
-                        u3b u3bVar = (u3b) b04Var.n.get(str);
-                        if (u3bVar != null) {
-                            b04Var.g(str, u3bVar, i10);
+                        v3b v3bVar = (v3b) b04Var.n.get(str);
+                        if (v3bVar != null) {
+                            b04Var.g(str, v3bVar, i10);
                         } else {
-                            u3bVar = new u3b(b04Var.getContext(), b2);
-                            u3bVar.setFocusable(true);
-                            u3bVar.setOnClickListener(new View.OnClickListener() { // from class: ru9
+                            v3bVar = new v3b(b04Var.getContext(), b2);
+                            v3bVar.setFocusable(true);
+                            v3bVar.setOnClickListener(new View.OnClickListener() { // from class: ru9
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
                                     byte b4 = b2;
@@ -2526,24 +2526,24 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
                                     }
                                 }
                             });
-                            oobVar.addView(u3bVar, i10);
-                            u3bVar.x = true;
+                            oobVar.addView(v3bVar, i10);
+                            v3bVar.x = true;
                             rb0 rb0Var = new rb0(vnbVar2);
                             rb0Var.s(hl.L(14.0f));
                             rb0Var.p(M02);
                             int i11 = b04Var.a;
-                            de0 de0Var = u3bVar.e;
+                            de0 de0Var = v3bVar.e;
                             de0Var.setLayerNum(i11);
                             de0Var.f(M02, rb0Var);
                             de0Var.setAspectFit(true);
-                            u3bVar.setExpanded(b04Var.g0);
-                            u3bVar.a(b04Var.j0);
-                            u3bVar.h.setText(M02.title);
+                            v3bVar.setExpanded(b04Var.g0);
+                            v3bVar.a(b04Var.j0);
+                            v3bVar.h.setText(M02.title);
                         }
-                        u3bVar.d = true;
-                        u3bVar.setTag(R.id.index_tag, Integer.valueOf(i10));
-                        u3bVar.setSelected(i10 == b04Var.E);
-                        b04Var.h.put(str, u3bVar);
+                        v3bVar.d = true;
+                        v3bVar.setTag(R.id.index_tag, Integer.valueOf(i10));
+                        v3bVar.setSelected(i10 == b04Var.E);
+                        b04Var.h.put(str, v3bVar);
                     }
                     b = 0;
                     vnbVar = null;
@@ -2572,13 +2572,13 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
                     String str2 = "set" + tL_messages_stickerSet5.set.id;
                     int i13 = b04Var.y;
                     b04Var.y = i13 + 1;
-                    u3b u3bVar2 = (u3b) b04Var.n.get(str2);
-                    if (u3bVar2 != null) {
-                        b04Var.g(str2, u3bVar2, i13);
+                    v3b v3bVar2 = (v3b) b04Var.n.get(str2);
+                    if (v3bVar2 != null) {
+                        b04Var.g(str2, v3bVar2, i13);
                     } else {
-                        u3bVar2 = new u3b(b04Var.getContext(), 0);
-                        u3bVar2.setFocusable(true);
-                        u3bVar2.setOnClickListener(new View.OnClickListener() { // from class: ru9
+                        v3bVar2 = new v3b(b04Var.getContext(), 0);
+                        v3bVar2.setFocusable(true);
+                        v3bVar2.setOnClickListener(new View.OnClickListener() { // from class: ru9
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 byte b4 = b3;
@@ -2593,25 +2593,25 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
                                 }
                             }
                         });
-                        u3bVar2.setExpanded(b04Var.g0);
-                        u3bVar2.a(b04Var.j0);
-                        oobVar.addView(u3bVar2, i13);
+                        v3bVar2.setExpanded(b04Var.g0);
+                        v3bVar2.a(b04Var.j0);
+                        oobVar.addView(v3bVar2, i13);
                     }
-                    u3bVar2.e.setLayerNum(b04Var.a);
+                    v3bVar2.e.setLayerNum(b04Var.a);
                     b = 0;
-                    u3bVar2.d = false;
-                    u3bVar2.setTag(w);
-                    u3bVar2.setTag(R.id.index_tag, Integer.valueOf(i13));
-                    u3bVar2.setTag(R.id.parent_tag, tL_messages_stickerSet5);
-                    u3bVar2.setTag(R.id.object_tag, document);
-                    u3bVar2.setSelected(i13 == b04Var.E);
-                    b04Var.h.put(str2, u3bVar2);
+                    v3bVar2.d = false;
+                    v3bVar2.setTag(w);
+                    v3bVar2.setTag(R.id.index_tag, Integer.valueOf(i13));
+                    v3bVar2.setTag(R.id.parent_tag, tL_messages_stickerSet5);
+                    v3bVar2.setTag(R.id.object_tag, document);
+                    v3bVar2.setSelected(i13 == b04Var.E);
+                    b04Var.h.put(str2, v3bVar2);
                     StringBuilder sb = new StringBuilder();
                     sb.append(tL_messages_stickerSet5.set.title);
                     sb.append(", ");
                     vnbVar = null;
                     sb.append(ob6.M0(2131754752, null));
-                    u3bVar2.setContentDescription(sb.toString());
+                    v3bVar2.setContentDescription(sb.toString());
                 }
                 i9++;
                 b2 = b;
@@ -2918,7 +2918,7 @@ public class o24 extends FrameLayout implements snb, s84, fn7, fp5 {
             int childCount2 = wz3Var.getChildCount();
             for (int i7 = 0; i7 < childCount2; i7++) {
                 View childAt = wz3Var.getChildAt(i7);
-                if ((childAt instanceof t3b) || (childAt instanceof x2b)) {
+                if ((childAt instanceof u3b) || (childAt instanceof x2b)) {
                     childAt.invalidate();
                 }
             }

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class NotificationDismissReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -25,11 +25,11 @@ public class NotificationDismissReceiver extends BroadcastReceiver {
                 }
                 if (longExtra == 0) {
                     cc4.b("set dismissDate of global to " + intExtra2);
-                    uc7.s1(intExtra).W3.edit().putInt("dismissDate", intExtra2).commit();
+                    uc7.s1(intExtra).X3.edit().putInt("dismissDate", intExtra2).commit();
                     return;
                 }
                 cc4.b("set dismissDate of " + longExtra + " to " + intExtra2);
-                SharedPreferences.Editor edit = uc7.s1(intExtra).W3.edit();
+                SharedPreferences.Editor edit = uc7.s1(intExtra).X3.edit();
                 StringBuilder sb = new StringBuilder("dismissDate");
                 sb.append(longExtra);
                 edit.putInt(sb.toString(), intExtra2).commit();

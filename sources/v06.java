@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class v06 implements Runnable {
     public final /* synthetic */ byte a = 2;
@@ -51,7 +51,7 @@ public final /* synthetic */ class v06 implements Runnable {
     /* JADX WARN: Removed duplicated region for block: B:104:0x03a3  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x0170 A[Catch: Exception -> 0x039c, TryCatch #1 {Exception -> 0x039c, blocks: (B:20:0x00a6, B:24:0x00cd, B:28:0x023a, B:36:0x01d3, B:37:0x0108, B:39:0x016a, B:41:0x0170, B:43:0x0176, B:45:0x01a7, B:46:0x01ac, B:48:0x01b4, B:50:0x01c3, B:54:0x01cd, B:56:0x013a, B:58:0x01df, B:60:0x01f3, B:63:0x0205, B:68:0x0211, B:70:0x0217, B:72:0x0226, B:76:0x024c, B:78:0x025c, B:79:0x0264, B:81:0x026a, B:82:0x0275, B:84:0x0284, B:86:0x028e, B:88:0x0294, B:93:0x02d6, B:95:0x02dc, B:97:0x0385, B:109:0x02fa, B:114:0x0334, B:116:0x033a, B:122:0x0346, B:124:0x037e, B:127:0x038d, B:130:0x0398), top: B:19:0x00a6 }] */
     /* JADX WARN: Removed duplicated region for block: B:54:0x01cd A[Catch: Exception -> 0x039c, TryCatch #1 {Exception -> 0x039c, blocks: (B:20:0x00a6, B:24:0x00cd, B:28:0x023a, B:36:0x01d3, B:37:0x0108, B:39:0x016a, B:41:0x0170, B:43:0x0176, B:45:0x01a7, B:46:0x01ac, B:48:0x01b4, B:50:0x01c3, B:54:0x01cd, B:56:0x013a, B:58:0x01df, B:60:0x01f3, B:63:0x0205, B:68:0x0211, B:70:0x0217, B:72:0x0226, B:76:0x024c, B:78:0x025c, B:79:0x0264, B:81:0x026a, B:82:0x0275, B:84:0x0284, B:86:0x028e, B:88:0x0294, B:93:0x02d6, B:95:0x02dc, B:97:0x0385, B:109:0x02fa, B:114:0x0334, B:116:0x033a, B:122:0x0346, B:124:0x037e, B:127:0x038d, B:130:0x0398), top: B:19:0x00a6 }] */
-    /* JADX WARN: Type inference failed for: r0v78, types: [jf7] */
+    /* JADX WARN: Type inference failed for: r0v78, types: [kf7] */
     /* JADX WARN: Type inference failed for: r10v2, types: [java.lang.Object, java.lang.Runnable] */
     /* JADX WARN: Type inference failed for: r10v3 */
     /* JADX WARN: Type inference failed for: r10v4, types: [java.util.ArrayList] */
@@ -402,7 +402,7 @@ public final /* synthetic */ class v06 implements Runnable {
                                                         TLdeserialize.id = r1.intValue(1);
                                                         TLdeserialize.date = r1.intValue(2);
                                                         TLdeserialize.dialog_id = j;
-                                                        jf7.d(TLdeserialize, arrayList3, arrayList4, null);
+                                                        kf7.d(TLdeserialize, arrayList3, arrayList4, null);
                                                         arrayList.add(TLdeserialize);
                                                         TLRPC.Peer peer = TLdeserialize.peer_id;
                                                         long j3 = peer != null ? peer.channel_id : 0L;
@@ -461,14 +461,14 @@ public final /* synthetic */ class v06 implements Runnable {
                                             }
                                         }
                                         if (!arrayList7.isEmpty()) {
-                                            ArrayList W = r28.getMessagesStorage().W(arrayList7, j);
-                                            int size2 = W.size();
+                                            ArrayList Y = r28.getMessagesStorage().Y(arrayList7, j);
+                                            int size2 = Y.size();
                                             int i15 = 0;
                                             while (i15 < size2) {
-                                                Object obj10 = W.get(i15);
+                                                Object obj10 = Y.get(i15);
                                                 i15++;
                                                 TLRPC.TL_message b3 = o44.b((TL_ephemeral.EphemeralMessage) obj10);
-                                                jf7.d(b3, arrayList3, arrayList4, null);
+                                                kf7.d(b3, arrayList3, arrayList4, null);
                                                 arrayList.add(b3);
                                             }
                                         }
@@ -487,10 +487,10 @@ public final /* synthetic */ class v06 implements Runnable {
                                     final zh6 zh6Var7 = zh6Var3;
                                     qsb qsbVar7 = qsbVar6;
                                     if (!arrayList3.isEmpty()) {
-                                        r28.getMessagesStorage().k0(arrayList3, r10, false);
+                                        r28.getMessagesStorage().m0(arrayList3, r10, false);
                                     }
                                     if (!arrayList4.isEmpty()) {
-                                        r28.getMessagesStorage().P(TextUtils.join(",", arrayList4), arrayList2);
+                                        r28.getMessagesStorage().R(TextUtils.join(",", arrayList4), arrayList2);
                                     }
                                     long j4 = j;
                                     r28.n(arrayList, zh6Var7, r10, arrayList2, j4, true);
@@ -586,7 +586,7 @@ public final /* synthetic */ class v06 implements Runnable {
                                                                                     ls6 ls6Var2 = ls6.this;
                                                                                     zh6 zh6Var10 = zh6Var9;
                                                                                     ls6Var2.n(arrayList11, zh6Var10, arrayList12, arrayList13, j9, false);
-                                                                                    ls6Var2.getMessagesStorage().j1(messages_messages3.users, messages_messages3.chats, true, true);
+                                                                                    ls6Var2.getMessagesStorage().n1(messages_messages3.users, messages_messages3.chats, true, true);
                                                                                     ls6Var2.W1(zh6Var10, messages_messages3.messages, z5);
                                                                                     return;
                                                                                 }
@@ -614,7 +614,7 @@ public final /* synthetic */ class v06 implements Runnable {
                                                                     r47.b0(arrayList9, j7);
                                                                     in5.S(messages_messages.messages);
                                                                     ls6Var.n(messages_messages.messages, zh6Var9, messages_messages.users, messages_messages.chats, j8, false);
-                                                                    ls6Var.getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+                                                                    ls6Var.getMessagesStorage().n1(messages_messages.users, messages_messages.chats, true, true);
                                                                     ls6Var.W1(zh6Var9, messages_messages.messages, z5);
                                                                 }
                                                             } else {
@@ -691,7 +691,7 @@ public final /* synthetic */ class v06 implements Runnable {
                                                                     ls6 ls6Var = ls6.this;
                                                                     zh6 zh6Var9 = zh6Var7;
                                                                     ls6Var.n(arrayList9, zh6Var9, arrayList10, arrayList11, j8, false);
-                                                                    ls6Var.getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+                                                                    ls6Var.getMessagesStorage().n1(messages_messages.users, messages_messages.chats, true, true);
                                                                     ls6Var.W1(zh6Var9, messages_messages.messages, z3);
                                                                 } else {
                                                                     qsb.c(qsbVar9, "channels.getMessages error: " + tL_error.code + " " + tL_error.text);

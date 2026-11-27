@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f87 implements icc {
     public final /* synthetic */ byte a;
@@ -58,16 +58,16 @@ public final /* synthetic */ class f87 implements icc {
             case 5:
                 TLRPC.EmojiGameInfo emojiGameInfo = (TLRPC.EmojiGameInfo) obj;
                 if (emojiGameInfo != null) {
-                    uc7Var.l5 = emojiGameInfo;
+                    uc7Var.m5 = emojiGameInfo;
                 }
-                ArrayList arrayList = uc7Var.k5;
+                ArrayList arrayList = uc7Var.l5;
                 int size = arrayList.size();
                 while (i < size) {
                     Object obj3 = arrayList.get(i);
                     i++;
-                    ((pcc) obj3).a(Boolean.valueOf(uc7Var.l5 instanceof TLRPC.TL_emojiGameDiceInfo));
+                    ((pcc) obj3).a(Boolean.valueOf(uc7Var.m5 instanceof TLRPC.TL_emojiGameDiceInfo));
                 }
-                uc7Var.k5 = null;
+                uc7Var.l5 = null;
                 break;
             default:
                 TLRPC.Updates updates3 = (TLRPC.Updates) obj;

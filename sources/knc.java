@@ -37,7 +37,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.c;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class knc extends View {
     public static int L3;
@@ -3601,6 +3601,7 @@ public final class knc extends View {
                         sncVar.m(N.isEmpty() ? dm3.c : N.get(0));
                         return true;
                     }
+                    byte b4 = 4;
                     if (i == 4) {
                         snc sncVar2 = (snc) lycVar.e;
                         if (sncVar2.L != null && !sncVar2.n.trim().isEmpty()) {
@@ -3677,15 +3678,15 @@ public final class knc extends View {
                     } else if (i == 7) {
                         snc sncVar5 = (snc) lycVar.e;
                         c cVar4 = sncVar5.b;
-                        byte b4 = sncVar5.c;
-                        if (b4 == 4) {
+                        byte b5 = sncVar5.c;
+                        if (b5 == 4) {
                             sncVar5.u();
                             zu1 zu1Var2 = cVar4.a.E3;
                             if (zu1Var2 != null) {
                                 zu1Var2.presentFragment(new woa());
                                 return true;
                             }
-                        } else if (b4 == 2) {
+                        } else if (b5 == 2) {
                             cVar4.e();
                             hl.d3(new lnc(sncVar5, b2), 300L);
                             return true;
@@ -3739,7 +3740,7 @@ public final class knc extends View {
                                 wmaVar3.addView(m7Var2, sncVar6.L.getParent() == wmaVar3 ? wmaVar3.indexOfChild(sncVar6.L) + 1 : wmaVar3.getChildCount(), new FrameLayout.LayoutParams(1, 1, 51));
                                 sncVar6.Y = m7Var2;
                                 m7Var2.requestFocus();
-                                hl.d3(new vlc(sncVar6, m7Var2, b2), 50L);
+                                hl.d3(new slc(sncVar6, m7Var2, b4), 50L);
                                 StringBuilder sb = new StringBuilder("field: editing in place (");
                                 sb.append(sncVar6.n.length());
                                 sb.append(" chars, recording ");

@@ -28,7 +28,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class of1 implements rb2 {
     public final /* synthetic */ tf1 a;
@@ -534,7 +534,7 @@ public final class of1 implements rb2 {
             if (xc2.c0(wf1Var.f)) {
                 long B0 = r47.B0(messageObject.k);
                 i2 = ((e) wf1Var).currentAccount;
-                ro4.a(zu1Var, if7.a(B0, r47.b2(i2, messageObject.k, true, false)));
+                ro4.a(zu1Var, jf7.a(B0, r47.b2(i2, messageObject.k, true, false)));
             }
             wf1Var.presentFragment(zu1Var);
             return;

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class gx3 {
     public static final Object i = new Object();
@@ -192,7 +192,7 @@ public final class gx3 {
                             }
                         }
                         if (i2 == i3 && i2 < charSequence.length()) {
-                            oy3 oy3Var = new oy3((ag7) ((u8a) qx6Var.b).c);
+                            oy3 oy3Var = new oy3((bg7) ((u8a) qx6Var.b).c);
                             int codePointAt = Character.codePointAt(charSequence, i2);
                             x9c x9cVar2 = x9cVar;
                             int i5 = 0;
@@ -212,21 +212,21 @@ public final class gx3 {
                                             codePointAt = Character.codePointAt(charSequence, i2);
                                         }
                                     } else if (a == 3) {
-                                        if (!qx6Var.w(charSequence, i4, i2, ((ag7) oy3Var.f).b)) {
+                                        if (!qx6Var.w(charSequence, i4, i2, ((bg7) oy3Var.f).b)) {
                                             if (x9cVar2 == null) {
                                                 x9cVar2 = new x9c((Spannable) new SpannableString(charSequence));
                                             }
-                                            x9cVar2.setSpan(new x7c(((ag7) oy3Var.f).b), i4, i2, 33);
+                                            x9cVar2.setSpan(new x7c(((bg7) oy3Var.f).b), i4, i2, 33);
                                             i5++;
                                         }
                                     }
                                 }
                             }
-                            if (oy3Var.a == 2 && ((ag7) oy3Var.e).b != null && ((oy3Var.c > 1 || oy3Var.d()) && i5 < Integer.MAX_VALUE && !qx6Var.w(charSequence, i4, i2, ((ag7) oy3Var.e).b))) {
+                            if (oy3Var.a == 2 && ((bg7) oy3Var.e).b != null && ((oy3Var.c > 1 || oy3Var.d()) && i5 < Integer.MAX_VALUE && !qx6Var.w(charSequence, i4, i2, ((bg7) oy3Var.e).b))) {
                                 if (x9cVar2 == null) {
                                     x9cVar2 = new x9c(charSequence);
                                 }
-                                x9cVar2.setSpan(new x7c(((ag7) oy3Var.e).b), i4, i2, 33);
+                                x9cVar2.setSpan(new x7c(((bg7) oy3Var.e).b), i4, i2, 33);
                             }
                             if (x9cVar2 != null) {
                                 return x9cVar2.b;

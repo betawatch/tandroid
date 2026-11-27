@@ -7,7 +7,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xf4 extends zb3 {
     public final /* synthetic */ fg4 F;
@@ -75,7 +75,7 @@ public final class xf4 extends zb3 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean r(f89 f89Var, l09 l09Var, int i, int i2, int i3, int i4) {
+    public final boolean r(f89 f89Var, m09 m09Var, int i, int i2, int i3, int i4) {
         int i5;
         int i6;
         int i7;
@@ -96,7 +96,7 @@ public final class xf4 extends zb3 {
         int i12;
         View view = f89Var.a;
         if (!(view instanceof dg4)) {
-            return super.r(f89Var, l09Var, i, i2, i3, i4);
+            return super.r(f89Var, m09Var, i, i2, i3, i4);
         }
         int translationX = i + ((int) view.getTranslationX());
         int translationY = i2 + ((int) view.getTranslationY());

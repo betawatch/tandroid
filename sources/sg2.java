@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxSquare;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class sg2 extends FrameLayout {
     public final byte E;
@@ -517,7 +517,7 @@ public final class sg2 extends FrameLayout {
         this.x.f(tLObject, rb0Var);
         boolean z = tLObject instanceof TLRPC.User;
         String r = z ? lbc.r((TLRPC.User) tLObject) : lv2.o(tLObject);
-        if (z && ((TLRPC.User) tLObject).id == uc7.s1(yac.t0).L3) {
+        if (z && ((TLRPC.User) tLObject).id == uc7.s1(yac.t0).M3) {
             r = ob6.M0(2131752435, null);
         }
         if (!this.I) {

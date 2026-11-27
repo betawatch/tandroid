@@ -3,7 +3,7 @@
 import java.util.HashMap;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class lt7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -35,8 +35,8 @@ public final /* synthetic */ class lt7 implements Runnable {
                 int i = ot7Var.a;
                 String str = ot7Var.l1.slug;
                 HashMap hashMap = vs7.a;
-                jf7 Y = jf7.Y(i);
-                Y.a.c(new t87(Y, str, (byte) 23));
+                kf7 a0 = kf7.a0(i);
+                a0.a.c(new t87(a0, str, (byte) 23));
                 break;
         }
     }

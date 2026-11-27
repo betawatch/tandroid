@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class t03 {
     public static boolean a(String str, String str2) {
@@ -66,7 +66,7 @@ public abstract class t03 {
             upperCase.getClass();
             switch (upperCase) {
                 case "OWNER_USERNAMES_LIMIT_EXCEEDED":
-                    return ob6.a0(null, null, 2131751690, Integer.valueOf(uc7.s1(i).k4.Y.f()), b(treeSet));
+                    return ob6.a0(null, null, 2131751690, Integer.valueOf(uc7.s1(i).l4.Y.f()), b(treeSet));
                 case "PREMIUM_ACCOUNT_REQUIRED":
                     String c = c(str, treeSet);
                     return hl.M2(c == null ? ob6.M0(2131751688, null) : ob6.a0(null, null, 2131751689, c), aob.Xc, vnbVar, zdVar, false);
@@ -106,7 +106,7 @@ public abstract class t03 {
             return;
         }
         TreeSet treeSet = new TreeSet();
-        Set<String> set = uc7.s1(i).k4.u0.f;
+        Set<String> set = uc7.s1(i).l4.u0.f;
         if (set != null) {
             for (String str2 : set) {
                 if (!TextUtils.isEmpty(str2)) {

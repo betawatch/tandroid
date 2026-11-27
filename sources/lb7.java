@@ -23,7 +23,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class lb7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class lb7 implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ lb7(q58 q58Var, View view, w49 w49Var, boolean z, boolean z2) {
+    public /* synthetic */ lb7(r58 r58Var, View view, w49 w49Var, boolean z, boolean z2) {
         this.a = (byte) 9;
-        this.c = q58Var;
+        this.c = r58Var;
         this.d = view;
         this.e = w49Var;
         this.b = z;
@@ -113,7 +113,7 @@ public final /* synthetic */ class lb7 implements Runnable {
                 }
                 return;
             case 2:
-                ((jf7) this.c).k1((List) this.d, (List) this.e, this.b);
+                ((kf7) this.c).o1((List) this.d, (List) this.e, this.b);
                 return;
             case 3:
                 ip7 ip7Var = (ip7) this.c;
@@ -292,7 +292,7 @@ public final /* synthetic */ class lb7 implements Runnable {
                 }
                 byte[] bArr10 = b18Var.d1;
                 if (bArr10 == null || bArr10.length == 0) {
-                    Utilities.e.c(new fd7((Object) r08Var, (Object) r08Var.b, (Object) r08Var.d, (byte) 19));
+                    Utilities.e.c(new gd7((Object) r08Var, (Object) r08Var.b, (Object) r08Var.d, (byte) 19));
                     return;
                 } else {
                     r08Var.b();
@@ -337,7 +337,7 @@ public final /* synthetic */ class lb7 implements Runnable {
                             return;
                         }
                         if (securePasswordKdfAlgo instanceof TLRPC.TL_securePasswordKdfAlgoUnknown) {
-                            hl.c3(new fe7(r08Var3, b));
+                            hl.c3(new ge7(r08Var3, b));
                             return;
                         }
                         bArr = new byte[0];
@@ -373,12 +373,12 @@ public final /* synthetic */ class lb7 implements Runnable {
                 }
                 return;
             case 9:
-                q58 q58Var = (q58) this.c;
+                r58 r58Var = (r58) this.c;
                 View view = (View) this.d;
                 w49 w49Var = (w49) this.e;
                 boolean z11 = this.b;
-                o68 o68Var = q58Var.a;
-                jj.X(o68Var.m2, o68Var.l1, 1, new wv1(q58Var, z11, w49Var, view));
+                o68 o68Var = r58Var.a;
+                jj.X(o68Var.m2, o68Var.l1, 1, new wv1(r58Var, z11, w49Var, view));
                 return;
             case 10:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;

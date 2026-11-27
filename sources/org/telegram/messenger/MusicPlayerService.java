@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements fn7 {
     public static final boolean s;
@@ -372,7 +372,7 @@ public class MusicPlayerService extends Service implements fn7 {
                         }
                         b = 1;
                         editMetadata.apply();
-                        hl.d3(new ki7(this, b), j);
+                        hl.d3(new li7(this, b), j);
                     } else {
                         i2 = 2;
                     }
@@ -614,7 +614,7 @@ public class MusicPlayerService extends Service implements fn7 {
         Drawable drawable = getResources().getDrawable(R.drawable.nocover_big);
         drawable.setBounds(0, 0, this.d.getWidth(), this.d.getHeight());
         drawable.draw(new Canvas(this.d));
-        w.p0(new nj7(this, b), null);
+        w.p0(new oj7(this, b), null);
         w.n0(true);
         g();
         rx6 rx6Var = w;
@@ -664,7 +664,7 @@ public class MusicPlayerService extends Service implements fn7 {
         }
         r47 r47Var = MediaController.z().v0;
         if (r47Var == null) {
-            hl.c3(new fe7(this, (byte) 3));
+            hl.c3(new ge7(this, (byte) 3));
             return 1;
         }
         if (s) {

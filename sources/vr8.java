@@ -7,9 +7,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class vr8 extends gca {
+public final class vr8 extends hca {
     public final /* synthetic */ wr8 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -53,7 +53,7 @@ public final class vr8 extends gca {
             linearLayout.addView(textView2, tre.m(0.5f, 0, 44, i == 0 ? 0 : 4, i == 0 ? 4 : 0, 0));
             if (i == 0) {
                 this.c = textView2;
-                textView2.setOnClickListener(new View.OnClickListener(this) { // from class: fca
+                textView2.setOnClickListener(new View.OnClickListener(this) { // from class: gca
                     public final /* synthetic */ vr8 b;
 
                     {
@@ -66,7 +66,7 @@ public final class vr8 extends gca {
                         vr8 vr8Var = this.b;
                         switch (b3) {
                             case 0:
-                                hl.c3(new me7(vr8Var, vr8Var.e, (byte) 9));
+                                hl.c3(new oe7(vr8Var, vr8Var.e, (byte) 9));
                                 break;
                             default:
                                 int i2 = vr8Var.e;
@@ -83,7 +83,7 @@ public final class vr8 extends gca {
                 });
             } else {
                 this.d = textView2;
-                textView2.setOnClickListener(new View.OnClickListener(this) { // from class: fca
+                textView2.setOnClickListener(new View.OnClickListener(this) { // from class: gca
                     public final /* synthetic */ vr8 b;
 
                     {
@@ -96,7 +96,7 @@ public final class vr8 extends gca {
                         vr8 vr8Var = this.b;
                         switch (b3) {
                             case 0:
-                                hl.c3(new me7(vr8Var, vr8Var.e, (byte) 9));
+                                hl.c3(new oe7(vr8Var, vr8Var.e, (byte) 9));
                                 break;
                             default:
                                 int i2 = vr8Var.e;

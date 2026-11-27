@@ -17,7 +17,7 @@ import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class na9 extends uo3 {
     public final /* synthetic */ pa9 E;
@@ -32,14 +32,14 @@ public final class na9 extends uo3 {
     public int r;
     public ma9 s;
     public final tl0 w;
-    public final ki7 x;
+    public final li7 x;
     public final ma9 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public na9(pa9 pa9Var, SurfaceTexture surfaceTexture, tl0 tl0Var) {
         super("CanvasInternal", true);
         this.E = pa9Var;
-        this.x = new ki7(this, (byte) 16);
+        this.x = new li7(this, (byte) 16);
         this.y = new ma9(this, (byte) 0);
         this.w = tl0Var;
         this.a = surfaceTexture;
@@ -165,39 +165,39 @@ public final class na9 extends uo3 {
                                     GLES20.glDisable(2929);
                                     nx7 nx7Var = pa9Var.c;
                                     nx7Var.getClass();
-                                    Map map = qca.a;
+                                    Map map = rca.a;
                                     HashMap hashMap = new HashMap();
-                                    for (Map.Entry entry : qca.a.entrySet()) {
+                                    for (Map.Entry entry : rca.a.entrySet()) {
                                         Map map2 = (Map) entry.getValue();
                                         String str = (String) map2.get("vertex");
                                         String str2 = (String) map2.get("fragment");
                                         String[] strArr = (String[]) map2.get("attributes");
                                         String[] strArr2 = (String[]) map2.get("uniforms");
-                                        pca pcaVar = new pca();
-                                        pcaVar.b = new HashMap();
-                                        pcaVar.a = GLES20.glCreateProgram();
-                                        l09 b = pca.b(35633, str);
+                                        qca qcaVar = new qca();
+                                        qcaVar.b = new HashMap();
+                                        qcaVar.a = GLES20.glCreateProgram();
+                                        m09 b = qca.b(35633, str);
                                         int i3 = b.b;
                                         if (b.c == 0) {
                                             if (f11.a) {
                                                 cc4.d("Vertex shader compilation failed");
                                             }
-                                            pca.c(i3, i2, pcaVar.a);
+                                            qca.c(i3, i2, qcaVar.a);
                                         } else {
-                                            l09 b2 = pca.b(35632, str2);
+                                            m09 b2 = qca.b(35632, str2);
                                             int i4 = b2.b;
                                             if (b2.c == 0) {
                                                 if (f11.a) {
                                                     cc4.d("Fragment shader compilation failed");
                                                 }
-                                                pca.c(i3, i4, pcaVar.a);
+                                                qca.c(i3, i4, qcaVar.a);
                                             } else {
-                                                GLES20.glAttachShader(pcaVar.a, i3);
-                                                GLES20.glAttachShader(pcaVar.a, i4);
+                                                GLES20.glAttachShader(qcaVar.a, i3);
+                                                GLES20.glAttachShader(qcaVar.a, i4);
                                                 int i5 = i2;
                                                 while (true) {
                                                     int length = strArr.length;
-                                                    i = pcaVar.a;
+                                                    i = qcaVar.a;
                                                     if (i5 >= length) {
                                                         break;
                                                     }
@@ -211,12 +211,12 @@ public final class na9 extends uo3 {
                                                     cc4.d(GLES20.glGetProgramInfoLog(i));
                                                 }
                                                 if (iArr3[i2] == 0) {
-                                                    pca.c(i3, i4, pcaVar.a);
+                                                    qca.c(i3, i4, qcaVar.a);
                                                 } else {
                                                     int length2 = strArr2.length;
                                                     for (int i6 = i2; i6 < length2; i6++) {
                                                         String str3 = strArr2[i6];
-                                                        pcaVar.b.put(str3, Integer.valueOf(GLES20.glGetUniformLocation(pcaVar.a, str3)));
+                                                        qcaVar.b.put(str3, Integer.valueOf(GLES20.glGetUniformLocation(qcaVar.a, str3)));
                                                     }
                                                     if (i3 != 0) {
                                                         GLES20.glDeleteShader(i3);
@@ -227,7 +227,7 @@ public final class na9 extends uo3 {
                                                 }
                                             }
                                         }
-                                        hashMap.put((String) entry.getKey(), pcaVar);
+                                        hashMap.put((String) entry.getKey(), qcaVar);
                                         i2 = 0;
                                     }
                                     nx7Var.r = DesugarCollections.unmodifiableMap(hashMap);

@@ -8,7 +8,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class nh3 implements Runnable {
     public final /* synthetic */ byte a = 1;
@@ -54,36 +54,36 @@ public final /* synthetic */ class nh3 implements Runnable {
                 uj3Var.getMessagesController().H(uj3Var.Y2);
                 break;
             default:
-                rbb rbbVar = (rbb) fn7Var;
+                sbb sbbVar = (sbb) fn7Var;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) tLObject2;
                 TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) tLObject;
                 boolean z2 = this.b;
                 long j2 = this.c;
                 if (!z2) {
-                    w96.N = w96.g(rbbVar.b, rbbVar.c, storyItem, j2, storyItem.id, z2, inputGroupCall, true, this.d);
+                    w96.N = w96.g(sbbVar.b, sbbVar.c, storyItem, j2, storyItem.id, z2, inputGroupCall, true, this.d);
                 }
-                mbb mbbVar = rbbVar.G;
-                if (mbbVar != null) {
-                    mbbVar.f(false);
+                nbb nbbVar = sbbVar.G;
+                if (nbbVar != null) {
+                    nbbVar.f(false);
                 }
-                rbbVar.G = null;
-                rbbVar.K = false;
-                RectF rectF = rbbVar.I;
+                sbbVar.G = null;
+                sbbVar.K = false;
+                RectF rectF = sbbVar.I;
                 Point point = hl.q;
                 rectF.set(0.0f, 0.0f, point.x, point.y);
-                rbbVar.H = hl.L(8.0f);
-                rbbVar.o(true);
+                sbbVar.H = hl.L(8.0f);
+                sbbVar.o(true);
                 e S = LaunchActivity.S();
                 storyItem.dialogId = j2;
                 storyItem.justUploaded = true;
-                S.getOrCreateStoryViewer().J(rbbVar.b, storyItem, null);
-                jn7.f(rbbVar.c).k(jn7.G2, Long.valueOf(inputGroupCall.id));
+                S.getOrCreateStoryViewer().J(sbbVar.b, storyItem, null);
+                jn7.f(sbbVar.c).k(jn7.G2, Long.valueOf(inputGroupCall.id));
                 break;
         }
     }
 
-    public /* synthetic */ nh3(rbb rbbVar, boolean z, TL_stories.StoryItem storyItem, long j, TLRPC.InputGroupCall inputGroupCall, boolean z2) {
-        this.e = rbbVar;
+    public /* synthetic */ nh3(sbb sbbVar, boolean z, TL_stories.StoryItem storyItem, long j, TLRPC.InputGroupCall inputGroupCall, boolean z2) {
+        this.e = sbbVar;
         this.b = z;
         this.f = storyItem;
         this.c = j;

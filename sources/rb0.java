@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class rb0 extends Drawable {
     public static final int[][] L = {new int[]{-636796, -1090751, -612560, -35006}, new int[]{-693938, -690388, -11246, -22717}, new int[]{-8160001, -5217281, -36183, -1938945}, new int[]{-16133536, -10560448, -4070106, -8331477}, new int[]{-10569989, -14692629, -12191817, -14683687}, new int[]{-11694593, -13910017, -14622003, -15801871}, new int[]{-439392, -304000, -19910, -98718}};
@@ -665,7 +665,7 @@ public class rb0 extends Drawable {
             }
         }
         uc7 s1 = uc7.s1(yac.t0);
-        lc7 lc7Var = s1.E3;
+        lc7 lc7Var = s1.F3;
         if (lc7Var == null || lc7Var.d(i) == null) {
             if (this.f != null) {
                 int[] iArr3 = iArr[d(i)];
@@ -678,7 +678,7 @@ public class rb0 extends Drawable {
                 return;
             }
         }
-        int f = s1.E3.d(i).f();
+        int f = s1.F3.d(i).f();
         if (this.f != null) {
             int[] iArr4 = iArr[e(f)];
             this.f.d(iArr4[0], iArr4[1], iArr4[2], iArr4[3]);

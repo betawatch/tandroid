@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class yg4 extends FrameLayout implements snb, fn7, s84 {
     public static final SpannableStringBuilder[] t0 = new SpannableStringBuilder[3];
@@ -212,7 +212,7 @@ public final class yg4 extends FrameLayout implements snb, fn7, s84 {
         if (user != null) {
             if (M02 != null) {
                 CharSequence charSequence2 = M02.title;
-                if (xc2.c0(M02) && (f2 = uc7.s1(yac.t0).g4.f(M02.id, r47.b2(r47Var.K1, r47Var.k, true, false))) != null) {
+                if (xc2.c0(M02) && (f2 = uc7.s1(yac.t0).h4.f(M02.id, r47.b2(r47Var.K1, r47Var.k, true, false))) != null) {
                     charSequence2 = ro4.k(f2, null, null);
                 }
                 CharSequence m = pv3.m(charSequence2, textPaint == null ? null : textPaint.getFontMetricsInt(), false, null, 0);
@@ -224,7 +224,7 @@ public final class yg4 extends FrameLayout implements snb, fn7, s84 {
             }
         } else if (M0 != null) {
             CharSequence charSequence3 = M0.title;
-            if (xc2.c0(M0) && (f = uc7.s1(yac.t0).g4.f(M0.id, r47.b2(r47Var.K1, r47Var.k, true, false))) != null) {
+            if (xc2.c0(M0) && (f = uc7.s1(yac.t0).h4.f(M0.id, r47.b2(r47Var.K1, r47Var.k, true, false))) != null) {
                 charSequence3 = ro4.k(f, null, null);
             }
             charSequence = pv3.m(charSequence3, textPaint == null ? null : textPaint.getFontMetricsInt(), false, null, 0);
@@ -606,7 +606,7 @@ public final class yg4 extends FrameLayout implements snb, fn7, s84 {
                         j5 = j10;
                         i3 = i7;
                         i6 = 1;
-                        jf7.Y(i7).J0(0, str5, arrayList7, new ArrayList(), new ArrayList(), null, z7 ? 1 : 0);
+                        kf7.a0(i7).M0(0, str5, arrayList7, new ArrayList(), new ArrayList(), null, z7 ? 1 : 0);
                         i4 = z7 ? 1 : 0;
                         arrayList6 = arrayList7;
                     }
@@ -750,7 +750,7 @@ public final class yg4 extends FrameLayout implements snb, fn7, s84 {
                                 TLRPC.messages_Messages messages_messages2 = messages_messages;
                                 yg4Var3.w = messages_messages2.next_rate;
                                 int i14 = i10;
-                                jf7.Y(i14).j1(messages_messages2.users, messages_messages2.chats, true, true);
+                                kf7.a0(i14).n1(messages_messages2.users, messages_messages2.chats, true, true);
                                 uc7.s1(i14).j4(messages_messages2.users, false);
                                 uc7.s1(i14).c4(messages_messages2.chats, false);
                                 boolean z9 = z8;

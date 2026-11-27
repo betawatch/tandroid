@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ir1 extends vic {
     public final /* synthetic */ byte W;
@@ -122,7 +122,7 @@ public final class ir1 extends vic {
             case 1:
                 return getCurrentPosition() != 2;
             case 4:
-                return !((lm7) this.a0).u0(false);
+                return !((lm7) this.a0).t0(false);
             default:
                 return super.f(motionEvent);
         }
@@ -134,7 +134,7 @@ public final class ir1 extends vic {
             case 1:
                 return false;
             case 4:
-                return !((lm7) this.a0).u0(true);
+                return !((lm7) this.a0).t0(true);
             case 7:
                 return false;
             default:
@@ -184,7 +184,7 @@ public final class ir1 extends vic {
             case 4:
                 lm7 lm7Var = (lm7) this.a0;
                 if (lm7Var.M && TextUtils.isEmpty(lm7Var.Q)) {
-                    lm7Var.j0();
+                    lm7Var.i0();
                     break;
                 }
                 break;
@@ -225,7 +225,7 @@ public final class ir1 extends vic {
                 zw3.C1 = ir1Var2.getCurrentPosition();
                 break;
             case 3:
-                ((sk7) obj).b.invalidate();
+                ((tk7) obj).b.invalidate();
                 break;
             case 4:
                 lm7 lm7Var = (lm7) obj;
@@ -242,7 +242,7 @@ public final class ir1 extends vic {
                         cm7Var2.j(abs, positionAnimated > f ? currentPosition + 1 : currentPosition - 1);
                     }
                 }
-                lm7Var.P0();
+                lm7Var.N0();
                 break;
             case 5:
                 h48 h48Var = (h48) obj;

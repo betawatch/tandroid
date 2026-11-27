@@ -38,7 +38,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class yg9 extends e implements fn7 {
     public xq2 A0;
@@ -687,7 +687,7 @@ public final class yg9 extends e implements fn7 {
         kg9 kg9Var = new kg9();
         this.I0 = kg9Var;
         this.P.r.add(kg9Var);
-        pi9 pi9Var = new pi9(context, this.currentAccount, getResourceProvider(), new i09((Object) this, (byte) 5));
+        pi9 pi9Var = new pi9(context, this.currentAccount, getResourceProvider(), new j09((Object) this, (byte) 5));
         this.Q = pi9Var;
         pi9Var.setFileRefParentObject(this.r);
         this.P.addView(this.Q, tre.e(-1, -1, jn7.D1));
@@ -1406,7 +1406,7 @@ public final class yg9 extends e implements fn7 {
         if (di9Var != null && di9Var.w()) {
             n0();
         } else {
-            new ue9(this.currentAccount, getResourceProvider(), new ii7(this, (byte) 29), getParentActivity()).show();
+            new ue9(this.currentAccount, getResourceProvider(), new ji7(this, (byte) 29), getParentActivity()).show();
         }
     }
 
@@ -1569,7 +1569,7 @@ public final class yg9 extends e implements fn7 {
                     return;
                 } else {
                     if (pi9Var.getContext() != null) {
-                        Utilities.e.c(new z09(pi9Var, data, (byte) 18));
+                        Utilities.e.c(new yz8(pi9Var, data, (byte) 19));
                         return;
                     }
                     return;

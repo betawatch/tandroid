@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class wuc extends n9c implements fn7 {
     @Override // n9c
@@ -113,10 +113,10 @@ public final class wuc extends n9c implements fn7 {
                 yob.j(c51Var, background, M2, null, resourceProvider);
             }
             m.addView(c51Var, tre.t(-1, 44, 1, 16, 0, 16, 16));
-            jl7 jl7Var = new jl7(parentActivity, m, resourceProvider);
-            jl7Var.show();
-            imageView.setOnClickListener(new e45(jl7Var, (byte) 1));
-            c51Var.setOnClickListener(new cg(c51Var, ku9Var, jl7Var, resourceProvider, (byte) 21));
+            kl7 kl7Var = new kl7(parentActivity, m, resourceProvider);
+            kl7Var.show();
+            imageView.setOnClickListener(new e45(kl7Var, (byte) 1));
+            c51Var.setOnClickListener(new cg(c51Var, ku9Var, kl7Var, resourceProvider, (byte) 21));
         }
     }
 

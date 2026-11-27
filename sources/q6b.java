@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public class q6b {
     public int A;
@@ -27,7 +27,7 @@ public class q6b {
     public boolean N;
     public float O;
     public float P;
-    public z3b Q;
+    public n3b Q;
     public View R;
     public int c;
     public TL_stories.StoryItem d;
@@ -111,13 +111,13 @@ public class q6b {
                     this.O = motionEvent.getX();
                     this.P = motionEvent.getY();
                     if (this.I) {
-                        z3b z3bVar = this.Q;
-                        if (z3bVar != null) {
-                            hl.r(z3bVar);
+                        n3b n3bVar = this.Q;
+                        if (n3bVar != null) {
+                            hl.r(n3bVar);
                         }
-                        z3b z3bVar2 = new z3b(this, view, (byte) 18);
-                        this.Q = z3bVar2;
-                        hl.d3(z3bVar2, ViewConfiguration.getLongPressTimeout());
+                        n3b n3bVar2 = new n3b(this, view, (byte) 19);
+                        this.Q = n3bVar2;
+                        hl.d3(n3bVar2, ViewConfiguration.getLongPressTimeout());
                     }
                 }
                 return this.N;
@@ -130,9 +130,9 @@ public class q6b {
                     v41Var2.a = view;
                     v41Var2.c(false);
                 }
-                z3b z3bVar3 = this.Q;
-                if (z3bVar3 != null) {
-                    hl.r(z3bVar3);
+                n3b n3bVar3 = this.Q;
+                if (n3bVar3 != null) {
+                    hl.r(n3bVar3);
                 }
                 view.getParent().requestDisallowInterceptTouchEvent(false);
                 this.N = false;
@@ -171,9 +171,9 @@ public class q6b {
                 ((ViewGroup) parent).requestDisallowInterceptTouchEvent(false);
             }
             this.N = false;
-            z3b z3bVar4 = this.Q;
-            if (z3bVar4 != null) {
-                hl.r(z3bVar4);
+            n3b n3bVar4 = this.Q;
+            if (n3bVar4 != null) {
+                hl.r(n3bVar4);
             }
         }
         return this.N;

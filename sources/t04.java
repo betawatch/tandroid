@@ -7,7 +7,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class t04 extends xy3 {
     public final /* synthetic */ o24 g0;
@@ -27,7 +27,7 @@ public final class t04 extends xy3 {
     public final void e() {
         o24 o24Var = this.g0;
         ArrayList arrayList = o24Var.o1;
-        if (arrayList.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList.get(0)).set == null || uc7.s1(o24Var.d1).Y3.getLong("emoji_featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id) {
+        if (arrayList.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList.get(0)).set == null || uc7.s1(o24Var.d1).Z3.getLong("emoji_featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id) {
             return;
         }
         yac.h(yac.t0);

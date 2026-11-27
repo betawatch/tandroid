@@ -12,7 +12,7 @@ import org.telegram.messenger.Intro;
 import org.webrtc.EglRenderer;
 import org.webrtc.ThreadUtils;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wr5 implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ byte a;
@@ -59,7 +59,7 @@ public final class wr5 implements TextureView.SurfaceTextureListener {
                 on9Var.j.b("preview surface available: view=" + i + "x" + i2);
                 Handler handler = on9Var.n;
                 if (on9Var.U && handler != null && on9Var.c.isAvailable()) {
-                    handler.post(new dn9(on9Var, b));
+                    handler.post(new en9(on9Var, b));
                     break;
                 }
                 break;

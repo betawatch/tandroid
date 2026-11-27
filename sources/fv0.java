@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class fv0 implements Runnable {
     public final /* synthetic */ byte a;
@@ -92,7 +92,7 @@ public final /* synthetic */ class fv0 implements Runnable {
             case 11:
                 d61 d61Var = (d61) obj;
                 d61Var.d.clear();
-                d61Var.getMessagesController().h4.h(d61Var.e, d61Var.d);
+                d61Var.getMessagesController().i4.h(d61Var.e, d61Var.d);
                 d61Var.Y();
                 d61Var.finishFragment();
                 break;

@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class x35 implements Runnable {
     public final /* synthetic */ byte a;
@@ -154,7 +154,7 @@ public final /* synthetic */ class x35 implements Runnable {
                     nx0Var.show();
                     break;
                 } else {
-                    jl7 D = a55.D(context, iArr[0], null, tL_urlAuthResultRequest3, vnbVar, new o45(nx0VarArr, zArr, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest3, nx0Var, teVar, (byte) 4), new pl7(nx0VarArr, zArr, (byte) 9));
+                    kl7 D = a55.D(context, iArr[0], null, tL_urlAuthResultRequest3, vnbVar, new o45(nx0VarArr, zArr, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest3, nx0Var, teVar, (byte) 4), new ql7(nx0VarArr, zArr, (byte) 10));
                     nx0VarArr[0] = D;
                     uq7.a = D;
                     break;

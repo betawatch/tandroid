@@ -1,30 +1,35 @@
 // default package
 
+import java.util.HashSet;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ulc implements icc {
+public final /* synthetic */ class ulc implements Runnable {
     public final /* synthetic */ byte a;
     public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ HashSet c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ ulc(VoIPService voIPService, byte b) {
+    public /* synthetic */ ulc(VoIPService voIPService, HashSet hashSet, String str, byte b) {
         this.a = b;
         this.b = voIPService;
+        this.c = hashSet;
+        this.d = str;
     }
 
-    @Override // icc
-    public final void a(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
+        String str = this.d;
+        HashSet hashSet = this.c;
         VoIPService voIPService = this.b;
-        Boolean bool = (Boolean) obj;
-        Boolean bool2 = (Boolean) obj2;
         switch (b) {
             case 0:
-                voIPService.lambda$switchToSpeaker$88(bool, bool2);
+                voIPService.lambda$startConferenceGroupCall$53(hashSet, str);
                 break;
             default:
-                voIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$92(bool, bool2);
+                voIPService.lambda$startConferenceGroupCall$45(hashSet, str);
                 break;
         }
     }

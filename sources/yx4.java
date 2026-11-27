@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class yx4 extends ny0 implements fn7 {
     public final ArrayList A2;
@@ -871,7 +871,7 @@ public final class yx4 extends ny0 implements fn7 {
             }
         }
         z2 = false;
-        if (uc7.s1(this.S1).k4.F2.f || (arrayList4.isEmpty() && ((disallowedGiftsSettings3 = this.V1) == null || disallowedGiftsSettings3.disallow_unique_stargifts || (axaVar2 = this.h2) == null || axaVar2.l.isEmpty()))) {
+        if (uc7.s1(this.S1).l4.F2.f || (arrayList4.isEmpty() && ((disallowedGiftsSettings3 = this.V1) == null || disallowedGiftsSettings3.disallow_unique_stargifts || (axaVar2 = this.h2) == null || axaVar2.l.isEmpty()))) {
             TLRPC.DisallowedGiftsSettings disallowedGiftsSettings5 = this.V1;
             if (disallowedGiftsSettings5 == null || disallowedGiftsSettings5.disallow_unique_stargifts || !arrayList4.isEmpty()) {
                 return;

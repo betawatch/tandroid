@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class wh2 implements at9, i8a, la6, pa6 {
     public final ys9[] E;
@@ -916,7 +916,7 @@ public final class wh2 implements at9, i8a, la6, pa6 {
                                     }
                                     long j30 = (j26 + i5) - j6;
                                     long d4 = b2.d(j30);
-                                    rv2Var = new rv2(h73Var2, bge.a(ub9Var, xg0Var.a, z10, b2.f(j30, j17) ? 0 : 8), n2, o2, r4, e, d4, j29, (j21 == -9223372036854775807L || j21 > d4) ? -9223372036854775807L : j21, j26, i5, dg7.k(n2.t) ? e : -ub9Var.c, b2.a);
+                                    rv2Var = new rv2(h73Var2, bge.a(ub9Var, xg0Var.a, z10, b2.f(j30, j17) ? 0 : 8), n2, o2, r4, e, d4, j29, (j21 == -9223372036854775807L || j21 > d4) ? -9223372036854775807L : j21, j26, i5, eg7.k(n2.t) ? e : -ub9Var.c, b2.a);
                                 }
                                 n31Var2.c = rv2Var;
                             } else {

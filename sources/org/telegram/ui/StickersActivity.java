@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7 {
     public q9c a;
@@ -46,14 +46,14 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
     private int suggestRow;
     public ArrayList w;
     public final HashSet x;
-    public final x3b y;
+    public final y3b y;
 
     /* JADX WARN: Multi-variable type inference failed */
     public StickersActivity(int i, ArrayList arrayList) {
         super(null);
         this.f = new ArrayList();
         this.x = new HashSet();
-        this.y = new x3b(this, (byte) 0);
+        this.y = new y3b(this, (byte) 0);
         this.s = i;
         this.w = arrayList;
     }
@@ -393,11 +393,11 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                     Object obj = arrayList5.get(i2);
                     i2++;
                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
-                    int i10 = o3b.b;
-                    b8c K = b8c.K(o3b.class);
+                    int i10 = p3b.b;
+                    b8c K = b8c.K(p3b.class);
                     K.H = tL_messages_stickerSet;
                     final byte b5 = 0;
-                    K.E = new View.OnClickListener(this) { // from class: w3b
+                    K.E = new View.OnClickListener(this) { // from class: x3b
                         public final /* synthetic */ StickersActivity b;
 
                         {
@@ -411,12 +411,12 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                             switch (b6) {
                                 case 0:
                                     stickersActivity.getClass();
-                                    if (view != null && (view.getParent() instanceof p3b)) {
-                                        p3b p3bVar = (p3b) view.getParent();
-                                        final TLRPC.TL_messages_stickerSet stickersSet = p3bVar.getStickersSet();
-                                        fu5 I = fu5.I(stickersActivity, p3bVar);
+                                    if (view != null && (view.getParent() instanceof q3b)) {
+                                        q3b q3bVar = (q3b) view.getParent();
+                                        final TLRPC.TL_messages_stickerSet stickersSet = q3bVar.getStickersSet();
+                                        fu5 I = fu5.I(stickersActivity, q3bVar);
                                         final byte b7 = 0;
-                                        I.b(R.drawable.msg_archive, ob6.M0(2131744515, null), new Runnable() { // from class: y3b
+                                        I.b(R.drawable.msg_archive, ob6.M0(2131744515, null), new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b7) {
@@ -456,7 +456,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                                             }
                                         }, false);
                                         final byte b8 = 1;
-                                        I.k(R.drawable.msg_link, ob6.M0(2131744520, null), new Runnable() { // from class: y3b
+                                        I.k(R.drawable.msg_link, ob6.M0(2131744520, null), new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b8) {
@@ -495,9 +495,9 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                                                 }
                                             }
                                         }, !stickersSet.set.official);
-                                        I.b(R.drawable.msg_reorder, ob6.M0(2131744508, null), new z3b(stickersActivity, p3bVar, (byte) 0), false);
+                                        I.b(R.drawable.msg_reorder, ob6.M0(2131744508, null), new n3b(stickersActivity, q3bVar), false);
                                         final byte b9 = 2;
-                                        I.k(R.drawable.msg_share, ob6.M0(2131744503, null), new Runnable() { // from class: y3b
+                                        I.k(R.drawable.msg_share, ob6.M0(2131744503, null), new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b9) {
@@ -537,7 +537,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                                             }
                                         }, !stickersSet.set.official);
                                         final byte b10 = 3;
-                                        I.l(R.drawable.msg_delete, new Runnable() { // from class: y3b
+                                        I.l(R.drawable.msg_delete, new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b10) {
@@ -590,7 +590,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                             }
                         }
                     };
-                    K.F = new View.OnClickListener(this) { // from class: w3b
+                    K.F = new View.OnClickListener(this) { // from class: x3b
                         public final /* synthetic */ StickersActivity b;
 
                         {
@@ -604,12 +604,12 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                             switch (b6) {
                                 case 0:
                                     stickersActivity.getClass();
-                                    if (view != null && (view.getParent() instanceof p3b)) {
-                                        p3b p3bVar = (p3b) view.getParent();
-                                        final TLRPC.TL_messages_stickerSet stickersSet = p3bVar.getStickersSet();
-                                        fu5 I = fu5.I(stickersActivity, p3bVar);
+                                    if (view != null && (view.getParent() instanceof q3b)) {
+                                        q3b q3bVar = (q3b) view.getParent();
+                                        final TLRPC.TL_messages_stickerSet stickersSet = q3bVar.getStickersSet();
+                                        fu5 I = fu5.I(stickersActivity, q3bVar);
                                         final byte b7 = 0;
-                                        I.b(R.drawable.msg_archive, ob6.M0(2131744515, null), new Runnable() { // from class: y3b
+                                        I.b(R.drawable.msg_archive, ob6.M0(2131744515, null), new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b7) {
@@ -649,7 +649,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                                             }
                                         }, false);
                                         final byte b8 = 1;
-                                        I.k(R.drawable.msg_link, ob6.M0(2131744520, null), new Runnable() { // from class: y3b
+                                        I.k(R.drawable.msg_link, ob6.M0(2131744520, null), new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b8) {
@@ -688,9 +688,9 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                                                 }
                                             }
                                         }, !stickersSet.set.official);
-                                        I.b(R.drawable.msg_reorder, ob6.M0(2131744508, null), new z3b(stickersActivity, p3bVar, (byte) 0), false);
+                                        I.b(R.drawable.msg_reorder, ob6.M0(2131744508, null), new n3b(stickersActivity, q3bVar), false);
                                         final byte b9 = 2;
-                                        I.k(R.drawable.msg_share, ob6.M0(2131744503, null), new Runnable() { // from class: y3b
+                                        I.k(R.drawable.msg_share, ob6.M0(2131744503, null), new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b9) {
@@ -730,7 +730,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                                             }
                                         }, !stickersSet.set.official);
                                         final byte b10 = 3;
-                                        I.l(R.drawable.msg_delete, new Runnable() { // from class: y3b
+                                        I.l(R.drawable.msg_delete, new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b10) {
@@ -830,7 +830,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                     int i11 = c94.b;
                     b8c K2 = b8c.K(c94.class);
                     K2.H = stickerSetCovered;
-                    K2.E = new View.OnClickListener(this) { // from class: w3b
+                    K2.E = new View.OnClickListener(this) { // from class: x3b
                         public final /* synthetic */ StickersActivity b;
 
                         {
@@ -844,12 +844,12 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                             switch (b6) {
                                 case 0:
                                     stickersActivity.getClass();
-                                    if (view != null && (view.getParent() instanceof p3b)) {
-                                        p3b p3bVar = (p3b) view.getParent();
-                                        final TLRPC.TL_messages_stickerSet stickersSet = p3bVar.getStickersSet();
-                                        fu5 I = fu5.I(stickersActivity, p3bVar);
+                                    if (view != null && (view.getParent() instanceof q3b)) {
+                                        q3b q3bVar = (q3b) view.getParent();
+                                        final TLRPC.TL_messages_stickerSet stickersSet = q3bVar.getStickersSet();
+                                        fu5 I = fu5.I(stickersActivity, q3bVar);
                                         final byte b7 = 0;
-                                        I.b(R.drawable.msg_archive, ob6.M0(2131744515, null), new Runnable() { // from class: y3b
+                                        I.b(R.drawable.msg_archive, ob6.M0(2131744515, null), new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b7) {
@@ -889,7 +889,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                                             }
                                         }, false);
                                         final byte b8 = 1;
-                                        I.k(R.drawable.msg_link, ob6.M0(2131744520, null), new Runnable() { // from class: y3b
+                                        I.k(R.drawable.msg_link, ob6.M0(2131744520, null), new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b8) {
@@ -928,9 +928,9 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                                                 }
                                             }
                                         }, !stickersSet.set.official);
-                                        I.b(R.drawable.msg_reorder, ob6.M0(2131744508, null), new z3b(stickersActivity, p3bVar, (byte) 0), false);
+                                        I.b(R.drawable.msg_reorder, ob6.M0(2131744508, null), new n3b(stickersActivity, q3bVar), false);
                                         final byte b9 = 2;
-                                        I.k(R.drawable.msg_share, ob6.M0(2131744503, null), new Runnable() { // from class: y3b
+                                        I.k(R.drawable.msg_share, ob6.M0(2131744503, null), new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b9) {
@@ -970,7 +970,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
                                             }
                                         }, !stickersSet.set.official);
                                         final byte b10 = 3;
-                                        I.l(R.drawable.msg_delete, new Runnable() { // from class: y3b
+                                        I.l(R.drawable.msg_delete, new Runnable() { // from class: z3b
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 switch (b10) {
@@ -1077,11 +1077,11 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         int i = aob.d6;
-        arrayList.add(new apb(this.a, 16, new Class[]{p3b.class, qmb.class, wkb.class}, (Paint) null, (Drawable[]) null, (zob) null, i));
+        arrayList.add(new apb(this.a, 16, new Class[]{q3b.class, qmb.class, wkb.class}, (Paint) null, (Drawable[]) null, (zob) null, i));
         arrayList.add(new apb(this.a, 0, new Class[]{wkb.class}, new String[]{"checkBox"}, (Drawable[]) null, (zob) null, aob.M6));
         arrayList.add(new apb(this.a, 0, new Class[]{wkb.class}, new String[]{"checkBox"}, (Drawable[]) null, (zob) null, aob.N6));
-        arrayList.add(new apb(this.a, TLObject.FLAG_13, new Class[]{p3b.class}, new String[]{"checkBox"}, (Drawable[]) null, (zob) null, i));
-        arrayList.add(new apb(this.a, TLObject.FLAG_14, new Class[]{p3b.class}, new String[]{"checkBox"}, (Drawable[]) null, (zob) null, aob.k7));
+        arrayList.add(new apb(this.a, TLObject.FLAG_13, new Class[]{q3b.class}, new String[]{"checkBox"}, (Drawable[]) null, (zob) null, i));
+        arrayList.add(new apb(this.a, TLObject.FLAG_14, new Class[]{q3b.class}, new String[]{"checkBox"}, (Drawable[]) null, (zob) null, aob.k7));
         o5c o5cVar = this.c;
         if (o5cVar != null) {
             arrayList.addAll(o5cVar.S());
@@ -1214,7 +1214,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
         if (obj instanceof TLRPC.TL_messages_stickerSet) {
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
             if (!this.x.isEmpty()) {
-                q0((p3b) view);
+                q0((q3b) view);
                 return;
             }
             ArrayList<TLRPC.Document> arrayList = tL_messages_stickerSet.documents;
@@ -1340,23 +1340,23 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
     /* JADX WARN: Type inference failed for: r12v6, types: [org.telegram.tgnet.TLRPC$StickerSetCovered] */
     /* JADX WARN: Type inference failed for: r12v9 */
     public final void m0(View view) {
-        p3b p3bVar;
+        q3b q3bVar;
         TLRPC.TL_messages_stickerSet stickersSet;
         ?? r12;
         if (view == null || !(view.getParent() instanceof ViewGroup)) {
             return;
         }
         ViewGroup viewGroup = (ViewGroup) view.getParent();
-        if (!(viewGroup.getParent() instanceof p3b) || (stickersSet = (p3bVar = (p3b) viewGroup.getParent()).getStickersSet()) == null || stickersSet.set == null) {
+        if (!(viewGroup.getParent() instanceof q3b) || (stickersSet = (q3bVar = (q3b) viewGroup.getParent()).getStickersSet()) == null || stickersSet.set == null) {
             return;
         }
         int i = 0;
-        if (p3bVar.E != view) {
-            if (p3bVar.F == view) {
+        if (q3bVar.E != view) {
+            if (q3bVar.F == view) {
                 ls6.d0(this.currentAccount).h2(getParentActivity(), stickersSet, 0, this, false, true);
                 return;
             } else {
-                if (p3bVar.G == view) {
+                if (q3bVar.G == view) {
                     showDialog(new xk8((org.telegram.ui.ActionBar.e) this, 11, false));
                     return;
                 }
@@ -1597,8 +1597,8 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
         }
     }
 
-    public final void q0(p3b p3bVar) {
-        TLRPC.TL_messages_stickerSet stickersSet = p3bVar.getStickersSet();
+    public final void q0(q3b q3bVar) {
+        TLRPC.TL_messages_stickerSet stickersSet = q3bVar.getStickersSet();
         if (stickersSet == null) {
             return;
         }
@@ -1606,10 +1606,10 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
         HashSet hashSet = this.x;
         if (hashSet.contains(valueOf)) {
             hashSet.remove(Long.valueOf(stickersSet.set.id));
-            p3bVar.b(false, true);
+            q3bVar.b(false, true);
         } else {
             hashSet.add(Long.valueOf(stickersSet.set.id));
-            p3bVar.b(true, true);
+            q3bVar.b(true, true);
         }
         this.a.g3.O(true);
         c0();
@@ -1630,9 +1630,9 @@ public class StickersActivity extends org.telegram.ui.ActionBar.e implements fn7
         this.d = arrayList2;
         this.r = true;
         Collections.sort(ls6.d0(this.currentAccount).t0(this.s), new jz0(this, (byte) 7));
-        x3b x3bVar = this.y;
-        hl.r(x3bVar);
-        hl.d3(x3bVar, 1000L);
+        y3b y3bVar = this.y;
+        hl.r(y3bVar);
+        hl.d3(y3bVar, 1000L);
     }
 
     @Override // org.telegram.ui.ActionBar.e

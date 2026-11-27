@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class bt5 extends nx0 {
     public static final /* synthetic */ int h2 = 0;
@@ -334,9 +334,9 @@ public final class bt5 extends nx0 {
         yob.X(m2, i2, vnbVar);
         int i6 = tL_starsSubscriptionPricing.period;
         if (i6 == 2592000) {
-            m2.setText(ob6.a0(null, null, 2131744715, di0.h().e((int) ((tL_starsSubscriptionPricing.amount / 1000.0d) * uc7.s1(i).k4.A3.i), "USD")));
+            m2.setText(ob6.a0(null, null, 2131744715, di0.h().e((int) ((tL_starsSubscriptionPricing.amount / 1000.0d) * uc7.s1(i).l4.A3.i), "USD")));
         } else {
-            m2.setText(String.format(Locale.US, "appx. %1$s per %2$s", di0.h().e((int) (uc7.s1(i).k4.A3.i * (tL_starsSubscriptionPricing.amount / 1000.0d)), "USD"), i6 == 300 ? "5min" : "min"));
+            m2.setText(String.format(Locale.US, "appx. %1$s per %2$s", di0.h().e((int) (uc7.s1(i).l4.A3.i * (tL_starsSubscriptionPricing.amount / 1000.0d)), "USD"), i6 == 300 ? "5min" : "min"));
         }
         j2.addView(m2, tre.t(-1, -2, 17, 20, 0, 20, 4));
         ?? hjbVar = new hjb(context, vnbVar);

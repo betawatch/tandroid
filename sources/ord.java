@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class ord {
     public static final Object a(rd3[] rd3VarArr, yfb yfbVar) {
@@ -75,7 +75,7 @@ public abstract class ord {
                         return vx2Var;
                     }
                 }
-                return f9c.a;
+                return g9c.a;
             }
         }
         ad0Var = new ad0(ax2Var);
@@ -85,7 +85,7 @@ public abstract class ord {
         }
         while (it.hasNext()) {
         }
-        return f9c.a;
+        return g9c.a;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x003f  */
@@ -140,7 +140,7 @@ public abstract class ord {
                         }
                         i2++;
                         if (i2 < length) {
-                            return f9c.a;
+                            return g9c.a;
                         }
                     }
                 }

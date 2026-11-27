@@ -4,7 +4,7 @@ import android.util.LongSparseArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class u07 extends rf0 {
     public static final u07[] b = new u07[4];
@@ -40,7 +40,7 @@ public final class u07 extends rf0 {
             N0.requests_pending = tL_updatePendingJoinRequests.requests_pending;
             N0.recent_requesters = tL_updatePendingJoinRequests.recent_requesters;
             N0.flags |= 131072;
-            getMessagesStorage().K1(N0, false);
+            getMessagesStorage().P1(N0, false);
             jn7 notificationCenter = getNotificationCenter();
             Boolean bool = Boolean.FALSE;
             notificationCenter.k(jn7.T, N0, 0, bool, bool);

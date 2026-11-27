@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class re2 implements Runnable {
     public final /* synthetic */ byte a = 0;
@@ -91,14 +91,14 @@ public final /* synthetic */ class re2 implements Runnable {
                                             userFull.wallpaper = wallPaper2;
                                             userFull.flags |= 16777216;
                                             af2Var.p(j, wallPaper2);
-                                            af2Var.getMessagesStorage().g2(userFull, false);
+                                            af2Var.getMessagesStorage().l2(userFull, false);
                                             jn7.f(af2Var.currentAccount).k(68, Long.valueOf(j), userFull);
                                         } else if (N0 != null) {
                                             TLRPC.WallPaper wallPaper3 = tL_messageActionSetChatWallPaper.wallpaper;
                                             N0.wallpaper = wallPaper3;
                                             N0.flags2 |= 128;
                                             af2Var.p(j, wallPaper3);
-                                            af2Var.getMessagesStorage().K1(N0, false);
+                                            af2Var.getMessagesStorage().P1(N0, false);
                                             jn7 f = jn7.f(af2Var.currentAccount);
                                             Boolean bool = Boolean.FALSE;
                                             f.k(31, N0, 0, bool, bool);
@@ -142,7 +142,7 @@ public final /* synthetic */ class re2 implements Runnable {
                             Y1.saved_music = null;
                         }
                     }
-                    jf7.Y(j20Var.a).g2(Y1, true);
+                    kf7.a0(j20Var.a).l2(Y1, true);
                     jn7.f(j20Var.a).k(jn7.Y3, Long.valueOf(e));
                 }
                 runnable.run();
@@ -199,14 +199,14 @@ public final /* synthetic */ class re2 implements Runnable {
                 hl.c3(new ba7(k35Var, c35Var2, pccVar, j3));
                 return;
             default:
-                jf7 jf7Var = (jf7) this.e;
+                kf7 kf7Var = (kf7) this.e;
                 boolean z4 = this.d;
                 long j4 = this.c;
                 Integer[] numArr = (Integer[]) this.f;
                 CountDownLatch countDownLatch = (CountDownLatch) this.b;
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                        SQLiteDatabase sQLiteDatabase = kf7Var.b;
                         if (z4) {
                             sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT outbox_max FROM dialogs WHERE did = " + j4, new Object[0]);
                             if (sQLiteCursor.next()) {
@@ -227,7 +227,7 @@ public final /* synthetic */ class re2 implements Runnable {
                     } finally {
                     }
                 } catch (Exception e5) {
-                    jf7Var.n(e5, true);
+                    kf7Var.p(e5, true);
                     break;
                 }
                 sQLiteCursor.dispose();
@@ -252,8 +252,8 @@ public final /* synthetic */ class re2 implements Runnable {
         this.f = pccVar;
     }
 
-    public /* synthetic */ re2(jf7 jf7Var, boolean z, long j, Integer[] numArr, CountDownLatch countDownLatch) {
-        this.e = jf7Var;
+    public /* synthetic */ re2(kf7 kf7Var, boolean z, long j, Integer[] numArr, CountDownLatch countDownLatch) {
+        this.e = kf7Var;
         this.d = z;
         this.c = j;
         this.f = numArr;

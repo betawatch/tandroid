@@ -19,7 +19,7 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class dt1 implements al1 {
     public final /* synthetic */ it1 a;
@@ -30,13 +30,13 @@ public final class dt1 implements al1 {
 
     @Override // al1
     public final void B(dl1 dl1Var, int i) {
-        ze7 ze7Var = new ze7((Object) this, (Object) dl1Var, i, (byte) 13);
+        bf7 bf7Var = new bf7((Object) this, (Object) dl1Var, i, (byte) 13);
         zu1 zu1Var = this.a.R;
         if (!zu1Var.D0.O) {
-            ze7Var.run();
+            bf7Var.run();
         } else {
             zu1Var.Kb(false, true, true);
-            hl.d3(ze7Var, 80L);
+            hl.d3(bf7Var, 80L);
         }
     }
 

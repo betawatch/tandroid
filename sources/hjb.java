@@ -22,7 +22,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class hjb extends TableLayout implements snb {
     public final vnb a;
@@ -165,7 +165,7 @@ public final class hjb extends TableLayout implements snb {
         h(str, charSequence, runnable, null, null);
     }
 
-    public final TableRow j(String str, CharSequence charSequence, int i, ida idaVar, String str2, npc npcVar) {
+    public final TableRow j(String str, CharSequence charSequence, int i, kba kbaVar, String str2, npc npcVar) {
         FrameLayout frameLayout = new FrameLayout(getContext());
         final p66 p66Var = new p66(getContext(), null);
         p66Var.setTypeface(hl.n1("fonts/rmono.ttf"));
@@ -188,7 +188,7 @@ public final class hjb extends TableLayout implements snb {
             SpannableString spannableString = new SpannableString("btn");
             spannableString.setSpan(z41Var, 0, spannableString.length(), 33);
             y41Var.setText(spannableString);
-            float f2 = (idaVar != null ? 34 : 0) + 12.66f;
+            float f2 = (kbaVar != null ? 34 : 0) + 12.66f;
             ((FrameLayout.LayoutParams) p66Var.getLayoutParams()).rightMargin = hl.L(f2) + z41Var.a();
             frameLayout.addView(y41Var, tre.d(-2, -2.0f, 53, 0.0f, 0.0f, f2, 0.0f));
             frameLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: cjb
@@ -203,13 +203,13 @@ public final class hjb extends TableLayout implements snb {
                 }
             });
         }
-        if (idaVar != null) {
+        if (kbaVar != null) {
             ImageView imageView = new ImageView(getContext());
             imageView.setImageResource(R.drawable.msg_copy);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             int i3 = aob.v6;
             yob.s(imageView, i3, vnbVar, PorterDuff.Mode.SRC_IN);
-            imageView.setOnClickListener(new jy8(charSequence, idaVar, (byte) 29));
+            imageView.setOnClickListener(new jy8(charSequence, kbaVar, (byte) 29));
             iye.a(imageView);
             hf0 f0 = aob.f0(aob.p1(0.1f, aob.v0(i3, vnbVar)), 7, -1);
             uob K = yob.K(0.1f, i3);
@@ -220,8 +220,8 @@ public final class hjb extends TableLayout implements snb {
         return l(frameLayout, str);
     }
 
-    public final void k(String str, CharSequence charSequence, int i, ida idaVar) {
-        j(str, charSequence, i, idaVar, null, null);
+    public final void k(String str, CharSequence charSequence, int i, kba kbaVar) {
+        j(str, charSequence, i, kbaVar, null, null);
     }
 
     public final TableRow l(View view, String str) {

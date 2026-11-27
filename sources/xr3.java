@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.math.RoundingMode;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class xr3 implements av3 {
     public final ey7 a;
@@ -119,8 +119,8 @@ public final class xr3 implements av3 {
                             int i11 = i8 + (c3.f(2) > 0 ? 1 : 0);
                             jo4 jo4Var = new jo4();
                             jo4Var.a = str;
-                            jo4Var.r = dg7.n("video/mp2t");
-                            jo4Var.s = dg7.n("audio/vnd.dts");
+                            jo4Var.r = eg7.n("video/mp2t");
+                            jo4Var.s = eg7.n("audio/vnd.dts");
                             jo4Var.i = i10;
                             jo4Var.M = i11;
                             jo4Var.O = i9;
@@ -473,8 +473,8 @@ public final class xr3 implements av3 {
         ko4 ko4Var3 = this.l;
         jo4 jo4Var = ko4Var3 == null ? new jo4() : ko4Var3.a();
         jo4Var.a = this.e;
-        jo4Var.r = dg7.n("video/mp2t");
-        jo4Var.s = dg7.n(str);
+        jo4Var.r = eg7.n("video/mp2t");
+        jo4Var.s = eg7.n(str);
         jo4Var.M = i2;
         jo4Var.O = i;
         jo4Var.d = this.c;

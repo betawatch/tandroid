@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class gp4 implements ComponentCallbacks, View.OnCreateContextMenuListener, i36, shc, pe5, vt9 {
     public static final Object k0 = new Object();
@@ -53,7 +53,7 @@ public abstract class gp4 implements ComponentCallbacks, View.OnCreateContextMen
     public z26 d0;
     public k36 e0;
     public Bundle f;
-    public final qj7 f0;
+    public final rj7 f0;
     public wt9 g0;
     public gp4 h;
     public rx h0;
@@ -74,7 +74,7 @@ public abstract class gp4 implements ComponentCallbacks, View.OnCreateContextMen
     public gp4() {
         new zz3(this, (byte) 6);
         this.d0 = z26.e;
-        this.f0 = new qj7();
+        this.f0 = new rj7();
         this.i0 = new ArrayList();
         this.j0 = new dp4(this);
         r();
@@ -197,7 +197,7 @@ public abstract class gp4 implements ComponentCallbacks, View.OnCreateContextMen
     }
 
     @Override // pe5
-    public final oj7 d() {
+    public final pj7 d() {
         Application application;
         Context applicationContext = K().getApplicationContext();
         while (true) {
@@ -214,8 +214,8 @@ public abstract class gp4 implements ComponentCallbacks, View.OnCreateContextMen
         if (application == null && kq4.K(3)) {
             Log.d("FragmentManager", "Could not find Application instance from Context " + K().getApplicationContext() + ", you will not be able to use AndroidViewModel with the default ViewModelProvider.Factory");
         }
-        oj7 oj7Var = new oj7();
-        LinkedHashMap linkedHashMap = (LinkedHashMap) oj7Var.a;
+        pj7 pj7Var = new pj7();
+        LinkedHashMap linkedHashMap = (LinkedHashMap) pj7Var.a;
         if (application != null) {
             linkedHashMap.put(phc.I, application);
         }
@@ -225,7 +225,7 @@ public abstract class gp4 implements ComponentCallbacks, View.OnCreateContextMen
         if (bundle != null) {
             linkedHashMap.put(fhd.c, bundle);
         }
-        return oj7Var;
+        return pj7Var;
     }
 
     public final Activity e() {

@@ -9,7 +9,7 @@ import androidx.credentials.playservices.controllers.identityauth.HiddenActivity
 import androidx.credentials.playservices.controllers.identitycredentials.IdentityCredentialApiHiddenActivity;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m23 implements ur4 {
     public final /* synthetic */ byte a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class m23 implements ur4 {
     @Override // ur4
     public final Object invoke(Object obj) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         Object obj2 = this.c;
         Object obj3 = this.b;
         switch (b) {
@@ -48,7 +48,7 @@ public final /* synthetic */ class m23 implements ur4 {
                         }
                     }
                 }
-                return f9cVar;
+                return g9cVar;
             case 1:
                 CancellationSignal cancellationSignal2 = (CancellationSignal) obj3;
                 v23 v23Var = (v23) obj2;
@@ -74,7 +74,7 @@ public final /* synthetic */ class m23 implements ur4 {
                         }
                     }
                 }
-                return f9cVar;
+                return g9cVar;
             case 2:
                 a33 a33Var = (a33) obj2;
                 Context context3 = a33Var.e;
@@ -88,10 +88,10 @@ public final /* synthetic */ class m23 implements ur4 {
                     intent3.putExtra("EXTRA_ERROR_NAME", "GET_UNKNOWN");
                     context3.startActivity(intent3);
                 }
-                return f9cVar;
+                return g9cVar;
             default:
                 ((le5) obj3).c.removeCallbacks((iqd) obj2);
-                return f9cVar;
+                return g9cVar;
         }
     }
 }

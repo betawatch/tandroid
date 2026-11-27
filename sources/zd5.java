@@ -4,7 +4,7 @@ import android.util.Pair;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class zd5 implements av3 {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
@@ -13,7 +13,7 @@ public final class zd5 implements av3 {
     public final oz9 c;
     public final String d;
     public final ey7 e;
-    public final xj7 f;
+    public final yj7 f;
     public final boolean[] g = new boolean[4];
     public final yd5 h;
     public long i;
@@ -33,7 +33,7 @@ public final class zd5 implements av3 {
         yd5Var.a = new byte[128];
         this.h = yd5Var;
         if (oz9Var != null) {
-            this.f = new xj7(jn7.H2);
+            this.f = new yj7(jn7.H2);
             this.e = new ey7();
         } else {
             this.f = null;
@@ -54,7 +54,7 @@ public final class zd5 implements av3 {
     */
     public final void b(ey7 ey7Var) {
         yd5 yd5Var;
-        xj7 xj7Var;
+        yj7 yj7Var;
         int i;
         boolean z;
         long j;
@@ -77,7 +77,7 @@ public final class zd5 implements av3 {
         while (true) {
             int b = rfd.b(bArr, i5, i6, this.g);
             yd5Var = this.h;
-            xj7Var = this.f;
+            yj7Var = this.f;
             if (b == i6) {
                 break;
             }
@@ -118,8 +118,8 @@ public final class zd5 implements av3 {
                             f2 = 1.0f;
                             jo4 jo4Var = new jo4();
                             jo4Var.a = str;
-                            jo4Var.r = dg7.n(this.d);
-                            jo4Var.s = dg7.n("video/mpeg2");
+                            jo4Var.r = eg7.n(this.d);
+                            jo4Var.s = eg7.n("video/mpeg2");
                             jo4Var.z = i13;
                             jo4Var.A = i14;
                             jo4Var.H = f2;
@@ -148,8 +148,8 @@ public final class zd5 implements av3 {
                         f2 = f / i3;
                         jo4 jo4Var2 = new jo4();
                         jo4Var2.a = str;
-                        jo4Var2.r = dg7.n(this.d);
-                        jo4Var2.s = dg7.n("video/mpeg2");
+                        jo4Var2.r = eg7.n(this.d);
+                        jo4Var2.s = eg7.n("video/mpeg2");
                         jo4Var2.z = i13;
                         jo4Var2.A = i14;
                         jo4Var2.H = f2;
@@ -172,17 +172,17 @@ public final class zd5 implements av3 {
                 }
                 yd5Var.a(0, 3, yd5.e);
             }
-            if (xj7Var != null) {
+            if (yj7Var != null) {
                 if (i9 > 0) {
-                    xj7Var.a(i5, b, bArr);
+                    yj7Var.a(i5, b, bArr);
                     i2 = 0;
                 } else {
                     i2 = -i9;
                 }
-                if (xj7Var.b(i2)) {
-                    int m = rfd.m(xj7Var.e, xj7Var.d);
+                if (yj7Var.b(i2)) {
+                    int m = rfd.m(yj7Var.e, yj7Var.d);
                     String str2 = gcc.a;
-                    byte[] bArr2 = xj7Var.d;
+                    byte[] bArr2 = yj7Var.d;
                     ey7 ey7Var2 = this.e;
                     ey7Var2.L(m, bArr2);
                     this.c.a(this.o, ey7Var2);
@@ -190,7 +190,7 @@ public final class zd5 implements av3 {
                 if (i8 == 178) {
                     z = true;
                     if (ey7Var.a[b + 2] == 1) {
-                        xj7Var.d(i8);
+                        yj7Var.d(i8);
                     }
                     if (i8 != 0 || i8 == 179) {
                         int i17 = i - b;
@@ -269,8 +269,8 @@ public final class zd5 implements av3 {
         if (!this.k) {
             yd5Var.a(i5, i6, bArr);
         }
-        if (xj7Var != null) {
-            xj7Var.a(i5, i6, bArr);
+        if (yj7Var != null) {
+            yj7Var.a(i5, i6, bArr);
         }
     }
 
@@ -281,9 +281,9 @@ public final class zd5 implements av3 {
         yd5Var.d = false;
         yd5Var.b = 0;
         yd5Var.c = 0;
-        xj7 xj7Var = this.f;
-        if (xj7Var != null) {
-            xj7Var.c();
+        yj7 yj7Var = this.f;
+        if (yj7Var != null) {
+            yj7Var.c();
         }
         this.i = 0L;
         this.j = false;

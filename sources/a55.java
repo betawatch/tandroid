@@ -38,7 +38,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class a55 {
     public final int a;
@@ -86,7 +86,7 @@ public final class a55 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static jl7 D(Context context, final int i, final v45 v45Var, final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, final vnb vnbVar, final o45 o45Var, final Runnable runnable) {
+    public static kl7 D(Context context, final int i, final v45 v45Var, final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, final vnb vnbVar, final o45 o45Var, final Runnable runnable) {
         TLRPC.WebDocument webDocument;
         boolean z;
         TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr;
@@ -196,8 +196,8 @@ public final class a55 {
                         final c51 i6 = xnb.i(24, vnbVar, context, true);
                         i6.setText(ob6.M0(2131742815, null));
                         linearLayout.addView(i6, tre.m(1.0f, 0, 44, 6, 0, 0));
-                        final jl7 jl7Var = new jl7(context, j, vnbVar);
-                        jl7Var.z0 = new t45(i6);
+                        final kl7 kl7Var = new kl7(context, j, vnbVar);
+                        kl7Var.z0 = new t45(i6);
                         final boolean z3 = z;
                         final oq6 oq6Var = new oq6(z3, i6, C, tonconnectsession, v45Var, textView2, de0Var, textView);
                         final ?? r2 = new fn7() { // from class: c45
@@ -219,7 +219,7 @@ public final class a55 {
                         oq6Var.run();
                         final boolean[] zArr = {false};
                         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr3 = inputtonconnectoauthsessionArr;
-                        jl7Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: d45
+                        kl7Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: d45
                             @Override // android.content.DialogInterface.OnDismissListener
                             public final void onDismiss(DialogInterface dialogInterface) {
                                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession;
@@ -236,9 +236,9 @@ public final class a55 {
                                 }
                             }
                         });
-                        jl7Var.show();
-                        k.setOnClickListener(new e45(jl7Var, (byte) 0));
-                        c51Var.setOnClickListener(new je3(i6, jl7Var, (byte) 21));
+                        kl7Var.show();
+                        k.setOnClickListener(new e45(kl7Var, (byte) 0));
+                        c51Var.setOnClickListener(new je3(i6, kl7Var, (byte) 21));
                         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr4 = inputtonconnectoauthsessionArr;
                         i6.setOnClickListener(new View.OnClickListener() { // from class: f45
                             @Override // android.view.View.OnClickListener
@@ -254,7 +254,7 @@ public final class a55 {
                                 c51Var3.setEnabled(false);
                                 ImageView imageView = k;
                                 imageView.setEnabled(false);
-                                o45 o45Var2 = new o45(c51Var2, c51Var3, imageView, jl7Var, vnbVar, oq6Var, (byte) 0);
+                                o45 o45Var2 = new o45(c51Var2, c51Var3, imageView, kl7Var, vnbVar, oq6Var, (byte) 0);
                                 if (!z3) {
                                     a55Var.getClass();
                                     hl.c3(new re4((Object) a55Var, (Object) v45Var, (Object) o45Var2, (byte) 19));
@@ -281,7 +281,7 @@ public final class a55 {
                                 }
                             }
                         });
-                        return jl7Var;
+                        return kl7Var;
                     }
                 }
                 M0 = ob6.M0(2131742812, null);
@@ -320,8 +320,8 @@ public final class a55 {
                 final c51 i62 = xnb.i(24, vnbVar, context, true);
                 i62.setText(ob6.M0(2131742815, null));
                 linearLayout2.addView(i62, tre.m(1.0f, 0, 44, 6, 0, 0));
-                final jl7 jl7Var2 = new jl7(context, j, vnbVar);
-                jl7Var2.z0 = new t45(i62);
+                final kl7 kl7Var2 = new kl7(context, j, vnbVar);
+                kl7Var2.z0 = new t45(i62);
                 final boolean z32 = z;
                 final oq6 oq6Var2 = new oq6(z32, i62, C, tonconnectsession, v45Var, textView2, de0Var, textView);
                 final c45 r22 = new fn7() { // from class: c45
@@ -343,7 +343,7 @@ public final class a55 {
                 oq6Var2.run();
                 final boolean[] zArr2 = {false};
                 final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr32 = inputtonconnectoauthsessionArr;
-                jl7Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: d45
+                kl7Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: d45
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession;
@@ -360,9 +360,9 @@ public final class a55 {
                         }
                     }
                 });
-                jl7Var2.show();
-                k.setOnClickListener(new e45(jl7Var2, (byte) 0));
-                c51Var2.setOnClickListener(new je3(i62, jl7Var2, (byte) 21));
+                kl7Var2.show();
+                k.setOnClickListener(new e45(kl7Var2, (byte) 0));
+                c51Var2.setOnClickListener(new je3(i62, kl7Var2, (byte) 21));
                 final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr42 = inputtonconnectoauthsessionArr;
                 i62.setOnClickListener(new View.OnClickListener() { // from class: f45
                     @Override // android.view.View.OnClickListener
@@ -378,7 +378,7 @@ public final class a55 {
                         c51Var3.setEnabled(false);
                         ImageView imageView = k;
                         imageView.setEnabled(false);
-                        o45 o45Var2 = new o45(c51Var22, c51Var3, imageView, jl7Var2, vnbVar, oq6Var2, (byte) 0);
+                        o45 o45Var2 = new o45(c51Var22, c51Var3, imageView, kl7Var2, vnbVar, oq6Var2, (byte) 0);
                         if (!z32) {
                             a55Var.getClass();
                             hl.c3(new re4((Object) a55Var, (Object) v45Var, (Object) o45Var2, (byte) 19));
@@ -405,7 +405,7 @@ public final class a55 {
                         }
                     }
                 });
-                return jl7Var2;
+                return kl7Var2;
             }
         }
         z = z2;
@@ -464,8 +464,8 @@ public final class a55 {
         final c51 i622 = xnb.i(24, vnbVar, context, true);
         i622.setText(ob6.M0(2131742815, null));
         linearLayout22.addView(i622, tre.m(1.0f, 0, 44, 6, 0, 0));
-        final jl7 jl7Var22 = new jl7(context, j, vnbVar);
-        jl7Var22.z0 = new t45(i622);
+        final kl7 kl7Var22 = new kl7(context, j, vnbVar);
+        kl7Var22.z0 = new t45(i622);
         final boolean z322 = z;
         final oq6 oq6Var22 = new oq6(z322, i622, C, tonconnectsession, v45Var, textView22, de0Var, textView);
         final c45 r222 = new fn7() { // from class: c45
@@ -487,7 +487,7 @@ public final class a55 {
         oq6Var22.run();
         final boolean[] zArr22 = {false};
         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr322 = inputtonconnectoauthsessionArr;
-        jl7Var22.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: d45
+        kl7Var22.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: d45
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession;
@@ -504,9 +504,9 @@ public final class a55 {
                 }
             }
         });
-        jl7Var22.show();
-        k.setOnClickListener(new e45(jl7Var22, (byte) 0));
-        c51Var22.setOnClickListener(new je3(i622, jl7Var22, (byte) 21));
+        kl7Var22.show();
+        k.setOnClickListener(new e45(kl7Var22, (byte) 0));
+        c51Var22.setOnClickListener(new je3(i622, kl7Var22, (byte) 21));
         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr422 = inputtonconnectoauthsessionArr;
         i622.setOnClickListener(new View.OnClickListener() { // from class: f45
             @Override // android.view.View.OnClickListener
@@ -522,7 +522,7 @@ public final class a55 {
                 c51Var3.setEnabled(false);
                 ImageView imageView = k;
                 imageView.setEnabled(false);
-                o45 o45Var2 = new o45(c51Var222, c51Var3, imageView, jl7Var22, vnbVar, oq6Var22, (byte) 0);
+                o45 o45Var2 = new o45(c51Var222, c51Var3, imageView, kl7Var22, vnbVar, oq6Var22, (byte) 0);
                 if (!z322) {
                     a55Var.getClass();
                     hl.c3(new re4((Object) a55Var, (Object) v45Var, (Object) o45Var2, (byte) 19));
@@ -549,7 +549,7 @@ public final class a55 {
                 }
             }
         });
-        return jl7Var22;
+        return kl7Var22;
     }
 
     public static LinearLayout F(Context context, String str, vnb vnbVar) {
@@ -831,7 +831,7 @@ public final class a55 {
             g45Var.a(null, "A TON Connect request is already open");
             return;
         }
-        String string = uc7.s1(a55Var.a).X3.getString(k(j, i2), null);
+        String string = uc7.s1(a55Var.a).Y3.getString(k(j, i2), null);
         if (string == null) {
             a55Var.h = true;
             a55Var.b.A0(new r77((Object) a55Var, j, (Object) g45Var, i2, (byte) 6));
@@ -1045,7 +1045,7 @@ public final class a55 {
             int i = w45Var.b;
             TL_wallet.tonConnectSession tonconnectsession = w45Var.a;
             if (A && !i(w45Var)) {
-                String string = uc7.s1(this.a).X3.getString(k(tonconnectsession.id, i).concat(".transfer"), null);
+                String string = uc7.s1(this.a).Y3.getString(k(tonconnectsession.id, i).concat(".transfer"), null);
                 if (string == null) {
                     walletEngine2.prepareTonConnectTransfer(c35Var, w45Var.f, "ton-connect:" + tonconnectsession.id + ":" + i, new nu0((Object) this, (Object) w45Var, (Object) c35Var, (Object) pccVar, (byte) 9));
                     return;
@@ -1093,7 +1093,7 @@ public final class a55 {
 
     public final void d(int i, long j, pcc pccVar) {
         long j2 = i;
-        uc7.s1(this.a).X3.edit().remove(k(j, j2)).remove(k(j, j2).concat(".transfer")).apply();
+        uc7.s1(this.a).Y3.edit().remove(k(j, j2)).remove(k(j, j2).concat(".transfer")).apply();
         w45 w45Var = this.g;
         if (w45Var != null && w45Var.a.id == j && w45Var.b == i) {
             w45Var.n = true;
@@ -1113,7 +1113,7 @@ public final class a55 {
         }
         w45Var.m = true;
         gt gtVar = new gt(this, w45Var, pccVar, (byte) 22);
-        String string = uc7.s1(this.a).X3.getString(k(tonconnectsession.id, w45Var.b), null);
+        String string = uc7.s1(this.a).Y3.getString(k(tonconnectsession.id, w45Var.b), null);
         if (string == null) {
             this.b.E(true, false, false, new o25(this, gtVar, w45Var, z, (byte) 1));
             return;

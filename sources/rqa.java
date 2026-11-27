@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import android.widget.TextView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class rqa implements TextWatcher {
     public boolean a;
@@ -38,9 +38,9 @@ public final class rqa implements TextWatcher {
         try {
             d = TextUtils.isEmpty(editable) ? 0.0d : Double.parseDouble(editable.toString());
             try {
-                if (d > uc7.s1(this.b).k4.V2.f() / 1.0E9d) {
+                if (d > uc7.s1(this.b).l4.V2.f() / 1.0E9d) {
                     this.a = true;
-                    d = uc7.s1(this.b).k4.V2.f() / 1.0E9d;
+                    d = uc7.s1(this.b).l4.V2.f() / 1.0E9d;
                     this.c.setText(Double.toString(d));
                     EditTextBoldCursor editTextBoldCursor = this.c;
                     editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
@@ -49,9 +49,9 @@ public final class rqa implements TextWatcher {
                     int i = -iArr[0];
                     iArr[0] = i;
                     hl.A3(i, lu7Var, null);
-                } else if (d > 0.0d && d < uc7.s1(this.b).k4.U2.f() / 1.0E9d) {
+                } else if (d > 0.0d && d < uc7.s1(this.b).l4.U2.f() / 1.0E9d) {
                     this.a = true;
-                    d = uc7.s1(this.b).k4.U2.f() / 1.0E9d;
+                    d = uc7.s1(this.b).l4.U2.f() / 1.0E9d;
                     this.c.setText(Double.toString(d));
                     EditTextBoldCursor editTextBoldCursor2 = this.c;
                     editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
@@ -87,7 +87,7 @@ public final class rqa implements TextWatcher {
         TextView textView3 = this.f;
         StringBuilder sb = new StringBuilder("≈");
         di0.h();
-        sb.append(di0.f("USD", 2, (long) (d * uc7.s1(this.b).k4.k.i * 100.0d), false));
+        sb.append(di0.f("USD", 2, (long) (d * uc7.s1(this.b).l4.k.i * 100.0d), false));
         textView3.setText(sb.toString());
     }
 

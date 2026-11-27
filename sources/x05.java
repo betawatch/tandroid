@@ -9,7 +9,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class x05 {
     public um4 a;
@@ -133,8 +133,8 @@ public final class x05 {
         um4 um4Var = this.a;
         um4Var.getClass();
         try {
-            i09 i09Var = (i09) um4Var.c;
-            if (i09Var == null) {
+            j09 j09Var = (j09) um4Var.c;
+            if (j09Var == null) {
                 qae qaeVar = (qae) um4Var.b;
                 Parcel Q = qaeVar.Q(qaeVar.R(), 25);
                 IBinder readStrongBinder = Q.readStrongBinder();
@@ -145,11 +145,11 @@ public final class x05 {
                     ykdVar = queryLocalInterface instanceof ykd ? (ykd) queryLocalInterface : new ykd(readStrongBinder, "com.google.android.gms.maps.internal.IUiSettingsDelegate", (byte) 6);
                 }
                 Q.recycle();
-                i09Var = new i09((Object) ykdVar, (byte) 21);
-                um4Var.c = i09Var;
+                j09Var = new j09((Object) ykdVar, (byte) 21);
+                um4Var.c = j09Var;
             }
             aj3 aj3Var = new aj3((byte) 10, false);
-            aj3Var.b = i09Var;
+            aj3Var.b = j09Var;
             return aj3Var;
         } catch (RemoteException e) {
             p3d.i(e);

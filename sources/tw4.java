@@ -35,7 +35,7 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class tw4 implements Runnable {
     public final /* synthetic */ byte a;
@@ -64,9 +64,9 @@ public final /* synthetic */ class tw4 implements Runnable {
             TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject;
             uc7Var.j4(tL_channels_channelParticipants.users, false);
             uc7Var.c4(tL_channels_channelParticipants.chats, false);
-            uc7Var.getMessagesStorage().j1(tL_channels_channelParticipants.users, tL_channels_channelParticipants.chats, true, true);
-            jf7 messagesStorage = uc7Var.getMessagesStorage();
-            messagesStorage.a.c(new se7(messagesStorage, l.longValue(), (ArrayList) tL_channels_channelParticipants.participants, (byte) 7));
+            uc7Var.getMessagesStorage().n1(tL_channels_channelParticipants.users, tL_channels_channelParticipants.chats, true, true);
+            kf7 messagesStorage = uc7Var.getMessagesStorage();
+            messagesStorage.a.c(new te7(messagesStorage, l.longValue(), (ArrayList) tL_channels_channelParticipants.participants, (byte) 6));
             uc7Var.o1.add(l);
         }
         uc7Var.n1.remove(l);
@@ -77,32 +77,32 @@ public final /* synthetic */ class tw4 implements Runnable {
 
     private final void b() {
         long j;
-        jf7 jf7Var = (jf7) this.b;
+        kf7 kf7Var = (kf7) this.b;
         ArrayList arrayList = (ArrayList) this.c;
         ArrayList arrayList2 = (ArrayList) this.d;
         ArrayList arrayList3 = (ArrayList) this.e;
         zh6 zh6Var = (zh6) this.f;
-        jf7Var.getMessagesController().j4(arrayList, true);
-        jf7Var.getMessagesController().c4(arrayList2, true);
-        jf7Var.getMessagesController().g4(arrayList3);
+        kf7Var.getMessagesController().j4(arrayList, true);
+        kf7Var.getMessagesController().c4(arrayList2, true);
+        kf7Var.getMessagesController().g4(arrayList3);
         for (int i = 0; i < zh6Var.m(); i++) {
             long j2 = zh6Var.j(i);
-            ff7 ff7Var = (ff7) zh6Var.n(i);
-            if (jf7Var.getMessagesController().v2(j2) || jf7Var.r0(8, j2) || jf7Var.getMessagesController().C2(j2)) {
-                uc7 messagesController = jf7Var.getMessagesController();
+            gf7 gf7Var = (gf7) zh6Var.n(i);
+            if (kf7Var.getMessagesController().v2(j2) || kf7Var.u0(8, j2) || kf7Var.getMessagesController().C2(j2)) {
+                uc7 messagesController = kf7Var.getMessagesController();
                 j = j2;
-                jf7 messagesStorage = messagesController.getMessagesStorage();
+                kf7 messagesStorage = messagesController.getMessagesStorage();
                 messagesStorage.a.c(new ue2((Object) messagesStorage, j, (Object) new y97(messagesController, j), (byte) 5));
             } else {
                 j = j2;
             }
-            int i2 = ff7Var.a;
-            jf7Var.getMessagesController().r3(j, i2, i2, ff7Var.b, false, 0L, ff7Var.c, true, 0);
+            int i2 = gf7Var.a;
+            kf7Var.getMessagesController().r3(j, i2, i2, gf7Var.b, false, 0L, gf7Var.c, true, 0);
         }
     }
 
     private final void c() {
-        ((jf7) this.b).R1(null, (LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (zh6) this.e, (LongSparseIntArray) this.f);
+        ((kf7) this.b).W1(null, (LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (zh6) this.e, (LongSparseIntArray) this.f);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:241:0x064e, code lost:
@@ -165,7 +165,7 @@ public final /* synthetic */ class tw4 implements Runnable {
                         userFull.flags2 = i5 | 32;
                     }
                     userFull.birthday = tL_birthday;
-                    jf7.Y(bx4Var.a).g2(userFull, false);
+                    kf7.a0(bx4Var.a).l2(userFull, false);
                 }
                 if (tL_error == null || (str = tL_error.text) == null || !str.startsWith("FLOOD_WAIT_")) {
                     bs2.v(null, 2131743534, new d31(ex0Var, bx4Var.J0), R.raw.error, 36);
@@ -224,7 +224,7 @@ public final /* synthetic */ class tw4 implements Runnable {
                 pcc pccVar = (pcc) this.e;
                 c35 c35Var3 = (c35) this.f;
                 try {
-                    if (!uc7.s1(a55Var.a).X3.edit().putString(a55.k(w45Var2.a.id, w45Var2.b).concat(".transfer"), new JSONObject().put("boc", Base64.encodeToString(sendtransfer.data_normal, 2)).put("randomId", sendtransfer.random_id).toString()).commit()) {
+                    if (!uc7.s1(a55Var.a).Y3.edit().putString(a55.k(w45Var2.a.id, w45Var2.b).concat(".transfer"), new JSONObject().put("boc", Base64.encodeToString(sendtransfer.data_normal, 2)).put("randomId", sendtransfer.random_id).toString()).commit()) {
                         throw new IllegalStateException("Could not save signed transfer");
                     }
                 } catch (Exception e2) {
@@ -1004,14 +1004,14 @@ public final /* synthetic */ class tw4 implements Runnable {
                 ArrayList arrayList9 = (ArrayList) this.d;
                 zh6 zh6Var = (zh6) this.e;
                 zh6 zh6Var2 = (zh6) this.f;
-                uc7Var.getMessagesStorage().j1(updates_difference.users, updates_difference.chats, true, false);
+                uc7Var.getMessagesStorage().n1(updates_difference.users, updates_difference.chats, true, false);
                 if (!arrayList9.isEmpty()) {
                     SparseArray sparseArray = new SparseArray();
                     for (int i13 = 0; i13 < arrayList9.size(); i13++) {
                         TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) arrayList9.get(i13);
-                        long[] X1 = uc7Var.getMessagesStorage().X1(tL_updateMessageID.random_id, 0L, null, tL_updateMessageID.id, 0, -1, 0);
-                        if (X1 != null) {
-                            sparseArray.put(tL_updateMessageID.id, X1);
+                        long[] c22 = uc7Var.getMessagesStorage().c2(tL_updateMessageID.random_id, 0L, null, tL_updateMessageID.id, 0, -1, 0);
+                        if (c22 != null) {
+                            sparseArray.put(tL_updateMessageID.id, c22);
                         }
                     }
                     if (sparseArray.size() != 0) {
@@ -1065,27 +1065,27 @@ public final /* synthetic */ class tw4 implements Runnable {
                 c();
                 return;
             default:
-                rl7 rl7Var = (rl7) this.b;
+                sl7 sl7Var = (sl7) this.b;
                 TLRPC.TL_contacts_importedContacts tL_contacts_importedContacts = (TLRPC.TL_contacts_importedContacts) this.c;
                 TLRPC.TL_inputPhoneContact tL_inputPhoneContact = (TLRPC.TL_inputPhoneContact) this.d;
                 TLRPC.TL_error tL_error12 = (TLRPC.TL_error) this.f;
                 TLRPC.TL_contacts_importContacts tL_contacts_importContacts = (TLRPC.TL_contacts_importContacts) this.e;
-                e eVar2 = rl7Var.F1;
-                rl7Var.A1 = false;
+                e eVar2 = sl7Var.F1;
+                sl7Var.A1 = false;
                 if (tL_contacts_importedContacts == null) {
-                    hl.T3(rl7Var.Q1, true, 0.5f, true, true);
-                    hl.T3(rl7Var.R1, false, 0.5f, true, true);
-                    jj.c0(rl7Var.a, tL_error12, eVar2, tL_contacts_importContacts, new Object[0]);
+                    hl.T3(sl7Var.Q1, true, 0.5f, true, true);
+                    hl.T3(sl7Var.R1, false, 0.5f, true, true);
+                    jj.c0(sl7Var.a, tL_error12, eVar2, tL_contacts_importContacts, new Object[0]);
                     return;
                 } else if (!tL_contacts_importedContacts.users.isEmpty()) {
-                    uc7.s1(rl7Var.a).j4(tL_contacts_importedContacts.users, false);
-                    uc7.s1(rl7Var.a).I3(tL_contacts_importedContacts.users.get(0), null, eVar2, 1);
-                    rl7Var.dismiss();
+                    uc7.s1(sl7Var.a).j4(tL_contacts_importedContacts.users, false);
+                    uc7.s1(sl7Var.a).I3(tL_contacts_importedContacts.users.get(0), null, eVar2, 1);
+                    sl7Var.dismiss();
                     return;
                 } else {
                     if (eVar2.getParentActivity() != null) {
-                        hl.T3(rl7Var.Q1, true, 0.5f, true, true);
-                        hl.T3(rl7Var.R1, false, 0.5f, true, true);
+                        hl.T3(sl7Var.Q1, true, 0.5f, true, true);
+                        hl.T3(sl7Var.R1, false, 0.5f, true, true);
                         jj.u(eVar2, tL_inputPhoneContact.first_name, tL_inputPhoneContact.last_name, tL_inputPhoneContact.phone);
                         return;
                     }

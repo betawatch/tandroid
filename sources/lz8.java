@@ -14,7 +14,7 @@ import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class lz8 implements Consumer {
     public final /* synthetic */ rz8 a;
@@ -78,11 +78,11 @@ public final /* synthetic */ class lz8 implements Consumer {
         if (rz8Var.h == null || Float.isNaN(rz8Var.L)) {
             return;
         }
-        f09 f09Var = rz8Var.d;
-        float l = f09Var != null ? f09Var.h1 < 0.5f ? (-Utilities.l((AnimationUtils.currentAnimationTimeMillis() - f09Var.d6) / 150.0f)) - 1.0E-4f : !f09Var.e6 ? 0.0f : Utilities.l((AnimationUtils.currentAnimationTimeMillis() - f09Var.c6) / 470.0f) : 1.0f;
-        f09 f09Var2 = rz8Var.d;
-        boolean z = f09Var2 != null && f09Var2.h1 > 0.5f;
-        float l2 = f09Var2 != null ? Utilities.l(f09Var2.g1) : 1.0f;
+        g09 g09Var = rz8Var.d;
+        float l = g09Var != null ? g09Var.h1 < 0.5f ? (-Utilities.l((AnimationUtils.currentAnimationTimeMillis() - g09Var.d6) / 150.0f)) - 1.0E-4f : !g09Var.e6 ? 0.0f : Utilities.l((AnimationUtils.currentAnimationTimeMillis() - g09Var.c6) / 470.0f) : 1.0f;
+        g09 g09Var2 = rz8Var.d;
+        boolean z = g09Var2 != null && g09Var2.h1 > 0.5f;
+        float l2 = g09Var2 != null ? Utilities.l(g09Var2.g1) : 1.0f;
         float f9 = 1.0f - l2;
         boolean z2 = z;
         float v = bp1.v(f9, f9, f9, 1.0f);
@@ -196,10 +196,10 @@ public final /* synthetic */ class lz8 implements Consumer {
         canvas4.drawRect(0.0f, f16, width, Math.max(f17 + f16, hl.L(200.0f) + yy8Var2.getHeight()), paint4);
         boolean z3 = l < 1.0f && !z2;
         float f18 = z2 ? l2 : l;
-        f09 f09Var3 = rz8Var.d;
+        g09 g09Var3 = rz8Var.d;
         float f19 = 90.0f;
-        if (f09Var3 != null) {
-            rz8Var.e0 = rz8Var.r - (f09Var3.H0() - hl.L(8.0f));
+        if (g09Var3 != null) {
+            rz8Var.e0 = rz8Var.r - (g09Var3.H0() - hl.L(8.0f));
             float translationY = cz8Var.getTranslationY();
             float f20 = rz8Var.e0;
             if (translationY != f20) {
@@ -256,7 +256,7 @@ public final /* synthetic */ class lz8 implements Consumer {
                     float height3 = (childAt.getHeight() / 2.0f) + childAt.getTop();
                     if (l >= 0.0f) {
                         canvas2 = canvas4;
-                        f6 = (f09.S(Math.max(0.0f, Math.min(1.0f, ((l * 470.0f) - (Math.max(0.0f, ((f22 - height3) / f23) - 0.5f) * Math.min(45.0f, 250.0f / f25))) / 220.0f)), 1.2f) * 0.5f) + 0.5f;
+                        f6 = (g09.S(Math.max(0.0f, Math.min(1.0f, ((l * 470.0f) - (Math.max(0.0f, ((f22 - height3) / f23) - 0.5f) * Math.min(45.0f, 250.0f / f25))) / 220.0f)), 1.2f) * 0.5f) + 0.5f;
                     } else {
                         canvas2 = canvas4;
                         float max5 = Math.max(0.0f, Math.min(1.0f, (((-l) * 150.0f) - (Math.max(0.0f, ((height3 - max4) / f23) - 0.5f) * Math.min(25.0f, 60.0f / Math.max(1.0f, f25 - 1.0f)))) / f24));

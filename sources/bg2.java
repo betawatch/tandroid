@@ -27,7 +27,7 @@ import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class bg2 extends e implements fn7 {
     public int A0;
@@ -324,7 +324,7 @@ public final class bg2 extends e implements fn7 {
             if (j <= 0) {
                 j = 10;
             }
-            long k = Utilities.k(j, getMessagesController().k4.P1.f(), 1L);
+            long k = Utilities.k(j, getMessagesController().l4.P1.f(), 1L);
             this.A1 = k;
             this.z1 = k;
         }
@@ -1069,7 +1069,7 @@ public final class bg2 extends e implements fn7 {
                 if (j <= 0) {
                     j = 10;
                 }
-                long k = Utilities.k(j, getMessagesController().k4.P1.f(), 1L);
+                long k = Utilities.k(j, getMessagesController().l4.P1.f(), 1L);
                 this.A1 = k;
                 this.z1 = k;
             }
@@ -1735,8 +1735,8 @@ public final class bg2 extends e implements fn7 {
                 if (i == this.x0) {
                     final skb skbVar = (skb) view;
                     TLRPC.ChatFull chatFull3 = this.r;
-                    if (chatFull3 != null && !chatFull3.antispam && l0() < getMessagesController().k4.y1.f()) {
-                        c00.v(ob6.G(getMessagesController().k4.y1.f(), "ChannelAntiSpamForbidden", new Object[0]), d31.b0(this), R.raw.msg_antispam, 36);
+                    if (chatFull3 != null && !chatFull3.antispam && l0() < getMessagesController().l4.y1.f()) {
+                        c00.v(ob6.G(getMessagesController().l4.y1.f(), "ChannelAntiSpamForbidden", new Object[0]), d31.b0(this), R.raw.msg_antispam, 36);
                         return;
                     }
                     if (this.r == null || !xc2.y(13, this.n) || this.w0) {
@@ -1751,7 +1751,7 @@ public final class bg2 extends e implements fn7 {
                     chatFull4.antispam = z10;
                     tL_channels_toggleAntiSpam.enabled = z10;
                     skbVar.setChecked(z10);
-                    skbVar.getCheckBox().setIcon((xc2.y(13, this.n) && ((chatFull2 = this.r) == null || chatFull2.antispam || l0() >= getMessagesController().k4.y1.f())) ? 0 : R.drawable.permission_locked);
+                    skbVar.getCheckBox().setIcon((xc2.y(13, this.n) && ((chatFull2 = this.r) == null || chatFull2.antispam || l0() >= getMessagesController().l4.y1.f())) ? 0 : R.drawable.permission_locked);
                     getConnectionsManager().sendRequest(tL_channels_toggleAntiSpam, new RequestDelegate(this) { // from class: ff2
                         public final /* synthetic */ bg2 b;
 
@@ -1791,7 +1791,7 @@ public final class bg2 extends e implements fn7 {
                                                                 bg2Var4.r.antispam = z12;
                                                                 skbVar3.setChecked(z12);
                                                                 Switch checkBox = skbVar3.getCheckBox();
-                                                                if (xc2.y(13, bg2Var4.n) && ((chatFull5 = bg2Var4.r) == null || !chatFull5.antispam || bg2Var4.l0() >= bg2Var4.getMessagesController().k4.y1.f())) {
+                                                                if (xc2.y(13, bg2Var4.n) && ((chatFull5 = bg2Var4.r) == null || !chatFull5.antispam || bg2Var4.l0() >= bg2Var4.getMessagesController().l4.y1.f())) {
                                                                     i5 = 0;
                                                                 }
                                                                 checkBox.setIcon(i5);
@@ -1804,7 +1804,7 @@ public final class bg2 extends e implements fn7 {
                                                                 bg2Var4.r.participants_hidden = z12;
                                                                 skbVar3.setChecked(z12);
                                                                 Switch checkBox2 = skbVar3.getCheckBox();
-                                                                if (xc2.y(2, bg2Var4.n) && ((chatFull6 = bg2Var4.r) == null || !chatFull6.participants_hidden || bg2Var4.l0() >= bg2Var4.getMessagesController().k4.z1.f())) {
+                                                                if (xc2.y(2, bg2Var4.n) && ((chatFull6 = bg2Var4.r) == null || !chatFull6.participants_hidden || bg2Var4.l0() >= bg2Var4.getMessagesController().l4.z1.f())) {
                                                                     i5 = 0;
                                                                 }
                                                                 checkBox2.setIcon(i5);
@@ -1844,7 +1844,7 @@ public final class bg2 extends e implements fn7 {
                                                                 bg2Var4.r.antispam = z12;
                                                                 skbVar3.setChecked(z12);
                                                                 Switch checkBox = skbVar3.getCheckBox();
-                                                                if (xc2.y(13, bg2Var4.n) && ((chatFull5 = bg2Var4.r) == null || !chatFull5.antispam || bg2Var4.l0() >= bg2Var4.getMessagesController().k4.y1.f())) {
+                                                                if (xc2.y(13, bg2Var4.n) && ((chatFull5 = bg2Var4.r) == null || !chatFull5.antispam || bg2Var4.l0() >= bg2Var4.getMessagesController().l4.y1.f())) {
                                                                     i5 = 0;
                                                                 }
                                                                 checkBox.setIcon(i5);
@@ -1857,7 +1857,7 @@ public final class bg2 extends e implements fn7 {
                                                                 bg2Var4.r.participants_hidden = z12;
                                                                 skbVar3.setChecked(z12);
                                                                 Switch checkBox2 = skbVar3.getCheckBox();
-                                                                if (xc2.y(2, bg2Var4.n) && ((chatFull6 = bg2Var4.r) == null || !chatFull6.participants_hidden || bg2Var4.l0() >= bg2Var4.getMessagesController().k4.z1.f())) {
+                                                                if (xc2.y(2, bg2Var4.n) && ((chatFull6 = bg2Var4.r) == null || !chatFull6.participants_hidden || bg2Var4.l0() >= bg2Var4.getMessagesController().l4.z1.f())) {
                                                                     i5 = 0;
                                                                 }
                                                                 checkBox2.setIcon(i5);
@@ -1879,8 +1879,8 @@ public final class bg2 extends e implements fn7 {
                 }
                 if (i == this.J0) {
                     final skb skbVar2 = (skb) view;
-                    if (l0() < getMessagesController().k4.z1.f()) {
-                        c00.v(ob6.G(getMessagesController().k4.z1.f(), "ChannelHiddenMembersForbidden", new Object[0]), d31.b0(this), R.raw.contacts_sync_off, 36);
+                    if (l0() < getMessagesController().l4.z1.f()) {
+                        c00.v(ob6.G(getMessagesController().l4.z1.f(), "ChannelHiddenMembersForbidden", new Object[0]), d31.b0(this), R.raw.contacts_sync_off, 36);
                         return;
                     }
                     if (this.r == null || !xc2.y(2, this.n) || this.I0) {
@@ -1896,7 +1896,7 @@ public final class bg2 extends e implements fn7 {
                     tL_channels_toggleParticipantsHidden.enabled = z12;
                     skbVar2.setChecked(z12);
                     Switch checkBox = skbVar2.getCheckBox();
-                    if (!xc2.y(2, this.n) || ((chatFull = this.r) != null && !chatFull.participants_hidden && l0() < getMessagesController().k4.z1.f())) {
+                    if (!xc2.y(2, this.n) || ((chatFull = this.r) != null && !chatFull.participants_hidden && l0() < getMessagesController().l4.z1.f())) {
                         b = 2131232529;
                     }
                     checkBox.setIcon(b);
@@ -1939,7 +1939,7 @@ public final class bg2 extends e implements fn7 {
                                                                 bg2Var4.r.antispam = z122;
                                                                 skbVar3.setChecked(z122);
                                                                 Switch checkBox2 = skbVar3.getCheckBox();
-                                                                if (xc2.y(13, bg2Var4.n) && ((chatFull52 = bg2Var4.r) == null || !chatFull52.antispam || bg2Var4.l0() >= bg2Var4.getMessagesController().k4.y1.f())) {
+                                                                if (xc2.y(13, bg2Var4.n) && ((chatFull52 = bg2Var4.r) == null || !chatFull52.antispam || bg2Var4.l0() >= bg2Var4.getMessagesController().l4.y1.f())) {
                                                                     i5 = 0;
                                                                 }
                                                                 checkBox2.setIcon(i5);
@@ -1952,7 +1952,7 @@ public final class bg2 extends e implements fn7 {
                                                                 bg2Var4.r.participants_hidden = z122;
                                                                 skbVar3.setChecked(z122);
                                                                 Switch checkBox22 = skbVar3.getCheckBox();
-                                                                if (xc2.y(2, bg2Var4.n) && ((chatFull6 = bg2Var4.r) == null || !chatFull6.participants_hidden || bg2Var4.l0() >= bg2Var4.getMessagesController().k4.z1.f())) {
+                                                                if (xc2.y(2, bg2Var4.n) && ((chatFull6 = bg2Var4.r) == null || !chatFull6.participants_hidden || bg2Var4.l0() >= bg2Var4.getMessagesController().l4.z1.f())) {
                                                                     i5 = 0;
                                                                 }
                                                                 checkBox22.setIcon(i5);
@@ -1992,7 +1992,7 @@ public final class bg2 extends e implements fn7 {
                                                                 bg2Var4.r.antispam = z122;
                                                                 skbVar3.setChecked(z122);
                                                                 Switch checkBox2 = skbVar3.getCheckBox();
-                                                                if (xc2.y(13, bg2Var4.n) && ((chatFull52 = bg2Var4.r) == null || !chatFull52.antispam || bg2Var4.l0() >= bg2Var4.getMessagesController().k4.y1.f())) {
+                                                                if (xc2.y(13, bg2Var4.n) && ((chatFull52 = bg2Var4.r) == null || !chatFull52.antispam || bg2Var4.l0() >= bg2Var4.getMessagesController().l4.y1.f())) {
                                                                     i5 = 0;
                                                                 }
                                                                 checkBox2.setIcon(i5);
@@ -2005,7 +2005,7 @@ public final class bg2 extends e implements fn7 {
                                                                 bg2Var4.r.participants_hidden = z122;
                                                                 skbVar3.setChecked(z122);
                                                                 Switch checkBox22 = skbVar3.getCheckBox();
-                                                                if (xc2.y(2, bg2Var4.n) && ((chatFull6 = bg2Var4.r) == null || !chatFull6.participants_hidden || bg2Var4.l0() >= bg2Var4.getMessagesController().k4.z1.f())) {
+                                                                if (xc2.y(2, bg2Var4.n) && ((chatFull6 = bg2Var4.r) == null || !chatFull6.participants_hidden || bg2Var4.l0() >= bg2Var4.getMessagesController().l4.z1.f())) {
                                                                     i5 = 0;
                                                                 }
                                                                 checkBox22.setIcon(i5);

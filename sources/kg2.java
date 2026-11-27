@@ -24,7 +24,7 @@ import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class kg2 extends d6 {
     public final /* synthetic */ byte a;
@@ -369,10 +369,10 @@ public final class kg2 extends d6 {
                 } else if (i == 1 && ru3Var.getParentActivity() != null) {
                     ArrayList arrayList5 = new ArrayList();
                     for (int i6 = 0; i6 < arrayList4.size(); i6++) {
-                        arrayList5.add(if7.a(((Long) arrayList4.get(i6)).longValue(), 0L));
+                        arrayList5.add(jf7.a(((Long) arrayList4.get(i6)).longValue(), 0L));
                     }
-                    jf7 messagesStorage = ru3Var.getMessagesStorage();
-                    messagesStorage.a.c(new de7(messagesStorage, i5, arrayList5, b3));
+                    kf7 messagesStorage = ru3Var.getMessagesStorage();
+                    messagesStorage.a.c(new ce7(messagesStorage, i5, arrayList5, b3));
                     SharedPreferences.Editor edit2 = ru3Var.getParentActivity().getSharedPreferences("shortcut_widget", 0).edit();
                     String k = uh9.k(i5, "account");
                     i2 = ((e) ru3Var).currentAccount;

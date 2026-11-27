@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class yt4 implements icc {
     public final /* synthetic */ byte a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class yt4 implements icc {
         nj0 nj0Var;
         float f3;
         TL_stars.StarsAmount starsAmount;
-        p5b p5bVar;
+        q5b q5bVar;
         ArrayList<TLRPC.Message> arrayList5;
         int i3;
         byte b = this.a;
@@ -137,7 +137,7 @@ public final /* synthetic */ class yt4 implements icc {
                             if (zw4Var.c) {
                                 int i8 = zw4Var.d;
                                 String G = i8 > 0 ? ob6.G(i8, "Gift2ExportTONUnlocksIn", new Object[0]) : null;
-                                if (uc7.s1(bx4Var.a).k4.v0.f) {
+                                if (uc7.s1(bx4Var.a).l4.v0.f) {
                                     if (bx4Var.X1 == null) {
                                         bx4Var.X1 = bx4Var.b1(R.drawable.filled_wallet_move, aob.v0(aob.Fi, bx4Var.J0));
                                     }
@@ -415,12 +415,12 @@ public final /* synthetic */ class yt4 implements icc {
                 ef5 ef5Var = (ef5) obj3;
                 ArrayList arrayList20 = (ArrayList) obj;
                 ArrayList arrayList21 = ef5Var.R;
-                boolean z3 = ef5Var.S && (p5bVar = ef5Var.T) != null && p5bVar.i.size() > 0;
+                boolean z3 = ef5Var.S && (q5bVar = ef5Var.T) != null && q5bVar.i.size() > 0;
                 if (z3) {
-                    p5b p5bVar2 = ef5Var.T;
+                    q5b q5bVar2 = ef5Var.T;
                     int i24 = wc7.b;
                     b8c K5 = b8c.K(wc7.class);
-                    K5.H = p5bVar2;
+                    K5.H = q5bVar2;
                     arrayList20.add(K5);
                 }
                 ef5Var.U = z3;
@@ -654,7 +654,7 @@ public final /* synthetic */ class yt4 implements icc {
                     break;
                 }
             case 21:
-                ((ArrayList) obj).add(b8c.k(((jl7) obj3).T1));
+                ((ArrayList) obj).add(b8c.k(((kl7) obj3).T1));
                 break;
             case 22:
                 ms7 ms7Var = (ms7) obj3;
@@ -723,7 +723,7 @@ public final /* synthetic */ class yt4 implements icc {
                 dx7Var.a0(dx7Var.g0((TLRPC.MessageMedia) obj, (TL_stories.MediaArea) obj2));
                 break;
             case 26:
-                ((qbb) obj3).X(((Float) obj2).floatValue(), (Bitmap) obj);
+                ((rbb) obj3).X(((Float) obj2).floatValue(), (Bitmap) obj);
                 break;
             case 27:
                 ji8 ji8Var = (ji8) obj3;

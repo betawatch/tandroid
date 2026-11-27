@@ -2,7 +2,7 @@
 
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class dwc implements ewc {
     public static final int[] m = {-1, -1, -1, -1, 2, 4, 6, 8, -1, -1, -1, -1, 2, 4, 6, 8};
@@ -42,7 +42,7 @@ public final class dwc implements ewc {
         this.f = new ey7((t << 1) * i2 * g);
         int i5 = ((i3 * i) << 3) / t;
         jo4 jo4Var = new jo4();
-        jo4Var.s = dg7.n("audio/raw");
+        jo4Var.s = eg7.n("audio/raw");
         jo4Var.i = i5;
         jo4Var.j = i5;
         jo4Var.t = (max << 1) * i2;

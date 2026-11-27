@@ -27,9 +27,9 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ie implements n7, fq7, o69, nt2, fd, z28, u69, ez5, hj, m39, wb0, oj3, r42, ef7 {
+public final /* synthetic */ class ie implements n7, fq7, o69, nt2, fd, z28, u69, ez5, hj, m39, wb0, oj3, r42, ff7 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -342,7 +342,7 @@ public final /* synthetic */ class ie implements n7, fq7, o69, nt2, fd, z28, u69
             uj3Var.finishFragment();
             return true;
         }
-        long j3 = ((if7) arrayList.get(0)).a;
+        long j3 = ((jf7) arrayList.get(0)).a;
         ls6.d0(chatActivityEnterView.R).T1(j3, 0L, "@" + lbc.p(X1) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, null, null, 0L, true, false, null);
         if (j3 == chatActivityEnterView.F3) {
             uj3Var.finishFragment();
@@ -594,7 +594,7 @@ public final /* synthetic */ class ie implements n7, fq7, o69, nt2, fd, z28, u69
     public final void h(float f) {
     }
 
-    @Override // ef7
+    @Override // ff7
     public final void run(long j) {
         ((pd2) this.b).j0((TLRPC.TL_inputCheckPasswordSRP) this.c, (TwoStepVerificationActivity) this.d, j);
     }

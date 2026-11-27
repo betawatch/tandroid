@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class rr0 extends e implements fn7 {
     public static final k43 F = new k43(0.2d, 0.1d, 0.35d, 0.9d);

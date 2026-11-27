@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class e9b extends nx0 implements fn7 {
     public final int l1;
@@ -53,7 +53,7 @@ public final class e9b extends nx0 implements fn7 {
                 vnb vnbVar2 = vnbVar;
                 id idVar = new id(3, vnbVar2, context2);
                 idVar.q(200L);
-                uc7.s1(i).O1().j(wf3.m(inputPeer2), new v58((Object) idVar, (Object) pccVar2, (Object) inputPeer2, (byte) 11), true, vnbVar2);
+                uc7.s1(i).O1().j(wf3.m(inputPeer2), new w58((Object) idVar, (Object) pccVar2, (Object) inputPeer2, (byte) 11), true, vnbVar2);
                 e9bVar.dismiss();
             }
         });

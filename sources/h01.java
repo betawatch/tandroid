@@ -41,9 +41,9 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class h01 implements RequestDelegateTimestamp, lcc, fd, oj3, ea9, s9, wb0, t69, gc7, hj, dz5, h69, n39, bf7, ResultCallback, zj5, c88, on5, u12 {
+public final /* synthetic */ class h01 implements RequestDelegateTimestamp, lcc, fd, oj3, ea9, s9, wb0, t69, gc7, hj, dz5, h69, n39, cf7, ResultCallback, zj5, c88, on5, u12 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -54,7 +54,7 @@ public final /* synthetic */ class h01 implements RequestDelegateTimestamp, lcc,
         this.c = user;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         oq1 oq1Var = (oq1) this.b;
         long j = ((TLRPC.User) this.c).id;
@@ -145,7 +145,7 @@ public final /* synthetic */ class h01 implements RequestDelegateTimestamp, lcc,
             }
             HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
             if (hashMap.size() + 1 > chatAttachAlertPhotoLayout.h0()) {
-                new d31(n12Var.o3, chatAttachAlertPhotoLayout.a).t(hl.S2(ob6.G(eVar.getMessagesController().k4.q0.f(), "BusinessRepliesToastLimit", new Object[0])), null).j();
+                new d31(n12Var.o3, chatAttachAlertPhotoLayout.a).t(hl.S2(ob6.G(eVar.getMessagesController().l4.q0.f(), "BusinessRepliesToastLimit", new Object[0])), null).j();
                 return;
             }
             boolean containsKey = hashMap.containsKey(Integer.valueOf(photoEntry.C));
@@ -308,7 +308,7 @@ public final /* synthetic */ class h01 implements RequestDelegateTimestamp, lcc,
     @Override // org.telegram.tgnet.ResultCallback
     public final void onComplete(Object obj) {
         xu1 xu1Var = (xu1) this.b;
-        hh7 hh7Var = (hh7) this.c;
+        ih7 ih7Var = (ih7) this.c;
         Pair pair = (Pair) obj;
         if (pair != null) {
             long longValue = ((Long) pair.first).longValue();
@@ -317,8 +317,8 @@ public final /* synthetic */ class h01 implements RequestDelegateTimestamp, lcc,
             if (ez3Var == null || longValue != ez3Var.h(xu1Var.q ? 1 : 0) || bitmap == null) {
                 return;
             }
-            hh7Var.x = bitmap;
-            hh7Var.i();
+            ih7Var.x = bitmap;
+            ih7Var.i();
         }
     }
 
@@ -343,22 +343,22 @@ public final /* synthetic */ class h01 implements RequestDelegateTimestamp, lcc,
                     z3 = false;
                     break;
                 }
-                if (((u51) d61Var.d.get(i5)).a == ((if7) arrayList.get(i4)).a) {
+                if (((u51) d61Var.d.get(i5)).a == ((jf7) arrayList.get(i4)).a) {
                     u51Var = (u51) d61Var.d.get(i5);
                     break;
                 }
                 i5++;
             }
             if (!z3) {
-                b = d61Var.getMessagesController().h4.c(d61Var.e) != 2 ? (byte) 2 : (byte) 3;
+                b = d61Var.getMessagesController().i4.c(d61Var.e) != 2 ? (byte) 2 : (byte) 3;
                 ArrayList arrayList3 = d61Var.d;
-                u51 u51Var2 = new u51(((if7) arrayList.get(i4)).a, b);
+                u51 u51Var2 = new u51(((jf7) arrayList.get(i4)).a, b);
                 arrayList3.add(u51Var2);
                 u51Var = u51Var2;
             }
             i4++;
         }
-        d61Var.getMessagesController().h4.h(d61Var.e, d61Var.d);
+        d61Var.getMessagesController().i4.h(d61Var.e, d61Var.d);
         d61Var.Y();
         if (u51Var != null) {
             int i6 = 0;

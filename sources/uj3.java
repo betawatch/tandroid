@@ -90,7 +90,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.PrivacySettingsActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class uj3 extends e implements fn7, el4, s84, ej6 {
     public static boolean E4;
@@ -323,7 +323,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
     public final fm0 r;
     public kg5 r0;
     public b8 r1;
-    public final if7 r2;
+    public final jf7 r2;
     public final pn r3;
     public final rz4 r4;
     public final fm0 s;
@@ -405,7 +405,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         this.W1 = true;
         this.e2 = true;
         this.k2 = true;
-        this.r2 = new if7();
+        this.r2 = new jf7();
         this.K2 = new ArrayList();
         this.L2 = true;
         this.r3 = new pn(null);
@@ -547,7 +547,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         uc7 s1 = uc7.s1(i);
         byte b = 1;
         if (s1.k2 == 0 && !s1.getUserConfig().T) {
-            SharedPreferences sharedPreferences = uc7.s1(s1.currentAccount).W3;
+            SharedPreferences sharedPreferences = uc7.s1(s1.currentAccount).X3;
             if (sharedPreferences.contains("EnableGroup")) {
                 boolean z = sharedPreferences.getBoolean("EnableGroup", true);
                 editor = sharedPreferences.edit();
@@ -591,16 +591,16 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
             s1.getConnectionsManager().sendRequest(new TL_account.getContactSignUpNotification(), new h77(s1, (byte) 13));
         }
         s1.d3(0, 0, 100, true, null);
-        if (s1.s.isEmpty() && !TextUtils.isEmpty(s1.t3)) {
+        if (s1.s.isEmpty() && !TextUtils.isEmpty(s1.u3)) {
             TLRPC.TL_help_getRecentMeUrls tL_help_getRecentMeUrls = new TLRPC.TL_help_getRecentMeUrls();
-            tL_help_getRecentMeUrls.referer = s1.t3;
+            tL_help_getRecentMeUrls.referer = s1.u3;
             s1.getConnectionsManager().sendRequest(tL_help_getRecentMeUrls, new h77(s1, (byte) 5));
         }
         s1.o3(0, yac.h(i).f(), false);
         lv2.r(i).f();
         ls6.d0(i).w(false);
         hl.d3(new zg3(k5Var, b), 200L);
-        Iterator it = s1.y3.iterator();
+        Iterator it = s1.z3.iterator();
         while (it.hasNext()) {
             ls6.d0(i).d1((String) it.next(), true, true);
         }
@@ -710,7 +710,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                 i3++;
             }
         }
-        int i4 = uc7.r5;
+        int i4 = uc7.s5;
         int i5 = z2;
         if (z) {
             i5 = TLObject.FLAG_13;
@@ -1216,9 +1216,9 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                                     this.Y.r.setText(str3);
                                     this.Y.r.setSelection(str3.length());
                                 } else if (!str3.equals("section")) {
-                                    rl7 rl7Var = new rl7(this, getParentActivity());
-                                    rl7Var.I0(str3, true);
-                                    rl7Var.show();
+                                    sl7 sl7Var = new sl7(this, getParentActivity());
+                                    sl7Var.I0(str3, true);
+                                    sl7Var.show();
                                 }
                             } else if (I instanceof iv2) {
                                 iv2 iv2Var = (iv2) I;
@@ -1375,7 +1375,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                 if (bj3Var7 != null && bj3Var7.B0) {
                     bj3Var7.S(false);
                 }
-                if (j3 == getUserConfig().e() && getMessagesController().P3) {
+                if (j3 == getUserConfig().e() && getMessagesController().Q3) {
                     Bundle bundle5 = new Bundle();
                     bundle5.putLong("dialog_id", yac.h(this.currentAccount).e());
                     bundle5.putInt(TeXSymbolParser.TYPE_ATTR, 0);
@@ -1428,7 +1428,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                         }
                         zu1 zu1Var2 = new zu1(bundle4);
                         if (j6 != j) {
-                            ro4.a(zu1Var2, if7.a(j3, j6));
+                            ro4.a(zu1Var2, jf7.a(j3, j6));
                         }
                         if (z4 && wf3.D(j3) && getMessagesController().R.f(j3) == null) {
                             ls6 mediaDataController = getMediaDataController();
@@ -1459,7 +1459,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                     }
                     if (xc2.a(M02)) {
                         zu1 zu1Var4 = new zu1(bundle4);
-                        ro4.a(zu1Var4, if7.a(-M02.id, getMessagesController().X3.getLong(qu6.n(M02.id, "forumlasttopic"), 1L)));
+                        ro4.a(zu1Var4, jf7.a(-M02.id, getMessagesController().Y3.getLong(qu6.n(M02.id, "forumlasttopic"), 1L)));
                         presentFragment(zu1Var4);
                         return;
                     }
@@ -2025,9 +2025,9 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         if ((li3Var != null && li3Var.c()) || this.s3 || (aVar = this.actionBar) == null || aVar.z() || this.n2) {
             return;
         }
-        rbb rbbVar = rbb.G2;
+        sbb sbbVar = sbb.G2;
         int i = 0;
-        if ((rbbVar != null && rbbVar.d) || (getLastStoryViewer() != null && getLastStoryViewer().K0)) {
+        if ((sbbVar != null && sbbVar.d) || (getLastStoryViewer() != null && getLastStoryViewer().K0)) {
             z = false;
         }
         boolean z3 = !F3() && v3().H();
@@ -2207,8 +2207,8 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         if (!lbc.w(X1)) {
             return false;
         }
-        ArrayList l = uc7.s1(this.currentAccount).g4.l(-X1.id);
-        return (l == null || l.isEmpty()) && uc7.s1(this.currentAccount).g4.e(-X1.id);
+        ArrayList l = uc7.s1(this.currentAccount).h4.l(-X1.id);
+        return (l == null || l.isEmpty()) && uc7.s1(this.currentAccount).h4.e(-X1.id);
     }
 
     public final void G4() {
@@ -2222,7 +2222,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                 showDialog(new l46(n.b(), this.currentAccount, null, getParentActivity(), this));
                 return;
             } else {
-                rbb C = rbb.C(getParentActivity(), this.currentAccount);
+                sbb C = sbb.C(getParentActivity(), this.currentAccount);
                 C.y = new ci3(this);
                 C.Q(null);
                 return;
@@ -2265,7 +2265,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         int i3;
         int i4 = 131072;
         if (this.U1) {
-            int i5 = uc7.r5;
+            int i5 = uc7.s5;
             if ((i & 131072) == 0) {
                 return;
             }
@@ -2292,7 +2292,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                 i4 = 131072;
             }
             if (recyclerView != null && recyclerView.getAdapter() != null) {
-                int i7 = uc7.r5;
+                int i7 = uc7.s5;
                 if (((i & 2048) != 0 || i == 0) && r6 != null) {
                     r6.b(false);
                 } else {
@@ -2304,7 +2304,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                         ArrayList arrayList = this.K2;
                         if (z2 && (this.D0 == null || recyclerView.getAdapter() != this.D0.e0)) {
                             of3 of3Var = (of3) childAt;
-                            int i9 = uc7.r5;
+                            int i9 = uc7.s5;
                             if ((i & i4) != 0) {
                                 of3Var.b0(this.actionBar.z(), true);
                                 if (this.U1) {
@@ -2558,14 +2558,14 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
     public final boolean H4(tj3 tj3Var, TLRPC.Dialog dialog) {
         TLRPC.EncryptedChat a1;
         if (tj3Var != null && dialog != null) {
-            if (!getMessagesController().o4.containsKey(Long.valueOf(dialog.id))) {
+            if (!getMessagesController().p4.containsKey(Long.valueOf(dialog.id))) {
                 if (K3(tj3Var)) {
                     return true;
                 }
                 ac7 s3 = s3(tj3Var);
                 if (s3 != null) {
                     int i = s3.g;
-                    int i2 = uc7.r5;
+                    int i2 = uc7.s5;
                     if ((i & 64) != 0) {
                         int i3 = this.currentAccount;
                         long j = dialog.id;
@@ -2618,7 +2618,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         ac7 s3 = s3(tj3Var);
         if (s3 != null) {
             int i = s3.g;
-            int i2 = uc7.r5;
+            int i2 = uc7.s5;
             if ((i & 64) != 0) {
                 return true;
             }
@@ -2913,7 +2913,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
             int i3 = tj3Var.h;
             if (i3 >= 0 && i3 < T0.size()) {
                 int i4 = ((ac7) T0.get(tj3Var.h)).g;
-                int i5 = uc7.r5;
+                int i5 = uc7.s5;
                 if ((i4 & 128) == 0 && ((abs > 0 && M0 >= o3(this.currentAccount, tj3Var.s, 1, this.U1).size() - 10) || (abs == 0 && !getMessagesController().U1.get(1)))) {
                     boolean z6 = getMessagesController().U1.get(1);
                     boolean z7 = !z6;
@@ -3262,7 +3262,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
             }
             ArrayList arrayList2 = new ArrayList();
             for (int i = 0; i < arrayList.size(); i++) {
-                arrayList2.add(if7.a(((Long) arrayList.get(i)).longValue(), 0L));
+                arrayList2.add(jf7.a(((Long) arrayList.get(i)).longValue(), 0L));
             }
             this.E2.q(this, arrayList2, null, false, this.L2, this.M2, this.N2, null);
         }
@@ -3300,7 +3300,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
     }
 
     public final void Q3() {
-        uc7.s1(this.currentAccount).X3.edit().putBoolean("storyhint", false).commit();
+        uc7.s1(this.currentAccount).Y3.edit().putBoolean("storyhint", false).commit();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x0049  */
@@ -4295,7 +4295,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                 }
                 ArrayList arrayList3 = new ArrayList();
                 arrayList3.add(Long.valueOf(dialogId));
-                boolean z7 = uj3Var3.a3 == j && uj3Var3.getMessagesController().k4.P0.f && uj3Var3.getMessagesController().L0 && uj3Var3.getMessagesController().G0 != null && uj3Var3.getMessagesController().G0.size() > 0;
+                boolean z7 = uj3Var3.a3 == j && uj3Var3.getMessagesController().l4.P0.f && uj3Var3.getMessagesController().L0 && uj3Var3.getMessagesController().G0 != null && uj3Var3.getMessagesController().G0.size() > 0;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout[] actionBarPopupWindow$ActionBarPopupWindowLayoutArr5 = new ActionBarPopupWindow$ActionBarPopupWindowLayout[1];
                 if (z7) {
                     LinearLayout linearLayout2 = new LinearLayout(uj3Var3.getParentActivity());
@@ -4556,7 +4556,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                             i3 = 1;
                         }
                     }
-                    int f = (!z4 || ac7Var == null) ? (uj3Var.Y2 == 0 && ac7Var == null) ? uj3Var.getUserConfig().p() ? uj3Var.getMessagesController().k4.g1.f() : uj3Var.getMessagesController().k4.f1.f() : uj3Var.getUserConfig().p() ? uj3Var.getMessagesController().e3 : uj3Var.getMessagesController().d3 : 100 - ac7Var.h.size();
+                    int f = (!z4 || ac7Var == null) ? (uj3Var.Y2 == 0 && ac7Var == null) ? uj3Var.getUserConfig().p() ? uj3Var.getMessagesController().l4.g1.f() : uj3Var.getMessagesController().l4.f1.f() : uj3Var.getUserConfig().p() ? uj3Var.getMessagesController().e3 : uj3Var.getMessagesController().d3 : 100 - ac7Var.h.size();
                     boolean z9 = i4 + i14 <= f && (i5 + i13) - i3 <= f;
                     r5 = 0;
                     zArr[0] = z9;
@@ -5116,7 +5116,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         this.u0 = zp4Var2;
         nj3Var3.addView(zp4Var2, zp4.b());
         this.u0.setOnClickListener(new wg3(this, (byte) 28));
-        if (!F3() && this.T0 == 0 && uc7.s1(this.currentAccount).X3.getBoolean("storyhint", true)) {
+        if (!F3() && this.T0 == 0 && uc7.s1(this.currentAccount).Y3.getBoolean("storyhint", true)) {
             kg5 kg5Var = new kg5(context2, 2);
             kg5Var.q(8.0f);
             kg5Var.d = 8000L;
@@ -5124,7 +5124,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
             kg5Var.h = hl.L(165.0f);
             kg5Var.p(true);
             f = 8.0f;
-            kg5Var.t(hl.G2(ob6.L0(2131744369), rbb.k(context2), "%s"));
+            kg5Var.t(hl.G2(ob6.L0(2131744369), sbb.k(context2), "%s"));
             kg5Var.n(1.0f, -40.0f);
             kg5Var.i(getThemedColor(aob.wj));
             kg5Var.r0 = new ch3(this, (byte) 13);
@@ -5720,14 +5720,14 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                 ij3 ij3Var5 = this.A0;
                 if (ij3Var5 != null && ij3Var5.getVisibility() == 0) {
                     int intValue = num.intValue();
-                    int i14 = uc7.r5;
+                    int i14 = uc7.s5;
                     if ((intValue & 256) != 0) {
                         this.A0.d();
                     }
                 }
                 if (this.a3 != 0) {
                     int intValue2 = num.intValue();
-                    int i15 = uc7.r5;
+                    int i15 = uc7.s5;
                     if ((intValue2 & TLObject.FLAG_13) != 0 || (num.intValue() & 2) != 0 || (num.intValue() & 8) != 0 || (num.intValue() & 16) != 0) {
                         TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(this.a3));
                         this.b3 = M0;
@@ -5738,7 +5738,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                 if (this.f0 != null) {
                     for (int i16 = 0; i16 < this.f0.length; i16++) {
                         int intValue3 = num.intValue();
-                        int i17 = uc7.r5;
+                        int i17 = uc7.s5;
                         if ((intValue3 & 4) != 0) {
                             this.f0[i16].d.P(true);
                         }
@@ -5810,7 +5810,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                     return;
                 }
                 if (i == jn7.I || i == jn7.J || i == jn7.L) {
-                    int i20 = uc7.r5;
+                    int i20 = uc7.s5;
                     G5(TLObject.FLAG_12, true);
                     return;
                 }
@@ -5825,11 +5825,11 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                         return;
                     }
                     int i21 = gx9Var2.t0;
-                    jf7.Y(i21).a.c(new bt(i21, i5, (Object) new ll3(gx9Var2), (byte) 6));
+                    kf7.a0(i21).a.c(new bt(i21, i5, (Object) new ll3(gx9Var2), (byte) 6));
                     return;
                 }
                 if (i == jn7.s0) {
-                    int i22 = uc7.r5;
+                    int i22 = uc7.s5;
                     G5(32768, true);
                     return;
                 }
@@ -5922,9 +5922,9 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                         g5();
                         q5();
                         uc7 messagesController = getMessagesController();
-                        if (!messagesController.j5 && messagesController.A4 + 10 >= messagesController.getConnectionsManager().getCurrentTime()) {
-                            boolean contains = messagesController.u3.contains("SETUP_LOGIN_EMAIL");
-                            if (messagesController.u3.contains("SETUP_LOGIN_EMAIL_NOSKIP")) {
+                        if (!messagesController.k5 && messagesController.B4 + 10 >= messagesController.getConnectionsManager().getCurrentTime()) {
+                            boolean contains = messagesController.v3.contains("SETUP_LOGIN_EMAIL");
+                            if (messagesController.v3.contains("SETUP_LOGIN_EMAIL_NOSKIP")) {
                                 c = 2;
                             } else if (contains) {
                                 c = 1;
@@ -5941,7 +5941,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                                 qh6Var.h0 = z5;
                                 qh6Var.i0 = true;
                                 presentFragment(qh6Var);
-                                getMessagesController().j5 = true;
+                                getMessagesController().k5 = true;
                                 return;
                             }
                             return;
@@ -6227,7 +6227,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
             while (true) {
                 tj3[] tj3VarArr10 = this.f0;
                 if (i33 >= tj3VarArr10.length) {
-                    int i34 = uc7.r5;
+                    int i34 = uc7.s5;
                     G5(512, true);
                     return;
                 }
@@ -6235,19 +6235,19 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                     boolean booleanValue4 = ((Boolean) objArr[2]).booleanValue();
                     long longValue5 = ((Long) objArr[0]).longValue();
                     long longValue6 = ((Long) objArr[1]).longValue();
-                    if7 if7Var = this.r2;
+                    jf7 jf7Var = this.r2;
                     if (booleanValue4) {
-                        long j2 = if7Var.a;
-                        if (longValue5 == j2 && longValue6 == if7Var.b) {
-                            if7Var.a = 0L;
-                            if7Var.b = 0L;
+                        long j2 = jf7Var.a;
+                        if (longValue5 == j2 && longValue6 == jf7Var.b) {
+                            jf7Var.a = 0L;
+                            jf7Var.b = 0L;
                             longValue5 = 0;
                         } else {
                             longValue5 = j2;
                         }
                     } else {
-                        if7Var.a = longValue5;
-                        if7Var.b = longValue6;
+                        jf7Var.a = longValue5;
+                        jf7Var.b = longValue6;
                     }
                     this.f0[i33].d.s = longValue5;
                 }
@@ -6392,7 +6392,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         I.b(R.drawable.outline_groups_24, ob6.M0(2131748027, null), new rg3(this, (byte) 18), false);
         I.b(R.drawable.outline_saved_24, ob6.M0(2131745629, null), new rg3(this, (byte) 19), false);
         org.telegram.messenger.a aVar = org.telegram.messenger.a.a;
-        if (getMessagesController().k4.v0.f) {
+        if (getMessagesController().l4.v0.f) {
             I.b(R.drawable.ic_gram, ob6.M0(2131742845, null), new rg3(this, (byte) 9), false);
         } else {
             TLRPC.TL_attachMenuBots tL_attachMenuBots = ls6.d0(yac.t0).b;
@@ -6580,7 +6580,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
 
     public final void g5() {
         if (this.Y3 == null) {
-            for (String str : getMessagesController().u3) {
+            for (String str : getMessagesController().v3) {
                 if ("AUTOARCHIVE_POPULAR".equals(str)) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
                     String M0 = ob6.M0(2131749073, null);
@@ -6999,7 +6999,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                             i5++;
                         }
                     }
-                    int i6 = uc7.r5;
+                    int i6 = uc7.s5;
                     G5(131072, true);
                 }
                 if (!this.s3) {
@@ -7267,7 +7267,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                         return;
                     }
                     ArrayList arrayList = new ArrayList();
-                    arrayList.add(if7.a(j, j2));
+                    arrayList.add(jf7.a(j, j2));
                     if (this.E2.q(this, arrayList, null, false, this.L2, this.M2, this.N2, tzbVar) && this.k2) {
                         this.E2 = null;
                         return;
@@ -7307,7 +7307,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                         return;
                     }
                     String str = M04.title;
-                    if (j2 != 0 && (f = getMessagesController().g4.f(M04.id, j2)) != null) {
+                    if (j2 != 0 && (f = getMessagesController().h4.f(M04.id, j2)) != null) {
                         str = ((Object) str) + " " + f.title;
                     }
                     if (this.j2 != null) {
@@ -7923,7 +7923,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         ArrayList arrayList6 = s1.M;
         ArrayList arrayList7 = s1.G;
         if (i2 == 0) {
-            return (i3 == 0 && E3()) ? s1.p4 : s1.W0(i3);
+            return (i3 == 0 && E3()) ? s1.q4 : s1.W0(i3);
         }
         if (i2 == 10 || i2 == 13) {
             return s1.F;
@@ -8136,7 +8136,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         if (arrayList11 == null) {
             messagesController.getClass();
         } else {
-            Collections.sort(arrayList11, messagesController.s4);
+            Collections.sort(arrayList11, messagesController.t4);
         }
         return this.Z3;
     }
@@ -8148,7 +8148,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         nj0 nj0Var = a.c;
         if (nj0Var != null && !set.contains(nj0Var.a)) {
             set.add(a.c.a);
-            SharedPreferences.Editor edit = uc7.s1(i).X3.edit();
+            SharedPreferences.Editor edit = uc7.s1(i).Y3.edit();
             edit.putStringSet("bday_hidden", set);
             edit.apply();
             jn7.f(i).k(jn7.j5, new Object[0]);
@@ -8533,7 +8533,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
             getMessagesController().O1().V();
         }
         getContactsController().B();
-        if (getMessagesController().P3) {
+        if (getMessagesController().Q3) {
             nt9 F1 = getMessagesController().F1();
             if (!F1.e) {
                 F1.g(true);
@@ -9018,7 +9018,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                 userFull.flags2 = i | 32;
             }
             userFull.birthday = tL_birthday;
-            getMessagesStorage().g2(userFull, false);
+            getMessagesStorage().l2(userFull, false);
         }
         if (tL_error == null || (str = tL_error.text) == null || !str.startsWith("FLOOD_WAIT_")) {
             bs2.v(null, 2131743534, d31.b0(this), R.raw.error, 36);
@@ -9122,7 +9122,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                     if (getMessagesController().G2(dialog.id, true)) {
                         this.T2++;
                         int i8 = getMessagesController().t2;
-                        int i9 = uc7.r5;
+                        int i9 = uc7.s5;
                         if (i8 == 1) {
                             i2++;
                             this.X2 = true;
@@ -9152,7 +9152,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                         X1 = (y || !wf3.D(dialog.id)) ? null : getMessagesController().X1(Long.valueOf(dialog.id));
                     }
                     if (X1 != null && X1.bot) {
-                        int i10 = uc7.r5;
+                        int i10 = uc7.s5;
                     }
                     if (H3) {
                         i6++;
@@ -9465,16 +9465,16 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
             if (getMessagesController().x2()) {
                 this.O1.setOnClickListener(new wg3(this, b6));
                 this.O1.c(ob6.M0(2131754696, null), ob6.M0(2131754697, null), false, true);
-            } else if (this.Y2 == 0 && this.a3 == 0 && getMessagesController().u3.contains("SETUP_PASSKEY")) {
+            } else if (this.Y2 == 0 && this.a3 == 0 && getMessagesController().v3.contains("SETUP_PASSKEY")) {
                 this.O1.setOnClickListener(new wg3(this, b3));
                 this.O1.b(pv3.p(ob6.M0(2131747357, null), this.O1.c, new ch3(this, b6)), ob6.M0(2131747358, null));
                 this.O1.setOnCloseListener(new wg3(this, (byte) 25));
-            } else if (this.Y2 == 0 && this.a3 == 0 && getMessagesController().u3.contains("PREMIUM_GRACE")) {
+            } else if (this.Y2 == 0 && this.a3 == 0 && getMessagesController().v3.contains("PREMIUM_GRACE")) {
                 this.O1.setOnClickListener(new wg3(this, (byte) 26));
                 this.O1.b(pv3.p(ob6.M0(2131749296, null), this.O1.c, new ch3(this, b6)), ob6.M0(2131749300, null));
                 this.O1.setOnCloseListener(new wg3(this, (byte) 27));
-            } else if (this.Y2 == 0 && this.a3 == 0 && getMessagesController().w3 != null) {
-                final TLRPC.TL_pendingSuggestion tL_pendingSuggestion = getMessagesController().w3;
+            } else if (this.Y2 == 0 && this.a3 == 0 && getMessagesController().x3 != null) {
+                final TLRPC.TL_pendingSuggestion tL_pendingSuggestion = getMessagesController().x3;
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_pendingSuggestion.title.text);
                 r47.b(spannableStringBuilder, tL_pendingSuggestion.title.entities, false, false, true, true, 0);
                 Spannable A5 = r47.A5(pv3.m(spannableStringBuilder, this.O1.c.getPaint().getFontMetricsInt(), false, null, 0), tL_pendingSuggestion.title.entities, this.O1.c.getPaint().getFontMetricsInt(), false);
@@ -9526,7 +9526,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                     }
                 });
             } else {
-                if (this.Y2 == 0 && this.a3 == 0 && uc7.s1(this.currentAccount).u3.contains("STARS_SUBSCRIPTION_LOW_BALANCE")) {
+                if (this.Y2 == 0 && this.a3 == 0 && uc7.s1(this.currentAccount).v3.contains("STARS_SUBSCRIPTION_LOW_BALANCE")) {
                     jxa v = jxa.v(this.currentAccount, false);
                     ArrayList arrayList = v.z;
                     if (!arrayList.isEmpty()) {
@@ -9619,7 +9619,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                             uk3Var3.b(nza.b1(false, ob6.K("StarsSubscriptionExpiredHintTitle2", (int) j2, ',', sb3), 0.72f, null), ob6.M0(2131744646, null));
                             this.O1.setOnCloseListener(new wg3(this, (byte) 13));
                         }
-                        if (this.Y2 != 0 && this.a3 == j && !getMessagesController().N3() && (b = pj0.a(this.currentAccount).b()) != null && !b.c.isEmpty() && !getMessagesController().v3.contains("BIRTHDAY_CONTACTS_TODAY")) {
+                        if (this.Y2 != 0 && this.a3 == j && !getMessagesController().N3() && (b = pj0.a(this.currentAccount).b()) != null && !b.c.isEmpty() && !getMessagesController().w3.contains("BIRTHDAY_CONTACTS_TODAY")) {
                             nj0 b7 = pj0.a(this.currentAccount).b();
                             ArrayList arrayList3 = b7.c;
                             this.O1.setOnClickListener(new je3(this, b7, (byte) 6));
@@ -9627,19 +9627,19 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                             this.O1.b(pv3.p(hl.N2(arrayList3.size() == 1 ? ob6.a0(null, null, 2131753699, lbc.l((TLRPC.User) arrayList3.get(0))) : ob6.G(arrayList3.size(), "BirthdayTodayMultipleTitle", new Object[0]), aob.I6, 2, null, null), this.O1.c, new ch3(this, b6)), ob6.a0(null, null, arrayList3.size() == 1 ? 2131753700 : 2131753703, new Object[0]));
                             this.O1.setOnCloseListener(new wg3(this, (byte) 14));
                             jxa.v(this.currentAccount, false).U();
-                        } else if (this.Y2 != 0 && this.a3 == j && uc7.s1(this.currentAccount).u3.contains("BIRTHDAY_SETUP") && getMessagesController().Y1(getUserConfig().e()) != null && getMessagesController().Y1(getUserConfig().e()).birthday == null) {
+                        } else if (this.Y2 != 0 && this.a3 == j && uc7.s1(this.currentAccount).v3.contains("BIRTHDAY_SETUP") && getMessagesController().Y1(getUserConfig().e()) != null && getMessagesController().Y1(getUserConfig().e()).birthday == null) {
                             lv2.r(this.currentAccount).D(false);
                             this.O1.setOnClickListener(new wg3(this, (byte) 15));
                             this.O1.b(pv3.p(ob6.M0(2131753705, null), this.O1.c, new ch3(this, b6)), ob6.a0(null, null, 2131753706, new Object[0]));
                             this.O1.setOnCloseListener(new wg3(this, (byte) 16));
-                        } else if (!((uc7.s1(this.currentAccount).M3() && this.Y2 == 0 && this.a3 == j) ? uc7.s1(this.currentAccount).u3.contains("PREMIUM_CHRISTMAS") : false)) {
+                        } else if (!((uc7.s1(this.currentAccount).M3() && this.Y2 == 0 && this.a3 == j) ? uc7.s1(this.currentAccount).v3.contains("PREMIUM_CHRISTMAS") : false)) {
                             this.O1.setOnClickListener(new y00((byte) 3));
                             this.O1.b(pv3.m(hl.N2(ob6.M0(2131749462, null), aob.I6, 2, null, null), null, false, null, 0), ob6.a0(null, null, 2131753324, new Object[0]));
                             this.O1.setOnCloseListener(new wg3(this, (byte) 17));
-                        } else if (!uc7.s1(this.currentAccount).M3() && this.Y2 == 0 && this.a3 == j && uc7.s1(this.currentAccount).u3.contains("PREMIUM_RESTORE") && !getUserConfig().p() && ls6.d0(this.currentAccount).i0(false) != null) {
+                        } else if (!uc7.s1(this.currentAccount).M3() && this.Y2 == 0 && this.a3 == j && uc7.s1(this.currentAccount).v3.contains("PREMIUM_RESTORE") && !getUserConfig().p() && ls6.d0(this.currentAccount).i0(false) != null) {
                             this.O1.setOnClickListener(new wg3(this, (byte) 18));
                             this.O1.b(hl.N2(ob6.a0(null, null, 2131745791, ls6.d0(this.currentAccount).i0(false)), aob.I6, 2, null, null), ob6.M0(2131745792, null));
-                        } else if (uc7.s1(this.currentAccount).M3() || this.Y2 != 0 || this.a3 != j || ((!(uc7.s1(this.currentAccount).u3.contains("PREMIUM_UPGRADE") && getUserConfig().p()) && (!uc7.s1(this.currentAccount).u3.contains("PREMIUM_ANNUAL") || getUserConfig().p())) || (!yac.h(this.currentAccount).p() ? ls6.d0(this.currentAccount).i0(false) == null : f11.b() || ls6.d0(this.currentAccount).i0(true) == null))) {
+                        } else if (uc7.s1(this.currentAccount).M3() || this.Y2 != 0 || this.a3 != j || ((!(uc7.s1(this.currentAccount).v3.contains("PREMIUM_UPGRADE") && getUserConfig().p()) && (!uc7.s1(this.currentAccount).v3.contains("PREMIUM_ANNUAL") || getUserConfig().p())) || (!yac.h(this.currentAccount).p() ? ls6.d0(this.currentAccount).i0(false) == null : f11.b() || ls6.d0(this.currentAccount).i0(true) == null))) {
                             if (this.Q1 != null && this.R1 != null) {
                                 if (r0.longValue() / this.R1.longValue() < 0.3f) {
                                     uc7.e1().edit().remove("cache_hint_showafter").remove("cache_hint_period").apply();
@@ -9648,7 +9648,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                                     this.O1.b(hl.N2(ob6.a0(null, null, 2131752013, hl.i0(this.Q1.longValue(), false, false)), aob.I6, 2, null, null), ob6.M0(2131752014, null));
                                 }
                             }
-                            if (this.Y2 == 0 && this.a3 == 0 && getUserConfig().f() != null && ((getUserConfig().f().photo == null || (getUserConfig().f().photo instanceof TLRPC.TL_userProfilePhotoEmpty)) && uc7.s1(this.currentAccount).u3.contains("USERPIC_SETUP"))) {
+                            if (this.Y2 == 0 && this.a3 == 0 && getUserConfig().f() != null && ((getUserConfig().f().photo == null || (getUserConfig().f().photo instanceof TLRPC.TL_userProfilePhotoEmpty)) && uc7.s1(this.currentAccount).v3.contains("USERPIC_SETUP"))) {
                                 this.O1.setOnClickListener(new wg3(this, (byte) 23));
                                 this.O1.h.setVisibility(0);
                                 rb0 rb0Var = new rb0((vnb) null);
@@ -9669,12 +9669,12 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                                 this.O1.b(pv3.p(ob6.M0(2131749055, null), this.O1.c, new ch3(this, b6)), ob6.M0(2131749054, null));
                                 this.O1.setOnCloseListener(new wg3(this, (byte) 24));
                             } else if (this.Y2 == 0 && this.a3 == 0 && org.telegram.messenger.a.a != null) {
-                                for (String str2 : uc7.s1(this.currentAccount).u3) {
+                                for (String str2 : uc7.s1(this.currentAccount).v3) {
                                     org.telegram.messenger.a.a.getClass();
                                 }
                             }
                         } else {
-                            this.C3 = uc7.s1(this.currentAccount).u3.contains("PREMIUM_UPGRADE");
+                            this.C3 = uc7.s1(this.currentAccount).v3.contains("PREMIUM_UPGRADE");
                             this.O1.setOnClickListener(new wg3(this, (byte) 21));
                             this.O1.b(hl.N2(ob6.a0(null, null, this.C3 ? 2131745662 : 2131743461, ls6.d0(this.currentAccount).i0(false)), aob.I6, 2, null, null), ob6.M0(this.C3 ? 2131743464 : 2131745663, null));
                         }
@@ -9692,7 +9692,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
                 }
                 if (this.Y2 != 0) {
                 }
-                if (!((uc7.s1(this.currentAccount).M3() && this.Y2 == 0 && this.a3 == j) ? uc7.s1(this.currentAccount).u3.contains("PREMIUM_CHRISTMAS") : false)) {
+                if (!((uc7.s1(this.currentAccount).M3() && this.Y2 == 0 && this.a3 == j) ? uc7.s1(this.currentAccount).v3.contains("PREMIUM_CHRISTMAS") : false)) {
                 }
             }
             z = true;
@@ -9778,7 +9778,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
             if (!isInPreviewMode() && this.Y2 == 0 && this.a3 == 0 && this.T0 == 0) {
                 ov4 giftAuctionsController = getGiftAuctionsController();
                 if (!giftAuctionsController.d) {
-                    SharedPreferences sharedPreferences = giftAuctionsController.getMessagesController().X3;
+                    SharedPreferences sharedPreferences = giftAuctionsController.getMessagesController().Y3;
                     if (System.currentTimeMillis() - (sharedPreferences != null ? sharedPreferences.getLong("lastGiftAuctionTimeUpdate", 0L) : 0L) < 86400000) {
                         giftAuctionsController.d = true;
                         TL_payments.TL_getStarGiftActiveAuctions tL_getStarGiftActiveAuctions = new TL_payments.TL_getStarGiftActiveAuctions();
@@ -10745,7 +10745,7 @@ public class uj3 extends e implements fn7, el4, s84, ej6 {
         int i4 = i2;
         if (getMessagesController().v2(j2) || getMessagesController().C2(j2)) {
             uc7 messagesController = getMessagesController();
-            jf7 messagesStorage = messagesController.getMessagesStorage();
+            kf7 messagesStorage = messagesController.getMessagesStorage();
             y97 y97Var = new y97(messagesController, j2);
             to3 to3Var = messagesStorage.a;
             ue2 ue2Var = new ue2((Object) messagesStorage, j2, (Object) y97Var, (byte) 5);

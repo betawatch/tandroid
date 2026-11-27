@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class qn2 extends e implements fn7 {
     public oz4 a;
@@ -142,7 +142,7 @@ public final class qn2 extends e implements fn7 {
         this.b = this.arguments.getLong("dialog_id", 0L);
         this.c = getMessagesController().M0(Long.valueOf(-this.b));
         this.d = getMessagesController().X1(Long.valueOf(this.b));
-        this.n = getMessagesController().F4;
+        this.n = getMessagesController().G4;
         uc7 messagesController = getMessagesController();
         te2 te2Var = new te2(this, (byte) 26);
         int i = this.classGuid;

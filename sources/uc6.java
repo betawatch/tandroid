@@ -60,7 +60,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class uc6 extends e implements fn7 {
     public Location A0;
@@ -244,8 +244,8 @@ public class uc6 extends e implements fn7 {
             return;
         }
         final TLRPC.User X1 = wf3.D(this.m0) ? getMessagesController().X1(Long.valueOf(this.m0)) : null;
-        showDialog(jj.B(getParentActivity(), z, X1, new df7() { // from class: fc6
-            @Override // df7
+        showDialog(jj.B(getParentActivity(), z, X1, new ef7() { // from class: fc6
+            @Override // ef7
             public final void a(int i) {
                 boolean z2 = z;
                 uc6.this.w0(i, X1, z2);
@@ -3692,7 +3692,7 @@ public class uc6 extends e implements fn7 {
             r47 r47Var = h.h;
             if (r47Var != null && (message = r47Var.k) != null && (messageMedia = message.media) != null) {
                 messageMedia.period = i6;
-                getMessagesStorage().o1(h.h.k, null, null, true);
+                getMessagesStorage().s1(h.h.k, null, null, true);
             }
             getConnectionsManager().sendRequest(tL_messages_editMessage, null);
             jn7.e().k(jn7.G4, new Object[0]);

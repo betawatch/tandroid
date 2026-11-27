@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class wy implements Runnable {
     public final /* synthetic */ byte a;
@@ -44,17 +44,17 @@ public final /* synthetic */ class wy implements Runnable {
     private final void a() {
         SQLitePreparedStatement executeFast;
         boolean z;
-        jf7 jf7Var = (jf7) this.d;
+        kf7 kf7Var = (kf7) this.d;
         ArrayList arrayList = (ArrayList) this.e;
         ArrayList arrayList2 = (ArrayList) this.f;
         int i = this.c;
         long j = this.b;
-        zh6 zh6Var = jf7Var.K;
+        zh6 zh6Var = kf7Var.K;
         SQLitePreparedStatement sQLitePreparedStatement = null;
         try {
             try {
-                jf7Var.b.beginTransaction();
-                executeFast = jf7Var.b.executeFast("UPDATE dialogs SET folder_id = ?, pinned = ? WHERE did = ?");
+                kf7Var.b.beginTransaction();
+                executeFast = kf7Var.b.executeFast("UPDATE dialogs SET folder_id = ?, pinned = ? WHERE did = ?");
             } catch (Exception e) {
                 e = e;
             }
@@ -104,20 +104,20 @@ public final /* synthetic */ class wy implements Runnable {
                 z = z2;
             }
             executeFast.dispose();
-            jf7Var.b.commitTransaction();
+            kf7Var.b.commitTransaction();
             if (!z) {
-                jf7Var.k(1);
+                kf7Var.m(1);
             }
-            jf7Var.q1(false);
-            SQLiteDatabase sQLiteDatabase = jf7Var.b;
+            kf7Var.u1(false);
+            SQLiteDatabase sQLiteDatabase = kf7Var.b;
             if (sQLiteDatabase != null) {
                 sQLiteDatabase.commitTransaction();
             }
         } catch (Exception e2) {
             e = e2;
             sQLitePreparedStatement = executeFast;
-            jf7Var.n(e, true);
-            SQLiteDatabase sQLiteDatabase2 = jf7Var.b;
+            kf7Var.p(e, true);
+            SQLiteDatabase sQLiteDatabase2 = kf7Var.b;
             if (sQLiteDatabase2 != null) {
                 sQLiteDatabase2.commitTransaction();
             }
@@ -127,7 +127,7 @@ public final /* synthetic */ class wy implements Runnable {
         } catch (Throwable th2) {
             th = th2;
             sQLitePreparedStatement = executeFast;
-            SQLiteDatabase sQLiteDatabase3 = jf7Var.b;
+            SQLiteDatabase sQLiteDatabase3 = kf7Var.b;
             if (sQLiteDatabase3 != null) {
                 sQLiteDatabase3.commitTransaction();
             }
@@ -267,9 +267,9 @@ public final /* synthetic */ class wy implements Runnable {
                 int i2 = this.c;
                 Runnable runnable = (Runnable) this.f;
                 for (long j2 : jArr) {
-                    jf7 messagesStorage = wp0Var.getMessagesStorage();
+                    kf7 messagesStorage = wp0Var.getMessagesStorage();
                     messagesStorage.getClass();
-                    messagesStorage.H(new ae7(messagesStorage, i2, j, j2, (byte) 4));
+                    messagesStorage.J(new ae7(messagesStorage, i2, j, j2, (byte) 4));
                 }
                 hl.c3(runnable);
                 return;
@@ -343,29 +343,29 @@ public final /* synthetic */ class wy implements Runnable {
                     return;
                 }
             case 6:
-                jf7 jf7Var = (jf7) this.d;
+                kf7 kf7Var = (kf7) this.d;
                 int i8 = this.c;
                 long j7 = this.b;
                 TLRPC.Message message = (TLRPC.Message) this.e;
                 String str = (String) this.f;
                 try {
-                    jf7Var.b.beginTransaction();
-                    TLRPC.TL_message c0 = jf7Var.c0(i8, j7);
-                    c0.voiceTranscriptionOpen = message.voiceTranscriptionOpen;
-                    c0.voiceTranscriptionRated = message.voiceTranscriptionRated;
-                    c0.voiceTranscriptionFinal = message.voiceTranscriptionFinal;
-                    c0.voiceTranscriptionForce = message.voiceTranscriptionForce;
-                    c0.voiceTranscriptionId = message.voiceTranscriptionId;
-                    c0.voiceTranscription = str;
-                    c0.voiceTranscriptionLocal = message.voiceTranscriptionLocal;
-                    c0.voiceTranscriptionWords = message.voiceTranscriptionWords;
+                    kf7Var.b.beginTransaction();
+                    TLRPC.TL_message e0 = kf7Var.e0(i8, j7);
+                    e0.voiceTranscriptionOpen = message.voiceTranscriptionOpen;
+                    e0.voiceTranscriptionRated = message.voiceTranscriptionRated;
+                    e0.voiceTranscriptionFinal = message.voiceTranscriptionFinal;
+                    e0.voiceTranscriptionForce = message.voiceTranscriptionForce;
+                    e0.voiceTranscriptionId = message.voiceTranscriptionId;
+                    e0.voiceTranscription = str;
+                    e0.voiceTranscriptionLocal = message.voiceTranscriptionLocal;
+                    e0.voiceTranscriptionWords = message.voiceTranscriptionWords;
                     int i9 = 0;
                     while (i9 < 2) {
-                        SQLiteDatabase sQLiteDatabase2 = jf7Var.b;
+                        SQLiteDatabase sQLiteDatabase2 = kf7Var.b;
                         SQLitePreparedStatement executeFast = i9 == 0 ? sQLiteDatabase2.executeFast("UPDATE messages_v2 SET custom_params = ? WHERE mid = ? AND uid = ?") : sQLiteDatabase2.executeFast("UPDATE messages_topics SET custom_params = ? WHERE mid = ? AND uid = ?");
                         try {
                             executeFast.requery();
-                            NativeByteBuffer c = s37.c(c0);
+                            NativeByteBuffer c = s37.c(e0);
                             if (c != null) {
                                 executeFast.bindByteBuffer(1, c);
                             } else {
@@ -375,7 +375,7 @@ public final /* synthetic */ class wy implements Runnable {
                             executeFast.bindLong(3, j7);
                             executeFast.step();
                             executeFast.dispose();
-                            jf7Var.b.commitTransaction();
+                            kf7Var.b.commitTransaction();
                             if (c != null) {
                                 c.reuse();
                             }
@@ -384,8 +384,8 @@ public final /* synthetic */ class wy implements Runnable {
                             e = e;
                             sQLitePreparedStatement = executeFast;
                             try {
-                                jf7Var.n(e, true);
-                                SQLiteDatabase sQLiteDatabase3 = jf7Var.b;
+                                kf7Var.p(e, true);
+                                SQLiteDatabase sQLiteDatabase3 = kf7Var.b;
                                 if (sQLiteDatabase3 != null) {
                                     sQLiteDatabase3.commitTransaction();
                                 }
@@ -396,7 +396,7 @@ public final /* synthetic */ class wy implements Runnable {
                                 return;
                             } catch (Throwable th) {
                                 th = th;
-                                sQLiteDatabase = jf7Var.b;
+                                sQLiteDatabase = kf7Var.b;
                                 if (sQLiteDatabase != null) {
                                     sQLiteDatabase.commitTransaction();
                                 }
@@ -408,7 +408,7 @@ public final /* synthetic */ class wy implements Runnable {
                         } catch (Throwable th2) {
                             th = th2;
                             sQLitePreparedStatement = executeFast;
-                            sQLiteDatabase = jf7Var.b;
+                            sQLiteDatabase = kf7Var.b;
                             if (sQLiteDatabase != null) {
                             }
                             if (sQLitePreparedStatement != null) {
@@ -416,7 +416,7 @@ public final /* synthetic */ class wy implements Runnable {
                             throw th;
                         }
                     }
-                    SQLiteDatabase sQLiteDatabase4 = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase4 = kf7Var.b;
                     if (sQLiteDatabase4 != null) {
                         sQLiteDatabase4.commitTransaction();
                         return;
@@ -430,7 +430,7 @@ public final /* synthetic */ class wy implements Runnable {
                     sQLitePreparedStatement = null;
                 }
             case 7:
-                jf7 jf7Var2 = (jf7) this.d;
+                kf7 kf7Var2 = (kf7) this.d;
                 long j8 = this.b;
                 int i10 = this.c;
                 TLRPC.TL_updates_channelDifferenceTooLong tL_updates_channelDifferenceTooLong = (TLRPC.TL_updates_channelDifferenceTooLong) this.e;
@@ -439,7 +439,7 @@ public final /* synthetic */ class wy implements Runnable {
                 try {
                     try {
                         i = 0;
-                        queryFinalized = jf7Var2.b.queryFinalized("SELECT pinned FROM dialogs WHERE did = " + j9, new Object[0]);
+                        queryFinalized = kf7Var2.b.queryFinalized("SELECT pinned FROM dialogs WHERE did = " + j9, new Object[0]);
                     } catch (Exception e3) {
                         e = e3;
                         z = true;
@@ -456,22 +456,22 @@ public final /* synthetic */ class wy implements Runnable {
                         z2 = i10 != 0;
                     }
                     queryFinalized.dispose();
-                    jf7Var2.b.executeFast("DELETE FROM chat_pinned_count WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM chat_pinned_v2 WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM messages_v2 WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM bot_keyboard WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM bot_keyboard_topics WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("UPDATE media_counts_v2 SET old = 1 WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM media_v4 WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM messages_holes WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM media_holes_v2 WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM topics WHERE did = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM media_topics WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM media_holes_topics WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM messages_topics WHERE uid = " + j9).stepThis().dispose();
-                    jf7Var2.b.executeFast("DELETE FROM messages_holes_topics WHERE uid = " + j9).stepThis().dispose();
-                    ls6 mediaDataController = jf7Var2.getMediaDataController();
+                    kf7Var2.b.executeFast("DELETE FROM chat_pinned_count WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM chat_pinned_v2 WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM messages_v2 WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM bot_keyboard WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM bot_keyboard_topics WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("UPDATE media_counts_v2 SET old = 1 WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM media_v4 WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM messages_holes WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM media_holes_v2 WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM topics WHERE did = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM media_topics WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM media_holes_topics WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM messages_topics WHERE uid = " + j9).stepThis().dispose();
+                    kf7Var2.b.executeFast("DELETE FROM messages_holes_topics WHERE uid = " + j9).stepThis().dispose();
+                    ls6 mediaDataController = kf7Var2.getMediaDataController();
                     mediaDataController.getClass();
                     hl.c3(new lq6(mediaDataController, j9, (byte) 0));
                     TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
@@ -487,28 +487,28 @@ public final /* synthetic */ class wy implements Runnable {
                         dialog.pinned = i != 0;
                         dialog.pinnedNum = i;
                         tL_messages_dialogs.dialogs.add(dialog);
-                        jf7Var2.b1(tL_messages_dialogs, 0);
+                        kf7Var2.f1(tL_messages_dialogs, 0);
                         try {
-                            jf7Var2.O1(j9, j8, new ArrayList(), null);
+                            kf7Var2.T1(j9, j8, new ArrayList(), null);
                         } catch (Exception e4) {
                             e = e4;
                             z = true;
-                            jf7Var2 = jf7Var2;
+                            kf7Var2 = kf7Var2;
                         }
                     } catch (Exception e5) {
                         e = e5;
                     }
                     try {
-                        hl.c3(new cq6((Object) jf7Var2, j9, (Object) tL_updates_channelDifferenceTooLong, (byte) 17));
+                        hl.c3(new cq6((Object) kf7Var2, j9, (Object) tL_updates_channelDifferenceTooLong, (byte) 18));
                         if (z2) {
                             if (i10 == 1) {
-                                jf7Var2.getMessagesController().E(j8, true);
+                                kf7Var2.getMessagesController().E(j8, true);
                             } else {
-                                jf7Var2.getMessagesController().B0(j8, false);
+                                kf7Var2.getMessagesController().B0(j8, false);
                             }
                         }
                         if (i10 != 1) {
-                            qyb qybVar = jf7Var2.getMessagesController().g4;
+                            qyb qybVar = kf7Var2.getMessagesController().h4;
                             qybVar.getClass();
                             z = true;
                             hl.c3(new dp2((Object) qybVar, j8, z, (byte) 4));
@@ -518,7 +518,7 @@ public final /* synthetic */ class wy implements Runnable {
                         z = true;
                         sQLiteCursor = null;
                         try {
-                            jf7Var2.n(e, z);
+                            kf7Var2.p(e, z);
                             if (sQLiteCursor != null) {
                                 sQLiteCursor.dispose();
                             }
@@ -536,7 +536,7 @@ public final /* synthetic */ class wy implements Runnable {
                     e = e7;
                     z = true;
                     sQLiteCursor = queryFinalized;
-                    jf7Var2.n(e, z);
+                    kf7Var2.p(e, z);
                     if (sQLiteCursor != null) {
                     }
                     t77Var.run();

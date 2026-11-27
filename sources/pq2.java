@@ -18,7 +18,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class pq2 extends oq2 implements shc, pe5, vt9 {
     public final CopyOnWriteArrayList E;
@@ -98,9 +98,9 @@ public abstract class pq2 extends oq2 implements shc, pe5, vt9 {
     }
 
     @Override // pe5
-    public final oj7 d() {
-        oj7 oj7Var = new oj7();
-        LinkedHashMap linkedHashMap = (LinkedHashMap) oj7Var.a;
+    public final pj7 d() {
+        pj7 pj7Var = new pj7();
+        LinkedHashMap linkedHashMap = (LinkedHashMap) pj7Var.a;
         if (getApplication() != null) {
             linkedHashMap.put(phc.I, getApplication());
         }
@@ -109,7 +109,7 @@ public abstract class pq2 extends oq2 implements shc, pe5, vt9 {
         if (getIntent() != null && getIntent().getExtras() != null) {
             linkedHashMap.put(fhd.c, getIntent().getExtras());
         }
-        return oj7Var;
+        return pj7Var;
     }
 
     @Override // shc
@@ -226,7 +226,7 @@ public abstract class pq2 extends oq2 implements shc, pe5, vt9 {
             while (it.hasNext()) {
                 pt2 pt2Var = (pt2) it.next();
                 configuration.getClass();
-                pt2Var.accept(new bj7(z));
+                pt2Var.accept(new cj7(z));
             }
         } catch (Throwable th) {
             this.I = false;
@@ -431,7 +431,7 @@ public abstract class pq2 extends oq2 implements shc, pe5, vt9 {
         }
         Iterator it = this.G.iterator();
         while (it.hasNext()) {
-            ((pt2) it.next()).accept(new bj7(z));
+            ((pt2) it.next()).accept(new cj7(z));
         }
     }
 

@@ -11,7 +11,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class vn8 extends e implements fn7 {
     public final boolean E;
@@ -42,7 +42,7 @@ public final class vn8 extends e implements fn7 {
         fu5 I = fu5.I(this, view);
         I.X(new ColorDrawable(aob.w0(null, aob.d6, false)));
         boolean z = this.E;
-        I.k(0, ob6.M0(2131743566, null), new h68(this, l, (byte) 26), z);
+        I.k(0, ob6.M0(2131743566, null), new a58(this, l, (byte) 27), z);
         boolean z2 = !z;
         I.l(z ? 0 : R.drawable.msg_user_remove, new pg6(this, l), ob6.M0(2131746048, null), z2, true);
         I.Y = jn7.T2;
@@ -193,7 +193,7 @@ public final class vn8 extends e implements fn7 {
             return;
         }
         int intValue = ((Integer) objArr[0]).intValue();
-        int i3 = uc7.r5;
+        int i3 = uc7.s5;
         if (((intValue & 2) == 0 && (intValue & 1) == 0) || (d79Var = this.a) == null) {
             return;
         }

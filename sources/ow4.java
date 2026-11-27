@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ow4 extends nx0 {
     public static final int[] G1 = {21600, 43200, 86400, 129600, 172800, 259200};
@@ -93,7 +93,7 @@ public final class ow4 extends nx0 {
         if (j > j2 && uc7.s1(i).Y1(j) == null && (X1 = uc7.s1(i).X1(Long.valueOf(j))) != null) {
             uc7.s1(i).f3(X1, 0, false, null);
         }
-        hr hrVar = uc7.s1(i).k4;
+        hr hrVar = uc7.s1(i).l4;
         long j3 = tL_starGiftUnique.offer_min_stars;
         pj pjVar = pj.a;
         oj h = oj.h(j3, pjVar);
@@ -464,7 +464,7 @@ public final class ow4 extends nx0 {
             sb.append('~');
             pj pjVar6 = this.A1.a;
             int i6 = this.a;
-            double d3 = pjVar6 == pjVar2 ? uc7.s1(i6).k4.k.i : uc7.s1(i6).k4.A3.i * 1.0E-5d;
+            double d3 = pjVar6 == pjVar2 ? uc7.s1(i6).l4.k.i : uc7.s1(i6).l4.A3.i * 1.0E-5d;
             di0.h();
             sb.append(di0.f("USD", 2, (long) (this.A1.c() * d3 * 100.0d), z4));
             this.w1.c(sb, z3, true);

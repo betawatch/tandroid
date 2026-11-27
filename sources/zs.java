@@ -30,7 +30,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class zs implements View.OnLongClickListener {
     public final /* synthetic */ byte a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class zs implements View.OnLongClickListener {
             }
             actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
             actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new uda(keaVar, (byte) 0));
-            actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new fda(keaVar, b3));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new gda(keaVar, b3));
             actionBarPopupWindow$ActionBarPopupWindowLayout.setShownFromBottom(false);
             final b8 b8Var = new b8(1, keaVar.J0, keaVar.getContext(), true, false);
             if (z) {
@@ -131,7 +131,7 @@ public final /* synthetic */ class zs implements View.OnLongClickListener {
         actionBarPopupWindow$ActionBarPopupWindowLayout2.setAnimationEnabled(false);
         actionBarPopupWindow$ActionBarPopupWindowLayout2.setOnTouchListener(new uda(keaVar, (byte) 1));
         byte b4 = 3;
-        actionBarPopupWindow$ActionBarPopupWindowLayout2.setDispatchKeyEventListener(new fda(keaVar, b4));
+        actionBarPopupWindow$ActionBarPopupWindowLayout2.setDispatchKeyEventListener(new gda(keaVar, b4));
         actionBarPopupWindow$ActionBarPopupWindowLayout2.setShownFromBottom(false);
         b8 b8Var3 = new b8(0, keaVar.J0, keaVar.getContext(), true, true);
         if (z) {
@@ -141,7 +141,7 @@ public final /* synthetic */ class zs implements View.OnLongClickListener {
         b8Var3.j(ob6.M0(2131745311, null), R.drawable.input_notify_off, null);
         b8Var3.setMinimumWidth(hl.L(196.0f));
         actionBarPopupWindow$ActionBarPopupWindowLayout2.a(b8Var3, tre.o(-1, 48));
-        b8Var3.setOnClickListener(new eda(keaVar, b3));
+        b8Var3.setOnClickListener(new fda(keaVar, b3));
         b8 b8Var4 = new b8(0, keaVar.J0, keaVar.getContext(), true, true);
         if (z) {
             b8Var4.setTextColor(aob.v0(aob.eh, keaVar.J0));
@@ -150,7 +150,7 @@ public final /* synthetic */ class zs implements View.OnLongClickListener {
         b8Var4.j(ob6.M0(2131745329, null), R.drawable.msg_send, null);
         b8Var4.setMinimumWidth(hl.L(196.0f));
         actionBarPopupWindow$ActionBarPopupWindowLayout2.a(b8Var4, tre.o(-1, 48));
-        b8Var4.setOnClickListener(new eda(keaVar, b4));
+        b8Var4.setOnClickListener(new fda(keaVar, b4));
         kea.R0(actionBarPopupWindow$ActionBarPopupWindowLayout2, aob.I5, keaVar.J0);
         linearLayout.addView(actionBarPopupWindow$ActionBarPopupWindowLayout2, tre.o(-1, -2));
         n8 n8Var = new n8(linearLayout, -2, -2);
@@ -462,8 +462,8 @@ public final /* synthetic */ class zs implements View.OnLongClickListener {
                 fz7Var.r.setText("");
                 fz7Var.s.b(true);
                 Drawable drawable = fz7Var.a;
-                if (drawable instanceof hh7) {
-                    ((hh7) drawable).w();
+                if (drawable instanceof ih7) {
+                    ((ih7) drawable).w();
                 }
                 return true;
             case 8:
@@ -858,28 +858,28 @@ public final /* synthetic */ class zs implements View.OnLongClickListener {
                 yg4Var2.e(i16, kjaVar, r47Var3, intValue);
                 return true;
             case 18:
-                rbb rbbVar = (rbb) obj;
-                Activity activity = rbbVar.b;
-                wab wabVar = rbbVar.C0;
-                if (wabVar == null || !wabVar.isFrontface()) {
+                sbb sbbVar = (sbb) obj;
+                Activity activity = sbbVar.b;
+                xab xabVar = sbbVar.C0;
+                if (xabVar == null || !xabVar.isFrontface()) {
                     return false;
                 }
-                rbbVar.m();
-                rbbVar.F0.setSelected(true);
-                rbbVar.s.e(0.85f, 240L, null);
-                ?? G4 = fu5.G(rbbVar.r, rbbVar.a, rbbVar.F0);
+                sbbVar.m();
+                sbbVar.F0.setSelected(true);
+                sbbVar.s.e(0.85f, 240L, null);
+                ?? G4 = fu5.G(sbbVar.r, sbbVar.a, sbbVar.F0);
                 ena enaVar = new ena(activity, 1);
-                enaVar.c(rbbVar.s.o);
-                enaVar.h = new dab(rbbVar, (byte) 20);
+                enaVar.c(sbbVar.s.o);
+                enaVar.h = new dab(sbbVar, (byte) 20);
                 G4.p(enaVar);
                 G4.n(true);
                 ena enaVar2 = new ena(activity, 2);
                 enaVar2.b = 0.65f;
                 enaVar2.c = 1.0f;
-                enaVar2.c(rbbVar.s.p);
-                enaVar2.h = new dab(rbbVar, (byte) 21);
+                enaVar2.c(sbbVar.s.p);
+                enaVar2.h = new dab(sbbVar, (byte) 21);
                 G4.p(enaVar2);
-                G4.p = new bab(rbbVar, b3);
+                G4.p = new bab(sbbVar, b3);
                 G4.s = (short) 0;
                 G4.W(5);
                 G4.b0(hl.L(46.0f), -hl.L(4.0f));

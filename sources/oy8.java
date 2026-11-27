@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class oy8 {
     public final AtomicReference a;
@@ -26,7 +26,7 @@ public final class oy8 {
         this.h = new ly8(this, (byte) 0);
         this.c = dabVar;
         this.e = uc7.s1(yac.t0).N2;
-        Utilities.e.c(new hp8(this, context, (byte) 18));
+        Utilities.e.c(new ep8(this, context, (byte) 19));
     }
 
     public static void e(String str, JSONObject jSONObject) {
@@ -36,8 +36,8 @@ public final class oy8 {
         }
     }
 
-    public final void a(wab wabVar) {
-        this.f = wabVar;
+    public final void a(xab xabVar) {
+        this.f = xabVar;
         if (this.a.get() == null || ((AtomicBoolean) this.b).get()) {
             return;
         }
@@ -111,12 +111,12 @@ public final class oy8 {
         }
     }
 
-    public oy8(Context context, bca bcaVar, z3f z3fVar, ve9 ve9Var, ri6 ri6Var, sc3 sc3Var, p63 p63Var) {
+    public oy8(Context context, cca ccaVar, z3f z3fVar, ve9 ve9Var, ri6 ri6Var, sc3 sc3Var, p63 p63Var) {
         AtomicReference atomicReference = new AtomicReference();
         this.a = atomicReference;
         this.h = new AtomicReference(new TaskCompletionSource());
         this.b = context;
-        this.c = bcaVar;
+        this.c = ccaVar;
         this.d = ve9Var;
         this.e = ri6Var;
         this.f = sc3Var;

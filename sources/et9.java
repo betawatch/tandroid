@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.SaveToGallerySettingsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class et9 implements s69, u69, oj3 {
     public final /* synthetic */ SaveToGallerySettingsActivity a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class et9 implements s69, u69, oj3 {
     @Override // oj3
     public final boolean q(uj3 uj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, tzb tzbVar) {
         Bundle bundle = new Bundle();
-        bundle.putLong("dialog_id", ((if7) arrayList.get(0)).a);
+        bundle.putLong("dialog_id", ((jf7) arrayList.get(0)).a);
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
         bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.a);
         saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle), true);

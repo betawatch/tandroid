@@ -13,7 +13,7 @@ import org.telegram.messenger.a;
 import org.telegram.messenger.time.FastDateFormat;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class cc4 {
     public static boolean j = false;
@@ -101,11 +101,11 @@ public final class cc4 {
                 j = true;
                 File file = new File(a.h(), "malformed_database/");
                 file.mkdirs();
-                jf7 Y = jf7.Y(yac.t0);
+                kf7 a0 = kf7.a0(yac.t0);
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(Y.c);
-                arrayList.add(Y.d);
-                arrayList.add(Y.e);
+                arrayList.add(a0.c);
+                arrayList.add(a0.d);
+                arrayList.add(a0.e);
                 for (int i = 0; i < arrayList.size(); i++) {
                     try {
                         hl.E((File) arrayList.get(i), new File(file, ((File) arrayList.get(i)).getName()));

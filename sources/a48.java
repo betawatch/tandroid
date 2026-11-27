@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class a48 extends FrameLayout {
     public static final /* synthetic */ int r0 = 0;
@@ -545,7 +545,7 @@ public final class a48 extends FrameLayout {
             u38Var.invalidate();
         }
         j(true);
-        hl.d0(this.b, new ii7(this, (byte) 10));
+        hl.d0(this.b, new ji7(this, (byte) 10));
         g48 g48Var = this.F;
         if (g48Var != null) {
             l(g48Var);

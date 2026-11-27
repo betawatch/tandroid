@@ -21,9 +21,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public class ActionBarOverlayLayout extends ViewGroup implements al7, bl7 {
+public class ActionBarOverlayLayout extends ViewGroup implements bl7, cl7 {
     public static final int[] S = {R.attr.actionBarSize, android.R.attr.windowContentOverlay};
     public final Rect E;
     public final Rect F;
@@ -38,7 +38,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements al7, bl7 {
     public final h0 O;
     public final c8 P;
     public final c8 Q;
-    public final l09 R;
+    public final m09 R;
     public int a;
     public int b;
     public ContentFrameLayout c;
@@ -68,7 +68,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements al7, bl7 {
         this.P = new c8(this, (byte) 0);
         this.Q = new c8(this, (byte) 1);
         c(context);
-        this.R = new l09((byte) 3);
+        this.R = new m09((byte) 3);
     }
 
     public static boolean a(View view, Rect rect, boolean z) {
@@ -256,26 +256,26 @@ public class ActionBarOverlayLayout extends ViewGroup implements al7, bl7 {
         return ((jxb) this.e).a.getTitle();
     }
 
-    @Override // al7
+    @Override // bl7
     public final void k(int i, View view) {
         if (i == 0) {
             onStopNestedScroll(view);
         }
     }
 
-    @Override // bl7
+    @Override // cl7
     public final void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
         m(view, i, i2, i3, i4, i5);
     }
 
-    @Override // al7
+    @Override // bl7
     public final void m(View view, int i, int i2, int i3, int i4, int i5) {
         if (i5 == 0) {
             onNestedScroll(view, i, i2, i3, i4);
         }
     }
 
-    @Override // al7
+    @Override // bl7
     public final boolean n(View view, View view2, int i, int i2) {
         return i2 == 0 && onStartNestedScroll(view, view2, i);
     }
@@ -499,7 +499,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements al7, bl7 {
         }
     }
 
-    @Override // al7
+    @Override // bl7
     public final void q(View view, View view2, int i, int i2) {
         if (i2 == 0) {
             onNestedScrollAccepted(view, view2, i);
@@ -610,7 +610,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements al7, bl7 {
     public final void onNestedPreScroll(View view, int i, int i2, int[] iArr) {
     }
 
-    @Override // al7
+    @Override // bl7
     public final void r(View view, int i, int i2, int[] iArr, int i3) {
     }
 }

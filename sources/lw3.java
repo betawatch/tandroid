@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_feed;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class lw3 implements Runnable {
     public final /* synthetic */ byte a;
@@ -233,8 +233,8 @@ public final /* synthetic */ class lw3 implements Runnable {
                     if (arrayList5.isEmpty()) {
                         r4cVar.a(new ArrayList());
                     } else {
-                        jf7 Y = jf7.Y(q84Var.a);
-                        Y.a.c(new cv2(Y, arrayList5, r4cVar, (byte) 24));
+                        kf7 a0 = kf7.a0(q84Var.a);
+                        a0.a.c(new cv2(a0, arrayList5, r4cVar, (byte) 24));
                     }
                     i8 = 0;
                 }

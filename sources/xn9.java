@@ -16,7 +16,7 @@ import android.view.Surface;
 import java.util.concurrent.CountDownLatch;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class xn9 {
     public EGLSurface B;
@@ -84,7 +84,7 @@ public final class xn9 {
     public HandlerThread t;
     public volatile boolean t0;
     public Handler u;
-    public volatile dn9 u0;
+    public volatile en9 u0;
     public SurfaceTexture v;
     public fn9 v0;
     public Surface w;
@@ -172,12 +172,12 @@ public final class xn9 {
             if (z == this.F) {
                 if (!this.t0) {
                     j(i, fArr);
-                    dn9 dn9Var = this.u0;
-                    if (this.w0 || dn9Var == null) {
+                    en9 en9Var = this.u0;
+                    if (this.w0 || en9Var == null) {
                         return;
                     }
                     this.w0 = true;
-                    dn9Var.run();
+                    en9Var.run();
                     return;
                 }
                 if (this.m && timestamp < this.p) {

@@ -11,7 +11,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class y9b extends View {
     public static final /* synthetic */ int a = 0;
@@ -20,7 +20,7 @@ public abstract class y9b extends View {
         u9b u9bVar;
         if (c8bVar != null) {
             try {
-                String string = uc7.s1(i).X3.getString("story_privacy2", null);
+                String string = uc7.s1(i).Y3.getString("story_privacy2", null);
                 if (string == null) {
                     u9bVar = new u9b();
                 } else {
@@ -37,8 +37,8 @@ public abstract class y9b extends View {
                             hashSet.addAll((ArrayList) it.next());
                         }
                         if (!hashSet.isEmpty()) {
-                            jf7 Y = jf7.Y(i);
-                            Y.a.c(new a39((Object) Y, (Object) hashSet, i, (byte) 20));
+                            kf7 a0 = kf7.a0(i);
+                            a0.a.c(new a39((Object) a0, (Object) hashSet, i, (byte) 20));
                         }
                     }
                 }
@@ -50,7 +50,7 @@ public abstract class y9b extends View {
             c8bVar.F0.clear();
             c8bVar.F0.addAll(c8bVar.E0.b);
             if (yac.h(i).p()) {
-                c8bVar.I0 = uc7.s1(i).X3.getInt("story_period", 86400);
+                c8bVar.I0 = uc7.s1(i).Y3.getInt("story_period", 86400);
             } else {
                 c8bVar.I0 = 86400;
             }

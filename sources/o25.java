@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o25 implements icc {
     public final /* synthetic */ byte a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class o25 implements icc {
                     v35 v35Var = new v35(b, gtVar, (byte) 4);
                     String str2 = w45Var.e;
                     TL_wallet.tonConnectSession tonconnectsession = w45Var.a;
-                    if (!"sendTransaction".equals(str2) || !uc7.s1(a55Var.a).X3.contains(a55.k(tonconnectsession.id, w45Var.b).concat(".transfer"))) {
+                    if (!"sendTransaction".equals(str2) || !uc7.s1(a55Var.a).Y3.contains(a55.k(tonconnectsession.id, w45Var.b).concat(".transfer"))) {
                         s45 s45Var = new s45(a55Var, w45Var, v35Var, z2, b);
                         if (!tonconnectsession.closed) {
                             TL_wallet.tonConnectRegisterKey tonconnectregisterkey = new TL_wallet.tonConnectRegisterKey();

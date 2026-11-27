@@ -26,7 +26,7 @@ import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class fj6 extends iic implements fn7, s84 {
     public kac F;
@@ -103,7 +103,7 @@ public final class fj6 extends iic implements fn7, s84 {
         }
         if (i == 2) {
             if (!this.x) {
-                return new tba(bs2.l("hasMainTabs", true));
+                return new uba(bs2.l("hasMainTabs", true));
             }
             Bundle bundle2 = new Bundle();
             bundle2.putBoolean("needFinishFragment", false);
@@ -747,7 +747,7 @@ public final class fj6 extends iic implements fn7, s84 {
         if (this.I == null) {
             return;
         }
-        int i = jf7.Y(this.currentAccount).L;
+        int i = kf7.a0(this.currentAccount).L;
         if (i <= 0) {
             this.N[0].e(null, false, z);
         } else {

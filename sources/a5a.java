@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class a5a extends ny0 implements fn7, nv4 {
     public final boolean S1;
@@ -127,12 +127,12 @@ public class a5a extends ny0 implements fn7, nv4 {
         if (d instanceof ColorDrawable) {
             num = Integer.valueOf(((ColorDrawable) d).getColor());
         } else {
-            if (d instanceof hh7) {
-                hh7 hh7Var = (hh7) d;
-                if (hh7Var.q < 0) {
+            if (d instanceof ih7) {
+                ih7 ih7Var = (ih7) d;
+                if (ih7Var.q < 0) {
                     num = -16777216;
                 } else {
-                    int[] iArr = hh7Var.a;
+                    int[] iArr = ih7Var.a;
                     if (iArr != null && iArr.length > 0) {
                         num = Integer.valueOf(iArr[0]);
                     }
@@ -236,7 +236,7 @@ public class a5a extends ny0 implements fn7, nv4 {
         dl1Var.i0(r47Var, true);
         linearLayout.addView(dl1Var, tre.t(-1, -1, jn7.D1, 0, M1 > j2 ? 0 : 8, 0, 8));
         u4aVar.addView(linearLayout, tre.e(-1, -1, jn7.D1));
-        v4a v4aVar = new v4a(this, context, (wma) this.b, ob6.M0(starGift != null ? 2131750079 : 2131750078, null), uc7.s1(i).k4.M1.f(), this.J0, jl0Var, i);
+        v4a v4aVar = new v4a(this, context, (wma) this.b, ob6.M0(starGift != null ? 2131750079 : 2131750078, null), uc7.s1(i).l4.M1.f(), this.J0, jl0Var, i);
         this.o2 = v4aVar;
         lt3 lt3Var = v4aVar.b;
         lt3Var.getEditText().addTextChangedListener(new gi());

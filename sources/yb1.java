@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class yb1 extends Drawable {
     public final Paint a;
@@ -17,15 +17,15 @@ public final class yb1 extends Drawable {
     public boolean f;
     public boolean g;
     public final b29 h;
-    public final hbb i;
-    public final /* synthetic */ hbb j;
+    public final ibb i;
+    public final /* synthetic */ ibb j;
 
-    public yb1(hbb hbbVar, hbb hbbVar2) {
-        this.j = hbbVar;
+    public yb1(ibb ibbVar, ibb ibbVar2) {
+        this.j = ibbVar;
         Paint paint = new Paint(1);
         this.a = paint;
         this.c = 1.0f;
-        this.i = hbbVar2;
+        this.i = ibbVar2;
         b29 b29Var = new b29(R.raw.chat_audio_record_delete_3, hl.L(28.0f), hl.L(28.0f), false, null);
         this.h = b29Var;
         b29Var.p0 = true;

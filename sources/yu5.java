@@ -2,7 +2,7 @@
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class yu5 extends yfb implements is4 {
     public final /* synthetic */ byte a;
@@ -33,12 +33,12 @@ public final class yu5 extends yfb implements is4 {
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         ux2 ux2Var = (ux2) obj;
         zw2 zw2Var = (zw2) obj2;
         switch (b) {
         }
-        return ((yu5) create(ux2Var, zw2Var)).invokeSuspend(f9cVar);
+        return ((yu5) create(ux2Var, zw2Var)).invokeSuspend(g9cVar);
     }
 
     @Override // qf0
@@ -66,12 +66,12 @@ public final class yu5 extends yfb implements is4 {
                     }
                     ixe.b(obj);
                 }
-                rj7 rj7Var = (rj7) obj;
-                if (rj7Var == null) {
+                sj7 sj7Var = (sj7) obj;
+                if (sj7Var == null) {
                     return l;
                 }
                 zj8Var.getClass();
-                Object obj2 = rj7Var.a.get(zj8Var);
+                Object obj2 = sj7Var.a.get(zj8Var);
                 if (obj2 instanceof byte[]) {
                     byte[] bArr = (byte[]) obj2;
                     obj2 = Arrays.copyOf(bArr, bArr.length);

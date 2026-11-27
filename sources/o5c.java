@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class o5c extends nx0 {
     public final int l1;
@@ -62,9 +62,9 @@ public class o5c extends nx0 {
         z4bVar.getClass();
         h94.a(arrayList, u00Var);
         int i = aob.Lf;
-        arrayList.add(new apb(s5cVar, 4, new Class[]{t3b.class}, new String[]{"textView"}, (Drawable[]) null, (zob) null, i));
-        arrayList.add(new apb(s5cVar, 4, new Class[]{t3b.class}, new String[]{"urlTextView"}, (Drawable[]) null, (zob) null, i));
-        arrayList.add(new apb(s5cVar, 8, new Class[]{t3b.class}, new String[]{"buttonView"}, (Drawable[]) null, (zob) null, aob.Nf));
+        arrayList.add(new apb(s5cVar, 4, new Class[]{u3b.class}, new String[]{"textView"}, (Drawable[]) null, (zob) null, i));
+        arrayList.add(new apb(s5cVar, 4, new Class[]{u3b.class}, new String[]{"urlTextView"}, (Drawable[]) null, (zob) null, i));
+        arrayList.add(new apb(s5cVar, 8, new Class[]{u3b.class}, new String[]{"buttonView"}, (Drawable[]) null, (zob) null, aob.Nf));
         arrayList.add(new apb((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, u00Var, aob.Mf));
         arrayList.add(new apb((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, u00Var, i));
         ImageView imageView = z4bVar.M;

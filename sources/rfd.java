@@ -5,7 +5,7 @@ import java.lang.reflect.Array;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class rfd {
     public static final byte[] a = {0, 0, 0, 1};
@@ -109,7 +109,7 @@ public abstract class rfd {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static zj7 g(vh6 vh6Var, boolean z, int i, zj7 zj7Var) {
+    public static ak7 g(vh6 vh6Var, boolean z, int i, ak7 ak7Var) {
         int[] iArr;
         int i2;
         int i3;
@@ -134,7 +134,7 @@ public abstract class rfd {
             }
             i2 = e;
         } else {
-            if (zj7Var == null) {
+            if (ak7Var == null) {
                 iArr = iArr2;
                 i2 = 0;
                 i3 = 0;
@@ -154,13 +154,13 @@ public abstract class rfd {
                 if (i > 0) {
                     vh6Var.k((8 - i) << 1);
                 }
-                return new zj7(i2, i3, i4, e2, z2, iArr);
+                return new ak7(i2, i3, i4, e2, z2, iArr);
             }
-            int i11 = zj7Var.a;
-            z3 = zj7Var.b;
-            i5 = zj7Var.c;
-            i6 = zj7Var.d;
-            iArr2 = zj7Var.e;
+            int i11 = ak7Var.a;
+            z3 = ak7Var.b;
+            i5 = ak7Var.c;
+            i6 = ak7Var.d;
+            iArr2 = ak7Var.e;
             i2 = i11;
         }
         iArr = iArr2;
@@ -174,7 +174,7 @@ public abstract class rfd {
         vh6Var.k(i92);
         if (i > 0) {
         }
-        return new zj7(i2, i3, i4, e22, z2, iArr);
+        return new ak7(i2, i3, i4, e22, z2, iArr);
     }
 
     public static h30 h(int i, int i2, byte[] bArr) {
@@ -254,7 +254,7 @@ public abstract class rfd {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ck7 i(byte[] bArr, int i, int i2, lyc lycVar) {
+    public static dk7 i(byte[] bArr, int i, int i2, lyc lycVar) {
         int i3;
         int i4;
         int i5;
@@ -267,7 +267,7 @@ public abstract class rfd {
         int i10;
         int f3;
         int i11;
-        zj7 zj7Var;
+        ak7 ak7Var;
         int i12;
         int i13;
         int i14;
@@ -278,7 +278,7 @@ public abstract class rfd {
         int i18;
         int i19;
         byte b3;
-        ak7 ak7Var;
+        bk7 bk7Var;
         int i20;
         int i21;
         int i22;
@@ -293,18 +293,18 @@ public abstract class rfd {
         if (lycVar != null) {
             po5 po5Var = (po5) lycVar.b;
             if (!po5Var.isEmpty()) {
-                i3 = ((yj7) po5Var.get(Math.min(i24, po5Var.size() - 1))).a;
-                zj7 zj7Var2 = null;
+                i3 = ((zj7) po5Var.get(Math.min(i24, po5Var.size() - 1))).a;
+                ak7 ak7Var2 = null;
                 if (z) {
                     vh6Var.j();
-                    zj7Var2 = g(vh6Var, true, e, null);
+                    ak7Var2 = g(vh6Var, true, e, null);
                 } else if (lycVar != null) {
-                    ak7 ak7Var2 = (ak7) lycVar.c;
-                    int[] iArr = ak7Var2.b;
-                    po5 po5Var2 = ak7Var2.a;
+                    bk7 bk7Var2 = (bk7) lycVar.c;
+                    int[] iArr = bk7Var2.b;
+                    po5 po5Var2 = bk7Var2.a;
                     int i25 = iArr[i3];
                     if (po5Var2.size() > i25) {
-                        zj7Var2 = (zj7) po5Var2.get(i25);
+                        ak7Var2 = (ak7) po5Var2.get(i25);
                     }
                 }
                 vh6Var.f();
@@ -340,12 +340,12 @@ public abstract class rfd {
                             e2 = ((int[]) um4Var.c)[i3];
                         }
                         if (e2 != -1 && po5Var3.size() > e2) {
-                            bk7 bk7Var = (bk7) po5Var3.get(e2);
-                            int i26 = bk7Var.a;
-                            i7 = bk7Var.d;
-                            int i27 = bk7Var.e;
-                            f = bk7Var.b;
-                            f2 = bk7Var.c;
+                            ck7 ck7Var = (ck7) po5Var3.get(e2);
+                            int i26 = ck7Var.a;
+                            i7 = ck7Var.d;
+                            int i27 = ck7Var.e;
+                            f = ck7Var.b;
+                            f2 = ck7Var.c;
                             i6 = i27;
                             i8 = i6;
                             i9 = i7;
@@ -520,7 +520,7 @@ public abstract class rfd {
                 vh6Var.k(2);
                 float f16 = 1.0f;
                 if (vh6Var.d()) {
-                    zj7Var = zj7Var2;
+                    ak7Var = ak7Var2;
                     i12 = f;
                     i13 = i7;
                     i14 = i9;
@@ -560,14 +560,14 @@ public abstract class rfd {
                             i19 = -1;
                         }
                     } else {
-                        if (lycVar != null && (ak7Var = (ak7) lycVar.e) != null) {
-                            po5 po5Var4 = ak7Var.a;
-                            int i55 = ak7Var.b[i53];
+                        if (lycVar != null && (bk7Var = (bk7) lycVar.e) != null) {
+                            po5 po5Var4 = bk7Var.a;
+                            int i55 = bk7Var.b[i53];
                             if (po5Var4.size() > i55) {
-                                dk7 dk7Var = (dk7) po5Var4.get(i55);
-                                int i56 = dk7Var.a;
-                                byte b4 = dk7Var.b;
-                                i19 = dk7Var.c;
+                                ek7 ek7Var = (ek7) po5Var4.get(i55);
+                                int i56 = ek7Var.a;
+                                byte b4 = ek7Var.b;
+                                i19 = ek7Var.c;
                                 i18 = i56;
                                 b3 = b4;
                             }
@@ -587,17 +587,17 @@ public abstract class rfd {
                     i16 = i18;
                     i17 = i19;
                     b2 = b3;
-                    zj7Var = zj7Var2;
+                    ak7Var = ak7Var2;
                     i12 = f;
                     i13 = i7;
                     i14 = i9;
                     i15 = i8;
                 }
-                return new ck7(e, zj7Var, i12, f2, i13, i6, i14, i15, f16, i10, i16, b2, i17);
+                return new dk7(e, ak7Var, i12, f2, i13, i6, i14, i15, f16, i10, i16, b2, i17);
             }
         }
         i3 = 0;
-        zj7 zj7Var22 = null;
+        ak7 ak7Var22 = null;
         if (z) {
         }
         vh6Var.f();
@@ -632,7 +632,7 @@ public abstract class rfd {
         float f162 = 1.0f;
         if (vh6Var.d()) {
         }
-        return new ck7(e, zj7Var, i12, f2, i13, i6, i14, i15, f162, i10, i16, b2, i17);
+        return new dk7(e, ak7Var, i12, f2, i13, i6, i14, i15, f162, i10, i16, b2, i17);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -643,7 +643,7 @@ public abstract class rfd {
     public static lyc j(int i, int i2, byte[] bArr) {
         int[] iArr;
         int[] iArr2;
-        ak7 ak7Var;
+        bk7 bk7Var;
         int i3;
         int i4;
         int i5;
@@ -672,7 +672,7 @@ public abstract class rfd {
         int i13 = e + 1;
         int e2 = vh6Var.e(3);
         vh6Var.k(17);
-        zj7 g = g(vh6Var, true, e2, null);
+        ak7 g = g(vh6Var, true, e2, null);
         for (int i14 = vh6Var.d() ? 0 : e2; i14 <= e2; i14++) {
             vh6Var.f();
             vh6Var.f();
@@ -681,13 +681,13 @@ public abstract class rfd {
         int e3 = vh6Var.e(6);
         int f = vh6Var.f() + 1;
         int i15 = 6;
-        ak7 ak7Var2 = new ak7(po5.u(g), new int[1], (byte) 0);
+        bk7 bk7Var2 = new bk7(po5.u(g), new int[1], (byte) 0);
         boolean z3 = i13 >= 2 && f >= 2;
         boolean z4 = d4 && d5;
         int i16 = e3 + 1;
         boolean z5 = i16 >= i13;
         if (!z3 || !z4 || !z5) {
-            return new lyc(null, ak7Var2, null, null);
+            return new lyc(null, bk7Var2, null, null);
         }
         Class cls = Integer.TYPE;
         int[][] iArr5 = (int[][]) Array.newInstance((Class<?>) cls, f, i16);
@@ -794,13 +794,13 @@ public abstract class rfd {
         int[][] iArr10 = iArr5;
         int[] iArr11 = iArr7;
         if (!vh6Var.d()) {
-            return new lyc(null, ak7Var2, null, null);
+            return new lyc(null, bk7Var2, null, null);
         }
         int i26 = vh6Var.d;
         if (i26 > 0) {
             vh6Var.k(8 - i26);
         }
-        zj7 g2 = g(vh6Var, false, e2, g);
+        ak7 g2 = g(vh6Var, false, e2, g);
         boolean d9 = vh6Var.d();
         boolean[] zArr3 = new boolean[16];
         int i27 = 0;
@@ -812,7 +812,7 @@ public abstract class rfd {
             }
         }
         if (i27 == 0 || !zArr3[1]) {
-            return new lyc(null, ak7Var2, null, null);
+            return new lyc(null, bk7Var2, null, null);
         }
         int[] iArr12 = new int[i27];
         for (int i29 = 0; i29 < i27 - (d9 ? 1 : 0); i29++) {
@@ -898,7 +898,7 @@ public abstract class rfd {
         int[] iArr18 = iArr16;
         int e4 = vh6Var.e(4);
         if (i36 < 2 || e4 == 0) {
-            return new lyc(null, ak7Var2, null, null);
+            return new lyc(null, bk7Var2, null, null);
         }
         int[] iArr19 = new int[i36];
         for (int i40 = 0; i40 < i36; i40++) {
@@ -914,7 +914,7 @@ public abstract class rfd {
             int[] iArr21 = iArr20;
             int i43 = i36;
             int min = Math.min(iArr18[i42], i43 - 1);
-            p.c(new yj7(iArr21[i42], min >= 0 ? iArr19[min] : -1));
+            p.c(new zj7(iArr21[i42], min >= 0 ? iArr19[min] : -1));
             i42++;
             iArr20 = iArr21;
             iArr15 = iArr15;
@@ -922,8 +922,8 @@ public abstract class rfd {
         }
         int[] iArr22 = iArr15;
         j99 f3 = p.f();
-        if (((yj7) f3.get(0)).b == -1) {
-            return new lyc(null, ak7Var2, null, null);
+        if (((zj7) f3.get(0)).b == -1) {
+            return new lyc(null, bk7Var2, null, null);
         }
         int i44 = 1;
         while (true) {
@@ -931,13 +931,13 @@ public abstract class rfd {
                 i44 = -1;
                 break;
             }
-            if (((yj7) f3.get(i44)).b != -1) {
+            if (((zj7) f3.get(i44)).b != -1) {
                 break;
             }
             i44++;
         }
         if (i44 == -1) {
-            return new lyc(null, ak7Var2, null, null);
+            return new lyc(null, bk7Var2, null, null);
         }
         Class cls2 = Boolean.TYPE;
         boolean[][] zArr4 = (boolean[][]) Array.newInstance((Class<?>) cls2, i13, i13);
@@ -986,7 +986,7 @@ public abstract class rfd {
             }
         }
         if (i53 > 1) {
-            return new lyc(null, ak7Var2, null, null);
+            return new lyc(null, bk7Var2, null, null);
         }
         int[] iArr24 = new int[i13];
         int[] iArr25 = new int[f];
@@ -1009,7 +1009,7 @@ public abstract class rfd {
             int[] iArr26 = iArr24;
             int i59 = 0;
             for (int i60 = 0; i60 < iArr6[i58]; i60++) {
-                i59 = Math.max(i59, iArr26[((yj7) f3.get(iArr10[i58][i60])).a]);
+                i59 = Math.max(i59, iArr26[((zj7) f3.get(iArr10[i58][i60])).a]);
             }
             iArr25[i58] = i59 + 1;
             i57 = i58 + 1;
@@ -1049,7 +1049,7 @@ public abstract class rfd {
         j99 f5 = p2.f();
         int f6 = vh6Var.f() + f;
         if (f6 > f) {
-            return new lyc(null, ak7Var2, null, null);
+            return new lyc(null, bk7Var2, null, null);
         }
         int e5 = vh6Var.e(2);
         boolean[][] zArr13 = (boolean[][]) Array.newInstance((Class<?>) cls2, f6, i16);
@@ -1132,14 +1132,14 @@ public abstract class rfd {
                     RoundingMode roundingMode = RoundingMode.CEILING;
                     int c2 = cje.c(f4);
                     if (!zArr[i71][i76]) {
-                        int i77 = ((yj7) f3.get(iArr10[i71][i76])).a;
+                        int i77 = ((zj7) f3.get(iArr10[i71][i76])).a;
                         int i78 = 0;
                         while (true) {
                             if (i78 >= i76) {
                                 break;
                             }
                             int i79 = i78;
-                            if (zArr12[i77][((yj7) f3.get(iArr10[i71][i79])).a]) {
+                            if (zArr12[i77][((zj7) f3.get(iArr10[i71][i79])).a]) {
                                 zArr[i71][i76] = true;
                                 break;
                             }
@@ -1174,7 +1174,7 @@ public abstract class rfd {
         j99 j99Var3 = f5;
         boolean[][] zArr17 = zArr15;
         if (i72 == 0) {
-            return new lyc(null, ak7Var2, null, null);
+            return new lyc(null, bk7Var2, null, null);
         }
         int f7 = vh6Var.f();
         int i80 = f7 + 1;
@@ -1210,7 +1210,7 @@ public abstract class rfd {
                 e6 -= (f8 + f9) * ((i3 == 1 || i3 == 2) ? 2 : 1);
                 e7 -= (f10 + f11) * (i3 == 1 ? 2 : 1);
             }
-            bk7 bk7Var = new bk7(i3, i4, i5, e6, e7);
+            ck7 ck7Var = new ck7(i3, i4, i5, e6, e7);
             int b2 = io5.b(objArr.length, i82 + 1);
             if (b2 > objArr.length || z8) {
                 objArr = Arrays.copyOf(objArr, b2);
@@ -1218,7 +1218,7 @@ public abstract class rfd {
             } else {
                 z7 = z8;
             }
-            objArr[i82] = bk7Var;
+            objArr[i82] = ck7Var;
             i82++;
             i81 = i83 + 1;
         }
@@ -1312,13 +1312,13 @@ public abstract class rfd {
                 boolean z10 = d18;
                 int g3 = bm2.g(vh6Var.e(8));
                 vh6Var.k(8);
-                dk7 dk7Var = new dk7(f14, i98, g3);
+                ek7 ek7Var = new ek7(f14, i98, g3);
                 int b3 = io5.b(objArr2.length, i97 + 1);
                 if (b3 > objArr2.length || z9) {
                     objArr2 = Arrays.copyOf(objArr2, b3);
                     z9 = false;
                 }
-                objArr2[i97] = dk7Var;
+                objArr2[i97] = ek7Var;
                 i96++;
                 i97++;
                 d18 = z10;
@@ -1328,11 +1328,11 @@ public abstract class rfd {
                     iArr34[i99] = vh6Var.e(4);
                 }
             }
-            ak7Var = new ak7(po5.o(i97, objArr2), iArr34, (byte) 1);
+            bk7Var = new bk7(po5.o(i97, objArr2), iArr34, (byte) 1);
         } else {
-            ak7Var = null;
+            bk7Var = null;
         }
-        return new lyc(f3, new ak7(j99Var3, iArr31, (byte) 0), um4Var, ak7Var);
+        return new lyc(f3, new bk7(j99Var3, iArr31, (byte) 0), um4Var, bk7Var);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x024f  */
@@ -1350,7 +1350,7 @@ public abstract class rfd {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static fk7 k(int i, int i2, byte[] bArr) {
+    public static gk7 k(int i, int i2, byte[] bArr) {
         int f;
         int f2;
         boolean z;
@@ -1577,7 +1577,7 @@ public abstract class rfd {
                     i9 = i6;
                     i10 = i32;
                 }
-                return new fk7(i31, e2, e3, f4, i30, i29, f3, i3, i9, z, d2, i8, i5, i13, z2, i14, i11, i12, i10);
+                return new gk7(i31, e2, e3, f4, i30, i29, f3, i3, i9, z, d2, i8, i5, i13, z2, i14, i11, i12, i10);
             }
             i4 = e;
             i5 = f7;
@@ -1608,7 +1608,7 @@ public abstract class rfd {
         float f152 = 1.0f;
         if (vh6Var.d()) {
         }
-        return new fk7(i312, e2, e3, f4, i302, i292, f3, i3, i9, z, d2, i8, i5, i13, z2, i14, i11, i12, i10);
+        return new gk7(i312, e2, e3, f4, i302, i292, f3, i3, i9, z, d2, i8, i5, i13, z2, i14, i11, i12, i10);
     }
 
     public static void l(vh6 vh6Var) {

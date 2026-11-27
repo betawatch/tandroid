@@ -32,7 +32,7 @@ import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class u34 implements OnCompleteListener, s69, fd, oj3, cka, tq2, t69, on5, qc6, jrb {
     public final /* synthetic */ byte a;
@@ -281,7 +281,7 @@ public final /* synthetic */ class u34 implements OnCompleteListener, s69, fd, o
                 rv4Var.getClass();
                 long j = 0;
                 while (i3 < arrayList.size()) {
-                    j = ((if7) arrayList.get(i3)).a;
+                    j = ((jf7) arrayList.get(i3)).a;
                     rv4Var.e.getSendMessagesHelper().q0(p7a.b(str, j, null, null, null, true, null, null, null, true, 0, 0, null, false));
                     i3++;
                 }
@@ -294,7 +294,7 @@ public final /* synthetic */ class u34 implements OnCompleteListener, s69, fd, o
                 u51 u51Var = null;
                 while (i3 < arrayList.size()) {
                     ArrayList arrayList2 = ox5Var.g0;
-                    u51 u51Var2 = new u51(((if7) arrayList.get(i3)).a, 3);
+                    u51 u51Var2 = new u51(((jf7) arrayList.get(i3)).a, 3);
                     arrayList2.add(u51Var2);
                     i3++;
                     u51Var = u51Var2;

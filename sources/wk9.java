@@ -19,10 +19,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.a;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wk9 extends dk9 implements yib {
-    public final ki7 A0;
+    public final li7 A0;
     public final TL_iv.pageBlockTable X;
     public final zib Y;
     public final ArrayList Z;
@@ -58,7 +58,7 @@ public final class wk9 extends dk9 implements yib {
         int i2;
         this.Z = new ArrayList();
         this.d0 = new ArrayList();
-        this.A0 = new ki7(this, (byte) 20);
+        this.A0 = new li7(this, (byte) 20);
         Rect rect2 = this.b;
         rect2.top = hl.L(10.0f) + rect2.top;
         this.X = pageblocktable;
@@ -621,11 +621,11 @@ public final class wk9 extends dk9 implements yib {
         zib zibVar;
         int i2;
         int i3;
-        ui7 ui7Var = this.L;
-        if (ui7Var != null && ui7Var.h) {
+        vi7 vi7Var = this.L;
+        if (vi7Var != null && vi7Var.h) {
             ArrayList arrayList = this.d0;
-            if (!arrayList.isEmpty() && ui7Var.d((si7) arrayList.get(0)) >= 0) {
-                float c = ui7Var.c((si7) arrayList.get(0));
+            if (!arrayList.isEmpty() && vi7Var.d((ti7) arrayList.get(0)) >= 0) {
+                float c = vi7Var.c((ti7) arrayList.get(0));
                 float f2 = 0.0f;
                 if (c <= 0.0f) {
                     return;
@@ -664,21 +664,21 @@ public final class wk9 extends dk9 implements yib {
                     int i7 = i6;
                     if (vk9Var == null) {
                         d.a(canvas, this.W, true);
-                    } else if (ui7Var.i(vk9Var)) {
-                        if (ui7Var.g(vk9Var)) {
+                    } else if (vi7Var.i(vk9Var)) {
+                        if (vi7Var.g(vk9Var)) {
                             d.a(canvas, this.W, false);
                             if (d.b instanceof gl9) {
                                 canvas.save();
                                 f = f2;
                                 canvas.translate(d.b(), d.c());
-                                ((gl9) d.b).m(canvas, ui7Var.g(vk9Var) ? ui7Var.e : -1, ui7Var.g(vk9Var) ? ui7Var.f : f);
+                                ((gl9) d.b).m(canvas, vi7Var.g(vk9Var) ? vi7Var.e : -1, vi7Var.g(vk9Var) ? vi7Var.f : f);
                                 canvas.restore();
                             } else {
                                 f = f2;
                             }
                         } else {
                             f = f2;
-                            float c2 = ui7Var.c(vk9Var);
+                            float c2 = vi7Var.c(vk9Var);
                             if (c2 >= 1.0f) {
                                 d.a(canvas, this.W, true);
                             } else {

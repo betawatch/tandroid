@@ -14,7 +14,7 @@ import j$.util.Objects;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class fx0 extends TextView {
     public final /* synthetic */ byte a;
@@ -137,7 +137,7 @@ public final class fx0 extends TextView {
                 float e = frcVar.h0.e(false, frcVar.f0);
                 TextPaint paint2 = getPaint();
                 Objects.requireNonNull(paint2);
-                frcVar.c(e, new ec1(paint2, (byte) 2), new vlc(this, canvas, (byte) 13));
+                frcVar.c(e, new ec1(paint2, (byte) 2), new slc(this, canvas, (byte) 14));
                 break;
             default:
                 super.onDraw(canvas);

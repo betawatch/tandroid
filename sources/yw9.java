@@ -33,9 +33,9 @@ import org.telegram.ui.d0;
 import org.telegram.ui.e0;
 import org.telegram.utils.twidget.w;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class yw9 implements fd, is6, QuickAckDelegate, bf7, s69, ot2, t69, vh8, yu8, u69, sgb, OnSuccessListener, m0d {
+public final /* synthetic */ class yw9 implements fd, is6, QuickAckDelegate, cf7, s69, ot2, t69, vh8, yu8, u69, sgb, OnSuccessListener, m0d {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -47,7 +47,7 @@ public final /* synthetic */ class yw9 implements fd, is6, QuickAckDelegate, bf7
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         byte b = this.a;
         Object obj = this.c;
@@ -296,8 +296,8 @@ public final /* synthetic */ class yw9 implements fd, is6, QuickAckDelegate, bf7
                                                         id idVar4 = new id(3, w9bVar.J0, r9bVar.getContext());
                                                         r9bVar.H = idVar4;
                                                         idVar4.q(50L);
-                                                        jf7 Y = jf7.Y(w9bVar.a);
-                                                        Y.a.c(new y09(r9bVar, M02, Y, j));
+                                                        kf7 a0 = kf7.a0(w9bVar.a);
+                                                        a0.a.c(new z09(r9bVar, M02, a0, j));
                                                     } else {
                                                         r9bVar.e(j, N0.participants);
                                                     }
@@ -558,7 +558,7 @@ public final /* synthetic */ class yw9 implements fd, is6, QuickAckDelegate, bf7
                 ConnectionsManager.getInstance(yac.t0).sendRequest(tL_stickers_deleteStickerSet, new xe2((byte) 9));
                 break;
             case 9:
-                ((ThemeActivity) obj2).y0((bcb) obj);
+                ((ThemeActivity) obj2).y0((hab) obj);
                 break;
             case 12:
                 d0 d0Var = (d0) obj2;
@@ -630,7 +630,7 @@ public final /* synthetic */ class yw9 implements fd, is6, QuickAckDelegate, bf7
                 ((gtc) obj2).presentFragment(atcVar);
                 break;
             case 25:
-                ((vlc) obj2).run();
+                ((slc) obj2).run();
                 ((nx0) obj).dismiss();
                 break;
             case 26:

@@ -9,7 +9,7 @@ import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jb7 implements Runnable {
     public final /* synthetic */ byte a = 1;
@@ -54,7 +54,7 @@ public final /* synthetic */ class jb7 implements Runnable {
                 final int i2 = this.e;
                 final TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) obj2;
                 final gn1 gn1Var = (gn1) obj;
-                jf7 messagesStorage = uc7Var.getMessagesStorage();
+                kf7 messagesStorage = uc7Var.getMessagesStorage();
                 messagesStorage.getClass();
                 final ArrayList arrayList = new ArrayList();
                 SQLiteCursor sQLiteCursor = null;
@@ -67,7 +67,7 @@ public final /* synthetic */ class jb7 implements Runnable {
                             try {
                                 arrayList.add(Integer.valueOf(sQLiteCursor.intValue(0)));
                             } catch (Exception e) {
-                                messagesStorage.n(e, true);
+                                messagesStorage.p(e, true);
                             }
                         }
                         sQLiteCursor.dispose();
@@ -78,12 +78,12 @@ public final /* synthetic */ class jb7 implements Runnable {
                         throw th;
                     }
                 } catch (Exception e2) {
-                    messagesStorage.n(e2, true);
+                    messagesStorage.p(e2, true);
                     break;
                 }
                 sQLiteCursor.dispose();
-                uc7Var.getMessagesStorage().M0(j, arrayList, false, true, 0, 0);
-                uc7Var.getMessagesStorage().O1(j, 0L, arrayList, null);
+                uc7Var.getMessagesStorage().P0(j, arrayList, false, true, 0, 0);
+                uc7Var.getMessagesStorage().T1(j, 0L, arrayList, null);
                 final long j2 = this.d;
                 final boolean z = this.f;
                 hl.c3(new Runnable() { // from class: nb7

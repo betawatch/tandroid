@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class x73 extends yfb implements ks4 {
     public final /* synthetic */ byte a = 1;
@@ -16,15 +16,15 @@ public final class x73 extends yfb implements ks4 {
     @Override // ks4
     public final Object a(Object obj, Object obj2, Object obj3) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         switch (b) {
             case 0:
-                return new x73((o83) this.c, (zw2) obj3).invokeSuspend(f9cVar);
+                return new x73((o83) this.c, (zw2) obj3).invokeSuspend(g9cVar);
             default:
                 ((Boolean) obj2).getClass();
                 x73 x73Var = new x73(3, (zw2) obj3);
                 x73Var.c = (lc4) obj;
-                return x73Var.invokeSuspend(f9cVar);
+                return x73Var.invokeSuspend(g9cVar);
         }
     }
 
@@ -49,7 +49,7 @@ public final class x73 extends yfb implements ks4 {
                     }
                     ixe.b(obj);
                 }
-                return f9c.a;
+                return g9c.a;
             default:
                 boolean z2 = this.b;
                 if (z2) {

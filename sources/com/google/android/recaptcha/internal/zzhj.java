@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class zzhj {
     public static final Object zza(zzhh zzhhVar, is4 is4Var, zw2 zw2Var) {
@@ -25,7 +25,7 @@ public final class zzhj {
                 zzhiVar.zzb = i2 - TLObject.FLAG_31;
                 Object obj = zzhiVar.zza;
                 i = zzhiVar.zzb;
-                f9c f9cVar = f9c.a;
+                g9c g9cVar = g9c.a;
                 if (i != 0) {
                     ixe.b(obj);
                     zzhiVar.zzb = 1;
@@ -41,21 +41,21 @@ public final class zzhj {
                     }
                     ixe.b(obj);
                 }
-                return f9cVar;
+                return g9cVar;
             }
         }
         zzhiVar = new zzhi(zw2Var);
         Object obj3 = zzhiVar.zza;
         i = zzhiVar.zzb;
-        f9c f9cVar2 = f9c.a;
+        g9c g9cVar2 = g9c.a;
         if (i != 0) {
         }
-        return f9cVar2;
+        return g9cVar2;
     }
 
     public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, zw2 zw2Var) {
         Object zza = zzhgVar.zza(zzgrVar.zza(), zw2Var);
-        return zza == vx2.a ? zza : f9c.a;
+        return zza == vx2.a ? zza : g9c.a;
     }
 
     public static final Object zzd(int i, int i2, is4 is4Var, zw2 zw2Var) {

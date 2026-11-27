@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g6a implements Runnable {
     public final /* synthetic */ c5a E;
@@ -199,7 +199,7 @@ public final /* synthetic */ class g6a implements Runnable {
                     long j6 = j2;
                     int i6 = this.d;
                     if (!B && i6 == 0 && (oecVar2 == null || (oecVar2.A == null && oecVar2.B == null && oecVar2.G == null && oecVar2.H == null))) {
-                        jf7 Y = jf7.Y(k5Var3.a);
+                        kf7 a0 = kf7.a0(k5Var3.a);
                         if (B) {
                             file = file2;
                             i4 = 5;
@@ -207,12 +207,12 @@ public final /* synthetic */ class g6a implements Runnable {
                             file = file2;
                             i4 = 2;
                         }
-                        Object[] e0 = Y.e0(i4, sb);
-                        if (e0 != null) {
-                            Object obj6 = e0[objArr2 == true ? 1 : 0];
+                        Object[] g0 = a0.g0(i4, sb);
+                        if (g0 != null) {
+                            Object obj6 = g0[objArr2 == true ? 1 : 0];
                             if (obj6 instanceof TLRPC.TL_document) {
                                 TLRPC.TL_document tL_document4 = (TLRPC.TL_document) obj6;
-                                String str9 = (String) e0[1];
+                                String str9 = (String) g0[1];
                                 i = i6;
                                 str = "_";
                                 z2 = z;

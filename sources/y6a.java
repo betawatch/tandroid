@@ -46,7 +46,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class y6a implements Runnable {
     public final /* synthetic */ byte a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class y6a implements Runnable {
         zh6 zh6Var9 = uc7Var.S;
         zh6 zh6Var10 = uc7Var.T;
         SparseArray sparseArray = uc7Var.V;
-        a5c a5cVar = uc7Var.i4;
+        a5c a5cVar = uc7Var.j4;
         zh6 zh6Var11 = uc7Var.R;
         Long l = 0L;
         long j2 = 0;

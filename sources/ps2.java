@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ps2 extends z01 {
     public final x01 G;
@@ -28,10 +28,10 @@ public final class ps2 extends z01 {
     public final Object G(Object obj, boolean z) {
         x01 x01Var = this.G;
         x01 x01Var2 = x01.c;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         if (x01Var == x01Var2) {
             Object d = super.d(obj);
-            return (!(d instanceof oj1) || (d instanceof nj1)) ? d : f9cVar;
+            return (!(d instanceof oj1) || (d instanceof nj1)) ? d : g9cVar;
         }
         Object obj2 = b11.d;
         qj1 qj1Var = (qj1) fx.a.getObjectVolatile(this, z01.E);
@@ -54,7 +54,7 @@ public final class ps2 extends z01 {
             int D = D(qj1Var, i2, obj, j, obj2, r);
             if (D == 0) {
                 qj1Var.b();
-                return f9cVar;
+                return g9cVar;
             }
             if (D == 1) {
                 break;
@@ -92,7 +92,7 @@ public final class ps2 extends z01 {
         if (G(obj, true) instanceof nj1) {
             throw n();
         }
-        return f9c.a;
+        return g9c.a;
     }
 
     @Override // z01, o4a

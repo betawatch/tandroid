@@ -2,9 +2,9 @@
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class nna implements sf7 {
+public final class nna implements tf7 {
     public final ArrayList a;
 
     public nna(ArrayList arrayList) {
@@ -29,12 +29,12 @@ public final class nna implements sf7 {
         yve.f(!z);
     }
 
-    @Override // sf7
+    @Override // tf7
     public final ko4 a() {
         return null;
     }
 
-    @Override // sf7
+    @Override // tf7
     public final byte[] c() {
         return null;
     }
@@ -57,7 +57,7 @@ public final class nna implements sf7 {
         return "SlowMotion: segments=" + this.a;
     }
 
-    @Override // sf7
+    @Override // tf7
     public final void b(lt6 lt6Var) {
     }
 }

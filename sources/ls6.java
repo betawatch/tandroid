@@ -68,7 +68,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ls6 extends rf0 {
     public static final Pattern U1 = Pattern.compile("\\*\\*(.+?)\\*\\*");
@@ -390,7 +390,7 @@ public final class ls6 extends rf0 {
         H0(false);
         H0(true);
         this.A0 = new wm9(this.currentAccount);
-        this.e = getMessagesController().X3.getInt("menuBotsUpdateDate", 0);
+        this.e = getMessagesController().Y3.getInt("menuBotsUpdateDate", 0);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0024 A[SYNTHETIC] */
@@ -1491,7 +1491,7 @@ public final class ls6 extends rf0 {
             getConnectionsManager().sendRequest(tL_messages_getArchivedStickers, new b22(this, i, (byte) 2));
             return;
         }
-        int i2 = uc7.s1(this.currentAccount).W3.getInt("archivedStickersCount" + i, -1);
+        int i2 = uc7.s1(this.currentAccount).X3.getInt("archivedStickersCount" + i, -1);
         if (i2 == -1) {
             E0(i, false);
         } else {
@@ -1705,32 +1705,32 @@ public final class ls6 extends rf0 {
         getConnectionsManager().sendRequest(getdefaultprofilephotoemojis2, new vi1((Object) this, (Object) k, z, (byte) 7));
     }
 
-    public final void H1(if7 if7Var, TLRPC.Message message) {
+    public final void H1(jf7 jf7Var, TLRPC.Message message) {
         SQLiteCursor queryFinalized;
-        if (if7Var != null) {
+        if (jf7Var != null) {
             try {
-                if (if7Var.b != 0) {
+                if (jf7Var.b != 0) {
                     SQLiteDatabase sQLiteDatabase = getMessagesStorage().b;
                     Locale locale = Locale.US;
-                    queryFinalized = sQLiteDatabase.queryFinalized("SELECT mid FROM bot_keyboard_topics WHERE uid = " + if7Var.a + " AND tid = " + if7Var.b, new Object[0]);
+                    queryFinalized = sQLiteDatabase.queryFinalized("SELECT mid FROM bot_keyboard_topics WHERE uid = " + jf7Var.a + " AND tid = " + jf7Var.b, new Object[0]);
                 } else {
                     SQLiteDatabase sQLiteDatabase2 = getMessagesStorage().b;
                     Locale locale2 = Locale.US;
-                    queryFinalized = sQLiteDatabase2.queryFinalized("SELECT mid FROM bot_keyboard WHERE uid = " + if7Var.a, new Object[0]);
+                    queryFinalized = sQLiteDatabase2.queryFinalized("SELECT mid FROM bot_keyboard WHERE uid = " + jf7Var.a, new Object[0]);
                 }
                 int intValue = queryFinalized.next() ? queryFinalized.intValue(0) : 0;
                 queryFinalized.dispose();
                 if (intValue < message.id || r47.f3(intValue) || r47.f3(message.id)) {
-                    SQLitePreparedStatement executeFast = if7Var.b != 0 ? getMessagesStorage().b.executeFast("REPLACE INTO bot_keyboard_topics VALUES(?, ?, ?, ?)") : getMessagesStorage().b.executeFast("REPLACE INTO bot_keyboard VALUES(?, ?, ?)");
+                    SQLitePreparedStatement executeFast = jf7Var.b != 0 ? getMessagesStorage().b.executeFast("REPLACE INTO bot_keyboard_topics VALUES(?, ?, ?, ?)") : getMessagesStorage().b.executeFast("REPLACE INTO bot_keyboard VALUES(?, ?, ?)");
                     executeFast.requery();
                     r47.p5(message);
                     NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
                     message.serializeToStream(nativeByteBuffer);
-                    long j = if7Var.b;
-                    long j2 = if7Var.a;
+                    long j = jf7Var.b;
+                    long j2 = jf7Var.a;
                     if (j != 0) {
                         executeFast.bindLong(1, j2);
-                        executeFast.bindLong(2, if7Var.b);
+                        executeFast.bindLong(2, jf7Var.b);
                         executeFast.bindInteger(3, message.id);
                         executeFast.bindByteBuffer(4, nativeByteBuffer);
                     } else {
@@ -1741,7 +1741,7 @@ public final class ls6 extends rf0 {
                     executeFast.step();
                     nativeByteBuffer.reuse();
                     executeFast.dispose();
-                    hl.c3(new xp6(this, if7Var, message));
+                    hl.c3(new xp6(this, jf7Var, message));
                 }
             } catch (Exception e) {
                 cc4.g(e, true);
@@ -1891,13 +1891,13 @@ public final class ls6 extends rf0 {
         return intent;
     }
 
-    public final void K0(if7 if7Var, boolean z) {
-        TLRPC.Message message = (TLRPC.Message) this.A1.get(if7Var);
+    public final void K0(jf7 jf7Var, boolean z) {
+        TLRPC.Message message = (TLRPC.Message) this.A1.get(jf7Var);
         byte b = 1;
         if (message != null) {
-            getNotificationCenter().k(jn7.G0, message, if7Var);
+            getNotificationCenter().k(jn7.G0, message, jf7Var);
         } else {
-            getMessagesStorage().a.c(new yn6(this, if7Var, z, b));
+            getMessagesStorage().a.c(new yn6(this, jf7Var, z, b));
         }
     }
 
@@ -2136,7 +2136,7 @@ public final class ls6 extends rf0 {
                 }
                 if ((i5 == 0 && TextUtils.isEmpty(str)) || wf3.B(j)) {
                     fs6 fs6Var = new fs6(this, i, j, i3, j2, i4, w49Var, i2, i6, i5, z, i7);
-                    jf7 messagesStorage = getMessagesStorage();
+                    kf7 messagesStorage = getMessagesStorage();
                     messagesStorage.a.c(fs6Var);
                     SparseArray sparseArray = messagesStorage.h;
                     ArrayList arrayList = (ArrayList) sparseArray.get(i6);
@@ -2416,7 +2416,7 @@ public final class ls6 extends rf0 {
                         TLdeserialize.id = queryFinalized.intValue(i2);
                         TLdeserialize.date = queryFinalized.intValue(2);
                         TLdeserialize.dialog_id = j;
-                        jf7.d(TLdeserialize, arrayList8, arrayList9, null);
+                        kf7.d(TLdeserialize, arrayList8, arrayList9, null);
                         arrayList5.add(TLdeserialize);
                         arrayList4.remove(Integer.valueOf(TLdeserialize.id));
                     }
@@ -2441,7 +2441,7 @@ public final class ls6 extends rf0 {
                         if (!(TLdeserialize2.action instanceof TLRPC.TL_messageActionHistoryClear)) {
                             TLdeserialize2.readAttachPath(byteBufferValue2, j3);
                             TLdeserialize2.dialog_id = j;
-                            jf7.d(TLdeserialize2, arrayList8, arrayList9, null);
+                            kf7.d(TLdeserialize2, arrayList8, arrayList9, null);
                             arrayList5.add(TLdeserialize2);
                             arrayList4.remove(Integer.valueOf(TLdeserialize2.id));
                         }
@@ -2469,13 +2469,13 @@ public final class ls6 extends rf0 {
                 return null;
             }
             if (!arrayList8.isEmpty()) {
-                getMessagesStorage().k0(arrayList8, arrayList6, false);
+                getMessagesStorage().m0(arrayList8, arrayList6, false);
             }
             if (arrayList2.isEmpty()) {
                 arrayList3 = arrayList7;
             } else {
                 arrayList3 = arrayList7;
-                getMessagesStorage().P(TextUtils.join(charSequence, arrayList2), arrayList3);
+                getMessagesStorage().R(TextUtils.join(charSequence, arrayList2), arrayList3);
             }
             if (z) {
                 return m(arrayList5, arrayList6, arrayList3, true, true);
@@ -2504,7 +2504,7 @@ public final class ls6 extends rf0 {
         if (arrayList.isEmpty()) {
             return null;
         }
-        String string = uc7.s1(this.currentAccount).Y3.getString("reaction_on_double_tap", null);
+        String string = uc7.s1(this.currentAccount).Z3.getString("reaction_on_double_tap", null);
         if (string == null || (this.r.get(string) == null && !string.startsWith("animated_"))) {
             return ((TLRPC.TL_availableReaction) arrayList.get(0)).reaction;
         }
@@ -2548,7 +2548,7 @@ public final class ls6 extends rf0 {
                         TLRPC.Chat chat = messages_messages.chats.get(i6);
                         zh6Var4.k(chat.id, chat);
                     }
-                    ls6Var.getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+                    ls6Var.getMessagesStorage().n1(messages_messages.users, messages_messages.chats, true, true);
                     ls6Var.getMessagesController().j4(messages_messages.users, false);
                     ls6Var.getMessagesController().c4(messages_messages.chats, false);
                     int size = messages_messages.messages.size();
@@ -2580,9 +2580,9 @@ public final class ls6 extends rf0 {
                     i3 = r5;
                     z = false;
                 }
-                jf7 messagesStorage = ls6Var.getMessagesStorage();
+                kf7 messagesStorage = ls6Var.getMessagesStorage();
                 long j2 = j;
-                messagesStorage.Z1(j2, arrayList, true, i3, i, z, hashMap);
+                messagesStorage.e2(j2, arrayList, true, i3, i, z, hashMap);
                 hl.c3(new lq6(ls6Var, j2, (byte) 3));
             }
         });
@@ -3174,17 +3174,17 @@ public final class ls6 extends rf0 {
                                                         byteBufferValue.reuse();
                                                         TLRPC.Message message5 = message3.replyMessage;
                                                         if (message5 != null) {
-                                                            jf7.d(message5, arrayList, arrayList2, null);
+                                                            kf7.d(message5, arrayList, arrayList2, null);
                                                         }
                                                     }
                                                     if (message3.replyMessage == null) {
-                                                        jf7.c(message3, zh6Var8, zh6Var9);
+                                                        kf7.c(message3, zh6Var8, zh6Var9);
                                                     }
                                                 }
                                             } catch (Exception e4) {
-                                                ls6Var.getMessagesStorage().n(e4, true);
+                                                ls6Var.getMessagesStorage().p(e4, true);
                                             }
-                                            ls6Var.getMessagesStorage().H0(zh6Var8, zh6Var9, arrayList, arrayList2, 0);
+                                            ls6Var.getMessagesStorage().K0(zh6Var8, zh6Var9, arrayList, arrayList2, 0);
                                         }
                                         message4 = message3;
                                     }
@@ -3718,7 +3718,7 @@ public final class ls6 extends rf0 {
             getMessagesStorage().a.c(new wr6(this, z, i, z4 ? 1 : 0));
             return;
         }
-        SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).Y3;
+        SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).Z3;
         if (!z3) {
             if (Math.abs(System.currentTimeMillis() - (z ? sharedPreferences.getLong("lastGifLoadTime", 0L) : i == 0 ? sharedPreferences.getLong("lastStickersLoadTime", 0L) : i == 1 ? sharedPreferences.getLong("lastStickersLoadTimeMask", 0L) : i == 3 ? sharedPreferences.getLong("lastStickersLoadTimeGreet", 0L) : i == 5 ? sharedPreferences.getLong("lastStickersLoadTimeEmojiPacks", 0L) : i == 7 ? sharedPreferences.getLong("lastStickersLoadTimePremiumStickers", 0L) : sharedPreferences.getLong("lastStickersLoadTimeFavs", 0L))) < 3600000) {
                 if (z) {
@@ -4526,7 +4526,7 @@ public final class ls6 extends rf0 {
                     sparseArrayArr[1].clear();
                     uc7 messagesController = getMessagesController();
                     long j8 = this.P0;
-                    zh6 zh6Var = messagesController.P4;
+                    zh6 zh6Var = messagesController.Q4;
                     if (zh6Var != null && (tL_messages_savedReactionsTags = (TLRPC.TL_messages_savedReactionsTags) zh6Var.f(j8)) != null) {
                         for (int i12 = 0; i12 < tL_messages_savedReactionsTags.tags.size(); i12++) {
                             if (w49Var2.f(tL_messages_savedReactionsTags.tags.get(i12).reaction)) {
@@ -4539,7 +4539,7 @@ public final class ls6 extends rf0 {
                     this.W0 = TextUtils.isEmpty(tL_messages_search2.q) ? i7 : 0;
                     this.h1 = true;
                     this.i1 = false;
-                    jf7 messagesStorage = getMessagesStorage();
+                    kf7 messagesStorage = getMessagesStorage();
                     TLRPC.Reaction g = w49Var.g();
                     long j9 = this.P0;
                     ArrayList arrayList2 = this.b1;
@@ -4567,9 +4567,9 @@ public final class ls6 extends rf0 {
                     };
                     to3 to3Var = messagesStorage.a;
                     String str5 = str2;
-                    xe7 xe7Var = new xe7(messagesStorage, str5, j9, g, jn7.W4, size, true, mccVar);
+                    ze7 ze7Var = new ze7(messagesStorage, str5, j9, g, jn7.W4, size, true, mccVar);
                     str3 = str5;
-                    to3Var.c(xe7Var);
+                    to3Var.c(ze7Var);
                 }
                 if (this.P0 != 0) {
                     if (j5 == getUserConfig().e() || getMessagesController().B2(j5)) {
@@ -4646,7 +4646,7 @@ public final class ls6 extends rf0 {
                                             }
                                             i17++;
                                         }
-                                        ls6Var2.getMessagesStorage().j1(messages_messages2.users, messages_messages2.chats, true, true);
+                                        ls6Var2.getMessagesStorage().n1(messages_messages2.users, messages_messages2.chats, true, true);
                                         ls6Var2.getMessagesController().j4(messages_messages2.users, false);
                                         ls6Var2.getMessagesController().c4(messages_messages2.chats, false);
                                         final TLRPC.TL_messages_search tL_messages_search4 = tL_messages_search3;
@@ -4889,7 +4889,7 @@ public final class ls6 extends rf0 {
                                     }
                                     i17++;
                                 }
-                                ls6Var2.getMessagesStorage().j1(messages_messages2.users, messages_messages2.chats, true, true);
+                                ls6Var2.getMessagesStorage().n1(messages_messages2.users, messages_messages2.chats, true, true);
                                 ls6Var2.getMessagesController().j4(messages_messages2.users, false);
                                 ls6Var2.getMessagesController().c4(messages_messages2.chats, false);
                                 final TLRPC.TL_messages_search tL_messages_search4 = tL_messages_search3;
@@ -5167,7 +5167,7 @@ public final class ls6 extends rf0 {
             }
             i2++;
         }
-        if ((this.j0.size() > getMessagesController().k4.b1.f() && !yac.h(this.currentAccount).p()) || this.j0.size() > getMessagesController().k4.c1.f()) {
+        if ((this.j0.size() > getMessagesController().l4.b1.f() && !yac.h(this.currentAccount).p()) || this.j0.size() > getMessagesController().l4.c1.f()) {
             getMessagesStorage().a.c(new lp6(this, (TLRPC.Document) qd4.l(1, this.j0), (byte) 1));
             if (z) {
                 hl.c3(new z96(document, (byte) 19));
@@ -5259,7 +5259,7 @@ public final class ls6 extends rf0 {
     }
 
     public final void c2(String str) {
-        uc7.s1(this.currentAccount).Y3.edit().putString("reaction_on_double_tap", str).apply();
+        uc7.s1(this.currentAccount).Z3.edit().putString("reaction_on_double_tap", str).apply();
         this.s = str;
     }
 
@@ -8266,7 +8266,7 @@ public final class ls6 extends rf0 {
         } else {
             if (i5 == 0) {
                 in5.S(messages_messages.messages);
-                getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+                getMessagesStorage().n1(messages_messages.users, messages_messages.chats, true, true);
                 getMessagesStorage().a.c(new xq6(this, i3, messages_messages.messages, z2, j, i2, i4, j2));
             }
             Utilities.g.c(new Runnable() { // from class: zr6
@@ -8302,7 +8302,7 @@ public final class ls6 extends rf0 {
                     boolean z3 = i5;
                     long j4 = j;
                     iq6 iq6Var = new iq6(ls6Var, messages_messages2, z3 ? 1 : 0, j4, arrayList3, i6, i4, z, i3, i7, (byte) 0);
-                    if (ls6Var.getMessagesController().i4.u(j4)) {
+                    if (ls6Var.getMessagesController().j4.u(j4)) {
                         ls6Var.getMessagesStorage().a.c(new yg6(ls6Var, arrayList3, iq6Var, (byte) 5));
                     } else {
                         iq6Var.run();
@@ -8396,14 +8396,14 @@ public final class ls6 extends rf0 {
             this.b = tL_attachMenuBots;
             this.a = j;
         }
-        SharedPreferences.Editor edit = getMessagesController().X3.edit();
+        SharedPreferences.Editor edit = getMessagesController().Y3.edit();
         this.e = i;
         edit.putInt("menuBotsUpdateDate", i).commit();
         this.d = true;
         byte b = 0;
         if (tL_attachMenuBots != null) {
             if (!z) {
-                getMessagesStorage().j1(tL_attachMenuBots.users, null, true, true);
+                getMessagesStorage().n1(tL_attachMenuBots.users, null, true, true);
             }
             getMessagesController().j4(tL_attachMenuBots.users, z);
             hl.c3(new ip6(this, b));

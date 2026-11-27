@@ -22,7 +22,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class jjb implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -338,9 +338,9 @@ public final /* synthetic */ class jjb implements View.OnClickListener {
                 break;
             case 17:
                 wk1 wk1Var = (wk1) this.b;
-                jl7[] jl7VarArr = (jl7[]) this.c;
+                kl7[] kl7VarArr = (kl7[]) this.c;
                 wk1Var.run();
-                jl7VarArr[0].dismiss();
+                kl7VarArr[0].dismiss();
                 break;
             case 18:
                 sg2 sg2Var2 = (sg2) this.b;

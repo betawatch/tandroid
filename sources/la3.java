@@ -9,7 +9,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class la3 implements v2c {
     public static final j99 p = po5.t(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
@@ -58,18 +58,18 @@ public final class la3 implements v2c {
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) g.e;
         Iterator it = copyOnWriteArrayList.iterator();
         while (it.hasNext()) {
-            il7 il7Var = (il7) it.next();
-            if (il7Var.a.get() == null) {
-                copyOnWriteArrayList.remove(il7Var);
+            jl7 jl7Var = (jl7) it.next();
+            if (jl7Var.a.get() == null) {
+                copyOnWriteArrayList.remove(jl7Var);
             }
         }
-        il7 il7Var2 = new il7(g, ka3Var, a);
+        jl7 jl7Var2 = new jl7(g, ka3Var, a);
         synchronized (g.f) {
-            ((CopyOnWriteArrayList) g.e).add(il7Var2);
+            ((CopyOnWriteArrayList) g.e).add(jl7Var2);
             z = g.d;
         }
         if (z) {
-            il7Var2.b.execute(new fe7(il7Var2, (byte) 5));
+            jl7Var2.b.execute(new ge7(jl7Var2, (byte) 5));
         }
     }
 

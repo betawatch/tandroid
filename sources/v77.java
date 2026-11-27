@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v77 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class v77 implements RequestDelegate {
                     uc7Var.V3(tL_messages_affectedMessages.pts, tL_messages_affectedMessages.pts_count, j2);
                 }
                 if (j != 0) {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                     break;
                 }
                 break;
@@ -47,11 +47,11 @@ public final /* synthetic */ class v77 implements RequestDelegate {
                         tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
                         tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
                         tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
-                        uc7Var2.T3(tL_messages_dialogs, null, null, tL_dialog.folder_id, 0, 1, uc7Var2.E4, false, false, false);
+                        uc7Var2.T3(tL_messages_dialogs, null, null, tL_dialog.folder_id, 0, 1, uc7Var2.F4, false, false, false);
                     }
                 }
                 if (j2 != 0) {
-                    uc7Var2.getMessagesStorage().n1(j2);
+                    uc7Var2.getMessagesStorage().r1(j2);
                 }
                 uc7Var2.T0.e(j);
                 break;

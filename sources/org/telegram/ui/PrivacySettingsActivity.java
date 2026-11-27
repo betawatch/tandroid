@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.e implements fn7 {
     public int E;
@@ -555,7 +555,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.e impleme
         this.autoDeleteMesages = 2;
         this.P = 4;
         this.passcodeRow = 3;
-        if (getMessagesController().k4.G.f && Build.VERSION.SDK_INT >= 28 && f11.i) {
+        if (getMessagesController().l4.G.f && Build.VERSION.SDK_INT >= 28 && f11.i) {
             int i2 = this.P;
             this.P = i2 + 1;
             this.passkeysRow = i2;
@@ -606,7 +606,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.e impleme
         this.n = i7 + 4;
         this.P = i7 + 6;
         this.h = i7 + 5;
-        if (getMessagesController().k4.T0.f || getUserConfig().p()) {
+        if (getMessagesController().l4.T0.f || getUserConfig().p()) {
             int i8 = this.P;
             this.x = i8;
             this.newChatsRow = i8 + 1;
@@ -719,7 +719,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.e impleme
         this.b.setAdapter(this.a);
         byte b = 19;
         this.b.setOnItemClickListener(new l0(this, context, b));
-        uo0.c(getParentActivity(), this.currentAccount, new ii7(this, b));
+        uo0.c(getParentActivity(), this.currentAccount, new ji7(this, b));
         return this.fragmentView;
     }
 

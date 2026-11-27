@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class f11 {
     public static boolean a = true;
@@ -24,7 +24,7 @@ public abstract class f11 {
 
     static {
         b = Build.VERSION.SDK_INT <= 29;
-        c = "13.4.0";
+        c = "13.4.1";
         d = (byte) 4;
         e = "014b35b6184100b085b0d0572f9b5103";
         f = "AIzaSyDqt8P-7F7CPCseMkOiVRgb1LY8RN1bvH8";
@@ -80,7 +80,7 @@ public abstract class f11 {
                     Object obj2 = arrayList2.get(i3);
                     i3++;
                     uo8 uo8Var = (uo8) obj2;
-                    Iterator it = uc7.s1(yac.t0).k4.I3.f.iterator();
+                    Iterator it = uc7.s1(yac.t0).l4.I3.f.iterator();
                     while (it.hasNext()) {
                         if (Objects.equals(uo8Var.c, (String) it.next())) {
                             return true;

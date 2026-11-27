@@ -33,7 +33,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class xkc {
     public static long a;
@@ -41,7 +41,7 @@ public abstract class xkc {
     public static boolean a(TLRPC.TL_messageActionPhoneCall tL_messageActionPhoneCall) {
         TLRPC.PhoneCallDiscardReason phoneCallDiscardReason = tL_messageActionPhoneCall.reason;
         if (!(phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonBusy) && !(phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonMissed)) {
-            Iterator<String> it = uc7.s1(yac.t0).W3.getStringSet("calls_access_hashes", Collections.EMPTY_SET).iterator();
+            Iterator<String> it = uc7.s1(yac.t0).X3.getStringSet("calls_access_hashes", Collections.EMPTY_SET).iterator();
             while (it.hasNext()) {
                 String[] split = it.next().split(" ");
                 if (split.length >= 2) {
@@ -67,8 +67,8 @@ public abstract class xkc {
             if (SystemClock.elapsedRealtime() - a >= (chat != null ? jn7.d3 : 2000)) {
                 if (z5 && chat != null && !z4 && (N02 = uc7.s1(k5Var.a).N0(chat.id)) != null && (peer = N02.groupcall_default_join_as) != null) {
                     final TLRPC.InputPeer j1 = uc7.s1(k5Var.a).j1(r47.B1(peer));
-                    bw5.E0(activity, -chat.id, k5Var, new bf7() { // from class: pkc
-                        @Override // bf7
+                    bw5.E0(activity, -chat.id, k5Var, new cf7() { // from class: pkc
+                        @Override // cf7
                         public final void A(boolean z8) {
                             String str2 = str;
                             Activity activity2 = activity;
@@ -703,7 +703,7 @@ public abstract class xkc {
     }
 
     public static void k(Activity activity, TLRPC.TL_messageActionPhoneCall tL_messageActionPhoneCall) {
-        Iterator<String> it = uc7.s1(yac.t0).W3.getStringSet("calls_access_hashes", Collections.EMPTY_SET).iterator();
+        Iterator<String> it = uc7.s1(yac.t0).X3.getStringSet("calls_access_hashes", Collections.EMPTY_SET).iterator();
         while (it.hasNext()) {
             String[] split = it.next().split(" ");
             if (split.length >= 2) {

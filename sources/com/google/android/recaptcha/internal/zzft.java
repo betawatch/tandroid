@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 final class zzft extends yfb implements ur4 {
     int zza;
@@ -21,7 +21,7 @@ final class zzft extends yfb implements ur4 {
 
     @Override // ur4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        return ((zzft) create((zw2) obj)).invokeSuspend(f9c.a);
+        return ((zzft) create((zw2) obj)).invokeSuspend(g9c.a);
     }
 
     @Override // qf0
@@ -38,6 +38,6 @@ final class zzft extends yfb implements ur4 {
                 return vx2Var;
             }
         }
-        return f9c.a;
+        return g9c.a;
     }
 }

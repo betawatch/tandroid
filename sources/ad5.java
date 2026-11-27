@@ -15,7 +15,7 @@ import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.q;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ad5 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -242,14 +242,14 @@ public final class ad5 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 27:
-                g58 g58Var = (g58) obj;
-                o68 o68Var = g58Var.c8;
+                h58 h58Var = (h58) obj;
+                o68 o68Var = h58Var.c8;
                 o68Var.invalidate();
-                g58Var.setAnimatedTop(0);
+                h58Var.setAnimatedTop(0);
                 o68Var.F2 = true;
-                View view = g58Var.v2;
+                View view = h58Var.v2;
                 if (view != null && view.getVisibility() == 0) {
-                    g58Var.v2.setTranslationY(((1.0f - g58Var.getTopViewEnterProgress()) * g58Var.v2.getLayoutParams().height) + g58Var.I2);
+                    h58Var.v2.setTranslationY(((1.0f - h58Var.getTopViewEnterProgress()) * h58Var.v2.getLayoutParams().height) + h58Var.I2);
                 }
                 o68Var.O1 = null;
                 break;

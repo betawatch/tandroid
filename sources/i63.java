@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class i63 extends rg0 {
     public final HashMap A;
@@ -40,7 +40,7 @@ public final class i63 extends rg0 {
     public final boolean i;
     public final f73 j;
     public final qx6 k;
-    public final rg7 l;
+    public final sg7 l;
     public final pr3 m;
     public final z6f n;
     public final u8a o;
@@ -63,7 +63,7 @@ public final class i63 extends rg0 {
     /* JADX WARN: Type inference failed for: r2v10, types: [e63] */
     /* JADX WARN: Type inference failed for: r2v9, types: [e63] */
     /* JADX WARN: Type inference failed for: r3v1, types: [int, short] */
-    public i63(ft6 ft6Var, f73 f73Var, iy7 iy7Var, qx6 qx6Var, rg7 rg7Var, pr3 pr3Var, z6f z6fVar, long j, long j2) {
+    public i63(ft6 ft6Var, f73 f73Var, iy7 iy7Var, qx6 qx6Var, sg7 sg7Var, pr3 pr3Var, z6f z6fVar, long j, long j2) {
         this.R = ft6Var;
         this.S = ft6Var.c;
         Uri uri = ft6Var.b.a;
@@ -76,7 +76,7 @@ public final class i63 extends rg0 {
         this.n = z6fVar;
         this.p = (int) j;
         this.q = (int) j2;
-        this.l = rg7Var;
+        this.l = sg7Var;
         this.o = new u8a((byte) 3);
         final byte b = 0;
         this.i = false;
@@ -351,7 +351,7 @@ public final class i63 extends rg0 {
         if (rx6Var == null) {
             rx6Var = new rx6("SntpClient");
         }
-        rx6Var.w0(new qf5((byte) 26), new k09(f63Var, (byte) 11), 1);
+        rx6Var.w0(new qf5((byte) 26), new l09(f63Var, (byte) 11), 1);
     }
 
     public final void x(jy7 jy7Var, long j, long j2) {

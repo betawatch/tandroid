@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static final LruCache<VideoAdsLocation, VideoAdsCache> cached = new LruCache<>(3);
@@ -61,7 +61,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new dec(this, 1);
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -192,7 +192,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class VideoAdsCache {
         final ArrayList<TLRPC.TL_sponsoredMessage> ads = new ArrayList<>();
         int betweenDelay;
@@ -206,7 +206,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -300,7 +300,7 @@ public class VideoAds {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$load$1(TLObject tLObject, TLRPC.TL_error tL_error) {
-        hl.c3(new g9c(this, tLObject, (byte) 6));
+        hl.c3(new c9c(this, tLObject, (byte) 7));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -437,7 +437,7 @@ public class VideoAds {
                 }, false);
             }
             if (tL_sponsoredMessage.can_report) {
-                fu5Var.b(R.drawable.msg_info, ob6.M0(2131754939, null), new g9c(context2, w53Var, (byte) 8), false);
+                fu5Var.b(R.drawable.msg_info, ob6.M0(2131754939, null), new c9c(context2, w53Var, (byte) 9), false);
                 String M0 = ob6.M0(2131745961, null);
                 kta ktaVar = new kta((Object) this, (Object) context2, (Object) tL_sponsoredMessage, (Object) fu5Var, (byte) 23);
                 fu5Var = fu5Var;
@@ -473,7 +473,7 @@ public class VideoAds {
                 this.currentMenu = fu5Var;
                 this.currentMenuTranslationY = adLayout.getTranslationY();
                 pccVar.a(Boolean.TRUE);
-                fu5Var.p = new g9c(this, pccVar, (byte) 7);
+                fu5Var.p = new c9c(this, pccVar, (byte) 8);
                 fu5Var.a0();
                 checkPopupShownCallback();
                 return;
@@ -618,7 +618,7 @@ public class VideoAds {
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$show$18(TLRPC.TL_sponsoredMessage tL_sponsoredMessage, View view) {
         logSponsoredClicked(tL_sponsoredMessage);
-        m01.t(view.getContext(), Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, uc7.s1(yac.t0).k4.I2.f, false, false);
+        m01.t(view.getContext(), Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, uc7.s1(yac.t0).l4.I2.f, false, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -721,7 +721,7 @@ public class VideoAds {
     public void lambda$show$7(fu5 fu5Var, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Context context, View view) {
         fu5Var.u();
         logSponsoredClicked(tL_sponsoredMessage);
-        m01.t(context, Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, uc7.s1(this.currentAccount).k4.I2.f, false, false);
+        m01.t(context, Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, uc7.s1(this.currentAccount).l4.I2.f, false, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -890,7 +890,7 @@ public class VideoAds {
             }
         }, 3, true);
         this.premiumSheet = xk8Var2;
-        xk8Var2.n(new g9c(this, xk8Var2, (byte) 5));
+        xk8Var2.n(new c9c(this, xk8Var2, (byte) 6));
         xk8Var2.show();
         checkPopupShownCallback();
     }
@@ -975,7 +975,7 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     /* loaded from: classes2.dex */
     public static class AdLayout extends q11 {
         public final ImageView buttonView;
@@ -1045,7 +1045,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;

@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class wpc extends nic {
     public final /* synthetic */ ArrayList a;
@@ -18,15 +18,15 @@ public final class wpc extends nic {
     public final /* synthetic */ vnb c;
     public final /* synthetic */ Rect d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ jl7[] f;
+    public final /* synthetic */ kl7[] f;
 
-    public wpc(ArrayList arrayList, Context context, vnb vnbVar, Rect rect, int i, jl7[] jl7VarArr) {
+    public wpc(ArrayList arrayList, Context context, vnb vnbVar, Rect rect, int i, kl7[] kl7VarArr) {
         this.a = arrayList;
         this.b = context;
         this.c = vnbVar;
         this.d = rect;
         this.e = i;
-        this.f = jl7VarArr;
+        this.f = kl7VarArr;
     }
 
     @Override // nic

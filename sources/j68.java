@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class j68 extends g9 {
     public boolean c;
@@ -157,7 +157,7 @@ public final class j68 extends g9 {
                 storyItem = storyItem4;
                 x53Var = x53Var11;
                 actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_cancel, ob6.M0(2131752570, null), false, x53Var11).setOnClickListener(new d68(this, (byte) 0));
+                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_cancel, ob6.M0(2131752570, null), false, x53Var11).setOnClickListener(new e68(this, (byte) 0));
             } else {
                 storyItem = storyItem4;
                 x53Var = x53Var11;
@@ -174,20 +174,20 @@ public final class j68 extends g9 {
                 fu5Var.b(R.drawable.ic_ab_back, ob6.M0(2131753749, null), new fw2(actionBarPopupWindow$ActionBarPopupWindowLayout2, (byte) 1), false);
                 fu5Var.j();
                 n68Var = n68Var2;
-                q5b A = o68Var.getStoriesController().A(o68Var.l1, true);
-                q5b A2 = o68Var.C1.A(o68Var.l1, false);
+                r5b A = o68Var.getStoriesController().A(o68Var.l1, true);
+                r5b A2 = o68Var.C1.A(o68Var.l1, false);
                 boolean z5 = A2 != null && A2.a();
-                fd7 fd7Var = new fd7((Object) this, (Object) x53Var, (Object) storyItem2, (byte) 26);
+                gd7 gd7Var = new gd7((Object) this, (Object) x53Var, (Object) storyItem2, (byte) 26);
                 x53 x53Var12 = x53Var;
                 x53Var = x53Var12;
-                fu5.e(fu5Var, A, hashSet, z5, fd7Var, new ku0((Object) this, (Object) hashSet, (Object) storyItem2, (Object) x53Var12, (byte) 15));
+                fu5.e(fu5Var, A, hashSet, z5, gd7Var, new ku0((Object) this, (Object) hashSet, (Object) storyItem2, (Object) x53Var12, (byte) 15));
                 int b3 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(fu5Var.B);
                 b8 b8Var = new b8(0, x53Var, o68Var.getContext(), false, false);
                 o68Var.o3 = b8Var;
                 b8Var.j(ob6.M0(2131744462, null), R.drawable.menu_album_add, null);
                 b8 b8Var2 = o68Var.o3;
-                b8Var2.Q = new c68(actionBarPopupWindow$ActionBarPopupWindowLayout2, b3, (byte) 1);
-                b8Var2.setOnClickListener(new d68(this, (byte) 15));
+                b8Var2.Q = new d68(actionBarPopupWindow$ActionBarPopupWindowLayout2, b3, (byte) 1);
+                b8Var2.setOnClickListener(new e68(this, (byte) 15));
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.addView(o68Var.o3);
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.c = true;
                 k8 k8Var = new k8(aob.H8, x53Var, o68Var.getContext());
@@ -273,16 +273,16 @@ public final class j68 extends g9 {
                 }
                 actionBarPopupWindow$ActionBarPopupWindowLayout5 = actionBarPopupWindow$ActionBarPopupWindowLayout4;
                 x53Var5 = x53Var4;
-                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout5, R.drawable.msg_gallery, ob6.M0(i3, str3), false, x53Var5).setOnClickListener(new d68(j68Var, (byte) 11));
+                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout5, R.drawable.msg_gallery, ob6.M0(i3, str3), false, x53Var5).setOnClickListener(new e68(j68Var, (byte) 11));
             }
             if (!uc7.s1(o68Var.m2).M3() && !n68Var.f && !o68Var.n1) {
                 o68Var.s0(actionBarPopupWindow$ActionBarPopupWindowLayout5);
             }
             if (o68Var.n1 && o68Var.E2) {
-                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout5, R.drawable.msg_link, ob6.M0(2131751727, null), false, x53Var5).setOnClickListener(new d68(j68Var, (byte) 12));
+                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout5, R.drawable.msg_link, ob6.M0(2131751727, null), false, x53Var5).setOnClickListener(new e68(j68Var, (byte) 12));
             }
             if (o68Var.E2) {
-                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_shareout, ob6.M0(2131752963, null), false, x53Var5).setOnClickListener(new d68(j68Var, b4));
+                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_shareout, ob6.M0(2131752963, null), false, x53Var5).setOnClickListener(new e68(j68Var, b4));
             }
             TL_stories.StoryItem storyItem6 = n68Var.a;
             if (storyItem6 != null) {
@@ -300,12 +300,12 @@ public final class j68 extends g9 {
                         i2 = R.drawable.msg_voice_muted;
                     }
                     s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, i2, M02, false, x53Var5).setOnClickListener(new w6((byte) 6, j68Var, z8));
-                    s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.menu_camera_retake, ob6.M0(2131754747, str2), false, x53Var5).setOnClickListener(new d68(j68Var, (byte) 14));
+                    s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.menu_camera_retake, ob6.M0(2131754747, str2), false, x53Var5).setOnClickListener(new e68(j68Var, (byte) 14));
                 }
             }
             if (n68Var.f) {
                 final byte b5 = 0;
-                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.menu_video_pip, ob6.M0(2131746949, null), false, x53Var5).setOnClickListener(new View.OnClickListener(j68Var) { // from class: e68
+                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.menu_video_pip, ob6.M0(2131746949, null), false, x53Var5).setOnClickListener(new View.OnClickListener(j68Var) { // from class: f68
                     public final /* synthetic */ j68 b;
 
                     {
@@ -337,14 +337,14 @@ public final class j68 extends g9 {
                 });
             }
             if (n68Var.f && (o68Var.l1 == yac.h(o68Var.m2).e() || xc2.w(14, uc7.s1(o68Var.m2).M0(Long.valueOf(-o68Var.l1))) || ((w96Var = lcbVar.B0) != null && n68Var.i(w96Var.j()) && (groupCall = lcbVar.B0.s) != null && groupCall.creator))) {
-                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_settings_old, ob6.M0(2131748544, null), false, x53Var5).setOnClickListener(new f68(j68Var, x53Var5, lcbVar, (byte) 0));
+                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_settings_old, ob6.M0(2131748544, null), false, x53Var5).setOnClickListener(new g68(j68Var, x53Var5, lcbVar, (byte) 0));
             }
             if (n68Var.f) {
                 b8 c4 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_remove, ob6.M0(2131748574, null), false, x53Var5);
                 int i7 = aob.q7;
                 c4.h(0.12f, i7);
                 c4.d(x53Var5.h(i7), x53Var5.h(i7));
-                c4.setOnClickListener(new f68(j68Var, x53Var5, lcbVar, (byte) 1));
+                c4.setOnClickListener(new g68(j68Var, x53Var5, lcbVar, (byte) 1));
             }
             if (!n68Var.f) {
                 if (!o68Var.m1) {
@@ -390,7 +390,7 @@ public final class j68 extends g9 {
                 c5.h(0.12f, i9);
                 c5.d(x53Var5.h(i9), x53Var5.h(i9));
                 b = 1;
-                c5.setOnClickListener(new d68(j68Var, b));
+                c5.setOnClickListener(new e68(j68Var, b));
                 r22 = (n68Var != null || (storyItem3 = n68Var.a) == null || (messageMedia = storyItem3.media) == null || (!r47.V2(messageMedia.document) && ((photo = n68Var.a.media.photo) == null || !photo.has_stickers))) ? 0 : b;
                 if (n68Var == null) {
                     HashSet hashSet2 = new HashSet();
@@ -539,7 +539,7 @@ public final class j68 extends g9 {
                     user2 = user;
                     z = false;
                     final TLRPC.Chat chat3 = chat;
-                    View.OnClickListener onClickListener = new View.OnClickListener(this) { // from class: g68
+                    View.OnClickListener onClickListener = new View.OnClickListener(this) { // from class: h68
                         public final /* synthetic */ j68 b;
 
                         {
@@ -557,7 +557,7 @@ public final class j68 extends g9 {
                             switch (b7) {
                                 case 0:
                                     o68 o68Var2 = j68Var2.x;
-                                    uc7.s1(o68Var2.m2).W3.edit().putBoolean("stories_" + str7, false).apply();
+                                    uc7.s1(o68Var2.m2).X3.edit().putBoolean("stories_" + str7, false).apply();
                                     ip7.n(o68Var2.m2).c0(o68Var2.l1, 0L, true);
                                     v21 V = new d31(o68Var2.M0, x53Var16).V(Arrays.asList(tLObject2), hl.S2(ob6.a0("NotificationsStoryMutedHint", null, 2131747589, str6)), null, null);
                                     V.a = 2;
@@ -570,7 +570,7 @@ public final class j68 extends g9 {
                                     break;
                                 default:
                                     o68 o68Var3 = j68Var2.x;
-                                    uc7.s1(o68Var3.m2).W3.edit().putBoolean("stories_" + str7, true).apply();
+                                    uc7.s1(o68Var3.m2).X3.edit().putBoolean("stories_" + str7, true).apply();
                                     ip7.n(o68Var3.m2).c0(o68Var3.l1, 0L, true);
                                     v21 V2 = new d31(o68Var3.M0, x53Var16).V(Arrays.asList(tLObject2), hl.S2(ob6.a0("NotificationsStoryUnmutedHint", null, 2131747586, str6)), null, null);
                                     V2.a = 2;
@@ -595,7 +595,7 @@ public final class j68 extends g9 {
                     user2 = user;
                     b8 c7 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_unmute, ob6.M0(2131747587, null), false, x53Var11);
                     final byte b7 = 1;
-                    View.OnClickListener onClickListener2 = new View.OnClickListener(this) { // from class: g68
+                    View.OnClickListener onClickListener2 = new View.OnClickListener(this) { // from class: h68
                         public final /* synthetic */ j68 b;
 
                         {
@@ -613,7 +613,7 @@ public final class j68 extends g9 {
                             switch (b72) {
                                 case 0:
                                     o68 o68Var2 = j68Var2.x;
-                                    uc7.s1(o68Var2.m2).W3.edit().putBoolean("stories_" + str7, false).apply();
+                                    uc7.s1(o68Var2.m2).X3.edit().putBoolean("stories_" + str7, false).apply();
                                     ip7.n(o68Var2.m2).c0(o68Var2.l1, 0L, true);
                                     v21 V = new d31(o68Var2.M0, x53Var16).V(Arrays.asList(tLObject2), hl.S2(ob6.a0("NotificationsStoryMutedHint", null, 2131747589, str6)), null, null);
                                     V.a = 2;
@@ -626,7 +626,7 @@ public final class j68 extends g9 {
                                     break;
                                 default:
                                     o68 o68Var3 = j68Var2.x;
-                                    uc7.s1(o68Var3.m2).W3.edit().putBoolean("stories_" + str7, true).apply();
+                                    uc7.s1(o68Var3.m2).X3.edit().putBoolean("stories_" + str7, true).apply();
                                     ip7.n(o68Var3.m2).c0(o68Var3.l1, 0L, true);
                                     v21 V2 = new d31(o68Var3.M0, x53Var16).V(Arrays.asList(tLObject2), hl.S2(ob6.a0("NotificationsStoryUnmutedHint", null, 2131747586, str6)), null, null);
                                     V2.a = 2;
@@ -660,15 +660,15 @@ public final class j68 extends g9 {
                 }
                 if (z11) {
                     j68Var = this;
-                    s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_delete, ob6.M0(2131744405, null), false, x53Var8).setOnClickListener(new d68(j68Var, (byte) 3));
+                    s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_delete, ob6.M0(2131744405, null), false, x53Var8).setOnClickListener(new e68(j68Var, (byte) 3));
                 } else {
                     j68Var = this;
                     if (z2) {
                         if (z3) {
                             b2 = 5;
-                            s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_unarchive, ob6.M0(2131743569, null), false, x53Var8).setOnClickListener(new d68(j68Var, b2));
+                            s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_unarchive, ob6.M0(2131743569, null), false, x53Var8).setOnClickListener(new e68(j68Var, b2));
                         } else {
-                            s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_archive, ob6.M0(2131754146, null), false, x53Var8).setOnClickListener(new d68(j68Var, (byte) 4));
+                            s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_archive, ob6.M0(2131754146, null), false, x53Var8).setOnClickListener(new e68(j68Var, (byte) 4));
                         }
                     }
                 }
@@ -677,7 +677,7 @@ public final class j68 extends g9 {
             if (n68Var2.f) {
                 x53Var9 = x53Var8;
                 final byte b8 = 1;
-                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.menu_video_pip, ob6.M0(2131746949, null), false, x53Var8).setOnClickListener(new View.OnClickListener(j68Var) { // from class: e68
+                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.menu_video_pip, ob6.M0(2131746949, null), false, x53Var8).setOnClickListener(new View.OnClickListener(j68Var) { // from class: f68
                     public final /* synthetic */ j68 b;
 
                     {
@@ -713,7 +713,7 @@ public final class j68 extends g9 {
             if (uc7.s1(o68Var.m2).M3() || !n68Var2.e) {
                 i4 = R.drawable.msg_gallery_locked2;
             } else {
-                boolean z12 = uc7.s1(o68Var.m2).Q3;
+                boolean z12 = uc7.s1(o68Var.m2).R3;
                 int i18 = 2131744163;
                 if (yac.h(o68Var.m2).p()) {
                     if (z12) {
@@ -729,18 +729,18 @@ public final class j68 extends g9 {
                     i4 = R.drawable.msg_gallery_locked2;
                     Drawable drawable = o68Var.getContext().getDrawable(i4);
                     drawable.setColorFilter(new PorterDuffColorFilter(vm2.f(0.5f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
-                    c58 c58Var = new c58(o68Var.getContext().getDrawable(R.drawable.menu_quality_hd2), drawable, (byte) 1);
+                    d58 d58Var = new d58(o68Var.getContext().getDrawable(R.drawable.menu_quality_hd2), drawable, (byte) 1);
                     int L = hl.L(24.0f);
                     int L2 = hl.L(24.0f);
-                    c58Var.e = L;
-                    c58Var.f = L2;
+                    d58Var.e = L;
+                    d58Var.f = L2;
                     int L3 = hl.L(1.0f);
                     int i19 = -hl.L(2.0f);
-                    c58Var.s = L3;
-                    c58Var.w = i19;
+                    d58Var.s = L3;
+                    d58Var.w = i19;
                     b8 c8 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.menu_quality_hd, ob6.M0(2131744163, null), false, x53Var10);
                     c8.setOnClickListener(new v48(o68Var, (byte) 11));
-                    c8.setIcon(c58Var);
+                    c8.setIcon(d58Var);
                 }
             }
             if (o68Var.M2 || !o68Var.C2 || n68Var2.f) {
@@ -749,16 +749,16 @@ public final class j68 extends g9 {
             } else {
                 if (yac.h(o68Var.m2).p()) {
                     x53Var5 = x53Var9;
-                    s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_gallery, ob6.M0(2131745657, null), false, x53Var5).setOnClickListener(new d68(j68Var, (byte) 6));
+                    s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_gallery, ob6.M0(2131745657, null), false, x53Var5).setOnClickListener(new e68(j68Var, (byte) 6));
                 } else {
                     x53Var5 = x53Var9;
                     if (!uc7.s1(o68Var.m2).M3()) {
                         Drawable drawable2 = context3.getDrawable(i4);
                         drawable2.setColorFilter(new PorterDuffColorFilter(vm2.f(0.5f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
-                        c58 c58Var2 = new c58(context3.getDrawable(R.drawable.msg_gallery_locked1), drawable2, (byte) 2);
+                        d58 d58Var2 = new d58(context3.getDrawable(R.drawable.msg_gallery_locked1), drawable2, (byte) 2);
                         actionBarPopupWindow$ActionBarPopupWindowLayout7 = actionBarPopupWindow$ActionBarPopupWindowLayout;
                         b8 c9 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout7, R.drawable.msg_gallery, ob6.M0(2131745657, null), false, x53Var5);
-                        c9.setIcon(c58Var2);
+                        c9.setIcon(d58Var2);
                         c9.setOnClickListener(new lw4(j68Var, c9, lcbVar, (byte) 14));
                     }
                 }
@@ -768,25 +768,25 @@ public final class j68 extends g9 {
                 o68Var.s0(actionBarPopupWindow$ActionBarPopupWindowLayout7);
             }
             if (o68Var.E2) {
-                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout7, R.drawable.msg_link2, ob6.M0(2131751727, null), false, x53Var5).setOnClickListener(new d68(j68Var, (byte) 7));
+                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout7, R.drawable.msg_link2, ob6.M0(2131751727, null), false, x53Var5).setOnClickListener(new e68(j68Var, (byte) 7));
             }
             if (o68Var.E2) {
-                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_shareout, ob6.M0(2131752963, null), false, x53Var5).setOnClickListener(new d68(j68Var, (byte) 8));
+                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_shareout, ob6.M0(2131752963, null), false, x53Var5).setOnClickListener(new e68(j68Var, (byte) 8));
             }
             TL_stories.StoryItem storyItem10 = n68Var2.a;
             if (storyItem10 != null) {
                 if (storyItem10.translated && TextUtils.equals(storyItem10.translatedLng, r3c.H0())) {
-                    s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_translate, ob6.M0(2131749058, null), false, x53Var5).setOnClickListener(new d68(j68Var, (byte) 9));
+                    s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_translate, ob6.M0(2131749058, null), false, x53Var5).setOnClickListener(new e68(j68Var, (byte) 9));
                 } else {
-                    a5c a5cVar = uc7.s1(o68Var.m2).i4;
+                    a5c a5cVar = uc7.s1(o68Var.m2).j4;
                     TL_stories.StoryItem storyItem11 = n68Var2.a;
                     a5cVar.getClass();
                     if (storyItem11 != null && !TextUtils.isEmpty(storyItem11.caption) && !pv3.d(storyItem11.caption) && ((storyItem11.detectedLng == null && storyItem11.translatedText != null && TextUtils.equals(storyItem11.translatedLng, r3c.H0())) || ((str4 = storyItem11.detectedLng) != null && !a5cVar.v(str4)))) {
                         actionBarPopupWindow$ActionBarPopupWindowLayout8 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-                        s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout8, R.drawable.msg_translate, ob6.M0(2131743611, null), false, x53Var5).setOnClickListener(new d68(j68Var, (byte) 10));
+                        s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout8, R.drawable.msg_translate, ob6.M0(2131743611, null), false, x53Var5).setOnClickListener(new e68(j68Var, (byte) 10));
                         j68Var.s(actionBarPopupWindow$ActionBarPopupWindowLayout8, n68Var2.a);
                         if (!o68Var.M2 && !lbc.C(o68Var.l1) && !o68Var.A0()) {
-                            s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout8, R.drawable.msg_report, ob6.M0(2131745957, null), false, x53Var5).setOnClickListener(new f68(j68Var, lcbVar, x53Var5));
+                            s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout8, R.drawable.msg_report, ob6.M0(2131745957, null), false, x53Var5).setOnClickListener(new g68(j68Var, lcbVar, x53Var5));
                         }
                         actionBarPopupWindow$ActionBarPopupWindowLayout6 = actionBarPopupWindow$ActionBarPopupWindowLayout;
                         n68Var = n68Var2;
@@ -796,7 +796,7 @@ public final class j68 extends g9 {
             actionBarPopupWindow$ActionBarPopupWindowLayout8 = actionBarPopupWindow$ActionBarPopupWindowLayout;
             j68Var.s(actionBarPopupWindow$ActionBarPopupWindowLayout8, n68Var2.a);
             if (!o68Var.M2) {
-                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout8, R.drawable.msg_report, ob6.M0(2131745957, null), false, x53Var5).setOnClickListener(new f68(j68Var, lcbVar, x53Var5));
+                s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout8, R.drawable.msg_report, ob6.M0(2131745957, null), false, x53Var5).setOnClickListener(new g68(j68Var, lcbVar, x53Var5));
             }
             actionBarPopupWindow$ActionBarPopupWindowLayout6 = actionBarPopupWindow$ActionBarPopupWindowLayout;
             n68Var = n68Var2;
@@ -828,14 +828,13 @@ public final class j68 extends g9 {
     @Override // g9
     public final void k() {
         if (!this.c && !this.w[0]) {
-            hl.c3(new z58(this, (byte) 3));
+            hl.c3(new a68(this, (byte) 3));
         }
         o68 o68Var = this.x;
         o68Var.d1 = null;
         o68Var.c1 = null;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     public final void r(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, boolean z) {
         n68 n68Var;
         boolean z2 = this.f;
@@ -847,6 +846,7 @@ public final class j68 extends g9 {
         }
         Context context = o68Var.getContext();
         fj8 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
+        final byte b = 0;
         final um4 um4Var = new um4(this, actionBarPopupWindow$ActionBarPopupWindowLayout, false, (byte) 18);
         rx6 rx6Var = new rx6((byte) 22);
         b8[] b8VarArr = new b8[5];
@@ -858,7 +858,7 @@ public final class j68 extends g9 {
         c.setOnClickListener(new y60(swipeBack, (byte) 3));
         c.d(-328966, -328966);
         c.setSelectorColor(268435455);
-        b6 b6Var = new b6(context, (byte) 8);
+        View b6Var = new b6(context, (byte) 8);
         b6Var.setMinimumWidth(hl.L(196.0f));
         b6Var.setBackgroundColor(-15198184);
         actionBarPopupWindow$ActionBarPopupWindowLayout2.addView(b6Var);
@@ -877,7 +877,7 @@ public final class j68 extends g9 {
         w7Var.setTextColor(-1);
         w7Var.setOnValueChange(new n82(um4Var, (byte) 6));
         actionBarPopupWindow$ActionBarPopupWindowLayout2.a(w7Var, tre.o(-1, 44));
-        b6 b6Var2 = new b6(context, (byte) 9);
+        View b6Var2 = new b6(context, (byte) 9);
         b6Var2.setMinimumWidth(hl.L(196.0f));
         b6Var2.setBackgroundColor(-15198184);
         actionBarPopupWindow$ActionBarPopupWindowLayout2.addView(b6Var2);
@@ -888,16 +888,15 @@ public final class j68 extends g9 {
         layoutParams2.width = -1;
         layoutParams2.height = hl.L(8.0f);
         b6Var2.setLayoutParams(layoutParams2);
-        final byte b = 3;
+        final byte b2 = 3;
         b8 c2 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_0_2, ob6.M0(2131744920, null), false, null);
         c2.d(-328966, -328966);
-        final Object[] objArr = null == true ? 1 : 0;
         c2.setOnClickListener(new View.OnClickListener() { // from class: fh2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                byte b2 = objArr;
+                byte b3 = b;
                 um4 um4Var2 = um4Var;
-                switch (b2) {
+                switch (b3) {
                     case 0:
                         um4Var2.a0(true, true, 0.2f);
                         break;
@@ -920,13 +919,13 @@ public final class j68 extends g9 {
         b8VarArr[0] = c2;
         b8 c3 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_slow, ob6.M0(2131744923, null), false, null);
         c3.d(-328966, -328966);
-        final byte b2 = 1;
+        final byte b3 = 1;
         c3.setOnClickListener(new View.OnClickListener() { // from class: fh2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                byte b22 = b2;
+                byte b32 = b3;
                 um4 um4Var2 = um4Var;
-                switch (b22) {
+                switch (b32) {
                     case 0:
                         um4Var2.a0(true, true, 0.2f);
                         break;
@@ -949,13 +948,13 @@ public final class j68 extends g9 {
         b8VarArr[1] = c3;
         b8 c4 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_normal, ob6.M0(2131744924, null), false, null);
         c4.d(-328966, -328966);
-        final byte b3 = 2;
+        final byte b4 = 2;
         c4.setOnClickListener(new View.OnClickListener() { // from class: fh2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                byte b22 = b3;
+                byte b32 = b4;
                 um4 um4Var2 = um4Var;
-                switch (b22) {
+                switch (b32) {
                     case 0:
                         um4Var2.a0(true, true, 0.2f);
                         break;
@@ -981,9 +980,9 @@ public final class j68 extends g9 {
         c5.setOnClickListener(new View.OnClickListener() { // from class: fh2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                byte b22 = b;
+                byte b32 = b2;
                 um4 um4Var2 = um4Var;
-                switch (b22) {
+                switch (b32) {
                     case 0:
                         um4Var2.a0(true, true, 0.2f);
                         break;
@@ -1006,13 +1005,13 @@ public final class j68 extends g9 {
         b8VarArr[3] = c5;
         b8 c6 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_superfast, ob6.M0(2131744921, null), false, null);
         c6.d(-328966, -328966);
-        final byte b4 = 4;
+        final byte b5 = 4;
         c6.setOnClickListener(new View.OnClickListener() { // from class: fh2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                byte b22 = b4;
+                byte b32 = b5;
                 um4 um4Var2 = um4Var;
-                switch (b22) {
+                switch (b32) {
                     case 0:
                         um4Var2.a0(true, true, 0.2f);
                         break;
@@ -1051,10 +1050,10 @@ public final class j68 extends g9 {
         layoutParams3.width = -1;
         layoutParams3.height = hl.L(48.0f);
         o68Var.n3.setLayoutParams(layoutParams3);
-        int b5 = actionBarPopupWindow$ActionBarPopupWindowLayout.b((ActionBarPopupWindow$ActionBarPopupWindowLayout) o68Var.m3.b);
+        int b6 = actionBarPopupWindow$ActionBarPopupWindowLayout.b((ActionBarPopupWindow$ActionBarPopupWindowLayout) o68Var.m3.b);
         b8 b8Var2 = o68Var.n3;
-        b8Var2.Q = new c68(actionBarPopupWindow$ActionBarPopupWindowLayout, b5, (byte) 0);
-        b8Var2.setOnClickListener(new d68(this, (byte) 2));
+        b8Var2.Q = new d68(actionBarPopupWindow$ActionBarPopupWindowLayout, b6, (byte) 0);
+        b8Var2.setOnClickListener(new e68(this, (byte) 2));
         actionBarPopupWindow$ActionBarPopupWindowLayout.c = true;
         if (z) {
             k8 k8Var = new k8(aob.H8, x53Var, o68Var.getContext());
@@ -1071,7 +1070,7 @@ public final class j68 extends g9 {
         }
         TLRPC.ChatFull N0 = uc7.s1(o68Var.m2).N0(M0.id);
         if (N0 == null) {
-            N0 = jf7.Y(o68Var.m2).C0(M0.id, true, new CountDownLatch(1), false, false, 0);
+            N0 = kf7.a0(o68Var.m2).F0(M0.id, true, new CountDownLatch(1), false, false, 0);
         }
         if (N0 == null || !N0.can_view_stats) {
             return;

@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ui0 implements cr7 {
     public final /* synthetic */ byte a;
@@ -23,7 +23,7 @@ public final class ui0 implements cr7 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void S0(Object obj) {
-        qj7 qj7Var;
+        rj7 rj7Var;
         byte b = this.a;
         bj0 bj0Var = this.b;
         switch (b) {
@@ -61,12 +61,12 @@ public final class ui0 implements cr7 {
                         if ((a == null ? false : tx5.b(a)) && nrd.b(bj0Var.m0.c())) {
                             bj0Var.T();
                             mj0 mj0Var = bj0Var.m0;
-                            qj7Var = mj0Var.q;
-                            if (qj7Var == null) {
-                                qj7Var = new qj7();
-                                mj0Var.q = qj7Var;
+                            rj7Var = mj0Var.q;
+                            if (rj7Var == null) {
+                                rj7Var = new rj7();
+                                mj0Var.q = rj7Var;
                             }
-                            mj0.f(qj7Var, null);
+                            mj0.f(rj7Var, null);
                             break;
                         }
                     }
@@ -111,10 +111,10 @@ public final class ui0 implements cr7 {
                         bj0Var.U(i, charSequence);
                     }
                     mj0 mj0Var3 = bj0Var.m0;
-                    qj7Var = mj0Var3.q;
-                    if (qj7Var == null) {
+                    rj7Var = mj0Var3.q;
+                    if (rj7Var == null) {
                     }
-                    mj0.f(qj7Var, null);
+                    mj0.f(rj7Var, null);
                 }
                 break;
             default:
@@ -122,12 +122,12 @@ public final class ui0 implements cr7 {
                     bj0Var.O(1);
                     bj0Var.P();
                     mj0 mj0Var4 = bj0Var.m0;
-                    qj7 qj7Var2 = mj0Var4.v;
-                    if (qj7Var2 == null) {
-                        qj7Var2 = new qj7();
-                        mj0Var4.v = qj7Var2;
+                    rj7 rj7Var2 = mj0Var4.v;
+                    if (rj7Var2 == null) {
+                        rj7Var2 = new rj7();
+                        mj0Var4.v = rj7Var2;
                     }
-                    mj0.f(qj7Var2, Boolean.FALSE);
+                    mj0.f(rj7Var2, Boolean.FALSE);
                     break;
                 }
                 break;

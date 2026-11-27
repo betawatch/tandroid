@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class bw5 extends nx0 {
     public static ArrayList C1;
@@ -45,18 +45,18 @@ public final class bw5 extends nx0 {
     public TLRPC.InputPeer y1;
     public boolean z1;
 
-    public static void E0(Activity activity, long j, k5 k5Var, bf7 bf7Var) {
+    public static void E0(Activity activity, long j, k5 k5Var, cf7 cf7Var) {
         int i = F1;
         int i2 = k5Var.a;
         char c = 1;
         if (i == i2 && E1 == j && C1 != null && SystemClock.elapsedRealtime() - D1 < 240000) {
-            bf7Var.A(C1.size() == 1);
+            cf7Var.A(C1.size() == 1);
             return;
         }
         id idVar = new id(3, null, activity);
         TL_phone.getGroupCallJoinAs getgroupcalljoinas = new TL_phone.getGroupCallJoinAs();
         getgroupcalljoinas.peer = uc7.s1(i2).j1(j);
-        idVar.setOnCancelListener(new tv5(k5Var, ConnectionsManager.getInstance(i2).sendRequest(getgroupcalljoinas, new ft0(idVar, j, k5Var, bf7Var)), c == true ? 1 : 0));
+        idVar.setOnCancelListener(new tv5(k5Var, ConnectionsManager.getInstance(i2).sendRequest(getgroupcalljoinas, new ft0(idVar, j, k5Var, cf7Var)), c == true ? 1 : 0));
         try {
             idVar.q(500L);
         } catch (Exception unused) {

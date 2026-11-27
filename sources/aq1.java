@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class aq1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -165,7 +165,7 @@ public final /* synthetic */ class aq1 implements Runnable {
                             }
                             UndoView w3 = uj3Var.w3();
                             if (w3 != null) {
-                                w3.l(dialog.id, r6 != 0 ? 2 : 3, null, new ze7((Object) sj3Var, (Object) dialog, i4, (byte) 19));
+                                w3.l(dialog.id, r6 != 0 ? 2 : 3, null, new bf7((Object) sj3Var, (Object) dialog, i4, (byte) 19));
                             }
                         }
                         if (uj3Var.Y2 != 0 && uj3Var.T1.isEmpty()) {
@@ -195,8 +195,8 @@ public final /* synthetic */ class aq1 implements Runnable {
                 uc7 uc7Var = (uc7) obj2;
                 uc7Var.i1.clear();
                 uc7Var.p1.clear();
-                jf7 messagesStorage = uc7Var.getMessagesStorage();
-                messagesStorage.G();
+                kf7 messagesStorage = uc7Var.getMessagesStorage();
+                messagesStorage.I();
                 uc7Var.A4(true, messagesStorage.w, ((TLRPC.updates_Difference) obj).pts, this.b, this.c);
                 uc7Var.O1().p();
                 break;
@@ -231,10 +231,10 @@ public final /* synthetic */ class aq1 implements Runnable {
                 dc7Var2.d(i2, i3, tL_photos_photos);
                 break;
             case 10:
-                jf7 jf7Var = (jf7) obj2;
+                kf7 kf7Var = (kf7) obj2;
                 byte[] bArr = (byte[]) obj;
                 try {
-                    SQLitePreparedStatement executeFast = jf7Var.b.executeFast("UPDATE params SET lsv = ?, sg = ?, pbytes = ? WHERE id = 1");
+                    SQLitePreparedStatement executeFast = kf7Var.b.executeFast("UPDATE params SET lsv = ?, sg = ?, pbytes = ? WHERE id = 1");
                     executeFast.bindInteger(1, i2);
                     executeFast.bindInteger(2, i3);
                     NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(bArr != null ? bArr.length : 1);
@@ -247,7 +247,7 @@ public final /* synthetic */ class aq1 implements Runnable {
                     nativeByteBuffer.reuse();
                     break;
                 } catch (Exception e) {
-                    jf7Var.n(e, true);
+                    kf7Var.p(e, true);
                     return;
                 }
             default:

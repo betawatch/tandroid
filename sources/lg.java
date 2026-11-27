@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class lg implements Runnable {
     public final /* synthetic */ byte a;
@@ -157,7 +157,7 @@ public final /* synthetic */ class lg implements Runnable {
                 qu6.s(null, null, 2131744047, new Object[]{zu1Var2.getMessagesController().A1(wf3.n(message.from_id), false)}, spannableStringBuilder);
                 spannableStringBuilder.append((CharSequence) "\n\n");
                 oj n = oj.n(message.suggested_post.price);
-                int f = n.a == pj.b ? zu1Var2.getMessagesController().k4.g.f() : zu1Var2.getMessagesController().k4.d.f();
+                int f = n.a == pj.b ? zu1Var2.getMessagesController().l4.g.f() : zu1Var2.getMessagesController().l4.d.f();
                 if (z6) {
                     n = oj.j((n.b / 1000) * f, n.a);
                 }
@@ -174,7 +174,7 @@ public final /* synthetic */ class lg implements Runnable {
                 }
                 spannableStringBuilder.append(' ');
                 i = ((e) zu1Var2).currentAccount;
-                qu6.s(null, null, 2131744046, new Object[]{Long.valueOf(uc7.s1(i).k4.h.g(TimeUnit.HOURS))}, spannableStringBuilder);
+                qu6.s(null, null, 2131744046, new Object[]{Long.valueOf(uc7.s1(i).l4.h.g(TimeUnit.HOURS))}, spannableStringBuilder);
                 v21[] v21VarArr = new v21[1];
                 o1 o1Var = new o1(v21VarArr, (byte) 13);
                 id[] idVarArr = new id[1];
@@ -348,7 +348,7 @@ public final /* synthetic */ class lg implements Runnable {
                     lv2Var.d(false);
                 }
                 jn7 notificationCenter = lv2Var.getNotificationCenter();
-                int i14 = uc7.r5;
+                int i14 = uc7.s5;
                 notificationCenter.k(2, 1);
                 lv2Var.getNotificationCenter().k(25, new Object[0]);
                 if (z13) {
@@ -384,7 +384,7 @@ public final /* synthetic */ class lg implements Runnable {
                         zw3 zw3Var = hw3Var.r;
                         ArrayList arrayList7 = hw3Var.n;
                         int i15 = zw3.C1;
-                        jf7.Y(zw3Var.a).s1(str6, messages_botresults);
+                        kf7.a0(zw3Var.a).w1(str6, messages_botresults);
                         fw3Var.h = messages_botresults.next_offset;
                         if (z16) {
                             arrayList7.clear();
@@ -698,7 +698,7 @@ public final /* synthetic */ class lg implements Runnable {
                     TLRPC.contacts_Blocked contacts_blocked = (TLRPC.contacts_Blocked) tLObject8;
                     uc7Var.j4(contacts_blocked.users, false);
                     uc7Var.c4(contacts_blocked.chats, false);
-                    uc7Var.getMessagesStorage().j1(contacts_blocked.users, contacts_blocked.chats, true, true);
+                    uc7Var.getMessagesStorage().n1(contacts_blocked.users, contacts_blocked.chats, true, true);
                     if (z30) {
                         longSparseIntArray.clear();
                     }

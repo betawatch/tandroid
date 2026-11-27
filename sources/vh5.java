@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class vh5 implements la6, pa6, i8a, g84, xs9 {
     public static final Set q0 = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(1, 2, 5)));
@@ -178,12 +178,12 @@ public final class vh5 implements la6, pa6, i8a, g84, xs9 {
         }
         String str = ko4Var.l;
         String str2 = ko4Var2.t;
-        int h = dg7.h(str2);
+        int h = eg7.h(str2);
         if (gcc.v(h, str) == 1) {
             b = gcc.w(h, str);
-            str2 = dg7.d(b);
+            str2 = eg7.d(b);
         } else {
-            b = dg7.b(str, str2);
+            b = eg7.b(str, str2);
         }
         ko4Var2.o = ko4Var.o;
         ko4Var2.p = ko4Var.p;
@@ -209,19 +209,19 @@ public final class vh5 implements la6, pa6, i8a, g84, xs9 {
             a.a(ko4Var.F);
         }
         if (str2 != null) {
-            a.s = dg7.n(str2);
+            a.s = eg7.n(str2);
         }
         int i = ko4Var.N;
         if (i != -1 && h == 1) {
             a.M = i;
         }
-        uf7 uf7Var = ko4Var.m;
-        if (uf7Var != null) {
-            uf7 uf7Var2 = ko4Var2.m;
-            if (uf7Var2 != null) {
-                uf7Var = uf7Var2.b(uf7Var);
+        vf7 vf7Var = ko4Var.m;
+        if (vf7Var != null) {
+            vf7 vf7Var2 = ko4Var2.m;
+            if (vf7Var2 != null) {
+                vf7Var = vf7Var2.b(vf7Var);
             }
-            a.l = uf7Var;
+            a.l = vf7Var;
         }
         return new ko4(a);
     }
@@ -262,7 +262,7 @@ public final class vh5 implements la6, pa6, i8a, g84, xs9 {
                             ko4 ko4Var = this.Z.a(i4).d[0];
                             String str = y.t;
                             String str2 = ko4Var.t;
-                            int h = dg7.h(str);
+                            int h = eg7.h(str);
                             if (h == 3) {
                                 if (Objects.equals(str, str2)) {
                                     if ((!"application/cea-608".equals(str) && !"application/cea-708".equals(str)) || y.T == ko4Var.T) {
@@ -272,7 +272,7 @@ public final class vh5 implements la6, pa6, i8a, g84, xs9 {
                                     continue;
                                 }
                                 i5++;
-                            } else if (h == dg7.h(str2)) {
+                            } else if (h == eg7.h(str2)) {
                                 break;
                             } else {
                                 i5++;
@@ -302,10 +302,10 @@ public final class vh5 implements la6, pa6, i8a, g84, xs9 {
                 ko4 y2 = this.M[i6].y();
                 y2.getClass();
                 String str3 = y2.t;
-                if (dg7.m(str3)) {
+                if (eg7.m(str3)) {
                     i9 = 2;
-                } else if (!dg7.i(str3)) {
-                    i9 = dg7.l(str3) ? 3 : -2;
+                } else if (!eg7.i(str3)) {
+                    i9 = eg7.l(str3) ? 3 : -2;
                 }
                 if (y(i9) > y(i8)) {
                     i7 = i6;
@@ -342,7 +342,7 @@ public final class vh5 implements la6, pa6, i8a, g84, xs9 {
                     this.c0 = i12;
                     i = 0;
                 } else {
-                    if (i8 != 2 || !dg7.i(y3.t)) {
+                    if (i8 != 2 || !eg7.i(y3.t)) {
                         ko4Var2 = null;
                     }
                     StringBuilder l = c00.l(str4, ":muxed:");

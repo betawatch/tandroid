@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_feed;
 import org.telegram.ui.ActionBar.a;
@@ -29,7 +28,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class lm7 extends e implements ej6, fn7, i1d {
     public static final fa4 f0 = new fa4(null, 0, null);
@@ -46,7 +45,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
     public int O;
     public int P;
     public String Q;
-    public vl7 R;
+    public wl7 R;
     public rla S;
     public boolean T;
     public final km7 U;
@@ -54,7 +53,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
     public final HashMap W;
     public final fm7[] X;
     public final da4[] Y;
-    public final vl7 Z;
+    public final wl7 Z;
     public oz4 a;
     public final na4 a0;
     public final jm7[] b;
@@ -76,8 +75,8 @@ public final class lm7 extends e implements ej6, fn7, i1d {
 
     public lm7() {
         super(null);
-        byte b = 3;
-        byte b2 = 0;
+        byte b = 0;
+        byte b2 = 2;
         this.b = new jm7[]{new jm7(), new jm7(), new jm7()};
         this.c = new ArrayList();
         this.d = new HashSet();
@@ -91,15 +90,11 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         this.W = new HashMap();
         this.X = new fm7[3];
         this.Y = new da4[3];
-        this.Z = new vl7(this, b);
-        this.a0 = new na4(new su3((byte) 21), new y94(ea4.i(this.currentAccount), b2));
+        this.Z = new wl7(this, b2);
+        this.a0 = new na4(new su3((byte) 21), new y94(ea4.i(this.currentAccount), b));
     }
 
-    public static String B0(int i, r47 r47Var) {
-        return i + "_" + r47.B0(r47Var.k) + "_" + r47Var.e1();
-    }
-
-    public static String E0(TLRPC.Message message) {
+    public static String C0(TLRPC.Message message) {
         Object valueOf;
         StringBuilder sb = new StringBuilder();
         sb.append(r47.B0(message));
@@ -113,35 +108,35 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         return sb.toString();
     }
 
-    public static void L0(jm7 jm7Var) {
+    public static void J0(jm7 jm7Var) {
         im7 im7Var = jm7Var.f;
         if (im7Var != null) {
             im7Var.g3.O(true);
         }
     }
 
-    public static void f0(ViewGroup viewGroup, boolean z) {
+    public static void e0(ViewGroup viewGroup, boolean z) {
         viewGroup.animate().cancel();
         if (z) {
             viewGroup.setVisibility(0);
         }
-        viewGroup.animate().alpha(z ? 1.0f : 0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(220L).setInterpolator(k43.h).withEndAction(z ? null : new fe7(viewGroup, (byte) 7)).start();
+        viewGroup.animate().alpha(z ? 1.0f : 0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(220L).setInterpolator(k43.h).withEndAction(z ? null : new ge7(viewGroup, (byte) 7)).start();
     }
 
-    public static void g0(jm7 jm7Var, List list, fa4 fa4Var) {
+    public static void f0(jm7 jm7Var, List list, fa4 fa4Var) {
         HashMap hashMap = jm7Var.d;
         if (fa4Var.a != null) {
             Iterator it = list.iterator();
             while (it.hasNext()) {
                 TLRPC.Message message = (TLRPC.Message) it.next();
-                if (message != null && message.peer_id != null && !hashMap.containsKey(E0(message))) {
-                    hashMap.put(E0(message), fa4Var);
+                if (message != null && message.peer_id != null && !hashMap.containsKey(C0(message))) {
+                    hashMap.put(C0(message), fa4Var);
                 }
             }
         }
     }
 
-    public static void i0(im7 im7Var) {
+    public static void h0(im7 im7Var) {
         if (im7Var == null) {
             return;
         }
@@ -149,49 +144,16 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         im7Var.invalidate();
     }
 
+    public static String z0(int i, r47 r47Var) {
+        return i + "_" + r47.B0(r47Var.k) + "_" + r47Var.e1();
+    }
+
     @Override // ej6
     public final rz4 A() {
         return getBaseSimpleGlass().d();
     }
 
-    public final void A0() {
-        View m;
-        int round;
-        int i = 0;
-        while (true) {
-            jm7[] jm7VarArr = this.b;
-            if (i >= jm7VarArr.length) {
-                return;
-            }
-            im7 im7Var = jm7VarArr[i].f;
-            if (im7Var != null) {
-                for (int i2 = 0; i2 < im7Var.getChildCount(); i2++) {
-                    View childAt = im7Var.getChildAt(i2);
-                    if (childAt instanceof v94) {
-                        ((v94) childAt).p();
-                    }
-                }
-                fm7 fm7Var = this.X[i];
-                im7 im7Var2 = jm7VarArr[i].f;
-                if (fm7Var != null && im7Var2 != null && (m = im7Var2.f3.m(fm7Var.a)) != null) {
-                    km7 km7Var = fm7Var.d;
-                    if (km7Var != null) {
-                        float f = km7Var.b;
-                        float f2 = fm7Var.f;
-                        float max = f != f2 ? Math.max(0.0f, Math.min(1.0f, (km7Var.a - f2) / (f - f2))) : 1.0f;
-                        int i3 = fm7Var.e;
-                        round = Math.round(hl.U1(max, i3, Math.max(0, i3)));
-                    } else {
-                        round = Math.round((fm7Var.b + fm7Var.c) - ((m instanceof v94 ? ((v94) m).getMorphHeight() : m.getHeight()) / 2.0f));
-                    }
-                    im7Var2.f3.g1(fm7Var.a, round);
-                }
-            }
-            i++;
-        }
-    }
-
-    public final String C0(r47 r47Var) {
+    public final String A0(r47 r47Var) {
         String K = xc2.K(getMessagesController().M0(Long.valueOf(-r47.B0(r47Var.k))), false);
         String k = c00.k(new StringBuilder("https://"), getMessagesController().N2, "/");
         if (!TextUtils.isEmpty(K)) {
@@ -206,30 +168,16 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         return l.toString();
     }
 
-    public final void D0(zu1 zu1Var, int i, r47 r47Var) {
-        ha4 n0 = n0(i, r47Var, "open_post", null);
-        fa4 fa4Var = n0.f;
+    public final void B0(zu1 zu1Var, int i, r47 r47Var) {
+        ha4 m0 = m0(i, r47Var, "open_post", null);
+        fa4 fa4Var = m0.f;
         if (fa4Var != null) {
-            zu1Var.yb = new ty0(fa4Var, new int[]{n0.d}, r47Var.k.grouped_id, SystemClock.elapsedRealtime());
+            zu1Var.yb = new ty0(fa4Var, new int[]{m0.d}, r47Var.k.grouped_id, SystemClock.elapsedRealtime());
         }
-        zu1Var.zb = n0;
+        zu1Var.zb = m0;
     }
 
-    @Override // ej6
-    public final void F() {
-        boolean z = this.N;
-        jm7[] jm7VarArr = this.b;
-        if (z) {
-            i0(jm7VarArr[2].f);
-            return;
-        }
-        ir1 ir1Var = this.w;
-        if (ir1Var != null) {
-            i0(jm7VarArr[ir1Var.getCurrentPosition()].f);
-        }
-    }
-
-    public final void F0(ha4 ha4Var) {
+    public final void D0(ha4 ha4Var) {
         this.a0.b();
         String i = ea4.i(this.currentAccount);
         if (i != null) {
@@ -237,7 +185,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         }
     }
 
-    public final void G0() {
+    public final void E0() {
         if (this.f) {
             return;
         }
@@ -246,22 +194,36 @@ public final class lm7 extends e implements ej6, fn7, i1d {
             return;
         }
         this.f = true;
-        M0(true);
+        K0(true);
         TL_feed.TL_feed_setInterestCategories tL_feed_setInterestCategories = new TL_feed.TL_feed_setInterestCategories();
         tL_feed_setInterestCategories.category_ids.addAll(hashSet);
-        getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_feed_setInterestCategories, new ol7(this, tL_feed_setInterestCategories, (byte) 1)), this.classGuid);
+        getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_feed_setInterestCategories, new pl7(this, tL_feed_setInterestCategories, (byte) 1)), this.classGuid);
     }
 
-    public final void H0(String str) {
+    @Override // ej6
+    public final void F() {
+        boolean z = this.N;
+        jm7[] jm7VarArr = this.b;
+        if (z) {
+            h0(jm7VarArr[2].f);
+            return;
+        }
+        ir1 ir1Var = this.w;
+        if (ir1Var != null) {
+            h0(jm7VarArr[ir1Var.getCurrentPosition()].f);
+        }
+    }
+
+    public final void F0(String str) {
         if (str.equals(this.Q)) {
             return;
         }
         this.Q = str;
         jm7[] jm7VarArr = this.b;
         jm7 jm7Var = jm7VarArr[2];
-        vl7 vl7Var = this.R;
-        if (vl7Var != null) {
-            hl.r(vl7Var);
+        wl7 wl7Var = this.R;
+        if (wl7Var != null) {
+            hl.r(wl7Var);
         }
         this.R = null;
         jm7Var.a.clear();
@@ -270,18 +232,18 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         jm7Var.d.clear();
         jm7Var.e.clear();
         jm7Var.i = null;
+        byte b = 0;
         jm7Var.l = false;
         jm7Var.n = false;
         jm7Var.m = false;
         jm7Var.o = false;
-        L0(jm7Var);
-        byte b = 1;
+        J0(jm7Var);
         boolean z = this.M && !TextUtils.isEmpty(this.Q);
         if (this.N != z) {
             this.N = z;
             im7 im7Var = jm7VarArr[2].f;
-            f0(this.w, !z);
-            f0(im7Var, z);
+            e0(this.w, !z);
+            e0(im7Var, z);
             if (z) {
                 im7Var.x0(0);
             }
@@ -289,12 +251,12 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        vl7 vl7Var2 = new vl7(this, b);
-        this.R = vl7Var2;
-        hl.d3(vl7Var2, 500L);
+        wl7 wl7Var2 = new wl7(this, b);
+        this.R = wl7Var2;
+        hl.d3(wl7Var2, 500L);
     }
 
-    public final float I0(int i) {
+    public final float G0(int i) {
         im7 im7Var;
         View m;
         int L = hl.L(48.0f);
@@ -304,23 +266,23 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         return (im7Var.f3.K0() > 0 || (m = im7Var.f3.m(0)) == null) ? L : Math.max(0, Math.min(L, im7Var.getPaddingTop() - m.getTop()));
     }
 
-    public final void J0(int i, r47 r47Var, boolean z) {
-        F0(n0(i, r47Var, z ? "feed.likePost" : "feed.dislikePost", null));
+    public final void H0(int i, r47 r47Var, boolean z) {
+        D0(m0(i, r47Var, z ? "feed.likePost" : "feed.dislikePost", null));
         if (z) {
             d31.b0(this).M(getParentActivity().getResources().getDrawable(R.drawable.msg_rate_up).mutate(), ob6.M0(2131747990, null)).j();
         } else {
-            hl.d3(new fd7((Object) this, (Object) this.b[i], (Object) r47Var, (byte) 11), 420L);
+            hl.d3(new gd7((Object) this, (Object) this.b[i], (Object) r47Var, (byte) 11), 420L);
             d31.b0(this).M(getParentActivity().getResources().getDrawable(R.drawable.msg_rate_down).mutate(), ob6.M0(2131747985, null)).j();
         }
     }
 
-    public final void K0(boolean z) {
+    public final void I0(boolean z) {
         if (this.M == z) {
             return;
         }
         this.M = z;
         if (!z) {
-            H0("");
+            F0("");
         }
         ValueAnimator valueAnimator = this.F;
         if (valueAnimator != null) {
@@ -334,22 +296,22 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         this.F.start();
     }
 
-    public final void M0(boolean z) {
-        int q0;
-        boolean s0 = s0();
+    public final void K0(boolean z) {
+        int p0;
+        boolean r0 = r0();
         if (this.H != null) {
             Boolean bool = this.J;
-            if (bool == null || bool.booleanValue() != s0) {
-                this.J = Boolean.valueOf(s0);
+            if (bool == null || bool.booleanValue() != r0) {
+                this.J = Boolean.valueOf(r0);
                 this.H.animate().cancel();
                 ir8 ir8Var = this.H;
                 if (!z) {
-                    ir8Var.setAlpha(s0 ? 1.0f : 0.0f);
-                    this.H.setScaleX(s0 ? 1.0f : 0.7f);
-                    this.H.setScaleY(s0 ? 1.0f : 0.7f);
-                    this.H.setTranslationY(s0 ? 0.0f : hl.L(10.0f));
-                    this.H.setVisibility(s0 ? 0 : 8);
-                } else if (s0) {
+                    ir8Var.setAlpha(r0 ? 1.0f : 0.0f);
+                    this.H.setScaleX(r0 ? 1.0f : 0.7f);
+                    this.H.setScaleY(r0 ? 1.0f : 0.7f);
+                    this.H.setTranslationY(r0 ? 0.0f : hl.L(10.0f));
+                    this.H.setVisibility(r0 ? 0 : 8);
+                } else if (r0) {
                     if (ir8Var.getVisibility() != 0) {
                         this.H.setAlpha(0.0f);
                         this.H.setScaleX(0.7f);
@@ -359,7 +321,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
                     this.H.setVisibility(0);
                     this.H.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).translationY(0.0f).setDuration(320L).setInterpolator(k43.h).withEndAction(null).start();
                 } else {
-                    ir8Var.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).translationY(hl.L(10.0f)).setDuration(320L).setInterpolator(k43.h).withEndAction(new vl7(this, (byte) 4)).start();
+                    ir8Var.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).translationY(hl.L(10.0f)).setDuration(320L).setInterpolator(k43.h).withEndAction(new wl7(this, (byte) 3)).start();
                 }
             }
             this.H.setEnabled(!this.f);
@@ -379,9 +341,9 @@ public final class lm7 extends e implements ej6, fn7, i1d {
                 return;
             }
             jm7 jm7Var = jm7VarArr[i];
-            if (jm7Var.f != null && jm7Var.f.getPaddingBottom() != (q0 = q0(i))) {
+            if (jm7Var.f != null && jm7Var.f.getPaddingBottom() != (p0 = p0(i))) {
                 im7 im7Var = jm7Var.f;
-                im7Var.setPadding(0, im7Var.getPaddingTop(), 0, q0);
+                im7Var.setPadding(0, im7Var.getPaddingTop(), 0, p0);
                 ViewGroup viewGroup = jm7Var.i;
                 if (viewGroup != null) {
                     viewGroup.requestLayout();
@@ -391,7 +353,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         }
     }
 
-    public final void N0(boolean z) {
+    public final void L0(boolean z) {
         sla slaVar = this.L;
         if (slaVar != null) {
             slaVar.setContentDescription(ob6.M0(this.T ? 2131747996 : 2131747993, null));
@@ -427,7 +389,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         }
     }
 
-    public final void O0(int i) {
+    public final void M0(int i) {
         jm7 jm7Var;
         String str;
         jm7 jm7Var2 = this.b[i];
@@ -441,9 +403,9 @@ public final class lm7 extends e implements ej6, fn7, i1d {
                 if (v94Var.getMessage() != null && childAt.getAlpha() >= 0.5f) {
                     r47 message = v94Var.getMessage();
                     float y = childAt.getY() + im7Var.getTranslationY();
-                    fa4 fa4Var = (fa4) jm7Var2.d.get(E0(message.k));
+                    fa4 fa4Var = (fa4) jm7Var2.d.get(C0(message.k));
                     long B0 = r47.B0(message.k);
-                    Integer num = (Integer) jm7Var2.e.get(E0(message.k));
+                    Integer num = (Integer) jm7Var2.e.get(C0(message.k));
                     int intValue = num != null ? num.intValue() : message.e1();
                     long j = message.k.grouped_id;
                     float height = y + childAt.getHeight();
@@ -454,8 +416,8 @@ public final class lm7 extends e implements ej6, fn7, i1d {
                         fa4Var = f0;
                     }
                     r47 message2 = v94Var.getMessage();
-                    if (t0(i, message2)) {
-                        km7 km7Var = (km7) this.W.get(B0(i, message2));
+                    if (s0(i, message2)) {
+                        km7 km7Var = (km7) this.W.get(z0(i, message2));
                         str = (!v94Var.L || v94Var.a0 <= v94Var.b0 || (km7Var != null && km7Var.b >= 1.0f)) ? "whole" : "cut";
                     } else {
                         str = "card";
@@ -475,17 +437,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         this.Y[i].a.d(arrayList);
     }
 
-    @Override // i1d
-    public final void P() {
-        int i = this.P;
-        if (this.O == i) {
-            return;
-        }
-        this.O = i;
-        M0(false);
-    }
-
-    public final void P0() {
+    public final void N0() {
         ir1 ir1Var;
         if (this.y == null || (ir1Var = this.w) == null) {
             return;
@@ -493,12 +445,12 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         int currentPosition = ir1Var.getCurrentPosition();
         float positionAnimated = this.w.getPositionAnimated();
         float f = currentPosition;
-        float R1 = hl.R1(I0(currentPosition), I0(positionAnimated > f ? currentPosition + 1 : currentPosition - 1), Math.abs(positionAnimated - f));
+        float R1 = hl.R1(G0(currentPosition), G0(positionAnimated > f ? currentPosition + 1 : currentPosition - 1), Math.abs(positionAnimated - f));
         float L = hl.L(48.0f);
-        float p0 = (p0() - hl.L(9.0f)) - R1;
-        float r0 = r0();
-        this.y.setTranslationY(hl.R1(p0, r0, this.E));
-        this.w.setTranslationY((r0 - p0) * this.E);
+        float o0 = (o0() - hl.L(9.0f)) - R1;
+        float q0 = q0();
+        this.y.setTranslationY(hl.R1(o0, q0, this.E));
+        this.w.setTranslationY((q0 - o0) * this.E);
         float R12 = hl.R1(1.0f - (R1 / L), 1.0f, this.E);
         this.y.setAlpha(R12);
         this.y.setVisibility(R12 > 0.0f ? 0 : 4);
@@ -518,13 +470,23 @@ public final class lm7 extends e implements ej6, fn7, i1d {
     }
 
     @Override // i1d
+    public final void P() {
+        int i = this.P;
+        if (this.O == i) {
+            return;
+        }
+        this.O = i;
+        K0(false);
+    }
+
+    @Override // i1d
     public final View R() {
         return this.fragmentView;
     }
 
     @Override // org.telegram.ui.ActionBar.e, ej6
     public final boolean W(MotionEvent motionEvent, boolean z) {
-        if (u0(z)) {
+        if (t0(z)) {
             return false;
         }
         if (!this.N) {
@@ -558,7 +520,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         this.S = v;
         byte b2 = 1;
         this.L = v.a(1, this.T ? R.drawable.news_compact : R.drawable.news_expanded);
-        N0(false);
+        L0(false);
         d26 d26Var = new d26((byte) 5, context, this);
         bm6 bm6Var = new bm6(this, (byte) 18);
         WeakHashMap weakHashMap = ihc.a;
@@ -570,14 +532,15 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         if (launchActivity != null) {
             launchActivity.g1.d.add(this);
         }
-        ir1 ir1Var = new ir1((byte) 4, context, this);
+        byte b3 = 4;
+        ir1 ir1Var = new ir1(b3, context, this);
         this.w = ir1Var;
         ir1Var.setAllowDisallowInterceptTouch(false);
-        byte b3 = 3;
-        this.w.setAdapter(new bn0(b3, context, this));
+        byte b4 = 3;
+        this.w.setAdapter(new bn0(b4, context, this));
         d26Var.addView(this.w, tre.e(-1, -1, jn7.D1));
         jm7[] jm7VarArr = this.b;
-        jm7VarArr[2].f = m0(context, 2);
+        jm7VarArr[2].f = l0(context, 2);
         jm7VarArr[2].f.setAlpha(0.0f);
         jm7VarArr[2].f.setVisibility(8);
         d26Var.addView(jm7VarArr[2].f, tre.c(-1.0f, -1));
@@ -609,9 +572,9 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         hj3Var.setupBlurredBackground(c);
         hj3Var.setBlurredBackgroundVisibility(0.0f);
         m7Var.setOnFocusChangeListener(new ts0(this, (byte) 15));
-        hj3Var.setCloseButtonOnClickListener(new vl7(this, b));
+        hj3Var.setCloseButtonOnClickListener(new wl7(this, b3));
         hj3Var.setCloseButtonHideDuration(80L);
-        m7Var.addTextChangedListener(new nh6(this, b3));
+        m7Var.addTextChangedListener(new nh6(this, b4));
         this.y = hj3Var;
         d26Var.addView(hj3Var, d26Var.indexOfChild(this.K), tre.d(-1, 48.0f, 48, 7.0f, 0.0f, 7.0f, 0.0f));
         this.simpleActionBar.setBackground(null);
@@ -652,70 +615,13 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         this.H.addView(this.I, tre.e(-2, -1, 17));
         this.H.setOnClickListener(new am7(this, b));
         d26Var.addView(this.H, tre.e(-2, 60, 81));
-        M0(false);
-        x0();
+        K0(false);
+        u0();
         setBulletinDelegate(new t10(this, (byte) 13));
         return d26Var;
     }
 
-    public final void d0(TLRPC.Chat chat, boolean z) {
-        long j = chat.id;
-        j61 j61Var = new j61((Object) this, j, (Object) chat, z, (byte) 9);
-        if (!chat.in_news) {
-            getMessagesController().j(j, getUserConfig().f(), 0, null, this, false, new j61((Object) this, j, z, (Object) j61Var, (byte) 10), null, null, z);
-            return;
-        }
-        TLRPC.TL_channels_editChannelNews tL_channels_editChannelNews = new TLRPC.TL_channels_editChannelNews();
-        tL_channels_editChannelNews.channel = getMessagesController().h1(j);
-        tL_channels_editChannelNews.news = false;
-        getConnectionsManager().sendRequest(tL_channels_editChannelNews, new rs0((Object) this, j, false, (Object) tL_channels_editChannelNews, (Runnable) j61Var, (byte) 4));
-    }
-
-    @Override // fn7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == jn7.Q) {
-            y0(1, true);
-            return;
-        }
-        if (i == 1) {
-            long longValue = ((Long) objArr[0]).longValue();
-            if (((Boolean) objArr[2]).booleanValue() || ((Integer) objArr[3]).intValue() != 0 || longValue >= 0) {
-                return;
-            }
-            TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(-longValue));
-            if (!xc2.V(M0) || xc2.r0(M0)) {
-                return;
-            }
-            jm7 jm7Var = this.b[1];
-            if (jm7Var.l) {
-                if (jm7Var.k && jm7Var.p) {
-                    return;
-                }
-                ArrayList arrayList = (ArrayList) objArr[1];
-                im7 im7Var = jm7Var.f;
-                boolean z = (im7Var == null || im7Var.canScrollVertically(-1)) ? false : true;
-                int size = arrayList.size();
-                int i3 = 0;
-                int i4 = 0;
-                while (i4 < size) {
-                    Object obj = arrayList.get(i4);
-                    i4++;
-                    TLRPC.Message message = ((r47) obj).k;
-                    if (message != null && message.id > 0 && !(message instanceof TLRPC.TL_messageService) && e0(jm7Var, message, 0)) {
-                        i3++;
-                    }
-                }
-                if (i3 > 0) {
-                    L0(jm7Var);
-                    if (z) {
-                        jm7Var.f.x0(0);
-                    }
-                }
-            }
-        }
-    }
-
-    public final boolean e0(jm7 jm7Var, TLRPC.Message message, int i) {
+    public final boolean d0(jm7 jm7Var, TLRPC.Message message, int i) {
         int i2 = 0;
         if (message != null && !(message instanceof TLRPC.TL_messageEmpty) && message.peer_id != null) {
             String str = r47.B0(message) + ":" + message.id;
@@ -727,11 +633,11 @@ public final class lm7 extends e implements ej6, fn7, i1d {
                     r47Var.J5(this.Q, true);
                 }
                 HashMap hashMap = jm7Var.e;
-                String E0 = E0(message);
+                String C0 = C0(message);
                 int i3 = message.id;
-                Integer num = (Integer) hashMap.get(E0);
+                Integer num = (Integer) hashMap.get(C0);
                 if (num == null || i3 < num.intValue()) {
-                    hashMap.put(E0, Integer.valueOf(i3));
+                    hashMap.put(C0, Integer.valueOf(i3));
                 }
                 if (message.grouped_id != 0) {
                     long B0 = r47.B0(r47Var.k);
@@ -776,9 +682,66 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         return false;
     }
 
-    public final void h0(ha4 ha4Var, boolean z, String str) {
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == jn7.Q) {
+            w0(1, true);
+            return;
+        }
+        if (i == 1) {
+            long longValue = ((Long) objArr[0]).longValue();
+            if (((Boolean) objArr[2]).booleanValue() || ((Integer) objArr[3]).intValue() != 0 || longValue >= 0) {
+                return;
+            }
+            TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(-longValue));
+            if (!xc2.V(M0) || xc2.r0(M0)) {
+                return;
+            }
+            jm7 jm7Var = this.b[1];
+            if (jm7Var.l) {
+                if (jm7Var.k && jm7Var.p) {
+                    return;
+                }
+                ArrayList arrayList = (ArrayList) objArr[1];
+                im7 im7Var = jm7Var.f;
+                boolean z = (im7Var == null || im7Var.canScrollVertically(-1)) ? false : true;
+                int size = arrayList.size();
+                int i3 = 0;
+                int i4 = 0;
+                while (i4 < size) {
+                    Object obj = arrayList.get(i4);
+                    i4++;
+                    TLRPC.Message message = ((r47) obj).k;
+                    if (message != null && message.id > 0 && !(message instanceof TLRPC.TL_messageService) && d0(jm7Var, message, 0)) {
+                        i3++;
+                    }
+                }
+                if (i3 > 0) {
+                    J0(jm7Var);
+                    if (z) {
+                        jm7Var.f.x0(0);
+                    }
+                }
+            }
+        }
+    }
+
+    public final void g0(ha4 ha4Var, boolean z, String str) {
         this.a0.a(ha4Var, z, PhotoViewer.C0() && PhotoViewer.q0().V0());
         ea4.c(this.currentAccount, ha4Var, str);
+    }
+
+    public final void i0() {
+        hj3 hj3Var = this.y;
+        if (hj3Var == null || !this.M) {
+            return;
+        }
+        hj3Var.post(new ge7(hj3Var, (byte) 8));
+        this.y.r.getText().clear();
+        hl.t1(this.y.r);
+        this.y.r.clearFocus();
+        this.y.setCloseButtonVisible(false);
+        I0(false);
     }
 
     @Override // org.telegram.ui.ActionBar.e
@@ -791,20 +754,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         return getBaseSimpleGlass().c();
     }
 
-    public final void j0() {
-        hj3 hj3Var = this.y;
-        if (hj3Var == null || !this.M) {
-            return;
-        }
-        hj3Var.post(new fe7(hj3Var, (byte) 8));
-        this.y.r.getText().clear();
-        hl.t1(this.y.r);
-        this.y.r.clearFocus();
-        this.y.setCloseButtonVisible(false);
-        K0(false);
-    }
-
-    public final FrameLayout k0(Context context, int i) {
+    public final FrameLayout j0(Context context, int i) {
         FrameLayout frameLayout = new FrameLayout(context);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
@@ -829,7 +779,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         return frameLayout;
     }
 
-    public final rg2 l0(Context context) {
+    public final rg2 k0(Context context) {
         e29 e29Var = new e29(context);
         e29Var.f(R.raw.utyan_empty, jn7.N1, jn7.N1, null);
         e29Var.d();
@@ -854,22 +804,29 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         return rg2Var;
     }
 
-    public final im7 m0(Context context, int i) {
+    public final im7 l0(Context context, int i) {
         jm7 jm7Var = this.b[i];
         im7 im7Var = new im7(this, context, i, new f((Object) this, i, (Object) jm7Var, (Object) context, (byte) 7), new bf((Object) this, i, (Object) jm7Var, (byte) 10), new wg((Object) this, i, (byte) 16));
         im7Var.setClipToPadding(false);
-        im7Var.setPadding(0, p0(), 0, q0(i));
+        im7Var.setPadding(0, o0(), 0, p0(i));
         im7Var.j(new em7(this, i, im7Var, jm7Var));
         return im7Var;
     }
 
-    public final ha4 n0(int i, r47 r47Var, String str, String str2) {
+    public final ha4 m0(int i, r47 r47Var, String str, String str2) {
         TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(-r47.B0(r47Var.k)));
         long B0 = r47.B0(r47Var.k);
         long j = (M0 == null || M0.min) ? 0L : M0.access_hash;
         jm7[] jm7VarArr = this.b;
-        Integer num = (Integer) jm7VarArr[i].e.get(E0(r47Var.k));
-        return new ha4(B0, j, num != null ? num.intValue() : r47Var.e1(), str, str2, i == 2 ? "search" : i == 1 ? "added" : "feed", (fa4) jm7VarArr[i].d.get(E0(r47Var.k)), ea4.g(this.currentAccount), Utilities.b.nextLong());
+        Integer num = (Integer) jm7VarArr[i].e.get(C0(r47Var.k));
+        return new ha4(B0, j, num != null ? num.intValue() : r47Var.e1(), str, str2, i == 2 ? "search" : i == 1 ? "added" : "feed", (fa4) jm7VarArr[i].d.get(C0(r47Var.k)), ea4.g(this.currentAccount), Utilities.b.nextLong());
+    }
+
+    public final void n0(int i, r47 r47Var, ArrayList arrayList) {
+        TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(-r47.B0(r47Var.k)));
+        kea keaVar = new kea(getParentActivity(), arrayList, null, xc2.V(M0), TextUtils.isEmpty(xc2.K(M0, false)) ? null : A0(r47Var), false, this.resourceProvider);
+        keaVar.n2 = new lp((Object) this, i, (Object) r47Var, (byte) 11);
+        showDialog(keaVar);
     }
 
     @Override // i1d
@@ -879,14 +836,15 @@ public final class lm7 extends e implements ej6, fn7, i1d {
             return;
         }
         this.O = i;
-        M0(false);
+        K0(false);
     }
 
-    public final void o0(int i, r47 r47Var, ArrayList arrayList) {
-        TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(-r47.B0(r47Var.k)));
-        kea keaVar = new kea(getParentActivity(), arrayList, null, xc2.V(M0), TextUtils.isEmpty(xc2.K(M0, false)) ? null : C0(r47Var), false, this.resourceProvider);
-        keaVar.n2 = new lp((Object) this, i, (Object) r47Var, (byte) 11);
-        showDialog(keaVar);
+    public final int o0() {
+        jla jlaVar = this.simpleActionBar;
+        if (jlaVar == null) {
+            return a.getCurrentActionBarHeight();
+        }
+        return this.simpleActionBar.getExtraHeight() + a.getCurrentActionBarHeight() + (jlaVar.getOccupyStatusBar() ? hl.m : 0);
     }
 
     @Override // org.telegram.ui.ActionBar.e
@@ -897,7 +855,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         if (!z) {
             return false;
         }
-        j0();
+        i0();
         return false;
     }
 
@@ -959,18 +917,18 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         if (launchActivity != null) {
             launchActivity.g1.d.remove(this);
         }
-        vl7 vl7Var = this.R;
-        if (vl7Var != null) {
-            hl.r(vl7Var);
+        wl7 wl7Var = this.R;
+        if (wl7Var != null) {
+            hl.r(wl7Var);
         }
         getNotificationCenter().n(this, jn7.Q);
         getNotificationCenter().n(this, 1);
         setBulletinDelegate(null);
         super.onFragmentDestroy();
         for (jm7 jm7Var : this.b) {
-            xl7 xl7Var = jm7Var.t;
-            if (xl7Var != null) {
-                hl.r(xl7Var);
+            yl7 yl7Var = jm7Var.t;
+            if (yl7Var != null) {
+                hl.r(yl7Var);
                 jm7Var.t.run();
             }
             jm7Var.f = null;
@@ -997,25 +955,17 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         }
     }
 
-    public final int p0() {
-        jla jlaVar = this.simpleActionBar;
-        if (jlaVar == null) {
-            return a.getCurrentActionBarHeight();
-        }
-        return this.simpleActionBar.getExtraHeight() + a.getCurrentActionBarHeight() + (jlaVar.getOccupyStatusBar() ? hl.m : 0);
-    }
-
-    public final int q0(int i) {
-        int L = hl.L((s0() ? 60 : 0) + 72) + this.G;
+    public final int p0(int i) {
+        int L = hl.L((r0() ? 60 : 0) + 72) + this.G;
         return i == 2 ? Math.max(L, this.O) : L;
     }
 
-    public final int r0() {
+    public final int q0() {
         jla jlaVar = this.simpleActionBar;
         return ((a.getCurrentActionBarHeight() - hl.L(48.0f)) / 2) + ((jlaVar == null || !jlaVar.getOccupyStatusBar()) ? 0 : hl.m);
     }
 
-    public final boolean s0() {
+    public final boolean r0() {
         if (this.f) {
             return true;
         }
@@ -1023,8 +973,8 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         return (hashSet.isEmpty() || hashSet.equals(this.e)) ? false : true;
     }
 
-    public final boolean t0(int i, r47 r47Var) {
-        km7 km7Var = (km7) this.V.get(B0(i, r47Var));
+    public final boolean s0(int i, r47 r47Var) {
+        km7 km7Var = (km7) this.V.get(z0(i, r47Var));
         return (km7Var != null ? km7Var.b : this.U.b) > 0.5f;
     }
 
@@ -1033,7 +983,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean u0(boolean z) {
+    public final boolean t0(boolean z) {
         im7 im7Var;
         jm7 jm7Var;
         if (ob6.a0 != z) {
@@ -1057,6 +1007,15 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         im7Var = jm7Var.f;
         if (ik8.A(im7Var)) {
         }
+    }
+
+    public final void u0() {
+        if (this.n || this.h) {
+            return;
+        }
+        this.n = true;
+        this.r = false;
+        getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(new TL_feed.TL_feed_getInterestCategories(), new xl7(this, (byte) 0)), this.classGuid);
     }
 
     @Override // org.telegram.ui.ActionBar.e
@@ -1093,38 +1052,8 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         jm7Var.g.k(0, 0, false, false);
     }
 
-    public final /* synthetic */ void w0(TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_channels_editChannelNews tL_channels_editChannelNews, long j, boolean z, j61 j61Var) {
-        if (this.h) {
-            return;
-        }
-        if (tL_error != null || !(tLObject instanceof TLRPC.Updates)) {
-            jj.c0(this.currentAccount, tL_error, this, tL_channels_editChannelNews, new Object[0]);
-            return;
-        }
-        TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(j));
-        if (M0 != null) {
-            M0.in_news = z;
-        }
-        getNotificationCenter().k(jn7.Q, Long.valueOf(j));
-        getMessagesController().h5(null);
-        getNotificationCenter().k(jn7.r, new Object[0]);
-        jn7 notificationCenter = getNotificationCenter();
-        int i = uc7.r5;
-        notificationCenter.k(2, Integer.valueOf(TLObject.FLAG_13));
-        j61Var.run();
-    }
-
-    public final void x0() {
-        if (this.n || this.h) {
-            return;
-        }
-        this.n = true;
-        this.r = false;
-        getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(new TL_feed.TL_feed_getInterestCategories(), new wl7(this, (byte) 0)), this.classGuid);
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
-    public final void y0(int i, boolean z) {
+    public final void w0(int i, boolean z) {
         TL_feed.TL_feed_getForYou tL_feed_getForYou;
         w94 w94Var;
         jm7 jm7Var = this.b[i];
@@ -1152,7 +1081,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
             }
             jm7Var.k = true;
             jm7Var.n = false;
-            L0(jm7Var);
+            J0(jm7Var);
             if (i == 0 || i == 2) {
                 TL_feed.TL_feed_getForYou tL_feed_getForYou2 = new TL_feed.TL_feed_getForYou();
                 tL_feed_getForYou2.limit = 30;
@@ -1170,7 +1099,7 @@ public final class lm7 extends e implements ej6, fn7, i1d {
         }
     }
 
-    public final void z0(jm7 jm7Var) {
+    public final void x0(jm7 jm7Var) {
         im7 im7Var;
         int i;
         int i2;
@@ -1205,15 +1134,52 @@ public final class lm7 extends e implements ej6, fn7, i1d {
                 TL_feed.FeedPosition feedPosition2 = jm7Var.s;
                 if (feedPosition2 == null || i4 > (i = feedPosition2.date) || (i4 == i && i5 > feedPosition2.id)) {
                     jm7Var.s = feedPosition;
-                    xl7 xl7Var = jm7Var.t;
-                    if (xl7Var != null) {
-                        hl.r(xl7Var);
+                    yl7 yl7Var = jm7Var.t;
+                    if (yl7Var != null) {
+                        hl.r(yl7Var);
                     }
-                    xl7 xl7Var2 = new xl7(this, jm7Var, (byte) 1);
-                    jm7Var.t = xl7Var2;
-                    hl.d3(xl7Var2, 500L);
+                    yl7 yl7Var2 = new yl7(this, jm7Var, (byte) 1);
+                    jm7Var.t = yl7Var2;
+                    hl.d3(yl7Var2, 500L);
                 }
             }
+        }
+    }
+
+    public final void y0() {
+        View m;
+        int round;
+        int i = 0;
+        while (true) {
+            jm7[] jm7VarArr = this.b;
+            if (i >= jm7VarArr.length) {
+                return;
+            }
+            im7 im7Var = jm7VarArr[i].f;
+            if (im7Var != null) {
+                for (int i2 = 0; i2 < im7Var.getChildCount(); i2++) {
+                    View childAt = im7Var.getChildAt(i2);
+                    if (childAt instanceof v94) {
+                        ((v94) childAt).p();
+                    }
+                }
+                fm7 fm7Var = this.X[i];
+                im7 im7Var2 = jm7VarArr[i].f;
+                if (fm7Var != null && im7Var2 != null && (m = im7Var2.f3.m(fm7Var.a)) != null) {
+                    km7 km7Var = fm7Var.d;
+                    if (km7Var != null) {
+                        float f = km7Var.b;
+                        float f2 = fm7Var.f;
+                        float max = f != f2 ? Math.max(0.0f, Math.min(1.0f, (km7Var.a - f2) / (f - f2))) : 1.0f;
+                        int i3 = fm7Var.e;
+                        round = Math.round(hl.U1(max, i3, Math.max(0, i3)));
+                    } else {
+                        round = Math.round((fm7Var.b + fm7Var.c) - ((m instanceof v94 ? ((v94) m).getMorphHeight() : m.getHeight()) / 2.0f));
+                    }
+                    im7Var2.f3.g1(fm7Var.a, round);
+                }
+            }
+            i++;
         }
     }
 

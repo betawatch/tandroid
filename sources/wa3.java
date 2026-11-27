@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class wa3 implements pr3 {
     public final Set E;
@@ -141,7 +141,7 @@ public final class wa3 implements pr3 {
         int i = 0;
         ta3 ta3Var = null;
         if (hr3Var == null) {
-            int h = dg7.h(ko4Var.t);
+            int h = eg7.h(ko4Var.t);
             d64 d64Var = this.G;
             d64Var.getClass();
             if (d64Var.v() == 2) {
@@ -357,7 +357,7 @@ public final class wa3 implements pr3 {
         int v = d64Var.v();
         hr3 hr3Var = ko4Var.x;
         if (hr3Var == null) {
-            int h = dg7.h(ko4Var.t);
+            int h = eg7.h(ko4Var.t);
             int i = 0;
             while (true) {
                 int[] iArr = this.f;

@@ -37,7 +37,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.c;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class lyc implements tw8, h49, jb9, uw8 {
     public static volatile lyc f;
@@ -980,7 +980,7 @@ public final class lyc implements tw8, h49, jb9, uw8 {
         this.e = new z8d((byte) 7);
         ev5 ev5Var = (ev5) ux2Var.c().get(qf5.c);
         if (ev5Var != null) {
-            ev5Var.invokeOnCompletion(new cj7(l83Var, this, (byte) 1));
+            ev5Var.invokeOnCompletion(new dj7(l83Var, this, (byte) 1));
         }
     }
 
@@ -1019,7 +1019,7 @@ public final class lyc implements tw8, h49, jb9, uw8 {
     public lyc(Context context) {
         this.a = (byte) 2;
         this.b = context != null ? context.getApplicationContext() : null;
-        this.d = rg7.b;
+        this.d = sg7.b;
         if (context == null) {
             this.e = sz.f;
         }
@@ -1059,7 +1059,7 @@ public final class lyc implements tw8, h49, jb9, uw8 {
         this.c = str;
     }
 
-    public lyc(j99 j99Var, ak7 ak7Var, um4 um4Var, ak7 ak7Var2) {
+    public lyc(j99 j99Var, bk7 bk7Var, um4 um4Var, bk7 bk7Var2) {
         Object obj;
         this.a = (byte) 9;
         if (j99Var != null) {
@@ -1069,9 +1069,9 @@ public final class lyc implements tw8, h49, jb9, uw8 {
             obj = j99.e;
         }
         this.b = obj;
-        this.c = ak7Var;
+        this.c = bk7Var;
         this.d = um4Var;
-        this.e = ak7Var2;
+        this.e = bk7Var2;
     }
 
     public lyc(snc sncVar, ViewGroup viewGroup) {

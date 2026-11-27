@@ -48,7 +48,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class z87 implements Runnable {
     public final /* synthetic */ byte a;
@@ -59,14 +59,14 @@ public final /* synthetic */ class z87 implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ z87(k17 k17Var, String str, TLRPC.TL_error tL_error, TLObject tLObject, uc7 uc7Var, jf7 jf7Var) {
+    public /* synthetic */ z87(k17 k17Var, String str, TLRPC.TL_error tL_error, TLObject tLObject, uc7 uc7Var, kf7 kf7Var) {
         this.a = (byte) 17;
         this.c = k17Var;
         this.h = str;
         this.d = tL_error;
         this.e = tLObject;
         this.b = uc7Var;
-        this.f = jf7Var;
+        this.f = kf7Var;
     }
 
     private final void a() {
@@ -159,7 +159,7 @@ public final /* synthetic */ class z87 implements Runnable {
         wx9Var.getMessagesController().R.k(tL_dialog.id, tL_dialog);
         wx9Var.getMessagesController().y.add(tL_dialog);
         wx9Var.getMessagesController().h5(null);
-        jf7 messagesStorage = wx9Var.getMessagesStorage();
+        kf7 messagesStorage = wx9Var.getMessagesStorage();
         messagesStorage.a.c(new oy6(messagesStorage, encryptedChat, user, tL_dialog, (byte) 10));
         wx9Var.getNotificationCenter().k(jn7.r, new Object[0]);
         wx9Var.getNotificationCenter().k(jn7.a0, encryptedChat);
@@ -470,7 +470,7 @@ public final /* synthetic */ class z87 implements Runnable {
         message.attachPath = file.toString();
         ArrayList arrayList = new ArrayList();
         arrayList.add(r47Var.k);
-        r7aVar.getMessagesStorage().g1(arrayList, false, true, false, 0, false, r47Var.r1 ? 1 : 0, 0L);
+        r7aVar.getMessagesStorage().k1(arrayList, false, true, false, 0, false, r47Var.r1 ? 1 : 0, 0L);
         r7aVar.getNotificationCenter().k(jn7.l0, r47Var.k);
         d7aVar.g = (TLRPC.PhotoSize) c00.g(1, tL_photo.sizes);
         d7aVar.h = tL_photo;
@@ -543,7 +543,7 @@ public final /* synthetic */ class z87 implements Runnable {
                 }
                 ArrayList arrayList3 = new ArrayList();
                 arrayList3.add(wallPaper);
-                uc7Var.getMessagesStorage().m1(2, arrayList3);
+                uc7Var.getMessagesStorage().q1(2, arrayList3);
                 TLRPC.PhotoSize w = xb4.w(wallPaper.document.thumbs, jn7.q5, false, null, false);
                 if (w != null) {
                     StringBuilder sb = new StringBuilder();
@@ -1026,7 +1026,7 @@ public final /* synthetic */ class z87 implements Runnable {
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.d;
                 TLObject tLObject5 = (TLObject) this.e;
                 uc7 uc7Var2 = (uc7) this.b;
-                jf7 jf7Var = (jf7) this.f;
+                kf7 kf7Var = (kf7) this.f;
                 r17 r17Var = k17Var.e;
                 String str17 = r17Var.r0;
                 if (str17 == null || !str17.equals(str16)) {
@@ -1037,7 +1037,7 @@ public final /* synthetic */ class z87 implements Runnable {
                     if (!tL_contacts_resolvedPeer.users.isEmpty()) {
                         TLRPC.User user2 = tL_contacts_resolvedPeer.users.get(0);
                         uc7Var2.i4(user2, false, false);
-                        jf7Var.j1(tL_contacts_resolvedPeer.users, null, true, true);
+                        kf7Var.n1(tL_contacts_resolvedPeer.users, null, true, true);
                         user = user2;
                     }
                 }
@@ -1080,7 +1080,7 @@ public final /* synthetic */ class z87 implements Runnable {
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject6;
                 uc7Var3.j4(messages_messages.users, false);
                 uc7Var3.c4(messages_messages.chats, false);
-                uc7Var3.getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+                uc7Var3.getMessagesStorage().n1(messages_messages.users, messages_messages.chats, true, true);
                 eVar.presentFragment(new zu1(bundle), true);
                 return;
             case 20:
@@ -1185,10 +1185,10 @@ public final /* synthetic */ class z87 implements Runnable {
                 vnb vnbVar4 = (vnb) this.d;
                 byte[] bArr5 = (byte[]) this.e;
                 e eVar2 = (e) this.f;
-                en9 en9Var = (en9) this.h;
+                dn9 dn9Var = (dn9) this.h;
                 nb9 nb9Var2 = new nb9(context2, vnbVar4, 0L, bArr5);
                 nb9Var2.J0(tL_channels_sponsoredMessageReportResultChooseOption);
-                nb9Var2.u1 = new u8a(eVar2, context2, vnbVar4, en9Var);
+                nb9Var2.u1 = new u8a(eVar2, context2, vnbVar4, dn9Var);
                 nb9Var2.show();
                 return;
             case 23:

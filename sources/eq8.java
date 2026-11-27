@@ -25,7 +25,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class eq8 implements t69 {
     public int a = 0;
@@ -101,16 +101,16 @@ public final class eq8 implements t69 {
             edit.apply();
             return;
         }
-        byte b3 = 11;
+        byte b3 = 13;
         if (i == 6) {
-            jf7 messagesStorage = this.c.getMessagesStorage();
-            messagesStorage.a.c(new be7(messagesStorage, b3));
+            kf7 messagesStorage = this.c.getMessagesStorage();
+            messagesStorage.a.c(new hd7(messagesStorage, b3));
             DictationLid.b();
             xea.C(false);
             qu6.i(qu6.i(qu6.i(qu6.i(qu6.i(qu6.i(qu6.i(qu6.i(qu6.i(uc7.e1().edit().remove("archivehint").remove("proximityhint"), "archivehint_l", "searchpostsnew", "speedhint", "gifhint"), "reminderhint", "soundHint", "themehint", "bganimationhint"), "filterhint", "n_0", "storyprvhint", "storyhint"), "storyhint2", "storydualhint", "storysvddualhint", "stories_camera"), "dualcam", "dualmatrix", "dual_available", "archivehint"), "askNotificationsAfter", "askNotificationsDuration", "viewoncehint", "voicepausehint"), "taptostorysoundhint", "nothanos", "voiceoncehint", "savedhint"), "savedsearchhint", "savedsearchtaghint", "newppsms", "monetizationadshint"), "seekSpeedHintShowed", "unsupport_video/av01", "statusgiftpage", "multistorieshint").remove("trimvoicehint").remove("taptostoryhighlighthint").apply();
             ioe.a();
             i4 = ((e) this.c).currentAccount;
-            uc7.s1(i4).Y3.edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
+            uc7.s1(i4).Z3.edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
             xea.I = 0;
             xea.N = 0;
             xea.Q = false;
@@ -134,7 +134,7 @@ public final class eq8 implements t69 {
             ee9.Z();
             i6 = ((e) this.c).currentAccount;
             a78.e(i6).a();
-            SharedPreferences sharedPreferences = this.c.getMessagesController().X3;
+            SharedPreferences sharedPreferences = this.c.getMessagesController().Y3;
             SharedPreferences.Editor edit2 = sharedPreferences.edit();
             qu6.i(edit2, "peerColors", "profilePeerColors", "boostingappearance", "bizbothint").remove("movecaptionhint");
             for (String str : sharedPreferences.getAll().keySet()) {
@@ -144,9 +144,9 @@ public final class eq8 implements t69 {
             }
             edit2.apply();
             i7 = ((e) this.c).currentAccount;
-            SharedPreferences.Editor edit3 = uc7.s1(i7).W3.edit();
+            SharedPreferences.Editor edit3 = uc7.s1(i7).X3.edit();
             i8 = ((e) this.c).currentAccount;
-            for (String str2 : uc7.s1(i8).W3.getAll().keySet()) {
+            for (String str2 : uc7.s1(i8).X3.getAll().keySet()) {
                 if (str2.startsWith("dialog_bar_botver")) {
                     edit3.remove(str2);
                 }
@@ -163,8 +163,8 @@ public final class eq8 implements t69 {
             return;
         }
         if (i == 10) {
-            jf7 messagesStorage2 = this.c.getMessagesStorage();
-            messagesStorage2.a.c(new ad7(messagesStorage2, -1, b2));
+            kf7 messagesStorage2 = this.c.getMessagesStorage();
+            messagesStorage2.a.c(new bd7(messagesStorage2, -1, b2));
             return;
         }
         if (i == 11) {
@@ -181,7 +181,7 @@ public final class eq8 implements t69 {
             return;
         }
         if (i == 13) {
-            Set set = this.c.getMessagesController().u3;
+            Set set = this.c.getMessagesController().v3;
             set.add("VALIDATE_PHONE_NUMBER");
             set.add("VALIDATE_PASSWORD");
             this.c.getNotificationCenter().k(i9, new Object[0]);
@@ -271,7 +271,7 @@ public final class eq8 implements t69 {
                     uo0.a();
                     tq0.b();
                     mp0.a();
-                    oca.c();
+                    pca.c();
                     return;
                 }
                 if (i == 30) {

@@ -16,7 +16,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class r18 extends de0 implements jq3 {
     public RectF H;
@@ -30,7 +30,7 @@ public final class r18 extends de0 implements jq3 {
     public int P;
     public int Q;
     public Paint R;
-    public hh7 S;
+    public ih7 S;
     public int T;
     public mqb U;
     public int V;
@@ -113,7 +113,7 @@ public final class r18 extends de0 implements jq3 {
         pqb pqbVar3;
         int i7;
         int i8;
-        hh7 hh7Var;
+        ih7 ih7Var;
         BlendMode blendMode;
         RadialProgress2 radialProgress2 = this.I;
         RectF rectF = this.H;
@@ -173,15 +173,15 @@ public final class r18 extends de0 implements jq3 {
                                     this.Q = i9;
                                     if (i6 != 0) {
                                         this.L = null;
-                                        hh7 hh7Var2 = this.S;
-                                        if (hh7Var2 != null) {
+                                        ih7 ih7Var2 = this.S;
+                                        if (ih7Var2 != null) {
                                             i8 = i2;
-                                            hh7Var2.n(false, i8, i4, i6, i7);
+                                            ih7Var2.n(false, i8, i4, i6, i7);
                                         } else {
-                                            hh7 hh7Var3 = new hh7(i2, i4, i6, i7, true, false);
+                                            ih7 ih7Var3 = new ih7(i2, i4, i6, i7, true, false);
                                             i8 = i2;
-                                            this.S = hh7Var3;
-                                            hh7Var3.u(hl.L(6.0f));
+                                            this.S = ih7Var3;
+                                            ih7Var3.u(hl.L(6.0f));
                                             this.S.p(this);
                                         }
                                         ImageReceiver imageReceiver = this.a;
@@ -206,9 +206,9 @@ public final class r18 extends de0 implements jq3 {
                                         this.a.W(null);
                                     }
                                 }
-                                hh7Var = this.S;
-                                if (hh7Var == null) {
-                                    hh7Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                                ih7Var = this.S;
+                                if (ih7Var == null) {
+                                    ih7Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                                     this.S.draw(canvas);
                                 } else {
                                     paint.setShader(this.L);
@@ -237,8 +237,8 @@ public final class r18 extends de0 implements jq3 {
                         int i102 = pqbVar52.m1;
                         if (i4 != 0) {
                         }
-                        hh7Var = this.S;
-                        if (hh7Var == null) {
+                        ih7Var = this.S;
+                        if (ih7Var == null) {
                         }
                         super.onDraw(canvas);
                         if (radialProgress2.i.q == 4) {
@@ -259,8 +259,8 @@ public final class r18 extends de0 implements jq3 {
                 int i1022 = pqbVar522.m1;
                 if (i4 != 0) {
                 }
-                hh7Var = this.S;
-                if (hh7Var == null) {
+                ih7Var = this.S;
+                if (ih7Var == null) {
                 }
                 super.onDraw(canvas);
                 if (radialProgress2.i.q == 4) {
@@ -285,8 +285,8 @@ public final class r18 extends de0 implements jq3 {
         int i10222 = pqbVar5222.m1;
         if (i4 != 0) {
         }
-        hh7Var = this.S;
-        if (hh7Var == null) {
+        ih7Var = this.S;
+        if (ih7Var == null) {
         }
         super.onDraw(canvas);
         if (radialProgress2.i.q == 4) {

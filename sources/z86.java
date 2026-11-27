@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z86 implements s69, jcc {
-    public final /* synthetic */ b58 a;
+    public final /* synthetic */ c58 a;
 
-    public /* synthetic */ z86(b58 b58Var) {
-        this.a = b58Var;
+    public /* synthetic */ z86(c58 c58Var) {
+        this.a = c58Var;
     }
 
     @Override // s69
@@ -24,11 +24,11 @@ public final /* synthetic */ class z86 implements s69, jcc {
         int i2;
         int i3;
         int i4;
-        b58 b58Var = this.a;
-        gu guVar = b58Var.c;
-        ArrayList arrayList = b58Var.r;
+        c58 c58Var = this.a;
+        gu guVar = c58Var.c;
+        ArrayList arrayList = c58Var.r;
         n96 n96Var = ((l96) view).f;
-        int i5 = b58Var.O;
+        int i5 = c58Var.O;
         int currentTime = ConnectionsManager.getInstance(i5).getCurrentTime();
         HashSet hashSet = new HashSet();
         int i6 = 0;
@@ -44,7 +44,7 @@ public final /* synthetic */ class z86 implements s69, jcc {
             }
             i7++;
         }
-        w96 w96Var = b58Var.Q;
+        w96 w96Var = c58Var.Q;
         long m = w96Var != null ? w96Var.m() : 0L;
         int i8 = 0;
         int i9 = 0;
@@ -56,7 +56,7 @@ public final /* synthetic */ class z86 implements s69, jcc {
             }
             m96 m96Var2 = (m96) arrayList.get(i8);
             if (m96Var2.b || !m96Var2.e || m96Var2.g >= m) {
-                if (!hashSet.contains(Integer.valueOf(m96Var2.a)) || (b58Var.x == n96Var.b && (i4 = b58Var.y) != 0 && m96Var2.a >= i4)) {
+                if (!hashSet.contains(Integer.valueOf(m96Var2.a)) || (c58Var.x == n96Var.b && (i4 = c58Var.y) != 0 && m96Var2.a >= i4)) {
                     i9++;
                 }
             }
@@ -85,13 +85,13 @@ public final /* synthetic */ class z86 implements s69, jcc {
         if (i2 < 0) {
             return;
         }
-        b58Var.x = n96Var.b;
-        b58Var.y = i2;
-        b58Var.E = true;
+        c58Var.x = n96Var.b;
+        c58Var.y = i2;
+        c58Var.E = true;
         o79 itemAnimator = guVar.getItemAnimator();
         guVar.setItemAnimator(null);
-        b58Var.d.h1(i9, guVar.getHeight() / 2, true);
-        b58Var.e.g(i9);
+        c58Var.d.h1(i9, guVar.getHeight() / 2, true);
+        c58Var.e.g(i9);
         guVar.setItemAnimator(itemAnimator);
     }
 

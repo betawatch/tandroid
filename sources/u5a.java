@@ -6,7 +6,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u5a implements Runnable {
     public final /* synthetic */ byte a;
@@ -47,10 +47,10 @@ public final /* synthetic */ class u5a implements Runnable {
                 break;
             case 1:
                 r7a r7aVar2 = (r7a) rf0Var;
-                jf7 messagesStorage = r7aVar2.getMessagesStorage();
+                kf7 messagesStorage = r7aVar2.getMessagesStorage();
                 ArrayList arrayList = this.c;
                 boolean z = this.d;
-                messagesStorage.g1(arrayList, true, false, false, 0, false, z ? 1 : 0, 0L);
+                messagesStorage.k1(arrayList, true, false, false, 0, false, z ? 1 : 0, 0L);
                 hl.c3(new b6a(r7aVar2, this.e, (TLRPC.Message) tLObject2, this.h ? 1 : 0, z ? 1 : 0, (TLRPC.Message) tLObject, (r47) obj, this.s));
                 break;
             default:
@@ -66,7 +66,7 @@ public final /* synthetic */ class u5a implements Runnable {
                 if (userFull != null) {
                     if (zh6Var.f(user.id) == null) {
                         zh6Var.k(user.id, userFull);
-                        uc7Var.i4.M(user.id);
+                        uc7Var.j4.M(user.id);
                         jxa.v(uc7Var.currentAccount, false).N(userFull);
                         int indexOfKey = longSparseIntArray.indexOfKey(user.id);
                         if (userFull.blocked) {

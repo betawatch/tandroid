@@ -8,7 +8,7 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class du0 implements icc {
     public final /* synthetic */ byte a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class du0 implements icc {
     @Override // icc
     public final void a(Object obj, Object obj2) {
         int i;
-        pi7 pi7Var;
+        qi7 qi7Var;
         byte b = this.a;
         String str = this.d;
         pv0 pv0Var = this.c;
@@ -58,21 +58,21 @@ public final /* synthetic */ class du0 implements icc {
                             Boolean bool = tL_requestPeerTypeUser.bot;
                             Boolean bool2 = tL_requestPeerTypeUser.premium;
                             lu0 lu0Var = new lu0(rv0Var2, zArr, str2, tL_buttonTypeRequestPeer, pv0Var2);
-                            pi7 pi7Var2 = pi7.p2;
+                            qi7 qi7Var2 = qi7.p2;
                             e Q = LaunchActivity.Q();
                             if (Q == null) {
-                                pi7Var = null;
+                                qi7Var = null;
                             } else {
-                                pi7Var = pi7.p2;
-                                if (pi7Var == null) {
-                                    pi7 pi7Var3 = new pi7(Q, i, bool, bool2, lu0Var);
-                                    pi7Var3.show();
-                                    pi7.p2 = pi7Var3;
-                                    pi7Var = pi7Var3;
+                                qi7Var = qi7.p2;
+                                if (qi7Var == null) {
+                                    qi7 qi7Var3 = new qi7(Q, i, bool, bool2, lu0Var);
+                                    qi7Var3.show();
+                                    qi7.p2 = qi7Var3;
+                                    qi7Var = qi7Var3;
                                 }
                             }
-                            if (pi7Var != null) {
-                                pi7Var.setOnDismissListener(new mu0(rv0Var2, zArr, pv0Var2, str2));
+                            if (qi7Var != null) {
+                                qi7Var.setOnDismissListener(new mu0(rv0Var2, zArr, pv0Var2, str2));
                                 break;
                             }
                         } else {

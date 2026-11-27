@@ -66,7 +66,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class qx6 implements ty9, nc2, ep2, SuccessContinuation, u69, nh5, tw8, mm4 {
     public static e3d e;
@@ -716,7 +716,7 @@ public final class qx6 implements ty9, nc2, ep2, SuccessContinuation, u69, nh5, 
         mx2 mx2Var = (mx2) ((aj3) this.c).b;
         context.getClass();
         mx2Var.getClass();
-        return ij4.a(sjf.d, new i09((Object) new nx2((byte) 1), (byte) 3), xde.a(mx2Var), new hj4(context, (byte) 0));
+        return ij4.a(sjf.d, new j09((Object) new nx2((byte) 1), (byte) 3), xde.a(mx2Var), new hj4(context, (byte) 0));
     }
 
     @Override // ty9
@@ -794,7 +794,7 @@ public final class qx6 implements ty9, nc2, ep2, SuccessContinuation, u69, nh5, 
                     if (i != 1) {
                         if (i == 2) {
                             ixe.b(obj);
-                            return f9c.a;
+                            return g9c.a;
                         }
                         grb.i("call to 'resume' before 'invoke' with coroutine");
                         return null;
@@ -874,7 +874,7 @@ public final class qx6 implements ty9, nc2, ep2, SuccessContinuation, u69, nh5, 
         ((fu5) this.b).u();
         zu1 zu1Var = (zu1) this.c;
         i = ((e) zu1Var).currentAccount;
-        SharedPreferences sharedPreferences = uc7.s1(i).W3;
+        SharedPreferences sharedPreferences = uc7.s1(i).X3;
         boolean z = sharedPreferences.getBoolean("sound_enabled_" + ip7.p(zu1Var.l6, zu1Var.c(), false), true);
         boolean z2 = !z;
         sharedPreferences.edit().putBoolean("sound_enabled_" + ip7.p(zu1Var.l6, zu1Var.c(), false), z2).apply();
@@ -1079,7 +1079,7 @@ public final class qx6 implements ty9, nc2, ep2, SuccessContinuation, u69, nh5, 
     public final boolean w(CharSequence charSequence, int i, int i2, px3 px3Var) {
         if (px3Var.c == 0) {
             eb3 eb3Var = (eb3) this.c;
-            xf7 b = px3Var.b();
+            yf7 b = px3Var.b();
             int a = b.a(8);
             if (a != 0) {
                 b.b.getShort(a + b.a);

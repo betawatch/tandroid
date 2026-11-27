@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class h implements pcc {
     public final /* synthetic */ byte a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class h implements pcc {
                         int i3 = i2 + 1;
                         boolean p = yac.h(b1Var.a).p();
                         int i4 = b1Var.a;
-                        if (i3 <= (p ? uc7.s1(i4).k4.e0.f() : uc7.s1(i4).k4.d0.f())) {
+                        if (i3 <= (p ? uc7.s1(i4).l4.e0.f() : uc7.s1(i4).l4.d0.f())) {
                             s0 s0Var = new s0(b1Var.getContext(), b1Var.J0);
                             s0Var.f2 = new h(b1Var, b2);
                             s0Var.show();

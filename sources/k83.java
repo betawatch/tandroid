@@ -2,7 +2,7 @@
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class k83 extends yfb implements ur4 {
     public final /* synthetic */ byte a = 1;
@@ -37,11 +37,11 @@ public final class k83 extends yfb implements ur4 {
     @Override // ur4
     public final Object invoke(Object obj) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         zw2 zw2Var = (zw2) obj;
         switch (b) {
         }
-        return ((k83) create(zw2Var)).invokeSuspend(f9cVar);
+        return ((k83) create(zw2Var)).invokeSuspend(g9cVar);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x005a  */
@@ -92,7 +92,7 @@ public final class k83 extends yfb implements ur4 {
                             n89Var = (n89) ((Serializable) this.d);
                             ixe.b(obj);
                             n89Var.a = ((Number) obj).intValue();
-                            return f9c.a;
+                            return g9c.a;
                         }
                         if (b2 != 3) {
                             grb.i("call to 'resume' before 'invoke' with coroutine");
@@ -101,7 +101,7 @@ public final class k83 extends yfb implements ur4 {
                         n89Var2 = (n89) ((Serializable) this.d);
                         ixe.b(obj);
                         n89Var2.a = ((Number) obj).intValue();
-                        return f9c.a;
+                        return g9c.a;
                     }
                     p89Var = (p89) ((Serializable) this.d);
                     ixe.b(obj);
@@ -116,7 +116,7 @@ public final class k83 extends yfb implements ur4 {
                 }
                 n89Var = n89Var2;
                 n89Var.a = ((Number) obj).intValue();
-                return f9c.a;
+                return g9c.a;
             default:
                 byte b3 = this.b;
                 if (b3 == 0) {

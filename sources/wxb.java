@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wxb extends e {
     public zu1 E;
@@ -321,7 +321,7 @@ public final class wxb extends e {
         long j = this.arguments.getLong("topic_id", 0L);
         this.c = j;
         if (j != 0) {
-            TLRPC.TL_forumTopic f = getMessagesController().g4.f(-this.a, this.c);
+            TLRPC.TL_forumTopic f = getMessagesController().h4.f(-this.a, this.c);
             this.x = f;
             if (f == null) {
                 return false;

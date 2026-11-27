@@ -12,7 +12,7 @@ import java.util.UUID;
 import org.telegram.messenger.voip.CallAudioDevice;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ko4 {
     public static final String A0;
@@ -94,7 +94,7 @@ public final class ko4 {
     public final int j;
     public final int k;
     public final String l;
-    public final uf7 m;
+    public final vf7 m;
     public final String n;
     public boolean o;
     public long p;
@@ -601,7 +601,7 @@ public final class ko4 {
         if (this == ko4Var) {
             return this;
         }
-        int h = dg7.h(this.t);
+        int h = eg7.h(this.t);
         String str3 = ko4Var.a;
         float f2 = ko4Var.g;
         int i2 = ko4Var.V;
@@ -633,10 +633,10 @@ public final class ko4 {
         if (str6 == null) {
             str6 = ko4Var.n;
         }
-        uf7 uf7Var = ko4Var.m;
-        uf7 uf7Var2 = this.m;
-        if (uf7Var2 != null) {
-            uf7Var = uf7Var2.b(uf7Var);
+        vf7 vf7Var = ko4Var.m;
+        vf7 vf7Var2 = this.m;
+        if (vf7Var2 != null) {
+            vf7Var = vf7Var2.b(vf7Var);
         }
         float f3 = this.F;
         if (f3 == -1.0f) {
@@ -724,7 +724,7 @@ public final class ko4 {
         a.i = i4;
         a.j = i5;
         a.k = str5;
-        a.l = uf7Var;
+        a.l = vf7Var;
         a.m = str6;
         a.w = hr3Var3;
         a.a(f4);
@@ -759,8 +759,8 @@ public final class ko4 {
         int floatToIntBits = (((((((Float.floatToIntBits(this.g) + ((((((hashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31) + this.e) * 31) + this.f) * 31)) * 31) + this.h) * 31) + this.i) * 31) + this.j) * 31;
         String str4 = this.l;
         int hashCode3 = (floatToIntBits + (str4 == null ? 0 : str4.hashCode())) * 31;
-        uf7 uf7Var = this.m;
-        int hashCode4 = (hashCode3 + (uf7Var == null ? 0 : uf7Var.hashCode())) * 961;
+        vf7 vf7Var = this.m;
+        int hashCode4 = (hashCode3 + (vf7Var == null ? 0 : vf7Var.hashCode())) * 961;
         String str5 = this.n;
         int hashCode5 = (hashCode4 + (str5 == null ? 0 : str5.hashCode())) * 31;
         String str6 = this.s;

@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class h70 implements zq7 {
     public static final h70 a = new h70();
@@ -22,22 +22,22 @@ public final class h70 implements zq7 {
 
     @Override // l34
     public final void a(Object obj, Object obj2) {
-        nf7 nf7Var = (nf7) obj;
+        of7 of7Var = (of7) obj;
         ar7 ar7Var = (ar7) obj2;
-        ar7Var.g(b, nf7Var.a);
-        ar7Var.a(c, nf7Var.b);
-        ar7Var.a(d, nf7Var.c);
-        ar7Var.a(e, nf7Var.d);
-        ar7Var.a(f, mf7.b);
-        ar7Var.a(g, nf7Var.e);
-        ar7Var.a(h, nf7Var.f);
-        ar7Var.e(i, nf7Var.g);
-        ar7Var.e(j, nf7Var.h);
-        ar7Var.a(k, nf7Var.i);
+        ar7Var.g(b, of7Var.a);
+        ar7Var.a(c, of7Var.b);
+        ar7Var.a(d, of7Var.c);
+        ar7Var.a(e, of7Var.d);
+        ar7Var.a(f, nf7.b);
+        ar7Var.a(g, of7Var.e);
+        ar7Var.a(h, of7Var.f);
+        ar7Var.e(i, of7Var.g);
+        ar7Var.e(j, of7Var.h);
+        ar7Var.a(k, of7Var.i);
         ar7Var.g(l, 0L);
-        ar7Var.a(m, kf7.b);
-        ar7Var.a(n, nf7Var.j);
+        ar7Var.a(m, lf7.b);
+        ar7Var.a(n, of7Var.j);
         ar7Var.g(o, 0L);
-        ar7Var.a(p, nf7Var.k);
+        ar7Var.a(p, of7Var.k);
     }
 }

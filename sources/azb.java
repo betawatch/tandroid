@@ -19,7 +19,7 @@ import org.telegram.ui.VoIPFeedbackActivity;
 import org.telegram.ui.VoIPPermissionActivity;
 import org.webrtc.VideoFileRenderer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class azb implements Runnable {
     public final /* synthetic */ byte a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class azb implements Runnable {
         }
         if (map != null) {
             gd4 gd4Var = (gd4) vh4Var.d;
-            ((qf7) gd4Var.b).h((String) gd4Var.a, map, vh4Var.a);
+            ((rf7) gd4Var.b).h((String) gd4Var.a, map, vh4Var.a);
         }
     }
 
@@ -72,7 +72,7 @@ public final /* synthetic */ class azb implements Runnable {
             case 4:
                 a5c a5cVar = (a5c) this.b;
                 uc7 uc7Var = a5cVar.n;
-                String string = uc7Var.X3.getString("translating_dialog_languages2", null);
+                String string = uc7Var.Y3.getString("translating_dialog_languages2", null);
                 if (string != null) {
                     for (String str2 : string.split(";")) {
                         String[] split = str2.split("=");
@@ -107,7 +107,7 @@ public final /* synthetic */ class azb implements Runnable {
                             }
                         }
                     }
-                    Set<String> stringSet = uc7Var.X3.getStringSet("hidden_translation_at", null);
+                    Set<String> stringSet = uc7Var.Y3.getStringSet("hidden_translation_at", null);
                     if (stringSet != null) {
                         Iterator<String> it = stringSet.iterator();
                         while (it.hasNext()) {
@@ -158,7 +158,7 @@ public final /* synthetic */ class azb implements Runnable {
                     }
                 }
                 if (z2) {
-                    ((qf7) gd4Var.b).i((String) gd4Var.a, str);
+                    ((rf7) gd4Var.b).i((String) gd4Var.a, str);
                     return;
                 }
                 return;

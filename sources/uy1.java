@@ -21,7 +21,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class uy1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -84,7 +84,7 @@ public final class uy1 implements Runnable {
             }
             u = t.u(new uff(i, 2, bundle, (byte) 0));
         }
-        u.addOnCompleteListener(no3.e, new k09((CountDownLatch) this.d, (byte) 29));
+        u.addOnCompleteListener(no3.e, new l09((CountDownLatch) this.d, (byte) 29));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0024, code lost:
@@ -232,7 +232,7 @@ public final class uy1 implements Runnable {
                 a();
                 return;
             case 7:
-                super/*vh0*/.c((k09) this.c, (tg0) this.d);
+                super/*vh0*/.c((l09) this.c, (tg0) this.d);
                 return;
             case 8:
                 super/*vh0*/.a((mt2) this.c, (nt2) this.d);

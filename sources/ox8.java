@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ox8 extends e {
     public float E;
@@ -48,7 +48,7 @@ public final class ox8 extends e {
     public mx8 b;
     public p56 c;
     public LinearLayout d;
-    public rca[] e;
+    public sca[] e;
     public ilb[] f;
     public qmb h;
     public qmb n;
@@ -60,7 +60,7 @@ public final class ox8 extends e {
 
     public ox8() {
         super(null);
-        this.e = new rca[3];
+        this.e = new sca[3];
         this.f = new ilb[2];
         this.s = new i29[3];
         this.E = 1.0f;
@@ -103,7 +103,7 @@ public final class ox8 extends e {
         }
     }
 
-    public final void Z(int i, boolean z, me7 me7Var) {
+    public final void Z(int i, boolean z, oe7 oe7Var) {
         i29[] i29VarArr = this.s;
         ilb[] ilbVarArr = this.f;
         if (this.w != i) {
@@ -112,8 +112,8 @@ public final class ox8 extends e {
             byte b = 2;
             if (z) {
                 TransitionSet duration = new TransitionSet().addTransition(new Fade(2)).addTransition(new ChangeBounds()).addTransition(new Fade(1)).setInterpolator((TimeInterpolator) k43.f).setDuration(250L);
-                if (me7Var != null) {
-                    duration.addListener((Transition.TransitionListener) new j7(me7Var, b));
+                if (oe7Var != null) {
+                    duration.addListener((Transition.TransitionListener) new j7(oe7Var, b));
                 }
                 TransitionManager.beginDelayedTransition(this.c, duration);
             }
@@ -178,7 +178,7 @@ public final class ox8 extends e {
     */
     public final void b0() {
         String str;
-        rca[] rcaVarArr = this.e;
+        sca[] scaVarArr = this.e;
         ClipData primaryClip = this.I.getPrimaryClip();
         jx8 jx8Var = null;
         if (primaryClip != null && primaryClip.getItemCount() > 0) {
@@ -203,14 +203,14 @@ public final class ox8 extends e {
                 if (jx8Var2 != null) {
                     if (qmbVar.getVisibility() != 0) {
                         this.n.setVisibility(0);
-                        rcaVarArr[2].setVisibility(0);
+                        scaVarArr[2].setVisibility(0);
                         return;
                     }
                     return;
                 }
                 if (qmbVar.getVisibility() != 8) {
                     this.n.setVisibility(8);
-                    rcaVarArr[2].setVisibility(8);
+                    scaVarArr[2].setVisibility(8);
                     return;
                 }
                 return;
@@ -258,7 +258,7 @@ public final class ox8 extends e {
     public final View createView(Context context) {
         ilb[] ilbVarArr = this.f;
         wea weaVar = this.K;
-        rca[] rcaVarArr = this.e;
+        sca[] scaVarArr = this.e;
         i29[] i29VarArr = this.s;
         final byte b = 1;
         setHasOwnBackground(true);
@@ -310,7 +310,7 @@ public final class ox8 extends e {
                                 if (i3 >= editTextBoldCursorArr.length) {
                                     EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[0];
                                     editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                                    ox8Var.Z(i2, true, new me7(ox8Var, i2, (byte) 10));
+                                    ox8Var.Z(i2, true, new oe7(ox8Var, i2, (byte) 10));
                                     break;
                                 } else {
                                     if ((i2 != 1 || i3 != 4) && (i2 != 2 || (i3 != 2 && i3 != 3))) {
@@ -369,9 +369,9 @@ public final class ox8 extends e {
             i2++;
             i = -1;
         }
-        rca rcaVar = new rca(context, (uh9) null);
-        rcaVarArr[0] = rcaVar;
-        this.c.addView(rcaVar, tre.o(i, -2));
+        sca scaVar = new sca(context, (uh9) null);
+        scaVarArr[0] = scaVar;
+        this.c.addView(scaVar, tre.o(i, -2));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
         linearLayout.setOrientation(1);
@@ -492,7 +492,7 @@ public final class ox8 extends e {
                                 if (i32 >= editTextBoldCursorArr2.length) {
                                     EditTextBoldCursor editTextBoldCursor3 = editTextBoldCursorArr2[0];
                                     editTextBoldCursor3.setSelection(editTextBoldCursor3.length());
-                                    ox8Var.Z(i22, true, new me7(ox8Var, i22, (byte) 10));
+                                    ox8Var.Z(i22, true, new oe7(ox8Var, i22, (byte) 10));
                                     break;
                                 } else {
                                     if ((i22 != 1 || i32 != 4) && (i22 != 2 || (i32 != 2 && i32 != 3))) {
@@ -534,10 +534,10 @@ public final class ox8 extends e {
         });
         this.c.addView(this.n, 0, tre.o(-1, -2));
         this.n.setVisibility(8);
-        rca rcaVar2 = new rca(this.fragmentView.getContext(), (uh9) null);
-        rcaVarArr[2] = rcaVar2;
-        this.c.addView(rcaVar2, 1, tre.o(-1, -2));
-        rcaVarArr[2].setVisibility(8);
+        sca scaVar2 = new sca(this.fragmentView.getContext(), (uh9) null);
+        scaVarArr[2] = scaVar2;
+        this.c.addView(scaVar2, 1, tre.o(-1, -2));
+        scaVarArr[2].setVisibility(8);
         qmb qmbVar2 = new qmb(context);
         this.h = qmbVar2;
         hf0 L02 = aob.L0(true);
@@ -549,9 +549,9 @@ public final class ox8 extends e {
         yob.X(this.h.getTextView(), i9, null);
         this.c.addView(this.h, tre.o(-1, -2));
         this.h.setOnClickListener(new uv5(this, context, (byte) 29));
-        rca rcaVar3 = new rca(context, (uh9) null);
-        rcaVarArr[1] = rcaVar3;
-        this.c.addView(rcaVar3, tre.o(-1, -2));
+        sca scaVar3 = new sca(context, (uh9) null);
+        scaVarArr[1] = scaVar3;
+        this.c.addView(scaVar3, tre.o(-1, -2));
         this.I = (ClipboardManager) context.getSystemService("clipboard");
         this.G = true;
         this.E = 1.0f;
@@ -594,11 +594,11 @@ public final class ox8 extends e {
         arrayList.add(new apb((View) null, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (zob) null, aob.d6));
         int i3 = 0;
         while (true) {
-            rca[] rcaVarArr = this.e;
-            if (i3 >= rcaVarArr.length) {
+            sca[] scaVarArr = this.e;
+            if (i3 >= scaVarArr.length) {
                 break;
             }
-            rca rcaVar = rcaVarArr[i3];
+            sca scaVar = scaVarArr[i3];
             i3++;
         }
         for (int i4 = 0; i4 < this.f.length; i4++) {

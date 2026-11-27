@@ -8,7 +8,7 @@ import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ExperimentalFfmpegVideoRenderer extends vg0 implements m93 {
     public static final int y0 = ((gcc.g(720, 64) * gcc.g(1280, 64)) * 6144) / 2;
@@ -111,7 +111,7 @@ public final class ExperimentalFfmpegVideoRenderer extends vg0 implements m93 {
                 k7b k7bVar = this.M;
                 Handler handler = (Handler) k7bVar.b;
                 if (handler != null) {
-                    handler.post(new g9c(k7bVar, e, (byte) 18));
+                    handler.post(new c9c(k7bVar, e, (byte) 19));
                 }
                 throw e(e, this.Q, false, 4003);
             }
@@ -122,7 +122,7 @@ public final class ExperimentalFfmpegVideoRenderer extends vg0 implements m93 {
     public final int G(ko4 ko4Var) {
         String str = ko4Var.t;
         String str2 = FfmpegLibrary.a;
-        return !dg7.m(str) ? qu6.a(0, 0, 0, 0) : !FfmpegLibrary.d(str) ? qu6.a(1, 0, 0, 0) : ko4Var.X != 0 ? qu6.a(2, 0, 0, 0) : jn7.V1;
+        return !eg7.m(str) ? qu6.a(0, 0, 0, 0) : !FfmpegLibrary.d(str) ? qu6.a(1, 0, 0, 0) : ko4Var.X != 0 ? qu6.a(2, 0, 0, 0) : jn7.V1;
     }
 
     public final n93 K(ko4 ko4Var) {
@@ -420,7 +420,7 @@ public final class ExperimentalFfmpegVideoRenderer extends vg0 implements m93 {
                 efd.d("DecoderVideoRenderer", "Video codec error", e2);
                 Handler handler2 = (Handler) k7bVar.b;
                 if (handler2 != null) {
-                    handler2.post(new g9c(k7bVar, e2, (byte) 18));
+                    handler2.post(new c9c(k7bVar, e2, (byte) 19));
                 }
                 throw e(e2, this.Q, false, 4001);
             }
@@ -489,7 +489,7 @@ public final class ExperimentalFfmpegVideoRenderer extends vg0 implements m93 {
             k7b k7bVar = this.M;
             Handler handler = (Handler) k7bVar.b;
             if (handler != null) {
-                handler.post(new g9c(k7bVar, name, (byte) 19));
+                handler.post(new c9c(k7bVar, name, (byte) 20));
             }
             this.T = null;
         }

@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class e98 extends v79 {
     public final /* synthetic */ byte a;
@@ -194,18 +194,18 @@ public final class e98 extends v79 {
                 break;
             case 20:
                 if (i == 0) {
-                    tba tbaVar = (tba) obj;
-                    if (tbaVar.F != null) {
-                        sla slaVar = tbaVar.d;
+                    uba ubaVar = (uba) obj;
+                    if (ubaVar.F != null) {
+                        sla slaVar = ubaVar.d;
                         if (slaVar == null || !slaVar.x()) {
-                            float f2 = tbaVar.Y;
+                            float f2 = ubaVar.Y;
                             if (f2 > 0.0f && f2 < 1.0f) {
-                                q9c q9cVar = tbaVar.c;
+                                q9c q9cVar = ubaVar.c;
                                 if (f2 >= 0.5f) {
-                                    q9cVar.y0(0, (int) (-(tbaVar.a0 - tbaVar.Z)), k43.h);
+                                    q9cVar.y0(0, (int) (-(ubaVar.a0 - ubaVar.Z)), k43.h);
                                     break;
                                 } else {
-                                    q9cVar.y0(0, (int) Math.ceil(tbaVar.Z - tbaVar.b0), k43.h);
+                                    q9cVar.y0(0, (int) Math.ceil(ubaVar.Z - ubaVar.b0), k43.h);
                                     break;
                                 }
                             }
@@ -446,11 +446,11 @@ public final class e98 extends v79 {
                 z3aVar.invalidate();
                 break;
             case 20:
-                tba tbaVar = (tba) obj;
-                tbaVar.n0(false, true);
-                tbaVar.o0();
-                if (tbaVar.c.J1) {
-                    hl.t1(tbaVar.fragmentView);
+                uba ubaVar = (uba) obj;
+                ubaVar.n0(false, true);
+                ubaVar.o0();
+                if (ubaVar.c.J1) {
+                    hl.t1(ubaVar.fragmentView);
                     break;
                 }
                 break;

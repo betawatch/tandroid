@@ -2,9 +2,9 @@
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xa7 implements df7 {
+public final /* synthetic */ class xa7 implements ef7 {
     public final /* synthetic */ uc7 a;
     public final /* synthetic */ long b;
     public final /* synthetic */ int c;
@@ -21,7 +21,7 @@ public final /* synthetic */ class xa7 implements df7 {
         this.f = j2;
     }
 
-    @Override // df7
+    @Override // ef7
     public final void a(int i) {
         uc7 uc7Var = this.a;
         long e = uc7Var.getUserConfig().e();

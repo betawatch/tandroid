@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class fp2 implements co2 {
     public final Context a;
@@ -39,7 +39,7 @@ public final class fp2 implements co2 {
         this.d = i;
         this.e = j;
         this.f = uc7.s1(i).M0(Long.valueOf(j));
-        this.o = uc7.s1(i).X3.getLong(qu6.n(j, "community_requests_last_view_time_"), 0L);
+        this.o = uc7.s1(i).Y3.getLong(qu6.n(j, "community_requests_last_view_time_"), 0L);
     }
 
     public final void a() {
@@ -115,7 +115,7 @@ public final class fp2 implements co2 {
         int i = this.d;
         long currentTime = ConnectionsManager.getInstance(i).getCurrentTime();
         this.o = currentTime;
-        uc7.s1(i).X3.edit().putLong("community_requests_last_view_time_" + this.e, currentTime).apply();
+        uc7.s1(i).Y3.edit().putLong("community_requests_last_view_time_" + this.e, currentTime).apply();
         a();
     }
 

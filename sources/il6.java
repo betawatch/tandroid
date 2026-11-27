@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class il6 extends FrameLayout {
     public boolean E;
@@ -44,7 +44,7 @@ public abstract class il6 extends FrameLayout {
     public il6(Context context, int i, Bitmap bitmap, Bitmap bitmap2, int i2, fo6 fo6Var) {
         super(context);
         gc8 gc8Var = (gc8) this;
-        xh4 xh4Var = new xh4((Object) gc8Var, (byte) 12);
+        xh4 xh4Var = new xh4(gc8Var, (byte) 12);
         this.J = new ArrayList();
         this.K = new Rect();
         this.a = i;
@@ -62,7 +62,7 @@ public abstract class il6 extends FrameLayout {
         pa9 pa9Var = new pa9(context, nx7Var, bitmap, null, null);
         this.e = pa9Var;
         pa9Var.setAlpha(0.0f);
-        pa9Var.setDelegate(new aj3((Object) gc8Var, (byte) 19));
+        pa9Var.setDelegate(new aj3(gc8Var, (byte) 19));
         pa9Var.setUndoStore(a9cVar);
         pa9Var.setQueue(uo3Var);
         pa9Var.setVisibility(4);

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xwb extends c79 {
     public int c;
@@ -139,15 +139,15 @@ public final class xwb extends c79 {
             axbVar.y.setLayoutParams(r79Var);
             view = bxbVar;
         } else if (i == 2) {
-            rca rcaVar = new rca(viewGroup.getContext(), (uh9) null);
+            sca scaVar = new sca(viewGroup.getContext(), (uh9) null);
             Drawable W0 = aob.W0(viewGroup.getContext(), R.drawable.greydivider, aob.b7);
             int i4 = aob.a7;
             ColorDrawable colorDrawable = new ColorDrawable(aob.w0(null, i4, false));
             zm2 zm2Var = new zm2(colorDrawable, W0);
             zm2Var.x = true;
-            rcaVar.setBackground(zm2Var);
-            yob.x(rcaVar, colorDrawable, i4, null, PorterDuff.Mode.SRC_IN);
-            view = rcaVar;
+            scaVar.setBackground(zm2Var);
+            yob.x(scaVar, colorDrawable, i4, null, PorterDuff.Mode.SRC_IN);
+            view = scaVar;
         } else if (i != 3) {
             view = i != 5 ? new bd5(viewGroup.getContext(), 1, 0, false) : new t24(viewGroup.getContext(), hl.L(12.0f));
         } else {

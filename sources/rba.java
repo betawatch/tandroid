@@ -3,54 +3,88 @@
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class rba extends a8c {
-    static {
-        a8c.h(new rba());
+public final class rba extends LinearLayout implements snb {
+    public final vnb a;
+    public final n57 b;
+    public final FrameLayout c;
+    public final ImageView d;
+    public final TextView e;
+    public final TextView f;
+    public final TextView h;
+    public boolean n;
+    public boolean r;
+
+    public rba(Context context, vnb vnbVar) {
+        super(context);
+        this.n = true;
+        this.a = vnbVar;
+        setOrientation(0);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        n57 n57Var = new n57((byte) 1);
+        this.b = n57Var;
+        frameLayout.setBackground(n57Var);
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        frameLayout.addView(imageView, tre.e(24, 24, 17));
+        LinearLayout j = uh9.j(context, 1);
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView m = ik8.m(j, textView, tre.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        this.f = m;
+        m.setTextSize(1, 13.0f);
+        TextView m2 = ik8.m(j, m, tre.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2), context);
+        this.h = m2;
+        m2.setTextSize(1, 16.0f);
+        if (ob6.a0) {
+            addView(m2, tre.t(-2, -2, 16, 20, 0, 0, 0));
+            addView(j, tre.q(0, -2, 1.0f, 23, 20, 0, 18, 0));
+            addView(frameLayout, tre.t(28, 28, 21, 0, 0, 18, 0));
+        } else {
+            addView(frameLayout, tre.t(28, 28, 19, 18, 0, 0, 0));
+            addView(j, tre.q(0, -2, 1.0f, 23, 18, 0, 20, 0));
+            addView(m2, tre.t(-2, -2, 16, 0, 0, 20, 0));
+        }
+        updateColors();
     }
 
-    public static b8c i(String str, CharSequence charSequence, String str2, View.OnClickListener onClickListener, CharSequence charSequence2, View.OnClickListener onClickListener2) {
-        b8c K = b8c.K(rba.class);
-        K.m = str;
-        K.n = charSequence;
-        K.o = str2;
-        K.E = onClickListener;
-        K.p = charSequence2;
-        K.F = onClickListener2;
-        return K;
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.G6));
+        hashSet.add(Integer.valueOf(aob.y6));
+        hashSet.add(Integer.valueOf(aob.n6));
     }
 
-    @Override // a8c
-    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
-        sba sbaVar = (sba) view;
-        CharSequence charSequence = b8cVar.m;
-        CharSequence charSequence2 = b8cVar.n;
-        CharSequence charSequence3 = b8cVar.o;
-        View.OnClickListener onClickListener = b8cVar.E;
-        CharSequence charSequence4 = b8cVar.p;
-        View.OnClickListener onClickListener2 = b8cVar.F;
-        c51 c51Var = sbaVar.e;
-        p66 p66Var = sbaVar.b;
-        p66Var.setText(pv3.m(charSequence, p66Var.getPaint().getFontMetricsInt(), false, null, 0));
-        p66 p66Var2 = sbaVar.c;
-        p66Var2.setText(pv3.m(charSequence2, p66Var2.getPaint().getFontMetricsInt(), false, null, 0));
-        c51 c51Var2 = sbaVar.d;
-        c51Var2.setVisibility(TextUtils.isEmpty(charSequence3) ? 8 : 0);
-        c51Var2.setText(charSequence3);
-        c51Var2.setOnClickListener(onClickListener);
-        c51Var.setText(charSequence4);
-        c51Var.setOnClickListener(onClickListener2);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(this.r ? 60.0f : 50.0f), TLObject.FLAG_30));
     }
 
-    @Override // a8c
-    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
-        return new sba(context, vnbVar);
+    public void setValue(CharSequence charSequence) {
+        int i = !TextUtils.isEmpty(charSequence) ? 0 : 8;
+        TextView textView = this.h;
+        textView.setVisibility(i);
+        textView.setText(charSequence);
     }
 
-    @Override // a8c
-    public final boolean f() {
-        return false;
+    @Override // snb
+    public final void updateColors() {
+        int i = aob.G6;
+        vnb vnbVar = this.a;
+        this.e.setTextColor(aob.v0(i, vnbVar));
+        this.f.setTextColor(aob.v0(aob.y6, vnbVar));
+        this.h.setTextColor(aob.v0(aob.n6, vnbVar));
+        this.b.b = this.n && (vnbVar == null ? aob.I.o() : vnbVar.a());
     }
 }

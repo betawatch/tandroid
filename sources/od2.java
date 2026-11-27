@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class od2 extends c79 {
     public final Context c;
@@ -920,12 +920,12 @@ public final class od2 extends c79 {
                 }
                 break;
             case 5:
-                rca rcaVar = (rca) view;
+                sca scaVar = (sca) view;
                 if (i3 != 2 || (i != pd2Var.p0 && i != pd2Var.x0)) {
-                    rcaVar.setAlpha(1.0f);
+                    scaVar.setAlpha(1.0f);
                     break;
                 } else {
-                    rcaVar.setAlpha(pd2Var.K);
+                    scaVar.setAlpha(pd2Var.K);
                     break;
                 }
                 break;
@@ -1081,7 +1081,7 @@ public final class od2 extends c79 {
                 yob.h(aob.d6, null, uacVar);
                 break;
             case 5:
-                uacVar = new rca(context, (uh9) null);
+                uacVar = new sca(context, (uh9) null);
                 break;
             case 6:
                 uacVar = new clb(null, context, false);

@@ -5,13 +5,13 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class ef5 extends l9c {
     public final int Q;
     public final ArrayList R;
     public boolean S;
-    public p5b T;
+    public q5b T;
     public boolean U;
     public boolean V;
     public int W;
@@ -55,10 +55,10 @@ public abstract class ef5 extends l9c {
     }
 
     public final void W() {
-        p5b p5bVar = this.T;
-        if (p5bVar != null && p5bVar.I != 0) {
-            ConnectionsManager.getInstance(p5bVar.c).cancelRequest(p5bVar.I, true);
-            p5bVar.I = 0;
+        q5b q5bVar = this.T;
+        if (q5bVar != null && q5bVar.I != 0) {
+            ConnectionsManager.getInstance(q5bVar.c).cancelRequest(q5bVar.I, true);
+            q5bVar.I = 0;
         }
         this.S = false;
         if (this.X >= 0) {

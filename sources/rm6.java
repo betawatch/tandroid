@@ -24,7 +24,7 @@ import org.webrtc.StatsObserver;
 import org.webrtc.VideoSource;
 import org.webrtc.VideoTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class rm6 implements vm6, nx, ot2, pz6, fd, gc7, s69, qd3, jy2, NativeLifecycleLock.NativeCallable, NativeLifecycleLock.NativePointerCallable, NativeLifecycleLock.NativeRunnable, f9b {
     public final /* synthetic */ byte a;
@@ -144,7 +144,7 @@ public final /* synthetic */ class rm6 implements vm6, nx, ot2, pz6, fd, gc7, s6
     }
 
     @Override // f9b
-    public final void c(u9b u9bVar, boolean z, boolean z2, boolean z3, boolean z4, TLRPC.InputPeer inputPeer, int i, z3b z3bVar, s8b s8bVar) {
+    public final void c(u9b u9bVar, boolean z, boolean z2, boolean z3, boolean z4, TLRPC.InputPeer inputPeer, int i, n3b n3bVar, s8b s8bVar) {
         byte b = this.a;
         Object obj = this.c;
         Object obj2 = this.b;
@@ -157,7 +157,7 @@ public final /* synthetic */ class rm6 implements vm6, nx, ot2, pz6, fd, gc7, s6
                 tL_stories_editStory.id = storyItem.id;
                 tL_stories_editStory.flags |= 4;
                 tL_stories_editStory.privacy_rules = u9bVar.b;
-                ConnectionsManager.getInstance(o68Var.m2).sendRequest(tL_stories_editStory, new au0((Object) o68Var, (Object) z3bVar, (Object) storyItem, (Object) u9bVar, (byte) 14));
+                ConnectionsManager.getInstance(o68Var.m2).sendRequest(tL_stories_editStory, new au0((Object) o68Var, (Object) n3bVar, (Object) storyItem, (Object) u9bVar, (byte) 14));
                 break;
             default:
                 j68 j68Var = (j68) obj2;
@@ -177,7 +177,7 @@ public final /* synthetic */ class rm6 implements vm6, nx, ot2, pz6, fd, gc7, s6
                         togglegroupcallsettings.call = inputGroupCall;
                         togglegroupcallsettings.messages_enabled = Boolean.valueOf(z);
                         togglegroupcallsettings.send_paid_messages_stars = Long.valueOf(i);
-                        ConnectionsManager.getInstance(o68Var2.m2).sendRequest(togglegroupcallsettings, new ol7(j68Var, w9bVar, (byte) 7));
+                        ConnectionsManager.getInstance(o68Var2.m2).sendRequest(togglegroupcallsettings, new pl7(j68Var, w9bVar, (byte) 7));
                         break;
                     }
                 }

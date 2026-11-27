@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class r41 {
     public static volatile r41[] e = new r41[4];
@@ -51,7 +51,7 @@ public final class r41 {
             arrayList.remove(c);
             jn7.f(this.a).k(jn7.J1, new Object[0]);
             byte b = 8;
-            d31.b0(n41Var).U(ob6.M0(2131752696, null), true, new ze7(this, indexOf, c, b), new tu0(this, str, c, b)).j();
+            d31.b0(n41Var).U(ob6.M0(2131752696, null), true, new bf7(this, indexOf, c, b), new tu0(this, str, c, b)).j();
         }
     }
 
@@ -105,8 +105,8 @@ public final class r41 {
             this.c = true;
             int i = this.a;
             if (z) {
-                jf7 Y = jf7.Y(i);
-                Y.a.c(new ds6((Object) this, (Object) Y, z2, (byte) 7));
+                kf7 a0 = kf7.a0(i);
+                a0.a.c(new ds6((Object) this, (Object) a0, z2, (byte) 7));
             } else {
                 ConnectionsManager.getInstance(i).sendRequest(new TL_account.getBusinessChatLinks(), new p41(this, (byte) 0));
             }
@@ -115,7 +115,7 @@ public final class r41 {
 
     public final void f() {
         ArrayList arrayList = new ArrayList(this.b);
-        jf7 Y = jf7.Y(this.a);
-        Y.a.c(new q41(Y, arrayList, (byte) 0));
+        kf7 a0 = kf7.a0(this.a);
+        a0.a.c(new q41(a0, arrayList, (byte) 0));
     }
 }

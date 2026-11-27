@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class b19 {
     public static volatile b19[] g = new b19[4];
@@ -149,8 +149,8 @@ public final class b19 {
         this.e = true;
         int i2 = this.a;
         if (z) {
-            jf7 Y = jf7.Y(i2);
-            Y.a.c(new ba7((Object) this, (Object) Y, yac.h(i2).e(), (Object) runnable, (byte) 29));
+            kf7 a0 = kf7.a0(i2);
+            a0.a.c(new ba7((Object) this, (Object) a0, yac.h(i2).e(), (Object) runnable, (byte) 29));
             return;
         }
         TLRPC.TL_messages_getQuickReplies tL_messages_getQuickReplies = new TLRPC.TL_messages_getQuickReplies();
@@ -217,7 +217,7 @@ public final class b19 {
         }
         if (update instanceof TL_update.TL_updateQuickReplies) {
             final byte b2 = 2;
-            b(new Runnable(this) { // from class: x09
+            b(new Runnable(this) { // from class: y09
                 public final /* synthetic */ b19 b;
 
                 {
@@ -238,8 +238,8 @@ public final class b19 {
                                 b19Var.b.remove(c);
                                 b19Var.a(c.b);
                                 int i3 = c.a;
-                                jf7 Y = jf7.Y(i2);
-                                Y.a.c(new ad7(Y, i3, (byte) 5));
+                                kf7 a0 = kf7.a0(i2);
+                                a0.a.c(new bd7(a0, i3, (byte) 5));
                                 b19Var.l();
                                 jn7.f(i2).k(jn7.F1, new Object[0]);
                                 break;
@@ -265,8 +265,8 @@ public final class b19 {
                                 } else {
                                     c2.e = null;
                                     long e = yac.h(i4).e();
-                                    jf7 Y2 = jf7.Y(i4);
-                                    Y2.a.c(new y09(b19Var2, Y2, c2, e, (byte) 0));
+                                    kf7 a02 = kf7.a0(i4);
+                                    a02.a.c(new z09(b19Var2, a02, c2, e, (byte) 0));
                                     break;
                                 }
                             }
@@ -320,8 +320,8 @@ public final class b19 {
                                 if (r47Var3 != null && r47Var3.e1() != tL_quickReply2.top_message) {
                                     c3.e = null;
                                     long e2 = yac.h(i7).e();
-                                    jf7 Y3 = jf7.Y(i7);
-                                    Y3.a.c(new y09(b19Var3, Y3, c3, e2, (byte) 0));
+                                    kf7 a03 = kf7.a0(i7);
+                                    a03.a.c(new z09(b19Var3, a03, c3, e2, (byte) 0));
                                     break;
                                 }
                             } else {
@@ -346,7 +346,7 @@ public final class b19 {
         }
         if (update instanceof TL_update.TL_updateNewQuickReply) {
             final byte b3 = 3;
-            b(new Runnable(this) { // from class: x09
+            b(new Runnable(this) { // from class: y09
                 public final /* synthetic */ b19 b;
 
                 {
@@ -367,8 +367,8 @@ public final class b19 {
                                 b19Var.b.remove(c);
                                 b19Var.a(c.b);
                                 int i3 = c.a;
-                                jf7 Y = jf7.Y(i2);
-                                Y.a.c(new ad7(Y, i3, (byte) 5));
+                                kf7 a0 = kf7.a0(i2);
+                                a0.a.c(new bd7(a0, i3, (byte) 5));
                                 b19Var.l();
                                 jn7.f(i2).k(jn7.F1, new Object[0]);
                                 break;
@@ -394,8 +394,8 @@ public final class b19 {
                                 } else {
                                     c2.e = null;
                                     long e = yac.h(i4).e();
-                                    jf7 Y2 = jf7.Y(i4);
-                                    Y2.a.c(new y09(b19Var2, Y2, c2, e, (byte) 0));
+                                    kf7 a02 = kf7.a0(i4);
+                                    a02.a.c(new z09(b19Var2, a02, c2, e, (byte) 0));
                                     break;
                                 }
                             }
@@ -449,8 +449,8 @@ public final class b19 {
                                 if (r47Var3 != null && r47Var3.e1() != tL_quickReply2.top_message) {
                                     c3.e = null;
                                     long e2 = yac.h(i7).e();
-                                    jf7 Y3 = jf7.Y(i7);
-                                    Y3.a.c(new y09(b19Var3, Y3, c3, e2, (byte) 0));
+                                    kf7 a03 = kf7.a0(i7);
+                                    a03.a.c(new z09(b19Var3, a03, c3, e2, (byte) 0));
                                     break;
                                 }
                             } else {
@@ -475,7 +475,7 @@ public final class b19 {
         }
         final byte b4 = 0;
         if (update instanceof TL_update.TL_updateDeleteQuickReply) {
-            b(new Runnable(this) { // from class: x09
+            b(new Runnable(this) { // from class: y09
                 public final /* synthetic */ b19 b;
 
                 {
@@ -496,8 +496,8 @@ public final class b19 {
                                 b19Var.b.remove(c);
                                 b19Var.a(c.b);
                                 int i3 = c.a;
-                                jf7 Y = jf7.Y(i2);
-                                Y.a.c(new ad7(Y, i3, (byte) 5));
+                                kf7 a0 = kf7.a0(i2);
+                                a0.a.c(new bd7(a0, i3, (byte) 5));
                                 b19Var.l();
                                 jn7.f(i2).k(jn7.F1, new Object[0]);
                                 break;
@@ -523,8 +523,8 @@ public final class b19 {
                                 } else {
                                     c2.e = null;
                                     long e = yac.h(i4).e();
-                                    jf7 Y2 = jf7.Y(i4);
-                                    Y2.a.c(new y09(b19Var2, Y2, c2, e, (byte) 0));
+                                    kf7 a02 = kf7.a0(i4);
+                                    a02.a.c(new z09(b19Var2, a02, c2, e, (byte) 0));
                                     break;
                                 }
                             }
@@ -578,8 +578,8 @@ public final class b19 {
                                 if (r47Var3 != null && r47Var3.e1() != tL_quickReply2.top_message) {
                                     c3.e = null;
                                     long e2 = yac.h(i7).e();
-                                    jf7 Y3 = jf7.Y(i7);
-                                    Y3.a.c(new y09(b19Var3, Y3, c3, e2, (byte) 0));
+                                    kf7 a03 = kf7.a0(i7);
+                                    a03.a.c(new z09(b19Var3, a03, c3, e2, (byte) 0));
                                     break;
                                 }
                             } else {
@@ -605,7 +605,7 @@ public final class b19 {
         if (!(update instanceof TL_update.TL_updateDeleteQuickReplyMessages)) {
             return false;
         }
-        b(new Runnable(this) { // from class: x09
+        b(new Runnable(this) { // from class: y09
             public final /* synthetic */ b19 b;
 
             {
@@ -626,8 +626,8 @@ public final class b19 {
                             b19Var.b.remove(c);
                             b19Var.a(c.b);
                             int i3 = c.a;
-                            jf7 Y = jf7.Y(i2);
-                            Y.a.c(new ad7(Y, i3, (byte) 5));
+                            kf7 a0 = kf7.a0(i2);
+                            a0.a.c(new bd7(a0, i3, (byte) 5));
                             b19Var.l();
                             jn7.f(i2).k(jn7.F1, new Object[0]);
                             break;
@@ -653,8 +653,8 @@ public final class b19 {
                             } else {
                                 c2.e = null;
                                 long e = yac.h(i4).e();
-                                jf7 Y2 = jf7.Y(i4);
-                                Y2.a.c(new y09(b19Var2, Y2, c2, e, (byte) 0));
+                                kf7 a02 = kf7.a0(i4);
+                                a02.a.c(new z09(b19Var2, a02, c2, e, (byte) 0));
                                 break;
                             }
                         }
@@ -708,8 +708,8 @@ public final class b19 {
                             if (r47Var3 != null && r47Var3.e1() != tL_quickReply2.top_message) {
                                 c3.e = null;
                                 long e2 = yac.h(i7).e();
-                                jf7 Y3 = jf7.Y(i7);
-                                Y3.a.c(new y09(b19Var3, Y3, c3, e2, (byte) 0));
+                                kf7 a03 = kf7.a0(i7);
+                                a03.a.c(new z09(b19Var3, a03, c3, e2, (byte) 0));
                                 break;
                             }
                         } else {
@@ -749,7 +749,7 @@ public final class b19 {
     }
 
     public final void l() {
-        jf7 Y = jf7.Y(this.a);
-        Y.a.c(new z09(this, Y));
+        kf7 a0 = kf7.a0(this.a);
+        a0.a.c(new yz8(this, a0, (byte) 3));
     }
 }

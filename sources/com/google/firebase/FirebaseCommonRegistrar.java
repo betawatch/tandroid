@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -28,14 +28,14 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         b.a(new qe3(2, 0, aa0.class));
         b.f = new da3((byte) 14);
         arrayList.add(b.b());
-        h09 h09Var = new h09(od0.class, Executor.class);
+        i09 i09Var = new i09(od0.class, Executor.class);
         eq2 eq2Var = new eq2(hb3.class, rf5.class, sf5.class);
         eq2Var.a(qe3.b(Context.class));
         eq2Var.a(qe3.b(ji4.class));
         eq2Var.a(new qe3(2, 0, qf5.class));
         eq2Var.a(new qe3(1, 1, md3.class));
-        eq2Var.a(new qe3(h09Var, 1, 0));
-        eq2Var.f = new fb3(h09Var, (byte) 0);
+        eq2Var.a(new qe3(i09Var, 1, 0));
+        eq2Var.f = new fb3(i09Var, (byte) 0);
         arrayList.add(eq2Var.b());
         arrayList.add(ise.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
         arrayList.add(ise.a("fire-core", "22.2.1"));

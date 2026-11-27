@@ -8,7 +8,7 @@ import java.util.Iterator;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k9b implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -105,12 +105,12 @@ public final /* synthetic */ class k9b implements View.OnClickListener {
                             } else {
                                 u9bVar = new u9b(i6, w9bVar.a, (ArrayList) null);
                             }
-                            w9bVar.H0(u9bVar, new b68(w9bVar, (byte) 1), false);
+                            w9bVar.H0(u9bVar, new c68(w9bVar, (byte) 1), false);
                             break;
                         } else if (i5 == 2) {
                             if (w9bVar.T1) {
                                 w9bVar.G0();
-                                w9bVar.H0(new u9b(2, w9bVar.a, arrayList3), new b68(w9bVar, (byte) 1), false);
+                                w9bVar.H0(new u9b(2, w9bVar.a, arrayList3), new c68(w9bVar, (byte) 1), false);
                                 break;
                             } else {
                                 w9bVar.G0();

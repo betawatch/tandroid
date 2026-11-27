@@ -6,7 +6,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hz0 implements Runnable {
     public final /* synthetic */ byte a;
@@ -167,7 +167,7 @@ public final /* synthetic */ class hz0 implements Runnable {
                     mediaController.Y0 = false;
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                     oo6Var.h = messages_messages.next_rate;
-                    jf7.Y(i4).j1(messages_messages.users, messages_messages.chats, true, true);
+                    kf7.a0(i4).n1(messages_messages.users, messages_messages.chats, true, true);
                     uc7.s1(i4).j4(messages_messages.users, false);
                     uc7.s1(i4).c4(messages_messages.chats, false);
                     int size = messages_messages.messages.size();
@@ -224,7 +224,7 @@ public final /* synthetic */ class hz0 implements Runnable {
             case 5:
                 dg9 dg9Var3 = (dg9) obj2;
                 amb ambVar3 = (amb) obj;
-                xl9 xl9Var = (xl9) ((i09) obj3).b;
+                xl9 xl9Var = (xl9) ((j09) obj3).b;
                 if (dg9Var3.length() >= i3 && dg9Var3.getSelectionStart() != dg9Var3.getSelectionEnd() && ambVar3.i0(xl9Var, 0, i4, i3)) {
                     xl9Var.H = true;
                     dg9Var3.setSelection(i3);
@@ -384,7 +384,7 @@ public final /* synthetic */ class hz0 implements Runnable {
                 break;
             default:
                 TLRPC.Document document = (TLRPC.Document) obj2;
-                oca.g(i3, (TLRPC.User) obj3, document, i4, new hca((yt0) obj, document, (byte) 0));
+                pca.g(i3, (TLRPC.User) obj3, document, i4, new ica((yt0) obj, document, (byte) 0));
                 break;
         }
     }

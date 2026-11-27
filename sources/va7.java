@@ -34,7 +34,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class va7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -129,11 +129,11 @@ public final /* synthetic */ class va7 implements Runnable {
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(X1);
             i8 = 0;
-            uj3Var.getMessagesStorage().j1(arrayList2, null, false, true);
+            uj3Var.getMessagesStorage().n1(arrayList2, null, false, true);
             TLRPC.UserFull Y1 = uj3Var.getMessagesController().Y1(uj3Var.getUserConfig().e());
             if (Y1 != null) {
                 Y1.profile_photo = tL_photos_photo.photo;
-                uj3Var.getMessagesStorage().g2(Y1, false);
+                uj3Var.getMessagesStorage().l2(Y1, false);
             }
             fileLocation = null;
         } else {
@@ -143,7 +143,7 @@ public final /* synthetic */ class va7 implements Runnable {
         uj3Var.j4 = fileLocation;
         jn7 notificationCenter = uj3Var.getNotificationCenter();
         Object[] objArr = new Object[1];
-        objArr[i8] = Integer.valueOf(uc7.r5);
+        objArr[i8] = Integer.valueOf(uc7.s5);
         notificationCenter.k(2, objArr);
         uj3Var.getNotificationCenter().k(jn7.j0, new Object[i8]);
         uj3Var.getUserConfig().u(true);
@@ -214,18 +214,18 @@ public final /* synthetic */ class va7 implements Runnable {
         int i;
         int i2;
         va7 va7Var = this;
-        jf7 jf7Var = (jf7) va7Var.c;
+        kf7 kf7Var = (kf7) va7Var.c;
         zh6 zh6Var = (zh6) va7Var.d;
         zh6 zh6Var2 = (zh6) va7Var.e;
         zh6 zh6Var3 = (zh6) va7Var.f;
         boolean z3 = true;
         try {
-            jf7Var.b.beginTransaction();
+            kf7Var.b.beginTransaction();
             try {
                 int i3 = 2;
-                if (!jf7.p0(zh6Var)) {
+                if (!kf7.s0(zh6Var)) {
                     try {
-                        SQLitePreparedStatement executeFast2 = jf7Var.b.executeFast("UPDATE messages_v2 SET media = max((SELECT media FROM messages_v2 WHERE mid = ? AND uid = ?), ?) WHERE mid = ? AND uid = ?");
+                        SQLitePreparedStatement executeFast2 = kf7Var.b.executeFast("UPDATE messages_v2 SET media = max((SELECT media FROM messages_v2 WHERE mid = ? AND uid = ?), ?) WHERE mid = ? AND uid = ?");
                         int i4 = 0;
                         while (i4 < zh6Var.m()) {
                             try {
@@ -253,7 +253,7 @@ public final /* synthetic */ class va7 implements Runnable {
                                 z = true;
                                 sQLitePreparedStatement = executeFast2;
                                 try {
-                                    jf7Var.n(e, z3);
+                                    kf7Var.p(e, z3);
                                     if (z) {
                                     }
                                     if (sQLitePreparedStatement != null) {
@@ -261,7 +261,7 @@ public final /* synthetic */ class va7 implements Runnable {
                                 } catch (Throwable th) {
                                     th = th;
                                     z3 = z;
-                                    if (z3 && (sQLiteDatabase = jf7Var.b) != null) {
+                                    if (z3 && (sQLiteDatabase = kf7Var.b) != null) {
                                         sQLiteDatabase.commitTransaction();
                                     }
                                     if (sQLitePreparedStatement != null) {
@@ -284,8 +284,8 @@ public final /* synthetic */ class va7 implements Runnable {
                         e = e2;
                         z = true;
                         sQLitePreparedStatement = null;
-                        jf7Var.n(e, z3);
-                        if (z && (sQLiteDatabase2 = jf7Var.b) != null) {
+                        kf7Var.p(e, z3);
+                        if (z && (sQLiteDatabase2 = kf7Var.b) != null) {
                             sQLiteDatabase2.commitTransaction();
                         }
                         if (sQLitePreparedStatement != null) {
@@ -304,8 +304,8 @@ public final /* synthetic */ class va7 implements Runnable {
                         throw th;
                     }
                 }
-                if (!jf7.p0(zh6Var2)) {
-                    executeFast = jf7Var.b.executeFast("UPDATE messages_v2 SET forwards = max((SELECT forwards FROM messages_v2 WHERE mid = ? AND uid = ?), ?) WHERE mid = ? AND uid = ?");
+                if (!kf7.s0(zh6Var2)) {
+                    executeFast = kf7Var.b.executeFast("UPDATE messages_v2 SET forwards = max((SELECT forwards FROM messages_v2 WHERE mid = ? AND uid = ?), ?) WHERE mid = ? AND uid = ?");
                     for (int i6 = 0; i6 < zh6Var2.m(); i6++) {
                         try {
                             long j2 = zh6Var2.j(i6);
@@ -326,7 +326,7 @@ public final /* synthetic */ class va7 implements Runnable {
                             e = e3;
                             sQLitePreparedStatement = executeFast;
                             z = z3;
-                            jf7Var.n(e, z3);
+                            kf7Var.p(e, z3);
                             if (z) {
                             }
                             if (sQLitePreparedStatement != null) {
@@ -343,8 +343,8 @@ public final /* synthetic */ class va7 implements Runnable {
                     }
                     executeFast.dispose();
                 }
-                if (!jf7.p0(zh6Var3)) {
-                    executeFast = jf7Var.b.executeFast("UPDATE messages_v2 SET replies_data = ? WHERE mid = ? AND uid = ?");
+                if (!kf7.s0(zh6Var3)) {
+                    executeFast = kf7Var.b.executeFast("UPDATE messages_v2 SET replies_data = ? WHERE mid = ? AND uid = ?");
                     int i8 = 0;
                     while (i8 < zh6Var3.m()) {
                         try {
@@ -354,7 +354,7 @@ public final /* synthetic */ class va7 implements Runnable {
                             int i9 = 0;
                             while (i9 < size3) {
                                 int keyAt3 = sparseArray.keyAt(i9);
-                                SQLiteDatabase sQLiteDatabase3 = jf7Var.b;
+                                SQLiteDatabase sQLiteDatabase3 = kf7Var.b;
                                 Locale locale = Locale.US;
                                 SQLiteCursor queryFinalized = sQLiteDatabase3.queryFinalized("SELECT replies_data FROM messages_v2 WHERE mid = " + keyAt3 + " AND uid = " + j3, new Object[0]);
                                 boolean next = queryFinalized.next();
@@ -420,7 +420,7 @@ public final /* synthetic */ class va7 implements Runnable {
                                             sQLitePreparedStatement = executeFast;
                                             z3 = z2;
                                             z = z3;
-                                            jf7Var.n(e, z3);
+                                            kf7Var.p(e, z3);
                                             if (z) {
                                                 sQLiteDatabase2.commitTransaction();
                                             }
@@ -455,7 +455,7 @@ public final /* synthetic */ class va7 implements Runnable {
                             sQLitePreparedStatement = executeFast;
                             z3 = true;
                             z = true;
-                            jf7Var.n(e, z3);
+                            kf7Var.p(e, z3);
                             if (z) {
                             }
                             if (sQLitePreparedStatement != null) {
@@ -468,7 +468,7 @@ public final /* synthetic */ class va7 implements Runnable {
                     }
                     executeFast.dispose();
                 }
-                jf7Var.b.commitTransaction();
+                kf7Var.b.commitTransaction();
             } catch (Exception e6) {
                 e = e6;
                 z3 = true;
@@ -865,7 +865,7 @@ public final /* synthetic */ class va7 implements Runnable {
     }
 
     private final void k() {
-        rbb rbbVar = (rbb) this.c;
+        sbb sbbVar = (sbb) this.c;
         Bitmap bitmap = (Bitmap) this.d;
         File file = (File) this.e;
         c8b c8bVar = (c8b) this.f;
@@ -874,7 +874,7 @@ public final /* synthetic */ class va7 implements Runnable {
         } catch (Exception e) {
             cc4.g(e, true);
         }
-        hl.c3(new pwa(rbbVar, c8bVar, file, (byte) 15));
+        hl.c3(new pwa(sbbVar, c8bVar, file, (byte) 15));
     }
 
     private final void l() {
@@ -966,7 +966,7 @@ public final /* synthetic */ class va7 implements Runnable {
                 jj.c0(((uc7) this.c).currentAccount, (TLRPC.TL_error) this.d, (e) this.e, (TLRPC.TL_channels_editBanned) this.f, Boolean.valueOf(this.b));
                 return;
             case 1:
-                jf7 jf7Var = (jf7) this.c;
+                kf7 kf7Var = (kf7) this.c;
                 TLRPC.Message message = (TLRPC.Message) this.d;
                 boolean z3 = this.b;
                 ArrayList arrayList3 = (ArrayList) this.e;
@@ -976,7 +976,7 @@ public final /* synthetic */ class va7 implements Runnable {
                         try {
                             try {
                                 try {
-                                    sQLiteDatabase4 = jf7Var.b;
+                                    sQLiteDatabase4 = kf7Var.b;
                                     Locale locale = Locale.US;
                                     i11 = message.id;
                                     j = 0;
@@ -988,8 +988,8 @@ public final /* synthetic */ class va7 implements Runnable {
                                     sQLitePreparedStatement2 = null;
                                     z = i2;
                                     try {
-                                        jf7Var.n(e, z);
-                                        sQLiteDatabase2 = jf7Var.b;
+                                        kf7Var.p(e, z);
+                                        sQLiteDatabase2 = kf7Var.b;
                                         if (sQLiteDatabase2 != null) {
                                             sQLiteDatabase2.commitTransaction();
                                         }
@@ -1003,7 +1003,7 @@ public final /* synthetic */ class va7 implements Runnable {
                                         return;
                                     } catch (Throwable th2) {
                                         th = th2;
-                                        sQLiteDatabase = jf7Var.b;
+                                        sQLiteDatabase = kf7Var.b;
                                         if (sQLiteDatabase != null) {
                                             sQLiteDatabase.commitTransaction();
                                         }
@@ -1039,19 +1039,19 @@ public final /* synthetic */ class va7 implements Runnable {
                                 e = e4;
                                 i3 = 0;
                                 sQLiteCursor = null;
-                                jf7Var.n(e, true);
+                                kf7Var.p(e, true);
                                 if (sQLiteCursor != null) {
                                     sQLiteCursor.dispose();
                                 }
                                 nativeByteBuffer = null;
-                                jf7Var.b.beginTransaction();
+                                kf7Var.b.beginTransaction();
                                 if (message.dialog_id == j) {
                                 }
-                                jf7.I(message);
+                                kf7.K(message);
                                 r47.p5(message);
                                 NativeByteBuffer nativeByteBuffer4 = new NativeByteBuffer(message.getObjectSize());
                                 message.serializeToStream(nativeByteBuffer4);
-                                long e5 = jf7Var.getUserConfig().e();
+                                long e5 = kf7Var.getUserConfig().e();
                                 i4 = 0;
                                 long j2 = j;
                                 ArrayList arrayList5 = null;
@@ -1063,12 +1063,12 @@ public final /* synthetic */ class va7 implements Runnable {
                                 if (nativeByteBuffer != null) {
                                 }
                                 nativeByteBuffer4.reuse();
-                                jf7Var.b.commitTransaction();
+                                kf7Var.b.commitTransaction();
                                 if (z2) {
                                 }
                                 if (arrayList != null) {
                                 }
-                                sQLiteDatabase3 = jf7Var.b;
+                                sQLiteDatabase3 = kf7Var.b;
                                 if (sQLiteDatabase3 == null) {
                                 }
                                 sQLiteDatabase3.commitTransaction();
@@ -1077,7 +1077,7 @@ public final /* synthetic */ class va7 implements Runnable {
                             if (!sQLiteCursor.next()) {
                                 sQLiteCursor.dispose();
                                 sQLiteCursor.dispose();
-                                sQLiteDatabase3 = jf7Var.b;
+                                sQLiteDatabase3 = kf7Var.b;
                                 if (sQLiteDatabase3 == null) {
                                     return;
                                 }
@@ -1090,18 +1090,18 @@ public final /* synthetic */ class va7 implements Runnable {
                                 sQLiteCursor.dispose();
                             } catch (Exception e6) {
                                 e = e6;
-                                jf7Var.n(e, true);
+                                kf7Var.p(e, true);
                                 if (sQLiteCursor != null) {
                                 }
                                 nativeByteBuffer = null;
-                                jf7Var.b.beginTransaction();
+                                kf7Var.b.beginTransaction();
                                 if (message.dialog_id == j) {
                                 }
-                                jf7.I(message);
+                                kf7.K(message);
                                 r47.p5(message);
                                 NativeByteBuffer nativeByteBuffer42 = new NativeByteBuffer(message.getObjectSize());
                                 message.serializeToStream(nativeByteBuffer42);
-                                long e52 = jf7Var.getUserConfig().e();
+                                long e52 = kf7Var.getUserConfig().e();
                                 i4 = 0;
                                 long j22 = j;
                                 ArrayList arrayList52 = null;
@@ -1113,38 +1113,38 @@ public final /* synthetic */ class va7 implements Runnable {
                                 if (nativeByteBuffer != null) {
                                 }
                                 nativeByteBuffer42.reuse();
-                                jf7Var.b.commitTransaction();
+                                kf7Var.b.commitTransaction();
                                 if (z2) {
                                 }
                                 if (arrayList != null) {
                                 }
-                                sQLiteDatabase3 = jf7Var.b;
+                                sQLiteDatabase3 = kf7Var.b;
                                 if (sQLiteDatabase3 == null) {
                                 }
                                 sQLiteDatabase3.commitTransaction();
                                 return;
                             }
-                            jf7Var.b.beginTransaction();
+                            kf7Var.b.beginTransaction();
                             if (message.dialog_id == j) {
                                 r47.B0(message);
                             }
-                            jf7.I(message);
+                            kf7.K(message);
                             r47.p5(message);
                             NativeByteBuffer nativeByteBuffer422 = new NativeByteBuffer(message.getObjectSize());
                             message.serializeToStream(nativeByteBuffer422);
-                            long e522 = jf7Var.getUserConfig().e();
+                            long e522 = kf7Var.getUserConfig().e();
                             i4 = 0;
                             long j222 = j;
                             ArrayList arrayList522 = null;
                             while (i4 < i15) {
                                 int i16 = i4 == r6 ? r6 : i14;
                                 boolean z4 = z3;
-                                long Z1 = r47.Z1(jf7Var.currentAccount, message, jf7Var.X(message.dialog_id));
+                                long Z1 = r47.Z1(kf7Var.currentAccount, message, kf7Var.Z(message.dialog_id));
                                 int i17 = i4;
                                 long j3 = message.dialog_id;
                                 try {
                                     if (i16 == 0) {
-                                        executeFast = jf7Var.b.executeFast("REPLACE INTO messages_v2 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?)");
+                                        executeFast = kf7Var.b.executeFast("REPLACE INTO messages_v2 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?)");
                                     } else if (Z1 == j222) {
                                         arrayList2 = arrayList522;
                                         i4 = i17 + 1;
@@ -1153,7 +1153,7 @@ public final /* synthetic */ class va7 implements Runnable {
                                         r6 = 1;
                                         i14 = 0;
                                     } else {
-                                        executeFast = jf7Var.b.executeFast("REPLACE INTO messages_topics VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)");
+                                        executeFast = kf7Var.b.executeFast("REPLACE INTO messages_topics VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)");
                                         if (j3 == e522) {
                                             try {
                                                 try {
@@ -1185,7 +1185,7 @@ public final /* synthetic */ class va7 implements Runnable {
                                                             executeFast.bindInteger(i21, message.views);
                                                         } else {
                                                             i7 = i6 + 7;
-                                                            executeFast.bindInteger(i21, jf7.b0(message));
+                                                            executeFast.bindInteger(i21, kf7.d0(message));
                                                         }
                                                         if (message.replyStory == null) {
                                                             nativeByteBuffer2 = new NativeByteBuffer(message.replyStory.getObjectSize());
@@ -1268,8 +1268,8 @@ public final /* synthetic */ class va7 implements Runnable {
                                                     sQLitePreparedStatement = executeFast;
                                                     sQLitePreparedStatement2 = null;
                                                     z = i2;
-                                                    jf7Var.n(e, z);
-                                                    sQLiteDatabase2 = jf7Var.b;
+                                                    kf7Var.p(e, z);
+                                                    sQLiteDatabase2 = kf7Var.b;
                                                     if (sQLiteDatabase2 != null) {
                                                     }
                                                     if (sQLitePreparedStatement != null) {
@@ -1281,7 +1281,7 @@ public final /* synthetic */ class va7 implements Runnable {
                                                 th = th4;
                                                 sQLitePreparedStatement = executeFast;
                                                 sQLitePreparedStatement2 = null;
-                                                sQLiteDatabase = jf7Var.b;
+                                                sQLiteDatabase = kf7Var.b;
                                                 if (sQLiteDatabase != null) {
                                                 }
                                                 if (sQLitePreparedStatement != null) {
@@ -1350,8 +1350,8 @@ public final /* synthetic */ class va7 implements Runnable {
                                     i2 = 1;
                                     sQLitePreparedStatement2 = null;
                                     z = i2;
-                                    jf7Var.n(e, z);
-                                    sQLiteDatabase2 = jf7Var.b;
+                                    kf7Var.p(e, z);
+                                    sQLiteDatabase2 = kf7Var.b;
                                     if (sQLiteDatabase2 != null) {
                                     }
                                     if (sQLitePreparedStatement != null) {
@@ -1367,11 +1367,11 @@ public final /* synthetic */ class va7 implements Runnable {
                                 int i29 = 2;
                                 while (i28 < i29) {
                                     boolean z5 = i28 == 1;
-                                    long Z12 = r47.Z1(jf7Var.currentAccount, message, jf7Var.X(message.dialog_id));
+                                    long Z12 = r47.Z1(kf7Var.currentAccount, message, kf7Var.Z(message.dialog_id));
                                     if (z5 && Z12 == j222) {
                                         i29 = 2;
                                     } else {
-                                        SQLiteDatabase sQLiteDatabase5 = jf7Var.b;
+                                        SQLiteDatabase sQLiteDatabase5 = kf7Var.b;
                                         SQLitePreparedStatement executeFast2 = i28 == 0 ? sQLiteDatabase5.executeFast("REPLACE INTO media_v4 VALUES(?, ?, ?, ?, ?)") : sQLiteDatabase5.executeFast("REPLACE INTO media_topics VALUES(?, ?, ?, ?, ?, ?)");
                                         try {
                                             executeFast2.requery();
@@ -1394,8 +1394,8 @@ public final /* synthetic */ class va7 implements Runnable {
                                             sQLitePreparedStatement2 = executeFast2;
                                             z = 1;
                                             sQLitePreparedStatement = null;
-                                            jf7Var.n(e, z);
-                                            sQLiteDatabase2 = jf7Var.b;
+                                            kf7Var.p(e, z);
+                                            sQLiteDatabase2 = kf7Var.b;
                                             if (sQLiteDatabase2 != null) {
                                             }
                                             if (sQLitePreparedStatement != null) {
@@ -1406,7 +1406,7 @@ public final /* synthetic */ class va7 implements Runnable {
                                             th = th5;
                                             sQLitePreparedStatement2 = executeFast2;
                                             sQLitePreparedStatement = null;
-                                            sQLiteDatabase = jf7Var.b;
+                                            sQLiteDatabase = kf7Var.b;
                                             if (sQLiteDatabase != null) {
                                             }
                                             if (sQLitePreparedStatement != null) {
@@ -1423,7 +1423,7 @@ public final /* synthetic */ class va7 implements Runnable {
                                 nativeByteBuffer.reuse();
                             }
                             nativeByteBuffer422.reuse();
-                            jf7Var.b.commitTransaction();
+                            kf7Var.b.commitTransaction();
                             if (z2) {
                                 HashMap hashMap = new HashMap();
                                 HashMap hashMap2 = new HashMap();
@@ -1436,17 +1436,17 @@ public final /* synthetic */ class va7 implements Runnable {
                                     hashMap2.put(Long.valueOf(chat.id), chat);
                                 }
                                 arrayList = arrayList522;
-                                r47 r47Var = new r47(jf7Var.currentAccount, message, (AbstractMap) hashMap, (AbstractMap) hashMap2, true, true);
+                                r47 r47Var = new r47(kf7Var.currentAccount, message, (AbstractMap) hashMap, (AbstractMap) hashMap2, true, true);
                                 ArrayList arrayList7 = new ArrayList();
                                 arrayList7.add(r47Var);
-                                hl.c3(new fd7((Object) jf7Var, (Object) r47Var, arrayList7, (byte) 4));
+                                hl.c3(new gd7((Object) kf7Var, (Object) r47Var, arrayList7, (byte) 4));
                             } else {
                                 arrayList = arrayList522;
                             }
                             if (arrayList != null) {
-                                hl.c3(new q41(jf7Var, arrayList, (byte) 16));
+                                hl.c3(new q41(kf7Var, arrayList, (byte) 17));
                             }
-                            sQLiteDatabase3 = jf7Var.b;
+                            sQLiteDatabase3 = kf7Var.b;
                             if (sQLiteDatabase3 == null) {
                                 return;
                             }
@@ -1460,7 +1460,7 @@ public final /* synthetic */ class va7 implements Runnable {
                         th = th7;
                         sQLitePreparedStatement = null;
                         sQLitePreparedStatement2 = null;
-                        sQLiteDatabase = jf7Var.b;
+                        sQLiteDatabase = kf7Var.b;
                         if (sQLiteDatabase != null) {
                         }
                         if (sQLitePreparedStatement != null) {

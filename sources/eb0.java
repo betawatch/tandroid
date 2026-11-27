@@ -14,10 +14,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class eb0 extends wma {
-    public final l09 g0;
+    public final m09 g0;
     public final /* synthetic */ ob0 h0;
     public boolean i0;
     public boolean j0;
@@ -30,7 +30,7 @@ public final class eb0 extends wma {
         super(context, null);
         this.m0 = ob0Var;
         this.h0 = ob0Var;
-        this.g0 = new l09((byte) 3);
+        this.g0 = new m09((byte) 3);
     }
 
     @Override // wma, android.view.ViewGroup, android.view.View

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class du1 extends kea {
     public final /* synthetic */ r47 U2;
@@ -60,7 +60,7 @@ public final class du1 extends kea {
     @Override // kea
     public final void N0(View view) {
         zu1 zu1Var = this.V2.a;
-        kbb b = view instanceof nea ? mbb.b((nea) view) : null;
+        lbb b = view instanceof nea ? nbb.b((nea) view) : null;
         ArrayList arrayList = new ArrayList();
         r47 r47Var = this.U2;
         m47 m47Var = r47Var.c1() != 0 ? (m47) zu1Var.P6.f(r47Var.c1()) : null;
@@ -69,7 +69,7 @@ public final class du1 extends kea {
         } else {
             arrayList.add(r47Var);
         }
-        rbb C = rbb.C(zu1Var.getParentActivity(), this.a);
+        sbb C = sbb.C(zu1Var.getParentActivity(), this.a);
         C.S = new yt1(this, C, view, (byte) 0);
         C.T(b, c8b.x(arrayList));
     }

@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class in0 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -39,18 +39,19 @@ public final /* synthetic */ class in0 implements RequestDelegate {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v0, types: [byte] */
-    /* JADX WARN: Type inference failed for: r5v24 */
-    /* JADX WARN: Type inference failed for: r5v25, types: [int] */
-    /* JADX WARN: Type inference failed for: r5v38 */
+    /* JADX WARN: Type inference failed for: r6v0, types: [byte] */
+    /* JADX WARN: Type inference failed for: r6v23 */
+    /* JADX WARN: Type inference failed for: r6v24, types: [int] */
+    /* JADX WARN: Type inference failed for: r6v42 */
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         TLRPC.Document document;
         TLRPC.Photo photo;
         byte b = this.a;
+        byte b2 = 15;
         String str = "";
-        byte b2 = 4;
-        final byte b3 = 1;
+        byte b3 = 4;
+        final byte b4 = 1;
         final int i = 0;
         i = 0;
         Object obj = this.f;
@@ -104,7 +105,7 @@ public final /* synthetic */ class in0 implements RequestDelegate {
                     }
                     zg6Var.w.getMessagesController().Y3(updates, false);
                     di0.h().d(purchase, tL_payments_canPurchaseStore.purpose, null);
-                    hl.c3(new ug6(zg6Var, b2));
+                    hl.c3(new ug6(zg6Var, b3));
                     break;
                 }
                 break;
@@ -153,21 +154,21 @@ public final /* synthetic */ class in0 implements RequestDelegate {
                         uc7Var.getConnectionsManager().sendRequest(updatetheme, new RequestDelegate() { // from class: m97
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(final TLObject tLObject2, TLRPC.TL_error tL_error2) {
-                                switch (b3) {
+                                switch (b4) {
                                     case 0:
-                                        final byte b4 = 0;
+                                        final byte b5 = 0;
                                         final uc7 uc7Var2 = uc7Var;
                                         final znb znbVar2 = znbVar;
                                         final ynb ynbVar2 = ynbVar;
                                         hl.c3(new Runnable() { // from class: x97
                                             @Override // java.lang.Runnable
                                             public final void run() {
-                                                byte b5 = b4;
+                                                byte b6 = b5;
                                                 ynb ynbVar3 = ynbVar2;
                                                 znb znbVar3 = znbVar2;
                                                 TLObject tLObject3 = tLObject2;
                                                 uc7 uc7Var3 = uc7Var2;
-                                                switch (b5) {
+                                                switch (b6) {
                                                     case 0:
                                                         if (!(tLObject3 instanceof TLRPC.TL_theme)) {
                                                             uc7Var3.getNotificationCenter().k(jn7.N2, znbVar3, ynbVar3);
@@ -192,19 +193,19 @@ public final /* synthetic */ class in0 implements RequestDelegate {
                                         });
                                         break;
                                     default:
-                                        final byte b5 = 1;
+                                        final byte b6 = 1;
                                         final uc7 uc7Var3 = uc7Var;
                                         final znb znbVar3 = znbVar;
                                         final ynb ynbVar3 = ynbVar;
                                         hl.c3(new Runnable() { // from class: x97
                                             @Override // java.lang.Runnable
                                             public final void run() {
-                                                byte b52 = b5;
+                                                byte b62 = b6;
                                                 ynb ynbVar32 = ynbVar3;
                                                 znb znbVar32 = znbVar3;
                                                 TLObject tLObject3 = tLObject2;
                                                 uc7 uc7Var32 = uc7Var3;
-                                                switch (b52) {
+                                                switch (b62) {
                                                     case 0:
                                                         if (!(tLObject3 instanceof TLRPC.TL_theme)) {
                                                             uc7Var32.getNotificationCenter().k(jn7.N2, znbVar32, ynbVar32);
@@ -250,19 +251,19 @@ public final /* synthetic */ class in0 implements RequestDelegate {
                             public final void run(final TLObject tLObject2, TLRPC.TL_error tL_error2) {
                                 switch (i) {
                                     case 0:
-                                        final byte b4 = 0;
+                                        final byte b5 = 0;
                                         final uc7 uc7Var2 = uc7Var;
                                         final znb znbVar2 = znbVar;
                                         final ynb ynbVar2 = ynbVar;
                                         hl.c3(new Runnable() { // from class: x97
                                             @Override // java.lang.Runnable
                                             public final void run() {
-                                                byte b52 = b4;
+                                                byte b62 = b5;
                                                 ynb ynbVar32 = ynbVar2;
                                                 znb znbVar32 = znbVar2;
                                                 TLObject tLObject3 = tLObject2;
                                                 uc7 uc7Var32 = uc7Var2;
-                                                switch (b52) {
+                                                switch (b62) {
                                                     case 0:
                                                         if (!(tLObject3 instanceof TLRPC.TL_theme)) {
                                                             uc7Var32.getNotificationCenter().k(jn7.N2, znbVar32, ynbVar32);
@@ -287,19 +288,19 @@ public final /* synthetic */ class in0 implements RequestDelegate {
                                         });
                                         break;
                                     default:
-                                        final byte b5 = 1;
+                                        final byte b6 = 1;
                                         final uc7 uc7Var3 = uc7Var;
                                         final znb znbVar3 = znbVar;
                                         final ynb ynbVar3 = ynbVar;
                                         hl.c3(new Runnable() { // from class: x97
                                             @Override // java.lang.Runnable
                                             public final void run() {
-                                                byte b52 = b5;
+                                                byte b62 = b6;
                                                 ynb ynbVar32 = ynbVar3;
                                                 znb znbVar32 = znbVar3;
                                                 TLObject tLObject3 = tLObject2;
                                                 uc7 uc7Var32 = uc7Var3;
-                                                switch (b52) {
+                                                switch (b62) {
                                                     case 0:
                                                         if (!(tLObject3 instanceof TLRPC.TL_theme)) {
                                                             uc7Var32.getNotificationCenter().k(jn7.N2, znbVar32, ynbVar32);
@@ -352,7 +353,7 @@ public final /* synthetic */ class in0 implements RequestDelegate {
                 TLRPC.User user = (TLRPC.User) obj;
                 if (tL_error != null) {
                     wx9Var.f.clear();
-                    hl.c3(new sx9(wx9Var, activity, idVar2, b3));
+                    hl.c3(new sx9(wx9Var, activity, idVar2, b4));
                     break;
                 } else {
                     hl.c3(new z87((Object) wx9Var, (Object) activity, (Object) idVar2, (Object) tLObject, (Object) bArr, (Object) user, (byte) 25));
@@ -383,7 +384,7 @@ public final /* synthetic */ class in0 implements RequestDelegate {
                             System.arraycopy(encryptedChat.key_hash, 0, bArr5, 0, 16);
                             System.arraycopy(o, 0, bArr5, 16, 20);
                             encryptedChat2.key_hash = bArr5;
-                            wx9Var2.getMessagesStorage().S1(encryptedChat2);
+                            wx9Var2.getMessagesStorage().X1(encryptedChat2);
                         } catch (Throwable th) {
                             cc4.g(th, true);
                         }
@@ -392,12 +393,12 @@ public final /* synthetic */ class in0 implements RequestDelegate {
                     int i4 = encryptedChat2.layer;
                     Typeface typeface2 = hl.a;
                     encryptedChat2.layer = (i4 & (-65536)) | jn7.g2;
-                    jf7 messagesStorage = wx9Var2.getMessagesStorage();
-                    messagesStorage.a.c(new id7(messagesStorage, encryptedChat2, (byte) 2));
+                    kf7 messagesStorage = wx9Var2.getMessagesStorage();
+                    messagesStorage.a.c(new kd7(messagesStorage, encryptedChat2, (byte) 2));
                 }
                 if (tL_error != null) {
-                    wx9Var2.getMessagesStorage().K0(0, message);
-                    hl.c3(new en9(wx9Var2, message, (byte) 14));
+                    wx9Var2.getMessagesStorage().N0(0, message);
+                    hl.c3(new dn9(wx9Var2, message, b2));
                     break;
                 } else {
                     String str3 = message.attachPath;
@@ -433,7 +434,7 @@ public final /* synthetic */ class in0 implements RequestDelegate {
                                 in5.z().N(str4, str5, jn5.i(photoSize, message2.media.photo), true);
                                 ArrayList arrayList = new ArrayList();
                                 arrayList.add(message2);
-                                wx9Var2.getMessagesStorage().g1(arrayList, false, true, false, 0, false, 0, 0L);
+                                wx9Var2.getMessagesStorage().k1(arrayList, false, true, false, 0, false, 0, 0L);
                             } else if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (document = messageMedia.document) != null) {
                                 messageMedia.document = new TLRPC.TL_documentEncrypted();
                                 TLRPC.Document document3 = message2.media.document;
@@ -468,7 +469,7 @@ public final /* synthetic */ class in0 implements RequestDelegate {
                                 }
                                 ArrayList arrayList3 = new ArrayList();
                                 arrayList3.add(message2);
-                                wx9Var2.getMessagesStorage().g1(arrayList3, false, true, false, 0, false, 0, 0L);
+                                wx9Var2.getMessagesStorage().k1(arrayList3, false, true, false, 0, false, 0, 0L);
                             }
                             i = r47Var.o1();
                         }

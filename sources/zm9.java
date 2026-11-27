@@ -30,9 +30,9 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class zm9 implements hj, y27, qv0, ty9, tka, bf7, i27, bv9, jt1, v78, li1, i89, ep2, h23, a43, v30, rv9, je8 {
+public final class zm9 implements hj, y27, qv0, ty9, tka, cf7, i27, bv9, jt1, v78, li1, i89, ep2, h23, a43, v30, rv9, je8 {
     public static zm9 c;
     public static final an9 d = new an9(0, 0, 0, false, false);
     public static final Object e = new Object();
@@ -85,7 +85,7 @@ public final class zm9 implements hj, y27, qv0, ty9, tka, bf7, i27, bv9, jt1, v7
         return zm9Var;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         wk5 wk5Var;
         wk5 wk5Var2;
@@ -161,7 +161,7 @@ public final class zm9 implements hj, y27, qv0, ty9, tka, bf7, i27, bv9, jt1, v7
     @Override // je8
     public final boolean E() {
         iv3 iv3Var = (iv3) this.b;
-        return (iv3Var.N1 == iv3Var.l1 && iv3Var.x1 && "inapp".equals(uc7.s1(iv3Var.a).k4.Q0.f)) ? false : true;
+        return (iv3Var.N1 == iv3Var.l1 && iv3Var.x1 && "inapp".equals(uc7.s1(iv3Var.a).l4.Q0.f)) ? false : true;
     }
 
     @Override // je8

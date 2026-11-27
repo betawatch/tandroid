@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class a30 implements Runnable {
     public final /* synthetic */ byte a;
@@ -200,8 +200,8 @@ public final /* synthetic */ class a30 implements Runnable {
                     TL_account.contactBirthdays contactbirthdays = (TL_account.contactBirthdays) tLObject;
                     pj0Var.c = nj0.b(contactbirthdays);
                     uc7.s1(i11).j4(contactbirthdays.users, false);
-                    jf7.Y(i11).j1(contactbirthdays.users, null, true, true);
-                    SharedPreferences.Editor edit = uc7.s1(i11).X3.edit();
+                    kf7.a0(i11).n1(contactbirthdays.users, null, true, true);
+                    SharedPreferences.Editor edit = uc7.s1(i11).Y3.edit();
                     edit.putLong("bday_check", pj0Var.b);
                     oj0 oj0Var = new oj0();
                     oj0Var.a = contactbirthdays.contacts;
@@ -215,13 +215,13 @@ public final /* synthetic */ class a30 implements Runnable {
                 }
                 return;
             case 8:
-                jf7 jf7Var = (jf7) this.b;
+                kf7 kf7Var = (kf7) this.b;
                 pcc pccVar = (pcc) this.c;
-                HashMap f0 = jf7Var.f0();
-                if (f0.isEmpty()) {
+                HashMap h0 = kf7Var.h0();
+                if (h0.isEmpty()) {
                     return;
                 }
-                hl.c3(new zf(pccVar, f0, (byte) 1));
+                hl.c3(new zf(pccVar, h0, (byte) 1));
                 return;
             case 9:
                 ((q2a) this.b).a((ArrayList) this.c);
@@ -261,7 +261,7 @@ public final /* synthetic */ class a30 implements Runnable {
                 while (true) {
                     if (i12 >= arrayList3.size()) {
                         i12 = -1;
-                    } else if (!TextUtils.equals(((o5b) arrayList3.get(i12)).E, str4)) {
+                    } else if (!TextUtils.equals(((p5b) arrayList3.get(i12)).E, str4)) {
                         i12++;
                     }
                 }

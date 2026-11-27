@@ -1,126 +1,483 @@
 // default package
 
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
 import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.SystemClock;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.q;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.SecretMediaViewer;
+import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class dn9 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ on9 b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ dn9(on9 on9Var, byte b) {
+    public /* synthetic */ dn9(Object obj, Object obj2, byte b) {
         this.a = b;
-        this.b = on9Var;
+        this.b = obj;
+        this.c = obj2;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
     public final void run() {
-        xn9 xn9Var;
-        rn9 rn9Var;
-        boolean z;
-        byte b = this.a;
-        byte b2 = 0;
-        on9 on9Var = this.b;
-        switch (b) {
+        int i;
+        int indexOf;
+        int K;
+        TLRPC.Message message;
+        byte b = 5;
+        byte b2 = 2;
+        byte b3 = 0;
+        r13 = false;
+        boolean z = false;
+        int i2 = 0;
+        int i3 = 0;
+        switch (this.a) {
             case 0:
-                on9Var.U = false;
+                ((on9) this.b).Y((cp9) this.c);
+                return;
+            case 1:
+                on9 on9Var = (on9) this.b;
+                HandlerThread handlerThread = (HandlerThread) this.c;
                 on9Var.f();
-                rn9 rn9Var2 = on9Var.w;
-                if (rn9Var2 != null) {
-                    long p = rn9Var2.p();
-                    xn9 xn9Var2 = on9Var.v;
-                    if (xn9Var2 != null && p != Long.MAX_VALUE) {
-                        xn9Var2.q = Math.max(0L, p) * 1000;
-                        Handler handler = xn9Var2.u;
+                rn9 rn9Var = on9Var.w;
+                if (rn9Var != null) {
+                    long p = rn9Var.p();
+                    xn9 xn9Var = on9Var.v;
+                    if (xn9Var != null && p != Long.MAX_VALUE) {
+                        xn9Var.q = Math.max(0L, p) * 1000;
+                        Handler handler = xn9Var.u;
                         if (handler != null) {
-                            handler.removeCallbacks(xn9Var2.y0);
+                            handler.removeCallbacks(xn9Var.y0);
                         }
                     }
                 }
                 on9Var.j();
-                rn9 rn9Var3 = on9Var.w;
-                if (rn9Var3 != null) {
-                    rn9Var3.u();
+                rn9 rn9Var2 = on9Var.w;
+                if (rn9Var2 != null) {
+                    rn9Var2.u();
                     on9Var.w = null;
                 }
-                on9Var.Y = false;
-                jp9 jp9Var = (jp9) on9Var.k.b;
-                jp9Var.i.post(new uo9(jp9Var, (byte) 3));
-                return;
-            case 1:
-                on9Var.G();
+                if (on9Var.w0 <= 0) {
+                    handlerThread.quitSafely();
+                    return;
+                }
+                on9Var.j.b("release waits for camera open results: pending=" + on9Var.w0);
+                on9Var.x0 = handlerThread;
                 return;
             case 2:
-                on9Var.q();
-                return;
+                xn9 xn9Var2 = (xn9) this.b;
+                CountDownLatch countDownLatch = (CountDownLatch) this.c;
+                xn9Var2.getClass();
+                try {
+                    try {
+                        xn9Var2.f();
+                        xn9Var2.r0 = true;
+                    } catch (RuntimeException e) {
+                        xn9Var2.x0 = e;
+                        xn9Var2.i();
+                    }
+                    return;
+                } finally {
+                    countDownLatch.countDown();
+                }
             case 3:
-                int w = on9Var.w();
-                if (w == on9Var.B0 || (xn9Var = on9Var.v) == null) {
+                xb1 xb1Var = (xb1) this.b;
+                pp9 pp9Var = (pp9) this.c;
+                oo9 oo9Var = xb1Var.a;
+                if (pp9Var.getWidth() <= 0) {
+                    oo9Var.animate().scaleX(0.0f).scaleY(1.0f).withEndAction(new v59(xb1Var, (byte) 16)).start();
                     return;
                 }
-                on9Var.B0 = w;
-                xn9Var.s0 = w;
-                Handler handler2 = xn9Var.u;
-                if (xn9Var.r0 && handler2 != null) {
-                    handler2.post(new me7((Object) xn9Var, w, (byte) 15));
+                float width = pp9Var.getWidth() / oo9Var.getWidth();
+                ValueAnimator valueAnimator = xb1Var.x;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
                 }
-                on9Var.j.b("display rotation applied: degrees=" + w);
+                xb1Var.x = ValueAnimator.ofFloat(0.0f, 1.0f);
+                xb1Var.x.addUpdateListener(new am(xb1Var, oo9Var.getScaleX(), width, ((pp9Var.getWidth() / 2.0f) + pp9Var.getX()) - ((oo9Var.getWidth() / 2.0f) + oo9Var.getX()), ((pp9Var.getHeight() / 2.0f) + pp9Var.getY()) - ((oo9Var.getHeight() / 2.0f) + oo9Var.getY()), (byte) 4));
+                xb1Var.x.addListener(new wd8((Object) xb1Var, (Object) pp9Var, (byte) 12));
+                xb1Var.x.setDuration(320L);
+                xb1Var.x.setInterpolator(k43.h);
+                xb1Var.w = pp9Var;
+                xb1Var.x.start();
                 return;
             case 4:
-                on9Var.a0();
+                pq8 pq8Var = (pq8) this.b;
+                cp9 cp9Var = (cp9) this.c;
+                jp9 jp9Var = (jp9) pq8Var.b;
+                jp9Var.R++;
+                jp9Var.y = true;
+                jp9Var.m.b("camera switch started: target=" + cp9Var);
+                q qVar = (q) jp9Var.d.b;
+                FrameLayout frameLayout = qVar.y;
+                qVar.v0++;
+                ValueAnimator valueAnimator2 = qVar.e0;
+                if (valueAnimator2 != null) {
+                    valueAnimator2.removeAllListeners();
+                    qVar.e0.cancel();
+                    qVar.e0 = null;
+                }
+                qVar.q0 = true;
+                qVar.r0 = false;
+                qVar.s0 = false;
+                qVar.t0 = false;
+                qVar.u0 = SystemClock.elapsedRealtime();
+                os1 os1Var = qVar.F;
+                qVar.t(false);
+                Bitmap bitmap = qVar.w0;
+                if (bitmap != null) {
+                    os1Var.setImageBitmap(bitmap);
+                    qVar.p0 = true;
+                    os1Var.animate().cancel();
+                    os1Var.setAlpha(1.0f);
+                }
+                frameLayout.animate().cancel();
+                frameLayout.setRotationY(0.0f);
+                frameLayout.setCameraDistance(frameLayout.getMeasuredHeight() * 8.0f);
+                int i4 = qVar.v0;
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                qVar.e0 = ofFloat;
+                ofFloat.setDuration(580L);
+                qVar.e0.setInterpolator(k43.h);
+                qVar.e0.addUpdateListener(new dx0(qVar, i4, b2));
+                qVar.e0.addListener(new dn(qVar, i4, b));
+                qVar.e0.start();
+                cc4.b("RoundVideo camera flip started: facing=" + cp9Var + ", minimumDurationMs=580");
+                qVar.z();
+                jp9Var.o();
                 return;
             case 5:
-                Handler handler3 = on9Var.n;
-                if (handler3 != null) {
-                    handler3.post(new dn9(on9Var, (byte) 6));
+                dq9 dq9Var = (dq9) this.b;
+                NativeInstance nativeInstance = (NativeInstance) this.c;
+                if (dq9Var.w || dq9Var.P != nativeInstance) {
                     return;
                 }
+                cc4.b("[LivePlayer] broadcast asks to rejoin");
+                dq9Var.Z = true;
+                dq9Var.P.resetGroupInstance(true, false);
                 return;
             case 6:
-                if (!on9Var.U || on9Var.z == null || (rn9Var = on9Var.w) == null) {
-                    return;
-                }
-                synchronized (rn9Var) {
-                    z = rn9Var.E;
-                }
-                if (z) {
-                    return;
-                }
-                try {
-                    rn9 rn9Var4 = on9Var.w;
-                    on9Var.x = rn9Var4;
-                    Handler handler4 = on9Var.n;
-                    if (handler4 != null) {
-                        handler4.removeCallbacks(on9Var.k1);
-                        handler4.postDelayed(on9Var.k1, 3000L);
-                    }
-                    rn9Var4.t(new hn9(on9Var, rn9Var4, b2), new hn9(on9Var, rn9Var4, (byte) 1));
-                    on9Var.j.b("first camera frame received; audio startup requested: segmentElapsedMs=" + on9.x(on9Var.C0));
-                    return;
-                } catch (RuntimeException e) {
-                    on9Var.f();
-                    on9Var.M(e);
-                    return;
-                }
+                dq9 dq9Var2 = (dq9) this.b;
+                dq9Var2.a0 = (String) this.c;
+                dq9Var2.N();
+                return;
             case 7:
-                rn9 rn9Var5 = on9Var.x;
-                if (!on9Var.U || on9Var.Y || rn9Var5 == null || on9Var.w != rn9Var5) {
+                cq9 cq9Var = (cq9) this.b;
+                ArrayList arrayList = (ArrayList) this.c;
+                dq9 dq9Var3 = cq9Var.a;
+                if (dq9Var3.w) {
                     return;
                 }
-                on9Var.x = null;
-                on9Var.M(new IllegalStateException("Timed out waiting for synchronized audio and video start"));
+                if (arrayList.isEmpty()) {
+                    dq9Var3.C(true);
+                    return;
+                }
+                if (dq9Var3.y == null) {
+                    TLRPC.TL_groupCallParticipant tL_groupCallParticipant = new TLRPC.TL_groupCallParticipant();
+                    dq9Var3.y = tL_groupCallParticipant;
+                    tL_groupCallParticipant.peer = uc7.s1(dq9Var3.e).y1(dq9Var3.b);
+                    dq9Var3.y.video = new TLRPC.TL_groupCallParticipantVideo();
+                    TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = new TLRPC.TL_groupCallParticipantVideoSourceGroup();
+                    tL_groupCallParticipantVideoSourceGroup.semantics = "SIM";
+                    int size = arrayList.size();
+                    while (b3 < size) {
+                        tL_groupCallParticipantVideoSourceGroup.sources.add(Integer.valueOf(((TL_phone.TL_groupCallStreamChannel) arrayList.get(b3)).channel));
+                        b3++;
+                    }
+                    dq9Var3.y.video.source_groups.add(tL_groupCallParticipantVideoSourceGroup);
+                    TLRPC.GroupCallParticipant groupCallParticipant = dq9Var3.y;
+                    groupCallParticipant.video.endpoint = "unified";
+                    groupCallParticipant.videoEndpoint = "unified";
+                    return;
+                }
+                return;
+            case 8:
+                kq9 kq9Var = (kq9) this.b;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
+                if (kq9Var.w || !kq9Var.P) {
+                    return;
+                }
+                cc4.b("[LivePlayer] rejoin failed: " + tL_error.text);
+                kq9Var.K();
+                return;
+            case 9:
+                iq9 iq9Var = (iq9) this.b;
+                ArrayList arrayList2 = (ArrayList) this.c;
+                kq9 kq9Var2 = iq9Var.a;
+                if (kq9Var2.w) {
+                    return;
+                }
+                if (arrayList2.isEmpty()) {
+                    kq9Var2.C(true);
+                    return;
+                }
+                kq9Var2.C(false);
+                if (kq9Var2.y == null) {
+                    TLRPC.TL_groupCallParticipant tL_groupCallParticipant2 = new TLRPC.TL_groupCallParticipant();
+                    kq9Var2.y = tL_groupCallParticipant2;
+                    tL_groupCallParticipant2.peer = uc7.s1(kq9Var2.e).y1(kq9Var2.b);
+                    kq9Var2.y.video = new TLRPC.TL_groupCallParticipantVideo();
+                    TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup2 = new TLRPC.TL_groupCallParticipantVideoSourceGroup();
+                    tL_groupCallParticipantVideoSourceGroup2.semantics = "SIM";
+                    int size2 = arrayList2.size();
+                    while (i3 < size2) {
+                        Object obj = arrayList2.get(i3);
+                        i3++;
+                        tL_groupCallParticipantVideoSourceGroup2.sources.add(Integer.valueOf(((TL_phone.TL_groupCallStreamChannel) obj).channel));
+                    }
+                    kq9Var2.y.video.source_groups.add(tL_groupCallParticipantVideoSourceGroup2);
+                    TLRPC.GroupCallParticipant groupCallParticipant2 = kq9Var2.y;
+                    groupCallParticipant2.video.endpoint = "unified";
+                    groupCallParticipant2.videoEndpoint = "unified";
+                    return;
+                }
+                return;
+            case 10:
+                nt9 nt9Var = (nt9) this.b;
+                try {
+                    SQLitePreparedStatement executeFast = ((kf7) this.c).b.executeFast("DELETE FROM saved_dialogs WHERE forumChatId = ?");
+                    executeFast.requery();
+                    executeFast.bindLong(1, 0L);
+                    executeFast.step();
+                    executeFast.dispose();
+                } catch (Exception e2) {
+                    cc4.g(e2, true);
+                }
+                hl.c3(new lt9(nt9Var, b3));
+                return;
+            case 11:
+                lv9 lv9Var = (lv9) this.b;
+                String str = (String) this.c;
+                lv9Var.J = str;
+                if (lv9Var.r) {
+                    lv9Var.f.g(str, true, false, lv9Var.s, lv9Var.w, lv9Var.y, lv9Var.x, -1, 1);
+                }
+                int i5 = yac.t0;
+                ArrayList arrayList3 = new ArrayList(lv2.r(i5).f0);
+                lv9Var.E = true;
+                int i6 = lv9Var.G;
+                lv9Var.G = i6 + 1;
+                lv9Var.F = i6;
+                lv9Var.f();
+                Utilities.g.c(new hz0((Object) lv9Var, (Object) str, i6, (Object) arrayList3, i5, (byte) 8));
+                return;
+            case 12:
+                sv9 sv9Var = (sv9) this.b;
+                ArrayList arrayList4 = (ArrayList) this.c;
+                int i7 = sv9Var.m;
+                try {
+                    kf7.a0(i7).b.beginTransaction();
+                    SQLitePreparedStatement executeFast2 = kf7.a0(i7).b.executeFast("REPLACE INTO hashtag_recent_v2 VALUES(?, ?)");
+                    while (true) {
+                        if (i2 < arrayList4.size() && i2 != 100) {
+                            qv9 qv9Var = (qv9) arrayList4.get(i2);
+                            executeFast2.requery();
+                            executeFast2.bindString(1, qv9Var.a);
+                            executeFast2.bindInteger(2, qv9Var.b);
+                            executeFast2.step();
+                            i2++;
+                        }
+                    }
+                    executeFast2.dispose();
+                    if (arrayList4.size() > 100) {
+                        SQLitePreparedStatement executeFast3 = kf7.a0(i7).b.executeFast("DELETE FROM hashtag_recent_v2 WHERE id = ?");
+                        for (i = 100; i < arrayList4.size(); i++) {
+                            executeFast3.requery();
+                            executeFast3.bindString(1, ((qv9) arrayList4.get(i)).a);
+                            executeFast3.step();
+                        }
+                        executeFast3.dispose();
+                    }
+                    kf7.a0(i7).b.commitTransaction();
+                    return;
+                } catch (Exception e3) {
+                    cc4.g(e3, true);
+                    return;
+                }
+            case 13:
+                gx9 gx9Var = (gx9) this.b;
+                TLRPC.TL_sponsoredPeer tL_sponsoredPeer = (TLRPC.TL_sponsoredPeer) this.c;
+                ArrayList arrayList5 = gx9Var.L;
+                if (arrayList5.isEmpty() || (indexOf = arrayList5.indexOf(tL_sponsoredPeer)) < 0 || (K = gx9Var.K()) >= gx9Var.b()) {
+                    return;
+                }
+                arrayList5.remove(indexOf);
+                gx9Var.s(K + 1 + indexOf);
+                int size3 = gx9Var.k0.e.size();
+                int size4 = arrayList5.size();
+                if (gx9Var.H0) {
+                    size3 = Math.min(3, size3);
+                }
+                if (size4 + size3 <= 0) {
+                    gx9Var.s(K);
+                    return;
+                }
+                return;
+            case 14:
+                gx9 gx9Var2 = (gx9) this.b;
+                uj3 uj3Var = (uj3) this.c;
+                gx9Var2.S();
+                d31.b0(uj3Var).c(ob6.M0(2131754481, null)).j();
+                return;
+            case 15:
+                wx9 wx9Var = (wx9) this.b;
+                TLRPC.Message message2 = (TLRPC.Message) this.c;
+                message2.send_state = 2;
+                wx9Var.getNotificationCenter().k(23, Integer.valueOf(message2.id));
+                wx9Var.getSendMessagesHelper().c0(message2.id);
+                wx9Var.getSendMessagesHelper().h0(message2.id, false);
+                return;
+            case 16:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
+                fd8 fd8Var = (fd8) this.c;
+                secretMediaViewer.L = false;
+                fd8Var.a.v0(false, true);
+                return;
+            case 17:
+                ((SecretMediaViewer) ((um4) this.b).c).i((File) this.c);
+                return;
+            case 18:
+                ((sy9) this.b).sendAccessibilityEvent((View) this.c, 4);
+                return;
+            case 19:
+                n1a n1aVar = (n1a) this.b;
+                e eVar = (e) this.c;
+                n1aVar.v(null, false, false);
+                eVar.presentFragment(new StickersActivity(5, n1aVar.M0));
+                c1a c1aVar = n1aVar.V1;
+                if (c1aVar != null) {
+                    c1aVar.run();
+                    return;
+                }
+                return;
+            case 20:
+                r1a r1aVar = (r1a) this.b;
+                TLObject tLObject = (TLObject) this.c;
+                ArrayList arrayList6 = r1aVar.X1;
+                r1aVar.p2 = false;
+                r1aVar.o2 = false;
+                if (tLObject instanceof TLRPC.messages_Messages) {
+                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                    uc7.s1(r1aVar.a).j4(messages_messages.users, false);
+                    uc7.s1(r1aVar.a).c4(messages_messages.chats, false);
+                    ArrayList<TLRPC.Message> arrayList7 = messages_messages.messages;
+                    int size5 = arrayList7.size();
+                    int i8 = 0;
+                    while (i8 < size5) {
+                        TLRPC.Message message3 = arrayList7.get(i8);
+                        i8++;
+                        arrayList6.add(new r47(r1aVar.a, message3, false, true));
+                    }
+                    if ((messages_messages instanceof TLRPC.TL_messages_messagesSlice) && arrayList6.size() < messages_messages.count) {
+                        z = true;
+                    }
+                    r1aVar.n2 = z;
+                    r1aVar.m2 = messages_messages.next_rate;
+                } else {
+                    r1aVar.n2 = false;
+                    r1aVar.m2 = 0;
+                }
+                r1aVar.j2.O(true);
+                return;
+            case 21:
+                r1a r1aVar2 = (r1a) this.b;
+                ArrayList arrayList8 = (ArrayList) this.c;
+                r1aVar2.E2 = false;
+                r1aVar2.W1.addAll(arrayList8);
+                r1aVar2.j2.O(true);
+                return;
+            case 22:
+                m3a m3aVar = (m3a) this.b;
+                String str2 = (String) this.c;
+                m3aVar.f = null;
+                z3a z3aVar = m3aVar.h;
+                z3aVar.R = false;
+                z3aVar.P.c = str2.toLowerCase();
+                z3aVar.e();
+                return;
+            case 23:
+                r7a r7aVar = (r7a) this.b;
+                TLRPC.TL_updateShortSentMessage tL_updateShortSentMessage = (TLRPC.TL_updateShortSentMessage) this.c;
+                r7aVar.getMessagesController().W3(tL_updateShortSentMessage.pts, tL_updateShortSentMessage.date, tL_updateShortSentMessage.pts_count);
+                return;
+            case 24:
+                r7a r7aVar2 = (r7a) this.b;
+                r47 r47Var = (r47) this.c;
+                if (r47Var == null || (message = r47Var.k) == null) {
+                    return;
+                }
+                message.reqId = 0;
+                if (message.send_state == 3) {
+                    message.send_state = 0;
+                    r7aVar2.getNotificationCenter().k(50, Long.valueOf(r47.B0(r47Var.k)), qd4.t(r47Var));
+                    return;
+                }
+                return;
+            case 25:
+                g7a g7aVar = (g7a) this.b;
+                String str3 = (String) this.c;
+                i7a i7aVar = g7aVar.b;
+                HashSet hashSet = i7aVar.c;
+                hashSet.remove(str3);
+                r7a r7aVar3 = i7aVar.q;
+                r7aVar3.getNotificationCenter().k(jn7.v1, Long.valueOf(i7aVar.j));
+                if (hashSet.isEmpty()) {
+                    TLRPC.TL_messages_startHistoryImport tL_messages_startHistoryImport = new TLRPC.TL_messages_startHistoryImport();
+                    tL_messages_startHistoryImport.peer = i7aVar.g;
+                    tL_messages_startHistoryImport.import_id = i7aVar.k;
+                    r7aVar3.getConnectionsManager().sendRequest(tL_messages_startHistoryImport, new h7a(i7aVar, tL_messages_startHistoryImport));
+                    return;
+                }
+                return;
+            case 26:
+                m7a m7aVar = (m7a) this.b;
+                String str4 = (String) this.c;
+                HashMap hashMap = m7aVar.a;
+                hashMap.remove(str4);
+                m7aVar.o.getNotificationCenter().k(jn7.w1, m7aVar.e);
+                if (hashMap.isEmpty()) {
+                    m7aVar.b();
+                    return;
+                }
+                return;
+            case 27:
+                b8a b8aVar = (b8a) this.b;
+                zu1 zu1Var = (zu1) this.c;
+                if (zu1Var != null) {
+                    zu1Var.presentFragment(new PremiumPreviewFragment(0, "select_sender"));
+                    b8aVar.dismiss();
+                    return;
+                }
+                return;
+            case 28:
+                ((WindowManager) this.c).removeView(((b8a) this.b).B);
                 return;
             default:
-                if (!on9Var.k0 || on9Var.M <= 0.0f) {
-                    on9Var.a();
-                    return;
-                } else {
-                    if (!on9Var.U || on9Var.V || on9Var.z == null || !on9Var.l0) {
-                        return;
-                    }
-                    on9Var.v("zoom requested", null, 5);
-                    return;
-                }
+                uba ubaVar = (uba) this.b;
+                hl.g((String) this.c);
+                d31.b0(ubaVar).k(false).j();
+                return;
         }
     }
 }

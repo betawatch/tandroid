@@ -5,7 +5,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class w14 {
     public final ArrayList a = new ArrayList();
@@ -27,11 +27,11 @@ public final class w14 {
         ArrayList arrayList = this.a;
         if (z) {
             arrayList.add(y);
-            jf7.Y(i).L(y, si1Var);
+            kf7.a0(i).N(y, si1Var);
             return;
         }
         uc7 s1 = uc7.s1(i);
-        TLObject c2 = s1.c2(s1.o3);
+        TLObject c2 = s1.c2(s1.p3);
         if (c2 instanceof TLRPC.User) {
             arrayList.add(y);
             TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();

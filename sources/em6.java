@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class em6 extends e implements xia, el4, fn7 {
     public boolean E;
@@ -67,7 +67,7 @@ public final class em6 extends e implements xia, el4, fn7 {
     @Override // el4
     public final List D() {
         Activity parentActivity = getParentActivity();
-        uo3 uo3Var = xca.m;
+        uo3 uo3Var = yca.m;
         return Arrays.asList(new dl4((parentActivity.getSharedPreferences("shapedetector_conf", 0).getBoolean("learning", false) ? "Disable" : "Enable").concat(" shape detector learning debug"), new zl6(this, (byte) 1)));
     }
 
@@ -178,10 +178,10 @@ public final class em6 extends e implements xia, el4, fn7 {
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    u5b u5bVar;
-                    u5b u5bVar2;
-                    u5b u5bVar3;
-                    u5b u5bVar4;
+                    v5b v5bVar;
+                    v5b v5bVar2;
+                    v5b v5bVar3;
+                    v5b v5bVar4;
                     int i2;
                     byte b3 = b;
                     yw0 yw0Var = yw0.E;
@@ -220,16 +220,16 @@ public final class em6 extends e implements xia, el4, fn7 {
                                 boolean z3 = em6Var.E;
                                 boolean z4 = em6Var.F;
                                 oha ohaVar = dm6Var2.f0;
-                                if (ohaVar != null && (u5bVar2 = ohaVar.s) != null) {
-                                    u5bVar2.n = z3;
-                                    u5bVar2.o = z4;
-                                    u5bVar2.d(true);
+                                if (ohaVar != null && (v5bVar2 = ohaVar.s) != null) {
+                                    v5bVar2.n = z3;
+                                    v5bVar2.o = z4;
+                                    v5bVar2.d(true);
                                 }
                                 aga agaVar = dm6Var2.h0;
-                                if (agaVar != null && (u5bVar = agaVar.s) != null) {
-                                    u5bVar.n = z3;
-                                    u5bVar.o = z4;
-                                    u5bVar.d(true);
+                                if (agaVar != null && (v5bVar = agaVar.s) != null) {
+                                    v5bVar.n = z3;
+                                    v5bVar.o = z4;
+                                    v5bVar.d(true);
                                     break;
                                 }
                             }
@@ -252,16 +252,16 @@ public final class em6 extends e implements xia, el4, fn7 {
                                 boolean z7 = em6Var.E;
                                 boolean z8 = em6Var.F;
                                 oha ohaVar2 = dm6Var3.f0;
-                                if (ohaVar2 != null && (u5bVar4 = ohaVar2.s) != null) {
-                                    u5bVar4.n = z7;
-                                    u5bVar4.o = z8;
-                                    u5bVar4.d(true);
+                                if (ohaVar2 != null && (v5bVar4 = ohaVar2.s) != null) {
+                                    v5bVar4.n = z7;
+                                    v5bVar4.o = z8;
+                                    v5bVar4.d(true);
                                 }
                                 aga agaVar2 = dm6Var3.h0;
-                                if (agaVar2 != null && (u5bVar3 = agaVar2.s) != null) {
-                                    u5bVar3.n = z7;
-                                    u5bVar3.o = z8;
-                                    u5bVar3.d(true);
+                                if (agaVar2 != null && (v5bVar3 = agaVar2.s) != null) {
+                                    v5bVar3.n = z7;
+                                    v5bVar3.o = z8;
+                                    v5bVar3.d(true);
                                     break;
                                 }
                             }
@@ -321,10 +321,10 @@ public final class em6 extends e implements xia, el4, fn7 {
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    u5b u5bVar;
-                    u5b u5bVar2;
-                    u5b u5bVar3;
-                    u5b u5bVar4;
+                    v5b v5bVar;
+                    v5b v5bVar2;
+                    v5b v5bVar3;
+                    v5b v5bVar4;
                     int i2;
                     byte b3 = r2;
                     yw0 yw0Var = yw0.E;
@@ -363,16 +363,16 @@ public final class em6 extends e implements xia, el4, fn7 {
                                 boolean z3 = em6Var.E;
                                 boolean z4 = em6Var.F;
                                 oha ohaVar = dm6Var2.f0;
-                                if (ohaVar != null && (u5bVar2 = ohaVar.s) != null) {
-                                    u5bVar2.n = z3;
-                                    u5bVar2.o = z4;
-                                    u5bVar2.d(true);
+                                if (ohaVar != null && (v5bVar2 = ohaVar.s) != null) {
+                                    v5bVar2.n = z3;
+                                    v5bVar2.o = z4;
+                                    v5bVar2.d(true);
                                 }
                                 aga agaVar = dm6Var2.h0;
-                                if (agaVar != null && (u5bVar = agaVar.s) != null) {
-                                    u5bVar.n = z3;
-                                    u5bVar.o = z4;
-                                    u5bVar.d(true);
+                                if (agaVar != null && (v5bVar = agaVar.s) != null) {
+                                    v5bVar.n = z3;
+                                    v5bVar.o = z4;
+                                    v5bVar.d(true);
                                     break;
                                 }
                             }
@@ -395,16 +395,16 @@ public final class em6 extends e implements xia, el4, fn7 {
                                 boolean z7 = em6Var.E;
                                 boolean z8 = em6Var.F;
                                 oha ohaVar2 = dm6Var3.f0;
-                                if (ohaVar2 != null && (u5bVar4 = ohaVar2.s) != null) {
-                                    u5bVar4.n = z7;
-                                    u5bVar4.o = z8;
-                                    u5bVar4.d(true);
+                                if (ohaVar2 != null && (v5bVar4 = ohaVar2.s) != null) {
+                                    v5bVar4.n = z7;
+                                    v5bVar4.o = z8;
+                                    v5bVar4.d(true);
                                 }
                                 aga agaVar2 = dm6Var3.h0;
-                                if (agaVar2 != null && (u5bVar3 = agaVar2.s) != null) {
-                                    u5bVar3.n = z7;
-                                    u5bVar3.o = z8;
-                                    u5bVar3.d(true);
+                                if (agaVar2 != null && (v5bVar3 = agaVar2.s) != null) {
+                                    v5bVar3.n = z7;
+                                    v5bVar3.o = z8;
+                                    v5bVar3.d(true);
                                     break;
                                 }
                             }
@@ -472,10 +472,10 @@ public final class em6 extends e implements xia, el4, fn7 {
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    u5b u5bVar;
-                    u5b u5bVar2;
-                    u5b u5bVar3;
-                    u5b u5bVar4;
+                    v5b v5bVar;
+                    v5b v5bVar2;
+                    v5b v5bVar3;
+                    v5b v5bVar4;
                     int i2;
                     byte b32 = b3;
                     yw0 yw0Var = yw0.E;
@@ -514,16 +514,16 @@ public final class em6 extends e implements xia, el4, fn7 {
                                 boolean z3 = em6Var.E;
                                 boolean z4 = em6Var.F;
                                 oha ohaVar = dm6Var2.f0;
-                                if (ohaVar != null && (u5bVar2 = ohaVar.s) != null) {
-                                    u5bVar2.n = z3;
-                                    u5bVar2.o = z4;
-                                    u5bVar2.d(true);
+                                if (ohaVar != null && (v5bVar2 = ohaVar.s) != null) {
+                                    v5bVar2.n = z3;
+                                    v5bVar2.o = z4;
+                                    v5bVar2.d(true);
                                 }
                                 aga agaVar = dm6Var2.h0;
-                                if (agaVar != null && (u5bVar = agaVar.s) != null) {
-                                    u5bVar.n = z3;
-                                    u5bVar.o = z4;
-                                    u5bVar.d(true);
+                                if (agaVar != null && (v5bVar = agaVar.s) != null) {
+                                    v5bVar.n = z3;
+                                    v5bVar.o = z4;
+                                    v5bVar.d(true);
                                     break;
                                 }
                             }
@@ -546,16 +546,16 @@ public final class em6 extends e implements xia, el4, fn7 {
                                 boolean z7 = em6Var.E;
                                 boolean z8 = em6Var.F;
                                 oha ohaVar2 = dm6Var3.f0;
-                                if (ohaVar2 != null && (u5bVar4 = ohaVar2.s) != null) {
-                                    u5bVar4.n = z7;
-                                    u5bVar4.o = z8;
-                                    u5bVar4.d(true);
+                                if (ohaVar2 != null && (v5bVar4 = ohaVar2.s) != null) {
+                                    v5bVar4.n = z7;
+                                    v5bVar4.o = z8;
+                                    v5bVar4.d(true);
                                 }
                                 aga agaVar2 = dm6Var3.h0;
-                                if (agaVar2 != null && (u5bVar3 = agaVar2.s) != null) {
-                                    u5bVar3.n = z7;
-                                    u5bVar3.o = z8;
-                                    u5bVar3.d(true);
+                                if (agaVar2 != null && (v5bVar3 = agaVar2.s) != null) {
+                                    v5bVar3.n = z7;
+                                    v5bVar3.o = z8;
+                                    v5bVar3.d(true);
                                     break;
                                 }
                             }
@@ -617,10 +617,10 @@ public final class em6 extends e implements xia, el4, fn7 {
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    u5b u5bVar;
-                    u5b u5bVar2;
-                    u5b u5bVar3;
-                    u5b u5bVar4;
+                    v5b v5bVar;
+                    v5b v5bVar2;
+                    v5b v5bVar3;
+                    v5b v5bVar4;
                     int i2;
                     byte b32 = b2;
                     yw0 yw0Var = yw0.E;
@@ -659,16 +659,16 @@ public final class em6 extends e implements xia, el4, fn7 {
                                 boolean z3 = em6Var.E;
                                 boolean z4 = em6Var.F;
                                 oha ohaVar = dm6Var2.f0;
-                                if (ohaVar != null && (u5bVar2 = ohaVar.s) != null) {
-                                    u5bVar2.n = z3;
-                                    u5bVar2.o = z4;
-                                    u5bVar2.d(true);
+                                if (ohaVar != null && (v5bVar2 = ohaVar.s) != null) {
+                                    v5bVar2.n = z3;
+                                    v5bVar2.o = z4;
+                                    v5bVar2.d(true);
                                 }
                                 aga agaVar = dm6Var2.h0;
-                                if (agaVar != null && (u5bVar = agaVar.s) != null) {
-                                    u5bVar.n = z3;
-                                    u5bVar.o = z4;
-                                    u5bVar.d(true);
+                                if (agaVar != null && (v5bVar = agaVar.s) != null) {
+                                    v5bVar.n = z3;
+                                    v5bVar.o = z4;
+                                    v5bVar.d(true);
                                     break;
                                 }
                             }
@@ -691,16 +691,16 @@ public final class em6 extends e implements xia, el4, fn7 {
                                 boolean z7 = em6Var.E;
                                 boolean z8 = em6Var.F;
                                 oha ohaVar2 = dm6Var3.f0;
-                                if (ohaVar2 != null && (u5bVar4 = ohaVar2.s) != null) {
-                                    u5bVar4.n = z7;
-                                    u5bVar4.o = z8;
-                                    u5bVar4.d(true);
+                                if (ohaVar2 != null && (v5bVar4 = ohaVar2.s) != null) {
+                                    v5bVar4.n = z7;
+                                    v5bVar4.o = z8;
+                                    v5bVar4.d(true);
                                 }
                                 aga agaVar2 = dm6Var3.h0;
-                                if (agaVar2 != null && (u5bVar3 = agaVar2.s) != null) {
-                                    u5bVar3.n = z7;
-                                    u5bVar3.o = z8;
-                                    u5bVar3.d(true);
+                                if (agaVar2 != null && (v5bVar3 = agaVar2.s) != null) {
+                                    v5bVar3.n = z7;
+                                    v5bVar3.o = z8;
+                                    v5bVar3.d(true);
                                     break;
                                 }
                             }
@@ -788,10 +788,10 @@ public final class em6 extends e implements xia, el4, fn7 {
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    u5b u5bVar;
-                    u5b u5bVar2;
-                    u5b u5bVar3;
-                    u5b u5bVar4;
+                    v5b v5bVar;
+                    v5b v5bVar2;
+                    v5b v5bVar3;
+                    v5b v5bVar4;
                     int i22;
                     byte b32 = b4;
                     yw0 yw0Var = yw0.E;
@@ -830,16 +830,16 @@ public final class em6 extends e implements xia, el4, fn7 {
                                 boolean z3 = em6Var.E;
                                 boolean z4 = em6Var.F;
                                 oha ohaVar = dm6Var2.f0;
-                                if (ohaVar != null && (u5bVar2 = ohaVar.s) != null) {
-                                    u5bVar2.n = z3;
-                                    u5bVar2.o = z4;
-                                    u5bVar2.d(true);
+                                if (ohaVar != null && (v5bVar2 = ohaVar.s) != null) {
+                                    v5bVar2.n = z3;
+                                    v5bVar2.o = z4;
+                                    v5bVar2.d(true);
                                 }
                                 aga agaVar = dm6Var2.h0;
-                                if (agaVar != null && (u5bVar = agaVar.s) != null) {
-                                    u5bVar.n = z3;
-                                    u5bVar.o = z4;
-                                    u5bVar.d(true);
+                                if (agaVar != null && (v5bVar = agaVar.s) != null) {
+                                    v5bVar.n = z3;
+                                    v5bVar.o = z4;
+                                    v5bVar.d(true);
                                     break;
                                 }
                             }
@@ -862,16 +862,16 @@ public final class em6 extends e implements xia, el4, fn7 {
                                 boolean z7 = em6Var.E;
                                 boolean z8 = em6Var.F;
                                 oha ohaVar2 = dm6Var3.f0;
-                                if (ohaVar2 != null && (u5bVar4 = ohaVar2.s) != null) {
-                                    u5bVar4.n = z7;
-                                    u5bVar4.o = z8;
-                                    u5bVar4.d(true);
+                                if (ohaVar2 != null && (v5bVar4 = ohaVar2.s) != null) {
+                                    v5bVar4.n = z7;
+                                    v5bVar4.o = z8;
+                                    v5bVar4.d(true);
                                 }
                                 aga agaVar2 = dm6Var3.h0;
-                                if (agaVar2 != null && (u5bVar3 = agaVar2.s) != null) {
-                                    u5bVar3.n = z7;
-                                    u5bVar3.o = z8;
-                                    u5bVar3.d(true);
+                                if (agaVar2 != null && (v5bVar3 = agaVar2.s) != null) {
+                                    v5bVar3.n = z7;
+                                    v5bVar3.o = z8;
+                                    v5bVar3.d(true);
                                     break;
                                 }
                             }

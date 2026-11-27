@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class it7 {
     public static final HashMap a = new HashMap();
@@ -425,7 +425,7 @@ public abstract class it7 {
                 s(context, vnbVar, M0, bool);
                 break;
             case "STARGIFT_ONCHAIN_PRICE_INVALID":
-                hr hrVar = uc7.s1(i).k4;
+                hr hrVar = uc7.s1(i).l4;
                 long f = hrVar.q.f();
                 long f2 = hrVar.r.f();
                 M0 = (f <= 0 || f2 <= f) ? ob6.M0(2131749600, null) : ob6.a0(null, null, 2131749599, l(f), l(f2));
@@ -562,7 +562,7 @@ public abstract class it7 {
     }
 
     public static void v(TL_stars.StarGift starGift, String str) {
-        hl.c3(new pl7(starGift, str, (byte) 10));
+        hl.c3(new ql7(starGift, str, (byte) 11));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:6:0x0015  */

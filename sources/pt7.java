@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class pt7 extends nx0 {
     public final long l1;
@@ -29,7 +29,7 @@ public final class pt7 extends nx0 {
     public pt7(int i, vnb vnbVar, pcc pccVar, Context context) {
         super(1, vnbVar, context, true);
         this.a = i;
-        hr hrVar = uc7.s1(i).k4;
+        hr hrVar = uc7.s1(i).l4;
         this.l1 = Math.max(hrVar.q.f(), 10000000L);
         long f = hrVar.r.f();
         this.m1 = f;
@@ -118,7 +118,7 @@ public final class pt7 extends nx0 {
             this.t1 = i;
         }
         yob.X(this.n1, i == 0 ? aob.G6 : aob.q7, this.J0);
-        double d = (j / 1.0E9d) * uc7.s1(this.a).k4.k.i;
+        double d = (j / 1.0E9d) * uc7.s1(this.a).l4.k.i;
         TextView textView = this.o1;
         di0.h();
         textView.setText(di0.f("USD", 2, (long) (d * 100.0d), false));
@@ -145,6 +145,6 @@ public final class pt7 extends nx0 {
     @Override // nx0, android.app.Dialog
     public final void show() {
         super.show();
-        hl.d3(new fe7(this, (byte) 14), 50L);
+        hl.d3(new ge7(this, (byte) 14), 50L);
     }
 }

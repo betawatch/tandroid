@@ -13,7 +13,7 @@ import java.util.PriorityQueue;
 import java.util.UUID;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class hr4 implements e84 {
     public static final byte[] P = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -62,7 +62,7 @@ public final class hr4 implements e84 {
 
     static {
         jo4 jo4Var = new jo4();
-        jo4Var.s = dg7.n("application/x-emsg");
+        jo4Var.s = eg7.n("application/x-emsg");
         Q = new ko4(jo4Var);
     }
 
@@ -98,12 +98,12 @@ public final class hr4 implements e84 {
         int size = arrayList.size();
         ArrayList arrayList2 = null;
         for (int i = 0; i < size; i++) {
-            vh7 vh7Var = (vh7) arrayList.get(i);
-            if (vh7Var.b == 1886614376) {
+            wh7 wh7Var = (wh7) arrayList.get(i);
+            if (wh7Var.b == 1886614376) {
                 if (arrayList2 == null) {
                     arrayList2 = new ArrayList();
                 }
-                byte[] bArr = vh7Var.e.a;
+                byte[] bArr = wh7Var.e.a;
                 sx8 b = lwe.b(bArr);
                 UUID uuid = b == null ? null : (UUID) b.c;
                 if (uuid == null) {
@@ -319,7 +319,7 @@ public final class hr4 implements e84 {
     /* JADX WARN: Code restructure failed: missing block: B:199:0x01a1, code lost:
     
         r49.E = r3.d(r9, 7);
-        ok7.b(r49.D, r13);
+        pk7.b(r49.D, r13);
         r2.e(7, r13);
         r9 = r49.E + 7;
         r49.E = r9;
@@ -837,9 +837,9 @@ public final class hr4 implements e84 {
                     if (ey7Var2 != null) {
                         ((cb3) f84Var).c(ey7Var2.a, 8, i5, false);
                         int i6 = this.t;
-                        vh7 vh7Var = new vh7(i6, ey7Var2);
+                        wh7 wh7Var = new wh7(i6, ey7Var2);
                         if (!arrayDeque.isEmpty()) {
-                            ((uh7) arrayDeque.peek()).f.add(vh7Var);
+                            ((vh7) arrayDeque.peek()).f.add(wh7Var);
                         } else if (i6 == 1936286840) {
                             cb3 cb3Var = (cb3) f84Var;
                             Pair l = l(cb3Var.d, ey7Var2);
@@ -1210,7 +1210,7 @@ public final class hr4 implements e84 {
                 } else if (j23 == 0) {
                     long j24 = ((cb3) f84Var).c;
                     if (j24 == -1 && !arrayDeque.isEmpty()) {
-                        j24 = ((uh7) arrayDeque.peek()).e;
+                        j24 = ((vh7) arrayDeque.peek()).e;
                     }
                     if (j24 != -1) {
                         j = -1;
@@ -1278,7 +1278,7 @@ public final class hr4 implements e84 {
                                     cb3Var5.l(ey7Var.b, false);
                                     cb3Var5.f = 0;
                                 }
-                                arrayDeque.push(new uh7(this.t, j29));
+                                arrayDeque.push(new vh7(this.t, j29));
                                 if (this.u == this.v) {
                                     m(j29);
                                 } else {
@@ -1423,9 +1423,9 @@ public final class hr4 implements e84 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void m(long j) {
-        uf7 uf7Var;
+        vf7 vf7Var;
         int i;
-        uf7 uf7Var2;
+        vf7 vf7Var2;
         ArrayList arrayList;
         int i2;
         pc3 pc3Var;
@@ -1461,19 +1461,19 @@ public final class hr4 implements e84 {
         int i19;
         while (true) {
             ArrayDeque arrayDeque = this.m;
-            if (arrayDeque.isEmpty() || ((uh7) arrayDeque.peek()).e != j) {
+            if (arrayDeque.isEmpty() || ((vh7) arrayDeque.peek()).e != j) {
                 break;
             }
-            uh7 uh7Var = (uh7) arrayDeque.pop();
-            int i20 = uh7Var.b;
-            ArrayList arrayList9 = uh7Var.g;
-            ArrayList arrayList10 = uh7Var.f;
+            vh7 vh7Var = (vh7) arrayDeque.pop();
+            int i20 = vh7Var.b;
+            ArrayList arrayList9 = vh7Var.g;
+            ArrayList arrayList10 = vh7Var.f;
             int i21 = 12;
             SparseArray sparseArray = this.d;
             int i22 = this.b;
             if (i20 == 1836019574) {
                 hr3 i23 = i(arrayList10);
-                uh7 u = uh7Var.u(1836475768);
+                vh7 u = vh7Var.u(1836475768);
                 u.getClass();
                 SparseArray sparseArray2 = new SparseArray();
                 ArrayList arrayList11 = u.f;
@@ -1481,9 +1481,9 @@ public final class hr4 implements e84 {
                 long j2 = -9223372036854775807L;
                 int i24 = 0;
                 while (i24 < size) {
-                    vh7 vh7Var = (vh7) arrayList11.get(i24);
-                    int i25 = vh7Var.b;
-                    ey7 ey7Var = vh7Var.e;
+                    wh7 wh7Var = (wh7) arrayList11.get(i24);
+                    int i25 = wh7Var.b;
+                    ey7 ey7Var = wh7Var.e;
                     if (i25 == 1953654136) {
                         ey7Var.N(i21);
                         arrayList3 = arrayList11;
@@ -1500,21 +1500,21 @@ public final class hr4 implements e84 {
                     arrayList11 = arrayList3;
                     i21 = 12;
                 }
-                uh7 u2 = uh7Var.u(1835365473);
-                uf7 f = u2 != null ? zy0.f(u2) : null;
+                vh7 u2 = vh7Var.u(1835365473);
+                vf7 f = u2 != null ? zy0.f(u2) : null;
                 du4 du4Var = new du4();
-                vh7 v = uh7Var.v(1969517665);
+                wh7 v = vh7Var.v(1969517665);
                 if (v != null) {
-                    uf7 k = zy0.k(v, (i22 & 1024) != 0);
+                    vf7 k = zy0.k(v, (i22 & 1024) != 0);
                     du4Var.b(k);
-                    uf7Var = k;
+                    vf7Var = k;
                 } else {
-                    uf7Var = null;
+                    vf7Var = null;
                 }
-                vh7 v2 = uh7Var.v(1836476516);
+                wh7 v2 = vh7Var.v(1836476516);
                 v2.getClass();
-                uf7 uf7Var3 = new uf7(zy0.g(v2.e));
-                ArrayList j3 = zy0.j(uh7Var, du4Var, j2, i23, (i22 & 16) != 0, false, new dr4(this, (byte) 0), false);
+                vf7 vf7Var3 = new vf7(zy0.g(v2.e));
+                ArrayList j3 = zy0.j(vh7Var, du4Var, j2, i23, (i22 & 16) != 0, false, new dr4(this, (byte) 0), false);
                 int size2 = j3.size();
                 if (sparseArray.size() == 0) {
                     String a = ute.a(j3);
@@ -1534,8 +1534,8 @@ public final class hr4 implements e84 {
                             e0.d(j4);
                             i = i26;
                             jo4 a2 = ko4Var.a();
-                            uf7Var2 = uf7Var3;
-                            a2.r = dg7.n(str);
+                            vf7Var2 = vf7Var3;
+                            a2.r = eg7.n(str);
                             if (i29 == 1) {
                                 int i30 = du4Var.a;
                                 i2 = i28;
@@ -1548,7 +1548,7 @@ public final class hr4 implements e84 {
                                 arrayList = j3;
                                 i2 = i28;
                             }
-                            tte.f(i29, f, a2, ko4Var.m, uf7Var, uf7Var2);
+                            tte.f(i29, f, a2, ko4Var.m, vf7Var, vf7Var2);
                             if (sparseArray2.size() == 1) {
                                 pc3Var = (pc3) sparseArray2.valueAt(0);
                             } else {
@@ -1560,12 +1560,12 @@ public final class hr4 implements e84 {
                         } else {
                             arrayList = j3;
                             i = i26;
-                            uf7Var2 = uf7Var3;
+                            vf7Var2 = vf7Var3;
                             i2 = i28;
                         }
                         i26 = i + 1;
                         a = str;
-                        uf7Var3 = uf7Var2;
+                        vf7Var3 = vf7Var2;
                         size2 = i2;
                         j3 = arrayList;
                     }
@@ -1612,10 +1612,10 @@ public final class hr4 implements e84 {
                 int size3 = arrayList9.size();
                 int i35 = 0;
                 while (i35 < size3) {
-                    uh7 uh7Var2 = (uh7) arrayList9.get(i35);
-                    if (uh7Var2.b == 1953653094) {
-                        vh7 v3 = uh7Var2.v(1952868452);
-                        ArrayList arrayList13 = uh7Var2.f;
+                    vh7 vh7Var2 = (vh7) arrayList9.get(i35);
+                    if (vh7Var2.b == 1953653094) {
+                        wh7 v3 = vh7Var2.v(1952868452);
+                        ArrayList arrayList13 = vh7Var2.f;
                         v3.getClass();
                         ey7 ey7Var2 = v3.e;
                         ey7Var2.N(8);
@@ -1650,7 +1650,7 @@ public final class hr4 implements e84 {
                             boolean z6 = s1cVar2.q;
                             gr4Var2.e();
                             gr4Var2.n = true;
-                            vh7 v4 = uh7Var2.v(1952867444);
+                            wh7 v4 = vh7Var2.v(1952867444);
                             if (v4 == null || (i22 & 2) != 0) {
                                 s1cVar2.p = j5;
                                 s1cVar2.q = z6;
@@ -1669,10 +1669,10 @@ public final class hr4 implements e84 {
                                 if (i36 >= size4) {
                                     break;
                                 }
-                                vh7 vh7Var2 = (vh7) arrayList13.get(i36);
+                                wh7 wh7Var2 = (wh7) arrayList13.get(i36);
                                 ArrayList arrayList14 = arrayList9;
-                                if (vh7Var2.b == 1953658222) {
-                                    ey7 ey7Var4 = vh7Var2.e;
+                                if (wh7Var2.b == 1953658222) {
+                                    ey7 ey7Var4 = wh7Var2.e;
                                     ey7Var4.N(12);
                                     int E = ey7Var4.E();
                                     if (E > 0) {
@@ -1706,10 +1706,10 @@ public final class hr4 implements e84 {
                             while (true) {
                                 long j6 = 0;
                                 if (i40 < size4) {
-                                    vh7 vh7Var3 = (vh7) arrayList13.get(i40);
-                                    if (vh7Var3.b == i8) {
+                                    wh7 wh7Var3 = (wh7) arrayList13.get(i40);
+                                    if (wh7Var3.b == i8) {
                                         int i43 = i41 + 1;
-                                        ey7 ey7Var5 = vh7Var3.e;
+                                        ey7 ey7Var5 = wh7Var3.e;
                                         ey7Var5.N(8);
                                         int m4 = ey7Var5.m();
                                         byte[] bArr3 = zy0.a;
@@ -1843,7 +1843,7 @@ public final class hr4 implements e84 {
                                     int i47 = pc3Var6.a;
                                     r1c[] r1cVarArr = p1cVar4.n;
                                     r1c r1cVar = r1cVarArr == null ? null : r1cVarArr[i47];
-                                    vh7 v5 = uh7Var2.v(1935763834);
+                                    wh7 v5 = vh7Var2.v(1935763834);
                                     if (v5 != null) {
                                         r1cVar.getClass();
                                         ey7 ey7Var6 = v5.e;
@@ -1882,7 +1882,7 @@ public final class hr4 implements e84 {
                                             s1cVar2.o = true;
                                         }
                                     }
-                                    vh7 v6 = uh7Var2.v(1935763823);
+                                    wh7 v6 = vh7Var2.v(1935763823);
                                     if (v6 != null) {
                                         ey7 ey7Var7 = v6.e;
                                         ey7Var7.N(8);
@@ -1897,7 +1897,7 @@ public final class hr4 implements e84 {
                                         }
                                         s1cVar2.c += zy0.e(m9) == 0 ? ey7Var7.C() : ey7Var7.G();
                                     }
-                                    vh7 v7 = uh7Var2.v(1936027235);
+                                    wh7 v7 = vh7Var2.v(1936027235);
                                     if (v7 != null) {
                                         k(v7.e, 0, s1cVar2);
                                     }
@@ -1910,9 +1910,9 @@ public final class hr4 implements e84 {
                                         if (i49 >= arrayList15.size()) {
                                             break;
                                         }
-                                        vh7 vh7Var4 = (vh7) arrayList6.get(i49);
-                                        ey7 ey7Var10 = vh7Var4.e;
-                                        int i50 = vh7Var4.b;
+                                        wh7 wh7Var4 = (wh7) arrayList6.get(i49);
+                                        ey7 ey7Var10 = wh7Var4.e;
+                                        int i50 = wh7Var4.b;
                                         if (i50 == 1935828848) {
                                             ey7Var10.N(12);
                                             if (ey7Var10.m() == 1936025959) {
@@ -1973,9 +1973,9 @@ public final class hr4 implements e84 {
                                     }
                                     int size5 = arrayList6.size();
                                     for (int i53 = 0; i53 < size5; i53++) {
-                                        vh7 vh7Var5 = (vh7) arrayList6.get(i53);
-                                        if (vh7Var5.b == 1970628964) {
-                                            ey7 ey7Var11 = vh7Var5.e;
+                                        wh7 wh7Var5 = (wh7) arrayList6.get(i53);
+                                        if (wh7Var5.b == 1970628964) {
+                                            ey7 ey7Var11 = wh7Var5.e;
                                             ey7Var11.N(8);
                                             byte[] bArr8 = this.h;
                                             ey7Var11.k(0, 16, bArr8);
@@ -2046,7 +2046,7 @@ public final class hr4 implements e84 {
                     this.z = -9223372036854775807L;
                 }
             } else if (!arrayDeque.isEmpty()) {
-                ((uh7) arrayDeque.peek()).g.add(uh7Var);
+                ((vh7) arrayDeque.peek()).g.add(vh7Var);
             }
         }
     }

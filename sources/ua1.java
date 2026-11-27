@@ -1,35 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ua1 implements ks4 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ ua1(wj7 wj7Var, vj7 vj7Var) {
+    public /* synthetic */ ua1(xj7 xj7Var, wj7 wj7Var) {
         this.a = (byte) 1;
-        this.b = wj7Var;
+        this.b = xj7Var;
     }
 
     @Override // ks4
     public final Object a(Object obj, Object obj2, Object obj3) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         Object obj4 = this.b;
         switch (b) {
             case 0:
                 ((a2) obj4).invoke((Throwable) obj);
                 break;
             case 1:
-                wj7 wj7Var = (wj7) obj4;
-                wj7.h.set(wj7Var, null);
-                wj7Var.f(null);
+                xj7 xj7Var = (xj7) obj4;
+                xj7.h.set(xj7Var, null);
+                xj7Var.f(null);
                 break;
             default:
                 ((k4a) obj4).b();
                 break;
         }
-        return f9cVar;
+        return g9cVar;
     }
 
     public /* synthetic */ ua1(Object obj, byte b) {

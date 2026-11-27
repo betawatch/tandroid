@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class td1 implements d5c {
     public final kj4 a;
@@ -51,7 +51,7 @@ public final class td1 implements d5c {
         vw5Var.a(c84.class, m50Var);
         vw5Var.a(u90.class, m50Var);
         q50 q50Var = q50.a;
-        vw5Var.a(gl7.class, q50Var);
+        vw5Var.a(hl7.class, q50Var);
         vw5Var.a(fa0.class, q50Var);
         l50 l50Var = l50.a;
         vw5Var.a(f74.class, l50Var);
@@ -75,7 +75,7 @@ public final class td1 implements d5c {
 
     /* JADX WARN: Code restructure failed: missing block: B:34:0x00a8, code lost:
     
-        if (((el7) el7.a.get(r0)) != null) goto L21;
+        if (((fl7) fl7.a.get(r0)) != null) goto L21;
      */
     /* JADX WARN: Removed duplicated region for block: B:16:0x00b0  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x010f  */
@@ -112,7 +112,7 @@ public final class td1 implements d5c {
         hashMap3.put("tz-offset", String.valueOf(offset));
         int i2 = -1;
         if (activeNetworkInfo == null) {
-            SparseArray sparseArray = fl7.a;
+            SparseArray sparseArray = gl7.a;
             type = -1;
         } else {
             type = activeNetworkInfo.getType();
@@ -126,7 +126,7 @@ public final class td1 implements d5c {
         if (activeNetworkInfo != null) {
             subtype = activeNetworkInfo.getSubtype();
             if (subtype == -1) {
-                SparseArray sparseArray2 = el7.a;
+                SparseArray sparseArray2 = fl7.a;
                 subtype = 100;
             }
             hashMap = (HashMap) c.h;
@@ -151,7 +151,7 @@ public final class td1 implements d5c {
             c.a("application_build", Integer.toString(i2));
             return c.b();
         }
-        SparseArray sparseArray3 = el7.a;
+        SparseArray sparseArray3 = fl7.a;
         subtype = 0;
         hashMap = (HashMap) c.h;
         if (hashMap != null) {

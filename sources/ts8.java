@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ts8 {
     public final int a;
@@ -62,11 +62,11 @@ public final class ts8 {
         this.g = i;
         int i3 = this.a;
         long e = yac.h(i3).e();
-        jf7 Y = jf7.Y(i3);
-        Y.a.c(new kd7(this, i, Y, j, e, i2));
+        kf7 a0 = kf7.a0(i3);
+        a0.a.c(new pd7(this, i, a0, j, e, i2));
     }
 
-    public final /* synthetic */ void c(TLObject tLObject, jf7 jf7Var, long j, int i, ArrayList arrayList) {
+    public final /* synthetic */ void c(TLObject tLObject, kf7 kf7Var, long j, int i, ArrayList arrayList) {
         if (!(tLObject instanceof TLRPC.messages_Messages)) {
             if (i != this.e) {
                 return;
@@ -78,8 +78,8 @@ public final class ts8 {
         int i2 = this.a;
         uc7.s1(i2).j4(messages_messages.users, false);
         uc7.s1(i2).c4(messages_messages.chats, false);
-        jf7Var.j1(messages_messages.users, messages_messages.chats, true, true);
-        jf7Var.e1(3, 0, 0, -j, 0L, messages_messages, false);
+        kf7Var.n1(messages_messages.users, messages_messages.chats, true, true);
+        kf7Var.i1(3, 0, 0, -j, 0L, messages_messages, false);
         if (i != this.e || messages_messages.messages.isEmpty()) {
             return;
         }
@@ -109,7 +109,7 @@ public final class ts8 {
         a();
     }
 
-    public final /* synthetic */ void d(int i, int i2, long j, jf7 jf7Var, ArrayList arrayList) {
+    public final /* synthetic */ void d(int i, int i2, long j, kf7 kf7Var, ArrayList arrayList) {
         if (i != this.e) {
             return;
         }
@@ -148,6 +148,6 @@ public final class ts8 {
                 tL_channels_getMessages.id.add(Integer.valueOf(i6));
             }
         }
-        ConnectionsManager.getInstance(i3).sendRequest(tL_channels_getMessages, new kb7(this, jf7Var, j, i, arrayList));
+        ConnectionsManager.getInstance(i3).sendRequest(tL_channels_getMessages, new kb7(this, kf7Var, j, i, arrayList));
     }
 }

@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class PushListenerController {
     public static final int NOTIFICATION_ID = 1;
@@ -28,7 +28,7 @@ public class PushListenerController {
     public static final int PUSH_TYPE_HUAWEI = 13;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public interface IPushListenerServiceProvider {
         String getLogTitle();
 
@@ -224,7 +224,7 @@ public class PushListenerController {
      */
     /* JADX WARN: Code restructure failed: missing block: B:1080:0x072e, code lost:
     
-        if (jf7.Y(r27).l(r12) == false) goto L261;
+        if (kf7.a0(r27).n(r12) == false) goto L261;
      */
     /* JADX WARN: Code restructure failed: missing block: B:125:0x039d, code lost:
     
@@ -689,7 +689,7 @@ public class PushListenerController {
                                     j12 = j3;
                                     Integer num = (Integer) uc7.s1(i4).P.get(Long.valueOf(j8));
                                     if (num == null) {
-                                        num = Integer.valueOf(jf7.Y(i4).S(j8, false));
+                                        num = Integer.valueOf(kf7.a0(i4).U(j8, false));
                                         uc7.s1(i4).P.put(Long.valueOf(j8), num);
                                     }
                                     z3 = i7 > num.intValue();
@@ -4963,7 +4963,7 @@ public class PushListenerController {
                     tL_updateServiceNotification.media = new TLRPC.TL_messageMediaEmpty();
                     TLRPC.TL_updates tL_updates = new TLRPC.TL_updates();
                     tL_updates.updates.add(tL_updateServiceNotification);
-                    Utilities.d.c(new me7(i2, (Object) tL_updates, (byte) 11));
+                    Utilities.d.c(new oe7(i2, (Object) tL_updates, (byte) 11));
                     ConnectionsManager.getInstance(i2).resumeNetworkMaybe();
                     countDownLatch.countDown();
                     break;

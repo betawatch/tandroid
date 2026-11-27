@@ -17,7 +17,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class e73 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -237,9 +237,9 @@ public final /* synthetic */ class e73 implements View.OnClickListener {
                             if (i49Var != null && i49Var.getReactionsWindow() != null) {
                                 w.P1.getReactionsWindow().d();
                             }
-                            m58 m58Var = w.J2;
-                            if (m58Var != null) {
-                                m58Var.dismiss();
+                            n58 n58Var = w.J2;
+                            if (n58Var != null) {
+                                n58Var.dismiss();
                             }
                             w.G0();
                         }
@@ -289,10 +289,10 @@ public final /* synthetic */ class e73 implements View.OnClickListener {
                             TL_stories.TL_storiesStealthMode tL_storiesStealthMode2 = new TL_stories.TL_storiesStealthMode();
                             tL_storiesStealthMode2.flags |= 3;
                             int currentTime = ConnectionsManager.getInstance(g2bVar.a).getCurrentTime();
-                            os2 os2Var = uc7.s1(g2bVar.a).k4.m3;
+                            os2 os2Var = uc7.s1(g2bVar.a).l4.m3;
                             TimeUnit timeUnit = TimeUnit.SECONDS;
                             tL_storiesStealthMode2.cooldown_until_date = currentTime + ((int) os2Var.g(timeUnit));
-                            tL_storiesStealthMode2.active_until_date = ConnectionsManager.getInstance(g2bVar.a).getCurrentTime() + ((int) uc7.s1(g2bVar.a).k4.l3.g(timeUnit));
+                            tL_storiesStealthMode2.active_until_date = ConnectionsManager.getInstance(g2bVar.a).getCurrentTime() + ((int) uc7.s1(g2bVar.a).l4.l3.g(timeUnit));
                             O12.h0(tL_storiesStealthMode2);
                             ConnectionsManager.getInstance(g2bVar.a).sendRequest(tL_stories_activateStealthMode, new xe2((byte) 8));
                             try {

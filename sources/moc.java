@@ -4,7 +4,7 @@ import android.util.Base64;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class moc {
     public static final lo5 a = new lo5(new int[]{0, 2, 1}, 3);
@@ -13,7 +13,7 @@ public abstract class moc {
     public static final lo5 d = lo5.c(2, 1, 6, 5, 3, 4);
     public static final lo5 e = lo5.c(2, 1, 7, 5, 6, 3, 4);
 
-    public static uf7 a(List list) {
+    public static vf7 a(List list) {
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < list.size(); i++) {
             String str = (String) list.get(i);
@@ -34,6 +34,6 @@ public abstract class moc {
         if (arrayList.isEmpty()) {
             return null;
         }
-        return new uf7(arrayList);
+        return new vf7(arrayList);
     }
 }

@@ -2,7 +2,7 @@
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ra9 {
     public final vg0 a;
@@ -99,7 +99,7 @@ public final class ra9 {
                 return true;
             }
             yt6 yt6Var2 = yt6Var.m;
-            if (yt6Var.g.f && yt6Var2 != null && yt6Var2.e && ((vg0Var instanceof vlb) || (vg0Var instanceof zf7) || vg0Var.y >= yt6Var2.e())) {
+            if (yt6Var.g.f && yt6Var2 != null && yt6Var2.e && ((vg0Var instanceof vlb) || (vg0Var instanceof ag7) || vg0Var.y >= yt6Var2.e())) {
                 return true;
             }
         }

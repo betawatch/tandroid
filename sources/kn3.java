@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class kn3 implements Runnable {
     public final /* synthetic */ byte a = 3;
@@ -106,11 +106,11 @@ public final /* synthetic */ class kn3 implements Runnable {
                 d31.Y().Q(R.raw.error, 36, ob6.M0(2131744260, null)).k(false);
                 return;
             case 2:
-                jf7 jf7Var = (jf7) obj2;
+                kf7 kf7Var = (kf7) obj2;
                 String str2 = (String) obj;
                 if (z) {
                     try {
-                        SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                        SQLiteDatabase sQLiteDatabase = kf7Var.b;
                         StringBuilder sb = new StringBuilder();
                         Locale locale = Locale.US;
                         sb.append("SELECT " + str2 + " FROM dialogs WHERE did = ");
@@ -156,7 +156,7 @@ public final /* synthetic */ class kn3 implements Runnable {
                     }
                 }
                 int i3 = r2 + i;
-                SQLiteDatabase sQLiteDatabase2 = jf7Var.getMessagesStorage().b;
+                SQLiteDatabase sQLiteDatabase2 = kf7Var.getMessagesStorage().b;
                 Locale locale2 = Locale.US;
                 SQLitePreparedStatement executeFast = sQLiteDatabase2.executeFast("UPDATE dialogs SET " + str2 + " = ? WHERE did = ?");
                 try {
@@ -185,21 +185,21 @@ public final /* synthetic */ class kn3 implements Runnable {
                     throw th;
                 }
             default:
-                ((jf7) obj2).A1(this.c, (List) obj, this.d, true, this.b);
+                ((kf7) obj2).E1(this.c, (List) obj, this.d, true, this.b);
                 return;
         }
     }
 
-    public /* synthetic */ kn3(jf7 jf7Var, long j, List list, boolean z, int i) {
-        this.e = jf7Var;
+    public /* synthetic */ kn3(kf7 kf7Var, long j, List list, boolean z, int i) {
+        this.e = kf7Var;
         this.c = j;
         this.f = list;
         this.d = z;
         this.b = i;
     }
 
-    public /* synthetic */ kn3(jf7 jf7Var, boolean z, String str, long j, int i, String str2) {
-        this.e = jf7Var;
+    public /* synthetic */ kn3(kf7 kf7Var, boolean z, String str, long j, int i, String str2) {
+        this.e = kf7Var;
         this.d = z;
         this.f = str;
         this.c = j;

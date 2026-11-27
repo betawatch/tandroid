@@ -20,10 +20,10 @@ import android.graphics.drawable.NinePatchDrawable;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class t37 extends Drawable {
-    public static final hh7[] T = new hh7[3];
+    public static final ih7[] T = new ih7[3];
     public NinePatchDrawable F;
     public int G;
     public boolean I;
@@ -83,19 +83,19 @@ public class t37 extends Drawable {
         if (this.a instanceof BitmapShader) {
             boolean z = this.L;
             Matrix matrix = this.k;
-            hh7[] hh7VarArr = T;
+            ih7[] ih7VarArr = T;
             byte b = this.l;
             char c = 2;
             if (z && (bitmap = this.N) != null) {
                 char c2 = b == 2 ? (char) 1 : (char) 0;
-                float min = 1.0f / Math.min(bitmap.getWidth() / hh7VarArr[c2].getBounds().width(), this.N.getHeight() / hh7VarArr[c2].getBounds().height());
+                float min = 1.0f / Math.min(bitmap.getWidth() / ih7VarArr[c2].getBounds().width(), this.N.getHeight() / ih7VarArr[c2].getBounds().height());
                 matrix.postScale(min, min);
             } else {
                 if (!this.v) {
                     c = b == 2 ? (char) 1 : (char) 0;
                 }
-                Bitmap bitmap2 = hh7VarArr[c].k;
-                float min2 = 1.0f / Math.min(bitmap2.getWidth() / hh7VarArr[c].getBounds().width(), bitmap2.getHeight() / hh7VarArr[c].getBounds().height());
+                Bitmap bitmap2 = ih7VarArr[c].k;
+                float min2 = 1.0f / Math.min(bitmap2.getWidth() / ih7VarArr[c].getBounds().width(), bitmap2.getHeight() / ih7VarArr[c].getBounds().height());
                 matrix.postScale(min2, min2);
             }
         }
@@ -497,13 +497,13 @@ public class t37 extends Drawable {
         return vnbVar != null ? vnbVar.j(i) : aob.lm.get(i);
     }
 
-    public final hh7 j() {
+    public final ih7 j() {
         boolean z = this.v;
-        hh7[] hh7VarArr = T;
+        ih7[] ih7VarArr = T;
         if (z) {
-            return hh7VarArr[2];
+            return ih7VarArr[2];
         }
-        return hh7VarArr[this.l == 2 ? (char) 1 : (char) 0];
+        return ih7VarArr[this.l == 2 ? (char) 1 : (char) 0];
     }
 
     public final Drawable k() {
@@ -695,12 +695,12 @@ public class t37 extends Drawable {
                     byte b = this.l;
                     char c2 = !z9 ? (char) 2 : b == 2 ? (char) 1 : (char) 0;
                     z4 = this.L;
-                    hh7[] hh7VarArr = T;
+                    ih7[] ih7VarArr = T;
                     if (z4 && i10 != 0 && z3) {
                         c = 3;
-                        hh7 hh7Var = hh7VarArr[c2];
-                        if (hh7Var != null) {
-                            int[] iArr = hh7Var.a;
+                        ih7 ih7Var = ih7VarArr[c2];
+                        if (ih7Var != null) {
+                            int[] iArr = ih7Var.a;
                             z5 = true;
                             this.e = iArr[0];
                             this.f = iArr[1];
@@ -719,16 +719,16 @@ public class t37 extends Drawable {
                                     if (i10 == 0) {
                                         this.a = new LinearGradient(0.0f, i8, 0.0f, i7, new int[]{i9, i13}, (float[]) null, Shader.TileMode.CLAMP);
                                     } else if (z3) {
-                                        if (hh7VarArr[c2] == null) {
-                                            hh7 hh7Var2 = new hh7();
-                                            hh7VarArr[c2] = hh7Var2;
+                                        if (ih7VarArr[c2] == null) {
+                                            ih7 ih7Var2 = new ih7();
+                                            ih7VarArr[c2] = ih7Var2;
                                             if (b != 2) {
-                                                hh7Var2.t = true;
+                                                ih7Var2.t = true;
                                             }
-                                            hh7Var2.u(b(1.0f));
+                                            ih7Var2.u(b(1.0f));
                                         }
-                                        hh7VarArr[c2].n(true, i13, i9, i10, i11);
-                                        this.a = hh7VarArr[c2].v;
+                                        ih7VarArr[c2].n(true, i13, i9, i10, i11);
+                                        this.a = ih7VarArr[c2].v;
                                     } else if (i11 != 0) {
                                         this.a = new LinearGradient(0.0f, i8, 0.0f, i7, new int[]{i11, i10, i9, i13}, (float[]) null, Shader.TileMode.CLAMP);
                                     } else {
@@ -752,29 +752,29 @@ public class t37 extends Drawable {
                                         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                                         this.O = new BitmapShader(bitmap, tileMode, tileMode);
                                     }
-                                    if (hh7VarArr[c2] == null) {
-                                        hh7 hh7Var3 = new hh7();
-                                        hh7VarArr[c2] = hh7Var3;
+                                    if (ih7VarArr[c2] == null) {
+                                        ih7 ih7Var3 = new ih7();
+                                        ih7VarArr[c2] = ih7Var3;
                                         if (b != 2) {
                                             boolean z10 = z5;
-                                            hh7Var3.t = z10;
+                                            ih7Var3.t = z10;
                                             z6 = z10;
                                         } else {
                                             z6 = z5;
                                         }
-                                        hh7Var3.u(b(1.0f));
+                                        ih7Var3.u(b(1.0f));
                                         r7 = z6;
                                     } else {
                                         r7 = z5;
                                     }
-                                    hh7 hh7Var4 = hh7VarArr[c2];
+                                    ih7 ih7Var4 = ih7VarArr[c2];
                                     Bitmap bitmap2 = this.N;
-                                    int[] iArr2 = hh7Var4.a;
+                                    int[] iArr2 = ih7Var4.a;
                                     iArr2[0] = i13;
                                     iArr2[r7] = i9;
                                     iArr2[2] = i10;
                                     iArr2[c] = i11;
-                                    hh7Var4.c(bitmap2, hh7Var4.i, hh7Var4.e.getInterpolation(hh7Var4.h));
+                                    ih7Var4.c(bitmap2, ih7Var4.i, ih7Var4.e.getInterpolation(ih7Var4.h));
                                     this.O.setLocalMatrix(this.k);
                                 }
                                 BitmapShader bitmapShader = this.O;
@@ -789,7 +789,7 @@ public class t37 extends Drawable {
                             }
                             if (this.a instanceof BitmapShader) {
                                 i12 = 0;
-                                hh7VarArr[c2].setBounds(0, i8, i2, i7 - i4);
+                                ih7VarArr[c2].setBounds(0, i8, i2, i7 - i4);
                             } else {
                                 i12 = 0;
                             }
@@ -835,7 +835,7 @@ public class t37 extends Drawable {
         if (!z92) {
         }
         z4 = this.L;
-        hh7[] hh7VarArr2 = T;
+        ih7[] ih7VarArr2 = T;
         if (z4) {
         }
         c = 3;

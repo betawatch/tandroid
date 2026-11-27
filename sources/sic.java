@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class sic extends View {
     public ric a;
@@ -18,7 +18,7 @@ public final class sic extends View {
     public CharSequence d;
     public pkb e;
     public boolean f;
-    public sca h;
+    public tca h;
     public final mm n;
     public final /* synthetic */ uic r;
 
@@ -75,7 +75,7 @@ public final class sic extends View {
         float d = this.n.d(this.f);
         if (d > 0.0f) {
             if (this.h == null) {
-                this.h = new sca(this);
+                this.h = new tca(this);
             }
             canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
             this.h.a(canvas, d);

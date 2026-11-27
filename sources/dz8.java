@@ -14,7 +14,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class dz8 extends FrameLayout implements fn7 {
     public static final long[] L = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
@@ -95,7 +95,7 @@ public abstract class dz8 extends FrameLayout implements fn7 {
     public final ArrayList a() {
         if (this.J == null) {
             this.J = new ArrayList();
-            for (String str : uc7.s1(this.a).X3.getString("qrAppliedEmoji", "").split(",")) {
+            for (String str : uc7.s1(this.a).Y3.getString("qrAppliedEmoji", "").split(",")) {
                 try {
                     if (!str.isEmpty()) {
                         this.J.add(Long.valueOf(Long.parseLong(str)));
@@ -191,7 +191,7 @@ public abstract class dz8 extends FrameLayout implements fn7 {
             this.F = true;
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
             tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-            TLRPC.TL_messages_stickerSet m0 = ls6.d0(i3).m0(tL_inputStickerSetShortName, null, false, true, new ii7(this, b));
+            TLRPC.TL_messages_stickerSet m0 = ls6.d0(i3).m0(tL_inputStickerSetShortName, null, false, true, new ji7(this, b));
             if (m0 != null && (arrayList5 = m0.documents) != null && !arrayList5.isEmpty()) {
                 this.E = m0;
             }

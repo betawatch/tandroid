@@ -3,14 +3,14 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class koc extends ucb {
     public u8a n;
     public int o;
     public boolean p;
     public loc q;
-    public i09 r;
+    public j09 r;
 
     @Override // ucb
     public final void a(long j) {
@@ -77,8 +77,8 @@ public final class koc extends ucb {
             ey7Var.A();
             this.q = new loc(A, s, i2, i3, pow, pow2, Arrays.copyOf(ey7Var.a, ey7Var.c));
         } else {
-            i09 i09Var = this.r;
-            if (i09Var == null) {
+            j09 j09Var = this.r;
+            if (j09Var == null) {
                 this.r = s2f.b(ey7Var, true, true);
             } else {
                 int i4 = ey7Var.c;
@@ -243,7 +243,7 @@ public final class koc extends ucb {
                         if (!zd1Var.e()) {
                             throw hy7.a("framing bit after modes not set as expected", null);
                         }
-                        u8aVar = new u8a(locVar, i09Var, bArr, jp5VarArr);
+                        u8aVar = new u8a(locVar, j09Var, bArr, jp5VarArr);
                     } else {
                         if (zd1Var.f(24) != 5653314) {
                             throw hy7.a("expected code book to start with [0x56, 0x43, 0x42] at " + ((zd1Var.d << 3) + zd1Var.e), null);
@@ -290,10 +290,10 @@ public final class koc extends ucb {
         ArrayList arrayList = new ArrayList();
         arrayList.add(locVar2.g);
         arrayList.add((byte[]) u8aVar.c);
-        uf7 a = moc.a(po5.r((String[]) ((i09) u8aVar.b).b));
+        vf7 a = moc.a(po5.r((String[]) ((j09) u8aVar.b).b));
         jo4 jo4Var = new jo4();
-        jo4Var.r = dg7.n("audio/ogg");
-        jo4Var.s = dg7.n("audio/vorbis");
+        jo4Var.r = eg7.n("audio/ogg");
+        jo4Var.s = eg7.n("audio/vorbis");
         jo4Var.i = locVar2.d;
         jo4Var.j = locVar2.c;
         jo4Var.M = locVar2.a;

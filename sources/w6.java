@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class w6 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -140,9 +140,9 @@ public final /* synthetic */ class w6 implements View.OnClickListener {
                 o68 o68Var = (o68) obj;
                 boolean z4 = !z;
                 uc7 s1 = uc7.s1(o68Var.m2);
-                if (s1.Q3 != z4) {
-                    SharedPreferences.Editor edit2 = s1.X3.edit();
-                    s1.Q3 = z4;
+                if (s1.R3 != z4) {
+                    SharedPreferences.Editor edit2 = s1.Y3.edit();
+                    s1.R3 = z4;
                     edit2.putBoolean("storyQualityFull", z4).apply();
                     s1.getNotificationCenter().k(jn7.o3, new Object[0]);
                 }

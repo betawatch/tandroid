@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class uw1 implements View.OnClickListener {
     public final /* synthetic */ zu1 a;
@@ -38,7 +38,7 @@ public final class uw1 implements View.OnClickListener {
         }
         c43Var.a(chatActivityEnterView.V2, true);
         imageView.setImageDrawable(chatActivityEnterView.f0);
-        uc7.s1(chatActivityEnterView.R).W3.edit().putBoolean("silent_" + chatActivityEnterView.F3, chatActivityEnterView.V2).commit();
+        uc7.s1(chatActivityEnterView.R).X3.edit().putBoolean("silent_" + chatActivityEnterView.F3, chatActivityEnterView.V2).commit();
         ip7.n(chatActivityEnterView.R).c0(chatActivityEnterView.F3, zu1Var.c(), true);
         zu1Var.i6();
         UndoView undoView = zu1Var.N3;

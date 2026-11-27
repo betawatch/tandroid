@@ -6,7 +6,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class am3 implements icc {
     public final /* synthetic */ byte a = 0;
@@ -70,8 +70,8 @@ public final /* synthetic */ class am3 implements icc {
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 if (stargiftdepositpayload != null) {
                     ks5 ks5Var = new ks5(wuaVar, new boolean[1], idVar, bx4Var, this.b, stargiftdepositpayload);
-                    ida idaVar = new ida((Object) new Runnable[]{c.C(wuaVar.a).j(stargiftdepositpayload, new ia7(idaVar, ks5Var, (byte) 9))}, (Object) ks5Var, (byte) 10);
-                    hl.d3(idaVar, 5000L);
+                    kba kbaVar = new kba((Object) new Runnable[]{c.C(wuaVar.a).j(stargiftdepositpayload, new ia7(kbaVar, ks5Var, (byte) 9))}, (Object) ks5Var, (byte) 11);
+                    hl.d3(kbaVar, 5000L);
                     break;
                 } else {
                     idVar.dismiss();

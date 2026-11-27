@@ -39,7 +39,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class gcc {
     public static final String a;
@@ -170,7 +170,7 @@ public abstract class gcc {
 
     public static ko4 G(int i2, int i3, int i4) {
         jo4 jo4Var = new jo4();
-        jo4Var.s = dg7.n("audio/raw");
+        jo4Var.s = eg7.n("audio/raw");
         jo4Var.M = i3;
         jo4Var.O = i4;
         jo4Var.P = i2;
@@ -1095,9 +1095,9 @@ public abstract class gcc {
 
     public static gba h0(x76 x76Var, nx nxVar) {
         gba gbaVar = new gba();
-        g9c g9cVar = new g9c(gbaVar, x76Var, (byte) 4);
+        c9c c9cVar = new c9c(gbaVar, x76Var, (byte) 5);
         mo3 mo3Var = mo3.a;
-        gbaVar.b(g9cVar, mo3Var);
+        gbaVar.b(c9cVar, mo3Var);
         x76Var.b(new b6c(x76Var, gbaVar, nxVar, (byte) 2), mo3Var);
         return gbaVar;
     }
@@ -1317,7 +1317,7 @@ public abstract class gcc {
     public static int v(int i2, String str) {
         int i3 = 0;
         for (String str2 : e0(str)) {
-            if (i2 == dg7.h(dg7.d(str2))) {
+            if (i2 == eg7.h(eg7.d(str2))) {
                 i3++;
             }
         }
@@ -1331,7 +1331,7 @@ public abstract class gcc {
         }
         StringBuilder sb = new StringBuilder();
         for (String str2 : e0) {
-            if (i2 == dg7.h(dg7.d(str2))) {
+            if (i2 == eg7.h(eg7.d(str2))) {
                 if (sb.length() > 0) {
                     sb.append(",");
                 }
@@ -1354,7 +1354,7 @@ public abstract class gcc {
         int i3;
         int i4;
         int i5;
-        if (str == null || !dg7.j(str, str2)) {
+        if (str == null || !eg7.j(str, str2)) {
             return null;
         }
         if (str.startsWith("dvhe") || str.startsWith("dvh1") || str.startsWith("dav1")) {

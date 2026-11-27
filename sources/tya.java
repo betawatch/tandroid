@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import android.widget.TextView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class tya implements TextWatcher {
     public boolean a;
@@ -42,10 +42,10 @@ public final class tya implements TextWatcher {
         try {
             j = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
             try {
-                if (j > uc7.s1(yac.t0).k4.z2.f()) {
+                if (j > uc7.s1(yac.t0).l4.z2.f()) {
                     this.a = true;
                     EditTextBoldCursor editTextBoldCursor = this.c;
-                    j = uc7.s1(yac.t0).k4.z2.f();
+                    j = uc7.s1(yac.t0).l4.z2.f();
                     editTextBoldCursor.setText(Long.toString(j));
                     EditTextBoldCursor editTextBoldCursor2 = this.c;
                     editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
@@ -84,7 +84,7 @@ public final class tya implements TextWatcher {
             return;
         }
         textView2.animate().alpha(1.0f).start();
-        this.n.setText("≈" + di0.h().e((long) ((j / 1000.0d) * uc7.s1(yac.t0).k4.A3.i), "USD"));
+        this.n.setText("≈" + di0.h().e((long) ((j / 1000.0d) * uc7.s1(yac.t0).l4.A3.i), "USD"));
     }
 
     @Override // android.text.TextWatcher

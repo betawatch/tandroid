@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ahe extends qi6 {
     public boolean d = true;
@@ -22,10 +22,10 @@ public final class ahe extends qi6 {
         g9d g9dVar = new g9d();
         g9dVar.b = Float.valueOf(lm5Var.a);
         this.e = new b2f(g9dVar);
-        this.h = new q2f(jg7.c().b(), (byte) 1);
+        this.h = new q2f(kg7.c().b(), (byte) 1);
     }
 
-    @Override // sg7
+    @Override // tg7
     public final synchronized void b() {
         this.f.zzb();
         q8f q8fVar = this.g;
@@ -41,7 +41,7 @@ public final class ahe extends qi6 {
         xnb.c(1, new dd1(q8fVar, new rx(fpVar, 0), vxe.e, q8fVar.b(), (byte) 3));
     }
 
-    @Override // sg7
+    @Override // tg7
     public final synchronized void c() {
         this.f.zzc();
         this.d = true;
@@ -60,7 +60,7 @@ public final class ahe extends qi6 {
                 a = this.f.a(jq5Var);
                 f(pxe.b, jq5Var, elapsedRealtime);
                 this.d = false;
-            } catch (kg7 e) {
+            } catch (lg7 e) {
                 f(e.a == 14 ? pxe.c : pxe.d, jq5Var, elapsedRealtime);
                 throw e;
             }
@@ -111,7 +111,7 @@ public final class ahe extends qi6 {
         synchronized (q2fVar) {
             long elapsedRealtime3 = SystemClock.elapsedRealtime();
             if (q2fVar.b.get() == -1 || elapsedRealtime3 - q2fVar.b.get() > 1800000) {
-                q2fVar.a.i(new ikb(0, Arrays.asList(new bg7(24305, s, 0, j2, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new zg2((Object) q2fVar, elapsedRealtime3, (byte) 11));
+                q2fVar.a.i(new ikb(0, Arrays.asList(new cg7(24305, s, 0, j2, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new zg2((Object) q2fVar, elapsedRealtime3, (byte) 11));
             }
         }
     }

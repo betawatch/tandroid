@@ -21,7 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class c74 implements Handler.Callback, wt6, sec {
     public static final long x0 = gcc.i0(10000);
@@ -2384,7 +2384,7 @@ public final class c74 implements Handler.Callback, wt6, sec {
                                                     }
                                                     boolean q = d2cVar5.q(i14);
                                                     e74[] e74VarArr = (e74[]) d2cVar5.d;
-                                                    if (q && ra9VarArr3[i14].a.b != -2 && !dg7.a(e74VarArr[i14].n().t, e74VarArr[i14].n().l) && !ra9VarArr3[i14].g()) {
+                                                    if (q && ra9VarArr3[i14].a.b != -2 && !eg7.a(e74VarArr[i14].n().t, e74VarArr[i14].n().l) && !ra9VarArr3[i14].g()) {
                                                         z17 = false;
                                                         break;
                                                     }
@@ -3954,11 +3954,11 @@ public final class c74 implements Handler.Callback, wt6, sec {
             boolean z3 = false;
             for (e74 e74Var : e74VarArr) {
                 if (e74Var != null) {
-                    uf7 uf7Var = e74Var.i(0).m;
-                    if (uf7Var == null) {
-                        mo5Var.c(new uf7(new sf7[0]));
+                    vf7 vf7Var = e74Var.i(0).m;
+                    if (vf7Var == null) {
+                        mo5Var.c(new vf7(new tf7[0]));
                     } else {
-                        mo5Var.c(uf7Var);
+                        mo5Var.c(vf7Var);
                         z3 = true;
                     }
                 }

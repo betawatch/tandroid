@@ -14,7 +14,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.v;
 import org.telegram.ui.z;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class x38 implements Runnable {
     public final /* synthetic */ byte a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class x38 implements Runnable {
                             break;
                         }
                         i = ((e) h48Var).currentAccount;
-                        ed9 ed9Var2 = new ed9(i, a48Var.L.id, new ii7(y38Var, (byte) 12));
+                        ed9 ed9Var2 = new ed9(i, a48Var.L.id, new ji7(y38Var, (byte) 12));
                         ed9Var2.x = true;
                         a48Var.K = ed9Var2;
                         ed9Var2.o(false);
@@ -68,10 +68,10 @@ public final /* synthetic */ class x38 implements Runnable {
                 }
                 break;
             case 1:
-                ((q58) obj).a.K0();
+                ((r58) obj).a.K0();
                 break;
             case 2:
-                o68 o68Var = ((t58) obj).y;
+                o68 o68Var = ((u58) obj).y;
                 k68 k68Var = o68Var.A1;
                 if (k68Var != null) {
                     if (!o68Var.D1 && !o68Var.E1 && !o68Var.F1) {

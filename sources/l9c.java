@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class l9c extends la {
     public of0 F;
@@ -270,7 +270,7 @@ public class l9c extends la {
                 if (i != 16) {
                     return;
                 }
-                ((v09) view).setReorder(z);
+                ((w09) view).setReorder(z);
             } else {
                 a8c G = b8c.G(i);
                 if (G != null) {
@@ -392,6 +392,7 @@ public class l9c extends la {
                 long j4 = 0;
                 byte b = 2;
                 str = "";
+                byte b2 = 1;
                 switch (i4) {
                     case -5:
                         k89 k89Var = (k89) view;
@@ -706,27 +707,27 @@ public class l9c extends la {
                         bnaVar.setMinValueAllowed((int) G.C);
                         break;
                     case 16:
-                        v09 v09Var = (v09) view;
-                        v09Var.d.a(G.e, false);
-                        v09Var.setReorder(this.O);
+                        w09 w09Var = (w09) view;
+                        w09Var.d.a(G.e, false);
+                        w09Var.setReorder(this.O);
                         Object obj3 = G.H;
                         if (obj3 instanceof a19) {
-                            v09Var.a((a19) obj3, null, J);
+                            w09Var.a((a19) obj3, null, J);
                             break;
                         }
                         break;
                     case 17:
-                        u09 u09Var = (u09) view;
-                        u09Var.e.a(G.e, false);
+                        v09 v09Var = (v09) view;
+                        v09Var.e.a(G.e, false);
                         Object obj4 = G.H;
                         if (obj4 instanceof a19) {
                             a19 a19Var = (a19) obj4;
-                            rb0 rb0Var = u09Var.a;
-                            int[] iArr = u09Var.r;
-                            TextView textView3 = u09Var.d;
-                            ImageReceiver imageReceiver2 = u09Var.b;
+                            rb0 rb0Var = v09Var.a;
+                            int[] iArr = v09Var.r;
+                            TextView textView3 = v09Var.d;
+                            ImageReceiver imageReceiver2 = v09Var.b;
                             int i12 = yac.t0;
-                            u09Var.c.setText(uc7.s1(i12).A1(yac.h(i12).e(), false));
+                            v09Var.c.setText(uc7.s1(i12).A1(yac.h(i12).e(), false));
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                             r47 r47Var = a19Var.e;
                             if (r47Var != null) {
@@ -766,10 +767,10 @@ public class l9c extends la {
                                         TLRPC.PhotoSize w2 = xb4.w(document2.thumbs, hl.L(36.0f), true, null, true);
                                         TLRPC.Document document3 = m1.document;
                                         if (w2 == null) {
-                                            jn5 b2 = jn5.b(document3);
+                                            jn5 b3 = jn5.b(document3);
                                             j = m1.document.size;
                                             str2 = "g";
-                                            jn5Var = b2;
+                                            jn5Var = b3;
                                         } else {
                                             jn5 f2 = jn5.f(w2, document3);
                                             j = w2.size;
@@ -782,8 +783,8 @@ public class l9c extends la {
                                         imageReceiver3.q0(hl.L(6.0f));
                                     }
                                 }
-                                u09Var.s = J;
-                                u09Var.invalidate();
+                                v09Var.s = J;
+                                v09Var.invalidate();
                                 break;
                             } else {
                                 imageReceiver = imageReceiver2;
@@ -791,8 +792,8 @@ public class l9c extends la {
                             rb0Var.q(yac.h(i12).f());
                             imageReceiver.U(yac.h(i12).f(), rb0Var, null);
                             imageReceiver.q0(hl.L(56.0f));
-                            u09Var.s = J;
-                            u09Var.invalidate();
+                            v09Var.s = J;
+                            v09Var.invalidate();
                         }
                         break;
                     case 18:
@@ -1065,7 +1066,7 @@ public class l9c extends la {
                         sg2Var.setPad(G.i);
                         sg2Var.e(G.m, "", G.e, J, sg2Var.a == G.d);
                         sg2Var.a = G.d;
-                        sg2Var.setIcon(G.u ? R.drawable.permission_locked : (byte) 0);
+                        sg2Var.setIcon(G.u ? R.drawable.permission_locked : 0);
                         if (i4 == 36 || i4 == 41) {
                             boolean z9 = G.f;
                             CharSequence charSequence16 = G.p;
@@ -1107,7 +1108,7 @@ public class l9c extends la {
                         vkbVar.setIcon(G.u ? R.drawable.permission_locked : 0);
                         if (i4 == 40) {
                             if (!TextUtils.isEmpty(G.p)) {
-                                vkbVar.a(new g9c(G, vkbVar, r0), G.p.toString(), G.f);
+                                vkbVar.a(new c9c(G, vkbVar, b2), G.p.toString(), G.f);
                                 break;
                             } else {
                                 LinearLayout linearLayout = vkbVar.f;
@@ -1283,10 +1284,10 @@ public class l9c extends la {
                     mf5Var = new bna(context, vnbVar);
                     break;
                 case 16:
-                    mf5Var = new v09(vnbVar, context, this.N != null);
+                    mf5Var = new w09(vnbVar, context, this.N != null);
                     break;
                 case 17:
-                    mf5Var = new u09(context, vnbVar);
+                    mf5Var = new v09(context, vnbVar);
                     break;
                 case 18:
                 case 19:

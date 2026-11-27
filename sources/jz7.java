@@ -32,7 +32,7 @@ import org.webrtc.MediaConstraints;
 import org.webrtc.NativeLifecycleLock;
 import org.webrtc.PeerConnectionFactory;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class jz7 implements ncc, NativeLifecycleLock.NativePointerCallable, h56, n98, p88, OnSuccessListener, fd, zk0, s84, m8, nr7, jcc, kj6, dz5, p29, t69 {
     public final /* synthetic */ byte a;
@@ -398,10 +398,10 @@ public final /* synthetic */ class jz7 implements ncc, NativeLifecycleLock.Nativ
                 }
                 break;
             default:
-                w09 w09Var = (w09) ((rn8) obj).b;
-                i3 = ((e) w09Var).currentAccount;
+                x09 x09Var = (x09) ((rn8) obj).b;
+                i3 = ((e) x09Var).currentAccount;
                 b19 f = b19.f(i3);
-                ArrayList arrayList2 = w09Var.b;
+                ArrayList arrayList2 = x09Var.b;
                 int i6 = f.a;
                 int i7 = 0;
                 while (i7 < arrayList2.size()) {
@@ -425,7 +425,7 @@ public final /* synthetic */ class jz7 implements ncc, NativeLifecycleLock.Nativ
                             if (Y1 != null) {
                                 Y1.flags2 &= -5;
                                 Y1.business_greeting_message = null;
-                                jf7.Y(i6).g2(Y1, true);
+                                kf7.a0(i6).l2(Y1, true);
                             }
                         } else if ("away".equals(c.b)) {
                             ConnectionsManager.getInstance(i6).sendRequest(new TL_account.updateBusinessAwayMessage(), null);
@@ -433,16 +433,16 @@ public final /* synthetic */ class jz7 implements ncc, NativeLifecycleLock.Nativ
                             if (Y12 != null) {
                                 Y12.flags2 &= -9;
                                 Y12.business_away_message = null;
-                                jf7.Y(i6).g2(Y12, true);
+                                kf7.a0(i6).l2(Y12, true);
                             }
                         }
                     }
                     f.l();
-                    jf7 Y = jf7.Y(i6);
-                    Y.a.c(new q41(Y, arrayList2, (byte) 24));
+                    kf7 a0 = kf7.a0(i6);
+                    a0.a.c(new q41(a0, arrayList2, (byte) 24));
                     jn7.f(i6).k(jn7.F1, new Object[0]);
                 }
-                w09Var.d0();
+                x09Var.d0();
                 break;
         }
     }

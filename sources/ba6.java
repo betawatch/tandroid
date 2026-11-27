@@ -11,7 +11,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class ba6 implements je8 {
     public static ba6 E;
@@ -215,12 +215,12 @@ public final class ba6 implements je8 {
     }
 
     public final void d(boolean z) {
-        ybb ybbVar;
+        zbb zbbVar;
         lcb lcbVar = this.c;
-        if (lcbVar == null || (ybbVar = lcbVar.s) == null) {
+        if (lcbVar == null || (zbbVar = lcbVar.s) == null) {
             return;
         }
-        ybbVar.setVisibility(z ? 8 : 0);
+        zbbVar.setVisibility(z ? 8 : 0);
     }
 
     @Override // je8

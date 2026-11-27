@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class jo0 extends FrameLayout {
     public final /* synthetic */ byte a = 10;
@@ -60,7 +60,7 @@ public final class jo0 extends FrameLayout {
         addView(textView, tre.d(-1, -2.0f, 17, 17.0f, 40.0f, 17.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        String a0 = ob6.a0(null, null, 2131748452, Integer.valueOf(i91Var.getMessagesController().k4.E3.f()));
+        String a0 = ob6.a0(null, null, 2131748452, Integer.valueOf(i91Var.getMessagesController().l4.E3.f()));
         if (hl.O1() && !hl.N1()) {
             a0 = a0.replace('\n', ' ');
         }

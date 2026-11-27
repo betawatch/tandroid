@@ -6,16 +6,16 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class v6b extends vu7 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ lcb d;
     public final /* synthetic */ x53 e;
-    public final /* synthetic */ acb f;
+    public final /* synthetic */ bcb f;
 
-    public v6b(acb acbVar, Context context, lcb lcbVar, x53 x53Var) {
-        this.f = acbVar;
+    public v6b(bcb bcbVar, Context context, lcb lcbVar, x53 x53Var) {
+        this.f = bcbVar;
         this.c = context;
         this.d = lcbVar;
         this.e = x53Var;
@@ -32,22 +32,22 @@ public final class v6b extends vu7 {
 
     @Override // vu7
     public final int b() {
-        acb acbVar = this.f;
-        ArrayList arrayList = acbVar.y0;
-        return arrayList != null ? arrayList.size() : acbVar.B0.size();
+        bcb bcbVar = this.f;
+        ArrayList arrayList = bcbVar.y0;
+        return arrayList != null ? arrayList.size() : bcbVar.B0.size();
     }
 
     @Override // vu7
     public final Object e(fic ficVar, int i) {
         o68 u6bVar;
         Context context = this.c;
-        acb acbVar = this.f;
-        w6b w6bVar = new w6b(acbVar, context);
-        ArrayList arrayList = acbVar.Q0;
+        bcb bcbVar = this.f;
+        w6b w6bVar = new w6b(bcbVar, context);
+        ArrayList arrayList = bcbVar.Q0;
         boolean isEmpty = arrayList.isEmpty();
         lcb lcbVar = this.d;
         if (isEmpty) {
-            u6bVar = new u6b(this, this.c, lcbVar, acbVar.I0, this.e);
+            u6bVar = new u6b(this, this.c, lcbVar, bcbVar.I0, this.e);
         } else {
             u6bVar = (o68) arrayList.remove(0);
             u6bVar.Y0.a.getImageReceiver().v0(true, true);
@@ -78,27 +78,27 @@ public final class v6b extends vu7 {
             u6bVar.f0();
         }
         w6bVar.a = u6bVar;
-        u6bVar.setAccount(acbVar.z0);
-        u6bVar.setDelegate(acbVar.C0);
+        u6bVar.setAccount(bcbVar.z0);
+        u6bVar.setDelegate(bcbVar.C0);
         u6bVar.setLongpressed(lcbVar.a1);
         w6bVar.setTag(Integer.valueOf(i));
-        ArrayList arrayList2 = acbVar.y0;
+        ArrayList arrayList2 = bcbVar.y0;
         if (arrayList2 != null) {
             if (lcbVar.R0) {
                 i = (arrayList2.size() - 1) - i;
             }
             ArrayList arrayList3 = (ArrayList) arrayList2.get(i);
             w6bVar.c = arrayList3;
-            u5b u5bVar = lcbVar.O0;
-            if ((u5bVar instanceof p5b) || (u5bVar instanceof w5b)) {
-                r47 f = u5bVar.f(((Integer) arrayList3.get(0)).intValue());
-                w6bVar.b = f == null ? acbVar.x0 : r47.B0(f.k);
+            v5b v5bVar = lcbVar.O0;
+            if ((v5bVar instanceof q5b) || (v5bVar instanceof x5b)) {
+                r47 f = v5bVar.f(((Integer) arrayList3.get(0)).intValue());
+                w6bVar.b = f == null ? bcbVar.x0 : r47.B0(f.k);
             } else {
-                w6bVar.b = acbVar.x0;
+                w6bVar.b = bcbVar.x0;
             }
         } else {
             w6bVar.c = null;
-            w6bVar.b = ((Long) acbVar.B0.get(i)).longValue();
+            w6bVar.b = ((Long) bcbVar.B0.get(i)).longValue();
         }
         w6bVar.addView(u6bVar);
         u6bVar.requestLayout();

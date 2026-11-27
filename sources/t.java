@@ -33,7 +33,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class t implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -626,7 +626,7 @@ public final /* synthetic */ class t implements View.OnClickListener {
                     id idVar5 = new id(3, null, i91Var.getParentActivity());
                     TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
                     getgroupcall.call = tL_inputGroupCallInviteMessage;
-                    getgroupcall.limit = i91Var.getMessagesController().k4.E3.f();
+                    getgroupcall.limit = i91Var.getMessagesController().l4.E3.f();
                     idVar5.setOnCancelListener(new n81(i91Var, i91Var.getConnectionsManager().sendRequest(getgroupcall, new m81(i91Var, idVar5, hashSet, tL_inputGroupCallInviteMessage, z3, (byte) 1)), b5));
                     idVar5.q(600L);
                     break;

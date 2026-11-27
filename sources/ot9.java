@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ot9 {
     public static final Class[] f = {Boolean.TYPE, boolean[].class, Double.TYPE, double[].class, Integer.TYPE, int[].class, Long.TYPE, long[].class, String.class, String[].class, Binder.class, Bundle.class, Byte.TYPE, byte[].class, Character.TYPE, char[].class, CharSequence.class, CharSequence[].class, ArrayList.class, Float.TYPE, float[].class, Parcelable.class, Parcelable[].class, Serializable.class, Short.TYPE, short[].class, SparseArray.class, Size.class, SizeF.class};
@@ -154,9 +154,9 @@ public final class ot9 {
                 throw new IllegalArgumentException("Can't put value with type " + c.getClass() + " into saved state");
             }
             Object obj2 = ot9Var.c.get(str3);
-            qj7 qj7Var = obj2 instanceof qj7 ? (qj7) obj2 : null;
-            if (qj7Var != null) {
-                qj7Var.i(c);
+            rj7 rj7Var = obj2 instanceof rj7 ? (rj7) obj2 : null;
+            if (rj7Var != null) {
+                rj7Var.i(c);
             } else {
                 linkedHashMap.put(str3, c);
             }

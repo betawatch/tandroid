@@ -50,7 +50,7 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class ChatAttachAlertPhotoLayout extends f12 implements fn7 {
     public static boolean r1;
@@ -462,7 +462,7 @@ public class ChatAttachAlertPhotoLayout extends f12 implements fn7 {
         r3dVar.setDelegate(new v42(this, (byte) 3));
         ShutterButton shutterButton = new ShutterButton(context);
         shutterButton.b = new DecelerateInterpolator();
-        shutterButton.x = new ki7(shutterButton, (byte) 29);
+        shutterButton.x = new li7(shutterButton, (byte) 29);
         shutterButton.a = shutterButton.getResources().getDrawable(R.drawable.camera_btn);
         Paint paint2 = new Paint(1);
         shutterButton.c = paint2;
@@ -2125,7 +2125,7 @@ public class ChatAttachAlertPhotoLayout extends f12 implements fn7 {
     public final int h0() {
         n12 n12Var = this.b;
         org.telegram.ui.ActionBar.e eVar = n12Var.Z1;
-        return ((eVar instanceof zu1) && ((zu1) eVar).g4 == 5) ? eVar.getMessagesController().k4.q0.f() - ((zu1) n12Var.Z1).M6.size() : ConnectionsManager.DEFAULT_DATACENTER_ID;
+        return ((eVar instanceof zu1) && ((zu1) eVar).g4 == 5) ? eVar.getMessagesController().l4.q0.f() - ((zu1) n12Var.Z1).M6.size() : ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(16:22|(1:24)|(1:29)|(6:31|(5:33|(1:35)|36|(1:38)|(1:40))|98|42|(1:97)|46)(1:99)|(1:96)(1:51)|52|53|54|55|(4:57|58|(2:60|61)|63)|64|65|66|67|68|69) */

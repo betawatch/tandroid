@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class kr extends j79 {
     public final /* synthetic */ byte c;
@@ -512,7 +512,7 @@ public final class kr extends j79 {
                                         v47Var3.f = f[1];
                                     } else {
                                         v47Var3.e = 0;
-                                        v47Var3.f = Math.min(uc7.s1(s57Var.x).k4.V1.f(), ou1.d(messageObject));
+                                        v47Var3.f = Math.min(uc7.s1(s57Var.x).l4.V1.f(), ou1.d(messageObject));
                                     }
                                 }
                             }

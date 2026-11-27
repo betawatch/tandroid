@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class l46 extends ny0 implements fn7 {
     public static final /* synthetic */ int R2 = 0;
@@ -184,8 +184,8 @@ public class l46 extends ny0 implements fn7 {
         k46Var.e = 0;
         k46Var.f = 0;
         if (i == 0) {
-            k46Var.e = uc7.s1(i2).k4.l1.f();
-            k46Var.f = uc7.s1(i2).k4.m1.f();
+            k46Var.e = uc7.s1(i2).l4.l1.f();
+            k46Var.f = uc7.s1(i2).l4.m1.f();
             k46Var.a = R.drawable.msg_limit_pin;
             k46Var.b = ob6.a0("LimitReachedPinDialogs", null, 2131748708, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
             k46Var.c = ob6.a0("LimitReachedPinDialogsPremium", null, 2131748706, Integer.valueOf(k46Var.f));
@@ -193,8 +193,8 @@ public class l46 extends ny0 implements fn7 {
             return k46Var;
         }
         if (i == 33) {
-            k46Var.e = uc7.s1(i2).k4.p2.f();
-            k46Var.f = uc7.s1(i2).k4.q2.f();
+            k46Var.e = uc7.s1(i2).l4.p2.f();
+            k46Var.f = uc7.s1(i2).l4.q2.f();
             k46Var.a = R.drawable.msg_limit_pin;
             k46Var.b = ob6.a0(null, null, 2131748705, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
             k46Var.c = ob6.a0(null, null, 2131748703, Integer.valueOf(k46Var.f));
@@ -202,8 +202,8 @@ public class l46 extends ny0 implements fn7 {
             return k46Var;
         }
         if (i == 2) {
-            k46Var.e = uc7.s1(i2).k4.p3.f();
-            k46Var.f = uc7.s1(i2).k4.n1.f();
+            k46Var.e = uc7.s1(i2).l4.p3.f();
+            k46Var.f = uc7.s1(i2).l4.n1.f();
             k46Var.a = R.drawable.msg_limit_links;
             k46Var.b = ob6.a0("LimitReachedPublicLinks", null, 2131748701, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
             k46Var.c = ob6.a0("LimitReachedPublicLinksPremium", null, 2131748699, Integer.valueOf(k46Var.f));
@@ -211,8 +211,8 @@ public class l46 extends ny0 implements fn7 {
             return k46Var;
         }
         if (i == 12) {
-            k46Var.e = uc7.s1(i2).k4.C1.f();
-            k46Var.f = uc7.s1(i2).k4.B3.f();
+            k46Var.e = uc7.s1(i2).l4.C1.f();
+            k46Var.f = uc7.s1(i2).l4.B3.f();
             k46Var.a = R.drawable.msg_limit_links;
             k46Var.b = ob6.a0("LimitReachedFolderLinks", null, 2131748714, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
             k46Var.c = ob6.a0("LimitReachedFolderLinksPremium", null, 2131748712, Integer.valueOf(k46Var.f));
@@ -220,8 +220,8 @@ public class l46 extends ny0 implements fn7 {
             return k46Var;
         }
         if (i == 13) {
-            k46Var.e = uc7.s1(i2).k4.L1.f();
-            k46Var.f = uc7.s1(i2).k4.C3.f();
+            k46Var.e = uc7.s1(i2).l4.L1.f();
+            k46Var.f = uc7.s1(i2).l4.C3.f();
             k46Var.a = R.drawable.msg_limit_folder;
             k46Var.b = ob6.a0("LimitReachedSharedFolders", null, 2131748697, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
             k46Var.c = ob6.a0("LimitReachedSharedFoldersPremium", null, 2131748695, Integer.valueOf(k46Var.f));
@@ -229,8 +229,8 @@ public class l46 extends ny0 implements fn7 {
             return k46Var;
         }
         if (i == 3) {
-            k46Var.e = uc7.s1(i2).k4.h1.f();
-            k46Var.f = uc7.s1(i2).k4.i1.f();
+            k46Var.e = uc7.s1(i2).l4.h1.f();
+            k46Var.f = uc7.s1(i2).l4.i1.f();
             k46Var.a = R.drawable.msg_limit_folder;
             k46Var.b = ob6.a0("LimitReachedFolders", null, 2131748711, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
             k46Var.c = ob6.a0("LimitReachedFoldersPremium", null, 2131748709, Integer.valueOf(k46Var.f));
@@ -238,8 +238,8 @@ public class l46 extends ny0 implements fn7 {
             return k46Var;
         }
         if (i == 4) {
-            k46Var.e = uc7.s1(i2).k4.j1.f();
-            k46Var.f = uc7.s1(i2).k4.k1.f();
+            k46Var.e = uc7.s1(i2).l4.j1.f();
+            k46Var.f = uc7.s1(i2).l4.k1.f();
             k46Var.a = R.drawable.msg_limit_chats;
             k46Var.b = ob6.a0("LimitReachedChatInFolders", null, 2131748729, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
             k46Var.c = ob6.a0("LimitReachedChatInFoldersPremium", null, 2131748727, Integer.valueOf(k46Var.f));
@@ -247,8 +247,8 @@ public class l46 extends ny0 implements fn7 {
             return k46Var;
         }
         if (i == 5) {
-            k46Var.e = uc7.s1(i2).k4.t3.f();
-            k46Var.f = uc7.s1(i2).k4.u3.f();
+            k46Var.e = uc7.s1(i2).l4.t3.f();
+            k46Var.f = uc7.s1(i2).l4.u3.f();
             k46Var.a = R.drawable.msg_limit_groups;
             k46Var.b = ob6.a0("LimitReachedCommunities", null, 2131748726, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
             k46Var.c = ob6.a0("LimitReachedCommunitiesPremium", null, 2131748724, Integer.valueOf(k46Var.f));
@@ -283,8 +283,8 @@ public class l46 extends ny0 implements fn7 {
             return k46Var;
         }
         if (i == 14) {
-            k46Var.e = uc7.s1(i2).k4.D1.f();
-            k46Var.f = uc7.s1(i2).k4.E1.f();
+            k46Var.e = uc7.s1(i2).l4.D1.f();
+            k46Var.f = uc7.s1(i2).l4.E1.f();
             k46Var.a = R.drawable.msg_limit_stories;
             k46Var.b = ob6.H(',', "LimitReachedStoriesCount2First", k46Var.e) + "\n" + ob6.H(',', "LimitReachedStoriesCount2Second", k46Var.f);
             k46Var.c = ob6.H(',', "LimitReachedStoriesCount2Premium", k46Var.f);
@@ -292,8 +292,8 @@ public class l46 extends ny0 implements fn7 {
             return k46Var;
         }
         if (i == 15) {
-            k46Var.e = uc7.s1(i2).k4.H1.f();
-            k46Var.f = uc7.s1(i2).k4.I1.f();
+            k46Var.e = uc7.s1(i2).l4.H1.f();
+            k46Var.f = uc7.s1(i2).l4.I1.f();
             k46Var.a = R.drawable.msg_limit_stories;
             k46Var.b = ob6.a0("LimitReachedStoriesWeekly", null, 2131748683, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
             k46Var.c = ob6.a0("LimitReachedStoriesWeeklyPremium", null, 2131748682, Integer.valueOf(k46Var.f));
@@ -301,8 +301,8 @@ public class l46 extends ny0 implements fn7 {
             return k46Var;
         }
         if (i == 16) {
-            k46Var.e = uc7.s1(i2).k4.J1.f();
-            k46Var.f = uc7.s1(i2).k4.K1.f();
+            k46Var.e = uc7.s1(i2).l4.J1.f();
+            k46Var.f = uc7.s1(i2).l4.K1.f();
             k46Var.a = R.drawable.msg_limit_stories;
             k46Var.b = ob6.a0("LimitReachedStoriesMonthly", null, 2131748685, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
             k46Var.c = ob6.a0("LimitReachedStoriesMonthlyPremium", null, 2131748684, Integer.valueOf(k46Var.f));
@@ -312,8 +312,8 @@ public class l46 extends ny0 implements fn7 {
         if (i != 18 && i != 32 && i != 20 && i != 24 && i != 27 && i != 28 && i != 25 && i != 30 && i != 35 && i != 29 && i != 22 && i != 23 && i != 19 && i != 21 && i != 26) {
             return k46Var;
         }
-        k46Var.e = uc7.s1(i2).k4.J1.f();
-        k46Var.f = uc7.s1(i2).k4.K1.f();
+        k46Var.e = uc7.s1(i2).l4.J1.f();
+        k46Var.f = uc7.s1(i2).l4.K1.f();
         k46Var.a = R.drawable.filled_limit_boost;
         k46Var.b = ob6.a0("LimitReachedStoriesMonthly", null, 2131748685, Integer.valueOf(k46Var.e), Integer.valueOf(k46Var.f));
         k46Var.c = ob6.a0("LimitReachedStoriesMonthlyPremium", null, 2131748684, Integer.valueOf(k46Var.f));
@@ -711,24 +711,24 @@ public class l46 extends ny0 implements fn7 {
             }
             return;
         }
-        rbb rbbVar = rbb.G2;
+        sbb sbbVar = sbb.G2;
         if (!booleanValue) {
-            if (rbbVar == null || !rbbVar.d) {
+            if (sbbVar == null || !sbbVar.d) {
                 dismiss();
                 ym0.f(LaunchActivity.Q(), chat, false);
                 return;
             }
             zu1 ha = zu1.ha(-chat.id);
             LaunchActivity.Q().presentFragment(ha, false, false);
-            rbb.v();
+            sbb.v();
             dismiss();
             ym0.f(ha, chat, false);
             return;
         }
-        if (rbbVar != null && rbbVar.d) {
+        if (sbbVar != null && sbbVar.d) {
             zu1 ha2 = zu1.ha(-chat.id);
             LaunchActivity.Q().presentFragment(ha2, false, false);
-            rbb.v();
+            sbb.v();
             dismiss();
             ym0.f(ha2, chat, true);
             return;
@@ -884,7 +884,7 @@ public class l46 extends ny0 implements fn7 {
         j46Var.addView(j46Var.b, indexOfChild, tre.t(-2, -2, 1, 24, -2, 24, 17));
         this.Y1.a.setText(e1());
         TextView textView4 = this.Y1.b;
-        hr hrVar = uc7.s1(this.a).k4;
+        hr hrVar = uc7.s1(this.a).l4;
         boolean j1 = j1();
         int i6 = this.c2;
         String str = null;
@@ -1169,10 +1169,10 @@ public class l46 extends ny0 implements fn7 {
             i2 = 1;
         }
         uc7 s1 = uc7.s1(this.a);
-        hr hrVar = s1.k4;
-        lc7 lc7Var = s1.E3;
+        hr hrVar = s1.l4;
+        lc7 lc7Var = s1.F3;
         int max = Math.max(10, lc7Var != null ? lc7Var.e(j1()) : 0);
-        lc7 lc7Var2 = s1.F3;
+        lc7 lc7Var2 = s1.G3;
         int max2 = Math.max(max, lc7Var2 != null ? lc7Var2.e(j1()) : 0);
         int max3 = j1() ? Math.max(Math.max(Math.max(Math.max(Math.max(max2, hrVar.h2.f()), hrVar.j2.f()), hrVar.g2.f()), hrVar.k2.f()), hrVar.m2.f()) : Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(max2, hrVar.d2.f()), hrVar.e2.f()), hrVar.f2.f()), hrVar.n2.f()), hrVar.o2.f()), hrVar.b2.f()), hrVar.c2.f());
         ArrayList arrayList = null;
@@ -1180,7 +1180,7 @@ public class l46 extends ny0 implements fn7 {
             boolean j1 = j1();
             ArrayList arrayList2 = new ArrayList();
             uc7 s12 = uc7.s1(this.a);
-            hr hrVar2 = s12.k4;
+            hr hrVar2 = s12.l4;
             if (!j1 && i2 >= hrVar2.c2.f()) {
                 arrayList2.add(f46.a(R.drawable.menu_feature_translate, 2131753653));
             }
@@ -1192,9 +1192,9 @@ public class l46 extends ny0 implements fn7 {
                 b2.f = true;
                 arrayList2.add(b2);
             }
-            lc7 lc7Var3 = s12.E3;
+            lc7 lc7Var3 = s12.F3;
             int a = lc7Var3 != null ? lc7Var3.a(i2, false) : 0;
-            lc7 lc7Var4 = s12.F3;
+            lc7 lc7Var4 = s12.G3;
             int a2 = lc7Var4 != null ? lc7Var4.a(i2, j1) : 0;
             if (!j1 && a > 0) {
                 arrayList2.add(f46.b(R.drawable.menu_feature_color_name, 7, "BoostFeatureNameColor"));
@@ -1482,7 +1482,7 @@ public class l46 extends ny0 implements fn7 {
                 int i2 = this.f2;
                 this.f2 = i2 + 1;
                 this.U1 = i2;
-                if (uc7.s1(this.a).k4.W1.f) {
+                if (uc7.s1(this.a).l4.W1.f) {
                     int i3 = this.f2;
                     this.f2 = i3 + 1;
                     this.n2 = i3;

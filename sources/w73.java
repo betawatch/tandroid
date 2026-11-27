@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.concurrent.CancellationException;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class w73 extends yfb implements is4 {
     public final /* synthetic */ byte a;
@@ -47,18 +47,18 @@ public final class w73 extends yfb implements is4 {
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         switch (b) {
             case 0:
-                return ((w73) create((i0b) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((w73) create((i0b) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             case 1:
-                ((w73) create((ux2) obj, (zw2) obj2)).invokeSuspend(f9cVar);
-                return f9cVar;
+                ((w73) create((ux2) obj, (zw2) obj2)).invokeSuspend(g9cVar);
+                return g9cVar;
             case 2:
-                ((w73) create((rj7) obj, (zw2) obj2)).invokeSuspend(f9cVar);
-                return f9cVar;
+                ((w73) create((sj7) obj, (zw2) obj2)).invokeSuspend(g9cVar);
+                return g9cVar;
             default:
-                return ((w73) create((rj7) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((w73) create((sj7) obj, (zw2) obj2)).invokeSuspend(g9cVar);
         }
     }
 
@@ -68,7 +68,7 @@ public final class w73 extends yfb implements is4 {
         long j;
         int intVolatile;
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         boolean z = false;
         Object obj2 = this.c;
         switch (b) {
@@ -98,10 +98,10 @@ public final class w73 extends yfb implements is4 {
                                 }
                             }
                             gq2Var.invoke();
-                            return f9cVar;
+                            return g9cVar;
                         } while (!unsafe.compareAndSwapInt(frbVar, j, intVolatile, 0));
                         gq2Var.invoke();
-                        return f9cVar;
+                        return g9cVar;
                     } finally {
                         frbVar.m();
                     }
@@ -110,11 +110,11 @@ public final class w73 extends yfb implements is4 {
                 }
             case 2:
                 ixe.b(obj);
-                ((ur4) obj2).invoke((rj7) this.b);
-                return f9cVar;
+                ((ur4) obj2).invoke((sj7) this.b);
+                return g9cVar;
             default:
                 ixe.b(obj);
-                Set keySet = ((rj7) this.b).a().keySet();
+                Set keySet = ((sj7) this.b).a().keySet();
                 ArrayList arrayList = new ArrayList(ul2.c(keySet, 10));
                 Iterator it = keySet.iterator();
                 while (it.hasNext()) {

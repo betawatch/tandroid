@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class veb implements pw2 {
     public final /* synthetic */ zeb a;
@@ -173,19 +173,19 @@ public final class veb implements pw2 {
         TLRPC.User f = yac.h(yac.t0).f();
         Object tL_emojiStatusEmpty = f == null ? new TLRPC.TL_emojiStatusEmpty() : f.emoji_status;
         uc7.s1(zebVar.a).v5(emojiStatus, null);
-        bcb bcbVar = new bcb((Object) this, tL_emojiStatusEmpty, (byte) 1);
+        hab habVar = new hab((Object) this, tL_emojiStatusEmpty, (byte) 2);
         xeb xebVar = zebVar.c;
         e parentFragment = xebVar == null ? null : xebVar.getParentFragment();
         if (parentFragment != null) {
             if (document != null) {
-                d31.b0(parentFragment).r(document, ob6.M0(2131745273, null), ob6.M0(2131743540, null), bcbVar).j();
+                d31.b0(parentFragment).r(document, ob6.M0(2131745273, null), ob6.M0(2131743540, null), habVar).j();
                 return;
             }
             n21 n21Var = new n21(zebVar.getContext(), vnbVar);
             n21Var.b.setText(ob6.M0(2131746014, null));
             n21Var.a.setImageResource(R.drawable.msg_settings_premium);
             t21 t21Var = new t21(vnbVar, zebVar.getContext(), true);
-            t21Var.b = bcbVar;
+            t21Var.b = habVar;
             n21Var.setButton(t21Var);
             v21.g(parentFragment, n21Var, 1500).j();
         }

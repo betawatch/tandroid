@@ -31,7 +31,7 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class sr {
     public static int a(MediaCodecInfo.VideoCapabilities videoCapabilities, int i, int i2, double d) {
@@ -95,7 +95,7 @@ public abstract class sr {
         List<MediaCodecInfo.VideoCapabilities.PerformancePoint> supportedPerformancePoints;
         try {
             jo4 jo4Var = new jo4();
-            jo4Var.s = dg7.n("video/avc");
+            jo4Var.s = eg7.n("video/avc");
             ko4 ko4Var = new ko4(jo4Var);
             if (ko4Var.t != null) {
                 j99 g = wm6.g(ko4Var, z, false);

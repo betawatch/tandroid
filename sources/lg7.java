@@ -1,114 +1,22 @@
 // default package
 
-import java.util.Collection;
-import java.util.Deque;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class lg7 implements ExecutorService, AutoCloseable {
-    public static final ThreadLocal b = new ThreadLocal();
-    public final ThreadPoolExecutor a;
+public final class lg7 extends Exception {
+    public final byte a;
 
-    public lg7() {
-        ThreadFactory defaultThreadFactory = Executors.defaultThreadFactory();
-        int availableProcessors = Runtime.getRuntime().availableProcessors();
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(availableProcessors, availableProcessors, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new wc3(defaultThreadFactory, (byte) 2));
-        this.a = threadPoolExecutor;
-        threadPoolExecutor.allowCoreThreadTimeOut(true);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lg7(String str, Throwable th) {
+        super(str, th);
+        xve.g(str, "Provided message must not be empty.");
+        this.a = (byte) 13;
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean awaitTermination(long j, TimeUnit timeUnit) {
-        return this.a.awaitTermination(j, timeUnit);
-    }
-
-    @Override // java.lang.AutoCloseable
-    public final /* synthetic */ void close() {
-        a3.e(this);
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        Deque deque = (Deque) b.get();
-        if (deque == null || deque.size() > 1) {
-            this.a.execute(new ps9(runnable, (byte) 3));
-            return;
-        }
-        deque.add(runnable);
-        if (deque.size() <= 1) {
-            do {
-                runnable.run();
-                deque.removeFirst();
-                runnable = (Runnable) deque.peekFirst();
-            } while (runnable != null);
-        }
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final List invokeAll(Collection collection) {
-        return this.a.invokeAll(collection);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Object invokeAny(Collection collection) {
-        return this.a.invokeAny(collection);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean isShutdown() {
-        return this.a.isShutdown();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean isTerminated() {
-        return this.a.isTerminated();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final void shutdown() {
-        this.a.shutdown();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final List shutdownNow() {
-        return this.a.shutdownNow();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Future submit(Runnable runnable) {
-        return this.a.submit(runnable);
-    }
-
-    public final String toString() {
-        return this.a.toString();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final List invokeAll(Collection collection, long j, TimeUnit timeUnit) {
-        return this.a.invokeAll(collection, j, timeUnit);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Object invokeAny(Collection collection, long j, TimeUnit timeUnit) {
-        return this.a.invokeAny(collection, j, timeUnit);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Future submit(Runnable runnable, Object obj) {
-        return this.a.submit(runnable, obj);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Future submit(Callable callable) {
-        return this.a.submit(callable);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public lg7(String str, int i) {
+        super(str);
+        xve.g(str, "Provided message must not be empty.");
+        this.a = i;
     }
 }

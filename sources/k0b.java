@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class k0b implements mm4, vs4, nm4 {
     public static final /* synthetic */ long e = fx.a.objectFieldOffset(k0b.class.getDeclaredField("_state$volatile"));
@@ -46,7 +46,7 @@ public final class k0b implements mm4, vs4, nm4 {
     @Override // nm4
     public final Object c(Object obj, zw2 zw2Var) {
         b(obj);
-        return f9c.a;
+        return g9c.a;
     }
 
     public final boolean d(Object obj, Object obj2) {
@@ -87,7 +87,7 @@ public final class k0b implements mm4, vs4, nm4 {
                                                 break;
                                             }
                                         }
-                                        ((va1) obj3).resumeWith(f9c.a);
+                                        ((va1) obj3).resumeWith(g9c.a);
                                         break;
                                     }
                                     while (!atomicReference.compareAndSet(obj3, ow5Var)) {
@@ -269,7 +269,7 @@ public final class k0b implements mm4, vs4, nm4 {
                                     j0bVar.d = ev5Var;
                                     j0bVar.e = obj;
                                     j0bVar.n = 3;
-                                    f9c f9cVar = f9c.a;
+                                    g9c g9cVar = g9c.a;
                                     va1 va1Var = new va1(1, xpe.a(j0bVar));
                                     va1Var.s();
                                     AtomicReference atomicReference3 = r2.a;
@@ -278,7 +278,7 @@ public final class k0b implements mm4, vs4, nm4 {
                                             break;
                                         }
                                         if (atomicReference3.get() != ow5Var2) {
-                                            va1Var.resumeWith(f9cVar);
+                                            va1Var.resumeWith(g9cVar);
                                             break;
                                         }
                                     }

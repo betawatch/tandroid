@@ -83,7 +83,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class pm3 implements tw8, ILocationServiceProvider, iq5, ws4, jc7, ly9, ifc, v78, jb9 {
     public final /* synthetic */ byte a;
@@ -91,50 +91,50 @@ public final class pm3 implements tw8, ILocationServiceProvider, iq5, ws4, jc7, 
     public Object c;
     public Object d;
 
-    public pm3(vh4 vh4Var, xdc xdcVar, fg7 fg7Var) {
-        pg7 pg7Var;
+    public pm3(vh4 vh4Var, xdc xdcVar, gg7 gg7Var) {
+        qg7 qg7Var;
         int i;
         int i2;
         this.a = (byte) 21;
         this.c = vh4Var;
         this.d = new ArrayList();
-        fg7 fg7Var2 = fg7Var;
+        gg7 gg7Var2 = gg7Var;
         int i3 = 0;
         int i4 = 0;
         while (true) {
-            pg7Var = pg7.n;
-            if (fg7Var2 == null) {
+            qg7Var = qg7.n;
+            if (gg7Var2 == null) {
                 break;
             }
-            int i5 = fg7Var2.c;
-            int i6 = i3 + fg7Var2.d;
-            fg7 fg7Var3 = fg7Var2.e;
+            int i5 = gg7Var2.c;
+            int i6 = i3 + gg7Var2.d;
+            gg7 gg7Var3 = gg7Var2.e;
             int i7 = i4;
-            pg7 pg7Var2 = fg7Var2.a;
-            boolean z = (pg7Var2 == pg7.h && fg7Var3 == null && i5 != 0) || !(fg7Var3 == null || i5 == fg7Var3.c);
+            qg7 qg7Var2 = gg7Var2.a;
+            boolean z = (qg7Var2 == qg7.h && gg7Var3 == null && i5 != 0) || !(gg7Var3 == null || i5 == gg7Var3.c);
             i = z ? 1 : i7;
-            if (fg7Var3 == null || fg7Var3.a != pg7Var2 || z) {
-                ((ArrayList) this.d).add(0, new gg7(this, pg7Var2, fg7Var2.b, i5, i6));
+            if (gg7Var3 == null || gg7Var3.a != qg7Var2 || z) {
+                ((ArrayList) this.d).add(0, new hg7(this, qg7Var2, gg7Var2.b, i5, i6));
                 i2 = 0;
             } else {
                 i2 = i6;
             }
             if (z) {
-                ((ArrayList) this.d).add(0, new gg7(this, pg7Var, fg7Var2.b, fg7Var2.c, 0));
+                ((ArrayList) this.d).add(0, new hg7(this, qg7Var, gg7Var2.b, gg7Var2.c, 0));
             }
             i4 = i;
-            fg7Var2 = fg7Var3;
+            gg7Var2 = gg7Var3;
             i3 = i2;
         }
         int i8 = i4;
         boolean z2 = vh4Var.a;
         r44 r44Var = (r44) vh4Var.d;
         if (z2) {
-            gg7 gg7Var = (gg7) ((ArrayList) this.d).get(0);
-            if (gg7Var != null && gg7Var.a != pg7Var && i8 != 0) {
-                ((ArrayList) this.d).add(0, new gg7(this, pg7Var, 0, 0, 0));
+            hg7 hg7Var = (hg7) ((ArrayList) this.d).get(0);
+            if (hg7Var != null && hg7Var.a != qg7Var && i8 != 0) {
+                ((ArrayList) this.d).add(0, new hg7(this, qg7Var, 0, 0, 0));
             }
-            ((ArrayList) this.d).add(((gg7) ((ArrayList) this.d).get(0)).a == pg7Var ? 1 : 0, new gg7(this, pg7.s, 0, 0, 0));
+            ((ArrayList) this.d).add(((hg7) ((ArrayList) this.d).get(0)).a == qg7Var ? 1 : 0, new hg7(this, qg7.s, 0, 0, 0));
         }
         int i9 = xdcVar.a;
         int i10 = 26;
@@ -490,7 +490,7 @@ public final class pm3 implements tw8, ILocationServiceProvider, iq5, ws4, jc7, 
         nd6 nd6Var = new nd6(arrayList, false, false);
         qa4Var.getClass();
         wjb b = xjb.b();
-        b.a = new k09(nd6Var, (byte) 27);
+        b.a = new l09(nd6Var, (byte) 27);
         b.d = (char) 2426;
         qa4Var.e(0, b.a()).addOnCompleteListener(new q05(pt2Var, (byte) 1));
     }
@@ -525,7 +525,7 @@ public final class pm3 implements tw8, ILocationServiceProvider, iq5, ws4, jc7, 
         context.getClass();
         mx2Var.getClass();
         p9aVar.getClass();
-        return ij4.a(p9aVar, new i09((Object) new a2((Object) p9aVar, (byte) 4), (byte) 3), xde.a(mx2Var), new hj4(context, (byte) 1));
+        return ij4.a(p9aVar, new j09((Object) new a2((Object) p9aVar, (byte) 4), (byte) 3), xde.a(mx2Var), new hj4(context, (byte) 1));
     }
 
     @Override // iq5
@@ -771,7 +771,7 @@ public final class pm3 implements tw8, ILocationServiceProvider, iq5, ws4, jc7, 
             kec kecVar = mm8Var.n;
             if (kecVar != null) {
                 if (o00Var == null || !o00Var.g) {
-                    kecVar.animate().alpha(1.0f).setDuration(180L).withEndAction(new h68(this, c8bVar, (byte) 20)).start();
+                    kecVar.animate().alpha(1.0f).setDuration(180L).withEndAction(new a58(this, c8bVar, (byte) 21)).start();
                     return;
                 }
                 return;
@@ -942,7 +942,7 @@ public final class pm3 implements tw8, ILocationServiceProvider, iq5, ws4, jc7, 
             qa4Var.getClass();
             String simpleName = r05.class.getSimpleName();
             xve.g(simpleName, "Listener type must not be empty");
-            qa4Var.c(new y76(r05Var, simpleName), 2418).continueWith(no3.c, rg7.e);
+            qa4Var.c(new y76(r05Var, simpleName), 2418).continueWith(no3.c, sg7.e);
         }
     }
 
@@ -954,7 +954,7 @@ public final class pm3 implements tw8, ILocationServiceProvider, iq5, ws4, jc7, 
             qa4Var.getClass();
             String simpleName = r05.class.getSimpleName();
             xve.g(simpleName, "Listener type must not be empty");
-            qa4Var.c(new y76(r05Var, simpleName), 2418).continueWith(no3.c, rg7.e);
+            qa4Var.c(new y76(r05Var, simpleName), 2418).continueWith(no3.c, sg7.e);
         }
         r05 r05Var2 = new r05(pj5Var);
         ((HashMap) this.d).put(pj5Var, r05Var2);
@@ -1048,16 +1048,16 @@ public final class pm3 implements tw8, ILocationServiceProvider, iq5, ws4, jc7, 
                 StringBuilder sb2 = new StringBuilder();
                 ArrayList arrayList = (ArrayList) this.d;
                 int size = arrayList.size();
-                gg7 gg7Var = null;
+                hg7 hg7Var = null;
                 while (i < size) {
                     Object obj = arrayList.get(i);
                     i++;
-                    gg7 gg7Var2 = (gg7) obj;
-                    if (gg7Var != null) {
+                    hg7 hg7Var2 = (hg7) obj;
+                    if (hg7Var != null) {
                         sb2.append(",");
                     }
-                    sb2.append(gg7Var2.toString());
-                    gg7Var = gg7Var2;
+                    sb2.append(hg7Var2.toString());
+                    hg7Var = hg7Var2;
                 }
                 return sb2.toString();
             case 22:
@@ -1170,17 +1170,17 @@ public final class pm3 implements tw8, ILocationServiceProvider, iq5, ws4, jc7, 
         while (i2 < size) {
             Object obj = arrayList.get(i2);
             i2++;
-            gg7 gg7Var = (gg7) obj;
-            int i3 = gg7Var.d;
-            pg7 pg7Var = gg7Var.a;
-            int a = pg7Var.a(xdcVar);
+            hg7 hg7Var = (hg7) obj;
+            int i3 = hg7Var.d;
+            qg7 qg7Var = hg7Var.a;
+            int a = qg7Var.a(xdcVar);
             int i4 = a + 4;
-            int ordinal = pg7Var.ordinal();
+            int ordinal = qg7Var.ordinal();
             if (ordinal != 1) {
                 if (ordinal == 2) {
                     i4 = ((i3 / 2) * 11) + i4 + (i3 % 2 != 1 ? 0 : 6);
                 } else if (ordinal == 4) {
-                    i4 += gg7Var.a() << 3;
+                    i4 += hg7Var.a() << 3;
                 } else if (ordinal == 5) {
                     i4 = a + 12;
                 } else if (ordinal == 6) {
@@ -1422,8 +1422,8 @@ public final class pm3 implements tw8, ILocationServiceProvider, iq5, ws4, jc7, 
         switch (b) {
             case 23:
                 jo4 jo4Var = new jo4();
-                jo4Var.r = dg7.n("video/mp2t");
-                jo4Var.s = dg7.n(str);
+                jo4Var.r = eg7.n("video/mp2t");
+                jo4Var.s = eg7.n(str);
                 this.b = new ko4(jo4Var);
                 break;
             default:

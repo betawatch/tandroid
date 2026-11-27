@@ -1,28 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class bca {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final yl5 e;
-    public final String f;
-    public final String g;
-    public final String h;
-    public final byte i;
+public interface bca {
+    Object a(zw2 zw2Var);
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public bca(String str, String str2, String str3, String str4, yl5 yl5Var, String str5, String str6, String str7, int i) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = str4;
-        this.e = yl5Var;
-        this.f = str5;
-        this.g = str6;
-        this.h = str7;
-        this.i = i;
-    }
+    Boolean b();
+
+    bs3 c();
+
+    Double d();
 }

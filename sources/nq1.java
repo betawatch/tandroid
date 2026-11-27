@@ -2,9 +2,9 @@
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class nq1 implements bf7 {
+public final class nq1 implements cf7 {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ oq1 b;
 
@@ -13,15 +13,15 @@ public final class nq1 implements bf7 {
         this.a = z;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         zu1 zu1Var = this.b.b;
         if (z) {
             TLRPC.User user = zu1Var.f;
             boolean z2 = this.a;
             if (user != null || z2) {
-                jf7 messagesStorage = zu1Var.getMessagesStorage();
-                messagesStorage.a.c(new ke7(messagesStorage, zu1Var.l6, new mq1((byte) 1, this, z2), (byte) 0));
+                kf7 messagesStorage = zu1Var.getMessagesStorage();
+                messagesStorage.a.c(new le7(messagesStorage, zu1Var.l6, new mq1((byte) 1, this, z2), (byte) 0));
                 return;
             }
         }

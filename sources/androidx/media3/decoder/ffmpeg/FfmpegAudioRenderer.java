@@ -8,7 +8,7 @@ import android.os.Trace;
 import androidx.media3.decoder.SimpleDecoderOutputBuffer;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioRenderer extends vg0 implements hm6, m93 {
     public final lh2 K;
@@ -137,13 +137,13 @@ public final class FfmpegAudioRenderer extends vg0 implements hm6, m93 {
         String str = ko4Var.t;
         int i2 = ko4Var.P;
         int i3 = ko4Var.N;
-        if (!dg7.i(str)) {
+        if (!eg7.i(str)) {
             return qu6.a(0, 0, 0, 0);
         }
         String str2 = ko4Var.t;
         str2.getClass();
         String str3 = FfmpegLibrary.a;
-        if (dg7.i(str2)) {
+        if (eg7.i(str2)) {
             if (FfmpegLibrary.d(str2)) {
                 ko4 G = gcc.G(2, i3, i2);
                 y30 y30Var = this.L;
@@ -231,7 +231,7 @@ public final class FfmpegAudioRenderer extends vg0 implements hm6, m93 {
             FfmpegAudioDecoder ffmpegAudioDecoder = this.S;
             ffmpegAudioDecoder.getClass();
             jo4 jo4Var = new jo4();
-            jo4Var.s = dg7.n("audio/raw");
+            jo4Var.s = eg7.n("audio/raw");
             jo4Var.M = ffmpegAudioDecoder.x;
             jo4Var.O = ffmpegAudioDecoder.y;
             jo4Var.P = ffmpegAudioDecoder.t;

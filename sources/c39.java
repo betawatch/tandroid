@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class c39 extends FrameLayout {
     public final tk4 a;
@@ -95,7 +95,7 @@ public final class c39 extends FrameLayout {
         r47 r47Var = this.s;
         TLRPC.Chat M0 = s1.M0(Long.valueOf(r47Var.x0()));
         TLRPC.ChatFull N0 = s1.N0(r47Var.x0());
-        if (M0 == null || !r47Var.O3() || !r47Var.p4() || r47Var.Y2() || r47Var.n4() || r47Var.m4() || r47Var.k.media_unread || r47Var.E4() || ConnectionsManager.getInstance(i).getCurrentTime() - r47Var.k.date >= 604800 || ((!xc2.n0(M0) && xc2.T(M0)) || N0 == null || N0.participants_count > uc7.s1(i).k4.V0.f() || (r47Var.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
+        if (M0 == null || !r47Var.O3() || !r47Var.p4() || r47Var.Y2() || r47Var.n4() || r47Var.m4() || r47Var.k.media_unread || r47Var.E4() || ConnectionsManager.getInstance(i).getCurrentTime() - r47Var.k.date >= 604800 || ((!xc2.n0(M0) && xc2.T(M0)) || N0 == null || N0.participants_count > uc7.s1(i).l4.V0.f() || (r47Var.k.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
             a();
             return;
         }

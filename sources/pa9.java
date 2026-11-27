@@ -16,7 +16,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class pa9 extends TextureView {
     public boolean E;
@@ -25,7 +25,7 @@ public class pa9 extends TextureView {
     public final nx7 c;
     public na9 d;
     public final bq5 e;
-    public final cda f;
+    public final dda f;
     public Bitmap h;
     public Bitmap n;
     public boolean r;
@@ -44,22 +44,22 @@ public class pa9 extends TextureView {
         setSurfaceTextureListener(new la9(this, tl0Var));
         this.e = new bq5(this);
         ja9 ja9Var = new ja9(this, (byte) 0);
-        cda cdaVar = new cda();
+        dda ddaVar = new dda();
         Paint paint = new Paint(1);
-        cdaVar.c = paint;
+        ddaVar.c = paint;
         Paint paint2 = new Paint(1);
-        cdaVar.d = paint2;
+        ddaVar.d = paint2;
         Paint paint3 = new Paint(1);
-        cdaVar.e = paint3;
+        ddaVar.e = paint3;
         Paint paint4 = new Paint(1);
-        cdaVar.f = paint4;
+        ddaVar.f = paint4;
         Paint paint5 = new Paint(1);
-        cdaVar.g = paint5;
-        cdaVar.m = new ArrayList();
-        cdaVar.n = new ArrayList();
-        cdaVar.p = new float[2];
-        cdaVar.a = this;
-        cdaVar.b = ja9Var;
+        ddaVar.g = paint5;
+        ddaVar.m = new ArrayList();
+        ddaVar.n = new ArrayList();
+        ddaVar.p = new float[2];
+        ddaVar.a = this;
+        ddaVar.b = ja9Var;
         paint2.setColor(-13840296);
         Paint.Style style = Paint.Style.STROKE;
         paint3.setStyle(style);
@@ -74,7 +74,7 @@ public class pa9 extends TextureView {
         paint.setStrokeWidth(hl.L(0.8f));
         paint.setPathEffect(new DashPathEffect(new float[]{hl.L(8.0f), hl.L(8.0f)}, 0.0f));
         paint.setShadowLayer(4.0f, 0.0f, 1.5f, TLObject.FLAG_30);
-        this.f = cdaVar;
+        this.f = ddaVar;
         nx7Var.a = new xh4((Object) this, (byte) 29);
     }
 
@@ -88,15 +88,15 @@ public class pa9 extends TextureView {
 
     public final void b() {
         pa9 pa9Var;
-        cda cdaVar = this.f;
-        if (cdaVar == null || (pa9Var = cdaVar.a) == null || pa9Var.getPainting() == null || cdaVar.h == null) {
+        dda ddaVar = this.f;
+        if (ddaVar == null || (pa9Var = ddaVar.a) == null || pa9Var.getPainting() == null || ddaVar.h == null) {
             return;
         }
         nx7 painting = pa9Var.getPainting();
         painting.f.f(new kx7(painting, (byte) 0));
-        cdaVar.m.clear();
-        cdaVar.n.clear();
-        cdaVar.h = null;
+        ddaVar.m.clear();
+        ddaVar.n.clear();
+        ddaVar.h = null;
     }
 
     public final Bitmap c(boolean z, boolean z2) {
@@ -121,41 +121,41 @@ public class pa9 extends TextureView {
     public final void d(Canvas canvas) {
         Canvas canvas2;
         if (this.y instanceof u01) {
-            cda cdaVar = this.f;
-            Paint paint = cdaVar.c;
-            ArrayList arrayList = cdaVar.m;
-            pa9 pa9Var = cdaVar.a;
+            dda ddaVar = this.f;
+            Paint paint = ddaVar.c;
+            ArrayList arrayList = ddaVar.m;
+            pa9 pa9Var = ddaVar.a;
             if (pa9Var == null || pa9Var.getPainting() == null) {
                 return;
             }
             qma qmaVar = pa9Var.getPainting().g;
             for (int i = 0; i < arrayList.size(); i++) {
-                bda bdaVar = (bda) arrayList.get(i);
-                if (bdaVar.c && !bdaVar.b) {
-                    cdaVar.b(canvas, qmaVar, bdaVar);
+                cda cdaVar = (cda) arrayList.get(i);
+                if (cdaVar.c && !cdaVar.b) {
+                    ddaVar.b(canvas, qmaVar, cdaVar);
                 }
             }
-            tca tcaVar = cdaVar.h;
-            if (tcaVar != null && tcaVar.h != 0.0f) {
+            uca ucaVar = ddaVar.h;
+            if (ucaVar != null && ucaVar.h != 0.0f) {
                 canvas.save();
-                canvas.rotate((float) (((-r0.h) / 3.141592653589793d) * 180.0d), (cdaVar.h.b / qmaVar.a) * canvas.getWidth(), (cdaVar.h.c / qmaVar.b) * canvas.getHeight());
+                canvas.rotate((float) (((-r0.h) / 3.141592653589793d) * 180.0d), (ddaVar.h.b / qmaVar.a) * canvas.getWidth(), (ddaVar.h.c / qmaVar.b) * canvas.getHeight());
             }
-            tca tcaVar2 = cdaVar.h;
-            if (tcaVar2 == null || tcaVar2.a.n() != 4) {
+            uca ucaVar2 = ddaVar.h;
+            if (ucaVar2 == null || ucaVar2.a.n() != 4) {
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
-                canvas2.drawLine(canvas.getWidth() * (cdaVar.h.b / qmaVar.a), canvas.getHeight() * (cdaVar.h.c / qmaVar.b), canvas.getWidth() * (cdaVar.h.i / qmaVar.a), canvas.getHeight() * (cdaVar.h.j / qmaVar.b), paint);
-                canvas2.drawLine(canvas2.getWidth() * (cdaVar.h.d / qmaVar.a), canvas2.getHeight() * (cdaVar.h.e / qmaVar.b), canvas2.getWidth() * (cdaVar.h.i / qmaVar.a), canvas2.getHeight() * (cdaVar.h.j / qmaVar.b), paint);
+                canvas2.drawLine(canvas.getWidth() * (ddaVar.h.b / qmaVar.a), canvas.getHeight() * (ddaVar.h.c / qmaVar.b), canvas.getWidth() * (ddaVar.h.i / qmaVar.a), canvas.getHeight() * (ddaVar.h.j / qmaVar.b), paint);
+                canvas2.drawLine(canvas2.getWidth() * (ddaVar.h.d / qmaVar.a), canvas2.getHeight() * (ddaVar.h.e / qmaVar.b), canvas2.getWidth() * (ddaVar.h.i / qmaVar.a), canvas2.getHeight() * (ddaVar.h.j / qmaVar.b), paint);
             }
             for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                bda bdaVar2 = (bda) arrayList.get(i2);
-                if (bdaVar2.c && bdaVar2.b) {
-                    cdaVar.b(canvas2, qmaVar, bdaVar2);
+                cda cdaVar2 = (cda) arrayList.get(i2);
+                if (cdaVar2.c && cdaVar2.b) {
+                    ddaVar.b(canvas2, qmaVar, cdaVar2);
                 }
             }
-            tca tcaVar3 = cdaVar.h;
-            if (tcaVar3 == null || tcaVar3.h == 0.0f) {
+            uca ucaVar3 = ddaVar.h;
+            if (ucaVar3 == null || ucaVar3.h == 0.0f) {
                 return;
             }
             canvas2.restore();
@@ -199,20 +199,20 @@ public class pa9 extends TextureView {
         if (motionEvent.getPointerCount() > 1 || (na9Var = this.d) == null || !na9Var.f || !na9Var.h) {
             return;
         }
-        bda bdaVar = null;
+        cda cdaVar = null;
         Object[] objArr = 0;
         Object[] objArr2 = 0;
         byte b2 = 2;
         Object[] objArr3 = 0;
         if (this.y instanceof u01) {
-            cda cdaVar = this.f;
+            dda ddaVar = this.f;
             getScaleX();
-            ArrayList arrayList = cdaVar.n;
-            ArrayList arrayList2 = cdaVar.m;
-            ja9 ja9Var = cdaVar.b;
-            float[] fArr = cdaVar.p;
-            pa9 pa9Var = cdaVar.a;
-            if (pa9Var == null || pa9Var.getPainting() == null || cdaVar.h == null) {
+            ArrayList arrayList = ddaVar.n;
+            ArrayList arrayList2 = ddaVar.m;
+            ja9 ja9Var = ddaVar.b;
+            float[] fArr = ddaVar.p;
+            pa9 pa9Var = ddaVar.a;
+            if (pa9Var == null || pa9Var.getPainting() == null || ddaVar.h == null) {
                 return;
             }
             int actionMasked = motionEvent.getActionMasked();
@@ -220,58 +220,58 @@ public class pa9 extends TextureView {
             float height = pa9Var.getHeight() - motionEvent.getY();
             fArr[0] = x;
             fArr[1] = height;
-            cdaVar.o.mapPoints(fArr);
+            ddaVar.o.mapPoints(fArr);
             float f4 = fArr[0];
             float f5 = fArr[1];
             ja9Var.run();
             if (actionMasked != 0) {
                 if (actionMasked != 2) {
                     if (actionMasked == 1 || actionMasked == 3) {
-                        cdaVar.k = null;
+                        ddaVar.k = null;
                         return;
                     }
                     return;
                 }
-                bda bdaVar2 = cdaVar.k;
-                if (bdaVar2 == null) {
-                    yca ycaVar = cdaVar.l;
-                    if (ycaVar != null) {
-                        if (ycaVar.b) {
-                            cdaVar.c(f4, f5, false);
+                cda cdaVar2 = ddaVar.k;
+                if (cdaVar2 == null) {
+                    zca zcaVar = ddaVar.l;
+                    if (zcaVar != null) {
+                        if (zcaVar.b) {
+                            ddaVar.c(f4, f5, false);
                         }
-                        float f6 = fArr[0] + cdaVar.i;
-                        yca ycaVar2 = cdaVar.l;
-                        float f7 = f6 - ycaVar2.d;
-                        float f8 = (fArr[1] + cdaVar.j) - ycaVar2.e;
+                        float f6 = fArr[0] + ddaVar.i;
+                        zca zcaVar2 = ddaVar.l;
+                        float f7 = f6 - zcaVar2.d;
+                        float f8 = (fArr[1] + ddaVar.j) - zcaVar2.e;
                         for (int i4 = 0; i4 < arrayList.size(); i4++) {
-                            bda bdaVar3 = (bda) arrayList.get(i4);
-                            bdaVar3.b(bdaVar3.d + f7, bdaVar3.e + f8);
+                            cda cdaVar3 = (cda) arrayList.get(i4);
+                            cdaVar3.b(cdaVar3.d + f7, cdaVar3.e + f8);
                         }
                     }
                 } else {
-                    if (bdaVar2.b) {
-                        cdaVar.d(false);
+                    if (cdaVar2.b) {
+                        ddaVar.d(false);
                     }
-                    cdaVar.k.b(fArr[0] + cdaVar.i, fArr[1] + cdaVar.j);
+                    ddaVar.k.b(fArr[0] + ddaVar.i, fArr[1] + ddaVar.j);
                 }
-                pa9Var.getPainting().k(cdaVar.h);
+                pa9Var.getPainting().k(ddaVar.h);
                 ja9Var.run();
                 return;
             }
             double d = Double.MAX_VALUE;
             int i5 = 0;
             while (i5 < arrayList2.size()) {
-                bda bdaVar4 = (bda) arrayList2.get(i5);
-                if (bdaVar4.c) {
+                cda cdaVar4 = (cda) arrayList2.get(i5);
+                if (cdaVar4.c) {
                     fArr[0] = f4;
                     fArr[i3] = f5;
-                    if (bdaVar4.b) {
-                        cdaVar.c(f4, f5, false);
+                    if (cdaVar4.b) {
+                        ddaVar.c(f4, f5, false);
                     }
-                    double a = dte.a(bdaVar4.d, bdaVar4.e, fArr[0], fArr[i3]);
+                    double a = dte.a(cdaVar4.d, cdaVar4.e, fArr[0], fArr[i3]);
                     i2 = i3;
-                    if (a < hl.L(40.0f) && (bdaVar == null || a < d)) {
-                        bdaVar = bdaVar4;
+                    if (a < hl.L(40.0f) && (cdaVar == null || a < d)) {
+                        cdaVar = cdaVar4;
                         d = a;
                     }
                 } else {
@@ -283,23 +283,23 @@ public class pa9 extends TextureView {
             int i6 = i3;
             fArr[0] = f4;
             fArr[i6] = f5;
-            cdaVar.c(f4, f5, false);
-            if (bdaVar == null) {
-                tca tcaVar = cdaVar.h;
-                if (tcaVar != null) {
-                    if (tcaVar.a.n() == 0 || cdaVar.h.a.n() == 2) {
+            ddaVar.c(f4, f5, false);
+            if (cdaVar == null) {
+                uca ucaVar = ddaVar.h;
+                if (ucaVar != null) {
+                    if (ucaVar.a.n() == 0 || ddaVar.h.a.n() == 2) {
                         f = f4;
                         f2 = f5;
-                        double sqrt2 = Math.sqrt(Math.pow(f2 - cdaVar.h.c, 2.0d) + Math.pow(f - cdaVar.h.b, 2.0d));
-                        tca tcaVar2 = cdaVar.h;
-                    } else if (cdaVar.h.a.n() == i6 || cdaVar.h.a.n() == 3) {
-                        tca tcaVar3 = cdaVar.h;
-                        float f9 = tcaVar3.b;
-                        float f10 = tcaVar3.d;
-                        float f11 = tcaVar3.f / 2.0f;
+                        double sqrt2 = Math.sqrt(Math.pow(f2 - ddaVar.h.c, 2.0d) + Math.pow(f - ddaVar.h.b, 2.0d));
+                        uca ucaVar2 = ddaVar.h;
+                    } else if (ddaVar.h.a.n() == i6 || ddaVar.h.a.n() == 3) {
+                        uca ucaVar3 = ddaVar.h;
+                        float f9 = ucaVar3.b;
+                        float f10 = ucaVar3.d;
+                        float f11 = ucaVar3.f / 2.0f;
                         float f12 = (f9 - f10) - f11;
-                        float f13 = tcaVar3.c;
-                        float f14 = tcaVar3.e;
+                        float f13 = ucaVar3.c;
+                        float f14 = ucaVar3.e;
                         float f15 = (f13 - f14) - f11;
                         float f16 = f9 + f10 + f11;
                         float f17 = f13 + f14 + f11;
@@ -333,51 +333,51 @@ public class pa9 extends TextureView {
                             }
                             f3 = 30.0f;
                         }
-                        if (cdaVar.h.a.n() == 3) {
-                            tca tcaVar4 = cdaVar.h;
+                        if (ddaVar.h.a.n() == 3) {
+                            uca ucaVar4 = ddaVar.h;
                             f = f4;
                             f2 = f5;
-                            sqrt = Math.min(sqrt, cda.a(f4, f5, tcaVar4.b, tcaVar4.c, tcaVar4.i, tcaVar4.j));
+                            sqrt = Math.min(sqrt, dda.a(f4, f5, ucaVar4.b, ucaVar4.c, ucaVar4.i, ucaVar4.j));
                         } else {
                             f = f4;
                             f2 = f5;
                         }
-                    } else if (cdaVar.h.a.n() == 4) {
+                    } else if (ddaVar.h.a.n() == 4) {
                         qma qmaVar = pa9Var.getPainting().g;
-                        tca tcaVar5 = cdaVar.h;
-                        float a2 = cda.a(f4, f5, tcaVar5.b, tcaVar5.c, tcaVar5.i, tcaVar5.j);
-                        tca tcaVar6 = cdaVar.h;
-                        if (Math.min(a2, cda.a(f4, f5, tcaVar6.d, tcaVar6.e, tcaVar6.i, tcaVar6.j)) - (cdaVar.h.f / 2.0f) < Math.min(qmaVar.a, qmaVar.b) * 0.1f) {
+                        uca ucaVar5 = ddaVar.h;
+                        float a2 = dda.a(f4, f5, ucaVar5.b, ucaVar5.c, ucaVar5.i, ucaVar5.j);
+                        uca ucaVar6 = ddaVar.h;
+                        if (Math.min(a2, dda.a(f4, f5, ucaVar6.d, ucaVar6.e, ucaVar6.i, ucaVar6.j)) - (ddaVar.h.f / 2.0f) < Math.min(qmaVar.a, qmaVar.b) * 0.1f) {
                             f = f4;
                             f2 = f5;
                         }
                     }
                 }
-                cdaVar.e();
+                ddaVar.e();
                 return;
             }
             f = f4;
             f2 = f5;
             fArr[0] = f;
             fArr[1] = f2;
-            cdaVar.k = bdaVar;
-            if (bdaVar != null) {
-                if (bdaVar.b) {
-                    cdaVar.c(f, f2, false);
+            ddaVar.k = cdaVar;
+            if (cdaVar != null) {
+                if (cdaVar.b) {
+                    ddaVar.c(f, f2, false);
                 }
-                bda bdaVar5 = cdaVar.k;
-                cdaVar.i = bdaVar5.d - fArr[0];
-                cdaVar.j = bdaVar5.e - fArr[1];
+                cda cdaVar5 = ddaVar.k;
+                ddaVar.i = cdaVar5.d - fArr[0];
+                ddaVar.j = cdaVar5.e - fArr[1];
                 return;
             }
-            yca ycaVar3 = cdaVar.l;
-            if (ycaVar3 != null) {
-                if (ycaVar3.b) {
-                    cdaVar.c(f, f2, false);
+            zca zcaVar3 = ddaVar.l;
+            if (zcaVar3 != null) {
+                if (zcaVar3.b) {
+                    ddaVar.c(f, f2, false);
                 }
-                yca ycaVar4 = cdaVar.l;
-                cdaVar.i = ycaVar4.d - fArr[0];
-                cdaVar.j = ycaVar4.e - fArr[1];
+                zca zcaVar4 = ddaVar.l;
+                ddaVar.i = zcaVar4.d - fArr[0];
+                ddaVar.j = zcaVar4.e - fArr[1];
                 return;
             }
             return;
@@ -601,25 +601,25 @@ public class pa9 extends TextureView {
                                     painting4.f.f(new jx7(painting4, objArr == true ? 1 : 0, (byte) 1));
                                 }
                             } else if ((bq5Var.a.getCurrentBrush() instanceof t01) || (bq5Var.a.getCurrentBrush() instanceof q01)) {
-                                xca xcaVar = bq5Var.s;
+                                yca ycaVar = bq5Var.s;
                                 boolean z3 = a3 > ((float) hl.L(6.0f)) / scaleX;
-                                synchronized (xcaVar) {
-                                    xcaVar.b.add(new vca(d6, d7));
-                                    z2 = xcaVar.b.size() >= 8;
+                                synchronized (ycaVar) {
+                                    ycaVar.b.add(new wca(d6, d7));
+                                    z2 = ycaVar.b.size() >= 8;
                                 }
                                 if (z2) {
-                                    uo3 uo3Var = xca.m;
-                                    uca ucaVar = xcaVar.l;
-                                    AtomicBoolean atomicBoolean = xcaVar.k;
-                                    if (!xcaVar.j.get()) {
-                                        if (atomicBoolean.get() && !xcaVar.d && z3) {
-                                            uo3Var.cancelRunnable(ucaVar);
-                                            uo3Var.postRunnable(ucaVar, 150L);
+                                    uo3 uo3Var = yca.m;
+                                    vca vcaVar = ycaVar.l;
+                                    AtomicBoolean atomicBoolean = ycaVar.k;
+                                    if (!ycaVar.j.get()) {
+                                        if (atomicBoolean.get() && !ycaVar.d && z3) {
+                                            uo3Var.cancelRunnable(vcaVar);
+                                            uo3Var.postRunnable(vcaVar, 150L);
                                         }
                                         if (!atomicBoolean.get()) {
                                             r5 = 1;
                                             atomicBoolean.set(true);
-                                            uo3Var.postRunnable(ucaVar, 150L);
+                                            uo3Var.postRunnable(vcaVar, 150L);
                                             i = bq5Var.n + r5;
                                             bq5Var.n = i;
                                             bq5Var.o += r5;
@@ -691,7 +691,7 @@ public class pa9 extends TextureView {
         if (na9Var == null) {
             return;
         }
-        na9Var.postRunnable(new z09(this, runnable, (byte) 7));
+        na9Var.postRunnable(new yz8(this, runnable, (byte) 8));
     }
 
     public v01 getCurrentBrush() {
@@ -735,10 +735,10 @@ public class pa9 extends TextureView {
         matrix.preScale(f, -f);
         matrix.preTranslate((-qmaVar.a) / 2.0f, (-qmaVar.b) / 2.0f);
         if (this.y instanceof u01) {
-            cda cdaVar = this.f;
-            cdaVar.getClass();
+            dda ddaVar = this.f;
+            ddaVar.getClass();
             Matrix matrix2 = new Matrix();
-            cdaVar.o = matrix2;
+            ddaVar.o = matrix2;
             matrix.invert(matrix2);
         } else {
             bq5 bq5Var = this.e;
@@ -754,9 +754,9 @@ public class pa9 extends TextureView {
     /* JADX WARN: Multi-variable type inference failed */
     public void setBrush(v01 v01Var) {
         boolean z = this.y instanceof u01;
-        cda cdaVar = this.f;
+        dda ddaVar = this.f;
         if (z) {
-            cdaVar.e();
+            ddaVar.e();
         }
         this.y = v01Var;
         i();
@@ -764,89 +764,89 @@ public class pa9 extends TextureView {
         v01 v01Var2 = this.y;
         if (v01Var2 instanceof u01) {
             int n = ((u01) v01Var2).n();
-            ArrayList arrayList = cdaVar.n;
-            ArrayList arrayList2 = cdaVar.m;
-            pa9 pa9Var = cdaVar.a;
+            ArrayList arrayList = ddaVar.n;
+            ArrayList arrayList2 = ddaVar.m;
+            pa9 pa9Var = ddaVar.a;
             if (pa9Var == null || pa9Var.getPainting() == null) {
                 return;
             }
             arrayList2.clear();
             arrayList.clear();
-            cdaVar.h = new tca(u01.o(n));
+            ddaVar.h = new uca(u01.o(n));
             qma qmaVar = pa9Var.getPainting().g;
-            tca tcaVar = cdaVar.h;
+            uca ucaVar = ddaVar.h;
             float f = qmaVar.a;
-            tcaVar.b = f / 2.0f;
+            ucaVar.b = f / 2.0f;
             float f2 = qmaVar.b;
-            tcaVar.c = f2 / 2.0f;
+            ucaVar.c = f2 / 2.0f;
             float min = Math.min(f, f2) / 5.0f;
-            tcaVar.e = min;
-            tcaVar.d = min;
-            cdaVar.h.f = pa9Var.getCurrentWeight();
-            cdaVar.h.g = hl.L(32.0f);
-            cdaVar.h.l = a78.e(yac.t0).k;
+            ucaVar.e = min;
+            ucaVar.d = min;
+            ddaVar.h.f = pa9Var.getCurrentWeight();
+            ddaVar.h.g = hl.L(32.0f);
+            ddaVar.h.l = a78.e(yac.t0).k;
             byte b = 4;
             byte b2 = 1;
             byte b3 = 0;
             Object[] objArr = 0;
             Object[] objArr2 = 0;
             Object[] objArr3 = 0;
-            if (cdaVar.h.a.n() == 4) {
-                tca tcaVar2 = cdaVar.h;
+            if (ddaVar.h.a.n() == 4) {
+                uca ucaVar2 = ddaVar.h;
                 float f3 = qmaVar.a / 2.0f;
-                tcaVar2.d = f3;
-                tcaVar2.b = f3;
-                tcaVar2.i = f3 + 1.0f;
+                ucaVar2.d = f3;
+                ucaVar2.b = f3;
+                ucaVar2.i = f3 + 1.0f;
                 float f4 = qmaVar.b;
                 float f5 = f4 / 3.0f;
                 float f6 = 1.0f * f5;
-                tcaVar2.c = f6;
+                ucaVar2.c = f6;
                 float f7 = f4 / 2.0f;
-                tcaVar2.j = f7;
-                tcaVar2.e = f5 * 2.0f;
-                tcaVar2.k = Math.abs(f6 - f7);
-                yca ycaVar = new yca(cdaVar, b3);
-                arrayList2.add(ycaVar);
-                zca zcaVar = new zca(cdaVar, ycaVar, objArr3 == true ? 1 : 0);
+                ucaVar2.j = f7;
+                ucaVar2.e = f5 * 2.0f;
+                ucaVar2.k = Math.abs(f6 - f7);
+                zca zcaVar = new zca(ddaVar, b3);
                 arrayList2.add(zcaVar);
-                arrayList.add(zcaVar);
-                zca zcaVar2 = new zca(cdaVar, ycaVar, b2);
-                arrayList2.add(zcaVar2);
-                arrayList.add(zcaVar2);
+                ada adaVar = new ada(ddaVar, zcaVar, objArr3 == true ? 1 : 0);
+                arrayList2.add(adaVar);
+                arrayList.add(adaVar);
+                ada adaVar2 = new ada(ddaVar, zcaVar, b2);
+                arrayList2.add(adaVar2);
+                arrayList.add(adaVar2);
             }
-            if (cdaVar.h.a.n() == 0) {
-                arrayList2.add(new yca(cdaVar, b2));
+            if (ddaVar.h.a.n() == 0) {
+                arrayList2.add(new zca(ddaVar, b2));
             }
             byte b4 = 2;
-            if (cdaVar.h.a.n() == 2) {
-                arrayList2.add(new yca(cdaVar, b4));
+            if (ddaVar.h.a.n() == 2) {
+                arrayList2.add(new zca(ddaVar, b4));
             }
             byte b5 = 3;
-            if (cdaVar.h.a.n() == 1 || cdaVar.h.a.n() == 3) {
-                arrayList2.add(new ada(cdaVar, cdaVar.h, false, false));
-                arrayList2.add(new ada(cdaVar, cdaVar.h, true, false));
-                arrayList2.add(new ada(cdaVar, cdaVar.h, false, true));
-                arrayList2.add(new ada(cdaVar, cdaVar.h, true, true));
-                arrayList2.add(new yca(cdaVar, b5, objArr == true ? 1 : 0));
+            if (ddaVar.h.a.n() == 1 || ddaVar.h.a.n() == 3) {
+                arrayList2.add(new bda(ddaVar, ddaVar.h, false, false));
+                arrayList2.add(new bda(ddaVar, ddaVar.h, true, false));
+                arrayList2.add(new bda(ddaVar, ddaVar.h, false, true));
+                arrayList2.add(new bda(ddaVar, ddaVar.h, true, true));
+                arrayList2.add(new zca(ddaVar, b5, objArr == true ? 1 : 0));
             }
-            if (cdaVar.h.a.n() == 3) {
-                tca tcaVar3 = cdaVar.h;
-                tcaVar3.i = (tcaVar3.d * 0.8f) + tcaVar3.b;
-                tcaVar3.j = (tcaVar3.e * 1.2f) + tcaVar3.c + tcaVar3.f;
-                yca ycaVar2 = new yca(cdaVar, b);
-                arrayList2.add(ycaVar2);
-                ycaVar2.b = false;
-                arrayList.add(ycaVar2);
+            if (ddaVar.h.a.n() == 3) {
+                uca ucaVar3 = ddaVar.h;
+                ucaVar3.i = (ucaVar3.d * 0.8f) + ucaVar3.b;
+                ucaVar3.j = (ucaVar3.e * 1.2f) + ucaVar3.c + ucaVar3.f;
+                zca zcaVar2 = new zca(ddaVar, b);
+                arrayList2.add(zcaVar2);
+                zcaVar2.b = false;
+                arrayList.add(zcaVar2);
             }
-            cdaVar.l = new yca(cdaVar, (byte) 5, objArr2 == true ? 1 : 0);
-            if (cdaVar.h.a.n() != 4) {
-                cdaVar.l.c = false;
+            ddaVar.l = new zca(ddaVar, (byte) 5, objArr2 == true ? 1 : 0);
+            if (ddaVar.h.a.n() != 4) {
+                ddaVar.l.c = false;
             }
-            yca ycaVar3 = cdaVar.l;
-            ycaVar3.b = false;
-            arrayList.add(ycaVar3);
-            arrayList2.add(cdaVar.l);
-            pa9Var.getPainting().k(cdaVar.h);
+            zca zcaVar3 = ddaVar.l;
+            zcaVar3.b = false;
+            arrayList.add(zcaVar3);
+            arrayList2.add(ddaVar.l);
+            pa9Var.getPainting().k(ddaVar.h);
         }
     }
 
@@ -854,23 +854,23 @@ public class pa9 extends TextureView {
         float f2 = this.c.g.a;
         this.w = c00.x(f2, 0.043945312f, f, 0.00390625f * f2);
         if (this.y instanceof u01) {
-            cda cdaVar = this.f;
-            pa9 pa9Var = cdaVar.a;
-            tca tcaVar = cdaVar.h;
-            if (tcaVar == null || tcaVar.f == pa9Var.getCurrentWeight()) {
+            dda ddaVar = this.f;
+            pa9 pa9Var = ddaVar.a;
+            uca ucaVar = ddaVar.h;
+            if (ucaVar == null || ucaVar.f == pa9Var.getCurrentWeight()) {
                 return;
             }
-            cdaVar.h.f = pa9Var.getCurrentWeight();
-            pa9Var.getPainting().k(cdaVar.h);
+            ddaVar.h.f = pa9Var.getCurrentWeight();
+            pa9Var.getPainting().k(ddaVar.h);
         }
     }
 
     public void setColor(int i) {
         this.x = i;
         if (this.y instanceof u01) {
-            cda cdaVar = this.f;
-            if (cdaVar.h != null) {
-                cdaVar.a.getPainting().k(cdaVar.h);
+            dda ddaVar = this.f;
+            if (ddaVar.h != null) {
+                ddaVar.a.getPainting().k(ddaVar.h);
             }
         }
     }

@@ -7,7 +7,7 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class k34 {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -18,9 +18,9 @@ public abstract class k34 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void a(String str, pg7 pg7Var, qj0 qj0Var, Charset charset) {
+    public static void a(String str, qg7 qg7Var, qj0 qj0Var, Charset charset) {
         int i;
-        int ordinal = pg7Var.ordinal();
+        int ordinal = qg7Var.ordinal();
         int i2 = 0;
         if (ordinal == 1) {
             int length = str.length();
@@ -77,7 +77,7 @@ public abstract class k34 {
             return;
         }
         if (ordinal != 6) {
-            throw new w30("Invalid mode: " + pg7Var);
+            throw new w30("Invalid mode: " + qg7Var);
         }
         Charset charset2 = bdb.b;
         if (charset2 == null) {
@@ -126,7 +126,7 @@ public abstract class k34 {
         Charset forName;
         int i;
         int i2;
-        pg7 pg7Var;
+        qg7 qg7Var;
         int i3;
         xdc xdcVar;
         xdc xdcVar2;
@@ -153,7 +153,7 @@ public abstract class k34 {
                 forName = Charset.forName(abstractMap.get(i34Var3).toString());
             } catch (UnsupportedCharsetException unused) {
             }
-            pg7 pg7Var2 = pg7.h;
+            qg7 qg7Var2 = qg7.h;
             int i11 = 8;
             int i12 = 4;
             if (z2) {
@@ -161,7 +161,7 @@ public abstract class k34 {
                 i2 = 1;
                 Charset charset2 = bdb.b;
                 if (charset2 != null && charset2.equals(forName) && c(str)) {
-                    pg7Var = pg7.r;
+                    qg7Var = qg7.r;
                 } else {
                     boolean z3 = false;
                     boolean z4 = false;
@@ -179,15 +179,15 @@ public abstract class k34 {
                             }
                             i13++;
                         } else if (z3) {
-                            pg7Var = pg7.e;
+                            qg7Var = qg7.e;
                         } else if (z4) {
-                            pg7Var = pg7.d;
+                            qg7Var = qg7.d;
                         }
                     }
-                    pg7Var = pg7Var2;
+                    qg7Var = qg7Var2;
                 }
                 qj0 qj0Var2 = new qj0();
-                if (pg7Var == pg7Var2 && containsKey && (a2 = jk1.a(forName)) != null) {
+                if (qg7Var == qg7Var2 && containsKey && (a2 = jk1.a(forName)) != null) {
                     i3 = 4;
                     qj0Var2.b(7, 4);
                     qj0Var2.b(a2.a[0], 8);
@@ -197,17 +197,17 @@ public abstract class k34 {
                 if (z) {
                     qj0Var2.b(5, i3);
                 }
-                qj0Var2.b(pg7Var.b, i3);
+                qj0Var2.b(qg7Var.b, i3);
                 qj0 qj0Var3 = new qj0();
-                a(str, pg7Var, qj0Var3, forName);
+                a(str, qg7Var, qj0Var3, forName);
                 i34 i34Var4 = i34.r;
                 if (!abstractMap.containsKey(i34Var4)) {
-                    int a3 = pg7Var.a(xdc.c(1)) + qj0Var2.b + qj0Var3.b;
+                    int a3 = qg7Var.a(xdc.c(1)) + qj0Var2.b + qj0Var3.b;
                     int i14 = 1;
                     while (i14 <= 40) {
                         xdc c = xdc.c(i14);
                         if (d(a3, c, r44Var)) {
-                            int a4 = pg7Var.a(c) + qj0Var2.b + qj0Var3.b;
+                            int a4 = qg7Var.a(c) + qj0Var2.b + qj0Var3.b;
                             int i15 = 1;
                             while (i15 <= 40) {
                                 xdc c2 = xdc.c(i15);
@@ -228,7 +228,7 @@ public abstract class k34 {
                     throw new w30("Data too big");
                 }
                 xdcVar = xdc.c(Integer.parseInt(abstractMap.get(i34Var4).toString()));
-                if (!d(pg7Var.a(xdcVar) + qj0Var2.b + qj0Var3.b, xdcVar, r44Var)) {
+                if (!d(qg7Var.a(xdcVar) + qj0Var2.b + qj0Var3.b, xdcVar, r44Var)) {
                     throw new w30("Data too big for requested version");
                 }
                 qj0 qj0Var4 = new qj0();
@@ -237,8 +237,8 @@ public abstract class k34 {
                 for (int i17 = i; i17 < i16; i17++) {
                     qj0Var4.a(qj0Var2.d(i17));
                 }
-                int e = pg7Var == pg7Var2 ? qj0Var3.e() : str.length();
-                int a5 = pg7Var.a(xdcVar);
+                int e = qg7Var == qg7Var2 ? qj0Var3.e() : str.length();
+                int a5 = qg7Var.a(xdcVar);
                 int i18 = 1 << a5;
                 if (e >= i18) {
                     StringBuilder sb = new StringBuilder();
@@ -253,7 +253,7 @@ public abstract class k34 {
                 for (int i20 = i; i20 < i19; i20++) {
                     qj0Var4.a(qj0Var3.d(i20));
                 }
-                pg7Var2 = pg7Var;
+                qg7Var2 = qg7Var;
                 xdcVar2 = xdcVar;
                 qj0Var = qj0Var4;
             } else {
@@ -294,23 +294,23 @@ public abstract class k34 {
                 while (i26 < size) {
                     Object obj = arrayList.get(i26);
                     i26++;
-                    gg7 gg7Var = (gg7) obj;
-                    int i27 = gg7Var.c;
-                    pm3 pm3Var3 = gg7Var.e;
+                    hg7 hg7Var = (hg7) obj;
+                    int i27 = hg7Var.c;
+                    pm3 pm3Var3 = hg7Var.e;
                     int i28 = i9;
                     vh4 vh4Var2 = (vh4) pm3Var3.c;
-                    pg7 pg7Var3 = gg7Var.a;
-                    qj0Var5.b(pg7Var3.b, i12);
-                    int i29 = gg7Var.d;
+                    qg7 qg7Var3 = hg7Var.a;
+                    qj0Var5.b(qg7Var3.b, i12);
+                    int i29 = hg7Var.d;
                     if (i29 > 0) {
-                        qj0Var5.b(gg7Var.a(), pg7Var3.a((xdc) pm3Var3.b));
+                        qj0Var5.b(hg7Var.a(), qg7Var3.a((xdc) pm3Var3.b));
                     }
-                    if (pg7Var3 == pg7.n) {
+                    if (qg7Var3 == qg7.n) {
                         qj0Var5.b(jk1.a(((xs3) vh4Var2.c).a[i27].charset()).a[i28], 8);
                     } else if (i29 > 0) {
                         String str2 = (String) vh4Var2.b;
-                        int i30 = gg7Var.b;
-                        a(str2.substring(i30, i29 + i30), pg7Var3, qj0Var5, ((xs3) vh4Var2.c).a[i27].charset());
+                        int i30 = hg7Var.b;
+                        a(str2.substring(i30, i29 + i30), qg7Var3, qj0Var5, ((xs3) vh4Var2.c).a[i27].charset());
                     }
                     i9 = i28;
                     i12 = 4;
@@ -475,7 +475,7 @@ public abstract class k34 {
             d2c d2cVar = new d2c();
             d2cVar.b = -1;
             d2cVar.d = r44Var;
-            d2cVar.c = pg7Var2;
+            d2cVar.c = qg7Var2;
             d2cVar.e = xdcVar2;
             int i67 = (xdcVar2.a << 2) + 17;
             sj0 sj0Var = new sj0(i67, i67);
@@ -644,7 +644,7 @@ public abstract class k34 {
             return d2cVar;
         }
         forName = charset;
-        pg7 pg7Var22 = pg7.h;
+        qg7 qg7Var22 = qg7.h;
         int i112 = 8;
         int i122 = 4;
         if (z2) {

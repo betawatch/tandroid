@@ -22,7 +22,7 @@ import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class am7 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class am7 implements View.OnClickListener {
         Object obj = this.b;
         switch (b2) {
             case 0:
-                ((lm7) obj).G0();
+                ((lm7) obj).E0();
                 break;
             case 1:
                 ((wkb) obj).setChecked(!r10.e.h);

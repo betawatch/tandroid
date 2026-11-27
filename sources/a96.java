@@ -4,55 +4,55 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a96 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ b58 b;
+    public final /* synthetic */ c58 b;
 
-    public /* synthetic */ a96(b58 b58Var, byte b) {
+    public /* synthetic */ a96(c58 c58Var, byte b) {
         this.a = b;
-        this.b = b58Var;
+        this.b = c58Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        b58 b58Var = this.b;
+        c58 c58Var = this.b;
         switch (b) {
             case 0:
-                b58Var.a();
+                c58Var.a();
                 break;
             case 1:
-                if (b58Var.P != null && !b58Var.V) {
-                    hl.r(b58Var.W);
-                    b58Var.V = true;
+                if (c58Var.P != null && !c58Var.V) {
+                    hl.r(c58Var.W);
+                    c58Var.V = true;
                     TL_phone.getGroupCallStars getgroupcallstars = new TL_phone.getGroupCallStars();
-                    getgroupcallstars.call = b58Var.P;
-                    ConnectionsManager.getInstance(b58Var.O).sendRequestTyped(getgroupcallstars, new ic((byte) 0), new qe2(b58Var, getgroupcallstars, (byte) 27));
+                    getgroupcallstars.call = c58Var.P;
+                    ConnectionsManager.getInstance(c58Var.O).sendRequestTyped(getgroupcallstars, new ic((byte) 0), new qe2(c58Var, getgroupcallstars, (byte) 27));
                     break;
                 }
                 break;
             case 2:
-                hl.r(b58Var.e0);
-                v21 v21Var = b58Var.a0;
+                hl.r(c58Var.e0);
+                v21 v21Var = c58Var.a0;
                 if (v21Var != null) {
                     v21Var.b();
-                    b58Var.a0 = null;
+                    c58Var.a0 = null;
                 }
-                long j = b58Var.S;
+                long j = c58Var.S;
                 if (j <= 0) {
-                    b58Var.i();
+                    c58Var.i();
                     break;
                 } else {
-                    b58Var.S = 0L;
-                    b58Var.T = true;
-                    b58Var.n(new TLRPC.TL_textWithEntities(), j);
+                    c58Var.S = 0L;
+                    c58Var.T = true;
+                    c58Var.n(new TLRPC.TL_textWithEntities(), j);
                     break;
                 }
             default:
-                b58Var.e.O(true);
-                b58Var.n.O(true);
+                c58Var.e.O(true);
+                c58Var.n.O(true);
                 break;
         }
     }

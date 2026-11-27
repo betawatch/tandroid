@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class m57 extends FrameLayout {
     public static final /* synthetic */ int e0 = 0;
@@ -212,7 +212,7 @@ public final class m57 extends FrameLayout {
                                         g57 g57Var2 = m57Var3.e;
                                         s57 s57Var2 = m57Var3.d0;
                                         if (m57Var3.a(null) != null) {
-                                            if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                            if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                                 hmb hmbVar = g57Var2.W;
                                                 r47 a = m57Var3.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                                 v47 v47Var4 = s57Var2.d;
@@ -242,12 +242,12 @@ public final class m57 extends FrameLayout {
                                             m57Var3.g(false, true);
                                             m57Var3.l(true);
                                             break;
-                                        } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).k4.V1.f()) {
+                                        } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).l4.V1.f()) {
                                             r47 a2 = m57Var3.a(null);
                                             if (a2 != null) {
                                                 if (!g57Var3.w()) {
                                                     v47Var5.e = 0;
-                                                    int min = Math.min(uc7.s1(i8).k4.V1.f(), ou1.d(a2));
+                                                    int min = Math.min(uc7.s1(i8).l4.V1.f(), ou1.d(a2));
                                                     v47Var5.f = min;
                                                     v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                                     View b6 = m57Var3.b();
@@ -414,7 +414,7 @@ public final class m57 extends FrameLayout {
                                         g57 g57Var2 = m57Var3.e;
                                         s57 s57Var2 = m57Var3.d0;
                                         if (m57Var3.a(null) != null) {
-                                            if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                            if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                                 hmb hmbVar = g57Var2.W;
                                                 r47 a = m57Var3.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                                 v47 v47Var4 = s57Var2.d;
@@ -444,12 +444,12 @@ public final class m57 extends FrameLayout {
                                             m57Var3.g(false, true);
                                             m57Var3.l(true);
                                             break;
-                                        } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).k4.V1.f()) {
+                                        } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).l4.V1.f()) {
                                             r47 a2 = m57Var3.a(null);
                                             if (a2 != null) {
                                                 if (!g57Var3.w()) {
                                                     v47Var5.e = 0;
-                                                    int min = Math.min(uc7.s1(i8).k4.V1.f(), ou1.d(a2));
+                                                    int min = Math.min(uc7.s1(i8).l4.V1.f(), ou1.d(a2));
                                                     v47Var5.f = min;
                                                     v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                                     View b6 = m57Var3.b();
@@ -626,7 +626,7 @@ public final class m57 extends FrameLayout {
                                     g57 g57Var2 = m57Var3.e;
                                     s57 s57Var2 = m57Var3.d0;
                                     if (m57Var3.a(null) != null) {
-                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                             hmb hmbVar = g57Var2.W;
                                             r47 a = m57Var3.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                             v47 v47Var4 = s57Var2.d;
@@ -656,12 +656,12 @@ public final class m57 extends FrameLayout {
                                         m57Var3.g(false, true);
                                         m57Var3.l(true);
                                         break;
-                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).k4.V1.f()) {
+                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).l4.V1.f()) {
                                         r47 a2 = m57Var3.a(null);
                                         if (a2 != null) {
                                             if (!g57Var3.w()) {
                                                 v47Var5.e = 0;
-                                                int min = Math.min(uc7.s1(i8).k4.V1.f(), ou1.d(a2));
+                                                int min = Math.min(uc7.s1(i8).l4.V1.f(), ou1.d(a2));
                                                 v47Var5.f = min;
                                                 v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                                 View b6 = m57Var3.b();
@@ -832,7 +832,7 @@ public final class m57 extends FrameLayout {
                                     g57 g57Var2 = m57Var3.e;
                                     s57 s57Var2 = m57Var3.d0;
                                     if (m57Var3.a(null) != null) {
-                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                             hmb hmbVar = g57Var2.W;
                                             r47 a = m57Var3.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                             v47 v47Var4 = s57Var2.d;
@@ -862,12 +862,12 @@ public final class m57 extends FrameLayout {
                                         m57Var3.g(false, true);
                                         m57Var3.l(true);
                                         break;
-                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).k4.V1.f()) {
+                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).l4.V1.f()) {
                                         r47 a2 = m57Var3.a(null);
                                         if (a2 != null) {
                                             if (!g57Var3.w()) {
                                                 v47Var5.e = 0;
-                                                int min = Math.min(uc7.s1(i8).k4.V1.f(), ou1.d(a2));
+                                                int min = Math.min(uc7.s1(i8).l4.V1.f(), ou1.d(a2));
                                                 v47Var5.f = min;
                                                 v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                                 View b62 = m57Var3.b();
@@ -1029,7 +1029,7 @@ public final class m57 extends FrameLayout {
                                     g57 g57Var2 = m57Var3.e;
                                     s57 s57Var2 = m57Var3.d0;
                                     if (m57Var3.a(null) != null) {
-                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                             hmb hmbVar = g57Var2.W;
                                             r47 a = m57Var3.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                             v47 v47Var4 = s57Var2.d;
@@ -1059,12 +1059,12 @@ public final class m57 extends FrameLayout {
                                         m57Var3.g(false, true);
                                         m57Var3.l(true);
                                         break;
-                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).k4.V1.f()) {
+                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).l4.V1.f()) {
                                         r47 a2 = m57Var3.a(null);
                                         if (a2 != null) {
                                             if (!g57Var3.w()) {
                                                 v47Var5.e = 0;
-                                                int min = Math.min(uc7.s1(i8).k4.V1.f(), ou1.d(a2));
+                                                int min = Math.min(uc7.s1(i8).l4.V1.f(), ou1.d(a2));
                                                 v47Var5.f = min;
                                                 v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                                 View b62 = m57Var3.b();
@@ -1235,7 +1235,7 @@ public final class m57 extends FrameLayout {
                                 g57 g57Var2 = m57Var3.e;
                                 s57 s57Var2 = m57Var3.d0;
                                 if (m57Var3.a(null) != null) {
-                                    if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                    if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                         hmb hmbVar = g57Var2.W;
                                         r47 a = m57Var3.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                         v47 v47Var4 = s57Var2.d;
@@ -1265,12 +1265,12 @@ public final class m57 extends FrameLayout {
                                     m57Var3.g(false, true);
                                     m57Var3.l(true);
                                     break;
-                                } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).k4.V1.f()) {
+                                } else if (g57Var3.v - g57Var3.u <= uc7.s1(i8).l4.V1.f()) {
                                     r47 a2 = m57Var3.a(null);
                                     if (a2 != null) {
                                         if (!g57Var3.w()) {
                                             v47Var5.e = 0;
-                                            int min = Math.min(uc7.s1(i8).k4.V1.f(), ou1.d(a2));
+                                            int min = Math.min(uc7.s1(i8).l4.V1.f(), ou1.d(a2));
                                             v47Var5.f = min;
                                             v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                             View b62 = m57Var3.b();
@@ -1435,7 +1435,7 @@ public final class m57 extends FrameLayout {
                                 g57 g57Var2 = m57Var3.e;
                                 s57 s57Var2 = m57Var3.d0;
                                 if (m57Var3.a(null) != null) {
-                                    if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                    if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                         hmb hmbVar = g57Var2.W;
                                         r47 a = m57Var3.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                         v47 v47Var4 = s57Var2.d;
@@ -1465,12 +1465,12 @@ public final class m57 extends FrameLayout {
                                     m57Var3.g(false, true);
                                     m57Var3.l(true);
                                     break;
-                                } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).k4.V1.f()) {
+                                } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).l4.V1.f()) {
                                     r47 a2 = m57Var3.a(null);
                                     if (a2 != null) {
                                         if (!g57Var3.w()) {
                                             v47Var5.e = 0;
-                                            int min = Math.min(uc7.s1(i82).k4.V1.f(), ou1.d(a2));
+                                            int min = Math.min(uc7.s1(i82).l4.V1.f(), ou1.d(a2));
                                             v47Var5.f = min;
                                             v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                             View b62 = m57Var3.b();
@@ -1692,7 +1692,7 @@ public final class m57 extends FrameLayout {
                                     g57 g57Var2 = m57Var32.e;
                                     s57 s57Var2 = m57Var32.d0;
                                     if (m57Var32.a(null) != null) {
-                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                             hmb hmbVar = g57Var2.W;
                                             r47 a = m57Var32.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                             v47 v47Var4 = s57Var2.d;
@@ -1722,12 +1722,12 @@ public final class m57 extends FrameLayout {
                                         m57Var32.g(false, true);
                                         m57Var32.l(true);
                                         break;
-                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).k4.V1.f()) {
+                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).l4.V1.f()) {
                                         r47 a2 = m57Var32.a(null);
                                         if (a2 != null) {
                                             if (!g57Var3.w()) {
                                                 v47Var5.e = 0;
-                                                int min = Math.min(uc7.s1(i82).k4.V1.f(), ou1.d(a2));
+                                                int min = Math.min(uc7.s1(i82).l4.V1.f(), ou1.d(a2));
                                                 v47Var5.f = min;
                                                 v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                                 View b62 = m57Var32.b();
@@ -1892,7 +1892,7 @@ public final class m57 extends FrameLayout {
                                     g57 g57Var2 = m57Var32.e;
                                     s57 s57Var2 = m57Var32.d0;
                                     if (m57Var32.a(null) != null) {
-                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                             hmb hmbVar = g57Var2.W;
                                             r47 a = m57Var32.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                             v47 v47Var4 = s57Var2.d;
@@ -1922,12 +1922,12 @@ public final class m57 extends FrameLayout {
                                         m57Var32.g(false, true);
                                         m57Var32.l(true);
                                         break;
-                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).k4.V1.f()) {
+                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).l4.V1.f()) {
                                         r47 a2 = m57Var32.a(null);
                                         if (a2 != null) {
                                             if (!g57Var3.w()) {
                                                 v47Var5.e = 0;
-                                                int min = Math.min(uc7.s1(i82).k4.V1.f(), ou1.d(a2));
+                                                int min = Math.min(uc7.s1(i82).l4.V1.f(), ou1.d(a2));
                                                 v47Var5.f = min;
                                                 v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                                 View b62 = m57Var32.b();
@@ -2087,7 +2087,7 @@ public final class m57 extends FrameLayout {
                                     g57 g57Var2 = m57Var32.e;
                                     s57 s57Var2 = m57Var32.d0;
                                     if (m57Var32.a(null) != null) {
-                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                             hmb hmbVar = g57Var2.W;
                                             r47 a = m57Var32.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                             v47 v47Var4 = s57Var2.d;
@@ -2117,12 +2117,12 @@ public final class m57 extends FrameLayout {
                                         m57Var32.g(false, true);
                                         m57Var32.l(true);
                                         break;
-                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).k4.V1.f()) {
+                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).l4.V1.f()) {
                                         r47 a2 = m57Var32.a(null);
                                         if (a2 != null) {
                                             if (!g57Var3.w()) {
                                                 v47Var5.e = 0;
-                                                int min = Math.min(uc7.s1(i82).k4.V1.f(), ou1.d(a2));
+                                                int min = Math.min(uc7.s1(i82).l4.V1.f(), ou1.d(a2));
                                                 v47Var5.f = min;
                                                 v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                                 View b62 = m57Var32.b();
@@ -2280,7 +2280,7 @@ public final class m57 extends FrameLayout {
                                     g57 g57Var2 = m57Var32.e;
                                     s57 s57Var2 = m57Var32.d0;
                                     if (m57Var32.a(null) != null) {
-                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                        if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                             hmb hmbVar = g57Var2.W;
                                             r47 a = m57Var32.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                             v47 v47Var4 = s57Var2.d;
@@ -2310,12 +2310,12 @@ public final class m57 extends FrameLayout {
                                         m57Var32.g(false, true);
                                         m57Var32.l(true);
                                         break;
-                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).k4.V1.f()) {
+                                    } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).l4.V1.f()) {
                                         r47 a2 = m57Var32.a(null);
                                         if (a2 != null) {
                                             if (!g57Var3.w()) {
                                                 v47Var5.e = 0;
-                                                int min = Math.min(uc7.s1(i82).k4.V1.f(), ou1.d(a2));
+                                                int min = Math.min(uc7.s1(i82).l4.V1.f(), ou1.d(a2));
                                                 v47Var5.f = min;
                                                 v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                                 View b62 = m57Var32.b();
@@ -2510,7 +2510,7 @@ public final class m57 extends FrameLayout {
                             g57 g57Var2 = m57Var32.e;
                             s57 s57Var2 = m57Var32.d0;
                             if (m57Var32.a(null) != null) {
-                                if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                     hmb hmbVar = g57Var2.W;
                                     r47 a = m57Var32.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                     v47 v47Var4 = s57Var2.d;
@@ -2540,12 +2540,12 @@ public final class m57 extends FrameLayout {
                                 m57Var32.g(false, true);
                                 m57Var32.l(true);
                                 break;
-                            } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).k4.V1.f()) {
+                            } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).l4.V1.f()) {
                                 r47 a2 = m57Var32.a(null);
                                 if (a2 != null) {
                                     if (!g57Var3.w()) {
                                         v47Var5.e = 0;
-                                        int min = Math.min(uc7.s1(i82).k4.V1.f(), ou1.d(a2));
+                                        int min = Math.min(uc7.s1(i82).l4.V1.f(), ou1.d(a2));
                                         v47Var5.f = min;
                                         v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                         View b62 = m57Var32.b();
@@ -2711,7 +2711,7 @@ public final class m57 extends FrameLayout {
                             g57 g57Var2 = m57Var32.e;
                             s57 s57Var2 = m57Var32.d0;
                             if (m57Var32.a(null) != null) {
-                                if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                     hmb hmbVar = g57Var2.W;
                                     r47 a = m57Var32.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                     v47 v47Var4 = s57Var2.d;
@@ -2741,12 +2741,12 @@ public final class m57 extends FrameLayout {
                                 m57Var32.g(false, true);
                                 m57Var32.l(true);
                                 break;
-                            } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).k4.V1.f()) {
+                            } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).l4.V1.f()) {
                                 r47 a2 = m57Var32.a(null);
                                 if (a2 != null) {
                                     if (!g57Var3.w()) {
                                         v47Var5.e = 0;
-                                        int min = Math.min(uc7.s1(i82).k4.V1.f(), ou1.d(a2));
+                                        int min = Math.min(uc7.s1(i82).l4.V1.f(), ou1.d(a2));
                                         v47Var5.f = min;
                                         v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                         View b62 = m57Var32.b();
@@ -2910,7 +2910,7 @@ public final class m57 extends FrameLayout {
                             g57 g57Var2 = m57Var32.e;
                             s57 s57Var2 = m57Var32.d0;
                             if (m57Var32.a(null) != null) {
-                                if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).k4.V1.f()) {
+                                if (g57Var2.v - g57Var2.u <= uc7.s1(s57Var2.x).l4.V1.f()) {
                                     hmb hmbVar = g57Var2.W;
                                     r47 a = m57Var32.a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                                     v47 v47Var4 = s57Var2.d;
@@ -2940,12 +2940,12 @@ public final class m57 extends FrameLayout {
                                 m57Var32.g(false, true);
                                 m57Var32.l(true);
                                 break;
-                            } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).k4.V1.f()) {
+                            } else if (g57Var3.v - g57Var3.u <= uc7.s1(i82).l4.V1.f()) {
                                 r47 a2 = m57Var32.a(null);
                                 if (a2 != null) {
                                     if (!g57Var3.w()) {
                                         v47Var5.e = 0;
-                                        int min = Math.min(uc7.s1(i82).k4.V1.f(), ou1.d(a2));
+                                        int min = Math.min(uc7.s1(i82).l4.V1.f(), ou1.d(a2));
                                         v47Var5.f = min;
                                         v47Var5.d = ou1.b(v47Var5.e, min, a2);
                                         View b62 = m57Var32.b();
@@ -3413,7 +3413,7 @@ public final class m57 extends FrameLayout {
         v47 v47Var = s57Var.d;
         if (this.a == 0) {
             g57 g57Var = this.e;
-            if (g57Var.v - g57Var.u <= uc7.s1(s57Var.x).k4.V1.f()) {
+            if (g57Var.v - g57Var.u <= uc7.s1(s57Var.x).l4.V1.f()) {
                 hmb hmbVar = g57Var.W;
                 r47 a = a(hmbVar != null ? ((wb2) hmbVar).getMessageObject() : null);
                 if (v47Var.d != null && g57Var.w()) {

@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class lv2 extends rf0 {
     public static Locale o0;
@@ -111,7 +111,7 @@ public final class lv2 extends rf0 {
         this.k0 = new ArrayList();
         this.l0 = new HashMap();
         this.m0 = new HashMap();
-        if (uc7.s1(this.currentAccount).X3.getBoolean("needGetStatuses", false)) {
+        if (uc7.s1(this.currentAccount).Y3.getBoolean("needGetStatuses", false)) {
             I();
         }
         hashMap.put("À", "A");
@@ -305,8 +305,8 @@ public final class lv2 extends rf0 {
             if (f11.a) {
                 cc4.b("load contacts from cache");
             }
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new be7(messagesStorage, (byte) 16));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new hd7(messagesStorage, (byte) 18));
             return;
         }
         if (f11.a) {
@@ -823,7 +823,7 @@ public final class lv2 extends rf0 {
                             hashMap2 = hashMap22;
                         } else {
                             hashMap2 = hashMap22;
-                            lv2Var.getMessagesStorage().W0(hashMap2, false, false);
+                            lv2Var.getMessagesStorage().a1(hashMap2, false, false);
                         }
                         hashMap6 = hashMap15;
                         i = i11;
@@ -861,7 +861,7 @@ public final class lv2 extends rf0 {
                                             lv2Var2.c(arrayList7, null, null, null);
                                             arrayList7.clear();
                                         }
-                                        lv2Var2.getMessagesStorage().W0(hashMap27, false, false);
+                                        lv2Var2.getMessagesStorage().a1(hashMap27, false, false);
                                         hl.c3(new xu2(lv2Var2, hashMap25, arrayList6, hashMap26, (byte) 0));
                                         break;
                                     case 1:
@@ -902,7 +902,7 @@ public final class lv2 extends rf0 {
                         if (hashMap23.isEmpty()) {
                             return;
                         }
-                        lv2Var.getMessagesStorage().W0(hashMap23, false, false);
+                        lv2Var.getMessagesStorage().a1(hashMap23, false, false);
                         return;
                     }
                     if (arrayList4.isEmpty()) {
@@ -934,7 +934,7 @@ public final class lv2 extends rf0 {
                                             lv2Var2.c(arrayList72, null, null, null);
                                             arrayList72.clear();
                                         }
-                                        lv2Var2.getMessagesStorage().W0(hashMap272, false, false);
+                                        lv2Var2.getMessagesStorage().a1(hashMap272, false, false);
                                         hl.c3(new xu2(lv2Var2, hashMap29, arrayList7, hashMap30, (byte) 0));
                                         break;
                                     case 1:
@@ -1029,7 +1029,7 @@ public final class lv2 extends rf0 {
                                                 lv2Var2.c(arrayList72, null, null, null);
                                                 arrayList72.clear();
                                             }
-                                            lv2Var2.getMessagesStorage().W0(hashMap272, false, false);
+                                            lv2Var2.getMessagesStorage().a1(hashMap272, false, false);
                                             hl.c3(new xu2(lv2Var2, hashMap34, arrayList8, hashMap35, (byte) 0));
                                             break;
                                         case 1:
@@ -1155,14 +1155,14 @@ public final class lv2 extends rf0 {
             }
         }
         if (!arrayList4.isEmpty()) {
-            jf7 messagesStorage = getMessagesStorage();
+            kf7 messagesStorage = getMessagesStorage();
             messagesStorage.getClass();
             if (!arrayList4.isEmpty()) {
                 messagesStorage.a.c(new q41(messagesStorage, arrayList4, (byte) 18));
             }
         }
         if (!arrayList3.isEmpty()) {
-            getMessagesStorage().Z0(arrayList3, false);
+            getMessagesStorage().d1(arrayList3, false);
         }
         if (this.h && this.r) {
             c(arrayList, concurrentHashMap, arrayList3, arrayList4);
@@ -1646,14 +1646,14 @@ public final class lv2 extends rf0 {
         uc7 messagesController = getMessagesController();
         messagesController.i1.clear();
         messagesController.p1.clear();
-        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
+        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).Y3.edit();
         edit.putBoolean("needGetStatuses", true).commit();
         getConnectionsManager().sendRequest(new TLRPC.TL_contacts_getStatuses(), new ql(this, edit, (byte) 28));
     }
 
     public final void J(boolean z) {
         try {
-            if (uc7.s1(this.currentAccount).X3.getLong("lastReloadStatusTime", 0L) < System.currentTimeMillis() - 10800000 || z) {
+            if (uc7.s1(this.currentAccount).Y3.getLong("lastReloadStatusTime", 0L) < System.currentTimeMillis() - 10800000 || z) {
                 I();
             }
         } catch (Exception e) {
@@ -1667,7 +1667,7 @@ public final class lv2 extends rf0 {
 
     public final void L() {
         try {
-            uc7.s1(this.currentAccount).X3.edit().putLong("lastReloadStatusTime", System.currentTimeMillis()).commit();
+            uc7.s1(this.currentAccount).Y3.edit().putLong("lastReloadStatusTime", System.currentTimeMillis()).commit();
         } catch (Exception e) {
             cc4.g(e, true);
         }
@@ -1986,7 +1986,7 @@ public final class lv2 extends rf0 {
     }
 
     public final void f() {
-        SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).X3;
+        SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).Y3;
         this.y = sharedPreferences.getString("invitelink", null);
         int i = sharedPreferences.getInt("invitelinktime", 0);
         if (this.E) {

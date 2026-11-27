@@ -29,7 +29,7 @@ import org.telegram.utils.twidget.WidgetEngineService;
 import org.webrtc.NativeLifecycleLock;
 import org.webrtc.VideoTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ftb implements m8, t69, ez5, fd, yma, sgb, ta9, rv9, Continuation, n7b, on5, NativeLifecycleLock.NativeDisposer, nr7, OnCompleteListener, erc, yyc, s99 {
     public final /* synthetic */ byte a;
@@ -215,7 +215,7 @@ public final /* synthetic */ class ftb implements m8, t69, ez5, fd, yma, sgb, ta
                         rxVar.b(1);
                         byte[] bArr = (byte[]) rxVar.d;
                         Objects.requireNonNull(bArr);
-                        pycVar.k.execute(new cxc((Object) pycVar, (Object) bArr, (byte) 7));
+                        pycVar.k.execute(new zwc(pycVar, bArr, (byte) 8));
                         return;
                     }
                 }
@@ -232,7 +232,7 @@ public final /* synthetic */ class ftb implements m8, t69, ez5, fd, yma, sgb, ta
                     if (str.length() - 14 > 1398112) {
                         pycVar.h();
                     } else {
-                        pycVar.k.execute(new cxc((Object) pycVar, (Object) str, (byte) 6));
+                        pycVar.k.execute(new zwc(pycVar, str, (byte) 7));
                     }
                 }
             }

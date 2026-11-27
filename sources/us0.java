@@ -18,7 +18,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class us0 implements Runnable {
     public final /* synthetic */ byte a;
@@ -341,7 +341,7 @@ public final /* synthetic */ class us0 implements Runnable {
                         }
                     }
                 }
-                String str5 = a5cVar.getMessagesController().k4.S2.f;
+                String str5 = a5cVar.getMessagesController().l4.S2.f;
                 if ("alternative".equals(str5) || "system".equals(str5)) {
                     String str6 = w4cVar.e;
                     while (i < w4cVar.b.size()) {
@@ -363,7 +363,7 @@ public final /* synthetic */ class us0 implements Runnable {
                     tL_messages_translateText.id = w4cVar.b;
                 }
                 tL_messages_translateText.to_lang = a5c.D(w4cVar.e);
-                int sendRequest = a5cVar.getConnectionsManager().sendRequest(tL_messages_translateText, new rs0((rf0) a5cVar, (Object) w4cVar, z12, j12, (Object) hashSet2, (byte) 7));
+                int sendRequest = a5cVar.getConnectionsManager().sendRequest(tL_messages_translateText, new rs0((rf0) a5cVar, (Object) w4cVar, z12, j12, (Object) hashSet2, (byte) 6));
                 synchronized (a5cVar) {
                     w4cVar.h = sendRequest;
                 }

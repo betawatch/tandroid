@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class at0 extends e implements fn7 {
     public final fj1 E;
@@ -120,7 +120,7 @@ public final class at0 extends e implements fn7 {
             Long l = (Long) g.d.get(Long.valueOf(j));
             g.j(j, l == null || System.currentTimeMillis() - l.longValue() > 30000);
         }
-        this.K = hl.D2(hl.N2(z ? ob6.H(',', "SelfStarsWithdrawInfo", (int) getMessagesController().k4.y2.f()) : ob6.M0(2131752938, null), -1, 0, new ms0(this, (byte) 2), null), true);
+        this.K = hl.D2(hl.N2(z ? ob6.H(',', "SelfStarsWithdrawInfo", (int) getMessagesController().l4.y2.f()) : ob6.M0(2131752938, null), -1, 0, new ms0(this, (byte) 2), null), true);
     }
 
     public static String x0(int i) {
@@ -265,7 +265,7 @@ public final class at0 extends e implements fn7 {
         ub ubVar = new ub(context, true, getResourceProvider(), b3);
         ubVar.setRoundRadius(24);
         this.b0 = ubVar;
-        ubVar.setEnabled(uc7.s1(this.currentAccount).k4.b3.f);
+        ubVar.setEnabled(uc7.s1(this.currentAccount).l4.b3.f);
         this.b0.i(ob6.M0(2131752950, null), false, true);
         ub ubVar2 = this.b0;
         final boolean z8 = z3 ? 1 : 0;
@@ -324,7 +324,7 @@ public final class at0 extends e implements fn7 {
         c51 c51Var2 = new c51(this.resourceProvider, context, true);
         c51Var2.setRoundRadius(24);
         this.i0 = c51Var2;
-        c51Var2.setEnabled(uc7.s1(this.currentAccount).k4.b3.f);
+        c51Var2.setEnabled(uc7.s1(this.currentAccount).l4.b3.f);
         final byte b4 = 1;
         this.i0.i(ob6.M0(this.c ? 2131748129 : 2131748105, null), false, true);
         this.i0.setVisibility(8);
@@ -544,7 +544,7 @@ public final class at0 extends e implements fn7 {
             if (this.c) {
                 return;
             }
-            if (getMessagesController().k4.K2.f) {
+            if (getMessagesController().l4.K2.f) {
                 arrayList.add(yb.i(2, aob.v0(aob.lk, this.resourceProvider), g92.a0(ob6.M0(2131753138, null)), ob6.M0(2131753139, null)));
                 arrayList.add(b8c.B(-4, null));
             }
@@ -655,7 +655,7 @@ public final class at0 extends e implements fn7 {
             arrayList.add(b8c.k(this.e0));
             SpannableStringBuilder spannableStringBuilder4 = this.n0;
             if (spannableStringBuilder4 == null) {
-                spannableStringBuilder4 = hl.D2(hl.N2(ob6.M0(uc7.s1(this.currentAccount).k4.b3.f ? 2131753034 : 2131753032, null), -1, 3, new ms0(this, (byte) 5), null), true);
+                spannableStringBuilder4 = hl.D2(hl.N2(ob6.M0(uc7.s1(this.currentAccount).l4.b3.f ? 2131753034 : 2131753032, null), -1, 3, new ms0(this, (byte) 5), null), true);
                 this.n0 = spannableStringBuilder4;
             }
             arrayList.add(b8c.B(-5, spannableStringBuilder4));
@@ -868,12 +868,12 @@ public final class at0 extends e implements fn7 {
         v21.e();
         TLRPC.TL_payments_starsRevenueStats h = kt0.g(this.currentAccount).h(this.b, false);
         long j = h == null ? 0L : h.status.available_balance.amount;
-        if (j < getMessagesController().k4.y2.f()) {
+        if (j < getMessagesController().l4.y2.f()) {
             this.Y = true;
             this.Z = j;
         } else {
             this.Y = false;
-            j = getMessagesController().k4.y2.f();
+            j = getMessagesController().l4.y2.f();
             this.Z = j;
         }
         this.X = true;
@@ -958,8 +958,8 @@ public final class at0 extends e implements fn7 {
             this.k0 = d31.b0(this).Q(R.raw.timer_3, 36, hl.S2(ob6.a0(null, null, 2131752933, x0(this.Q - currentTime)))).j();
             return;
         }
-        if (this.Z < getMessagesController().k4.y2.f()) {
-            d31.b0(this).M(getParentActivity().getResources().getDrawable(R.drawable.star_small_inner).mutate(), hl.N2(ob6.G((int) getMessagesController().k4.y2.f(), "BotStarsWithdrawMinLimit", new Object[0]), -1, 0, new ms0(this, b), null)).j();
+        if (this.Z < getMessagesController().l4.y2.f()) {
+            d31.b0(this).M(getParentActivity().getResources().getDrawable(R.drawable.star_small_inner).mutate(), hl.N2(ob6.G((int) getMessagesController().l4.y2.f(), "BotStarsWithdrawMinLimit", new Object[0]), -1, 0, new ms0(this, b), null)).j();
             return;
         }
         long j = this.Z;

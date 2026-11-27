@@ -9,7 +9,7 @@ import android.view.TextureView;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ly8 implements Runnable {
     public final /* synthetic */ byte a;
@@ -29,8 +29,8 @@ public final /* synthetic */ class ly8 implements Runnable {
         oy8 oy8Var = this.b;
         switch (b) {
             case 0:
-                if (oy8Var.a.get() != null && ((wab) oy8Var.f) != null && !((AtomicBoolean) oy8Var.b).get()) {
-                    TextureView textureView = ((wab) oy8Var.f).getTextureView();
+                if (oy8Var.a.get() != null && ((xab) oy8Var.f) != null && !((AtomicBoolean) oy8Var.b).get()) {
+                    TextureView textureView = ((xab) oy8Var.f).getTextureView();
                     if (textureView != null) {
                         int width = textureView.getWidth();
                         int height = textureView.getHeight();
@@ -99,7 +99,7 @@ public final /* synthetic */ class ly8 implements Runnable {
                             }
                         }
                         oy8Var.d = my8Var;
-                        hl.c3(new hp8(oy8Var, my8Var, (byte) 19));
+                        hl.c3(new ep8(oy8Var, my8Var, (byte) 20));
                     }
                     if (!((AtomicBoolean) oy8Var.b).get()) {
                         Utilities.e.a((ly8) oy8Var.h);

@@ -3,7 +3,7 @@
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wc7 extends a8c {
     public static final /* synthetic */ int b = 0;
@@ -14,7 +14,7 @@ public final class wc7 extends a8c {
 
     @Override // a8c
     public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
-        ((xc7) view).a((p5b) b8cVar.H);
+        ((xc7) view).a((q5b) b8cVar.H);
     }
 
     @Override // a8c

@@ -32,7 +32,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ls5 implements Runnable {
     public final /* synthetic */ byte a;
@@ -124,7 +124,7 @@ public final /* synthetic */ class ls5 implements Runnable {
                             if (i8 < 0) {
                                 chatFull.invitesCount = 0;
                             }
-                            jf7.Y(bt5Var2.a).t1(bt5Var2.n1.invitesCount, bt5Var2.a2);
+                            kf7.a0(bt5Var2.a).x1(bt5Var2.n1.invitesCount, bt5Var2.a2);
                         }
                         lf1 lf1Var = bt5Var2.d2;
                         if (lf1Var != null) {
@@ -655,7 +655,7 @@ public final /* synthetic */ class ls5 implements Runnable {
                     ArrayList arrayList5 = new ArrayList();
                     arrayList5.add(user5);
                     i5 = ((e) qh6Var3).currentAccount;
-                    jf7.Y(i5).j1(arrayList5, null, true, true);
+                    kf7.a0(i5).n1(arrayList5, null, true, true);
                     i6 = ((e) qh6Var3).currentAccount;
                     uc7.s1(i6).i4(user5, false, false);
                     i7 = ((e) qh6Var3).currentAccount;

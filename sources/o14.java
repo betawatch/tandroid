@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class o14 extends c79 {
     public boolean E;
@@ -203,9 +203,9 @@ public final class o14 extends c79 {
             if (i2 != 3) {
                 return;
             }
-            t3b t3bVar = (t3b) view;
+            u3b u3bVar = (u3b) view;
             if (this.d != 0) {
-                t3bVar.a(0, ob6.G(this.f.size(), "EmojiCount", new Object[0]));
+                u3bVar.a(0, ob6.G(this.f.size(), "EmojiCount", new Object[0]));
                 return;
             }
             if (!arrayList.isEmpty()) {
@@ -214,10 +214,10 @@ public final class o14 extends c79 {
                 i3 = 2;
             }
             if (i == arrayList2.size() + i3) {
-                t3bVar.a(0, ob6.M0(2131744532, null));
+                u3bVar.a(0, ob6.M0(2131744532, null));
                 return;
             } else {
-                t3bVar.a(0, ob6.M0(2131744531, null));
+                u3bVar.a(0, ob6.M0(2131744531, null));
                 return;
             }
         }
@@ -302,7 +302,7 @@ public final class o14 extends c79 {
             view2.setLayoutParams(new r79(-1, o24Var.c1));
             view = view2;
         } else if (i == 3) {
-            view = new t3b(o24Var.getContext(), true, false, o24Var.a2, o24Var.j2);
+            view = new u3b(o24Var.getContext(), true, false, o24Var.a2, o24Var.j2);
         } else if (i == 4) {
             ViewGroup.LayoutParams r79Var = new r79(-1, hl.L(79.0f));
             View view3 = this.c;

@@ -32,7 +32,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class PopupNotificationActivity extends Activity implements fn7 {
     public static final /* synthetic */ int c0 = 0;
@@ -224,7 +224,7 @@ public class PopupNotificationActivity extends Activity implements fn7 {
                 return;
             }
             int intValue = ((Integer) objArr[0]).intValue();
-            int i7 = uc7.r5;
+            int i7 = uc7.s5;
             if ((intValue & 1) != 0 || (intValue & 4) != 0 || (intValue & 16) != 0 || (intValue & 32) != 0) {
                 r();
             }

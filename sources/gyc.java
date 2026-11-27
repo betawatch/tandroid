@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.regex.Matcher;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class gyc extends AsyncTask {
     public static final /* synthetic */ int f = 0;
@@ -206,7 +206,7 @@ public final class gyc extends AsyncTask {
      */
     /* JADX WARN: Code restructure failed: missing block: B:173:0x03ae, code lost:
     
-        hl.c3(new cxc((java.lang.Object) r24, (java.lang.Object) (r6 + r8 + "('" + r24.d.substring(3) + "');"), (byte) 4));
+        hl.c3(new zwc(r24, r6 + r8 + "('" + r24.d.substring(3) + "');", 5));
         r24.b.await();
      */
     /* JADX WARN: Code restructure failed: missing block: B:175:0x03d1, code lost:

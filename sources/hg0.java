@@ -22,7 +22,7 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class hg0 {
     public static final a94[] D = new a94[0];
@@ -48,8 +48,8 @@ public abstract class hg0 {
     public final ArrayList q;
     public dyd r;
     public byte s;
-    public final i09 t;
-    public final k09 u;
+    public final j09 t;
+    public final l09 u;
     public final short v;
     public final String w;
     public volatile String x;
@@ -57,7 +57,7 @@ public abstract class hg0 {
     public ws2 z;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public hg0(Context context, Looper looper, aef aefVar, int i, i09 i09Var, k09 k09Var, String str) {
+    public hg0(Context context, Looper looper, aef aefVar, int i, j09 j09Var, l09 l09Var, String str) {
         Object obj = i05.d;
         this.f = null;
         this.l = new Object();
@@ -76,8 +76,8 @@ public abstract class hg0 {
         this.j = aefVar;
         this.k = new igd(this, looper);
         this.v = i;
-        this.t = i09Var;
-        this.u = k09Var;
+        this.t = j09Var;
+        this.u = l09Var;
         this.w = str;
     }
 

@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class muc extends n9c {
     public String E;
@@ -251,7 +251,7 @@ public final class muc extends n9c {
                         w.n = hl.r0(c00.i("@", p), null, "@".concat(trim));
                     }
                     b = b2;
-                    w.G = new v58((Object) user2, (Object) w.m, (Object) w.n, (byte) 16);
+                    w.G = new w58((Object) user2, (Object) w.m, (Object) w.n, (byte) 16);
                 }
                 arrayList.add(w);
                 i4++;
@@ -292,7 +292,7 @@ public final class muc extends n9c {
         if (obj instanceof TLRPC.User) {
             TLRPC.User user = (TLRPC.User) obj;
             int i = this.currentAccount;
-            jf7.Y(i).a.c(new am0(i, user.id, (byte) 2));
+            kf7.a0(i).a.c(new am0(i, user.id, (byte) 2));
             hl.t1(this.O);
             l0(null, user);
         }
@@ -363,12 +363,12 @@ public final class muc extends n9c {
         this.N = h8bVar;
         sv9 sv9Var = new sv9(true);
         this.x = sv9Var;
-        sv9Var.a = new k09(this, (byte) 19);
+        sv9Var.a = new l09(this, (byte) 19);
         getNotificationCenter().b(this.J, jn7.S0);
         ls6.d0(this.currentAccount).O0(true);
         this.s.clear();
         int i2 = this.currentAccount;
-        jf7.Y(i2).a.c(new bt(i2, 0, (Object) new kuc(this), (byte) 6));
+        kf7.a0(i2).a.c(new bt(i2, 0, (Object) new kuc(this), (byte) 6));
         FrameLayout frameLayout = new FrameLayout(context);
         this.W = frameLayout;
         frameLayout.setPadding(hl.L(14.0f), hl.L(10.0f), hl.L(14.0f), hl.L(10.0f));
@@ -415,7 +415,7 @@ public final class muc extends n9c {
         TL_toncenter.performApiRequest performapirequest = new TL_toncenter.performApiRequest();
         performapirequest.endpoint = "/api/v3/dns/records";
         performapirequest.query = "domain=" + Uri.encode(str) + "&limit=2";
-        this.F = ConnectionsManager.getInstance(i2).sendRequestTyped(performapirequest, new ic((byte) 0), new qe2((Object) str, (Object) jq0Var, (byte) 21), uc7.s1(i2).r3, 0);
+        this.F = ConnectionsManager.getInstance(i2).sendRequestTyped(performapirequest, new ic((byte) 0), new qe2((Object) str, (Object) jq0Var, (byte) 21), uc7.s1(i2).s3, 0);
     }
 
     public final void g0(c cVar, TLRPC.User user, String str, TL_wallet.walletTransaction wallettransaction, String str2) {
@@ -542,11 +542,11 @@ public final class muc extends n9c {
         this.h = true;
         this.a0.setLoading(true);
         c C = c.C(this.currentAccount);
-        v58 v58Var = new v58((Object) this, (Object) C, (Object) user, (byte) 15);
+        w58 w58Var = new w58((Object) this, (Object) C, (Object) user, (byte) 15);
         if (user != null) {
-            C.k0(user, new ia7(this, v58Var, (byte) 19));
+            C.k0(user, new ia7(this, w58Var, (byte) 19));
         } else {
-            v58Var.a(str);
+            w58Var.a(str);
         }
     }
 

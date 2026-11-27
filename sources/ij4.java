@@ -6,18 +6,18 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.attribute.FileAttribute;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ij4 {
-    public static o83 a(s8a s8aVar, i09 i09Var, xw2 xw2Var, sr4 sr4Var) {
+    public static o83 a(s8a s8aVar, j09 j09Var, xw2 xw2Var, sr4 sr4Var) {
         x24 x24Var = x24.a;
         byte b = 3;
         zw2 zw2Var = null;
         try {
             System.loadLibrary("datastore_shared_counter");
-            return new o83(new bd4(s8aVar, new l83(xw2Var, (byte) 1), sr4Var), tl2.a(new ii1(x24Var, zw2Var, b)), i09Var, xw2Var);
+            return new o83(new bd4(s8aVar, new l83(xw2Var, (byte) 1), sr4Var), tl2.a(new ii1(x24Var, zw2Var, b)), j09Var, xw2Var);
         } catch (SecurityException | UnsatisfiedLinkError unused) {
-            return new o83(new bd4(s8aVar, zc4.c, sr4Var), tl2.a(new ii1(x24Var, zw2Var, b)), i09Var, xw2Var);
+            return new o83(new bd4(s8aVar, zc4.c, sr4Var), tl2.a(new ii1(x24Var, zw2Var, b)), j09Var, xw2Var);
         }
     }
 

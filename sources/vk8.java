@@ -3,7 +3,7 @@
 import android.view.KeyEvent;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class vk8 implements dic {
     public final /* synthetic */ byte a;
@@ -41,15 +41,15 @@ public final class vk8 implements dic {
                 break;
             default:
                 lcb lcbVar = (lcb) this.b;
-                acb acbVar = (acb) callback;
-                o68 currentPeerView = acbVar.getCurrentPeerView();
+                bcb bcbVar = (bcb) callback;
+                o68 currentPeerView = bcbVar.getCurrentPeerView();
                 if (currentPeerView != null) {
-                    ((ccb) acbVar.C0).a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
-                    acbVar.F();
+                    ((ccb) bcbVar.C0).a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
+                    bcbVar.F();
                     hcb hcbVar = lcbVar.u0;
                     if (hcbVar != null) {
                         if (i >= 3) {
-                            if (i > acbVar.A0.b() - 4) {
+                            if (i > bcbVar.A0.b() - 4) {
                                 lcbVar.u0.f(true);
                                 break;
                             }
@@ -80,22 +80,22 @@ public final class vk8 implements dic {
                 d();
                 break;
             default:
-                acb acbVar = (acb) callback;
-                acbVar.J0 = i;
-                acbVar.K0 = i2 > 0 ? i + 1 : i - 1;
-                acbVar.L0 = f;
-                long j = yac.h(acbVar.z0).n;
-                int i3 = acbVar.J0;
-                if (i3 >= 0 && (acbVar.y0 != null ? acbVar.x0 == j : !(i3 >= acbVar.B0.size() || ((Long) acbVar.B0.get(acbVar.J0)).longValue() != j))) {
-                    ((ccb) acbVar.C0).d(1.0f - acbVar.L0);
+                bcb bcbVar = (bcb) callback;
+                bcbVar.J0 = i;
+                bcbVar.K0 = i2 > 0 ? i + 1 : i - 1;
+                bcbVar.L0 = f;
+                long j = yac.h(bcbVar.z0).n;
+                int i3 = bcbVar.J0;
+                if (i3 >= 0 && (bcbVar.y0 != null ? bcbVar.x0 == j : !(i3 >= bcbVar.B0.size() || ((Long) bcbVar.B0.get(bcbVar.J0)).longValue() != j))) {
+                    ((ccb) bcbVar.C0).d(1.0f - bcbVar.L0);
                     break;
                 } else {
-                    int i4 = acbVar.K0;
-                    if (i4 >= 0 && (acbVar.y0 != null ? acbVar.x0 == j : !(i4 >= acbVar.B0.size() || ((Long) acbVar.B0.get(acbVar.K0)).longValue() != j))) {
-                        ((ccb) acbVar.C0).d(acbVar.L0);
+                    int i4 = bcbVar.K0;
+                    if (i4 >= 0 && (bcbVar.y0 != null ? bcbVar.x0 == j : !(i4 >= bcbVar.B0.size() || ((Long) bcbVar.B0.get(bcbVar.K0)).longValue() != j))) {
+                        ((ccb) bcbVar.C0).d(bcbVar.L0);
                         break;
                     } else {
-                        ((ccb) acbVar.C0).d(0.0f);
+                        ((ccb) bcbVar.C0).d(0.0f);
                         break;
                     }
                 }
@@ -109,15 +109,15 @@ public final class vk8 implements dic {
             case 0:
                 break;
             default:
-                acb acbVar = (acb) this.c;
-                ((ccb) acbVar.C0).d.U();
-                Runnable runnable = acbVar.H0;
+                bcb bcbVar = (bcb) this.c;
+                ((ccb) bcbVar.C0).d.U();
+                Runnable runnable = bcbVar.H0;
                 if (runnable != null && i == 0) {
                     runnable.run();
-                    acbVar.H0 = null;
+                    bcbVar.H0 = null;
                 }
-                acbVar.G0 = i;
-                lcb lcbVar = acbVar.S0;
+                bcbVar.G0 = i;
+                lcb lcbVar = bcbVar.S0;
                 if (lcbVar.o0.G0 == 1) {
                     hl.r(lcbVar.b1);
                     break;

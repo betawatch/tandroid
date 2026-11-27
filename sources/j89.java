@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class j89 implements u79 {
     public RecyclerView a;
@@ -18,7 +18,7 @@ public final class j89 implements u79 {
     public final i89 k;
     public int b = -1;
     public final int j = hl.L(80.0f);
-    public final ki7 l = new ki7(this, (byte) 14);
+    public final li7 l = new li7(this, (byte) 14);
 
     public j89(i89 i89Var) {
         this.k = i89Var;
@@ -31,12 +31,12 @@ public final class j89 implements u79 {
         float y = motionEvent.getY();
         int action = motionEvent.getAction();
         i89 i89Var = this.k;
-        ki7 ki7Var = this.l;
+        li7 li7Var = this.l;
         if (action == 1) {
             this.c = false;
             this.g = false;
             this.h = false;
-            hl.r(ki7Var);
+            hl.r(li7Var);
             i89Var.r(false);
             return;
         }
@@ -46,20 +46,20 @@ public final class j89 implements u79 {
                     this.h = false;
                     if (!this.g) {
                         this.g = true;
-                        hl.r(ki7Var);
-                        hl.c3(ki7Var);
+                        hl.r(li7Var);
+                        hl.c3(li7Var);
                     }
                     this.i = ((int) (this.d - (y - 0.0f))) / 2;
                 } else if (y >= this.e && y <= this.f) {
                     this.g = false;
                     if (!this.h) {
                         this.h = true;
-                        hl.r(ki7Var);
-                        hl.c3(ki7Var);
+                        hl.r(li7Var);
+                        hl.c3(li7Var);
                     }
                     this.i = ((int) ((y + this.f) - (this.e + r11))) / 2;
                 } else if (this.g || this.h) {
-                    hl.r(ki7Var);
+                    hl.r(li7Var);
                     this.g = false;
                     this.h = false;
                 }

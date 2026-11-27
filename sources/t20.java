@@ -39,7 +39,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProxyListActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class t20 extends c79 {
     public final /* synthetic */ byte c;
@@ -243,7 +243,7 @@ public final class t20 extends c79 {
         if (i31 == 1) {
             wkb wkbVar = (wkb) f89Var.a;
             i2 = ((e) ((NotificationsSettingsActivity) this.e)).currentAccount;
-            SharedPreferences sharedPreferences = uc7.s1(i2).W3;
+            SharedPreferences sharedPreferences = uc7.s1(i2).X3;
             i3 = ((NotificationsSettingsActivity) this.e).inappSoundRow;
             if (i == i3) {
                 wkbVar.f(ob6.M0(2131748969, null), sharedPreferences.getBoolean("EnableInAppSounds", true), true);
@@ -280,11 +280,11 @@ public final class t20 extends c79 {
                 return;
             }
             if (i == notificationsSettingsActivity2.w) {
-                wkbVar.g(ob6.M0(2131747603, "NotificationsService"), ob6.M0(2131747600, "NotificationsServiceInfo"), sharedPreferences.getBoolean("pushService", ((NotificationsSettingsActivity) this.e).getMessagesController().k4.G3.f), true, true);
+                wkbVar.g(ob6.M0(2131747603, "NotificationsService"), ob6.M0(2131747600, "NotificationsServiceInfo"), sharedPreferences.getBoolean("pushService", ((NotificationsSettingsActivity) this.e).getMessagesController().l4.G3.f), true, true);
                 return;
             }
             if (i == notificationsSettingsActivity2.x) {
-                wkbVar.g(ob6.M0(2131747602, "NotificationsServiceConnection"), ob6.M0(2131747601, "NotificationsServiceConnectionInfo"), sharedPreferences.getBoolean("pushConnection", ((NotificationsSettingsActivity) this.e).getMessagesController().k4.H3.f), true, true);
+                wkbVar.g(ob6.M0(2131747602, "NotificationsServiceConnection"), ob6.M0(2131747601, "NotificationsServiceConnectionInfo"), sharedPreferences.getBoolean("pushConnection", ((NotificationsSettingsActivity) this.e).getMessagesController().l4.H3.f), true, true);
                 return;
             }
             i9 = notificationsSettingsActivity2.badgeNumberShowRow;
@@ -343,7 +343,7 @@ public final class t20 extends c79 {
             }
             qmb qmbVar = (qmb) f89Var.a;
             i30 = ((e) ((NotificationsSettingsActivity) this.e)).currentAccount;
-            SharedPreferences sharedPreferences2 = uc7.s1(i30).W3;
+            SharedPreferences sharedPreferences2 = uc7.s1(i30).X3;
             NotificationsSettingsActivity notificationsSettingsActivity4 = (NotificationsSettingsActivity) this.e;
             if (i == notificationsSettingsActivity4.J) {
                 String string = sharedPreferences2.getString("CallsRingtone", ob6.M0(2131751564, "DefaultRingtone"));
@@ -380,7 +380,7 @@ public final class t20 extends c79 {
         }
         uo7 uo7Var = (uo7) f89Var.a;
         i15 = ((e) ((NotificationsSettingsActivity) this.e)).currentAccount;
-        SharedPreferences sharedPreferences3 = uc7.s1(i15).W3;
+        SharedPreferences sharedPreferences3 = uc7.s1(i15).X3;
         i16 = ((e) ((NotificationsSettingsActivity) this.e)).currentAccount;
         int currentTime = ConnectionsManager.getInstance(i16).getCurrentTime();
         i17 = ((NotificationsSettingsActivity) this.e).privateRow;
@@ -2305,7 +2305,7 @@ public final class t20 extends c79 {
                     ac7 ac7Var = (ac7) arrayList3.get(i);
                     yob.X(hx0Var.getTextView(), aob.j5, null);
                     int i46 = ac7Var.g;
-                    int i47 = uc7.s5;
+                    int i47 = uc7.t5;
                     int i48 = i46 & 31;
                     hx0Var.a(r47.A5(pv3.m(ac7Var.b, hx0Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0), ac7Var.c, hx0Var.getTextView().getPaint().getFontMetricsInt(), false), 0, new pb2(ah4Var.getContext(), i48 == 3 ? R.drawable.msg_openprofile : ((i46 & 64) == 0 || i48 != 31) ? i48 == 8 ? R.drawable.msg_channel : i48 == 4 ? R.drawable.msg_groups : i48 == 1 ? R.drawable.msg_contacts : i48 == 16 ? R.drawable.msg_bots : R.drawable.msg_folders : R.drawable.msg_markunread, ac7Var.m), false);
                     hx0Var.getTextView().setEmojiColor(aob.v0(aob.Fi, ah4Var.J0));
@@ -2535,7 +2535,7 @@ public final class t20 extends c79 {
         View wkbVar;
         l88 l88Var;
         ViewGroup viewGroup2;
-        View rcaVar;
+        View scaVar;
         FrameLayout frameLayout3;
         byte b = this.c;
         byte b2 = 6;
@@ -2572,9 +2572,9 @@ public final class t20 extends c79 {
                         mf5Var = new mf5((Context) obj2, aob.L6, 21, 15, false, a72Var.a);
                         break;
                     case 1:
-                        View rcaVar2 = new rca(context2, (uh9) null);
+                        View scaVar2 = new sca(context2, (uh9) null);
                         new zm2(new ColorDrawable(aob.v0(aob.a7, vnbVar6)), aob.W0(context2, R.drawable.greydivider, aob.b7)).x = true;
-                        mf5Var = rcaVar2;
+                        mf5Var = scaVar2;
                         break;
                     case 2:
                         mf5Var = new ilb(context2, vnbVar6);
@@ -2733,7 +2733,7 @@ public final class t20 extends c79 {
                     wkbVar2.setHeight(56);
                     view = wkbVar2;
                 } else if (i == 1) {
-                    view = new rca(context3, (uh9) null);
+                    view = new sca(context3, (uh9) null);
                 } else if (i == 2) {
                     view = new mf5(context3);
                 } else if (i != 3) {
@@ -2746,7 +2746,7 @@ public final class t20 extends c79 {
                 return qu6.h(view, view, -1, -2);
             case 3:
                 Context context4 = (Context) obj2;
-                View skbVar = i != 0 ? i != 1 ? i != 2 ? i != 3 ? i != 4 ? i != 5 ? new skb(context4) : new uo7(context4) : new ilb(context4) : new wkb(context4) : new mf5(context4, 22) : new qmb(context4) : new rca(context4, (uh9) null);
+                View skbVar = i != 0 ? i != 1 ? i != 2 ? i != 3 ? i != 4 ? i != 5 ? new skb(context4) : new uo7(context4) : new ilb(context4) : new wkb(context4) : new mf5(context4, 22) : new qmb(context4) : new sca(context4, (uh9) null);
                 return qu6.h(skbVar, skbVar, -1, -2);
             case 4:
                 return new n69(new dg4((fg4) obj, (Context) obj2));
@@ -2790,7 +2790,7 @@ public final class t20 extends c79 {
                     yob.h(aob.d6, null, dlbVar);
                     view2 = dlbVar;
                 } else if (i == 2) {
-                    view2 = new rca(context5, (uh9) null);
+                    view2 = new sca(context5, (uh9) null);
                 } else if (i != 3) {
                     view2 = new ilb(context5);
                 } else {
@@ -2814,7 +2814,7 @@ public final class t20 extends c79 {
                     vnbVar3 = ((e) notificationsSettingsActivity).resourceProvider;
                     mf5Var2 = new uo7((Context) obj2, 21, 64, true, vnbVar3);
                 } else if (i == 4) {
-                    mf5Var2 = new rca(context6, (uh9) null);
+                    mf5Var2 = new sca(context6, (uh9) null);
                 } else if (i != 5) {
                     vnbVar5 = ((e) notificationsSettingsActivity).resourceProvider;
                     mf5Var2 = new ilb(context6, vnbVar5);
@@ -2858,7 +2858,7 @@ public final class t20 extends c79 {
                 if (i == 0) {
                     vnb vnbVar7 = ((c98) obj).J0;
                     o88 o88Var = new o88(context9);
-                    o88Var.e = new ki7(o88Var, (byte) 7);
+                    o88Var.e = new li7(o88Var, (byte) 7);
                     TextView textView2 = new TextView(context9);
                     o88Var.a = textView2;
                     textView2.setGravity(5);
@@ -2968,26 +2968,26 @@ public final class t20 extends c79 {
             case 14:
                 Context context12 = (Context) obj2;
                 if (i == 0) {
-                    rcaVar = new rca(context12, (uh9) null);
+                    scaVar = new sca(context12, (uh9) null);
                 } else if (i == 1) {
-                    rcaVar = new qmb(context12);
-                    yob.h(aob.d6, null, rcaVar);
+                    scaVar = new qmb(context12);
+                    yob.h(aob.d6, null, scaVar);
                 } else if (i == 2) {
-                    rcaVar = new mf5(context12);
-                    yob.h(aob.d6, null, rcaVar);
+                    scaVar = new mf5(context12);
+                    yob.h(aob.d6, null, scaVar);
                 } else if (i == 3) {
-                    rcaVar = new wkb(context12);
-                    yob.h(aob.d6, null, rcaVar);
+                    scaVar = new wkb(context12);
+                    yob.h(aob.d6, null, scaVar);
                 } else if (i == 4) {
-                    rcaVar = new ilb(context12);
+                    scaVar = new ilb(context12);
                 } else if (i != 6) {
-                    rcaVar = new hx8((ProxyListActivity) obj, context12);
-                    yob.h(aob.d6, null, rcaVar);
+                    scaVar = new hx8((ProxyListActivity) obj, context12);
+                    yob.h(aob.d6, null, scaVar);
                 } else {
-                    rcaVar = new zma(context12, null);
-                    yob.h(aob.d6, null, rcaVar);
+                    scaVar = new zma(context12, null);
+                    yob.h(aob.d6, null, scaVar);
                 }
-                return qu6.h(rcaVar, rcaVar, -1, -2);
+                return qu6.h(scaVar, scaVar, -1, -2);
             case 15:
                 Context context13 = (Context) obj2;
                 dka dkaVar = (dka) obj;

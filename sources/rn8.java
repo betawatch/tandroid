@@ -20,7 +20,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.UserInfoActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class rn8 extends d6 {
     public final /* synthetic */ byte a;
@@ -155,38 +155,38 @@ public final class rn8 extends d6 {
                 }
                 break;
             case 7:
-                w09 w09Var = (w09) obj;
-                ArrayList arrayList = w09Var.b;
+                x09 x09Var = (x09) obj;
+                ArrayList arrayList = x09Var.b;
                 if (i != -1) {
                     if (i != 1) {
                         if (i == 2) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, w09Var.getResourceProvider(), w09Var.getParentActivity());
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, x09Var.getResourceProvider(), x09Var.getParentActivity());
                             String G = ob6.G(arrayList.size(), "BusinessRepliesDeleteTitle", new Object[0]);
                             id idVar = alertDialog$Builder.a;
                             idVar.S = G;
                             idVar.U = ob6.G(arrayList.size(), "BusinessRepliesDeleteMessage", new Object[0]);
                             alertDialog$Builder.j(ob6.M0(2131746048, null), new jz7((Object) this, (byte) 23));
                             alertDialog$Builder.g(ob6.M0(2131752570, null), null);
-                            w09Var.showDialog(idVar);
+                            x09Var.showDialog(idVar);
                             break;
                         }
                     } else if (arrayList.size() == 1) {
                         int intValue = ((Integer) arrayList.get(0)).intValue();
-                        i2 = ((e) w09Var).currentAccount;
+                        i2 = ((e) x09Var).currentAccount;
                         a19 c = b19.f(i2).c(intValue);
                         if (c != null) {
-                            Activity parentActivity = w09Var.getParentActivity();
-                            i3 = ((e) w09Var).currentAccount;
-                            vnbVar = ((e) w09Var).resourceProvider;
-                            w09.g0(parentActivity, i3, null, c, vnbVar, new jq0(this, intValue, b2));
+                            Activity parentActivity = x09Var.getParentActivity();
+                            i3 = ((e) x09Var).currentAccount;
+                            vnbVar = ((e) x09Var).resourceProvider;
+                            x09.g0(parentActivity, i3, null, c, vnbVar, new jq0(this, intValue, b2));
                             break;
                         }
                     }
                 } else if (!arrayList.isEmpty()) {
-                    w09Var.d0();
+                    x09Var.d0();
                     break;
                 } else {
-                    w09Var.finishFragment();
+                    x09Var.finishFragment();
                     break;
                 }
                 break;
@@ -233,20 +233,20 @@ public final class rn8 extends d6 {
                 }
                 break;
             case 15:
-                tba tbaVar = (tba) obj;
+                uba ubaVar = (uba) obj;
                 if (i != -1) {
                     if (i == 2) {
-                        tbaVar.j0(new th6(null));
+                        ubaVar.j0(new th6(null));
                         break;
                     }
-                } else if (!tbaVar.O) {
-                    tbaVar.finishFragment();
+                } else if (!ubaVar.O) {
+                    ubaVar.finishFragment();
                     break;
                 } else {
                     Bundle bundle2 = new Bundle();
-                    bundle2.putLong("user_id", tbaVar.getUserConfig().e());
+                    bundle2.putLong("user_id", ubaVar.getUserConfig().e());
                     bundle2.putBoolean("immediate", true);
-                    tbaVar.presentFragment(new rz8(bundle2));
+                    ubaVar.presentFragment(new rz8(bundle2));
                     break;
                 }
                 break;

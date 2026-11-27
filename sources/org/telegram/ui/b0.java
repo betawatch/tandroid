@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class b0 extends c79 {
     public final /* synthetic */ PremiumPreviewFragment c;
@@ -178,7 +178,7 @@ public final class b0 extends c79 {
     @Override // j79
     public final f89 x(ViewGroup viewGroup, int i) {
         View jl8Var;
-        View rcaVar;
+        View scaVar;
         vnb vnbVar;
         Context context = viewGroup.getContext();
         switch (i) {
@@ -186,8 +186,8 @@ public final class b0 extends c79 {
                 jl8Var = new jl8(this, context);
                 break;
             case 2:
-                rcaVar = new rca(context, 0, 0);
-                jl8Var = rcaVar;
+                scaVar = new sca(context, 0, 0);
+                jl8Var = scaVar;
                 break;
             case 3:
             default:
@@ -195,8 +195,8 @@ public final class b0 extends c79 {
                 jl8Var.setTag(-33024);
                 break;
             case 4:
-                rcaVar = new u1(context, (byte) 0);
-                jl8Var = rcaVar;
+                scaVar = new u1(context, (byte) 0);
+                jl8Var = scaVar;
                 break;
             case 5:
                 jl8Var = new ilb(context);

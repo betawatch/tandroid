@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class kt7 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class kt7 implements View.OnClickListener {
                 int[] iArr = ot7.z1;
                 for (int i = 0; i < 6; i++) {
                     int i2 = iArr[i];
-                    G.h(new me7((Object) ot7Var, i2, (byte) 4), ob6.G(i2 / 3600, "GiftOfferHours", new Object[0]), i2 == ot7Var.x1);
+                    G.h(new oe7((Object) ot7Var, i2, (byte) 4), ob6.G(i2 / 3600, "GiftOfferHours", new Object[0]), i2 == ot7Var.x1);
                 }
                 G.W(5);
                 ot7Var.C0(textView, G, true);
@@ -49,8 +49,8 @@ public final /* synthetic */ class kt7 implements View.OnClickListener {
                         HashMap hashMap = vs7.a;
                         r7a.B(i4);
                         long D = r7a.D();
-                        jf7 Y = jf7.Y(i4);
-                        Y.a.c(new ic2(Y, D, str, j, i3, mt7Var));
+                        kf7 a0 = kf7.a0(i4);
+                        a0.a.c(new ic2(a0, D, str, j, i3, mt7Var));
                         break;
                     }
                 }

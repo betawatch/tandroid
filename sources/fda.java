@@ -1,13 +1,12 @@
 // default package
 
-import android.os.Build;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.WindowInsets;
+import android.widget.Toast;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fda implements ry4, nr7, l8, sy4 {
+public final /* synthetic */ class fda implements View.OnClickListener {
     public final /* synthetic */ byte a;
     public final /* synthetic */ kea b;
 
@@ -16,54 +15,82 @@ public final /* synthetic */ class fda implements ry4, nr7, l8, sy4 {
         this.b = keaVar;
     }
 
-    @Override // nr7
-    public final l2d S(View view, l2d l2dVar) {
-        WindowInsets g = l2dVar.g();
-        kea keaVar = this.b;
-        keaVar.q0(g);
-        mq5 f = l2dVar.a.f(519);
-        if (!keaVar.B2.equals(f)) {
-            keaVar.B2 = f;
-            keaVar.c.requestLayout();
-        }
-        return l2d.b;
-    }
-
-    @Override // sy4
-    public final int h() {
-        return aob.v0(aob.d6, this.b.J0);
-    }
-
-    @Override // ry4
-    public final void k(int i) {
-        kea keaVar = this.b;
-        tq3 tq3Var = keaVar.J2;
-        if (Build.VERSION.SDK_INT < 31 || tq3Var == null) {
-            return;
-        }
-        if (vsd.a(i, 4)) {
-            tq3Var.h(keaVar.X0.e());
-        }
-        tq3Var.e(keaVar.O2, keaVar.b.getWidth(), keaVar.b.getHeight());
-    }
-
-    @Override // l8
-    public final void o(KeyEvent keyEvent) {
-        n8 n8Var;
-        n8 n8Var2;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
         kea keaVar = this.b;
         switch (b) {
+            case 0:
+                keaVar.Q0(true);
+                break;
+            case 1:
+                keaVar.Z1.a(!r6.a.q, true);
+                keaVar.W0();
+                break;
             case 2:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n8Var = keaVar.E2) != null && n8Var.isShowing()) {
+                n8 n8Var = keaVar.E2;
+                if (n8Var != null && n8Var.isShowing()) {
                     keaVar.E2.d(true);
-                    break;
+                }
+                keaVar.Q0(false);
+                break;
+            case 3:
+                n8 n8Var2 = keaVar.E2;
+                if (n8Var2 != null && n8Var2.isShowing()) {
+                    keaVar.E2.d(true);
+                }
+                keaVar.Q0(true);
+                break;
+            case 4:
+                String[] strArr = keaVar.j2;
+                if (keaVar.P1.m() == 0) {
+                    if (keaVar.i2 || strArr[0] != null) {
+                        keaVar.dismiss();
+                        PhotoViewer.q0().A(true, false);
+                        if (strArr[0] != null || !keaVar.g2) {
+                            keaVar.getContext();
+                            keaVar.G0();
+                            break;
+                        } else {
+                            keaVar.h2 = true;
+                            Toast.makeText(keaVar.getContext(), ob6.M0(2131748533, null), 0).show();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                String[] strArr2 = keaVar.j2;
+                if (keaVar.P1.m() == 0) {
+                    if (keaVar.i2 || strArr2[0] != null) {
+                        keaVar.dismiss();
+                        if (strArr2[0] != null || !keaVar.g2) {
+                            keaVar.getContext();
+                            keaVar.G0();
+                            break;
+                        } else {
+                            keaVar.h2 = true;
+                            Toast.makeText(keaVar.getContext(), ob6.M0(2131748533, null), 0).show();
+                            break;
+                        }
+                    }
                 }
                 break;
             default:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n8Var2 = keaVar.E2) != null && n8Var2.isShowing()) {
-                    keaVar.E2.d(true);
-                    break;
+                String[] strArr3 = keaVar.j2;
+                if (keaVar.P1.m() == 0) {
+                    if (keaVar.i2 || strArr3[0] != null) {
+                        keaVar.dismiss();
+                        if (strArr3[0] != null || !keaVar.g2) {
+                            keaVar.getContext();
+                            keaVar.G0();
+                            break;
+                        } else {
+                            keaVar.h2 = true;
+                            Toast.makeText(keaVar.getContext(), ob6.M0(2131748533, null), 0).show();
+                            break;
+                        }
+                    }
                 }
                 break;
         }

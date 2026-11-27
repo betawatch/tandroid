@@ -7,7 +7,7 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.widget.EditText;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class lx3 extends InputConnectionWrapper {
     public final EditText a;
@@ -30,9 +30,9 @@ public final class lx3 extends InputConnectionWrapper {
             tj tjVar = a.e;
             tjVar.getClass();
             Bundle bundle = editorInfo.extras;
-            yf7 yf7Var = (yf7) ((u8a) tjVar.c).a;
-            int a2 = yf7Var.a(4);
-            bundle.putInt("android.support.text.emoji.emojiCompat_metadataVersion", a2 != 0 ? yf7Var.b.getInt(a2 + yf7Var.a) : 0);
+            zf7 zf7Var = (zf7) ((u8a) tjVar.c).a;
+            int a2 = zf7Var.a(4);
+            bundle.putInt("android.support.text.emoji.emojiCompat_metadataVersion", a2 != 0 ? zf7Var.b.getInt(a2 + zf7Var.a) : 0);
             editorInfo.extras.putBoolean("android.support.text.emoji.emojiCompat_replaceAll", false);
         }
     }

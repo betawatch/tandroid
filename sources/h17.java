@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class h17 implements RequestDelegate {
     public final /* synthetic */ byte a = 0;
@@ -18,13 +18,13 @@ public final /* synthetic */ class h17 implements RequestDelegate {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ h17(r17 r17Var, String str, boolean z, TLRPC.User user, String str2, jf7 jf7Var, String str3) {
+    public /* synthetic */ h17(r17 r17Var, String str, boolean z, TLRPC.User user, String str2, kf7 kf7Var, String str3) {
         this.c = r17Var;
         this.d = str;
         this.b = z;
         this.g = user;
         this.e = str2;
-        this.h = jf7Var;
+        this.h = kf7Var;
         this.f = str3;
     }
 
@@ -40,7 +40,7 @@ public final /* synthetic */ class h17 implements RequestDelegate {
         fn7 fn7Var = this.c;
         switch (b) {
             case 0:
-                hl.c3(new oq6((r17) fn7Var, (String) serializable2, this.b, tLObject, (TLRPC.User) obj2, (String) obj3, (jf7) obj, (String) serializable, (byte) 4));
+                hl.c3(new oq6((r17) fn7Var, (String) serializable2, this.b, tLObject, (TLRPC.User) obj2, (String) obj3, (kf7) obj, (String) serializable, (byte) 4));
                 break;
             default:
                 r7a r7aVar = (r7a) fn7Var;

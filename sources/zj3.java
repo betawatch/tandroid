@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class zj3 implements pcc {
     public final /* synthetic */ byte a;
@@ -166,22 +166,22 @@ public final /* synthetic */ class zj3 implements pcc {
                 break;
             case 19:
                 bq5 bq5Var = (bq5) obj2;
-                tca tcaVar = (tca) obj;
+                uca ucaVar = (uca) obj;
                 pa9 pa9Var = bq5Var.a;
-                if (tcaVar != null) {
+                if (ucaVar != null) {
                     float currentWeight = pa9Var.getCurrentWeight();
-                    tcaVar.f = currentWeight;
+                    ucaVar.f = currentWeight;
                     double d = bq5Var.p;
                     if (d > 0.0d) {
-                        tcaVar.f = (float) ((d / bq5Var.q) * currentWeight);
+                        ucaVar.f = (float) ((d / bq5Var.q) * currentWeight);
                     }
-                    if (tcaVar.a.n() == 4) {
-                        tcaVar.k *= tcaVar.f;
+                    if (ucaVar.a.n() == 4) {
+                        ucaVar.k *= ucaVar.f;
                     }
                 }
                 nx7 painting = pa9Var.getPainting();
                 if (painting.L == null) {
-                    painting.f.f(new jx7(painting, tcaVar, b3));
+                    painting.f.f(new jx7(painting, ucaVar, b3));
                     break;
                 }
                 break;

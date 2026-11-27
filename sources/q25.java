@@ -25,7 +25,7 @@ import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class q25 implements Runnable {
     public final /* synthetic */ byte a;
@@ -188,15 +188,15 @@ public final /* synthetic */ class q25 implements Runnable {
                 ArrayList arrayList = jm7Var.a;
                 if (jm7Var.o) {
                     jm7Var.o = false;
-                    lm7Var.y0(i21, true);
+                    lm7Var.w0(i21, true);
                     return;
                 }
                 if (i21 == 2 && !str4.equals(lm7Var.Q)) {
                     if (TextUtils.isEmpty(lm7Var.Q) || lm7Var.R != null) {
-                        lm7.L0(jm7Var);
+                        lm7.J0(jm7Var);
                         return;
                     } else {
-                        lm7Var.y0(i21, true);
+                        lm7Var.w0(i21, true);
                         return;
                     }
                 }
@@ -221,7 +221,7 @@ public final /* synthetic */ class q25 implements Runnable {
                     ArrayList<TLRPC.Chat> arrayList3 = forYouFeed.chats;
                     lm7Var.getMessagesController().j4(arrayList2, false);
                     lm7Var.getMessagesController().c4(arrayList3, false);
-                    lm7Var.getMessagesStorage().j1(arrayList2, arrayList3, true, true);
+                    lm7Var.getMessagesStorage().n1(arrayList2, arrayList3, true, true);
                     int size = forYouFeed.items.size();
                     ArrayList<TL_feed.FeedItem> arrayList4 = forYouFeed.items;
                     int size2 = arrayList4.size();
@@ -236,8 +236,8 @@ public final /* synthetic */ class q25 implements Runnable {
                             TL_feed.TL_feedItemMessage tL_feedItemMessage = (TL_feed.TL_feedItemMessage) feedItem2;
                             z2 = z7;
                             i22++;
-                            lm7.g0(jm7Var, Collections.singletonList(tL_feedItemMessage.message), new fa4(valueOf, i22, "preview"));
-                            if (lm7Var.e0(jm7Var, tL_feedItemMessage.message, -1)) {
+                            lm7.f0(jm7Var, Collections.singletonList(tL_feedItemMessage.message), new fa4(valueOf, i22, "preview"));
+                            if (lm7Var.d0(jm7Var, tL_feedItemMessage.message, -1)) {
                                 i23++;
                             }
                             l = valueOf;
@@ -247,7 +247,7 @@ public final /* synthetic */ class q25 implements Runnable {
                                 ArrayList<TLRPC.Message> arrayList5 = ((TL_feed.TL_feedItemMessageGroup) feedItem2).messages;
                                 if (arrayList5 != null) {
                                     i22++;
-                                    lm7.g0(jm7Var, arrayList5, new fa4(valueOf, i22, "preview"));
+                                    lm7.f0(jm7Var, arrayList5, new fa4(valueOf, i22, "preview"));
                                 }
                                 if (arrayList5 == null || arrayList5.isEmpty()) {
                                     l = valueOf;
@@ -272,7 +272,7 @@ public final /* synthetic */ class q25 implements Runnable {
                                     }
                                     i6 = -1;
                                 }
-                                if (lm7Var.e0(jm7Var, message, i6)) {
+                                if (lm7Var.d0(jm7Var, message, i6)) {
                                     i23++;
                                 }
                                 if (arrayList5 != null) {
@@ -284,7 +284,7 @@ public final /* synthetic */ class q25 implements Runnable {
                                         TLRPC.Message message4 = message3;
                                         ArrayList<TLRPC.Message> arrayList6 = arrayList5;
                                         if (message4 != message) {
-                                            lm7Var.e0(jm7Var, message4, -1);
+                                            lm7Var.d0(jm7Var, message4, -1);
                                         }
                                         arrayList5 = arrayList6;
                                     }
@@ -322,7 +322,7 @@ public final /* synthetic */ class q25 implements Runnable {
                         ArrayList<TLRPC.Chat> arrayList8 = tL_feedMessages.chats;
                         lm7Var.getMessagesController().j4(arrayList7, false);
                         lm7Var.getMessagesController().c4(arrayList8, false);
-                        lm7Var.getMessagesStorage().j1(arrayList7, arrayList8, true, true);
+                        lm7Var.getMessagesStorage().n1(arrayList7, arrayList8, true, true);
                         TL_feed.FeedPosition feedPosition2 = tL_feedMessages.read_max_position;
                         if (feedPosition2 != null && ((feedPosition = jm7Var.s) == null || (i3 = feedPosition2.date) > (i4 = feedPosition.date) || (i3 == i4 && feedPosition2.id > feedPosition.id))) {
                             jm7Var.s = feedPosition2;
@@ -335,7 +335,7 @@ public final /* synthetic */ class q25 implements Runnable {
                         while (i28 < size6) {
                             TLRPC.Message message5 = arrayList9.get(i28);
                             i28++;
-                            if (lm7Var.e0(jm7Var, message5, -1)) {
+                            if (lm7Var.d0(jm7Var, message5, -1)) {
                                 i2++;
                             }
                         }
@@ -372,13 +372,13 @@ public final /* synthetic */ class q25 implements Runnable {
                     jm7Var.f.g3.O(false);
                 } else {
                     i5 = 0;
-                    lm7.L0(jm7Var);
+                    lm7.J0(jm7Var);
                 }
                 if (z6 && !jm7Var.n && (im7Var2 = jm7Var.f) != null) {
                     im7Var2.x0(i5);
                 }
                 if (z10) {
-                    lm7.i0(jm7Var.f);
+                    lm7.h0(jm7Var.f);
                 }
                 if (!z6 || (w94Var = jm7Var.h) == null) {
                     b = 0;
@@ -389,7 +389,7 @@ public final /* synthetic */ class q25 implements Runnable {
                 if (i21 != 1 || (im7Var = jm7Var.f) == null) {
                     return;
                 }
-                im7Var.post(new xl7(lm7Var, jm7Var, b));
+                im7Var.post(new yl7(lm7Var, jm7Var, b));
                 return;
             case 2:
                 l98 l98Var = (l98) obj4;
@@ -1055,7 +1055,7 @@ public final /* synthetic */ class q25 implements Runnable {
                 }
                 for (int i34 = 0; i34 < arrayList12.size(); i34++) {
                     TLRPC.Message message7 = ((r47) arrayList12.get(i34)).k;
-                    r7aVar.getMessagesStorage().K0(z6 ? 1 : 0, message7);
+                    r7aVar.getMessagesStorage().N0(z6 ? 1 : 0, message7);
                     message7.send_state = 2;
                     message7.errorAllowedPriceStars = 0L;
                     message7.errorNewPriceStars = 0L;

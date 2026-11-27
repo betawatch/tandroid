@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class u8a implements ws4, gn7, reb, jb9 {
     public static u8a e;
@@ -46,35 +46,35 @@ public final class u8a implements ws4, gn7, reb, jb9 {
     public Object c;
     public Object d;
 
-    public u8a(Typeface typeface, yf7 yf7Var) {
+    public u8a(Typeface typeface, zf7 zf7Var) {
         int i;
         int i2;
         int i3;
         int i4;
         this.d = typeface;
-        this.a = yf7Var;
-        this.c = new ag7(1024);
-        int a = yf7Var.a(6);
+        this.a = zf7Var;
+        this.c = new bg7(1024);
+        int a = zf7Var.a(6);
         if (a != 0) {
-            int i5 = a + yf7Var.a;
-            i = yf7Var.b.getInt(yf7Var.b.getInt(i5) + i5);
+            int i5 = a + zf7Var.a;
+            i = zf7Var.b.getInt(zf7Var.b.getInt(i5) + i5);
         } else {
             i = 0;
         }
         this.b = new char[i << 1];
-        int a2 = yf7Var.a(6);
+        int a2 = zf7Var.a(6);
         if (a2 != 0) {
-            int i6 = a2 + yf7Var.a;
-            i2 = yf7Var.b.getInt(yf7Var.b.getInt(i6) + i6);
+            int i6 = a2 + zf7Var.a;
+            i2 = zf7Var.b.getInt(zf7Var.b.getInt(i6) + i6);
         } else {
             i2 = 0;
         }
         for (int i7 = 0; i7 < i2; i7++) {
             px3 px3Var = new px3(this, i7);
-            xf7 b = px3Var.b();
+            yf7 b = px3Var.b();
             int a3 = b.a(4);
             Character.toChars(a3 != 0 ? b.b.getInt(a3 + b.a) : 0, (char[]) this.b, i7 << 1);
-            xf7 b2 = px3Var.b();
+            yf7 b2 = px3Var.b();
             int a4 = b2.a(16);
             if (a4 != 0) {
                 int i8 = a4 + b2.a;
@@ -86,8 +86,8 @@ public final class u8a implements ws4, gn7, reb, jb9 {
                 lq5.j("invalid metadata codepoint length");
                 throw null;
             }
-            ag7 ag7Var = (ag7) this.c;
-            xf7 b3 = px3Var.b();
+            bg7 bg7Var = (bg7) this.c;
+            yf7 b3 = px3Var.b();
             int a5 = b3.a(16);
             if (a5 != 0) {
                 int i9 = a5 + b3.a;
@@ -95,7 +95,7 @@ public final class u8a implements ws4, gn7, reb, jb9 {
             } else {
                 i4 = 0;
             }
-            ag7Var.a(px3Var, 0, i4 - 1);
+            bg7Var.a(px3Var, 0, i4 - 1);
         }
     }
 
@@ -209,9 +209,9 @@ public final class u8a implements ws4, gn7, reb, jb9 {
     public final Object F(ax2 ax2Var) {
         yr9 yr9Var;
         int i;
-        wj7 wj7Var;
+        xj7 xj7Var;
         Throwable th;
-        wj7 wj7Var2;
+        xj7 xj7Var2;
         u8a u8aVar;
         try {
             if (ax2Var instanceof yr9) {
@@ -221,16 +221,16 @@ public final class u8a implements ws4, gn7, reb, jb9 {
                     yr9Var.e = i2 - TLObject.FLAG_31;
                     Object obj = yr9Var.c;
                     i = yr9Var.e;
-                    f9c f9cVar = f9c.a;
+                    g9c g9cVar = g9c.a;
                     vx2 vx2Var = vx2.a;
                     if (i != 0) {
                         ixe.b(obj);
                         if (!(((vp2) this.b).v() instanceof hp5)) {
-                            return f9cVar;
+                            return g9cVar;
                         }
-                        wj7Var = (wj7) this.a;
+                        xj7Var = (xj7) this.a;
                         yr9Var.a = this;
-                        yr9Var.b = wj7Var;
+                        yr9Var.b = xj7Var;
                         yr9Var.e = 1;
                     } else {
                         if (i != 1) {
@@ -238,38 +238,38 @@ public final class u8a implements ws4, gn7, reb, jb9 {
                                 grb.i("call to 'resume' before 'invoke' with coroutine");
                                 return null;
                             }
-                            wj7Var2 = yr9Var.b;
+                            xj7Var2 = yr9Var.b;
                             u8aVar = yr9Var.a;
                             try {
                                 ixe.b(obj);
-                                ((vp2) u8aVar.b).B(f9cVar);
-                                wj7Var2.f(null);
-                                return f9cVar;
+                                ((vp2) u8aVar.b).B(g9cVar);
+                                xj7Var2.f(null);
+                                return g9cVar;
                             } catch (Throwable th2) {
                                 th = th2;
-                                wj7Var2.f(null);
+                                xj7Var2.f(null);
                                 throw th;
                             }
                         }
-                        wj7 wj7Var3 = yr9Var.b;
+                        xj7 xj7Var3 = yr9Var.b;
                         u8a u8aVar2 = yr9Var.a;
                         ixe.b(obj);
-                        wj7Var = wj7Var3;
+                        xj7Var = xj7Var3;
                         this = u8aVar2;
                     }
                     if (((vp2) this.b).v() instanceof hp5) {
-                        wj7Var.f(null);
-                        return f9cVar;
+                        xj7Var.f(null);
+                        return g9cVar;
                     }
                     yr9Var.a = this;
-                    yr9Var.b = wj7Var;
+                    yr9Var.b = xj7Var;
                     yr9Var.e = 2;
                     if (this.m(yr9Var) != vx2Var) {
                         u8aVar = this;
-                        wj7Var2 = wj7Var;
-                        ((vp2) u8aVar.b).B(f9cVar);
-                        wj7Var2.f(null);
-                        return f9cVar;
+                        xj7Var2 = xj7Var;
+                        ((vp2) u8aVar.b).B(g9cVar);
+                        xj7Var2.f(null);
+                        return g9cVar;
                     }
                     return vx2Var;
                 }
@@ -277,16 +277,16 @@ public final class u8a implements ws4, gn7, reb, jb9 {
             if (((vp2) this.b).v() instanceof hp5) {
             }
         } catch (Throwable th3) {
-            wj7 wj7Var4 = wj7Var;
+            xj7 xj7Var4 = xj7Var;
             th = th3;
-            wj7Var2 = wj7Var4;
-            wj7Var2.f(null);
+            xj7Var2 = xj7Var4;
+            xj7Var2.f(null);
             throw th;
         }
         yr9Var = new yr9(this, ax2Var);
         Object obj2 = yr9Var.c;
         i = yr9Var.e;
-        f9c f9cVar2 = f9c.a;
+        g9c g9cVar2 = g9c.a;
         vx2 vx2Var2 = vx2.a;
         if (i != 0) {
         }
@@ -388,7 +388,7 @@ public final class u8a implements ws4, gn7, reb, jb9 {
 
     @Override // gn7
     public final void a() {
-        pj7 pj7Var = (pj7) this.c;
+        qj7 qj7Var = (qj7) this.c;
         if (((fn7) this.b) == null) {
             return;
         }
@@ -397,17 +397,17 @@ public final class u8a implements ws4, gn7, reb, jb9 {
             u8aVar.a();
             this.d = null;
         }
-        int i = pj7Var.b;
+        int i = qj7Var.b;
         for (int i2 = 0; i2 < i; i2++) {
             jn7 jn7Var = (jn7) this.a;
             fn7 fn7Var = (fn7) this.b;
-            if (i2 < 0 || i2 >= pj7Var.b) {
-                lq5.g(pj7Var.b - 1, uh9.m(i2, "Index ", " must be in 0.."));
+            if (i2 < 0 || i2 >= qj7Var.b) {
+                lq5.g(qj7Var.b - 1, uh9.m(i2, "Index ", " must be in 0.."));
                 return;
             }
-            jn7Var.n(fn7Var, pj7Var.a[i2]);
+            jn7Var.n(fn7Var, qj7Var.a[i2]);
         }
-        pj7Var.b = 0;
+        qj7Var.b = 0;
         this.a = null;
         this.b = null;
     }
@@ -416,16 +416,16 @@ public final class u8a implements ws4, gn7, reb, jb9 {
         if (((fn7) this.b) == null) {
             return this;
         }
-        pj7 pj7Var = (pj7) this.c;
-        int i2 = pj7Var.b + 1;
-        int[] iArr = pj7Var.a;
+        qj7 qj7Var = (qj7) this.c;
+        int i2 = qj7Var.b + 1;
+        int[] iArr = qj7Var.a;
         if (iArr.length < i2) {
             iArr = Arrays.copyOf(iArr, Math.max(i2, (iArr.length * 3) / 2));
-            pj7Var.a = iArr;
+            qj7Var.a = iArr;
         }
-        int i3 = pj7Var.b;
+        int i3 = qj7Var.b;
         iArr[i3] = i;
-        pj7Var.b = i3 + 1;
+        qj7Var.b = i3 + 1;
         ((jn7) this.a).a((fn7) this.b, i);
         return this;
     }
@@ -443,7 +443,7 @@ public final class u8a implements ws4, gn7, reb, jb9 {
 
     @Override // jb9
     public final void d() {
-        hl.d3(new fb9((e) this.a, (Context) this.b, (vnb) this.c, (en9) this.d, (byte) 2), 200L);
+        hl.d3(new fb9((e) this.a, (Context) this.b, (vnb) this.c, (dn9) this.d, (byte) 2), 200L);
     }
 
     public final u8a e(int i) {
@@ -461,7 +461,7 @@ public final class u8a implements ws4, gn7, reb, jb9 {
 
     @Override // jb9
     public final void f() {
-        hl.d3(new z09((e) this.a, (en9) this.d, (byte) 12), 200L);
+        hl.d3(new yz8((e) this.a, (dn9) this.d, (byte) 13), 200L);
     }
 
     public final ArrayList g(List list) {
@@ -712,7 +712,7 @@ public final class u8a implements ws4, gn7, reb, jb9 {
                     k63Var = (k63) obj;
                 }
                 ((o83) this.d).h.H(k63Var);
-                return f9c.a;
+                return g9c.a;
             }
         }
         p73Var = new p73(this, ax2Var);
@@ -721,7 +721,7 @@ public final class u8a implements ws4, gn7, reb, jb9 {
         if (i != 0) {
         }
         ((o83) this.d).h.H(k63Var);
-        return f9c.a;
+        return g9c.a;
     }
 
     public final void n(long[] jArr, long j) {
@@ -1011,9 +1011,9 @@ public final class u8a implements ws4, gn7, reb, jb9 {
     }
 
     public u8a(jn7 jn7Var, fn7 fn7Var) {
-        pj7 pj7Var = new pj7();
-        pj7Var.a = new int[16];
-        this.c = pj7Var;
+        qj7 qj7Var = new qj7();
+        qj7Var.a = new int[16];
+        this.c = qj7Var;
         this.a = jn7Var;
         this.b = fn7Var;
     }

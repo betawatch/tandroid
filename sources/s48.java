@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s48 implements fd, w41 {
     public final /* synthetic */ byte a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class s48 implements fd, w41 {
     /* JADX WARN: Type inference failed for: r14v9 */
     /* JADX WARN: Type inference failed for: r5v20, types: [java.util.ArrayList] */
     /* JADX WARN: Type inference failed for: r5v21, types: [java.util.ArrayList] */
-    /* JADX WARN: Type inference failed for: r5v8, types: [jf7] */
+    /* JADX WARN: Type inference failed for: r5v8, types: [kf7] */
     /* JADX WARN: Type inference failed for: r8v10 */
     /* JADX WARN: Type inference failed for: r8v11 */
     /* JADX WARN: Type inference failed for: r8v12, types: [java.lang.Object, org.telegram.tgnet.tl.TL_stories$PeerStories] */
@@ -67,11 +67,11 @@ public final /* synthetic */ class s48 implements fd, w41 {
                     }
                 }
                 TL_stories.StoryItem storyItem2 = n68Var.a;
-                if (storyItem2 instanceof n5b) {
-                    o5b o5bVar = ((n5b) storyItem2).a;
+                if (storyItem2 instanceof o5b) {
+                    p5b p5bVar = ((o5b) storyItem2).a;
                     TLRPC.MessageMedia messageMedia2 = storyItem2.media;
-                    o5bVar.getClass();
-                    o5bVar.F(new ArrayList(Arrays.asList(messageMedia2)));
+                    p5bVar.getClass();
+                    p5bVar.F(new ArrayList(Arrays.asList(messageMedia2)));
                 } else if (storyItem2 != null) {
                     o68 o68Var2 = n68Var.k;
                     c6b c6bVar = o68Var2.C1;
@@ -141,10 +141,10 @@ public final /* synthetic */ class s48 implements fd, w41 {
                                 }
                             }
                             if (chatFull != null) {
-                                jf7.Y(i2).K1(chatFull, false);
+                                kf7.a0(i2).P1(chatFull, false);
                             }
                             if (r14 != 0) {
-                                jf7.Y(i2).g2(r14, false);
+                                kf7.a0(i2).l2(r14, false);
                             }
                             i3++;
                             chatFull2 = null;
@@ -186,9 +186,9 @@ public final /* synthetic */ class s48 implements fd, w41 {
                 }
                 break;
             default:
-                g58 g58Var = o68Var.L1;
-                if (g58Var != null) {
-                    g58Var.G();
+                h58 h58Var = o68Var.L1;
+                if (h58Var != null) {
+                    h58Var.G();
                     break;
                 }
                 break;

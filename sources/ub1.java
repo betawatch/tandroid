@@ -21,7 +21,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.z;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class ub1 extends qb1 {
     public boolean S0;
@@ -377,7 +377,7 @@ public abstract class ub1 extends qb1 {
 
     @Override // qb1
     public int getCaptionDefaultLimit() {
-        return uc7.s1(this.V).k4.o1.f();
+        return uc7.s1(this.V).l4.o1.f();
     }
 
     @Override // qb1
@@ -387,7 +387,7 @@ public abstract class ub1 extends qb1 {
 
     @Override // qb1
     public int getCaptionPremiumLimit() {
-        return uc7.s1(this.V).k4.p1.f();
+        return uc7.s1(this.V).l4.p1.f();
     }
 
     @Override // qb1
@@ -479,7 +479,7 @@ public abstract class ub1 extends qb1 {
         boolean z;
         rb1 rb1Var = this.p1;
         hl.r(rb1Var);
-        if (uc7.s1(this.V).X3.getInt("movecaptionhint", 0) >= 24) {
+        if (uc7.s1(this.V).Y3.getInt("movecaptionhint", 0) >= 24) {
             boolean z2 = f11.a;
             z = false;
         } else {
@@ -487,7 +487,7 @@ public abstract class ub1 extends qb1 {
         }
         this.o1 = z;
         if (z) {
-            SharedPreferences sharedPreferences = uc7.s1(this.V).X3;
+            SharedPreferences sharedPreferences = uc7.s1(this.V).Y3;
             sharedPreferences.edit().putInt("movecaptionhint", sharedPreferences.getInt("movecaptionhint", 0) + 1).apply();
             invalidate();
             hl.d3(rb1Var, 5000L);

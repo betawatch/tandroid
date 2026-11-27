@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class cw8 implements xt6, g84, la6, pa6, xs9 {
     public static final Map l0;
@@ -70,7 +70,7 @@ public final class cw8 implements xt6, g84, la6, pa6, xs9 {
         l0 = DesugarCollections.unmodifiableMap(hashMap);
         jo4 jo4Var = new jo4();
         jo4Var.a = "icy";
-        jo4Var.s = dg7.n("application/x-icy");
+        jo4Var.s = eg7.n("application/x-icy");
         m0 = new ko4(jo4Var);
     }
 
@@ -270,7 +270,7 @@ public final class cw8 implements xt6, g84, la6, pa6, xs9 {
                 z2 |= e74Var.n().z;
                 int i10 = i3;
                 aw8 aw8Var = new aw8(this, b, e74Var.n().z);
-                if (Build.VERSION.SDK_INT >= 37 && r9 == false && dg7.m(e74Var.n().t)) {
+                if (Build.VERSION.SDK_INT >= 37 && r9 == false && eg7.m(e74Var.n().t)) {
                     int i11 = i10;
                     while (i11 < u1cVar2.a) {
                         if (rk2.e(u1cVar2.a(i11).d[i10])) {
@@ -610,7 +610,7 @@ public final class cw8 implements xt6, g84, la6, pa6, xs9 {
 
     @Override // g84
     public final void m0(zy9 zy9Var) {
-        this.I.post(new hp8(this, zy9Var, (byte) 17));
+        this.I.post(new ep8(this, zy9Var, (byte) 18));
     }
 
     @Override // xt6
@@ -759,7 +759,7 @@ public final class cw8 implements xt6, g84, la6, pa6, xs9 {
     }
 
     public final void v() {
-        uf7 a;
+        vf7 a;
         long j = this.x;
         if (this.k0 || this.P || !this.O || this.T == null) {
             return;
@@ -785,7 +785,7 @@ public final class cw8 implements xt6, g84, la6, pa6, xs9 {
             }
             ko4 y = this.M[i2].y();
             y.getClass();
-            int h = dg7.h(y.t);
+            int h = eg7.h(y.t);
             char c2 = h != 1 ? h != 2 ? h != 3 ? h != 4 ? (char) 0 : (char) 2 : (char) 1 : (char) 4 : (char) 3;
             if (i == 1) {
                 c = 3;
@@ -807,25 +807,25 @@ public final class cw8 implements xt6, g84, la6, pa6, xs9 {
             ko4 y2 = this.M[i4].y();
             y2.getClass();
             String str = y2.t;
-            boolean i5 = dg7.i(str);
-            boolean z2 = (i5 || dg7.m(str)) ? true : z;
+            boolean i5 = eg7.i(str);
+            boolean z2 = (i5 || eg7.m(str)) ? true : z;
             zArr[i4] = z2;
             boolean z3 = z;
             this.Q |= z2;
-            this.R = (j != -9223372036854775807L && length == 1 && dg7.k(str)) ? true : z3 ? 1 : 0;
+            this.R = (j != -9223372036854775807L && length == 1 && eg7.k(str)) ? true : z3 ? 1 : 0;
             rl5 rl5Var = this.K;
             if (rl5Var != null) {
                 int i6 = rl5Var.a;
                 if (i5 || this.N[i4].b) {
-                    uf7 uf7Var = y2.m;
-                    if (uf7Var == null) {
-                        sf7[] sf7VarArr = new sf7[1];
-                        sf7VarArr[z3 ? 1 : 0] = rl5Var;
-                        a = new uf7(sf7VarArr);
+                    vf7 vf7Var = y2.m;
+                    if (vf7Var == null) {
+                        tf7[] tf7VarArr = new tf7[1];
+                        tf7VarArr[z3 ? 1 : 0] = rl5Var;
+                        a = new vf7(tf7VarArr);
                     } else {
-                        sf7[] sf7VarArr2 = new sf7[1];
-                        sf7VarArr2[z3 ? 1 : 0] = rl5Var;
-                        a = uf7Var.a(sf7VarArr2);
+                        tf7[] tf7VarArr2 = new tf7[1];
+                        tf7VarArr2[z3 ? 1 : 0] = rl5Var;
+                        a = vf7Var.a(tf7VarArr2);
                     }
                     jo4 a2 = y2.a();
                     a2.l = a;
@@ -881,7 +881,7 @@ public final class cw8 implements xt6, g84, la6, pa6, xs9 {
             return;
         }
         ko4 ko4Var = ((u1c) u8aVar.a).a(i).d[0];
-        this.e.i(dg7.h(ko4Var.t), ko4Var, 0, null, this.f0);
+        this.e.i(eg7.h(ko4Var.t), ko4Var, 0, null, this.f0);
         zArr[i] = true;
     }
 

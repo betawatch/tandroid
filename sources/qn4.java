@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class qn4 extends ny0 {
     public static final /* synthetic */ int A2 = 0;
@@ -119,9 +119,9 @@ public final class qn4 extends ny0 {
             }
         }
         ac7Var = null;
-        ze7 ze7Var = new ze7(i, (Object) eVar, (Object) pccVar, (byte) 27);
+        bf7 bf7Var = new bf7(i, (Object) eVar, (Object) pccVar, (byte) 27);
         if (ac7Var == null || !ac7Var.e()) {
-            ze7Var.run();
+            bf7Var.run();
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eVar.getContext());
@@ -130,7 +130,7 @@ public final class qn4 extends ny0 {
         idVar.S = M0;
         idVar.U = ob6.M0(2131750753, null);
         alertDialog$Builder.g(ob6.M0(2131752570, null), new f62(pccVar, (byte) 1));
-        alertDialog$Builder.j(ob6.M0(2131751563, null), new lu3(ze7Var, (byte) 23));
+        alertDialog$Builder.j(ob6.M0(2131751563, null), new lu3(bf7Var, (byte) 23));
         eVar.showDialog(idVar);
         TextView textView = (TextView) idVar.c(-1);
         if (textView != null) {

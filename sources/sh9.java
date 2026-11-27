@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class sh9 implements pcc {
     public final /* synthetic */ byte a;
@@ -222,7 +222,7 @@ public final /* synthetic */ class sh9 implements pcc {
                 ((n9b) obj2).n.a0.B1 = ((Integer) obj).intValue();
                 break;
             case 18:
-                ((rab) obj2).h((pcc) obj);
+                ((sab) obj2).h((pcc) obj);
                 break;
             case 19:
                 ueb uebVar = (ueb) obj2;
@@ -236,7 +236,7 @@ public final /* synthetic */ class sh9 implements pcc {
                     tL_birthday = Y1.birthday;
                     Y1.flags2 |= 32;
                     Y1.birthday = tL_birthday2;
-                    jf7.Y(i4).g2(Y1, false);
+                    kf7.a0(i4).l2(Y1, false);
                 }
                 ConnectionsManager.getInstance(i4).sendRequest(updatebirthday, new qn8((Object) uebVar, (Object) Y1, (Object) tL_birthday, (byte) 23), 1024);
                 uc7.s1(i4).j2();
@@ -266,7 +266,7 @@ public final /* synthetic */ class sh9 implements pcc {
                 ((snc) ((lyc) obj2).e).m(obj);
                 break;
             case 27:
-                hl.c3(new vlc((wsc) obj2, (TLRPC.UserFull) obj, (byte) 19));
+                hl.c3(new slc((wsc) obj2, (TLRPC.UserFull) obj, (byte) 20));
                 break;
             case 28:
                 atc atcVar = (atc) obj2;

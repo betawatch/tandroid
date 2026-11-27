@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class oh2 {
     public int a;
@@ -390,7 +390,7 @@ public final class oh2 {
                 f89 V2 = RecyclerView.V(view);
                 rx6 rx6Var = recyclerView.e;
                 zg2 zg2Var = (zg2) rx6Var.c;
-                int indexOfChild = ((RecyclerView) ((i09) rx6Var.b).b).indexOfChild(view);
+                int indexOfChild = ((RecyclerView) ((j09) rx6Var.b).b).indexOfChild(view);
                 if (indexOfChild < 0) {
                     lq5.q(view, "view is not a child, cannot hide ");
                     return f89Var;
@@ -403,7 +403,7 @@ public final class oh2 {
                 rx6Var.A0(view);
                 rx6 rx6Var2 = recyclerView.e;
                 zg2 zg2Var2 = (zg2) rx6Var2.c;
-                int indexOfChild2 = ((RecyclerView) ((i09) rx6Var2.b).b).indexOfChild(view);
+                int indexOfChild2 = ((RecyclerView) ((j09) rx6Var2.b).b).indexOfChild(view);
                 int s = (indexOfChild2 == -1 || zg2Var2.w(indexOfChild2)) ? -1 : indexOfChild2 - zg2Var2.s(indexOfChild2);
                 if (s == -1) {
                     StringBuilder sb = new StringBuilder("layout index should not be -1 after unhiding a view:");

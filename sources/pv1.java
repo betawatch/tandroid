@@ -18,7 +18,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.l;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class pv1 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -32,13 +32,13 @@ public final /* synthetic */ class pv1 implements View.OnClickListener {
     private final void a(View view) {
         ChatActivityEnterView chatActivityEnterView = this.b;
         int i = ChatActivityEnterView.X7;
-        SharedPreferences.Editor edit = uc7.s1(chatActivityEnterView.R).X3.edit();
+        SharedPreferences.Editor edit = uc7.s1(chatActivityEnterView.R).Y3.edit();
         if (pj0.d(chatActivityEnterView.E3.s8)) {
             edit.putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + chatActivityEnterView.E3.a(), false);
         } else {
             edit.putBoolean("show_gift_for_" + chatActivityEnterView.E3.a(), false);
         }
-        if (uc7.s1(chatActivityEnterView.R).k4.K0.f && uc7.s1(chatActivityEnterView.R).k4.J0.f) {
+        if (uc7.s1(chatActivityEnterView.R).l4.K0.f && uc7.s1(chatActivityEnterView.R).l4.J0.f) {
             edit.putBoolean("show_gift_for_" + chatActivityEnterView.E3.a(), false);
         }
         edit.apply();

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 final class zzhy extends yfb implements is4 {
     final /* synthetic */ zzib zza;
@@ -22,7 +22,7 @@ final class zzhy extends yfb implements is4 {
 
     @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhy) create((zzgr) obj, (zw2) obj2)).invokeSuspend(f9c.a);
+        return ((zzhy) create((zzgr) obj, (zw2) obj2)).invokeSuspend(g9c.a);
     }
 
     @Override // qf0
@@ -30,7 +30,7 @@ final class zzhy extends yfb implements is4 {
         ixe.b(obj);
         try {
             zzib.zza(this.zza).zzc(this.zzb, this.zzc);
-            return f9c.a;
+            return g9c.a;
         } catch (Exception e) {
             throw new zzcg(zzce.zzk, zzcd.zzT, e.getMessage(), null, 8, null);
         }

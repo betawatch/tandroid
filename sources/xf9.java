@@ -20,7 +20,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class xf9 extends ze9 implements snb, zlb, jf9, jq3 {
     public final RadialProgress2 E;
@@ -79,7 +79,7 @@ public final class xf9 extends ze9 implements snb, zlb, jf9, jq3 {
         this.F = imageReceiver;
         imageReceiver.A1 = true;
         imageReceiver.q0(hl.L(6.0f));
-        if9 if9Var = new if9(context, vnbVar, new k09(this, (byte) 3));
+        if9 if9Var = new if9(context, vnbVar, new l09(this, (byte) 3));
         this.G = if9Var;
         addView(if9Var.a, tre.e(-2, -2, 51));
         updateColors();

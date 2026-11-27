@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ll1 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class ll1 implements View.OnClickListener {
             case 9:
                 zu1 zu1Var7 = this.b;
                 if (zu1Var7.r4 != null) {
-                    qyb qybVar = zu1Var7.getMessagesController().g4;
+                    qyb qybVar = zu1Var7.getMessagesController().h4;
                     long j = zu1Var7.e.id;
                     TLRPC.TL_forumTopic tL_forumTopic = zu1Var7.r4;
                     int i3 = tL_forumTopic.id;
@@ -206,7 +206,7 @@ public final /* synthetic */ class ll1 implements View.OnClickListener {
                 r47 r47Var2 = zu1Var13.v5;
                 if (r47Var2 != null) {
                     zu1Var13.Z9(r47Var2, false, false);
-                    m01.t(zu1Var13.getParentActivity(), Uri.parse(zu1Var13.v5.T0), true, false, false, null, null, false, zu1Var13.getMessagesController().k4.I2.f, false, false);
+                    m01.t(zu1Var13.getParentActivity(), Uri.parse(zu1Var13.v5.T0), true, false, false, null, null, false, zu1Var13.getMessagesController().l4.I2.f, false, false);
                     break;
                 }
                 break;

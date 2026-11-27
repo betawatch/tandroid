@@ -50,7 +50,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ds6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -132,14 +132,14 @@ public final /* synthetic */ class ds6 implements Runnable {
     */
     private final void c() {
         r41 r41Var = (r41) this.c;
-        jf7 jf7Var = (jf7) this.d;
+        kf7 kf7Var = (kf7) this.d;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
         SQLiteCursor sQLiteCursor = null;
         try {
             try {
-                sQLiteCursor = jf7Var.b.queryFinalized("SELECT data FROM business_links ORDER BY order_value ASC", new Object[0]);
+                sQLiteCursor = kf7Var.b.queryFinalized("SELECT data FROM business_links ORDER BY order_value ASC", new Object[0]);
                 while (sQLiteCursor.next()) {
                     NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(0);
                     arrayList.add(TL_account.TL_businessChatLink.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false));
@@ -161,10 +161,10 @@ public final /* synthetic */ class ds6 implements Runnable {
                     }
                 }
                 if (!arrayList4.isEmpty()) {
-                    jf7Var.k0(arrayList4, arrayList2, false);
+                    kf7Var.m0(arrayList4, arrayList2, false);
                 }
                 if (!arrayList5.isEmpty()) {
-                    jf7Var.P(TextUtils.join(",", arrayList5), arrayList3);
+                    kf7Var.R(TextUtils.join(",", arrayList5), arrayList3);
                 }
             } catch (Exception e) {
                 cc4.g(e, true);
@@ -307,13 +307,13 @@ public final /* synthetic */ class ds6 implements Runnable {
     */
     private final void m() {
         SQLiteDatabase sQLiteDatabase;
-        jf7 jf7Var = (jf7) this.c;
+        kf7 kf7Var = (kf7) this.c;
         pcc pccVar = (pcc) this.d;
         ArrayList arrayList = new ArrayList();
         SQLiteCursor sQLiteCursor = null;
         try {
             try {
-                sQLiteDatabase = jf7Var.b;
+                sQLiteDatabase = kf7Var.b;
             } catch (Exception e) {
                 cc4.g(e, true);
             }
@@ -549,19 +549,19 @@ public final /* synthetic */ class ds6 implements Runnable {
         SQLiteDatabase sQLiteDatabase2;
         Object[] objArr;
         Object[] objArr2;
-        jf7 jf7Var = (jf7) this.c;
+        kf7 kf7Var = (kf7) this.c;
         HashMap hashMap = (HashMap) this.d;
         SQLitePreparedStatement sQLitePreparedStatement2 = null;
         try {
             if (f11.a) {
-                cc4.b(jf7Var.currentAccount + " save contacts to db " + hashMap.size());
+                cc4.b(kf7Var.currentAccount + " save contacts to db " + hashMap.size());
             }
-            jf7Var.b.executeFast("DELETE FROM user_contacts_v7 WHERE 1").stepThis().dispose();
-            jf7Var.b.executeFast("DELETE FROM user_phones_v7 WHERE 1").stepThis().dispose();
-            jf7Var.b.beginTransaction();
-            SQLitePreparedStatement executeFast = jf7Var.b.executeFast("REPLACE INTO user_contacts_v7 VALUES(?, ?, ?, ?, ?)");
+            kf7Var.b.executeFast("DELETE FROM user_contacts_v7 WHERE 1").stepThis().dispose();
+            kf7Var.b.executeFast("DELETE FROM user_phones_v7 WHERE 1").stepThis().dispose();
+            kf7Var.b.beginTransaction();
+            SQLitePreparedStatement executeFast = kf7Var.b.executeFast("REPLACE INTO user_contacts_v7 VALUES(?, ?, ?, ?, ?)");
             try {
-                sQLitePreparedStatement = jf7Var.b.executeFast("REPLACE INTO user_phones_v7 VALUES(?, ?, ?, ?)");
+                sQLitePreparedStatement = kf7Var.b.executeFast("REPLACE INTO user_phones_v7 VALUES(?, ?, ?, ?)");
             } catch (Exception e) {
                 e = e;
                 sQLitePreparedStatement = null;
@@ -602,26 +602,26 @@ public final /* synthetic */ class ds6 implements Runnable {
                 try {
                     try {
                         sQLitePreparedStatement.dispose();
-                        jf7Var.b.commitTransaction();
+                        kf7Var.b.commitTransaction();
                         if (this.b) {
-                            jf7Var.b.executeFast("DROP TABLE IF EXISTS user_contacts_v6;").stepThis().dispose();
-                            jf7Var.b.executeFast("DROP TABLE IF EXISTS user_phones_v6;").stepThis().dispose();
-                            jf7Var.a.c(new je7(jf7Var, objArr == true ? 1 : 0, objArr2 == true ? 1 : 0));
+                            kf7Var.b.executeFast("DROP TABLE IF EXISTS user_contacts_v6;").stepThis().dispose();
+                            kf7Var.b.executeFast("DROP TABLE IF EXISTS user_phones_v6;").stepThis().dispose();
+                            kf7Var.a.c(new ke7(kf7Var, objArr == true ? 1 : 0, objArr2 == true ? 1 : 0));
                         }
-                        SQLiteDatabase sQLiteDatabase3 = jf7Var.b;
+                        SQLiteDatabase sQLiteDatabase3 = kf7Var.b;
                         if (sQLiteDatabase3 != null) {
                             sQLiteDatabase3.commitTransaction();
                         }
                     } catch (Exception e2) {
                         e = e2;
-                        jf7Var.n(e, true);
+                        kf7Var.p(e, true);
                         if (sQLitePreparedStatement2 != null) {
                             sQLitePreparedStatement2.dispose();
                         }
                         if (sQLitePreparedStatement != null) {
                             sQLitePreparedStatement.dispose();
                         }
-                        sQLiteDatabase2 = jf7Var.b;
+                        sQLiteDatabase2 = kf7Var.b;
                         if (sQLiteDatabase2 == null) {
                             sQLiteDatabase2.commitTransaction();
                         }
@@ -634,7 +634,7 @@ public final /* synthetic */ class ds6 implements Runnable {
                     if (sQLitePreparedStatement != null) {
                         sQLitePreparedStatement.dispose();
                     }
-                    sQLiteDatabase = jf7Var.b;
+                    sQLiteDatabase = kf7Var.b;
                     if (sQLiteDatabase != null) {
                         sQLiteDatabase.commitTransaction();
                     }
@@ -643,12 +643,12 @@ public final /* synthetic */ class ds6 implements Runnable {
             } catch (Exception e3) {
                 e = e3;
                 sQLitePreparedStatement2 = executeFast;
-                jf7Var.n(e, true);
+                kf7Var.p(e, true);
                 if (sQLitePreparedStatement2 != null) {
                 }
                 if (sQLitePreparedStatement != null) {
                 }
-                sQLiteDatabase2 = jf7Var.b;
+                sQLiteDatabase2 = kf7Var.b;
                 if (sQLiteDatabase2 == null) {
                 }
             } catch (Throwable th3) {
@@ -658,7 +658,7 @@ public final /* synthetic */ class ds6 implements Runnable {
                 }
                 if (sQLitePreparedStatement != null) {
                 }
-                sQLiteDatabase = jf7Var.b;
+                sQLiteDatabase = kf7Var.b;
                 if (sQLiteDatabase != null) {
                 }
                 throw th;
@@ -694,7 +694,7 @@ public final /* synthetic */ class ds6 implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:106:0x0242, code lost:
     
-        r4 = r1.a0(r5, r4);
+        r4 = r1.c0(r5, r4);
      */
     /* JADX WARN: Code restructure failed: missing block: B:107:0x0247, code lost:
     
@@ -723,7 +723,7 @@ public final /* synthetic */ class ds6 implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:121:0x0265, code lost:
     
-        hl.c3(new bd7(r1, r0, 1));
+        hl.c3(new cd7(r1, r0, 1));
      */
     /* JADX WARN: Code restructure failed: missing block: B:122:0x026e, code lost:
     
@@ -791,7 +791,7 @@ public final /* synthetic */ class ds6 implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:96:0x021b, code lost:
     
-        r13 = r1.e0;
+        r13 = r1.o0;
         r14 = r11.id;
         r13 = (zh6) r13.a;
         r15 = (android.util.SparseIntArray) r13.f(r5);
@@ -1453,7 +1453,7 @@ public final /* synthetic */ class ds6 implements Runnable {
                 w();
                 return;
             case 3:
-                jf7 jf7Var = (jf7) this.c;
+                kf7 kf7Var = (kf7) this.c;
                 zh6 zh6Var5 = (zh6) this.d;
                 boolean z7 = this.b;
                 zh6 zh6Var6 = new zh6();
@@ -1461,13 +1461,13 @@ public final /* synthetic */ class ds6 implements Runnable {
                     if (z7) {
                         try {
                             try {
-                                jf7Var.b.beginTransaction();
+                                kf7Var.b.beginTransaction();
                             } catch (Exception e2) {
                                 e = e2;
                                 sQLitePreparedStatement2 = null;
                                 z3 = true;
                                 i5 = 0;
-                                jf7Var.n(e, z3);
+                                kf7Var.p(e, z3);
                                 break;
                             }
                         } catch (Throwable th9) {
@@ -1479,14 +1479,14 @@ public final /* synthetic */ class ds6 implements Runnable {
                         }
                     }
                     try {
-                        sQLitePreparedStatement2 = jf7Var.b.executeFast("DELETE FROM ephemeral_messages WHERE dialog_id = ? AND id = ?;");
+                        sQLitePreparedStatement2 = kf7Var.b.executeFast("DELETE FROM ephemeral_messages WHERE dialog_id = ? AND id = ?;");
                         int i19 = 0;
                         while (i19 < zh6Var5.m()) {
                             try {
                                 long j7 = zh6Var5.j(i19);
                                 ArrayList arrayList13 = (ArrayList) zh6Var5.n(i19);
                                 if (arrayList13 != null) {
-                                    zh6Var6.k(j7, jf7Var.W(arrayList13, j7));
+                                    zh6Var6.k(j7, kf7Var.Y(arrayList13, j7));
                                     int i20 = 0;
                                     i5 = 0;
                                     while (i20 < arrayList13.size()) {
@@ -1500,7 +1500,7 @@ public final /* synthetic */ class ds6 implements Runnable {
                                         } catch (Exception e3) {
                                             e = e3;
                                             z3 = true;
-                                            jf7Var.n(e, z3);
+                                            kf7Var.p(e, z3);
                                         }
                                     }
                                 }
@@ -1516,21 +1516,21 @@ public final /* synthetic */ class ds6 implements Runnable {
                         while (i21 < zh6Var5.m()) {
                             long j8 = zh6Var5.j(i21);
                             ArrayList arrayList14 = (ArrayList) zh6Var5.n(i21);
-                            ls6 mediaDataController = jf7Var.getMediaDataController();
-                            if7 a = if7.a(j8, j);
+                            ls6 mediaDataController = kf7Var.getMediaDataController();
+                            jf7 a = jf7.a(j8, j);
                             mediaDataController.getClass();
                             long j9 = j;
                             hl.c3(new yg6(mediaDataController, sQLitePreparedStatement3, a, (byte) 6));
                             String join = TextUtils.join(",", arrayList14);
-                            SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                            SQLiteDatabase sQLiteDatabase = kf7Var.b;
                             Locale locale = Locale.US;
                             sQLiteDatabase.executeFast("DELETE FROM bot_keyboard WHERE mid IN(" + join + ") AND uid = " + j8).stepThis().dispose();
-                            jf7Var.b.executeFast("DELETE FROM bot_keyboard_topics WHERE mid IN(" + join + ") AND uid = " + j8).stepThis().dispose();
+                            kf7Var.b.executeFast("DELETE FROM bot_keyboard_topics WHERE mid IN(" + join + ") AND uid = " + j8).stepThis().dispose();
                             i21++;
                             j = j9;
                         }
                         if (z7) {
-                            jf7Var.b.commitTransaction();
+                            kf7Var.b.commitTransaction();
                             break;
                         }
                     } catch (Exception e5) {

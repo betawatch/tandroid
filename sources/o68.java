@@ -62,7 +62,7 @@ import org.telegram.ui.Components.q;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class o68 extends wma implements fn7 {
     public static final /* synthetic */ int O3 = 0;
@@ -89,9 +89,9 @@ public abstract class o68 extends wma implements fn7 {
     public boolean F0;
     public boolean F1;
     public boolean F2;
-    public final ki7 F3;
+    public final li7 F3;
     public long G0;
-    public o58 G1;
+    public p58 G1;
     public lg5 G2;
     public final mm G3;
     public long H0;
@@ -104,23 +104,23 @@ public abstract class o68 extends wma implements fn7 {
     public final mm I3;
     public boolean J0;
     public cv7 J1;
-    public m58 J2;
+    public n58 J2;
     public float J3;
     public boolean K0;
-    public tj7 K1;
+    public uj7 K1;
     public FrameLayout K2;
     public final Path K3;
     public boolean L0;
-    public g58 L1;
+    public h58 L1;
     public xb L2;
     public boolean L3;
-    public final t58 M0;
+    public final u58 M0;
     public vz1 M1;
     public boolean M2;
     public ValueAnimator M3;
     public final FrameLayout N0;
     public kg5 N1;
-    public i58 N2;
+    public j58 N2;
     public float N3;
     public final nl O0;
     public ValueAnimator O1;
@@ -137,7 +137,7 @@ public abstract class o68 extends wma implements fn7 {
     public Runnable S0;
     public TextView S1;
     public boolean S2;
-    public final r58 T0;
+    public final s58 T0;
     public d8b T1;
     public boolean T2;
     public final tv3 U0;
@@ -204,7 +204,7 @@ public abstract class o68 extends wma implements fn7 {
     public boolean m1;
     public int m2;
     public rx6 m3;
-    public final o58 n0;
+    public final p58 n0;
     public boolean n1;
     public int n2;
     public b8 n3;
@@ -232,11 +232,11 @@ public abstract class o68 extends wma implements fn7 {
     public int t1;
     public q t2;
     public wg1 t3;
-    public final y58 u0;
+    public final z58 u0;
     public boolean u1;
     public int u2;
     public long u3;
-    public final b58 v0;
+    public final c58 v0;
     public int v1;
     public boolean v2;
     public long v3;
@@ -252,7 +252,7 @@ public abstract class o68 extends wma implements fn7 {
     public final n68 y1;
     public final mm y2;
     public final u48 y3;
-    public final o58 z0;
+    public final p58 z0;
     public final fp z1;
     public final mm z2;
     public int z3;
@@ -279,7 +279,7 @@ public abstract class o68 extends wma implements fn7 {
         this.A3 = new u48(this, (byte) 1);
         this.B3 = new ArrayList();
         this.C3 = new ArrayList();
-        this.F3 = new ki7(this, (byte) 6);
+        this.F3 = new li7(this, (byte) 6);
         this.G3 = new mm(this);
         this.H3 = new mm(this);
         this.I3 = new mm(this);
@@ -334,8 +334,8 @@ public abstract class o68 extends wma implements fn7 {
         paint2.setColor(352321535);
         this.l0 = x53Var;
         setClipChildren(false);
-        r58 r58Var = new r58(this, context, this.M0, x53Var, lcbVar);
-        this.T0 = r58Var;
+        s58 s58Var = new s58(this, context, this.M0, x53Var, lcbVar);
+        this.T0 = s58Var;
         cl0 cl0Var = new cl0(x53Var, aob.Je, 0.8f);
         this.r3 = cl0Var;
         oz4 oz4Var = new oz4();
@@ -357,14 +357,14 @@ public abstract class o68 extends wma implements fn7 {
         jl0 c = ll0Var.c(this, cl0Var, false);
         this.W1 = c;
         c.u(hl.L(32.0f));
-        t58 t58Var = new t58(this, context, m68Var, lcbVar);
-        this.M0 = t58Var;
-        t58Var.setClipChildren(false);
-        this.U0 = new tv3(this.m2, t58Var);
-        t58Var.addView(r58Var, tre.c(-1.0f, -1));
-        y58 y58Var = new y58(this, getContext(), lcbVar.E, lcbVar, x53Var);
-        this.u0 = y58Var;
-        y58Var.b0.setOnClickListener(new v48(this, (byte) 1));
+        u58 u58Var = new u58(this, context, m68Var, lcbVar);
+        this.M0 = u58Var;
+        u58Var.setClipChildren(false);
+        this.U0 = new tv3(this.m2, u58Var);
+        u58Var.addView(s58Var, tre.c(-1.0f, -1));
+        z58 z58Var = new z58(this, getContext(), lcbVar.E, lcbVar, x53Var);
+        this.u0 = z58Var;
+        z58Var.b0.setOnClickListener(new v48(this, (byte) 1));
         ImageView imageView = new ImageView(context);
         this.x0 = imageView;
         imageView.setImageDrawable(m68Var.m);
@@ -376,38 +376,38 @@ public abstract class o68 extends wma implements fn7 {
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageDrawable(m68Var.n);
         imageView2.setPadding(L, L, L, L);
-        o58 o58Var = new o58(this, getContext(), (byte) 1);
-        this.z0 = o58Var;
+        p58 p58Var = new p58(this, getContext(), (byte) 1);
+        this.z0 = p58Var;
         hn hnVar = this.B0;
         if (hnVar != null) {
-            hnVar.setCallback(o58Var);
+            hnVar.setCallback(p58Var);
         }
-        o58Var.setWillNotDraw(false);
-        o58Var.setOnClickListener(new v48(this, (byte) 3));
-        o58 o58Var2 = new o58(this, getContext(), (byte) 2);
-        this.n0 = o58Var2;
+        p58Var.setWillNotDraw(false);
+        p58Var.setOnClickListener(new v48(this, (byte) 3));
+        p58 p58Var2 = new p58(this, getContext(), (byte) 2);
+        this.n0 = p58Var2;
         hn hnVar2 = this.A0;
         if (hnVar2 != null) {
-            hnVar2.setCallback(o58Var2);
+            hnVar2.setCallback(p58Var2);
         }
-        o58Var2.setWillNotDraw(false);
-        o58Var2.setOnClickListener(new v48(this, (byte) 4));
-        o58Var2.setOnLongClickListener(new v0(this, lcbVar, (byte) 3));
+        p58Var2.setWillNotDraw(false);
+        p58Var2.setOnClickListener(new v48(this, (byte) 4));
+        p58Var2.setOnLongClickListener(new v0(this, lcbVar, (byte) 3));
         h6b h6bVar = new h6b(context, m68Var);
         this.o0 = h6bVar;
         h6bVar.setPadding(L, L, L, L);
-        o58Var2.addView(this.o0, tre.e(40, 40, 3));
-        o58Var.addView(imageView2, tre.e(40, 40, 3));
-        iye.b(o58Var2, 0.3f, 5.0f);
-        iye.b(o58Var, 0.3f, 5.0f);
+        p58Var2.addView(this.o0, tre.e(40, 40, 3));
+        p58Var.addView(imageView2, tre.e(40, 40, 3));
+        iye.b(p58Var2, 0.3f, 5.0f);
+        iye.b(p58Var, 0.3f, 5.0f);
         final byte b = 1;
         nlVar.A1 = true;
-        nlVar.p0(t58Var);
+        nlVar.p0(u58Var);
         bn9 bn9Var = new bn9(10);
         this.i1 = bn9Var;
-        t58Var.setOutlineProvider(bn9Var);
-        t58Var.setClipToOutline(true);
-        addView(t58Var);
+        u58Var.setOutlineProvider(bn9Var);
+        u58Var.setClipToOutline(true);
+        addView(u58Var);
         l68 l68Var = new l68(context, n68Var);
         this.Y0 = l68Var;
         l68Var.setOnClickListener(new View.OnClickListener(this) { // from class: w48
@@ -455,7 +455,7 @@ public abstract class o68 extends wma implements fn7 {
                 }
             }
         });
-        t58Var.addView(l68Var, tre.d(-1, -2.0f, 0, 0.0f, 17.0f, 0.0f, 0.0f));
+        u58Var.addView(l68Var, tre.d(-1, -2.0f, 0, 0.0f, 17.0f, 0.0f, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         this.N0 = frameLayout;
         LayoutTransition layoutTransition = new LayoutTransition();
@@ -467,8 +467,8 @@ public abstract class o68 extends wma implements fn7 {
         linearLayout.setOrientation(0);
         linearLayout.setLayoutTransition(layoutTransition);
         linearLayout.addView(imageView, tre.r(40, 40, 5));
-        linearLayout.addView(o58Var, tre.r(40, 40, 5));
-        linearLayout.addView(o58Var2, tre.r(40, 40, 5));
+        linearLayout.addView(p58Var, tre.r(40, 40, 5));
+        linearLayout.addView(p58Var2, tre.r(40, 40, 5));
         addView(linearLayout, tre.d(-2, -2.0f, 5, 0.0f, 0.0f, 4.0f, 0.0f));
         ImageView imageView3 = new ImageView(context);
         this.g0 = imageView3;
@@ -476,19 +476,19 @@ public abstract class o68 extends wma implements fn7 {
         imageView3.setPadding(hl.L(8.0f), hl.L(8.0f), hl.L(8.0f), hl.L(8.0f));
         imageView3.setBackground(aob.f0(-1, 1, -1));
         imageView3.setContentDescription(ob6.M0(2131754834, null));
-        t58Var.addView(imageView3, tre.d(40, 40.0f, 53, 2.0f, 15.0f, 2.0f, 0.0f));
+        u58Var.addView(imageView3, tre.d(40, 40.0f, 53, 2.0f, 15.0f, 2.0f, 0.0f));
         ImageView imageView4 = new ImageView(context);
         this.h0 = imageView4;
         imageView4.setImageDrawable(m68Var.r);
         imageView4.setPadding(hl.L(8.0f), hl.L(8.0f), hl.L(8.0f), hl.L(8.0f));
         imageView4.setBackground(aob.f0(-1, 1, -1));
         imageView4.setContentDescription(ob6.M0(2131754803, null));
-        t58Var.addView(imageView4, tre.d(40, 40.0f, 53, 2.0f, 15.0f, 42.0f, 0.0f));
+        u58Var.addView(imageView4, tre.d(40, 40.0f, 53, 2.0f, 15.0f, 42.0f, 0.0f));
         imageView4.setOnClickListener(new am7(lcbVar, (byte) 9));
         imageView3.setOnClickListener(new nh(this, x53Var, lcbVar, context, m68Var, (byte) 11));
         b6 b6Var = new b6(context, (byte) 23);
         this.i0 = b6Var;
-        t58Var.addView(b6Var, tre.d(40, 40.0f, 53, 2.0f, 15.0f, 42.0f, 0.0f));
+        u58Var.addView(b6Var, tre.d(40, 40.0f, 53, 2.0f, 15.0f, 42.0f, 0.0f));
         e29 e29Var = new e29(context);
         this.j0 = e29Var;
         e29Var.setPadding(hl.L(6.0f), hl.L(6.0f), hl.L(6.0f), hl.L(6.0f));
@@ -502,7 +502,7 @@ public abstract class o68 extends wma implements fn7 {
         x9b x9bVar = new x9b(context);
         this.m0 = x9bVar;
         x9bVar.setOnClickListener(new v48(this, (byte) 0));
-        t58Var.addView(x9bVar, tre.d(60, 40.0f, 53, 2.0f, 15.0f, 42.0f, 0.0f));
+        u58Var.addView(x9bVar, tre.d(60, 40.0f, 53, 2.0f, 15.0f, 42.0f, 0.0f));
         final byte b2 = 0;
         b6Var.setOnClickListener(new View.OnClickListener(this) { // from class: w48
             public final /* synthetic */ o68 b;
@@ -550,15 +550,15 @@ public abstract class o68 extends wma implements fn7 {
             }
         });
         this.Z0 = new e8b(this, m68Var);
-        t58Var.addView(y58Var, tre.d(-1, -1.0f, 0, 0.0f, 64.0f, 0.0f, 0.0f));
+        u58Var.addView(z58Var, tre.d(-1, -1.0f, 0, 0.0f, 64.0f, 0.0f, 0.0f));
         View view = new View(context);
         this.w0 = view;
         view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, -16777216}));
-        b58 b58Var = new b58(this, context, lcbVar, lcbVar.w, view, frameLayout, lcbVar);
-        this.v0 = b58Var;
-        t58Var.addView(view, tre.e(-1, jn7.d3, 87));
-        t58Var.addView(b58Var, tre.d(-1, -1.0f, 0, 0.0f, 64.0f, 0.0f, 0.0f));
-        t58Var.addView(frameLayout, tre.d(-1, 100.0f, 0, 0.0f, 55.0f, 0.0f, 0.0f));
+        c58 c58Var = new c58(this, context, lcbVar, lcbVar.w, view, frameLayout, lcbVar);
+        this.v0 = c58Var;
+        u58Var.addView(view, tre.e(-1, jn7.d3, 87));
+        u58Var.addView(c58Var, tre.d(-1, -1.0f, 0, 0.0f, 64.0f, 0.0f, 0.0f));
+        u58Var.addView(frameLayout, tre.d(-1, 100.0f, 0, 0.0f, 55.0f, 0.0f, 0.0f));
         int L2 = hl.L(20.0f);
         int o = vm2.o(-1, 100);
         b6Var.setBackground(aob.i0(L2, L2, L2, L2, 0, o, o));
@@ -573,11 +573,11 @@ public abstract class o68 extends wma implements fn7 {
         imageView.setBackground(aob.i0(L5, L5, L5, L5, 0, o4, o4));
         int L6 = hl.L(20.0f);
         int o5 = vm2.o(-1, 100);
-        o58Var2.setBackground(aob.i0(L6, L6, L6, L6, 0, o5, o5));
+        p58Var2.setBackground(aob.i0(L6, L6, L6, L6, 0, o5, o5));
         int L7 = hl.L(20.0f);
         int o6 = vm2.o(-1, 100);
-        o58Var.setBackground(aob.i0(L7, L7, L7, L7, 0, o6, o6));
-        jmb jmbVar = y58Var.W;
+        p58Var.setBackground(aob.i0(L7, L7, L7, L7, 0, o6, o6));
+        jmb jmbVar = z58Var.W;
         View m = jmbVar.m(context);
         hl.B2(m);
         addView(m);
@@ -615,9 +615,9 @@ public abstract class o68 extends wma implements fn7 {
     }
 
     public final boolean A0() {
-        u5b u5bVar;
+        v5b v5bVar;
         lcb lcbVar = this.t0;
-        return (lcbVar == null || (u5bVar = lcbVar.O0) == null || u5bVar.e != 4) ? false : true;
+        return (lcbVar == null || (v5bVar = lcbVar.O0) == null || v5bVar.e != 4) ? false : true;
     }
 
     public final boolean B0() {
@@ -645,9 +645,9 @@ public abstract class o68 extends wma implements fn7 {
         b6 b6Var = this.i0;
         b6Var.setTranslationY(f4);
         b6Var.setAlpha((1.0f - this.N3) * this.O2);
-        o58 o58Var = this.G1;
-        if (o58Var != null) {
-            o58Var.setTranslationY(hl.L(8.0f) * this.N3);
+        p58 p58Var = this.G1;
+        if (p58Var != null) {
+            p58Var.setTranslationY(hl.L(8.0f) * this.N3);
             this.G1.setAlpha(1.0f - this.N3);
         }
         x9b x9bVar = this.m0;
@@ -659,21 +659,21 @@ public abstract class o68 extends wma implements fn7 {
         k68 k68Var = this.A1;
         float f5 = k68Var == null ? 0.0f : ((ccb) k68Var).d.W;
         float hideInterfaceAlpha = getHideInterfaceAlpha();
-        o58 o58Var2 = this.n0;
-        if (o58Var2 != null) {
-            o58Var2.setAlpha((1.0f - this.N3) * (1.0f - f5) * hideInterfaceAlpha);
+        p58 p58Var2 = this.n0;
+        if (p58Var2 != null) {
+            p58Var2.setAlpha((1.0f - this.N3) * (1.0f - f5) * hideInterfaceAlpha);
         }
         ImageView imageView3 = this.x0;
         if (imageView3 != null) {
             imageView3.setAlpha((1.0f - this.N3) * (1.0f - f5) * hideInterfaceAlpha);
         }
-        o58 o58Var3 = this.z0;
-        if (o58Var3 != null) {
-            o58Var3.setAlpha((1.0f - this.N3) * (1.0f - f5) * hideInterfaceAlpha);
+        p58 p58Var3 = this.z0;
+        if (p58Var3 != null) {
+            p58Var3.setAlpha((1.0f - this.N3) * (1.0f - f5) * hideInterfaceAlpha);
         }
-        g58 g58Var = this.L1;
-        if (g58Var != null) {
-            g58Var.setAlpha(1.0f - this.N3);
+        h58 h58Var = this.L1;
+        if (h58Var != null) {
+            h58Var.setAlpha(1.0f - this.N3);
             invalidate();
         }
         this.M0.invalidate();
@@ -712,15 +712,15 @@ public abstract class o68 extends wma implements fn7 {
             this.C1.i0(this.l1, n68Var.a, w49Var);
         }
         TL_stories.StoryItem storyItem2 = n68Var.a;
-        o58 o58Var = this.n0;
+        p58 p58Var = this.n0;
         if (storyItem2 == null || (reaction = storyItem2.sent_reaction) == null) {
             this.o0.setReaction(null);
-            o58Var.setContentDescription(ob6.M0(2131754846, null));
+            p58Var.setContentDescription(ob6.M0(2131754846, null));
             z = false;
         } else {
             z2 = !z2;
             this.o0.setReaction(w49.d(reaction));
-            o58Var.setContentDescription(ob6.M0(2131754845, null));
+            p58Var.setContentDescription(ob6.M0(2131754845, null));
             try {
                 performHapticFeedback(3);
             } catch (Exception unused) {
@@ -755,22 +755,22 @@ public abstract class o68 extends wma implements fn7 {
             }
             TLRPC.TL_channels_sendAsPeers L1 = uc7.s1(this.m2).L1(this.l1, true);
             this.x3 = L1;
-            g58 g58Var = this.L1;
-            if (g58Var == null || L1 == null) {
+            h58 h58Var = this.L1;
+            if (h58Var == null || L1 == null) {
                 return;
             }
-            g58Var.I2(true);
+            h58Var.I2(true);
         }
     }
 
     public final boolean G0() {
-        g58 g58Var = this.L1;
-        if (g58Var == null) {
+        h58 h58Var = this.L1;
+        if (h58Var == null) {
             return false;
         }
-        boolean z = g58Var.o3;
+        boolean z = h58Var.o3;
         if (z) {
-            g58Var.h2();
+            h58Var.h2();
         }
         hl.d3(new u48(this, (byte) 5), 300L);
         return z;
@@ -778,7 +778,7 @@ public abstract class o68 extends wma implements fn7 {
 
     public final void H0() {
         long j;
-        a58 a58Var;
+        b58 b58Var;
         nx0 nx0Var;
         int i;
         uc7.e1().edit().putInt("taptostoryhighlighthint", 3).apply();
@@ -793,24 +793,24 @@ public abstract class o68 extends wma implements fn7 {
         String r = wf3.r(i2, this.l1);
         long messageMinPrice = getMessageMinPrice();
         long j2 = this.u3;
-        a58 a58Var2 = new a58(this, (byte) 0);
+        b58 b58Var2 = new b58(this, (byte) 0);
         x53 x53Var = new x53();
         nx0 nx0Var2 = new nx0(1, (vnb) x53Var, context, false);
         nx0Var2.J();
         nx0Var2.w0 = false;
         LinearLayout j3 = uh9.j(context, 1);
         nx0Var2.O = j3;
-        int[] iArr = uc7.s1(i2).T3;
+        int[] iArr = uc7.s1(i2).U3;
         CharSequence j0 = r47.j0(textWithEntities, false, false, new TextPaint());
         if (j0 instanceof Spannable) {
             Spannable spannable = (Spannable) j0;
             j = j2;
-            a58Var = a58Var2;
+            b58Var = b58Var2;
             nx0Var = nx0Var2;
             i = ((hm[]) spannable.getSpans(0, j0.length(), hm.class)).length + ((mv3[]) spannable.getSpans(0, j0.length(), mv3.class)).length;
         } else {
             j = j2;
-            a58Var = a58Var2;
+            b58Var = b58Var2;
             nx0Var = nx0Var2;
             i = 0;
         }
@@ -847,12 +847,12 @@ public abstract class o68 extends wma implements fn7 {
         zc zcVar3 = new zc(context, ob6.M0(2131748570, null), x53Var);
         j4.addView(zcVar3, tre.q(-1, -1, 1.0f, jn7.w1, 5, 0, 0, 0));
         dg5 dg5Var = new dg5(context, x53Var, r6);
-        a58 a58Var3 = a58Var;
+        b58 b58Var3 = b58Var;
         pcc[] pccVarArr = {new cg5(jArr, c51Var, new wm2[1], m96Var, h96Var, i2, zcVar, zcVar2, zcVar3, dg5Var, new boolean[]{true})};
         h96Var.set(m96Var);
         int i6 = 9;
         int[] iArr3 = {1, 50, 100, 500, 1000, 2000, 5000, 7500, 10000};
-        int f = uc7.s1(i2).k4.T2.f();
+        int f = uc7.s1(i2).l4.T2.f();
         ArrayList arrayList = new ArrayList();
         int i7 = 0;
         while (true) {
@@ -902,7 +902,7 @@ public abstract class o68 extends wma implements fn7 {
         j3.addView(h96Var, tre.t(-2, -2, 17, 42, 22, 42, 20));
         j3.addView(c51Var, tre.k(16.0f, 0.0f, 16.0f, 12.0f, -1, 48));
         nx0Var.show();
-        c51Var.setOnClickListener(new lw4(a58Var3, jArr, nx0Var, (byte) 4));
+        c51Var.setOnClickListener(new lw4(b58Var3, jArr, nx0Var, (byte) 4));
     }
 
     public final void I0() {
@@ -913,7 +913,7 @@ public abstract class o68 extends wma implements fn7 {
         TL_stories.TL_stories_exportStoryLink tL_stories_exportStoryLink = new TL_stories.TL_stories_exportStoryLink();
         tL_stories_exportStoryLink.id = n68Var.a.id;
         tL_stories_exportStoryLink.peer = uc7.s1(this.m2).j1(this.l1);
-        ConnectionsManager.getInstance(this.m2).sendRequest(tL_stories_exportStoryLink, new n58());
+        ConnectionsManager.getInstance(this.m2).sendRequest(tL_stories_exportStoryLink, new o58());
     }
 
     public final void J0() {
@@ -1320,9 +1320,9 @@ public abstract class o68 extends wma implements fn7 {
                     lcb lcbVar = ((ccb) this.A1).d;
                     lcbVar.l1 = true;
                     lcbVar.U();
-                    ki7 ki7Var = this.F3;
-                    hl.r(ki7Var);
-                    hl.d3(ki7Var, 100L);
+                    li7 li7Var = this.F3;
+                    hl.r(li7Var);
+                    hl.d3(li7Var, 100L);
                 }
                 L0(j);
                 d1();
@@ -1473,22 +1473,22 @@ public abstract class o68 extends wma implements fn7 {
                     LaunchActivity.H1.startActivityForResult(Intent.createChooser(intent, ob6.M0(2131744503, null)), 500);
                     return;
                 }
-                m58 m58Var = new m58(this, lcbVar.f.getContext(), b, b, uc7.s1(this.m2).k5() && (!(this.n1 || lbc.C(this.l1)) || xc2.t0(this.n1 ? uc7.s1(this.m2).M0(Long.valueOf(-this.l1)) : null)), new pu0(this.l0, (byte) 5));
-                this.J2 = m58Var;
-                m58Var.d2 = true;
+                n58 n58Var = new n58(this, lcbVar.f.getContext(), b, b, uc7.s1(this.m2).k5() && (!(this.n1 || lbc.C(this.l1)) || xc2.t0(this.n1 ? uc7.s1(this.m2).M0(Long.valueOf(-this.l1)) : null)), new pu0(this.l0, (byte) 5));
+                this.J2 = n58Var;
+                n58Var.d2 = true;
                 TL_stories.StoryItem storyItem = n68Var.a;
                 storyItem.dialogId = this.l1;
-                m58Var.A2 = storyItem;
-                m58Var.n2 = new kj4((Object) this, (byte) 24);
-                ((ccb) this.A1).h(m58Var);
+                n58Var.A2 = storyItem;
+                n58Var.n2 = new kj4((Object) this, (byte) 24);
+                ((ccb) this.A1).h(n58Var);
             }
         }
     }
 
     public final void U0() {
-        t58 t58Var = this.M0;
+        u58 u58Var = this.M0;
         x53 x53Var = this.l0;
-        new d31(t58Var, x53Var).t(ob6.M0(2131743488, null), x53Var).j();
+        new d31(u58Var, x53Var).t(ob6.M0(2131743488, null), x53Var).j();
     }
 
     public final void V0() {
@@ -1518,13 +1518,13 @@ public abstract class o68 extends wma implements fn7 {
                     if (this.b3.getReactionsWindow() != null) {
                         this.b3.getReactionsWindow().e();
                     }
-                    this.b3.animate().alpha(0.0f).setDuration(150L).setListener(new e58(this, b)).start();
+                    this.b3.animate().alpha(0.0f).setDuration(150L).setListener(new f58(this, b)).start();
                     return;
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d3, z ? 1.0f : 0.0f);
                 this.b3.setTransitionProgress(this.d3);
                 ofFloat.addUpdateListener(new y48(this, (byte) 1));
-                ofFloat.addListener(new d58(this, z, b));
+                ofFloat.addListener(new e58(this, z, b));
                 ofFloat.setDuration(200L);
                 ofFloat.setInterpolator(k43.g);
                 ofFloat.start();
@@ -1559,19 +1559,19 @@ public abstract class o68 extends wma implements fn7 {
                 lcbVar.k1 = true;
                 lcbVar.U();
             }
-            uc7.s1(this.m2).G0().a(this.l1, new a58(this, b));
+            uc7.s1(this.m2).G0().a(this.l1, new b58(this, b));
             return;
         }
-        g58 g58Var = this.L1;
+        h58 h58Var = this.L1;
         int i = -this.b1;
         this.b1 = i;
-        hl.A3(i, g58Var, null);
+        hl.A3(i, h58Var, null);
         yw0.E.a();
         String r = this.l1 >= 0 ? lbc.r(uc7.s1(this.m2).X1(Long.valueOf(this.l1))) : "";
         boolean M3 = uc7.s1(this.m2).M3();
         x53 x53Var = this.l0;
-        t58 t58Var = this.M0;
-        (M3 ? new d31(t58Var, x53Var).Q(R.raw.star_premium_2, 36, hl.S2(ob6.a0(null, null, 2131743413, r))) : new d31(t58Var, x53Var).K(R.raw.star_premium_2, hl.S2(ob6.a0(null, null, 2131743413, r)), ob6.M0(2131743414, null), new u48(this, (byte) 11))).j();
+        u58 u58Var = this.M0;
+        (M3 ? new d31(u58Var, x53Var).Q(R.raw.star_premium_2, 36, hl.S2(ob6.a0(null, null, 2131743413, r))) : new d31(u58Var, x53Var).K(R.raw.star_premium_2, hl.S2(ob6.a0(null, null, 2131743413, r)), ob6.M0(2131743414, null), new u48(this, (byte) 11))).j();
     }
 
     public final boolean Z0(boolean z) {
@@ -1607,8 +1607,8 @@ public abstract class o68 extends wma implements fn7 {
             lcb.E1.remove(j + (j >> 16) + (storyItem.id << 16));
         }
         this.S2 = true;
-        acb acbVar = lcbVar.o0;
-        if (acbVar != null && (currentPeerView = acbVar.getCurrentPeerView()) != null) {
+        bcb bcbVar = lcbVar.o0;
+        if (bcbVar != null && (currentPeerView = bcbVar.getCurrentPeerView()) != null) {
             currentPeerView.i0();
         }
         if (z) {
@@ -1661,9 +1661,9 @@ public abstract class o68 extends wma implements fn7 {
                 V0();
                 return;
             }
-            m58 m58Var = this.J2;
-            if (m58Var != null) {
-                m58Var.dismiss();
+            n58 n58Var = this.J2;
+            if (n58Var != null) {
+                n58Var.dismiss();
             }
             hl.d3(new u48(this, (byte) 8), 120L);
         }
@@ -1677,7 +1677,7 @@ public abstract class o68 extends wma implements fn7 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.N3, z ? 1.0f : 0.0f);
         this.M3 = ofFloat;
         ofFloat.addUpdateListener(new y48(this, (byte) 2));
-        this.M3.addListener(new d58(this, z, (byte) 1));
+        this.M3.addListener(new e58(this, z, (byte) 1));
         this.M3.setDuration(420L);
         this.M3.setInterpolator(k43.h);
         this.M3.start();
@@ -1773,7 +1773,7 @@ public abstract class o68 extends wma implements fn7 {
         c8b c8bVar2;
         lcb lcbVar;
         boolean z7;
-        g58 g58Var;
+        h58 h58Var;
         b6b b6bVar3;
         v21 v21Var;
         TL_stories.StoryItem storyItem5;
@@ -1788,7 +1788,7 @@ public abstract class o68 extends wma implements fn7 {
         TLRPC.MessageMedia messageMedia2;
         kg5 kg5Var;
         kg5 kg5Var2;
-        u5b u5bVar;
+        v5b v5bVar;
         TL_stories.StoryItem storyItem7;
         CharSequence charSequence2;
         TL_stories.StoryItem storyItem8;
@@ -1796,12 +1796,12 @@ public abstract class o68 extends wma implements fn7 {
         k68 k68Var;
         boolean z8;
         LinearLayout linearLayout;
-        g58 g58Var2;
+        h58 h58Var2;
         byte b3;
-        g58 g58Var3;
+        h58 h58Var3;
         vz1 vz1Var;
         dn2 dn2Var;
-        tj7 tj7Var;
+        uj7 uj7Var;
         n68 n68Var2;
         TL_stories.StoryItem storyItem9;
         boolean z9;
@@ -1829,7 +1829,7 @@ public abstract class o68 extends wma implements fn7 {
         BitmapDrawable bitmapDrawable;
         b6b b6bVar7;
         TLRPC.MessageMedia messageMedia3;
-        u5b u5bVar2;
+        v5b v5bVar2;
         if (this.f1.isEmpty() && this.g1.isEmpty()) {
             return;
         }
@@ -1845,7 +1845,7 @@ public abstract class o68 extends wma implements fn7 {
         boolean z13 = this.E1;
         boolean z14 = this.F1;
         lcb lcbVar3 = this.t0;
-        if (lcbVar3 == null || (u5bVar2 = lcbVar3.O0) == null || u5bVar2.e != 4) {
+        if (lcbVar3 == null || (v5bVar2 = lcbVar3.O0) == null || v5bVar2.e != 4) {
             storyItem = (i7 < 0 || i7 >= this.f1.size()) ? null : (TL_stories.StoryItem) this.f1.get(i7);
             int size = i7 - this.f1.size();
             b6bVar = (size < 0 || size >= this.g1.size()) ? null : (b6b) this.g1.get(size);
@@ -2075,9 +2075,9 @@ public abstract class o68 extends wma implements fn7 {
                     if (i6 != Math.max(1, groupCall != null ? 0 : groupCall.participants_count)) {
                         z7 = true;
                         if ((b6bVar8 != null || (str = b6bVar8.e) == null || !str.equals(this.y1.c())) && (storyItem12 == null || (storyItem5 = this.y1.a) == null || storyItem12.id != storyItem5.id)) {
-                            g58Var = this.L1;
-                            if (g58Var != null) {
-                                if (storyItem12 != null && !TextUtils.isEmpty(g58Var.getEditField().getText())) {
+                            h58Var = this.L1;
+                            if (h58Var != null) {
+                                if (storyItem12 != null && !TextUtils.isEmpty(h58Var.getEditField().getText())) {
                                     lcb lcbVar6 = this.t0;
                                     long j2 = storyItem12.dialogId;
                                     Editable text = this.L1.getEditField().getText();
@@ -2091,11 +2091,11 @@ public abstract class o68 extends wma implements fn7 {
                                 lcbVar7.getClass();
                                 editField.setText(lcb.x(j3, storyItem18));
                                 boolean z22 = this.y1.f;
-                                g58 g58Var4 = this.L1;
+                                h58 h58Var4 = this.L1;
                                 if (z22) {
-                                    g58Var4.G1(false, false, false);
+                                    h58Var4.G1(false, false, false);
                                 } else {
-                                    g58Var4.G1(true, true, false);
+                                    h58Var4.G1(true, true, false);
                                 }
                             }
                             if (this.y1.f) {
@@ -2114,9 +2114,9 @@ public abstract class o68 extends wma implements fn7 {
                             } else if (!z21) {
                                 this.Y0.h = 0.0f;
                             }
-                            t58 t58Var = this.M0;
+                            u58 u58Var = this.M0;
                             v21Var = v21.x;
-                            if (v21Var != null && v21Var.h == t58Var) {
+                            if (v21Var != null && v21Var.h == u58Var) {
                                 v21Var.b();
                             }
                             this.u0.J();
@@ -2150,7 +2150,7 @@ public abstract class o68 extends wma implements fn7 {
                                     b2 = 2;
                                     if (charSequence != null) {
                                         lcb lcbVar8 = this.t0;
-                                        if (lcbVar8 != null && (u5bVar = lcbVar8.O0) != null && (storyItem7 = this.y1.a) != null && u5bVar.m(storyItem7.id)) {
+                                        if (lcbVar8 != null && (v5bVar = lcbVar8.O0) != null && (storyItem7 = this.y1.a) != null && v5bVar.m(storyItem7.id)) {
                                             if (!(charSequence instanceof SpannableStringBuilder)) {
                                                 charSequence = new SpannableStringBuilder(charSequence);
                                             }
@@ -2330,9 +2330,9 @@ public abstract class o68 extends wma implements fn7 {
                             if (this.Q1 != null && (this.p1 || this.q1)) {
                                 e1();
                             }
-                            g58 g58Var5 = this.L1;
-                            if (g58Var5 != null) {
-                                g58Var5.setEnabled((!this.p1 || this.y1.f) && !this.q1);
+                            h58 h58Var5 = this.L1;
+                            if (h58Var5 != null) {
+                                h58Var5.setEnabled((!this.p1 || this.y1.f) && !this.q1);
                                 this.L1.H2();
                             }
                             h0(true);
@@ -2349,13 +2349,13 @@ public abstract class o68 extends wma implements fn7 {
                             this.E2 = false;
                             this.D2 = false;
                             this.C2 = false;
-                            g58 g58Var6 = this.L1;
-                            if (g58Var6 != null) {
-                                g58Var6.setVisibility(8);
+                            h58 h58Var6 = this.L1;
+                            if (h58Var6 != null) {
+                                h58Var6.setVisibility(8);
                             }
-                            o58 o58Var = this.G1;
-                            if (o58Var != null) {
-                                o58Var.setVisibility(8);
+                            p58 p58Var = this.G1;
+                            if (p58Var != null) {
+                                p58Var.setVisibility(8);
                             }
                             LinearLayout linearLayout2 = this.y0;
                             if (linearLayout2 != null) {
@@ -2373,21 +2373,21 @@ public abstract class o68 extends wma implements fn7 {
                                 b3 = 0;
                                 this.L1.setVisibility(0);
                             } else {
-                                if ((lbc.C(this.l1) || A0()) && (g58Var2 = this.L1) != null) {
-                                    g58Var2.setVisibility(8);
-                                } else if (!this.m1 && ((!this.n1 || (this.o1 && (xc2.q(M05) || xc2.s0(M05)))) && (g58Var3 = this.L1) != null)) {
+                                if ((lbc.C(this.l1) || A0()) && (h58Var2 = this.L1) != null) {
+                                    h58Var2.setVisibility(8);
+                                } else if (!this.m1 && ((!this.n1 || (this.o1 && (xc2.q(M05) || xc2.s0(M05)))) && (h58Var3 = this.L1) != null)) {
                                     b3 = 0;
-                                    g58Var3.setVisibility(0);
+                                    h58Var3.setVisibility(0);
                                 }
                                 b3 = 0;
                             }
-                            g58 g58Var7 = this.L1;
-                            if (g58Var7 != null) {
-                                g58Var7.setOnSendButtonLongClick(this.y1.f ? new x48(this, b3) : null);
-                                g58 g58Var8 = this.L1;
+                            h58 h58Var7 = this.L1;
+                            if (h58Var7 != null) {
+                                h58Var7.setOnSendButtonLongClick(this.y1.f ? new x48(this, b3) : null);
+                                h58 h58Var8 = this.L1;
                                 boolean z23 = this.y1.f;
                                 v0(true);
-                                g58Var8.U1(z23);
+                                h58Var8.U1(z23);
                                 this.L1.b2(this.y1.f && !v0(true) && (this.f2 || this.L1.X0), true);
                             }
                             if (this.p1 && this.Q1 == null) {
@@ -2399,13 +2399,13 @@ public abstract class o68 extends wma implements fn7 {
                                 }
                                 this.Q1.setVisibility(((!this.p1 || this.y1.f) && !this.q1) ? 8 : 0);
                             }
-                            g58 g58Var9 = this.L1;
-                            if (g58Var9 != null) {
-                                g58Var9.setEnabled((!this.p1 || this.y1.f) && !this.q1);
+                            h58 h58Var9 = this.L1;
+                            if (h58Var9 != null) {
+                                h58Var9.setEnabled((!this.p1 || this.y1.f) && !this.q1);
                             }
-                            o58 o58Var2 = this.G1;
-                            if (o58Var2 != null) {
-                                o58Var2.setVisibility((!this.m1 || this.y1.f) ? 8 : 0);
+                            p58 p58Var2 = this.G1;
+                            if (p58Var2 != null) {
+                                p58Var2.setVisibility((!this.m1 || this.y1.f) ? 8 : 0);
                             }
                             FrameLayout frameLayout = this.K2;
                             if (frameLayout != null) {
@@ -2427,8 +2427,8 @@ public abstract class o68 extends wma implements fn7 {
                         }
                         vz1Var = this.M1;
                         if (vz1Var != null) {
-                            g58 g58Var10 = this.L1;
-                            vz1Var.setVisibility((g58Var10 == null || g58Var10.getVisibility() != 0 || this.y1.f) ? 8 : 0);
+                            h58 h58Var10 = this.L1;
+                            vz1Var.setVisibility((h58Var10 == null || h58Var10.getVisibility() != 0 || this.y1.f) ? 8 : 0);
                         }
                         dn2Var = this.H1;
                         if (dn2Var != null) {
@@ -2436,36 +2436,36 @@ public abstract class o68 extends wma implements fn7 {
                             this.H1.a(this.v0.g0, false);
                             this.H1.setCount(this.v0.getUnreadMessagesCount());
                         }
-                        tj7Var = this.K1;
-                        if (tj7Var != null) {
+                        uj7Var = this.K1;
+                        if (uj7Var != null) {
                             if (!this.M2) {
                                 n68 n68Var11 = this.y1;
                                 if (n68Var11.f && (w96Var2 = w96.N) != null && n68Var11.i(w96Var2.j())) {
                                     i5 = 0;
-                                    tj7Var.setVisibility(i5);
-                                    tj7 tj7Var2 = this.K1;
+                                    uj7Var.setVisibility(i5);
+                                    uj7 uj7Var2 = this.K1;
                                     w96 w96Var5 = w96.N;
-                                    tj7Var2.b(w96Var5 == null && w96Var5.r(), true);
-                                    tj7 tj7Var3 = this.K1;
+                                    uj7Var2.b(w96Var5 == null && w96Var5.r(), true);
+                                    uj7 uj7Var3 = this.K1;
                                     w96 w96Var6 = w96.N;
-                                    tj7Var3.a(w96Var6 != null || w96Var6.G, true);
+                                    uj7Var3.a(w96Var6 != null || w96Var6.G, true);
                                 }
                             }
                             i5 = 8;
-                            tj7Var.setVisibility(i5);
-                            tj7 tj7Var22 = this.K1;
+                            uj7Var.setVisibility(i5);
+                            uj7 uj7Var22 = this.K1;
                             w96 w96Var52 = w96.N;
-                            tj7Var22.b(w96Var52 == null && w96Var52.r(), true);
-                            tj7 tj7Var32 = this.K1;
+                            uj7Var22.b(w96Var52 == null && w96Var52.r(), true);
+                            uj7 uj7Var32 = this.K1;
                             w96 w96Var62 = w96.N;
-                            tj7Var32.a(w96Var62 != null || w96Var62.G, true);
+                            uj7Var32.a(w96Var62 != null || w96Var62.G, true);
                         }
                         if (this.J1 != null) {
                             this.I1.setVisibility((this.M2 || !this.y1.f) ? 8 : 0);
                             this.J1.setVisibility((this.M2 || !this.y1.f) ? 8 : 0);
                             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.J1.getLayoutParams();
-                            tj7 tj7Var4 = this.K1;
-                            int L = hl.L((tj7Var4 == null || tj7Var4.getVisibility() != 0) ? 7.0f : 54.0f);
+                            uj7 uj7Var4 = this.K1;
+                            int L = hl.L((uj7Var4 == null || uj7Var4.getVisibility() != 0) ? 7.0f : 54.0f);
                             if (layoutParams.rightMargin != L) {
                                 layoutParams.rightMargin = L;
                                 this.J1.setLayoutParams(layoutParams);
@@ -2507,9 +2507,9 @@ public abstract class o68 extends wma implements fn7 {
                                 if (this.v0.q(this.l1, ((TLRPC.TL_messageMediaVideoStream) messageMedia8).call)) {
                                     this.v0.p(false, false);
                                     this.u3 = j;
-                                    g58 g58Var11 = this.L1;
-                                    if (g58Var11 != null) {
-                                        g58Var11.P(true);
+                                    h58 h58Var11 = this.L1;
+                                    if (h58Var11 != null) {
+                                        h58Var11.P(true);
                                         this.L1.K2();
                                         h0(true);
                                     }
@@ -2527,9 +2527,9 @@ public abstract class o68 extends wma implements fn7 {
                                         b = 0;
                                     }
                                     imageView3.setVisibility(b);
-                                    o58 o58Var3 = this.z0;
-                                    if (o58Var3 != null) {
-                                        o58Var3.setVisibility(8);
+                                    p58 p58Var3 = this.z0;
+                                    if (p58Var3 != null) {
+                                        p58Var3.setVisibility(8);
                                     }
                                     this.n0.setVisibility((this.m1 || this.y1.f) ? 8 : 0);
                                     this.n0.getLayoutParams().width = hl.L(40.0f);
@@ -2538,9 +2538,9 @@ public abstract class o68 extends wma implements fn7 {
                                         b = 0;
                                     }
                                     imageView3.setVisibility(b);
-                                    o58 o58Var4 = this.z0;
-                                    if (o58Var4 != null) {
-                                        o58Var4.setVisibility((!this.D2 || this.y1.f) ? 8 : 0);
+                                    p58 p58Var4 = this.z0;
+                                    if (p58Var4 != null) {
+                                        p58Var4.setVisibility((!this.D2 || this.y1.f) ? 8 : 0);
                                     }
                                     this.n0.setVisibility((this.F1 || this.y1.f) ? 8 : 0);
                                 }
@@ -2666,9 +2666,9 @@ public abstract class o68 extends wma implements fn7 {
                                     z3a.d(this.m2, this.l1, this.y1.a);
                                 }
                                 ff0 ff0Var = this.Y0.b;
-                                u5b u5bVar3 = this.t0.O0;
-                                ff0Var.setPadding(0, 0, (u5bVar3 != null || u5bVar3.g() == this.x1) ? 0 : hl.L(56.0f), 0);
-                                uc7.s1(this.m2).i4.k(this.y1.a);
+                                v5b v5bVar3 = this.t0.O0;
+                                ff0Var.setPadding(0, 0, (v5bVar3 != null || v5bVar3.g() == this.x1) ? 0 : hl.L(56.0f), 0);
+                                uc7.s1(this.m2).j4.k(this.y1.a);
                                 if (!z && !this.m1 && this.j3 == null && !xea.S && xea.T) {
                                     u48 u48Var = new u48(this, (byte) 3);
                                     this.j3 = u48Var;
@@ -2762,9 +2762,9 @@ public abstract class o68 extends wma implements fn7 {
                         if (this.m1) {
                         }
                         ff0 ff0Var2 = this.Y0.b;
-                        u5b u5bVar32 = this.t0.O0;
-                        ff0Var2.setPadding(0, 0, (u5bVar32 != null || u5bVar32.g() == this.x1) ? 0 : hl.L(56.0f), 0);
-                        uc7.s1(this.m2).i4.k(this.y1.a);
+                        v5b v5bVar32 = this.t0.O0;
+                        ff0Var2.setPadding(0, 0, (v5bVar32 != null || v5bVar32.g() == this.x1) ? 0 : hl.L(56.0f), 0);
+                        uc7.s1(this.m2).j4.k(this.y1.a);
                         if (!z) {
                             u48 u48Var2 = new u48(this, (byte) 3);
                             this.j3 = u48Var2;
@@ -2788,8 +2788,8 @@ public abstract class o68 extends wma implements fn7 {
                 z7 = false;
                 if (b6bVar8 != null) {
                 }
-                g58Var = this.L1;
-                if (g58Var != null) {
+                h58Var = this.L1;
+                if (h58Var != null) {
                 }
                 if (this.y1.f) {
                 }
@@ -2799,7 +2799,7 @@ public abstract class o68 extends wma implements fn7 {
                 b6bVar3 = this.y1.b;
                 if (b6bVar3 != null) {
                 }
-                t58 t58Var2 = this.M0;
+                u58 u58Var2 = this.M0;
                 v21Var = v21.x;
                 if (v21Var != null) {
                     v21Var.b();
@@ -2854,8 +2854,8 @@ public abstract class o68 extends wma implements fn7 {
                 dn2Var = this.H1;
                 if (dn2Var != null) {
                 }
-                tj7Var = this.K1;
-                if (tj7Var != null) {
+                uj7Var = this.K1;
+                if (uj7Var != null) {
                 }
                 if (this.J1 != null) {
                 }
@@ -2917,9 +2917,9 @@ public abstract class o68 extends wma implements fn7 {
                 if (this.m1) {
                 }
                 ff0 ff0Var22 = this.Y0.b;
-                u5b u5bVar322 = this.t0.O0;
-                ff0Var22.setPadding(0, 0, (u5bVar322 != null || u5bVar322.g() == this.x1) ? 0 : hl.L(56.0f), 0);
-                uc7.s1(this.m2).i4.k(this.y1.a);
+                v5b v5bVar322 = this.t0.O0;
+                ff0Var22.setPadding(0, 0, (v5bVar322 != null || v5bVar322.g() == this.x1) ? 0 : hl.L(56.0f), 0);
+                uc7.s1(this.m2).j4.k(this.y1.a);
                 if (!z) {
                 }
                 kg5Var3 = this.q0;
@@ -2964,8 +2964,8 @@ public abstract class o68 extends wma implements fn7 {
         z7 = false;
         if (b6bVar8 != null) {
         }
-        g58Var = this.L1;
-        if (g58Var != null) {
+        h58Var = this.L1;
+        if (h58Var != null) {
         }
         if (this.y1.f) {
         }
@@ -2975,7 +2975,7 @@ public abstract class o68 extends wma implements fn7 {
         b6bVar3 = this.y1.b;
         if (b6bVar3 != null) {
         }
-        t58 t58Var22 = this.M0;
+        u58 u58Var22 = this.M0;
         v21Var = v21.x;
         if (v21Var != null) {
         }
@@ -3029,8 +3029,8 @@ public abstract class o68 extends wma implements fn7 {
         dn2Var = this.H1;
         if (dn2Var != null) {
         }
-        tj7Var = this.K1;
-        if (tj7Var != null) {
+        uj7Var = this.K1;
+        if (uj7Var != null) {
         }
         if (this.J1 != null) {
         }
@@ -3092,9 +3092,9 @@ public abstract class o68 extends wma implements fn7 {
         if (this.m1) {
         }
         ff0 ff0Var222 = this.Y0.b;
-        u5b u5bVar3222 = this.t0.O0;
-        ff0Var222.setPadding(0, 0, (u5bVar3222 != null || u5bVar3222.g() == this.x1) ? 0 : hl.L(56.0f), 0);
-        uc7.s1(this.m2).i4.k(this.y1.a);
+        v5b v5bVar3222 = this.t0.O0;
+        ff0Var222.setPadding(0, 0, (v5bVar3222 != null || v5bVar3222.g() == this.x1) ? 0 : hl.L(56.0f), 0);
+        uc7.s1(this.m2).j4.k(this.y1.a);
         if (!z) {
         }
         kg5Var3 = this.q0;
@@ -3140,13 +3140,14 @@ public abstract class o68 extends wma implements fn7 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0090  */
     /* JADX WARN: Removed duplicated region for block: B:54:0x02c5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void d1() {
         ArrayList arrayList;
+        byte b;
         int i;
         ImageReceiver imageReceiver;
         boolean isEmpty;
@@ -3185,7 +3186,11 @@ public abstract class o68 extends wma implements fn7 {
         }
         arrayList.clear();
         int i7 = 0;
-        while (i7 < 2) {
+        while (true) {
+            b = 1;
+            if (i7 >= 2) {
+                break;
+            }
             int i8 = this.t1;
             if (i7 == 0) {
                 i = i8 - 1;
@@ -3273,12 +3278,12 @@ public abstract class o68 extends wma implements fn7 {
                             ImageReceiver imageReceiver2 = imageReceiver;
                             if (i10 != 0) {
                                 TLRPC.PhotoSize w = xb4.w(messageMedia2.getDocument().thumbs, 1000, z, null, z);
-                                jn5 b = jn5.b(c6b.B(this.m2, storyItem3));
+                                jn5 b2 = jn5.b(c6b.B(this.m2, storyItem3));
                                 String concat = m.concat("_pframe");
                                 jn5 c = jn5.c(w, storyItem3.media.getDocument());
                                 storyItem = storyItem3;
                                 str = null;
-                                imageReceiver2.Y(b, concat, c, m, null, null, null, 0L, null, storyItem, 0);
+                                imageReceiver2.Y(b2, concat, c, m, null, null, null, 0L, null, storyItem, 0);
                                 i4 = z;
                             } else {
                                 str = null;
@@ -3461,7 +3466,7 @@ public abstract class o68 extends wma implements fn7 {
                 }
             }
         }
-        byte b2 = i5;
+        int i13 = i5;
         ArrayList arrayList15 = arrayList11;
         ArrayList arrayList16 = arrayList12;
         ccb ccbVar = (ccb) this.A1;
@@ -3472,29 +3477,29 @@ public abstract class o68 extends wma implements fn7 {
             if (z2) {
                 return;
             }
-            for (int i13 = b2; i13 < arrayList17.size(); i13++) {
-                for (int i14 = b2; i14 < arrayList15.size(); i14++) {
-                    if (((Uri) arrayList15.get(i14)).equals(((kcb) arrayList17.get(i13)).uri)) {
-                        arrayList15.remove(i14);
+            for (int i14 = i13; i14 < arrayList17.size(); i14++) {
+                for (int i15 = i13; i15 < arrayList15.size(); i15++) {
+                    if (((Uri) arrayList15.get(i15)).equals(((kcb) arrayList17.get(i14)).uri)) {
+                        arrayList15.remove(i15);
                     }
                 }
             }
-            for (int i15 = b2; i15 < arrayList15.size(); i15++) {
-                Uri uri = (Uri) arrayList15.get(i15);
+            for (int i16 = i13; i16 < arrayList15.size(); i16++) {
+                Uri uri = (Uri) arrayList15.get(i16);
                 kcb kcbVar = new kcb(lcbVar, lcbVar.D0, lcbVar.C0);
-                kcbVar.setOnSeekUpdate(new bcb(ccbVar, kcbVar, b2));
+                kcbVar.setOnSeekUpdate(new hab(ccbVar, kcbVar, b));
                 kcbVar.uri = uri;
-                TLRPC.Document document = (TLRPC.Document) arrayList16.get(i15);
+                TLRPC.Document document = (TLRPC.Document) arrayList16.get(i16);
                 kcbVar.document = document;
                 if (document != null) {
-                    hd4.J.put(Long.valueOf(document.id), Integer.valueOf(b2));
+                    hd4.J.put(Long.valueOf(document.id), Integer.valueOf(i13));
                 } else {
                     ConcurrentHashMap concurrentHashMap = hd4.I;
                 }
                 kcbVar.preparePlayer(uri, lcb.D1, lcb.B1);
                 arrayList17.add(kcbVar);
                 if (arrayList17.size() > 2) {
-                    ((kcb) arrayList17.remove(b2)).release(null);
+                    ((kcb) arrayList17.remove(i13)).release(null);
                 }
             }
         }
@@ -3612,17 +3617,17 @@ public abstract class o68 extends wma implements fn7 {
             return;
         }
         c1(false);
-        g58 g58Var = this.L1;
-        if (g58Var != null) {
-            g58Var.P(true);
+        h58 h58Var = this.L1;
+        if (h58Var != null) {
+            h58Var.P(true);
             this.L1.I2(true);
             h0(true);
         }
-        b58 b58Var = this.v0;
-        if (b58Var != null) {
-            w96 w96Var2 = b58Var.Q;
-            if (b58Var.I != (w96Var2 != null ? w96Var2.m() : 0L)) {
-                b58Var.e.O(true);
+        c58 c58Var = this.v0;
+        if (c58Var != null) {
+            w96 w96Var2 = c58Var.Q;
+            if (c58Var.I != (w96Var2 != null ? w96Var2.m() : 0L)) {
+                c58Var.e.O(true);
             }
         }
     }
@@ -3643,10 +3648,10 @@ public abstract class o68 extends wma implements fn7 {
         super.dispatchDraw(canvas);
         boolean z = this.e3;
         LinearLayout linearLayout = this.y0;
-        o58 o58Var = this.n0;
+        p58 p58Var = this.n0;
         if (z) {
-            float measuredWidth = (o58Var.getMeasuredWidth() / 2.0f) + o58Var.getX() + linearLayout.getX();
-            float measuredHeight = (o58Var.getMeasuredHeight() / 2.0f) + o58Var.getY() + linearLayout.getY();
+            float measuredWidth = (p58Var.getMeasuredWidth() / 2.0f) + p58Var.getX() + linearLayout.getX();
+            float measuredHeight = (p58Var.getMeasuredHeight() / 2.0f) + p58Var.getY() + linearLayout.getY();
             int L = hl.L(24.0f);
             float f = L / 2.0f;
             float R1 = hl.R1(this.g3, measuredWidth - f, k43.g.getInterpolation(this.f3));
@@ -3667,8 +3672,8 @@ public abstract class o68 extends wma implements fn7 {
             }
         }
         if (this.a3) {
-            float measuredWidth2 = (o58Var.getMeasuredWidth() / 2.0f) + o58Var.getX() + linearLayout.getX();
-            float measuredHeight2 = (o58Var.getMeasuredHeight() / 2.0f) + o58Var.getY() + linearLayout.getY();
+            float measuredWidth2 = (p58Var.getMeasuredWidth() / 2.0f) + p58Var.getX() + linearLayout.getX();
+            float measuredHeight2 = (p58Var.getMeasuredHeight() / 2.0f) + p58Var.getY() + linearLayout.getY();
             int L2 = hl.L(120.0f);
             if (this.Z2) {
                 yl ylVar = this.W2;
@@ -3697,22 +3702,22 @@ public abstract class o68 extends wma implements fn7 {
                 }
             }
         }
-        g58 g58Var = this.L1;
-        if (g58Var != null) {
-            rw1 rw1Var2 = g58Var.n2;
-            rw1 rw1Var3 = g58Var.o2;
-            if (g58Var.getAlpha() == 0.0f || (rw1Var = g58Var.f1) == null || rw1Var.getParent() == null || g58Var.f1.getVisibility() != 0) {
+        h58 h58Var = this.L1;
+        if (h58Var != null) {
+            rw1 rw1Var2 = h58Var.n2;
+            rw1 rw1Var3 = h58Var.o2;
+            if (h58Var.getAlpha() == 0.0f || (rw1Var = h58Var.f1) == null || rw1Var.getParent() == null || h58Var.f1.getVisibility() != 0) {
                 return;
             }
             int save = canvas.save();
-            canvas.translate(g58Var.f1.getX() + rw1Var2.getX() + rw1Var3.getX() + g58Var.getX(), g58Var.f1.getY() + rw1Var2.getY() + rw1Var3.getY() + g58Var.getY());
-            if (g58Var.getAlpha() != 1.0f) {
+            canvas.translate(h58Var.f1.getX() + rw1Var2.getX() + rw1Var3.getX() + h58Var.getX(), h58Var.f1.getY() + rw1Var2.getY() + rw1Var3.getY() + h58Var.getY());
+            if (h58Var.getAlpha() != 1.0f) {
                 canvas2 = canvas;
-                canvas2.saveLayerAlpha(0.0f, 0.0f, g58Var.getMeasuredWidth(), g58Var.getMeasuredHeight(), (int) (g58Var.getAlpha() * 255.0f), 31);
+                canvas2.saveLayerAlpha(0.0f, 0.0f, h58Var.getMeasuredWidth(), h58Var.getMeasuredHeight(), (int) (h58Var.getAlpha() * 255.0f), 31);
             } else {
                 canvas2 = canvas;
             }
-            g58Var.f1.draw(canvas2);
+            h58Var.f1.draw(canvas2);
             canvas2.restoreToCount(save);
         }
     }
@@ -3728,11 +3733,11 @@ public abstract class o68 extends wma implements fn7 {
             canvas.restore();
             return drawChild;
         }
-        g58 g58Var = this.L1;
+        h58 h58Var = this.L1;
         Paint paint = this.X1;
-        o58 o58Var = this.n0;
+        p58 p58Var = this.n0;
         m68 m68Var = this.h1;
-        if (view == g58Var) {
+        if (view == h58Var) {
             float f = this.a2;
             n68 n68Var = this.y1;
             if (f > 0.0f && !n68Var.f) {
@@ -3747,8 +3752,8 @@ public abstract class o68 extends wma implements fn7 {
             if (n68Var.f) {
                 L = hl.L(46.0f);
                 L2 = hl.L(46.0f);
-                tj7 tj7Var = this.K1;
-                if (tj7Var != null && tj7Var.getVisibility() == 0) {
+                uj7 uj7Var = this.K1;
+                if (uj7Var != null && uj7Var.getVisibility() == 0) {
                     L2 += hl.L(46.0f);
                 }
             } else {
@@ -3758,8 +3763,8 @@ public abstract class o68 extends wma implements fn7 {
                 if (this.D2 && this.n1) {
                     L2 += hl.L(46.0f);
                 }
-                if (o58Var != null && o58Var.getVisibility() == 0) {
-                    L2 = (L2 - hl.L(40.0f)) + o58Var.getLayoutParams().width;
+                if (p58Var != null && p58Var.getVisibility() == 0) {
+                    L2 = (L2 - hl.L(40.0f)) + p58Var.getLayoutParams().width;
                 }
                 L = 0.0f;
             }
@@ -3785,7 +3790,7 @@ public abstract class o68 extends wma implements fn7 {
                 return drawChild2;
             }
         } else {
-            if (g58Var != null && g58Var.V0(view)) {
+            if (h58Var != null && h58Var.V0(view)) {
                 float L4 = hl.L(30.0f);
                 RectF rectF4 = m68Var.k;
                 RectF rectF5 = m68Var.k;
@@ -3810,13 +3815,13 @@ public abstract class o68 extends wma implements fn7 {
             }
             if (view != this.P1 || this.L1 == null) {
                 if (view == this.b3) {
-                    view.setTranslationY((this.y0.getY() + (o58Var.getY() + (-(r2.getMeasuredHeight() - this.b3.getPaddingBottom())))) - hl.L(18.0f));
+                    view.setTranslationY((this.y0.getY() + (p58Var.getY() + (-(r2.getMeasuredHeight() - this.b3.getPaddingBottom())))) - hl.L(18.0f));
                 } else {
-                    t58 t58Var = this.M0;
-                    if (view == t58Var && Build.VERSION.SDK_INT >= 31 && canvas.isHardwareAccelerated() && (rz4Var = this.q3) != null && !rz4Var.r) {
+                    u58 u58Var = this.M0;
+                    if (view == u58Var && Build.VERSION.SDK_INT >= 31 && canvas.isHardwareAccelerated() && (rz4Var = this.q3) != null && !rz4Var.r) {
                         RecordingCanvas i = rz4Var.i(getMeasuredWidth(), getMeasuredHeight());
                         i.drawColor(vm2.f(0.2f, -16777216, -1));
-                        i.translate(t58Var.getX(), t58Var.getY());
+                        i.translate(u58Var.getX(), u58Var.getY());
                         view.draw(i);
                         rz4Var.j();
                     }
@@ -3858,7 +3863,7 @@ public abstract class o68 extends wma implements fn7 {
             boolean V = xc2.V(M0);
             this.o1 = !V;
             if (!V && uc7.s1(this.m2).N0(-this.l1) == null) {
-                jf7.Y(this.m2).C0(-this.l1, true, new CountDownLatch(1), false, false, 0);
+                kf7.a0(this.m2).F0(-this.l1, true, new CountDownLatch(1), false, false, 0);
             }
             this.p1 = this.o1 && !xc2.q(M0);
             this.r1 = uc7.s1(this.m2).M1(this.l1);
@@ -3887,7 +3892,7 @@ public abstract class o68 extends wma implements fn7 {
         this.s3 = null;
         this.t3 = null;
         boolean z2 = this.n1;
-        t58 t58Var = this.M0;
+        u58 u58Var = this.M0;
         lcb lcbVar = this.t0;
         int i2 = 8;
         n68 n68Var = this.y1;
@@ -3898,15 +3903,15 @@ public abstract class o68 extends wma implements fn7 {
             }
             if (this.L1 != null) {
                 TLRPC.Chat M02 = uc7.s1(this.m2).M0(Long.valueOf(-this.l1));
-                g58 g58Var = this.L1;
+                h58 h58Var = this.L1;
                 if (n68Var.f || (!A0() && this.o1 && (xc2.q(M02) || xc2.s0(M02)))) {
                     i2 = 0;
                 }
-                g58Var.setVisibility(i2);
-                g58 g58Var2 = this.L1;
+                h58Var.setVisibility(i2);
+                h58 h58Var2 = this.L1;
                 boolean z3 = n68Var.f;
                 v0(true);
-                g58Var2.U1(z3);
+                h58Var2.U1(z3);
                 this.L1.b2(n68Var.f && !v0(true) && (this.f2 || this.L1.X0), true);
                 xt3 editField = this.L1.getEditField();
                 long j3 = this.l1;
@@ -3921,50 +3926,50 @@ public abstract class o68 extends wma implements fn7 {
             if (hnVar == null) {
                 hn hnVar2 = new hn(false, false, false);
                 this.A0 = hnVar2;
-                o58 o58Var = this.n0;
-                hnVar2.setCallback(o58Var);
+                p58 p58Var = this.n0;
+                hnVar2.setCallback(p58Var);
                 this.A0.u(x53Var.h(aob.G6));
                 this.A0.w(hl.L(14.0f));
-                this.C0 = new mm(o58Var);
+                this.C0 = new mm(p58Var);
             }
-            o58 o58Var2 = this.z0;
-            if (o58Var2 != null && this.B0 == null) {
+            p58 p58Var2 = this.z0;
+            if (p58Var2 != null && this.B0 == null) {
                 hn hnVar3 = new hn(false, false, false);
                 this.B0 = hnVar3;
-                hnVar3.setCallback(o58Var2);
+                hnVar3.setCallback(p58Var2);
                 this.B0.u(x53Var.h(aob.G6));
                 this.B0.w(hl.L(14.0f));
-                this.D0 = new mm(o58Var2);
+                this.D0 = new mm(p58Var2);
             }
             if (i == -1) {
                 f1();
             }
             c1(false);
             this.k1 = getStoriesCount();
-            t58Var.invalidate();
+            u58Var.invalidate();
             invalidate();
         } else if (this.m1) {
             r0();
             boolean z4 = n68Var.f;
-            o58 o58Var3 = this.G1;
+            p58 p58Var3 = this.G1;
             if (z4) {
-                o58Var3.setVisibility(8);
+                p58Var3.setVisibility(8);
                 if (this.L1 == null) {
                     l0();
                 }
                 this.L1.setVisibility(0);
             } else {
-                o58Var3.setVisibility(0);
-                g58 g58Var3 = this.L1;
-                if (g58Var3 != null) {
-                    g58Var3.setVisibility(8);
+                p58Var3.setVisibility(0);
+                h58 h58Var3 = this.L1;
+                if (h58Var3 != null) {
+                    h58Var3.setVisibility(8);
                 }
             }
-            g58 g58Var4 = this.L1;
-            if (g58Var4 != null) {
+            h58 h58Var4 = this.L1;
+            if (h58Var4 != null) {
                 boolean z5 = n68Var.f;
                 v0(true);
-                g58Var4.U1(z5);
+                h58Var4.U1(z5);
                 this.L1.b2(n68Var.f && !v0(true) && (this.f2 || this.L1.X0), true);
             }
             if (i == -1) {
@@ -3995,7 +4000,7 @@ public abstract class o68 extends wma implements fn7 {
                 }
             }
             c1(false);
-            t58Var.invalidate();
+            u58Var.invalidate();
             invalidate();
         } else {
             if (this.L1 == null) {
@@ -4018,13 +4023,13 @@ public abstract class o68 extends wma implements fn7 {
                 f1();
             }
             c1(false);
-            g58 g58Var5 = this.L1;
-            if (g58Var5 != null) {
-                g58Var5.setVisibility((A0() || lbc.C(this.l1)) ? 8 : 0);
-                g58 g58Var6 = this.L1;
+            h58 h58Var5 = this.L1;
+            if (h58Var5 != null) {
+                h58Var5.setVisibility((A0() || lbc.C(this.l1)) ? 8 : 0);
+                h58 h58Var6 = this.L1;
                 boolean z6 = n68Var.f;
                 v0(true);
-                g58Var6.U1(z6);
+                h58Var6.U1(z6);
                 this.L1.b2(n68Var.f && !v0(true) && (this.f2 || this.L1.X0), true);
                 xt3 editField2 = this.L1.getEditField();
                 long j4 = this.l1;
@@ -4040,11 +4045,11 @@ public abstract class o68 extends wma implements fn7 {
                 }
             }
             this.k1 = getStoriesCount();
-            o58 o58Var4 = this.G1;
-            if (o58Var4 != null) {
-                o58Var4.setVisibility(8);
+            p58 p58Var4 = this.G1;
+            if (p58Var4 != null) {
+                p58Var4.setVisibility(8);
             }
-            t58Var.invalidate();
+            u58Var.invalidate();
             invalidate();
         }
         h0(false);
@@ -4075,9 +4080,9 @@ public abstract class o68 extends wma implements fn7 {
     }
 
     public final void f0() {
-        y58 y58Var = this.u0;
-        if (y58Var.W.w()) {
-            y58Var.W.e(false);
+        z58 z58Var = this.u0;
+        if (z58Var.W.w()) {
+            z58Var.W.e(false);
         }
     }
 
@@ -4178,8 +4183,8 @@ public abstract class o68 extends wma implements fn7 {
     }
 
     public Bitmap getPlayingBitmap() {
-        t58 t58Var = this.M0;
-        Bitmap createBitmap = Bitmap.createBitmap(t58Var.getWidth(), t58Var.getHeight(), Bitmap.Config.ARGB_8888);
+        u58 u58Var = this.M0;
+        Bitmap createBitmap = Bitmap.createBitmap(u58Var.getWidth(), u58Var.getHeight(), Bitmap.Config.ARGB_8888);
         w0(new Canvas(createBitmap), createBitmap.getWidth(), createBitmap.getHeight());
         return createBitmap;
     }
@@ -4233,15 +4238,15 @@ public abstract class o68 extends wma implements fn7 {
                     this.L1.setEnabled(true);
                     float f = measureText * 1.2f;
                     float measuredWidth = this.L1.getEditField().getMeasuredWidth();
-                    g58 g58Var = this.L1;
+                    h58 h58Var = this.L1;
                     if (f >= measuredWidth) {
                         String a0 = ob6.a0(null, null, 2131744545, "");
                         String format = String.format(locale, "%02d:%02d", Integer.valueOf(i2), Integer.valueOf(i3));
-                        g58Var.e = a0;
-                        g58Var.f = format;
-                        g58Var.y2(z);
+                        h58Var.e = a0;
+                        h58Var.f = format;
+                        h58Var.y2(z);
                     } else {
-                        g58Var.W1(ob6.a0(null, null, 2131744546, String.format(locale, "%02d:%02d", Integer.valueOf(i2), Integer.valueOf(i3))), z);
+                        h58Var.W1(ob6.a0(null, null, 2131744546, String.format(locale, "%02d:%02d", Integer.valueOf(i2), Integer.valueOf(i3))), z);
                     }
                     hl.d3(u48Var, 1000L);
                     return;
@@ -4250,18 +4255,18 @@ public abstract class o68 extends wma implements fn7 {
             this.U2 = false;
             this.L1.setEnabled(true);
             boolean z3 = n68Var.f;
-            g58 g58Var2 = this.L1;
+            h58 h58Var2 = this.L1;
             if (!z3) {
-                g58Var2.W1(ob6.M0(this.o1 ? 2131745977 : 2131745982, null), z);
+                h58Var2.W1(ob6.M0(this.o1 ? 2131745977 : 2131745982, null), z);
                 return;
             }
-            long starsPrice = g58Var2.getStarsPrice();
-            g58 g58Var3 = this.L1;
+            long starsPrice = h58Var2.getStarsPrice();
+            h58 h58Var3 = this.L1;
             if (starsPrice <= 0) {
-                g58Var3.W1(ob6.M0(2131751970, null), z);
+                h58Var3.W1(ob6.M0(2131751970, null), z);
                 return;
             }
-            g58Var3.W1(nza.Z0(false, ob6.a0(null, null, 2131751969, ob6.E((int) starsPrice, ',')), this.L1.j7), z);
+            h58Var3.W1(nza.Z0(false, ob6.a0(null, null, 2131751969, ob6.E((int) starsPrice, ',')), this.L1.j7), z);
             wm2 wm2Var = this.L1.j7[0];
             if (wm2Var != null) {
                 wm2Var.H = 0.9f;
@@ -4271,7 +4276,7 @@ public abstract class o68 extends wma implements fn7 {
 
     public final void h1() {
         TL_stories.PeerStories x;
-        u5b u5bVar;
+        v5b v5bVar;
         TL_stories.StoryItem storyItem;
         ArrayList arrayList = this.f1;
         arrayList.clear();
@@ -4280,11 +4285,11 @@ public abstract class o68 extends wma implements fn7 {
             ArrayList arrayList2 = this.j1;
             int i = 0;
             ArrayList arrayList3 = this.g1;
-            if (arrayList2 != null && (u5bVar = lcbVar.O0) != null) {
-                if (u5bVar instanceof o5b) {
+            if (arrayList2 != null && (v5bVar = lcbVar.O0) != null) {
+                if (v5bVar instanceof p5b) {
                     arrayList3.clear();
                     ArrayList E = uc7.s1(this.m2).O1().E(this.l1);
-                    String str = ((o5b) lcbVar.O0).E;
+                    String str = ((p5b) lcbVar.O0).E;
                     if (E != null) {
                         for (int i2 = 0; i2 < E.size(); i2++) {
                             b6b b6bVar = (b6b) E.get(i2);
@@ -4356,20 +4361,20 @@ public abstract class o68 extends wma implements fn7 {
             i49Var.getReactionsWindow().d();
             return true;
         }
-        r58 r58Var = this.T0;
-        if (r58Var != null) {
-            kg5 kg5Var = r58Var.c;
+        s58 s58Var = this.T0;
+        if (s58Var != null) {
+            kg5 kg5Var = s58Var.c;
             if (kg5Var != null) {
                 kg5Var.f(true);
-                r58Var.c = null;
+                s58Var.c = null;
             }
-            r58Var.b = null;
-            r58Var.invalidate();
-            r58Var.b(false);
+            s58Var.b = null;
+            s58Var.invalidate();
+            s58Var.b(false);
         }
-        y58 y58Var = this.u0;
-        if (y58Var.W.w()) {
-            y58Var.W.e(false);
+        z58 z58Var = this.u0;
+        if (z58Var.W.w()) {
+            z58Var.W.e(false);
             return true;
         }
         kg5 kg5Var2 = this.p0;
@@ -4389,8 +4394,8 @@ public abstract class o68 extends wma implements fn7 {
             j68Var.a();
             return true;
         }
-        g58 g58Var = this.L1;
-        if (g58Var != null && g58Var.W0()) {
+        h58 h58Var = this.L1;
+        if (h58Var != null && h58Var.W0()) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.l0, getContext());
             boolean z = this.L1.d1;
             id idVar = alertDialog$Builder.a;
@@ -4411,31 +4416,31 @@ public abstract class o68 extends wma implements fn7 {
             this.P1.getReactionsWindow().d();
             return true;
         }
-        g58 g58Var2 = this.L1;
-        if (g58Var2 != null && g58Var2.U0()) {
+        h58 h58Var2 = this.L1;
+        if (h58Var2 != null && h58Var2.U0()) {
             int i2 = this.i2;
-            g58 g58Var3 = this.L1;
+            h58 h58Var3 = this.L1;
             if (i2 > 0) {
-                hl.t1(g58Var3.getEmojiView());
+                hl.t1(h58Var3.getEmojiView());
                 return true;
             }
-            g58Var3.O0(true, false, true);
+            h58Var3.O0(true, false, true);
             return true;
         }
         if (getKeyboardHeight() < hl.L(20.0f)) {
-            if (y58Var.getVisibility() != 0 || y58Var.getProgressToBlackout() <= 0.0f) {
+            if (z58Var.getVisibility() != 0 || z58Var.getProgressToBlackout() <= 0.0f) {
                 return false;
             }
-            y58Var.D();
+            z58Var.D();
             this.Q2 = false;
             this.M0.invalidate();
             return true;
         }
-        g58 g58Var4 = this.L1;
-        if (g58Var4 != null) {
+        h58 h58Var4 = this.L1;
+        if (h58Var4 != null) {
             long j = this.l1;
             TL_stories.StoryItem storyItem = this.y1.a;
-            Editable editText = g58Var4.getEditText();
+            Editable editText = h58Var4.getEditText();
             this.t0.getClass();
             lcb.N(j, storyItem, editText);
         }
@@ -4463,7 +4468,7 @@ public abstract class o68 extends wma implements fn7 {
             }
             TL_stories.StoryViews storyViews = storyItem.views;
             lcb lcbVar = this.t0;
-            o58 o58Var = this.n0;
+            p58 p58Var = this.n0;
             if (!z3) {
                 int i3 = 3;
                 if (storyViews == null || storyViews.views_count <= 0) {
@@ -4529,7 +4534,7 @@ public abstract class o68 extends wma implements fn7 {
                     }
                     this.p2.setVisibility(0);
                 }
-                o58Var.getLayoutParams().width = hl.L(40.0f);
+                p58Var.getLayoutParams().width = hl.L(40.0f);
                 this.y0.requestLayout();
                 return;
             }
@@ -4575,27 +4580,27 @@ public abstract class o68 extends wma implements fn7 {
             } else {
                 this.k2.setText("");
             }
-            o58Var.getLayoutParams().width = (int) (hl.L(40.0f) + (this.E0 ? this.A0.d + hl.L(4.0f) : 0.0f));
-            ((ViewGroup.MarginLayoutParams) this.G1.getLayoutParams()).rightMargin = hl.L(40.0f) + o58Var.getLayoutParams().width;
-            o58 o58Var2 = this.z0;
-            if (o58Var2 != null) {
-                o58Var2.getLayoutParams().width = (int) (hl.L(40.0f) + (this.F0 ? this.B0.d + hl.L(4.0f) : 0.0f));
-                ((ViewGroup.MarginLayoutParams) this.G1.getLayoutParams()).rightMargin += o58Var2.getLayoutParams().width;
-                o58Var2.requestLayout();
+            p58Var.getLayoutParams().width = (int) (hl.L(40.0f) + (this.E0 ? this.A0.d + hl.L(4.0f) : 0.0f));
+            ((ViewGroup.MarginLayoutParams) this.G1.getLayoutParams()).rightMargin = hl.L(40.0f) + p58Var.getLayoutParams().width;
+            p58 p58Var2 = this.z0;
+            if (p58Var2 != null) {
+                p58Var2.getLayoutParams().width = (int) (hl.L(40.0f) + (this.F0 ? this.B0.d + hl.L(4.0f) : 0.0f));
+                ((ViewGroup.MarginLayoutParams) this.G1.getLayoutParams()).rightMargin += p58Var2.getLayoutParams().width;
+                p58Var2.requestLayout();
             }
             this.G1.requestLayout();
-            o58Var.requestLayout();
+            p58Var.requestLayout();
             this.l2.setVisibility(8);
             this.p2.setVisibility(8);
             TL_stories.StoryItem storyItem2 = n68Var.a;
-            r58 r58Var = this.T0;
+            s58 s58Var = this.T0;
             if (storyItem2 == null) {
-                r58Var.getClass();
+                s58Var.getClass();
                 return;
             }
-            for (int i8 = 0; i8 < r58Var.getChildCount(); i8++) {
-                if (r58Var.getChildAt(i8) instanceof aab) {
-                    ((aab) r58Var.getChildAt(i8)).c(storyItem2.views, z);
+            for (int i8 = 0; i8 < s58Var.getChildCount(); i8++) {
+                if (s58Var.getChildAt(i8) instanceof aab) {
+                    ((aab) s58Var.getChildAt(i8)).c(storyItem2.views, z);
                 }
             }
         }
@@ -4605,13 +4610,13 @@ public abstract class o68 extends wma implements fn7 {
         if (this.s2 == null) {
             f41 f41Var = new f41(this, getContext(), this.l0);
             this.s2 = f41Var;
-            f41Var.W3 = new k58(this);
+            f41Var.W3 = new l58(this);
             f41Var.d2.g0();
             f41 f41Var2 = this.s2;
             f41Var2.Q1 = true;
             f41Var2.a1();
             f41 f41Var3 = this.s2;
-            f41Var3.R1 = new l58(this);
+            f41Var3.R1 = new m58(this);
             f41Var3.V0().setText(this.L1.getFieldText());
         }
     }
@@ -4641,9 +4646,9 @@ public abstract class o68 extends wma implements fn7 {
 
     public final void l0() {
         x53 x53Var = this.l0;
-        g58 g58Var = new g58(this, hl.W(getContext()), this, new pu0(x53Var, (byte) 4));
-        this.L1 = g58Var;
-        xt3 editField = g58Var.getEditField();
+        h58 h58Var = new h58(this, hl.W(getContext()), this, new pu0(x53Var, (byte) 4));
+        this.L1 = h58Var;
+        xt3 editField = h58Var.getEditField();
         editField.getClass();
         pt3 pt3Var = new pt3(editField, (byte) 0);
         editField.u0 = pt3Var;
@@ -4658,20 +4663,20 @@ public abstract class o68 extends wma implements fn7 {
         this.L1.getEditField().setScaleX(0.0f);
         this.L1.setOverrideKeyboardAnimation(true);
         this.L1.setClipChildren(false);
-        this.L1.setDelegate(new h58(this));
+        this.L1.setDelegate(new i58(this));
         setDelegate(this.L1);
-        g58 g58Var2 = this.L1;
-        g58Var2.i6 = false;
-        g58Var2.j6 = true;
+        h58 h58Var2 = this.L1;
+        h58Var2.i6 = false;
+        h58Var2.j6 = true;
         if (this.y1.f) {
-            g58Var2.G1(false, false, false);
+            h58Var2.G1(false, false, false);
         } else {
-            g58Var2.G1(true, true, false);
+            h58Var2.G1(true, true, false);
         }
         this.L1.updateColors();
-        g58 g58Var3 = this.L1;
-        g58Var3.k6 = true;
-        addView(g58Var3, tre.d(-1, -2.0f, 83, 7.0f, 0.0f, 7.0f, 0.0f));
+        h58 h58Var3 = this.L1;
+        h58Var3.k6 = true;
+        addView(h58Var3, tre.d(-1, -2.0f, 83, 7.0f, 0.0f, 7.0f, 0.0f));
         if (this.x3 != null) {
             this.L1.I2(false);
         }
@@ -4711,19 +4716,19 @@ public abstract class o68 extends wma implements fn7 {
         if (this.K1 != null || getContext() == null) {
             return;
         }
-        tj7 tj7Var = new tj7(getContext(), this.r3);
-        this.K1 = tj7Var;
-        tj7Var.setOnClickListener(new v48(this, (byte) 9));
-        tj7 tj7Var2 = this.K1;
+        uj7 uj7Var = new uj7(getContext(), this.r3);
+        this.K1 = uj7Var;
+        uj7Var.setOnClickListener(new v48(this, (byte) 9));
+        uj7 uj7Var2 = this.K1;
         w96 w96Var = w96.N;
         boolean z = true;
-        tj7Var2.b(w96Var != null && w96Var.r(), false);
-        tj7 tj7Var3 = this.K1;
+        uj7Var2.b(w96Var != null && w96Var.r(), false);
+        uj7 uj7Var3 = this.K1;
         w96 w96Var2 = w96.N;
         if (w96Var2 != null && !w96Var2.G) {
             z = false;
         }
-        tj7Var3.a(z, false);
+        uj7Var3.a(z, false);
         addView(this.K1, tre.d(46, 42.0f, 85, 7.0f, 0.0f, 7.0f, 3.0f));
     }
 
@@ -4749,9 +4754,9 @@ public abstract class o68 extends wma implements fn7 {
         this.P0.I();
         this.V2.I();
         this.X2.I();
-        g58 g58Var = this.L1;
-        if (g58Var != null) {
-            g58Var.j1();
+        h58 h58Var = this.L1;
+        if (h58Var != null) {
+            h58Var.j1();
         }
         int i = 0;
         while (true) {
@@ -4783,9 +4788,9 @@ public abstract class o68 extends wma implements fn7 {
         this.P0.K();
         this.V2.K();
         this.X2.K();
-        g58 g58Var = this.L1;
-        if (g58Var != null) {
-            g58Var.i1();
+        h58 h58Var = this.L1;
+        if (h58Var != null) {
+            h58Var.i1();
         }
         wl wlVar = this.Y2;
         if (wlVar != null) {
@@ -4842,7 +4847,7 @@ public abstract class o68 extends wma implements fn7 {
         float L;
         FrameLayout.LayoutParams layoutParams;
         i49 i49Var;
-        i58 i58Var;
+        j58 j58Var;
         lcb lcbVar = this.t0;
         if (lcbVar.b) {
             ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = hl.m;
@@ -4864,17 +4869,17 @@ public abstract class o68 extends wma implements fn7 {
         int i3 = this.i2;
         i49 i49Var2 = this.b3;
         if (i49Var2 == null || i49Var2.getReactionsWindow() == null || this.b3.getReactionsWindow().q) {
-            g58 g58Var = this.L1;
-            if (g58Var != null && (g58Var.U0() || this.L1.Z3)) {
+            h58 h58Var = this.L1;
+            if (h58Var != null && (h58Var.U0() || this.L1.Z3)) {
                 int measuredHeight = this.L1.getEmojiView().getMeasuredHeight();
-                g58 g58Var2 = this.L1;
+                h58 h58Var2 = this.L1;
                 if (measuredHeight == 0) {
-                    i3 = g58Var2.getEmojiPadding();
-                } else if (g58Var2.o4) {
-                    g58Var2.Q();
+                    i3 = h58Var2.getEmojiPadding();
+                } else if (h58Var2.o4) {
+                    h58Var2.Q();
                     i3 = this.L1.getStickersExpandedHeight();
                 } else {
-                    i3 = g58Var2.getVisibleEmojiPadding();
+                    i3 = h58Var2.getVisibleEmojiPadding();
                 }
             }
         } else {
@@ -4890,9 +4895,9 @@ public abstract class o68 extends wma implements fn7 {
             n68 n68Var = this.y1;
             if (i3 <= 0 || !this.u1) {
                 f = 8.0f;
-                g58 g58Var3 = this.L1;
-                if (g58Var3 != null) {
-                    lcb.N(this.l1, n68Var.a, g58Var3.getEditText());
+                h58 h58Var3 = this.L1;
+                if (h58Var3 != null) {
+                    lcb.N(this.l1, n68Var.a, h58Var3.getEditText());
                 }
             } else {
                 this.f2 = true;
@@ -4906,7 +4911,7 @@ public abstract class o68 extends wma implements fn7 {
                     i49 i49Var4 = this.P1;
                     i49Var4.O0 = true;
                     addView(i49Var4, this.s0, tre.d(-2, 72.0f, 49, 0.0f, 0.0f, 0.0f, 64.0f));
-                    this.P1.setDelegate(new q58(this));
+                    this.P1.setDelegate(new r58(this));
                     this.P1.m(null, null, true);
                 } else {
                     f = 8.0f;
@@ -4922,12 +4927,12 @@ public abstract class o68 extends wma implements fn7 {
                     s49Var2.l = true;
                 }
             }
-            g58 g58Var4 = this.L1;
-            if (g58Var4 != null) {
-                g58Var4.b2(n68Var.f && !v0(true) && this.f2, true);
+            h58 h58Var4 = this.L1;
+            if (h58Var4 != null) {
+                h58Var4.b2(n68Var.f && !v0(true) && this.f2, true);
             }
-            if (this.f2 && (i58Var = this.N2) != null) {
-                i58Var.setVisibility(0);
+            if (this.f2 && (j58Var = this.N2) != null) {
+                j58Var.setVisibility(0);
             }
             if (!this.f2 && (i49Var = this.P1) != null) {
                 i49Var.k();
@@ -4952,7 +4957,7 @@ public abstract class o68 extends wma implements fn7 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r2, i3);
             this.Z1 = ofFloat;
             ofFloat.addUpdateListener(new y48(this, b));
-            this.Z1.addListener(new e58(this, b2));
+            this.Z1.addListener(new f58(this, b2));
             boolean z3 = this.f2;
             ValueAnimator valueAnimator2 = this.Z1;
             if (z3) {
@@ -4991,16 +4996,16 @@ public abstract class o68 extends wma implements fn7 {
                             this.N1.setPadding(hl.L(f), 0, hl.L(f), 0);
                             kg5 kg5Var3 = this.N1;
                             kg5Var3.L = Layout.Alignment.ALIGN_OPPOSITE;
-                            kg5Var3.r0 = new pl7(this, kg5Var2, (byte) 28);
+                            kg5Var3.r0 = new ql7(this, kg5Var2, (byte) 29);
                             addView(kg5Var3, tre.e(-1, 100, 87));
                             this.N1.v();
                             j1();
                         }
                     }
                 } else {
-                    g58 g58Var5 = this.L1;
-                    if (g58Var5 != null) {
-                        g58Var5.getEditField().clearFocus();
+                    h58 h58Var5 = this.L1;
+                    if (h58Var5 != null) {
+                        h58Var5.getEditField().clearFocus();
                     }
                     kg5 kg5Var4 = this.N1;
                     if (kg5Var4 != null) {
@@ -5014,12 +5019,12 @@ public abstract class o68 extends wma implements fn7 {
         } else {
             f = 8.0f;
         }
-        g58 g58Var6 = this.L1;
-        if (g58Var6 != null && g58Var6.getEmojiView() != null) {
+        h58 h58Var6 = this.L1;
+        if (h58Var6 != null && h58Var6.getEmojiView() != null) {
             ((FrameLayout.LayoutParams) this.L1.getEmojiView().getLayoutParams()).gravity = 80;
         }
-        t58 t58Var = this.M0;
-        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) t58Var.getLayoutParams();
+        u58 u58Var = this.M0;
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) u58Var.getLayoutParams();
         layoutParams2.height = size2;
         boolean z5 = size - size2 > hl.L(64.0f);
         this.h2 = z5;
@@ -5031,11 +5036,11 @@ public abstract class o68 extends wma implements fn7 {
             this.u2 = ((-L2) + size) - size2;
         }
         if (this.h2 != this.g2) {
-            t58Var.setLayoutParams(layoutParams2);
+            u58Var.setLayoutParams(layoutParams2);
         }
-        o58 o58Var = this.G1;
-        if (o58Var != null) {
-            FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) o58Var.getLayoutParams();
+        p58 p58Var = this.G1;
+        if (p58Var != null) {
+            FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) p58Var.getLayoutParams();
             if (this.h2) {
                 layoutParams3.topMargin = hl.L(f) + L2 + size2;
             } else {
@@ -5061,23 +5066,23 @@ public abstract class o68 extends wma implements fn7 {
                     }
                 }
                 z = this.h2;
-                y58 y58Var = this.u0;
+                z58 z58Var = this.u0;
                 LinearLayout linearLayout = this.y0;
                 if (z) {
                     ((FrameLayout.LayoutParams) linearLayout.getLayoutParams()).topMargin = ((L2 + size2) - hl.L(12.0f)) - hl.L(40.0f);
                     int L3 = this.m1 ? hl.L(40.0f) : hl.L(56.0f);
-                    ((FrameLayout.LayoutParams) y58Var.getLayoutParams()).bottomMargin = L3;
+                    ((FrameLayout.LayoutParams) z58Var.getLayoutParams()).bottomMargin = L3;
                     if (this.g2 != this.h2) {
-                        y58Var.setLayoutParams((FrameLayout.LayoutParams) y58Var.getLayoutParams());
+                        z58Var.setLayoutParams((FrameLayout.LayoutParams) z58Var.getLayoutParams());
                     }
-                    y58Var.u0 = L3;
+                    z58Var.u0 = L3;
                 } else {
                     ((FrameLayout.LayoutParams) linearLayout.getLayoutParams()).topMargin = hl.L(12.0f) + L2 + size2;
-                    ((FrameLayout.LayoutParams) y58Var.getLayoutParams()).bottomMargin = hl.L(f);
+                    ((FrameLayout.LayoutParams) z58Var.getLayoutParams()).bottomMargin = hl.L(f);
                     if (this.g2 != this.h2) {
-                        y58Var.setLayoutParams((FrameLayout.LayoutParams) y58Var.getLayoutParams());
+                        z58Var.setLayoutParams((FrameLayout.LayoutParams) z58Var.getLayoutParams());
                     }
-                    y58Var.u0 = hl.L(f);
+                    z58Var.u0 = hl.L(f);
                 }
                 this.F2 = true;
                 L = hl.L(48.0f);
@@ -5108,7 +5113,7 @@ public abstract class o68 extends wma implements fn7 {
         if (qVar != null) {
         }
         z = this.h2;
-        y58 y58Var2 = this.u0;
+        z58 z58Var2 = this.u0;
         LinearLayout linearLayout2 = this.y0;
         if (z) {
         }
@@ -5191,9 +5196,9 @@ public abstract class o68 extends wma implements fn7 {
         if (this.G1 != null) {
             return;
         }
-        o58 o58Var = new o58(this, getContext(), (byte) 0);
-        this.G1 = o58Var;
-        o58Var.setClickable(true);
+        p58 p58Var = new p58(this, getContext(), (byte) 0);
+        this.G1 = p58Var;
+        p58Var.setClickable(true);
         addView(this.G1, tre.d(-1, 48.0f, 48, 0.0f, 0.0f, 136.0f, 0.0f));
         a81 a81Var = new a81(this, getContext());
         this.p2 = a81Var;
@@ -5229,10 +5234,10 @@ public abstract class o68 extends wma implements fn7 {
         }
         Drawable drawable = getContext().getDrawable(R.drawable.msg_gallery_locked2);
         drawable.setColorFilter(new PorterDuffColorFilter(vm2.f(0.5f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
-        c58 c58Var = new c58(getContext().getDrawable(R.drawable.msg_stealth_locked), drawable, (byte) 0);
+        d58 d58Var = new d58(getContext().getDrawable(R.drawable.msg_stealth_locked), drawable, (byte) 0);
         b8 c = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_stories_stealth2, ob6.M0(2131744544, null), false, x53Var);
         c.setOnClickListener(new v48(this, (byte) 13));
-        c.setIcon(c58Var);
+        c.setIcon(d58Var);
     }
 
     public void setAccount(int i) {
@@ -5281,12 +5286,12 @@ public abstract class o68 extends wma implements fn7 {
             this.L0 = z;
             this.M0.invalidate();
             if (this.u1 && this.t0.a && Build.VERSION.SDK_INT < 33) {
-                ki7 ki7Var = this.F3;
+                li7 li7Var = this.F3;
                 if (z) {
-                    hl.r(ki7Var);
-                    hl.d3(ki7Var, 250L);
+                    hl.r(li7Var);
+                    hl.d3(li7Var, 250L);
                 } else {
-                    hl.r(ki7Var);
+                    hl.r(li7Var);
                     lcb lcbVar = ((ccb) this.A1).d;
                     lcbVar.l1 = true;
                     lcbVar.U();
@@ -5414,8 +5419,8 @@ public abstract class o68 extends wma implements fn7 {
             }
         }
         canvas.save();
-        t58 t58Var = this.M0;
-        canvas.scale(i / t58Var.getMeasuredWidth(), i2 / t58Var.getMeasuredHeight());
+        u58 u58Var = this.M0;
+        canvas.scale(i / u58Var.getMeasuredWidth(), i2 / u58Var.getMeasuredHeight());
         this.O0.h(canvas, null);
         canvas.restore();
     }
@@ -5454,15 +5459,15 @@ public abstract class o68 extends wma implements fn7 {
                 for (int i = 0; i < viewGroup.getChildCount(); i++) {
                     View childAt = viewGroup.getChildAt(i);
                     if (childAt.getVisibility() == 0) {
-                        y58 y58Var = this.u0;
-                        if (childAt == y58Var) {
+                        z58 z58Var = this.u0;
+                        if (childAt == z58Var) {
                             Rect rect = hl.Q;
                             childAt.getHitRect(rect);
                             if (rect.contains((int) f, (int) f2)) {
                                 float top = f2 - childAt.getTop();
-                                f7b f7bVar = y58Var.b0;
-                                if (f7bVar.x == 1.0f && !y58Var.s0) {
-                                    if (top > f7bVar.getTranslationY() + (y58Var.r0.getTop() - y58Var.getScrollY())) {
+                                f7b f7bVar = z58Var.b0;
+                                if (f7bVar.x == 1.0f && !z58Var.s0) {
+                                    if (top > f7bVar.getTranslationY() + (z58Var.r0.getTop() - z58Var.getScrollY())) {
                                     }
                                 }
                             }
@@ -5470,13 +5475,13 @@ public abstract class o68 extends wma implements fn7 {
                         Rect rect2 = hl.Q;
                         childAt.getHitRect(rect2);
                         if ((childAt != this.M0 || (d30Var = this.w2) == null || (jxVar = (jx) d30Var.e) == null || !y0(jxVar, f - childAt.getX(), f2 - childAt.getY(), z)) && (!childAt.isClickable() || !rect2.contains((int) f, (int) f2))) {
-                            r58 r58Var = this.T0;
-                            if (childAt == r58Var && r58Var.b == null && (f < hl.L(60.0f) || f > viewGroup.getMeasuredWidth() - hl.L(60.0f))) {
-                                Matrix matrix = r58Var.e;
-                                float[] fArr = r58Var.f;
-                                for (int i2 = 0; i2 < r58Var.getChildCount(); i2++) {
-                                    View childAt2 = r58Var.getChildAt(i2);
-                                    if (childAt2 != r58Var.d && (childAt2 instanceof aab)) {
+                            s58 s58Var = this.T0;
+                            if (childAt == s58Var && s58Var.b == null && (f < hl.L(60.0f) || f > viewGroup.getMeasuredWidth() - hl.L(60.0f))) {
+                                Matrix matrix = s58Var.e;
+                                float[] fArr = s58Var.f;
+                                for (int i2 = 0; i2 < s58Var.getChildCount(); i2++) {
+                                    View childAt2 = s58Var.getChildAt(i2);
+                                    if (childAt2 != s58Var.d && (childAt2 instanceof aab)) {
                                         childAt2.getMatrix().invert(matrix);
                                         fArr[0] = f;
                                         fArr[1] = f2;
@@ -5486,17 +5491,17 @@ public abstract class o68 extends wma implements fn7 {
                                     }
                                 }
                             } else {
-                                b58 b58Var = this.v0;
-                                if (childAt == b58Var) {
-                                    qob qobVar = b58Var.f;
-                                    gu guVar = b58Var.c;
-                                    qob qobVar2 = b58Var.f;
+                                c58 c58Var = this.v0;
+                                if (childAt == c58Var) {
+                                    qob qobVar = c58Var.f;
+                                    gu guVar = c58Var.c;
+                                    qob qobVar2 = c58Var.f;
                                     qobVar.getHitRect(rect2);
-                                    if (!rect2.contains((int) ((f - b58Var.getX()) - qobVar2.getX()), (int) ((f2 - b58Var.getY()) - qobVar2.getY()))) {
-                                        if (b58Var.g0) {
+                                    if (!rect2.contains((int) ((f - c58Var.getX()) - qobVar2.getX()), (int) ((f2 - c58Var.getY()) - qobVar2.getY()))) {
+                                        if (c58Var.g0) {
                                             continue;
                                         } else if (!this.f2) {
-                                            if (f2 <= b58Var.r() + b58Var.getY() && guVar.F(f, (f2 - b58Var.getY()) - guVar.getY()) == null) {
+                                            if (f2 <= c58Var.r() + c58Var.getY() && guVar.F(f, (f2 - c58Var.getY()) - guVar.getY()) == null) {
                                             }
                                         }
                                     }
@@ -5511,8 +5516,8 @@ public abstract class o68 extends wma implements fn7 {
                                             }
                                             if (childAt.isEnabled()) {
                                             }
-                                            g58 g58Var = this.L1;
-                                            if (g58Var != null && childAt == g58Var.getRecordCircle()) {
+                                            h58 h58Var = this.L1;
+                                            if (h58Var != null && childAt == h58Var.getRecordCircle()) {
                                             }
                                         }
                                     }
@@ -5531,9 +5536,9 @@ public abstract class o68 extends wma implements fn7 {
 
     public final boolean z0(View view, MotionEvent motionEvent) {
         float x = getX();
-        t58 t58Var = this.M0;
-        float x2 = view.getX() + t58Var.getX() + x;
-        float y = view.getY() + t58Var.getY() + getY();
+        u58 u58Var = this.M0;
+        float x2 = view.getX() + u58Var.getX() + x;
+        float y = view.getY() + u58Var.getY() + getY();
         return motionEvent.getX() >= x2 && motionEvent.getX() <= x2 + ((float) view.getWidth()) && motionEvent.getY() >= y && motionEvent.getY() <= y + ((float) view.getHeight());
     }
 }

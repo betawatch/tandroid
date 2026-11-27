@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class zw7 extends a44 {
     public final Paint h;
@@ -14,12 +14,12 @@ public final class zw7 extends a44 {
     public float s;
     public int w;
     public int x;
-    public final /* synthetic */ vab y;
+    public final /* synthetic */ wab y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zw7(vab vabVar, Context context, v34 v34Var) {
+    public zw7(wab wabVar, Context context, v34 v34Var) {
         super(context, v34Var);
-        this.y = vabVar;
+        this.y = wabVar;
         Paint paint = new Paint();
         this.h = paint;
         setWillNotDraw(false);
@@ -48,14 +48,14 @@ public final class zw7 extends a44 {
         super.onDraw(canvas);
         long min = Math.min(16L, System.currentTimeMillis() - this.n);
         this.n = System.currentTimeMillis();
-        vab vabVar = this.y;
-        h44 h44Var = vabVar.t0;
+        wab wabVar = this.y;
+        h44 h44Var = wabVar.t0;
         if (h44Var == null || h44Var.r || !h44Var.n) {
             i = 0;
             i2 = 0;
         } else {
             i = h44Var.getStickyX();
-            i2 = vabVar.t0.getStickyY();
+            i2 = wabVar.t0.getStickyY();
         }
         if (i != 0) {
             this.w = i;
@@ -128,14 +128,14 @@ public final class zw7 extends a44 {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        vab vabVar = this.y;
-        zw7 zw7Var = vabVar.B0;
-        if (vabVar.B1 <= 0) {
-            vabVar.B1 = zw7Var.getMeasuredWidth();
+        wab wabVar = this.y;
+        zw7 zw7Var = wabVar.B0;
+        if (wabVar.B1 <= 0) {
+            wabVar.B1 = zw7Var.getMeasuredWidth();
         }
-        if (vabVar.C1 <= 0) {
-            vabVar.C1 = zw7Var.getMeasuredHeight();
+        if (wabVar.C1 <= 0) {
+            wabVar.C1 = zw7Var.getMeasuredHeight();
         }
-        vabVar.G0();
+        wabVar.G0();
     }
 }

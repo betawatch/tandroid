@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ld5 extends c79 {
     public final Context c;
@@ -53,21 +53,21 @@ public final class ld5 extends c79 {
         int i3 = f89Var.f;
         View view = f89Var.a;
         if (i3 == 0) {
-            p3b p3bVar = (p3b) view;
+            q3b q3bVar = (q3b) view;
             if (i == nd5Var.K) {
-                p3bVar.b(false, false);
-                p3bVar.d(nd5Var.r, false, false);
-                p3bVar.setDeleteAction(new sa5(this, (byte) 6));
+                q3bVar.b(false, false);
+                q3bVar.d(nd5Var.r, false, false);
+                q3bVar.setDeleteAction(new sa5(this, (byte) 6));
                 return;
             }
             i2 = ((e) nd5Var).currentAccount;
             ArrayList t0 = ls6.d0(i2).t0(nd5Var.d0());
             int i4 = i - nd5Var.F;
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) t0.get(i4);
-            p3bVar.d((TLRPC.TL_messages_stickerSet) t0.get(i4), i4 != t0.size() - 1, false);
-            p3bVar.setDeleteAction(null);
+            q3bVar.d((TLRPC.TL_messages_stickerSet) t0.get(i4), i4 != t0.size() - 1, false);
+            q3bVar.setDeleteAction(null);
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = nd5Var.r;
-            p3bVar.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : nd5Var.c0(nd5Var.w) != null ? nd5Var.c0(nd5Var.w).id : 0L), false);
+            q3bVar.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : nd5Var.c0(nd5Var.w) != null ? nd5Var.c0(nd5Var.w).id : 0L), false);
             return;
         }
         if (i3 == 1) {
@@ -125,23 +125,23 @@ public final class ld5 extends c79 {
 
     @Override // j79
     public final f89 x(ViewGroup viewGroup, int i) {
-        View p3bVar;
+        View q3bVar;
         Context context = this.c;
         if (i == 0) {
-            p3bVar = new p3b(context, 3);
-            yob.h(aob.d6, null, p3bVar);
+            q3bVar = new q3b(context, 3);
+            yob.h(aob.d6, null, q3bVar);
         } else if (i == 1) {
-            p3bVar = new ilb(context);
+            q3bVar = new ilb(context);
         } else if (i != 5) {
-            p3bVar = new mf5(context);
-            yob.h(aob.d6, null, p3bVar);
+            q3bVar = new mf5(context);
+            yob.h(aob.d6, null, q3bVar);
         } else {
             nd5 nd5Var = this.d;
             kd5 kd5Var = new kd5(nd5Var, context);
             nd5Var.P = kd5Var;
-            p3bVar = kd5Var;
+            q3bVar = kd5Var;
         }
-        p3bVar.setLayoutParams(new r79(-1, -2));
-        return new n69(p3bVar);
+        q3bVar.setLayoutParams(new r79(-1, -2));
+        return new n69(q3bVar);
     }
 }

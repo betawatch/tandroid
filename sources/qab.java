@@ -1,47 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+import org.telegram.messenger.camera.CameraController;
+
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qab implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ rab b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ sab b;
 
-    public /* synthetic */ qab(rab rabVar, Runnable runnable, boolean z) {
-        this.b = rabVar;
-        this.c = runnable;
-        this.d = z;
+    public /* synthetic */ qab(sab sabVar, byte b) {
+        this.a = b;
+        this.b = sabVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        boolean z = this.d;
-        Runnable runnable = this.c;
-        rab rabVar = this.b;
+        sab sabVar = this.b;
         switch (b) {
             case 0:
-                rabVar.g(runnable, z);
+                sbb sbbVar = sabVar.a;
+                oy8 oy8Var = sbbVar.D0;
+                if (oy8Var != null) {
+                    oy8Var.f(false);
+                }
+                if (sbbVar.R1 && sbbVar.S1 && sbbVar.C0 != null) {
+                    sbbVar.i0(false);
+                    CameraController.getInstance().stopVideoRecording(sbbVar.C0.getCameraSessionRecording(), false, false);
+                    break;
+                }
+                break;
+            case 1:
+                sabVar.a.I(1, true);
+                break;
+            case 2:
+                sabVar.a.I(1, true);
                 break;
             default:
-                runnable.run();
-                rbb rbbVar = rabVar.a;
-                hg5 hg5Var = rbbVar.U0;
-                hg5Var.a.t(ob6.M0(z ? 2131744314 : 2131744315, null), false, true);
-                hg5Var.invalidate();
-                rbbVar.e(true, true);
-                rbbVar.c0(true);
-                rbbVar.J0.a(false, true);
-                rbbVar.K0.b(true, true);
-                rbbVar.h0(true, true);
+                sabVar.a.I(1, true);
                 break;
         }
-    }
-
-    public /* synthetic */ qab(rab rabVar, boolean z, Runnable runnable) {
-        this.b = rabVar;
-        this.d = z;
-        this.c = runnable;
     }
 }

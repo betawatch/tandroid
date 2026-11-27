@@ -3,7 +3,7 @@
 import android.net.Uri;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class hl1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class hl1 implements Runnable {
             case 5:
                 zu1 zu1Var3 = this.b;
                 String str3 = this.c;
-                String str4 = zu1Var3.getMessagesController().k4.O1.f;
+                String str4 = zu1Var3.getMessagesController().l4.O1.f;
                 if (TextUtils.isEmpty(str4)) {
                     str4 = "https://tonviewer.com/";
                 } else if (!str4.endsWith("/")) {

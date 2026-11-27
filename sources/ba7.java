@@ -36,7 +36,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ba7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -103,7 +103,7 @@ public final /* synthetic */ class ba7 implements Runnable {
         }
         ArrayList arrayList2 = new ArrayList();
         arrayList2.add(M0);
-        uc7Var.getMessagesStorage().j1(null, arrayList2, true, true);
+        uc7Var.getMessagesStorage().n1(null, arrayList2, true, true);
         uc7Var.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
         runnable.run();
     }
@@ -151,13 +151,13 @@ public final /* synthetic */ class ba7 implements Runnable {
     }
 
     private final void d() {
-        jf7 jf7Var = (jf7) this.b;
-        jf7Var.getMessagesController().J((TLRPC.TL_dialog) this.d, (TLRPC.InputPeer) this.e, this.c);
+        kf7 kf7Var = (kf7) this.b;
+        kf7Var.getMessagesController().J((TLRPC.TL_dialog) this.d, (TLRPC.InputPeer) this.e, this.c);
     }
 
     private final void e() {
         long j;
-        jf7 jf7Var = (jf7) this.b;
+        kf7 kf7Var = (kf7) this.b;
         TLRPC.TL_messageReactions tL_messageReactions = (TLRPC.TL_messageReactions) this.d;
         TLRPC.TL_messageReactions tL_messageReactions2 = (TLRPC.TL_messageReactions) this.e;
         zh6 zh6Var = new zh6();
@@ -185,7 +185,7 @@ public final /* synthetic */ class ba7 implements Runnable {
             long j2 = zh6Var.j(i3);
             w49 w49Var = (w49) zh6Var.n(i3);
             if (!zh6Var2.d(j2)) {
-                z = jf7Var.getMessagesController().G5(j, w49Var, false) || z;
+                z = kf7Var.getMessagesController().G5(j, w49Var, false) || z;
             }
             i3++;
         }
@@ -193,31 +193,31 @@ public final /* synthetic */ class ba7 implements Runnable {
             long j3 = zh6Var2.j(i4);
             w49 w49Var2 = (w49) zh6Var2.n(i4);
             if (!zh6Var.d(j3)) {
-                z = jf7Var.getMessagesController().G5(j, w49Var2, true) || z;
+                z = kf7Var.getMessagesController().G5(j, w49Var2, true) || z;
             }
         }
         if (z) {
             if (j != 0) {
-                jf7Var.getMessagesController().E5(0L);
+                kf7Var.getMessagesController().E5(0L);
             }
-            jf7Var.getMessagesController().E5(j);
+            kf7Var.getMessagesController().E5(j);
         }
     }
 
     private final void f() {
-        jf7 jf7Var = (jf7) this.b;
+        kf7 kf7Var = (kf7) this.b;
         TLRPC.User[] userArr = (TLRPC.User[]) this.d;
         CountDownLatch countDownLatch = (CountDownLatch) this.e;
-        userArr[0] = jf7Var.g0(this.c);
+        userArr[0] = kf7Var.i0(this.c);
         countDownLatch.countDown();
     }
 
     private final void g() {
-        jf7 jf7Var = (jf7) this.b;
+        kf7 kf7Var = (kf7) this.b;
         ArrayList arrayList = (ArrayList) this.d;
         ArrayList arrayList2 = (ArrayList) this.e;
-        jf7Var.getFileLoader().g(arrayList);
-        jf7Var.getMessagesController().t3(arrayList2, this.c);
+        kf7Var.getFileLoader().g(arrayList);
+        kf7Var.getMessagesController().t3(arrayList2, this.c);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0036, code lost:
@@ -228,17 +228,17 @@ public final /* synthetic */ class ba7 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final void h() {
-        jf7 jf7Var = (jf7) this.b;
+        kf7 kf7Var = (kf7) this.b;
         long j = this.c;
         Boolean[] boolArr = (Boolean[]) this.d;
         CountDownLatch countDownLatch = (CountDownLatch) this.e;
         SQLiteCursor sQLiteCursor = null;
         try {
             try {
-                sQLiteCursor = jf7Var.b.queryFinalized("SELECT date FROM dialogs WHERE did = " + j, new Object[0]);
+                sQLiteCursor = kf7Var.b.queryFinalized("SELECT date FROM dialogs WHERE did = " + j, new Object[0]);
                 boolArr[0] = Boolean.valueOf(sQLiteCursor.next());
             } catch (Exception e) {
-                jf7Var.n(e, true);
+                kf7Var.p(e, true);
             }
             sQLiteCursor.dispose();
             countDownLatch.countDown();
@@ -258,26 +258,26 @@ public final /* synthetic */ class ba7 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final void i() {
-        jf7 jf7Var = (jf7) this.b;
+        kf7 kf7Var = (kf7) this.b;
         long j = this.c;
         Integer[] numArr = (Integer[]) this.d;
         CountDownLatch countDownLatch = (CountDownLatch) this.e;
-        jf7Var.getClass();
+        kf7Var.getClass();
         SQLiteCursor sQLiteCursor = null;
         try {
             try {
-                sQLiteCursor = jf7Var.b.queryFinalized("SELECT pts FROM dialogs WHERE did = " + (-j), new Object[0]);
+                sQLiteCursor = kf7Var.b.queryFinalized("SELECT pts FROM dialogs WHERE did = " + (-j), new Object[0]);
                 if (sQLiteCursor.next()) {
                     numArr[0] = Integer.valueOf(sQLiteCursor.intValue(0));
                 }
             } catch (Exception e) {
-                jf7Var.n(e, true);
+                kf7Var.p(e, true);
             }
             sQLiteCursor.dispose();
             try {
                 countDownLatch.countDown();
             } catch (Exception e2) {
-                jf7Var.n(e2, true);
+                kf7Var.p(e2, true);
             }
         } catch (Throwable th) {
             if (sQLiteCursor != null) {
@@ -288,15 +288,15 @@ public final /* synthetic */ class ba7 implements Runnable {
     }
 
     private final void j() {
-        jf7 jf7Var = (jf7) this.b;
+        kf7 kf7Var = (kf7) this.b;
         TLRPC.Chat[] chatArr = (TLRPC.Chat[]) this.d;
         CountDownLatch countDownLatch = (CountDownLatch) this.e;
-        chatArr[0] = jf7Var.N(this.c);
+        chatArr[0] = kf7Var.P(this.c);
         countDownLatch.countDown();
     }
 
     private final void k() {
-        jf7 jf7Var = (jf7) this.b;
+        kf7 kf7Var = (kf7) this.b;
         long j = this.c;
         ArrayList arrayList = (ArrayList) this.d;
         CountDownLatch countDownLatch = (CountDownLatch) this.e;
@@ -304,17 +304,17 @@ public final /* synthetic */ class ba7 implements Runnable {
             try {
                 ArrayList arrayList2 = new ArrayList();
                 ArrayList arrayList3 = new ArrayList();
-                jf7Var.T(String.valueOf(j), arrayList3, arrayList2);
+                kf7Var.V(String.valueOf(j), arrayList3, arrayList2);
                 if (!arrayList3.isEmpty() && !arrayList2.isEmpty()) {
                     ArrayList arrayList4 = new ArrayList();
-                    jf7Var.k0(arrayList2, arrayList4, false);
+                    kf7Var.m0(arrayList2, arrayList4, false);
                     if (!arrayList4.isEmpty()) {
                         arrayList.add((TLObject) arrayList3.get(0));
                         arrayList.add((TLObject) arrayList4.get(0));
                     }
                 }
             } catch (Exception e) {
-                jf7Var.n(e, true);
+                kf7Var.p(e, true);
             }
         } finally {
             countDownLatch.countDown();
@@ -349,7 +349,7 @@ public final /* synthetic */ class ba7 implements Runnable {
         SQLitePreparedStatement sQLitePreparedStatement4;
         int i7;
         SQLiteCursor sQLiteCursor2;
-        jf7 jf7Var = (jf7) this.b;
+        kf7 kf7Var = (kf7) this.b;
         long j = this.c;
         TLRPC.Poll poll = (TLRPC.Poll) this.d;
         TLRPC.PollResults pollResults = (TLRPC.PollResults) this.e;
@@ -357,7 +357,7 @@ public final /* synthetic */ class ba7 implements Runnable {
         SQLiteCursor sQLiteCursor3 = null;
         try {
             try {
-                SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                SQLiteDatabase sQLiteDatabase = kf7Var.b;
                 Locale locale = Locale.US;
                 SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT uid, mid FROM polls_v2 WHERE id = " + j, new Object[0]);
                 zh6 zh6Var2 = null;
@@ -378,7 +378,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                             } catch (Exception e) {
                                 e = e;
                                 sQLiteCursor3 = queryFinalized2;
-                                jf7Var.n(e, z);
+                                kf7Var.p(e, z);
                                 if (sQLiteCursor3 != null) {
                                     sQLiteCursor3.dispose();
                                     return;
@@ -396,9 +396,9 @@ public final /* synthetic */ class ba7 implements Runnable {
                 }
                 queryFinalized2.dispose();
                 if (zh6Var2 != null) {
-                    jf7Var.b.beginTransaction();
-                    SQLitePreparedStatement executeFast = jf7Var.b.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
-                    SQLitePreparedStatement executeFast2 = jf7Var.b.executeFast("UPDATE messages_topics SET data = ? WHERE mid = ? AND uid = ?");
+                    kf7Var.b.beginTransaction();
+                    SQLitePreparedStatement executeFast = kf7Var.b.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
+                    SQLitePreparedStatement executeFast2 = kf7Var.b.executeFast("UPDATE messages_topics SET data = ? WHERE mid = ? AND uid = ?");
                     int m = zh6Var2.m();
                     for (int i8 = 0; i8 < m; i8++) {
                         long j2 = zh6Var2.j(i8);
@@ -412,7 +412,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                             int i11 = 0;
                             boolean z2 = false;
                             while (i11 < 2) {
-                                SQLiteDatabase sQLiteDatabase2 = jf7Var.b;
+                                SQLiteDatabase sQLiteDatabase2 = kf7Var.b;
                                 int i12 = i9;
                                 if (i11 == 1) {
                                     Locale locale2 = Locale.US;
@@ -432,7 +432,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                                             e = e3;
                                             sQLiteCursor3 = sQLiteCursor2;
                                             z = true;
-                                            jf7Var.n(e, z);
+                                            kf7Var.p(e, z);
                                             if (sQLiteCursor3 != null) {
                                             }
                                         } catch (Throwable th2) {
@@ -463,7 +463,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                                         TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r6), r6);
                                         sQLitePreparedStatement4 = executeFast2;
                                         i7 = m;
-                                        TLdeserialize.readAttachPath(byteBufferValue, jf7Var.getUserConfig().n);
+                                        TLdeserialize.readAttachPath(byteBufferValue, kf7Var.getUserConfig().n);
                                         byteBufferValue.reuse();
                                         TLRPC.MessageMedia messageMedia = TLdeserialize.media;
                                         if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
@@ -507,7 +507,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                             SQLitePreparedStatement sQLitePreparedStatement6 = executeFast2;
                             int i14 = m;
                             if (!z2) {
-                                SQLiteDatabase sQLiteDatabase3 = jf7Var.b;
+                                SQLiteDatabase sQLiteDatabase3 = kf7Var.b;
                                 Locale locale4 = Locale.US;
                                 sQLiteDatabase3.executeFast("DELETE FROM polls_v2 WHERE mid = " + num + " AND uid = " + j2).stepThis().dispose();
                             }
@@ -522,8 +522,8 @@ public final /* synthetic */ class ba7 implements Runnable {
                     SQLitePreparedStatement sQLitePreparedStatement7 = executeFast2;
                     executeFast.dispose();
                     sQLitePreparedStatement7.dispose();
-                    SQLitePreparedStatement executeFast3 = jf7Var.b.executeFast("UPDATE media_v4 SET data = ? WHERE mid = ? AND uid = ?");
-                    SQLitePreparedStatement executeFast4 = jf7Var.b.executeFast("UPDATE media_topics SET data = ? WHERE mid = ? AND uid = ? AND topic_id = ?");
+                    SQLitePreparedStatement executeFast3 = kf7Var.b.executeFast("UPDATE media_v4 SET data = ? WHERE mid = ? AND uid = ?");
+                    SQLitePreparedStatement executeFast4 = kf7Var.b.executeFast("UPDATE media_topics SET data = ? WHERE mid = ? AND uid = ? AND topic_id = ?");
                     int m2 = zh6Var2.m();
                     SQLiteCursor sQLiteCursor5 = sQLiteCursor3;
                     int i15 = 0;
@@ -543,7 +543,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                                     while (i17 < 1) {
                                         boolean z3 = i17 == 1;
                                         try {
-                                            SQLiteDatabase sQLiteDatabase4 = jf7Var.b;
+                                            SQLiteDatabase sQLiteDatabase4 = kf7Var.b;
                                             if (z3) {
                                                 Locale locale5 = Locale.US;
                                                 sQLitePreparedStatement = executeFast4;
@@ -577,7 +577,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                                                         TLRPC.Message TLdeserialize2 = TLRPC.Message.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
                                                         arrayList = arrayList4;
                                                         i5 = size2;
-                                                        TLdeserialize2.readAttachPath(byteBufferValue2, jf7Var.getUserConfig().n);
+                                                        TLdeserialize2.readAttachPath(byteBufferValue2, kf7Var.getUserConfig().n);
                                                         byteBufferValue2.reuse();
                                                         TLRPC.MessageMedia messageMedia2 = TLdeserialize2.media;
                                                         if (messageMedia2 instanceof TLRPC.TL_messageMediaPoll) {
@@ -634,7 +634,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                                                 sQLiteCursor7 = queryFinalized2;
                                                 sQLiteCursor3 = sQLiteCursor7;
                                                 z = true;
-                                                jf7Var.n(e, z);
+                                                kf7Var.p(e, z);
                                                 if (sQLiteCursor3 != null) {
                                                 }
                                             } catch (Throwable th4) {
@@ -679,7 +679,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                     SQLitePreparedStatement sQLitePreparedStatement9 = executeFast4;
                     executeFast3.dispose();
                     sQLitePreparedStatement9.dispose();
-                    jf7Var.b.commitTransaction();
+                    kf7Var.b.commitTransaction();
                     sQLiteCursor3 = sQLiteCursor5;
                 }
                 if (sQLiteCursor3 != null) {
@@ -702,7 +702,7 @@ public final /* synthetic */ class ba7 implements Runnable {
         r4c r4cVar = new r4c(photoViewer, str, no6Var, j);
         if (photoViewer.E2) {
             Bitmap createBitmap = Bitmap.createBitmap(photoViewer.D2.getWidth(), photoViewer.D2.getHeight(), Bitmap.Config.ARGB_8888);
-            hl.z0(photoViewer.D2, createBitmap, new h68(r4cVar, createBitmap, (byte) 4));
+            hl.z0(photoViewer.D2, createBitmap, new a58(r4cVar, createBitmap, (byte) 5));
             return;
         }
         TextureView textureView = photoViewer.C2;
@@ -856,7 +856,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                     if (dialog4.last_message_date == 0) {
                         dialog4.last_message_date = r47Var.k.date;
                     }
-                    uc7Var2.i4.c(j3);
+                    uc7Var2.j4.c(j3);
                 }
                 uc7Var2.h5(null);
                 uc7Var2.getNotificationCenter().k(3, Boolean.TRUE);
@@ -985,7 +985,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                             }
                         }
                     }
-                    int i8 = uc7.r5;
+                    int i8 = uc7.s5;
                     uj3Var.G5(196608, true);
                     return;
                 }
@@ -1283,14 +1283,14 @@ public final /* synthetic */ class ba7 implements Runnable {
                 return;
             default:
                 b19 b19Var = (b19) this.b;
-                jf7 jf7Var = (jf7) this.d;
+                kf7 kf7Var = (kf7) this.d;
                 long j18 = this.c;
                 Runnable runnable = (Runnable) this.e;
                 ArrayList arrayList7 = new ArrayList();
                 ArrayList arrayList8 = new ArrayList();
                 ArrayList arrayList9 = new ArrayList();
                 try {
-                    SQLiteDatabase sQLiteDatabase2 = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase2 = kf7Var.b;
                     SQLiteCursor queryFinalized = sQLiteDatabase2.queryFinalized("SELECT topic_id, name, order_value, count FROM business_replies ORDER BY order_value ASC", new Object[0]);
                     while (queryFinalized.next()) {
                         try {
@@ -1358,7 +1358,7 @@ public final /* synthetic */ class ba7 implements Runnable {
                                     TLdeserialize.flags |= TLObject.FLAG_30;
                                     TLdeserialize.quick_reply_shortcut_id = queryFinalized.intValue(4);
                                     TLdeserialize.ttl = queryFinalized.intValue(5);
-                                    jf7.d(TLdeserialize, arrayList10, arrayList11, null);
+                                    kf7.d(TLdeserialize, arrayList10, arrayList11, null);
                                     j = j18;
                                     r47 r47Var3 = new r47(b19Var.a, TLdeserialize, false, true);
                                     a19Var2.e = r47Var3;
@@ -1397,10 +1397,10 @@ public final /* synthetic */ class ba7 implements Runnable {
                     }
                     sQLiteCursor2 = queryFinalized;
                     if (!arrayList11.isEmpty()) {
-                        jf7Var.P(TextUtils.join(",", arrayList11), arrayList9);
+                        kf7Var.R(TextUtils.join(",", arrayList11), arrayList9);
                     }
                     if (!arrayList10.isEmpty()) {
-                        jf7Var.k0(arrayList10, arrayList8, false);
+                        kf7Var.m0(arrayList10, arrayList8, false);
                     }
                     sQLiteCursor2.dispose();
                 } catch (Exception e5) {

@@ -13,7 +13,7 @@ import java.util.Locale;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class vc6 extends og0 {
     public int E;
@@ -594,9 +594,9 @@ public class vc6 extends og0 {
                         view = view2;
                         break;
                     case 10:
-                        View rcaVar = new rca(context, (uh9) null);
+                        View scaVar = new sca(context, (uh9) null);
                         new zm2(new ColorDrawable(aob.v0(aob.a7, vnbVar)), aob.W0(context, R.drawable.greydivider_bottom, aob.b7)).x = true;
-                        view = rcaVar;
+                        view = scaVar;
                         break;
                     case 11:
                         View view3 = new View(context);

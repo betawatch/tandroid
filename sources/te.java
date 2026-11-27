@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.PollVotesAlert$UserCell;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class te implements Runnable {
     public final /* synthetic */ byte a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class te implements Runnable {
                         } else {
                             uc7.s1(i).j4(tL_contacts_resolvedPeer.users, false);
                             uc7.s1(i).c4(tL_contacts_resolvedPeer.chats, false);
-                            jf7.Y(i).j1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
+                            kf7.a0(i).n1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
                             TLRPC.Chat chat = tL_contacts_resolvedPeer.chats.get(0);
                             xi5Var.n = chat;
                             if (!chat.left || chat.kicked) {
@@ -344,7 +344,7 @@ public final /* synthetic */ class te implements Runnable {
                         yac.h(i).v(X1);
                         yac.h(i).u(z2);
                         bt1Var.run();
-                        d31.b0(wk5Var.getLastFragment()).V(Collections.singletonList(X1), hl.S2(ob6.M0(2131754212, null)), hl.N2(ob6.M0(2131754213, null), -1, 0, new me7(i, wk5Var, (byte) 5), null), null).j();
+                        d31.b0(wk5Var.getLastFragment()).V(Collections.singletonList(X1), hl.S2(ob6.M0(2131754212, null)), hl.N2(ob6.M0(2131754213, null), -1, 0, new oe7(i, wk5Var, (byte) 5), null), null).j();
                         break;
                     }
                 }

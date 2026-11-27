@@ -2,17 +2,17 @@
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class bba {
-    public final aca a;
-    public final aca b;
+    public final bca a;
+    public final bca b;
 
-    public bba(aca acaVar, aca acaVar2) {
-        acaVar.getClass();
-        acaVar2.getClass();
-        this.a = acaVar;
-        this.b = acaVar2;
+    public bba(bca bcaVar, bca bcaVar2) {
+        bcaVar.getClass();
+        bcaVar2.getClass();
+        this.a = bcaVar;
+        this.b = bcaVar2;
     }
 
     public final double a() {
@@ -68,7 +68,7 @@ public final class bba {
                     if (i != 1) {
                         if (i == 2) {
                             ixe.b(obj);
-                            return f9c.a;
+                            return g9c.a;
                         }
                         grb.i("call to 'resume' before 'invoke' with coroutine");
                         return null;

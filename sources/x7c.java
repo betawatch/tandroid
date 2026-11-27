@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class x7c extends ReplacementSpan {
     public final px3 b;
@@ -36,7 +36,7 @@ public final class x7c extends ReplacementSpan {
         float abs = Math.abs(fontMetricsInt2.descent - fontMetricsInt2.ascent) * 1.0f;
         px3 px3Var = this.b;
         this.c = abs / (px3Var.b().a(14) != 0 ? r8.b.getShort(r1 + r8.a) : (short) 0);
-        xf7 b = px3Var.b();
+        yf7 b = px3Var.b();
         int a = b.a(14);
         if (a != 0) {
             b.b.getShort(a + b.a);

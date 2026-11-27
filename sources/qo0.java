@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class qo0 implements kcc {
     public final /* synthetic */ byte a;
@@ -39,11 +39,12 @@ public final /* synthetic */ class qo0 implements kcc {
         String str3;
         long j;
         long j2;
-        vab vabVar;
+        wab wabVar;
         long j3 = 0;
         str = "NULL_ERROR";
+        byte b = 3;
         String str4 = null;
-        byte b = 0;
+        byte b2 = 0;
         switch (this.a) {
             case 0:
                 uo0 uo0Var = (uo0) this.b;
@@ -165,7 +166,7 @@ public final /* synthetic */ class qo0 implements kcc {
                     TL_wallet.fetchEncryptedSecretPhrasePart fetchencryptedsecretphrasepart = new TL_wallet.fetchEncryptedSecretPhrasePart();
                     fetchencryptedsecretphrasepart.token = secretphraseparts.token;
                     fetchencryptedsecretphrasepart.public_key = key_to_public_key;
-                    ConnectionsManager.getInstance(cVar.a).sendRequestTyped(fetchencryptedsecretphrasepart, new ic(b), new icc() { // from class: p25
+                    ConnectionsManager.getInstance(cVar.a).sendRequestTyped(fetchencryptedsecretphrasepart, new ic(b2), new icc() { // from class: p25
                         @Override // icc
                         public final void a(Object obj4, Object obj5) {
                             c cVar2 = c.this;
@@ -254,20 +255,20 @@ public final /* synthetic */ class qo0 implements kcc {
                     return;
                 }
             case 5:
-                b58 b58Var = (b58) this.b;
+                c58 c58Var = (c58) this.b;
                 m96 m96Var = (m96) this.c;
                 Boolean bool2 = (Boolean) obj;
                 Boolean bool3 = (Boolean) obj3;
-                int i2 = b58Var.O;
+                int i2 = c58Var.O;
                 if (((Boolean) obj2).booleanValue()) {
                     TL_phone.deleteGroupCallParticipantMessages deletegroupcallparticipantmessages = new TL_phone.deleteGroupCallParticipantMessages();
-                    deletegroupcallparticipantmessages.call = b58Var.P;
+                    deletegroupcallparticipantmessages.call = c58Var.P;
                     deletegroupcallparticipantmessages.participant = uc7.s1(i2).j1(m96Var.c);
                     deletegroupcallparticipantmessages.report_spam = bool2.booleanValue();
                     ConnectionsManager.getInstance(i2).sendRequest(deletegroupcallparticipantmessages, null);
                     long j4 = m96Var.c;
-                    ArrayList arrayList2 = b58Var.r;
-                    ArrayList arrayList3 = b58Var.s;
+                    ArrayList arrayList2 = c58Var.r;
+                    ArrayList arrayList3 = c58Var.s;
                     int i3 = 0;
                     boolean z2 = false;
                     while (i3 < arrayList2.size()) {
@@ -283,7 +284,7 @@ public final /* synthetic */ class qo0 implements kcc {
                                             arrayList3.remove(i4);
                                             z2 = true;
                                         } else {
-                                            b58Var.l();
+                                            c58Var.l();
                                         }
                                     } else {
                                         i4++;
@@ -291,7 +292,7 @@ public final /* synthetic */ class qo0 implements kcc {
                                 }
                             }
                             arrayList2.remove(i3);
-                            b58Var.e.O(true);
+                            c58Var.e.O(true);
                             i3--;
                         } else {
                             j2 = j3;
@@ -302,68 +303,68 @@ public final /* synthetic */ class qo0 implements kcc {
                     j = j3;
                     if (z2) {
                         ConnectionsManager.getInstance(i2).getCurrentTime();
-                        Collections.sort(arrayList3, new f03(b58Var, (byte) 25));
-                        b58Var.n.O(true);
-                        b58Var.s();
+                        Collections.sort(arrayList3, new f03(c58Var, (byte) 25));
+                        c58Var.n.O(true);
+                        c58Var.s();
                     }
                 } else {
                     j = 0;
                     TL_phone.deleteGroupCallMessages deletegroupcallmessages = new TL_phone.deleteGroupCallMessages();
-                    deletegroupcallmessages.call = b58Var.P;
+                    deletegroupcallmessages.call = c58Var.P;
                     deletegroupcallmessages.messages.add(Integer.valueOf(m96Var.a));
                     ConnectionsManager.getInstance(i2).sendRequest(deletegroupcallmessages, null);
-                    b58Var.b(m96Var.a);
+                    c58Var.b(m96Var.a);
                 }
                 if (bool3.booleanValue()) {
-                    if (b58Var.N >= j) {
-                        uc7.s1(i2).u(b58Var.N);
+                    if (c58Var.N >= j) {
+                        uc7.s1(i2).u(c58Var.N);
                         return;
                     } else {
-                        uc7.s1(i2).c0(-b58Var.N, uc7.s1(i2).j1(m96Var.c), true, null);
+                        uc7.s1(i2).c0(-c58Var.N, uc7.s1(i2).j1(m96Var.c), true, null);
                         return;
                     }
                 }
                 return;
             default:
-                hbb hbbVar = (hbb) this.b;
+                ibb ibbVar = (ibb) this.b;
                 xb1 xb1Var = (xb1) this.c;
                 File file = (File) obj;
                 String str9 = (String) obj2;
                 Long l = (Long) obj3;
-                rbb rbbVar = hbbVar.S1;
-                gbb gbbVar = rbbVar.Y0;
-                if (gbbVar != null) {
-                    gbbVar.P = false;
-                    gbbVar.b();
-                    gbb gbbVar2 = rbbVar.Y0;
-                    gbbVar2.m(0L);
-                    ksb ksbVar = gbbVar2.G;
+                sbb sbbVar = ibbVar.S1;
+                hbb hbbVar = sbbVar.Y0;
+                if (hbbVar != null) {
+                    hbbVar.P = false;
+                    hbbVar.b();
+                    hbb hbbVar2 = sbbVar.Y0;
+                    hbbVar2.m(0L);
+                    ksb ksbVar = hbbVar2.G;
                     if (ksbVar != null) {
                         ksbVar.setProgress(0L);
                     }
                 }
-                c8b c8bVar = rbbVar.L1;
+                c8b c8bVar = sbbVar.L1;
                 if (c8bVar != null) {
                     c8bVar.o0 = file;
                     c8bVar.p0 = str9;
                     c8bVar.q0 = l.longValue();
-                    c8b c8bVar2 = rbbVar.L1;
+                    c8b c8bVar2 = sbbVar.L1;
                     c8bVar2.s0 = 0.0f;
                     c8bVar2.t0 = 1.0f;
                     c8bVar2.r0 = 0L;
                     c8bVar2.u0 = 1.0f;
-                    rbbVar.s();
-                    if (rbbVar.Y0 == null || (vabVar = rbbVar.w1) == null) {
+                    sbbVar.s();
+                    if (sbbVar.Y0 == null || (wabVar = sbbVar.w1) == null) {
                         xb1Var.a(false);
                         return;
                     }
-                    pp9 j0 = vabVar.j0(rbbVar.L1.p0, true);
-                    hbbVar.setHasRoundVideo(true);
-                    rbbVar.Y0.s(rbbVar.L1, j0, true);
+                    pp9 j0 = wabVar.j0(sbbVar.L1.p0, true);
+                    ibbVar.setHasRoundVideo(true);
+                    sbbVar.Y0.s(sbbVar.L1, j0, true);
                     hl.r(xb1Var.h);
                     xb1Var.a.destroy(true, null);
                     j0.setDraw(false);
-                    xb1Var.post(new en9(xb1Var, j0, (byte) 2));
+                    xb1Var.post(new dn9(xb1Var, j0, b));
                     return;
                 }
                 return;

@@ -1,54 +1,27 @@
 // default package
 
-import androidx.datastore.core.NativeSharedCounter;
+import java.io.FileOutputStream;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class wi7 extends yfb implements is4 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ aj7 b;
+public final class wi7 extends ax2 {
+    public FileOutputStream a;
+    public long b;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ sae d;
+    public int e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ wi7(aj7 aj7Var, zw2 zw2Var, byte b) {
-        super(2, zw2Var);
-        this.a = b;
-        this.b = aj7Var;
-    }
-
-    @Override // qf0
-    public final zw2 create(Object obj, zw2 zw2Var) {
-        byte b = this.a;
-        aj7 aj7Var = this.b;
-        switch (b) {
-            case 0:
-                return new wi7(aj7Var, zw2Var, (byte) 0);
-            default:
-                return new wi7(aj7Var, zw2Var, (byte) 1);
-        }
-    }
-
-    @Override // is4
-    public final Object invoke(Object obj, Object obj2) {
-        byte b = this.a;
-        f9c f9cVar = f9c.a;
-        ux2 ux2Var = (ux2) obj;
-        zw2 zw2Var = (zw2) obj2;
-        switch (b) {
-        }
-        return ((wi7) create(ux2Var, zw2Var)).invokeSuspend(f9cVar);
+    public wi7(sae saeVar, zw2 zw2Var) {
+        super(zw2Var);
+        this.d = saeVar;
     }
 
     @Override // qf0
     public final Object invokeSuspend(Object obj) {
-        byte b = this.a;
-        NativeSharedCounter nativeSharedCounter = yea.b;
-        aj7 aj7Var = this.b;
-        ixe.b(obj);
-        switch (b) {
-            case 0:
-                return new Integer(nativeSharedCounter.nativeGetCounterValue(((yea) aj7Var.i.getValue()).a));
-            default:
-                return new Integer(nativeSharedCounter.nativeIncrementAndGetCounterValue(((yea) aj7Var.i.getValue()).a));
-        }
+        this.c = obj;
+        this.e |= TLObject.FLAG_31;
+        return this.d.h(null, this);
     }
 }

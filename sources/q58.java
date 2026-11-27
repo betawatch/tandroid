@@ -1,63 +1,60 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.app.Activity;
 import android.view.View;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes3.dex */
-public final class q58 implements h49 {
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes2.dex */
+public final class q58 implements yq5 {
     public final /* synthetic */ o68 a;
 
     public q58(o68 o68Var) {
         this.a = o68Var;
     }
 
-    @Override // h49
-    public final void e(View view, w49 w49Var, boolean z, boolean z2) {
+    @Override // yq5
+    public final void G(no6 no6Var, oec oecVar, boolean z, int i, boolean z2, long j) {
+        k5 accountInstance;
+        k5 accountInstance2;
+        k5 accountInstance3;
         o68 o68Var = this.a;
-        if (z) {
-            jj.X(o68Var.m2, o68Var.l1, 1, new wv1(this, z, w49Var, view));
-        } else {
-            o68Var.d0(new lb7(this, view, w49Var, z, z2));
+        TL_stories.StoryItem storyItem = o68Var.y1.a;
+        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
+            return;
         }
-    }
-
-    @Override // h49
-    public final boolean j() {
-        return true;
-    }
-
-    @Override // h49
-    public final boolean k() {
-        return this.a.G0();
-    }
-
-    @Override // h49
-    public final void m(Canvas canvas, RectF rectF, float f, float f2, float f3, int i, boolean z) {
-        o68 o68Var = this.a;
-        Paint paint = o68Var.X1;
-        fp fpVar = o68Var.z1;
-        float f4 = -f2;
-        float f5 = -f3;
-        fpVar.i(f4, f5, o68Var.getMeasuredWidth() + f4, o68Var.getMeasuredHeight() + f5);
-        if (f > 0.0f) {
-            canvas.drawRoundRect(rectF, f, f, (Paint) fpVar.a);
-            canvas.drawRoundRect(rectF, f, f, paint);
-        } else {
-            canvas.drawRect(rectF, (Paint) fpVar.a);
-            canvas.drawRect(rectF, paint);
+        storyItem.dialogId = o68Var.l1;
+        if (no6Var.b) {
+            accountInstance3 = o68Var.getAccountInstance();
+            String str = no6Var.I;
+            r7a.a0(no6Var.x, i, o68Var.l1, 0L, j, 0L, accountInstance3, null, null, null, null, null, null, oecVar, no6Var.a, str, null, no6Var.n, null, storyItem, z, false, no6Var.M);
+        } else if (no6Var.h != null) {
+            accountInstance2 = o68Var.getAccountInstance();
+            r7a.Y(accountInstance2, no6Var.h, no6Var.c, null, o68Var.l1, null, null, null, no6Var.n, no6Var.r, null, no6Var.x, null, oecVar, z, i, false, no6Var.a, null, 0L, j, 0L, null);
+        } else if (no6Var.I != null) {
+            accountInstance = o68Var.getAccountInstance();
+            r7a.Y(accountInstance, no6Var.I, no6Var.c, null, o68Var.l1, null, null, null, no6Var.n, no6Var.r, null, no6Var.x, null, oecVar, z, i, false, no6Var.a, null, 0L, j, 0L, null);
         }
+        o68Var.a0(j <= 0);
     }
 
-    @Override // h49
-    public final void n() {
-        ((ccb) this.a.A1).b(false);
+    @Override // yq5
+    public final int getClassGuid() {
+        return this.a.j2;
     }
 
-    @Override // h49
-    public final boolean p() {
+    @Override // yq5
+    public final View getFragmentView() {
+        return this.a;
+    }
+
+    @Override // yq5
+    public final Activity getParentActivity() {
+        return hl.W(this.a.getContext());
+    }
+
+    @Override // yq5
+    public final boolean y() {
         return false;
     }
 }

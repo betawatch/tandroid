@@ -47,7 +47,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class pi9 extends q9c {
     public static final ArrayList A4 = new ArrayList();
@@ -109,7 +109,7 @@ public final class pi9 extends q9c {
     public final di9 v3;
     public final zh9 v4;
     public final lmb w3;
-    public final k09 w4;
+    public final l09 w4;
     public int x3;
     public final ArrayList x4;
     public int y3;
@@ -148,8 +148,8 @@ public final class pi9 extends q9c {
         this.t4 = -1;
         this.u4 = new oh9(this);
         this.v4 = new zh9(this);
-        k09 k09Var = new k09(this, (byte) 4);
-        this.w4 = k09Var;
+        l09 l09Var = new l09(this, (byte) 4);
+        this.w4 = l09Var;
         this.x4 = new ArrayList();
         this.z4 = -1;
         pi9[] pi9VarArr = {this};
@@ -171,7 +171,7 @@ public final class pi9 extends q9c {
         hl.B2(m);
         di9Var.D = new fi9(this, ni9Var);
         j(new bj1(this, ni9Var, (byte) 11));
-        this.R3 = new ch9(k09Var);
+        this.R3 = new ch9(l09Var);
     }
 
     public static boolean A3(TL_iv.PageBlock pageBlock) {
@@ -1782,7 +1782,7 @@ public final class pi9 extends q9c {
                                             }
                                             if (hashSet3.size() < model.c) {
                                                 i5 = i3;
-                                                i6 = (z4 || !z2 || model.c >= uc7.s1(this.n3).k4.k0.f()) ? 0 : i3;
+                                                i6 = (z4 || !z2 || model.c >= uc7.s1(this.n3).l4.k0.f()) ? 0 : i3;
                                                 i7 = (z4 || !z) ? 0 : i3;
                                                 fu5Var = this.r4;
                                                 i8 = i;
@@ -6479,7 +6479,7 @@ public final class pi9 extends q9c {
     }
 
     public final boolean J3() {
-        hr hrVar = uc7.s1(this.n3).k4;
+        hr hrVar = uc7.s1(this.n3).l4;
         int i = 0;
         int i2 = 0;
         while (true) {
@@ -12541,7 +12541,7 @@ public final class pi9 extends q9c {
     }
 
     public final boolean m3(int i) {
-        return ((mk0) this.t3.get(i)).c + 1 <= uc7.s1(this.n3).k4.i0.f() + (-6);
+        return ((mk0) this.t3.get(i)).c + 1 <= uc7.s1(this.n3).l4.i0.f() + (-6);
     }
 
     public final boolean n2() {

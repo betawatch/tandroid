@@ -25,7 +25,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class zz3 implements Runnable {
     public final /* synthetic */ byte a;
@@ -279,12 +279,12 @@ public final class zz3 implements Runnable {
                 ai4Var.D0.d(1);
                 mj0 mj0Var = ai4Var.D0;
                 String string = n.getString(R.string.fingerprint_dialog_touch_sensor);
-                qj7 qj7Var = mj0Var.y;
-                if (qj7Var == null) {
-                    qj7Var = new qj7();
-                    mj0Var.y = qj7Var;
+                rj7 rj7Var = mj0Var.y;
+                if (rj7Var == null) {
+                    rj7Var = new rj7();
+                    mj0Var.y = rj7Var;
                 }
-                mj0.f(qj7Var, string);
+                mj0.f(rj7Var, string);
                 return;
             case 5:
                 jm4 jm4Var = (jm4) this.b;
@@ -572,11 +572,11 @@ public final class zz3 implements Runnable {
                 radialProgressView.animate().setDuration(120L).alpha(1.0f).start();
                 return;
             case 21:
-                synchronized (((qj7) this.b).a) {
-                    obj = ((qj7) this.b).f;
-                    ((qj7) this.b).f = qj7.k;
+                synchronized (((rj7) this.b).a) {
+                    obj = ((rj7) this.b).f;
+                    ((rj7) this.b).f = rj7.k;
                 }
-                ((qj7) this.b).i(obj);
+                ((rj7) this.b).i(obj);
                 return;
             case 22:
                 ((pa6) this.b).b();

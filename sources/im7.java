@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.HashMap;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class im7 extends q9c implements t94 {
     public final int n3;
@@ -87,7 +87,7 @@ public final class im7 extends q9c implements t94 {
             if (z2 && (F instanceof v94) && getScrollState() == 0 && ((valueAnimator2 = this.x3) == null || !valueAnimator2.isRunning())) {
                 v94 v94Var = (v94) F;
                 if (v94Var.getMessage() != null) {
-                    km7 km7Var3 = (km7) hashMap.get(lm7.B0(i, v94Var.getMessage()));
+                    km7 km7Var3 = (km7) hashMap.get(lm7.z0(i, v94Var.getMessage()));
                     if (!(km7Var3 != null ? km7Var3.b() : km7Var2.b())) {
                         this.p3 = v94Var;
                         this.t3 = true;
@@ -113,7 +113,7 @@ public final class im7 extends q9c implements t94 {
                             this.t3 = false;
                             this.u3 = true;
                             this.v3 = false;
-                            this.w3 = !lm7Var.t0(i, this.p3.getMessage());
+                            this.w3 = !lm7Var.s0(i, this.p3.getMessage());
                             this.q3 = motionEvent.getX() - (f2 * f3);
                             getParent().requestDisallowInterceptTouchEvent(true);
                             K0(true);
@@ -140,13 +140,13 @@ public final class im7 extends q9c implements t94 {
                         boolean z5 = true;
                         z = z5;
                         if (jm7Var.f != null) {
-                            String B0 = lm7.B0(i, message2);
-                            km7 km7Var4 = (km7) hashMap.get(B0);
+                            String z0 = lm7.z0(i, message2);
+                            km7 km7Var4 = (km7) hashMap.get(z0);
                             c = 0;
                             if (km7Var4 == null) {
                                 f = 0.0f;
                                 km7Var = new km7(lm7Var, km7Var2.a, km7Var2.b);
-                                hashMap.put(B0, km7Var);
+                                hashMap.put(z0, km7Var);
                             } else {
                                 f = 0.0f;
                                 km7Var = km7Var4;
@@ -169,7 +169,7 @@ public final class im7 extends q9c implements t94 {
                             } catch (Exception unused) {
                             }
                             if (km7Var.b <= 0.5f) {
-                                lm7Var.F0(lm7Var.n0(i, message2, "expand", null));
+                                lm7Var.D0(lm7Var.m0(i, message2, "expand", null));
                             }
                             km7Var.a(km7Var.b > 0.5f ? f : 1.0f);
                             r16 = z5;

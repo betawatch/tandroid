@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class eg implements fq7, ci0, jcc, fd, OnFailureListener, is6 {
     public final /* synthetic */ int a;
@@ -120,7 +120,7 @@ public final /* synthetic */ class eg implements fq7, ci0, jcc, fd, OnFailureLis
         I.X(new nt8(cgaVar));
         I.k(R.drawable.menu_gift_add, ob6.M0(2131750197, null), new ft8(cgaVar, (byte) 2), h);
         I.k(R.drawable.msg_share, ob6.M0(2131750193, null), new st(cgaVar, i3, q, tL_starGiftCollection, context, vnbVar, eVar), !TextUtils.isEmpty(q));
-        I.k(R.drawable.msg_edit, ob6.M0(2131750195, null), new hp8(cgaVar, tL_starGiftCollection, (byte) 15), h);
+        I.k(R.drawable.msg_edit, ob6.M0(2131750195, null), new ep8(cgaVar, tL_starGiftCollection, (byte) 16), h);
         I.k(R.drawable.tabs_reorder, ob6.M0(2131750194, null), new ft8(cgaVar, (byte) 1), h);
         I.l(R.drawable.msg_delete, new l65((Object) cgaVar, i, (Object) tL_starGiftCollection, (byte) 28), ob6.M0(2131750196, null), h, true);
         cgaVar.J = I;
@@ -147,7 +147,7 @@ public final /* synthetic */ class eg implements fq7, ci0, jcc, fd, OnFailureLis
         i61 i61Var = (i61) this.e;
         k3bVar.y = false;
         cc4.g(exc, true);
-        if ((exc instanceof kg7) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && k3bVar.isAttachedToWindow()) {
+        if ((exc instanceof lg7) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && k3bVar.isAttachedToWindow()) {
             hl.d3(new efa((Object) k3bVar, (Object) bitmap, i, (Object) ea8Var, (byte) 5), 2000L);
         } else {
             i61Var.a(new ArrayList());

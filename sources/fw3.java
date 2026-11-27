@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class fw3 extends c79 {
     public String e;
@@ -68,7 +68,7 @@ public final class fw3 extends c79 {
         }
         if (this.f == null) {
             int i2 = zw3.C1;
-            TLObject c2 = uc7.s1(zw3Var.a).c2(uc7.s1(zw3Var.a).o3);
+            TLObject c2 = uc7.s1(zw3Var.a).c2(uc7.s1(zw3Var.a).p3);
             if (c2 instanceof TLRPC.User) {
                 this.f = (TLRPC.User) c2;
             }
@@ -79,7 +79,7 @@ public final class fw3 extends c79 {
             }
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
             int i3 = zw3.C1;
-            tL_contacts_resolveUsername.username = uc7.s1(zw3Var.a).o3;
+            tL_contacts_resolveUsername.username = uc7.s1(zw3Var.a).p3;
             this.d = ConnectionsManager.getInstance(zw3Var.a).sendRequest(tL_contacts_resolveUsername, new ye(this, (byte) 22));
             return;
         }
@@ -96,7 +96,7 @@ public final class fw3 extends c79 {
         tL_messages_getInlineBotResults.offset = str2 != null ? str2 : "";
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
         String str3 = "gif_search_" + tL_messages_getInlineBotResults.query + "_" + tL_messages_getInlineBotResults.offset;
-        jf7.Y(zw3Var.a).L(str3, new si1(this, isEmpty, tL_messages_getInlineBotResults, str3));
+        kf7.a0(zw3Var.a).N(str3, new si1(this, isEmpty, tL_messages_getInlineBotResults, str3));
     }
 
     public final void G(String str) {
@@ -205,13 +205,13 @@ public final class fw3 extends c79 {
             Context context = hw3Var.getContext();
             zw3 zw3Var = hw3Var.r;
             int i2 = zw3.C1;
-            t3b t3bVar = new t3b(context, false, false, zw3Var.J0, false);
-            t3bVar.a(0, ob6.M0(2131750799, null));
+            u3b u3bVar = new u3b(context, false, false, zw3Var.J0, false);
+            u3bVar.a(0, ob6.M0(2131750799, null));
             r79 r79Var = new r79(-1, -2);
             ((ViewGroup.MarginLayoutParams) r79Var).topMargin = hl.L(2.5f);
             ((ViewGroup.MarginLayoutParams) r79Var).bottomMargin = hl.L(5.5f);
-            t3bVar.setLayoutParams(r79Var);
-            view = t3bVar;
+            u3bVar.setLayoutParams(r79Var);
+            view = u3bVar;
         } else {
             vw2 vw2Var = new vw2(hw3Var.getContext());
             vw2Var.getPhotoImage().m0(7);

@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class io0 extends FrameLayout {
     public final /* synthetic */ lo0 a;
@@ -171,7 +171,7 @@ public final class io0 extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
         linearLayout.addView(jo0Var, tre.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        if (uc7.s1(lo0Var.T).k4.W1.f && xc2.N(lo0Var.j0)) {
+        if (uc7.s1(lo0Var.T).l4.W1.f && xc2.N(lo0Var.j0)) {
             linearLayout.addView(jo0Var2, tre.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         }
         linearLayout.addView(jo0Var3, tre.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));

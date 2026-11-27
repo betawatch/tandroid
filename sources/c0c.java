@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class c0c implements Runnable {
     public final /* synthetic */ byte a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class c0c implements Runnable {
                 long j = n0cVar.b;
                 if (!n0cVar.d && n0cVar.y > 0.0f && (x46Var = (x46) n0cVar.r.getLayoutManager()) != null && x46Var.M0() >= n0cVar.s.c.size() - 3) {
                     if (!n0cVar.i()) {
-                        qyb qybVar = uc7.s1(n0cVar.a).g4;
+                        qyb qybVar = uc7.s1(n0cVar.a).h4;
                         long j2 = -j;
                         if (!qybVar.e(j2)) {
                             qybVar.o(j2);

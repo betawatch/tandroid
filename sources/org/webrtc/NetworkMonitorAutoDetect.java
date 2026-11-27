@@ -27,7 +27,7 @@ import java.util.Set;
 import org.webrtc.NetworkChangeDetector;
 import org.webrtc.NetworkMonitorAutoDetect;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public class NetworkMonitorAutoDetect extends BroadcastReceiver implements NetworkChangeDetector {
     private static final long INVALID_NET_ID = -1;
@@ -47,7 +47,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
     private WifiManagerDelegate wifiManagerDelegate;
     private String wifiSSID;
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     static class NetworkState {
         private final boolean connected;
         private final int subtype;
@@ -84,7 +84,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     class SimpleNetworkCallback extends ConnectivityManager.NetworkCallback {
         private final String TAG;
         final Set<Network> availableNetworks;
@@ -141,7 +141,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     static class WifiDirectManagerDelegate extends BroadcastReceiver {
         private static final int WIFI_P2P_NETWORK_HANDLE = 0;
         private final Context context;
@@ -417,7 +417,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         return this.connectivityManagerDelegate.supportNetworkCallback();
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     static class WifiManagerDelegate {
         private final Context context;
 
@@ -437,7 +437,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     static class ConnectivityManagerDelegate {
         private static final int NET_CAPABILITY_PRIORITIZE_UNIFIED_COMMUNICATIONS = 38;
         private final Set<Network> availableNetworks;

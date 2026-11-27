@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class g49 extends FrameLayout {
     public int E;
@@ -349,10 +349,10 @@ public final class g49 extends FrameLayout {
         if (w49Var2.b) {
             uc7 s1 = uc7.s1(i49Var.K);
             long j = this.e.g;
-            if (s1.W4 != null) {
-                for (int i = 0; i < s1.W4.documents.size(); i++) {
-                    if (s1.W4.documents.get(i).id == j) {
-                        document = s1.W4.documents.get(i);
+            if (s1.X4 != null) {
+                for (int i = 0; i < s1.X4.documents.size(); i++) {
+                    if (s1.X4.documents.get(i).id == j) {
+                        document = s1.X4.documents.get(i);
                         break;
                     }
                 }

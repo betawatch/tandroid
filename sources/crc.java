@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class crc extends in {
     public final /* synthetic */ byte s;
@@ -28,8 +28,8 @@ public final class crc extends in {
     @Override // in, android.view.View
     public final void onDraw(Canvas canvas) {
         byte b = this.s;
-        byte b2 = 16;
         frc frcVar = this.w;
+        byte b2 = 16;
         switch (b) {
             case 0:
                 float c = getDrawable().c();
@@ -41,14 +41,14 @@ public final class crc extends in {
                 float e = (1.0f - frcVar.U) * frcVar.g0.e(false, frcVar.e0);
                 hn drawable = getDrawable();
                 Objects.requireNonNull(drawable);
-                frcVar.c(e, new ftb(drawable, b2), new vlc(this, canvas, (byte) 14));
+                frcVar.c(e, new ftb(drawable, b2), new slc(this, canvas, (byte) 15));
                 canvas.restoreToCount(save);
                 break;
             default:
                 float e2 = (1.0f - frcVar.U) * frcVar.g0.e(false, frcVar.e0);
                 hn drawable2 = getDrawable();
                 Objects.requireNonNull(drawable2);
-                frcVar.c(e2, new ftb(drawable2, b2), new vlc(this, canvas, (byte) 15));
+                frcVar.c(e2, new ftb(drawable2, b2), new slc(this, canvas, b2));
                 break;
         }
     }

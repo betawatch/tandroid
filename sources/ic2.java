@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ic2 implements Runnable {
     public final /* synthetic */ byte a;
@@ -133,8 +133,8 @@ public final /* synthetic */ class ic2 implements Runnable {
                 int[] iArr = (int[]) obj;
                 long j7 = this.d;
                 if (j2 == 0) {
-                    jf7 messagesStorage = uc7Var.getMessagesStorage();
-                    messagesStorage.a.c(new le7(messagesStorage, j7, (byte) 1));
+                    kf7 messagesStorage = uc7Var.getMessagesStorage();
+                    messagesStorage.a.c(new me7(messagesStorage, j7, (byte) 1));
                 }
                 TLRPC.TL_messages_deleteSavedHistory tL_messages_deleteSavedHistory = new TLRPC.TL_messages_deleteSavedHistory();
                 tL_messages_deleteSavedHistory.peer = uc7Var.j1(j7);
@@ -165,13 +165,13 @@ public final /* synthetic */ class ic2 implements Runnable {
                 uc7Var.getConnectionsManager().sendRequest(tL_messages_deleteSavedHistory, new ft0(uc7Var, j7, (Object) iArr, (TLObject) inputPeer, (byte) 4), 64);
                 return;
             case 4:
-                jf7 jf7Var = (jf7) obj3;
+                kf7 kf7Var = (kf7) obj3;
                 String str2 = (String) obj2;
                 mt7 mt7Var = (mt7) obj;
                 long currentTimeMillis = System.currentTimeMillis();
                 try {
                     try {
-                        sQLiteDatabase = jf7Var.b;
+                        sQLiteDatabase = kf7Var.b;
                         sb = new StringBuilder("DELETE FROM onchain_offer_intents WHERE used_at < ");
                     } catch (Exception e) {
                         e = e;
@@ -181,8 +181,8 @@ public final /* synthetic */ class ic2 implements Runnable {
                         sb.append(" OR used_at > ");
                         sb.append(currentTimeMillis);
                         sQLiteDatabase.executeFast(sb.toString()).stepThis().dispose();
-                        jf7Var = jf7Var;
-                        SQLiteCursor queryFinalized = jf7Var.b.queryFinalized("SELECT random_id FROM onchain_offer_intents WHERE slug = ? AND amount = ? AND duration = ?", str2, Long.valueOf(j), Integer.valueOf(i3));
+                        kf7Var = kf7Var;
+                        SQLiteCursor queryFinalized = kf7Var.b.queryFinalized("SELECT random_id FROM onchain_offer_intents WHERE slug = ? AND amount = ? AND duration = ?", str2, Long.valueOf(j), Integer.valueOf(i3));
                         try {
                             try {
                                 if (queryFinalized.next()) {
@@ -194,7 +194,7 @@ public final /* synthetic */ class ic2 implements Runnable {
                                         z = true;
                                         sQLitePreparedStatement = null;
                                         try {
-                                            jf7Var.n(e, z);
+                                            kf7Var.p(e, z);
                                             if (sQLiteCursor != null) {
                                                 sQLiteCursor.dispose();
                                             }
@@ -216,7 +216,7 @@ public final /* synthetic */ class ic2 implements Runnable {
                                     }
                                 }
                                 queryFinalized.dispose();
-                                executeFast = jf7Var.b.executeFast("REPLACE INTO onchain_offer_intents VALUES(?, ?, ?, ?, ?)");
+                                executeFast = kf7Var.b.executeFast("REPLACE INTO onchain_offer_intents VALUES(?, ?, ?, ?, ?)");
                             } catch (Exception e3) {
                                 e = e3;
                                 sQLiteCursor = queryFinalized;
@@ -234,11 +234,11 @@ public final /* synthetic */ class ic2 implements Runnable {
                         }
                     } catch (Exception e4) {
                         e = e4;
-                        jf7Var = jf7Var;
+                        kf7Var = kf7Var;
                         z = true;
                         sQLiteCursor = null;
                         sQLitePreparedStatement = null;
-                        jf7Var.n(e, z);
+                        kf7Var.p(e, z);
                         if (sQLiteCursor != null) {
                         }
                         if (sQLitePreparedStatement != null) {
@@ -263,7 +263,7 @@ public final /* synthetic */ class ic2 implements Runnable {
                     sQLitePreparedStatement = executeFast;
                     z = true;
                     sQLiteCursor = null;
-                    jf7Var.n(e, z);
+                    kf7Var.p(e, z);
                     if (sQLiteCursor != null) {
                     }
                     if (sQLitePreparedStatement != null) {
@@ -283,17 +283,17 @@ public final /* synthetic */ class ic2 implements Runnable {
                 hl.c3(new kt(mt7Var, j2, (byte) 21));
                 return;
             case 5:
-                jf7 jf7Var2 = (jf7) obj3;
+                kf7 kf7Var2 = (kf7) obj3;
                 String str3 = (String) obj2;
                 String str4 = (String) obj;
                 try {
-                    jf7Var2.b.beginTransaction();
+                    kf7Var2.b.beginTransaction();
                     int i8 = 0;
                     while (true) {
-                        SQLiteDatabase sQLiteDatabase3 = jf7Var2.b;
+                        SQLiteDatabase sQLiteDatabase3 = kf7Var2.b;
                         if (i8 >= i2) {
                             sQLiteDatabase3.commitTransaction();
-                            SQLiteDatabase sQLiteDatabase4 = jf7Var2.b;
+                            SQLiteDatabase sQLiteDatabase4 = kf7Var2.b;
                             if (sQLiteDatabase4 != null) {
                                 sQLiteDatabase4.commitTransaction();
                                 return;
@@ -311,7 +311,7 @@ public final /* synthetic */ class ic2 implements Runnable {
                                 if (TLdeserialize != null) {
                                     z2 = i4;
                                     str = str4;
-                                    TLdeserialize.readAttachPath(byteBufferValue, jf7Var2.getUserConfig().n);
+                                    TLdeserialize.readAttachPath(byteBufferValue, kf7Var2.getUserConfig().n);
                                 } else {
                                     z2 = i4;
                                     str = str4;
@@ -328,7 +328,7 @@ public final /* synthetic */ class ic2 implements Runnable {
                                         if (str != null) {
                                             tL_messageMediaWidget.chat_data = str.isEmpty() ? null : str;
                                         }
-                                        SQLitePreparedStatement executeFast2 = jf7Var2.b.executeFast("UPDATE " + (i8 == 0 ? "messages_v2" : "messages_topics") + " SET data = ? WHERE mid = ? AND uid = ?");
+                                        SQLitePreparedStatement executeFast2 = kf7Var2.b.executeFast("UPDATE " + (i8 == 0 ? "messages_v2" : "messages_topics") + " SET data = ? WHERE mid = ? AND uid = ?");
                                         r47.p5(TLdeserialize);
                                         NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(TLdeserialize.getObjectSize());
                                         TLdeserialize.serializeToStream(nativeByteBuffer);
@@ -351,8 +351,8 @@ public final /* synthetic */ class ic2 implements Runnable {
                             e = e6;
                             sQLiteCursor2 = queryFinalized2;
                             try {
-                                jf7Var2.n(e, true);
-                                SQLiteDatabase sQLiteDatabase5 = jf7Var2.b;
+                                kf7Var2.p(e, true);
+                                SQLiteDatabase sQLiteDatabase5 = kf7Var2.b;
                                 if (sQLiteDatabase5 != null) {
                                     sQLiteDatabase5.commitTransaction();
                                 }
@@ -363,7 +363,7 @@ public final /* synthetic */ class ic2 implements Runnable {
                                 return;
                             } catch (Throwable th5) {
                                 th = th5;
-                                sQLiteDatabase2 = jf7Var2.b;
+                                sQLiteDatabase2 = kf7Var2.b;
                                 if (sQLiteDatabase2 != null) {
                                     sQLiteDatabase2.commitTransaction();
                                 }
@@ -375,7 +375,7 @@ public final /* synthetic */ class ic2 implements Runnable {
                         } catch (Throwable th6) {
                             th = th6;
                             sQLiteCursor2 = queryFinalized2;
-                            sQLiteDatabase2 = jf7Var2.b;
+                            sQLiteDatabase2 = kf7Var2.b;
                             if (sQLiteDatabase2 != null) {
                             }
                             if (sQLiteCursor2 != null) {
@@ -458,9 +458,9 @@ public final /* synthetic */ class ic2 implements Runnable {
         this.h = iArr;
     }
 
-    public /* synthetic */ ic2(jf7 jf7Var, int i, long j, String str, long j2, String str2) {
+    public /* synthetic */ ic2(kf7 kf7Var, int i, long j, String str, long j2, String str2) {
         this.a = (byte) 5;
-        this.e = jf7Var;
+        this.e = kf7Var;
         this.b = i;
         this.c = j;
         this.f = str;
@@ -468,9 +468,9 @@ public final /* synthetic */ class ic2 implements Runnable {
         this.h = str2;
     }
 
-    public /* synthetic */ ic2(jf7 jf7Var, long j, String str, long j2, int i, mt7 mt7Var) {
+    public /* synthetic */ ic2(kf7 kf7Var, long j, String str, long j2, int i, mt7 mt7Var) {
         this.a = (byte) 4;
-        this.e = jf7Var;
+        this.e = kf7Var;
         this.c = j;
         this.f = str;
         this.d = j2;

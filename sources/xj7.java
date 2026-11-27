@@ -1,61 +1,107 @@
 // default package
 
-import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class xj7 {
-    public final short a;
-    public boolean b;
-    public boolean c;
-    public byte[] d;
-    public int e;
+public final class xj7 extends k4a implements vj7 {
+    public static final /* synthetic */ AtomicReferenceFieldUpdater h = AtomicReferenceFieldUpdater.newUpdater(xj7.class, Object.class, "owner$volatile");
+    public static final /* synthetic */ long i = fx.a.objectFieldOffset(xj7.class.getDeclaredField("owner$volatile"));
+    private volatile /* synthetic */ Object owner$volatile = pfd.a;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public xj7(int i) {
-        this.a = i;
-        byte[] bArr = new byte[jn7.O1];
-        this.d = bArr;
-        bArr[2] = 1;
+    public final boolean c() {
+        return Math.max(fx.a.getIntVolatile(this, k4a.e), 0) == 0;
     }
 
-    public final void a(int i, int i2, byte[] bArr) {
-        if (this.b) {
-            int i3 = i2 - i;
-            byte[] bArr2 = this.d;
-            int length = bArr2.length;
-            int i4 = this.e + i3;
-            if (length < i4) {
-                bArr2 = Arrays.copyOf(bArr2, i4 << 1);
-                this.d = bArr2;
+    public final Object d(zw2 zw2Var) {
+        boolean e = e();
+        g9c g9cVar = g9c.a;
+        if (!e) {
+            va1 a = yud.a(xpe.a(zw2Var));
+            try {
+                a(new wj7(this, a));
+                Object q = a.q();
+                vx2 vx2Var = vx2.a;
+                if (q != vx2Var) {
+                    q = g9cVar;
+                }
+                if (q == vx2Var) {
+                    return q;
+                }
+            } catch (Throwable th) {
+                a.z();
+                throw th;
             }
-            System.arraycopy(bArr, i, bArr2, this.e, i3);
-            this.e += i3;
+        }
+        return g9cVar;
+    }
+
+    public final boolean e() {
+        xj7 xj7Var;
+        while (true) {
+            Unsafe unsafe = fx.a;
+            long j = k4a.e;
+            int intVolatile = unsafe.getIntVolatile(this, j);
+            if (intVolatile > 1) {
+                while (true) {
+                    Unsafe unsafe2 = fx.a;
+                    long j2 = k4a.e;
+                    int intVolatile2 = unsafe2.getIntVolatile(this, j2);
+                    if (intVolatile2 <= 1) {
+                        xj7Var = this;
+                        break;
+                    }
+                    xj7 xj7Var2 = this;
+                    xj7Var = xj7Var2;
+                    if (!unsafe2.compareAndSwapInt(xj7Var2, j2, intVolatile2, 1)) {
+                        this = xj7Var;
+                    }
+                }
+            } else {
+                xj7Var = this;
+                if (intVolatile <= 0) {
+                    return false;
+                }
+                if (unsafe.compareAndSwapInt(xj7Var, j, intVolatile, intVolatile - 1)) {
+                    unsafe.putObjectVolatile(xj7Var, i, (Object) null);
+                    return true;
+                }
+            }
+            this = xj7Var;
         }
     }
 
-    public final boolean b(int i) {
-        if (!this.b) {
-            return false;
+    public final void f(Object obj) {
+        while (this.c()) {
+            Unsafe unsafe = fx.a;
+            long j = i;
+            Object objectVolatile = unsafe.getObjectVolatile(this, j);
+            ow5 ow5Var = pfd.a;
+            if (objectVolatile != ow5Var) {
+                if (objectVolatile != obj && obj != null) {
+                    throw new IllegalStateException(("This mutex is locked by " + objectVolatile + ", but " + obj + " is expected").toString());
+                }
+                while (true) {
+                    Unsafe unsafe2 = fx.a;
+                    xj7 xj7Var = this;
+                    if (unsafe2.compareAndSwapObject(xj7Var, i, objectVolatile, ow5Var)) {
+                        xj7Var.b();
+                        return;
+                    } else {
+                        if (unsafe2.getObjectVolatile(xj7Var, j) != objectVolatile) {
+                            this = xj7Var;
+                            break;
+                        }
+                        this = xj7Var;
+                    }
+                }
+            }
         }
-        this.e -= i;
-        this.b = false;
-        this.c = true;
-        return true;
+        grb.i("This mutex is not locked");
     }
 
-    public final void c() {
-        this.b = false;
-        this.c = false;
-    }
-
-    public final void d(int i) {
-        yve.p(!this.b);
-        boolean z = i == this.a;
-        this.b = z;
-        if (z) {
-            this.e = 3;
-            this.c = false;
-        }
+    public final String toString() {
+        return "Mutex@" + l93.a(this) + "[isLocked=" + c() + ",owner=" + fx.a.getObjectVolatile(this, i) + ']';
     }
 }

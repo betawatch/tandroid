@@ -38,7 +38,7 @@ import org.telegram.ui.PopupNotificationActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class l65 implements Runnable {
     public final /* synthetic */ byte a;
@@ -397,9 +397,9 @@ public final /* synthetic */ class l65 implements Runnable {
                 int i7 = ef5Var.Q;
                 if (i6 == ef5Var.W) {
                     String str3 = (ef5Var.e0[0] ? "$" : "#") + ef5Var.b0;
-                    p5b p5bVar = ef5Var.T;
-                    if (p5bVar == null || !TextUtils.equals(p5bVar.C, str3)) {
-                        ef5Var.T = new p5b(i7, null, str3);
+                    q5b q5bVar = ef5Var.T;
+                    if (q5bVar == null || !TextUtils.equals(q5bVar.C, str3)) {
+                        ef5Var.T = new q5b(i7, null, str3);
                     }
                     if (ef5Var.T.i.size() <= 0) {
                         ef5Var.T.p(4, true);
@@ -563,7 +563,7 @@ public final /* synthetic */ class l65 implements Runnable {
                 if (tLObject3 != null) {
                     uc7Var.k2--;
                     TLRPC.TL_peerNotifySettings tL_peerNotifySettings = (TLRPC.TL_peerNotifySettings) tLObject3;
-                    SharedPreferences.Editor edit = uc7Var.W3.edit();
+                    SharedPreferences.Editor edit = uc7Var.X3.edit();
                     int i18 = tL_peerNotifySettings.flags & 1;
                     if (i17 == 0) {
                         if (i18 != 0) {
@@ -634,7 +634,7 @@ public final /* synthetic */ class l65 implements Runnable {
                 dc7Var.a(0, 80);
                 return;
             case 14:
-                ((jf7) this.c).getNotificationCenter().k(jn7.r1, (Long) this.d, Integer.valueOf(this.b), Boolean.TRUE);
+                ((kf7) this.c).getNotificationCenter().k(jn7.r1, (Long) this.d, Integer.valueOf(this.b), Boolean.TRUE);
                 return;
             case 15:
                 ((NativeInstance) this.c).lambda$onEmitJoinPayload$3(this.b, (String) this.d);
@@ -687,7 +687,7 @@ public final /* synthetic */ class l65 implements Runnable {
                 return;
             case 21:
                 nx7 nx7Var = (nx7) this.c;
-                nx7Var.e((tca) this.d, this.b, nx7Var.h);
+                nx7Var.e((uca) this.d, this.b, nx7Var.h);
                 nx7Var.h = null;
                 return;
             case 22:

@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class m65 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -230,7 +230,7 @@ public final /* synthetic */ class m65 implements RequestDelegate {
                     } else {
                         uc7Var5.W3(i4, -1, i5);
                     }
-                    uc7Var5.getMessagesStorage().Z1(chat != null ? -chat.id : user.id, null, false, 0, 0, false, null);
+                    uc7Var5.getMessagesStorage().e2(chat != null ? -chat.id : user.id, null, false, 0, 0, false, null);
                     break;
                 }
                 break;
@@ -266,14 +266,14 @@ public final /* synthetic */ class m65 implements RequestDelegate {
                 break;
             case 25:
                 p pVar = (p) obj3;
-                pl7 pl7Var = (pl7) obj2;
+                ql7 ql7Var = (ql7) obj2;
                 TLObject tLObject2 = (TLObject) obj;
                 pVar.getClass();
                 if (!(tLObject instanceof TLRPC.TL_payments_validatedRequestedInfo)) {
                     hl.c3(new c28(pVar, tL_error, tLObject2, (byte) 2));
                     break;
                 } else {
-                    hl.c3(new fd7((Object) pVar, tLObject, (Object) pl7Var, (byte) 21));
+                    hl.c3(new gd7((Object) pVar, tLObject, (Object) ql7Var, (byte) 21));
                     break;
                 }
             case 26:

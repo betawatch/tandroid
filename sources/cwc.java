@@ -12,10 +12,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cwc extends c79 {
-    public vlc E;
+    public slc E;
     public final /* synthetic */ WallpapersListActivity F;
     public final Context c;
     public final ArrayList d = new ArrayList();
@@ -44,9 +44,9 @@ public final class cwc extends c79 {
         if (str != null && this.n != null) {
             str = qu6.o(this.n, " ", str, new StringBuilder("#color"));
         }
-        vlc vlcVar = this.E;
-        if (vlcVar != null) {
-            hl.r(vlcVar);
+        slc slcVar = this.E;
+        if (slcVar != null) {
+            hl.r(slcVar);
             this.E = null;
         }
         boolean isEmpty = TextUtils.isEmpty(str);
@@ -74,9 +74,9 @@ public final class cwc extends c79 {
                 this.h = str;
                 f();
             } else {
-                vlc vlcVar2 = new vlc(this, str, (byte) 26);
-                this.E = vlcVar2;
-                hl.d3(vlcVar2, 500L);
+                slc slcVar2 = new slc(this, str, (byte) 27);
+                this.E = slcVar2;
+                hl.d3(slcVar2, 500L);
             }
         }
         f();
@@ -103,7 +103,7 @@ public final class cwc extends c79 {
         i = ((e) wallpapersListActivity).currentAccount;
         uc7 s1 = uc7.s1(i);
         i2 = ((e) wallpapersListActivity).currentAccount;
-        TLObject c2 = s1.c2(uc7.s1(i2).p3);
+        TLObject c2 = s1.c2(uc7.s1(i2).q3);
         if (!(c2 instanceof TLRPC.User)) {
             if (!z || this.x) {
                 return;
@@ -111,7 +111,7 @@ public final class cwc extends c79 {
             this.x = true;
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
             i7 = ((e) wallpapersListActivity).currentAccount;
-            tL_contacts_resolveUsername.username = uc7.s1(i7).p3;
+            tL_contacts_resolveUsername.username = uc7.s1(i7).q3;
             i8 = ((e) wallpapersListActivity).currentAccount;
             ConnectionsManager.getInstance(i8).sendRequest(tL_contacts_resolveUsername, new yp9(this, (byte) 26));
             return;

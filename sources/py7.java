@@ -10,7 +10,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.ProxyListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class py7 extends d6 {
     public final /* synthetic */ byte a;
@@ -35,7 +35,7 @@ public final class py7 extends d6 {
                 if (i != -1) {
                     if (i == 1) {
                         passcodeActivity.E = !passcodeActivity.E;
-                        hl.d3(new pl7(this, (b8) obj, (byte) 16), 150L);
+                        hl.d3(new ql7(this, (b8) obj, (byte) 17), 150L);
                         passcodeActivity.h.setText("");
                         ok2[] ok2VarArr = passcodeActivity.n.f;
                         int length = ok2VarArr.length;

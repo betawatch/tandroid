@@ -8,9 +8,9 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class hfa implements wp4, hf7, oj3 {
+public final /* synthetic */ class hfa implements wp4, if7, oj3 {
     public final /* synthetic */ eja a;
 
     public /* synthetic */ hfa(eja ejaVar) {
@@ -22,7 +22,7 @@ public final /* synthetic */ class hfa implements wp4, hf7, oj3 {
         return false;
     }
 
-    @Override // hf7
+    @Override // if7
     public final void a(String str) {
         this.a.w0(str);
     }
@@ -72,8 +72,8 @@ public final /* synthetic */ class hfa implements wp4, hf7, oj3 {
             piaVar.x.clear();
         }
         UndoView undoView = null;
-        if (arrayList.size() <= 1 && ((if7) arrayList.get(0)).a != eVar.getUserConfig().e() && charSequence == null) {
-            long j = ((if7) arrayList.get(0)).a;
+        if (arrayList.size() <= 1 && ((jf7) arrayList.get(0)).a != eVar.getUserConfig().e() && charSequence == null) {
+            long j = ((jf7) arrayList.get(0)).a;
             Bundle l = bs2.l("scrollToTopOnResume", true);
             if (wf3.B(j)) {
                 l.putInt("enc_id", (int) (j & 4294967295L));
@@ -89,7 +89,7 @@ public final /* synthetic */ class hfa implements wp4, hf7, oj3 {
             }
             eVar.getNotificationCenter().k(jn7.s, new Object[0]);
             zu1 zu1Var = new zu1(l);
-            ro4.a(zu1Var, (if7) arrayList.get(0));
+            ro4.a(zu1Var, (jf7) arrayList.get(0));
             uj3Var.presentFragment(zu1Var, true);
             zu1Var.cc(arrayList2);
             return true;
@@ -97,7 +97,7 @@ public final /* synthetic */ class hfa implements wp4, hf7, oj3 {
         ejaVar.J1(true);
         int i6 = 0;
         while (i6 < arrayList.size()) {
-            long j2 = ((if7) arrayList.get(i6)).a;
+            long j2 = ((jf7) arrayList.get(i6)).a;
             if (charSequence != null) {
                 eVar.getSendMessagesHelper().q0(p7a.b(charSequence.toString(), j2, null, null, null, true, null, null, null, true, 0, 0, null, false));
             }
@@ -114,7 +114,7 @@ public final /* synthetic */ class hfa implements wp4, hf7, oj3 {
             return z4;
         }
         if (arrayList.size() == z4) {
-            undoView3.m(((if7) arrayList.get(0)).a, Integer.valueOf(arrayList2.size()), 53);
+            undoView3.m(((jf7) arrayList.get(0)).a, Integer.valueOf(arrayList2.size()), 53);
             return z4;
         }
         undoView3.k(0L, 53, Integer.valueOf(arrayList2.size()), Integer.valueOf(arrayList.size()), null, null);

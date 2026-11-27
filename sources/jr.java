@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class jr implements r69 {
     public final /* synthetic */ byte a;
@@ -165,15 +165,15 @@ public final /* synthetic */ class jr implements r69 {
                 }
                 break;
             case 2:
-                b58 b58Var = (b58) fn7Var;
+                c58 c58Var = (c58) fn7Var;
                 h96 h96Var = (h96) view;
                 m96 m96Var = h96Var.L;
-                fu5 G3 = fu5.G((zbb) obj, new x53(), view);
+                fu5 G3 = fu5.G((acb) obj, new x53(), view);
                 G3.o(15, -1, ob6.a0(null, null, 2131748562, ob6.x(m96Var.d, true)));
                 G3.j();
                 G3.b(R.drawable.msg_openprofile, ob6.M0(2131747513, null), new z56((lcb) obj2, m96Var, b2), false);
-                G3.k(R.drawable.msg_copy, ob6.M0(2131751732, null), new z56(b58Var, h96Var, b3), !m96Var.e);
-                G3.k(R.drawable.msg_delete, ob6.M0(2131751563, null), new z56(b58Var, m96Var, (byte) 7), b58Var.N == yac.h(b58Var.O).e() || b58Var.e());
+                G3.k(R.drawable.msg_copy, ob6.M0(2131751732, null), new z56(c58Var, h96Var, b3), !m96Var.e);
+                G3.k(R.drawable.msg_delete, ob6.M0(2131751563, null), new z56(c58Var, m96Var, (byte) 7), c58Var.N == yac.h(c58Var.O).e() || c58Var.e());
                 G3.a0();
                 break;
             case 3:
@@ -232,7 +232,7 @@ public final /* synthetic */ class jr implements r69 {
             default:
                 r8b r8bVar = (r8b) fn7Var;
                 Context context2 = (Context) obj2;
-                gbb gbbVar = (gbb) obj;
+                hbb hbbVar = (hbb) obj;
                 zt3 zt3Var = r8bVar.U1;
                 zt3 zt3Var2 = r8bVar.T1;
                 b8c G5 = r8bVar.S1.G(i - 1);
@@ -255,7 +255,7 @@ public final /* synthetic */ class jr implements r69 {
                         k8bVar.x.a(!g66Var.f, false);
                         r57Var.a(!g66Var.e, false);
                         k8bVar.I = sh9Var;
-                        k8bVar.e.setImageDrawable(new g6(gbbVar, b3));
+                        k8bVar.e.setImageDrawable(new g6(hbbVar, b3));
                         k8bVar.show();
                         break;
                     } else if (G5.d == 2 && (view instanceof wkb)) {

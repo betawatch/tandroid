@@ -6,7 +6,7 @@ import android.util.Log;
 import java.util.LinkedHashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class av5 {
     public static final /* synthetic */ gx5[] d;
@@ -27,7 +27,7 @@ public final class av5 {
         this.b = new ThreadLocal();
         final byte b = 0;
         byte b2 = 3;
-        i09 i09Var = new i09(new ur4(this) { // from class: xu5
+        j09 j09Var = new j09(new ur4(this) { // from class: xu5
             public final /* synthetic */ av5 b;
 
             {
@@ -43,7 +43,7 @@ public final class av5 {
                         zx2 zx2Var = (zx2) obj;
                         zx2Var.getClass();
                         Log.w(s89.a(av5.class).b(), "CorruptionException in " + av5Var.a + " DataStore running in process " + Process.myPid(), zx2Var);
-                        return new rj7(true);
+                        return new sj7(true);
                     default:
                         Context context2 = (Context) obj;
                         context2.getClass();
@@ -71,7 +71,7 @@ public final class av5 {
                         zx2 zx2Var = (zx2) obj;
                         zx2Var.getClass();
                         Log.w(s89.a(av5.class).b(), "CorruptionException in " + av5Var.a + " DataStore running in process " + Process.myPid(), zx2Var);
-                        return new rj7(true);
+                        return new sj7(true);
                     default:
                         Context context2 = (Context) obj;
                         context2.getClass();
@@ -87,7 +87,7 @@ public final class av5 {
         lfb lfbVar = new lfb();
         qb3Var.getClass();
         xw2 a = xde.a(azd.c(qb3Var, lfbVar));
-        j26 j26Var = new j26(str, i09Var, ur4Var, a);
+        j26 j26Var = new j26(str, j09Var, ur4Var, a);
         d[0].getClass();
         xj8 xj8Var2 = (xj8) j26Var.c;
         if (xj8Var2 == null) {
@@ -97,7 +97,7 @@ public final class av5 {
                     applicationContext.getClass();
                     List list = (List) ur4Var.invoke(applicationContext);
                     yj8 yj8Var = new yj8((byte) 0, applicationContext, j26Var);
-                    j26Var.c = new xj8(new xj8(new o83(new bd4(uif.d, zc4.c, new ad4(yj8Var, (byte) 2)), tl2.a(new ii1(list, null, b2)), i09Var, a)));
+                    j26Var.c = new xj8(new xj8(new o83(new bd4(uif.d, zc4.c, new ad4(yj8Var, (byte) 2)), tl2.a(new ii1(list, null, b2)), j09Var, a)));
                 }
                 xj8Var = (xj8) j26Var.c;
                 xj8Var.getClass();

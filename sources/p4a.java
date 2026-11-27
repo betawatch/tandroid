@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class p4a implements icc {
     public final /* synthetic */ byte a;
@@ -156,8 +156,8 @@ public final /* synthetic */ class p4a implements icc {
                             ArrayList arrayList2 = v.H;
                             int i11 = v.F;
                             long j2 = v.G;
-                            jf7 Y = jf7.Y(i10);
-                            Y.a.c(new od7(Y, arrayList2, i11, j2));
+                            kf7 a03 = kf7.a0(i10);
+                            a03.a.c(new td7(a03, arrayList2, i11, j2));
                             jn7.f(i10).k(235, starGift2);
                             break;
                         }

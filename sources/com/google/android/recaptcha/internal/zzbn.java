@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 final class zzbn extends yfb implements is4 {
     Object zza;
@@ -24,7 +24,7 @@ final class zzbn extends yfb implements is4 {
 
     @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbn) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
+        return ((zzbn) create((zzhk) obj, (zw2) obj2)).invokeSuspend(g9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0049, code lost:
@@ -39,40 +39,40 @@ final class zzbn extends yfb implements is4 {
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         zzbo zzboVar;
-        uj7 uj7Var;
+        vj7 vj7Var;
         Object obj2;
         zzbp zzbpVar;
         zzhk zzhkVar2;
         int i = this.zzc;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         vx2 vx2Var = vx2.a;
         try {
             if (i == 0) {
                 ixe.b(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzboVar = this.zzd;
-                uj7Var = zzboVar.zzf;
+                vj7Var = zzboVar.zzf;
                 this.zze = zzhkVar;
-                this.zza = uj7Var;
+                this.zza = vj7Var;
                 this.zzb = zzboVar;
                 this.zzc = 1;
-                wj7 wj7Var = (wj7) uj7Var;
-                Object d = wj7Var.d(this);
-                obj2 = wj7Var;
+                xj7 xj7Var = (xj7) vj7Var;
+                Object d = xj7Var.d(this);
+                obj2 = xj7Var;
             } else {
                 if (i != 1) {
                     if (i != 2) {
                         ixe.b(obj);
-                        return f9cVar;
+                        return g9cVar;
                     }
                     zzhkVar2 = (zzhk) this.zze;
                     ixe.b(obj);
                     this.zze = null;
                     this.zzc = 3;
-                    return ((zzhg) obj).zza(zzhkVar2, this) == vx2Var ? f9cVar : vx2Var;
+                    return ((zzhg) obj).zza(zzhkVar2, this) == vx2Var ? g9cVar : vx2Var;
                 }
                 zzboVar = (zzbo) this.zzb;
-                Object obj3 = (uj7) this.zza;
+                Object obj3 = (vj7) this.zza;
                 zzhk zzhkVar3 = (zzhk) this.zze;
                 ixe.b(obj);
                 zzhkVar = zzhkVar3;
@@ -80,10 +80,10 @@ final class zzbn extends yfb implements is4 {
             }
             zzbpVar = zzboVar.zzc;
             if (!ur5.a(zzbpVar, zzbp.zza)) {
-                return f9cVar;
+                return g9cVar;
             }
             zzboVar.zzc = zzbp.zzb;
-            ((wj7) obj2).f(null);
+            ((xj7) obj2).f(null);
             zzbo zzboVar2 = this.zzd;
             zzboVar2.zza = xwd.a();
             fud.b(zzbo.zzb(zzboVar2).zzc(), new zzbm(zzhkVar, zzboVar2, null));
@@ -101,7 +101,7 @@ final class zzbn extends yfb implements is4 {
                 }
             }
         } finally {
-            ((wj7) obj2).f(null);
+            ((xj7) obj2).f(null);
         }
     }
 }

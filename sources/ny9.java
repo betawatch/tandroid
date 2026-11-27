@@ -19,7 +19,7 @@ import android.widget.ScrollView;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class ny9 extends ScrollView implements yi5 {
     public boolean E;
@@ -169,7 +169,7 @@ public class ny9 extends ScrollView implements yi5 {
                 Object obj = arrayList.get(i);
                 i++;
                 View view3 = (View) obj;
-                if (Objects.equals(view3.getTag(), -33024) || (view3 instanceof ilb) || (view3 instanceof rca) || (view3 instanceof fh4)) {
+                if (Objects.equals(view3.getTag(), -33024) || (view3 instanceof ilb) || (view3 instanceof sca) || (view3 instanceof fh4)) {
                     b(view, view2);
                 } else {
                     if (view != null && Math.abs(view2.getAlpha() - view3.getAlpha()) > 0.1f) {

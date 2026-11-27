@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class yrc extends FrameLayout {
     public int E;
@@ -517,7 +517,7 @@ public final class yrc extends FrameLayout {
                 ys4 ys4Var = this.f;
                 ys4Var.d = 0.0f;
                 ys4Var.i = 0.0f;
-                m(new me7((Object) this, i, (byte) 29));
+                m(new oe7((Object) this, i, (byte) 29));
             }
             setRendererPaused(!z);
         }

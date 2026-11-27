@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xq6 implements Runnable {
     public final /* synthetic */ byte a = 1;
@@ -50,7 +50,7 @@ public final /* synthetic */ class xq6 implements Runnable {
                 if (i3 == 0) {
                     try {
                         if (arrayList.isEmpty() || z) {
-                            ls6Var.getMessagesStorage().E(i4, i5, j, j2);
+                            ls6Var.getMessagesStorage().G(i4, i5, j, j2);
                             j2 = j2;
                             i5 = i5;
                             i4 = i4;
@@ -103,23 +103,23 @@ public final /* synthetic */ class xq6 implements Runnable {
                 if (!z || i4 != 0 || i9 != 0) {
                     int i10 = (z && i9 == 0) ? 1 : ((TLRPC.Message) arrayList.get(arrayList.size() - 1)).id;
                     if (i9 != 0) {
-                        ls6Var.getMessagesStorage().s(j, i10, ((TLRPC.Message) arrayList.get(0)).id, i5, j2);
+                        ls6Var.getMessagesStorage().u(j, i10, ((TLRPC.Message) arrayList.get(0)).id, i5, j2);
                     } else if (i4 != 0) {
-                        ls6Var.getMessagesStorage().s(j, i10, i4, i5, j2);
+                        ls6Var.getMessagesStorage().u(j, i10, i4, i5, j2);
                     } else {
-                        ls6Var.getMessagesStorage().s(j, i10, ConnectionsManager.DEFAULT_DATACENTER_ID, i5, j2);
+                        ls6Var.getMessagesStorage().u(j, i10, ConnectionsManager.DEFAULT_DATACENTER_ID, i5, j2);
                     }
                 }
                 ls6Var.getMessagesStorage().b.commitTransaction();
                 break;
             default:
-                ((jf7) rf0Var).B0(this.b, this.e, this.f, this.c, this.d, (TLRPC.messages_Messages) obj, this.h);
+                ((kf7) rf0Var).E0(this.b, this.e, this.f, this.c, this.d, (TLRPC.messages_Messages) obj, this.h);
                 break;
         }
     }
 
-    public /* synthetic */ xq6(jf7 jf7Var, int i, TLRPC.messages_Messages messages_messages, long j, long j2, int i2, int i3, boolean z) {
-        this.n = jf7Var;
+    public /* synthetic */ xq6(kf7 kf7Var, int i, TLRPC.messages_Messages messages_messages, long j, long j2, int i2, int i3, boolean z) {
+        this.n = kf7Var;
         this.b = i;
         this.r = messages_messages;
         this.c = j;

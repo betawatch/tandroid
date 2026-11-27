@@ -1,30 +1,27 @@
 // default package
 
-import java.io.FileInputStream;
-import java.nio.channels.FileLock;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class zi7 extends ax2 {
-    public wj7 a;
-    public FileInputStream b;
-    public FileLock c;
-    public boolean d;
-    public /* synthetic */ Object e;
-    public final /* synthetic */ aj7 f;
-    public int h;
+    public Object a;
+    public Object b;
+    public Object c;
+    public /* synthetic */ Object d;
+    public final /* synthetic */ bj7 e;
+    public int f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zi7(aj7 aj7Var, zw2 zw2Var) {
+    public zi7(bj7 bj7Var, zw2 zw2Var) {
         super(zw2Var);
-        this.f = aj7Var;
+        this.e = bj7Var;
     }
 
     @Override // qf0
     public final Object invokeSuspend(Object obj) {
-        this.e = obj;
-        this.h |= TLObject.FLAG_31;
-        return this.f.e(null, this);
+        this.d = obj;
+        this.f |= TLObject.FLAG_31;
+        return this.e.c(null, this);
     }
 }

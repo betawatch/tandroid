@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class mn0 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -52,19 +52,19 @@ public final /* synthetic */ class mn0 implements RequestDelegate {
                 uc7 uc7Var = (uc7) obj6;
                 Activity activity = (Activity) obj5;
                 id idVar = (id) obj4;
-                bf7 bf7Var = (bf7) obj3;
+                cf7 cf7Var = (cf7) obj3;
                 e eVar = (e) obj2;
                 TLRPC.TL_channels_convertToGigagroup tL_channels_convertToGigagroup = (TLRPC.TL_channels_convertToGigagroup) obj;
                 uc7Var.getClass();
                 if (tL_error != null) {
-                    hl.c3(new ra7((Object) uc7Var, (Object) bf7Var, (Object) activity, (Object) idVar, (Object) tL_error, (Object) eVar, (Object) tL_channels_convertToGigagroup, (byte) 1));
+                    hl.c3(new ra7((Object) uc7Var, (Object) cf7Var, (Object) activity, (Object) idVar, (Object) tL_error, (Object) eVar, (Object) tL_channels_convertToGigagroup, (byte) 1));
                     break;
                 } else {
                     if (activity != null) {
                         hl.c3(new gb7(activity, idVar, (byte) 0));
                     }
                     uc7Var.Y3((TLRPC.Updates) tLObject, false);
-                    hl.c3(new ue(bf7Var, (byte) 2));
+                    hl.c3(new ue(cf7Var, (byte) 2));
                     break;
                 }
             case 3:

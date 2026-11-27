@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class g24 extends c79 {
     public final Context c;
@@ -146,7 +146,7 @@ public final class g24 extends c79 {
             } else {
                 if (i8 == -4) {
                     ls6 d0 = ls6.d0(i4);
-                    SharedPreferences sharedPreferences = uc7.s1(i4).Y3;
+                    SharedPreferences sharedPreferences = uc7.s1(i4).Z3;
                     ArrayList arrayList3 = d0.t0[i5];
                     if (o24Var2.n1.isEmpty()) {
                         i = i8;
@@ -381,22 +381,22 @@ public final class g24 extends c79 {
         final byte b = 0;
         if (i3 != 2) {
             if (i3 == 3) {
-                ((q3b) view).setIsLast(i == this.s - 1);
+                ((r3b) view).setIsLast(i == this.s - 1);
                 return;
             } else {
                 if (i3 == 5) {
-                    ((t3b) view).b(ob6.M0(ls6.d0(i2).s0 ? 2131750797 : 2131750798, null), R.drawable.msg_close, ob6.M0(2131754894, null), 0, 0);
+                    ((u3b) view).b(ob6.M0(ls6.d0(i2).s0 ? 2131750797 : 2131750798, null), R.drawable.msg_close, ob6.M0(2131754894, null), 0, 0);
                     return;
                 }
                 return;
             }
         }
-        t3b t3bVar = (t3b) view;
-        t3bVar.setHeaderOnClick(null);
+        u3b u3bVar = (u3b) view;
+        u3bVar.setHeaderOnClick(null);
         if (i == o24Var.g1) {
             int i5 = (o24Var.h1 && o24Var.i1 == null) ? 0 : o24Var.i1 != null ? R.drawable.msg_mini_customize : R.drawable.msg_close;
             TLRPC.Chat M0 = o24Var.K1 != null ? uc7.s1(i2).M0(Long.valueOf(o24Var.K1.id)) : null;
-            t3bVar.a(i5, ob6.a0("CurrentGroupStickers", null, 2131751659, M0 != null ? M0.title : "Group Stickers"));
+            u3bVar.a(i5, ob6.a0("CurrentGroupStickers", null, 2131751659, M0 != null ? M0.title : "Group Stickers"));
             return;
         }
         Object obj2 = sparseArray.get(i);
@@ -404,9 +404,9 @@ public final class g24 extends c79 {
             final TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
             TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
             if (stickerSet != null) {
-                t3bVar.a(0, stickerSet.title);
+                u3bVar.a(0, stickerSet.title);
                 if (tL_messages_stickerSet.set.creator && !o24Var.S2) {
-                    t3bVar.setEdit(new View.OnClickListener(this) { // from class: e24
+                    u3bVar.setEdit(new View.OnClickListener(this) { // from class: e24
                         public final /* synthetic */ g24 b;
 
                         {
@@ -429,7 +429,7 @@ public final class g24 extends c79 {
                         }
                     });
                 }
-                t3bVar.setHeaderOnClick(new View.OnClickListener(this) { // from class: e24
+                u3bVar.setHeaderOnClick(new View.OnClickListener(this) { // from class: e24
                     public final /* synthetic */ g24 b;
 
                     {
@@ -456,11 +456,11 @@ public final class g24 extends c79 {
             return;
         }
         if (obj2 == o24Var.k1) {
-            t3bVar.b(ob6.M0(2131746091, null), R.drawable.msg_close, ob6.M0(2131752028, null), 0, 0);
+            u3bVar.b(ob6.M0(2131746091, null), R.drawable.msg_close, ob6.M0(2131752028, null), 0, 0);
         } else if (obj2 == o24Var.l1) {
-            t3bVar.a(0, ob6.M0(2131750806, null));
+            u3bVar.a(0, ob6.M0(2131750806, null));
         } else if (obj2 == o24Var.m1) {
-            t3bVar.a(0, ob6.M0(2131746676, null));
+            u3bVar.a(0, ob6.M0(2131746676, null));
         }
     }
 
@@ -481,26 +481,26 @@ public final class g24 extends c79 {
                 view = new t24(context);
                 break;
             case 2:
-                t3b t3bVar = new t3b(this.c, false, false, o24Var.a2, o24Var.j2);
-                t3bVar.setOnIconClickListener(new je3(this, t3bVar, (byte) 10));
-                view = t3bVar;
+                u3b u3bVar = new u3b(this.c, false, false, o24Var.a2, o24Var.j2);
+                u3bVar.setOnIconClickListener(new je3(this, u3bVar, (byte) 10));
+                view = u3bVar;
                 break;
             case 3:
-                q3b q3bVar = new q3b(context);
-                q3bVar.setOrientation(1);
+                r3b r3bVar = new r3b(context);
+                r3bVar.setOrientation(1);
                 TextView textView = new TextView(context);
                 yob.X(textView, aob.Of, null);
                 bs2.r(14.0f, 1, 2131749150, textView, null);
-                q3bVar.addView(textView, tre.t(-1, -2, 51, 17, 4, 17, 0));
+                r3bVar.addView(textView, tre.t(-1, -2, 51, 17, 4, 17, 0));
                 TextView textView2 = new TextView(context);
-                q3bVar.a = textView2;
+                r3bVar.a = textView2;
                 textView2.setPadding(hl.L(17.0f), 0, hl.L(17.0f), 0);
                 textView2.setGravity(17);
                 qd4.w(textView2, aob.Ji, null, 1, 14.0f);
                 textView2.setBackground(rnb.f(aob.Fi, 4.0f));
                 textView2.setText(ob6.M0(2131752081, null).toUpperCase());
-                q3bVar.addView(textView2, tre.t(-2, 28, 51, 17, 10, 14, 8));
-                q3bVar.setAddOnClickListener(new View.OnClickListener(this) { // from class: d24
+                r3bVar.addView(textView2, tre.t(-2, 28, 51, 17, 10, 14, 8));
+                r3bVar.setAddOnClickListener(new View.OnClickListener(this) { // from class: d24
                     public final /* synthetic */ g24 b;
 
                     {
@@ -525,7 +525,7 @@ public final class g24 extends c79 {
                                 int i2 = o24Var3.d1;
                                 ArrayList arrayList = ls6.d0(i2).t0[0];
                                 if (!arrayList.isEmpty()) {
-                                    uc7.s1(i2).Y3.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
+                                    uc7.s1(i2).Z3.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
                                     g24 g24Var2 = o24Var3.z0;
                                     if (g24Var2 != null) {
                                         g24Var2.q(1, 2);
@@ -544,8 +544,8 @@ public final class g24 extends c79 {
                         }
                     }
                 });
-                q3bVar.setLayoutParams(new r79(-1, -2));
-                view = q3bVar;
+                r3bVar.setLayoutParams(new r79(-1, -2));
+                view = r3bVar;
                 break;
             case 4:
                 View view2 = new View(context);
@@ -553,8 +553,8 @@ public final class g24 extends c79 {
                 view = view2;
                 break;
             case 5:
-                t3b t3bVar2 = new t3b(this.c, false, false, o24Var.a2, o24Var.j2);
-                t3bVar2.setOnIconClickListener(new View.OnClickListener(this) { // from class: d24
+                u3b u3bVar2 = new u3b(this.c, false, false, o24Var.a2, o24Var.j2);
+                u3bVar2.setOnIconClickListener(new View.OnClickListener(this) { // from class: d24
                     public final /* synthetic */ g24 b;
 
                     {
@@ -579,7 +579,7 @@ public final class g24 extends c79 {
                                 int i2 = o24Var3.d1;
                                 ArrayList arrayList = ls6.d0(i2).t0[0];
                                 if (!arrayList.isEmpty()) {
-                                    uc7.s1(i2).Y3.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
+                                    uc7.s1(i2).Z3.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
                                     g24 g24Var2 = o24Var3.z0;
                                     if (g24Var2 != null) {
                                         g24Var2.q(1, 2);
@@ -598,7 +598,7 @@ public final class g24 extends c79 {
                         }
                     }
                 });
-                view = t3bVar2;
+                view = u3bVar2;
                 break;
             case 6:
                 m24 m24Var = new m24(o24Var, false);
@@ -649,7 +649,7 @@ public final class g24 extends c79 {
                                 int i22 = o24Var3.d1;
                                 ArrayList arrayList = ls6.d0(i22).t0[0];
                                 if (!arrayList.isEmpty()) {
-                                    uc7.s1(i22).Y3.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
+                                    uc7.s1(i22).Z3.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
                                     g24 g24Var2 = o24Var3.z0;
                                     if (g24Var2 != null) {
                                         g24Var2.q(1, 2);

@@ -77,7 +77,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ip7 extends rf0 implements fn7 {
     public static String k0;
@@ -895,7 +895,7 @@ public final class ip7 extends rf0 implements fn7 {
                             z11 = true;
                         }
                         hp7Var.e = hp7Var.a();
-                        jf7 messagesStorage = ip7Var2.getMessagesStorage();
+                        kf7 messagesStorage = ip7Var2.getMessagesStorage();
                         messagesStorage.a.c(new t87(messagesStorage, hp7Var, b2));
                         z9 = true;
                     } else {
@@ -903,7 +903,7 @@ public final class ip7 extends rf0 implements fn7 {
                         hp7Var2.d = r47Var4.M;
                         ip7Var2.E.add(hp7Var2);
                         ip7Var2.F.k(B0, hp7Var2);
-                        jf7 messagesStorage2 = ip7Var2.getMessagesStorage();
+                        kf7 messagesStorage2 = ip7Var2.getMessagesStorage();
                         messagesStorage2.a.c(new t87(messagesStorage2, hp7Var2, b2));
                         z8 = true;
                         z11 = true;
@@ -997,7 +997,7 @@ public final class ip7 extends rf0 implements fn7 {
                                     if (z) {
                                         boolean z15 = r47Var3.i;
                                         if (z15) {
-                                            jf7 messagesStorage3 = ip7Var2.getMessagesStorage();
+                                            kf7 messagesStorage3 = ip7Var2.getMessagesStorage();
                                             messagesStorage3.a.c(new ve2(messagesStorage3, r47Var3, b3));
                                         }
                                         z9 = z15;
@@ -1015,7 +1015,7 @@ public final class ip7 extends rf0 implements fn7 {
                                 long j15 = j4;
                                 if (!z9) {
                                     if (z && !r47Var4.O) {
-                                        jf7 messagesStorage4 = ip7Var2.getMessagesStorage();
+                                        kf7 messagesStorage4 = ip7Var2.getMessagesStorage();
                                         messagesStorage4.a.c(new ve2(messagesStorage4, r47Var4, b3));
                                     }
                                     long b22 = r47.b2(ip7Var2.currentAccount, r47Var4.k, ip7Var2.getMessagesController().w2(r47Var4), false);
@@ -1308,14 +1308,14 @@ public final class ip7 extends rf0 implements fn7 {
         }
         boolean x = n(i).x(j, null, false, false);
         boolean z2 = j2 != 0;
-        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).W3.edit();
+        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
         if (!x || z2) {
             edit.putInt("notify2_" + p(j, j2, false), 0);
         } else {
             edit.remove("notify2_" + p(j, j2, false));
         }
         if (j2 == 0) {
-            getMessagesStorage().B1(j, 0L);
+            getMessagesStorage().G1(j, 0L);
             TLRPC.Dialog dialog = (TLRPC.Dialog) getMessagesController().R.f(j);
             if (dialog != null) {
                 dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
@@ -1328,7 +1328,7 @@ public final class ip7 extends rf0 implements fn7 {
     public final void H(long j, int i, long j2) {
         long j3 = 0;
         if (j != 0) {
-            SharedPreferences.Editor edit = uc7.s1(this.currentAccount).W3.edit();
+            SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
             boolean z = j2 != 0;
             boolean x = n(this.currentAccount).x(j, null, false, false);
             String p = p(j, j2, false);
@@ -1345,7 +1345,7 @@ public final class ip7 extends rf0 implements fn7 {
             edit.apply();
             if (j2 == 0) {
                 n(this.currentAccount).N(j);
-                jf7.Y(this.currentAccount).B1(j, j3);
+                kf7.a0(this.currentAccount).G1(j, j3);
                 TLRPC.Dialog dialog = (TLRPC.Dialog) uc7.s1(this.currentAccount).R.f(j);
                 if (dialog != null) {
                     TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
@@ -1374,7 +1374,7 @@ public final class ip7 extends rf0 implements fn7 {
             i2 += hashMap.size();
             z |= hp7Var.d;
             TLRPC.User X1 = getMessagesController().X1(Long.valueOf(j));
-            if (X1 == null && (X1 = getMessagesStorage().h0(j)) != null) {
+            if (X1 == null && (X1 = getMessagesStorage().j0(j)) != null) {
                 getMessagesController().i4(X1, true, false);
             }
             File file = null;
@@ -1628,7 +1628,7 @@ public final class ip7 extends rf0 implements fn7 {
             } else {
                 edit.putInt("notify2_" + p(j, j2, false), 0);
             }
-            getMessagesStorage().B1(j, 0L);
+            getMessagesStorage().G1(j, 0L);
             if (dialog != null) {
                 dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
             }
@@ -1652,7 +1652,7 @@ public final class ip7 extends rf0 implements fn7 {
                 j3 = 1 | (((long) currentTime) << 32);
             }
             n(yac.t0).N(j);
-            jf7.Y(yac.t0).B1(j, j3);
+            kf7.a0(yac.t0).G1(j, j3);
             if (dialog != null) {
                 TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
                 dialog.notify_settings = tL_peerNotifySettings;
@@ -1666,8 +1666,8 @@ public final class ip7 extends rf0 implements fn7 {
     public final void U(int i, int i2) {
         getAccountInstance().d().edit().putInt(k(i), i2).commit();
         b0(i);
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new be7(messagesStorage, (byte) 10));
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new hd7(messagesStorage, (byte) 12));
         g(i);
     }
 
@@ -1675,14 +1675,22 @@ public final class ip7 extends rf0 implements fn7 {
         l0.c(new bp7(this, i, (byte) 7));
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(87:51|(2:53|(3:55|56|57)(4:58|(2:61|59)|62|63))(1:895)|64|65|(1:67)(3:890|(1:892)(1:894)|893)|68|(4:71|(2:73|74)(1:76)|75|69)|77|78|(5:80|(2:(1:83)(1:761)|84)(1:762)|(1:760)(2:90|(2:94|95))|759|95)(3:763|(3:(1:875)(1:772)|773|(13:775|(2:777|(1:779)(5:828|(1:830)|831|380|381))(2:832|(1:840)(2:836|(1:838)))|780|781|(1:783)(2:818|(1:820)(2:821|(1:823)(2:824|(1:826)(7:827|785|786|(1:817)(4:791|(4:793|(1:807)(2:797|(2:801|802))|806|802)(2:808|(2:810|(2:812|(1:814))))|803|(1:805))|816|803|(0)))))|784|785|786|(0)|817|816|803|(0))(9:841|(2:843|(1:845)(5:847|(1:849)|831|380|381))(9:850|(1:874)(1:854)|855|(1:873)(2:859|(1:861))|872|863|(2:865|(1:867))(1:871)|(1:869)|870)|846|786|(0)|817|816|803|(0)))(3:876|(5:878|(2:880|(1:882))(2:883|(2:885|(1:887)))|831|380|381)(1:889)|888)|57)|(1:758)(2:99|(1:101))|102|(3:104|(1:106)(1:756)|107)(1:757)|108|(3:110|(3:112|(1:114)(3:743|744|(3:746|(1:748)(1:750)|749)(1:751))|115)|754)(1:755)|(2:(1:741)(3:122|(1:124)(2:(2:737|738)|736)|125)|126)(1:742)|127|(5:700|(5:702|(4:705|(2:713|714)|715|703)|720|721|(4:723|(1:725)|726|727)(1:733))(1:734)|728|(1:730)(1:732)|731)(1:130)|131|(1:133)|134|(1:136)(1:690)|137|(1:689)(1:141)|142|143|(1:688)(3:146|(1:148)|(3:653|654|(59:658|659|660|(6:664|(1:666)(2:(2:678|679)|682)|667|668|669|670)|151|(1:652)(1:155)|(1:651)(1:158)|159|(1:650)|166|(1:649)(1:173)|174|(11:176|(1:178)(2:377|(4:379|380|381|57)(2:382|(1:(1:385)(1:386))(2:387|(1:389)(2:390|(1:395)(1:394)))))|179|(2:182|180)|183|184|(1:376)(1:187)|188|(1:190)|(1:192)(1:375)|193)(4:396|(5:398|(1:400)(3:404|(1:406)(2:634|(2:639|(1:641)(2:642|(1:646)))(1:638))|(3:408|(1:410)|411)(14:412|(1:414)|415|(2:630|(1:632)(1:633))(1:421)|422|423|(3:622|(1:(1:625)(2:626|(1:628)))|629)(1:427)|428|(2:(2:431|(1:(2:434|(1:436))(1:616))(2:617|(1:619)))(1:620)|615)(1:621)|(4:548|(1:614)(5:554|(1:613)(4:557|(1:561)|(1:612)(2:567|(1:571))|611)|(2:576|(2:578|(1:588))(2:589|(1:599)))|(1:601)(1:(2:606|607))|602)|610|602)(1:440)|441|(7:443|(1:544)(8:456|(1:543)(3:460|(9:525|526|527|528|529|530|531|532|533)(1:462)|463)|464|(1:466)(1:524)|467|468|(2:519|520)(3:470|(3:515|(1:517)|518)|472)|(7:474|(1:476)|477|(2:479|(1:481))|482|483|(2:488|(2:490|(3:492|(2:497|498)(1:494)|(1:496))(2:501|(2:503|(1:505)))))))|512|(3:514|483|(3:486|488|(0)))|482|483|(0))(2:545|(1:547))|506|(2:508|(3:510|511|403))))|401|402|403)|647|648)|194|195|(44:197|(1:199)(2:349|(1:351)(2:352|(43:354|(1:356)(1:(1:359))|357|201|(1:203)|204|(1:206)|207|(2:209|(1:211)(1:344))(2:345|(1:347)(1:348))|(1:213)|214|(4:216|(2:219|217)|220|221)(1:343)|222|(1:224)(1:342)|225|(1:341)(1:231)|232|233|234|235|(1:237)|(4:239|240|241|(1:243))(1:337)|244|(1:246)|(2:250|(20:252|(4:255|(2:256|(2:258|(2:261|262)(1:260))(1:331))|(1:264)(1:265)|253)|332|266|(1:268)|269|(2:(1:274)|(1:281))|282|(1:288)|289|(1:291)|(1:293)|294|(3:299|(4:301|(3:303|(4:305|(1:307)|308|309)(2:311|312)|310)|313|314)|315)|(1:330)(2:318|(2:322|(1:324)))|325|(1:327)|328|329|57))|333|(0)|269|(3:271|(0)|(2:276|281))|282|(3:284|286|288)|289|(0)|(0)|294|(4:296|299|(0)|315)|(0)|330|325|(0)|328|329|57)))|200|201|(0)|204|(0)|207|(0)(0)|(0)|214|(0)(0)|222|(0)(0)|225|(1:227)|341|232|233|234|235|(0)|(0)(0)|244|(0)|(3:248|250|(0))|333|(0)|269|(0)|282|(0)|289|(0)|(0)|294|(0)|(0)|330|325|(0)|328|329|57)|360|(4:362|(2:365|363)|366|367)(2:368|(1:370)(2:371|(1:373)(1:374)))|201|(0)|204|(0)|207|(0)(0)|(0)|214|(0)(0)|222|(0)(0)|225|(0)|341|232|233|234|235|(0)|(0)(0)|244|(0)|(0)|333|(0)|269|(0)|282|(0)|289|(0)|(0)|294|(0)|(0)|330|325|(0)|328|329|57)))|150|151|(1:153)|652|(0)|651|159|(1:161)|650|166|(1:169)|649|174|(0)(0)|194|195|(0)|360|(0)(0)|201|(0)|204|(0)|207|(0)(0)|(0)|214|(0)(0)|222|(0)(0)|225|(0)|341|232|233|234|235|(0)|(0)(0)|244|(0)|(0)|333|(0)|269|(0)|282|(0)|289|(0)|(0)|294|(0)|(0)|330|325|(0)|328|329|57) */
-    /* JADX WARN: Code restructure failed: missing block: B:339:0x138b, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(90:51|(2:53|(3:55|56|57)(4:58|(2:61|59)|62|63))(1:895)|64|65|(1:67)(3:890|(1:892)(1:894)|893)|68|(4:71|(2:73|74)(1:76)|75|69)|77|78|(5:80|(2:(1:83)(1:761)|84)(1:762)|(1:760)(2:90|(2:94|95))|759|95)(3:763|(3:(1:875)(1:772)|773|(13:775|(2:777|(1:779)(5:828|(1:830)|831|380|381))(2:832|(1:840)(2:836|(1:838)))|780|781|(1:783)(2:818|(1:820)(2:821|(1:823)(2:824|(1:826)(7:827|785|786|(1:817)(4:791|(4:793|(1:807)(2:797|(2:801|802))|806|802)(2:808|(2:810|(2:812|(1:814))))|803|(1:805))|816|803|(0)))))|784|785|786|(0)|817|816|803|(0))(9:841|(2:843|(1:845)(5:847|(1:849)|831|380|381))(9:850|(1:874)(1:854)|855|(1:873)(2:859|(1:861))|872|863|(2:865|(1:867))(1:871)|(1:869)|870)|846|786|(0)|817|816|803|(0)))(3:876|(5:878|(2:880|(1:882))(2:883|(2:885|(1:887)))|831|380|381)(1:889)|888)|57)|(1:758)(2:99|(1:101))|102|(3:104|(1:106)(1:756)|107)(1:757)|108|(3:110|(3:112|(1:114)(3:743|744|(3:746|(1:748)(1:750)|749)(1:751))|115)|754)(1:755)|(2:(1:741)(3:122|(1:124)(2:(2:737|738)|736)|125)|126)(1:742)|127|(5:700|(5:702|(4:705|(2:713|714)|715|703)|720|721|(4:723|(1:725)|726|727)(1:733))(1:734)|728|(1:730)(1:732)|731)(1:130)|131|(1:133)|134|(1:136)(1:690)|137|(1:689)(1:141)|142|143|(1:688)(3:146|(1:148)|(3:653|654|(62:658|659|660|(6:664|(1:666)(2:(2:678|679)|682)|667|668|669|670)|151|(1:652)(1:155)|(1:651)(1:158)|159|(1:650)|166|(1:649)(1:173)|174|(11:176|(1:178)(2:377|(4:379|380|381|57)(2:382|(1:(1:385)(1:386))(2:387|(1:389)(2:390|(1:395)(1:394)))))|179|(2:182|180)|183|184|(1:376)(1:187)|188|(1:190)|(1:192)(1:375)|193)(4:396|(5:398|(1:400)(3:404|(1:406)(2:634|(2:639|(1:641)(2:642|(1:646)))(1:638))|(3:408|(1:410)|411)(14:412|(1:414)|415|(2:630|(1:632)(1:633))(1:421)|422|423|(3:622|(1:(1:625)(2:626|(1:628)))|629)(1:427)|428|(2:(2:431|(1:(2:434|(1:436))(1:616))(2:617|(1:619)))(1:620)|615)(1:621)|(4:548|(1:614)(5:554|(1:613)(4:557|(1:561)|(1:612)(2:567|(1:571))|611)|(2:576|(2:578|(1:588))(2:589|(1:599)))|(1:601)(1:(2:606|607))|602)|610|602)(1:440)|441|(7:443|(1:544)(8:456|(1:543)(3:460|(9:525|526|527|528|529|530|531|532|533)(1:462)|463)|464|(1:466)(1:524)|467|468|(2:519|520)(3:470|(3:515|(1:517)|518)|472)|(7:474|(1:476)|477|(2:479|(1:481))|482|483|(2:488|(2:490|(3:492|(2:497|498)(1:494)|(1:496))(2:501|(2:503|(1:505)))))))|512|(3:514|483|(3:486|488|(0)))|482|483|(0))(2:545|(1:547))|506|(2:508|(3:510|511|403))))|401|402|403)|647|648)|194|195|(47:197|(1:199)(2:349|(1:351)(2:352|(46:354|(1:356)(1:(1:359))|357|201|(1:203)|204|(1:206)|207|(2:209|(1:211)(1:344))(2:345|(1:347)(1:348))|(1:213)|214|(4:216|(2:219|217)|220|221)(1:343)|222|(1:224)(1:342)|225|(1:341)(1:231)|232|233|234|235|236|237|238|(1:240)|(1:244)|245|(1:247)|(2:251|(20:253|(4:256|(2:257|(2:259|(2:262|263)(1:261))(1:332))|(1:265)(1:266)|254)|333|267|(1:269)|270|(2:(1:275)|(1:282))|283|(1:289)|290|(1:292)|(1:294)|295|(3:300|(4:302|(3:304|(4:306|(1:308)|309|310)(2:312|313)|311)|314|315)|316)|(1:331)(2:319|(2:323|(1:325)))|326|(1:328)|329|330|57))|334|(0)|270|(3:272|(0)|(2:277|282))|283|(3:285|287|289)|290|(0)|(0)|295|(4:297|300|(0)|316)|(0)|331|326|(0)|329|330|57)))|200|201|(0)|204|(0)|207|(0)(0)|(0)|214|(0)(0)|222|(0)(0)|225|(1:227)|341|232|233|234|235|236|237|238|(0)|(2:242|244)|245|(0)|(3:249|251|(0))|334|(0)|270|(0)|283|(0)|290|(0)|(0)|295|(0)|(0)|331|326|(0)|329|330|57)|360|(4:362|(2:365|363)|366|367)(2:368|(1:370)(2:371|(1:373)(1:374)))|201|(0)|204|(0)|207|(0)(0)|(0)|214|(0)(0)|222|(0)(0)|225|(0)|341|232|233|234|235|236|237|238|(0)|(0)|245|(0)|(0)|334|(0)|270|(0)|283|(0)|290|(0)|(0)|295|(0)|(0)|331|326|(0)|329|330|57)))|150|151|(1:153)|652|(0)|651|159|(1:161)|650|166|(1:169)|649|174|(0)(0)|194|195|(0)|360|(0)(0)|201|(0)|204|(0)|207|(0)(0)|(0)|214|(0)(0)|222|(0)(0)|225|(0)|341|232|233|234|235|236|237|238|(0)|(0)|245|(0)|(0)|334|(0)|270|(0)|283|(0)|290|(0)|(0)|295|(0)|(0)|331|326|(0)|329|330|57) */
+    /* JADX WARN: Code restructure failed: missing block: B:336:0x1386, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:340:0x138c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:337:0x138b, code lost:
     
-        r4 = r72;
+        cc4.f(r0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:339:0x1388, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:340:0x1389, code lost:
+    
+        r4 = r37;
      */
     /* JADX WARN: Code restructure failed: missing block: B:815:0x054f, code lost:
     
@@ -1703,34 +1711,33 @@ public final class ip7 extends rf0 implements fn7 {
     /* JADX WARN: Removed duplicated region for block: B:168:0x091c A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:176:0x094a  */
     /* JADX WARN: Removed duplicated region for block: B:197:0x110c  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x11aa  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x11cc  */
-    /* JADX WARN: Removed duplicated region for block: B:209:0x1226  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x127f  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x12a3  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x11ab  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x11cd  */
+    /* JADX WARN: Removed duplicated region for block: B:209:0x1227  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x1284  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x12ab  */
     /* JADX WARN: Removed duplicated region for block: B:224:0x1300  */
     /* JADX WARN: Removed duplicated region for block: B:227:0x132e  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x1361 A[Catch: Exception -> 0x138b, TRY_LEAVE, TryCatch #2 {Exception -> 0x138b, blocks: (B:235:0x1343, B:237:0x1361), top: B:234:0x1343 }] */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x1369  */
-    /* JADX WARN: Removed duplicated region for block: B:246:0x1393  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x139c  */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x13a6  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x13f3  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x1435  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x143b  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x145a  */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x146f  */
-    /* JADX WARN: Removed duplicated region for block: B:293:0x1474  */
-    /* JADX WARN: Removed duplicated region for block: B:296:0x1481  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x148e  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x14ff A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:327:0x1535  */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x1376  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x1363 A[Catch: Exception -> 0x1386, TryCatch #12 {Exception -> 0x1386, blocks: (B:238:0x135c, B:240:0x1363, B:242:0x136b, B:244:0x136f, B:245:0x1375), top: B:237:0x135c }] */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x136b A[Catch: Exception -> 0x1386, TryCatch #12 {Exception -> 0x1386, blocks: (B:238:0x135c, B:240:0x1363, B:242:0x136b, B:244:0x136f, B:245:0x1375), top: B:237:0x135c }] */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x1390  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x1399  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x13a3  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x13f0  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x1432  */
+    /* JADX WARN: Removed duplicated region for block: B:275:0x1438  */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x1455  */
+    /* JADX WARN: Removed duplicated region for block: B:292:0x146a  */
+    /* JADX WARN: Removed duplicated region for block: B:294:0x146f  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x147c  */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x1489  */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x1506 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:328:0x153c  */
     /* JADX WARN: Removed duplicated region for block: B:342:0x1307  */
-    /* JADX WARN: Removed duplicated region for block: B:343:0x12ca  */
-    /* JADX WARN: Removed duplicated region for block: B:345:0x125b  */
-    /* JADX WARN: Removed duplicated region for block: B:362:0x1155  */
-    /* JADX WARN: Removed duplicated region for block: B:368:0x117b  */
+    /* JADX WARN: Removed duplicated region for block: B:343:0x12cc  */
+    /* JADX WARN: Removed duplicated region for block: B:345:0x125f  */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x1156  */
+    /* JADX WARN: Removed duplicated region for block: B:368:0x117c  */
     /* JADX WARN: Removed duplicated region for block: B:396:0x0ae5  */
     /* JADX WARN: Removed duplicated region for block: B:466:0x0eee  */
     /* JADX WARN: Removed duplicated region for block: B:46:0x0172  */
@@ -1745,18 +1752,18 @@ public final class ip7 extends rf0 implements fn7 {
     /* JADX WARN: Removed duplicated region for block: B:524:0x0ef2  */
     /* JADX WARN: Removed duplicated region for block: B:788:0x04f6 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:805:0x055f  */
-    /* JADX WARN: Removed duplicated region for block: B:900:0x15a3  */
-    /* JADX WARN: Removed duplicated region for block: B:910:0x160c  */
-    /* JADX WARN: Removed duplicated region for block: B:922:0x166d  */
-    /* JADX WARN: Removed duplicated region for block: B:948:0x15e2  */
-    /* JADX WARN: Removed duplicated region for block: B:954:0x01b7 A[EDGE_INSN: B:954:0x01b7->B:898:0x01b7 BREAK  A[LOOP:2: B:48:0x01a9->B:57:0x1587], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:900:0x15a5  */
+    /* JADX WARN: Removed duplicated region for block: B:910:0x160e  */
+    /* JADX WARN: Removed duplicated region for block: B:922:0x166f  */
+    /* JADX WARN: Removed duplicated region for block: B:948:0x15e4  */
+    /* JADX WARN: Removed duplicated region for block: B:954:0x01b7 A[EDGE_INSN: B:954:0x01b7->B:898:0x01b7 BREAK  A[LOOP:2: B:48:0x01a9->B:57:0x1589], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:955:0x0174  */
     /* JADX WARN: Type inference failed for: r4v10, types: [boolean, byte] */
     /* JADX WARN: Type inference failed for: r4v13 */
     /* JADX WARN: Type inference failed for: r4v9 */
-    /* JADX WARN: Type inference failed for: r8v111 */
-    /* JADX WARN: Type inference failed for: r8v112, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r8v113 */
+    /* JADX WARN: Type inference failed for: r8v101 */
+    /* JADX WARN: Type inference failed for: r8v102, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r8v103 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1848,10 +1855,10 @@ public final class ip7 extends rf0 implements fn7 {
         long j7;
         eo7 eo7Var;
         int i16;
-        r47 r47Var2;
         StringBuilder sb;
-        gp7 gp7Var2;
+        zh6 zh6Var8;
         long j8;
+        gp7 gp7Var2;
         String str11;
         int i17;
         Bitmap bitmap3;
@@ -1878,9 +1885,9 @@ public final class ip7 extends rf0 implements fn7 {
         TLRPC.FileLocation fileLocation10;
         TLRPC.UserProfilePhoto userProfilePhoto2;
         TLRPC.FileLocation fileLocation11;
+        r47 r47Var2;
+        zh6 zh6Var9;
         gp7 gp7Var3;
-        zh6 zh6Var8;
-        r47 r47Var3;
         ArrayList arrayList6;
         char c2;
         ArrayList arrayList7;
@@ -1889,24 +1896,29 @@ public final class ip7 extends rf0 implements fn7 {
         File file4;
         Uri c3;
         File file5;
+        r47 r47Var3;
+        int i22;
         long j12;
         long j13;
         Bitmap bitmap4;
-        ln7 ln7Var2;
         String str15;
-        r47 r47Var4;
+        eo7 eo7Var2;
+        String str16;
+        ArrayList arrayList8;
         long j14;
-        r47 r47Var5;
         TL_keyboard.KeyboardInlineButton keyboardInlineButton;
         TL_keyboard.TL_inlineButtonTypeCopy tL_inlineButtonTypeCopy;
         long j15;
         TLRPC.User user7;
         int size3;
-        int i22;
-        ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList8;
+        int i23;
+        String str17;
+        ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList9;
+        int i24;
         TLRPC.Message message;
         TLRPC.ReplyMarkup replyMarkup;
-        ArrayList arrayList9;
+        Intent intent;
+        ArrayList arrayList10;
         boolean z14;
         ?? r8;
         String G;
@@ -1914,7 +1926,7 @@ public final class ip7 extends rf0 implements fn7 {
         TLRPC.FileLocation fileLocation12;
         IconCompat iconCompat2;
         IconCompat iconCompat3;
-        int i23;
+        int i25;
         Bitmap bitmap5;
         String G2;
         TLRPC.UserProfilePhoto userProfilePhoto4;
@@ -1930,72 +1942,72 @@ public final class ip7 extends rf0 implements fn7 {
         wn7Var.f(8, z4);
         Notification b2 = wn7Var.b();
         SharedPreferences d = ip7Var.getAccountInstance().d();
-        ArrayList arrayList10 = new ArrayList();
+        ArrayList arrayList11 = new ArrayList();
         if (!ip7Var.E.isEmpty()) {
-            arrayList10.add(new gp7(0L, 0L, true));
+            arrayList11.add(new gp7(0L, 0L, true));
         }
-        zh6 zh6Var9 = new zh6();
-        int i24 = 0;
-        for (int i25 = 0; i25 < ip7Var.a.size(); i25++) {
-            r47 r47Var6 = (r47) ip7Var.a.get(i25);
-            long A0 = r47Var6.A0();
-            long a2 = r47.a2(ip7Var.currentAccount, r47Var6.k, ip7Var.getMessagesController().w2(r47Var6));
-            int i26 = d.getInt("dismissDate" + A0, 0);
-            if (r47Var6.K || r47Var6.k.date > i26) {
-                ArrayList arrayList11 = (ArrayList) zh6Var9.f(A0);
-                if (arrayList11 == null) {
-                    arrayList11 = qd4.s(zh6Var9, A0);
+        zh6 zh6Var10 = new zh6();
+        int i26 = 0;
+        for (int i27 = 0; i27 < ip7Var.a.size(); i27++) {
+            r47 r47Var4 = (r47) ip7Var.a.get(i27);
+            long A0 = r47Var4.A0();
+            long a2 = r47.a2(ip7Var.currentAccount, r47Var4.k, ip7Var.getMessagesController().w2(r47Var4));
+            int i28 = d.getInt("dismissDate" + A0, 0);
+            if (r47Var4.K || r47Var4.k.date > i28) {
+                ArrayList arrayList12 = (ArrayList) zh6Var10.f(A0);
+                if (arrayList12 == null) {
+                    arrayList12 = qd4.s(zh6Var10, A0);
                     cc4.b("showExtraNotifications: sortedDialogs += " + A0);
-                    arrayList10.add(new gp7(A0, a2, false));
+                    arrayList11.add(new gp7(A0, a2, false));
                 }
-                arrayList11.add(r47Var6);
+                arrayList12.add(r47Var4);
             } else {
                 StringBuilder o = ik8.o(A0, "showExtraNotifications: dialog ", " is skipped, message date (");
-                o.append(r47Var6.k.date);
+                o.append(r47Var4.k.date);
                 o.append(" <= ");
-                o.append(i26);
+                o.append(i28);
                 o.append(")");
                 cc4.b(o.toString());
             }
         }
-        zh6 zh6Var10 = new zh6();
-        int i27 = 0;
+        zh6 zh6Var11 = new zh6();
+        int i29 = 0;
         while (true) {
             int m = ip7Var.h.m();
             zh6Var = ip7Var.h;
-            if (i27 >= m) {
+            if (i29 >= m) {
                 break;
             }
-            zh6Var10.k(zh6Var.j(i27), (Integer) ip7Var.h.n(i27));
-            i27++;
+            zh6Var11.k(zh6Var.j(i29), (Integer) ip7Var.h.n(i29));
+            i29++;
         }
         zh6Var.b();
-        ArrayList arrayList12 = new ArrayList();
-        int i28 = Build.VERSION.SDK_INT;
-        if (i28 > 27) {
-            if (arrayList10.size() <= (ip7Var.E.isEmpty() ? 1 : 2)) {
+        ArrayList arrayList13 = new ArrayList();
+        int i30 = Build.VERSION.SDK_INT;
+        if (i30 > 27) {
+            if (arrayList11.size() <= (ip7Var.E.isEmpty() ? 1 : 2)) {
                 z5 = false;
-                if (z5 && i28 >= 26) {
+                if (z5 && i30 >= 26) {
                     c();
                 }
                 e = ip7Var.getUserConfig().e();
                 z6 = !hl.m2() || xea.B;
                 cc4.b("showExtraNotifications: passcode=" + (xea.r.length() <= 0) + " waitingForPasscode=" + z6 + " selfUserId=" + e + " useSummaryNotification=" + z5);
                 zh6Var2 = new zh6();
-                size = arrayList10.size();
-                arrayList = arrayList12;
+                size = arrayList11.size();
+                arrayList = arrayList13;
                 while (true) {
-                    if (i24 >= size) {
+                    if (i26 >= size) {
                         break;
                     }
                     if (arrayList.size() >= 7) {
                         cc4.b("showExtraNotifications: break from holders, count over 7");
                         break;
                     }
-                    gp7 gp7Var4 = (gp7) arrayList10.get(i24);
-                    ArrayList arrayList13 = arrayList10;
+                    gp7 gp7Var4 = (gp7) arrayList11.get(i26);
+                    ArrayList arrayList14 = arrayList11;
                     if (gp7Var4.c) {
-                        ArrayList arrayList14 = new ArrayList();
+                        ArrayList arrayList15 = new ArrayList();
                         if (ip7Var.E.isEmpty()) {
                             StringBuilder sb3 = new StringBuilder("showExtraNotifications: [");
                             z8 = z6;
@@ -2005,21 +2017,21 @@ public final class ip7 extends rf0 implements fn7 {
                             z9 = z5;
                             notification3 = b2;
                             sharedPreferences = d;
-                            zh6Var5 = zh6Var9;
-                            i8 = i24;
-                            zh6Var6 = zh6Var10;
+                            zh6Var5 = zh6Var10;
+                            i8 = i26;
+                            zh6Var6 = zh6Var11;
                             zh6Var7 = zh6Var2;
                             i6 = size;
                             j6 = e;
                             arrayList4 = arrayList;
-                            i24 = i8 + 1;
+                            i26 = i8 + 1;
                             arrayList = arrayList4;
-                            arrayList10 = arrayList13;
+                            arrayList11 = arrayList14;
                             z5 = z9;
                             z6 = z8;
                             size = i6;
-                            zh6Var9 = zh6Var5;
-                            zh6Var10 = zh6Var6;
+                            zh6Var10 = zh6Var5;
+                            zh6Var11 = zh6Var6;
                             d = sharedPreferences;
                             e = j6;
                             b2 = notification3;
@@ -2028,14 +2040,14 @@ public final class ip7 extends rf0 implements fn7 {
                             z8 = z6;
                             i6 = size;
                             long j16 = ((hp7) ip7Var.E.get(0)).a;
-                            int i29 = 0;
+                            int i31 = 0;
                             for (Iterator it = ((hp7) ip7Var.E.get(0)).c.keySet().iterator(); it.hasNext(); it = it) {
-                                i29 = Math.max(i29, ((Integer) it.next()).intValue());
+                                i31 = Math.max(i31, ((Integer) it.next()).intValue());
                             }
                             z9 = z5;
-                            arrayList3 = arrayList14;
-                            zh6Var5 = zh6Var9;
-                            e1 = i29;
+                            arrayList3 = arrayList15;
+                            zh6Var5 = zh6Var10;
+                            e1 = i31;
                             j3 = j16;
                             j4 = 0;
                             notification = b2;
@@ -2048,16 +2060,16 @@ public final class ip7 extends rf0 implements fn7 {
                         z9 = z5;
                         notification = b2;
                         long j18 = gp7Var4.b;
-                        ArrayList arrayList15 = (ArrayList) zh6Var9.f(j17);
+                        ArrayList arrayList16 = (ArrayList) zh6Var10.f(j17);
                         j3 = j17;
                         j4 = j18;
-                        zh6Var5 = zh6Var9;
-                        e1 = ((r47) arrayList15.get(0)).e1();
-                        r47Var = (r47) arrayList15.get(0);
-                        arrayList3 = arrayList15;
+                        zh6Var5 = zh6Var10;
+                        e1 = ((r47) arrayList16.get(0)).e1();
+                        r47Var = (r47) arrayList16.get(0);
+                        arrayList3 = arrayList16;
                     }
                     long j19 = e;
-                    Integer num3 = (Integer) zh6Var10.f(gp7Var4.a);
+                    Integer num3 = (Integer) zh6Var11.f(gp7Var4.a);
                     if (gp7Var4.c) {
                         num = 2147483646;
                         i7 = 32;
@@ -2067,19 +2079,19 @@ public final class ip7 extends rf0 implements fn7 {
                         if (num3 == null) {
                             num3 = Integer.valueOf(((int) j20) + ((int) (j20 >> 32)));
                         } else {
-                            zh6Var10.l(j20);
+                            zh6Var11.l(j20);
                         }
                         num = num3;
                     }
-                    i8 = i24;
-                    int i30 = 0;
-                    for (int i31 = 0; i31 < arrayList3.size(); i31++) {
-                        if (i30 < ((r47) arrayList3.get(i31)).k.date) {
-                            i30 = ((r47) arrayList3.get(i31)).k.date;
+                    i8 = i26;
+                    int i32 = 0;
+                    for (int i33 = 0; i33 < arrayList3.size(); i33++) {
+                        if (i32 < ((r47) arrayList3.get(i33)).k.date) {
+                            i32 = ((r47) arrayList3.get(i33)).k.date;
                         }
                     }
                     if (gp7Var4.c) {
-                        zh6Var6 = zh6Var10;
+                        zh6Var6 = zh6Var11;
                         TLRPC.User X1 = ip7Var.getMessagesController().X1(Long.valueOf(j3));
                         notification2 = notification;
                         if (ip7Var.E.size() == 1) {
@@ -2090,9 +2102,9 @@ public final class ip7 extends rf0 implements fn7 {
                             G2 = ob6.G(ip7Var.E.size(), "Stories", new Object[0]);
                         }
                         if (X1 == null || (userProfilePhoto4 = X1.photo) == null || (fileLocation13 = userProfilePhoto4.photo_small) == null) {
-                            i9 = i30;
+                            i9 = i32;
                         } else {
-                            i9 = i30;
+                            i9 = i32;
                             if (fileLocation13.volume_id != 0 && fileLocation13.local_id != 0) {
                                 i10 = e1;
                                 gp7Var = gp7Var4;
@@ -2121,10 +2133,10 @@ public final class ip7 extends rf0 implements fn7 {
                         L0 = G2;
                         chat = null;
                     } else {
-                        zh6Var6 = zh6Var10;
+                        zh6Var6 = zh6Var11;
                         notification2 = notification;
                         num2 = num;
-                        i9 = i30;
+                        i9 = i32;
                         if (wf3.B(j3)) {
                             i10 = e1;
                             gp7Var = gp7Var4;
@@ -2246,18 +2258,18 @@ public final class ip7 extends rf0 implements fn7 {
                                                 }
                                             }
                                         }
-                                        String str16 = str6;
+                                        String str18 = str6;
                                         chat = M0;
-                                        L0 = str16;
+                                        L0 = str18;
                                         user2 = user4;
                                         if (i12 == 0) {
                                             z10 = false;
                                         }
                                     }
                                     fileLocation = fileLocation3;
-                                    String str162 = str6;
+                                    String str182 = str6;
                                     chat = M0;
-                                    L0 = str162;
+                                    L0 = str182;
                                     user2 = user4;
                                     if (i12 == 0) {
                                     }
@@ -2278,9 +2290,9 @@ public final class ip7 extends rf0 implements fn7 {
                                 i12 = i11;
                                 fileLocation3 = fileLocation2;
                                 fileLocation = fileLocation3;
-                                String str1622 = str6;
+                                String str1822 = str6;
                                 chat = M0;
-                                L0 = str1622;
+                                L0 = str1822;
                                 user2 = user4;
                                 if (i12 == 0) {
                                 }
@@ -2308,7 +2320,7 @@ public final class ip7 extends rf0 implements fn7 {
                                     if (j4 != 0) {
                                         str4 = "showExtraNotifications: [";
                                         i10 = e1;
-                                        TLRPC.TL_forumTopic f = ip7Var.getMessagesController().g4.f(M0.id, j4);
+                                        TLRPC.TL_forumTopic f = ip7Var.getMessagesController().h4.f(M0.id, j4);
                                         if (f != null) {
                                             s = qu6.o(f.title, " in ", s, new StringBuilder());
                                         }
@@ -2348,22 +2360,22 @@ public final class ip7 extends rf0 implements fn7 {
                                 i12 = i11;
                                 fileLocation3 = fileLocation2;
                                 fileLocation = fileLocation3;
-                                String str16222 = str6;
+                                String str18222 = str6;
                                 chat = M0;
-                                L0 = str16222;
+                                L0 = str18222;
                                 user2 = user4;
                                 if (i12 == 0) {
                                 }
                             }
                         }
-                        i24 = i8 + 1;
+                        i26 = i8 + 1;
                         arrayList = arrayList4;
-                        arrayList10 = arrayList13;
+                        arrayList11 = arrayList14;
                         z5 = z9;
                         z6 = z8;
                         size = i6;
-                        zh6Var9 = zh6Var5;
-                        zh6Var10 = zh6Var6;
+                        zh6Var10 = zh6Var5;
+                        zh6Var11 = zh6Var6;
                         d = sharedPreferences;
                         e = j6;
                         b2 = notification3;
@@ -2418,14 +2430,14 @@ public final class ip7 extends rf0 implements fn7 {
                         file = null;
                     }
                     if (chat != null) {
-                        if (file == null || !file.exists() || (i23 = Build.VERSION.SDK_INT) < 28) {
+                        if (file == null || !file.exists() || (i25 = Build.VERSION.SDK_INT) < 28) {
                             str9 = str4;
                             iconCompat3 = null;
                         } else {
                             if (j5 == 489001) {
                                 iconCompat3 = IconCompat.d(a.b, R.drawable.ic_launcher_dr);
                             } else {
-                                if (i23 >= 28) {
+                                if (i25 >= 28) {
                                     try {
                                         iconCompat3 = IconCompat.c(ImageDecoder.decodeBitmap(ImageDecoder.createSource(file), new zo7()));
                                     } catch (Throwable unused2) {
@@ -2451,42 +2463,42 @@ public final class ip7 extends rf0 implements fn7 {
                         str8 = str7;
                         str9 = str4;
                     }
-                    String str17 = "currentAccount";
+                    String str19 = "currentAccount";
                     if ((!z12 || z11) && z10 && !xea.B && j19 != j5 && !lbc.A(j5) && uc7.s1(ip7Var.currentAccount).M1(j5) <= 0) {
                         bitmap2 = bitmap;
-                        Intent intent = new Intent(a.b, (Class<?>) WearReplyReceiver.class);
-                        intent.putExtra("dialog_id", j5);
-                        int i32 = i10;
-                        intent.putExtra("max_id", i32);
-                        intent.putExtra("topic_id", j4);
-                        intent.putExtra("currentAccount", ip7Var.currentAccount);
+                        Intent intent2 = new Intent(a.b, (Class<?>) WearReplyReceiver.class);
+                        intent2.putExtra("dialog_id", j5);
+                        int i34 = i10;
+                        intent2.putExtra("max_id", i34);
+                        intent2.putExtra("topic_id", j4);
+                        intent2.putExtra("currentAccount", ip7Var.currentAccount);
                         if (arrayList3.isEmpty()) {
                             str10 = "max_id";
                             user6 = user2;
                             chat2 = chat;
                         } else {
-                            ArrayList arrayList16 = new ArrayList();
+                            ArrayList arrayList17 = new ArrayList();
                             user6 = user2;
                             chat2 = chat;
-                            for (int i33 = 0; i33 < arrayList3.size(); i33++) {
-                                r47 r47Var7 = (r47) arrayList3.get(i33);
-                                if (r47Var7 != null && r47Var7.O4() && r47Var7.R2() && !r47Var7.N3()) {
-                                    arrayList16.add(Integer.valueOf(r47Var7.e1()));
+                            for (int i35 = 0; i35 < arrayList3.size(); i35++) {
+                                r47 r47Var5 = (r47) arrayList3.get(i35);
+                                if (r47Var5 != null && r47Var5.O4() && r47Var5.R2() && !r47Var5.N3()) {
+                                    arrayList17.add(Integer.valueOf(r47Var5.e1()));
                                 }
                             }
-                            if (arrayList16.isEmpty()) {
+                            if (arrayList17.isEmpty()) {
                                 str10 = "max_id";
                             } else {
-                                int size4 = arrayList16.size();
+                                int size4 = arrayList17.size();
                                 int[] iArr = new int[size4];
                                 str10 = "max_id";
-                                for (int i34 = 0; i34 < size4; i34++) {
-                                    iArr[i34] = ((Integer) arrayList16.get(i34)).intValue();
+                                for (int i36 = 0; i36 < size4; i36++) {
+                                    iArr[i36] = ((Integer) arrayList17.get(i36)).intValue();
                                 }
-                                intent.putExtra("voice_msg_ids", iArr);
+                                intent2.putExtra("voice_msg_ids", iArr);
                             }
                         }
-                        PendingIntent broadcast = PendingIntent.getBroadcast(a.b, num2.intValue(), intent, 167772160);
+                        PendingIntent broadcast = PendingIntent.getBroadcast(a.b, num2.intValue(), intent2, 167772160);
                         t99 t99Var = new t99(ob6.L0(2131745990), new Bundle(), new HashSet());
                         if (wf3.y(j5)) {
                             r4 = 1;
@@ -2497,7 +2509,7 @@ public final class ip7 extends rf0 implements fn7 {
                             z13 = false;
                             Z = ob6.Z(2131745971, str8);
                         }
-                        i15 = i32;
+                        i15 = i34;
                         kn7 kn7Var = new kn7(R.drawable.ic_reply_icon, broadcast, Z);
                         kn7Var.d = r4;
                         kn7Var.g = r4;
@@ -2520,8 +2532,8 @@ public final class ip7 extends rf0 implements fn7 {
                     int size5 = gp7Var5.c ? ip7Var.E.size() : Math.max(num4.intValue(), arrayList3.size());
                     String format = (size5 <= 1 || Build.VERSION.SDK_INT >= 28) ? str8 : String.format("%1$s (%2$d)", str8, Integer.valueOf(size5));
                     b78 b78Var2 = (b78) zh6Var2.f(j19);
-                    int i35 = Build.VERSION.SDK_INT;
-                    if (i35 < 28 || b78Var2 != null) {
+                    int i37 = Build.VERSION.SDK_INT;
+                    if (i37 < 28 || b78Var2 != null) {
                         ln7Var = b;
                     } else {
                         ln7Var = b;
@@ -2548,7 +2560,7 @@ public final class ip7 extends rf0 implements fn7 {
                                         if (ip7Var.getUserConfig().e() == 489001) {
                                             iconCompat2 = IconCompat.d(a.b, R.drawable.ic_launcher_dr);
                                         } else {
-                                            if (K != null && i35 >= 28) {
+                                            if (K != null && i37 >= 28) {
                                                 try {
                                                     iconCompat2 = IconCompat.c(ImageDecoder.decodeBitmap(ImageDecoder.createSource(K), new zo7()));
                                                 } catch (Throwable unused3) {
@@ -2583,16 +2595,16 @@ public final class ip7 extends rf0 implements fn7 {
                                             boolean[] zArr2 = new boolean[1];
                                             if (gp7Var5.c) {
                                             }
-                                            ArrayList arrayList17 = arrayList3;
+                                            ArrayList arrayList18 = arrayList3;
+                                            r47Var3 = r47Var;
                                             long j22 = j5;
-                                            zh6 zh6Var11 = zh6Var2;
-                                            Intent intent2 = new Intent(a.b, (Class<?>) LaunchActivity.class);
-                                            intent2.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                            intent2.setFlags(67108864);
-                                            intent2.addCategory("android.intent.category.LAUNCHER");
-                                            r47 r47Var8 = r47Var2;
-                                            if (r47Var2 != null) {
+                                            Intent intent3 = new Intent(a.b, (Class<?>) LaunchActivity.class);
+                                            intent3.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                            intent3.setFlags(67108864);
+                                            intent3.addCategory("android.intent.category.LAUNCHER");
+                                            if (r47Var3 != null) {
                                             }
+                                            i22 = i17;
                                             j12 = j22;
                                             if (gp7Var2.c) {
                                             }
@@ -2600,63 +2612,67 @@ public final class ip7 extends rf0 implements fn7 {
                                             ik8.q(j13, ik8.o(j12, "show extra notifications chatId ", " topicId "));
                                             if (j13 != 0) {
                                             }
-                                            String str18 = str11;
-                                            intent2.putExtra(str18, ip7Var.currentAccount);
-                                            PendingIntent activity = PendingIntent.getActivity(a.b, 0, intent2, 1140850688);
+                                            String str20 = str11;
+                                            intent3.putExtra(str20, ip7Var.currentAccount);
+                                            PendingIntent activity = PendingIntent.getActivity(a.b, 0, intent3, 1140850688);
                                             lyc lycVar = new lyc((byte) 10);
-                                            ln7 ln7Var3 = ln7Var;
+                                            ln7 ln7Var2 = ln7Var;
                                             if (ln7Var != null) {
                                             }
-                                            int i36 = i17;
-                                            Intent intent3 = new Intent(a.b, (Class<?>) AutoMessageHeardReceiver.class);
-                                            intent3.addFlags(i7);
-                                            intent3.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                            intent3.putExtra("dialog_id", j12);
-                                            int i37 = i15;
-                                            intent3.putExtra(str10, i37);
-                                            intent3.putExtra(str18, ip7Var.currentAccount);
-                                            ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList18 = arrayList5;
+                                            int i38 = i22;
+                                            Intent intent4 = new Intent(a.b, (Class<?>) AutoMessageHeardReceiver.class);
+                                            intent4.addFlags(i7);
+                                            intent4.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                            intent4.putExtra("dialog_id", j12);
+                                            int i39 = i15;
+                                            intent4.putExtra(str10, i39);
+                                            intent4.putExtra(str20, ip7Var.currentAccount);
+                                            ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList19 = arrayList5;
                                             bitmap4 = bitmap3;
-                                            kn7 kn7Var2 = new kn7(R.drawable.msg_markread, PendingIntent.getBroadcast(a.b, num2.intValue(), intent3, 167772160), ob6.L0(2131748435));
+                                            kn7 kn7Var2 = new kn7(R.drawable.msg_markread, PendingIntent.getBroadcast(a.b, num2.intValue(), intent4, 167772160), ob6.L0(2131748435));
                                             kn7Var2.g = (byte) 2;
                                             kn7Var2.h = false;
                                             ln7 b3 = kn7Var2.b();
                                             if (wf3.B(j12)) {
                                             }
-                                            if (str15 != null) {
+                                            if (str16 != null) {
                                             }
+                                            eo7 eo7Var3 = eo7Var2;
                                             long j23 = j6;
                                             lycVar.e = qu6.n(j23, "tgaccount");
+                                            j6 = j23;
                                             if (gp7Var2.c) {
                                             }
                                             wn7 wn7Var2 = new wn7(a.b);
                                             wn7Var2.e(str12);
+                                            ArrayList arrayList20 = arrayList8;
                                             wn7Var2.F.icon = R.drawable.notification;
                                             wn7Var2.d(sb.toString());
                                             wn7Var2.f(16, true);
-                                            wn7Var2.i = gp7Var2.c ? ip7Var.E.size() : arrayList17.size();
+                                            wn7Var2.i = gp7Var2.c ? ip7Var.E.size() : arrayList20.size();
                                             wn7Var2.w = -15618822;
                                             wn7Var2.r = false;
                                             wn7Var2.F.when = j14;
                                             wn7Var2.k = true;
-                                            wn7Var2.i(eo7Var);
+                                            wn7Var2.i(eo7Var3);
                                             wn7Var2.g = activity;
                                             lycVar.q(wn7Var2);
                                             wn7Var2.s = String.valueOf(Long.MAX_VALUE - j14);
                                             wn7Var2.f(8, (z3 && j12 == j && j13 == j2) ? false : true);
                                             wn7Var2.u = "msg";
-                                            Intent intent4 = new Intent(a.b, (Class<?>) NotificationDismissReceiver.class);
-                                            intent4.putExtra("messageDate", i9);
-                                            intent4.putExtra("dialogId", j12);
-                                            intent4.putExtra(str18, ip7Var.currentAccount);
+                                            intent = new Intent(a.b, (Class<?>) NotificationDismissReceiver.class);
+                                            intent.putExtra("messageDate", i9);
+                                            intent.putExtra("dialogId", j12);
+                                            String str21 = str15;
+                                            intent.putExtra(str21, ip7Var.currentAccount);
                                             if (gp7Var2.c) {
                                             }
-                                            if (r47Var4 != null) {
+                                            if (r47Var3 != null) {
                                             }
-                                            wn7Var2.F.deleteIntent = PendingIntent.getBroadcast(a.b, num2.intValue(), intent4, 167772160);
+                                            wn7Var2.F.deleteIntent = PendingIntent.getBroadcast(a.b, num2.intValue(), intent, 167772160);
                                             if (z9) {
                                             }
-                                            if (r47Var5 != null) {
+                                            if (r47Var3 != null) {
                                             }
                                             keyboardInlineButton = null;
                                             tL_inlineButtonTypeCopy = null;
@@ -2665,7 +2681,7 @@ public final class ip7 extends rf0 implements fn7 {
                                             j15 = gp7Var2.a;
                                             if (j15 != 489000) {
                                             }
-                                            if (arrayList13.size() == 1) {
+                                            if (arrayList14.size() == 1) {
                                             }
                                             if (wf3.B(j12)) {
                                             }
@@ -2683,20 +2699,19 @@ public final class ip7 extends rf0 implements fn7 {
                                             cc4.b("showExtraNotifications: holders.add " + j12);
                                             notification3 = notification4;
                                             z9 = z18;
-                                            zh6Var7 = zh6Var11;
+                                            zh6Var7 = zh6Var8;
                                             long j24 = j12;
-                                            fp7 fp7Var = new fp7(ip7Var, num2.intValue(), j24, gp7Var2.c, str12, user7, chat2, wn7Var2, j2, str2, jArr, i, uri, i2, z, z2, z3, i3);
                                             arrayList4 = arrayList;
-                                            arrayList4.add(fp7Var);
+                                            arrayList4.add(new fp7(ip7Var, num2.intValue(), j24, gp7Var2.c, str12, user7, chat2, wn7Var2, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                             ip7Var.h.k(j24, num2);
-                                            i24 = i8 + 1;
+                                            i26 = i8 + 1;
                                             arrayList = arrayList4;
-                                            arrayList10 = arrayList13;
+                                            arrayList11 = arrayList14;
                                             z5 = z9;
                                             z6 = z8;
                                             size = i6;
-                                            zh6Var9 = zh6Var5;
-                                            zh6Var10 = zh6Var6;
+                                            zh6Var10 = zh6Var5;
+                                            zh6Var11 = zh6Var6;
                                             d = sharedPreferences;
                                             e = j6;
                                             b2 = notification3;
@@ -2717,62 +2732,62 @@ public final class ip7 extends rf0 implements fn7 {
                                 String[] strArr22 = new String[1];
                                 boolean[] zArr22 = new boolean[1];
                                 if (gp7Var5.c) {
-                                    ArrayList arrayList19 = new ArrayList();
-                                    ArrayList arrayList20 = new ArrayList();
-                                    Pair I = ip7Var.I(arrayList19, arrayList20);
+                                    ArrayList arrayList21 = new ArrayList();
+                                    ArrayList arrayList22 = new ArrayList();
+                                    Pair I = ip7Var.I(arrayList21, arrayList22);
                                     int intValue = ((Integer) I.first).intValue();
                                     boolean booleanValue = ((Boolean) I.second).booleanValue();
                                     if (booleanValue) {
-                                        arrayList9 = arrayList20;
+                                        arrayList10 = arrayList22;
                                         j6 = j19;
                                         z14 = booleanValue;
                                         sb42.append(ob6.G(intValue, "StoryNotificationHidden", new Object[0]));
                                     } else {
                                         j6 = j19;
-                                        arrayList9 = arrayList20;
+                                        arrayList10 = arrayList22;
                                         z14 = booleanValue;
-                                        if (arrayList19.isEmpty()) {
+                                        if (arrayList21.isEmpty()) {
                                             cc4.b(str9 + j5 + "] continue; story but names is empty");
                                             zh6Var7 = zh6Var2;
                                             arrayList4 = arrayList;
                                             notification3 = notification2;
-                                            i24 = i8 + 1;
+                                            i26 = i8 + 1;
                                             arrayList = arrayList4;
-                                            arrayList10 = arrayList13;
+                                            arrayList11 = arrayList14;
                                             z5 = z9;
                                             z6 = z8;
                                             size = i6;
-                                            zh6Var9 = zh6Var5;
-                                            zh6Var10 = zh6Var6;
+                                            zh6Var10 = zh6Var5;
+                                            zh6Var11 = zh6Var6;
                                             d = sharedPreferences;
                                             e = j6;
                                             b2 = notification3;
                                             zh6Var2 = zh6Var7;
-                                        } else if (arrayList19.size() == 1) {
+                                        } else if (arrayList21.size() == 1) {
                                             if (intValue == 1) {
                                                 sb42.append(ob6.N0("StoryNotificationSingle"));
                                             } else {
-                                                sb42.append(ob6.G(intValue, "StoryNotification1", arrayList19.get(0)));
+                                                sb42.append(ob6.G(intValue, "StoryNotification1", arrayList21.get(0)));
                                             }
-                                        } else if (arrayList19.size() == 2) {
-                                            sb42.append(ob6.Z(2131744256, arrayList19.get(0), arrayList19.get(1)));
-                                        } else if (arrayList19.size() == 3 && ip7Var.E.size() == 3) {
-                                            sb42.append(ob6.Z(2131744255, e((String) arrayList19.get(0)), e((String) arrayList19.get(1)), e((String) arrayList19.get(2))));
+                                        } else if (arrayList21.size() == 2) {
+                                            sb42.append(ob6.Z(2131744256, arrayList21.get(0), arrayList21.get(1)));
+                                        } else if (arrayList21.size() == 3 && ip7Var.E.size() == 3) {
+                                            sb42.append(ob6.Z(2131744255, e((String) arrayList21.get(0)), e((String) arrayList21.get(1)), e((String) arrayList21.get(2))));
                                         } else {
-                                            sb42.append(ob6.G(ip7Var.E.size() - 2, "StoryNotification4", e((String) arrayList19.get(0)), e((String) arrayList19.get(1))));
+                                            sb42.append(ob6.G(ip7Var.E.size() - 2, "StoryNotification4", e((String) arrayList21.get(0)), e((String) arrayList21.get(1))));
                                         }
                                     }
                                     long j25 = Long.MAX_VALUE;
-                                    for (int i38 = 0; i38 < ip7Var.E.size(); i38++) {
-                                        j25 = Math.min(((hp7) ip7Var.E.get(i38)).e, j25);
+                                    for (int i40 = 0; i40 < ip7Var.E.size(); i40++) {
+                                        j25 = Math.min(((hp7) ip7Var.E.get(i40)).e, j25);
                                     }
                                     eo7Var.i = Boolean.FALSE;
-                                    if (arrayList19.size() != 1 || z14) {
+                                    if (arrayList21.size() != 1 || z14) {
                                         r8 = 0;
                                         G = ob6.G(intValue, str5, new Object[0]);
                                     } else {
                                         r8 = 0;
-                                        G = (String) arrayList19.get(0);
+                                        G = (String) arrayList21.get(0);
                                     }
                                     b78 b78Var5 = new b78();
                                     b78Var5.a = G;
@@ -2782,35 +2797,35 @@ public final class ip7 extends rf0 implements fn7 {
                                     b78Var5.e = r8;
                                     b78Var5.f = r8;
                                     do7 do7Var = new do7(sb42, j25, b78Var5);
-                                    ArrayList arrayList21 = eo7Var.e;
-                                    arrayList21.add(do7Var);
-                                    if (arrayList21.size() > 25) {
-                                        arrayList21.remove((int) r8);
+                                    ArrayList arrayList23 = eo7Var.e;
+                                    arrayList23.add(do7Var);
+                                    if (arrayList23.size() > 25) {
+                                        arrayList23.remove((int) r8);
                                     }
-                                    bitmap3 = !z14 ? F(arrayList9) : null;
-                                    r47Var2 = r47Var;
+                                    bitmap3 = !z14 ? F(arrayList10) : null;
                                     sb = sb42;
-                                    gp7Var2 = gp7Var5;
+                                    zh6Var8 = zh6Var2;
                                     j8 = j7;
                                     arrayList5 = null;
-                                    str12 = G;
+                                    gp7Var2 = gp7Var5;
                                     str11 = "currentAccount";
                                     i17 = 0;
+                                    str12 = G;
                                 } else {
                                     j6 = j19;
-                                    String str19 = str9;
+                                    String str22 = str9;
                                     int size6 = arrayList3.size() - 1;
-                                    ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList22 = null;
-                                    int i39 = 0;
+                                    ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList24 = null;
+                                    int i41 = 0;
                                     while (size6 >= 0) {
-                                        int i40 = size6;
-                                        r47 r47Var9 = (r47) arrayList3.get(size6);
-                                        ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList23 = arrayList22;
-                                        ArrayList arrayList24 = arrayList3;
-                                        r47 r47Var10 = r47Var;
-                                        long a22 = r47.a2(ip7Var.currentAccount, r47Var9.k, ip7Var.getMessagesController().w2(r47Var9));
+                                        int i42 = size6;
+                                        r47 r47Var6 = (r47) arrayList3.get(size6);
+                                        ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList25 = arrayList24;
+                                        ArrayList arrayList26 = arrayList3;
+                                        r47 r47Var7 = r47Var;
+                                        long a22 = r47.a2(ip7Var.currentAccount, r47Var6.k, ip7Var.getMessagesController().w2(r47Var6));
                                         if (j7 != a22) {
-                                            StringBuilder o2 = ik8.o(j5, str19, "] continue; topic id is not equal: topicId=");
+                                            StringBuilder o2 = ik8.o(j5, str22, "] continue; topic id is not equal: topicId=");
                                             o2.append(j7);
                                             o2.append(" messageTopicId=");
                                             o2.append(a22);
@@ -2818,119 +2833,119 @@ public final class ip7 extends rf0 implements fn7 {
                                             o2.append(ip7Var.getUserConfig().e());
                                             cc4.b(o2.toString());
                                             sb2 = sb42;
-                                            gp7Var3 = gp7Var5;
-                                            str13 = str19;
+                                            str13 = str22;
+                                            zh6Var9 = zh6Var2;
                                             strArr = strArr22;
                                             zArr = zArr22;
                                             j11 = j5;
                                             j10 = j7;
-                                            str14 = str17;
-                                            zh6Var8 = zh6Var2;
+                                            gp7Var3 = gp7Var5;
+                                            str14 = str19;
                                         } else {
                                             long j26 = j7;
-                                            String q = ip7Var.q(r47Var9, strArr22, zArr22);
-                                            int i41 = (j5 > 489001L ? 1 : (j5 == 489001L ? 0 : -1));
-                                            if (i41 == 0) {
+                                            String q = ip7Var.q(r47Var6, strArr22, zArr22);
+                                            int i43 = (j5 > 489001L ? 1 : (j5 == 489001L ? 0 : -1));
+                                            if (i43 == 0) {
                                                 strArr22[0] = ob6.L0(2131753114);
-                                                i18 = i41;
+                                                i18 = i43;
                                                 strArr = strArr22;
                                                 zArr = zArr22;
-                                            } else if (j5 != 489000 || r47Var9.W0() == null) {
-                                                i18 = i41;
+                                            } else if (j5 != 489000 || r47Var6.W0() == null) {
+                                                i18 = i43;
                                                 strArr = strArr22;
                                                 zArr = zArr22;
                                                 if (j5 == j6) {
                                                     strArr[0] = str8;
-                                                } else if (wf3.y(j5) && r47Var9.k.from_scheduled) {
+                                                } else if (wf3.y(j5) && r47Var6.k.from_scheduled) {
                                                     strArr[0] = ob6.L0(2131747689);
                                                 }
                                             } else {
-                                                i18 = i41;
+                                                i18 = i43;
                                                 strArr = strArr22;
                                                 zArr = zArr22;
-                                                strArr[0] = ip7Var.getMessagesController().z1(r47Var9.W0().longValue());
+                                                strArr[0] = ip7Var.getMessagesController().z1(r47Var6.W0().longValue());
                                             }
                                             if (q == null) {
                                                 if (f11.a) {
-                                                    cc4.l("message text is null for " + r47Var9.e1() + " did = " + r47Var9.A0());
+                                                    cc4.l("message text is null for " + r47Var6.e1() + " did = " + r47Var6.A0());
                                                 }
                                                 j10 = j26;
                                                 sb2 = sb42;
-                                                gp7Var3 = gp7Var5;
-                                                str13 = str19;
-                                                str14 = str17;
-                                                zh6Var8 = zh6Var2;
+                                                str13 = str22;
+                                                str14 = str19;
+                                                zh6Var9 = zh6Var2;
                                                 j11 = j5;
+                                                gp7Var3 = gp7Var5;
                                             } else {
                                                 if (sb42.length() > 0) {
                                                     sb42.append("\n\n");
                                                 }
-                                                if (j5 != j6 && r47Var9.k.from_scheduled && wf3.D(j5)) {
+                                                if (j5 != j6 && r47Var6.k.from_scheduled && wf3.D(j5)) {
                                                     q = String.format("%1$s: %2$s", ob6.L0(2131747689), q);
                                                     sb42.append(q);
                                                 } else {
-                                                    String str20 = strArr[0];
-                                                    if (str20 != null) {
-                                                        sb42.append(String.format("%1$s: %2$s", str20, q));
+                                                    String str23 = strArr[0];
+                                                    if (str23 != null) {
+                                                        sb42.append(String.format("%1$s: %2$s", str23, q));
                                                     } else {
                                                         sb42.append(q);
                                                     }
                                                 }
-                                                String str21 = q;
-                                                int i42 = (j5 > 489000L ? 1 : (j5 == 489000L ? 0 : -1));
-                                                if (i42 != 0 || r47Var9.W0() == null) {
+                                                String str24 = q;
+                                                int i44 = (j5 > 489000L ? 1 : (j5 == 489000L ? 0 : -1));
+                                                if (i44 != 0 || r47Var6.W0() == null) {
                                                     if (!wf3.D(j5)) {
                                                         if (z12) {
                                                             j9 = -j5;
                                                         } else if (wf3.y(j5)) {
-                                                            j9 = r47Var9.R1();
+                                                            j9 = r47Var6.R1();
                                                         }
                                                     }
                                                     j9 = j5;
                                                 } else {
-                                                    j9 = r47Var9.W0().longValue();
+                                                    j9 = r47Var6.W0().longValue();
                                                 }
-                                                str13 = str19;
-                                                str14 = str17;
+                                                str13 = str22;
+                                                str14 = str19;
                                                 b78 b78Var6 = (b78) zh6Var2.f(j9 + (j26 << 16));
-                                                String str22 = strArr[0];
+                                                String str25 = strArr[0];
                                                 sb2 = sb42;
-                                                if (str22 == null) {
+                                                if (str25 == null) {
                                                     if (!z8) {
                                                         j10 = j26;
                                                     } else if (!wf3.y(j5)) {
                                                         j10 = j26;
                                                         if (Build.VERSION.SDK_INT > 27) {
-                                                            str22 = ob6.L0(i14);
+                                                            str25 = ob6.L0(i14);
                                                         }
                                                     } else if (z12) {
                                                         j10 = j26;
                                                         if (Build.VERSION.SDK_INT > 27) {
-                                                            str22 = ob6.L0(i13);
+                                                            str25 = ob6.L0(i13);
                                                         }
                                                     } else {
                                                         j10 = j26;
-                                                        str22 = ob6.L0(2131747747);
+                                                        str25 = ob6.L0(2131747747);
                                                     }
-                                                    str22 = "";
+                                                    str25 = "";
                                                 } else {
                                                     j10 = j26;
                                                 }
-                                                if (b78Var6 == null || !TextUtils.equals(b78Var6.a, str22)) {
+                                                if (b78Var6 == null || !TextUtils.equals(b78Var6.a, str25)) {
                                                     if (!zArr[0] || wf3.B(j5) || (i19 = Build.VERSION.SDK_INT) < 28) {
                                                         j11 = j5;
                                                     } else {
                                                         if (wf3.D(j5) || z12) {
-                                                            i20 = i42;
+                                                            i20 = i44;
                                                             i21 = i19;
                                                             j11 = j5;
                                                             file2 = file;
                                                         } else {
-                                                            long R1 = r47Var9.R1();
-                                                            i20 = i42;
+                                                            long R1 = r47Var6.R1();
+                                                            i20 = i44;
                                                             i21 = i19;
                                                             TLRPC.User X14 = ip7Var.getMessagesController().X1(Long.valueOf(R1));
-                                                            if (X14 == null && (X14 = ip7Var.getMessagesStorage().h0(R1)) != null) {
+                                                            if (X14 == null && (X14 = ip7Var.getMessagesStorage().j0(R1)) != null) {
                                                                 ip7Var.getMessagesController().i4(X14, true, false);
                                                             }
                                                             if (X14 == null || (userProfilePhoto2 = X14.photo) == null || (fileLocation11 = userProfilePhoto2.photo_small) == null) {
@@ -2946,7 +2961,7 @@ public final class ip7 extends rf0 implements fn7 {
                                                             }
                                                             file2 = null;
                                                         }
-                                                        if (file2 == null && i20 == 0 && r47Var9.W0() != null) {
+                                                        if (file2 == null && i20 == 0 && r47Var6.W0() != null) {
                                                             if (j9 >= 0) {
                                                                 TLRPC.User X15 = ip7Var.getMessagesController().X1(Long.valueOf(j9));
                                                                 if (X15 != null && (userProfilePhoto = X15.photo) != null && (fileLocation10 = userProfilePhoto.photo_small) != null && fileLocation10.volume_id != 0 && fileLocation10.local_id != 0) {
@@ -2974,7 +2989,7 @@ public final class ip7 extends rf0 implements fn7 {
                                                             }
                                                         }
                                                         b78Var6 = new b78();
-                                                        b78Var6.a = str22;
+                                                        b78Var6.a = str25;
                                                         b78Var6.b = iconCompat;
                                                         b78Var6.c = null;
                                                         b78Var6.d = null;
@@ -2985,7 +3000,7 @@ public final class ip7 extends rf0 implements fn7 {
                                                     }
                                                     iconCompat = null;
                                                     b78Var6 = new b78();
-                                                    b78Var6.a = str22;
+                                                    b78Var6.a = str25;
                                                     b78Var6.b = iconCompat;
                                                     b78Var6.c = null;
                                                     b78Var6.d = null;
@@ -2998,29 +3013,29 @@ public final class ip7 extends rf0 implements fn7 {
                                                     c = 0;
                                                 }
                                                 if (wf3.B(j11)) {
+                                                    r47Var2 = r47Var6;
+                                                    zh6Var9 = zh6Var2;
                                                     gp7Var3 = gp7Var5;
-                                                    zh6Var8 = zh6Var2;
-                                                    r47Var3 = r47Var9;
-                                                    do7 do7Var2 = new do7(str21, r47Var3.k.date * 1000, b78Var6);
-                                                    ArrayList arrayList25 = eo7Var.e;
-                                                    arrayList25.add(do7Var2);
-                                                    if (arrayList25.size() > 25) {
-                                                        arrayList25.remove(0);
+                                                    do7 do7Var2 = new do7(str24, r47Var2.k.date * 1000, b78Var6);
+                                                    ArrayList arrayList27 = eo7Var.e;
+                                                    arrayList27.add(do7Var2);
+                                                    if (arrayList27.size() > 25) {
+                                                        arrayList27.remove(0);
                                                     }
                                                 } else {
-                                                    if (!zArr[c] || Build.VERSION.SDK_INT < 28 || ((ActivityManager) a.b.getSystemService("activity")).isLowRamDevice() || z8 || r47Var9.k4() || !(r47Var9.D == 1 || r47Var9.s4())) {
+                                                    if (!zArr[c] || Build.VERSION.SDK_INT < 28 || ((ActivityManager) a.b.getSystemService("activity")).isLowRamDevice() || z8 || r47Var6.k4() || !(r47Var6.D == 1 || r47Var6.s4())) {
+                                                        r47Var2 = r47Var6;
+                                                        zh6Var9 = zh6Var2;
                                                         gp7Var3 = gp7Var5;
-                                                        zh6Var8 = zh6Var2;
-                                                        r47Var3 = r47Var9;
                                                     } else {
                                                         xb4 fileLoader5 = ip7Var.getFileLoader();
-                                                        TLRPC.Message message2 = r47Var9.k;
+                                                        TLRPC.Message message2 = r47Var6.k;
                                                         fileLoader5.getClass();
                                                         File L2 = xb4.L(message2);
-                                                        if (L2.exists() && r47Var9.t2()) {
+                                                        if (L2.exists() && r47Var6.t2()) {
                                                             file4 = new File(L2.getParentFile(), L2.getName() + ".blur.jpg");
                                                             if (file4.exists()) {
-                                                                zh6Var8 = zh6Var2;
+                                                                zh6Var9 = zh6Var2;
                                                                 file5 = L2;
                                                             } else {
                                                                 try {
@@ -3031,7 +3046,7 @@ public final class ip7 extends rf0 implements fn7 {
                                                                     Utilities.stackBlurBitmap(createScaledBitmap, 5);
                                                                     C.recycle();
                                                                     Canvas canvas = new Canvas(createScaledBitmap);
-                                                                    zh6Var8 = zh6Var2;
+                                                                    zh6Var9 = zh6Var2;
                                                                     try {
                                                                         ip7Var.g0.h(vm2.o(-1, 82));
                                                                         file5 = L2;
@@ -3041,14 +3056,14 @@ public final class ip7 extends rf0 implements fn7 {
                                                                         cc4.f(e);
                                                                         file3 = file5;
                                                                         gp7Var3 = gp7Var5;
-                                                                        r47Var3 = r47Var9;
-                                                                        do7 do7Var3 = new do7(str21, r47Var9.k.date * 1000, b78Var6);
-                                                                        String str23 = r47Var3.s4() ? "image/webp" : "image/jpeg";
+                                                                        r47Var2 = r47Var6;
+                                                                        do7 do7Var3 = new do7(str24, r47Var6.k.date * 1000, b78Var6);
+                                                                        String str26 = r47Var2.s4() ? "image/webp" : "image/jpeg";
                                                                         if (file3.exists()) {
                                                                         }
                                                                         if (c3 != null) {
                                                                         }
-                                                                        do7 do7Var4 = new do7(str21, r47Var3.k.date * 1000, b78Var6);
+                                                                        do7 do7Var4 = new do7(str24, r47Var2.k.date * 1000, b78Var6);
                                                                         arrayList6 = eo7Var.e;
                                                                         arrayList6.add(do7Var4);
                                                                         if (arrayList6.size() > 25) {
@@ -3058,18 +3073,18 @@ public final class ip7 extends rf0 implements fn7 {
                                                                         }
                                                                         if (j11 == 777000) {
                                                                         }
-                                                                        arrayList22 = arrayList23;
-                                                                        size6 = i40 - 1;
+                                                                        arrayList24 = arrayList25;
+                                                                        size6 = i42 - 1;
                                                                         gp7Var5 = gp7Var3;
-                                                                        str17 = str14;
-                                                                        zh6Var2 = zh6Var8;
-                                                                        arrayList3 = arrayList24;
-                                                                        r47Var = r47Var10;
-                                                                        str19 = str13;
+                                                                        str19 = str14;
+                                                                        arrayList3 = arrayList26;
+                                                                        r47Var = r47Var7;
+                                                                        str22 = str13;
                                                                         strArr22 = strArr;
                                                                         zArr22 = zArr;
                                                                         sb42 = sb2;
                                                                         j7 = j10;
+                                                                        zh6Var2 = zh6Var9;
                                                                         j5 = j11;
                                                                     }
                                                                     try {
@@ -3085,14 +3100,14 @@ public final class ip7 extends rf0 implements fn7 {
                                                                         cc4.f(e);
                                                                         file3 = file5;
                                                                         gp7Var3 = gp7Var5;
-                                                                        r47Var3 = r47Var9;
-                                                                        do7 do7Var32 = new do7(str21, r47Var9.k.date * 1000, b78Var6);
-                                                                        String str232 = r47Var3.s4() ? "image/webp" : "image/jpeg";
+                                                                        r47Var2 = r47Var6;
+                                                                        do7 do7Var32 = new do7(str24, r47Var6.k.date * 1000, b78Var6);
+                                                                        String str262 = r47Var2.s4() ? "image/webp" : "image/jpeg";
                                                                         if (file3.exists()) {
                                                                         }
                                                                         if (c3 != null) {
                                                                         }
-                                                                        do7 do7Var42 = new do7(str21, r47Var3.k.date * 1000, b78Var6);
+                                                                        do7 do7Var42 = new do7(str24, r47Var2.k.date * 1000, b78Var6);
                                                                         arrayList6 = eo7Var.e;
                                                                         arrayList6.add(do7Var42);
                                                                         if (arrayList6.size() > 25) {
@@ -3102,35 +3117,35 @@ public final class ip7 extends rf0 implements fn7 {
                                                                         }
                                                                         if (j11 == 777000) {
                                                                         }
-                                                                        arrayList22 = arrayList23;
-                                                                        size6 = i40 - 1;
+                                                                        arrayList24 = arrayList25;
+                                                                        size6 = i42 - 1;
                                                                         gp7Var5 = gp7Var3;
-                                                                        str17 = str14;
-                                                                        zh6Var2 = zh6Var8;
-                                                                        arrayList3 = arrayList24;
-                                                                        r47Var = r47Var10;
-                                                                        str19 = str13;
+                                                                        str19 = str14;
+                                                                        arrayList3 = arrayList26;
+                                                                        r47Var = r47Var7;
+                                                                        str22 = str13;
                                                                         strArr22 = strArr;
                                                                         zArr22 = zArr;
                                                                         sb42 = sb2;
                                                                         j7 = j10;
+                                                                        zh6Var2 = zh6Var9;
                                                                         j5 = j11;
                                                                     }
                                                                 } catch (Exception e4) {
                                                                     e = e4;
-                                                                    zh6Var8 = zh6Var2;
+                                                                    zh6Var9 = zh6Var2;
                                                                 }
                                                             }
                                                             file3 = file5;
                                                         } else {
-                                                            zh6Var8 = zh6Var2;
+                                                            zh6Var9 = zh6Var2;
                                                             file3 = L2;
                                                             file4 = null;
                                                         }
                                                         gp7Var3 = gp7Var5;
-                                                        r47Var3 = r47Var9;
-                                                        do7 do7Var322 = new do7(str21, r47Var9.k.date * 1000, b78Var6);
-                                                        String str2322 = r47Var3.s4() ? "image/webp" : "image/jpeg";
+                                                        r47Var2 = r47Var6;
+                                                        do7 do7Var322 = new do7(str24, r47Var6.k.date * 1000, b78Var6);
+                                                        String str2622 = r47Var2.s4() ? "image/webp" : "image/jpeg";
                                                         if (file3.exists()) {
                                                             try {
                                                                 Context context = a.b;
@@ -3145,40 +3160,40 @@ public final class ip7 extends rf0 implements fn7 {
                                                         } else {
                                                             if (ip7Var.getFileLoader().S(file3.getName())) {
                                                                 Uri.Builder scheme = new Uri.Builder().scheme("content");
-                                                                String str24 = NotificationImageProvider.d;
-                                                                if (str24 == null) {
+                                                                String str27 = NotificationImageProvider.d;
+                                                                if (str27 == null) {
                                                                     a.d();
-                                                                    str24 = "org.telegram.messenger.beta.notification_image_provider";
+                                                                    str27 = "org.telegram.messenger.beta.notification_image_provider";
                                                                     NotificationImageProvider.d = "org.telegram.messenger.beta.notification_image_provider";
                                                                 }
-                                                                c3 = scheme.authority(str24).appendPath("msg_media_raw").appendPath(ip7Var.currentAccount + "").appendPath(file3.getName()).appendQueryParameter("final_path", file3.getAbsolutePath()).build();
+                                                                c3 = scheme.authority(str27).appendPath("msg_media_raw").appendPath(ip7Var.currentAccount + "").appendPath(file3.getName()).appendQueryParameter("final_path", file3.getAbsolutePath()).build();
                                                             }
                                                             c3 = null;
                                                         }
                                                         if (c3 != null) {
-                                                            do7Var322.e = str2322;
+                                                            do7Var322.e = str2622;
                                                             do7Var322.f = c3;
-                                                            ArrayList arrayList26 = eo7Var.e;
-                                                            arrayList26.add(do7Var322);
-                                                            if (arrayList26.size() > 25) {
-                                                                arrayList26.remove(0);
+                                                            ArrayList arrayList28 = eo7Var.e;
+                                                            arrayList28.add(do7Var322);
+                                                            if (arrayList28.size() > 25) {
+                                                                arrayList28.remove(0);
                                                             }
                                                             a.b.grantUriPermission("com.android.systemui", c3, 1);
-                                                            hl.d3(new pl7(c3, file4, (byte) 4), 20000L);
-                                                            if (!TextUtils.isEmpty(r47Var3.z)) {
-                                                                do7 do7Var5 = new do7(r47Var3.z, r47Var3.k.date * 1000, b78Var6);
-                                                                ArrayList arrayList27 = eo7Var.e;
-                                                                arrayList27.add(do7Var5);
-                                                                if (arrayList27.size() > 25) {
-                                                                    arrayList27.remove(0);
+                                                            hl.d3(new ql7(c3, file4, (byte) 5), 20000L);
+                                                            if (!TextUtils.isEmpty(r47Var2.z)) {
+                                                                do7 do7Var5 = new do7(r47Var2.z, r47Var2.k.date * 1000, b78Var6);
+                                                                ArrayList arrayList29 = eo7Var.e;
+                                                                arrayList29.add(do7Var5);
+                                                                if (arrayList29.size() > 25) {
+                                                                    arrayList29.remove(0);
                                                                 }
                                                             }
                                                             c2 = 0;
-                                                            if (zArr[c2] && !z8 && r47Var3.O4()) {
+                                                            if (zArr[c2] && !z8 && r47Var2.O4()) {
                                                                 arrayList7 = eo7Var.e;
                                                                 if (!arrayList7.isEmpty()) {
                                                                     xb4 fileLoader6 = ip7Var.getFileLoader();
-                                                                    TLRPC.Message message3 = r47Var3.k;
+                                                                    TLRPC.Message message3 = r47Var2.k;
                                                                     fileLoader6.getClass();
                                                                     File L3 = xb4.L(message3);
                                                                     if (L3.exists()) {
@@ -3201,18 +3216,18 @@ public final class ip7 extends rf0 implements fn7 {
                                                                             do7Var6.e = "audio/ogg";
                                                                             do7Var6.f = uri2;
                                                                         }
-                                                                    } else if (r47Var3.F0() != null) {
-                                                                        String s2 = xb4.s(r47Var3.F0());
+                                                                    } else if (r47Var2.F0() != null) {
+                                                                        String s2 = xb4.s(r47Var2.F0());
                                                                         if (!ip7Var.s.contains(s2)) {
                                                                             ip7Var.s.add(s2);
-                                                                            ip7Var.getFileLoader().X(r47Var3.F0(), r47Var3, 3, 0);
+                                                                            ip7Var.getFileLoader().X(r47Var2.F0(), r47Var2, 3, 0);
                                                                         }
                                                                     }
                                                                 }
                                                             }
                                                         }
                                                     }
-                                                    do7 do7Var422 = new do7(str21, r47Var3.k.date * 1000, b78Var6);
+                                                    do7 do7Var422 = new do7(str24, r47Var2.k.date * 1000, b78Var6);
                                                     arrayList6 = eo7Var.e;
                                                     arrayList6.add(do7Var422);
                                                     if (arrayList6.size() > 25) {
@@ -3229,245 +3244,188 @@ public final class ip7 extends rf0 implements fn7 {
                                                     }
                                                 }
                                                 if (j11 == 777000) {
-                                                    TLRPC.ReplyMarkup replyMarkup2 = r47Var3.k.reply_markup;
+                                                    TLRPC.ReplyMarkup replyMarkup2 = r47Var2.k.reply_markup;
                                                     if (replyMarkup2 instanceof TLRPC.TL_replyInlineMarkup) {
-                                                        arrayList22 = ((TLRPC.TL_replyInlineMarkup) replyMarkup2).rows;
-                                                        i39 = r47Var3.e1();
-                                                        size6 = i40 - 1;
+                                                        arrayList24 = ((TLRPC.TL_replyInlineMarkup) replyMarkup2).rows;
+                                                        i41 = r47Var2.e1();
+                                                        size6 = i42 - 1;
                                                         gp7Var5 = gp7Var3;
-                                                        str17 = str14;
-                                                        zh6Var2 = zh6Var8;
-                                                        arrayList3 = arrayList24;
-                                                        r47Var = r47Var10;
-                                                        str19 = str13;
+                                                        str19 = str14;
+                                                        arrayList3 = arrayList26;
+                                                        r47Var = r47Var7;
+                                                        str22 = str13;
                                                         strArr22 = strArr;
                                                         zArr22 = zArr;
                                                         sb42 = sb2;
                                                         j7 = j10;
+                                                        zh6Var2 = zh6Var9;
                                                         j5 = j11;
                                                     }
                                                 }
                                             }
                                         }
-                                        arrayList22 = arrayList23;
-                                        size6 = i40 - 1;
+                                        arrayList24 = arrayList25;
+                                        size6 = i42 - 1;
                                         gp7Var5 = gp7Var3;
-                                        str17 = str14;
-                                        zh6Var2 = zh6Var8;
-                                        arrayList3 = arrayList24;
-                                        r47Var = r47Var10;
-                                        str19 = str13;
+                                        str19 = str14;
+                                        arrayList3 = arrayList26;
+                                        r47Var = r47Var7;
+                                        str22 = str13;
                                         strArr22 = strArr;
                                         zArr22 = zArr;
                                         sb42 = sb2;
                                         j7 = j10;
+                                        zh6Var2 = zh6Var9;
                                         j5 = j11;
                                     }
-                                    r47Var2 = r47Var;
                                     sb = sb42;
-                                    gp7Var2 = gp7Var5;
+                                    zh6Var8 = zh6Var2;
                                     j8 = j7;
-                                    str11 = str17;
-                                    i17 = i39;
+                                    gp7Var2 = gp7Var5;
+                                    str11 = str19;
+                                    i17 = i41;
                                     bitmap3 = bitmap2;
                                     str12 = str8;
-                                    arrayList5 = arrayList22;
+                                    arrayList5 = arrayList24;
                                 }
-                                ArrayList arrayList172 = arrayList3;
+                                ArrayList arrayList182 = arrayList3;
+                                r47Var3 = r47Var;
                                 long j222 = j5;
-                                zh6 zh6Var112 = zh6Var2;
-                                Intent intent22 = new Intent(a.b, (Class<?>) LaunchActivity.class);
-                                intent22.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                intent22.setFlags(67108864);
-                                intent22.addCategory("android.intent.category.LAUNCHER");
-                                r47 r47Var82 = r47Var2;
-                                if (r47Var2 != null) {
-                                    if (r47Var82.O) {
-                                        intent22.putExtra("oauth_url", r47Var82.b);
-                                    } else if (r47Var82.J) {
-                                        intent22.putExtra("storyId", Math.abs(r47Var82.e1()));
-                                    } else if (r47Var82.N) {
-                                        gp7 gp7Var6 = gp7Var2;
+                                Intent intent32 = new Intent(a.b, (Class<?>) LaunchActivity.class);
+                                intent32.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                intent32.setFlags(67108864);
+                                intent32.addCategory("android.intent.category.LAUNCHER");
+                                if (r47Var3 != null) {
+                                    if (r47Var3.O) {
+                                        intent32.putExtra("oauth_url", r47Var3.b);
+                                    } else if (r47Var3.J) {
+                                        intent32.putExtra("storyId", Math.abs(r47Var3.e1()));
+                                    } else if (r47Var3.N) {
+                                        i22 = i17;
                                         j12 = j222;
                                         if (j222 < 0) {
-                                            intent22.putExtra("chatId", -j12);
+                                            intent32.putExtra("chatId", -j12);
                                         } else if (j222 > 0) {
-                                            intent22.putExtra("userId", j12);
+                                            intent32.putExtra("userId", j12);
                                         }
-                                        intent22.putExtra("storyId", Math.abs(r47Var82.e1()));
-                                        gp7Var2 = gp7Var6;
+                                        intent32.putExtra("storyId", Math.abs(r47Var3.e1()));
                                         j13 = j8;
                                         ik8.q(j13, ik8.o(j12, "show extra notifications chatId ", " topicId "));
                                         if (j13 != 0) {
-                                            intent22.putExtra("topicId", j13);
+                                            intent32.putExtra("topicId", j13);
                                         }
-                                        String str182 = str11;
-                                        intent22.putExtra(str182, ip7Var.currentAccount);
-                                        PendingIntent activity2 = PendingIntent.getActivity(a.b, 0, intent22, 1140850688);
+                                        String str202 = str11;
+                                        intent32.putExtra(str202, ip7Var.currentAccount);
+                                        PendingIntent activity2 = PendingIntent.getActivity(a.b, 0, intent32, 1140850688);
                                         lyc lycVar2 = new lyc((byte) 10);
-                                        ln7 ln7Var32 = ln7Var;
+                                        ln7 ln7Var22 = ln7Var;
                                         if (ln7Var != null) {
-                                            lycVar2.a(ln7Var32);
+                                            lycVar2.a(ln7Var22);
                                         }
-                                        int i362 = i17;
-                                        Intent intent32 = new Intent(a.b, (Class<?>) AutoMessageHeardReceiver.class);
-                                        intent32.addFlags(i7);
-                                        intent32.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                        intent32.putExtra("dialog_id", j12);
-                                        int i372 = i15;
-                                        intent32.putExtra(str10, i372);
-                                        intent32.putExtra(str182, ip7Var.currentAccount);
-                                        ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList182 = arrayList5;
+                                        int i382 = i22;
+                                        Intent intent42 = new Intent(a.b, (Class<?>) AutoMessageHeardReceiver.class);
+                                        intent42.addFlags(i7);
+                                        intent42.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                        intent42.putExtra("dialog_id", j12);
+                                        int i392 = i15;
+                                        intent42.putExtra(str10, i392);
+                                        intent42.putExtra(str202, ip7Var.currentAccount);
+                                        ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList192 = arrayList5;
                                         bitmap4 = bitmap3;
-                                        kn7 kn7Var22 = new kn7(R.drawable.msg_markread, PendingIntent.getBroadcast(a.b, num2.intValue(), intent32, 167772160), ob6.L0(2131748435));
+                                        kn7 kn7Var22 = new kn7(R.drawable.msg_markread, PendingIntent.getBroadcast(a.b, num2.intValue(), intent42, 167772160), ob6.L0(2131748435));
                                         kn7Var22.g = (byte) 2;
                                         kn7Var22.h = false;
                                         ln7 b32 = kn7Var22.b();
                                         if (wf3.B(j12)) {
-                                            ln7Var2 = ln7Var32;
-                                            str15 = j12 != o0 ? "tgenc" + wf3.h(j12) + "_" + i372 : null;
+                                            str15 = str202;
+                                            eo7Var2 = eo7Var;
+                                            str16 = j12 != o0 ? "tgenc" + wf3.h(j12) + "_" + i392 : null;
                                         } else if (wf3.D(j12)) {
-                                            str15 = "tguser" + j12 + "_" + i372;
-                                            ln7Var2 = ln7Var32;
+                                            str15 = str202;
+                                            eo7Var2 = eo7Var;
+                                            str16 = "tguser" + j12 + "_" + i392;
                                         } else {
                                             StringBuilder sb7 = new StringBuilder("tgchat");
-                                            ln7Var2 = ln7Var32;
+                                            str15 = str202;
+                                            eo7Var2 = eo7Var;
                                             sb7.append(-j12);
                                             sb7.append("_");
-                                            sb7.append(i372);
-                                            str15 = sb7.toString();
+                                            sb7.append(i392);
+                                            str16 = sb7.toString();
                                         }
-                                        if (str15 != null) {
-                                            lycVar2.d = str15;
+                                        if (str16 != null) {
+                                            lycVar2.d = str16;
                                             lyc lycVar3 = new lyc((byte) 10);
-                                            lycVar3.d = "summary_".concat(str15);
+                                            lycVar3.d = "summary_".concat(str16);
                                             lycVar3.q(wn7Var);
                                         }
+                                        eo7 eo7Var32 = eo7Var2;
                                         long j232 = j6;
                                         lycVar2.e = qu6.n(j232, "tgaccount");
+                                        j6 = j232;
                                         if (gp7Var2.c) {
-                                            j6 = j232;
                                             j14 = Long.MAX_VALUE;
-                                            int i43 = 0;
-                                            while (i43 < ip7Var.E.size()) {
-                                                j14 = Math.min(((hp7) ip7Var.E.get(i43)).e, j14);
-                                                i43++;
-                                                r47Var82 = r47Var82;
+                                            for (int i45 = 0; i45 < ip7Var.E.size(); i45++) {
+                                                j14 = Math.min(((hp7) ip7Var.E.get(i45)).e, j14);
                                             }
-                                            r47Var4 = r47Var82;
+                                            arrayList8 = arrayList182;
                                         } else {
-                                            r47Var4 = r47Var82;
-                                            j6 = j232;
-                                            j14 = ((r47) arrayList172.get(0)).k.date * 1000;
+                                            arrayList8 = arrayList182;
+                                            j14 = ((r47) arrayList8.get(0)).k.date * 1000;
                                         }
                                         wn7 wn7Var22 = new wn7(a.b);
                                         wn7Var22.e(str12);
+                                        ArrayList arrayList202 = arrayList8;
                                         wn7Var22.F.icon = R.drawable.notification;
                                         wn7Var22.d(sb.toString());
                                         wn7Var22.f(16, true);
-                                        wn7Var22.i = gp7Var2.c ? ip7Var.E.size() : arrayList172.size();
+                                        wn7Var22.i = gp7Var2.c ? ip7Var.E.size() : arrayList202.size();
                                         wn7Var22.w = -15618822;
                                         wn7Var22.r = false;
                                         wn7Var22.F.when = j14;
                                         wn7Var22.k = true;
-                                        wn7Var22.i(eo7Var);
+                                        wn7Var22.i(eo7Var32);
                                         wn7Var22.g = activity2;
                                         lycVar2.q(wn7Var22);
                                         wn7Var22.s = String.valueOf(Long.MAX_VALUE - j14);
                                         wn7Var22.f(8, (z3 && j12 == j && j13 == j2) ? false : true);
                                         wn7Var22.u = "msg";
-                                        Intent intent42 = new Intent(a.b, (Class<?>) NotificationDismissReceiver.class);
-                                        intent42.putExtra("messageDate", i9);
-                                        intent42.putExtra("dialogId", j12);
-                                        intent42.putExtra(str182, ip7Var.currentAccount);
+                                        intent = new Intent(a.b, (Class<?>) NotificationDismissReceiver.class);
+                                        intent.putExtra("messageDate", i9);
+                                        intent.putExtra("dialogId", j12);
+                                        String str212 = str15;
+                                        intent.putExtra(str212, ip7Var.currentAccount);
                                         if (gp7Var2.c) {
-                                            intent42.putExtra("story", true);
+                                            intent.putExtra("story", true);
                                         }
-                                        if (r47Var4 != null) {
-                                            r47Var5 = r47Var4;
-                                            try {
-                                                if (r47Var5.J) {
-                                                    intent42.putExtra("storyReaction", true);
-                                                }
-                                            } catch (Exception e6) {
-                                                e = e6;
-                                                cc4.f(e);
-                                                if (z9) {
-                                                }
-                                                if (r47Var5 != null) {
-                                                }
-                                                keyboardInlineButton = null;
-                                                tL_inlineButtonTypeCopy = null;
-                                                if (keyboardInlineButton != null) {
-                                                }
-                                                j15 = gp7Var2.a;
-                                                if (j15 != 489000) {
-                                                }
-                                                if (arrayList13.size() == 1) {
-                                                }
-                                                if (wf3.B(j12)) {
-                                                }
-                                                if (bitmap4 != null) {
-                                                }
-                                                if (!hl.n2(false)) {
-                                                }
-                                                if (chat2 == null) {
-                                                }
-                                                user7 = user6;
-                                                boolean z182 = z9;
-                                                Notification notification42 = notification2;
-                                                if (Build.VERSION.SDK_INT >= 26) {
-                                                }
-                                                cc4.b("showExtraNotifications: holders.add " + j12);
-                                                notification3 = notification42;
-                                                z9 = z182;
-                                                zh6Var7 = zh6Var112;
-                                                long j242 = j12;
-                                                fp7 fp7Var2 = new fp7(ip7Var, num2.intValue(), j242, gp7Var2.c, str12, user7, chat2, wn7Var22, j2, str2, jArr, i, uri, i2, z, z2, z3, i3);
-                                                arrayList4 = arrayList;
-                                                arrayList4.add(fp7Var2);
-                                                ip7Var.h.k(j242, num2);
-                                                i24 = i8 + 1;
-                                                arrayList = arrayList4;
-                                                arrayList10 = arrayList13;
-                                                z5 = z9;
-                                                z6 = z8;
-                                                size = i6;
-                                                zh6Var9 = zh6Var5;
-                                                zh6Var10 = zh6Var6;
-                                                d = sharedPreferences;
-                                                e = j6;
-                                                b2 = notification3;
-                                                zh6Var2 = zh6Var7;
-                                            }
-                                        } else {
-                                            r47Var5 = r47Var4;
+                                        if (r47Var3 != null && r47Var3.J) {
+                                            intent.putExtra("storyReaction", true);
                                         }
-                                        wn7Var22.F.deleteIntent = PendingIntent.getBroadcast(a.b, num2.intValue(), intent42, 167772160);
+                                        wn7Var22.F.deleteIntent = PendingIntent.getBroadcast(a.b, num2.intValue(), intent, 167772160);
                                         if (z9) {
                                             wn7Var22.q = ip7Var.f0;
                                             wn7Var22.C = true;
                                         }
-                                        if (r47Var5 != null && (message = r47Var5.k) != null) {
+                                        if (r47Var3 != null && (message = r47Var3.k) != null) {
                                             replyMarkup = message.reply_markup;
                                             if (replyMarkup instanceof TLRPC.TL_replyInlineMarkup) {
                                                 TLRPC.TL_replyInlineMarkup tL_replyInlineMarkup = (TLRPC.TL_replyInlineMarkup) replyMarkup;
                                                 tL_inlineButtonTypeCopy = null;
                                                 TL_keyboard.KeyboardInlineButton keyboardInlineButton2 = null;
-                                                for (int i44 = 0; i44 < tL_replyInlineMarkup.rows.size(); i44++) {
-                                                    int i45 = 0;
+                                                for (int i46 = 0; i46 < tL_replyInlineMarkup.rows.size(); i46++) {
+                                                    int i47 = 0;
                                                     while (true) {
-                                                        if (i45 >= tL_replyInlineMarkup.rows.get(i44).buttons.size()) {
+                                                        if (i47 >= tL_replyInlineMarkup.rows.get(i46).buttons.size()) {
                                                             break;
                                                         }
-                                                        TL_keyboard.KeyboardInlineButton keyboardInlineButton3 = tL_replyInlineMarkup.rows.get(i44).buttons.get(i45);
+                                                        TL_keyboard.KeyboardInlineButton keyboardInlineButton3 = tL_replyInlineMarkup.rows.get(i46).buttons.get(i47);
                                                         TL_keyboard.TL_inlineButtonTypeCopy tL_inlineButtonTypeCopy2 = (TL_keyboard.TL_inlineButtonTypeCopy) ehb.a(keyboardInlineButton3, TL_keyboard.TL_inlineButtonTypeCopy.class);
                                                         if (tL_inlineButtonTypeCopy2 != null) {
                                                             keyboardInlineButton2 = keyboardInlineButton3;
                                                             tL_inlineButtonTypeCopy = tL_inlineButtonTypeCopy2;
                                                             break;
                                                         } else {
-                                                            i45++;
+                                                            i47++;
                                                             tL_inlineButtonTypeCopy = tL_inlineButtonTypeCopy2;
                                                         }
                                                     }
@@ -3487,14 +3445,14 @@ public final class ip7 extends rf0 implements fn7 {
                                                 }
                                                 j15 = gp7Var2.a;
                                                 if (j15 != 489000 && j15 != 489001) {
-                                                    if (ln7Var2 != null) {
-                                                        wn7Var22.b.add(ln7Var2);
+                                                    if (ln7Var22 != null) {
+                                                        wn7Var22.b.add(ln7Var22);
                                                     }
-                                                    if (!z8 && !gp7Var2.c && (r47Var5 == null || !r47Var5.J)) {
+                                                    if (!z8 && !gp7Var2.c && (r47Var3 == null || !r47Var3.J)) {
                                                         wn7Var22.b.add(b32);
                                                     }
                                                 }
-                                                if (arrayList13.size() == 1 && !TextUtils.isEmpty(str) && !gp7Var2.c) {
+                                                if (arrayList14.size() == 1 && !TextUtils.isEmpty(str) && !gp7Var2.c) {
                                                     wn7Var22.j(str);
                                                 }
                                                 if (wf3.B(j12)) {
@@ -3503,77 +3461,84 @@ public final class ip7 extends rf0 implements fn7 {
                                                 if (bitmap4 != null) {
                                                     wn7Var22.g(bitmap4);
                                                 }
-                                                if (!hl.n2(false) && !xea.B && arrayList182 != null) {
-                                                    size3 = arrayList182.size();
-                                                    for (i22 = 0; i22 < size3; i22++) {
-                                                        ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList28 = arrayList182;
-                                                        TL_keyboard.KeyboardInlineButtonRow keyboardInlineButtonRow = arrayList28.get(i22);
+                                                if (!hl.n2(false) && !xea.B && arrayList192 != null) {
+                                                    size3 = arrayList192.size();
+                                                    i23 = 0;
+                                                    while (i23 < size3) {
+                                                        ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList30 = arrayList192;
+                                                        TL_keyboard.KeyboardInlineButtonRow keyboardInlineButtonRow = arrayList30.get(i23);
                                                         int size7 = keyboardInlineButtonRow.buttons.size();
-                                                        int i46 = 0;
-                                                        while (i46 < size7) {
-                                                            TL_keyboard.KeyboardInlineButton keyboardInlineButton4 = keyboardInlineButtonRow.buttons.get(i46);
-                                                            int i47 = size3;
+                                                        int i48 = 0;
+                                                        while (i48 < size7) {
+                                                            TL_keyboard.KeyboardInlineButton keyboardInlineButton4 = keyboardInlineButtonRow.buttons.get(i48);
                                                             TL_keyboard.TL_inlineButtonTypeCallback tL_inlineButtonTypeCallback = (TL_keyboard.TL_inlineButtonTypeCallback) ehb.a(keyboardInlineButton4, TL_keyboard.TL_inlineButtonTypeCallback.class);
-                                                            int i48 = i46;
+                                                            int i49 = size3;
                                                             if (tL_inlineButtonTypeCallback != null) {
-                                                                arrayList8 = arrayList28;
+                                                                arrayList9 = arrayList30;
                                                                 Intent intent6 = new Intent(a.b, (Class<?>) NotificationCallbackReceiver.class);
-                                                                intent6.putExtra(str182, ip7Var.currentAccount);
+                                                                intent6.putExtra(str212, ip7Var.currentAccount);
                                                                 intent6.putExtra("did", j12);
                                                                 byte[] bArr = tL_inlineButtonTypeCallback.data;
                                                                 if (bArr != null) {
                                                                     intent6.putExtra("data", bArr);
                                                                 }
-                                                                intent6.putExtra("mid", i362);
-                                                                String str25 = keyboardInlineButton4.text;
+                                                                i24 = i382;
+                                                                intent6.putExtra("mid", i24);
+                                                                String str28 = keyboardInlineButton4.text;
                                                                 Context context3 = a.b;
-                                                                int i49 = ip7Var.I;
-                                                                ip7Var.I = i49 + 1;
-                                                                wn7Var22.a(0, PendingIntent.getBroadcast(context3, i49, intent6, 167772160), str25);
+                                                                int i50 = ip7Var.I;
+                                                                str17 = str212;
+                                                                ip7Var.I = i50 + 1;
+                                                                wn7Var22.a(0, PendingIntent.getBroadcast(context3, i50, intent6, 167772160), str28);
                                                             } else {
-                                                                arrayList8 = arrayList28;
+                                                                str17 = str212;
+                                                                arrayList9 = arrayList30;
+                                                                i24 = i382;
                                                             }
-                                                            i46 = i48 + 1;
-                                                            size3 = i47;
-                                                            arrayList28 = arrayList8;
+                                                            i48++;
+                                                            i382 = i24;
+                                                            size3 = i49;
+                                                            arrayList30 = arrayList9;
+                                                            str212 = str17;
                                                         }
-                                                        arrayList182 = arrayList28;
+                                                        arrayList192 = arrayList30;
+                                                        i23++;
+                                                        str212 = str212;
                                                     }
                                                 }
                                                 if (chat2 == null || user6 == null) {
                                                     user7 = user6;
                                                 } else {
                                                     user7 = user6;
-                                                    String str26 = user7.phone;
-                                                    if (str26 != null && str26.length() > 0) {
-                                                        String str27 = "tel:+" + user7.phone;
-                                                        if (!str27.isEmpty()) {
-                                                            wn7Var22.G.add(str27);
+                                                    String str29 = user7.phone;
+                                                    if (str29 != null && str29.length() > 0) {
+                                                        String str30 = "tel:+" + user7.phone;
+                                                        if (!str30.isEmpty()) {
+                                                            wn7Var22.G.add(str30);
                                                         }
                                                     }
                                                 }
-                                                boolean z1822 = z9;
-                                                Notification notification422 = notification2;
+                                                boolean z182 = z9;
+                                                Notification notification42 = notification2;
                                                 if (Build.VERSION.SDK_INT >= 26) {
-                                                    W(notification422, wn7Var22, z1822);
+                                                    W(notification42, wn7Var22, z182);
                                                 }
                                                 cc4.b("showExtraNotifications: holders.add " + j12);
-                                                notification3 = notification422;
-                                                z9 = z1822;
-                                                zh6Var7 = zh6Var112;
-                                                long j2422 = j12;
-                                                fp7 fp7Var22 = new fp7(ip7Var, num2.intValue(), j2422, gp7Var2.c, str12, user7, chat2, wn7Var22, j2, str2, jArr, i, uri, i2, z, z2, z3, i3);
+                                                notification3 = notification42;
+                                                z9 = z182;
+                                                zh6Var7 = zh6Var8;
+                                                long j242 = j12;
                                                 arrayList4 = arrayList;
-                                                arrayList4.add(fp7Var22);
-                                                ip7Var.h.k(j2422, num2);
-                                                i24 = i8 + 1;
+                                                arrayList4.add(new fp7(ip7Var, num2.intValue(), j242, gp7Var2.c, str12, user7, chat2, wn7Var22, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                                ip7Var.h.k(j242, num2);
+                                                i26 = i8 + 1;
                                                 arrayList = arrayList4;
-                                                arrayList10 = arrayList13;
+                                                arrayList11 = arrayList14;
                                                 z5 = z9;
                                                 z6 = z8;
                                                 size = i6;
-                                                zh6Var9 = zh6Var5;
-                                                zh6Var10 = zh6Var6;
+                                                zh6Var10 = zh6Var5;
+                                                zh6Var11 = zh6Var6;
                                                 d = sharedPreferences;
                                                 e = j6;
                                                 b2 = notification3;
@@ -3586,13 +3551,13 @@ public final class ip7 extends rf0 implements fn7 {
                                         }
                                         j15 = gp7Var2.a;
                                         if (j15 != 489000) {
-                                            if (ln7Var2 != null) {
+                                            if (ln7Var22 != null) {
                                             }
                                             if (!z8) {
                                                 wn7Var22.b.add(b32);
                                             }
                                         }
-                                        if (arrayList13.size() == 1) {
+                                        if (arrayList14.size() == 1) {
                                             wn7Var22.j(str);
                                         }
                                         if (wf3.B(j12)) {
@@ -3600,101 +3565,107 @@ public final class ip7 extends rf0 implements fn7 {
                                         if (bitmap4 != null) {
                                         }
                                         if (!hl.n2(false)) {
-                                            size3 = arrayList182.size();
-                                            while (i22 < size3) {
+                                            size3 = arrayList192.size();
+                                            i23 = 0;
+                                            while (i23 < size3) {
                                             }
                                         }
                                         if (chat2 == null) {
                                         }
                                         user7 = user6;
-                                        boolean z18222 = z9;
-                                        Notification notification4222 = notification2;
+                                        boolean z1822 = z9;
+                                        Notification notification422 = notification2;
                                         if (Build.VERSION.SDK_INT >= 26) {
                                         }
                                         cc4.b("showExtraNotifications: holders.add " + j12);
-                                        notification3 = notification4222;
-                                        z9 = z18222;
-                                        zh6Var7 = zh6Var112;
-                                        long j24222 = j12;
-                                        fp7 fp7Var222 = new fp7(ip7Var, num2.intValue(), j24222, gp7Var2.c, str12, user7, chat2, wn7Var22, j2, str2, jArr, i, uri, i2, z, z2, z3, i3);
+                                        notification3 = notification422;
+                                        z9 = z1822;
+                                        zh6Var7 = zh6Var8;
+                                        long j2422 = j12;
                                         arrayList4 = arrayList;
-                                        arrayList4.add(fp7Var222);
-                                        ip7Var.h.k(j24222, num2);
-                                        i24 = i8 + 1;
+                                        arrayList4.add(new fp7(ip7Var, num2.intValue(), j2422, gp7Var2.c, str12, user7, chat2, wn7Var22, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                        ip7Var.h.k(j2422, num2);
+                                        i26 = i8 + 1;
                                         arrayList = arrayList4;
-                                        arrayList10 = arrayList13;
+                                        arrayList11 = arrayList14;
                                         z5 = z9;
                                         z6 = z8;
                                         size = i6;
-                                        zh6Var9 = zh6Var5;
-                                        zh6Var10 = zh6Var6;
+                                        zh6Var10 = zh6Var5;
+                                        zh6Var11 = zh6Var6;
                                         d = sharedPreferences;
                                         e = j6;
                                         b2 = notification3;
                                         zh6Var2 = zh6Var7;
                                     }
+                                    i22 = i17;
                                     j12 = j222;
                                     j13 = j8;
                                     ik8.q(j13, ik8.o(j12, "show extra notifications chatId ", " topicId "));
                                     if (j13 != 0) {
                                     }
-                                    String str1822 = str11;
-                                    intent22.putExtra(str1822, ip7Var.currentAccount);
-                                    PendingIntent activity22 = PendingIntent.getActivity(a.b, 0, intent22, 1140850688);
+                                    String str2022 = str11;
+                                    intent32.putExtra(str2022, ip7Var.currentAccount);
+                                    PendingIntent activity22 = PendingIntent.getActivity(a.b, 0, intent32, 1140850688);
                                     lyc lycVar22 = new lyc((byte) 10);
-                                    ln7 ln7Var322 = ln7Var;
+                                    ln7 ln7Var222 = ln7Var;
                                     if (ln7Var != null) {
                                     }
-                                    int i3622 = i17;
-                                    Intent intent322 = new Intent(a.b, (Class<?>) AutoMessageHeardReceiver.class);
-                                    intent322.addFlags(i7);
-                                    intent322.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                    intent322.putExtra("dialog_id", j12);
-                                    int i3722 = i15;
-                                    intent322.putExtra(str10, i3722);
-                                    intent322.putExtra(str1822, ip7Var.currentAccount);
-                                    ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList1822 = arrayList5;
+                                    int i3822 = i22;
+                                    Intent intent422 = new Intent(a.b, (Class<?>) AutoMessageHeardReceiver.class);
+                                    intent422.addFlags(i7);
+                                    intent422.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                    intent422.putExtra("dialog_id", j12);
+                                    int i3922 = i15;
+                                    intent422.putExtra(str10, i3922);
+                                    intent422.putExtra(str2022, ip7Var.currentAccount);
+                                    ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList1922 = arrayList5;
                                     bitmap4 = bitmap3;
-                                    kn7 kn7Var222 = new kn7(R.drawable.msg_markread, PendingIntent.getBroadcast(a.b, num2.intValue(), intent322, 167772160), ob6.L0(2131748435));
+                                    kn7 kn7Var222 = new kn7(R.drawable.msg_markread, PendingIntent.getBroadcast(a.b, num2.intValue(), intent422, 167772160), ob6.L0(2131748435));
                                     kn7Var222.g = (byte) 2;
                                     kn7Var222.h = false;
                                     ln7 b322 = kn7Var222.b();
                                     if (wf3.B(j12)) {
                                     }
-                                    if (str15 != null) {
+                                    if (str16 != null) {
                                     }
+                                    eo7 eo7Var322 = eo7Var2;
                                     long j2322 = j6;
                                     lycVar22.e = qu6.n(j2322, "tgaccount");
+                                    j6 = j2322;
                                     if (gp7Var2.c) {
                                     }
                                     wn7 wn7Var222 = new wn7(a.b);
                                     wn7Var222.e(str12);
+                                    ArrayList arrayList2022 = arrayList8;
                                     wn7Var222.F.icon = R.drawable.notification;
                                     wn7Var222.d(sb.toString());
                                     wn7Var222.f(16, true);
-                                    wn7Var222.i = gp7Var2.c ? ip7Var.E.size() : arrayList172.size();
+                                    wn7Var222.i = gp7Var2.c ? ip7Var.E.size() : arrayList2022.size();
                                     wn7Var222.w = -15618822;
                                     wn7Var222.r = false;
                                     wn7Var222.F.when = j14;
                                     wn7Var222.k = true;
-                                    wn7Var222.i(eo7Var);
+                                    wn7Var222.i(eo7Var322);
                                     wn7Var222.g = activity22;
                                     lycVar22.q(wn7Var222);
                                     wn7Var222.s = String.valueOf(Long.MAX_VALUE - j14);
                                     wn7Var222.f(8, (z3 && j12 == j && j13 == j2) ? false : true);
                                     wn7Var222.u = "msg";
-                                    Intent intent422 = new Intent(a.b, (Class<?>) NotificationDismissReceiver.class);
-                                    intent422.putExtra("messageDate", i9);
-                                    intent422.putExtra("dialogId", j12);
-                                    intent422.putExtra(str1822, ip7Var.currentAccount);
+                                    intent = new Intent(a.b, (Class<?>) NotificationDismissReceiver.class);
+                                    intent.putExtra("messageDate", i9);
+                                    intent.putExtra("dialogId", j12);
+                                    String str2122 = str15;
+                                    intent.putExtra(str2122, ip7Var.currentAccount);
                                     if (gp7Var2.c) {
                                     }
-                                    if (r47Var4 != null) {
+                                    if (r47Var3 != null) {
+                                        intent.putExtra("storyReaction", true);
                                     }
-                                    wn7Var222.F.deleteIntent = PendingIntent.getBroadcast(a.b, num2.intValue(), intent422, 167772160);
+                                    wn7Var222.F.deleteIntent = PendingIntent.getBroadcast(a.b, num2.intValue(), intent, 167772160);
                                     if (z9) {
                                     }
-                                    if (r47Var5 != null) {
+                                    if (r47Var3 != null) {
                                         replyMarkup = message.reply_markup;
                                         if (replyMarkup instanceof TLRPC.TL_replyInlineMarkup) {
                                         }
@@ -3706,7 +3677,7 @@ public final class ip7 extends rf0 implements fn7 {
                                     j15 = gp7Var2.a;
                                     if (j15 != 489000) {
                                     }
-                                    if (arrayList13.size() == 1) {
+                                    if (arrayList14.size() == 1) {
                                     }
                                     if (wf3.B(j12)) {
                                     }
@@ -3717,107 +3688,111 @@ public final class ip7 extends rf0 implements fn7 {
                                     if (chat2 == null) {
                                     }
                                     user7 = user6;
-                                    boolean z182222 = z9;
-                                    Notification notification42222 = notification2;
+                                    boolean z18222 = z9;
+                                    Notification notification4222 = notification2;
                                     if (Build.VERSION.SDK_INT >= 26) {
                                     }
                                     cc4.b("showExtraNotifications: holders.add " + j12);
-                                    notification3 = notification42222;
-                                    z9 = z182222;
-                                    zh6Var7 = zh6Var112;
-                                    long j242222 = j12;
-                                    fp7 fp7Var2222 = new fp7(ip7Var, num2.intValue(), j242222, gp7Var2.c, str12, user7, chat2, wn7Var222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3);
+                                    notification3 = notification4222;
+                                    z9 = z18222;
+                                    zh6Var7 = zh6Var8;
+                                    long j24222 = j12;
                                     arrayList4 = arrayList;
-                                    arrayList4.add(fp7Var2222);
-                                    ip7Var.h.k(j242222, num2);
-                                    i24 = i8 + 1;
+                                    arrayList4.add(new fp7(ip7Var, num2.intValue(), j24222, gp7Var2.c, str12, user7, chat2, wn7Var222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                    ip7Var.h.k(j24222, num2);
+                                    i26 = i8 + 1;
                                     arrayList = arrayList4;
-                                    arrayList10 = arrayList13;
+                                    arrayList11 = arrayList14;
                                     z5 = z9;
                                     z6 = z8;
                                     size = i6;
-                                    zh6Var9 = zh6Var5;
-                                    zh6Var10 = zh6Var6;
+                                    zh6Var10 = zh6Var5;
+                                    zh6Var11 = zh6Var6;
                                     d = sharedPreferences;
                                     e = j6;
                                     b2 = notification3;
                                     zh6Var2 = zh6Var7;
                                 }
+                                i22 = i17;
                                 j12 = j222;
                                 if (gp7Var2.c) {
                                     long[] jArr2 = new long[ip7Var.E.size()];
-                                    for (int i50 = 0; i50 < ip7Var.E.size(); i50++) {
-                                        jArr2[i50] = ((hp7) ip7Var.E.get(i50)).a;
+                                    for (int i51 = 0; i51 < ip7Var.E.size(); i51++) {
+                                        jArr2[i51] = ((hp7) ip7Var.E.get(i51)).a;
                                     }
-                                    intent22.putExtra("storyDialogIds", jArr2);
+                                    intent32.putExtra("storyDialogIds", jArr2);
                                 } else if (wf3.B(j12)) {
-                                    intent22.putExtra("encId", wf3.h(j12));
+                                    intent32.putExtra("encId", wf3.h(j12));
                                 } else if (wf3.D(j12)) {
-                                    intent22.putExtra("userId", j12);
+                                    intent32.putExtra("userId", j12);
                                 } else {
-                                    intent22.putExtra("chatId", -j12);
+                                    intent32.putExtra("chatId", -j12);
                                 }
                                 j13 = j8;
                                 ik8.q(j13, ik8.o(j12, "show extra notifications chatId ", " topicId "));
                                 if (j13 != 0) {
                                 }
-                                String str18222 = str11;
-                                intent22.putExtra(str18222, ip7Var.currentAccount);
-                                PendingIntent activity222 = PendingIntent.getActivity(a.b, 0, intent22, 1140850688);
+                                String str20222 = str11;
+                                intent32.putExtra(str20222, ip7Var.currentAccount);
+                                PendingIntent activity222 = PendingIntent.getActivity(a.b, 0, intent32, 1140850688);
                                 lyc lycVar222 = new lyc((byte) 10);
-                                ln7 ln7Var3222 = ln7Var;
+                                ln7 ln7Var2222 = ln7Var;
                                 if (ln7Var != null) {
                                 }
-                                int i36222 = i17;
-                                Intent intent3222 = new Intent(a.b, (Class<?>) AutoMessageHeardReceiver.class);
-                                intent3222.addFlags(i7);
-                                intent3222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                intent3222.putExtra("dialog_id", j12);
-                                int i37222 = i15;
-                                intent3222.putExtra(str10, i37222);
-                                intent3222.putExtra(str18222, ip7Var.currentAccount);
-                                ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList18222 = arrayList5;
+                                int i38222 = i22;
+                                Intent intent4222 = new Intent(a.b, (Class<?>) AutoMessageHeardReceiver.class);
+                                intent4222.addFlags(i7);
+                                intent4222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                intent4222.putExtra("dialog_id", j12);
+                                int i39222 = i15;
+                                intent4222.putExtra(str10, i39222);
+                                intent4222.putExtra(str20222, ip7Var.currentAccount);
+                                ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList19222 = arrayList5;
                                 bitmap4 = bitmap3;
-                                kn7 kn7Var2222 = new kn7(R.drawable.msg_markread, PendingIntent.getBroadcast(a.b, num2.intValue(), intent3222, 167772160), ob6.L0(2131748435));
+                                kn7 kn7Var2222 = new kn7(R.drawable.msg_markread, PendingIntent.getBroadcast(a.b, num2.intValue(), intent4222, 167772160), ob6.L0(2131748435));
                                 kn7Var2222.g = (byte) 2;
                                 kn7Var2222.h = false;
                                 ln7 b3222 = kn7Var2222.b();
                                 if (wf3.B(j12)) {
                                 }
-                                if (str15 != null) {
+                                if (str16 != null) {
                                 }
+                                eo7 eo7Var3222 = eo7Var2;
                                 long j23222 = j6;
                                 lycVar222.e = qu6.n(j23222, "tgaccount");
+                                j6 = j23222;
                                 if (gp7Var2.c) {
                                 }
                                 wn7 wn7Var2222 = new wn7(a.b);
                                 wn7Var2222.e(str12);
+                                ArrayList arrayList20222 = arrayList8;
                                 wn7Var2222.F.icon = R.drawable.notification;
                                 wn7Var2222.d(sb.toString());
                                 wn7Var2222.f(16, true);
-                                wn7Var2222.i = gp7Var2.c ? ip7Var.E.size() : arrayList172.size();
+                                wn7Var2222.i = gp7Var2.c ? ip7Var.E.size() : arrayList20222.size();
                                 wn7Var2222.w = -15618822;
                                 wn7Var2222.r = false;
                                 wn7Var2222.F.when = j14;
                                 wn7Var2222.k = true;
-                                wn7Var2222.i(eo7Var);
+                                wn7Var2222.i(eo7Var3222);
                                 wn7Var2222.g = activity222;
                                 lycVar222.q(wn7Var2222);
                                 wn7Var2222.s = String.valueOf(Long.MAX_VALUE - j14);
                                 wn7Var2222.f(8, (z3 && j12 == j && j13 == j2) ? false : true);
                                 wn7Var2222.u = "msg";
-                                Intent intent4222 = new Intent(a.b, (Class<?>) NotificationDismissReceiver.class);
-                                intent4222.putExtra("messageDate", i9);
-                                intent4222.putExtra("dialogId", j12);
-                                intent4222.putExtra(str18222, ip7Var.currentAccount);
+                                intent = new Intent(a.b, (Class<?>) NotificationDismissReceiver.class);
+                                intent.putExtra("messageDate", i9);
+                                intent.putExtra("dialogId", j12);
+                                String str21222 = str15;
+                                intent.putExtra(str21222, ip7Var.currentAccount);
                                 if (gp7Var2.c) {
                                 }
-                                if (r47Var4 != null) {
+                                if (r47Var3 != null) {
                                 }
-                                wn7Var2222.F.deleteIntent = PendingIntent.getBroadcast(a.b, num2.intValue(), intent4222, 167772160);
+                                wn7Var2222.F.deleteIntent = PendingIntent.getBroadcast(a.b, num2.intValue(), intent, 167772160);
                                 if (z9) {
                                 }
-                                if (r47Var5 != null) {
+                                if (r47Var3 != null) {
                                 }
                                 keyboardInlineButton = null;
                                 tL_inlineButtonTypeCopy = null;
@@ -3826,7 +3801,7 @@ public final class ip7 extends rf0 implements fn7 {
                                 j15 = gp7Var2.a;
                                 if (j15 != 489000) {
                                 }
-                                if (arrayList13.size() == 1) {
+                                if (arrayList14.size() == 1) {
                                 }
                                 if (wf3.B(j12)) {
                                 }
@@ -3837,27 +3812,26 @@ public final class ip7 extends rf0 implements fn7 {
                                 if (chat2 == null) {
                                 }
                                 user7 = user6;
-                                boolean z1822222 = z9;
-                                Notification notification422222 = notification2;
+                                boolean z182222 = z9;
+                                Notification notification42222 = notification2;
                                 if (Build.VERSION.SDK_INT >= 26) {
                                 }
                                 cc4.b("showExtraNotifications: holders.add " + j12);
-                                notification3 = notification422222;
-                                z9 = z1822222;
-                                zh6Var7 = zh6Var112;
-                                long j2422222 = j12;
-                                fp7 fp7Var22222 = new fp7(ip7Var, num2.intValue(), j2422222, gp7Var2.c, str12, user7, chat2, wn7Var2222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3);
+                                notification3 = notification42222;
+                                z9 = z182222;
+                                zh6Var7 = zh6Var8;
+                                long j242222 = j12;
                                 arrayList4 = arrayList;
-                                arrayList4.add(fp7Var22222);
-                                ip7Var.h.k(j2422222, num2);
-                                i24 = i8 + 1;
+                                arrayList4.add(new fp7(ip7Var, num2.intValue(), j242222, gp7Var2.c, str12, user7, chat2, wn7Var2222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                ip7Var.h.k(j242222, num2);
+                                i26 = i8 + 1;
                                 arrayList = arrayList4;
-                                arrayList10 = arrayList13;
+                                arrayList11 = arrayList14;
                                 z5 = z9;
                                 z6 = z8;
                                 size = i6;
-                                zh6Var9 = zh6Var5;
-                                zh6Var10 = zh6Var6;
+                                zh6Var10 = zh6Var5;
+                                zh6Var11 = zh6Var6;
                                 d = sharedPreferences;
                                 e = j6;
                                 b2 = notification3;
@@ -3879,16 +3853,16 @@ public final class ip7 extends rf0 implements fn7 {
                     boolean[] zArr222 = new boolean[1];
                     if (gp7Var5.c) {
                     }
-                    ArrayList arrayList1722 = arrayList3;
+                    ArrayList arrayList1822 = arrayList3;
+                    r47Var3 = r47Var;
                     long j2222 = j5;
-                    zh6 zh6Var1122 = zh6Var2;
-                    Intent intent222 = new Intent(a.b, (Class<?>) LaunchActivity.class);
-                    intent222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    intent222.setFlags(67108864);
-                    intent222.addCategory("android.intent.category.LAUNCHER");
-                    r47 r47Var822 = r47Var2;
-                    if (r47Var2 != null) {
+                    Intent intent322 = new Intent(a.b, (Class<?>) LaunchActivity.class);
+                    intent322.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    intent322.setFlags(67108864);
+                    intent322.addCategory("android.intent.category.LAUNCHER");
+                    if (r47Var3 != null) {
                     }
+                    i22 = i17;
                     j12 = j2222;
                     if (gp7Var2.c) {
                     }
@@ -3896,63 +3870,67 @@ public final class ip7 extends rf0 implements fn7 {
                     ik8.q(j13, ik8.o(j12, "show extra notifications chatId ", " topicId "));
                     if (j13 != 0) {
                     }
-                    String str182222 = str11;
-                    intent222.putExtra(str182222, ip7Var.currentAccount);
-                    PendingIntent activity2222 = PendingIntent.getActivity(a.b, 0, intent222, 1140850688);
+                    String str202222 = str11;
+                    intent322.putExtra(str202222, ip7Var.currentAccount);
+                    PendingIntent activity2222 = PendingIntent.getActivity(a.b, 0, intent322, 1140850688);
                     lyc lycVar2222 = new lyc((byte) 10);
-                    ln7 ln7Var32222 = ln7Var;
+                    ln7 ln7Var22222 = ln7Var;
                     if (ln7Var != null) {
                     }
-                    int i362222 = i17;
-                    Intent intent32222 = new Intent(a.b, (Class<?>) AutoMessageHeardReceiver.class);
-                    intent32222.addFlags(i7);
-                    intent32222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                    intent32222.putExtra("dialog_id", j12);
-                    int i372222 = i15;
-                    intent32222.putExtra(str10, i372222);
-                    intent32222.putExtra(str182222, ip7Var.currentAccount);
-                    ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList182222 = arrayList5;
+                    int i382222 = i22;
+                    Intent intent42222 = new Intent(a.b, (Class<?>) AutoMessageHeardReceiver.class);
+                    intent42222.addFlags(i7);
+                    intent42222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                    intent42222.putExtra("dialog_id", j12);
+                    int i392222 = i15;
+                    intent42222.putExtra(str10, i392222);
+                    intent42222.putExtra(str202222, ip7Var.currentAccount);
+                    ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList192222 = arrayList5;
                     bitmap4 = bitmap3;
-                    kn7 kn7Var22222 = new kn7(R.drawable.msg_markread, PendingIntent.getBroadcast(a.b, num2.intValue(), intent32222, 167772160), ob6.L0(2131748435));
+                    kn7 kn7Var22222 = new kn7(R.drawable.msg_markread, PendingIntent.getBroadcast(a.b, num2.intValue(), intent42222, 167772160), ob6.L0(2131748435));
                     kn7Var22222.g = (byte) 2;
                     kn7Var22222.h = false;
                     ln7 b32222 = kn7Var22222.b();
                     if (wf3.B(j12)) {
                     }
-                    if (str15 != null) {
+                    if (str16 != null) {
                     }
+                    eo7 eo7Var32222 = eo7Var2;
                     long j232222 = j6;
                     lycVar2222.e = qu6.n(j232222, "tgaccount");
+                    j6 = j232222;
                     if (gp7Var2.c) {
                     }
                     wn7 wn7Var22222 = new wn7(a.b);
                     wn7Var22222.e(str12);
+                    ArrayList arrayList202222 = arrayList8;
                     wn7Var22222.F.icon = R.drawable.notification;
                     wn7Var22222.d(sb.toString());
                     wn7Var22222.f(16, true);
-                    wn7Var22222.i = gp7Var2.c ? ip7Var.E.size() : arrayList1722.size();
+                    wn7Var22222.i = gp7Var2.c ? ip7Var.E.size() : arrayList202222.size();
                     wn7Var22222.w = -15618822;
                     wn7Var22222.r = false;
                     wn7Var22222.F.when = j14;
                     wn7Var22222.k = true;
-                    wn7Var22222.i(eo7Var);
+                    wn7Var22222.i(eo7Var32222);
                     wn7Var22222.g = activity2222;
                     lycVar2222.q(wn7Var22222);
                     wn7Var22222.s = String.valueOf(Long.MAX_VALUE - j14);
                     wn7Var22222.f(8, (z3 && j12 == j && j13 == j2) ? false : true);
                     wn7Var22222.u = "msg";
-                    Intent intent42222 = new Intent(a.b, (Class<?>) NotificationDismissReceiver.class);
-                    intent42222.putExtra("messageDate", i9);
-                    intent42222.putExtra("dialogId", j12);
-                    intent42222.putExtra(str182222, ip7Var.currentAccount);
+                    intent = new Intent(a.b, (Class<?>) NotificationDismissReceiver.class);
+                    intent.putExtra("messageDate", i9);
+                    intent.putExtra("dialogId", j12);
+                    String str212222 = str15;
+                    intent.putExtra(str212222, ip7Var.currentAccount);
                     if (gp7Var2.c) {
                     }
-                    if (r47Var4 != null) {
+                    if (r47Var3 != null) {
                     }
-                    wn7Var22222.F.deleteIntent = PendingIntent.getBroadcast(a.b, num2.intValue(), intent42222, 167772160);
+                    wn7Var22222.F.deleteIntent = PendingIntent.getBroadcast(a.b, num2.intValue(), intent, 167772160);
                     if (z9) {
                     }
-                    if (r47Var5 != null) {
+                    if (r47Var3 != null) {
                     }
                     keyboardInlineButton = null;
                     tL_inlineButtonTypeCopy = null;
@@ -3961,7 +3939,7 @@ public final class ip7 extends rf0 implements fn7 {
                     j15 = gp7Var2.a;
                     if (j15 != 489000) {
                     }
-                    if (arrayList13.size() == 1) {
+                    if (arrayList14.size() == 1) {
                     }
                     if (wf3.B(j12)) {
                     }
@@ -3972,27 +3950,26 @@ public final class ip7 extends rf0 implements fn7 {
                     if (chat2 == null) {
                     }
                     user7 = user6;
-                    boolean z18222222 = z9;
-                    Notification notification4222222 = notification2;
+                    boolean z1822222 = z9;
+                    Notification notification422222 = notification2;
                     if (Build.VERSION.SDK_INT >= 26) {
                     }
                     cc4.b("showExtraNotifications: holders.add " + j12);
-                    notification3 = notification4222222;
-                    z9 = z18222222;
-                    zh6Var7 = zh6Var1122;
-                    long j24222222 = j12;
-                    fp7 fp7Var222222 = new fp7(ip7Var, num2.intValue(), j24222222, gp7Var2.c, str12, user7, chat2, wn7Var22222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3);
+                    notification3 = notification422222;
+                    z9 = z1822222;
+                    zh6Var7 = zh6Var8;
+                    long j2422222 = j12;
                     arrayList4 = arrayList;
-                    arrayList4.add(fp7Var222222);
-                    ip7Var.h.k(j24222222, num2);
-                    i24 = i8 + 1;
+                    arrayList4.add(new fp7(ip7Var, num2.intValue(), j2422222, gp7Var2.c, str12, user7, chat2, wn7Var22222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                    ip7Var.h.k(j2422222, num2);
+                    i26 = i8 + 1;
                     arrayList = arrayList4;
-                    arrayList10 = arrayList13;
+                    arrayList11 = arrayList14;
                     z5 = z9;
                     z6 = z8;
                     size = i6;
-                    zh6Var9 = zh6Var5;
-                    zh6Var10 = zh6Var6;
+                    zh6Var10 = zh6Var5;
+                    zh6Var11 = zh6Var6;
                     d = sharedPreferences;
                     e = j6;
                     b2 = notification3;
@@ -4000,11 +3977,11 @@ public final class ip7 extends rf0 implements fn7 {
                 }
                 z7 = z5;
                 Notification notification5 = b2;
-                zh6Var3 = zh6Var10;
+                zh6Var3 = zh6Var11;
                 zh6 zh6Var12 = zh6Var2;
-                ArrayList arrayList29 = arrayList;
+                ArrayList arrayList31 = arrayList;
                 if (z7) {
-                    arrayList2 = arrayList29;
+                    arrayList2 = arrayList31;
                     if (ip7Var.y.isEmpty()) {
                         if (f11.a) {
                             c00.q(ip7Var.e0, new StringBuilder("cancel summary with id "));
@@ -4024,34 +4001,34 @@ public final class ip7 extends rf0 implements fn7 {
                             i4++;
                             zh6Var3 = zh6Var13;
                         }
-                        ArrayList arrayList30 = new ArrayList(arrayList2.size());
+                        ArrayList arrayList32 = new ArrayList(arrayList2.size());
                         cc4.b("showExtraNotifications: holders.size()=" + arrayList2.size());
                         size2 = arrayList2.size();
                         i5 = 0;
                         while (i5 < size2) {
-                            ArrayList arrayList31 = arrayList2;
-                            fp7 fp7Var3 = (fp7) arrayList31.get(i5);
-                            arrayList30.clear();
-                            int i51 = Build.VERSION.SDK_INT;
-                            if (i51 < 29 || wf3.B(fp7Var3.b)) {
+                            ArrayList arrayList33 = arrayList2;
+                            fp7 fp7Var = (fp7) arrayList33.get(i5);
+                            arrayList32.clear();
+                            int i52 = Build.VERSION.SDK_INT;
+                            if (i52 < 29 || wf3.B(fp7Var.b)) {
                                 zh6Var4 = zh6Var12;
                             } else {
-                                wn7 wn7Var3 = fp7Var3.g;
-                                long j27 = fp7Var3.b;
+                                wn7 wn7Var3 = fp7Var.g;
+                                long j27 = fp7Var.b;
                                 zh6Var4 = zh6Var12;
-                                String d2 = ip7Var.d(wn7Var3, j27, fp7Var3.d, fp7Var3.e, fp7Var3.f, (b78) zh6Var4.f(j27), !fp7Var3.c);
+                                String d2 = ip7Var.d(wn7Var3, j27, fp7Var.d, fp7Var.e, fp7Var.f, (b78) zh6Var4.f(j27), !fp7Var.c);
                                 if (d2 != null) {
-                                    arrayList30.add(d2);
+                                    arrayList32.add(d2);
                                 }
                             }
                             cc4.b("showExtraNotifications: holders[" + i5 + "].call()");
-                            fp7Var3.a();
-                            if (i51 >= 29 && xea.n0 && !arrayList30.isEmpty()) {
-                                mka.o(a.b, arrayList30);
+                            fp7Var.a();
+                            if (i52 >= 29 && xea.n0 && !arrayList32.isEmpty()) {
+                                mka.o(a.b, arrayList32);
                             }
                             i5++;
                             ip7Var = this;
-                            arrayList2 = arrayList31;
+                            arrayList2 = arrayList33;
                             zh6Var12 = zh6Var4;
                         }
                     }
@@ -4061,10 +4038,10 @@ public final class ip7 extends rf0 implements fn7 {
                     }
                     try {
                         m0.d(ip7Var.e0, notification5);
-                        arrayList2 = arrayList29;
-                    } catch (SecurityException e7) {
-                        cc4.f(e7);
-                        arrayList2 = arrayList29;
+                        arrayList2 = arrayList31;
+                    } catch (SecurityException e6) {
+                        cc4.f(e6);
+                        arrayList2 = arrayList31;
                         ip7Var.P(wn7Var, j, j2, str2, jArr, i, uri, i2, z, z2, z3, i3);
                     }
                 }
@@ -4072,7 +4049,7 @@ public final class ip7 extends rf0 implements fn7 {
                 i4 = 0;
                 while (i4 < zh6Var3.m()) {
                 }
-                ArrayList arrayList302 = new ArrayList(arrayList2.size());
+                ArrayList arrayList322 = new ArrayList(arrayList2.size());
                 cc4.b("showExtraNotifications: holders.size()=" + arrayList2.size());
                 size2 = arrayList2.size();
                 i5 = 0;
@@ -4091,19 +4068,19 @@ public final class ip7 extends rf0 implements fn7 {
         }
         cc4.b("showExtraNotifications: passcode=" + (xea.r.length() <= 0) + " waitingForPasscode=" + z6 + " selfUserId=" + e + " useSummaryNotification=" + z5);
         zh6Var2 = new zh6();
-        size = arrayList10.size();
-        arrayList = arrayList12;
+        size = arrayList11.size();
+        arrayList = arrayList13;
         while (true) {
-            if (i24 >= size) {
+            if (i26 >= size) {
             }
-            i24 = i8 + 1;
+            i26 = i8 + 1;
             arrayList = arrayList4;
-            arrayList10 = arrayList13;
+            arrayList11 = arrayList14;
             z5 = z9;
             z6 = z8;
             size = i6;
-            zh6Var9 = zh6Var5;
-            zh6Var10 = zh6Var6;
+            zh6Var10 = zh6Var5;
+            zh6Var11 = zh6Var6;
             d = sharedPreferences;
             e = j6;
             b2 = notification3;
@@ -4111,16 +4088,16 @@ public final class ip7 extends rf0 implements fn7 {
         }
         z7 = z5;
         Notification notification52 = b2;
-        zh6Var3 = zh6Var10;
+        zh6Var3 = zh6Var11;
         zh6 zh6Var122 = zh6Var2;
-        ArrayList arrayList292 = arrayList;
+        ArrayList arrayList312 = arrayList;
         if (z7) {
         }
         str3 = null;
         i4 = 0;
         while (i4 < zh6Var3.m()) {
         }
-        ArrayList arrayList3022 = new ArrayList(arrayList2.size());
+        ArrayList arrayList3222 = new ArrayList(arrayList2.size());
         cc4.b("showExtraNotifications: holders.size()=" + arrayList2.size());
         size2 = arrayList2.size();
         i5 = 0;
@@ -5477,7 +5454,7 @@ public final class ip7 extends rf0 implements fn7 {
     }
 
     public final void a0(long j, String str) {
-        l0.c(new cq6((Object) this, (Object) str, j, (byte) 21));
+        l0.c(new cq6((Object) this, (Object) str, j, (byte) 22));
     }
 
     public final void b(r47 r47Var) {
@@ -5767,7 +5744,7 @@ public final class ip7 extends rf0 implements fn7 {
     @Override // fn7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
         if (i == jn7.Y1) {
-            l0.c(new pl7(this, (String) objArr[0], (byte) 5));
+            l0.c(new ql7(this, (String) objArr[0], (byte) 6));
         }
     }
 

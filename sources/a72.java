@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class a72 extends f12 implements snb, vma, fn7 {
     public int A0;
@@ -208,7 +208,7 @@ public final class a72 extends f12 implements snb, vma, fn7 {
         lg5Var.setAlpha(0.0f);
         lg5Var.setVisibility(4);
         addView(lg5Var, tre.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
-        this.T0 = uc7.s1(this.b.G3).k4.U.f();
+        this.T0 = uc7.s1(this.b.G3).l4.U.f();
         this.R = new xxc(this.b.G3);
         jn7.f(this.b.G3).b(this, jn7.w0);
         if (p) {
@@ -258,7 +258,7 @@ public final class a72 extends f12 implements snb, vma, fn7 {
     }
 
     private int getAnswersMaxCount() {
-        return this.n ? getMessagesController().k4.F3.f() : getMessagesController().k4.R.f();
+        return this.n ? getMessagesController().l4.F3.f() : getMessagesController().l4.R.f();
     }
 
     private int getCurrentAccount() {
@@ -523,8 +523,8 @@ public final class a72 extends f12 implements snb, vma, fn7 {
             i = 0;
         }
         if (this.n) {
-            i2 = getMessagesController().k4.P2.f();
-            i3 = getMessagesController().k4.Q2.f();
+            i2 = getMessagesController().l4.P2.f();
+            i3 = getMessagesController().l4.Q2.f();
         } else {
             i2 = jn7.d4;
             i3 = 100;
@@ -1056,7 +1056,7 @@ public final class a72 extends f12 implements snb, vma, fn7 {
             int i3 = this.n0;
             boolean z = this.n;
             if (i == i3) {
-                f = z ? getMessagesController().k4.P2.f() : jn7.d4;
+                f = z ? getMessagesController().l4.P2.f() : jn7.d4;
                 Editable editable2 = this.O;
                 if (editable2 != null) {
                     length = editable2.length();
@@ -1085,7 +1085,7 @@ public final class a72 extends f12 implements snb, vma, fn7 {
                     return;
                 }
                 int i6 = i - i5;
-                f = z ? getMessagesController().k4.Q2.f() : 100;
+                f = z ? getMessagesController().l4.Q2.f() : 100;
                 CharSequence charSequence = this.L[i6];
                 if (charSequence != null) {
                     length = charSequence.length();

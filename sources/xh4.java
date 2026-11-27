@@ -34,7 +34,7 @@ import org.telegram.ui.Components.Switch;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xh4 implements cr7, rn4, s9, yj5, a70, s84, fx7, v30, ag4, l12, i89, bl0, hcb, ugc {
     public final /* synthetic */ byte a;
@@ -348,11 +348,11 @@ public final class xh4 implements cr7, rn4, s9, yj5, a70, s84, fx7, v30, ag4, l1
                 gc8Var.e.setBrushSize(f);
                 break;
             default:
-                vab vabVar = (vab) this.b;
-                a78.e(vabVar.p1).k(String.valueOf(v01.a.indexOf(vabVar.y0.getCurrentBrush())), f);
-                igb igbVar = vabVar.k1;
+                wab wabVar = (wab) this.b;
+                a78.e(wabVar.p1).k(String.valueOf(v01.a.indexOf(wabVar.y0.getCurrentBrush())), f);
+                igb igbVar = wabVar.k1;
                 igbVar.c = f;
-                vabVar.D0(igbVar, null, false);
+                wabVar.D0(igbVar, null, false);
                 break;
         }
     }
@@ -364,7 +364,7 @@ public final class xh4 implements cr7, rn4, s9, yj5, a70, s84, fx7, v30, ag4, l1
         hl.V3(xc5Var.b);
     }
 
-    public final void I(f89 f89Var, l09 l09Var, l09 l09Var2) {
+    public final void I(f89 f89Var, m09 m09Var, m09 m09Var2) {
         int i;
         int i2;
         boolean z;
@@ -376,15 +376,15 @@ public final class xh4 implements cr7, rn4, s9, yj5, a70, s84, fx7, v30, ag4, l1
         f89Var.q(false);
         cma cmaVar = (cma) recyclerView.d0;
         cmaVar.getClass();
-        int i4 = l09Var.b;
-        int i5 = l09Var.c;
+        int i4 = m09Var.b;
+        int i5 = m09Var.c;
         View view = f89Var.a;
-        if (l09Var2 == null) {
+        if (m09Var2 == null) {
             i2 = view.getLeft();
             i = view.getTop();
         } else {
-            int i6 = l09Var2.b;
-            i = l09Var2.c;
+            int i6 = m09Var2.b;
+            i = m09Var2.c;
             i2 = i6;
         }
         if (f89Var.j() || (i4 == i2 && i5 == i)) {
@@ -399,11 +399,11 @@ public final class xh4 implements cr7, rn4, s9, yj5, a70, s84, fx7, v30, ag4, l1
                 }
             }
             f89Var.i = (f89Var.h - i8) + (i8 * 1000);
-            cmaVar.s(f89Var, l09Var);
+            cmaVar.s(f89Var, m09Var);
             z = true;
         } else {
             view.layout(i2, i, view.getWidth() + i2, view.getHeight() + i);
-            z = cmaVar.r(f89Var, l09Var, i4, i5, i2, i);
+            z = cmaVar.r(f89Var, m09Var, i4, i5, i2, i);
         }
         if (z) {
             recyclerView.o0();
@@ -457,13 +457,13 @@ public final class xh4 implements cr7, rn4, s9, yj5, a70, s84, fx7, v30, ag4, l1
         View view = f89Var.a;
         oh2 oh2Var = recyclerView.b;
         rx6 rx6Var = q79Var.a;
-        i09 i09Var = (i09) rx6Var.b;
-        int indexOfChild = ((RecyclerView) i09Var.b).indexOfChild(view);
+        j09 j09Var = (j09) rx6Var.b;
+        int indexOfChild = ((RecyclerView) j09Var.b).indexOfChild(view);
         if (indexOfChild >= 0) {
             if (((zg2) rx6Var.c).y(indexOfChild)) {
                 rx6Var.A0(view);
             }
-            i09Var.N(indexOfChild);
+            j09Var.N(indexOfChild);
         }
         oh2Var.h(view);
     }
@@ -603,9 +603,9 @@ public final class xh4 implements cr7, rn4, s9, yj5, a70, s84, fx7, v30, ag4, l1
                 int i = gc8Var.a;
                 return currentBrush == null ? a78.e(i).i : a78.e(i).f("-1", currentBrush.c());
             default:
-                vab vabVar = (vab) this.b;
-                v01 currentBrush2 = vabVar.y0.getCurrentBrush();
-                int i2 = vabVar.p1;
+                wab wabVar = (wab) this.b;
+                v01 currentBrush2 = wabVar.y0.getCurrentBrush();
+                int i2 = wabVar.p1;
                 return currentBrush2 == null ? a78.e(i2).i : a78.e(i2).f(String.valueOf(v01.a.indexOf(currentBrush2)), currentBrush2.c());
         }
     }
@@ -854,11 +854,11 @@ public final class xh4 implements cr7, rn4, s9, yj5, a70, s84, fx7, v30, ag4, l1
     }
 
     @Override // hcb
-    public final void x(long j, int i, x58 x58Var) {
+    public final void x(long j, int i, y58 y58Var) {
         lq8 lq8Var = (lq8) this.b;
         int i2 = ProfileStoriesView.t0;
         lq8Var.f(true, false);
-        x58Var.run();
+        y58Var.run();
     }
 
     @Override // bl0

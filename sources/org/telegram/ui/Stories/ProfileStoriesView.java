@@ -24,7 +24,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class ProfileStoriesView extends View implements fn7 {
     public static final /* synthetic */ int t0 = 0;
@@ -1204,7 +1204,7 @@ public class ProfileStoriesView extends View implements fn7 {
             }
             r6bVar.getClass();
             int i27 = (X1 == null || (peerColor2 = X1.profile_color) == null) ? -1 : peerColor2.color;
-            lc7 lc7Var = uc7.s1(r6bVar.a).F3;
+            lc7 lc7Var = uc7.s1(r6bVar.a).G3;
             r6bVar.c(lc7Var == null ? null : lc7Var.d(i27), z);
         } else {
             TLRPC.Chat M0 = uc7.s1(i7).M0(Long.valueOf(-j));
@@ -1216,7 +1216,7 @@ public class ProfileStoriesView extends View implements fn7 {
             }
             r6bVar.getClass();
             int i28 = (M0 == null || (peerColor = M0.profile_color) == null) ? -1 : peerColor.color;
-            lc7 lc7Var2 = uc7.s1(r6bVar.a).F3;
+            lc7 lc7Var2 = uc7.s1(r6bVar.a).G3;
             r6bVar.c(lc7Var2 == null ? null : lc7Var2.d(i28), z);
         }
         invalidate();

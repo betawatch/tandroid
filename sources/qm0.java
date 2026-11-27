@@ -8,7 +8,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class qm0 implements fq7, m39, fd {
     public final /* synthetic */ int a;
@@ -104,7 +104,7 @@ public final /* synthetic */ class qm0 implements fq7, m39, fd {
         pcc pccVar = (pcc) this.f;
         int i2 = this.a;
         if (!yac.h(i2).p()) {
-            new xk8((e) new kca(null), 12, false).show();
+            new xk8((e) new lca(null), 12, false).show();
             return;
         }
         zArr[0] = true;

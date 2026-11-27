@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class f22 implements ps3 {
     public final /* synthetic */ byte a;
@@ -42,12 +42,12 @@ public final /* synthetic */ class f22 implements ps3 {
                 }
                 break;
             default:
-                rbb rbbVar = (rbb) obj;
+                sbb sbbVar = (sbb) obj;
                 if (!z) {
-                    rbbVar.N0.setTranslationY(f3);
-                    rbbVar.N0.L = false;
-                    rbbVar.p2 = null;
-                    rbbVar.q2 = null;
+                    sbbVar.N0.setTranslationY(f3);
+                    sbbVar.N0.L = false;
+                    sbbVar.p2 = null;
+                    sbbVar.q2 = null;
                     break;
                 }
                 break;

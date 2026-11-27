@@ -42,7 +42,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class da7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -300,11 +300,11 @@ public final /* synthetic */ class da7 implements Runnable {
                 return;
             case 5:
                 mk3 mk3Var = (mk3) this.d;
-                jf7 jf7Var = (jf7) this.e;
+                kf7 kf7Var = (kf7) this.e;
                 ArrayList arrayList4 = (ArrayList) this.c;
                 long j5 = this.b;
                 String str6 = (String) this.f;
-                SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                SQLiteDatabase sQLiteDatabase = kf7Var.b;
                 try {
                     sQLiteDatabase.executeFast("DELETE FROM popular_bots").stepThis().dispose();
                     SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("REPLACE INTO popular_bots VALUES(?, ?, ?, ?)");
@@ -433,7 +433,7 @@ public final /* synthetic */ class da7 implements Runnable {
                 TLObject tLObject4 = (TLObject) this.e;
                 long j8 = this.b;
                 k5 k5Var = (k5) this.c;
-                bf7 bf7Var = (bf7) this.f;
+                cf7 cf7Var = (cf7) this.f;
                 try {
                     idVar2.dismiss();
                 } catch (Exception e3) {
@@ -448,7 +448,7 @@ public final /* synthetic */ class da7 implements Runnable {
                     bw5.F1 = i8;
                     uc7.s1(i8).c4(joinaspeers.chats, false);
                     uc7.s1(k5Var.a).j4(joinaspeers.users, false);
-                    bf7Var.A(joinaspeers.peers.size() == 1);
+                    cf7Var.A(joinaspeers.peers.size() == 1);
                     return;
                 }
                 return;
@@ -477,7 +477,7 @@ public final /* synthetic */ class da7 implements Runnable {
                 pl1 pl1Var = (pl1) this.f;
                 boolean z3 = tL_error == null && (tLObject5 instanceof TLRPC.Bool);
                 if (z3) {
-                    SharedPreferences.Editor edit = uc7Var3.W3.edit();
+                    SharedPreferences.Editor edit = uc7Var3.X3.edit();
                     uc7Var3.d4(edit, j10, false);
                     edit.putBoolean("dialog_bar_archived" + j10, false);
                     edit.apply();
@@ -495,14 +495,14 @@ public final /* synthetic */ class da7 implements Runnable {
                 TLRPC.TL_messages_getSavedReactionTags tL_messages_getSavedReactionTags = (TLRPC.TL_messages_getSavedReactionTags) this.f;
                 if (tLObject6 instanceof TLRPC.TL_messages_savedReactionsTags) {
                     TLRPC.TL_messages_savedReactionsTags tL_messages_savedReactionsTags = (TLRPC.TL_messages_savedReactionsTags) tLObject6;
-                    uc7Var4.P4.k(j11, tL_messages_savedReactionsTags);
+                    uc7Var4.Q4.k(j11, tL_messages_savedReactionsTags);
                     uc7Var4.getNotificationCenter().k(jn7.j3, Long.valueOf(j11));
                     uc7Var4.H4(j11, tL_messages_savedReactionsTags);
                     return;
                 }
                 if ((tLObject6 instanceof TLRPC.TL_messages_savedReactionsTagsNotModified) && messages_savedreactiontags == null && tL_messages_getSavedReactionTags.hash == 0) {
                     TLRPC.TL_messages_savedReactionsTags tL_messages_savedReactionsTags2 = new TLRPC.TL_messages_savedReactionsTags();
-                    uc7Var4.P4.k(j11, tL_messages_savedReactionsTags2);
+                    uc7Var4.Q4.k(j11, tL_messages_savedReactionsTags2);
                     uc7Var4.getNotificationCenter().k(jn7.j3, Long.valueOf(j11));
                     uc7Var4.H4(j11, tL_messages_savedReactionsTags2);
                     return;
@@ -1003,7 +1003,7 @@ public final /* synthetic */ class da7 implements Runnable {
                 if (z86Var == null) {
                     hxa c0 = jxaVar3.c0(r47Var2, zu1Var2, j22, false, true, Long.valueOf(j23));
                     if (c0 != null) {
-                        hl.c3(new ida((Object) e0bVar, (Object) c0, (byte) 26));
+                        hl.c3(new kba((Object) e0bVar, (Object) c0, (byte) 27));
                         return;
                     }
                     return;

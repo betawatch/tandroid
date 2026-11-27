@@ -3,7 +3,7 @@
 import android.content.Context;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class xhf {
     public static final odd b = odd.c(1, new Object[]{"optional-module-barcode", "com.google.android.gms.vision.barcode"}, null);
@@ -20,7 +20,7 @@ public final class xhf {
         }
         this.a = "common";
         ri6.v();
-        ri6.G(new tg7(this, (byte) 8));
+        ri6.G(new ug7(this, (byte) 8));
         ri6.v();
         Objects.requireNonNull(ljaVar);
         ri6.G(new z1f(ljaVar, (byte) 3));

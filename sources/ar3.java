@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ar3 {
     public final int a;
@@ -23,8 +23,8 @@ public final class ar3 {
         }
         this.f = true;
         wq3 wq3Var = new wq3(this, (byte) 0);
-        jf7 Y = jf7.Y(i);
-        Y.a.c(new ds6((Object) Y, true, (Object) wq3Var, (byte) 18));
+        kf7 a0 = kf7.a0(i);
+        a0.a.c(new ds6((Object) a0, true, (Object) wq3Var, (byte) 18));
     }
 
     public final void a(zq3 zq3Var) {
@@ -32,7 +32,7 @@ public final class ar3 {
         StringBuilder sb;
         long j;
         int i = this.a;
-        jf7 Y = jf7.Y(i);
+        kf7 a0 = kf7.a0(i);
         StringBuilder sb2 = new StringBuilder("StoryDraft append ");
         sb2.append(zq3Var.a);
         sb2.append(" (edit=");
@@ -61,7 +61,7 @@ public final class ar3 {
         sb2.append(System.currentTimeMillis());
         sb2.append(")");
         cc4.b(sb2.toString());
-        Y.a.c(new yq3(Y, zq3Var, (byte) 1));
+        a0.a.c(new yq3(a0, zq3Var, (byte) 1));
         jn7.f(i).k(jn7.B5, new Object[0]);
     }
 
@@ -124,8 +124,8 @@ public final class ar3 {
             }
             this.b.removeAll(arrayList);
             int i2 = this.a;
-            jf7 Y = jf7.Y(i2);
-            Y.a.c(new q41(Y, arrayList2, b));
+            kf7 a0 = kf7.a0(i2);
+            a0.a.c(new q41(a0, arrayList2, b));
             jn7.f(i2).k(jn7.B5, new Object[0]);
         }
     }
@@ -143,8 +143,8 @@ public final class ar3 {
         }
         zq3 zq3Var = new zq3(c8bVar);
         int i = this.a;
-        jf7 Y = jf7.Y(i);
-        Y.a.c(new yq3(Y, zq3Var, b));
+        kf7 a0 = kf7.a0(i);
+        a0.a.c(new yq3(a0, zq3Var, b));
         jn7.f(i).k(jn7.B5, new Object[0]);
     }
 

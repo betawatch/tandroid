@@ -28,7 +28,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class fz7 extends FrameLayout implements fn7 {
     public static final int[] j0 = {R.id.passcode_btn_0, R.id.passcode_btn_1, R.id.passcode_btn_2, R.id.passcode_btn_3, R.id.passcode_btn_4, R.id.passcode_btn_5, R.id.passcode_btn_6, R.id.passcode_btn_7, R.id.passcode_btn_8, R.id.passcode_btn_9, R.id.passcode_btn_backspace, R.id.passcode_btn_fingerprint};
@@ -58,7 +58,7 @@ public class fz7 extends FrameLayout implements fn7 {
     public final TextView c;
     public int c0;
     public final FrameLayout d;
-    public final ki7 d0;
+    public final li7 d0;
     public final b6 e;
     public int e0;
     public final ArrayList f;
@@ -93,7 +93,7 @@ public class fz7 extends FrameLayout implements fn7 {
         this.a0 = new ArrayList();
         this.c0 = -12;
         byte b = 5;
-        this.d0 = new ki7(this, b);
+        this.d0 = new li7(this, b);
         final byte b2 = 1;
         this.g0 = true;
         this.i0 = new int[2];
@@ -417,14 +417,14 @@ public class fz7 extends FrameLayout implements fn7 {
                             fz7 fz7Var4 = fz7Var;
                             if (intValue != 11) {
                                 Drawable drawable = fz7Var4.a;
-                                if (drawable instanceof hh7) {
-                                    hh7 hh7Var = (hh7) drawable;
-                                    hh7Var.C = null;
-                                    hh7Var.x();
-                                    float f = hh7Var.h;
+                                if (drawable instanceof ih7) {
+                                    ih7 ih7Var = (ih7) drawable;
+                                    ih7Var.C = null;
+                                    ih7Var.x();
+                                    float f = ih7Var.h;
                                     if (intValue == 10) {
                                         if (z2) {
-                                            hh7Var.w();
+                                            ih7Var.w();
                                             z4 = true;
                                         } else {
                                             z4 = z;
@@ -432,15 +432,15 @@ public class fz7 extends FrameLayout implements fn7 {
                                         z3 = z;
                                     } else {
                                         z3 = true;
-                                        hh7Var.v(true);
+                                        ih7Var.v(true);
                                         z4 = true;
                                     }
                                     if (z4) {
                                         if (f >= 1.0f) {
-                                            fz7Var4.a(hh7Var);
+                                            fz7Var4.a(ih7Var);
                                         } else {
                                             ?? r3 = linkedList2;
-                                            r3.offer(new yn6((Object) fz7Var4, z3, (Object) hh7Var, (byte) 6));
+                                            r3.offer(new yn6((Object) fz7Var4, z3, (Object) ih7Var, (byte) 6));
                                             ?? r2 = linkedList;
                                             r2.offer(Boolean.valueOf(z3));
                                             ?? arrayList4 = new ArrayList();
@@ -742,14 +742,14 @@ public class fz7 extends FrameLayout implements fn7 {
                             fz7 fz7Var4 = fz7Var;
                             if (intValue != 11) {
                                 Drawable drawable = fz7Var4.a;
-                                if (drawable instanceof hh7) {
-                                    hh7 hh7Var = (hh7) drawable;
-                                    hh7Var.C = null;
-                                    hh7Var.x();
-                                    float f = hh7Var.h;
+                                if (drawable instanceof ih7) {
+                                    ih7 ih7Var = (ih7) drawable;
+                                    ih7Var.C = null;
+                                    ih7Var.x();
+                                    float f = ih7Var.h;
                                     if (intValue == 10) {
                                         if (z2) {
-                                            hh7Var.w();
+                                            ih7Var.w();
                                             z4 = true;
                                         } else {
                                             z4 = z;
@@ -757,15 +757,15 @@ public class fz7 extends FrameLayout implements fn7 {
                                         z3 = z;
                                     } else {
                                         z3 = true;
-                                        hh7Var.v(true);
+                                        ih7Var.v(true);
                                         z4 = true;
                                     }
                                     if (z4) {
                                         if (f >= 1.0f) {
-                                            fz7Var4.a(hh7Var);
+                                            fz7Var4.a(ih7Var);
                                         } else {
                                             ?? r3 = linkedList2;
-                                            r3.offer(new yn6((Object) fz7Var4, z3, (Object) hh7Var, (byte) 6));
+                                            r3.offer(new yn6((Object) fz7Var4, z3, (Object) ih7Var, (byte) 6));
                                             ?? r2 = linkedList;
                                             r2.offer(Boolean.valueOf(z3));
                                             ?? arrayList4 = new ArrayList();
@@ -1136,14 +1136,14 @@ public class fz7 extends FrameLayout implements fn7 {
                                 fz7 fz7Var4 = fz7Var;
                                 if (intValue != 11) {
                                     Drawable drawable = fz7Var4.a;
-                                    if (drawable instanceof hh7) {
-                                        hh7 hh7Var = (hh7) drawable;
-                                        hh7Var.C = null;
-                                        hh7Var.x();
-                                        float f = hh7Var.h;
+                                    if (drawable instanceof ih7) {
+                                        ih7 ih7Var = (ih7) drawable;
+                                        ih7Var.C = null;
+                                        ih7Var.x();
+                                        float f = ih7Var.h;
                                         if (intValue == 10) {
                                             if (z2) {
-                                                hh7Var.w();
+                                                ih7Var.w();
                                                 z4 = true;
                                             } else {
                                                 z4 = z;
@@ -1151,15 +1151,15 @@ public class fz7 extends FrameLayout implements fn7 {
                                             z3 = z;
                                         } else {
                                             z3 = true;
-                                            hh7Var.v(true);
+                                            ih7Var.v(true);
                                             z4 = true;
                                         }
                                         if (z4) {
                                             if (f >= 1.0f) {
-                                                fz7Var4.a(hh7Var);
+                                                fz7Var4.a(ih7Var);
                                             } else {
                                                 ?? r3 = linkedList2;
-                                                r3.offer(new yn6((Object) fz7Var4, z3, (Object) hh7Var, (byte) 6));
+                                                r3.offer(new yn6((Object) fz7Var4, z3, (Object) ih7Var, (byte) 6));
                                                 ?? r2 = linkedList;
                                                 r2.offer(Boolean.valueOf(z3));
                                                 ?? arrayList4 = new ArrayList();
@@ -1203,19 +1203,19 @@ public class fz7 extends FrameLayout implements fn7 {
         c();
     }
 
-    public final void a(hh7 hh7Var) {
+    public final void a(ih7 ih7Var) {
         vpa vpaVar = this.U;
         if (vpaVar != null && vpaVar.f) {
             vpaVar.d();
         }
         xk4 xk4Var = new xk4(0.0f);
-        hh7Var.C = new bm6(xk4Var, (byte) 29);
-        hh7Var.x();
+        ih7Var.C = new bm6(xk4Var, (byte) 29);
+        ih7Var.x();
         vpa vpaVar2 = new vpa(xk4Var);
         vpaVar2.m = bp1.j(100.0f, 300.0f, 1.0f);
         this.U = vpaVar2;
-        vpaVar2.a(new x11(this, hh7Var, (byte) 5));
-        this.U.b(new i10(hh7Var, (byte) 10));
+        vpaVar2.a(new x11(this, ih7Var, (byte) 5));
+        this.U.b(new i10(ih7Var, (byte) 10));
         this.U.h();
     }
 
@@ -1277,10 +1277,10 @@ public class fz7 extends FrameLayout implements fn7 {
         long j2 = xea.s;
         EditTextBoldCursor editTextBoldCursor = this.r;
         FrameLayout frameLayout = this.h;
-        ki7 ki7Var = this.d0;
+        li7 li7Var = this.d0;
         TextView textView = this.y;
         if (j2 <= 0) {
-            hl.r(ki7Var);
+            hl.r(li7Var);
             if (textView.getVisibility() == 0) {
                 textView.setVisibility(4);
                 frameLayout.setVisibility(0);
@@ -1304,8 +1304,8 @@ public class fz7 extends FrameLayout implements fn7 {
             o(false);
             hl.t1(editTextBoldCursor);
         }
-        hl.r(ki7Var);
-        hl.d3(ki7Var, 100L);
+        hl.r(li7Var);
+        hl.d3(li7Var, 100L);
     }
 
     @Override // fn7
@@ -1426,7 +1426,7 @@ public class fz7 extends FrameLayout implements fn7 {
         }
         setTranslationY(0.0f);
         this.a = null;
-        boolean z3 = aob.r0() instanceof hh7;
+        boolean z3 = aob.r0() instanceof ih7;
         tt ttVar = this.w;
         if (z3) {
             z2 = !aob.I.o();
@@ -1465,9 +1465,9 @@ public class fz7 extends FrameLayout implements fn7 {
             z2 = false;
         }
         Drawable drawable = this.a;
-        if (drawable instanceof hh7) {
-            hh7 hh7Var = (hh7) drawable;
-            int[] iArr = hh7Var.a;
+        if (drawable instanceof ih7) {
+            ih7 ih7Var = (ih7) drawable;
+            int[] iArr = ih7Var.a;
             if (z2) {
                 int[] iArr2 = new int[iArr.length];
                 for (int i6 = 0; i6 < iArr.length; i6++) {
@@ -1475,13 +1475,13 @@ public class fz7 extends FrameLayout implements fn7 {
                 }
                 iArr = iArr2;
             }
-            this.a = new hh7(iArr[0], iArr[1], iArr[2], iArr[3], false, false);
-            if (hh7Var.u == null || hh7Var.q >= 0) {
+            this.a = new ih7(iArr[0], iArr[1], iArr[2], iArr[3], false, false);
+            if (ih7Var.u == null || ih7Var.q >= 0) {
                 ttVar.setBackgroundColor(570425344);
             } else {
                 ttVar.setBackgroundColor(2130706432);
             }
-            ((hh7) this.a).p(ttVar);
+            ((ih7) this.a).p(ttVar);
         }
         this.x.setText(ob6.M0(2131754225, null));
         int i7 = xea.q;
@@ -1567,18 +1567,18 @@ public class fz7 extends FrameLayout implements fn7 {
                 this.c0 = i3;
                 hl.A3(i3, frameLayout, null);
                 Drawable drawable = this.a;
-                if (drawable instanceof hh7) {
-                    hh7 hh7Var = (hh7) drawable;
+                if (drawable instanceof ih7) {
+                    ih7 ih7Var = (ih7) drawable;
                     LinkedList linkedList = this.V;
                     linkedList.clear();
                     LinkedList linkedList2 = this.W;
                     linkedList2.clear();
                     vpa vpaVar = this.U;
                     if (vpaVar == null || !vpaVar.f) {
-                        hh7Var.m(true);
+                        ih7Var.m(true);
                         return;
                     } else {
-                        linkedList.offer(new gh7(hh7Var, (byte) 1));
+                        linkedList.offer(new hh7(ih7Var, (byte) 1));
                         linkedList2.offer(Boolean.FALSE);
                         return;
                     }
@@ -1646,7 +1646,7 @@ public class fz7 extends FrameLayout implements fn7 {
         jn7.e().b(this, jn7.Q1);
         jn7.e().b(this, jn7.o0);
         if (this.f0 == null && (getParent() instanceof View)) {
-            this.f0 = new rx5((View) getParent(), false, new ii7(this, (byte) 9));
+            this.f0 = new rx5((View) getParent(), false, new ji7(this, (byte) 9));
         }
     }
 

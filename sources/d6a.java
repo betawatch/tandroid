@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d6a implements Runnable {
     public final /* synthetic */ byte a = 3;
@@ -256,11 +256,11 @@ public final /* synthetic */ class d6a implements Runnable {
                     ArrayList arrayList10 = arrayList9;
                     i = 2;
                     if (!arrayList10.isEmpty()) {
-                        r7aVar5.getMessagesStorage().c1(arrayList10, i10);
+                        r7aVar5.getMessagesStorage().g1(arrayList10, i10);
                     }
                     char c2 = 3;
                     if (zh6Var5 != null) {
-                        r7aVar5.getMessagesStorage().X0(null, null, zh6Var5, i10);
+                        r7aVar5.getMessagesStorage().b1(null, null, zh6Var5, i10);
                         jn7 notificationCenter = r7aVar5.getNotificationCenter();
                         Object[] objArr = new Object[4];
                         i2 = 0;
@@ -334,7 +334,7 @@ public final /* synthetic */ class d6a implements Runnable {
                             if (!z7) {
                                 Integer num2 = (Integer) r7aVar7.getMessagesController().Q.get(Long.valueOf(message.dialog_id));
                                 if (num2 == null) {
-                                    num2 = Integer.valueOf(r7aVar7.getMessagesStorage().S(message.dialog_id, message.out));
+                                    num2 = Integer.valueOf(r7aVar7.getMessagesStorage().U(message.dialog_id, message.out));
                                     r7aVar7.getMessagesController().Q.put(Long.valueOf(message.dialog_id), num2);
                                 }
                                 message.unread = num2.intValue() < message.id;
@@ -402,19 +402,19 @@ public final /* synthetic */ class d6a implements Runnable {
                                         if (message8.quick_reply_shortcut_id == 0 && message8.quick_reply_shortcut == null) {
                                             z8 = z9;
                                             final r7a r7aVar9 = r7a.this;
-                                            jf7 messagesStorage = r7aVar9.getMessagesStorage();
+                                            kf7 messagesStorage = r7aVar9.getMessagesStorage();
                                             long j2 = message8.random_id;
                                             long B1 = r47.B1(message8.peer_id);
                                             final int i14 = i12;
                                             boolean z10 = z8;
-                                            messagesStorage.X1(j2, B1, Integer.valueOf(i14), message8.id, 0, z10 ? 1 : 0, message8.quick_reply_shortcut_id);
-                                            r7aVar9.getMessagesStorage().g1(arrayList12, true, false, false, 0, false, z10 ? 1 : 0, message8.quick_reply_shortcut_id);
+                                            messagesStorage.c2(j2, B1, Integer.valueOf(i14), message8.id, 0, z10 ? 1 : 0, message8.quick_reply_shortcut_id);
+                                            r7aVar9.getMessagesStorage().k1(arrayList12, true, false, false, 0, false, z10 ? 1 : 0, message8.quick_reply_shortcut_id);
                                             if (r47.e3(message8)) {
                                                 long B12 = r47.B1(message8.peer_id);
                                                 ArrayList arrayList14 = new ArrayList(1);
                                                 arrayList14.add(Integer.valueOf(message8.id));
-                                                r7aVar9.getMessagesStorage().M0(B12, arrayList14, false, false, z10 ? 1 : 0, (int) r47.Z1(r7aVar9.currentAccount, message8, 0));
-                                                r7aVar9.getMessagesStorage().O1(B12, -B12, arrayList14, null);
+                                                r7aVar9.getMessagesStorage().P0(B12, arrayList14, false, false, z10 ? 1 : 0, (int) r47.Z1(r7aVar9.currentAccount, message8, 0));
+                                                r7aVar9.getMessagesStorage().T1(B12, -B12, arrayList14, null);
                                                 hl.c3(new p5a(r7aVar9, B12, arrayList14, (byte) 2));
                                             }
                                             final int[] iArr4 = iArr2;
@@ -475,13 +475,13 @@ public final /* synthetic */ class d6a implements Runnable {
                                     }
                                     z8 = r1;
                                     final r7a r7aVar92 = r7a.this;
-                                    jf7 messagesStorage2 = r7aVar92.getMessagesStorage();
+                                    kf7 messagesStorage2 = r7aVar92.getMessagesStorage();
                                     long j22 = message8.random_id;
                                     long B13 = r47.B1(message8.peer_id);
                                     final int i142 = i12;
                                     boolean z102 = z8;
-                                    messagesStorage2.X1(j22, B13, Integer.valueOf(i142), message8.id, 0, z102 ? 1 : 0, message8.quick_reply_shortcut_id);
-                                    r7aVar92.getMessagesStorage().g1(arrayList12, true, false, false, 0, false, z102 ? 1 : 0, message8.quick_reply_shortcut_id);
+                                    messagesStorage2.c2(j22, B13, Integer.valueOf(i142), message8.id, 0, z102 ? 1 : 0, message8.quick_reply_shortcut_id);
+                                    r7aVar92.getMessagesStorage().k1(arrayList12, true, false, false, 0, false, z102 ? 1 : 0, message8.quick_reply_shortcut_id);
                                     if (r47.e3(message8)) {
                                     }
                                     final int[] iArr42 = iArr2;
@@ -565,7 +565,7 @@ public final /* synthetic */ class d6a implements Runnable {
                     while (i14 < arrayList6.size()) {
                         r47 r47Var3 = (r47) arrayList6.get(i14);
                         TLRPC.Message message8 = r47Var3.k;
-                        r7aVar.getMessagesStorage().K0(r4, message8);
+                        r7aVar.getMessagesStorage().N0(r4, message8);
                         int i15 = i;
                         message8.send_state = i15;
                         if (r4 == 0 && tL_error != null && (str = tL_error.text) != null && str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
@@ -573,7 +573,7 @@ public final /* synthetic */ class d6a implements Runnable {
                             message8.errorAllowedPriceStars = jxa.l(tLObject2);
                             message8.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23));
                             jxa.v(r7aVar.currentAccount, false).e0(Arrays.asList(r47Var3));
-                            r7aVar.getMessagesStorage().U1(r47.B0(message8), message8);
+                            r7aVar.getMessagesStorage().Z1(r47.B0(message8), message8);
                         }
                         r7aVar.getNotificationCenter().k(23, Integer.valueOf(message8.id));
                         r7aVar.c0(message8.id);
@@ -604,8 +604,8 @@ public final /* synthetic */ class d6a implements Runnable {
                     message9.send_state = 0;
                     ArrayList arrayList15 = new ArrayList();
                     arrayList15.add(message9);
-                    r7aVar9.getMessagesStorage().g1(arrayList15, false, true, false, 0, false, 0, 0L);
-                    qyb qybVar = r7aVar9.getMessagesController().g4;
+                    r7aVar9.getMessagesStorage().k1(arrayList15, false, true, false, 0, false, 0, 0L);
+                    qyb qybVar = r7aVar9.getMessagesController().h4;
                     TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) qybVar.e.f(qyb.p(message9.id, -message9.dialog_id));
                     if (tL_forumTopic != null) {
                         tL_forumTopic.topMessage = message9;

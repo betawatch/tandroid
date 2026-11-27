@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class q6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -52,19 +52,19 @@ public final class q6 implements Runnable {
                 break;
             default:
                 try {
-                    ((nk7) this.d).a.bind(new InetSocketAddress(61578));
+                    ((ok7) this.d).a.bind(new InetSocketAddress(61578));
                     this.b = true;
                     do {
                         try {
-                            Socket accept = ((nk7) this.d).a.accept();
+                            Socket accept = ((ok7) this.d).a.accept();
                             accept.setSoTimeout(5000);
                             InputStream inputStream = accept.getInputStream();
-                            nk7 nk7Var = (nk7) this.d;
-                            nk7Var.c.u(new gk7(nk7Var, inputStream, accept));
+                            ok7 ok7Var = (ok7) this.d;
+                            ok7Var.c.u(new hk7(ok7Var, inputStream, accept));
                         } catch (IOException e) {
-                            nk7.d.log(Level.FINE, "Communication with the client broken", (Throwable) e);
+                            ok7.d.log(Level.FINE, "Communication with the client broken", (Throwable) e);
                         }
-                    } while (!((nk7) this.d).a.isClosed());
+                    } while (!((ok7) this.d).a.isClosed());
                 } catch (IOException e2) {
                     this.c = e2;
                     return;
@@ -72,9 +72,9 @@ public final class q6 implements Runnable {
         }
     }
 
-    public q6(nk7 nk7Var) {
+    public q6(ok7 ok7Var) {
         this.a = (byte) 2;
-        this.d = nk7Var;
+        this.d = ok7Var;
         this.b = false;
     }
 }

@@ -22,7 +22,7 @@ import org.telegram.ui.PopupNotificationActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class w0 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -39,7 +39,8 @@ public final /* synthetic */ class w0 implements View.OnClickListener {
     public final void onClick(View view) {
         int i;
         byte b = this.a;
-        byte b2 = 2;
+        byte b2 = 8;
+        byte b3 = 2;
         int i2 = this.b;
         Object obj = this.c;
         switch (b) {
@@ -113,15 +114,15 @@ public final /* synthetic */ class w0 implements View.OnClickListener {
                 ((em6) obj).S.f1(i2 + 8);
                 break;
             case 12:
-                nab nabVar = (nab) obj;
-                boolean contains = nabVar.e.contains(Integer.valueOf(i2));
-                ArrayList arrayList = nabVar.e;
+                oab oabVar = (oab) obj;
+                boolean contains = oabVar.e.contains(Integer.valueOf(i2));
+                ArrayList arrayList = oabVar.e;
                 if (!contains) {
                     arrayList.add(Integer.valueOf(i2));
                 } else if (arrayList.size() > 1) {
-                    nabVar.e.remove(Integer.valueOf(i2));
+                    oabVar.e.remove(Integer.valueOf(i2));
                 }
-                hl.d0(nabVar.b, new ii7(nabVar, r8));
+                hl.d0(oabVar.b, new ji7(oabVar, r8));
                 break;
             case 13:
                 yu7 yu7Var = (yu7) obj;
@@ -146,7 +147,7 @@ public final /* synthetic */ class w0 implements View.OnClickListener {
                     w78Var.J.d(true);
                 }
                 if (i2 == 0) {
-                    jj.I(w78Var.getParentActivity(), w78Var.G.a(), new s78(w78Var, b2));
+                    jj.I(w78Var.getParentActivity(), w78Var.G.a(), new s78(w78Var, b3));
                     break;
                 } else {
                     w78Var.Z(w78Var.b, w78Var.c, true, 0);
@@ -161,7 +162,7 @@ public final /* synthetic */ class w0 implements View.OnClickListener {
                     l98Var.n0.d(true);
                 }
                 if (i2 == 0) {
-                    jj.I(l98Var.getParentActivity(), l98Var.V.a(), new d98(l98Var, b2));
+                    jj.I(l98Var.getParentActivity(), l98Var.V.a(), new d98(l98Var, b3));
                     break;
                 } else {
                     l98Var.i0(0, true);
@@ -198,8 +199,8 @@ public final /* synthetic */ class w0 implements View.OnClickListener {
                             profileActivity.O.U0(gr8Var2.s1(gr8Var2.getClosestTab()), profileActivity.a(), profileActivity);
                             break;
                         } else if (profileActivity.getMessagesController().k5()) {
-                            profileActivity.getMessagesController().X3.edit().putBoolean("story_keep", true).apply();
-                            rbb C = rbb.C(profileActivity.getParentActivity(), profileActivity.getCurrentAccount());
+                            profileActivity.getMessagesController().Y3.edit().putBoolean("story_keep", true).apply();
+                            sbb C = sbb.C(profileActivity.getParentActivity(), profileActivity.getCurrentAccount());
                             C.y = new fr8(profileActivity);
                             C.Q(null);
                             break;
@@ -274,9 +275,9 @@ public final /* synthetic */ class w0 implements View.OnClickListener {
                         profileActivity.getMessagesController().O1().q0(e, arrayList3, false);
                         boolean[] zArr3 = {false};
                         boolean z4 = z3;
-                        profileActivity.D5 = new j61((Object) profileActivity, e, (Object) arrayList3, z3, (byte) 11);
+                        profileActivity.D5 = new j61((Object) profileActivity, e, (Object) arrayList3, z3, (byte) 9);
                         da7 da7Var = new da7((Object) profileActivity, (Object) zArr3, (Object) arrayList3, (Object) zArr2, e, (byte) 13);
-                        (z4 ? d31.b0(profileActivity).L(R.raw.contact_check, ob6.G(i, "StorySavedTitle", new Object[0]), ob6.M0(2131744138, null), ob6.M0(2131743540, null), da7Var).j() : d31.b0(profileActivity).J(R.raw.chats_archived, ob6.G(i, "StoryArchived", new Object[0]), ob6.M0(2131743540, null), 5000, false, da7Var).j()).w = new hp8(profileActivity, zArr3, (byte) 7);
+                        (z4 ? d31.b0(profileActivity).L(R.raw.contact_check, ob6.G(i, "StorySavedTitle", new Object[0]), ob6.M0(2131744138, null), ob6.M0(2131743540, null), da7Var).j() : d31.b0(profileActivity).J(R.raw.chats_archived, ob6.G(i, "StoryArchived", new Object[0]), ob6.M0(2131743540, null), 5000, false, da7Var).j()).w = new ep8(profileActivity, zArr3, b2);
                         break;
                     }
                 }

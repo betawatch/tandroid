@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import j$.util.Objects;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class cd3 extends jd3 implements Comparable {
     public final boolean E;
@@ -251,8 +251,8 @@ public final class cd3 extends jd3 implements Comparable {
         pp2 c = pp2.a.c(z, z3);
         Integer valueOf = Integer.valueOf(this.w);
         Integer valueOf2 = Integer.valueOf(cd3Var.w);
-        pk7 pk7Var = pk7.c;
-        pp2 b = c.b(valueOf, valueOf2, pk7Var).a(this.s, cd3Var.s).a(this.x, cd3Var.x).b(Integer.valueOf(this.y), Integer.valueOf(cd3Var.y), pk7Var).c(this.I, cd3Var.I).c(this.F, cd3Var.F).b(Integer.valueOf(this.G), Integer.valueOf(cd3Var.G), pk7Var).a(this.H, cd3Var.H).c(z2, cd3Var.f).b(Integer.valueOf(this.M), Integer.valueOf(cd3Var.M), pk7Var);
+        qk7 qk7Var = qk7.c;
+        pp2 b = c.b(valueOf, valueOf2, qk7Var).a(this.s, cd3Var.s).a(this.x, cd3Var.x).b(Integer.valueOf(this.y), Integer.valueOf(cd3Var.y), qk7Var).c(this.I, cd3Var.I).c(this.F, cd3Var.F).b(Integer.valueOf(this.G), Integer.valueOf(cd3Var.G), qk7Var).a(this.H, cd3Var.H).c(z2, cd3Var.f).b(Integer.valueOf(this.M), Integer.valueOf(cd3Var.M), qk7Var);
         boolean z4 = this.n.F;
         int i2 = this.L;
         if (z4) {

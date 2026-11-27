@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class r17 extends c79 implements fn7 {
     public Location A0;
@@ -477,7 +477,7 @@ public final class r17 extends c79 implements fn7 {
                 }
             }
             if (this.x0.bot_inline_geo) {
-                if (uc7.s1(this.f).W3.getBoolean("inlinegeo_" + this.x0.id, false) || (zu1Var = this.H0) == null || zu1Var.getParentActivity() == null) {
+                if (uc7.s1(this.f).X3.getBoolean("inlinegeo_" + this.x0.id, false) || (zu1Var = this.H0) == null || zu1Var.getParentActivity() == null) {
                     r17Var = this;
                     r17Var.G();
                 } else {
@@ -572,9 +572,9 @@ public final class r17 extends c79 implements fn7 {
                 }
             }
             uc7 s1 = uc7.s1(this.f);
-            jf7 Y = jf7.Y(this.f);
+            kf7 a0 = kf7.a0(this.f);
             this.s0 = str2;
-            k17 k17Var2 = new k17(this, str2, str, s1, Y);
+            k17 k17Var2 = new k17(this, str2, str, s1, a0);
             this.z0 = k17Var2;
             hl.d3(k17Var2, 400L);
         }
@@ -612,15 +612,15 @@ public final class r17 extends c79 implements fn7 {
         sb.append("_");
         sb.append((!user.bot_inline_geo || this.A0.getLatitude() == -1000.0d) ? "" : Double.valueOf(this.A0.getLongitude() + this.A0.getLatitude()));
         String sb2 = sb.toString();
-        jf7 Y = jf7.Y(this.f);
-        h17 h17Var = new h17(this, str, z, user, str2, Y, sb2);
+        kf7 a0 = kf7.a0(this.f);
+        h17 h17Var = new h17(this, str, z, user, str2, a0, sb2);
         long j = user.id;
         if (j != this.T) {
             this.U = null;
             this.T = j;
         }
         if (z) {
-            Y.L(sb2, h17Var);
+            a0.N(sb2, h17Var);
             return;
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
@@ -857,7 +857,7 @@ public final class r17 extends c79 implements fn7 {
                 ConnectionsManager.getInstance(this.f).cancelRequest(this.F0, z3);
                 this.F0 = 0;
             }
-            boolean z9 = uc7.s1(this.f).k4.Y0.f;
+            boolean z9 = uc7.s1(this.f).l4.Y0.f;
             if (z9) {
                 i2 = i;
                 arrayList2 = arrayList;
@@ -1013,7 +1013,7 @@ public final class r17 extends c79 implements fn7 {
                             }
                             sv9 sv9Var = this.x;
                             if (!sv9Var.s) {
-                                jf7.Y(sv9Var.m).a.c(new pv9(sv9Var, (byte) 0));
+                                kf7.a0(sv9Var.m).a.c(new pv9(sv9Var, (byte) 0));
                                 this.a0 = charSequence2;
                                 this.d0 = i2;
                                 this.e0 = arrayList2;
@@ -1709,12 +1709,12 @@ public final class r17 extends c79 implements fn7 {
             return;
         }
         if (i3 == 5) {
-            v09 v09Var = (v09) view;
+            w09 w09Var = (w09) view;
             ArrayList arrayList = this.N;
             if (arrayList == null || i2 < 0 || i2 >= arrayList.size()) {
                 return;
             }
-            v09Var.a((a19) this.N.get(i2), this.M, false);
+            w09Var.a((a19) this.N.get(i2), this.M, false);
             return;
         }
         ArrayList arrayList2 = this.S;
@@ -1878,7 +1878,7 @@ public final class r17 extends c79 implements fn7 {
                         view = t62Var;
                     }
                 } else {
-                    view = new v09(vnbVar, context, false);
+                    view = new w09(vnbVar, context, false);
                 }
             } else {
                 vw2 vw2Var = new vw2(context);

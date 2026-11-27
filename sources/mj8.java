@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class mj8 extends FrameLayout {
     public final u1 E;
@@ -61,7 +61,7 @@ public final class mj8 extends FrameLayout {
         this.a = eVar;
         int currentAccount = eVar.getCurrentAccount();
         this.b = currentAccount;
-        q9c q9cVar = new q9c(activity, currentAccount, 0, false, new hj8(this, (byte) 1), new jz7((Object) this, (byte) 13), null, null);
+        q9c q9cVar = new q9c(activity, currentAccount, 0, false, new hj8(this, (byte) 1), new jz7(this, (byte) 13), null, null);
         this.c = q9cVar;
         q9cVar.j(new bj1(this, eVar, (byte) 7));
         addView(q9cVar, tre.e(-1, -1, jn7.D1));
@@ -200,7 +200,6 @@ public final class mj8 extends FrameLayout {
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     public final void d() {
         TLRPC.SearchPostsFlood searchPostsFlood;
         jj8 jj8Var = this.W;
@@ -214,7 +213,6 @@ public final class mj8 extends FrameLayout {
         TextView textView3 = this.J;
         final byte b = 1;
         final byte b2 = 0;
-        Object[] objArr = 0;
         c51 c51Var = this.I;
         if (!p) {
             de0Var.setVisibility(8);
@@ -343,15 +341,15 @@ public final class mj8 extends FrameLayout {
             wm2Var.J = 0.79f;
         }
         if (this.U == null) {
-            this.U = new sk((byte) 3, aob.v(aob.w0(null, aob.Fi, false), aob.p1(0.75f, aob.w0(null, aob.Ji, false))), objArr == true ? 1 : 0);
+            this.U = new sk((byte) 3, aob.v(aob.w0(null, aob.Fi, false), aob.p1(0.75f, aob.w0(null, aob.Ji, false))), false);
         }
         spannableStringBuilder.setSpan(this.S, 0, 1, 0);
-        spannableStringBuilder.append(ob6.M0(2131745460, null));
-        spannableStringBuilder.append(" ");
+        spannableStringBuilder.append((CharSequence) ob6.M0(2131745460, null));
+        spannableStringBuilder.append((CharSequence) " ");
         int length = spannableStringBuilder.length();
         spannableStringBuilder.append(TextUtils.ellipsize(this.x, c51Var.getTextPaint(), hl.L(100.0f), TextUtils.TruncateAt.END));
         spannableStringBuilder.setSpan(this.U, length, spannableStringBuilder.length(), 33);
-        spannableStringBuilder.append(" >");
+        spannableStringBuilder.append((CharSequence) " >");
         wm2 wm2Var2 = this.T;
         if (wm2Var2 == null) {
             wm2Var2 = new wm2(R.drawable.msg_mini_forumarrow, 0);

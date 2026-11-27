@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_fragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class or8 extends ClickableSpan {
     public final /* synthetic */ TLRPC.TL_username a;
@@ -32,7 +32,7 @@ public final class or8 extends ClickableSpan {
                 TL_fragment.TL_inputCollectibleUsername tL_inputCollectibleUsername = new TL_fragment.TL_inputCollectibleUsername();
                 tL_inputCollectibleUsername.username = tL_username.username;
                 tL_getCollectibleInfo.collectible = tL_inputCollectibleUsername;
-                profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new ol7(this, tL_username, (byte) 15)), profileActivity.getClassGuid());
+                profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new pl7(this, tL_username, (byte) 15)), profileActivity.getClassGuid());
                 return;
             }
             return;

@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.PrivacySettingsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class sn8 extends c79 {
     public final Context c;
@@ -450,7 +450,7 @@ public final class sn8 extends c79 {
                                                                     i32 = 2131751743;
                                                                 }
                                                                 String M02 = ob6.M0(i32, null);
-                                                                CharSequence z02 = (!this.d.getMessagesController().k4.v2.f || this.d.getMessagesController().k4.S1.f) ? this.d.z0(ob6.M0(2131746539, null)) : ob6.M0(2131746539, null);
+                                                                CharSequence z02 = (!this.d.getMessagesController().l4.v2.f || this.d.getMessagesController().l4.S1.f) ? this.d.z0(ob6.M0(2131746539, null)) : ob6.M0(2131746539, null);
                                                                 i18 = this.d.musicRow;
                                                                 qmbVar.c(z02, M02, false, i18 != -1);
                                                             } else if (i == privacySettingsActivity11.H) {
@@ -761,6 +761,6 @@ public final class sn8 extends c79 {
     @Override // j79
     public final f89 x(ViewGroup viewGroup, int i) {
         Context context = this.c;
-        return new n69(i != 0 ? i != 1 ? i != 2 ? i != 4 ? i != 5 ? new wkb(context) : new skb(context) : new rca(context, (uh9) null) : new mf5(context) : new ilb(context) : new qmb(context));
+        return new n69(i != 0 ? i != 1 ? i != 2 ? i != 4 ? i != 5 ? new wkb(context) : new skb(context) : new sca(context, (uh9) null) : new mf5(context) : new ilb(context) : new qmb(context));
     }
 }

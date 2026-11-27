@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class lfc {
     public final ua8 a;
@@ -41,7 +41,7 @@ public final class lfc {
         }
         this.c = g;
         if (p7bVar2 != null) {
-            r7b r7bVar3 = new r7b(p7bVar2, 0L, 0L, new g9c(this, r9, (byte) 14));
+            r7b r7bVar3 = new r7b(p7bVar2, 0L, 0L, new c9c(this, r9, (byte) 15));
             this.b = r7bVar3;
             r7b[] r7bVarArr = {r7bVar3};
             if (r7bVar3.f != null && uc7.e1().getBoolean("asr_video_captions", false) && (pm3Var = (r7bVar = this.b).f) != null && (DictationAsr.B((nm3) pm3Var.b) || DictationAsr.z((nm3) r7bVar.f.b))) {
@@ -101,7 +101,7 @@ public final class lfc {
         ad8 ad8Var3 = photoViewer.f0;
         vnb vnbVar = photoViewer.w2;
         pm3 pm3Var = r7bVar2.f;
-        gd4 gd4Var = new gd4(context, ad8Var3, vnbVar, pm3Var == null ? "" : bn3.t(pm3Var.t()), new g9c(this, r7bVar2, (byte) 15));
+        gd4 gd4Var = new gd4(context, ad8Var3, vnbVar, pm3Var == null ? "" : bn3.t(pm3Var.t()), new c9c(this, r7bVar2, (byte) 16));
         this.e = gd4Var;
         r7bVar2.h(0L, 0L, new ko9(this, gd4Var, r7bVar2));
         ox7 ox7Var5 = this.f;

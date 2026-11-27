@@ -21,7 +21,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ku0 implements pcc {
     public final /* synthetic */ byte a;
@@ -235,20 +235,20 @@ public final /* synthetic */ class ku0 implements pcc {
             case 13:
                 TLRPC.TL_document tL_document = (TLRPC.TL_document) obj4;
                 Long l2 = (Long) obj;
-                o68 o68Var = ((j58) obj5).a;
+                o68 o68Var = ((k58) obj5).a;
                 r7a.B(o68Var.m2).t0(tL_document, (String) obj3, o68Var.l1, null, null, o68Var.y1.a, null, null, true, 0, 0, false, this.e, null, l2.longValue(), o68Var.L1.getSendMonoForumPeerId(), o68Var.L1.getSendMessageSuggestionParams());
                 o68Var.L1.j(tL_document);
                 o68Var.L1.setFieldText("");
                 o68Var.a0(l2.longValue() <= 0);
                 break;
             case 14:
-                y58 y58Var = (y58) obj5;
+                z58 z58Var = (z58) obj5;
                 b7b b7bVar = (b7b) obj4;
                 lcb lcbVar = (lcb) obj3;
                 x53 x53Var = (x53) obj2;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
                 if (storyItem == null) {
-                    v21 Q2 = new d31(y58Var.z0.M0, x53Var).Q(R.raw.story_bomb2, 36, ob6.M0(2131744260, null));
+                    v21 Q2 = new d31(z58Var.z0.M0, x53Var).Q(R.raw.story_bomb2, 36, ob6.M0(2131744260, null));
                     Q2.a = 3;
                     Q2.k(true);
                     break;
@@ -257,8 +257,8 @@ public final /* synthetic */ class ku0 implements pcc {
                     if (Q3 != null) {
                         storyItem.dialogId = b7bVar.b.longValue();
                         lcb createOverlayStoryViewer = Q3.createOverlayStoryViewer();
-                        createOverlayStoryViewer.J(y58Var.getContext(), storyItem, null);
-                        createOverlayStoryViewer.o1 = new x58(lcbVar, (byte) 0);
+                        createOverlayStoryViewer.J(z58Var.getContext(), storyItem, null);
+                        createOverlayStoryViewer.o1 = new y58(lcbVar, (byte) 0);
                         lcbVar.U();
                         break;
                     }
@@ -267,21 +267,21 @@ public final /* synthetic */ class ku0 implements pcc {
             case 15:
                 TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) obj3;
                 x53 x53Var2 = (x53) obj2;
-                v5b v5bVar = (v5b) obj;
-                boolean contains = ((HashSet) obj4).contains(Integer.valueOf(v5bVar.a));
+                w5b w5bVar = (w5b) obj;
+                boolean contains = ((HashSet) obj4).contains(Integer.valueOf(w5bVar.a));
                 o68 o68Var2 = ((j68) obj5).x;
                 c6b c6bVar = o68Var2.C1;
                 if (contains) {
-                    c6bVar.b(v5bVar.a, o68Var2.l1, storyItem2);
-                    a0 = ob6.a0(null, null, 2131744388, v5bVar.b);
+                    c6bVar.b(w5bVar.a, o68Var2.l1, storyItem2);
+                    a0 = ob6.a0(null, null, 2131744388, w5bVar.b);
                 } else {
                     long j2 = o68Var2.l1;
-                    int i3 = v5bVar.a;
+                    int i3 = w5bVar.a;
                     c6bVar.getClass();
                     ArrayList arrayList4 = new ArrayList(1);
                     arrayList4.add(storyItem2);
                     c6bVar.e0(i3, j2, arrayList4);
-                    a0 = ob6.a0(null, null, 2131744148, v5bVar.b);
+                    a0 = ob6.a0(null, null, 2131744148, w5bVar.b);
                 }
                 c00.v(a0, new d31(o68Var2.M0, x53Var2), R.raw.contact_check, 36);
                 j68 j68Var = o68Var2.d1;
@@ -328,7 +328,7 @@ public final /* synthetic */ class ku0 implements pcc {
                 Runnable runnable3 = (Runnable) obj;
                 int i4 = n1aVar.W;
                 if (ConnectionsManager.getInstance(i4).getConnectionState() == 3) {
-                    ls6.d0(i4).b2(true, strArr.length != 0 ? strArr[0] : "", str5, new v58((Object) n1aVar, (Object) linkedHashSet, (Object) runnable3, (byte) 6), false);
+                    ls6.d0(i4).b2(true, strArr.length != 0 ? strArr[0] : "", str5, new w58((Object) n1aVar, (Object) linkedHashSet, (Object) runnable3, (byte) 6), false);
                     break;
                 } else {
                     runnable3.run();
@@ -399,7 +399,7 @@ public final /* synthetic */ class ku0 implements pcc {
                 }
                 break;
             case 21:
-                ((eja) obj5).z0((HashSet) obj4, (TL_stories.StoryItem) obj3, (fu5) obj2, (v5b) obj);
+                ((eja) obj5).z0((HashSet) obj4, (TL_stories.StoryItem) obj3, (fu5) obj2, (w5b) obj);
                 break;
             case 22:
                 ((atc) obj5).a0((String) obj3, (c) obj4, (e) obj2, (String) obj);
@@ -430,7 +430,7 @@ public final /* synthetic */ class ku0 implements pcc {
                         pccVar2.a("STORAGE_OLD_PUBLIC_KEY");
                         break;
                     } else {
-                        k35.i.execute(new re2(k35Var, k35Var.l(), bArr != null ? k35.p(bArr) : "", z2, new v58(gtcVar, pccVar2, cVar3, k35Var)));
+                        k35.i.execute(new re2(k35Var, k35Var.l(), bArr != null ? k35.p(bArr) : "", z2, new w58(gtcVar, pccVar2, cVar3, k35Var)));
                         break;
                     }
                 } else {

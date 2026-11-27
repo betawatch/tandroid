@@ -32,10 +32,10 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public class NestedScrollView extends FrameLayout implements bl7 {
-    public static final vk7 U = new vk7();
+public class NestedScrollView extends FrameLayout implements cl7 {
+    public static final wk7 U = new wk7();
     public static final int[] V = {R.attr.fillViewport};
     public boolean E;
     public boolean F;
@@ -47,11 +47,11 @@ public class NestedScrollView extends FrameLayout implements bl7 {
     public final int[] L;
     public int M;
     public int N;
-    public yk7 O;
-    public final l09 P;
-    public final zk7 Q;
+    public zk7 O;
+    public final m09 P;
+    public final al7 Q;
     public float R;
-    public xk7 S;
+    public yk7 S;
     public final w52 T;
     public final float a;
     public long b;
@@ -94,8 +94,8 @@ public class NestedScrollView extends FrameLayout implements bl7 {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, V, org.telegram.messenger.beta.R.attr.nestedScrollViewStyle, 0);
         setFillViewport(obtainStyledAttributes.getBoolean(0, false));
         obtainStyledAttributes.recycle();
-        this.P = new l09((byte) 3);
-        this.Q = new zk7(this);
+        this.P = new m09((byte) 3);
+        this.Q = new al7(this);
         setNestedScrollingEnabled(true);
         ihc.l(this, U);
     }
@@ -270,7 +270,7 @@ public class NestedScrollView extends FrameLayout implements bl7 {
             i = i2 - iArr[1];
             int scrollRange = getScrollRange();
             if (Build.VERSION.SDK_INT >= 35) {
-                wk7.a(this, Math.abs(this.d.getCurrVelocity()));
+                xk7.a(this, Math.abs(this.d.getCurrVelocity()));
             }
             if (i != 0) {
                 int scrollY = getScrollY();
@@ -562,7 +562,7 @@ public class NestedScrollView extends FrameLayout implements bl7 {
             this.N = getScrollY();
             postInvalidateOnAnimation();
             if (Build.VERSION.SDK_INT >= 35) {
-                wk7.a(this, Math.abs(this.d.getCurrVelocity()));
+                xk7.a(this, Math.abs(this.d.getCurrVelocity()));
             }
         }
     }
@@ -588,23 +588,23 @@ public class NestedScrollView extends FrameLayout implements bl7 {
         return w(i, rect.top, rect.bottom);
     }
 
-    @Override // al7
+    @Override // bl7
     public final void k(int i, View view) {
-        l09 l09Var = this.P;
+        m09 m09Var = this.P;
         if (i == 1) {
-            l09Var.c = 0;
+            m09Var.c = 0;
         } else {
-            l09Var.b = 0;
+            m09Var.b = 0;
         }
         C(i);
     }
 
-    @Override // bl7
+    @Override // cl7
     public final void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
         s(i4, i5, iArr);
     }
 
-    @Override // al7
+    @Override // bl7
     public final void m(View view, int i, int i2, int i3, int i4, int i5) {
         s(i4, i5, null);
     }
@@ -621,7 +621,7 @@ public class NestedScrollView extends FrameLayout implements bl7 {
         view.measure(ViewGroup.getChildMeasureSpec(i, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i2, marginLayoutParams.width), View.MeasureSpec.makeMeasureSpec(marginLayoutParams.topMargin + marginLayoutParams.bottomMargin, 0));
     }
 
-    @Override // al7
+    @Override // bl7
     public final boolean n(View view, View view2, int i, int i2) {
         return (i & 2) != 0;
     }
@@ -1097,29 +1097,29 @@ public class NestedScrollView extends FrameLayout implements bl7 {
 
     @Override // android.view.View
     public final void onRestoreInstanceState(Parcelable parcelable) {
-        if (!(parcelable instanceof yk7)) {
+        if (!(parcelable instanceof zk7)) {
             super.onRestoreInstanceState(parcelable);
             return;
         }
-        yk7 yk7Var = (yk7) parcelable;
-        super.onRestoreInstanceState(yk7Var.getSuperState());
-        this.O = yk7Var;
+        zk7 zk7Var = (zk7) parcelable;
+        super.onRestoreInstanceState(zk7Var.getSuperState());
+        this.O = zk7Var;
         requestLayout();
     }
 
     @Override // android.view.View
     public final Parcelable onSaveInstanceState() {
-        yk7 yk7Var = new yk7(super.onSaveInstanceState());
-        yk7Var.a = getScrollY();
-        return yk7Var;
+        zk7 zk7Var = new zk7(super.onSaveInstanceState());
+        zk7Var.a = getScrollY();
+        return zk7Var;
     }
 
     @Override // android.view.View
     public void onScrollChanged(int i, int i2, int i3, int i4) {
         super.onScrollChanged(i, i2, i3, i4);
-        xk7 xk7Var = this.S;
-        if (xk7Var != null) {
-            ((h78) xk7Var).a.F0(!r0.t1);
+        yk7 yk7Var = this.S;
+        if (yk7Var != null) {
+            ((h78) yk7Var).a.F0(!r0.t1);
         }
     }
 
@@ -1320,18 +1320,18 @@ public class NestedScrollView extends FrameLayout implements bl7 {
         return rect.bottom + i >= getScrollY() && rect.top - i <= getScrollY() + i2;
     }
 
-    @Override // al7
+    @Override // bl7
     public final void q(View view, View view2, int i, int i2) {
-        l09 l09Var = this.P;
+        m09 m09Var = this.P;
         if (i2 == 1) {
-            l09Var.c = i;
+            m09Var.c = i;
         } else {
-            l09Var.b = i;
+            m09Var.b = i;
         }
         A(2, i2);
     }
 
-    @Override // al7
+    @Override // bl7
     public final void r(View view, int i, int i2, int[] iArr, int i3) {
         d(i, i2, i3, iArr, null);
     }
@@ -1428,17 +1428,17 @@ public class NestedScrollView extends FrameLayout implements bl7 {
 
     @Override // android.view.View
     public void setNestedScrollingEnabled(boolean z) {
-        zk7 zk7Var = this.Q;
-        if (zk7Var.d) {
-            ViewGroup viewGroup = zk7Var.c;
+        al7 al7Var = this.Q;
+        if (al7Var.d) {
+            ViewGroup viewGroup = al7Var.c;
             WeakHashMap weakHashMap = ihc.a;
             ahc.j(viewGroup);
         }
-        zk7Var.d = z;
+        al7Var.d = z;
     }
 
-    public void setOnScrollChangeListener(xk7 xk7Var) {
-        this.S = xk7Var;
+    public void setOnScrollChangeListener(yk7 yk7Var) {
+        this.S = yk7Var;
     }
 
     public void setSmoothScrollingEnabled(boolean z) {

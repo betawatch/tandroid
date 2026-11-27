@@ -19,7 +19,7 @@ import org.telegram.ui.Components.Switch;
 import org.telegram.ui.DataAutoDownloadActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class u implements r69 {
     public final /* synthetic */ byte a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class u implements r69 {
                         dsVar.c = true;
                         break;
                     } else if (b4 == 7) {
-                        if (!dsVar.getUserConfig().p() && !dsVar.getMessagesController().k4.T0.f && !dsVar.d.archive_and_mute_new_noncontact_peers) {
+                        if (!dsVar.getUserConfig().p() && !dsVar.getMessagesController().l4.T0.f && !dsVar.d.archive_and_mute_new_noncontact_peers) {
                             n21 n21Var = new n21(dsVar.getParentActivity(), dsVar.getResourceProvider());
                             n21Var.b.setText(hl.N2(ob6.M0(2131743521, null), aob.xj, 0, new c1(dsVar, (byte) 18), null));
                             n21Var.b.setSingleLine(false);
@@ -255,13 +255,13 @@ public final /* synthetic */ class u implements r69 {
                         lcb orCreateStoryViewer = eVar.getOrCreateStoryViewer();
                         Context context = gr0Var.getContext();
                         int e1 = messageObject.e1();
-                        o5b o5bVar = gr0Var.a;
+                        p5b p5bVar = gr0Var.a;
                         l6b a = l6b.a(gr0Var.f);
                         if ((eVar instanceof ProfileActivity) && ((ProfileActivity) eVar).s1) {
                             i4 = hl.L(68.0f);
                         }
                         a.s += i4;
-                        orCreateStoryViewer.G(context, e1, o5bVar, a);
+                        orCreateStoryViewer.G(context, e1, p5bVar, a);
                         break;
                     }
                 }
@@ -622,7 +622,7 @@ public final /* synthetic */ class u implements r69 {
                                     yh3Var.s = longValue;
                                     i17++;
                                 } else {
-                                    int i18 = uc7.r5;
+                                    int i18 = uc7.s5;
                                     uj3Var.G5(512, true);
                                 }
                             }
@@ -764,7 +764,7 @@ public final /* synthetic */ class u implements r69 {
                             if (!nf4Var.s || !nf4Var.c.x.f) {
                                 if (!TextUtils.isEmpty(nf4Var.x) || !TextUtils.isEmpty(ac7Var.b)) {
                                     int i21 = nf4Var.E;
-                                    int i22 = uc7.r5;
+                                    int i22 = uc7.s5;
                                     if ((i21 & (-1537)) == 0 && nf4Var.H.isEmpty() && !nf4Var.G.isEmpty()) {
                                         nf4Var.y0(new oe4(nf4Var, (byte) 1), false);
                                         break;
@@ -779,7 +779,7 @@ public final /* synthetic */ class u implements r69 {
                                     i2 = 2131750727;
                                 } else {
                                     int i23 = nf4Var.E;
-                                    int i24 = uc7.r5;
+                                    int i24 = uc7.s5;
                                     if ((i23 & (-1537)) != 0) {
                                         if (nf4Var.H.isEmpty()) {
                                             b0 = d31.b0(nf4Var);

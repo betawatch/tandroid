@@ -30,7 +30,7 @@ import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class fs8 extends c79 {
     public String E;
@@ -41,7 +41,7 @@ public class fs8 extends c79 {
     public final int f;
     public final Context h;
     public boolean x;
-    public hp8 y;
+    public ep8 y;
     public final ArrayList d = new ArrayList();
     public ArrayList n = new ArrayList();
     public ArrayList r = new ArrayList();
@@ -85,16 +85,15 @@ public class fs8 extends c79 {
         es8 es8Var19;
         es8 es8Var20;
         final int currentAccount = eVar.getCurrentAccount();
-        byte b = 11;
-        es8 es8Var21 = new es8(500, ob6.L0(2131751229), 0, new hp8(eVar, eVar.getResourceProvider(), b));
-        final byte b2 = 28;
+        es8 es8Var21 = new es8(500, ob6.L0(2131751229), 0, new ep8(eVar, eVar.getResourceProvider(), (byte) 12));
+        final byte b = 28;
         es8 es8Var22 = new es8(501, ob6.L0(2131752518), 0, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b3 = b2;
+                byte b2 = b;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b3) {
+                switch (b2) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -233,14 +232,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var22.h = "tg://settings/edit/change-number";
-        final byte b3 = 10;
+        final byte b2 = 10;
         es8 es8Var23 = new es8(502, ob6.L0(2131754461), 0, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b4 = b3;
+                byte b3 = b2;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b4) {
+                switch (b3) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -354,14 +353,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var23.h = "tg://settings/edit/add-account";
-        final byte b4 = 21;
+        final byte b3 = 21;
         es8 es8Var24 = new es8(1, ob6.L0(2131747649), R.drawable.msg_notifications, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b4;
+                byte b32 = b3;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -479,16 +478,16 @@ public class fs8 extends c79 {
         es8Var25.h = "tg://settings/notifications/private-chats";
         es8 es8Var26 = new es8(3, ob6.L0(2131747634), ob6.L0(2131747649), R.drawable.msg_notifications, new ds8(eVar, (byte) 15));
         es8Var26.h = "tg://settings/notifications/groups";
-        es8 es8Var27 = new es8(4, ob6.L0(2131747648), ob6.L0(2131747649), R.drawable.msg_notifications, new yv1(eVar, b));
+        es8 es8Var27 = new es8(4, ob6.L0(2131747648), ob6.L0(2131747649), R.drawable.msg_notifications, new yv1(eVar, (byte) 11));
         es8Var27.h = "tg://settings/notifications/channels";
         es8 es8Var28 = new es8(5, ob6.L0(2131742931), "callsSectionRow", ob6.L0(2131747649), R.drawable.msg_notifications, new yv1(eVar, (byte) 23));
-        final byte b5 = 5;
+        final byte b4 = 5;
         es8 es8Var29 = new es8(6, ob6.L0(2131753726), "badgeNumberSection", ob6.L0(2131747649), R.drawable.msg_notifications, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b6 = b5;
+                byte b5 = b4;
                 e eVar2 = eVar;
-                switch (b6) {
+                switch (b5) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -606,13 +605,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b6 = 17;
+        final byte b5 = 17;
         es8 es8Var30 = new es8(7, ob6.L0(2131748973), "inappSectionRow", ob6.L0(2131747649), R.drawable.msg_notifications, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b6;
+                byte b52 = b5;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -732,13 +731,13 @@ public class fs8 extends c79 {
         });
         es8 es8Var31 = new es8(8, ob6.L0(2131751755), "contactJoinedRow", ob6.L0(2131747649), R.drawable.msg_notifications, new yv1(eVar, (byte) 27));
         es8Var31.h = "tg://settings/notifications/new-contacts";
-        final byte b7 = 28;
+        final byte b6 = 28;
         es8 es8Var32 = new es8(9, ob6.L0(2131746955), "pinnedMessageRow", ob6.L0(2131747649), R.drawable.msg_notifications, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b7;
+                byte b52 = b6;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -860,10 +859,10 @@ public class fs8 extends c79 {
         es8 es8Var33 = new es8(10, ob6.L0(2131745839), "resetNotificationsRow", ob6.L0(2131747649), R.drawable.msg_notifications, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b32 = b3;
+                byte b22 = b2;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b32) {
+                switch (b22) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -1005,10 +1004,10 @@ public class fs8 extends c79 {
         es8 es8Var34 = new es8(11, ob6.L0(2131747603), "notificationsServiceRow", ob6.L0(2131747649), R.drawable.msg_notifications, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b32 = b4;
+                byte b22 = b3;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b32) {
+                switch (b22) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -1146,14 +1145,14 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b8 = 22;
+        final byte b7 = 22;
         es8 es8Var35 = new es8(12, ob6.L0(2131747602), "notificationsServiceConnectionRow", ob6.L0(2131747649), R.drawable.msg_notifications, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b32 = b8;
+                byte b22 = b7;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b32) {
+                switch (b22) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -1291,14 +1290,14 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b9 = 23;
+        final byte b8 = 23;
         es8 es8Var36 = new es8(13, ob6.L0(2131746002), "repeatRow", ob6.L0(2131747649), R.drawable.msg_notifications, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b32 = b9;
+                byte b22 = b8;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b32) {
+                switch (b22) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -1436,14 +1435,14 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b10 = 24;
+        final byte b9 = 24;
         es8 es8Var37 = new es8(100, ob6.L0(2131746500), R.drawable.msg_secret, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b32 = b10;
+                byte b22 = b9;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b32) {
+                switch (b22) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -1582,14 +1581,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var37.h = "tg://settings/privacy";
-        final byte b11 = 25;
+        final byte b10 = 25;
         es8 es8Var38 = new es8(jn7.t1, ob6.L0(2131743593), ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b32 = b11;
+                byte b22 = b10;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b32) {
+                switch (b22) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -1728,14 +1727,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var38.h = "tg://settings/privacy/2sv";
-        final byte b12 = 0;
+        final byte b11 = 0;
         es8 es8Var39 = new es8(jn7.H1, ob6.L0(2131753843), ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: bs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b13 = b12;
+                byte b12 = b11;
                 e eVar2 = eVar;
                 int i = currentAccount;
-                switch (b13) {
+                switch (b12) {
                     case 0:
                         if (yac.h(i).q0 >= 0) {
                             eVar2.presentFragment(new x60());
@@ -1747,7 +1746,7 @@ public class fs8 extends c79 {
                             d31 b0 = d31.b0(eVar2);
                             b0.getClass();
                             c21 c21Var = new c21(b0.X(), null);
-                            byte b14 = 0;
+                            byte b13 = 0;
                             c21Var.h(R.raw.voip_muted, new String[0]);
                             String M0 = ob6.M0(2131746484, null);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
@@ -1755,7 +1754,7 @@ public class fs8 extends c79 {
                             int lastIndexOf = M0.lastIndexOf(42);
                             if (indexOf >= 0) {
                                 spannableStringBuilder.replace(indexOf, lastIndexOf + 1, (CharSequence) M0.substring(indexOf + 1, lastIndexOf));
-                                spannableStringBuilder.setSpan(new a31(b0, b14), indexOf, lastIndexOf - 1, 33);
+                                spannableStringBuilder.setSpan(new a31(b0, b13), indexOf, lastIndexOf - 1, 33);
                             }
                             c21Var.b.setText(spannableStringBuilder);
                             c21Var.b.setSingleLine(false);
@@ -1770,14 +1769,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var39.h = "tg://settings/privacy/auto-delete";
-        final byte b13 = 26;
+        final byte b12 = 26;
         es8 es8Var40 = new es8(jn7.s1, ob6.L0(2131747384), ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b32 = b13;
+                byte b22 = b12;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b32) {
+                switch (b22) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -1919,14 +1918,14 @@ public class fs8 extends c79 {
         es8 es8Var41 = null;
         if (xea.i1) {
             es8Var = es8Var38;
-            final byte b14 = 29;
+            final byte b13 = 29;
             es8Var2 = new es8(jn7.I1, ob6.L0(2131751167), "emailLoginRow", ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: as8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b32 = b14;
+                    byte b22 = b13;
                     int i = 0;
                     e eVar2 = eVar;
-                    switch (b32) {
+                    switch (b22) {
                         case 0:
                             q86 q86Var = new q86();
                             eVar2.presentFragment(q86Var);
@@ -2069,14 +2068,14 @@ public class fs8 extends c79 {
             es8Var = es8Var38;
             es8Var2 = null;
         }
-        final byte b15 = 0;
+        final byte b14 = 0;
         es8 es8Var42 = new es8(101, ob6.L0(2131753674), ob6.L0(2131746500), R.drawable.msg_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b15;
+                byte b32 = b14;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -2190,14 +2189,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var42.h = "tg://settings/privacy/blocked";
-        final byte b16 = 1;
+        final byte b15 = 1;
         es8 es8Var43 = new es8(jn7.u1, ob6.L0(2131745279), R.drawable.msg2_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b16;
+                byte b32 = b15;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -2311,14 +2310,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var43.h = "tg://settings/devices";
-        final byte b17 = 2;
+        final byte b16 = 2;
         es8 es8Var44 = new es8(jn7.p1, ob6.L0(2131746519), ob6.L0(2131746500), R.drawable.msg_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b17;
+                byte b32 = b16;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -2432,14 +2431,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var44.h = "tg://settings/privacy/phone-number/";
-        final byte b18 = 3;
+        final byte b17 = 3;
         es8 es8Var45 = new es8(jn7.m1, ob6.L0(2131746544), ob6.L0(2131746500), R.drawable.msg_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b18;
+                byte b32 = b17;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -2553,14 +2552,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var45.h = "tg://settings/privacy/last-seen";
-        final byte b19 = 4;
+        final byte b18 = 4;
         es8 es8Var46 = new es8(jn7.n1, ob6.L0(2131746506), ob6.L0(2131746500), R.drawable.msg_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b19;
+                byte b32 = b18;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -2674,14 +2673,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var46.h = "tg://settings/privacy/profile-photos";
-        final byte b20 = 5;
+        final byte b19 = 5;
         es8 es8Var47 = new es8(jn7.o1, ob6.L0(2131746566), ob6.L0(2131746500), R.drawable.msg_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b20;
+                byte b32 = b19;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -2795,14 +2794,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var47.h = "tg://settings/privacy/forwards";
-        final byte b21 = 6;
+        final byte b20 = 6;
         es8 es8Var48 = new es8(jn7.F1, ob6.L0(2131746529), ob6.L0(2131746500), R.drawable.msg_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b21;
+                byte b32 = b20;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -2916,14 +2915,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var48.h = "tg://settings/privacy/calls/p2p";
-        final byte b22 = 7;
+        final byte b21 = 7;
         es8 es8Var49 = new es8(jn7.q1, ob6.L0(2131752577), ob6.L0(2131746500), R.drawable.msg_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b22;
+                byte b32 = b21;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -3037,14 +3036,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var49.h = "tg://settings/privacy/calls";
-        final byte b23 = 9;
+        final byte b22 = 9;
         es8 es8Var50 = new es8(jn7.r1, ob6.L0(2131746546), ob6.L0(2131746500), R.drawable.msg_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b23;
+                byte b32 = b22;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -3158,14 +3157,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var50.h = "tg://settings/privacy/invites";
-        final byte b24 = 1;
+        final byte b23 = 1;
         es8 es8Var51 = new es8(jn7.G1, ob6.L0(2131746487), ob6.L0(2131746500), R.drawable.msg_secret, new Runnable() { // from class: bs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b132 = b24;
+                byte b122 = b23;
                 e eVar2 = eVar;
                 int i = currentAccount;
-                switch (b132) {
+                switch (b122) {
                     case 0:
                         if (yac.h(i).q0 >= 0) {
                             eVar2.presentFragment(new x60());
@@ -3177,7 +3176,7 @@ public class fs8 extends c79 {
                             d31 b0 = d31.b0(eVar2);
                             b0.getClass();
                             c21 c21Var = new c21(b0.X(), null);
-                            byte b142 = 0;
+                            byte b132 = 0;
                             c21Var.h(R.raw.voip_muted, new String[0]);
                             String M0 = ob6.M0(2131746484, null);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
@@ -3185,7 +3184,7 @@ public class fs8 extends c79 {
                             int lastIndexOf = M0.lastIndexOf(42);
                             if (indexOf >= 0) {
                                 spannableStringBuilder.replace(indexOf, lastIndexOf + 1, (CharSequence) M0.substring(indexOf + 1, lastIndexOf));
-                                spannableStringBuilder.setSpan(new a31(b0, b142), indexOf, lastIndexOf - 1, 33);
+                                spannableStringBuilder.setSpan(new a31(b0, b132), indexOf, lastIndexOf - 1, 33);
                             }
                             c21Var.b.setText(spannableStringBuilder);
                             c21Var.b.setSingleLine(false);
@@ -3200,16 +3199,16 @@ public class fs8 extends c79 {
             }
         });
         es8Var51.h = "tg://settings/privacy/voice";
-        if (uc7.s1(currentAccount).k4.T0.f()) {
+        if (uc7.s1(currentAccount).l4.T0.f()) {
             es8Var3 = es8Var51;
-            final byte b25 = 11;
+            final byte b24 = 11;
             es8Var4 = new es8(121, ob6.L0(2131754164), "newChatsRow", ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: cs8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b42 = b25;
+                    byte b32 = b24;
                     int i = 0;
                     e eVar2 = eVar;
-                    switch (b42) {
+                    switch (b32) {
                         case 0:
                             vn8 vn8Var = new vn8();
                             vn8Var.getMessagesController().F0(true);
@@ -3327,14 +3326,14 @@ public class fs8 extends c79 {
             es8Var3 = es8Var51;
             es8Var4 = null;
         }
-        final byte b26 = 12;
+        final byte b25 = 12;
         es8 es8Var52 = new es8(jn7.w1, ob6.L0(2131751561), "deleteAccountRow", ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b26;
+                byte b32 = b25;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -3448,14 +3447,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var52.h = "tg://settings/privacy/self-destruct";
-        final byte b27 = 13;
+        final byte b26 = 13;
         es8 es8Var53 = new es8(jn7.x1, ob6.L0(2131746526), "paymentsClearRow", ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b27;
+                byte b32 = b26;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -3569,14 +3568,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var53.h = "tg://settings/privacy/data-settings/clear-payment-info";
-        final byte b28 = 14;
+        final byte b27 = 14;
         es8 es8Var54 = new es8(jn7.y1, ob6.L0(2131742542), ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b28;
+                byte b32 = b27;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -3690,14 +3689,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var54.h = "tg://settings/privacy/active-websites";
-        final byte b29 = 15;
+        final byte b28 = 15;
         es8 es8Var55 = new es8(jn7.z1, ob6.L0(2131743949), "contactsDeleteRow", ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b29;
+                byte b32 = b28;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -3811,14 +3810,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var55.h = "tg://settings/privacy/data-settings/delete-synced";
-        final byte b30 = 16;
+        final byte b29 = 16;
         es8 es8Var56 = new es8(jn7.A1, ob6.L0(2131743951), "contactsSyncRow", ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b30;
+                byte b32 = b29;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -3932,14 +3931,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var56.h = "tg://settings/privacy/data-settings/sync-contacts";
-        final byte b31 = 17;
+        final byte b30 = 17;
         es8 es8Var57 = new es8(jn7.B1, ob6.L0(2131744065), "contactsSuggestRow", ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b31;
+                byte b32 = b30;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -4053,14 +4052,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var57.h = "tg://settings/privacy/data-settings/suggest-contacts";
-        final byte b32 = 19;
+        final byte b31 = 19;
         es8 es8Var58 = new es8(jn7.C1, ob6.L0(2131748443), "secretMapRow", ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b32;
+                byte b32 = b31;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b32) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -4174,14 +4173,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var58.h = "tg://settings/privacy/data-settings/map-provider";
-        final byte b33 = 20;
+        final byte b32 = 20;
         es8 es8Var59 = new es8(jn7.D1, ob6.L0(2131745412), "secretWebpageRow", ob6.L0(2131746500), R.drawable.msg2_secret, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b33;
+                byte b322 = b32;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b322) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -4295,14 +4294,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var59.h = "tg://settings/privacy/data-settings/link-previews";
-        final byte b34 = 22;
+        final byte b33 = 22;
         es8 es8Var60 = new es8(jn7.E1, ob6.L0(2131751420), R.drawable.msg2_devices, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b34;
+                byte b322 = b33;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b322) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -4416,14 +4415,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var60.h = "tg://settings/devices";
-        final byte b35 = 23;
+        final byte b34 = 23;
         es8 es8Var61 = new es8(121, ob6.L0(2131743861), "terminateAllSessionsRow", ob6.L0(2131751420), R.drawable.msg2_devices, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b35;
+                byte b322 = b34;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b322) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -4537,14 +4536,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var61.h = "tg://settings/devices/terminate-sessions";
-        final byte b36 = 24;
+        final byte b35 = 24;
         es8 es8Var62 = new es8(jn7.F1, ob6.L0(2131748671), ob6.L0(2131751420), R.drawable.msg2_devices, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b36;
+                byte b322 = b35;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b322) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -4658,14 +4657,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var62.h = "tg://settings/devices/link-desktop";
-        final byte b37 = 25;
+        final byte b36 = 25;
         es8 es8Var63 = new es8(jn7.d3, ob6.L0(2131751642), R.drawable.msg2_data, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b37;
+                byte b322 = b36;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b322) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -4779,14 +4778,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var63.h = "tg://settings/privacy/data-settings";
-        final byte b38 = 26;
+        final byte b37 = 26;
         es8 es8Var64 = new es8(jn7.e3, ob6.L0(2131751641), "usageSectionRow", ob6.L0(2131751642), R.drawable.msg2_data, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b38;
+                byte b322 = b37;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b322) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -4899,14 +4898,14 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b39 = 27;
+        final byte b38 = 27;
         es8 es8Var65 = new es8(jn7.f3, ob6.L0(2131744473), ob6.L0(2131751642), R.drawable.msg2_data, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b39;
+                byte b322 = b38;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b322) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -5020,14 +5019,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var65.h = "tg://settings/data/storage";
-        final byte b40 = 28;
+        final byte b39 = 28;
         es8 es8Var66 = new es8(203, ob6.L0(2131748814), "keepMediaRow", ob6.L0(2131751642), ob6.L0(2131744473), R.drawable.msg2_data, new Runnable() { // from class: cs8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b42 = b40;
+                byte b322 = b39;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b42) {
+                switch (b322) {
                     case 0:
                         vn8 vn8Var = new vn8();
                         vn8Var.getMessagesController().F0(true);
@@ -5196,13 +5195,13 @@ public class fs8 extends c79 {
         es8Var102.h = "tg://settings/data/pause-music";
         es8 es8Var103 = new es8(jn7.v5, ob6.L0(2131748193), "bluetoothScoRow", ob6.L0(2131752175), R.drawable.msg2_discussion, new yv1(eVar, (byte) 28));
         es8 es8Var104 = new es8(jn7.e5, ob6.L0(2131751403), "directShareRow", ob6.L0(2131752175), R.drawable.msg2_discussion, new yv1(eVar, (byte) 29));
-        final byte b41 = 0;
+        final byte b40 = 0;
         es8 es8Var105 = new es8(jn7.h5, ob6.L0(2131745360), "sendByEnterRow", ob6.L0(2131752175), R.drawable.msg2_discussion, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b41;
+                byte b52 = b40;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -5320,13 +5319,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b42 = 1;
+        final byte b41 = 1;
         es8 es8Var106 = new es8(jn7.o5, ob6.L0(2131751332), "distanceRow", ob6.L0(2131752175), R.drawable.msg2_discussion, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b42;
+                byte b52 = b41;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -5444,13 +5443,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b43 = 2;
+        final byte b42 = 2;
         es8 es8Var107 = new es8(600, ob6.L0(2131744514), R.drawable.msg2_sticker, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b43;
+                byte b52 = b42;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -5569,13 +5568,13 @@ public class fs8 extends c79 {
             }
         });
         es8Var107.h = "tg://settings/appearance/stickers-and-emoji";
-        final byte b44 = 3;
+        final byte b43 = 3;
         es8 es8Var108 = new es8(601, ob6.L0(2131744055), "suggestRow", ob6.L0(2131744514), R.drawable.msg2_sticker, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b44;
+                byte b52 = b43;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -5693,13 +5692,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b45 = 4;
+        final byte b44 = 4;
         es8 es8Var109 = new es8(602, ob6.L0(2131750798), "featuredStickersHeaderRow", ob6.L0(2131744514), R.drawable.msg2_sticker, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b45;
+                byte b52 = b44;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -5817,13 +5816,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b46 = 6;
+        final byte b45 = 6;
         es8 es8Var110 = new es8(603, ob6.L0(2131748433), null, ob6.L0(2131744514), R.drawable.msg2_sticker, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b46;
+                byte b52 = b45;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -5941,13 +5940,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b47 = 7;
+        final byte b46 = 7;
         es8 es8Var111 = new es8(604, ob6.L0(2131754121), null, ob6.L0(2131744514), R.drawable.msg2_sticker, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b47;
+                byte b52 = b46;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -6066,13 +6065,13 @@ public class fs8 extends c79 {
             }
         });
         es8Var111.h = "tg://settings/appearance/stickers-and-emoji/archived";
-        final byte b48 = 9;
+        final byte b47 = 9;
         es8 es8Var112 = new es8(605, ob6.L0(2131754126), null, ob6.L0(2131744514), R.drawable.msg2_sticker, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b48;
+                byte b52 = b47;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -6190,13 +6189,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b49 = 10;
+        final byte b48 = 10;
         es8 es8Var113 = new es8(606, ob6.L0(2131748788), "largeEmojiRow", ob6.L0(2131744514), R.drawable.msg2_sticker, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b49;
+                byte b52 = b48;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -6315,13 +6314,13 @@ public class fs8 extends c79 {
             }
         });
         es8Var113.h = "tg://settings/appearance/stickers-and-emoji/emoji/large";
-        final byte b50 = 11;
+        final byte b49 = 11;
         es8 es8Var114 = new es8(607, ob6.L0(2131748476), null, ob6.L0(2131746795), ob6.L0(2131748604), R.drawable.msg2_battery, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b50;
+                byte b52 = b49;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -6439,13 +6438,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b51 = 12;
+        final byte b50 = 12;
         es8 es8Var115 = new es8(608, ob6.L0(2131751161), null, ob6.L0(2131744514), R.drawable.input_smile, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b51;
+                byte b52 = b50;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -6564,13 +6563,13 @@ public class fs8 extends c79 {
             }
         });
         es8Var115.h = "tg://settings/appearance/stickers-and-emoji/emoji";
-        final byte b52 = 13;
+        final byte b51 = 13;
         es8 es8Var116 = new es8(609, ob6.L0(2131744069), "suggestAnimatedEmojiRow", ob6.L0(2131744514), ob6.L0(2131751161), R.drawable.input_smile, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b52;
+                byte b52 = b51;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b52) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -6689,13 +6688,13 @@ public class fs8 extends c79 {
             }
         });
         es8Var116.h = "tg://settings/appearance/stickers-and-emoji/emoji/suggest";
-        final byte b53 = 14;
+        final byte b52 = 14;
         es8 es8Var117 = new es8(610, ob6.L0(2131750800), "featuredStickersHeaderRow", ob6.L0(2131744514), ob6.L0(2131751161), R.drawable.input_smile, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b53;
+                byte b522 = b52;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b522) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -6813,13 +6812,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b54 = 15;
+        final byte b53 = 15;
         es8 es8Var118 = new es8(611, ob6.L0(2131751315), null, ob6.L0(2131744514), R.drawable.msg2_sticker, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b54;
+                byte b522 = b53;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b522) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -6938,13 +6937,13 @@ public class fs8 extends c79 {
             }
         });
         es8Var118.h = "tg://settings/appearance/stickers-and-emoji/emoji/quick-reaction";
-        final byte b55 = 16;
+        final byte b54 = 16;
         es8 es8Var119 = new es8(700, ob6.L0(2131750656), null, R.drawable.msg2_folder, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b55;
+                byte b522 = b54;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b522) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -7063,13 +7062,13 @@ public class fs8 extends c79 {
             }
         });
         es8Var119.h = "tg://settings/folders";
-        final byte b56 = 25;
+        final byte b55 = 25;
         es8 es8Var120 = new es8(701, ob6.L0(2131751681), "createFilterRow", ob6.L0(2131750656), R.drawable.msg2_folder, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b62 = b56;
+                byte b522 = b55;
                 e eVar2 = eVar;
-                switch (b62) {
+                switch (b522) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -7192,15 +7191,15 @@ public class fs8 extends c79 {
             es8Var5 = es8Var120;
             es8Var6 = es8Var111;
             es8Var7 = es8Var113;
-            final byte b57 = 6;
+            final byte b56 = 6;
             es8Var8 = es8Var115;
             es8Var9 = new es8(800, ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: as8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b322 = b57;
+                    byte b222 = b56;
                     int i = 0;
                     e eVar2 = eVar;
-                    switch (b322) {
+                    switch (b222) {
                         case 0:
                             q86 q86Var = new q86();
                             eVar2.presentFragment(q86Var);
@@ -7346,14 +7345,14 @@ public class fs8 extends c79 {
             es8Var9 = null;
         }
         if (F(currentAccount, 0)) {
-            final byte b58 = 17;
+            final byte b57 = 17;
             es8Var10 = new es8(801, ob6.L0(2131746727), ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: as8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b322 = b58;
+                    byte b222 = b57;
                     int i = 0;
                     e eVar2 = eVar;
-                    switch (b322) {
+                    switch (b222) {
                         case 0:
                             q86 q86Var = new q86();
                             eVar2.presentFragment(q86Var);
@@ -7495,14 +7494,14 @@ public class fs8 extends c79 {
             es8Var10 = null;
         }
         if (F(currentAccount, 11)) {
-            final byte b59 = 27;
+            final byte b58 = 27;
             es8Var11 = new es8(802, ob6.L0(2131746736), ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: as8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b322 = b59;
+                    byte b222 = b58;
                     int i = 0;
                     e eVar2 = eVar;
-                    switch (b322) {
+                    switch (b222) {
                         case 0:
                             q86 q86Var = new q86();
                             eVar2.presentFragment(q86Var);
@@ -7644,14 +7643,14 @@ public class fs8 extends c79 {
             es8Var11 = null;
         }
         if (F(currentAccount, 1)) {
-            final byte b60 = 8;
+            final byte b59 = 8;
             es8Var12 = new es8(803, ob6.L0(2131746693), ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: cs8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b422 = b60;
+                    byte b322 = b59;
                     int i = 0;
                     e eVar2 = eVar;
-                    switch (b422) {
+                    switch (b322) {
                         case 0:
                             vn8 vn8Var = new vn8();
                             vn8Var.getMessagesController().F0(true);
@@ -7768,14 +7767,14 @@ public class fs8 extends c79 {
             es8Var12 = null;
         }
         if (F(currentAccount, 2)) {
-            final byte b61 = 18;
+            final byte b60 = 18;
             es8Var13 = new es8(804, ob6.L0(2131746741), ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: cs8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b422 = b61;
+                    byte b322 = b60;
                     int i = 0;
                     e eVar2 = eVar;
-                    switch (b422) {
+                    switch (b322) {
                         case 0:
                             vn8 vn8Var = new vn8();
                             vn8Var.getMessagesController().F0(true);
@@ -7892,14 +7891,14 @@ public class fs8 extends c79 {
             es8Var13 = null;
         }
         if (F(currentAccount, 8)) {
-            final byte b62 = 29;
+            final byte b61 = 29;
             es8Var14 = new es8(805, ob6.L0(2131746691), ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: cs8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b422 = b62;
+                    byte b322 = b61;
                     int i = 0;
                     e eVar2 = eVar;
-                    switch (b422) {
+                    switch (b322) {
                         case 0:
                             vn8 vn8Var = new vn8();
                             vn8Var.getMessagesController().F0(true);
@@ -8019,13 +8018,13 @@ public class fs8 extends c79 {
         es8 es8Var122 = F(currentAccount, 4) ? new es8(807, ob6.L0(2131746712), ob6.L0(2131743884), R.drawable.msg_settings_premium, new ds8(eVar, (byte) 21)) : null;
         es8 es8Var123 = F(currentAccount, 5) ? new es8(808, ob6.L0(2131746705), ob6.L0(2131743884), R.drawable.msg_settings_premium, new yv1(eVar, (byte) 16)) : null;
         if (F(currentAccount, 9)) {
-            final byte b63 = 8;
+            final byte b62 = 8;
             es8Var15 = new es8(809, ob6.L0(2131746754), ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: zr8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b622 = b63;
+                    byte b522 = b62;
                     e eVar2 = eVar;
-                    switch (b622) {
+                    switch (b522) {
                         case 0:
                         case 1:
                             uh9.o(0, eVar2);
@@ -8147,13 +8146,13 @@ public class fs8 extends c79 {
             es8Var15 = null;
         }
         if (F(currentAccount, 6)) {
-            final byte b64 = 18;
+            final byte b63 = 18;
             es8Var16 = new es8(810, ob6.L0(2131746716), ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: zr8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b622 = b64;
+                    byte b522 = b63;
                     e eVar2 = eVar;
-                    switch (b622) {
+                    switch (b522) {
                         case 0:
                         case 1:
                             uh9.o(0, eVar2);
@@ -8275,13 +8274,13 @@ public class fs8 extends c79 {
             es8Var16 = null;
         }
         if (F(currentAccount, 7)) {
-            final byte b65 = 19;
+            final byte b64 = 19;
             es8Var17 = new es8(811, ob6.L0(2131746751), ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: zr8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b622 = b65;
+                    byte b522 = b64;
                     e eVar2 = eVar;
-                    switch (b622) {
+                    switch (b522) {
                         case 0:
                         case 1:
                             uh9.o(0, eVar2);
@@ -8403,13 +8402,13 @@ public class fs8 extends c79 {
             es8Var17 = null;
         }
         if (F(currentAccount, 10)) {
-            final byte b66 = 20;
+            final byte b65 = 20;
             es8Var18 = new es8(812, ob6.L0(2131746749), ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: zr8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b622 = b66;
+                    byte b522 = b65;
                     e eVar2 = eVar;
-                    switch (b622) {
+                    switch (b522) {
                         case 0:
                         case 1:
                             uh9.o(0, eVar2);
@@ -8531,13 +8530,13 @@ public class fs8 extends c79 {
             es8Var18 = null;
         }
         if (F(currentAccount, 12)) {
-            final byte b67 = 21;
+            final byte b66 = 21;
             es8Var19 = new es8(813, ob6.L0(2131746733), ob6.L0(2131743884), R.drawable.msg_settings_premium, new Runnable() { // from class: zr8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b622 = b67;
+                    byte b522 = b66;
                     e eVar2 = eVar;
-                    switch (b622) {
+                    switch (b522) {
                         case 0:
                         case 1:
                             uh9.o(0, eVar2);
@@ -8658,13 +8657,13 @@ public class fs8 extends c79 {
         } else {
             es8Var19 = null;
         }
-        final byte b68 = 22;
+        final byte b67 = 22;
         es8 es8Var124 = new es8(900, ob6.L0(2131746795), null, R.drawable.msg2_battery, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b622 = b68;
+                byte b522 = b67;
                 e eVar2 = eVar;
-                switch (b622) {
+                switch (b522) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -8783,13 +8782,13 @@ public class fs8 extends c79 {
             }
         });
         es8Var124.h = "tg://settings/power-saving";
-        final byte b69 = 23;
+        final byte b68 = 23;
         es8 es8Var125 = new es8(901, ob6.L0(2131748604), ob6.L0(2131746795), R.drawable.msg2_battery, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b622 = b69;
+                byte b522 = b68;
                 e eVar2 = eVar;
-                switch (b622) {
+                switch (b522) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -8908,13 +8907,13 @@ public class fs8 extends c79 {
             }
         });
         es8Var125.h = "tg://settings/power-saving/stickers";
-        final byte b70 = 24;
+        final byte b69 = 24;
         es8 es8Var126 = new es8(902, ob6.L0(2131748616), null, ob6.L0(2131746795), ob6.L0(2131748604), R.drawable.msg2_battery, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b622 = b70;
+                byte b522 = b69;
                 e eVar2 = eVar;
-                switch (b622) {
+                switch (b522) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -9032,13 +9031,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b71 = 26;
+        final byte b70 = 26;
         es8 es8Var127 = new es8(903, ob6.L0(2131748618), null, ob6.L0(2131746795), ob6.L0(2131748604), R.drawable.msg2_battery, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b622 = b71;
+                byte b522 = b70;
                 e eVar2 = eVar;
-                switch (b622) {
+                switch (b522) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -9156,13 +9155,13 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b72 = 27;
+        final byte b71 = 27;
         es8 es8Var128 = new es8(904, ob6.L0(2131748609), ob6.L0(2131746795), R.drawable.msg2_battery, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b622 = b72;
+                byte b522 = b71;
                 e eVar2 = eVar;
-                switch (b622) {
+                switch (b522) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -9281,13 +9280,13 @@ public class fs8 extends c79 {
             }
         });
         es8Var128.h = "tg://settings/power-saving/emoji";
-        final byte b73 = 29;
+        final byte b72 = 29;
         es8 es8Var129 = new es8(905, ob6.L0(2131748616), null, ob6.L0(2131746795), ob6.L0(2131748609), R.drawable.msg2_battery, new Runnable() { // from class: zr8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b622 = b73;
+                byte b522 = b72;
                 e eVar2 = eVar;
-                switch (b622) {
+                switch (b522) {
                     case 0:
                     case 1:
                         uh9.o(0, eVar2);
@@ -9405,14 +9404,14 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b74 = 0;
+        final byte b73 = 0;
         es8 es8Var130 = new es8(906, ob6.L0(2131748615), null, ob6.L0(2131746795), ob6.L0(2131748609), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b74;
+                byte b222 = b73;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -9550,14 +9549,14 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b75 = 1;
+        final byte b74 = 1;
         es8 es8Var131 = new es8(907, ob6.L0(2131748618), null, ob6.L0(2131746795), ob6.L0(2131748609), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b75;
+                byte b222 = b74;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -9695,14 +9694,14 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b76 = 2;
+        final byte b75 = 2;
         es8 es8Var132 = new es8(908, ob6.L0(2131748610), ob6.L0(2131746795), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b76;
+                byte b222 = b75;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -9841,14 +9840,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var132.h = "tg://settings/power-saving/effects";
-        final byte b77 = 3;
+        final byte b76 = 3;
         es8 es8Var133 = new es8(909, ob6.L0(2131748613), null, ob6.L0(2131746795), ob6.L0(2131748610), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b77;
+                byte b222 = b76;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -9987,14 +9986,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var133.h = "tg://settings/power-saving/background";
-        final byte b78 = 4;
+        final byte b77 = 4;
         es8 es8Var134 = new es8(910, ob6.L0(2131748601), null, ob6.L0(2131746795), ob6.L0(2131748610), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b78;
+                byte b222 = b77;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -10132,14 +10131,14 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b79 = 5;
+        final byte b78 = 5;
         es8 es8Var135 = new es8(911, ob6.L0(2131748605), null, ob6.L0(2131746795), ob6.L0(2131748610), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b79;
+                byte b222 = b78;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -10278,14 +10277,14 @@ public class fs8 extends c79 {
             }
         });
         if (xea.o() >= 1) {
-            final byte b80 = 7;
+            final byte b79 = 7;
             es8Var20 = new es8(jn7.w5, ob6.L0(2131748612), null, ob6.L0(2131746795), ob6.L0(2131748610), R.drawable.msg2_battery, new Runnable() { // from class: as8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b322 = b80;
+                    byte b222 = b79;
                     int i = 0;
                     e eVar2 = eVar;
-                    switch (b322) {
+                    switch (b222) {
                         case 0:
                             q86 q86Var = new q86();
                             eVar2.presentFragment(q86Var);
@@ -10426,14 +10425,14 @@ public class fs8 extends c79 {
         } else {
             es8Var20 = null;
         }
-        final byte b81 = 8;
+        final byte b80 = 8;
         es8 es8Var136 = new es8(912, ob6.L0(2131748606), null, ob6.L0(2131746795), ob6.L0(2131748610), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b81;
+                byte b222 = b80;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -10571,14 +10570,14 @@ public class fs8 extends c79 {
                 }
             }
         });
-        final byte b82 = 9;
+        final byte b81 = 9;
         es8 es8Var137 = new es8(913, ob6.L0(2131748611), ob6.L0(2131746795), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b82;
+                byte b222 = b81;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -10717,14 +10716,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var137.h = "tg://settings/power-saving/call-animations";
-        final byte b83 = 11;
+        final byte b82 = 11;
         es8 es8Var138 = new es8(jn7.q3, ob6.L0(2131748614), ob6.L0(2131746795), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b83;
+                byte b222 = b82;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -10863,14 +10862,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var138.h = "tg://settings/power-saving/videos";
-        final byte b84 = 12;
+        final byte b83 = 12;
         es8 es8Var139 = new es8(jn7.p3, ob6.L0(2131748617), ob6.L0(2131746795), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b84;
+                byte b222 = b83;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -11009,14 +11008,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var139.h = "tg://settings/power-saving/gifs";
-        final byte b85 = 13;
+        final byte b84 = 13;
         es8 es8Var140 = new es8(914, ob6.L0(2131748600), ob6.L0(2131746795), R.drawable.msg2_battery, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b85;
+                byte b222 = b84;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -11155,14 +11154,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var140.h = "tg://settings/power-saving/transitions";
-        final byte b86 = 14;
+        final byte b85 = 14;
         es8 es8Var141 = new es8(400, ob6.L0(2131748808), R.drawable.msg2_language, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b86;
+                byte b222 = b85;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -11301,14 +11300,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var141.h = "tg://settings/language";
-        final byte b87 = 15;
+        final byte b86 = 15;
         es8 es8Var142 = new es8(405, ob6.L0(2131745055), ob6.L0(2131748808), R.drawable.msg2_language, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b87;
+                byte b222 = b86;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -11447,15 +11446,15 @@ public class fs8 extends c79 {
             }
         });
         es8Var142.h = "tg://settings/language/show-button";
-        if (uc7.s1(currentAccount).i4.r()) {
-            final byte b88 = 16;
+        if (uc7.s1(currentAccount).j4.r()) {
+            final byte b87 = 16;
             es8 es8Var143 = new es8(406, ob6.L0(2131751323), ob6.L0(2131748808), R.drawable.msg2_language, new Runnable() { // from class: as8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    byte b322 = b88;
+                    byte b222 = b87;
                     int i = 0;
                     e eVar2 = eVar;
-                    switch (b322) {
+                    switch (b222) {
                         case 0:
                             q86 q86Var = new q86();
                             eVar2.presentFragment(q86Var);
@@ -11596,14 +11595,14 @@ public class fs8 extends c79 {
             es8Var143.h = "tg://settings/language/do-not-translate";
             es8Var41 = es8Var143;
         }
-        final byte b89 = 18;
+        final byte b88 = 18;
         es8 es8Var144 = new es8(402, ob6.L0(2131753979), ob6.L0(2131745207), R.drawable.msg2_help, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b89;
+                byte b222 = b88;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -11742,14 +11741,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var144.h = "tg://settings/ask-question";
-        final byte b90 = 19;
+        final byte b89 = 19;
         es8 es8Var145 = new es8(403, ob6.L0(2131743895), ob6.L0(2131745207), R.drawable.msg2_help, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b90;
+                byte b222 = b89;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -11888,14 +11887,14 @@ public class fs8 extends c79 {
             }
         });
         es8Var145.h = "tg://settings/faq";
-        final byte b91 = 20;
+        final byte b90 = 20;
         es8 es8Var146 = new es8(404, ob6.L0(2131746512), ob6.L0(2131745207), R.drawable.msg2_help, new Runnable() { // from class: as8
             @Override // java.lang.Runnable
             public final void run() {
-                byte b322 = b91;
+                byte b222 = b90;
                 int i = 0;
                 e eVar2 = eVar;
-                switch (b322) {
+                switch (b222) {
                     case 0:
                         q86 q86Var = new q86();
                         eVar2.presentFragment(q86Var);
@@ -12094,9 +12093,9 @@ public class fs8 extends c79 {
         }
         if (!TextUtils.isEmpty(str)) {
             to3 to3Var = Utilities.g;
-            hp8 hp8Var = new hp8(this, str, (byte) 13);
-            this.y = hp8Var;
-            to3Var.d(hp8Var, 300L);
+            ep8 ep8Var = new ep8(this, str, (byte) 14);
+            this.y = ep8Var;
+            to3Var.d(ep8Var, 300L);
             return;
         }
         this.x = false;
@@ -12221,18 +12220,18 @@ public class fs8 extends c79 {
                 return;
             }
         }
-        eca ecaVar = (eca) view;
+        fca fcaVar = (fca) view;
         if (this.x) {
             int size = this.r.size();
             ArrayList arrayList = this.r;
             if (i >= size) {
                 int k = bs2.k(1, i, arrayList);
-                ecaVar.a((CharSequence) this.n.get(this.r.size() + k), ((hc7) this.s.get(k)).b, true, k < this.r.size() - 1);
+                fcaVar.a((CharSequence) this.n.get(this.r.size() + k), ((hc7) this.s.get(k)).b, true, k < this.r.size() - 1);
                 return;
             } else {
                 es8 es8Var = (es8) arrayList.get(i);
                 es8 es8Var2 = i > 0 ? (es8) this.r.get(i - 1) : null;
-                ecaVar.b((CharSequence) this.n.get(i), es8Var.d, (es8Var2 == null || es8Var2.e != es8Var.e) ? es8Var.e : 0, i < this.r.size() - 1);
+                fcaVar.b((CharSequence) this.n.get(i), es8Var.d, (es8Var2 == null || es8Var2.e != es8Var.e) ? es8Var.e : 0, i < this.r.size() - 1);
                 return;
             }
         }
@@ -12243,23 +12242,23 @@ public class fs8 extends c79 {
         if (i >= arrayList2.size()) {
             int k2 = bs2.k(1, i, arrayList2);
             hc7 hc7Var = (hc7) this.d.get(k2);
-            ecaVar.a(hc7Var.a, hc7Var.b, true, k2 < arrayList2.size() - 1);
+            fcaVar.a(hc7Var.a, hc7Var.b, true, k2 < arrayList2.size() - 1);
             return;
         }
         Object obj = arrayList2.get(i);
         if (obj instanceof es8) {
             es8 es8Var3 = (es8) obj;
-            ecaVar.a(es8Var3.a, es8Var3.d, false, i < arrayList2.size() - 1);
+            fcaVar.a(es8Var3.a, es8Var3.d, false, i < arrayList2.size() - 1);
         } else if (obj instanceof hc7) {
             hc7 hc7Var2 = (hc7) obj;
-            ecaVar.a(hc7Var2.a, hc7Var2.b, true, i < arrayList2.size() - 1);
+            fcaVar.a(hc7Var2.a, hc7Var2.b, true, i < arrayList2.size() - 1);
         }
     }
 
     @Override // j79
     public final f89 x(ViewGroup viewGroup, int i) {
         Context context = this.h;
-        View mf5Var = i != 0 ? i != 1 ? new mf5(context, 16) : new p55(context, null) : new eca(context);
+        View mf5Var = i != 0 ? i != 1 ? new mf5(context, 16) : new p55(context, null) : new fca(context);
         mf5Var.setLayoutParams(new r79(-1, -2));
         return new n69(mf5Var);
     }

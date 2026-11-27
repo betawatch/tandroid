@@ -44,7 +44,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class SecretMediaViewer implements fn7, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     public static volatile SecretMediaViewer w1;
@@ -1127,7 +1127,7 @@ public class SecretMediaViewer implements fn7, GestureDetector.OnGestureListener
         }
         this.J0.setInterpolator(new DecelerateInterpolator());
         photoBackgroundDrawable.b = 0;
-        photoBackgroundDrawable.a = new en9(this, M, (byte) 15);
+        photoBackgroundDrawable.a = new dn9(this, M, (byte) 16);
         this.J0.start();
     }
 
@@ -1490,9 +1490,9 @@ public class SecretMediaViewer implements fn7, GestureDetector.OnGestureListener
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public class PhotoBackgroundDrawable extends ColorDrawable {
-        public en9 a;
+        public dn9 a;
         public int b;
 
         public PhotoBackgroundDrawable() {
@@ -1501,13 +1501,13 @@ public class SecretMediaViewer implements fn7, GestureDetector.OnGestureListener
 
         @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
         public final void draw(Canvas canvas) {
-            en9 en9Var;
+            dn9 dn9Var;
             super.draw(canvas);
             if (getAlpha() != 0) {
-                if (this.b != 2 || (en9Var = this.a) == null) {
+                if (this.b != 2 || (dn9Var = this.a) == null) {
                     invalidateSelf();
                 } else {
-                    en9Var.run();
+                    dn9Var.run();
                     this.a = null;
                 }
                 this.b++;

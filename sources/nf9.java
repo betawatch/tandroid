@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class nf9 extends View {
     public final /* synthetic */ byte a;
@@ -41,10 +41,10 @@ public final class nf9 extends View {
         switch (this.a) {
             case 12:
                 canvas.save();
-                rbb rbbVar = (rbb) this.b;
-                canvas.translate(rbbVar.d1.getX() + rbbVar.m0.getX(), rbbVar.d1.getY() + rbbVar.m0.getY());
-                hbb hbbVar = rbbVar.d1;
-                hbbVar.k(canvas, hbbVar.getBounds(), rbbVar.d1.getOver2Alpha());
+                sbb sbbVar = (sbb) this.b;
+                canvas.translate(sbbVar.d1.getX() + sbbVar.m0.getX(), sbbVar.d1.getY() + sbbVar.m0.getY());
+                ibb ibbVar = sbbVar.d1;
+                ibbVar.k(canvas, ibbVar.getBounds(), sbbVar.d1.getOver2Alpha());
                 canvas.restore();
                 break;
             default:
@@ -169,8 +169,8 @@ public final class nf9 extends View {
                             wmaVar.d = wmaVar.b;
                             wmaVar.e = wmaVar.c;
                         }
-                        if (newDrawable instanceof hh7) {
-                            ((hh7) newDrawable).p(wmaVar.M);
+                        if (newDrawable instanceof ih7) {
+                            ((ih7) newDrawable).p(wmaVar.M);
                         }
                         wmaVar.b = newDrawable;
                         if (wmaVar.N && (newDrawable instanceof g82)) {
@@ -178,8 +178,8 @@ public final class nf9 extends View {
                         }
                         if (wmaVar.N) {
                             Drawable drawable2 = wmaVar.b;
-                            if (drawable2 instanceof hh7) {
-                                ((hh7) drawable2).k();
+                            if (drawable2 instanceof ih7) {
+                                ((ih7) drawable2).k();
                             }
                         }
                         wmaVar.c = newDrawableMotion;
@@ -212,9 +212,9 @@ public final class nf9 extends View {
                                 f2 = f;
                                 f3 = f6;
                             }
-                            if (drawable3 instanceof hh7) {
-                                hh7 hh7Var = (hh7) drawable3;
-                                if (hh7Var.u != null) {
+                            if (drawable3 instanceof ih7) {
+                                ih7 ih7Var = (ih7) drawable3;
+                                if (ih7Var.u != null) {
                                     int currentActionBarHeight = (wmaVar.O() ? a.getCurrentActionBarHeight() : 0) + ((wmaVar.P() && wmaVar.s) ? hl.m : 0);
                                     int measuredHeight = wmaVar.W() ? getRootView().getMeasuredHeight() - currentActionBarHeight : getHeight();
                                     i = i2;
@@ -237,7 +237,7 @@ public final class nf9 extends View {
                                         canvas.save();
                                         canvas.clipRect(0, 0, getMeasuredWidth(), getRootView().getMeasuredHeight() - wmaVar.h);
                                     }
-                                    hh7Var.f = wmaVar.F;
+                                    ih7Var.f = wmaVar.F;
                                     drawable3.setBounds(0, 0, getMeasuredWidth(), (int) ((getRootView().getMeasuredHeight() - wmaVar.F) + f2));
                                     drawable3.draw(canvas);
                                     if (wmaVar.h != 0) {
@@ -277,9 +277,9 @@ public final class nf9 extends View {
                                     if (drawable3 instanceof g82) {
                                         g82 g82Var = (g82) drawable3;
                                         g82Var.b = this;
-                                        hh7 hh7Var2 = g82Var.f;
-                                        if (hh7Var2 != null) {
-                                            hh7Var2.p(this);
+                                        ih7 ih7Var2 = g82Var.f;
+                                        if (ih7Var2 != null) {
+                                            ih7Var2.p(this);
                                         }
                                     }
                                     float f7 = f3 - f4;
@@ -321,8 +321,8 @@ public final class nf9 extends View {
                                 }
                                 if (wmaVar.N) {
                                     Drawable drawable4 = wmaVar.d;
-                                    if (drawable4 instanceof hh7) {
-                                        ((hh7) drawable4).l();
+                                    if (drawable4 instanceof ih7) {
+                                        ((ih7) drawable4).l();
                                     }
                                 }
                                 wmaVar.d = null;

@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class n68 {
     public TL_stories.StoryItem a = null;
@@ -340,13 +340,13 @@ public final class n68 {
         int i;
         this.g = false;
         o68 o68Var = this.k;
-        y58 y58Var = o68Var.u0;
+        z58 z58Var = o68Var.u0;
         n68 n68Var = o68Var.y1;
         b6b b6bVar = n68Var.b;
         if (b6bVar != null) {
             CharSequence charSequence = b6bVar.c.C0;
             this.h = charSequence;
-            CharSequence m = pv3.m(charSequence, y58Var.b0.getPaint().getFontMetricsInt(), false, null, 0);
+            CharSequence m = pv3.m(charSequence, z58Var.b0.getPaint().getFontMetricsInt(), false, null, 0);
             this.h = m;
             SpannableStringBuilder spannableStringBuilder = m == null ? new SpannableStringBuilder() : SpannableStringBuilder.valueOf(m);
             TLRPC.User X1 = uc7.s1(o68Var.m2).X1(Long.valueOf(o68Var.l1));
@@ -361,13 +361,13 @@ public final class n68 {
             if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, r3c.H0())) {
                 String str = n68Var.a.caption;
                 this.h = str;
-                CharSequence m2 = pv3.m(str, y58Var.b0.getPaint().getFontMetricsInt(), false, null, 0);
+                CharSequence m2 = pv3.m(str, z58Var.b0.getPaint().getFontMetricsInt(), false, null, 0);
                 this.h = m2;
                 if (m2 == null || n68Var.a.entities == null) {
                     return;
                 }
-                SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(r47.A5(new SpannableStringBuilder(n68Var.a.caption), n68Var.a.entities, y58Var.b0.getPaint().getFontMetricsInt(), false));
-                SpannableStringBuilder.valueOf(pv3.m(valueOf, y58Var.b0.getPaint().getFontMetricsInt(), false, null, 0));
+                SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(r47.A5(new SpannableStringBuilder(n68Var.a.caption), n68Var.a.entities, z58Var.b0.getPaint().getFontMetricsInt(), false));
+                SpannableStringBuilder.valueOf(pv3.m(valueOf, z58Var.b0.getPaint().getFontMetricsInt(), false, null, 0));
                 i = (o68Var.l1 < 0 || uc7.s1(o68Var.m2).m5(uc7.s1(o68Var.m2).X1(Long.valueOf(o68Var.l1)))) ? 1 : 0;
                 if (i != 0) {
                     r47.d(valueOf, true);
@@ -380,13 +380,13 @@ public final class n68 {
             TLRPC.TL_textWithEntities tL_textWithEntities = n68Var.a.translatedText;
             String str2 = tL_textWithEntities.text;
             this.h = str2;
-            CharSequence m3 = pv3.m(str2, y58Var.b0.getPaint().getFontMetricsInt(), false, null, 0);
+            CharSequence m3 = pv3.m(str2, z58Var.b0.getPaint().getFontMetricsInt(), false, null, 0);
             this.h = m3;
             if (m3 == null || tL_textWithEntities.entities == null) {
                 return;
             }
-            SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(r47.A5(new SpannableStringBuilder(tL_textWithEntities.text), tL_textWithEntities.entities, y58Var.b0.getPaint().getFontMetricsInt(), false));
-            SpannableStringBuilder.valueOf(pv3.m(valueOf2, y58Var.b0.getPaint().getFontMetricsInt(), false, null, 0));
+            SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(r47.A5(new SpannableStringBuilder(tL_textWithEntities.text), tL_textWithEntities.entities, z58Var.b0.getPaint().getFontMetricsInt(), false));
+            SpannableStringBuilder.valueOf(pv3.m(valueOf2, z58Var.b0.getPaint().getFontMetricsInt(), false, null, 0));
             i = (o68Var.l1 < 0 || uc7.s1(o68Var.m2).m5(uc7.s1(o68Var.m2).X1(Long.valueOf(o68Var.l1)))) ? 1 : 0;
             if (i != 0) {
                 r47.d(valueOf2, true);

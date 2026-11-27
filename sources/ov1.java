@@ -8,9 +8,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ov1 implements oi7, oj3 {
+public final /* synthetic */ class ov1 implements pi7, oj3 {
     public final /* synthetic */ ChatActivityEnterView a;
     public final /* synthetic */ r47 b;
     public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer c;
@@ -26,7 +26,7 @@ public final /* synthetic */ class ov1 implements oi7, oj3 {
         return false;
     }
 
-    @Override // oi7
+    @Override // pi7
     public final void a(ArrayList arrayList) {
         int i = ChatActivityEnterView.X7;
         if (arrayList.isEmpty()) {
@@ -68,7 +68,7 @@ public final /* synthetic */ class ov1 implements oi7, oj3 {
             while (i4 < size) {
                 Object obj = arrayList.get(i4);
                 i4++;
-                hashSet.add(Long.valueOf(((if7) obj).a));
+                hashSet.add(Long.valueOf(((jf7) obj).a));
             }
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {

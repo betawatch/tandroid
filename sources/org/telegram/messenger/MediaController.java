@@ -70,7 +70,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class MediaController implements AudioManager.OnAudioFocusChangeListener, fn7, SensorEventListener {
     public static final String[] W1;
@@ -614,7 +614,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
     }
 
-    public static void i0(Context context, k5 k5Var, ArrayList arrayList, df7 df7Var) {
+    public static void i0(Context context, k5 k5Var, ArrayList arrayList, ef7 ef7Var) {
         if (arrayList.isEmpty()) {
             return;
         }
@@ -622,7 +622,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         jo6Var.d = new HashMap();
         jo6Var.a = k5Var;
         jo6Var.c = arrayList;
-        jo6Var.s = df7Var;
+        jo6Var.s = ef7Var;
         jo6Var.w = ((r47) arrayList.get(0)).I3();
         int i = k5Var.a;
         jn7.f(i).a(jo6Var, jn7.Y1);
@@ -1053,7 +1053,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         im0 im0Var = phd.b;
         im0Var.a();
         if (!im0Var.c) {
-            return !uc7.s1(i).k4.s0.f;
+            return !uc7.s1(i).l4.s0.f;
         }
         im0Var.a();
         return im0Var.d;
@@ -4467,7 +4467,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                             j8 = j9;
                                         }
                                         arrayList3 = arrayList4;
-                                        sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT data, mid FROM media_topics WHERE uid = " + j7 + " AND topic_id = " + j6 + " AND mid " + str + " " + j8 + " AND type = 4 ORDER BY date DESC, mid DESC LIMIT 1000", new Object[0]);
+                                        sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT data, mid FROM media_topics WHERE uid = " + j7 + " AND topic_id = " + j6 + " AND +mid " + str + " " + j8 + " AND type = 4 ORDER BY date DESC, mid DESC LIMIT 1000", new Object[0]);
                                     } catch (Exception e) {
                                         e = e;
                                         arrayList3 = arrayList4;
@@ -4480,17 +4480,17 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                         if (wf3.B(j7)) {
                                             SQLiteDatabase sQLiteDatabase2 = ls6Var.getMessagesStorage().b;
                                             Locale locale2 = Locale.US;
-                                            sQLiteCursor2 = sQLiteDatabase2.queryFinalized("SELECT data, mid FROM media_v4 WHERE uid = " + j7 + " AND mid > " + j8 + " AND type = 4 ORDER BY date DESC, mid DESC LIMIT 1000", new Object[0]);
+                                            sQLiteCursor2 = sQLiteDatabase2.queryFinalized("SELECT data, mid FROM media_v4 WHERE uid = " + j7 + " AND +mid > " + j8 + " AND type = 4 ORDER BY date DESC, mid DESC LIMIT 1000", new Object[0]);
                                         } else {
                                             SQLiteDatabase sQLiteDatabase3 = ls6Var.getMessagesStorage().b;
                                             Locale locale3 = Locale.US;
-                                            sQLiteCursor2 = sQLiteDatabase3.queryFinalized("SELECT data, mid FROM media_v4 WHERE uid = " + j7 + " AND mid < " + j8 + " AND type = 4 ORDER BY date DESC, mid DESC LIMIT 1000", new Object[0]);
+                                            sQLiteCursor2 = sQLiteDatabase3.queryFinalized("SELECT data, mid FROM media_v4 WHERE uid = " + j7 + " AND +mid < " + j8 + " AND type = 4 ORDER BY date DESC, mid DESC LIMIT 1000", new Object[0]);
                                         }
                                     } else if (wf3.B(j7)) {
                                         SQLiteDatabase sQLiteDatabase4 = ls6Var.getMessagesStorage().b;
                                         Locale locale4 = Locale.US;
                                         r1 = 0;
-                                        sQLiteCursor = sQLiteDatabase4.queryFinalized("SELECT data, mid FROM media_v4 WHERE uid = " + j7 + " AND mid < " + j9 + " AND type = 4 ORDER BY date DESC, mid DESC LIMIT 1000", new Object[0]);
+                                        sQLiteCursor = sQLiteDatabase4.queryFinalized("SELECT data, mid FROM media_v4 WHERE uid = " + j7 + " AND +mid < " + j9 + " AND type = 4 ORDER BY date DESC, mid DESC LIMIT 1000", new Object[0]);
                                         while (sQLiteCursor.next()) {
                                             try {
                                                 NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(r1);
@@ -4523,7 +4523,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                     } else {
                                         SQLiteDatabase sQLiteDatabase5 = ls6Var.getMessagesStorage().b;
                                         Locale locale5 = Locale.US;
-                                        sQLiteCursor2 = sQLiteDatabase5.queryFinalized("SELECT data, mid FROM media_v4 WHERE uid = " + j7 + " AND mid > " + j9 + " AND type = 4 ORDER BY date DESC, mid DESC LIMIT 1000", new Object[0]);
+                                        sQLiteCursor2 = sQLiteDatabase5.queryFinalized("SELECT data, mid FROM media_v4 WHERE uid = " + j7 + " AND +mid > " + j9 + " AND type = 4 ORDER BY date DESC, mid DESC LIMIT 1000", new Object[0]);
                                     }
                                 }
                                 r1 = 0;

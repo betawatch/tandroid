@@ -2,7 +2,7 @@
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ne7 implements Runnable {
     public final /* synthetic */ int E;
@@ -15,7 +15,7 @@ public final /* synthetic */ class ne7 implements Runnable {
     public final /* synthetic */ boolean L;
     public final /* synthetic */ boolean M;
     public final /* synthetic */ qsb N;
-    public final /* synthetic */ jf7 a;
+    public final /* synthetic */ kf7 a;
     public final /* synthetic */ TLRPC.TL_messages_messages b;
     public final /* synthetic */ int c;
     public final /* synthetic */ long d;
@@ -29,8 +29,8 @@ public final /* synthetic */ class ne7 implements Runnable {
     public final /* synthetic */ int x;
     public final /* synthetic */ int y;
 
-    public /* synthetic */ ne7(jf7 jf7Var, TLRPC.TL_messages_messages tL_messages_messages, int i, long j, long j2, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, boolean z, int i11, long j3, int i12, boolean z2, int i13, boolean z3, boolean z4, qsb qsbVar) {
-        this.a = jf7Var;
+    public /* synthetic */ ne7(kf7 kf7Var, TLRPC.TL_messages_messages tL_messages_messages, int i, long j, long j2, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, boolean z, int i11, long j3, int i12, boolean z2, int i13, boolean z3, boolean z4, qsb qsbVar) {
+        this.a = kf7Var;
         this.b = tL_messages_messages;
         this.c = i;
         this.d = j;

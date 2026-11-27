@@ -6,15 +6,15 @@ import android.graphics.ColorFilter;
 import android.util.SparseIntArray;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class j0a extends xy3 {
     public final /* synthetic */ int g0;
     public final /* synthetic */ n1a h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0a(n1a n1aVar, Context context, vnb vnbVar, boolean z, boolean z2, int i, en9 en9Var, int i2, int i3) {
-        super(context, vnbVar, z, z2, false, true, i, en9Var, i2, false);
+    public j0a(n1a n1aVar, Context context, vnb vnbVar, boolean z, boolean z2, int i, dn9 dn9Var, int i2, int i3) {
+        super(context, vnbVar, z, z2, false, true, i, dn9Var, i2, false);
         this.h0 = n1aVar;
         this.g0 = i3;
     }

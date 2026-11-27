@@ -35,7 +35,7 @@ import org.telegram.ui.Components.Switch;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class tg0 implements fd, s84, t36, ncc, jcc, t69, nr7, yyc, dz7, zk0, s69, vka, uka, yma, gcb, WebRtcAudioRecord.WebRtcAudioRecordSamplesReadyCallback, h69, CameraView.CameraViewDelegate, hc1 {
     public final /* synthetic */ byte a;
@@ -444,20 +444,20 @@ public final /* synthetic */ class tg0 implements fd, s84, t36, ncc, jcc, t69, n
                 }
                 break;
             default:
-                rbb rbbVar = ((hbb) ((zb1) obj)).S1;
-                gbb gbbVar = rbbVar.Y0;
-                if (gbbVar != null) {
-                    gbbVar.s(null, null, true);
-                }
-                vab vabVar = rbbVar.w1;
-                if (vabVar != null) {
-                    vabVar.n0();
-                }
-                hbb hbbVar = rbbVar.d1;
+                sbb sbbVar = ((ibb) ((zb1) obj)).S1;
+                hbb hbbVar = sbbVar.Y0;
                 if (hbbVar != null) {
-                    hbbVar.setHasRoundVideo(false);
+                    hbbVar.s(null, null, true);
                 }
-                c8b c8bVar = rbbVar.L1;
+                wab wabVar = sbbVar.w1;
+                if (wabVar != null) {
+                    wabVar.n0();
+                }
+                ibb ibbVar = sbbVar.d1;
+                if (ibbVar != null) {
+                    ibbVar.setHasRoundVideo(false);
+                }
+                c8b c8bVar = sbbVar.L1;
                 if (c8bVar != null) {
                     File file = c8bVar.o0;
                     if (file != null) {
@@ -465,15 +465,15 @@ public final /* synthetic */ class tg0 implements fd, s84, t36, ncc, jcc, t69, n
                             file.delete();
                         } catch (Exception unused) {
                         }
-                        c8bVar = rbbVar.L1;
+                        c8bVar = sbbVar.L1;
                         c8bVar.o0 = null;
                     }
                     if (c8bVar.p0 != null) {
                         try {
-                            new File(rbbVar.L1.p0).delete();
+                            new File(sbbVar.L1.p0).delete();
                         } catch (Exception unused2) {
                         }
-                        rbbVar.L1.p0 = null;
+                        sbbVar.L1.p0 = null;
                         break;
                     }
                 }

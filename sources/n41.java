@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class n41 extends n9c implements fn7 {
     public static id e;
@@ -117,7 +117,7 @@ public final class n41 extends n9c implements fn7 {
         arrayList.add(b8cVar);
         l9cVar.V();
         r41 d = r41.d(this.currentAccount);
-        if (d.b.size() < uc7.s1(d.a).k4.u2.f()) {
+        if (d.b.size() < uc7.s1(d.a).l4.u2.f()) {
             b8c c = b8c.c(1, R.drawable.menu_link_create, ob6.M0(2131752690, null));
             c.r = true;
             arrayList.add(c);

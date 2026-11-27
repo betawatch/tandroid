@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class bja extends yia {
     public final ArrayList E;
@@ -18,7 +18,7 @@ public class bja extends yia {
     public final boolean h;
     public final int n;
     public final ArrayList r;
-    public u5b s;
+    public v5b s;
     public final int w;
     public final zia x;
     public boolean y;
@@ -46,29 +46,29 @@ public class bja extends yia {
         e eVar = ejaVar.y1;
         long j = ejaVar.m1;
         int currentAccount = eVar.getCurrentAccount();
-        u5b u5bVar = null;
+        v5b v5bVar = null;
         if (!TextUtils.isEmpty(ejaVar.getStoriesHashtag())) {
-            u5b u5bVar2 = ejaVar.X1;
-            if (u5bVar2 == null) {
-                u5bVar2 = new p5b(currentAccount, TextUtils.isEmpty(ejaVar.getStoriesHashtagUsername()) ? null : ejaVar.getStoriesHashtagUsername(), ejaVar.getStoriesHashtag());
-                ejaVar.X1 = u5bVar2;
+            v5b v5bVar2 = ejaVar.X1;
+            if (v5bVar2 == null) {
+                v5bVar2 = new q5b(currentAccount, TextUtils.isEmpty(ejaVar.getStoriesHashtagUsername()) ? null : ejaVar.getStoriesHashtagUsername(), ejaVar.getStoriesHashtag());
+                ejaVar.X1 = v5bVar2;
             }
-            u5bVar = u5bVar2;
-            this.s = u5bVar;
+            v5bVar = v5bVar2;
+            this.s = v5bVar;
         } else if (ejaVar.getStoriesArea() != null) {
-            u5b u5bVar3 = ejaVar.X1;
-            if (u5bVar3 == null) {
-                u5bVar3 = new p5b(currentAccount, ejaVar.getStoriesArea());
-                ejaVar.X1 = u5bVar3;
+            v5b v5bVar3 = ejaVar.X1;
+            if (v5bVar3 == null) {
+                v5bVar3 = new q5b(currentAccount, ejaVar.getStoriesArea());
+                ejaVar.X1 = v5bVar3;
             }
-            u5bVar = u5bVar3;
-            this.s = u5bVar;
+            v5bVar = v5bVar3;
+            this.s = v5bVar;
         } else if (z) {
             int i3 = 1;
             Object[] objArr = j <= 0 && (X1 = uc7.s1(currentAccount).X1(Long.valueOf(j))) != null && X1.bot;
             if (i <= 0) {
-                u5bVar = eVar.getMessagesController().O1().z(0, i, ejaVar.m1, true);
-                this.s = u5bVar;
+                v5bVar = eVar.getMessagesController().O1().z(0, i, ejaVar.m1, true);
+                this.s = v5bVar;
             } else {
                 c6b O1 = eVar.getMessagesController().O1();
                 long j2 = ejaVar.m1;
@@ -76,12 +76,12 @@ public class bja extends yia {
                     i3 = 4;
                 } else if (!z) {
                     i2 = 0;
-                    u5bVar = O1.z(i2, -1, j2, true);
-                    this.s = u5bVar;
+                    v5bVar = O1.z(i2, -1, j2, true);
+                    this.s = v5bVar;
                 }
                 i2 = i3;
-                u5bVar = O1.z(i2, -1, j2, true);
-                this.s = u5bVar;
+                v5bVar = O1.z(i2, -1, j2, true);
+                this.s = v5bVar;
             }
         } else {
             int i32 = 1;
@@ -90,8 +90,8 @@ public class bja extends yia {
             if (i <= 0) {
             }
         }
-        if (u5bVar != null) {
-            this.w = u5bVar.o();
+        if (v5bVar != null) {
+            this.w = v5bVar.o();
             this.x = new zia(this, eVar.getMessagesController().O1(), ejaVar.m1, this.s.c);
         }
         N();
@@ -106,8 +106,8 @@ public class bja extends yia {
     public final String F(int i) {
         r47 r47Var;
         TL_stories.StoryItem storyItem;
-        u5b u5bVar = this.s;
-        if (u5bVar == null || i < 0 || i >= u5bVar.i.size() || (r47Var = (r47) this.s.i.get(i)) == null || (storyItem = r47Var.l) == null) {
+        v5b v5bVar = this.s;
+        if (v5bVar == null || i < 0 || i >= v5bVar.i.size() || (r47Var = (r47) this.s.i.get(i)) == null || (storyItem = r47Var.l) == null) {
             return null;
         }
         return ob6.e0(storyItem.date, true);
@@ -119,24 +119,24 @@ public class bja extends yia {
     }
 
     public final boolean M(int i) {
-        u5b u5bVar;
-        if (this.h || (u5bVar = this.s) == null) {
+        v5b v5bVar;
+        if (this.h || (v5bVar = this.s) == null) {
             return false;
         }
-        if (u5bVar instanceof o5b) {
+        if (v5bVar instanceof p5b) {
             eja ejaVar = this.G;
             TLRPC.User X1 = uc7.s1(ejaVar.y1.getCurrentAccount()).X1(Long.valueOf(ejaVar.m1));
             return X1 != null && X1.bot && X1.bot_has_main_app && X1.bot_can_edit;
         }
-        if (i < 0 || i >= u5bVar.i.size()) {
+        if (i < 0 || i >= v5bVar.i.size()) {
             return false;
         }
         r47 r47Var = (r47) this.s.i.get(i);
-        u5b u5bVar2 = this.s;
-        if (u5bVar2.f > 0) {
+        v5b v5bVar2 = this.s;
+        if (v5bVar2.f > 0) {
             return true;
         }
-        return u5bVar2.m(r47Var.e1());
+        return v5bVar2.m(r47Var.e1());
     }
 
     public final void N() {
@@ -144,15 +144,15 @@ public class bja extends yia {
         zha zhaVar2;
         zha zhaVar3;
         zha zhaVar4;
-        u5b u5bVar = this.s;
-        if (u5bVar == null || this.h) {
+        v5b v5bVar = this.s;
+        if (v5bVar == null || this.h) {
             return;
         }
         eja ejaVar = this.G;
         boolean z = ejaVar.o1;
         zha[] zhaVarArr = ejaVar.n0;
         int[] iArr = ejaVar.p1;
-        if ((!z || (ejaVar.n1 && u5bVar.g() > 1)) && this.s.g() > 0 && !ejaVar.s0()) {
+        if ((!z || (ejaVar.n1 && v5bVar.g() > 1)) && this.s.g() > 0 && !ejaVar.s0()) {
             if (this.s.g() < 5) {
                 iArr[1] = this.s.g();
                 if (zhaVarArr != null && (zhaVar3 = zhaVarArr[0]) != null && (zhaVar4 = zhaVarArr[1]) != null && zhaVar3.h != null && zhaVar4.h != null) {

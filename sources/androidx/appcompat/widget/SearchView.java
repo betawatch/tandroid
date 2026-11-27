@@ -36,10 +36,10 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class SearchView extends s46 implements ml2 {
-    public static final yg7 x0;
+    public static final zg7 x0;
     public final SearchAutoComplete G;
     public final View H;
     public final View I;
@@ -82,34 +82,34 @@ public class SearchView extends s46 implements ml2 {
     public final WeakHashMap w0;
 
     static {
-        yg7 yg7Var = null;
+        zg7 zg7Var = null;
         if (Build.VERSION.SDK_INT < 29) {
-            yg7 yg7Var2 = new yg7();
-            yg7Var2.a = null;
-            yg7Var2.b = null;
-            yg7Var2.c = null;
-            yg7.a();
+            zg7 zg7Var2 = new zg7();
+            zg7Var2.a = null;
+            zg7Var2.b = null;
+            zg7Var2.c = null;
+            zg7.a();
             try {
                 Method declaredMethod = AutoCompleteTextView.class.getDeclaredMethod("doBeforeTextChanged", null);
-                yg7Var2.a = declaredMethod;
+                zg7Var2.a = declaredMethod;
                 declaredMethod.setAccessible(true);
             } catch (NoSuchMethodException unused) {
             }
             try {
                 Method declaredMethod2 = AutoCompleteTextView.class.getDeclaredMethod("doAfterTextChanged", null);
-                yg7Var2.b = declaredMethod2;
+                zg7Var2.b = declaredMethod2;
                 declaredMethod2.setAccessible(true);
             } catch (NoSuchMethodException unused2) {
             }
             try {
                 Method method = AutoCompleteTextView.class.getMethod("ensureImeVisible", Boolean.TYPE);
-                yg7Var2.c = method;
+                zg7Var2.c = method;
                 method.setAccessible(true);
             } catch (NoSuchMethodException unused3) {
             }
-            yg7Var = yg7Var2;
+            zg7Var = zg7Var2;
         }
-        x0 = yg7Var;
+        x0 = zg7Var;
     }
 
     public SearchView(Context context, AttributeSet attributeSet, int i) {
@@ -321,19 +321,19 @@ public class SearchView extends s46 implements ml2 {
             c.a(searchAutoComplete);
             return;
         }
-        yg7 yg7Var = x0;
-        yg7Var.getClass();
-        yg7.a();
-        Method method = yg7Var.a;
+        zg7 zg7Var = x0;
+        zg7Var.getClass();
+        zg7.a();
+        Method method = zg7Var.a;
         if (method != null) {
             try {
                 method.invoke(searchAutoComplete, null);
             } catch (Exception unused) {
             }
         }
-        yg7Var.getClass();
-        yg7.a();
-        Method method2 = yg7Var.b;
+        zg7Var.getClass();
+        zg7.a();
+        Method method2 = zg7Var.b;
         if (method2 != null) {
             try {
                 method2.invoke(searchAutoComplete, null);
@@ -767,7 +767,7 @@ public class SearchView extends s46 implements ml2 {
         t();
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class SearchAutoComplete extends ko {
         public int e;
         public SearchView f;
@@ -799,10 +799,10 @@ public class SearchView extends s46 implements ml2 {
                 }
                 return;
             }
-            yg7 yg7Var = SearchView.x0;
-            yg7Var.getClass();
-            yg7.a();
-            Method method = yg7Var.c;
+            zg7 zg7Var = SearchView.x0;
+            zg7Var.getClass();
+            zg7.a();
+            Method method = zg7Var.c;
             if (method != null) {
                 try {
                     method.invoke(this, Boolean.TRUE);
@@ -875,7 +875,7 @@ public class SearchView extends s46 implements ml2 {
             if (z && this.f.hasFocus() && getVisibility() == 0) {
                 this.h = true;
                 Context context = getContext();
-                yg7 yg7Var = SearchView.x0;
+                zg7 zg7Var = SearchView.x0;
                 if (context.getResources().getConfiguration().orientation == 2) {
                     a();
                 }

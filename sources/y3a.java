@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class y3a {
     public int a;
@@ -208,7 +208,7 @@ public final class y3a {
                                                     storyItem2 = storyItem3;
                                                     uc7.s1(i3).j4(storyViewsList.users, false);
                                                     uc7.s1(i3).c4(storyViewsList.chats, false);
-                                                    jf7.Y(i3).j1(storyViewsList.users, storyViewsList.chats, true, false);
+                                                    kf7.a0(i3).n1(storyViewsList.users, storyViewsList.chats, true, false);
                                                     if (y3aVar2.l) {
                                                         y3aVar2.l = false;
                                                         for (int i5 = 0; i5 < arrayList3.size(); i5++) {
@@ -307,7 +307,7 @@ public final class y3a {
                                                     TL_stories.TL_storyReactionsList tL_storyReactionsList = (TL_stories.TL_storyReactionsList) tLObject2;
                                                     uc7.s1(i10).j4(tL_storyReactionsList.users, false);
                                                     uc7.s1(i10).c4(tL_storyReactionsList.chats, false);
-                                                    jf7.Y(i10).j1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
+                                                    kf7.a0(i10).n1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
                                                     if (y3aVar2.l) {
                                                         y3aVar2.l = false;
                                                         for (int i11 = 0; i11 < arrayList6.size(); i11++) {
@@ -405,7 +405,7 @@ public final class y3a {
                                                     storyItem2 = storyItem3;
                                                     uc7.s1(i3).j4(storyViewsList.users, false);
                                                     uc7.s1(i3).c4(storyViewsList.chats, false);
-                                                    jf7.Y(i3).j1(storyViewsList.users, storyViewsList.chats, true, false);
+                                                    kf7.a0(i3).n1(storyViewsList.users, storyViewsList.chats, true, false);
                                                     if (y3aVar22.l) {
                                                         y3aVar22.l = false;
                                                         for (int i5 = 0; i5 < arrayList3.size(); i5++) {
@@ -504,7 +504,7 @@ public final class y3a {
                                                     TL_stories.TL_storyReactionsList tL_storyReactionsList = (TL_stories.TL_storyReactionsList) tLObject2;
                                                     uc7.s1(i10).j4(tL_storyReactionsList.users, false);
                                                     uc7.s1(i10).c4(tL_storyReactionsList.chats, false);
-                                                    jf7.Y(i10).j1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
+                                                    kf7.a0(i10).n1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
                                                     if (y3aVar22.l) {
                                                         y3aVar22.l = false;
                                                         for (int i11 = 0; i11 < arrayList6.size(); i11++) {
@@ -643,7 +643,7 @@ public final class y3a {
                                                 storyItem2 = storyItem3;
                                                 uc7.s1(i3).j4(storyViewsList.users, false);
                                                 uc7.s1(i3).c4(storyViewsList.chats, false);
-                                                jf7.Y(i3).j1(storyViewsList.users, storyViewsList.chats, true, false);
+                                                kf7.a0(i3).n1(storyViewsList.users, storyViewsList.chats, true, false);
                                                 if (y3aVar22.l) {
                                                     y3aVar22.l = false;
                                                     for (int i5 = 0; i5 < arrayList3.size(); i5++) {
@@ -742,7 +742,7 @@ public final class y3a {
                                                 TL_stories.TL_storyReactionsList tL_storyReactionsList = (TL_stories.TL_storyReactionsList) tLObject2;
                                                 uc7.s1(i10).j4(tL_storyReactionsList.users, false);
                                                 uc7.s1(i10).c4(tL_storyReactionsList.chats, false);
-                                                jf7.Y(i10).j1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
+                                                kf7.a0(i10).n1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
                                                 if (y3aVar22.l) {
                                                     y3aVar22.l = false;
                                                     for (int i11 = 0; i11 < arrayList6.size(); i11++) {
@@ -840,7 +840,7 @@ public final class y3a {
                                                 storyItem2 = storyItem3;
                                                 uc7.s1(i3).j4(storyViewsList.users, false);
                                                 uc7.s1(i3).c4(storyViewsList.chats, false);
-                                                jf7.Y(i3).j1(storyViewsList.users, storyViewsList.chats, true, false);
+                                                kf7.a0(i3).n1(storyViewsList.users, storyViewsList.chats, true, false);
                                                 if (y3aVar22.l) {
                                                     y3aVar22.l = false;
                                                     for (int i5 = 0; i5 < arrayList3.size(); i5++) {
@@ -939,7 +939,7 @@ public final class y3a {
                                                 TL_stories.TL_storyReactionsList tL_storyReactionsList = (TL_stories.TL_storyReactionsList) tLObject2;
                                                 uc7.s1(i10).j4(tL_storyReactionsList.users, false);
                                                 uc7.s1(i10).c4(tL_storyReactionsList.chats, false);
-                                                jf7.Y(i10).j1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
+                                                kf7.a0(i10).n1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
                                                 if (y3aVar22.l) {
                                                     y3aVar22.l = false;
                                                     for (int i11 = 0; i11 < arrayList6.size(); i11++) {

@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class q57 extends View implements snb {
     public final ArrayList a;
@@ -59,7 +59,7 @@ public final class q57 extends View implements snb {
         int i = aob.Ee;
         vnb vnbVar = this.c;
         int v0 = aob.v0(i, vnbVar);
-        if ((vnbVar instanceof xu1) && (((xu1) vnbVar).l() instanceof hh7) && (iArr = ((hh7) ((xu1) vnbVar).l()).a) != null) {
+        if ((vnbVar instanceof xu1) && (((xu1) vnbVar).l() instanceof ih7) && (iArr = ((ih7) ((xu1) vnbVar).l()).a) != null) {
             v0 = hl.w0(hl.w0(iArr[0], iArr[1]), hl.w0(iArr[2], iArr[3]));
         }
         this.e = aob.b(-1606201797, v0);

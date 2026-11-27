@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class lra implements Runnable {
     public final /* synthetic */ byte a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class lra implements Runnable {
                 wuaVar.Z1(j);
                 break;
             case 5:
-                dza dzaVar = new dza(wuaVar.getContext(), wuaVar.J0, this.c, 10, null, new ida(wuaVar, new boolean[]{false}, (byte) 16), 0L);
+                dza dzaVar = new dza(wuaVar.getContext(), wuaVar.J0, this.c, 10, null, new kba(wuaVar, new boolean[]{false}, (byte) 17), 0L);
                 dzaVar.setOnDismissListener(new rsa(wuaVar, (byte) 0));
                 dzaVar.show();
                 break;

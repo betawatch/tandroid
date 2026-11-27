@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class q84 {
     public static volatile q84[] g = new q84[4];
@@ -102,7 +102,7 @@ public final class q84 {
         id idVar = ndVar.a;
         idVar.S = M0;
         int i2 = this.a;
-        int f = uc7.s1(i2).k4.e3.f();
+        int f = uc7.s1(i2).l4.e3.f();
         final m84 m84Var = new m84(activity, vnbVar, f, vnbVar);
         m84Var.s0 = true;
         boolean z3 = z2;

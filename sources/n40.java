@@ -14,12 +14,12 @@ import j$.util.Objects;
 import java.math.RoundingMode;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class n40 implements t00 {
     public static final mfb k = nze.a(new m40((byte) 0));
     public final Context a;
-    public final rg7 b;
+    public final sg7 b;
     public final fa3 c;
     public final ri6 d;
     public e86 e;
@@ -35,7 +35,7 @@ public final class n40 implements t00 {
         fa3 fa3Var = (fa3) lycVar.c;
         fa3Var.getClass();
         this.c = fa3Var;
-        this.b = (rg7) lycVar.d;
+        this.b = (sg7) lycVar.d;
         this.g = (sz) lycVar.e;
         this.d = context == null ? null : new ri6(this, (byte) 7);
         this.f = vgb.a;
@@ -153,7 +153,7 @@ public final class n40 implements t00 {
             l00 a = z4 ? this.c.a(ozVar, ko4Var) : l00.d;
             if (z4 && a.a) {
                 str.getClass();
-                int c2 = dg7.c(str, ko4Var.l);
+                int c2 = eg7.c(str, ko4Var.l);
                 if (i4 == -1) {
                     i4 = gcc.t(i5);
                 }

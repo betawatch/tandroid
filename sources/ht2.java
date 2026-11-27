@@ -47,7 +47,7 @@ import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuation, s69, OnSuccessListener, l8, yma, b86, ot2, id3, xj4, t69, fd, gc7, dj8, pn3, nr7 {
     public final /* synthetic */ byte a;
@@ -320,11 +320,11 @@ public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuati
             }
             String str17 = str12;
             String sb4 = sb3.toString();
-            oy8 oy8Var = new oy8(context, new bca(str10, p, replaceAll, replaceAll2, yl5Var, sb4.length() > 0 ? jn2.k(sb4) : null, str13, str17, bs2.h(d != null ? 4 : i2)), z3fVar, ve9Var, ri6Var, sc3Var, p63Var);
+            oy8 oy8Var = new oy8(context, new cca(str10, p, replaceAll, replaceAll2, yl5Var, sb4.length() > 0 ? jn2.k(sb4) : null, str13, str17, bs2.h(d != null ? 4 : i2)), z3fVar, ve9Var, ri6Var, sc3Var, p63Var);
             AtomicReference atomicReference = (AtomicReference) oy8Var.h;
             AtomicReference atomicReference2 = oy8Var.a;
             byte b2 = 28;
-            if (!((Context) oy8Var.b).getSharedPreferences("com.google.firebase.crashlytics", 0).getString("existing_instance_identifier", "").equals(((bca) oy8Var.c).f) || (b = oy8Var.b(i2)) == null) {
+            if (!((Context) oy8Var.b).getSharedPreferences("com.google.firebase.crashlytics", 0).getString("existing_instance_identifier", "").equals(((cca) oy8Var.c).f) || (b = oy8Var.b(i2)) == null) {
                 hba b3 = oy8Var.b(3);
                 if (b3 != null) {
                     atomicReference2.set(b3);
@@ -711,7 +711,7 @@ public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuati
                                         case 0:
                                             uj3 uj3Var2 = ii3Var2.P0;
                                             i10 = ((e) uj3Var2).currentAccount;
-                                            uc7.s1(i10).W3.edit().putBoolean("stories_" + str3, false).apply();
+                                            uc7.s1(i10).X3.edit().putBoolean("stories_" + str3, false).apply();
                                             uj3Var2.getNotificationsController().c0(j, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf = trim.indexOf(" ");
@@ -723,7 +723,7 @@ public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuati
                                         default:
                                             uj3 uj3Var3 = ii3Var2.P0;
                                             i11 = ((e) uj3Var3).currentAccount;
-                                            uc7.s1(i11).W3.edit().putBoolean("stories_" + str3, true).apply();
+                                            uc7.s1(i11).X3.edit().putBoolean("stories_" + str3, true).apply();
                                             uj3Var3.getNotificationsController().c0(j, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf2 = trim.indexOf(" ");
@@ -751,7 +751,7 @@ public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuati
                                         case 0:
                                             uj3 uj3Var2 = ii3Var2.P0;
                                             i10 = ((e) uj3Var2).currentAccount;
-                                            uc7.s1(i10).W3.edit().putBoolean("stories_" + str3, false).apply();
+                                            uc7.s1(i10).X3.edit().putBoolean("stories_" + str3, false).apply();
                                             uj3Var2.getNotificationsController().c0(j, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf = trim.indexOf(" ");
@@ -763,7 +763,7 @@ public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuati
                                         default:
                                             uj3 uj3Var3 = ii3Var2.P0;
                                             i11 = ((e) uj3Var3).currentAccount;
-                                            uc7.s1(i11).W3.edit().putBoolean("stories_" + str3, true).apply();
+                                            uc7.s1(i11).X3.edit().putBoolean("stories_" + str3, true).apply();
                                             uj3Var3.getNotificationsController().c0(j, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf2 = trim.indexOf(" ");
@@ -1110,7 +1110,7 @@ public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuati
                                 case 0:
                                     uj3 uj3Var2 = ii3Var2.P0;
                                     i10 = ((e) uj3Var2).currentAccount;
-                                    uc7.s1(i10).W3.edit().putBoolean("stories_" + str3, false).apply();
+                                    uc7.s1(i10).X3.edit().putBoolean("stories_" + str3, false).apply();
                                     uj3Var2.getNotificationsController().c0(j, 0L, true);
                                     trim = user != null ? user.first_name.trim() : "";
                                     int indexOf = trim.indexOf(" ");
@@ -1122,7 +1122,7 @@ public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuati
                                 default:
                                     uj3 uj3Var3 = ii3Var2.P0;
                                     i11 = ((e) uj3Var3).currentAccount;
-                                    uc7.s1(i11).W3.edit().putBoolean("stories_" + str3, true).apply();
+                                    uc7.s1(i11).X3.edit().putBoolean("stories_" + str3, true).apply();
                                     uj3Var3.getNotificationsController().c0(j, 0L, true);
                                     trim = user != null ? user.first_name.trim() : "";
                                     int indexOf2 = trim.indexOf(" ");
@@ -1150,7 +1150,7 @@ public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuati
                                 case 0:
                                     uj3 uj3Var2 = ii3Var2.P0;
                                     i10 = ((e) uj3Var2).currentAccount;
-                                    uc7.s1(i10).W3.edit().putBoolean("stories_" + str3, false).apply();
+                                    uc7.s1(i10).X3.edit().putBoolean("stories_" + str3, false).apply();
                                     uj3Var2.getNotificationsController().c0(j, 0L, true);
                                     trim = user != null ? user.first_name.trim() : "";
                                     int indexOf = trim.indexOf(" ");
@@ -1162,7 +1162,7 @@ public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuati
                                 default:
                                     uj3 uj3Var3 = ii3Var2.P0;
                                     i11 = ((e) uj3Var3).currentAccount;
-                                    uc7.s1(i11).W3.edit().putBoolean("stories_" + str3, true).apply();
+                                    uc7.s1(i11).X3.edit().putBoolean("stories_" + str3, true).apply();
                                     uj3Var3.getNotificationsController().c0(j, 0L, true);
                                     trim = user != null ? user.first_name.trim() : "";
                                     int indexOf2 = trim.indexOf(" ");
@@ -1486,7 +1486,7 @@ public final /* synthetic */ class ht2 implements ncc, nu3, qd3, tq2, Continuati
             lq3.q(i2).S = dataAutoDownloadActivity.e;
         }
         i4 = ((e) dataAutoDownloadActivity).currentAccount;
-        SharedPreferences.Editor edit = uc7.s1(i4).X3.edit();
+        SharedPreferences.Editor edit = uc7.s1(i4).Y3.edit();
         edit.putInt(dataAutoDownloadActivity.L, dataAutoDownloadActivity.e);
         edit.commit();
         i5 = ((e) dataAutoDownloadActivity).currentAccount;

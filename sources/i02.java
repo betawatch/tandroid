@@ -18,9 +18,9 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class i02 implements hj, fd, bm3, on5, qc6, pz6, bs9, hf7, lc5, bf7, f73 {
+public final /* synthetic */ class i02 implements hj, fd, bm3, on5, qc6, pz6, bs9, if7, lc5, cf7, f73 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -31,7 +31,7 @@ public final /* synthetic */ class i02 implements hj, fd, bm3, on5, qc6, pz6, bs
         this.c = ta0Var;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         zu1 zu1Var = ((l1c) this.c).s;
         if (ik8.A(zu1Var)) {
@@ -39,7 +39,7 @@ public final /* synthetic */ class i02 implements hj, fd, bm3, on5, qc6, pz6, bs
         }
     }
 
-    @Override // hf7
+    @Override // if7
     public final void a(String str) {
         r9b r9bVar = (r9b) this.c;
         uc7.s1(r9bVar.a0.a).O1().q(this.b, str, new j9b(r9bVar, (byte) 2));
@@ -191,7 +191,7 @@ public final /* synthetic */ class i02 implements hj, fd, bm3, on5, qc6, pz6, bs
                     gx9Var.w0.remove(sl3Var);
                     gx9Var.v0.remove(sl3Var);
                     gx9Var.f();
-                    jf7.Y(gx9Var.t0).a.c(new kt((Object) gx9Var, j, (byte) 15));
+                    kf7.a0(gx9Var.t0).a.c(new kt((Object) gx9Var, j, (byte) 15));
                     break;
                 }
                 break;

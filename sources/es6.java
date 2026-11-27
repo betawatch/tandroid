@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class es6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class es6 implements Runnable {
     /* JADX WARN: Removed duplicated region for block: B:119:0x02e6 A[Catch: Exception -> 0x033c, TryCatch #1 {Exception -> 0x033c, blocks: (B:102:0x0229, B:104:0x024c, B:106:0x0252, B:108:0x0288, B:110:0x028c, B:112:0x0290, B:114:0x0296, B:116:0x029a, B:117:0x02d9, B:119:0x02e6, B:120:0x02f1, B:122:0x0302, B:124:0x0306, B:126:0x030a, B:128:0x030e, B:130:0x0312, B:131:0x0314, B:133:0x0318, B:135:0x031c, B:138:0x0327, B:144:0x0338, B:150:0x029f, B:152:0x02a7, B:157:0x02b3, B:158:0x02b6, B:160:0x02c2, B:162:0x02c8, B:163:0x02d1, B:164:0x0256, B:166:0x0260, B:168:0x0266, B:170:0x026e, B:175:0x027a, B:176:0x027d, B:172:0x0275, B:140:0x032e, B:154:0x02ae), top: B:101:0x0229, inners: #2, #4, #6 }] */
     /* JADX WARN: Removed duplicated region for block: B:122:0x0302 A[Catch: Exception -> 0x033c, TryCatch #1 {Exception -> 0x033c, blocks: (B:102:0x0229, B:104:0x024c, B:106:0x0252, B:108:0x0288, B:110:0x028c, B:112:0x0290, B:114:0x0296, B:116:0x029a, B:117:0x02d9, B:119:0x02e6, B:120:0x02f1, B:122:0x0302, B:124:0x0306, B:126:0x030a, B:128:0x030e, B:130:0x0312, B:131:0x0314, B:133:0x0318, B:135:0x031c, B:138:0x0327, B:144:0x0338, B:150:0x029f, B:152:0x02a7, B:157:0x02b3, B:158:0x02b6, B:160:0x02c2, B:162:0x02c8, B:163:0x02d1, B:164:0x0256, B:166:0x0260, B:168:0x0266, B:170:0x026e, B:175:0x027a, B:176:0x027d, B:172:0x0275, B:140:0x032e, B:154:0x02ae), top: B:101:0x0229, inners: #2, #4, #6 }] */
     /* JADX WARN: Removed duplicated region for block: B:124:0x0306 A[Catch: Exception -> 0x033c, TryCatch #1 {Exception -> 0x033c, blocks: (B:102:0x0229, B:104:0x024c, B:106:0x0252, B:108:0x0288, B:110:0x028c, B:112:0x0290, B:114:0x0296, B:116:0x029a, B:117:0x02d9, B:119:0x02e6, B:120:0x02f1, B:122:0x0302, B:124:0x0306, B:126:0x030a, B:128:0x030e, B:130:0x0312, B:131:0x0314, B:133:0x0318, B:135:0x031c, B:138:0x0327, B:144:0x0338, B:150:0x029f, B:152:0x02a7, B:157:0x02b3, B:158:0x02b6, B:160:0x02c2, B:162:0x02c8, B:163:0x02d1, B:164:0x0256, B:166:0x0260, B:168:0x0266, B:170:0x026e, B:175:0x027a, B:176:0x027d, B:172:0x0275, B:140:0x032e, B:154:0x02ae), top: B:101:0x0229, inners: #2, #4, #6 }] */
-    /* JADX WARN: Type inference failed for: r1v11, types: [jf7, rf0] */
+    /* JADX WARN: Type inference failed for: r1v11, types: [kf7, rf0] */
     /* JADX WARN: Type inference failed for: r2v9, types: [java.util.ArrayList] */
     /* JADX WARN: Type inference failed for: r6v0, types: [byte] */
     /* JADX WARN: Type inference failed for: r6v1, types: [int] */
@@ -132,7 +132,7 @@ public final /* synthetic */ class es6 implements Runnable {
                 jj.f(((uc7) this.c).currentAccount, (TLRPC.Chat) this.b, (TLRPC.TL_messages_invitedUsers) this.d);
                 return;
             case 3:
-                ?? r1 = (jf7) this.c;
+                ?? r1 = (kf7) this.c;
                 ?? r2 = (ArrayList) this.b;
                 m77 m77Var = (m77) this.d;
                 int size = r2.size();
@@ -154,16 +154,16 @@ public final /* synthetic */ class es6 implements Runnable {
                                 boolean z2 = messageReplyHeader2.reply_to_ephemeral;
                                 int i4 = messageReplyHeader2.reply_to_msg_id;
                                 if (z2) {
-                                    TL_ephemeral.EphemeralMessage U = r1.U(i4, n);
-                                    if (U != null && (i = U.top_msg_id) != 0) {
+                                    TL_ephemeral.EphemeralMessage W = r1.W(i4, n);
+                                    if (W != null && (i = W.top_msg_id) != 0) {
                                         ephemeralMessage.reply_to.forum_topic = true;
                                         ephemeralMessage.top_msg_id = i;
                                         ephemeralMessage.flags |= 2;
                                     }
                                 } else {
-                                    TLRPC.Message a0 = r1.a0(n, i4);
-                                    if (a0 != null) {
-                                        int Z1 = (int) r47.Z1(r1.currentAccount, a0, r1.X(n));
+                                    TLRPC.Message c0 = r1.c0(n, i4);
+                                    if (c0 != null) {
+                                        int Z1 = (int) r47.Z1(r1.currentAccount, c0, r1.Z(n));
                                         ephemeralMessage.top_msg_id = Z1;
                                         if (Z1 != 0) {
                                             ephemeralMessage.reply_to.forum_topic = true;
@@ -175,7 +175,7 @@ public final /* synthetic */ class es6 implements Runnable {
                         }
                     }
                 }
-                r1.d1(r2, true);
+                r1.h1(r2, true);
                 m77Var.run();
                 return;
             case 4:
@@ -353,8 +353,8 @@ public final /* synthetic */ class es6 implements Runnable {
                 p30 p30Var = (p30) lh2Var2.c;
                 String str = gcc.a;
                 ea3 ea3Var = ((n64) p30Var).a.s;
-                uj U2 = ea3Var.U();
-                ea3Var.V(U2, 1009, new aa3(U2, ko4Var, w93Var, (byte) 21));
+                uj U = ea3Var.U();
+                ea3Var.V(U, 1009, new aa3(U, ko4Var, w93Var, (byte) 21));
                 return;
             case 14:
                 a();
@@ -473,7 +473,7 @@ public final /* synthetic */ class es6 implements Runnable {
                     if (runnable == null) {
                     }
                 } catch (Exception e4) {
-                    cc4.e("Failed to check for beta update at null received: " + str2, e4);
+                    cc4.e("Failed to check for beta update at https://telegram.org/dl/android/apk-public-beta.json received: " + str2, e4);
                     return;
                 }
                 break;

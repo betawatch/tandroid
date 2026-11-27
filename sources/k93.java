@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class k93 extends n9c {
     public static void c0(String str, StringBuilder sb) {
@@ -201,8 +201,8 @@ public final class k93 extends n9c {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0965  */
-    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:10:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0984  */
     @Override // n9c
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -210,16 +210,17 @@ public final class k93 extends n9c {
     public final void a0(b8c b8cVar, View view) {
         boolean z;
         String str;
-        byte b = 2;
+        byte b = 4;
+        byte b2 = 2;
         int i = 0;
-        byte b2 = 1;
+        byte b3 = 1;
         switch (b8cVar.d) {
             case 1:
                 z = true;
                 getUserConfig().V = true;
                 getUserConfig().u(false);
                 getContactsController().l();
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                     this.a.g3.O(z);
                     return;
                 }
@@ -227,26 +228,26 @@ public final class k93 extends n9c {
             case 2:
                 getContactsController().A(0L, false);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 3:
                 getContactsController().K();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 4:
                 getMessagesController().A0();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 5:
-                jf7 messagesStorage = getMessagesStorage();
-                messagesStorage.a.c(new ad7(messagesStorage, -1, b));
+                kf7 messagesStorage = getMessagesStorage();
+                messagesStorage.a.c(new bd7(messagesStorage, -1, b2));
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 6:
@@ -262,7 +263,7 @@ public final class k93 extends n9c {
                     }
                 }
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 7:
@@ -271,32 +272,32 @@ public final class k93 extends n9c {
                 edit.putBoolean("inappCamera", xea.v0);
                 edit.apply();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 8:
-                jf7 messagesStorage2 = getMessagesStorage();
-                messagesStorage2.a.c(new be7(messagesStorage2, (byte) 11));
+                kf7 messagesStorage2 = getMessagesStorage();
+                messagesStorage2.a.c(new hd7(messagesStorage2, (byte) 13));
                 af2 e2 = af2.e(this.currentAccount);
                 e2.c = 0L;
                 e2.d = 0L;
                 e2.f().edit().clear().apply();
-                getMessagesController().X3.edit().remove("peerColors").remove("profilePeerColors").apply();
+                getMessagesController().Y3.edit().remove("peerColors").remove("profilePeerColors").apply();
                 DictationLid.b();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 9:
                 xkc.i(getParentActivity());
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 10:
                 z = true;
                 ((LaunchActivity) getParentActivity()).A(true);
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 11:
@@ -305,7 +306,7 @@ public final class k93 extends n9c {
                 SharedPreferences.Editor edit2 = uc7.e1().edit();
                 edit2.putBoolean("disableVoiceAudioEffects", xea.U);
                 edit2.apply();
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 12:
@@ -313,16 +314,16 @@ public final class k93 extends n9c {
                 xea.x();
                 jn7.e().k(jn7.T4, new Object[0]);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 13:
-                Set set = getMessagesController().u3;
+                Set set = getMessagesController().v3;
                 set.add("VALIDATE_PHONE_NUMBER");
                 set.add("VALIDATE_PASSWORD");
                 getNotificationCenter().k(jn7.s1, new Object[0]);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 14:
@@ -336,7 +337,7 @@ public final class k93 extends n9c {
                 } catch (Exception unused) {
                 }
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 15:
@@ -344,14 +345,14 @@ public final class k93 extends n9c {
                 cookieManager.removeAllCookies(null);
                 cookieManager.flush();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 16:
                 xea.J();
                 Toast.makeText(getParentActivity(), ob6.M0(xea.F0 ? 2131751583 : 2131751584, null), 0).show();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 17:
@@ -367,13 +368,13 @@ public final class k93 extends n9c {
                 }
                 System.exit(0);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 18:
                 nle.a((LaunchActivity) getParentActivity(), !xea.t1, true);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 19:
@@ -383,7 +384,7 @@ public final class k93 extends n9c {
                 tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
                 getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new h93(this, (byte) 0));
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 20:
@@ -533,7 +534,7 @@ public final class k93 extends n9c {
                 c0("video/x-vnd.on2.vp9", sb2);
                 showDialog(new j93(this, getParentActivity(), sb2.toString()));
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 21:
@@ -544,7 +545,7 @@ public final class k93 extends n9c {
                 alertDialog$Builder.e(new CharSequence[]{hl.S2((o == 2 ? "**HIGH**" : "HIGH").concat(u == 2 ? " (measured)" : "")), hl.S2((o == 1 ? "**AVERAGE**" : "AVERAGE").concat(u == 1 ? " (measured)" : "")), hl.S2((o == 0 ? "**LOW**" : "LOW").concat(u == 0 ? " (measured)" : ""))}, new i93(u, (byte) 0));
                 ik8.y(null, 2131752570, alertDialog$Builder, null);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 22:
@@ -560,7 +561,7 @@ public final class k93 extends n9c {
                 } catch (Exception unused2) {
                 }
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 24:
@@ -570,52 +571,52 @@ public final class k93 extends n9c {
                     i++;
                 }
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 25:
                 xea.L();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 26:
                 xea.K();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 27:
                 getMediaDataController().G0(false, true, null);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 29:
                 uo0.a();
                 tq0.b();
                 mp0.a();
-                oca.c();
+                pca.c();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case jn7.S /* 30 */:
                 r40.a();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 31:
                 xea.O();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 32:
                 xea.I();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 33:
@@ -624,7 +625,7 @@ public final class k93 extends n9c {
                 edit4.putBoolean("debugVideoQualities", xea.N0);
                 edit4.apply();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 34:
@@ -634,13 +635,13 @@ public final class k93 extends n9c {
                 edit5.putBoolean("useSystemBoldFont", xea.R0);
                 edit5.apply();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 35:
                 uc7.s1(this.currentAccount).a3(true);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 36:
@@ -649,14 +650,14 @@ public final class k93 extends n9c {
                 edit6.putBoolean("forceForumTabs", xea.m);
                 edit6.apply();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 37:
                 cc4.j();
                 cc4.c(true);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 38:
@@ -665,7 +666,7 @@ public final class k93 extends n9c {
                 edit7.putBoolean("fastWallpaperDisabled", xea.n);
                 edit7.apply();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 39:
@@ -678,7 +679,7 @@ public final class k93 extends n9c {
                     launchActivity.C();
                 }
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 41:
@@ -687,14 +688,14 @@ public final class k93 extends n9c {
                 xea.c1 = z2;
                 edit9.putBoolean("debugViewMetrics", z2).apply();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 42:
                 im0 im0Var = phd.a;
                 synchronized (im0Var) {
                     if (!im0Var.b) {
-                        SharedPreferences sharedPreferences = zba.a;
+                        SharedPreferences sharedPreferences = aca.a;
                         im0Var.c = sharedPreferences.contains("experimental_settings_allowed");
                         im0Var.d = sharedPreferences.getBoolean("experimental_settings_allowed", true);
                         im0Var.b = true;
@@ -703,30 +704,30 @@ public final class k93 extends n9c {
                     im0Var.d = z3;
                     im0Var.c = true;
                     im0Var.b = true;
-                    zba.a.edit().putBoolean("experimental_settings_allowed", z3).apply();
+                    aca.a.edit().putBoolean("experimental_settings_allowed", z3).apply();
                 }
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 43:
                 while (i < 4) {
                     if (yac.h(i).o()) {
-                        jf7 Y = jf7.Y(i);
-                        Y.a.c(new be7(Y, b2));
+                        kf7 a0 = kf7.a0(i);
+                        a0.a.c(new hd7(a0, b));
                     }
                     i++;
                 }
                 d31.b0(this).Q(R.raw.done, 36, "Widget heights cleared").j();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 44:
                 xea.G0 = !xea.G0;
                 uc7.e1().edit().putBoolean("widgetStaticLayers", xea.G0).apply();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 45:
@@ -735,7 +736,7 @@ public final class k93 extends n9c {
                 ioe.a();
                 DictationLid.b();
                 vye.a(this.currentAccount);
-                uc7.s1(this.currentAccount).Y3.edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
+                uc7.s1(this.currentAccount).Z3.edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
                 uc7.f1().edit().remove("disable_sharing_learn").remove("askedAboutFSILockscreen").apply();
                 xea.I = 0;
                 xea.N = 0;
@@ -754,7 +755,7 @@ public final class k93 extends n9c {
                 getNotificationCenter().k(jn7.s1, new Object[0]);
                 ee9.Z();
                 a78.e(this.currentAccount).a();
-                SharedPreferences sharedPreferences2 = getMessagesController().X3;
+                SharedPreferences sharedPreferences2 = getMessagesController().Y3;
                 SharedPreferences.Editor edit10 = sharedPreferences2.edit();
                 edit10.remove("boostingappearance").remove("bizbothint").remove("movecaptionhint");
                 for (String str3 : sharedPreferences2.getAll().keySet()) {
@@ -763,15 +764,15 @@ public final class k93 extends n9c {
                     }
                 }
                 edit10.apply();
-                SharedPreferences.Editor edit11 = uc7.s1(this.currentAccount).W3.edit();
-                for (String str4 : uc7.s1(this.currentAccount).W3.getAll().keySet()) {
+                SharedPreferences.Editor edit11 = uc7.s1(this.currentAccount).X3.edit();
+                for (String str4 : uc7.s1(this.currentAccount).X3.getAll().keySet()) {
                     if (str4.startsWith("dialog_bar_botver")) {
                         edit11.remove(str4);
                     }
                 }
                 edit11.apply();
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 46:
@@ -781,7 +782,7 @@ public final class k93 extends n9c {
                 edit12.apply();
                 aob.j(false, false);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 47:
@@ -800,7 +801,7 @@ public final class k93 extends n9c {
                 CallAudioDevice.setDebugOverride(strArr[(i + 1) % 5]);
                 this.a.g3.O(true);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
                 }
                 break;
             case 48:
@@ -819,7 +820,14 @@ public final class k93 extends n9c {
                 GroupCallEngine.setDebugOverride(strArr2[(i + 1) % 3]);
                 this.a.g3.O(true);
                 z = true;
-                if (b8cVar.a == 4) {
+                if (b8cVar.a != 4) {
+                }
+                break;
+            case 49:
+                hl.c3(new hd7(kf7.a0(this.currentAccount), b3));
+                d31.b0(this).Q(R.raw.info, 36, "Go back to the chat list: the hint stays for 15 seconds").j();
+                z = true;
+                if (b8cVar.a != 4) {
                 }
                 break;
         }

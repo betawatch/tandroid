@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ih6 implements kcc {
     public final /* synthetic */ byte a;
@@ -269,17 +269,17 @@ public final /* synthetic */ class ih6 implements kcc {
                 }
                 break;
             default:
-                rbb rbbVar = (rbb) fn7Var;
+                sbb sbbVar = (sbb) fn7Var;
                 Boolean bool = (Boolean) obj;
                 ArrayList arrayList = (ArrayList) obj2;
                 ArrayList arrayList2 = (ArrayList) obj3;
-                if (rbbVar.g0 == 0 && arrayList != null && !arrayList.isEmpty() && rbbVar.q2 == null && !rbbVar.X && rbbVar.H()) {
-                    rbbVar.I1 = null;
-                    rbbVar.J1 = null;
-                    rbbVar.K1 = null;
+                if (sbbVar.g0 == 0 && arrayList != null && !arrayList.isEmpty() && sbbVar.q2 == null && !sbbVar.X && sbbVar.H()) {
+                    sbbVar.I1 = null;
+                    sbbVar.J1 = null;
+                    sbbVar.K1 = null;
                     if (bool.booleanValue()) {
-                        if (arrayList.size() + rbbVar.B0.getFilledCount() > rbbVar.B0.getTotalCount()) {
-                            int size = arrayList.size() + rbbVar.B0.getFilledCount();
+                        if (arrayList.size() + sbbVar.B0.getFilledCount() > sbbVar.B0.getTotalCount()) {
+                            int size = arrayList.size() + sbbVar.B0.getFilledCount();
                             ArrayList a = al2.a();
                             int size2 = a.size();
                             int i6 = 0;
@@ -294,113 +294,113 @@ public final /* synthetic */ class ih6 implements kcc {
                                     al2Var = null;
                                 }
                             }
-                            fbb fbbVar = rbbVar.B0;
+                            gbb gbbVar = sbbVar.B0;
                             if (al2Var == null) {
-                                fbbVar.o(null);
-                                rbbVar.B0.b();
-                                rbbVar.J0.setSelected((al2) null);
-                                wab wabVar = rbbVar.C0;
-                                if (wabVar != null) {
-                                    wabVar.recordHevc = !rbbVar.B0.i();
+                                gbbVar.o(null);
+                                sbbVar.B0.b();
+                                sbbVar.J0.setSelected((al2) null);
+                                xab xabVar = sbbVar.C0;
+                                if (xabVar != null) {
+                                    xabVar.recordHevc = !sbbVar.B0.i();
                                 }
-                                rbbVar.J0.a(false, true);
-                                rbbVar.l0(true);
+                                sbbVar.J0.a(false, true);
+                                sbbVar.l0(true);
                                 break;
                             } else {
-                                rbbVar.A0 = al2Var;
-                                fbbVar.o(al2Var);
-                                rbbVar.J0.setSelected(al2Var);
+                                sbbVar.A0 = al2Var;
+                                gbbVar.o(al2Var);
+                                sbbVar.J0.setSelected(al2Var);
                                 int indexOf = al2.a().indexOf(al2Var);
                                 if (indexOf >= 0) {
-                                    rbbVar.J0.a.x0(indexOf);
+                                    sbbVar.J0.a.x0(indexOf);
                                 }
-                                wab wabVar2 = rbbVar.C0;
-                                if (wabVar2 != null) {
-                                    wabVar2.recordHevc = !rbbVar.B0.i();
+                                xab xabVar2 = sbbVar.C0;
+                                if (xabVar2 != null) {
+                                    xabVar2.recordHevc = !sbbVar.B0.i();
                                 }
-                                rbbVar.H0.setDrawable(new bl2(al2Var, false));
-                                rbbVar.b0(rbbVar.I0, rbbVar.J0.e, true);
-                                rbbVar.P0.e(true, rbbVar.B0.i() ? rbbVar.B0.getFilledProgress() : 0.0f);
+                                sbbVar.H0.setDrawable(new bl2(al2Var, false));
+                                sbbVar.b0(sbbVar.I0, sbbVar.J0.e, true);
+                                sbbVar.P0.e(true, sbbVar.B0.i() ? sbbVar.B0.getFilledProgress() : 0.0f);
                             }
                         }
                     }
-                    rbbVar.M1 = true;
+                    sbbVar.M1 = true;
                     int i7 = 0;
                     while (true) {
                         if (i7 < arrayList.size()) {
                             c8b l2 = c8b.l((no6) arrayList.get(i7));
                             l2.M0 = (Bitmap) arrayList2.get(i7);
-                            l2.J0 = rbbVar.w0;
-                            l2.K0 = rbbVar.x0;
+                            l2.J0 = sbbVar.w0;
+                            l2.K0 = sbbVar.x0;
                             l2.z();
                             if (!bool.booleanValue()) {
-                                if (rbbVar.L1 == null) {
-                                    rbbVar.L1 = l2;
+                                if (sbbVar.L1 == null) {
+                                    sbbVar.L1 = l2;
                                 } else {
-                                    if (rbbVar.I1 == null) {
+                                    if (sbbVar.I1 == null) {
                                         ArrayList arrayList3 = new ArrayList();
-                                        rbbVar.I1 = arrayList3;
-                                        arrayList3.add(rbbVar.L1);
+                                        sbbVar.I1 = arrayList3;
+                                        arrayList3.add(sbbVar.L1);
                                     }
-                                    if (rbbVar.I1.size() < 10) {
-                                        rbbVar.I1.add(l2);
+                                    if (sbbVar.I1.size() < 10) {
+                                        sbbVar.I1.add(l2);
                                     }
                                 }
                                 i7++;
-                            } else if (rbbVar.B0.l(l2)) {
-                                rbbVar.L1 = c8b.a(rbbVar.B0.getLayout(), rbbVar.B0.getContent());
+                            } else if (sbbVar.B0.l(l2)) {
+                                sbbVar.L1 = c8b.a(sbbVar.B0.getLayout(), sbbVar.B0.getContent());
                             } else {
                                 i7++;
                             }
                         }
                     }
-                    if (rbbVar.I1 != null) {
-                        rbbVar.h0(false, true);
-                        rbbVar.R0.a(rbbVar.P1);
-                        u59 u59Var = rbbVar.P0;
-                        boolean z6 = rbbVar.P1 == 1;
+                    if (sbbVar.I1 != null) {
+                        sbbVar.h0(false, true);
+                        sbbVar.R0.a(sbbVar.P1);
+                        u59 u59Var = sbbVar.P0;
+                        boolean z6 = sbbVar.P1 == 1;
                         u59Var.o0 = -1.0f;
                         u59Var.p0 = z6;
                         u59Var.invalidate();
-                        rbbVar.J1 = new ArrayList();
-                        rbbVar.K1 = new ArrayList();
-                        for (int i8 = 0; i8 < rbbVar.I1.size(); i8 = qd4.g(i8, i8, 1, rbbVar.K1)) {
-                            rbbVar.J1.add(Integer.valueOf(i8));
+                        sbbVar.J1 = new ArrayList();
+                        sbbVar.K1 = new ArrayList();
+                        for (int i8 = 0; i8 < sbbVar.I1.size(); i8 = qd4.g(i8, i8, 1, sbbVar.K1)) {
+                            sbbVar.J1.add(Integer.valueOf(i8));
                         }
-                        rbbVar.B0.n(null);
-                        rbbVar.J0.a(false, true);
-                        rbbVar.l0(true);
-                        rbbVar.c(false);
-                        rbbVar.I(1, true);
-                        nab nabVar = rbbVar.e1;
-                        if (nabVar != null) {
-                            fe7 fe7Var = nabVar.h;
-                            if (!nabVar.J && !nabVar.N && (i3 = uc7.e1().getInt("multistorieshint", 0)) < 3) {
+                        sbbVar.B0.n(null);
+                        sbbVar.J0.a(false, true);
+                        sbbVar.l0(true);
+                        sbbVar.c(false);
+                        sbbVar.I(1, true);
+                        oab oabVar = sbbVar.e1;
+                        if (oabVar != null) {
+                            ge7 ge7Var = oabVar.h;
+                            if (!oabVar.J && !oabVar.N && (i3 = uc7.e1().getInt("multistorieshint", 0)) < 3) {
                                 uc7.e1().edit().putInt("multistorieshint", i3 + 1).apply();
-                                hl.r(fe7Var);
-                                nabVar.J = true;
-                                nabVar.invalidate();
-                                hl.d3(fe7Var, 5500L);
+                                hl.r(ge7Var);
+                                oabVar.J = true;
+                                oabVar.invalidate();
+                                hl.d3(ge7Var, 5500L);
                             }
                         }
-                        zt4 zt4Var = rbbVar.N0;
+                        zt4 zt4Var = sbbVar.N0;
                         if (zt4Var != null) {
-                            rbbVar.m2 = zt4Var.e.d0();
-                            rbbVar.n2 = rbbVar.N0.getSelectedAlbum();
+                            sbbVar.m2 = zt4Var.e.d0();
+                            sbbVar.n2 = sbbVar.N0.getSelectedAlbum();
                             break;
                         }
                     } else {
-                        c8b c8bVar = rbbVar.L1;
+                        c8b c8bVar = sbbVar.L1;
                         if (c8bVar != null) {
                             c8bVar.A();
                         }
-                        rbbVar.J0.a(false, true);
-                        rbbVar.l0(true);
-                        rbbVar.c(false);
-                        zt4 zt4Var2 = rbbVar.N0;
+                        sbbVar.J0.a(false, true);
+                        sbbVar.l0(true);
+                        sbbVar.c(false);
+                        zt4 zt4Var2 = sbbVar.N0;
                         if (zt4Var2 != null) {
-                            rbbVar.m2 = zt4Var2.e.d0();
-                            rbbVar.n2 = rbbVar.N0.getSelectedAlbum();
+                            sbbVar.m2 = zt4Var2.e.d0();
+                            sbbVar.n2 = sbbVar.N0.getSelectedAlbum();
                             break;
                         }
                     }

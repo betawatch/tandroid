@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class wh1 extends e implements fn7 {
     public TLRPC.EmojiStatus E;
@@ -454,7 +454,7 @@ public class wh1 extends e implements fn7 {
                 }
                 getMessagesController().a4(M0, r13);
                 jn7 notificationCenter2 = getNotificationCenter();
-                int i6 = uc7.r5;
+                int i6 = uc7.s5;
                 Object[] objArr = new Object[1];
                 objArr[r13] = Integer.valueOf(TLObject.FLAG_19);
                 notificationCenter2.k(2, objArr);
@@ -633,7 +633,7 @@ public class wh1 extends e implements fn7 {
     }
 
     public int D0() {
-        return getMessagesController().k4.o2.f();
+        return getMessagesController().l4.o2.f();
     }
 
     public int E0() {
@@ -673,7 +673,7 @@ public class wh1 extends e implements fn7 {
     }
 
     public int J0() {
-        return getMessagesController().k4.f2.f();
+        return getMessagesController().l4.f2.f();
     }
 
     public int K0() {
@@ -689,7 +689,7 @@ public class wh1 extends e implements fn7 {
     }
 
     public int N0() {
-        return getMessagesController().k4.e2.f();
+        return getMessagesController().l4.e2.f();
     }
 
     public int O0() {
@@ -709,7 +709,7 @@ public class wh1 extends e implements fn7 {
     }
 
     public int S0() {
-        return getMessagesController().k4.n2.f();
+        return getMessagesController().l4.n2.f();
     }
 
     public int T0() {
@@ -859,18 +859,18 @@ public class wh1 extends e implements fn7 {
         int i2;
         int i3;
         if (this.e != this.f) {
-            lc7 lc7Var = getMessagesController().E3;
+            lc7 lc7Var = getMessagesController().F3;
             kc7 d = lc7Var == null ? null : lc7Var.d(this.f);
             if (d != null && d.l(this.d) > this.b) {
                 i = d.l(this.d);
                 if (this.r != this.s) {
-                    lc7 lc7Var2 = getMessagesController().F3;
+                    lc7 lc7Var2 = getMessagesController().G3;
                     kc7 d2 = lc7Var2 != null ? lc7Var2.d(this.s) : null;
                     if (d2 != null && d2.l(this.d) > this.b) {
                         i = d2.l(this.d);
                         i2 = 24;
                         int i4 = i;
-                        if (this.h != this.n && getMessagesController().k4.d2.f() > this.b) {
+                        if (this.h != this.n && getMessagesController().l4.d2.f() > this.b) {
                             i2 = 27;
                         }
                         if (this.w != this.x && N0() > this.b) {
@@ -967,17 +967,17 @@ public class wh1 extends e implements fn7 {
     public final int Z0() {
         int i = 0;
         if (this.e != this.f) {
-            lc7 lc7Var = getMessagesController().E3;
+            lc7 lc7Var = getMessagesController().F3;
             kc7 d = lc7Var == null ? null : lc7Var.d(this.f);
             if (d != null) {
                 i = Math.max(0, d.l(this.d));
             }
         }
         if (this.h != this.n) {
-            i = Math.max(i, getMessagesController().k4.d2.f());
+            i = Math.max(i, getMessagesController().l4.d2.f());
         }
         if (this.r != this.s) {
-            lc7 lc7Var2 = getMessagesController().F3;
+            lc7 lc7Var2 = getMessagesController().G3;
             kc7 d2 = lc7Var2 != null ? lc7Var2.d(this.s) : null;
             if (d2 != null) {
                 i = Math.max(i, d2.l(this.d));

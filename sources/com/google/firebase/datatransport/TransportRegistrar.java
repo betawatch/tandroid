@@ -5,7 +5,7 @@ import com.google.firebase.components.ComponentRegistrar;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class TransportRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-transport";
@@ -35,11 +35,11 @@ public class TransportRegistrar implements ComponentRegistrar {
         b.a(qe3.b(Context.class));
         b.f = new grb((byte) 11);
         fq2 b2 = b.b();
-        eq2 a = fq2.a(new h09(p26.class, e5c.class));
+        eq2 a = fq2.a(new i09(p26.class, e5c.class));
         a.a(qe3.b(Context.class));
         a.f = new grb((byte) 12);
         fq2 b3 = a.b();
-        eq2 a2 = fq2.a(new h09(c5c.class, e5c.class));
+        eq2 a2 = fq2.a(new i09(c5c.class, e5c.class));
         a2.a(qe3.b(Context.class));
         a2.f = new grb((byte) 13);
         return Arrays.asList(b2, b3, a2.b(), ise.a(LIBRARY_NAME, "19.0.0"));

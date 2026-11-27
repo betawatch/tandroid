@@ -20,7 +20,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class x61 extends la {
     public final /* synthetic */ byte d;
@@ -233,7 +233,7 @@ public final class x61 extends la {
                     break;
                 } else if (i3 == 7) {
                     skb skbVar2 = (skb) view;
-                    w51 w51Var = z61Var.getMessagesController().h4;
+                    w51 w51Var = z61Var.getMessagesController().i4;
                     int i4 = v61Var.c;
                     int size = w51Var.d(((v61) arrayList.get(i)).c).size();
                     String G = size > 0 ? ob6.G(size, "ExceptionShort", Integer.valueOf(size)) : null;

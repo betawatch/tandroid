@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class jc3 implements uz6 {
     public final am2 a;
@@ -218,7 +218,7 @@ public final class jc3 implements uz6 {
                 rg0VarArr[i] = d;
                 for (int i2 = i; i2 < po5Var3.size(); i2++) {
                     jo4 jo4Var = new jo4();
-                    jo4Var.s = dg7.n(((et6) po5Var3.get(i2)).b);
+                    jo4Var.s = eg7.n(((et6) po5Var3.get(i2)).b);
                     jo4Var.d = ((et6) po5Var3.get(i2)).c;
                     jo4Var.e = ((et6) po5Var3.get(i2)).d;
                     jo4Var.f = ((et6) po5Var3.get(i2)).e;
@@ -232,7 +232,7 @@ public final class jc3 implements uz6 {
                     z6f z6fVar = new z6f((byte) 17);
                     if (this.c.j(ko4Var)) {
                         jo4 a4 = ko4Var.a();
-                        a4.s = dg7.n("application/x-media3-cues");
+                        a4.s = eg7.n("application/x-media3-cues");
                         a4.k = ko4Var.t;
                         a4.T = this.c.y(ko4Var);
                         ko4Var = new ko4(a4);

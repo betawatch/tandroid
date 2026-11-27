@@ -25,10 +25,10 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ixc extends n9c implements fn7 {
-    public c58 e;
+    public d58 e;
     public final vs f;
     public long h;
     public long n;
@@ -108,15 +108,15 @@ public final class ixc extends n9c implements fn7 {
             arrayList.add(b8c.C(ob6.M0(2131742564, null)));
             arrayList.add(b8c.u(ob6.M0(2131752846, null)));
             arrayList.size();
-            c58 c58Var = this.e;
+            d58 d58Var = this.e;
             String M02 = ob6.M0(2131752830, null);
             b8c b8cVar2 = new b8c(3);
             b8cVar2.d = 16;
-            b8cVar2.H = c58Var;
+            b8cVar2.H = d58Var;
             b8cVar2.m = M02;
             b8cVar2.r = true;
             arrayList.add(b8cVar2);
-            TL_account.TL_webBrowserSettings tL_webBrowserSettings = getMessagesController().n5;
+            TL_account.TL_webBrowserSettings tL_webBrowserSettings = getMessagesController().o5;
             ArrayList<TL_account.WebDomainException> arrayList2 = tL_webBrowserSettings == null ? new ArrayList<>() : tL_webBrowserSettings.inapp_exceptions;
             int size = arrayList2.size();
             while (i < size) {
@@ -162,15 +162,15 @@ public final class ixc extends n9c implements fn7 {
         }
         arrayList.add(b8c.u(ob6.M0(2131752827, null)));
         arrayList.size();
-        c58 c58Var2 = this.e;
+        d58 d58Var2 = this.e;
         String M05 = ob6.M0(2131752830, null);
         b8c b8cVar3 = new b8c(3);
         b8cVar3.d = 15;
-        b8cVar3.H = c58Var2;
+        b8cVar3.H = d58Var2;
         b8cVar3.m = M05;
         b8cVar3.r = true;
         arrayList.add(b8cVar3);
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = getMessagesController().n5;
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = getMessagesController().o5;
         ArrayList<TL_account.WebDomainException> arrayList3 = tL_webBrowserSettings2 == null ? new ArrayList<>() : tL_webBrowserSettings2.external_exceptions;
         int size2 = arrayList3.size();
         int i4 = 0;
@@ -227,7 +227,7 @@ public final class ixc extends n9c implements fn7 {
         if (i == 17) {
             boolean z = !getMessagesController().U2();
             uc7 messagesController = getMessagesController();
-            TL_account.TL_webBrowserSettings tL_webBrowserSettings = messagesController.n5;
+            TL_account.TL_webBrowserSettings tL_webBrowserSettings = messagesController.o5;
             if (tL_webBrowserSettings != null) {
                 messagesController.I5(tL_webBrowserSettings.open_external_browser, z);
             }
@@ -238,7 +238,7 @@ public final class ixc extends n9c implements fn7 {
         final byte b2 = 0;
         if (i == 1) {
             uc7 messagesController2 = getMessagesController();
-            TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = messagesController2.n5;
+            TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = messagesController2.o5;
             if (tL_webBrowserSettings2 != null) {
                 messagesController2.I5(!tL_webBrowserSettings2.open_external_browser, tL_webBrowserSettings2.display_close_button);
             }
@@ -251,7 +251,7 @@ public final class ixc extends n9c implements fn7 {
         }
         if (i == 10) {
             uc7 messagesController3 = getMessagesController();
-            TL_account.TL_webBrowserSettings tL_webBrowserSettings3 = messagesController3.n5;
+            TL_account.TL_webBrowserSettings tL_webBrowserSettings3 = messagesController3.o5;
             if (tL_webBrowserSettings3 != null) {
                 messagesController3.I5(tL_webBrowserSettings3.open_external_browser, true);
             }
@@ -261,7 +261,7 @@ public final class ixc extends n9c implements fn7 {
         byte b3 = 11;
         if (i == 11) {
             uc7 messagesController4 = getMessagesController();
-            TL_account.TL_webBrowserSettings tL_webBrowserSettings4 = messagesController4.n5;
+            TL_account.TL_webBrowserSettings tL_webBrowserSettings4 = messagesController4.o5;
             if (tL_webBrowserSettings4 != null) {
                 messagesController4.I5(tL_webBrowserSettings4.open_external_browser, false);
             }
@@ -356,13 +356,13 @@ public final class ixc extends n9c implements fn7 {
                             break;
                         default:
                             uc7 messagesController5 = ixcVar.getMessagesController();
-                            TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.n5;
+                            TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.o5;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
                                 tL_webBrowserSettings5.display_close_button = true;
                                 tL_webBrowserSettings5.external_exceptions.clear();
-                                messagesController5.n5.inapp_exceptions.clear();
-                                messagesController5.e5(messagesController5.n5);
+                                messagesController5.o5.inapp_exceptions.clear();
+                                messagesController5.e5(messagesController5.o5);
                             }
                             messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new ic((byte) 0), new f87(messagesController5, (byte) 4));
                             ixcVar.a.g3.O(true);
@@ -463,13 +463,13 @@ public final class ixc extends n9c implements fn7 {
                             break;
                         default:
                             uc7 messagesController5 = ixcVar.getMessagesController();
-                            TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.n5;
+                            TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.o5;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
                                 tL_webBrowserSettings5.display_close_button = true;
                                 tL_webBrowserSettings5.external_exceptions.clear();
-                                messagesController5.n5.inapp_exceptions.clear();
-                                messagesController5.e5(messagesController5.n5);
+                                messagesController5.o5.inapp_exceptions.clear();
+                                messagesController5.e5(messagesController5.o5);
                             }
                             messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new ic((byte) 0), new f87(messagesController5, (byte) 4));
                             ixcVar.a.g3.O(true);
@@ -578,13 +578,13 @@ public final class ixc extends n9c implements fn7 {
                             break;
                         default:
                             uc7 messagesController5 = ixcVar.getMessagesController();
-                            TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.n5;
+                            TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.o5;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
                                 tL_webBrowserSettings5.display_close_button = true;
                                 tL_webBrowserSettings5.external_exceptions.clear();
-                                messagesController5.n5.inapp_exceptions.clear();
-                                messagesController5.e5(messagesController5.n5);
+                                messagesController5.o5.inapp_exceptions.clear();
+                                messagesController5.e5(messagesController5.o5);
                             }
                             messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new ic((byte) 0), new f87(messagesController5, (byte) 4));
                             ixcVar.a.g3.O(true);
@@ -691,13 +691,13 @@ public final class ixc extends n9c implements fn7 {
                             break;
                         default:
                             uc7 messagesController5 = ixcVar.getMessagesController();
-                            TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.n5;
+                            TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.o5;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
                                 tL_webBrowserSettings5.display_close_button = true;
                                 tL_webBrowserSettings5.external_exceptions.clear();
-                                messagesController5.n5.inapp_exceptions.clear();
-                                messagesController5.e5(messagesController5.n5);
+                                messagesController5.o5.inapp_exceptions.clear();
+                                messagesController5.e5(messagesController5.o5);
                             }
                             messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new ic((byte) 0), new f87(messagesController5, (byte) 4));
                             ixcVar.a.g3.O(true);
@@ -715,7 +715,7 @@ public final class ixc extends n9c implements fn7 {
             String str = hxcVar.e;
             fu5 G = fu5.G((ViewGroup) this.fragmentView, null, hxcVar);
             G.s = (short) 40;
-            G.b(R.drawable.menu_delete_old, ob6.M0(2131746048, null), new cxc(this, str, (byte) 1), false);
+            G.b(R.drawable.menu_delete_old, ob6.M0(2131746048, null), new zwc(this, str, (byte) 2), false);
             G.a0();
             return;
         }
@@ -823,9 +823,9 @@ public final class ixc extends n9c implements fn7 {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
         e.setColorFilter(new PorterDuffColorFilter(getThemedColor(aob.k7), mode));
-        c58 c58Var = new c58(mutate, e, (byte) 4);
-        c58Var.y = hl.L(2.0f);
-        this.e = c58Var;
+        d58 d58Var = new d58(mutate, e, (byte) 4);
+        d58Var.y = hl.L(2.0f);
+        this.e = d58Var;
         this.fragmentView = super.createView(context);
         this.a.s1();
         this.a.setSectionsDrawBackground(true);
@@ -880,8 +880,8 @@ public final class ixc extends n9c implements fn7 {
     public final void onThemeColorsChanged() {
         super.onThemeColorsChanged();
         try {
-            c58 c58Var = this.e;
-            if (c58Var != null) {
+            d58 d58Var = this.e;
+            if (d58Var != null) {
                 int themedColor = getThemedColor(aob.N6);
                 int themedColor2 = getThemedColor(aob.k7);
                 if (themedColor == this.s && themedColor2 == this.w) {
@@ -889,11 +889,11 @@ public final class ixc extends n9c implements fn7 {
                 }
                 this.s = themedColor;
                 this.w = themedColor2;
-                Drawable drawable = c58Var.a;
+                Drawable drawable = d58Var.a;
                 if (drawable != null) {
                     drawable.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
                 }
-                Drawable drawable2 = c58Var.b;
+                Drawable drawable2 = d58Var.b;
                 if (drawable2 != null) {
                     drawable2.setColorFilter(new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.MULTIPLY));
                 }

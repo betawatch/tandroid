@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class au0 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -130,7 +130,7 @@ public final /* synthetic */ class au0 implements RequestDelegate {
                 hl.c3(new tw4((Object) qh6Var, tL_error, obj2, obj, obj3, (byte) 15));
                 break;
             case 9:
-                hl.c3(new z87((k17) obj4, (String) obj2, tL_error, tLObject, (uc7) obj3, (jf7) obj));
+                hl.c3(new z87((k17) obj4, (String) obj2, tL_error, tLObject, (uc7) obj3, (kf7) obj));
                 break;
             case 10:
                 uc7 uc7Var = (uc7) obj4;
@@ -195,27 +195,27 @@ public final /* synthetic */ class au0 implements RequestDelegate {
                             hl.c3(new gb7(activity, idVar2, (byte) 1));
                             break;
                         } else {
-                            jf7 messagesStorage = wx9Var.getMessagesStorage();
+                            kf7 messagesStorage = wx9Var.getMessagesStorage();
                             byte[] bArr2 = messages_dhconfig.p;
-                            messagesStorage.G();
+                            messagesStorage.I();
                             messagesStorage.y = bArr2;
-                            jf7 messagesStorage2 = wx9Var.getMessagesStorage();
+                            kf7 messagesStorage2 = wx9Var.getMessagesStorage();
                             int i5 = messages_dhconfig.g;
-                            messagesStorage2.G();
+                            messagesStorage2.I();
                             messagesStorage2.E = i5;
-                            jf7 messagesStorage3 = wx9Var.getMessagesStorage();
+                            kf7 messagesStorage3 = wx9Var.getMessagesStorage();
                             int i6 = messages_dhconfig.version;
-                            messagesStorage3.G();
+                            messagesStorage3.I();
                             messagesStorage3.x = i6;
-                            jf7 messagesStorage4 = wx9Var.getMessagesStorage();
-                            jf7 messagesStorage5 = wx9Var.getMessagesStorage();
-                            messagesStorage5.G();
+                            kf7 messagesStorage4 = wx9Var.getMessagesStorage();
+                            kf7 messagesStorage5 = wx9Var.getMessagesStorage();
+                            messagesStorage5.I();
                             int i7 = messagesStorage5.x;
-                            jf7 messagesStorage6 = wx9Var.getMessagesStorage();
-                            messagesStorage6.G();
+                            kf7 messagesStorage6 = wx9Var.getMessagesStorage();
+                            messagesStorage6.I();
                             int i8 = messagesStorage6.E;
-                            jf7 messagesStorage7 = wx9Var.getMessagesStorage();
-                            messagesStorage7.G();
+                            kf7 messagesStorage7 = wx9Var.getMessagesStorage();
+                            messagesStorage7.I();
                             messagesStorage4.a.c(new aq1(messagesStorage4, i7, i8, messagesStorage7.y, (byte) 10));
                         }
                     }
@@ -223,11 +223,11 @@ public final /* synthetic */ class au0 implements RequestDelegate {
                     for (int i9 = 0; i9 < 256; i9++) {
                         bArr3[i9] = (byte) (((byte) (Utilities.b.nextDouble() * 256.0d)) ^ messages_dhconfig.random[i9]);
                     }
-                    wx9Var.getMessagesStorage().G();
+                    wx9Var.getMessagesStorage().I();
                     BigInteger valueOf = BigInteger.valueOf(r0.E);
                     BigInteger bigInteger = new BigInteger(1, bArr3);
-                    jf7 messagesStorage8 = wx9Var.getMessagesStorage();
-                    messagesStorage8.G();
+                    kf7 messagesStorage8 = wx9Var.getMessagesStorage();
+                    messagesStorage8.I();
                     byte[] byteArray = valueOf.modPow(bigInteger, new BigInteger(1, messagesStorage8.y)).toByteArray();
                     if (byteArray.length > 256) {
                         byte[] bArr4 = new byte[256];

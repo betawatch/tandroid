@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class fr0 extends l69 {
     public final Context c;
-    public o5b e;
+    public p5b e;
     public fr0 f;
     public gd4 h;
     public boolean r;
@@ -35,8 +35,8 @@ public class fr0 extends l69 {
     public final String F(int i) {
         r47 r47Var;
         TL_stories.StoryItem storyItem;
-        o5b o5bVar = this.e;
-        if (o5bVar == null || i < 0 || i >= o5bVar.i.size() || (r47Var = (r47) this.e.i.get(i)) == null || (storyItem = r47Var.l) == null) {
+        p5b p5bVar = this.e;
+        if (p5bVar == null || i < 0 || i >= p5bVar.i.size() || (r47Var = (r47) this.e.i.get(i)) == null || (storyItem = r47Var.l) == null) {
             return null;
         }
         return ob6.e0(storyItem.date, true);
@@ -106,8 +106,8 @@ public class fr0 extends l69 {
 
     @Override // j79
     public void f() {
-        o5b o5bVar = this.e;
-        boolean A = ik8.A(o5bVar);
+        p5b p5bVar = this.e;
+        boolean A = ik8.A(p5bVar);
         gr0 gr0Var = this.s;
         if (A) {
             ArrayList arrayList = this.d;
@@ -117,7 +117,7 @@ public class fr0 extends l69 {
                 for (int i = 0; i < E.size(); i++) {
                     b6b b6bVar = (b6b) E.get(i);
                     c8b c8bVar = b6bVar.c;
-                    if (c8bVar != null && !c8bVar.g && TextUtils.equals(c8bVar.K0, o5bVar.E)) {
+                    if (c8bVar != null && !c8bVar.g && TextUtils.equals(c8bVar.K0, p5bVar.E)) {
                         arrayList.add(b6bVar);
                     }
                 }

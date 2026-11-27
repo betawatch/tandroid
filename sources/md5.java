@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class md5 extends c79 {
     public final Context c;
@@ -112,9 +112,9 @@ public final class md5 extends c79 {
         } else {
             arrayList = this.d;
         }
-        p3b p3bVar = (p3b) f89Var.a;
+        q3b q3bVar = (q3b) f89Var.a;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList.get(i);
-        p3bVar.d(tL_messages_stickerSet, i != arrayList.size() - 1, !z);
+        q3bVar.d(tL_messages_stickerSet, i != arrayList.size() - 1, !z);
         String str = this.h;
         String lowerCase = str != null ? str.toLowerCase(Locale.ROOT) : "";
         nd5 nd5Var = this.r;
@@ -126,7 +126,7 @@ public final class md5 extends c79 {
         if (indexOf != -1) {
             SpannableString spannableString = new SpannableString(stickerSet.title);
             spannableString.setSpan(new ho4(aob.q6, resourceProvider), indexOf, lowerCase.length() + indexOf, 0);
-            p3bVar.b.setText(spannableString);
+            q3bVar.b.setText(spannableString);
         }
         int indexOf2 = stickerSet.short_name.toLowerCase(locale).indexOf(lowerCase);
         if (indexOf2 != -1) {
@@ -134,28 +134,28 @@ public final class md5 extends c79 {
             int length = str3.length() + indexOf2;
             SpannableString spannableString2 = new SpannableString(str3 + stickerSet.short_name);
             spannableString2.setSpan(new ho4(aob.q6, resourceProvider), length, lowerCase.length() + length, 0);
-            p3bVar.c.setText(spannableString2);
+            q3bVar.c.setText(spannableString2);
         }
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = nd5Var.r;
-        p3bVar.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : nd5Var.c0(nd5Var.w) != null ? nd5Var.c0(nd5Var.w).id : 0L), false);
+        q3bVar.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : nd5Var.c0(nd5Var.w) != null ? nd5Var.c0(nd5Var.w).id : 0L), false);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // j79
     public final f89 x(ViewGroup viewGroup, int i) {
-        p3b p3bVar;
+        q3b q3bVar;
         if (i != 0) {
             int i2 = aob.B6;
             nd5 nd5Var = this.r;
             mf5 mf5Var = new mf5(this.c, i2, 21, 0, 0, false, false, nd5Var.getResourceProvider());
             mf5Var.setText(ob6.M0(nd5Var.O ? 2131752084 : 2131752083, null));
-            p3bVar = mf5Var;
+            q3bVar = mf5Var;
         } else {
-            p3b p3bVar2 = new p3b(this.c, 3);
-            yob.h(aob.d6, null, p3bVar2);
-            p3bVar = p3bVar2;
+            q3b q3bVar2 = new q3b(this.c, 3);
+            yob.h(aob.d6, null, q3bVar2);
+            q3bVar = q3bVar2;
         }
-        p3bVar.setLayoutParams(new r79(-1, -2));
-        return new n69(p3bVar);
+        q3bVar.setLayoutParams(new r79(-1, -2));
+        return new n69(q3bVar);
     }
 }

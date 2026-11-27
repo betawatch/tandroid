@@ -27,7 +27,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class c0 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -202,35 +202,35 @@ public final /* synthetic */ class c0 implements View.OnClickListener {
                 }
                 break;
             case 13:
-                hbb hbbVar = (hbb) obj3;
+                ibb ibbVar = (ibb) obj3;
                 FrameLayout frameLayout = (FrameLayout) obj2;
                 x53 x53Var = (x53) obj;
-                fu5 fu5Var = hbbVar.V0;
+                fu5 fu5Var = ibbVar.V0;
                 if (fu5Var == null || !fu5Var.E()) {
-                    wb1 wb1Var = new wb1(hbbVar, false ? (byte) 1 : (byte) 0);
-                    boolean p = yac.h(hbbVar.V).p();
-                    wb1 wb1Var2 = p ? null : new wb1(hbbVar, 1 == true ? 1 : 0);
-                    fu5 G2 = fu5.G(frameLayout, x53Var, hbbVar.T0);
-                    hbbVar.V0 = G2;
+                    wb1 wb1Var = new wb1(ibbVar, false ? (byte) 1 : (byte) 0);
+                    boolean p = yac.h(ibbVar.V).p();
+                    wb1 wb1Var2 = p ? null : new wb1(ibbVar, 1 == true ? 1 : 0);
+                    fu5 G2 = fu5.G(frameLayout, x53Var, ibbVar.T0);
+                    ibbVar.V0 = G2;
                     G2.o(13, hl.L(200.0f), ob6.N0("StoryPeriodHint"));
-                    hbbVar.V0.j();
+                    ibbVar.V0.j();
                     int i2 = 0;
                     while (true) {
                         int[] iArr = zb1.Q1;
                         if (i2 >= b3) {
-                            fu5 fu5Var2 = hbbVar.V0;
+                            fu5 fu5Var2 = ibbVar.V0;
                             fu5Var2.s = (short) 0;
                             fu5Var2.a0();
                             break;
                         } else {
                             int i3 = iArr[i2];
-                            fu5 fu5Var3 = hbbVar.V0;
+                            fu5 fu5Var3 = ibbVar.V0;
                             String N0 = i3 == Integer.MAX_VALUE ? ob6.N0("StoryPeriodKeep") : ob6.G(i3 / 3600, "Hours", new Object[0]);
                             int i4 = aob.E8;
                             fu5Var3.a(0, null, N0, null, i4, i4, new zd((Object) wb1Var, i3, (byte) 11));
                             fu5Var3.N((p || i3 == 86400 || i3 == Integer.MAX_VALUE) ? null : new zd((Object) wb1Var2, i3, (byte) 12));
-                            if (hbbVar.X0 == i2) {
-                                hbbVar.V0.M();
+                            if (ibbVar.X0 == i2) {
+                                ibbVar.V0.M();
                             }
                             i2++;
                             b3 = 4;
@@ -298,7 +298,7 @@ public final /* synthetic */ class c0 implements View.OnClickListener {
                         u02Var.performHapticFeedback(3, 2);
                     } catch (Exception unused) {
                     }
-                    if (!uc7.s1(i5).M3() && uc7.s1(i5).k4.p1.f() > n12Var2.F1) {
+                    if (!uc7.s1(i5).M3() && uc7.s1(i5).l4.p1.f() > n12Var2.F1) {
                         n12Var2.z1(eVar3);
                     }
                     ox1 ox1Var2 = n12Var2.b2;
@@ -366,7 +366,7 @@ public final /* synthetic */ class c0 implements View.OnClickListener {
             case 23:
                 dg2 dg2Var = (dg2) obj3;
                 TL_account.TL_connectedBot tL_connectedBot = (TL_account.TL_connectedBot) obj2;
-                me7 me7Var = (me7) obj;
+                oe7 oe7Var = (oe7) obj;
                 c51 c51Var2 = dg2Var.X1;
                 if (!c51Var2.R) {
                     c51Var2.setLoading(true);
@@ -374,7 +374,7 @@ public final /* synthetic */ class c0 implements View.OnClickListener {
                     updateconnectedbot.deleted = true;
                     updateconnectedbot.bot = uc7.s1(dg2Var.a).o1(tL_connectedBot.bot_id);
                     updateconnectedbot.recipients = new TL_account.TL_inputBusinessBotRecipients();
-                    ConnectionsManager.getInstance(dg2Var.a).sendRequest(updateconnectedbot, new ql(dg2Var, me7Var, (byte) 24));
+                    ConnectionsManager.getInstance(dg2Var.a).sendRequest(updateconnectedbot, new ql(dg2Var, oe7Var, (byte) 24));
                     break;
                 }
                 break;

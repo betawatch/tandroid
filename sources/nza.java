@@ -47,7 +47,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class nza extends m15 implements fn7 {
     public static DecimalFormat w0;
@@ -715,7 +715,7 @@ public final class nza extends m15 implements fn7 {
             String M0 = ob6.M0(2131753608, null);
             String M02 = ob6.M0(2131753607, null);
             i2 = 1;
-            cq6 cq6Var = new cq6((Object) nx0VarArr, j, (Object) boost, (byte) 27);
+            cq6 cq6Var = new cq6((Object) nx0VarArr, j, (Object) boost, (byte) 28);
             nx0VarArr = nx0VarArr;
             hjbVar.i(M0, M02, cq6Var);
         } else {
@@ -762,7 +762,7 @@ public final class nza extends m15 implements fn7 {
 
     public static h4a j1(Context context, int i, TL_stars.TL_starGiftUnique tL_starGiftUnique, icc iccVar, vnb vnbVar) {
         pj pjVar = pj.a;
-        h4a h4aVar = new h4a(context, vnbVar, i, tL_starGiftUnique == null ? oj.h(uc7.s1(i).k4.o.f(), pjVar) : tL_starGiftUnique.resale_ton_only ? tL_starGiftUnique.getResellAmount(pj.b) : tL_starGiftUnique.getResellAmount(pjVar), new ku9(iccVar, r8, (byte) 12));
+        h4a h4aVar = new h4a(context, vnbVar, i, tL_starGiftUnique == null ? oj.h(uc7.s1(i).l4.o.f(), pjVar) : tL_starGiftUnique.resale_ton_only ? tL_starGiftUnique.getResellAmount(pj.b) : tL_starGiftUnique.getResellAmount(pjVar), new ku9(iccVar, r8, (byte) 12));
         h4a[] h4aVarArr = {h4aVar};
         h4aVar.show();
         return h4aVarArr[0];
@@ -876,16 +876,16 @@ public final class nza extends m15 implements fn7 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0f48  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0faa  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0fe0  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x1025  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x107a  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x10b2  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x10d6  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x10bd  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x1086  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x1068  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0f4a  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0fac  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0fe2  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x1027  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x107c  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x10b4  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x10d8  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x10bf  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x1088  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x106a  */
     /* JADX WARN: Removed duplicated region for block: B:232:0x0aaf  */
     /* JADX WARN: Removed duplicated region for block: B:297:0x04f6  */
     /* JADX WARN: Removed duplicated region for block: B:300:0x0502  */
@@ -1953,7 +1953,7 @@ public final class nza extends m15 implements fn7 {
                         if (!TextUtils.isEmpty(starsTransaction3.id) && !z2) {
                             String L08 = ob6.L0(2131744605);
                             String str2 = starsTransaction3.id;
-                            hjbVar3.k(L08, str2, str2.length() <= 25 ? 9 : 10, new ida((Object) nx0VarArr3, (Object) vnbVar3, (byte) 25));
+                            hjbVar3.k(L08, str2, str2.length() <= 25 ? 9 : 10, new kba((Object) nx0VarArr3, (Object) vnbVar3, (byte) 26));
                         }
                         if (starsTransaction3.floodskip && starsTransaction3.floodskip_number > 0) {
                             hjbVar3.d(ob6.I(starsTransaction3.floodskip_number, "StarsTransactionFloodskipNumber"), ob6.L0(2131744611));
@@ -2017,7 +2017,7 @@ public final class nza extends m15 implements fn7 {
                 if (!TextUtils.isEmpty(starsTransaction3.id)) {
                     String L082 = ob6.L0(2131744605);
                     String str22 = starsTransaction3.id;
-                    hjbVar3.k(L082, str22, str22.length() <= 25 ? 9 : 10, new ida((Object) nx0VarArr3, (Object) vnbVar3, (byte) 25));
+                    hjbVar3.k(L082, str22, str22.length() <= 25 ? 9 : 10, new kba((Object) nx0VarArr3, (Object) vnbVar3, (byte) 26));
                 }
                 if (starsTransaction3.floodskip) {
                     hjbVar3.d(ob6.I(starsTransaction3.floodskip_number, "StarsTransactionFloodskipNumber"), ob6.L0(2131744611));
@@ -2458,10 +2458,10 @@ public final class nza extends m15 implements fn7 {
         arrayList.add(b8c.k(this.j0));
         c51 c51Var = this.s0;
         if (c51Var != null) {
-            c51Var.setVisibility(getMessagesController().k4.E2.f ? 0 : 8);
+            c51Var.setVisibility(getMessagesController().l4.E2.f ? 0 : 8);
         }
         arrayList.add(b8c.C(null));
-        if (getMessagesController().k4.K2.f) {
+        if (getMessagesController().l4.K2.f) {
             arrayList.add(yb.i(-4, getThemedColor(aob.lk), g92.a0(ob6.M0(2131743421, null)), ob6.M0(2131743422, null)));
             arrayList.add(b8c.C(null));
         }

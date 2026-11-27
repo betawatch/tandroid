@@ -4,16 +4,16 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yq3 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ jf7 b;
+    public final /* synthetic */ kf7 b;
     public final /* synthetic */ zq3 c;
 
-    public /* synthetic */ yq3(jf7 jf7Var, zq3 zq3Var, byte b) {
+    public /* synthetic */ yq3(kf7 kf7Var, zq3 zq3Var, byte b) {
         this.a = b;
-        this.b = jf7Var;
+        this.b = kf7Var;
         this.c = zq3Var;
     }
 
@@ -25,12 +25,12 @@ public final /* synthetic */ class yq3 implements Runnable {
         int i = 0;
         SQLitePreparedStatement sQLitePreparedStatement = null;
         zq3 zq3Var = this.c;
-        jf7 jf7Var = this.b;
+        kf7 kf7Var = this.b;
         switch (b) {
             case 0:
                 try {
                     try {
-                        sQLiteDatabase2 = jf7Var.b;
+                        sQLiteDatabase2 = kf7Var.b;
                     } catch (Exception e) {
                         cc4.g(e, true);
                         if (sQLitePreparedStatement == null) {
@@ -69,7 +69,7 @@ public final /* synthetic */ class yq3 implements Runnable {
             default:
                 try {
                     try {
-                        sQLiteDatabase = jf7Var.b;
+                        sQLiteDatabase = kf7Var.b;
                     } catch (Exception e2) {
                         cc4.g(e2, true);
                         if (sQLitePreparedStatement == null) {

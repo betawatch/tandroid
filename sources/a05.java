@@ -24,7 +24,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class a05 {
     public static final /* synthetic */ int F = 0;
@@ -123,7 +123,7 @@ public final class a05 {
                     intentFilter.addAction("android.intent.action.PACKAGE_RESTARTED");
                     intentFilter.addDataScheme("package");
                     ((Context) ye3Var.b).registerReceiver((ak) ye3Var.g, intentFilter, null, handler);
-                    handler.post((ki7) ye3Var.h);
+                    handler.post((li7) ye3Var.h);
                     return;
                 }
                 return;

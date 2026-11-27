@@ -2,47 +2,23 @@
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class tab extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ rbb b;
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ sbb c;
 
-    public /* synthetic */ tab(rbb rbbVar, byte b) {
-        this.a = b;
-        this.b = rbbVar;
+    /* JADX WARN: Multi-variable type inference failed */
+    public tab(sbb sbbVar, int i, int i2) {
+        this.c = sbbVar;
+        this.a = i;
+        this.b = i2;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        rbb rbbVar = this.b;
-        switch (b) {
-            case 0:
-                rbbVar.k2 = null;
-                rbbVar.r.setTranslationY(0.0f);
-                rbbVar.r.b(0.0f);
-                break;
-            case 1:
-                rbbVar.n.removeView(rbbVar.N0);
-                rbbVar.N0 = null;
-                rbbVar.o2 = null;
-                rbbVar.q2 = null;
-                rbbVar.d1.M.b(rbbVar.g0 != 1);
-                break;
-            default:
-                bbb bbbVar = rbbVar.D2;
-                if (bbbVar != null) {
-                    if (bbbVar.getParent() != null) {
-                        ((ViewGroup) rbbVar.D2.getParent()).removeView(rbbVar.D2);
-                    }
-                    rbbVar.D2 = null;
-                }
-                rbbVar.F2 = null;
-                super.onAnimationEnd(animator);
-                break;
-        }
+        this.c.L(this.a, this.b);
     }
 }

@@ -41,7 +41,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class jz8 extends FrameLayout {
     public static final k43 A0 = new k43(0.05d, 0.7d, 0.1d, 1.0d);
@@ -103,7 +103,7 @@ public final class jz8 extends FrameLayout {
     public final Paint x0;
     public final Paint y;
     public final RectF y0;
-    public final ki7 z0;
+    public final li7 z0;
 
     public jz8(Activity activity, RectF rectF, RectF rectF2, iz8 iz8Var) {
         super(activity);
@@ -144,7 +144,7 @@ public final class jz8 extends FrameLayout {
         this.v0 = new Matrix();
         this.x0 = new Paint(2);
         this.y0 = new RectF();
-        this.z0 = new ki7(this, (byte) 11);
+        this.z0 = new li7(this, (byte) 11);
         this.a = iz8Var;
         rectF3.set(rectF);
         rectF4.set(rectF2);
@@ -900,7 +900,7 @@ public final class jz8 extends FrameLayout {
         if (!rectF2.isEmpty()) {
             return;
         }
-        String[] strArr = f09.B9;
+        String[] strArr = g09.B9;
         int i6 = hl.m;
         int i7 = 0;
         View view = jz8Var;

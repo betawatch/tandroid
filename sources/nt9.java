@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class nt9 {
     public final int a;
@@ -30,7 +30,7 @@ public final class nt9 {
 
     public nt9(int i) {
         this.a = i;
-        this.b = uc7.s1(i).X3.getBoolean("savedMessagesUnsupported", true);
+        this.b = uc7.s1(i).Y3.getBoolean("savedMessagesUnsupported", true);
     }
 
     public static ArrayList d(ArrayList arrayList) {
@@ -104,11 +104,11 @@ public final class nt9 {
         int i = this.a;
         if (!z) {
             this.o = true;
-            jf7 Y = jf7.Y(i);
-            Y.a.c(new en9(this, Y, (byte) 9));
+            kf7 a0 = kf7.a0(i);
+            a0.a.c(new dn9(this, a0, (byte) 10));
         }
         this.b = true;
-        uc7.s1(i).X3.edit().remove("savedMessagesUnsupported").apply();
+        uc7.s1(i).Y3.edit().remove("savedMessagesUnsupported").apply();
     }
 
     public final void b() {
@@ -195,8 +195,8 @@ public final class nt9 {
             }
             this.k = true;
             long e = yac.h(i).e();
-            jf7 Y = jf7.Y(i);
-            Y.a.c(new y09((Object) this, (Object) Y, e, (Object) lt9Var, (byte) 2));
+            kf7 a0 = kf7.a0(i);
+            a0.a.c(new z09((Object) this, (Object) a0, e, (Object) lt9Var, (byte) 2));
             return;
         }
         if (z) {
@@ -231,7 +231,7 @@ public final class nt9 {
             tL_messages_getSavedDialogs.hash = r3;
             tL_messages_getSavedDialogs.hash = ls6.r(r3, mt9Var2.c());
         }
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getSavedDialogs, new ol7(this, arrayList2, b));
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getSavedDialogs, new pl7(this, arrayList2, b));
     }
 
     public final void h(TLRPC.Update update) {
@@ -368,7 +368,7 @@ public final class nt9 {
         arrayList3.addAll(arrayList4);
         int i5 = this.a;
         jn7.f(i5).k(jn7.i3, new Object[0]);
-        if (e() || !uc7.s1(i5).P3) {
+        if (e() || !uc7.s1(i5).Q3) {
             return;
         }
         uc7.s1(i5).b5(false);
@@ -387,7 +387,7 @@ public final class nt9 {
             }
         }
         int i = this.a;
-        if (arrayList2.size() <= (yac.h(i).p() ? uc7.s1(i).k4.q2.f() : uc7.s1(i).k4.p2.f()) && !j(d, arrayList2)) {
+        if (arrayList2.size() <= (yac.h(i).p() ? uc7.s1(i).l4.q2.f() : uc7.s1(i).l4.p2.f()) && !j(d, arrayList2)) {
             if (z2) {
                 o(arrayList2);
                 return true;

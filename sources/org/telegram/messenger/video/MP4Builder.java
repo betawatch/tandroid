@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class MP4Builder {
     private boolean splitMdat;
@@ -104,28 +104,28 @@ public class MP4Builder {
         return this;
     }
 
-    public oh7 createMovieBox(Mp4Movie mp4Movie) {
-        oh7 oh7Var = new oh7("moov");
-        ph7 ph7Var = new ph7("mvhd");
-        ph7Var.r = 1.0d;
-        ph7Var.s = 1.0f;
+    public ph7 createMovieBox(Mp4Movie mp4Movie) {
+        ph7 ph7Var = new ph7("moov");
+        qh7 qh7Var = new qh7("mvhd");
+        qh7Var.r = 1.0d;
+        qh7Var.s = 1.0f;
         ol6 ol6Var = ol6.j;
-        ph7Var.w = ol6Var;
+        qh7Var.w = ol6Var;
         Date date = new Date();
-        bp1.r(u84.c(ph7.R, ph7Var, ph7Var, date));
-        ph7Var.e = date;
+        bp1.r(u84.c(qh7.R, qh7Var, qh7Var, date));
+        qh7Var.e = date;
         long j = 4294967296L;
         if (ehe.a(date) >= 4294967296L) {
-            ph7Var.h();
+            qh7Var.h();
         }
         Date date2 = new Date();
-        bp1.r(u84.c(ph7.S, ph7Var, ph7Var, date2));
-        ph7Var.f = date2;
+        bp1.r(u84.c(qh7.S, qh7Var, qh7Var, date2));
+        qh7Var.f = date2;
         if (ehe.a(date2) >= 4294967296L) {
-            ph7Var.h();
+            qh7Var.h();
         }
-        bp1.r(u84.c(ph7.V, ph7Var, ph7Var, ol6Var));
-        ph7Var.w = ol6Var;
+        bp1.r(u84.c(qh7.V, qh7Var, qh7Var, ol6Var));
+        qh7Var.w = ol6Var;
         long timescale = getTimescale(mp4Movie);
         ArrayList<Track> tracks = mp4Movie.getTracks();
         int size = tracks.size();
@@ -145,25 +145,25 @@ public class MP4Builder {
             j = j3;
         }
         long j4 = j;
-        bp1.r(u84.c(ph7.U, ph7Var, ph7Var, new Long(j2)));
-        ph7Var.n = j2;
+        bp1.r(u84.c(qh7.U, qh7Var, qh7Var, new Long(j2)));
+        qh7Var.n = j2;
         if (j2 >= j4) {
-            ph7Var.h();
+            qh7Var.h();
         }
-        bp1.r(u84.c(ph7.T, ph7Var, ph7Var, new Long(timescale)));
-        ph7Var.h = timescale;
+        bp1.r(u84.c(qh7.T, qh7Var, qh7Var, new Long(timescale)));
+        qh7Var.h = timescale;
         long size2 = mp4Movie.getTracks().size() + 1;
-        bp1.r(u84.c(ph7.W, ph7Var, ph7Var, new Long(size2)));
-        ph7Var.x = size2;
-        oh7Var.a(ph7Var);
+        bp1.r(u84.c(qh7.W, qh7Var, qh7Var, new Long(size2)));
+        qh7Var.x = size2;
+        ph7Var.a(qh7Var);
         ArrayList<Track> tracks2 = mp4Movie.getTracks();
         int size3 = tracks2.size();
         while (i < size3) {
             Track track3 = tracks2.get(i);
             i++;
-            oh7Var.a(createTrackBox(track3, mp4Movie));
+            ph7Var.a(createTrackBox(track3, mp4Movie));
         }
-        return oh7Var;
+        return ph7Var;
     }
 
     public qy0 createStbl(Track track) {
@@ -499,7 +499,7 @@ public class MP4Builder {
         return this.fc.position();
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class InterleaveChunkMdat implements qy0 {
         private long contentSize;
         private long dataOffset;

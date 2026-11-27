@@ -12,7 +12,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class fs6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -293,22 +293,22 @@ public final class fs6 implements Runnable {
                     queryFinalized4.dispose();
                     if (j4 != 0) {
                         if (i20 > 1) {
-                            queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str7 + " m.uid = " + j7 + str + j4 + " AND m.mid > 0 AND m.mid < " + i18 + " AND m.mid >= " + i20 + " AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
+                            queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str7 + " m.uid = " + j7 + str + j4 + " AND +m.mid > 0 AND +m.mid < " + i18 + " AND +m.mid >= " + i20 + " AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
                             z2 = false;
                             sQLiteDatabase2 = sQLiteDatabase;
                         } else {
                             sQLiteDatabase = sQLiteDatabase;
-                            queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str7 + " m.uid = " + j7 + str + j4 + " AND m.mid > 0 AND m.mid < " + i18 + " AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
+                            queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str7 + " m.uid = " + j7 + str + j4 + " AND +m.mid > 0 AND +m.mid < " + i18 + " AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
                             sQLiteDatabase2 = sQLiteDatabase;
                         }
                     } else if (i20 > 1) {
                         sQLiteDatabase = sQLiteDatabase;
-                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str7 + " m.uid = " + j7 + " AND m.mid > 0 AND m.mid < " + i18 + " AND m.mid >= " + i20 + " AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
+                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str7 + " m.uid = " + j7 + " AND +m.mid > 0 AND +m.mid < " + i18 + " AND +m.mid >= " + i20 + " AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
                         z2 = false;
                         sQLiteDatabase2 = sQLiteDatabase;
                     } else {
                         sQLiteDatabase = sQLiteDatabase;
-                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str7 + " m.uid = " + j7 + " AND m.mid > 0 AND m.mid < " + i18 + " AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
+                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str7 + " m.uid = " + j7 + " AND +m.mid > 0 AND +m.mid < " + i18 + " AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
                         sQLiteDatabase2 = sQLiteDatabase;
                     }
                 } else {
@@ -345,14 +345,14 @@ public final class fs6 implements Runnable {
                             int i25 = i17;
                             if (i25 > 1) {
                                 sQLiteDatabase2 = sQLiteDatabase;
-                                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + " AND m.mid > 0 AND m.mid >= " + i15 + " AND m.mid <= " + i25 + " AND m.type = " + i10 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i7, new Object[0]);
+                                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + " AND +m.mid > 0 AND +m.mid >= " + i15 + " AND +m.mid <= " + i25 + " AND m.type = " + i10 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i7, new Object[0]);
                                 i9 = i15;
                                 z4 = true;
                                 z = z4;
                                 i11 = i9;
                             } else {
                                 sQLiteDatabase2 = sQLiteDatabase;
-                                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + " AND m.mid > 0 AND m.mid >= " + i15 + " AND m.type = " + i10 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i7, new Object[0]);
+                                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + " AND +m.mid > 0 AND +m.mid >= " + i15 + " AND m.type = " + i10 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i7, new Object[0]);
                                 z2 = true;
                                 i9 = i15;
                                 z4 = true;
@@ -360,7 +360,7 @@ public final class fs6 implements Runnable {
                                 i11 = i9;
                             }
                         } else if (i17 > 1) {
-                            queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + str + j4 + " AND m.mid > 0 AND m.mid >= " + i15 + " AND m.mid <= " + i17 + " AND m.type = " + i10 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i7, new Object[0]);
+                            queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + str + j4 + " AND +m.mid > 0 AND +m.mid >= " + i15 + " AND +m.mid <= " + i17 + " AND m.type = " + i10 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i7, new Object[0]);
                             sQLiteDatabase2 = sQLiteDatabase;
                             i9 = i15;
                             z4 = true;
@@ -368,7 +368,7 @@ public final class fs6 implements Runnable {
                             i11 = i9;
                         } else {
                             sQLiteDatabase2 = sQLiteDatabase;
-                            queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + str + j4 + " AND m.mid > 0 AND m.mid >= " + i15 + " AND m.type = " + i10 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i7, new Object[0]);
+                            queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + str + j4 + " AND +m.mid > 0 AND +m.mid >= " + i15 + " AND m.type = " + i10 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i7, new Object[0]);
                             z2 = true;
                             i9 = i15;
                             z4 = true;
@@ -396,15 +396,15 @@ public final class fs6 implements Runnable {
                         if (j4 == 0) {
                             String str10 = str5;
                             if (intValue2 > 1) {
-                                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + " AND m.mid >= " + intValue2 + str10 + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
+                                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + " AND +m.mid >= " + intValue2 + str10 + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
                             } else {
-                                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + " AND m.mid > 0 AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
+                                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + " AND +m.mid > 0 AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
                             }
                         } else if (intValue2 > 1) {
-                            queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + str6 + j4 + " AND m.mid >= " + intValue2 + str5 + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
+                            queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + str6 + j4 + " AND +m.mid >= " + intValue2 + str5 + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
                         } else {
                             sQLiteDatabase2 = sQLiteDatabase2;
-                            queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + str6 + j4 + " AND m.mid > 0 AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
+                            queryFinalized = sQLiteDatabase2.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j7 + str6 + j4 + " AND +m.mid > 0 AND m.type = " + i10 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i7, new Object[0]);
                         }
                     }
                 }
@@ -440,7 +440,7 @@ public final class fs6 implements Runnable {
                             }
                             arrayList3 = arrayList;
                             arrayList4 = arrayList2;
-                            jf7.d(TLdeserialize, arrayList4, arrayList3, null);
+                            kf7.d(TLdeserialize, arrayList4, arrayList3, null);
                         } catch (Exception e4) {
                             e = e4;
                             fs6Var = this;
@@ -579,7 +579,7 @@ public final class fs6 implements Runnable {
                                 long j11 = j5;
                                 TLdeserialize2.dialog_id = j11;
                                 arrayList9.add(TLdeserialize2);
-                                jf7.d(TLdeserialize2, arrayList8, arrayList7, null);
+                                kf7.d(TLdeserialize2, arrayList8, arrayList7, null);
                                 j5 = j11;
                                 it = it2;
                             }
@@ -598,10 +598,10 @@ public final class fs6 implements Runnable {
                 }
             }
             if (!arrayList8.isEmpty()) {
-                ls6Var2.getMessagesStorage().j0(arrayList8, tL_messages_messages3.users);
+                ls6Var2.getMessagesStorage().l0(arrayList8, tL_messages_messages3.users);
             }
             if (!arrayList7.isEmpty()) {
-                ls6Var2.getMessagesStorage().P(TextUtils.join(",", arrayList7), tL_messages_messages3.chats);
+                ls6Var2.getMessagesStorage().R(TextUtils.join(",", arrayList7), tL_messages_messages3.chats);
             }
             if (tL_messages_messages3.messages.size() <= b2 || i11 != 0) {
                 z5 = i11 != 0 ? false : z2;

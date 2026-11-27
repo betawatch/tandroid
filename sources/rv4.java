@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class rv4 extends c79 {
     public final vnb c;
@@ -56,8 +56,8 @@ public abstract class rv4 extends c79 {
         return 3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:60:0x033a  */
-    /* JADX WARN: Removed duplicated region for block: B:62:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x033a  */
+    /* JADX WARN: Removed duplicated region for block: B:61:? A[RETURN, SYNTHETIC] */
     @Override // j79
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -229,7 +229,7 @@ public abstract class rv4 extends c79 {
             spannableStringBuilder2.append((CharSequence) "**");
             spannableStringBuilder2.append((CharSequence) M0.title);
             spannableStringBuilder2.append((CharSequence) "**");
-            textView.setText(pv3.m(hl.N2(spannableStringBuilder2.toString(), aob.Xc, 0, new bcb((Object) zj3Var2, (Object) M0, (byte) 2), vnbVar), textView.getPaint().getFontMetricsInt(), false, null, 0));
+            textView.setText(pv3.m(hl.N2(spannableStringBuilder2.toString(), aob.Xc, 0, new hab((Object) zj3Var2, (Object) M0, (byte) 3), vnbVar), textView.getPaint().getFontMetricsInt(), false, null, 0));
             de0Var2.f(M0, new rb0(M0));
             frameLayout.setOnClickListener(new jy8(zj3Var2, M0, (byte) 28));
         } else {

@@ -8,7 +8,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class hsa implements pcc {
     public final /* synthetic */ wua a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class hsa implements pcc {
         final TLRPC.Document document = tL_starGiftUnique.getDocument();
         final int i = wuaVar.a;
         c C = c.C(i);
-        v58 v58Var = new v58((Object) wuaVar, (Object) l01Var, (Object) this.g, (byte) 8);
+        w58 w58Var = new w58((Object) wuaVar, (Object) l01Var, (Object) this.g, (byte) 8);
         final boolean z2 = this.h;
         final String str = this.i;
         pcc pccVar = j != e ? z2 ? null : new pcc() { // from class: jsa
@@ -104,10 +104,10 @@ public final /* synthetic */ class hsa implements pcc {
             if (indexOf >= 0) {
                 str2 = c.f0(str2, true);
             }
-            C.o0(X1, str2, 0L, null, null, this.f, null, v58Var, pccVar != null ? new rx1(C, pccVar, (byte) 27) : null, c.i(stargiftdepositpayload), null, null);
+            C.o0(X1, str2, 0L, null, null, this.f, null, w58Var, pccVar != null ? new rx1(C, pccVar, (byte) 27) : null, c.i(stargiftdepositpayload), null, null);
         } catch (Exception e2) {
             c.n("depositNFT: invalid payload", e2);
-            v58Var.a(e2.getMessage() == null ? "NULL_ERROR" : e2.getMessage());
+            w58Var.a(e2.getMessage() == null ? "NULL_ERROR" : e2.getMessage());
         }
     }
 }

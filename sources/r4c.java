@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class r4c implements pcc {
     public final /* synthetic */ byte a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class r4c implements pcc {
                 if (tL_textWithEntities == null) {
                     message.summarizedOpen = false;
                 }
-                a5cVar.getMessagesStorage().U1(j, r47Var.k);
+                a5cVar.getMessagesStorage().Z1(j, r47Var.k);
                 jn7.f(a5cVar.currentAccount).k(jn7.M1, r47Var, Boolean.TRUE);
                 break;
             case 1:
@@ -63,14 +63,14 @@ public final /* synthetic */ class r4c implements pcc {
                 og3 og3Var = (og3) obj2;
                 ((id) obj3).dismiss();
                 if (((Boolean) obj).booleanValue()) {
-                    rbb C = rbb.C(pg3Var.f0.getParentActivity(), pg3Var.f);
+                    sbb C = sbb.C(pg3Var.f0.getParentActivity(), pg3Var.f);
                     C.O = j;
-                    hbb hbbVar = C.d1;
-                    if (hbbVar != null) {
-                        hbbVar.setDialogId(j);
+                    ibb ibbVar = C.d1;
+                    if (ibbVar != null) {
+                        ibbVar.setDialogId(j);
                     }
                     C.N = false;
-                    C.Q(mbb.c(og3Var));
+                    C.Q(nbb.c(og3Var));
                     break;
                 }
                 break;
@@ -89,7 +89,7 @@ public final /* synthetic */ class r4c implements pcc {
                 }
                 if (oj3Var != null) {
                     ArrayList arrayList = new ArrayList();
-                    arrayList.add(if7.a(-j, 0L));
+                    arrayList.add(jf7.a(-j, 0L));
                     oj3Var.q(uj3Var, arrayList, null, false, uj3Var.L2, uj3Var.M2, uj3Var.N2, null);
                     break;
                 }
@@ -139,7 +139,7 @@ public final /* synthetic */ class r4c implements pcc {
                 ny nyVar = (ny) obj2;
                 e S = LaunchActivity.S();
                 if (((Boolean) obj).booleanValue()) {
-                    uc7Var.K4.add(Long.valueOf(j));
+                    uc7Var.L4.add(Long.valueOf(j));
                     uc7Var.S4(true);
                     if (S != null) {
                         d31.b0(S).P(R.raw.chats_infotip, hl.D2(hl.N2(ob6.M0(2131745302, null), -1, 2, new yv1(S, (byte) 4), null), true)).k(true);

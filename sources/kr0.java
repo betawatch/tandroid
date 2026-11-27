@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class kr0 extends FrameLayout implements snb, fn7 {
     public static LongSparseArray F;
@@ -27,7 +27,7 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
     public final int b;
     public final vnb c;
     public final long d;
-    public final o5b e;
+    public final p5b e;
     public final ArrayList f;
     public final ArrayList h;
     public final uq0 n;
@@ -64,13 +64,13 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
             longSparseArray3.put(j2, longSparseArray4);
             longSparseArray2 = longSparseArray4;
         }
-        o5b o5bVar = (o5b) longSparseArray2.get(j);
-        if (o5bVar == null) {
-            o5b o5bVar2 = new o5b(currentAccount, j, "", null);
-            longSparseArray2.put(j, o5bVar2);
-            o5bVar = o5bVar2;
+        p5b p5bVar = (p5b) longSparseArray2.get(j);
+        if (p5bVar == null) {
+            p5b p5bVar2 = new p5b(currentAccount, j, "", null);
+            longSparseArray2.put(j, p5bVar2);
+            p5bVar = p5bVar2;
         }
-        this.e = o5bVar;
+        this.e = p5bVar;
         bga bgaVar = (bga) this;
         uq0 uq0Var = new uq0(bgaVar, context);
         this.n = uq0Var;
@@ -102,7 +102,7 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
     }
 
     public final void b(String str) {
-        o5b o5bVar;
+        p5b p5bVar;
         TLRPC.MessageMedia messageMedia;
         if (TextUtils.isEmpty(str)) {
             return;
@@ -113,18 +113,18 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
         while (true) {
             ArrayList arrayList = this.f;
             if (i >= arrayList.size()) {
-                o5bVar = null;
+                p5bVar = null;
                 break;
             }
-            o5bVar = (o5b) arrayList.get(i);
-            if (o5bVar != null && TextUtils.equals(o5bVar.E, str)) {
+            p5bVar = (p5b) arrayList.get(i);
+            if (p5bVar != null && TextUtils.equals(p5bVar.E, str)) {
                 break;
             } else {
                 i++;
             }
         }
-        if (o5bVar != null) {
-            ArrayList arrayList2 = o5bVar.i;
+        if (p5bVar != null) {
+            ArrayList arrayList2 = p5bVar.i;
             TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
             int i2 = this.b;
             deletepreviewmedia.bot = uc7.s1(i2).o1(this.d);
@@ -144,12 +144,12 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
     public abstract boolean c(r47 r47Var);
 
     public final boolean d() {
-        o5b o5bVar;
+        p5b p5bVar;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof gr0) || (o5bVar = ((gr0) currentView).a) == null) {
+        if (!(currentView instanceof gr0) || (p5bVar = ((gr0) currentView).a) == null) {
             return true;
         }
-        ArrayList arrayList = o5bVar.i;
+        ArrayList arrayList = p5bVar.i;
         for (int i = 0; i < arrayList.size(); i++) {
             if (!c((r47) arrayList.get(i))) {
                 return false;
@@ -180,8 +180,8 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
             return;
         }
         Object obj = objArr[0];
-        o5b o5bVar = this.e;
-        if (obj == o5bVar) {
+        p5b p5bVar = this.e;
+        if (obj == p5bVar) {
             i(true);
             View[] viewPages2 = uq0Var.getViewPages();
             int length2 = viewPages2.length;
@@ -189,7 +189,7 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
                 View view2 = viewPages2[i4];
                 if (view2 instanceof gr0) {
                     gr0 gr0Var = (gr0) view2;
-                    if (gr0Var.a == o5bVar) {
+                    if (gr0Var.a == p5bVar) {
                         gr0Var.w.f();
                     }
                 }
@@ -212,12 +212,12 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
     public abstract boolean e(r47 r47Var);
 
     public final void f() {
-        o5b o5bVar;
+        p5b p5bVar;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof gr0) || (o5bVar = ((gr0) currentView).a) == null) {
+        if (!(currentView instanceof gr0) || (p5bVar = ((gr0) currentView).a) == null) {
             return;
         }
-        ArrayList arrayList = o5bVar.i;
+        ArrayList arrayList = p5bVar.i;
         for (int i = 0; i < arrayList.size(); i++) {
             if (!c((r47) arrayList.get(i))) {
                 e((r47) arrayList.get(i));
@@ -234,9 +234,9 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
         StringBuilder sb = new StringBuilder();
         View currentView = this.n.getCurrentView();
         if (currentView instanceof gr0) {
-            o5b o5bVar = ((gr0) currentView).a;
-            if (o5bVar != null) {
-                ArrayList arrayList = o5bVar.i;
+            p5b p5bVar = ((gr0) currentView).a;
+            if (p5bVar != null) {
+                ArrayList arrayList = p5bVar.i;
                 i = 0;
                 i2 = 0;
                 for (int i3 = 0; i3 < arrayList.size(); i3++) {
@@ -272,25 +272,25 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
 
     public String getCurrentLang() {
         View view;
-        o5b o5bVar;
+        p5b p5bVar;
         uq0 uq0Var = this.n;
         View[] viewPages = uq0Var.getViewPages();
         if (Math.abs(uq0Var.getCurrentPosition() - uq0Var.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
             view = viewPages[0];
         }
-        if (!(view instanceof gr0) || (o5bVar = ((gr0) view).a) == null) {
+        if (!(view instanceof gr0) || (p5bVar = ((gr0) view).a) == null) {
             return null;
         }
-        return o5bVar.E;
+        return p5bVar.E;
     }
 
-    public o5b getCurrentList() {
-        o5b o5bVar;
+    public p5b getCurrentList() {
+        p5b p5bVar;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof gr0) || (o5bVar = ((gr0) currentView).a) == null) {
+        if (!(currentView instanceof gr0) || (p5bVar = ((gr0) currentView).a) == null) {
             return null;
         }
-        return o5bVar;
+        return p5bVar;
     }
 
     public d79 getCurrentListView() {
@@ -302,12 +302,12 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
     }
 
     public int getItemsCount() {
-        o5b o5bVar;
+        p5b p5bVar;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof gr0) || (o5bVar = ((gr0) currentView).a) == null) {
+        if (!(currentView instanceof gr0) || (p5bVar = ((gr0) currentView).a) == null) {
             return 0;
         }
-        return o5bVar.i.size();
+        return p5bVar.i.size();
     }
 
     public int getStartedTrackingX() {
@@ -315,12 +315,12 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
     }
 
     public final void h() {
-        o5b o5bVar;
+        p5b p5bVar;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof gr0) || (o5bVar = ((gr0) currentView).a) == null) {
+        if (!(currentView instanceof gr0) || (p5bVar = ((gr0) currentView).a) == null) {
             return;
         }
-        ArrayList arrayList = o5bVar.i;
+        ArrayList arrayList = p5bVar.i;
         for (int i = 0; i < arrayList.size(); i++) {
             if (c((r47) arrayList.get(i))) {
                 g((r47) arrayList.get(i));
@@ -329,7 +329,7 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
     }
 
     public final void i(boolean z) {
-        o5b o5bVar;
+        p5b p5bVar;
         c8b c8bVar;
         ArrayList arrayList = new ArrayList(this.e.G);
         ArrayList arrayList2 = this.h;
@@ -370,22 +370,22 @@ public abstract class kr0 extends FrameLayout implements snb, fn7 {
             int i4 = 0;
             while (true) {
                 if (i4 >= arrayList4.size()) {
-                    o5bVar = null;
+                    p5bVar = null;
                     break;
                 } else {
-                    if (TextUtils.equals(((o5b) arrayList4.get(i4)).E, str2)) {
-                        o5bVar = (o5b) arrayList4.get(i4);
+                    if (TextUtils.equals(((p5b) arrayList4.get(i4)).E, str2)) {
+                        p5bVar = (p5b) arrayList4.get(i4);
                         break;
                     }
                     i4++;
                 }
             }
-            if (o5bVar == null) {
-                o5b o5bVar2 = new o5b(this.b, this.d, str2, null);
-                o5bVar2.H(null);
-                o5bVar = o5bVar2;
+            if (p5bVar == null) {
+                p5b p5bVar2 = new p5b(this.b, this.d, str2, null);
+                p5bVar2.H(null);
+                p5bVar = p5bVar2;
             }
-            arrayList3.add(o5bVar);
+            arrayList3.add(p5bVar);
         }
         uq0 uq0Var = this.n;
         uq0Var.m(true);

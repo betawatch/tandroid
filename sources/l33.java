@@ -7,11 +7,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class l33 extends FrameLayout {
     public boolean E;
-    public final gbb a;
+    public final hbb a;
     public final mm b;
     public final mm c;
     public final k33 d;
@@ -25,14 +25,14 @@ public abstract class l33 extends FrameLayout {
     public final u33 x;
     public c8b y;
 
-    public l33(Context context, gbb gbbVar) {
+    public l33(Context context, hbb hbbVar) {
         super(context);
         this.r = 0.0f;
         final byte b = 2;
         this.s = new int[2];
         this.w = new int[2];
         this.x = new u33();
-        this.a = gbbVar;
+        this.a = hbbVar;
         k33 k33Var = new k33(this, context);
         this.d = k33Var;
         k43 k43Var = k43.h;
@@ -74,7 +74,7 @@ public abstract class l33 extends FrameLayout {
                 l33 l33Var = this.b;
                 switch (b4) {
                     case 0:
-                        ((cbb) l33Var).F.k0(-1, false, true);
+                        ((dbb) l33Var).F.k0(-1, false, true);
                         break;
                     case 1:
                         l33Var.f.l(true);
@@ -92,7 +92,7 @@ public abstract class l33 extends FrameLayout {
                             c8b c8bVar2 = l33Var.y;
                             c8bVar2.m0.z = c8bVar2.Q;
                         }
-                        ((cbb) l33Var).F.k0(-1, false, true);
+                        ((dbb) l33Var).F.k0(-1, false, true);
                         break;
                 }
             }
@@ -118,7 +118,7 @@ public abstract class l33 extends FrameLayout {
                 l33 l33Var = this.b;
                 switch (b4) {
                     case 0:
-                        ((cbb) l33Var).F.k0(-1, false, true);
+                        ((dbb) l33Var).F.k0(-1, false, true);
                         break;
                     case 1:
                         l33Var.f.l(true);
@@ -136,7 +136,7 @@ public abstract class l33 extends FrameLayout {
                             c8b c8bVar2 = l33Var.y;
                             c8bVar2.m0.z = c8bVar2.Q;
                         }
-                        ((cbb) l33Var).F.k0(-1, false, true);
+                        ((dbb) l33Var).F.k0(-1, false, true);
                         break;
                 }
             }
@@ -162,7 +162,7 @@ public abstract class l33 extends FrameLayout {
                 l33 l33Var = this.b;
                 switch (b4) {
                     case 0:
-                        ((cbb) l33Var).F.k0(-1, false, true);
+                        ((dbb) l33Var).F.k0(-1, false, true);
                         break;
                     case 1:
                         l33Var.f.l(true);
@@ -180,7 +180,7 @@ public abstract class l33 extends FrameLayout {
                             c8b c8bVar2 = l33Var.y;
                             c8bVar2.m0.z = c8bVar2.Q;
                         }
-                        ((cbb) l33Var).F.k0(-1, false, true);
+                        ((dbb) l33Var).F.k0(-1, false, true);
                         break;
                 }
             }
@@ -194,8 +194,8 @@ public abstract class l33 extends FrameLayout {
             return 1;
         }
         int i = c8bVar.Q;
-        gbb gbbVar = this.a;
-        return (i == 90 || i == 270) ? gbbVar.getContentWidth() : gbbVar.getContentHeight();
+        hbb hbbVar = this.a;
+        return (i == 90 || i == 270) ? hbbVar.getContentWidth() : hbbVar.getContentHeight();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -205,8 +205,8 @@ public abstract class l33 extends FrameLayout {
             return 1;
         }
         int i = c8bVar.Q;
-        gbb gbbVar = this.a;
-        return (i == 90 || i == 270) ? gbbVar.getContentHeight() : gbbVar.getContentWidth();
+        hbb hbbVar = this.a;
+        return (i == 90 || i == 270) ? hbbVar.getContentHeight() : hbbVar.getContentWidth();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -251,8 +251,8 @@ public abstract class l33 extends FrameLayout {
         i33Var.K = true;
         getLocationOnScreen(this.s);
         int[] iArr = this.w;
-        gbb gbbVar = this.a;
-        gbbVar.getLocationOnScreen(iArr);
+        hbb hbbVar = this.a;
+        hbbVar.getLocationOnScreen(iArr);
         fo6 fo6Var = c8bVar.m0;
         if (fo6Var == null) {
             fo6Var = null;
@@ -279,6 +279,6 @@ public abstract class l33 extends FrameLayout {
         k33 k33Var = this.d;
         k33Var.setVisibility(0);
         k33Var.invalidate();
-        gbbVar.setCropEditorDrawing(this);
+        hbbVar.setCropEditorDrawing(this);
     }
 }

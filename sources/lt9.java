@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lt9 implements Runnable {
     public final /* synthetic */ byte a;
@@ -35,8 +35,8 @@ public final /* synthetic */ class lt9 implements Runnable {
                 if (!nt9Var.o) {
                     nt9Var.o = true;
                     ArrayList arrayList = new ArrayList(nt9Var.j);
-                    jf7 Y = jf7.Y(nt9Var.a);
-                    Y.a.c(new jr9((Object) nt9Var, (Object) Y, (Object) arrayList, (byte) 1));
+                    kf7 a0 = kf7.a0(nt9Var.a);
+                    a0.a.c(new jr9((Object) nt9Var, (Object) a0, (Object) arrayList, (byte) 1));
                     break;
                 }
                 break;

@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class xl9 extends ze9 implements snb, zlb {
     public boolean E;
@@ -53,7 +53,7 @@ public final class xl9 extends ze9 implements snb, zlb {
         dg9Var.setPadding(hl.L(2.0f), hl.L(4.0f), hl.L(2.0f), 0);
         dg9Var.setHint(ob6.M0(2131753982, null));
         dg9Var.setCenterEmptyHint(true);
-        dg9Var.setListener(new i09((Object) this, (byte) 7));
+        dg9Var.setListener(new j09((Object) this, (byte) 7));
         dg9Var.setDelegate(new ye9(this, (byte) 8));
         addView(dg9Var);
         ti9 ti9Var = new ti9(this, context, (byte) 1);
@@ -588,7 +588,7 @@ public final class xl9 extends ze9 implements snb, zlb {
         }
         TL_iv.pageTableCell pagetablecell = this.G.d[Math.max(0, Math.min(i, i3 - 1))][Math.max(0, Math.min(i2, this.G.c - 1))];
         if (pagetablecell != null) {
-            post(new z09(this, pagetablecell, (byte) 24));
+            post(new yz8(this, pagetablecell, (byte) 25));
         }
     }
 

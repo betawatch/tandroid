@@ -1,79 +1,60 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class o3b extends a8c {
-    public static final /* synthetic */ int b = 0;
+public final class o3b extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ q3b c;
 
-    static {
-        a8c.h(new o3b());
+    public /* synthetic */ o3b(q3b q3bVar, boolean z, byte b) {
+        this.a = b;
+        this.c = q3bVar;
+        this.b = z;
     }
 
-    @Override // a8c
-    public final void a(d79 d79Var, View view, b8c b8cVar) {
-        p3b p3bVar = (p3b) view;
-        boolean z = false;
-        p3bVar.b(b8cVar != null && b8cVar.e, true);
-        if ((d79Var instanceof q9c) && ((q9c) d79Var).k3) {
-            z = true;
-        }
-        p3bVar.c(z);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:16:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0078  */
-    @Override // a8c
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
-        int i = l9cVar.f;
-        p3b p3bVar = (p3b) view;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) b8cVar.H;
-        boolean z2 = false;
-        p3bVar.d(tL_messages_stickerSet, z, false);
-        p3bVar.b(b8cVar.e, false);
-        p3bVar.c(q9cVar.k3);
-        p3bVar.setOnOptionsClick(b8cVar.E);
-        p3bVar.E.setOnClickListener(b8cVar.F);
-        p3bVar.F.setOnClickListener(b8cVar.F);
-        p3bVar.G.setOnClickListener(b8cVar.F);
-        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-        if (stickerSet == null || !stickerSet.emojis) {
-            return;
-        }
-        int i2 = 1;
-        boolean D0 = ls6.d0(i).D0(tL_messages_stickerSet.set.id, true);
-        boolean p = yac.h(i).p();
-        boolean z3 = !p;
-        if (!p) {
-            for (int i3 = 0; i3 < tL_messages_stickerSet.documents.size(); i3++) {
-                if (r47.m3(tL_messages_stickerSet.documents.get(i3))) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        q3b q3bVar = this.c;
+        boolean z = this.b;
+        switch (b) {
+            case 0:
+                if (!z) {
+                    q3bVar.h.setVisibility(4);
+                    break;
                 }
-            }
-            if (z2) {
-                i2 = D0 ? 4 : 3;
-            } else if (D0 && !tL_messages_stickerSet.set.official) {
-                i2 = 2;
-            }
-            p3bVar.e(i2);
+                break;
+            default:
+                if (!z) {
+                    q3bVar.y.setVisibility(4);
+                    break;
+                }
+                break;
         }
-        z2 = z3;
-        if (z2) {
-        }
-        p3bVar.e(i2);
     }
 
-    @Override // a8c
-    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
-        p3b p3bVar = new p3b(context, 1);
-        if (d79Var instanceof q9c) {
-            p3bVar.setOnReorderButtonTouchListener(new g8((q9c) d79Var, p3bVar, (byte) 7));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        byte b = this.a;
+        q3b q3bVar = this.c;
+        boolean z = this.b;
+        switch (b) {
+            case 0:
+                if (z) {
+                    q3bVar.h.setVisibility(0);
+                    break;
+                }
+                break;
+            default:
+                if (z) {
+                    q3bVar.y.setVisibility(0);
+                    break;
+                }
+                break;
         }
-        return p3bVar;
     }
 }

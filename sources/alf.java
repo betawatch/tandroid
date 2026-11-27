@@ -24,7 +24,7 @@ import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class alf {
     public static final he6 v = new he6("MediaSessionManager", null);
@@ -138,7 +138,7 @@ public final class alf {
                     rx6Var.r0(new MediaMetadataCompat(bundle));
                 }
             }
-            rx6Var.p0(new nj7(this, b), null);
+            rx6Var.p0(new oj7(this, b), null);
             rx6Var.n0(true);
             this.c.T(rx6Var);
         }

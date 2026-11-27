@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wh8 extends e implements fn7, vma {
     public TLRPC.MessageMedia A0;
@@ -86,7 +86,7 @@ public final class wh8 extends e implements fn7, vma {
     public int x0;
     public int y;
     public int y0;
-    public final ki7 z0;
+    public final li7 z0;
 
     public wh8(zu1 zu1Var) {
         super(null);
@@ -96,9 +96,9 @@ public final class wh8 extends e implements fn7, vma {
         this.K = true;
         this.P = hl.L(3.0f);
         this.h0 = -1;
-        this.z0 = new ki7(this, (byte) 8);
+        this.z0 = new li7(this, (byte) 8);
         this.e0 = true;
-        int f = getMessagesController().k4.F3.f();
+        int f = getMessagesController().l4.F3.f();
         this.n = f;
         this.w = new CharSequence[f];
         this.x = new boolean[f];
@@ -425,8 +425,8 @@ public final class wh8 extends e implements fn7, vma {
         }
         boolean z3 = this.e0;
         if (z3) {
-            i2 = getMessagesController().k4.P2.f();
-            i3 = getMessagesController().k4.Q2.f();
+            i2 = getMessagesController().l4.P2.f();
+            i3 = getMessagesController().l4.Q2.f();
         } else {
             i2 = jn7.d4;
             i3 = 100;
@@ -692,9 +692,9 @@ public final class wh8 extends e implements fn7, vma {
             return;
         }
         this.U = true;
-        ki7 ki7Var = this.z0;
-        hl.r(ki7Var);
-        hl.d3(ki7Var, 100L);
+        li7 li7Var = this.z0;
+        hl.r(li7Var);
+        hl.d3(li7Var, 100L);
     }
 
     public final void q0(TLRPC.MessageMedia messageMedia, boolean z) {
@@ -761,7 +761,7 @@ public final class wh8 extends e implements fn7, vma {
             int i3 = this.j0;
             boolean z = this.e0;
             if (i == i3) {
-                i2 = z ? getMessagesController().k4.P2.f() : jn7.d4;
+                i2 = z ? getMessagesController().l4.P2.f() : jn7.d4;
                 CharSequence charSequence = this.F;
                 length = i2 - (charSequence != null ? charSequence.length() : 0);
             } else if (i == this.k0) {
@@ -775,7 +775,7 @@ public final class wh8 extends e implements fn7, vma {
                     return;
                 }
                 int i5 = i - i4;
-                int f = z ? getMessagesController().k4.Q2.f() : 100;
+                int f = z ? getMessagesController().l4.Q2.f() : 100;
                 CharSequence charSequence2 = this.w[i5];
                 length = f - (charSequence2 != null ? charSequence2.length() : 0);
                 i2 = f;

@@ -19,7 +19,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class q31 implements ggd {
     public static final v11 f = new v11();
@@ -339,7 +339,7 @@ public final class q31 implements ggd {
             zzb();
         }
         if (((trd) this.e) == null) {
-            throw new kg7("Waiting for the image labeling module to be downloaded. Please wait.", 14);
+            throw new lg7("Waiting for the image labeling module to be downloaded. Please wait.", 14);
         }
         Bitmap bitmap = jq5Var.a;
         xve.h(bitmap);
@@ -374,7 +374,7 @@ public final class q31 implements ggd {
             }
             return arrayList;
         } catch (RemoteException e) {
-            throw new kg7("Failed to run legacy image labeler.", e);
+            throw new lg7("Failed to run legacy image labeler.", e);
         }
     }
 
@@ -403,10 +403,10 @@ public final class q31 implements ggd {
                 zt7.a(context);
                 this.a = true;
             } catch (RemoteException e) {
-                throw new kg7("Failed to create legacy image labeler.", e);
+                throw new lg7("Failed to create legacy image labeler.", e);
             } catch (ss3 e2) {
                 if (str.equals("com.google.android.gms.vision.dynamite")) {
-                    throw new kg7("Failed to load deprecated vision dynamite module.", e2);
+                    throw new lg7("Failed to load deprecated vision dynamite module.", e2);
                 }
                 if (this.a) {
                     return;

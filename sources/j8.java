@@ -18,7 +18,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class j8 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -227,7 +227,7 @@ public final class j8 extends AnimatorListenerAdapter {
                 break;
             case 10:
                 h6b h6bVar = (h6b) obj;
-                o68 o68Var = ((s58) obj3).a;
+                o68 o68Var = ((t58) obj3).a;
                 o68Var.e3 = false;
                 o68Var.f3 = 1.0f;
                 o68Var.invalidate();

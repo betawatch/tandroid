@@ -5,7 +5,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wu8 extends d6 {
     public final /* synthetic */ String a;
@@ -32,11 +32,11 @@ public final class wu8 extends d6 {
         if (i == -1) {
             if (!zu8Var.n && zu8Var.r) {
                 i8 = ((e) zu8Var).currentAccount;
-                uc7.s1(i8).W3.edit().putInt("notify2_" + str, 0).apply();
+                uc7.s1(i8).X3.edit().putInt("notify2_" + str, 0).apply();
             }
         } else if (i == 1) {
             i2 = ((e) zu8Var).currentAccount;
-            SharedPreferences sharedPreferences = uc7.s1(i2).W3;
+            SharedPreferences sharedPreferences = uc7.s1(i2).X3;
             SharedPreferences.Editor edit = sharedPreferences.edit();
             edit.putBoolean("custom_" + str, true);
             i3 = ((e) zu8Var).currentAccount;
@@ -45,7 +45,7 @@ public final class wu8 extends d6 {
                 edit.putInt("notify2_" + str, 0);
                 if (j == 0) {
                     i7 = ((e) zu8Var).currentAccount;
-                    jf7.Y(i7).B1(j2, 0L);
+                    kf7.a0(i7).G1(j2, 0L);
                     if (dialog != null) {
                         dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
                     }
@@ -56,7 +56,7 @@ public final class wu8 extends d6 {
                     i4 = ((e) zu8Var).currentAccount;
                     ip7.n(i4).N(j2);
                     i5 = ((e) zu8Var).currentAccount;
-                    jf7.Y(i5).B1(j2, 1L);
+                    kf7.a0(i5).G1(j2, 1L);
                     if (dialog != null) {
                         TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
                         dialog.notify_settings = tL_peerNotifySettings;

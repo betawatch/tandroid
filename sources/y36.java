@@ -31,7 +31,7 @@ import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class y36 implements Runnable {
     public final /* synthetic */ byte a;
@@ -308,14 +308,14 @@ public final /* synthetic */ class y36 implements Runnable {
                 uc7Var2.getNotificationCenter().k(jn7.C5, Integer.valueOf(i10));
                 return;
             case 12:
-                jf7 jf7Var = (jf7) this.c;
+                kf7 kf7Var = (kf7) this.c;
                 ?? r2 = this.b;
                 ?? r3 = (String) this.d;
                 ?? r4 = (RequestDelegate) this.e;
                 try {
                     try {
-                        jf7Var.b.executeFast("DELETE FROM botcache WHERE date < " + r2).stepThis().dispose();
-                        r2 = jf7Var.b.queryFinalized("SELECT data FROM botcache WHERE id = ?", new Object[]{r3});
+                        kf7Var.b.executeFast("DELETE FROM botcache WHERE date < " + r2).stepThis().dispose();
+                        r2 = kf7Var.b.queryFinalized("SELECT data FROM botcache WHERE id = ?", new Object[]{r3});
                     } catch (Throwable th) {
                         th = th;
                     }
@@ -337,14 +337,14 @@ public final /* synthetic */ class y36 implements Runnable {
                                     } catch (Exception e3) {
                                         e = e3;
                                         try {
-                                            jf7Var.n(e, true);
+                                            kf7Var.p(e, true);
                                             r3 = r3;
                                             r2.dispose();
                                             r4.run(r3, null);
                                             return;
                                         } catch (Exception e4) {
                                             e = e4;
-                                            jf7Var.n(e, true);
+                                            kf7Var.p(e, true);
                                             r4.run(r3, null);
                                             if (r2 != 0) {
                                                 r2.dispose();
@@ -385,7 +385,7 @@ public final /* synthetic */ class y36 implements Runnable {
                     r3 = 0;
                 }
             case 13:
-                ((lm7) this.c).o0(this.b, (r47) this.e, (ArrayList) this.d);
+                ((lm7) this.c).n0(this.b, (r47) this.e, (ArrayList) this.d);
                 return;
             case 14:
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) this.c;
@@ -493,7 +493,7 @@ public final /* synthetic */ class y36 implements Runnable {
                             if (f11.a) {
                                 cc4.d("face detection is not operational");
                             }
-                            hl.c3(new fd7((Object) photoViewer, (Object) mn5Var, (Object) str6, (byte) 29));
+                            hl.c3(new gd7((Object) photoViewer, (Object) mn5Var, (Object) str6, (byte) 29));
                         }
                     } catch (Throwable th4) {
                         if (0 != 0) {
@@ -519,18 +519,18 @@ public final /* synthetic */ class y36 implements Runnable {
                 jj.c0(this.b, (TLRPC.TL_error) this.c, (e) this.d, (TLRPC.TL_payments_assignPlayMarketTransaction) this.e, new Object[0]);
                 return;
             case 22:
-                ((f09) this.c).d1(this.b, (String) this.d, (String) this.e);
+                ((g09) this.c).d1(this.b, (String) this.d, (String) this.e);
                 return;
             case 23:
-                f09 f09Var = (f09) this.c;
+                g09 g09Var = (g09) this.c;
                 Bitmap bitmap2 = (Bitmap) this.d;
                 int[] iArr2 = (int[]) this.e;
                 int i17 = this.b;
-                f09Var.V4 = false;
-                if (f09Var.W4 == null) {
-                    f09Var.W4 = bitmap2;
-                    f09Var.X4 = iArr2;
-                    f09Var.Y4 = i17;
+                g09Var.V4 = false;
+                if (g09Var.W4 == null) {
+                    g09Var.W4 = bitmap2;
+                    g09Var.X4 = iArr2;
+                    g09Var.Y4 = i17;
                     return;
                 }
                 return;
@@ -560,8 +560,8 @@ public final /* synthetic */ class y36 implements Runnable {
                         for (int i20 = 0; i20 < arrayList5.size(); i20++) {
                             ((a19) arrayList5.get(i20)).c = i20;
                         }
-                        jf7 Y = jf7.Y(i19);
-                        Y.a.c(new z09(Y, a19Var, r10 ? (byte) 1 : (byte) 0));
+                        kf7 a0 = kf7.a0(i19);
+                        a0.a.c(new yz8(a0, a19Var, b4));
                         jn7.f(i19).k(jn7.F1, new Object[0]);
                     } else {
                         int i21 = c.d;
@@ -583,7 +583,7 @@ public final /* synthetic */ class y36 implements Runnable {
                 if (str7 == null && i18 == 0) {
                     ArrayList arrayList6 = new ArrayList();
                     arrayList6.add(message);
-                    jf7.Y(i19).g1(arrayList6, true, true, false, lq3.q(i19).l(), false, 5, message.quick_reply_shortcut_id);
+                    kf7.a0(i19).k1(arrayList6, true, true, false, lq3.q(i19).l(), false, 5, message.quick_reply_shortcut_id);
                     long e8 = yac.h(i19).e();
                     ArrayList arrayList7 = new ArrayList();
                     arrayList7.add(new r47(i19, message, true, true));
@@ -606,7 +606,7 @@ public final /* synthetic */ class y36 implements Runnable {
                         messages_sentencryptedmessage.date = 0;
                     }
                 }
-                wx9Var.getMessagesStorage().X1(message2.random_id, 0L, Integer.valueOf(message2.id), message2.id, messages_sentencryptedmessage.date, 0, 0);
+                wx9Var.getMessagesStorage().c2(message2.random_id, 0L, Integer.valueOf(message2.id), message2.id, messages_sentencryptedmessage.date, 0, 0);
                 hl.c3(new a39(wx9Var, message2, i23, b2));
                 return;
             case 27:
@@ -618,26 +618,26 @@ public final /* synthetic */ class y36 implements Runnable {
                     yt0Var.a(Boolean.FALSE, "cancelled");
                     return;
                 } else {
-                    oca.b(i24, user, userFull, yt0Var);
+                    pca.b(i24, user, userFull, yt0Var);
                     return;
                 }
             case 28:
-                xca xcaVar = (xca) this.c;
-                tca tcaVar = (tca) this.e;
+                yca ycaVar = (yca) this.c;
+                uca ucaVar = (uca) this.e;
                 int i25 = this.b;
                 ArrayList arrayList8 = (ArrayList) this.d;
-                ArrayList arrayList9 = xcaVar.c;
-                boolean z2 = tcaVar != null;
-                xcaVar.d = z2;
+                ArrayList arrayList9 = ycaVar.c;
+                boolean z2 = ucaVar != null;
+                ycaVar.d = z2;
                 if (!z2 || i25 < 0 || i25 >= arrayList9.size()) {
-                    xcaVar.i = arrayList8;
+                    ycaVar.i = arrayList8;
                 } else {
-                    xcaVar.a++;
-                    ((wca) arrayList9.get(i25)).c++;
-                    xcaVar.g.edit().putInt(uh9.k(i25, "score"), ((wca) arrayList9.get(i25)).c).putInt("scoreall", xcaVar.a).apply();
-                    xcaVar.i = null;
+                    ycaVar.a++;
+                    ((xca) arrayList9.get(i25)).c++;
+                    ycaVar.g.edit().putInt(uh9.k(i25, "score"), ((xca) arrayList9.get(i25)).c).putInt("scoreall", ycaVar.a).apply();
+                    ycaVar.i = null;
                 }
-                xcaVar.e.a(tcaVar);
+                ycaVar.e.a(ucaVar);
                 return;
             default:
                 sea seaVar = (sea) this.c;
@@ -703,10 +703,10 @@ public final /* synthetic */ class y36 implements Runnable {
         this.d = arrayList;
     }
 
-    public /* synthetic */ y36(xca xcaVar, tca tcaVar, int i, ArrayList arrayList) {
+    public /* synthetic */ y36(yca ycaVar, uca ucaVar, int i, ArrayList arrayList) {
         this.a = (byte) 28;
-        this.c = xcaVar;
-        this.e = tcaVar;
+        this.c = ycaVar;
+        this.e = ucaVar;
         this.b = i;
         this.d = arrayList;
     }

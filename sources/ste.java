@@ -4,10 +4,10 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.MappedByteBuffer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class ste {
-    public static yf7 a(MappedByteBuffer mappedByteBuffer) {
+    public static zf7 a(MappedByteBuffer mappedByteBuffer) {
         long j;
         ByteBuffer duplicate = mappedByteBuffer.duplicate();
         duplicate.order(ByteOrder.BIG_ENDIAN);
@@ -43,15 +43,15 @@ public abstract class ste {
                 duplicate.getInt();
                 if (1164798569 == i5 || 1701669481 == i5) {
                     duplicate.position((int) (j3 + j));
-                    yf7 yf7Var = new yf7();
+                    zf7 zf7Var = new zf7();
                     duplicate.order(ByteOrder.LITTLE_ENDIAN);
                     int position = duplicate.position() + duplicate.getInt(duplicate.position());
-                    yf7Var.b = duplicate;
-                    yf7Var.a = position;
+                    zf7Var.b = duplicate;
+                    zf7Var.a = position;
                     int i6 = position - duplicate.getInt(position);
-                    yf7Var.c = i6;
-                    yf7Var.d = yf7Var.b.getShort(i6);
-                    return yf7Var;
+                    zf7Var.c = i6;
+                    zf7Var.d = zf7Var.b.getShort(i6);
+                    return zf7Var;
                 }
             }
         }

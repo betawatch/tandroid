@@ -40,7 +40,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class kea extends nx0 implements fn7 {
     public static final /* synthetic */ int T2 = 0;
@@ -185,7 +185,7 @@ public class kea extends nx0 implements fn7 {
         this.D2 = true;
         this.F2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         hl.S(getWindow());
-        oz4 d = this.X0.d(new fda(this, b5));
+        oz4 d = this.X0.d(new gda(this, b5));
         this.K2 = d;
         if (Build.VERSION.SDK_INT < 31 || !xea.f()) {
             this.J2 = null;
@@ -286,7 +286,7 @@ public class kea extends nx0 implements fn7 {
             TLRPC.TL_channels_exportMessageLink tL_channels_exportMessageLink = new TLRPC.TL_channels_exportMessageLink();
             tL_channels_exportMessageLink.id = ((r47) arrayList.get(0)).e1();
             tL_channels_exportMessageLink.channel = uc7.s1(this.a).h1(((r47) arrayList.get(0)).k.peer_id.channel_id);
-            ConnectionsManager.getInstance(this.a).sendRequest(tL_channels_exportMessageLink, new ol7(this, context, (byte) 27));
+            ConnectionsManager.getInstance(this.a).sendRequest(tL_channels_exportMessageLink, new pl7(this, context, (byte) 27));
         }
         xda xdaVar = new xda(this, context);
         this.y2 = xdaVar;
@@ -311,7 +311,7 @@ public class kea extends nx0 implements fn7 {
         m7Var.addTextChangedListener(rdaVar);
         m7Var.setHint(ob6.M0(2131745168, null));
         m7Var.setOnEditorActionListener(new j(this, (byte) 24));
-        rq4Var.setCloseButtonOnClickListener(new gda(this, b4));
+        rq4Var.setCloseButtonOnClickListener(new hda(this, b4));
         frameLayout.addView(rq4Var, tre.d(-1, 40.0f, 83, 11.0f, 7.0f, 11.0f, 11.0f));
         a aVar = new a(context, null);
         this.u2 = aVar;
@@ -347,7 +347,7 @@ public class kea extends nx0 implements fn7 {
         d79Var.setClipToPadding(false);
         byte b9 = 11;
         d79Var.i(new br1(b9));
-        d79Var.setOnItemClickListener(new r69(this) { // from class: hda
+        d79Var.setOnItemClickListener(new r69(this) { // from class: ida
             public final /* synthetic */ kea b;
 
             {
@@ -525,7 +525,7 @@ public class kea extends nx0 implements fn7 {
         mdaVar3.setAdapter(deaVar);
         yob.l(mdaVar3, 21, i9, this.J0);
         final byte b10 = 1;
-        mdaVar3.setOnItemClickListener(new r69(this) { // from class: hda
+        mdaVar3.setOnItemClickListener(new r69(this) { // from class: ida
             public final /* synthetic */ kea b;
 
             {
@@ -693,7 +693,7 @@ public class kea extends nx0 implements fn7 {
         mdaVar4.setLayoutManager(sd4Var);
         byte b11 = 1;
         sd4Var.O = new nda(this, b11);
-        mdaVar4.setOnItemClickListener(new r69(this) { // from class: hda
+        mdaVar4.setOnItemClickListener(new r69(this) { // from class: ida
             public final /* synthetic */ kea b;
 
             {
@@ -908,7 +908,7 @@ public class kea extends nx0 implements fn7 {
                 LinearLayout linearLayout3 = new LinearLayout(context);
                 linearLayout3.setOrientation(0);
                 iye.b(linearLayout3, 0.015f, 1.2f);
-                linearLayout3.setOnClickListener(new eda(this, (byte) 4));
+                linearLayout3.setOnClickListener(new fda(this, (byte) 4));
                 ema emaVar = new ema(context);
                 this.u1 = emaVar;
                 emaVar.setTextSize(15);
@@ -931,7 +931,7 @@ public class kea extends nx0 implements fn7 {
                 mdaVar2 = mdaVar4;
                 yob.j(textView, Y, null, M, vnbVar2);
                 linearLayout3.addView(textView, tre.q(-2, 28, 0.0f, 21, 0, 0, 7, 0));
-                textView.setOnClickListener(new eda(this, (byte) 5));
+                textView.setOnClickListener(new fda(this, (byte) 5));
                 iye.a(textView);
                 this.b.addView(frameLayout2, tre.e(-1, 58, 83));
                 ArrayList arrayList2 = this.I1;
@@ -1037,7 +1037,7 @@ public class kea extends nx0 implements fn7 {
                 } else {
                     textView3.setText(ob6.M0(2131743039, null).toUpperCase());
                 }
-                textView3.setOnClickListener(new eda(this, (byte) 6));
+                textView3.setOnClickListener(new fda(this, (byte) 6));
                 frameLayout5.addView(textView3, tre.e(-1, -1, jn7.D1));
                 this.b.addView(frameLayout4, tre.e(-1, 58, 87));
                 ArrayList arrayList3 = this.I1;
@@ -1169,7 +1169,7 @@ public class kea extends nx0 implements fn7 {
         di3Var.Q = L6;
         di3Var.t0 = true;
         pdaVar2.addView(di3Var, tre.g());
-        di3Var.setOnClickListener(new eda(this, (byte) 0));
+        di3Var.setOnClickListener(new fda(this, (byte) 0));
         di3Var.setOnLongClickListener(new zs(this, (byte) 16));
         this.e2.setTextSize(hl.L(12.0f));
         this.e2.setTypeface(hl.o());
@@ -1197,7 +1197,7 @@ public class kea extends nx0 implements fn7 {
             textView5.setText(ob6.Z(2131743233, hl.g0(num.intValue(), false, false)));
             linearLayout5.addView(textView5, tre.t(-2, -2, 16, 9, 0, 0, 0));
             iye.b(linearLayout5, 0.025f, 1.5f);
-            linearLayout5.setOnClickListener(new eda(this, (byte) 1));
+            linearLayout5.setOnClickListener(new fda(this, (byte) 1));
             frameLayout8.addView(linearLayout5, tre.e(-2, -2, 17));
             if (this.q1 == null) {
                 View view2 = new View(context);
@@ -1251,18 +1251,18 @@ public class kea extends nx0 implements fn7 {
         }
         int i16 = this.a;
         byte b18 = 0;
-        jf7.Y(i16).a.c(new bt(i16, (int) b18, (Object) new sda(this), (byte) 6));
+        kf7.a0(i16).a.c(new bt(i16, (int) b18, (Object) new sda(this), (byte) 6));
         ls6.d0(this.a).O0(true);
         this.X0.i(this.b);
         vy4 vy4Var2 = this.X0;
-        vy4Var2.a = new fda(this, b18);
+        vy4Var2.a = new gda(this, b18);
         vy4Var2.d = new gz4(hl.L(48.0f));
         hl.Q3(1.0f, mdaVar, true, false);
         hl.Q3(1.0f, mdaVar2, false, false);
         ex0 ex0Var2 = this.c;
-        fda fdaVar = new fda(this, (byte) 1);
+        gda gdaVar = new gda(this, (byte) 1);
         WeakHashMap weakHashMap = ihc.a;
-        ahc.i(ex0Var2, fdaVar);
+        ahc.i(ex0Var2, gdaVar);
     }
 
     public static kea H0(Context context, r47 r47Var, String str, boolean z, String str2) {
@@ -1372,7 +1372,7 @@ public class kea extends nx0 implements fn7 {
             wpaVar.a(1.0f);
             vpaVar2.m = wpaVar;
             this.w2 = vpaVar2;
-            vpaVar2.b(new dda(this, (nea) view, iArr, b));
+            vpaVar2.b(new eda(this, (nea) view, iArr, b));
             this.w2.a(new iw0(this, (byte) 10));
             this.w2.h();
         }
@@ -1614,7 +1614,7 @@ public class kea extends nx0 implements fn7 {
         } else {
             TLRPC.User X1 = uc7.s1(this.a).X1(Long.valueOf(dialog.id));
             TLRPC.Chat M05 = uc7.s1(this.a).M0(Long.valueOf(-dialog.id));
-            if ((lbc.w(X1) && (((l = uc7.s1(this.a).g4.l(-X1.id)) != null && !l.isEmpty()) || !uc7.s1(this.a).g4.e(-X1.id))) || (wf3.y(dialog.id) && (xc2.c0(M05) || (xc2.p0(M05) && xc2.A(this.a, M05, 24))))) {
+            if ((lbc.w(X1) && (((l = uc7.s1(this.a).h4.l(-X1.id)) != null && !l.isEmpty()) || !uc7.s1(this.a).h4.e(-X1.id))) || (wf3.y(dialog.id) && (xc2.c0(M05) || (xc2.p0(M05) && xc2.A(this.a, M05, 24))))) {
                 this.x2 = dialog;
                 this.D1.g1(0, this.k2 - d79Var.getPaddingTop());
                 AtomicReference atomicReference = new AtomicReference();
@@ -1623,13 +1623,13 @@ public class kea extends nx0 implements fn7 {
                 jn7 f = jn7.f(this.a);
                 int i = jn7.t5;
                 f.a(tdaVar, i);
-                ArrayList l2 = uc7.s1(this.a).g4.l(-dialog.id);
+                ArrayList l2 = uc7.s1(this.a).h4.l(-dialog.id);
                 int i2 = this.a;
                 if (l2 != null) {
                     tdaVar.didReceivedNotification(i, i2, Long.valueOf(-dialog.id));
                     return;
                 } else {
-                    uc7.s1(i2).g4.o(-dialog.id);
+                    uc7.s1(i2).h4.o(-dialog.id);
                     hl.d3((Runnable) atomicReference.get(), 300L);
                     return;
                 }
@@ -2121,7 +2121,7 @@ public class kea extends nx0 implements fn7 {
         vnb vnbVar = this.J0;
         byte b = 1;
         FrameLayout frameLayout = this.v1;
-        (M3 ? new d31(frameLayout, vnbVar).Q(R.raw.star_premium_2, 36, hl.S2(ob6.a0(null, null, 2131743415, r))) : new d31(frameLayout, vnbVar).K(R.raw.star_premium_2, hl.S2(ob6.a0(null, null, 2131743415, r)), ob6.M0(2131743414, null), new gda(this, b))).j();
+        (M3 ? new d31(frameLayout, vnbVar).Q(R.raw.star_premium_2, 36, hl.S2(ob6.a0(null, null, 2131743415, r))) : new d31(frameLayout, vnbVar).K(R.raw.star_premium_2, hl.S2(ob6.a0(null, null, 2131743415, r)), ob6.M0(2131743414, null), new hda(this, b))).j();
     }
 
     public final void U0() {

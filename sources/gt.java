@@ -38,7 +38,7 @@ import org.telegram.ui.Wallet.c;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class gt implements pcc {
     public final /* synthetic */ byte a;
@@ -63,9 +63,8 @@ public final /* synthetic */ class gt implements pcc {
         TLRPC.Document document;
         int i;
         byte b = 5;
-        byte b2 = 9;
         boolean z = true;
-        byte b3 = 0;
+        byte b2 = 0;
         int i2 = 0;
         switch (this.a) {
             case 0:
@@ -268,11 +267,11 @@ public final /* synthetic */ class gt implements pcc {
                                                 str6 = str6.substring(1);
                                             }
                                             str6 = qd4.y("+", str10, str6);
-                                            b3 = 1;
+                                            b2 = 1;
                                         }
                                     }
                                 }
-                                if (b3 == 0) {
+                                if (b2 == 0) {
                                     Context context = a.b;
                                     String upperCase = context != null ? ((TelephonyManager) context.getSystemService(TelephonyManager.class)).getSimCountryIso().toUpperCase(Locale.US) : Locale.getDefault().getCountry();
                                     if (upperCase.endsWith("0") && str6.startsWith("0")) {
@@ -301,10 +300,11 @@ public final /* synthetic */ class gt implements pcc {
                 wb2 wb2Var = (wb2) this.d;
                 TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
                 idVar2.b(200L);
-                boolean z2 = ju1Var.a.getMessagesController().k4.l.f && !TextUtils.isEmpty(ju1Var.a.getMessagesController().k4.X2.f);
+                boolean z2 = ju1Var.a.getMessagesController().l4.l.f && !TextUtils.isEmpty(ju1Var.a.getMessagesController().l4.X2.f);
                 boolean z3 = (contentsettings == null || !contentsettings.sensitive_can_change) && z2;
                 boolean[] zArr2 = new boolean[1];
                 FrameLayout frameLayout = new FrameLayout(ju1Var.a.getParentActivity());
+                byte b3 = 9;
                 if (z2) {
                     zArr2[0] = true;
                 } else if (contentsettings != null && contentsettings.sensitive_can_change) {
@@ -313,7 +313,7 @@ public final /* synthetic */ class gt implements pcc {
                     sg2Var.e(ob6.M0(2131748236, null), "", zArr2[0], false, false);
                     sg2Var.setPadding(ob6.a0 ? hl.L(16.0f) : hl.L(8.0f), 0, ob6.a0 ? hl.L(8.0f) : hl.L(16.0f), 0);
                     frameLayout.addView(sg2Var, tre.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-                    sg2Var.setOnClickListener(new de(zArr2, b2));
+                    sg2Var.setOnClickListener(new de(zArr2, b3));
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ju1Var.a.getResourceProvider(), ju1Var.a.getParentActivity());
                 alertDialog$Builder.a.S = ob6.M0(2131748227, null);
@@ -339,7 +339,7 @@ public final /* synthetic */ class gt implements pcc {
                     }
                     y0 y0Var = new y0(ju1Var2, r47Var2, (byte) 25);
                     int i7 = sqa.Y1;
-                    TLRPC.EmojiGameInfo emojiGameInfo = uc7.s1(zu1Var3.getCurrentAccount()).l5;
+                    TLRPC.EmojiGameInfo emojiGameInfo = uc7.s1(zu1Var3.getCurrentAccount()).m5;
                     if (emojiGameInfo instanceof TLRPC.TL_emojiGameDiceInfo) {
                         long j = ((TLRPC.TL_emojiGameDiceInfo) emojiGameInfo).prev_stake;
                         c21 c21Var = new c21(zu1Var3.getContext(), zu1Var3.getResourceProvider());
@@ -367,7 +367,7 @@ public final /* synthetic */ class gt implements pcc {
                         }
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(ob6.M0(2131744893, null));
                         spannableStringBuilder2.append((CharSequence) nza.K0(j));
-                        spannableStringBuilder2.append((CharSequence) "  ").append((CharSequence) z41.b(ob6.M0(2131744891, null), new ida(zu1Var3, y0Var, b2), zu1Var3.getResourceProvider(), null));
+                        spannableStringBuilder2.append((CharSequence) "  ").append((CharSequence) z41.b(ob6.M0(2131744891, null), new kba((Object) zu1Var3, (Object) y0Var, (byte) 10), zu1Var3.getResourceProvider(), null));
                         hl.B2(c21Var.b);
                         y41 y41Var = new y41(zu1Var3.getContext());
                         c21Var.b = y41Var;
@@ -384,7 +384,7 @@ public final /* synthetic */ class gt implements pcc {
                         c21Var.b.setMaxLines(2);
                         t21 t21Var = new t21(zu1Var3.getResourceProvider(), zu1Var3.getContext(), true);
                         t21Var.e(ob6.M0(2131744892, null));
-                        t21Var.b = new pqa(y0Var, j, b3);
+                        t21Var.b = new pqa(y0Var, j, b2);
                         c21Var.setButton(t21Var);
                         d31.b0(zu1Var3).b(c21Var, 2750).j();
                         break;
@@ -457,7 +457,7 @@ public final /* synthetic */ class gt implements pcc {
                 r47Var3.k.factcheck = tL_factCheck;
                 break;
             case 17:
-                Utilities.d.c(new ao1((xc4) this.b, (String) this.c, (String) this.d, (n5b) obj, (byte) 19));
+                Utilities.d.c(new ao1((xc4) this.b, (String) this.c, (String) this.d, (o5b) obj, (byte) 19));
                 break;
             case 18:
                 c cVar = (c) this.b;

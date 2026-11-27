@@ -18,7 +18,7 @@ import java.util.WeakHashMap;
 import java.util.concurrent.locks.ReentrantLock;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class b8d implements q6d {
     public final Context a;
@@ -42,7 +42,7 @@ public final class b8d implements q6d {
         this.o = reentrantLock;
         this.c = looper;
         this.j = d05Var;
-        this.d = new i6d(context, d6dVar, reentrantLock, looper, j05Var, qsVar2, null, qsVar4, null, arrayList2, new k09(this, (byte) 23));
+        this.d = new i6d(context, d6dVar, reentrantLock, looper, j05Var, qsVar2, null, qsVar4, null, arrayList2, new l09(this, (byte) 23));
         this.e = new i6d(context, d6dVar, reentrantLock, looper, j05Var, qsVar, oxbVar, qsVar3, rr5Var, arrayList, new pq8((Object) this, (byte) 29));
         qs qsVar5 = new qs(0);
         Iterator it = ((os) qsVar2.keySet()).iterator();

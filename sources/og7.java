@@ -1,46 +1,70 @@
 // default package
 
-import com.google.android.gms.tasks.CancellationTokenSource;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import java.io.Closeable;
-import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicBoolean;
+import android.util.Pair;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public abstract class og7 implements Closeable, h36 {
-    public static final j5 e = new j5("MobileVisionBase", "", (byte) 2);
-    public final AtomicBoolean a = new AtomicBoolean(false);
-    public final qi6 b;
-    public final CancellationTokenSource c;
-    public final Executor d;
+public final class og7 implements ez9 {
+    public final long[] a;
+    public final long[] b;
+    public final long c;
 
-    public og7(qi6 qi6Var, Executor executor) {
-        this.b = qi6Var;
-        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        this.c = cancellationTokenSource;
-        this.d = executor;
-        qi6Var.b.incrementAndGet();
-        qi6Var.a(executor, fgd.a, cancellationTokenSource.getToken()).addOnFailureListener(z6f.f);
+    public og7(long j, long[] jArr, long[] jArr2) {
+        this.a = jArr;
+        this.b = jArr2;
+        this.c = j == -9223372036854775807L ? gcc.T(jArr2[jArr2.length - 1]) : j;
     }
 
-    public final synchronized Task c(jq5 jq5Var) {
-        if (this.a.get()) {
-            return Tasks.forException(new kg7("This detector is already closed!", 14));
+    public static Pair i(long j, long[] jArr, long[] jArr2) {
+        int f = gcc.f(jArr, j, true);
+        long j2 = jArr[f];
+        long j3 = jArr2[f];
+        int i = f + 1;
+        if (i == jArr.length) {
+            return Pair.create(Long.valueOf(j2), Long.valueOf(j3));
         }
-        if (jq5Var.b < 32 || jq5Var.c < 32) {
-            return Tasks.forException(new kg7("InputImage width and height should be at least 32!", 3));
-        }
-        return this.b.a(this.d, new lka(this, jq5Var), this.c.getToken());
+        return Pair.create(Long.valueOf(j), Long.valueOf(((long) ((jArr[i] == j2 ? 0.0d : (j - j2) / (r6 - j2)) * (jArr2[i] - j3))) + j3));
     }
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    @es7(y26.ON_DESTROY)
-    public synchronized void close() {
-        if (!this.a.getAndSet(true)) {
-            this.c.cancel();
-            this.b.d(this.d);
-        }
+    @Override // ez9
+    public final long a() {
+        return -1L;
+    }
+
+    @Override // ez9
+    public final long b() {
+        return 0L;
+    }
+
+    @Override // zy9
+    public final boolean c() {
+        return true;
+    }
+
+    @Override // zy9
+    public final boolean d() {
+        return false;
+    }
+
+    @Override // zy9
+    public final yy9 e(long j) {
+        Pair i = i(gcc.i0(gcc.j(j, 0L, this.c)), this.b, this.a);
+        bz9 bz9Var = new bz9(gcc.T(((Long) i.first).longValue()), ((Long) i.second).longValue());
+        return new yy9(bz9Var, bz9Var);
+    }
+
+    @Override // ez9
+    public final long f(long j) {
+        return gcc.T(((Long) i(j, this.a, this.b).second).longValue());
+    }
+
+    @Override // ez9
+    public final int g() {
+        return -2147483647;
+    }
+
+    @Override // zy9
+    public final long h() {
+        return this.c;
     }
 }

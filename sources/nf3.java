@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class nf3 {
     public final of3 a;
@@ -40,13 +40,13 @@ public final class nf3 {
             this.b = e1;
             TextPaint textPaint = aob.E0[0];
             if (chat != null) {
-                ArrayList l = uc7.s1(i).g4.l(chat.id);
+                ArrayList l = uc7.s1(i).h4.l(chat.id);
                 if (l == null || l.isEmpty()) {
-                    if (uc7.s1(i).g4.e(chat.id)) {
+                    if (uc7.s1(i).h4.e(chat.id)) {
                         this.g = ob6.M0(xc2.p0(chat) ? 2131747921 : 2131747868, null);
                         return;
                     }
-                    uc7.s1(i).g4.n(0, chat.id, true);
+                    uc7.s1(i).h4.n(0, chat.id, true);
                     this.g = ob6.M0(2131748533, null);
                     this.e = true;
                     return;
@@ -64,7 +64,7 @@ public final class nf3 {
                     j = r47.b2(i, r47Var.k, true, false);
                     i2 = 1;
                     arrayList = arrayList2;
-                    TLRPC.TL_forumTopic f = uc7.s1(i).g4.f(chat.id, j);
+                    TLRPC.TL_forumTopic f = uc7.s1(i).h4.f(chat.id, j);
                     if (f != null) {
                         CharSequence k = ro4.k(f, textPaint, null);
                         spannableStringBuilder.append(k);

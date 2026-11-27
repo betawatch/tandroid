@@ -14,7 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class h9d implements Callable {
     public final /* synthetic */ byte a;
@@ -112,7 +112,7 @@ public final class h9d implements Callable {
         int i3;
         vh0 vh0Var = (vh0) this.b;
         tg0 tg0Var = (tg0) this.c;
-        k09 k09Var = (k09) this.d;
+        l09 l09Var = (l09) this.d;
         Exception exc = null;
         if (!vh0Var.n()) {
             gi0 gi0Var = hod.h;
@@ -132,8 +132,8 @@ public final class h9d implements Callable {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         int i4 = 0;
-        String str = ((j09) ((vjd) k09Var.b).get(0)).b;
-        vjd vjdVar = (vjd) k09Var.b;
+        String str = ((k09) ((vjd) l09Var.b).get(0)).b;
+        vjd vjdVar = (vjd) l09Var.b;
         int size = vjdVar.size();
         int i5 = 0;
         while (true) {
@@ -146,7 +146,7 @@ public final class h9d implements Callable {
             ArrayList<String> arrayList4 = new ArrayList<>();
             int size2 = arrayList3.size();
             for (int i7 = i4; i7 < size2; i7++) {
-                arrayList4.add(((j09) arrayList3.get(i7)).a);
+                arrayList4.add(((k09) arrayList3.get(i7)).a);
             }
             Bundle bundle = new Bundle();
             bundle.putStringArrayList("ITEM_ID_LIST", arrayList4);
@@ -214,9 +214,9 @@ public final class h9d implements Callable {
                                 while (i9 < size4) {
                                     String str3 = stringArrayList2.get(i9);
                                     i9++;
-                                    d9c d9cVar = new d9c(str3);
-                                    old.g("BillingClient", "Got unfetchedProduct: ".concat(d9cVar.toString()));
-                                    arrayList6.add(d9cVar);
+                                    e9c e9cVar = new e9c(str3);
+                                    old.g("BillingClient", "Got unfetchedProduct: ".concat(e9cVar.toString()));
+                                    arrayList6.add(e9cVar);
                                 }
                             } else {
                                 int size5 = arrayList3.size();
@@ -224,14 +224,14 @@ public final class h9d implements Callable {
                                 while (i10 < size5) {
                                     Object obj = arrayList3.get(i10);
                                     i10++;
-                                    j09 j09Var = (j09) obj;
+                                    k09 k09Var = (k09) obj;
                                     int size6 = arrayList5.size();
                                     int i11 = 0;
                                     while (true) {
                                         if (i11 >= size6) {
                                             i2 = size5;
                                             i3 = size;
-                                            arrayList6.add(new d9c(new JSONObject().put("productId", j09Var.a).put(TeXSymbolParser.TYPE_ATTR, j09Var.b).put("statusCode", 0).toString()));
+                                            arrayList6.add(new e9c(new JSONObject().put("productId", k09Var.a).put(TeXSymbolParser.TYPE_ATTR, k09Var.b).put("statusCode", 0).toString()));
                                             break;
                                         }
                                         Object obj2 = arrayList5.get(i11);
@@ -239,7 +239,7 @@ public final class h9d implements Callable {
                                         wo8 wo8Var2 = (wo8) obj2;
                                         i2 = size5;
                                         i3 = size;
-                                        if (!j09Var.a.equals(wo8Var2.c) || !j09Var.b.equals(wo8Var2.d)) {
+                                        if (!k09Var.a.equals(wo8Var2.c) || !k09Var.b.equals(wo8Var2.d)) {
                                             size5 = i2;
                                             size = i3;
                                         }

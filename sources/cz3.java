@@ -5,7 +5,7 @@ import android.util.Pair;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class cz3 implements pcc {
     public final /* synthetic */ byte a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class cz3 implements pcc {
                 t2b t2bVar = (t2b) obj2;
                 TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
                 if (tL_messages_emojiGroups != null) {
-                    jn7.f(yac.t0).d(new cq6((Object) t2bVar, (Object) tL_messages_emojiGroups, this.b, (byte) 28));
+                    jn7.f(yac.t0).d(new cq6((Object) t2bVar, (Object) tL_messages_emojiGroups, this.b, (byte) 29));
                     break;
                 }
                 break;
@@ -70,7 +70,7 @@ public final /* synthetic */ class cz3 implements pcc {
                 }
                 break;
             default:
-                hl.d3(new vlc((snc) obj2, (String) obj, (byte) 4), Math.max(0L, (j2 + 1200) - SystemClock.uptimeMillis()));
+                hl.d3(new slc((snc) obj2, (String) obj, (byte) 5), Math.max(0L, (j2 + 1200) - SystemClock.uptimeMillis()));
                 break;
         }
     }

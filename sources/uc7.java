@@ -86,53 +86,53 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class uc7 extends rf0 implements fn7 {
-    public static volatile long p5 = 0;
     public static volatile long q5 = 0;
-    public static final int r5 = 1050111;
-    public static final int s5 = 31;
-    public static volatile uc7[] t5 = new uc7[4];
-    public static final Object[] u5 = new Object[4];
+    public static volatile long r5 = 0;
+    public static final int s5 = 1050111;
+    public static final int t5 = 31;
+    public static volatile uc7[] u5 = new uc7[4];
+    public static final Object[] v5 = new Object[4];
     public final zh6 A0;
     public final HashMap A1;
     public final pg6 A2;
-    public HashMap A3;
-    public long A4;
+    public String A3;
+    public final zh6 A4;
     public final zh6 B0;
     public final zh6 B1;
     public final l87 B2;
     public HashMap B3;
-    public final Set B4;
+    public long B4;
     public int C0;
     public final zh6 C1;
     public long C2;
-    public boolean C3;
-    public final boolean C4;
+    public HashMap C3;
+    public final Set C4;
     public long D0;
     public final zh6 D1;
     public int D2;
     public boolean D3;
-    public final byte D4;
+    public final boolean D4;
     public final ArrayList E;
     public final SparseIntArray E0;
     public final zh6 E1;
     public byte E2;
-    public lc7 E3;
+    public boolean E3;
     public final byte E4;
     public final ArrayList F;
     public final SparseIntArray F0;
     public final zh6 F1;
     public boolean F2;
     public lc7 F3;
-    public ArrayList F4;
+    public final byte F4;
     public final ArrayList G;
     public ArrayList G0;
     public final zh6 G1;
     public String G2;
-    public int G3;
-    public final LongSparseIntArray G4;
+    public lc7 G3;
+    public ArrayList G4;
     public final ArrayList H;
     public ArrayList H0;
     public final zh6 H1;
@@ -149,223 +149,224 @@ public final class uc7 extends rf0 implements fn7 {
     public final SparseArray J0;
     public final zh6 J1;
     public String J2;
-    public Set J3;
-    public final zh6 J4;
+    public int J3;
+    public final LongSparseIntArray J4;
     public final ArrayList K;
     public boolean K0;
     public final ArrayList K1;
     public unb K2;
     public Set K3;
-    public final HashSet K4;
+    public final zh6 K4;
     public final ArrayList L;
     public boolean L0;
     public final HashMap L1;
     public kbc L2;
-    public long L3;
-    public boolean L4;
+    public Set L3;
+    public final HashSet L4;
     public final ArrayList M;
     public final ArrayList M0;
     public boolean M1;
     public final sb7 M2;
-    public Set M3;
-    public TLRPC.TL_exportedContactToken M4;
+    public long M3;
+    public boolean M4;
     public final ac7[] N;
     public final zh6 N0;
     public int N1;
     public String N2;
-    public long N3;
-    public HashMap N4;
+    public Set N3;
+    public TLRPC.TL_exportedContactToken N4;
     public int O;
     public final LongSparseLongArray O0;
     public zh6 O1;
     public int O2;
-    public Long O3;
-    public HashSet O4;
+    public long O3;
+    public HashMap O4;
     public final ConcurrentHashMap P;
     public final LongSparseIntArray P0;
     public zh6 P1;
     public final byte P2;
-    public boolean P3;
-    public zh6 P4;
+    public Long P3;
+    public HashSet P4;
     public final ConcurrentHashMap Q;
     public final zh6 Q0;
     public pa7 Q1;
     public int Q2;
     public boolean Q3;
-    public boolean Q4;
+    public zh6 Q4;
     public final zh6 R;
     public final zh6 R0;
     public boolean R1;
     public int R2;
-    public String R3;
+    public boolean R3;
     public boolean R4;
     public final zh6 S;
     public final zh6 S0;
     public final SparseIntArray S1;
     public int S2;
-    public HashSet S3;
-    public final zh6 S4;
+    public String S3;
+    public boolean S4;
     public final zh6 T;
     public final zh6 T0;
     public final SparseBooleanArray T1;
     public int T2;
-    public int[] T3;
-    public final HashSet T4;
+    public HashSet T3;
+    public final zh6 T4;
     public final LongSparseIntArray U;
     public final zh6 U0;
     public final SparseBooleanArray U1;
     public int U2;
-    public long[] U3;
-    public final l87 U4;
+    public int[] U3;
+    public final HashSet U4;
     public final SparseArray V;
     public final ArrayList V0;
     public final SparseBooleanArray V1;
     public boolean V2;
-    public int[][] V3;
-    public boolean V4;
+    public long[] V3;
+    public final l87 V4;
     public final ConcurrentHashMap W;
     public final ArrayList W0;
     public boolean W1;
     public int W2;
-    public final SharedPreferences W3;
-    public TLRPC.messages_AvailableEffects W4;
+    public int[][] W3;
+    public boolean W4;
     public zh6 X;
     public final ArrayList X0;
     public boolean X1;
     public final int X2;
     public final SharedPreferences X3;
-    public final ub7 X4;
+    public TLRPC.messages_AvailableEffects X4;
     public zh6 Y;
     public long Y0;
     public boolean Y1;
     public final int Y2;
     public final SharedPreferences Y3;
-    public boolean Y4;
+    public final ub7 Y4;
     public final zh6[] Z;
     public long Z0;
     public boolean Z1;
     public int Z2;
-    public volatile boolean Z3;
-    public ArrayList Z4;
+    public final SharedPreferences Z3;
+    public boolean Z4;
     public int a;
     public final ConcurrentHashMap a0;
     public long a1;
     public boolean a2;
     public int a3;
-    public int a4;
-    public long a5;
+    public volatile boolean a4;
+    public ArrayList a5;
     public final ConcurrentHashMap b;
     public final LongSparseIntArray b0;
     public final zh6 b1;
     public boolean b2;
     public int b3;
-    public fu2 b4;
-    public TL_account.contentSettings b5;
+    public int b4;
+    public long b5;
     public final ConcurrentHashMap c;
     public int c0;
     public final zh6 c1;
     public boolean c2;
     public int c3;
-    public long c4;
-    public boolean c5;
+    public fu2 c4;
+    public TL_account.contentSettings c5;
     public final ConcurrentHashMap d;
     public final SparseArray d0;
     public final zh6 d1;
     public long d2;
     public final int d3;
     public long d4;
-    public final HashSet d5;
+    public boolean d5;
     public final ConcurrentHashMap e;
     public c6b e0;
     public final zh6 e1;
     public boolean e2;
     public final int e3;
-    public l87 e4;
+    public long e4;
     public final HashSet e5;
     public final ConcurrentHashMap f;
     public nt9 f0;
     public VoIPDebugToSend f1;
     public TLRPC.TL_messages_peerDialogs f2;
     public int f3;
-    public final ConcurrentHashMap f4;
-    public final l87 f5;
+    public l87 f4;
+    public final HashSet f5;
     public u8c g0;
     public final zh6 g1;
     public TLRPC.messages_Dialogs g2;
     public int g3;
-    public final qyb g4;
-    public final LongSparseArray g5;
+    public final ConcurrentHashMap g4;
+    public final l87 g5;
     public final HashMap h;
     public boolean h0;
     public final HashSet h1;
     public final SparseIntArray h2;
     public int h3;
-    public final w51 h4;
-    public final HashMap h5;
+    public final qyb h4;
+    public final LongSparseArray h5;
     public xg1 i0;
     public final LongSparseLongArray i1;
     public ArrayList i2;
     public String i3;
-    public final a5c i4;
-    public oc7 i5;
+    public final w51 i4;
+    public final HashMap i5;
     public boolean j0;
     public final ConcurrentHashMap j1;
     public TLRPC.WebPage j2;
     public int j3;
-    public jc j4;
-    public boolean j5;
+    public final a5c j4;
+    public oc7 j5;
     public final zh6 k0;
     public final int k1;
     public int k2;
     public int k3;
-    public final hr k4;
-    public ArrayList k5;
+    public jc k4;
+    public boolean k5;
     public final ArrayList l0;
     public final HashSet l1;
     public boolean l2;
     public boolean l3;
-    public boolean l4;
-    public TLRPC.EmojiGameInfo l5;
+    public final hr l4;
+    public ArrayList l5;
     public final ArrayList m0;
     public final HashSet m1;
     public int m2;
     public boolean m3;
-    public final SparseArray m4;
-    public final l87 m5;
+    public boolean m4;
+    public TLRPC.EmojiGameInfo m5;
     public final ArrayList n;
     public final ArrayList n0;
     public final HashSet n1;
     public boolean n2;
     public boolean n3;
-    public final HashSet n4;
-    public TL_account.TL_webBrowserSettings n5;
+    public final SparseArray n4;
+    public final l87 n5;
     public final ArrayList o0;
     public final HashSet o1;
     public int o2;
-    public String o3;
-    public final HashMap o4;
-    public final vb7 o5;
+    public volatile boolean o3;
+    public final HashSet o4;
+    public TL_account.TL_webBrowserSettings o5;
     public final ArrayList p0;
     public final LongSparseLongArray p1;
     public int p2;
     public String p3;
-    public final ArrayList p4;
+    public final HashMap p4;
+    public final vb7 p5;
     public final LongSparseIntArray q0;
     public final zh6 q1;
     public TLRPC.Dialog q2;
     public String q3;
-    public ac7 q4;
+    public final ArrayList q4;
     public final zh6 r;
     public final zh6 r0;
     public final LongSparseIntArray r1;
     public boolean r2;
-    public int r3;
-    public final j97 r4;
+    public String r3;
+    public ac7 r4;
     public final ArrayList s;
     public final LongSparseIntArray s0;
     public final SparseIntArray s1;
     public long s2;
-    public String s3;
+    public int s3;
     public final j97 s4;
     public final zh6 t0;
     public final zh6 t1;
@@ -375,40 +376,40 @@ public final class uc7 extends rf0 implements fn7 {
     public final zh6 u0;
     public final zh6 u1;
     public String u2;
-    public Set u3;
-    public final vk6 u4;
+    public String u3;
+    public final j97 u4;
     public final zh6 v0;
     public final zh6 v1;
     public String v2;
     public Set v3;
-    public i61 v4;
+    public final vk6 v4;
     public final SparseArray w;
     public boolean w0;
     public final HashMap w1;
     public String w2;
-    public TLRPC.TL_pendingSuggestion w3;
-    public final l87 w4;
+    public Set w3;
+    public i61 w4;
     public final zh6 x;
     public final LongSparseIntArray x0;
     public final zh6 x1;
     public boolean x2;
-    public ArrayList x3;
+    public TLRPC.TL_pendingSuggestion x3;
     public final l87 x4;
     public final ArrayList y;
     public int y0;
     public final HashMap y1;
     public int y2;
-    public HashSet y3;
-    public final zh6 y4;
+    public ArrayList y3;
+    public final l87 y4;
     public boolean z0;
     public final zh6 z1;
     public int z2;
-    public String z3;
+    public HashSet z3;
     public final zh6 z4;
 
     static {
         for (int i = 0; i < 4; i++) {
-            u5[i] = new Object();
+            v5[i] = new Object();
         }
     }
 
@@ -541,65 +542,66 @@ public final class uc7 extends rf0 implements fn7 {
         this.I2 = new HashMap();
         this.M2 = new sb7(this);
         this.P2 = (byte) 100;
-        this.x3 = new ArrayList();
-        this.A3 = new HashMap();
+        this.o3 = true;
+        this.y3 = new ArrayList();
         this.B3 = new HashMap();
-        this.M3 = new HashSet();
-        this.f4 = new ConcurrentHashMap();
-        this.k4 = new hr(this.currentAccount);
-        this.m4 = new SparseArray();
+        this.C3 = new HashMap();
+        this.N3 = new HashSet();
+        this.g4 = new ConcurrentHashMap();
+        this.l4 = new hr(this.currentAccount);
+        this.n4 = new SparseArray();
         HashSet hashSet = new HashSet();
-        this.n4 = hashSet;
-        this.o4 = new HashMap();
-        this.p4 = new ArrayList();
-        this.r4 = new j97(this, 0 == true ? 1 : 0);
-        this.s4 = new j97(this, b2);
-        this.t4 = new j97(this, (byte) 2);
-        this.u4 = new vk6(this, (byte) 17);
-        this.w4 = new l87(this, (byte) 14);
-        this.x4 = new l87(this, (byte) 22);
-        this.y4 = new zh6();
+        this.o4 = hashSet;
+        this.p4 = new HashMap();
+        this.q4 = new ArrayList();
+        this.s4 = new j97(this, 0 == true ? 1 : 0);
+        this.t4 = new j97(this, b2);
+        this.u4 = new j97(this, (byte) 2);
+        this.v4 = new vk6(this, (byte) 17);
+        this.x4 = new l87(this, (byte) 14);
+        this.y4 = new l87(this, (byte) 22);
         this.z4 = new zh6();
-        this.B4 = DesugarCollections.synchronizedSet(new HashSet());
-        this.C4 = true;
-        this.D4 = (byte) 2;
-        this.E4 = (byte) 3;
-        this.F4 = new ArrayList();
-        this.G4 = new LongSparseIntArray();
+        this.A4 = new zh6();
+        this.C4 = DesugarCollections.synchronizedSet(new HashSet());
+        this.D4 = true;
+        this.E4 = (byte) 2;
+        this.F4 = (byte) 3;
+        this.G4 = new ArrayList();
         this.H4 = new LongSparseIntArray();
         this.I4 = new LongSparseIntArray();
-        this.J4 = new zh6();
-        this.K4 = new HashSet();
-        this.S4 = new zh6();
-        this.T4 = new HashSet();
-        this.U4 = new l87(this, (byte) 24);
-        this.X4 = new ub7(this);
-        this.d5 = new HashSet();
+        this.J4 = new LongSparseIntArray();
+        this.K4 = new zh6();
+        this.L4 = new HashSet();
+        this.T4 = new zh6();
+        this.U4 = new HashSet();
+        this.V4 = new l87(this, (byte) 24);
+        this.Y4 = new ub7(this);
         this.e5 = new HashSet();
-        this.f5 = new l87(this, (byte) 25);
-        this.g5 = new LongSparseArray();
-        this.h5 = new HashMap();
-        this.m5 = new l87(this, (byte) 6);
-        this.o5 = new vb7(this);
+        this.f5 = new HashSet();
+        this.g5 = new l87(this, (byte) 25);
+        this.h5 = new LongSparseArray();
+        this.i5 = new HashMap();
+        this.n5 = new l87(this, (byte) 6);
+        this.p5 = new vb7(this);
         in5.z();
         getMessagesStorage();
         getLocationController();
         hl.c3(new l87(this, (byte) 7));
         h();
         if (this.currentAccount == 0) {
-            this.W3 = a.b.getSharedPreferences("Notifications", 0);
+            this.X3 = a.b.getSharedPreferences("Notifications", 0);
             k = a.b.getSharedPreferences("mainconfig", 0);
-            this.X3 = k;
-            this.Y3 = a.b.getSharedPreferences("emoji", 0);
+            this.Y3 = k;
+            this.Z3 = a.b.getSharedPreferences("emoji", 0);
         } else {
-            this.W3 = bp1.k(new StringBuilder("Notifications"), this.currentAccount, a.b, 0);
+            this.X3 = bp1.k(new StringBuilder("Notifications"), this.currentAccount, a.b, 0);
             k = bp1.k(new StringBuilder("mainconfig"), this.currentAccount, a.b, 0);
-            this.X3 = k;
-            this.Y3 = bp1.k(new StringBuilder("emoji"), this.currentAccount, a.b, 0);
+            this.Y3 = k;
+            this.Z3 = bp1.k(new StringBuilder("emoji"), this.currentAccount, a.b, 0);
         }
         System.currentTimeMillis();
-        this.C3 = k.getBoolean("remoteConfigLoaded", false);
-        this.D3 = k.getBoolean("fpnvAllowed", false);
+        this.D3 = k.getBoolean("remoteConfigLoaded", false);
+        this.E3 = k.getBoolean("fpnvAllowed", false);
         this.z2 = k.getInt("secretWebpage2", 2);
         this.O2 = k.getInt("maxGroupCount", jn7.d3);
         this.Q2 = k.getInt("maxMegagroupCount", 10000);
@@ -619,42 +621,43 @@ public final class uc7 extends rf0 implements fn7 {
                 }
             }
         }
-        this.Z2 = this.X3.getInt("callReceiveTimeout", 20000);
-        this.a3 = this.X3.getInt("callRingTimeout", 90000);
-        this.b3 = this.X3.getInt("callConnectTimeout", 30000);
-        this.c3 = this.X3.getInt("callPacketTimeout", 10000);
-        this.h3 = this.X3.getInt("updateCheckDelay", 86400);
-        this.d3 = this.X3.getInt("maxFolderPinnedDialogsCountDefault", 100);
-        this.e3 = this.X3.getInt("maxFolderPinnedDialogsCountPremium", 100);
-        this.j3 = this.X3.getInt("maxMessageLength", TLObject.FLAG_12);
-        this.k3 = this.X3.getInt("maxCaptionLength", 1024);
-        this.f3 = this.X3.getInt("mapProvider", 0);
-        this.g3 = this.X3.getInt("availableMapProviders", 3);
-        this.i3 = this.X3.getString("pk", null);
-        this.t3 = this.X3.getString("installReferer", null);
-        this.T2 = this.X3.getInt("revokeTimeLimit", ConnectionsManager.DEFAULT_DATACENTER_ID);
-        this.U2 = this.X3.getInt("revokeTimePmLimit", ConnectionsManager.DEFAULT_DATACENTER_ID);
-        this.V2 = this.X3.getBoolean("canRevokePmInbox", this.V2);
-        this.m3 = this.X3.getBoolean("preloadFeaturedStickers", false);
-        this.s2 = this.X3.getLong("proxy_dialog", 0L);
-        this.m2 = this.X3.getInt("nextPromoInfoCheckTime", 0);
-        this.t2 = this.X3.getInt("promo_dialog_type", 0);
-        this.u2 = this.X3.getString("promo_psa_message", null);
-        this.v2 = this.X3.getString("promo_psa_type", null);
-        this.w2 = this.X3.getString("proxyDialogAddress", null);
-        this.o3 = this.X3.getString("gifSearchBot", "gif");
-        this.p3 = this.X3.getString("imageSearchBot", "pic");
-        this.l3 = this.X3.getBoolean("blockedCountry", false);
-        this.s3 = this.X3.getString("suggestedLangCode", "en");
-        this.n3 = this.X3.getBoolean("showFiltersTooltip", false);
-        this.u3 = this.X3.getStringSet("pendingSuggestions", null);
-        this.v3 = this.X3.getStringSet("dismissedSuggestions", null);
-        this.a4 = this.X3.getInt("transcribeButtonPressed", 0);
-        this.L3 = this.X3.getLong("telegramAntispamUserId", -1L);
+        this.Z2 = this.Y3.getInt("callReceiveTimeout", 20000);
+        this.a3 = this.Y3.getInt("callRingTimeout", 90000);
+        this.b3 = this.Y3.getInt("callConnectTimeout", 30000);
+        this.c3 = this.Y3.getInt("callPacketTimeout", 10000);
+        this.h3 = this.Y3.getInt("updateCheckDelay", 86400);
+        this.d3 = this.Y3.getInt("maxFolderPinnedDialogsCountDefault", 100);
+        this.e3 = this.Y3.getInt("maxFolderPinnedDialogsCountPremium", 100);
+        this.j3 = this.Y3.getInt("maxMessageLength", TLObject.FLAG_12);
+        this.k3 = this.Y3.getInt("maxCaptionLength", 1024);
+        this.f3 = this.Y3.getInt("mapProvider", 0);
+        this.g3 = this.Y3.getInt("availableMapProviders", 3);
+        this.i3 = this.Y3.getString("pk", null);
+        this.u3 = this.Y3.getString("installReferer", null);
+        this.T2 = this.Y3.getInt("revokeTimeLimit", ConnectionsManager.DEFAULT_DATACENTER_ID);
+        this.U2 = this.Y3.getInt("revokeTimePmLimit", ConnectionsManager.DEFAULT_DATACENTER_ID);
+        this.V2 = this.Y3.getBoolean("canRevokePmInbox", this.V2);
+        this.m3 = this.Y3.getBoolean("preloadFeaturedStickers", false);
+        this.s2 = this.Y3.getLong("proxy_dialog", 0L);
+        this.m2 = this.Y3.getInt("nextPromoInfoCheckTime", 0);
+        this.t2 = this.Y3.getInt("promo_dialog_type", 0);
+        this.u2 = this.Y3.getString("promo_psa_message", null);
+        this.v2 = this.Y3.getString("promo_psa_type", null);
+        this.w2 = this.Y3.getString("proxyDialogAddress", null);
+        this.p3 = this.Y3.getString("gifSearchBot", "gif");
+        this.q3 = this.Y3.getString("imageSearchBot", "pic");
+        this.l3 = this.Y3.getBoolean("blockedCountry", false);
+        this.t3 = this.Y3.getString("suggestedLangCode", "en");
+        this.n3 = this.Y3.getBoolean("showFiltersTooltip", false);
+        this.o3 = this.Y3.getBoolean("databaseMigrationEnabled", true);
+        this.v3 = this.Y3.getStringSet("pendingSuggestions", null);
+        this.w3 = this.Y3.getStringSet("dismissedSuggestions", null);
+        this.b4 = this.Y3.getInt("transcribeButtonPressed", 0);
+        this.M3 = this.Y3.getLong("telegramAntispamUserId", -1L);
         Object[] objArr2 = ConnectionsManager.native_isTestBackend(this.currentAccount) != 0;
         byte b3 = 11;
-        this.S3 = (HashSet) Collection.-EL.stream(this.X3.getStringSet("whitelistedBots", new HashSet())).map(new yz(b3)).collect(Collectors.toCollection(new zl1((byte) 1)));
-        String string2 = this.X3.getString("starsGroupcallMessageLimits", null);
+        this.T3 = (HashSet) Collection.-EL.stream(this.Y3.getStringSet("whitelistedBots", new HashSet())).map(new yz(b3)).collect(Collectors.toCollection(new zl1((byte) 1)));
+        String string2 = this.Y3.getString("starsGroupcallMessageLimits", null);
         byte b4 = 8;
         if (string2 == null || string2.length() == 0) {
             a = eg5.a();
@@ -666,27 +669,27 @@ public final class uc7 extends rf0 implements fn7 {
                 a = eg5.a();
             }
         }
-        this.T3 = a;
-        this.R3 = this.X3.getString("storiesPosting", "enabled");
-        this.E3 = lc7.b(0, this.X3.getString("peerColors", ""));
-        this.F3 = lc7.b(1, this.X3.getString("profilePeerColors", ""));
-        SharedPreferences sharedPreferences = this.X3;
+        this.U3 = a;
+        this.S3 = this.Y3.getString("storiesPosting", "enabled");
+        this.F3 = lc7.b(0, this.Y3.getString("peerColors", ""));
+        this.G3 = lc7.b(1, this.Y3.getString("profilePeerColors", ""));
+        SharedPreferences sharedPreferences = this.Y3;
         boolean z = f11.a;
         int i2 = sharedPreferences.getInt("transcribeAudioTrialWeeklyNumber", 0);
-        this.G3 = i2;
-        this.I3 = this.X3.getInt("transcribeAudioTrialCurrentNumber", i2);
-        this.H3 = this.X3.getInt("transcribeAudioTrialCooldownUntil", 0);
-        this.Q3 = this.X3.getBoolean("storyQualityFull", true);
-        this.P3 = this.X3.getBoolean("savedViewAsChats", false);
-        this.l4 = this.X3.getBoolean("folderTags", false);
-        this.J3 = this.X3.getStringSet("webAppAllowedProtocols", new HashSet(Arrays.asList("http", "https")));
-        this.K3 = this.X3.getStringSet("ignoreRestrictionReasons", new HashSet(Arrays.asList(new String[0])));
-        this.M3 = this.X3.getStringSet("starrefStartParamPrefixes", new HashSet(Arrays.asList("_tgr_")));
-        this.N3 = this.X3.getLong("paidReactionsAnonymousTime", 0L);
-        this.U3 = DesugarArrays.stream(this.X3.getString("tonStakediceStakeSuggestedAmounts", "100000000,1000000000,2000000000,5000000000,10000000000,20000000000").split(",")).mapToLong(new fh(b2)).toArray();
-        this.V3 = (int[][]) DesugarArrays.stream(this.X3.getString("stargiftsCraftAttributesPermilles", "90,,80,200,,70,190,460,,60,180,450,1000").split(",,")).map(new yz(b)).toArray(new g87((byte) 0));
-        hr hrVar = this.k4;
-        SharedPreferences sharedPreferences2 = this.X3;
+        this.H3 = i2;
+        this.J3 = this.Y3.getInt("transcribeAudioTrialCurrentNumber", i2);
+        this.I3 = this.Y3.getInt("transcribeAudioTrialCooldownUntil", 0);
+        this.R3 = this.Y3.getBoolean("storyQualityFull", true);
+        this.Q3 = this.Y3.getBoolean("savedViewAsChats", false);
+        this.m4 = this.Y3.getBoolean("folderTags", false);
+        this.K3 = this.Y3.getStringSet("webAppAllowedProtocols", new HashSet(Arrays.asList("http", "https")));
+        this.L3 = this.Y3.getStringSet("ignoreRestrictionReasons", new HashSet(Arrays.asList(new String[0])));
+        this.N3 = this.Y3.getStringSet("starrefStartParamPrefixes", new HashSet(Arrays.asList("_tgr_")));
+        this.O3 = this.Y3.getLong("paidReactionsAnonymousTime", 0L);
+        this.V3 = DesugarArrays.stream(this.Y3.getString("tonStakediceStakeSuggestedAmounts", "100000000,1000000000,2000000000,5000000000,10000000000,20000000000").split(",")).mapToLong(new fh(b2)).toArray();
+        this.W3 = (int[][]) DesugarArrays.stream(this.Y3.getString("stargiftsCraftAttributesPermilles", "90,,80,200,,70,190,460,,60,180,450,1000").split(",,")).map(new yz(b)).toArray(new g87((byte) 0));
+        hr hrVar = this.l4;
+        SharedPreferences sharedPreferences2 = this.Y3;
         hrVar.getClass();
         String[] strArr = hr.O3;
         SharedPreferences.Editor editor = null;
@@ -704,38 +707,38 @@ public final class uc7 extends rf0 implements fn7 {
         while (it.hasNext()) {
             ((yr2) it.next()).d(sharedPreferences2);
         }
-        this.k4.J0.a(new l87(this, objArr == true ? 1 : 0));
-        this.k4.B1.a(new l87(this, b2));
+        this.l4.J0.a(new l87(this, objArr == true ? 1 : 0));
+        this.l4.B1.a(new l87(this, b2));
         l87 l87Var = new l87(this, b3);
-        this.k4.G3.a(l87Var);
-        this.k4.H3.a(l87Var);
-        this.k4.I3.a(new pg6((byte) 5));
-        this.k4.A0.a(new l87(this, (byte) 13));
+        this.l4.G3.a(l87Var);
+        this.l4.H3.a(l87Var);
+        this.l4.I3.a(new pg6((byte) 5));
+        this.l4.A0.a(new l87(this, (byte) 13));
         System.currentTimeMillis();
-        this.O3 = null;
-        if (System.currentTimeMillis() - this.N3 < 7200000) {
-            boolean contains = this.X3.contains("paidReactionsDialogId");
-            SharedPreferences sharedPreferences3 = this.X3;
+        this.P3 = null;
+        if (System.currentTimeMillis() - this.O3 < 7200000) {
+            boolean contains = this.Y3.contains("paidReactionsDialogId");
+            SharedPreferences sharedPreferences3 = this.Y3;
             if (contains) {
-                this.O3 = Long.valueOf(sharedPreferences3.getLong("paidReactionsDialogId", 0L));
+                this.P3 = Long.valueOf(sharedPreferences3.getLong("paidReactionsDialogId", 0L));
             } else {
-                this.O3 = Long.valueOf(sharedPreferences3.getBoolean("paidReactionsAnonymous", false) ? 2666000L : 0L);
+                this.P3 = Long.valueOf(sharedPreferences3.getBoolean("paidReactionsAnonymous", false) ? 2666000L : 0L);
             }
         }
         hl.c3(new l87(this, b4));
-        f11.h = this.X3.getString("googleAuthClientId", f11.h);
-        if (this.X3.contains("dcDomainName2")) {
-            this.q3 = this.X3.getString("dcDomainName2", "apv3.stel.com");
+        f11.h = this.Y3.getString("googleAuthClientId", f11.h);
+        if (this.Y3.contains("dcDomainName2")) {
+            this.r3 = this.Y3.getString("dcDomainName2", "apv3.stel.com");
         } else {
-            this.q3 = objArr2 == true ? "tapv3.stel.com" : "apv3.stel.com";
+            this.r3 = objArr2 == true ? "tapv3.stel.com" : "apv3.stel.com";
         }
-        if (this.X3.contains("webFileDatacenterId")) {
-            this.r3 = this.X3.getInt("webFileDatacenterId", 4);
+        if (this.Y3.contains("webFileDatacenterId")) {
+            this.s3 = this.Y3.getInt("webFileDatacenterId", 4);
         } else {
-            this.r3 = objArr2 != false ? 2 : 4;
+            this.s3 = objArr2 != false ? 2 : 4;
         }
         SparseIntArray sparseIntArray = this.E0;
-        String string3 = this.X3.getString("premiumFeaturesTypesToPosition", null);
+        String string3 = this.Y3.getString("premiumFeaturesTypesToPosition", null);
         sparseIntArray.clear();
         if (string3 != null) {
             String[] split = string3.split("_");
@@ -744,7 +747,7 @@ public final class uc7 extends rf0 implements fn7 {
             }
         }
         SparseIntArray sparseIntArray2 = this.F0;
-        String string4 = this.X3.getString("businessFeaturesTypesToPosition", null);
+        String string4 = this.Y3.getString("businessFeaturesTypesToPosition", null);
         sparseIntArray2.clear();
         if (string4 != null) {
             String[] split2 = string4.split("_");
@@ -752,29 +755,29 @@ public final class uc7 extends rf0 implements fn7 {
                 sparseIntArray2.put(Integer.parseInt(split2[i5]), i5);
             }
         }
-        if (this.u3 != null) {
-            this.u3 = new HashSet(this.u3);
-        } else {
-            this.u3 = new HashSet();
-        }
         if (this.v3 != null) {
             this.v3 = new HashSet(this.v3);
         } else {
             this.v3 = new HashSet();
         }
-        this.z3 = this.X3.getString("autologinToken", null);
-        Set<String> stringSet = this.X3.getStringSet("diceEmojies", null);
+        if (this.w3 != null) {
+            this.w3 = new HashSet(this.w3);
+        } else {
+            this.w3 = new HashSet();
+        }
+        this.A3 = this.Y3.getString("autologinToken", null);
+        Set<String> stringSet = this.Y3.getStringSet("diceEmojies", null);
         if (stringSet == null) {
             HashSet hashSet2 = new HashSet();
-            this.y3 = hashSet2;
+            this.z3 = hashSet2;
             hashSet2.add("🎲");
-            this.y3.add("🎯");
+            this.z3.add("🎯");
         } else {
-            this.y3 = new HashSet(stringSet);
+            this.z3 = new HashSet(stringSet);
         }
-        String string5 = this.X3.getString("diceSuccess", null);
+        String string5 = this.Y3.getString("diceSuccess", null);
         if (string5 == null) {
-            this.A3.put("🎯", new ec7(62, 6));
+            this.B3.put("🎯", new ec7(62, 6));
         } else {
             try {
                 byte[] decode = Base64.decode(string5, 0);
@@ -782,7 +785,7 @@ public final class uc7 extends rf0 implements fn7 {
                     SerializedData serializedData = new SerializedData(decode);
                     int readInt32 = serializedData.readInt32(true);
                     for (int i6 = 0; i6 < readInt32; i6++) {
-                        this.A3.put(serializedData.readString(true), new ec7(serializedData.readInt32(true), serializedData.readInt32(true)));
+                        this.B3.put(serializedData.readString(true), new ec7(serializedData.readInt32(true), serializedData.readInt32(true)));
                     }
                     serializedData.cleanup();
                 }
@@ -790,7 +793,7 @@ public final class uc7 extends rf0 implements fn7 {
                 cc4.g(e2, true);
             }
         }
-        String string6 = this.X3.getString("emojiSounds", null);
+        String string6 = this.Y3.getString("emojiSounds", null);
         if (string6 != null) {
             try {
                 byte[] decode2 = Base64.decode(string6, 0);
@@ -798,7 +801,7 @@ public final class uc7 extends rf0 implements fn7 {
                     SerializedData serializedData2 = new SerializedData(decode2);
                     int readInt322 = serializedData2.readInt32(true);
                     for (int i7 = 0; i7 < readInt322; i7++) {
-                        HashMap hashMap = this.B3;
+                        HashMap hashMap = this.C3;
                         String readString = serializedData2.readString(true);
                         long readInt64 = serializedData2.readInt64(true);
                         long readInt642 = serializedData2.readInt64(true);
@@ -815,18 +818,18 @@ public final class uc7 extends rf0 implements fn7 {
                 cc4.g(e3, true);
             }
         }
-        String string7 = this.X3.getString("gifSearchEmojies", null);
+        String string7 = this.Y3.getString("gifSearchEmojies", null);
         if (string7 == null) {
-            this.x3.add("👍");
-            this.x3.add("👎");
-            this.x3.add("😍");
-            this.x3.add("😂");
-            this.x3.add("😮");
-            this.x3.add("🙄");
-            this.x3.add("😥");
-            this.x3.add("😡");
-            this.x3.add("🥳");
-            this.x3.add("😎");
+            this.y3.add("👍");
+            this.y3.add("👎");
+            this.y3.add("😍");
+            this.y3.add("😂");
+            this.y3.add("😮");
+            this.y3.add("🙄");
+            this.y3.add("😥");
+            this.y3.add("😡");
+            this.y3.add("🥳");
+            this.y3.add("😎");
         } else {
             try {
                 byte[] decode3 = Base64.decode(string7, 0);
@@ -834,7 +837,7 @@ public final class uc7 extends rf0 implements fn7 {
                     SerializedData serializedData3 = new SerializedData(decode3);
                     int readInt323 = serializedData3.readInt32(true);
                     for (int i8 = 0; i8 < readInt323; i8++) {
-                        this.x3.add(serializedData3.readString(true));
+                        this.y3.add(serializedData3.readString(true));
                     }
                     serializedData3.cleanup();
                 }
@@ -857,9 +860,9 @@ public final class uc7 extends rf0 implements fn7 {
         new LongSparseIntArray();
         qybVar.r = new LongSparseIntArray();
         qybVar.s = new zh6();
-        this.g4 = qybVar;
-        this.h4 = new w51(i);
-        this.i4 = new a5c(this);
+        this.h4 = qybVar;
+        this.i4 = new w51(i);
+        this.j4 = new a5c(this);
         Utilities.e.c(new l87(this, (byte) 19));
     }
 
@@ -1129,7 +1132,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public static SharedPreferences d1() {
-        return s1(0).Y3;
+        return s1(0).Z3;
     }
 
     public static TLRPC.TL_wallPaperSettings d2(unb unbVar) {
@@ -1169,7 +1172,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public static SharedPreferences e1() {
-        return s1(0).X3;
+        return s1(0).Y3;
     }
 
     public static boolean e2(String str, ArrayList arrayList) {
@@ -1188,7 +1191,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public static SharedPreferences f1() {
-        return s1(0).W3;
+        return s1(0).X3;
     }
 
     public static void f5(String str, e eVar) {
@@ -1347,14 +1350,14 @@ public final class uc7 extends rf0 implements fn7 {
 
     public static uc7 s1(int i) {
         uc7 uc7Var;
-        uc7 uc7Var2 = t5[i];
+        uc7 uc7Var2 = u5[i];
         if (uc7Var2 != null) {
             return uc7Var2;
         }
-        synchronized (u5[i]) {
-            uc7Var = t5[i];
+        synchronized (v5[i]) {
+            uc7Var = u5[i];
             if (uc7Var == null) {
-                uc7[] uc7VarArr = t5;
+                uc7[] uc7VarArr = u5;
                 uc7 uc7Var3 = new uc7(i);
                 uc7VarArr[i] = uc7Var3;
                 uc7Var = uc7Var3;
@@ -1398,7 +1401,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public static SharedPreferences w1(int i) {
-        return s1(i).W3;
+        return s1(i).X3;
     }
 
     public static ArrayList y0(TLRPC.Updates updates, Class cls) {
@@ -1459,17 +1462,17 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void A0() {
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.G();
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.I();
         int i = messagesStorage.w;
-        jf7 messagesStorage2 = getMessagesStorage();
-        messagesStorage2.G();
+        kf7 messagesStorage2 = getMessagesStorage();
+        messagesStorage2.I();
         int i2 = messagesStorage2.r;
-        jf7 messagesStorage3 = getMessagesStorage();
-        messagesStorage3.G();
+        kf7 messagesStorage3 = getMessagesStorage();
+        messagesStorage3.I();
         int i3 = messagesStorage3.n;
-        jf7 messagesStorage4 = getMessagesStorage();
-        messagesStorage4.G();
+        kf7 messagesStorage4 = getMessagesStorage();
+        messagesStorage4.I();
         A4(true, i, i2, i3, messagesStorage4.s);
         ip7 notificationsController = getNotificationsController();
         notificationsController.getClass();
@@ -1490,7 +1493,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final boolean A2(TLRPC.Dialog dialog, long j) {
         long j2;
-        HashMap hashMap = this.o4;
+        HashMap hashMap = this.p4;
         if (hashMap.isEmpty()) {
             return false;
         }
@@ -1524,7 +1527,7 @@ public final class uc7 extends rf0 implements fn7 {
     public final void A3(long j, long j2) {
         long j3;
         ArrayList l;
-        qyb qybVar = this.g4;
+        qyb qybVar = this.h4;
         byte b = 0;
         if (j2 == 0) {
             TLRPC.Dialog dialog = (TLRPC.Dialog) this.R.f(j);
@@ -1548,7 +1551,7 @@ public final class uc7 extends rf0 implements fn7 {
                 qybVar.y(j4, true);
             }
         }
-        getMessagesStorage().e2(0, j, j2, false);
+        getMessagesStorage().j2(0, j, j2, false);
         TLRPC.TL_messages_readPollVotes tL_messages_readPollVotes = new TLRPC.TL_messages_readPollVotes();
         tL_messages_readPollVotes.peer = j1(j);
         if (j2 != 0 && !B2(j)) {
@@ -1802,7 +1805,7 @@ public final class uc7 extends rf0 implements fn7 {
                 if (num5 == null) {
                     i5 = size;
                     zh6Var = zh6Var2;
-                    num5 = Integer.valueOf(uc7Var2.getMessagesStorage().S(message4.dialog_id, message4.out));
+                    num5 = Integer.valueOf(uc7Var2.getMessagesStorage().U(message4.dialog_id, message4.out));
                     concurrentHashMap3.put(Long.valueOf(message4.dialog_id), num5);
                 } else {
                     i5 = size;
@@ -1816,10 +1819,10 @@ public final class uc7 extends rf0 implements fn7 {
         }
         final int i15 = size;
         final zh6 zh6Var6 = zh6Var2;
-        final jf7 messagesStorage = uc7Var2.getMessagesStorage();
+        final kf7 messagesStorage = uc7Var2.getMessagesStorage();
         final TLRPC.messages_Dialogs messages_dialogs3 = uc7Var2.g2;
         final TLRPC.Message message5 = message2;
-        messagesStorage.a.c(new Runnable(messages_dialogs3, size2, i, i2, i3, i4, message5, i15, zh6Var6, zh6Var3) { // from class: vd7
+        messagesStorage.a.c(new Runnable(messages_dialogs3, size2, i, i2, i3, i4, message5, i15, zh6Var6, zh6Var3) { // from class: md7
             public final /* synthetic */ TLRPC.messages_Dialogs b;
             public final /* synthetic */ int c;
             public final /* synthetic */ int d;
@@ -1852,7 +1855,7 @@ public final class uc7 extends rf0 implements fn7 {
                 long j9;
                 long j10;
                 ArrayList arrayList3;
-                jf7 jf7Var = jf7.this;
+                kf7 kf7Var = kf7.this;
                 final TLRPC.messages_Dialogs messages_dialogs4 = this.b;
                 int i16 = this.c;
                 int i17 = this.d;
@@ -1876,7 +1879,7 @@ public final class uc7 extends rf0 implements fn7 {
                     }
                     final zh6 zh6Var9 = zh6Var7;
                     int i22 = 0;
-                    SQLiteCursor queryFinalized = jf7Var.b.queryFinalized("SELECT did, pinned FROM dialogs WHERE 1", new Object[0]);
+                    SQLiteCursor queryFinalized = kf7Var.b.queryFinalized("SELECT did, pinned FROM dialogs WHERE 1", new Object[0]);
                     int i23 = 0;
                     while (queryFinalized.next()) {
                         try {
@@ -1900,8 +1903,8 @@ public final class uc7 extends rf0 implements fn7 {
                             sQLiteCursor = queryFinalized;
                             z2 = true;
                             try {
-                                jf7Var.n(e, z2);
-                                SQLiteDatabase sQLiteDatabase2 = jf7Var.b;
+                                kf7Var.p(e, z2);
+                                SQLiteDatabase sQLiteDatabase2 = kf7Var.b;
                                 if (sQLiteDatabase2 != null) {
                                     sQLiteDatabase2.commitTransaction();
                                 }
@@ -1912,7 +1915,7 @@ public final class uc7 extends rf0 implements fn7 {
                                 return;
                             } catch (Throwable th) {
                                 th = th;
-                                sQLiteDatabase = jf7Var.b;
+                                sQLiteDatabase = kf7Var.b;
                                 if (sQLiteDatabase != null) {
                                     sQLiteDatabase.commitTransaction();
                                 }
@@ -1924,7 +1927,7 @@ public final class uc7 extends rf0 implements fn7 {
                         } catch (Throwable th2) {
                             th = th2;
                             sQLiteCursor = queryFinalized;
-                            sQLiteDatabase = jf7Var.b;
+                            sQLiteDatabase = kf7Var.b;
                             if (sQLiteDatabase != null) {
                             }
                             if (sQLiteCursor != null) {
@@ -1940,20 +1943,20 @@ public final class uc7 extends rf0 implements fn7 {
                     }
                     queryFinalized.dispose();
                     String str = "(" + TextUtils.join(",", arrayList4) + ")";
-                    jf7Var.b.beginTransaction();
-                    jf7Var.b.executeFast("DELETE FROM chat_pinned_count WHERE uid IN " + str).stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM chat_pinned_v2 WHERE uid IN " + str).stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM dialogs WHERE did IN " + str).stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM messages_v2 WHERE uid IN " + str).stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM polls_v2 WHERE 1").stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM widget_state WHERE uid IN " + str).stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM widget_heights WHERE uid IN " + str).stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM bot_keyboard WHERE uid IN " + str).stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM bot_keyboard_topics WHERE uid IN " + str).stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM media_v4 WHERE uid IN " + str).stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM messages_holes WHERE uid IN " + str).stepThis().dispose();
-                    jf7Var.b.executeFast("DELETE FROM media_holes_v2 WHERE uid IN " + str).stepThis().dispose();
-                    jf7Var.b.commitTransaction();
+                    kf7Var.b.beginTransaction();
+                    kf7Var.b.executeFast("DELETE FROM chat_pinned_count WHERE uid IN " + str).stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM chat_pinned_v2 WHERE uid IN " + str).stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM dialogs WHERE did IN " + str).stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM messages_v2 WHERE uid IN " + str).stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM polls_v2 WHERE 1").stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM widget_state WHERE uid IN " + str).stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM widget_heights WHERE uid IN " + str).stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM bot_keyboard WHERE uid IN " + str).stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM bot_keyboard_topics WHERE uid IN " + str).stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM media_v4 WHERE uid IN " + str).stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM messages_holes WHERE uid IN " + str).stepThis().dispose();
+                    kf7Var.b.executeFast("DELETE FROM media_holes_v2 WHERE uid IN " + str).stepThis().dispose();
+                    kf7Var.b.commitTransaction();
                     int i26 = 0;
                     while (i26 < size4) {
                         TLRPC.Dialog dialog2 = messages_dialogs4.dialogs.get(i16 + i26);
@@ -1984,9 +1987,9 @@ public final class uc7 extends rf0 implements fn7 {
                         i26++;
                         arrayList6 = arrayList3;
                     }
-                    jf7Var.b1(messages_dialogs4, 0);
-                    jf7Var.y1(i25, i18, i19, i20);
-                    int m = jf7Var.getUserConfig().m(0) + messages_dialogs4.dialogs.size();
+                    kf7Var.f1(messages_dialogs4, 0);
+                    kf7Var.C1(i25, i18, i19, i20);
+                    int m = kf7Var.getUserConfig().m(0) + messages_dialogs4.dialogs.size();
                     int i29 = message8.id;
                     int i30 = message8.date;
                     TLRPC.Peer peer2 = message8.peer_id;
@@ -2057,29 +2060,29 @@ public final class uc7 extends rf0 implements fn7 {
                         int i35 = i29;
                         int i36 = i30;
                         int i37 = i34;
-                        jf7Var.getUserConfig().w(i37, i35, i36, j5, j6, j7, j8);
-                        jf7Var.getUserConfig().y(i37, m);
+                        kf7Var.getUserConfig().w(i37, i35, i36, j5, j6, j7, j8);
+                        kf7Var.getUserConfig().y(i37, m);
                         i34 = i37 + 1;
                         i29 = i35;
                         i30 = i36;
                     }
-                    jf7Var.getUserConfig().w = false;
-                    jf7Var.getUserConfig().u(false);
-                    final uc7 messagesController = jf7Var.getMessagesController();
+                    kf7Var.getUserConfig().w = false;
+                    kf7Var.getUserConfig().u(false);
+                    final uc7 messagesController = kf7Var.getMessagesController();
                     messagesController.getClass();
                     Utilities.d.c(new Runnable() { // from class: fb7
                         @Override // java.lang.Runnable
                         public final void run() {
                             uc7 uc7Var3 = uc7.this;
                             uc7Var3.Y1 = false;
-                            uc7Var3.getMessagesStorage().F1(i18);
-                            uc7Var3.getMessagesStorage().E1(i19);
-                            uc7Var3.getMessagesStorage().G1(i20);
+                            uc7Var3.getMessagesStorage().K1(i18);
+                            uc7Var3.getMessagesStorage().J1(i19);
+                            uc7Var3.getMessagesStorage().L1(i20);
                             uc7Var3.X0();
                             hl.c3(new oy6(uc7Var3, messages_dialogs4, zh6Var9, zh6Var8, (byte) 7));
                         }
                     });
-                    SQLiteDatabase sQLiteDatabase3 = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase3 = kf7Var.b;
                     if (sQLiteDatabase3 != null) {
                         sQLiteDatabase3.commitTransaction();
                     }
@@ -2121,7 +2124,7 @@ public final class uc7 extends rf0 implements fn7 {
             }
             q3();
         }
-        getMessagesStorage().v1();
+        getMessagesStorage().z1();
         getNotificationCenter().k(jn7.O2, new Object[0]);
         O1().x.b();
     }
@@ -2174,7 +2177,7 @@ public final class uc7 extends rf0 implements fn7 {
         ArrayList arrayList2 = new ArrayList();
         arrayList2.add(tL_messageService);
         arrayList.add(new r47(this.currentAccount, tL_messageService, true, false));
-        getMessagesStorage().g1(arrayList2, true, true, false, 0, false, 0, 0L);
+        getMessagesStorage().k1(arrayList2, true, true, false, 0, false, 0, 0L);
         hl.c3(new p77(this, j, arrayList, (byte) 3));
     }
 
@@ -2192,7 +2195,7 @@ public final class uc7 extends rf0 implements fn7 {
     public final void B3(long j, long j2) {
         long j3;
         ArrayList l;
-        qyb qybVar = this.g4;
+        qyb qybVar = this.h4;
         byte b = 0;
         if (j2 == 0) {
             TLRPC.Dialog dialog = (TLRPC.Dialog) this.R.f(j);
@@ -2216,7 +2219,7 @@ public final class uc7 extends rf0 implements fn7 {
                 qybVar.y(j4, true);
             }
         }
-        getMessagesStorage().f2(0, j, j2, false);
+        getMessagesStorage().k2(0, j, j2, false);
         TLRPC.TL_messages_readReactions tL_messages_readReactions = new TLRPC.TL_messages_readReactions();
         tL_messages_readReactions.peer = j1(j);
         if (j2 != 0) {
@@ -2237,7 +2240,7 @@ public final class uc7 extends rf0 implements fn7 {
             return false;
         }
         Long valueOf = Long.valueOf(j);
-        HashMap hashMap = this.o4;
+        HashMap hashMap = this.p4;
         Integer num = (Integer) hashMap.get(valueOf);
         if (num != null) {
             hashMap.put(Long.valueOf(j), Integer.valueOf(num.intValue() + 1));
@@ -2595,7 +2598,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (r47Var == null) {
             return;
         }
-        jf7 messagesStorage = getMessagesStorage();
+        kf7 messagesStorage = getMessagesStorage();
         long B0 = r47.B0(r47Var.k);
         int P0 = r47Var.P0();
         messagesStorage.getClass();
@@ -2604,7 +2607,7 @@ public final class uc7 extends rf0 implements fn7 {
         arrayList.add(Integer.valueOf(P0));
         zh6Var.k(B0, arrayList);
         Object[] objArr = 0;
-        messagesStorage.H(new ds6((Object) messagesStorage, (Object) zh6Var, false, (byte) 3));
+        messagesStorage.J(new ds6((Object) messagesStorage, (Object) zh6Var, false, (byte) 3));
         TL_ephemeral.TL_deleteMessage tL_deleteMessage = new TL_ephemeral.TL_deleteMessage();
         tL_deleteMessage.peer = j1(r47.B0(r47Var.k));
         TLRPC.Message message = r47Var.k;
@@ -2743,7 +2746,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean D4() {
-        String str = this.k4.l0.f;
+        String str = this.l4.l0.f;
         int hashCode = str.hashCode();
         if (hashCode == -1609594047) {
             return str.equals("enabled");
@@ -2791,8 +2794,8 @@ public final class uc7 extends rf0 implements fn7 {
         }
         jn7.f(this.currentAccount).k(2, 0);
         jn7.f(this.currentAccount).k(jn7.Z3, Long.valueOf(j), Long.valueOf(j2), str2);
-        jf7 Y = jf7.Y(this.currentAccount);
-        Y.a.c(new wd7(Y, -j, j2, str2, (byte) 0));
+        kf7 a0 = kf7.a0(this.currentAccount);
+        a0.a.c(new od7(a0, -j, j2, str2, (byte) 0));
     }
 
     public final void E(long j, boolean z) {
@@ -2815,11 +2818,11 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final TLRPC.messages_AvailableEffects E0() {
-        if (!this.V4) {
-            this.V4 = true;
-            this.X4.c(this.currentAccount, 0, new mb7(this, (byte) 0));
+        if (!this.W4) {
+            this.W4 = true;
+            this.Y4.c(this.currentAccount, 0, new mb7(this, (byte) 0));
         }
-        return this.W4;
+        return this.X4;
     }
 
     public final String E1(ArrayList arrayList) {
@@ -2829,7 +2832,7 @@ public final class uc7 extends rf0 implements fn7 {
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
             TLRPC.RestrictionReason restrictionReason = (TLRPC.RestrictionReason) arrayList.get(i);
-            Set set = this.K3;
+            Set set = this.L3;
             if ((set == null || !set.contains(restrictionReason.reason)) && !"sensitive".equals(restrictionReason.reason)) {
                 if (!"all".equals(restrictionReason.platform)) {
                     if ("android".equals(restrictionReason.platform) || "android-ios".equals(restrictionReason.platform) || "ios-android".equals(restrictionReason.platform)) {
@@ -2851,7 +2854,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean E3() {
-        String str = this.k4.n0.f;
+        String str = this.l4.n0.f;
         if (str != null) {
             int hashCode = str.hashCode();
             if (hashCode != -1609594047) {
@@ -2904,7 +2907,7 @@ public final class uc7 extends rf0 implements fn7 {
         int i;
         int i2;
         String str;
-        zh6 zh6Var = this.P4;
+        zh6 zh6Var = this.Q4;
         if (zh6Var == null) {
             return;
         }
@@ -2914,7 +2917,7 @@ public final class uc7 extends rf0 implements fn7 {
             if (j == 0) {
                 return;
             }
-            zh6 zh6Var2 = this.P4;
+            zh6 zh6Var2 = this.Q4;
             TLRPC.TL_messages_savedReactionsTags tL_messages_savedReactionsTags2 = new TLRPC.TL_messages_savedReactionsTags();
             zh6Var2.k(j, tL_messages_savedReactionsTags2);
             tL_messages_savedReactionsTags = tL_messages_savedReactionsTags2;
@@ -3006,7 +3009,7 @@ public final class uc7 extends rf0 implements fn7 {
                 if (xb7Var.a) {
                     return;
                 }
-                if (System.currentTimeMillis() - xb7Var.b <= this.k4.A1.f() * 1000 && !z) {
+                if (System.currentTimeMillis() - xb7Var.b <= this.l4.A1.f() * 1000 && !z) {
                     return;
                 }
             }
@@ -3040,7 +3043,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (nt9Var != null) {
             return nt9Var;
         }
-        synchronized (u5[this.currentAccount]) {
+        synchronized (v5[this.currentAccount]) {
             nt9 nt9Var2 = this.f0;
             if (nt9Var2 != null) {
                 return nt9Var2;
@@ -3066,7 +3069,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (peerSettings == null) {
             return;
         }
-        SharedPreferences sharedPreferences = this.W3;
+        SharedPreferences sharedPreferences = this.X3;
         SharedPreferences.Editor edit = sharedPreferences.edit();
         if (peerSettings.business_bot_id != 0) {
             edit.putLong(qu6.n(j, "dialog_botid"), peerSettings.business_bot_id);
@@ -3173,7 +3176,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (xg1Var != null) {
             return xg1Var;
         }
-        synchronized (u5[this.currentAccount]) {
+        synchronized (v5[this.currentAccount]) {
             xg1 xg1Var2 = this.i0;
             if (xg1Var2 != null) {
                 return xg1Var2;
@@ -3185,12 +3188,12 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final oc7 G1() {
-        oc7 oc7Var = this.i5;
+        oc7 oc7Var = this.j5;
         if (oc7Var != null) {
             return oc7Var;
         }
         oc7 oc7Var2 = new oc7(this.currentAccount);
-        this.i5 = oc7Var2;
+        this.j5 = oc7Var2;
         return oc7Var2;
     }
 
@@ -3239,7 +3242,7 @@ public final class uc7 extends rf0 implements fn7 {
             int i2 = 1;
             if (i >= arrayList.size()) {
                 int length = sb.length();
-                SharedPreferences sharedPreferences = this.X3;
+                SharedPreferences sharedPreferences = this.Y3;
                 if (length <= 0) {
                     editor.remove(str);
                     return sharedPreferences.getString(str, null) != null;
@@ -3713,7 +3716,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean G5(long j, w49 w49Var, boolean z) {
-        if (this.P4 == null) {
+        if (this.Q4 == null) {
             return false;
         }
         int i = 0;
@@ -3721,10 +3724,10 @@ public final class uc7 extends rf0 implements fn7 {
         while (i < 2) {
             long j2 = i == 0 ? 0L : j;
             if (i != 1 || j2 != 0) {
-                TLRPC.TL_messages_savedReactionsTags tL_messages_savedReactionsTags = (TLRPC.TL_messages_savedReactionsTags) this.P4.f(j2);
+                TLRPC.TL_messages_savedReactionsTags tL_messages_savedReactionsTags = (TLRPC.TL_messages_savedReactionsTags) this.Q4.f(j2);
                 if (tL_messages_savedReactionsTags == null) {
                     if (j2 != 0) {
-                        zh6 zh6Var = this.P4;
+                        zh6 zh6Var = this.Q4;
                         tL_messages_savedReactionsTags = new TLRPC.TL_messages_savedReactionsTags();
                         zh6Var.k(j2, tL_messages_savedReactionsTags);
                     }
@@ -3765,29 +3768,29 @@ public final class uc7 extends rf0 implements fn7 {
         if (i == 0) {
             return;
         }
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new ad7(messagesStorage, i, (byte) 0));
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new bd7(messagesStorage, i, (byte) 0));
     }
 
     public final int H0() {
         boolean p = getUserConfig().p();
-        hr hrVar = this.k4;
+        hr hrVar = this.l4;
         return (p ? hrVar.p1 : hrVar.o1).f();
     }
 
     public final TLRPC.TL_messages_savedReactionsTags H1(long j, boolean z) {
-        HashSet hashSet = this.O4;
+        HashSet hashSet = this.P4;
         if (hashSet != null && hashSet.contains(Long.valueOf(j)) && !z) {
-            zh6 zh6Var = this.P4;
+            zh6 zh6Var = this.Q4;
             if (zh6Var == null) {
                 return null;
             }
             return (TLRPC.TL_messages_savedReactionsTags) zh6Var.f(j);
         }
-        HashSet hashSet2 = this.O4;
+        HashSet hashSet2 = this.P4;
         if (hashSet2 == null) {
             hashSet2 = new HashSet();
-            this.O4 = hashSet2;
+            this.P4 = hashSet2;
         }
         hashSet2.add(Long.valueOf(j));
         getMessagesStorage().a.c(new t77(this, j, (byte) 9));
@@ -3795,7 +3798,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean H2(int i, long j, boolean z) {
-        Boolean bool = (Boolean) this.h5.get(j + "_" + i);
+        Boolean bool = (Boolean) this.i5.get(j + "_" + i);
         return bool != null && bool.booleanValue() == z;
     }
 
@@ -3953,7 +3956,7 @@ public final class uc7 extends rf0 implements fn7 {
             int size = arrayList.size();
             for (int i = 0; i < size; i++) {
                 TLRPC.RestrictionReason restrictionReason = (TLRPC.RestrictionReason) arrayList.get(i);
-                Set set = this.K3;
+                Set set = this.L3;
                 if (set == null || !set.contains(restrictionReason.reason)) {
                     if (!"all".equals(restrictionReason.platform)) {
                         if ("android".equals(restrictionReason.platform) || "android-ios".equals(restrictionReason.platform) || "ios-android".equals(restrictionReason.platform)) {
@@ -4066,7 +4069,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void I5(boolean z, boolean z2) {
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.n5;
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.o5;
         if (tL_webBrowserSettings != null) {
             tL_webBrowserSettings.open_external_browser = z;
             tL_webBrowserSettings.display_close_button = z2;
@@ -4123,10 +4126,10 @@ public final class uc7 extends rf0 implements fn7 {
                 } catch (Exception e2) {
                     exc = e2;
                     cc4.g(exc, true);
-                    j = getMessagesStorage().y(nativeByteBuffer);
+                    j = getMessagesStorage().A(nativeByteBuffer);
                     getConnectionsManager().sendRequest(tL_messages_getHistory, new p87((Object) this, (Object) dialog, j, (byte) 12));
                 }
-                j = getMessagesStorage().y(nativeByteBuffer);
+                j = getMessagesStorage().A(nativeByteBuffer);
             }
             getConnectionsManager().sendRequest(tL_messages_getHistory, new p87((Object) this, (Object) dialog, j, (byte) 12));
         }
@@ -4157,7 +4160,7 @@ public final class uc7 extends rf0 implements fn7 {
             int i4 = longSparseIntArray.get(j);
             byte b3 = 2;
             if (i4 == 0) {
-                i4 = getMessagesStorage().M(j);
+                i4 = getMessagesStorage().O(j);
                 if (i4 != 0) {
                     longSparseIntArray.put(j, i4);
                 } else if (i == 2 || i == 3) {
@@ -4181,7 +4184,7 @@ public final class uc7 extends rf0 implements fn7 {
         }
         if (inputChannel == null) {
             TLRPC.Chat M0 = M0(Long.valueOf(j));
-            if (M0 == null && (M0 = getMessagesStorage().O(j)) != null) {
+            if (M0 == null && (M0 = getMessagesStorage().Q(j)) != null) {
                 a4(M0, true);
             }
             inputChannel2 = i1(M0);
@@ -4190,7 +4193,7 @@ public final class uc7 extends rf0 implements fn7 {
         }
         if (inputChannel2.access_hash == 0) {
             if (j3 != 0) {
-                getMessagesStorage().n1(j3);
+                getMessagesStorage().r1(j3);
             }
             hl.c3(new t77(this, j, b));
             return;
@@ -4209,7 +4212,7 @@ public final class uc7 extends rf0 implements fn7 {
                     nativeByteBuffer2 = nativeByteBuffer;
                     cc4.g(e, true);
                     nativeByteBuffer = nativeByteBuffer2;
-                    j3 = getMessagesStorage().y(nativeByteBuffer);
+                    j3 = getMessagesStorage().A(nativeByteBuffer);
                     zh6Var.k(j, Boolean.TRUE);
                     TLRPC.TL_updates_getChannelDifference tL_updates_getChannelDifference = new TLRPC.TL_updates_getChannelDifference();
                     tL_updates_getChannelDifference.channel = inputChannel2;
@@ -4231,7 +4234,7 @@ public final class uc7 extends rf0 implements fn7 {
                                     hl.c3(new u87(uc7Var, tL_error, j4, (byte) 0));
                                     uc7Var.Q0.e(j4);
                                     if (j5 != 0) {
-                                        uc7Var.getMessagesStorage().n1(j5);
+                                        uc7Var.getMessagesStorage().r1(j5);
                                         return;
                                     }
                                     return;
@@ -4271,7 +4274,7 @@ public final class uc7 extends rf0 implements fn7 {
                                     i7++;
                                 }
                             }
-                            uc7Var.getMessagesStorage().j1(updates_channeldifference.users, updates_channeldifference.chats, true, true);
+                            uc7Var.getMessagesStorage().n1(updates_channeldifference.users, updates_channeldifference.chats, true, true);
                             hl.c3(new t87(uc7Var, updates_channeldifference, (byte) 0));
                             uc7Var.getMessagesStorage().a.c(new w77(uc7Var, arrayList, j4, updates_channeldifference, chat2, zh6Var2, i, j5));
                         }
@@ -4280,7 +4283,7 @@ public final class uc7 extends rf0 implements fn7 {
             } catch (Exception e2) {
                 e = e2;
             }
-            j3 = getMessagesStorage().y(nativeByteBuffer);
+            j3 = getMessagesStorage().A(nativeByteBuffer);
         }
         zh6Var.k(j, Boolean.TRUE);
         TLRPC.TL_updates_getChannelDifference tL_updates_getChannelDifference2 = new TLRPC.TL_updates_getChannelDifference();
@@ -4304,7 +4307,7 @@ public final class uc7 extends rf0 implements fn7 {
                         hl.c3(new u87(uc7Var, tL_error, j4, (byte) 0));
                         uc7Var.Q0.e(j4);
                         if (j5 != 0) {
-                            uc7Var.getMessagesStorage().n1(j5);
+                            uc7Var.getMessagesStorage().r1(j5);
                             return;
                         }
                         return;
@@ -4344,7 +4347,7 @@ public final class uc7 extends rf0 implements fn7 {
                         i7++;
                     }
                 }
-                uc7Var.getMessagesStorage().j1(updates_channeldifference.users, updates_channeldifference.chats, true, true);
+                uc7Var.getMessagesStorage().n1(updates_channeldifference.users, updates_channeldifference.chats, true, true);
                 hl.c3(new t87(uc7Var, updates_channeldifference, (byte) 0));
                 uc7Var.getMessagesStorage().a.c(new w77(uc7Var, arrayList, j4, updates_channeldifference, chat2, zh6Var2, i, j5));
             }
@@ -4354,7 +4357,7 @@ public final class uc7 extends rf0 implements fn7 {
     public final String J1(TLRPC.Reaction reaction) {
         TLRPC.TL_messages_savedReactionsTags tL_messages_savedReactionsTags;
         boolean z;
-        zh6 zh6Var = this.P4;
+        zh6 zh6Var = this.Q4;
         if (zh6Var == null || (tL_messages_savedReactionsTags = (TLRPC.TL_messages_savedReactionsTags) zh6Var.f(0L)) == null) {
             return null;
         }
@@ -4474,8 +4477,8 @@ public final class uc7 extends rf0 implements fn7 {
             }
         }
         getNotificationCenter().k(jn7.I2, new Object[0]);
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new je7(messagesStorage, objArr == true ? 1 : 0, b2));
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new ke7(messagesStorage, objArr == true ? 1 : 0, b2));
         O();
         lv2 contactsController = getContactsController();
         contactsController.getClass();
@@ -4722,24 +4725,24 @@ public final class uc7 extends rf0 implements fn7 {
     public final void K(boolean z) {
         lc7 lc7Var;
         if (getUserConfig().f() != null) {
-            if (!this.Q4 && ((lc7Var = this.E3) == null || lc7Var.g() || z)) {
-                this.Q4 = true;
+            if (!this.R4 && ((lc7Var = this.F3) == null || lc7Var.g() || z)) {
+                this.R4 = true;
                 TLRPC.TL_help_getPeerColors tL_help_getPeerColors = new TLRPC.TL_help_getPeerColors();
-                lc7 lc7Var2 = this.E3;
+                lc7 lc7Var2 = this.F3;
                 tL_help_getPeerColors.hash = lc7Var2 != null ? lc7Var2.b : 0;
                 if (lc7Var2 != null && lc7Var2.g()) {
                     tL_help_getPeerColors.hash = 0;
                 }
                 getConnectionsManager().sendRequest(tL_help_getPeerColors, new h77(this, (byte) 20));
             }
-            if (this.R4) {
+            if (this.S4) {
                 return;
             }
-            lc7 lc7Var3 = this.F3;
+            lc7 lc7Var3 = this.G3;
             if (lc7Var3 == null || lc7Var3.g() || z) {
-                this.R4 = true;
+                this.S4 = true;
                 TLRPC.TL_help_getPeerProfileColors tL_help_getPeerProfileColors = new TLRPC.TL_help_getPeerProfileColors();
-                lc7 lc7Var4 = this.F3;
+                lc7 lc7Var4 = this.G3;
                 tL_help_getPeerProfileColors.hash = lc7Var4 != null ? lc7Var4.b : 0;
                 if (lc7Var4 != null && lc7Var4.g()) {
                     tL_help_getPeerProfileColors.hash = 0;
@@ -4766,7 +4769,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final boolean K3(long j, boolean z, TLRPC.InputPeer inputPeer, long j2) {
         NativeByteBuffer nativeByteBuffer;
-        long y;
+        long A;
         TLRPC.Dialog dialog = (TLRPC.Dialog) this.R.f(j);
         if (dialog != null) {
             if (dialog.pinned == z) {
@@ -4823,21 +4826,21 @@ public final class uc7 extends rf0 implements fn7 {
                             nativeByteBuffer2 = nativeByteBuffer;
                             cc4.g(e, true);
                             nativeByteBuffer = nativeByteBuffer2;
-                            y = getMessagesStorage().y(nativeByteBuffer);
-                            getConnectionsManager().sendRequest(tL_messages_toggleDialogPin, new e77(this, y, (byte) 9));
-                            jf7 messagesStorage = getMessagesStorage();
-                            messagesStorage.a.c(new gd7(messagesStorage, dialog.pinnedNum, j, (byte) 3));
+                            A = getMessagesStorage().A(nativeByteBuffer);
+                            getConnectionsManager().sendRequest(tL_messages_toggleDialogPin, new e77(this, A, (byte) 9));
+                            kf7 messagesStorage = getMessagesStorage();
+                            messagesStorage.a.c(new id7(messagesStorage, dialog.pinnedNum, j, (byte) 3));
                             return true;
                         }
-                        y = getMessagesStorage().y(nativeByteBuffer);
+                        A = getMessagesStorage().A(nativeByteBuffer);
                     } else {
-                        y = j2;
+                        A = j2;
                     }
-                    getConnectionsManager().sendRequest(tL_messages_toggleDialogPin, new e77(this, y, (byte) 9));
+                    getConnectionsManager().sendRequest(tL_messages_toggleDialogPin, new e77(this, A, (byte) 9));
                 }
             }
-            jf7 messagesStorage2 = getMessagesStorage();
-            messagesStorage2.a.c(new gd7(messagesStorage2, dialog.pinnedNum, j, (byte) 3));
+            kf7 messagesStorage2 = getMessagesStorage();
+            messagesStorage2.a.c(new id7(messagesStorage2, dialog.pinnedNum, j, (byte) 3));
             return true;
         }
         return false;
@@ -4845,7 +4848,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final void K4() {
         StringBuilder sb = new StringBuilder();
-        Iterator it = this.n4.iterator();
+        Iterator it = this.o4.iterator();
         while (it.hasNext()) {
             Integer num = (Integer) it.next();
             if (sb.length() > 0) {
@@ -4853,7 +4856,7 @@ public final class uc7 extends rf0 implements fn7 {
             }
             sb.append(num);
         }
-        this.X3.edit().putString("unreadOnlyFilters", sb.toString()).apply();
+        this.Y3.edit().putString("unreadOnlyFilters", sb.toString()).apply();
     }
 
     public final void L(boolean z) {
@@ -4894,12 +4897,12 @@ public final class uc7 extends rf0 implements fn7 {
     public final wb7 L0(long j) {
         wb7 wb7Var;
         TLRPC.TL_channels_getChannelRecommendations tL_channels_getChannelRecommendations;
-        if (this.N4 == null) {
-            this.N4 = new HashMap();
+        if (this.O4 == null) {
+            this.O4 = new HashMap();
         }
         boolean p = getUserConfig().p();
-        if (this.N4.containsKey(Long.valueOf(j))) {
-            wb7Var = (wb7) this.N4.get(Long.valueOf(j));
+        if (this.O4.containsKey(Long.valueOf(j))) {
+            wb7Var = (wb7) this.O4.get(Long.valueOf(j));
             if (wb7Var == null || wb7Var.a == p) {
                 return wb7Var;
             }
@@ -4918,7 +4921,7 @@ public final class uc7 extends rf0 implements fn7 {
             }
             tL_channels_getChannelRecommendations = tL_channels_getChannelRecommendations2;
         }
-        this.N4.put(Long.valueOf(j), null);
+        this.O4.put(Long.valueOf(j), null);
         getConnectionsManager().sendRequest(tL_channels_getChannelRecommendations, new bs6(this, p, j, (byte) 1));
         return wb7Var;
     }
@@ -4944,7 +4947,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final boolean L2(long j) {
         String str = "dialog_bar_vis3" + j;
-        SharedPreferences sharedPreferences = this.W3;
+        SharedPreferences sharedPreferences = this.X3;
         return sharedPreferences.getInt(str, 0) == 2 && (qu6.v("dialog_bar_report", j, sharedPreferences, false) || qu6.v("dialog_bar_block", j, sharedPreferences, false));
     }
 
@@ -5032,7 +5035,7 @@ public final class uc7 extends rf0 implements fn7 {
                         nativeByteBuffer2 = nativeByteBuffer;
                         cc4.g(e, true);
                         nativeByteBuffer = nativeByteBuffer2;
-                        j = getMessagesStorage().y(nativeByteBuffer);
+                        j = getMessagesStorage().A(nativeByteBuffer);
                         getConnectionsManager().sendRequest(savewallpaper, new e77(this, j, (byte) 10));
                         if ("c".equals(unbVar.c)) {
                         }
@@ -5041,7 +5044,7 @@ public final class uc7 extends rf0 implements fn7 {
                         j2 = unbVar.l;
                         if (j2 != 0) {
                         }
-                        tL_wallPaper.dark = hh7.j(unbVar.d, unbVar.e, unbVar.f, unbVar.g);
+                        tL_wallPaper.dark = ih7.j(unbVar.d, unbVar.e, unbVar.f, unbVar.g);
                         tL_wallPaper.flags |= 4;
                         TLRPC.WallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
                         tL_wallPaper.settings = tL_wallPaperSettings;
@@ -5061,13 +5064,13 @@ public final class uc7 extends rf0 implements fn7 {
                         }
                         ArrayList arrayList = new ArrayList();
                         arrayList.add(tL_wallPaper);
-                        getMessagesStorage().m1(-3, arrayList);
-                        getMessagesStorage().m0();
+                        getMessagesStorage().q1(-3, arrayList);
+                        getMessagesStorage().o0();
                     }
                 } catch (Exception e3) {
                     e = e3;
                 }
-                j = getMessagesStorage().y(nativeByteBuffer);
+                j = getMessagesStorage().A(nativeByteBuffer);
             }
             getConnectionsManager().sendRequest(savewallpaper, new e77(this, j, (byte) 10));
         }
@@ -5089,7 +5092,7 @@ public final class uc7 extends rf0 implements fn7 {
             } else {
                 tL_wallPaper.id = j2;
             }
-            tL_wallPaper.dark = hh7.j(unbVar.d, unbVar.e, unbVar.f, unbVar.g);
+            tL_wallPaper.dark = ih7.j(unbVar.d, unbVar.e, unbVar.f, unbVar.g);
             tL_wallPaper.flags |= 4;
             TLRPC.WallPaperSettings tL_wallPaperSettings2 = new TLRPC.TL_wallPaperSettings();
             tL_wallPaper.settings = tL_wallPaperSettings2;
@@ -5121,8 +5124,8 @@ public final class uc7 extends rf0 implements fn7 {
             }
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(tL_wallPaper);
-            getMessagesStorage().m1(-3, arrayList2);
-            getMessagesStorage().m0();
+            getMessagesStorage().q1(-3, arrayList2);
+            getMessagesStorage().o0();
         }
     }
 
@@ -5168,11 +5171,11 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean M2() {
-        return !"disabled".equals(this.k4.S2.f);
+        return !"disabled".equals(this.l4.S2.f);
     }
 
     public final boolean M3() {
-        return this.k4.i3.f && !getUserConfig().p();
+        return this.l4.i3.f && !getUserConfig().p();
     }
 
     public final void M4(String str, TLRPC.User user) {
@@ -5767,11 +5770,11 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean N2() {
-        return !"disabled".equals(this.k4.R2.f);
+        return !"disabled".equals(this.l4.R2.f);
     }
 
     public final boolean N3() {
-        return this.k4.i3.f;
+        return this.l4.i3.f;
     }
 
     public final void N4(final TLObject tLObject, final ArrayList arrayList, final TLRPC.TL_messages_dialogs tL_messages_dialogs, final TLRPC.TL_messages_dialogs tL_messages_dialogs2, final ArrayList arrayList2, final ArrayList arrayList3, final ArrayList arrayList4, final SparseArray sparseArray, final ArrayList arrayList5, final HashMap hashMap, final HashSet hashSet, final Runnable runnable) {
@@ -5803,7 +5806,7 @@ public final class uc7 extends rf0 implements fn7 {
                 ArrayList arrayList8 = arrayList;
                 arrayList8.remove(tLObject);
                 if (arrayList8.isEmpty()) {
-                    final jf7 messagesStorage = uc7.this.getMessagesStorage();
+                    final kf7 messagesStorage = uc7.this.getMessagesStorage();
                     to3 to3Var = messagesStorage.a;
                     final ArrayList arrayList9 = arrayList4;
                     final SparseArray sparseArray2 = sparseArray;
@@ -5811,10 +5814,10 @@ public final class uc7 extends rf0 implements fn7 {
                     final HashMap hashMap2 = hashMap;
                     final HashSet hashSet2 = hashSet;
                     final Runnable runnable2 = runnable;
-                    to3Var.c(new Runnable() { // from class: oe7
+                    to3Var.c(new Runnable() { // from class: pe7
                         @Override // java.lang.Runnable
                         public final void run() {
-                            jf7.this.V0(tL_messages_dialogs3, tL_messages_dialogs4, arrayList7, arrayList6, arrayList9, sparseArray2, arrayList10, hashMap2, hashSet2, runnable2);
+                            kf7.this.Z0(tL_messages_dialogs3, tL_messages_dialogs4, arrayList7, arrayList6, arrayList9, sparseArray2, arrayList10, hashMap2, hashSet2, runnable2);
                         }
                     });
                 }
@@ -5975,7 +5978,7 @@ public final class uc7 extends rf0 implements fn7 {
         mediaDataController.A1.clear();
         mediaDataController.B1.b();
         getColorPalette().a();
-        this.i4.h();
+        this.j4.h();
         F1().a();
         c cVar = c.T[this.currentAccount];
         if (cVar != null) {
@@ -6030,9 +6033,9 @@ public final class uc7 extends rf0 implements fn7 {
         }
         this.n3 = false;
         uj3.F4[this.currentAccount] = false;
-        this.W3.edit().clear().commit();
-        this.Y3.edit().putLong("lastGifLoadTime", 0L).putLong("lastStickersLoadTime", 0L).putLong("lastStickersLoadTimeMask", 0L).putLong("lastStickersLoadTimeFavs", 0L).commit();
-        qu6.i(this.X3.edit().remove("archivehint").remove("proximityhint").remove("archivehint_l").remove("gifhint"), "reminderhint", "soundHint", "dcDomainName2", "webFileDatacenterId").remove("themehint").remove("showFiltersTooltip").remove("transcribeButtonPressed").commit();
+        this.X3.edit().clear().commit();
+        this.Z3.edit().putLong("lastGifLoadTime", 0L).putLong("lastStickersLoadTime", 0L).putLong("lastStickersLoadTimeMask", 0L).putLong("lastStickersLoadTimeFavs", 0L).commit();
+        qu6.i(this.Y3.edit().remove("archivehint").remove("proximityhint").remove("archivehint_l").remove("gifhint"), "reminderhint", "soundHint", "dcDomainName2", "webFileDatacenterId").remove("themehint").remove("showFiltersTooltip").remove("transcribeButtonPressed").commit();
         SharedPreferences sharedPreferences = a.b.getSharedPreferences("shortcut_widget", 0);
         SharedPreferences.Editor editor = null;
         ArrayList arrayList2 = null;
@@ -6102,10 +6105,10 @@ public final class uc7 extends rf0 implements fn7 {
         this.e1.b();
         this.w.clear();
         this.x.b();
-        this.H4.clear();
-        this.G4.clear();
-        this.J4.b();
         this.I4.clear();
+        this.H4.clear();
+        this.K4.b();
+        this.J4.clear();
         this.n.clear();
         this.s1.clear();
         this.A0.b();
@@ -6113,8 +6116,8 @@ public final class uc7 extends rf0 implements fn7 {
         this.C0 = 0;
         this.F.clear();
         this.E.clear();
+        this.q4.clear();
         this.p4.clear();
-        this.o4.clear();
         this.y.clear();
         this.O = ConnectionsManager.DEFAULT_DATACENTER_ID;
         this.G.clear();
@@ -6131,8 +6134,8 @@ public final class uc7 extends rf0 implements fn7 {
         this.d.clear();
         this.e.clear();
         this.L2 = null;
-        this.S4.b();
-        this.T4.clear();
+        this.T4.b();
+        this.U4.clear();
         this.b.clear();
         this.S.b();
         this.U.clear();
@@ -6152,7 +6155,7 @@ public final class uc7 extends rf0 implements fn7 {
         this.K0 = false;
         this.M0.clear();
         this.L0 = false;
-        this.Z3 = false;
+        this.a4 = false;
         Utilities.d.c(new pa7(this, (byte) 13));
         this.n0.clear();
         this.o0.clear();
@@ -6220,7 +6223,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final int O0(long j) {
         TLRPC.ChatFull N0 = s1(this.currentAccount).N0(-j);
-        return (N0 == null || (!(N0 instanceof TLRPC.TL_chatFull) ? (N0.flags2 & TLObject.FLAG_13) != 0 : (N0.flags & TLObject.FLAG_20) != 0)) ? this.k4.r3.f() : N0.reactions_limit;
+        return (N0 == null || (!(N0 instanceof TLRPC.TL_chatFull) ? (N0.flags2 & TLObject.FLAG_13) != 0 : (N0.flags & TLObject.FLAG_20) != 0)) ? this.l4.r3.f() : N0.reactions_limit;
     }
 
     public final c6b O1() {
@@ -6228,7 +6231,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (c6bVar != null) {
             return c6bVar;
         }
-        synchronized (u5[this.currentAccount]) {
+        synchronized (v5[this.currentAccount]) {
             c6b c6bVar2 = this.e0;
             if (c6bVar2 != null) {
                 return c6bVar2;
@@ -6242,7 +6245,7 @@ public final class uc7 extends rf0 implements fn7 {
     public final boolean O2(long j) {
         if (j != 0 && !wf3.B(j) && j != getUserConfig().e()) {
             String str = "dialog_bar_vis3" + j;
-            SharedPreferences sharedPreferences = this.W3;
+            SharedPreferences sharedPreferences = this.X3;
             if (sharedPreferences.getInt(str, 0) == 2 && qu6.v("dialog_bar_report", j, sharedPreferences, false) && !qu6.v("dialog_bar_replied", j, sharedPreferences, false)) {
                 return true;
             }
@@ -6251,12 +6254,12 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void O3() {
-        int i = this.a4;
+        int i = this.b4;
         if (i < 2) {
-            this.a4 = i + 1;
-            SharedPreferences sharedPreferences = this.X3;
+            this.b4 = i + 1;
+            SharedPreferences sharedPreferences = this.Y3;
             if (sharedPreferences != null) {
-                sharedPreferences.edit().putInt("transcribeButtonPressed", this.a4).apply();
+                sharedPreferences.edit().putInt("transcribeButtonPressed", this.b4).apply();
             }
         }
     }
@@ -6316,7 +6319,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final yb7 P0(long j) {
-        LongSparseArray longSparseArray = this.g5;
+        LongSparseArray longSparseArray = this.h5;
         yb7 yb7Var = (yb7) longSparseArray.get(j);
         if (yb7Var != null) {
             return yb7Var;
@@ -6328,7 +6331,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final TL_account.RequirementToContact P2(long j) {
         if (!getUserConfig().p() && getUserConfig().e() != j) {
-            TL_account.RequirementToContact requirementToContact = (TL_account.RequirementToContact) this.S4.f(j);
+            TL_account.RequirementToContact requirementToContact = (TL_account.RequirementToContact) this.T4.f(j);
             if (requirementToContact != null) {
                 return requirementToContact;
             }
@@ -6339,8 +6342,8 @@ public final class uc7 extends rf0 implements fn7 {
                     return lbc.q(Y1);
                 }
                 o1(j);
-                this.T4.add(Long.valueOf(j));
-                l87 l87Var = this.U4;
+                this.U4.add(Long.valueOf(j));
+                l87 l87Var = this.V4;
                 hl.r(l87Var);
                 hl.d3(l87Var, 60L);
             }
@@ -6655,11 +6658,11 @@ public final class uc7 extends rf0 implements fn7 {
         return false;
     }
 
-    public final void Q(Activity activity, TLRPC.Chat chat, e eVar, bf7 bf7Var) {
+    public final void Q(Activity activity, TLRPC.Chat chat, e eVar, cf7 cf7Var) {
         TLRPC.TL_channels_convertToGigagroup tL_channels_convertToGigagroup = new TLRPC.TL_channels_convertToGigagroup();
         tL_channels_convertToGigagroup.channel = i1(chat);
         id idVar = activity != null ? new id(3, null, activity) : null;
-        int sendRequest = getConnectionsManager().sendRequest(tL_channels_convertToGigagroup, new mn0((Object) this, (Object) activity, (Object) idVar, (Object) bf7Var, (Object) eVar, (Object) tL_channels_convertToGigagroup, (byte) 2));
+        int sendRequest = getConnectionsManager().sendRequest(tL_channels_convertToGigagroup, new mn0((Object) this, (Object) activity, (Object) idVar, (Object) cf7Var, (Object) eVar, (Object) tL_channels_convertToGigagroup, (byte) 2));
         if (idVar != null) {
             idVar.setOnCancelListener(new q97(this, sendRequest, (byte) 1));
             try {
@@ -6690,7 +6693,7 @@ public final class uc7 extends rf0 implements fn7 {
                         ga6Var.e = z | (!p2(dialog.id, 0L, null));
                     }
                 } else {
-                    s1(this.currentAccount).g4.h(M0.id);
+                    s1(this.currentAccount).h4.h(M0.id);
                     int i4 = ga6Var.a;
                     int[] iArr = qyb.w;
                     int i5 = iArr[0];
@@ -6709,12 +6712,12 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final jc Q1() {
-        jc jcVar = this.j4;
+        jc jcVar = this.k4;
         if (jcVar != null) {
             return jcVar;
         }
         jc jcVar2 = new jc(this.currentAccount);
-        this.j4 = jcVar2;
+        this.k4 = jcVar2;
         return jcVar2;
     }
 
@@ -6740,11 +6743,11 @@ public final class uc7 extends rf0 implements fn7 {
         getConnectionsManager().sendRequest(tL_channels_setBoostsToUnblockRestrictions, new e77(this, j, (byte) 14));
     }
 
-    public final void R(Context context, long j, e eVar, ef7 ef7Var, ea2 ea2Var) {
+    public final void R(Context context, long j, e eVar, ff7 ff7Var, ea2 ea2Var) {
         TLRPC.TL_messages_migrateChat tL_messages_migrateChat = new TLRPC.TL_messages_migrateChat();
         tL_messages_migrateChat.chat_id = j;
         id idVar = context != null ? new id(3, null, context) : null;
-        int sendRequest = getConnectionsManager().sendRequest(tL_messages_migrateChat, new p97(this, context, idVar, ef7Var, j, ea2Var, eVar, tL_messages_migrateChat));
+        int sendRequest = getConnectionsManager().sendRequest(tL_messages_migrateChat, new p97(this, context, idVar, ff7Var, j, ea2Var, eVar, tL_messages_migrateChat));
         if (idVar != null) {
             idVar.setOnCancelListener(new q97(this, sendRequest, (byte) 0));
             try {
@@ -6755,25 +6758,25 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void R0(pcc pccVar) {
-        if (this.b5 != null && System.currentTimeMillis() - this.a5 < 3600000) {
+        if (this.c5 != null && System.currentTimeMillis() - this.b5 < 3600000) {
             if (pccVar != null) {
-                pccVar.a(this.b5);
+                pccVar.a(this.c5);
                 return;
             }
             return;
         }
-        ArrayList arrayList = this.Z4;
+        ArrayList arrayList = this.a5;
         if (arrayList == null) {
             arrayList = new ArrayList();
-            this.Z4 = arrayList;
+            this.a5 = arrayList;
         }
         if (pccVar != null) {
             arrayList.add(pccVar);
         }
-        if (this.Y4) {
+        if (this.Z4) {
             return;
         }
-        this.Y4 = true;
+        this.Z4 = true;
         getConnectionsManager().sendRequest(new TL_account.getContentSettings(), new h77(this, (byte) 23));
     }
 
@@ -6782,7 +6785,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (u8cVar != null) {
             return u8cVar;
         }
-        synchronized (u5[this.currentAccount]) {
+        synchronized (v5[this.currentAccount]) {
             u8c u8cVar2 = this.g0;
             if (u8cVar2 != null) {
                 return u8cVar2;
@@ -6794,7 +6797,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean R2(boolean z) {
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.n5;
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.o5;
         if (tL_webBrowserSettings == null) {
             return false;
         }
@@ -6806,7 +6809,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void R4(int i, long j) {
-        this.X3.edit().putInt("chatPendingRequests" + j, i).apply();
+        this.Y3.edit().putInt("chatPendingRequests" + j, i).apply();
     }
 
     public final int S(String str, ArrayList arrayList, String str2, int i, boolean z, Location location, String str3, int i2, e eVar) {
@@ -6857,7 +6860,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean S2() {
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.n5;
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.o5;
         return (tL_webBrowserSettings == null || tL_webBrowserSettings.open_external_browser) ? false : true;
     }
 
@@ -6868,13 +6871,13 @@ public final class uc7 extends rf0 implements fn7 {
             TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i);
             zh6Var.k(r47.B1(channelParticipant.peer), channelParticipant);
         }
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new cq6((Object) messagesStorage, j, (Object) zh6Var, (byte) 11));
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new cq6((Object) messagesStorage, j, (Object) zh6Var, (byte) 10));
         hl.c3(new j61((Object) this, j, (Object) zh6Var, z, (byte) 6));
     }
 
     public final void S4(boolean z) {
-        TL_account.contentSettings contentsettings = this.b5;
+        TL_account.contentSettings contentsettings = this.c5;
         if (contentsettings != null) {
             if (!contentsettings.sensitive_can_change) {
                 return;
@@ -6882,18 +6885,18 @@ public final class uc7 extends rf0 implements fn7 {
                 contentsettings.sensitive_enabled = z;
             }
         }
-        if (this.K3 == null) {
-            this.K3 = new HashSet();
+        if (this.L3 == null) {
+            this.L3 = new HashSet();
         }
-        Set set = this.K3;
+        Set set = this.L3;
         if (z) {
             set.add("sensitive");
         } else {
             set.remove("sensitive");
         }
-        SharedPreferences sharedPreferences = this.X3;
+        SharedPreferences sharedPreferences = this.Y3;
         if (sharedPreferences != null) {
-            sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", this.K3).apply();
+            sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", this.L3).apply();
         }
         TL_account.setContentSettings setcontentsettings = new TL_account.setContentSettings();
         setcontentsettings.sensitive_enabled = z;
@@ -6917,9 +6920,9 @@ public final class uc7 extends rf0 implements fn7 {
             nativeByteBuffer2 = nativeByteBuffer;
             cc4.g(e, true);
             nativeByteBuffer = nativeByteBuffer2;
-            return getMessagesStorage().y(nativeByteBuffer);
+            return getMessagesStorage().A(nativeByteBuffer);
         }
-        return getMessagesStorage().y(nativeByteBuffer);
+        return getMessagesStorage().A(nativeByteBuffer);
     }
 
     public final ArrayList T0() {
@@ -6928,7 +6931,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean T2(String str) {
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.n5;
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.o5;
         if (tL_webBrowserSettings != null && str != null) {
             String J0 = hl.J0(str, false);
             if (J0 == null) {
@@ -7020,7 +7023,7 @@ public final class uc7 extends rf0 implements fn7 {
                 boolean z9 = z2;
                 ConcurrentHashMap concurrentHashMap6 = uc7Var.Q;
                 ConcurrentHashMap concurrentHashMap7 = uc7Var.P;
-                boolean z10 = uc7Var.C4;
+                boolean z10 = uc7Var.D4;
                 if (uc7Var.b2) {
                     z4 = z9;
                     arrayList3 = arrayList6;
@@ -7053,7 +7056,7 @@ public final class uc7 extends rf0 implements fn7 {
                                 for (int i13 = 0; i13 < arrayList9.size(); i13++) {
                                     long j6 = ((TLRPC.UserFull) arrayList9.get(i13)).id;
                                     uc7Var2.b1.k(j6, (TLRPC.UserFull) arrayList9.get(i13));
-                                    uc7Var2.i4.M(j6);
+                                    uc7Var2.j4.M(j6);
                                 }
                             }
                             SparseBooleanArray sparseBooleanArray3 = uc7Var2.T1;
@@ -7475,7 +7478,7 @@ public final class uc7 extends rf0 implements fn7 {
                             if (num3 == null) {
                                 zh6Var6 = zh6Var5;
                                 concurrentHashMap2 = concurrentHashMap10;
-                                num3 = Integer.valueOf(uc7Var.getMessagesStorage().S(message6.dialog_id, message6.out));
+                                num3 = Integer.valueOf(uc7Var.getMessagesStorage().U(message6.dialog_id, message6.out));
                                 concurrentHashMap12.put(Long.valueOf(message6.dialog_id), num3);
                             } else {
                                 zh6Var6 = zh6Var5;
@@ -7487,9 +7490,9 @@ public final class uc7 extends rf0 implements fn7 {
                         zh6Var2 = zh6Var6;
                         concurrentHashMap10 = concurrentHashMap2;
                     }
-                    uc7Var.getMessagesStorage().a1(messages_dialogs5, b4 == uc7Var.E4 ? 3 : 0);
+                    uc7Var.getMessagesStorage().e1(messages_dialogs5, b4 == uc7Var.F4 ? 3 : 0);
                 }
-                if (b4 == uc7Var.D4) {
+                if (b4 == uc7Var.E4) {
                     TLRPC.Chat chat8 = messages_dialogs5.chats.get(0);
                     uc7Var.I0(chat8.id);
                     hl.c3(new d97(uc7Var, chat8, (byte) 1));
@@ -7553,16 +7556,16 @@ public final class uc7 extends rf0 implements fn7 {
                         zh6 zh6Var25;
                         uc7 uc7Var4 = uc7.this;
                         SparseBooleanArray sparseBooleanArray3 = uc7Var4.V1;
-                        byte b10 = uc7Var4.D4;
-                        byte b11 = uc7Var4.E4;
+                        byte b10 = uc7Var4.E4;
+                        byte b11 = uc7Var4.F4;
                         SparseBooleanArray sparseBooleanArray4 = uc7Var4.U1;
                         zh6 zh6Var26 = uc7Var4.S;
                         ArrayList arrayList19 = uc7Var4.y;
                         zh6 zh6Var27 = uc7Var4.T;
                         SparseArray sparseArray3 = uc7Var4.V;
                         zh6 zh6Var28 = uc7Var4.R;
-                        a5c a5cVar = uc7Var4.i4;
-                        boolean z18 = uc7Var4.C4;
+                        a5c a5cVar = uc7Var4.j4;
+                        boolean z18 = uc7Var4.D4;
                         TLRPC.Message message8 = message7;
                         if (message8 != null) {
                             uc7Var4.O = Math.min(uc7Var4.O, message8.date);
@@ -8000,7 +8003,7 @@ public final class uc7 extends rf0 implements fn7 {
                                     for (int i60 = 0; i60 < messages_dialogs6.dialogs.size(); i60++) {
                                         long j33 = messages_dialogs6.dialogs.get(i60).id;
                                         if (uc7Var2.v2(j33) || uc7Var2.C2(j33)) {
-                                            uc7Var2.g4.n(0, -j33, true);
+                                            uc7Var2.h4.n(0, -j33, true);
                                         }
                                     }
                                     return;
@@ -8070,14 +8073,14 @@ public final class uc7 extends rf0 implements fn7 {
             if (bool != null) {
                 N0.paid_reactions_available = bool.booleanValue();
             }
-            getMessagesStorage().K1(N0, false);
+            getMessagesStorage().P1(N0, false);
         }
     }
 
     public final void U(long j, long j2) {
-        jf7 messagesStorage = getMessagesStorage();
+        kf7 messagesStorage = getMessagesStorage();
         messagesStorage.getClass();
-        messagesStorage.H(new ae7(messagesStorage, 0, j, j2, (byte) 5));
+        messagesStorage.J(new ae7(messagesStorage, 0, j, j2, (byte) 5));
         TLRPC.TL_messages_deleteParticipantReactions tL_messages_deleteParticipantReactions = new TLRPC.TL_messages_deleteParticipantReactions();
         tL_messages_deleteParticipantReactions.peer = j1(j);
         tL_messages_deleteParticipantReactions.participant = j1(j2);
@@ -8085,7 +8088,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final dc7 U0(long j) {
-        zh6 zh6Var = this.z4;
+        zh6 zh6Var = this.A4;
         dc7 dc7Var = (dc7) zh6Var.f(j);
         if (dc7Var != null) {
             return dc7Var;
@@ -8099,7 +8102,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (S2()) {
             return false;
         }
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.n5;
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.o5;
         return tL_webBrowserSettings == null || tL_webBrowserSettings.display_close_button;
     }
 
@@ -8214,7 +8217,7 @@ public final class uc7 extends rf0 implements fn7 {
             j4 = 0;
         }
         psb d = qsb.d(qsbVar, "processLoadedMessages");
-        if (i11 == 0 && (arrayList = messages_messages2.messages) != null && !qu6.v("dialog_bar_replied", j11, uc7Var2.W3, false)) {
+        if (i11 == 0 && (arrayList = messages_messages2.messages) != null && !qu6.v("dialog_bar_replied", j11, uc7Var2.X3, false)) {
             int i20 = 0;
             while (true) {
                 if (i20 >= arrayList.size()) {
@@ -8233,7 +8236,7 @@ public final class uc7 extends rf0 implements fn7 {
             long j12 = -j11;
             if (i11 == 0 && j3 == j4) {
                 LongSparseIntArray longSparseIntArray = uc7Var2.P0;
-                if (longSparseIntArray.get(j12) == 0 && uc7Var2.getMessagesStorage().M(j12) == 0) {
+                if (longSparseIntArray.get(j12) == 0 && uc7Var2.getMessagesStorage().O(j12) == 0) {
                     longSparseIntArray.put(j12, messages_messages2.pts);
                     if (uc7Var2.r0.h(j12) < 0 || uc7Var2.q0.indexOfKey(j12) >= 0) {
                         j5 = j3;
@@ -8374,7 +8377,7 @@ public final class uc7 extends rf0 implements fn7 {
                         Integer num2 = (Integer) concurrentHashMap.get(valueOf);
                         if (num2 == null) {
                             z9 = false;
-                            num2 = Integer.valueOf(uc7Var.getMessagesStorage().S(j11, false));
+                            num2 = Integer.valueOf(uc7Var.getMessagesStorage().U(j11, false));
                             concurrentHashMap.put(Long.valueOf(j11), num2);
                         } else {
                             z9 = false;
@@ -8384,7 +8387,7 @@ public final class uc7 extends rf0 implements fn7 {
                         Integer num3 = (Integer) concurrentHashMap2.get(valueOf2);
                         if (num3 == null) {
                             z10 = true;
-                            num3 = Integer.valueOf(uc7Var.getMessagesStorage().S(j11, true));
+                            num3 = Integer.valueOf(uc7Var.getMessagesStorage().U(j11, true));
                             concurrentHashMap2.put(Long.valueOf(j11), num3);
                         } else {
                             z10 = true;
@@ -8465,7 +8468,7 @@ public final class uc7 extends rf0 implements fn7 {
                         long j17 = j11;
                         b = 2;
                         i17 = i19;
-                        uc7Var.getMessagesStorage().e1(i10, i3, i11, j17, j3, messages_messages3, z7);
+                        uc7Var.getMessagesStorage().i1(i10, i3, i11, j17, j3, messages_messages3, z7);
                         messages_messages2 = messages_messages3;
                         j7 = j3;
                         i16 = i11;
@@ -8808,14 +8811,14 @@ public final class uc7 extends rf0 implements fn7 {
                                                 long j24 = j23;
                                                 Integer num5 = (Integer) concurrentHashMap4.get(Long.valueOf(j24));
                                                 if (num5 == null) {
-                                                    num5 = Integer.valueOf(uc7Var8.getMessagesStorage().S(j24, false));
+                                                    num5 = Integer.valueOf(uc7Var8.getMessagesStorage().U(j24, false));
                                                     concurrentHashMap4.put(Long.valueOf(j24), num5);
                                                 }
                                                 Integer num6 = num5;
                                                 Integer num7 = (Integer) concurrentHashMap3.get(Long.valueOf(j24));
                                                 boolean z19 = true;
                                                 if (num7 == null) {
-                                                    num7 = Integer.valueOf(uc7Var8.getMessagesStorage().S(j24, true));
+                                                    num7 = Integer.valueOf(uc7Var8.getMessagesStorage().U(j24, true));
                                                     concurrentHashMap3.put(Long.valueOf(j24), num7);
                                                 }
                                                 Integer num8 = num7;
@@ -8826,7 +8829,7 @@ public final class uc7 extends rf0 implements fn7 {
                                                     ArrayList<TLRPC.Message> arrayList12 = messages_messages6.messages;
                                                     if (i55 >= size5) {
                                                         in5.S(arrayList12);
-                                                        uc7Var8.getMessagesStorage().e1(-1, 0, i38, j24, 0L, messages_messages6, false);
+                                                        uc7Var8.getMessagesStorage().i1(-1, 0, i38, j24, 0L, messages_messages6, false);
                                                         hl.c3(new ba7((Object) uc7Var8, j24, (Object) arrayList9, (Object) arrayList11, (byte) 18));
                                                         return;
                                                     }
@@ -9129,14 +9132,14 @@ public final class uc7 extends rf0 implements fn7 {
                                     long j24 = j23;
                                     Integer num5 = (Integer) concurrentHashMap4.get(Long.valueOf(j24));
                                     if (num5 == null) {
-                                        num5 = Integer.valueOf(uc7Var8.getMessagesStorage().S(j24, false));
+                                        num5 = Integer.valueOf(uc7Var8.getMessagesStorage().U(j24, false));
                                         concurrentHashMap4.put(Long.valueOf(j24), num5);
                                     }
                                     Integer num6 = num5;
                                     Integer num7 = (Integer) concurrentHashMap3.get(Long.valueOf(j24));
                                     boolean z19 = true;
                                     if (num7 == null) {
-                                        num7 = Integer.valueOf(uc7Var8.getMessagesStorage().S(j24, true));
+                                        num7 = Integer.valueOf(uc7Var8.getMessagesStorage().U(j24, true));
                                         concurrentHashMap3.put(Long.valueOf(j24), num7);
                                     }
                                     Integer num8 = num7;
@@ -9147,7 +9150,7 @@ public final class uc7 extends rf0 implements fn7 {
                                         ArrayList<TLRPC.Message> arrayList12 = messages_messages6.messages;
                                         if (i55 >= size5) {
                                             in5.S(arrayList12);
-                                            uc7Var8.getMessagesStorage().e1(-1, 0, i38, j24, 0L, messages_messages6, false);
+                                            uc7Var8.getMessagesStorage().i1(-1, 0, i38, j24, 0L, messages_messages6, false);
                                             hl.c3(new ba7((Object) uc7Var8, j24, (Object) arrayList9, (Object) arrayList11, (byte) 18));
                                             return;
                                         }
@@ -9209,7 +9212,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (M0 == null || !(M0.forum || M0.monoforum)) {
             return i;
         }
-        this.g4.h(-dialog.id);
+        this.h4.h(-dialog.id);
         return qyb.w[0];
     }
 
@@ -9220,7 +9223,7 @@ public final class uc7 extends rf0 implements fn7 {
         LongSparseIntArray longSparseIntArray = this.P0;
         int i3 = longSparseIntArray.get(j);
         if (i3 == 0) {
-            i3 = getMessagesStorage().M(j);
+            i3 = getMessagesStorage().O(j);
             if (i3 == 0) {
                 i3 = 1;
             }
@@ -9231,8 +9234,8 @@ public final class uc7 extends rf0 implements fn7 {
                 cc4.b("APPLY CHANNEL PTS");
             }
             longSparseIntArray.put(j, i);
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new gd7(messagesStorage, i, j, (byte) 5));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new id7(messagesStorage, i, j, (byte) 5));
             return;
         }
         if (i3 != i) {
@@ -9271,8 +9274,8 @@ public final class uc7 extends rf0 implements fn7 {
         if (dialog != null) {
             dialog.ttl_period = i;
         }
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new gd7(messagesStorage, i, j, (byte) 1));
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new id7(messagesStorage, i, j, (byte) 1));
         TLRPC.ChatFull chatFull = null;
         if (j > 0) {
             userFull = Y1(j);
@@ -9320,7 +9323,7 @@ public final class uc7 extends rf0 implements fn7 {
         boolean z4;
         NativeByteBuffer nativeByteBuffer;
         NativeByteBuffer nativeByteBuffer2;
-        long y;
+        long A;
         boolean z5;
         ArrayList arrayList;
         int i7;
@@ -9333,8 +9336,8 @@ public final class uc7 extends rf0 implements fn7 {
             if (j == getUserConfig().e()) {
                 F1().b();
             }
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new gd7(messagesStorage, i2, j, (byte) 0));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new id7(messagesStorage, i2, j, (byte) 0));
             return;
         }
         long j4 = j;
@@ -9370,8 +9373,8 @@ public final class uc7 extends rf0 implements fn7 {
         zh6Var.l(j4);
         this.v1.l(j4);
         if (i == 1 && i3 == 0) {
-            jf7 messagesStorage2 = getMessagesStorage();
-            messagesStorage2.a.c(new cq6((Object) messagesStorage2, j, (Object) new xa7(this, j4, i2, z, inputPeer, j2), (byte) 15));
+            kf7 messagesStorage2 = getMessagesStorage();
+            messagesStorage2.a.c(new cq6((Object) messagesStorage2, j, (Object) new xa7(this, j4, i2, z, inputPeer, j2), (byte) 16));
             return;
         }
         if (i2 == 0 || i2 == 3) {
@@ -9386,8 +9389,8 @@ public final class uc7 extends rf0 implements fn7 {
             if (j4 == getUserConfig().e()) {
                 F1().b();
             }
-            jf7 messagesStorage3 = getMessagesStorage();
-            messagesStorage3.a.c(new gd7(messagesStorage3, i2, j4, (byte) 0));
+            kf7 messagesStorage3 = getMessagesStorage();
+            messagesStorage3.a.c(new id7(messagesStorage3, i2, j4, (byte) 0));
             TLRPC.Dialog dialog = (TLRPC.Dialog) this.R.f(j4);
             if (i2 == 0 || i2 == 3) {
                 z5 = true;
@@ -9418,7 +9421,7 @@ public final class uc7 extends rf0 implements fn7 {
                 getMediaDataController().F(j, 0L, false);
                 j4 = j;
                 if (r2(j)) {
-                    this.W3.edit().remove("dialog_bar_spam" + j4).apply();
+                    this.X3.edit().remove("dialog_bar_spam" + j4).apply();
                 }
             } else {
                 i4 = i2;
@@ -9514,7 +9517,7 @@ public final class uc7 extends rf0 implements fn7 {
                         ArrayList arrayList3 = new ArrayList();
                         arrayList3.add(tL_messageService);
                         z5(0, j4, t);
-                        getMessagesStorage().g1(arrayList3, false, true, false, 0, false, 0, 0L);
+                        getMessagesStorage().k1(arrayList3, false, true, false, 0, false, 0, 0L);
                     }
                 }
                 i8 = 2;
@@ -9601,7 +9604,7 @@ public final class uc7 extends rf0 implements fn7 {
                         z4 = true;
                         cc4.g(e, z4);
                         nativeByteBuffer2 = nativeByteBuffer;
-                        y = getMessagesStorage().y(nativeByteBuffer2);
+                        A = getMessagesStorage().A(nativeByteBuffer2);
                         if (!z8) {
                         }
                     }
@@ -9611,7 +9614,7 @@ public final class uc7 extends rf0 implements fn7 {
                     z4 = true;
                     nativeByteBuffer = null;
                 }
-                y = getMessagesStorage().y(nativeByteBuffer2);
+                A = getMessagesStorage().A(nativeByteBuffer2);
                 if (!z8) {
                     TLRPC.TL_messages_deleteHistory tL_messages_deleteHistory = new TLRPC.TL_messages_deleteHistory();
                     tL_messages_deleteHistory.peer = j1;
@@ -9624,12 +9627,12 @@ public final class uc7 extends rf0 implements fn7 {
                     }
                     tL_messages_deleteHistory.just_clear = z2;
                     tL_messages_deleteHistory.revoke = z3;
-                    getConnectionsManager().sendRequest(tL_messages_deleteHistory, new bb7(this, y, j4, i4, i5, z3, j1), 64);
+                    getConnectionsManager().sendRequest(tL_messages_deleteHistory, new bb7(this, A, j4, i4, i5, z3, j1), 64);
                     return;
                 }
                 if (i4 == 0) {
-                    if (y != j3) {
-                        getMessagesStorage().n1(y);
+                    if (A != j3) {
+                        getMessagesStorage().r1(A);
                         return;
                     }
                     return;
@@ -9644,12 +9647,12 @@ public final class uc7 extends rf0 implements fn7 {
                     i5 = Integer.MAX_VALUE;
                 }
                 tL_channels_deleteHistory.max_id = i5;
-                getConnectionsManager().sendRequest(tL_channels_deleteHistory, new e77(this, y, (byte) 15), 64);
+                getConnectionsManager().sendRequest(tL_channels_deleteHistory, new e77(this, A, (byte) 15), 64);
                 return;
             }
         }
         z3 = z;
-        y = j2;
+        A = j2;
         if (!z8) {
         }
     }
@@ -9673,12 +9676,12 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Failed to find 'out' block for switch in B:46:0x01e0. Please report as an issue. */
     public final void W2(TLRPC.TL_help_appConfig tL_help_appConfig) {
         boolean z;
         int i;
         char c;
         TLRPC.TL_jsonObject tL_jsonObject;
-        hr hrVar;
         int i2;
         boolean z2;
         int i3;
@@ -9686,41 +9689,37 @@ public final class uc7 extends rf0 implements fn7 {
         TLRPC.TL_jsonObject tL_jsonObject2;
         boolean z3;
         long parseLong;
-        boolean z4;
         int i5;
         boolean G4;
-        HashMap hashMap;
         TLRPC.TL_jsonObject tL_jsonObject3;
         int i6;
         int i7;
         int i8;
-        int intValue;
-        char c2;
         int i9;
         int i10;
+        char c2;
+        int i11;
+        int i12;
         ArrayList<TLRPC.TL_jsonObjectValue> arrayList;
         char c3;
-        int i11;
-        HashMap hashMap2;
-        int i12;
         int i13;
+        int i14;
+        int i15;
         if (tL_help_appConfig != null) {
             TLRPC.JSONValue jSONValue = tL_help_appConfig.config;
             if (jSONValue instanceof TLRPC.TL_jsonObject) {
                 TLRPC.TL_jsonObject tL_jsonObject4 = (TLRPC.TL_jsonObject) jSONValue;
-                SharedPreferences sharedPreferences = this.X3;
-                SharedPreferences.Editor edit = sharedPreferences.edit();
-                this.K3 = new HashSet();
-                sharedPreferences.edit().remove("ignoreRestrictionReasons").apply();
-                hr hrVar2 = this.k4;
-                js2 js2Var = hrVar2.a;
-                HashMap hashMap3 = js2Var.a;
+                SharedPreferences.Editor edit = this.Y3.edit();
+                this.L3 = new HashSet();
+                this.Y3.edit().remove("ignoreRestrictionReasons").apply();
+                js2 js2Var = this.l4.a;
+                HashMap hashMap = js2Var.a;
                 ArrayList arrayList2 = new ArrayList();
                 HashSet hashSet = new HashSet();
                 int size = tL_jsonObject4.value.size();
-                for (int i14 = 0; i14 < size; i14++) {
-                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue = tL_jsonObject4.value.get(i14);
-                    yr2 yr2Var = (yr2) hashMap3.get(tL_jsonObjectValue.key);
+                for (int i16 = 0; i16 < size; i16++) {
+                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue = tL_jsonObject4.value.get(i16);
+                    yr2 yr2Var = (yr2) hashMap.get(tL_jsonObjectValue.key);
                     if (yr2Var != null && tL_jsonObjectValue.value != null) {
                         hashSet.add(yr2Var);
                         if (yr2Var.b(edit, tL_jsonObjectValue.value) && !arrayList2.contains(yr2Var)) {
@@ -9728,22 +9727,22 @@ public final class uc7 extends rf0 implements fn7 {
                         }
                     }
                 }
-                for (yr2 yr2Var2 : hashMap3.values()) {
+                for (yr2 yr2Var2 : hashMap.values()) {
                     if (!hashSet.contains(yr2Var2) && yr2Var2.c(edit)) {
                         arrayList2.add(yr2Var2);
                     }
                 }
                 js2Var.c.addAll(arrayList2);
-                boolean z5 = !arrayList2.isEmpty();
+                boolean z4 = !arrayList2.isEmpty();
                 int size2 = tL_jsonObject4.value.size();
-                boolean z6 = z5;
-                int i15 = 0;
-                int i16 = 0;
+                boolean z5 = z4;
                 int i17 = 0;
+                int i18 = 0;
+                int i19 = 0;
                 TLRPC.TL_jsonObject tL_jsonObject5 = null;
-                boolean z7 = false;
-                while (i15 < size2) {
-                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue2 = tL_jsonObject4.value.get(i15);
+                boolean z6 = false;
+                while (i17 < size2) {
+                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue2 = tL_jsonObject4.value.get(i17);
                     String str = tL_jsonObjectValue2.key;
                     str.getClass();
                     switch (str.hashCode()) {
@@ -9880,23 +9879,30 @@ public final class uc7 extends rf0 implements fn7 {
                             }
                             c = 65535;
                             break;
+                        case 1620518362:
+                            if (str.equals("android_database_migration")) {
+                                c = 19;
+                                break;
+                            }
+                            c = 65535;
+                            break;
                         case 1637671355:
                             if (str.equals("web_app_allowed_protocols")) {
-                                c = 19;
+                                c = 20;
                                 break;
                             }
                             c = 65535;
                             break;
                         case 1850325103:
                             if (str.equals("emojies_sounds")) {
-                                c = 20;
+                                c = 21;
                                 break;
                             }
                             c = 65535;
                             break;
                         case 1953570861:
                             if (str.equals("starref_start_param_prefixes")) {
-                                c = 21;
+                                c = 22;
                                 break;
                             }
                             c = 65535;
@@ -9908,13 +9914,12 @@ public final class uc7 extends rf0 implements fn7 {
                     switch (c) {
                         case 0:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue2 = tL_jsonObjectValue2.value;
                             if (jSONValue2 instanceof TLRPC.TL_jsonString) {
                                 try {
@@ -9922,513 +9927,539 @@ public final class uc7 extends rf0 implements fn7 {
                                 } catch (Exception e) {
                                     cc4.g(e, true);
                                 }
-                                if (parseLong != this.L3) {
-                                    this.L3 = parseLong;
+                                if (parseLong != this.M3) {
+                                    this.M3 = parseLong;
                                     edit.putLong("telegramAntispamUserId", parseLong);
-                                    z6 = true;
+                                    z5 = true;
                                     tL_jsonObject5 = tL_jsonObject2;
-                                    z7 = z3;
-                                    i16 = i4;
+                                    z6 = z3;
+                                    i18 = i4;
                                     break;
                                 }
+                                z5 = z2;
+                                tL_jsonObject5 = tL_jsonObject2;
+                                z6 = z3;
+                                i18 = i4;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
+                            break;
                         case 1:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue3 = tL_jsonObjectValue2.value;
-                            if ((jSONValue3 instanceof TLRPC.TL_jsonBool) && (z4 = ((TLRPC.TL_jsonBool) jSONValue3).value) != this.n3) {
-                                this.n3 = z4;
-                                edit.putBoolean("showFiltersTooltip", z4);
-                                getNotificationCenter().k(jn7.R2, new Object[0]);
-                                z6 = true;
+                            if (jSONValue3 instanceof TLRPC.TL_jsonBool) {
+                                boolean z7 = ((TLRPC.TL_jsonBool) jSONValue3).value;
+                                if (z7 != this.n3) {
+                                    this.n3 = z7;
+                                    edit.putBoolean("showFiltersTooltip", z7);
+                                    getNotificationCenter().k(jn7.R2, new Object[0]);
+                                    z5 = true;
+                                    tL_jsonObject5 = tL_jsonObject2;
+                                    z6 = z3;
+                                    i18 = i4;
+                                    break;
+                                }
+                                z5 = z2;
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
-                                break;
+                                z6 = z3;
+                                i18 = i4;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         case 2:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             HashSet hashSet2 = new HashSet();
                             TLRPC.JSONValue jSONValue4 = tL_jsonObjectValue2.value;
                             if (jSONValue4 instanceof TLRPC.TL_jsonArray) {
                                 TLRPC.TL_jsonArray tL_jsonArray = (TLRPC.TL_jsonArray) jSONValue4;
                                 int size3 = tL_jsonArray.value.size();
-                                for (int i18 = 0; i18 < size3; i18++) {
-                                    TLRPC.JSONValue jSONValue5 = tL_jsonArray.value.get(i18);
+                                for (int i20 = 0; i20 < size3; i20++) {
+                                    TLRPC.JSONValue jSONValue5 = tL_jsonArray.value.get(i20);
                                     if (jSONValue5 instanceof TLRPC.TL_jsonString) {
                                         hashSet2.add(((TLRPC.TL_jsonString) jSONValue5).value.toLowerCase());
                                     }
                                 }
                             }
-                            if (!this.K3.equals(hashSet2)) {
-                                this.K3 = hashSet2;
+                            if (!this.L3.equals(hashSet2)) {
+                                this.L3 = hashSet2;
                                 edit.putStringSet("ignoreRestrictionReasons", hashSet2);
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
-                                z6 = true;
+                                z6 = z3;
+                                i18 = i4;
+                                z5 = true;
                                 break;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         case 3:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue6 = tL_jsonObjectValue2.value;
                             if (jSONValue6 instanceof TLRPC.TL_jsonObject) {
                                 tL_jsonObject5 = (TLRPC.TL_jsonObject) jSONValue6;
-                                z6 = z2;
-                                z7 = z3;
-                                i16 = i4;
+                                z6 = z3;
+                                i18 = i4;
+                                z5 = z2;
                                 break;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                         case 4:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue7 = tL_jsonObjectValue2.value;
                             if ((jSONValue7 instanceof TLRPC.TL_jsonNumber) && (i5 = (int) ((TLRPC.TL_jsonNumber) jSONValue7).value) > 0) {
                                 xea.v(i5 - 1);
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         case 5:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             HashSet hashSet3 = new HashSet();
                             TLRPC.JSONValue jSONValue8 = tL_jsonObjectValue2.value;
                             if (jSONValue8 instanceof TLRPC.TL_jsonArray) {
                                 TLRPC.TL_jsonArray tL_jsonArray2 = (TLRPC.TL_jsonArray) jSONValue8;
                                 int size4 = tL_jsonArray2.value.size();
-                                for (int i19 = 0; i19 < size4; i19++) {
-                                    TLRPC.JSONValue jSONValue9 = tL_jsonArray2.value.get(i19);
+                                for (int i21 = 0; i21 < size4; i21++) {
+                                    TLRPC.JSONValue jSONValue9 = tL_jsonArray2.value.get(i21);
                                     if (jSONValue9 instanceof TLRPC.TL_jsonString) {
                                         hashSet3.add(((TLRPC.TL_jsonString) jSONValue9).value.replace("️", ""));
                                     }
                                 }
                             }
-                            if (!this.y3.equals(hashSet3)) {
-                                this.y3 = hashSet3;
+                            if (!this.z3.equals(hashSet3)) {
+                                this.z3 = hashSet3;
                                 edit.putStringSet("diceEmojies", hashSet3);
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
-                                z6 = true;
+                                z6 = z3;
+                                i18 = i4;
+                                z5 = true;
                                 break;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         case 6:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue10 = tL_jsonObjectValue2.value;
                             if (jSONValue10 instanceof TLRPC.TL_jsonArray) {
                                 TLRPC.TL_jsonArray tL_jsonArray3 = (TLRPC.TL_jsonArray) jSONValue10;
                                 long[] jArr = new long[tL_jsonArray3.value.size()];
-                                for (int i20 = 0; i20 < tL_jsonArray3.value.size(); i20++) {
-                                    if (tL_jsonArray3.value.get(i20) instanceof TLRPC.TL_jsonNumber) {
-                                        jArr[i20] = (long) ((TLRPC.TL_jsonNumber) tL_jsonArray3.value.get(i20)).value;
+                                for (int i22 = 0; i22 < tL_jsonArray3.value.size(); i22++) {
+                                    if (tL_jsonArray3.value.get(i22) instanceof TLRPC.TL_jsonNumber) {
+                                        jArr[i22] = (long) ((TLRPC.TL_jsonNumber) tL_jsonArray3.value.get(i22)).value;
                                     }
                                 }
-                                if (!Arrays.equals(jArr, this.U3)) {
-                                    this.U3 = jArr;
+                                if (!Arrays.equals(jArr, this.V3)) {
+                                    this.V3 = jArr;
                                     edit.putString("tonStakediceStakeSuggestedAmounts", (String) DesugarArrays.stream(jArr).mapToObj(new w97()).collect(Collectors.joining(",")));
-                                    z6 = true;
+                                    z5 = true;
                                     tL_jsonObject5 = tL_jsonObject2;
-                                    z7 = z3;
-                                    i16 = i4;
+                                    z6 = z3;
+                                    i18 = i4;
                                     break;
                                 }
+                                z5 = z2;
+                                tL_jsonObject5 = tL_jsonObject2;
+                                z6 = z3;
+                                i18 = i4;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
+                            break;
                         case 7:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue11 = tL_jsonObjectValue2.value;
                             if (jSONValue11 instanceof TLRPC.TL_jsonArray) {
                                 G4 = G4("premiumFeaturesTypesToPosition", this.E0, edit, ((TLRPC.TL_jsonArray) jSONValue11).value);
-                                z6 = z2 | G4;
+                                z5 = z2 | G4;
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
+                                z6 = z3;
+                                i18 = i4;
                                 break;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
+                            break;
                         case '\b':
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue12 = tL_jsonObjectValue2.value;
                             if (jSONValue12 instanceof TLRPC.TL_jsonArray) {
                                 G4 = G4("businessFeaturesTypesToPosition", this.F0, edit, ((TLRPC.TL_jsonArray) jSONValue12).value);
-                                z6 = z2 | G4;
+                                z5 = z2 | G4;
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
+                                z6 = z3;
+                                i18 = i4;
                                 break;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
+                            break;
                         case '\t':
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             try {
-                                hashMap = new HashMap();
+                                HashMap hashMap2 = new HashMap();
                                 TLRPC.JSONValue jSONValue13 = tL_jsonObjectValue2.value;
                                 if (jSONValue13 instanceof TLRPC.TL_jsonObject) {
                                     TLRPC.TL_jsonObject tL_jsonObject6 = (TLRPC.TL_jsonObject) jSONValue13;
                                     int size5 = tL_jsonObject6.value.size();
-                                    int i21 = 0;
-                                    while (i21 < size5) {
-                                        TLRPC.TL_jsonObjectValue tL_jsonObjectValue3 = tL_jsonObject6.value.get(i21);
+                                    int i23 = 0;
+                                    while (i23 < size5) {
+                                        TLRPC.TL_jsonObjectValue tL_jsonObjectValue3 = tL_jsonObject6.value.get(i23);
                                         TLRPC.JSONValue jSONValue14 = tL_jsonObjectValue3.value;
                                         if (jSONValue14 instanceof TLRPC.TL_jsonObject) {
                                             TLRPC.TL_jsonObject tL_jsonObject7 = (TLRPC.TL_jsonObject) jSONValue14;
                                             int size6 = tL_jsonObject7.value.size();
-                                            int i22 = 0;
-                                            int i23 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                                            int i24 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                                            while (i22 < size6) {
-                                                TLRPC.TL_jsonObjectValue tL_jsonObjectValue4 = tL_jsonObject7.value.get(i22);
+                                            int i24 = 0;
+                                            int i25 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                            int i26 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                            while (i24 < size6) {
+                                                TLRPC.TL_jsonObjectValue tL_jsonObjectValue4 = tL_jsonObject7.value.get(i24);
                                                 TLRPC.TL_jsonObject tL_jsonObject8 = tL_jsonObject6;
                                                 if (tL_jsonObjectValue4.value instanceof TLRPC.TL_jsonNumber) {
-                                                    i8 = size5;
+                                                    i9 = size5;
                                                     if ("value".equals(tL_jsonObjectValue4.key)) {
-                                                        i24 = (int) ((TLRPC.TL_jsonNumber) tL_jsonObjectValue4.value).value;
-                                                    } else if ("frame_start".equals(tL_jsonObjectValue4.key)) {
-                                                        i23 = (int) ((TLRPC.TL_jsonNumber) tL_jsonObjectValue4.value).value;
+                                                        i10 = i23;
+                                                        i26 = (int) ((TLRPC.TL_jsonNumber) tL_jsonObjectValue4.value).value;
+                                                    } else {
+                                                        i10 = i23;
+                                                        if ("frame_start".equals(tL_jsonObjectValue4.key)) {
+                                                            i25 = (int) ((TLRPC.TL_jsonNumber) tL_jsonObjectValue4.value).value;
+                                                        }
                                                     }
                                                 } else {
-                                                    i8 = size5;
+                                                    i9 = size5;
+                                                    i10 = i23;
                                                 }
-                                                i22++;
+                                                i24++;
                                                 tL_jsonObject6 = tL_jsonObject8;
-                                                size5 = i8;
+                                                size5 = i9;
+                                                i23 = i10;
                                             }
                                             tL_jsonObject3 = tL_jsonObject6;
                                             i6 = size5;
-                                            if (i23 != Integer.MAX_VALUE && (i7 = i24) != Integer.MAX_VALUE) {
-                                                hashMap.put(tL_jsonObjectValue3.key.replace("️", ""), new ec7(i23, i7));
+                                            i7 = i23;
+                                            if (i25 != Integer.MAX_VALUE && (i8 = i26) != Integer.MAX_VALUE) {
+                                                hashMap2.put(tL_jsonObjectValue3.key.replace("️", ""), new ec7(i25, i8));
                                             }
                                         } else {
                                             tL_jsonObject3 = tL_jsonObject6;
                                             i6 = size5;
+                                            i7 = i23;
                                         }
-                                        i21++;
+                                        i23 = i7 + 1;
                                         tL_jsonObject6 = tL_jsonObject3;
                                         size5 = i6;
                                     }
                                 }
+                                if (!this.B3.equals(hashMap2)) {
+                                    this.B3 = hashMap2;
+                                    SerializedData serializedData = new SerializedData();
+                                    serializedData.writeInt32(this.B3.size());
+                                    for (Map.Entry entry : this.B3.entrySet()) {
+                                        serializedData.writeString((String) entry.getKey());
+                                        ec7 ec7Var = (ec7) entry.getValue();
+                                        serializedData.writeInt32(ec7Var.a);
+                                        serializedData.writeInt32(ec7Var.b);
+                                    }
+                                    edit.putString("diceSuccess", Base64.encodeToString(serializedData.toByteArray(), 0));
+                                    serializedData.cleanup();
+                                    z5 = true;
+                                    tL_jsonObject5 = tL_jsonObject2;
+                                    z6 = z3;
+                                    i18 = i4;
+                                    break;
+                                }
+                                z5 = z2;
+                                tL_jsonObject5 = tL_jsonObject2;
+                                z6 = z3;
+                                i18 = i4;
                             } catch (Exception e2) {
                                 cc4.g(e2, true);
-                            }
-                            if (!this.A3.equals(hashMap)) {
-                                this.A3 = hashMap;
-                                SerializedData serializedData = new SerializedData();
-                                serializedData.writeInt32(this.A3.size());
-                                for (Map.Entry entry : this.A3.entrySet()) {
-                                    serializedData.writeString((String) entry.getKey());
-                                    ec7 ec7Var = (ec7) entry.getValue();
-                                    serializedData.writeInt32(ec7Var.a);
-                                    serializedData.writeInt32(ec7Var.b);
-                                }
-                                edit.putString("diceSuccess", Base64.encodeToString(serializedData.toByteArray(), 0));
-                                serializedData.cleanup();
-                                z6 = true;
-                                tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
                                 break;
                             }
-                            z6 = z2;
-                            tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
                             break;
                         case '\n':
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue15 = tL_jsonObjectValue2.value;
                             if (jSONValue15 instanceof TLRPC.TL_jsonArray) {
                                 TLRPC.TL_jsonArray tL_jsonArray4 = (TLRPC.TL_jsonArray) jSONValue15;
                                 int[][] iArr = new int[tL_jsonArray4.value.size()][];
-                                for (int i25 = 0; i25 < tL_jsonArray4.value.size(); i25++) {
-                                    if (tL_jsonArray4.value.get(i25) instanceof TLRPC.TL_jsonArray) {
-                                        TLRPC.TL_jsonArray tL_jsonArray5 = (TLRPC.TL_jsonArray) tL_jsonArray4.value.get(i25);
-                                        iArr[i25] = new int[tL_jsonArray5.value.size()];
-                                        for (int i26 = 0; i26 < tL_jsonArray5.value.size(); i26++) {
-                                            if (tL_jsonArray5.value.get(i26) instanceof TLRPC.TL_jsonNumber) {
-                                                iArr[i25][i26] = (int) ((TLRPC.TL_jsonNumber) tL_jsonArray5.value.get(i26)).value;
+                                for (int i27 = 0; i27 < tL_jsonArray4.value.size(); i27++) {
+                                    if (tL_jsonArray4.value.get(i27) instanceof TLRPC.TL_jsonArray) {
+                                        TLRPC.TL_jsonArray tL_jsonArray5 = (TLRPC.TL_jsonArray) tL_jsonArray4.value.get(i27);
+                                        iArr[i27] = new int[tL_jsonArray5.value.size()];
+                                        for (int i28 = 0; i28 < tL_jsonArray5.value.size(); i28++) {
+                                            if (tL_jsonArray5.value.get(i28) instanceof TLRPC.TL_jsonNumber) {
+                                                iArr[i27][i28] = (int) ((TLRPC.TL_jsonNumber) tL_jsonArray5.value.get(i28)).value;
                                             }
                                         }
                                     }
                                 }
-                                if (!Arrays.deepEquals(iArr, this.V3)) {
-                                    this.V3 = iArr;
+                                if (!Arrays.deepEquals(iArr, this.W3)) {
+                                    this.W3 = iArr;
                                     edit.putString("stargiftsCraftAttributesPermilles", (String) DesugarArrays.stream(iArr).map(new yz((byte) 14)).collect(Collectors.joining(",,")));
                                     tL_jsonObject5 = tL_jsonObject2;
-                                    z7 = z3;
-                                    i16 = i4;
-                                    z6 = true;
+                                    z6 = z3;
+                                    i18 = i4;
+                                    z5 = true;
                                     break;
                                 }
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         case 11:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             ArrayList arrayList3 = new ArrayList();
                             TLRPC.JSONValue jSONValue16 = tL_jsonObjectValue2.value;
                             if (jSONValue16 instanceof TLRPC.TL_jsonArray) {
                                 TLRPC.TL_jsonArray tL_jsonArray6 = (TLRPC.TL_jsonArray) jSONValue16;
                                 int size7 = tL_jsonArray6.value.size();
-                                for (int i27 = 0; i27 < size7; i27++) {
-                                    TLRPC.JSONValue jSONValue17 = tL_jsonArray6.value.get(i27);
+                                for (int i29 = 0; i29 < size7; i29++) {
+                                    TLRPC.JSONValue jSONValue17 = tL_jsonArray6.value.get(i29);
                                     if (jSONValue17 instanceof TLRPC.TL_jsonString) {
                                         arrayList3.add(((TLRPC.TL_jsonString) jSONValue17).value.replace("️", ""));
                                     }
                                 }
                             }
-                            if (!this.x3.equals(arrayList3)) {
-                                this.x3 = arrayList3;
+                            if (!this.y3.equals(arrayList3)) {
+                                this.y3 = arrayList3;
                                 SerializedData serializedData2 = new SerializedData();
-                                serializedData2.writeInt32(this.x3.size());
-                                int size8 = this.x3.size();
-                                for (int i28 = 0; i28 < size8; i28++) {
-                                    serializedData2.writeString((String) this.x3.get(i28));
+                                serializedData2.writeInt32(this.y3.size());
+                                int size8 = this.y3.size();
+                                for (int i30 = 0; i30 < size8; i30++) {
+                                    serializedData2.writeString((String) this.y3.get(i30));
                                 }
                                 edit.putString("gifSearchEmojies", Base64.encodeToString(serializedData2.toByteArray(), 0));
                                 serializedData2.cleanup();
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
-                                z6 = true;
+                                z6 = z3;
+                                i18 = i4;
+                                z5 = true;
                                 break;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         case '\f':
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue18 = tL_jsonObjectValue2.value;
                             if (jSONValue18 instanceof TLRPC.TL_jsonString) {
                                 TLRPC.TL_jsonString tL_jsonString = (TLRPC.TL_jsonString) jSONValue18;
-                                if (TextUtils.equals(tL_jsonString.value, this.R3)) {
-                                    z6 = z2;
-                                    z7 = z3;
+                                if (TextUtils.equals(tL_jsonString.value, this.S3)) {
+                                    z6 = z3;
+                                    z5 = z2;
                                 } else {
                                     String str2 = tL_jsonString.value;
-                                    this.R3 = str2;
+                                    this.S3 = str2;
                                     edit.putString("storiesPosting", str2);
+                                    z5 = true;
                                     z6 = true;
-                                    z7 = true;
                                 }
                                 tL_jsonObject5 = tL_jsonObject2;
-                                i16 = i4;
+                                i18 = i4;
                                 break;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
+                            break;
                         case '\r':
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue19 = tL_jsonObjectValue2.value;
                             if (jSONValue19 instanceof TLRPC.TL_jsonString) {
                                 String str3 = ((TLRPC.TL_jsonString) jSONValue19).value;
                                 if (!Objects.equals(f11.h, str3)) {
                                     f11.h = str3;
                                     edit.putString("googleAuthClientId", str3);
-                                    z6 = true;
+                                    z5 = true;
                                     tL_jsonObject5 = tL_jsonObject2;
-                                    z7 = z3;
-                                    i16 = i4;
+                                    z6 = z3;
+                                    i18 = i4;
                                     break;
                                 }
+                                z5 = z2;
+                                tL_jsonObject5 = tL_jsonObject2;
+                                z6 = z3;
+                                i18 = i4;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
+                            break;
                         case 14:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue20 = tL_jsonObjectValue2.value;
                             if (jSONValue20 instanceof TLRPC.TL_jsonNumber) {
                                 double d = ((TLRPC.TL_jsonNumber) jSONValue20).value;
                                 if (d != this.h3) {
-                                    int i29 = (int) d;
-                                    this.h3 = i29;
-                                    edit.putInt("updateCheckDelay", i29);
+                                    int i31 = (int) d;
+                                    this.h3 = i31;
+                                    edit.putInt("updateCheckDelay", i31);
                                 }
-                                z6 = z2;
+                                z5 = z2;
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
+                                z6 = z3;
+                                i18 = i4;
                                 break;
                             } else {
-                                if ((jSONValue20 instanceof TLRPC.TL_jsonString) && (intValue = Utilities.z(((TLRPC.TL_jsonString) jSONValue20).value).intValue()) != this.h3) {
-                                    this.h3 = intValue;
-                                    edit.putInt("updateCheckDelay", intValue);
+                                if (jSONValue20 instanceof TLRPC.TL_jsonString) {
+                                    int intValue = Utilities.z(((TLRPC.TL_jsonString) jSONValue20).value).intValue();
+                                    if (intValue != this.h3) {
+                                        this.h3 = intValue;
+                                        edit.putInt("updateCheckDelay", intValue);
+                                    }
+                                    z5 = z2;
+                                    tL_jsonObject5 = tL_jsonObject2;
+                                    z6 = z3;
+                                    i18 = i4;
                                 }
-                                z6 = z2;
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
+                                z6 = z3;
+                                i18 = i4;
+                                z5 = z2;
+                                break;
                             }
-                            z6 = true;
+                            z5 = true;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
-                            break;
+                            z6 = z3;
+                            i18 = i4;
                         case 15:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue21 = tL_jsonObjectValue2.value;
                             if (jSONValue21 instanceof TLRPC.TL_jsonArray) {
                                 TLRPC.TL_jsonArray tL_jsonArray7 = (TLRPC.TL_jsonArray) jSONValue21;
                                 int size9 = tL_jsonArray7.value.size() * 7;
                                 int[] iArr2 = new int[size9];
-                                int i30 = 0;
-                                while (i30 < tL_jsonArray7.value.size()) {
-                                    TLRPC.JSONValue jSONValue22 = tL_jsonArray7.value.get(i30);
+                                int i32 = 0;
+                                while (i32 < tL_jsonArray7.value.size()) {
+                                    TLRPC.JSONValue jSONValue22 = tL_jsonArray7.value.get(i32);
                                     if (jSONValue22 instanceof TLRPC.TL_jsonObject) {
                                         ArrayList<TLRPC.TL_jsonObjectValue> arrayList4 = ((TLRPC.TL_jsonObject) jSONValue22).value;
                                         int size10 = arrayList4.size();
-                                        int i31 = 0;
-                                        while (i31 < size10) {
-                                            int i32 = i31 + 1;
-                                            TLRPC.TL_jsonObjectValue tL_jsonObjectValue5 = arrayList4.get(i31);
+                                        int i33 = 0;
+                                        while (i33 < size10) {
+                                            int i34 = i33 + 1;
+                                            TLRPC.TL_jsonObjectValue tL_jsonObjectValue5 = arrayList4.get(i33);
                                             TLRPC.JSONValue jSONValue23 = tL_jsonObjectValue5.value;
                                             if (jSONValue23 instanceof TLRPC.TL_jsonNumber) {
-                                                int i33 = (int) ((TLRPC.TL_jsonNumber) jSONValue23).value;
+                                                int i35 = (int) ((TLRPC.TL_jsonNumber) jSONValue23).value;
                                                 String str4 = tL_jsonObjectValue5.key;
                                                 str4.getClass();
                                                 switch (str4.hashCode()) {
@@ -10466,23 +10497,23 @@ public final class uc7 extends rf0 implements fn7 {
                                                 }
                                                 switch (c3) {
                                                     case 0:
-                                                        i11 = 2;
+                                                        i13 = 2;
                                                         break;
                                                     case 1:
-                                                        i11 = 1;
+                                                        i13 = 1;
                                                         break;
                                                     case 2:
-                                                        i11 = 0;
+                                                        i13 = 0;
                                                         break;
                                                     case 3:
-                                                        i11 = 3;
+                                                        i13 = 3;
                                                         break;
                                                     default:
-                                                        i11 = -1;
+                                                        i13 = -1;
                                                         break;
                                                 }
-                                                if (i11 >= 0) {
-                                                    iArr2[(i30 * 7) + i11] = i33;
+                                                if (i13 >= 0) {
+                                                    iArr2[(i32 * 7) + i13] = i35;
                                                 }
                                             } else if (jSONValue23 instanceof TLRPC.TL_jsonString) {
                                                 String str5 = ((TLRPC.TL_jsonString) jSONValue23).value;
@@ -10516,215 +10547,247 @@ public final class uc7 extends rf0 implements fn7 {
                                                 }
                                                 switch (c2) {
                                                     case 0:
-                                                        i9 = 4;
+                                                        i11 = 4;
                                                         break;
                                                     case 1:
-                                                        i9 = 5;
+                                                        i11 = 5;
                                                         break;
                                                     case 2:
-                                                        i9 = 6;
+                                                        i11 = 6;
                                                         break;
                                                     default:
-                                                        i9 = -1;
+                                                        i11 = -1;
                                                         break;
                                                 }
-                                                if (i9 >= 0) {
+                                                if (i11 >= 0) {
                                                     try {
-                                                        i10 = i30;
+                                                        i12 = i32;
                                                         arrayList = arrayList4;
-                                                    } catch (Exception e3) {
-                                                        e = e3;
-                                                        i10 = i30;
-                                                        arrayList = arrayList4;
-                                                    }
-                                                    try {
-                                                        iArr2[(i10 * 7) + i9] = (int) Long.parseLong("FF" + str5, 16);
+                                                        try {
+                                                            iArr2[(i12 * 7) + i11] = (int) Long.parseLong("FF" + str5, 16);
+                                                        } catch (Exception e3) {
+                                                            e = e3;
+                                                            cc4.g(e, true);
+                                                            i33 = i34;
+                                                            i32 = i12;
+                                                            arrayList4 = arrayList;
+                                                        }
                                                     } catch (Exception e4) {
                                                         e = e4;
-                                                        cc4.g(e, true);
-                                                        i31 = i32;
-                                                        i30 = i10;
-                                                        arrayList4 = arrayList;
+                                                        i12 = i32;
+                                                        arrayList = arrayList4;
                                                     }
-                                                    i31 = i32;
-                                                    i30 = i10;
+                                                    i33 = i34;
+                                                    i32 = i12;
                                                     arrayList4 = arrayList;
                                                 }
                                             }
-                                            i10 = i30;
+                                            i12 = i32;
                                             arrayList = arrayList4;
-                                            i31 = i32;
-                                            i30 = i10;
+                                            i33 = i34;
+                                            i32 = i12;
                                             arrayList4 = arrayList;
                                         }
                                     }
-                                    i30++;
+                                    i32++;
                                 }
-                                int[] iArr3 = this.T3;
+                                int[] iArr3 = this.U3;
                                 if (iArr3 != null && size9 == iArr3.length) {
-                                    for (int i34 = 0; i34 < size9; i34++) {
-                                        if (iArr2[i34] == iArr3[i34]) {
+                                    for (int i36 = 0; i36 < size9; i36++) {
+                                        if (iArr2[i36] == iArr3[i36]) {
                                         }
                                     }
+                                    z5 = z2;
+                                    tL_jsonObject5 = tL_jsonObject2;
+                                    z6 = z3;
+                                    i18 = i4;
+                                    break;
                                 }
-                                this.T3 = iArr2;
+                                this.U3 = iArr2;
                                 edit.putString("starsGroupcallMessageLimits", (String) DesugarArrays.stream(iArr2).mapToObj(new g87((byte) 1)).collect(Collectors.joining(",")));
-                                z6 = true;
+                                z5 = true;
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
-                                break;
+                                z6 = z3;
+                                i18 = i4;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         case 16:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue24 = tL_jsonObjectValue2.value;
                             if (jSONValue24 instanceof TLRPC.TL_jsonNumber) {
-                                i17 = (int) ((TLRPC.TL_jsonNumber) jSONValue24).value;
+                                i19 = (int) ((TLRPC.TL_jsonNumber) jSONValue24).value;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         case 17:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue25 = tL_jsonObjectValue2.value;
                             if (jSONValue25 instanceof TLRPC.TL_jsonNumber) {
-                                i16 = (int) ((TLRPC.TL_jsonNumber) jSONValue25).value;
-                                z6 = z2;
+                                i18 = (int) ((TLRPC.TL_jsonNumber) jSONValue25).value;
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
+                                z6 = z3;
+                                z5 = z2;
                                 break;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
-                            break;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                         case 18:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
+                            z3 = z6;
                             HashSet hashSet4 = new HashSet();
                             TLRPC.JSONValue jSONValue26 = tL_jsonObjectValue2.value;
                             if (jSONValue26 instanceof TLRPC.TL_jsonArray) {
                                 ArrayList<TLRPC.JSONValue> arrayList5 = ((TLRPC.TL_jsonArray) jSONValue26).value;
-                                for (int i35 = 0; i35 < arrayList5.size(); i35++) {
-                                    if (arrayList5.get(i35) instanceof TLRPC.TL_jsonNumber) {
-                                        hashSet4.add(Long.valueOf((long) ((TLRPC.TL_jsonNumber) arrayList5.get(i35)).value));
+                                for (int i37 = 0; i37 < arrayList5.size(); i37++) {
+                                    if (arrayList5.get(i37) instanceof TLRPC.TL_jsonNumber) {
+                                        hashSet4.add(Long.valueOf((long) ((TLRPC.TL_jsonNumber) arrayList5.get(i37)).value));
                                     }
                                 }
                             }
-                            if (!hashSet4.equals(this.S3)) {
-                                this.S3 = hashSet4;
+                            if (!hashSet4.equals(this.T3)) {
+                                this.T3 = hashSet4;
                                 edit.putStringSet("whitelistedBots", (Set) Collection.-EL.stream(hashSet4).map(new yz((byte) 13)).collect(Collectors.toCollection(new zl1((byte) 1))));
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
-                                z6 = true;
+                                z6 = z3;
+                                i18 = i4;
+                                z5 = true;
                                 break;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         case 19:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
-                            HashSet hashSet5 = new HashSet();
+                            z3 = z6;
                             TLRPC.JSONValue jSONValue27 = tL_jsonObjectValue2.value;
-                            if (jSONValue27 instanceof TLRPC.TL_jsonArray) {
-                                TLRPC.TL_jsonArray tL_jsonArray8 = (TLRPC.TL_jsonArray) jSONValue27;
-                                int size11 = tL_jsonArray8.value.size();
-                                for (int i36 = 0; i36 < size11; i36++) {
-                                    TLRPC.JSONValue jSONValue28 = tL_jsonArray8.value.get(i36);
-                                    if (jSONValue28 instanceof TLRPC.TL_jsonString) {
-                                        hashSet5.add(((TLRPC.TL_jsonString) jSONValue28).value.toLowerCase());
+                            if (jSONValue27 instanceof TLRPC.TL_jsonBool) {
+                                TLRPC.TL_jsonBool tL_jsonBool = (TLRPC.TL_jsonBool) jSONValue27;
+                                if (tL_jsonBool.value != this.o3) {
+                                    this.o3 = tL_jsonBool.value;
+                                    edit.putBoolean("databaseMigrationEnabled", this.o3);
+                                    if (this.o3) {
+                                        kf7 messagesStorage = getMessagesStorage();
+                                        messagesStorage.a.c(new hd7(messagesStorage, (byte) 20));
                                     }
+                                    z5 = true;
+                                    tL_jsonObject5 = tL_jsonObject2;
+                                    z6 = z3;
+                                    i18 = i4;
+                                    break;
                                 }
-                            }
-                            if (!this.J3.equals(hashSet5)) {
-                                this.J3 = hashSet5;
-                                edit.putStringSet("webAppAllowedProtocols", hashSet5);
+                                z5 = z2;
                                 tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
-                                z6 = true;
-                                break;
+                                z6 = z3;
+                                i18 = i4;
                             }
-                            z6 = z2;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         case 20:
                             tL_jsonObject = tL_jsonObject4;
+                            i2 = size2;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
+                            tL_jsonObject2 = tL_jsonObject5;
+                            z3 = z6;
+                            HashSet hashSet5 = new HashSet();
+                            TLRPC.JSONValue jSONValue28 = tL_jsonObjectValue2.value;
+                            if (jSONValue28 instanceof TLRPC.TL_jsonArray) {
+                                TLRPC.TL_jsonArray tL_jsonArray8 = (TLRPC.TL_jsonArray) jSONValue28;
+                                int size11 = tL_jsonArray8.value.size();
+                                for (int i38 = 0; i38 < size11; i38++) {
+                                    TLRPC.JSONValue jSONValue29 = tL_jsonArray8.value.get(i38);
+                                    if (jSONValue29 instanceof TLRPC.TL_jsonString) {
+                                        hashSet5.add(((TLRPC.TL_jsonString) jSONValue29).value.toLowerCase());
+                                    }
+                                }
+                            }
+                            if (!this.K3.equals(hashSet5)) {
+                                this.K3 = hashSet5;
+                                edit.putStringSet("webAppAllowedProtocols", hashSet5);
+                                tL_jsonObject5 = tL_jsonObject2;
+                                z6 = z3;
+                                i18 = i4;
+                                z5 = true;
+                                break;
+                            }
+                            tL_jsonObject5 = tL_jsonObject2;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
+                            break;
+                        case 21:
+                            tL_jsonObject = tL_jsonObject4;
                             try {
-                                hashMap2 = new HashMap();
-                                TLRPC.JSONValue jSONValue29 = tL_jsonObjectValue2.value;
-                                if (jSONValue29 instanceof TLRPC.TL_jsonObject) {
-                                    TLRPC.TL_jsonObject tL_jsonObject9 = (TLRPC.TL_jsonObject) jSONValue29;
+                                HashMap hashMap3 = new HashMap();
+                                TLRPC.JSONValue jSONValue30 = tL_jsonObjectValue2.value;
+                                if (jSONValue30 instanceof TLRPC.TL_jsonObject) {
+                                    TLRPC.TL_jsonObject tL_jsonObject9 = (TLRPC.TL_jsonObject) jSONValue30;
                                     int size12 = tL_jsonObject9.value.size();
-                                    i2 = size2;
-                                    int i37 = 0;
-                                    while (i37 < size12) {
-                                        z2 = z6;
+                                    int i39 = 0;
+                                    while (i39 < size12) {
+                                        int i40 = size12;
+                                        TLRPC.TL_jsonObjectValue tL_jsonObjectValue6 = tL_jsonObject9.value.get(i39);
+                                        TLRPC.TL_jsonObject tL_jsonObject10 = tL_jsonObject9;
+                                        TLRPC.JSONValue jSONValue31 = tL_jsonObjectValue6.value;
+                                        i2 = size2;
                                         try {
-                                            TLRPC.TL_jsonObjectValue tL_jsonObjectValue6 = tL_jsonObject9.value.get(i37);
-                                            TLRPC.TL_jsonObject tL_jsonObject10 = tL_jsonObject9;
-                                            TLRPC.JSONValue jSONValue30 = tL_jsonObjectValue6.value;
-                                            int i38 = i37;
-                                            if (jSONValue30 instanceof TLRPC.TL_jsonObject) {
-                                                TLRPC.TL_jsonObject tL_jsonObject11 = (TLRPC.TL_jsonObject) jSONValue30;
+                                            if (jSONValue31 instanceof TLRPC.TL_jsonObject) {
+                                                TLRPC.TL_jsonObject tL_jsonObject11 = (TLRPC.TL_jsonObject) jSONValue31;
                                                 int size13 = tL_jsonObject11.value.size();
-                                                hrVar = hrVar2;
-                                                i12 = size12;
-                                                i3 = i15;
-                                                i4 = i16;
+                                                i14 = i39;
+                                                z2 = z5;
+                                                i3 = i17;
+                                                i4 = i18;
                                                 tL_jsonObject2 = tL_jsonObject5;
-                                                z3 = z7;
+                                                z3 = z6;
                                                 long j = 0;
                                                 long j2 = 0;
+                                                int i41 = 0;
                                                 String str7 = null;
-                                                int i39 = 0;
-                                                while (i39 < size13) {
-                                                    int i40 = size13;
+                                                while (i41 < size13) {
+                                                    int i42 = size13;
                                                     try {
-                                                        TLRPC.TL_jsonObjectValue tL_jsonObjectValue7 = tL_jsonObject11.value.get(i39);
+                                                        TLRPC.TL_jsonObjectValue tL_jsonObjectValue7 = tL_jsonObject11.value.get(i41);
                                                         TLRPC.TL_jsonObject tL_jsonObject12 = tL_jsonObject11;
                                                         if (tL_jsonObjectValue7.value instanceof TLRPC.TL_jsonString) {
-                                                            i13 = i39;
+                                                            i15 = i41;
                                                             if ("id".equals(tL_jsonObjectValue7.key)) {
                                                                 j2 = Utilities.A(((TLRPC.TL_jsonString) tL_jsonObjectValue7.value).value).longValue();
                                                             } else if ("access_hash".equals(tL_jsonObjectValue7.key)) {
@@ -10733,22 +10796,21 @@ public final class uc7 extends rf0 implements fn7 {
                                                                 str7 = ((TLRPC.TL_jsonString) tL_jsonObjectValue7.value).value;
                                                             }
                                                         } else {
-                                                            i13 = i39;
+                                                            i15 = i41;
                                                         }
-                                                        i39 = i13 + 1;
-                                                        size13 = i40;
+                                                        i41 = i15 + 1;
+                                                        size13 = i42;
                                                         tL_jsonObject11 = tL_jsonObject12;
                                                     } catch (Exception e5) {
                                                         e = e5;
                                                         cc4.g(e, true);
-                                                        z6 = z2;
                                                         tL_jsonObject5 = tL_jsonObject2;
-                                                        z7 = z3;
-                                                        i16 = i4;
-                                                        i15 = i3 + 1;
+                                                        z6 = z3;
+                                                        i18 = i4;
+                                                        z5 = z2;
+                                                        i17 = i3 + 1;
                                                         tL_jsonObject4 = tL_jsonObject;
                                                         size2 = i2;
-                                                        hrVar2 = hrVar;
                                                     }
                                                 }
                                                 if (j2 != 0 && j != 0 && str7 != null) {
@@ -10757,164 +10819,152 @@ public final class uc7 extends rf0 implements fn7 {
                                                     fc7Var.a = j2;
                                                     fc7Var.b = j;
                                                     fc7Var.c = Base64.decode(str7, 8);
-                                                    hashMap2.put(replace, fc7Var);
+                                                    hashMap3.put(replace, fc7Var);
                                                 }
                                             } else {
-                                                hrVar = hrVar2;
-                                                i12 = size12;
-                                                i3 = i15;
-                                                i4 = i16;
+                                                i14 = i39;
+                                                z2 = z5;
+                                                i3 = i17;
+                                                i4 = i18;
                                                 tL_jsonObject2 = tL_jsonObject5;
-                                                z3 = z7;
+                                                z3 = z6;
                                             }
-                                            i37 = i38 + 1;
+                                            i39 = i14 + 1;
+                                            size12 = i40;
                                             tL_jsonObject9 = tL_jsonObject10;
-                                            size12 = i12;
-                                            z6 = z2;
+                                            size2 = i2;
                                             tL_jsonObject5 = tL_jsonObject2;
-                                            z7 = z3;
-                                            i15 = i3;
-                                            i16 = i4;
-                                            hrVar2 = hrVar;
+                                            z6 = z3;
+                                            i17 = i3;
+                                            i18 = i4;
+                                            z5 = z2;
                                         } catch (Exception e6) {
                                             e = e6;
-                                            hrVar = hrVar2;
-                                            i3 = i15;
-                                            i4 = i16;
+                                            z2 = z5;
+                                            i3 = i17;
+                                            i4 = i18;
                                             tL_jsonObject2 = tL_jsonObject5;
-                                            z3 = z7;
+                                            z3 = z6;
                                             cc4.g(e, true);
-                                            z6 = z2;
                                             tL_jsonObject5 = tL_jsonObject2;
-                                            z7 = z3;
-                                            i16 = i4;
-                                            i15 = i3 + 1;
+                                            z6 = z3;
+                                            i18 = i4;
+                                            z5 = z2;
+                                            i17 = i3 + 1;
                                             tL_jsonObject4 = tL_jsonObject;
                                             size2 = i2;
-                                            hrVar2 = hrVar;
                                         }
                                     }
-                                } else {
-                                    i2 = size2;
                                 }
-                                hrVar = hrVar2;
-                                z2 = z6;
-                                i3 = i15;
-                                i4 = i16;
+                                i2 = size2;
+                                z2 = z5;
+                                i3 = i17;
+                                i4 = i18;
                                 tL_jsonObject2 = tL_jsonObject5;
-                                z3 = z7;
+                                z3 = z6;
+                                if (!this.C3.equals(hashMap3)) {
+                                    this.C3 = hashMap3;
+                                    SerializedData serializedData3 = new SerializedData();
+                                    serializedData3.writeInt32(this.C3.size());
+                                    for (Map.Entry entry2 : this.C3.entrySet()) {
+                                        serializedData3.writeString((String) entry2.getKey());
+                                        fc7 fc7Var2 = (fc7) entry2.getValue();
+                                        serializedData3.writeInt64(fc7Var2.a);
+                                        serializedData3.writeInt64(fc7Var2.b);
+                                        serializedData3.writeByteArray(fc7Var2.c);
+                                    }
+                                    edit.putString("emojiSounds", Base64.encodeToString(serializedData3.toByteArray(), 0));
+                                    serializedData3.cleanup();
+                                    z5 = true;
+                                    tL_jsonObject5 = tL_jsonObject2;
+                                    z6 = z3;
+                                    i18 = i4;
+                                }
+                                z5 = z2;
+                                tL_jsonObject5 = tL_jsonObject2;
+                                z6 = z3;
+                                i18 = i4;
                             } catch (Exception e7) {
                                 e = e7;
-                                hrVar = hrVar2;
                                 i2 = size2;
-                                z2 = z6;
                             }
-                            if (!this.B3.equals(hashMap2)) {
-                                this.B3 = hashMap2;
-                                SerializedData serializedData3 = new SerializedData();
-                                serializedData3.writeInt32(this.B3.size());
-                                for (Map.Entry entry2 : this.B3.entrySet()) {
-                                    serializedData3.writeString((String) entry2.getKey());
-                                    fc7 fc7Var2 = (fc7) entry2.getValue();
-                                    serializedData3.writeInt64(fc7Var2.a);
-                                    serializedData3.writeInt64(fc7Var2.b);
-                                    serializedData3.writeByteArray(fc7Var2.c);
-                                }
-                                edit.putString("emojiSounds", Base64.encodeToString(serializedData3.toByteArray(), 0));
-                                serializedData3.cleanup();
-                                z6 = true;
-                                tL_jsonObject5 = tL_jsonObject2;
-                                z7 = z3;
-                                i16 = i4;
-                            }
-                            z6 = z2;
-                            tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
                             break;
-                        case 21:
+                        case 22:
                             HashSet hashSet6 = new HashSet();
-                            TLRPC.JSONValue jSONValue31 = tL_jsonObjectValue2.value;
-                            if (jSONValue31 instanceof TLRPC.TL_jsonArray) {
-                                TLRPC.TL_jsonArray tL_jsonArray9 = (TLRPC.TL_jsonArray) jSONValue31;
+                            TLRPC.JSONValue jSONValue32 = tL_jsonObjectValue2.value;
+                            if (jSONValue32 instanceof TLRPC.TL_jsonArray) {
+                                TLRPC.TL_jsonArray tL_jsonArray9 = (TLRPC.TL_jsonArray) jSONValue32;
                                 int size14 = tL_jsonArray9.value.size();
-                                int i41 = 0;
-                                while (i41 < size14) {
+                                int i43 = 0;
+                                while (i43 < size14) {
+                                    TLRPC.JSONValue jSONValue33 = tL_jsonArray9.value.get(i43);
                                     TLRPC.TL_jsonObject tL_jsonObject13 = tL_jsonObject4;
-                                    TLRPC.JSONValue jSONValue32 = tL_jsonArray9.value.get(i41);
-                                    TLRPC.TL_jsonArray tL_jsonArray10 = tL_jsonArray9;
-                                    if (jSONValue32 instanceof TLRPC.TL_jsonString) {
-                                        hashSet6.add(((TLRPC.TL_jsonString) jSONValue32).value.toLowerCase());
+                                    if (jSONValue33 instanceof TLRPC.TL_jsonString) {
+                                        hashSet6.add(((TLRPC.TL_jsonString) jSONValue33).value.toLowerCase());
                                     }
-                                    i41++;
-                                    tL_jsonArray9 = tL_jsonArray10;
+                                    i43++;
                                     tL_jsonObject4 = tL_jsonObject13;
                                 }
                             }
                             tL_jsonObject = tL_jsonObject4;
-                            if (!this.M3.equals(hashSet6)) {
-                                this.M3 = hashSet6;
+                            if (!this.N3.equals(hashSet6)) {
+                                this.N3 = hashSet6;
                                 edit.putStringSet("starrefStartParamPrefixes", hashSet6);
-                                hrVar = hrVar2;
                                 i2 = size2;
-                                i3 = i15;
-                                z6 = true;
+                                i3 = i17;
+                                z5 = true;
                                 break;
                             }
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
-                            z6 = z2;
+                            z3 = z6;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                         default:
                             tL_jsonObject = tL_jsonObject4;
-                            hrVar = hrVar2;
                             i2 = size2;
-                            z2 = z6;
-                            i3 = i15;
-                            i4 = i16;
+                            z2 = z5;
+                            i3 = i17;
+                            i4 = i18;
                             tL_jsonObject2 = tL_jsonObject5;
-                            z3 = z7;
-                            z6 = z2;
+                            z3 = z6;
                             tL_jsonObject5 = tL_jsonObject2;
-                            z7 = z3;
-                            i16 = i4;
+                            z6 = z3;
+                            i18 = i4;
+                            z5 = z2;
                             break;
                     }
-                    i15 = i3 + 1;
+                    i17 = i3 + 1;
                     tL_jsonObject4 = tL_jsonObject;
                     size2 = i2;
-                    hrVar2 = hrVar;
                 }
-                hr hrVar3 = hrVar2;
-                boolean z8 = z6;
-                int i42 = i16;
+                boolean z8 = z5;
+                int i44 = i18;
                 TLRPC.TL_jsonObject tL_jsonObject14 = tL_jsonObject5;
-                boolean z9 = z7;
-                if (i42 != this.G3) {
-                    this.G3 = i42;
-                    edit.putInt("transcribeAudioTrialWeeklyNumber", i42);
-                    if (this.I3 <= 0 && (i17 == 0 || getConnectionsManager().getCurrentTime() > i17)) {
-                        this.I3 = i42;
-                        edit.putInt("transcribeAudioTrialCurrentNumber", i42);
-                    } else if (this.I3 > i42) {
-                        this.I3 = i42;
-                        edit.putInt("transcribeAudioTrialCurrentNumber", i42);
+                boolean z9 = z6;
+                if (i44 != this.H3) {
+                    this.H3 = i44;
+                    edit.putInt("transcribeAudioTrialWeeklyNumber", i44);
+                    if (this.J3 <= 0 && (i19 == 0 || getConnectionsManager().getCurrentTime() > i19)) {
+                        this.J3 = i44;
+                        edit.putInt("transcribeAudioTrialCurrentNumber", i44);
+                    } else if (this.J3 > i44) {
+                        this.J3 = i44;
+                        edit.putInt("transcribeAudioTrialCurrentNumber", i44);
                     }
                     z = true;
                 } else {
                     z = z8;
                 }
-                if (i17 != this.H3) {
-                    this.H3 = i17;
-                    edit.putInt("transcribeAudioTrialCooldownUntil", i17);
+                if (i19 != this.I3) {
+                    this.I3 = i19;
+                    edit.putInt("transcribeAudioTrialCooldownUntil", i19);
                     hl.c3(new l87(this, (byte) 8));
                     z = true;
                 }
@@ -10923,12 +10973,12 @@ public final class uc7 extends rf0 implements fn7 {
                     hl.c3(new l87(this, (byte) 21));
                 }
                 if (tL_jsonObject14 != null) {
-                    for (int i43 = 0; i43 < tL_jsonObject14.value.size(); i43++) {
-                        TLRPC.TL_jsonObjectValue tL_jsonObjectValue8 = tL_jsonObject14.value.get(i43);
+                    for (int i45 = 0; i45 < tL_jsonObject14.value.size(); i45++) {
+                        TLRPC.TL_jsonObjectValue tL_jsonObjectValue8 = tL_jsonObject14.value.get(i45);
                         if ("settings_mask".equals(tL_jsonObjectValue8.key)) {
-                            TLRPC.JSONValue jSONValue33 = tL_jsonObjectValue8.value;
-                            if (jSONValue33 instanceof TLRPC.TL_jsonArray) {
-                                ArrayList<TLRPC.JSONValue> arrayList6 = ((TLRPC.TL_jsonArray) jSONValue33).value;
+                            TLRPC.JSONValue jSONValue34 = tL_jsonObjectValue8.value;
+                            if (jSONValue34 instanceof TLRPC.TL_jsonArray) {
+                                ArrayList<TLRPC.JSONValue> arrayList6 = ((TLRPC.TL_jsonArray) jSONValue34).value;
                                 try {
                                     i86.a = (int) ((TLRPC.TL_jsonNumber) arrayList6.get(0)).value;
                                     i86.b = (int) ((TLRPC.TL_jsonNumber) arrayList6.get(1)).value;
@@ -10939,9 +10989,9 @@ public final class uc7 extends rf0 implements fn7 {
                             }
                         }
                         if ("battery_low".equals(tL_jsonObjectValue8.key)) {
-                            TLRPC.JSONValue jSONValue34 = tL_jsonObjectValue8.value;
-                            if (jSONValue34 instanceof TLRPC.TL_jsonArray) {
-                                ArrayList<TLRPC.JSONValue> arrayList7 = ((TLRPC.TL_jsonArray) jSONValue34).value;
+                            TLRPC.JSONValue jSONValue35 = tL_jsonObjectValue8.value;
+                            if (jSONValue35 instanceof TLRPC.TL_jsonArray) {
+                                ArrayList<TLRPC.JSONValue> arrayList7 = ((TLRPC.TL_jsonArray) jSONValue35).value;
                                 try {
                                     i86.d = (int) ((TLRPC.TL_jsonNumber) arrayList7.get(0)).value;
                                     i86.e = (int) ((TLRPC.TL_jsonNumber) arrayList7.get(1)).value;
@@ -10957,13 +11007,13 @@ public final class uc7 extends rf0 implements fn7 {
                 } else {
                     i = 0;
                 }
-                js2 js2Var2 = hrVar3.a;
+                js2 js2Var2 = this.l4.a;
                 js2Var2.getClass();
                 LinkedHashSet linkedHashSet = new LinkedHashSet();
                 ArrayList arrayList8 = js2Var2.c;
                 int size15 = arrayList8.size();
-                for (int i44 = i; i44 < size15; i44++) {
-                    linkedHashSet.addAll(((yr2) arrayList8.get(i44)).c);
+                for (int i46 = i; i46 < size15; i46++) {
+                    linkedHashSet.addAll(((yr2) arrayList8.get(i46)).c);
                 }
                 arrayList8.clear();
                 Iterator it = linkedHashSet.iterator();
@@ -10979,9 +11029,8 @@ public final class uc7 extends rf0 implements fn7 {
                 }
             }
         }
-        l87 l87Var = this.w4;
-        hl.r(l87Var);
-        hl.d3(l87Var, 240010L);
+        hl.r(this.x4);
+        hl.d3(this.x4, 240010L);
     }
 
     public final void W3(int i, int i2, int i3) {
@@ -10989,30 +11038,30 @@ public final class uc7 extends rf0 implements fn7 {
             c00.q(i3, bs2.p("processNewDifferenceParams seq = -1 pts = ", i, " date = ", i2, " pts_count = "));
         }
         if (i != -1) {
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.G();
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.I();
             if (messagesStorage.r + i3 == i) {
                 if (f11.a) {
                     cc4.b("APPLY PTS");
                 }
-                getMessagesStorage().F1(i);
-                jf7 messagesStorage2 = getMessagesStorage();
-                jf7 messagesStorage3 = getMessagesStorage();
-                messagesStorage3.G();
+                getMessagesStorage().K1(i);
+                kf7 messagesStorage2 = getMessagesStorage();
+                kf7 messagesStorage3 = getMessagesStorage();
+                messagesStorage3.I();
                 int i4 = messagesStorage3.w;
-                jf7 messagesStorage4 = getMessagesStorage();
-                messagesStorage4.G();
+                kf7 messagesStorage4 = getMessagesStorage();
+                messagesStorage4.I();
                 int i5 = messagesStorage4.r;
-                jf7 messagesStorage5 = getMessagesStorage();
-                messagesStorage5.G();
+                kf7 messagesStorage5 = getMessagesStorage();
+                messagesStorage5.I();
                 int i6 = messagesStorage5.n;
-                jf7 messagesStorage6 = getMessagesStorage();
-                messagesStorage6.G();
-                messagesStorage2.x1(i4, i5, i6, messagesStorage6.s);
+                kf7 messagesStorage6 = getMessagesStorage();
+                messagesStorage6.I();
+                messagesStorage2.B1(i4, i5, i6, messagesStorage6.s);
                 return;
             }
-            jf7 messagesStorage7 = getMessagesStorage();
-            messagesStorage7.G();
+            kf7 messagesStorage7 = getMessagesStorage();
+            messagesStorage7.I();
             if (messagesStorage7.r != i) {
                 if (!this.Y1 && this.Z0 != 0 && Math.abs(System.currentTimeMillis() - this.Z0) > 1500) {
                     X0();
@@ -11035,7 +11084,7 @@ public final class uc7 extends rf0 implements fn7 {
     public final void W4(ac7 ac7Var, boolean z) {
         if (ac7Var != null) {
             Integer valueOf = Integer.valueOf(ac7Var.a);
-            HashSet hashSet = this.n4;
+            HashSet hashSet = this.o4;
             if (z != hashSet.contains(valueOf)) {
                 int i = ac7Var.a;
                 if (z) {
@@ -11055,14 +11104,14 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void X0() {
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.G();
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.I();
         int i = messagesStorage.r;
-        jf7 messagesStorage2 = getMessagesStorage();
-        messagesStorage2.G();
+        kf7 messagesStorage2 = getMessagesStorage();
+        messagesStorage2.I();
         int i2 = messagesStorage2.n;
-        jf7 messagesStorage3 = getMessagesStorage();
-        messagesStorage3.G();
+        kf7 messagesStorage3 = getMessagesStorage();
+        messagesStorage3.I();
         Y0(i, i2, messagesStorage3.s, false);
     }
 
@@ -11086,7 +11135,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void X4(long j, long j2) {
-        this.X3.edit().putLong(qu6.n(j, "forumlasttopic"), j2).apply();
+        this.Y3.edit().putLong(qu6.n(j, "forumlasttopic"), j2).apply();
     }
 
     public final void Y(ArrayList arrayList, ArrayList arrayList2, TLRPC.EncryptedChat encryptedChat, long j, boolean z, int i, boolean z2, long j2, TLObject tLObject, int i2) {
@@ -11095,8 +11144,8 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final void Y0(int i, int i2, int i3, boolean z) {
         k4(xea.e, xea.f);
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.G();
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.I();
         byte b = 1;
         if (messagesStorage.r == 0) {
             if (this.a2) {
@@ -11139,33 +11188,32 @@ public final class uc7 extends rf0 implements fn7 {
         return (TLRPC.UserFull) this.b1.f(j);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:314:0x06f7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:313:0x06fd, code lost:
     
-        if (r3 == r5) goto L297;
+        if (r3 == r5) goto L296;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:316:0x06fb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:315:0x0701, code lost:
     
-        if (r6 == r13) goto L300;
+        if (r6 == r13) goto L299;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:621:0x0ce5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:622:0x0cea, code lost:
     
-        if (r0.getCallState() == 0) goto L559;
+        if (r0.getCallState() == 0) goto L560;
      */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:1016:0x1750  */
-    /* JADX WARN: Removed duplicated region for block: B:1022:0x176c  */
-    /* JADX WARN: Removed duplicated region for block: B:1105:0x18c3  */
-    /* JADX WARN: Removed duplicated region for block: B:1115:0x193e  */
-    /* JADX WARN: Removed duplicated region for block: B:1129:0x199e  */
-    /* JADX WARN: Removed duplicated region for block: B:1131:0x19ae  */
-    /* JADX WARN: Removed duplicated region for block: B:1133:0x19b2  */
+    /* JADX WARN: Removed duplicated region for block: B:1019:0x1756  */
+    /* JADX WARN: Removed duplicated region for block: B:1025:0x1772  */
+    /* JADX WARN: Removed duplicated region for block: B:1108:0x18c9  */
+    /* JADX WARN: Removed duplicated region for block: B:1118:0x1944  */
+    /* JADX WARN: Removed duplicated region for block: B:1132:0x19a4  */
+    /* JADX WARN: Removed duplicated region for block: B:1134:0x19b4  */
     /* JADX WARN: Removed duplicated region for block: B:1136:0x19b8  */
-    /* JADX WARN: Removed duplicated region for block: B:1145:0x19f4  */
-    /* JADX WARN: Removed duplicated region for block: B:1148:0x1a07  */
-    /* JADX WARN: Removed duplicated region for block: B:1151:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1153:0x19ab  */
-    /* JADX WARN: Removed duplicated region for block: B:319:0x0724  */
-    /* JADX WARN: Removed duplicated region for block: B:616:0x0dce  */
+    /* JADX WARN: Removed duplicated region for block: B:1139:0x19be  */
+    /* JADX WARN: Removed duplicated region for block: B:1148:0x19fa  */
+    /* JADX WARN: Removed duplicated region for block: B:1151:0x1a0d  */
+    /* JADX WARN: Removed duplicated region for block: B:1154:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1156:0x19b1  */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x072a  */
+    /* JADX WARN: Removed duplicated region for block: B:617:0x0dd3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -11197,25 +11245,25 @@ public final class uc7 extends rf0 implements fn7 {
         int i16;
         int i17;
         int i18;
+        int i19;
         ArrayList arrayList9;
         ArrayList arrayList10;
-        int i19;
         int i20;
         int i21;
         int i22;
         int i23;
+        int i24;
         ArrayList arrayList11;
         byte b2;
-        int i24;
         int i25;
-        byte b3;
         int i26;
+        byte b3;
         int i27;
         int i28;
         ConferenceCall conferenceCall;
         TLRPC.ChatFull N0;
-        TLRPC.UserFull userFull;
         long j2;
+        TLRPC.UserFull userFull;
         TL_bots.TL_botProfileWidget tL_botProfileWidget;
         long j3;
         boolean z6;
@@ -11240,9 +11288,9 @@ public final class uc7 extends rf0 implements fn7 {
         boolean z10;
         int i32;
         long j7;
-        String str;
         ArrayList<TLRPC.TL_username> arrayList12;
         int i33;
+        String str;
         uc7 uc7Var = this;
         ArrayList arrayList13 = arrayList;
         ArrayList arrayList14 = arrayList2;
@@ -11387,56 +11435,56 @@ public final class uc7 extends rf0 implements fn7 {
                                     if (arrayList12 != null) {
                                         int size3 = arrayList12.size();
                                         i33 = 1;
+                                        str = null;
                                         if (size3 > 1) {
-                                            str = null;
                                             X13.username = null;
                                             X13.usernames = tL_updateUserName.usernames;
                                         }
                                     } else {
                                         i33 = 1;
+                                        str = null;
                                     }
-                                    str = null;
                                     ArrayList<TLRPC.TL_username> arrayList17 = tL_updateUserName.usernames;
-                                    X13.username = (arrayList17 == null || arrayList17.size() != i33) ? null : tL_updateUserName.usernames.get(0).username;
+                                    X13.username = (arrayList17 == null || arrayList17.size() != i33) ? str : tL_updateUserName.usernames.get(0).username;
                                     X13.usernames.clear();
-                                } else {
-                                    str = null;
                                 }
                                 TLRPC.TL_user tL_user3 = new TLRPC.TL_user();
                                 tL_user3.id = tL_updateUserName.user_id;
                                 tL_user3.first_name = tL_updateUserName.first_name;
                                 tL_user3.last_name = tL_updateUserName.last_name;
                                 ArrayList<TLRPC.TL_username> arrayList18 = tL_updateUserName.usernames;
-                                tL_user3.username = (arrayList18 == null || arrayList18.size() != 1) ? str : tL_updateUserName.usernames.get(0).username;
+                                tL_user3.username = (arrayList18 == null || arrayList18.size() != 1) ? null : tL_updateUserName.usernames.get(0).username;
                                 arrayList15.add(tL_user3);
                             } else {
                                 if (update instanceof TL_update.TL_updateDialogPinned) {
                                     TL_update.TL_updateDialogPinned tL_updateDialogPinned = (TL_update.TL_updateDialogPinned) update;
                                     TLRPC.DialogPeer dialogPeer = tL_updateDialogPinned.peer;
-                                    arrayList9 = arrayList15;
-                                    i19 = i40;
-                                    i20 = i37;
-                                    arrayList10 = arrayList16;
-                                    i21 = i42;
-                                    i22 = i16;
-                                    i23 = i17;
+                                    i19 = i18;
+                                    i20 = i40;
+                                    i21 = i37;
                                     int i47 = i38;
+                                    arrayList9 = arrayList15;
+                                    i22 = i42;
+                                    i23 = i16;
+                                    i24 = i17;
+                                    arrayList10 = arrayList16;
                                     if (!uc7Var.K3(dialogPeer instanceof TLRPC.TL_dialogPeer ? wf3.n(((TLRPC.TL_dialogPeer) dialogPeer).peer) : 0L, tL_updateDialogPinned.pinned, null, -1L)) {
                                         uc7Var.getUserConfig().x(tL_updateDialogPinned.folder_id, false);
                                         uc7Var.getUserConfig().u(false);
                                         uc7Var.j3(tL_updateDialogPinned.folder_id);
                                     }
-                                    i25 = i47;
-                                    i24 = i39;
+                                    i26 = i47;
+                                    i25 = i39;
                                 } else {
+                                    i19 = i18;
                                     arrayList9 = arrayList15;
                                     arrayList10 = arrayList16;
-                                    i19 = i40;
-                                    i20 = i37;
-                                    i21 = i42;
-                                    i22 = i16;
-                                    i23 = i17;
+                                    i20 = i40;
+                                    i21 = i37;
                                     int i48 = i38;
+                                    i22 = i42;
+                                    i23 = i16;
+                                    i24 = i17;
                                     if (update instanceof TL_update.TL_updatePinnedDialogs) {
                                         TL_update.TL_updatePinnedDialogs tL_updatePinnedDialogs = (TL_update.TL_updatePinnedDialogs) update;
                                         uc7Var.getUserConfig().x(tL_updatePinnedDialogs.folder_id, false);
@@ -11467,8 +11515,8 @@ public final class uc7 extends rf0 implements fn7 {
                                             }
                                         }
                                         uc7Var.j3(tL_updatePinnedDialogs.folder_id);
-                                        i25 = i48;
-                                        i24 = i39;
+                                        i26 = i48;
+                                        i25 = i39;
                                     } else {
                                         int i50 = i39;
                                         if (update instanceof TL_update.TL_updateUserPhoto) {
@@ -11485,25 +11533,24 @@ public final class uc7 extends rf0 implements fn7 {
                                             if (lbc.D(X14)) {
                                                 uc7Var.getNotificationCenter().k(i48, new Object[0]);
                                             }
-                                            i25 = i48;
-                                            i24 = i50;
-                                            i42 = i21;
-                                            i27 = i22;
-                                            i26 = i20;
+                                            i26 = i48;
+                                            i25 = i50;
+                                            i28 = i23;
+                                            i27 = i21;
                                             b3 = 0;
                                             arrayList14 = arrayList2;
                                             arrayList15 = arrayList11;
-                                            i37 = i26;
-                                            i38 = i25;
-                                            i35 = i27;
-                                            i34 = i42;
-                                            size = i18;
-                                            i36 = i23;
+                                            i37 = i27;
+                                            i38 = i26;
+                                            i35 = i28;
+                                            size = i19;
+                                            i34 = i22;
+                                            i36 = i24;
                                             arrayList16 = arrayList10;
                                             b4 = b3;
                                             arrayList13 = arrayList;
-                                            i40 = i19 + 1;
-                                            i39 = i24;
+                                            i40 = i20 + 1;
+                                            i39 = i25;
                                         } else {
                                             arrayList11 = arrayList9;
                                             if (update instanceof TL_update.TL_updateNewStoryReaction) {
@@ -11600,7 +11647,7 @@ public final class uc7 extends rf0 implements fn7 {
                                                     if (tL_updateNotifySettings.notify_settings instanceof TLRPC.TL_peerNotifySettings) {
                                                         i41 |= 32;
                                                         if (editor2 == null) {
-                                                            editor2 = uc7Var.W3.edit();
+                                                            editor2 = uc7Var.X3.edit();
                                                         }
                                                         SharedPreferences.Editor editor3 = editor2;
                                                         uc7Var.getConnectionsManager().getCurrentTime();
@@ -11633,7 +11680,7 @@ public final class uc7 extends rf0 implements fn7 {
                                                                     editor3.putBoolean("EnablePreviewGroup", peerNotifySettings.show_previews);
                                                                 }
                                                                 if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
-                                                                    int i53 = uc7Var.W3.getInt("EnableGroup2", 0);
+                                                                    int i53 = uc7Var.X3.getInt("EnableGroup2", 0);
                                                                     int i54 = tL_updateNotifySettings.notify_settings.mute_until;
                                                                     if (i53 != i54) {
                                                                         editor3.putInt("EnableGroup2", i54);
@@ -11650,14 +11697,14 @@ public final class uc7 extends rf0 implements fn7 {
                                                                         editor3.putBoolean("EnablePreviewAll", peerNotifySettings2.show_previews);
                                                                     }
                                                                     int i55 = tL_updateNotifySettings.notify_settings.flags;
-                                                                    if (uc7Var.W3.contains("EnableAllStories")) {
+                                                                    if (uc7Var.X3.contains("EnableAllStories")) {
                                                                         z9 = true;
-                                                                        bool = Boolean.valueOf(uc7Var.W3.getBoolean("EnableAllStories", true));
+                                                                        bool = Boolean.valueOf(uc7Var.X3.getBoolean("EnableAllStories", true));
                                                                     } else {
                                                                         z9 = true;
                                                                         bool = null;
                                                                     }
-                                                                    Boolean valueOf = uc7Var.W3.contains("EnableHideStoriesSenders") ? Boolean.valueOf(uc7Var.W3.getBoolean("EnableHideStoriesSenders", z9)) : null;
+                                                                    Boolean valueOf = uc7Var.X3.contains("EnableHideStoriesSenders") ? Boolean.valueOf(uc7Var.X3.getBoolean("EnableHideStoriesSenders", z9)) : null;
                                                                     TLRPC.PeerNotifySettings peerNotifySettings3 = tL_updateNotifySettings.notify_settings;
                                                                     if ((peerNotifySettings3.flags & 64) != 0) {
                                                                         boolean z12 = !peerNotifySettings3.stories_muted;
@@ -11683,7 +11730,7 @@ public final class uc7 extends rf0 implements fn7 {
                                                                             }
                                                                             uc7Var.getNotificationsController().h0.a(tL_updateNotifySettings.notify_settings.android_sound, editor3, 0L, 0L, 1);
                                                                             if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
-                                                                                int i56 = uc7Var.W3.getInt("EnableAll2", 0);
+                                                                                int i56 = uc7Var.X3.getInt("EnableAll2", 0);
                                                                                 int i57 = tL_updateNotifySettings.notify_settings.mute_until;
                                                                                 if (i56 != i57) {
                                                                                     editor3.putInt("EnableAll2", i57);
@@ -11703,7 +11750,7 @@ public final class uc7 extends rf0 implements fn7 {
                                                                         editor3.putBoolean("EnablePreviewChannel", peerNotifySettings5.show_previews);
                                                                     }
                                                                     if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
-                                                                        int i58 = uc7Var.W3.getInt("EnableChannel2", 0);
+                                                                        int i58 = uc7Var.X3.getInt("EnableChannel2", 0);
                                                                         int i59 = tL_updateNotifySettings.notify_settings.mute_until;
                                                                         if (i58 != i59) {
                                                                             editor3.putInt("EnableChannel2", i59);
@@ -11716,8 +11763,8 @@ public final class uc7 extends rf0 implements fn7 {
                                                                 }
                                                                 editor = editor3;
                                                             }
-                                                            jf7 messagesStorage = uc7Var.getMessagesStorage();
-                                                            messagesStorage.a.c(new be7(messagesStorage, (byte) 10));
+                                                            kf7 messagesStorage = uc7Var.getMessagesStorage();
+                                                            messagesStorage.a.c(new hd7(messagesStorage, (byte) 12));
                                                             editor2 = editor;
                                                         }
                                                         long j13 = j5;
@@ -11727,8 +11774,8 @@ public final class uc7 extends rf0 implements fn7 {
                                                         if (peerNotifySettings6 != null) {
                                                             Utilities.e.c(new o30((Object) wp7Var, j13, j6, (Object) peerNotifySettings6, (byte) 12));
                                                         }
-                                                        jf7 messagesStorage2 = uc7Var.getMessagesStorage();
-                                                        messagesStorage2.a.c(new be7(messagesStorage2, (byte) 10));
+                                                        kf7 messagesStorage2 = uc7Var.getMessagesStorage();
+                                                        messagesStorage2.a.c(new hd7(messagesStorage2, (byte) 12));
                                                         editor2 = editor;
                                                     }
                                                 } else if (update instanceof TL_update.TL_updateNewAuthorization) {
@@ -11763,15 +11810,15 @@ public final class uc7 extends rf0 implements fn7 {
                                                         }
                                                         int i60 = i50 | TLObject.FLAG_13;
                                                         uc7Var.e3(0, tL_updateChannel.channel_id, true);
-                                                        i24 = i60;
-                                                        i25 = i48;
+                                                        i25 = i60;
+                                                        i26 = i48;
                                                     } else {
-                                                        i24 = i50;
+                                                        i25 = i50;
                                                         if (update instanceof TL_update.TL_updateChat) {
                                                             TL_update.TL_updateChat tL_updateChat = (TL_update.TL_updateChat) update;
                                                             TLRPC.Chat M02 = uc7Var.M0(Long.valueOf(tL_updateChat.chat_id));
                                                             if (M02 == null || !((M02 instanceof TLRPC.TL_chatForbidden) || M02.kicked)) {
-                                                                i25 = i48;
+                                                                i26 = i48;
                                                             } else {
                                                                 vc2 g12 = uc7Var.g1(M02.id, false, null);
                                                                 if (g12 != null) {
@@ -11781,7 +11828,7 @@ public final class uc7 extends rf0 implements fn7 {
                                                                     TLRPC.TL_groupCallDiscarded tL_groupCallDiscarded2 = new TLRPC.TL_groupCallDiscarded();
                                                                     tL_updateGroupCall2.call = tL_groupCallDiscarded2;
                                                                     TLRPC.GroupCall groupCall2 = g12.b;
-                                                                    i25 = i48;
+                                                                    i26 = i48;
                                                                     tL_groupCallDiscarded2.id = groupCall2.id;
                                                                     tL_groupCallDiscarded2.access_hash = groupCall2.access_hash;
                                                                     g12.p(tL_groupCallDiscarded2);
@@ -11789,23 +11836,23 @@ public final class uc7 extends rf0 implements fn7 {
                                                                         VoIPService.getSharedInstance().onGroupCallUpdated(tL_updateGroupCall2.call);
                                                                     }
                                                                 } else {
-                                                                    i25 = i48;
+                                                                    i26 = i48;
                                                                 }
                                                                 TLRPC.Dialog dialog3 = (TLRPC.Dialog) uc7Var.R.f(-M02.id);
                                                                 if (dialog3 != null) {
                                                                     i30 = 0;
                                                                     uc7Var.V(0, dialog3.id, false);
-                                                                    int i61 = i24 | TLObject.FLAG_13;
+                                                                    int i61 = i25 | TLObject.FLAG_13;
                                                                     uc7Var.e3(i30, tL_updateChat.chat_id, true);
-                                                                    i24 = i61;
+                                                                    i25 = i61;
                                                                 }
                                                             }
                                                             i30 = 0;
-                                                            int i612 = i24 | TLObject.FLAG_13;
+                                                            int i612 = i25 | TLObject.FLAG_13;
                                                             uc7Var.e3(i30, tL_updateChat.chat_id, true);
-                                                            i24 = i612;
+                                                            i25 = i612;
                                                         } else {
-                                                            i25 = i48;
+                                                            i26 = i48;
                                                             if (update instanceof TL_update.TL_updateChatDefaultBannedRights) {
                                                                 TL_update.TL_updateChatDefaultBannedRights tL_updateChatDefaultBannedRights = (TL_update.TL_updateChatDefaultBannedRights) update;
                                                                 TLRPC.Peer peer4 = tL_updateChatDefaultBannedRights.peer;
@@ -11854,9 +11901,9 @@ public final class uc7 extends rf0 implements fn7 {
                                                                 } else if (update instanceof TL_update.TL_updateNewStickerSet) {
                                                                     uc7Var.getMediaDataController().b(((TL_update.TL_updateNewStickerSet) update).stickerset);
                                                                 } else if (update instanceof TL_update.TL_updateSavedGifs) {
-                                                                    uc7Var.Y3.edit().putLong("lastGifLoadTime", 0L).commit();
+                                                                    uc7Var.Z3.edit().putLong("lastGifLoadTime", 0L).commit();
                                                                 } else if (update instanceof TL_update.TL_updateRecentStickers) {
-                                                                    uc7Var.Y3.edit().putLong("lastStickersLoadTime", 0L).commit();
+                                                                    uc7Var.Z3.edit().putLong("lastStickersLoadTime", 0L).commit();
                                                                 } else {
                                                                     if (update instanceof TL_update.TL_updateDraftMessage) {
                                                                         TL_update.TL_updateDraftMessage tL_updateDraftMessage = (TL_update.TL_updateDraftMessage) update;
@@ -11872,9 +11919,8 @@ public final class uc7 extends rf0 implements fn7 {
                                                                         uc7Var.getMediaDataController().B1(j17, n2, tL_updateDraftMessage.draft);
                                                                         uc7Var.getMediaDataController().U1(j17, n2, tL_updateDraftMessage.draft, null, true);
                                                                         b3 = 0;
-                                                                        i42 = i21;
-                                                                        i27 = i22;
-                                                                        i26 = i20;
+                                                                        i28 = i23;
+                                                                        i27 = i21;
                                                                         z2 = true;
                                                                     } else if (update instanceof TL_stories.TL_updateStoriesStealthMode) {
                                                                         uc7Var.O1().h0(((TL_stories.TL_updateStoriesStealthMode) update).stealth_mode);
@@ -11888,595 +11934,591 @@ public final class uc7 extends rf0 implements fn7 {
                                                                     } else if (update instanceof TL_update.TL_updatePinnedForumTopic) {
                                                                         TL_update.TL_updatePinnedForumTopic tL_updatePinnedForumTopic = (TL_update.TL_updatePinnedForumTopic) update;
                                                                         long j18 = -wf3.n(tL_updatePinnedForumTopic.peer);
-                                                                        ArrayList g = uc7Var.g4.g(j18);
+                                                                        ArrayList g = uc7Var.h4.g(j18);
                                                                         g.remove(Integer.valueOf(tL_updatePinnedForumTopic.topic_id));
                                                                         if (tL_updatePinnedForumTopic.pinned) {
                                                                             g.add(0, Integer.valueOf(tL_updatePinnedForumTopic.topic_id));
                                                                         }
-                                                                        uc7Var.g4.a(j18, g, true);
-                                                                    } else if (update instanceof TL_update.TL_updatePinnedForumTopics) {
-                                                                        TL_update.TL_updatePinnedForumTopics tL_updatePinnedForumTopics = (TL_update.TL_updatePinnedForumTopics) update;
-                                                                        long n3 = wf3.n(tL_updatePinnedForumTopics.peer);
-                                                                        int i62 = tL_updatePinnedForumTopics.flags & 1;
-                                                                        qyb qybVar = uc7Var.g4;
-                                                                        long j19 = -n3;
-                                                                        if (i62 != 0) {
-                                                                            qybVar.a(j19, tL_updatePinnedForumTopics.order, true);
-                                                                        } else {
-                                                                            qybVar.getClass();
-                                                                            hl.c3(new dp2((Object) qybVar, j19, (boolean) (null == true ? 1 : 0), (byte) 4));
-                                                                        }
-                                                                    } else if (update instanceof TL_update.TL_updateEditForumTopic) {
-                                                                        TL_update.TL_updateEditForumTopic tL_updateEditForumTopic = (TL_update.TL_updateEditForumTopic) update;
-                                                                        uc7Var.g4.r(wf3.n(tL_updateEditForumTopic.peer), tL_updateEditForumTopic);
-                                                                    } else if (update instanceof TL_update.TL_updateGroupCallParticipants) {
-                                                                        TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = (TL_update.TL_updateGroupCallParticipants) update;
-                                                                        vc2 vc2Var = (vc2) uc7Var.d1.f(tL_updateGroupCallParticipants.call.id);
-                                                                        if (vc2Var != null) {
-                                                                            vc2Var.q(tL_updateGroupCallParticipants, false);
-                                                                        }
-                                                                        if (VoIPService.getSharedInstance() != null) {
-                                                                            VoIPService.getSharedInstance().onGroupCallParticipantsUpdate(tL_updateGroupCallParticipants);
-                                                                        }
-                                                                    } else if (update instanceof TL_update.TL_updateGroupCall) {
-                                                                        TL_update.TL_updateGroupCall tL_updateGroupCall3 = (TL_update.TL_updateGroupCall) update;
-                                                                        if (tL_updateGroupCall3.live_story) {
-                                                                            uc7Var.getNotificationCenter().k(jn7.x2, Long.valueOf(wf3.n(tL_updateGroupCall3.peer)), tL_updateGroupCall3.call);
-                                                                        }
-                                                                        vc2 vc2Var2 = (vc2) uc7Var.d1.f(tL_updateGroupCall3.call.id);
-                                                                        if (vc2Var2 != null) {
-                                                                            vc2Var2.p(tL_updateGroupCall3.call);
-                                                                            TLRPC.Chat M04 = uc7Var.M0(Long.valueOf(vc2Var2.c));
-                                                                            if (M04 != null) {
-                                                                                M04.call_active = tL_updateGroupCall3.call instanceof TLRPC.TL_groupCall;
+                                                                        uc7Var.h4.a(j18, g, true);
+                                                                    } else {
+                                                                        boolean z15 = false;
+                                                                        if (update instanceof TL_update.TL_updatePinnedForumTopics) {
+                                                                            TL_update.TL_updatePinnedForumTopics tL_updatePinnedForumTopics = (TL_update.TL_updatePinnedForumTopics) update;
+                                                                            long n3 = wf3.n(tL_updatePinnedForumTopics.peer);
+                                                                            int i62 = tL_updatePinnedForumTopics.flags & 1;
+                                                                            qyb qybVar = uc7Var.h4;
+                                                                            long j19 = -n3;
+                                                                            if (i62 != 0) {
+                                                                                qybVar.a(j19, tL_updatePinnedForumTopics.order, true);
+                                                                            } else {
+                                                                                qybVar.getClass();
+                                                                                hl.c3(new dp2((Object) qybVar, j19, z15, (byte) 4));
                                                                             }
-                                                                        } else {
-                                                                            TLRPC.Peer peer7 = tL_updateGroupCall3.peer;
-                                                                            if (peer7 != null && (N02 = uc7Var.N0((j4 = -wf3.n(peer7)))) != null) {
-                                                                                TLRPC.InputGroupCall inputGroupCall = N02.call;
-                                                                                if (inputGroupCall != null) {
-                                                                                    i29 = inputGroupCall.id != tL_updateGroupCall3.call.id ? 0 : 0;
-                                                                                }
-                                                                                uc7Var.e3(i29, j4, true);
+                                                                        } else if (update instanceof TL_update.TL_updateEditForumTopic) {
+                                                                            TL_update.TL_updateEditForumTopic tL_updateEditForumTopic = (TL_update.TL_updateEditForumTopic) update;
+                                                                            uc7Var.h4.r(wf3.n(tL_updateEditForumTopic.peer), tL_updateEditForumTopic);
+                                                                        } else if (update instanceof TL_update.TL_updateGroupCallParticipants) {
+                                                                            TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = (TL_update.TL_updateGroupCallParticipants) update;
+                                                                            vc2 vc2Var = (vc2) uc7Var.d1.f(tL_updateGroupCallParticipants.call.id);
+                                                                            if (vc2Var != null) {
+                                                                                vc2Var.q(tL_updateGroupCallParticipants, false);
                                                                             }
-                                                                        }
-                                                                        if (VoIPService.getSharedInstance() != null) {
-                                                                            VoIPService.getSharedInstance().onGroupCallUpdated(tL_updateGroupCall3.call);
-                                                                        }
-                                                                    } else if (update instanceof TL_update.TL_updatePhoneCall) {
-                                                                        TL_phone.PhoneCall phoneCall = ((TL_update.TL_updatePhoneCall) update).phone_call;
-                                                                        VoIPService sharedInstance = VoIPService.getSharedInstance();
-                                                                        if (f11.a) {
-                                                                            cc4.b("Received call in update: " + phoneCall);
-                                                                            ik8.q(phoneCall.id, new StringBuilder("call id "));
-                                                                        }
-                                                                        VoIPDebugToSend voIPDebugToSend = uc7Var.f1;
-                                                                        if (voIPDebugToSend != null && (phoneCall instanceof TL_phone.TL_phoneCallDiscarded)) {
-                                                                            TL_phone.TL_phoneCallDiscarded tL_phoneCallDiscarded = (TL_phone.TL_phoneCallDiscarded) phoneCall;
-                                                                            voIPDebugToSend.done(tL_phoneCallDiscarded.id, tL_phoneCallDiscarded.need_debug);
-                                                                        }
-                                                                        if (phoneCall instanceof TL_phone.phoneCallRequested) {
-                                                                            if ((uc7Var.a3 / 1000) + phoneCall.date >= uc7Var.getConnectionsManager().getCurrentTime()) {
-                                                                                if (oo7.c(a.b).a()) {
-                                                                                    z6 = false;
-                                                                                } else if (!a.x && a.w) {
-                                                                                    z6 = true;
-                                                                                } else if (f11.a) {
-                                                                                    cc4.b("Ignoring incoming call because notifications are disabled in system");
+                                                                            if (VoIPService.getSharedInstance() != null) {
+                                                                                VoIPService.getSharedInstance().onGroupCallParticipantsUpdate(tL_updateGroupCallParticipants);
+                                                                            }
+                                                                        } else if (update instanceof TL_update.TL_updateGroupCall) {
+                                                                            TL_update.TL_updateGroupCall tL_updateGroupCall3 = (TL_update.TL_updateGroupCall) update;
+                                                                            if (tL_updateGroupCall3.live_story) {
+                                                                                uc7Var.getNotificationCenter().k(jn7.x2, Long.valueOf(wf3.n(tL_updateGroupCall3.peer)), tL_updateGroupCall3.call);
+                                                                            }
+                                                                            vc2 vc2Var2 = (vc2) uc7Var.d1.f(tL_updateGroupCall3.call.id);
+                                                                            if (vc2Var2 != null) {
+                                                                                vc2Var2.p(tL_updateGroupCall3.call);
+                                                                                TLRPC.Chat M04 = uc7Var.M0(Long.valueOf(vc2Var2.c));
+                                                                                if (M04 != null) {
+                                                                                    M04.call_active = tL_updateGroupCall3.call instanceof TLRPC.TL_groupCall;
                                                                                 }
-                                                                                TelephonyManager telephonyManager = (TelephonyManager) a.b.getSystemService("phone");
-                                                                                try {
-                                                                                } catch (Throwable th) {
-                                                                                    cc4.f(th);
-                                                                                }
-                                                                                if (Build.VERSION.SDK_INT >= 31) {
-                                                                                    if (sr.b(a.b, "android.permission.READ_PHONE_STATE") == 0) {
-                                                                                        z8 = telephonyManager.getCallStateForSubscription() == 0;
+                                                                            } else {
+                                                                                TLRPC.Peer peer7 = tL_updateGroupCall3.peer;
+                                                                                if (peer7 != null && (N02 = uc7Var.N0((j4 = -wf3.n(peer7)))) != null) {
+                                                                                    TLRPC.InputGroupCall inputGroupCall = N02.call;
+                                                                                    if (inputGroupCall == null) {
+                                                                                        i29 = 0;
+                                                                                    } else if (inputGroupCall.id != tL_updateGroupCall3.call.id) {
+                                                                                        i29 = 0;
                                                                                     }
-                                                                                    z7 = true;
+                                                                                    uc7Var.e3(i29, j4, true);
+                                                                                }
+                                                                            }
+                                                                            if (VoIPService.getSharedInstance() != null) {
+                                                                                VoIPService.getSharedInstance().onGroupCallUpdated(tL_updateGroupCall3.call);
+                                                                            }
+                                                                        } else if (update instanceof TL_update.TL_updatePhoneCall) {
+                                                                            TL_phone.PhoneCall phoneCall = ((TL_update.TL_updatePhoneCall) update).phone_call;
+                                                                            VoIPService sharedInstance = VoIPService.getSharedInstance();
+                                                                            if (f11.a) {
+                                                                                cc4.b("Received call in update: " + phoneCall);
+                                                                                ik8.q(phoneCall.id, new StringBuilder("call id "));
+                                                                            }
+                                                                            VoIPDebugToSend voIPDebugToSend = uc7Var.f1;
+                                                                            if (voIPDebugToSend != null && (phoneCall instanceof TL_phone.TL_phoneCallDiscarded)) {
+                                                                                TL_phone.TL_phoneCallDiscarded tL_phoneCallDiscarded = (TL_phone.TL_phoneCallDiscarded) phoneCall;
+                                                                                voIPDebugToSend.done(tL_phoneCallDiscarded.id, tL_phoneCallDiscarded.need_debug);
+                                                                            }
+                                                                            if (phoneCall instanceof TL_phone.phoneCallRequested) {
+                                                                                if ((uc7Var.a3 / 1000) + phoneCall.date >= uc7Var.getConnectionsManager().getCurrentTime()) {
+                                                                                    if (oo7.c(a.b).a()) {
+                                                                                        z6 = false;
+                                                                                    } else if (!a.x && a.w) {
+                                                                                        z6 = true;
+                                                                                    } else if (f11.a) {
+                                                                                        cc4.b("Ignoring incoming call because notifications are disabled in system");
+                                                                                    }
+                                                                                    TelephonyManager telephonyManager = (TelephonyManager) a.b.getSystemService("phone");
+                                                                                    try {
+                                                                                    } catch (Throwable th) {
+                                                                                        cc4.f(th);
+                                                                                    }
+                                                                                    if (Build.VERSION.SDK_INT >= 31) {
+                                                                                        if (sr.b(a.b, "android.permission.READ_PHONE_STATE") == 0) {
+                                                                                            z8 = telephonyManager.getCallStateForSubscription() == 0;
+                                                                                        }
+                                                                                        z7 = true;
+                                                                                        cc4.d("updatePhoneCall: svc=" + sharedInstance + " callIShouldHavePutIntoIntent=" + VoIPService.callIShouldHavePutIntoIntent + " callStateIsIdle=" + z7);
+                                                                                        if (sharedInstance != null && VoIPService.callIShouldHavePutIntoIntent == null && z7) {
+                                                                                            if (f11.a) {
+                                                                                                ik8.q(phoneCall.id, new StringBuilder("Starting service for call "));
+                                                                                            }
+                                                                                            VoIPService.callIShouldHavePutIntoIntent = phoneCall;
+                                                                                            cc4.d("set VoIPService.callIShouldHavePutIntoIntent = " + phoneCall);
+                                                                                            Intent intent = new Intent(a.b, (Class<?>) VoIPService.class);
+                                                                                            intent.putExtra("is_outgoing", false);
+                                                                                            intent.putExtra("user_id", phoneCall.participant_id == uc7Var.getUserConfig().e() ? phoneCall.admin_id : phoneCall.participant_id);
+                                                                                            intent.putExtra("account", uc7Var.currentAccount);
+                                                                                            intent.putExtra("notifications_disabled", z6);
+                                                                                            try {
+                                                                                                int i63 = Build.VERSION.SDK_INT;
+                                                                                                if (i63 >= 33) {
+                                                                                                    intent.putExtra("accept", true);
+                                                                                                    VoIPPreNotificationService.show(a.b, intent, phoneCall);
+                                                                                                } else if (z6 || i63 < 26) {
+                                                                                                    a.b.startService(intent);
+                                                                                                } else {
+                                                                                                    a.b.startForegroundService(intent);
+                                                                                                }
+                                                                                                if (a.x || !a.w) {
+                                                                                                    uc7Var.a4 = true;
+                                                                                                }
+                                                                                            } catch (Throwable th2) {
+                                                                                                cc4.f(th2);
+                                                                                            }
+                                                                                        } else if (sharedInstance != null || sharedInstance.getAccount() == uc7Var.currentAccount || sharedInstance.getUser() == null || sharedInstance.getUser().id != uc7Var.getUserConfig().e()) {
+                                                                                            if (f11.a) {
+                                                                                                cc4.b("Auto-declining call " + phoneCall.id + " because there's already active one");
+                                                                                            }
+                                                                                            TL_phone.discardCall discardcall = new TL_phone.discardCall();
+                                                                                            TLRPC.TL_inputPhoneCall tL_inputPhoneCall = new TLRPC.TL_inputPhoneCall();
+                                                                                            discardcall.peer = tL_inputPhoneCall;
+                                                                                            tL_inputPhoneCall.access_hash = phoneCall.access_hash;
+                                                                                            tL_inputPhoneCall.id = phoneCall.id;
+                                                                                            discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
+                                                                                            cc4.d("discardCall " + discardcall.reason);
+                                                                                            uc7Var.getConnectionsManager().sendRequest(discardcall, new h77(uc7Var, (byte) 6));
+                                                                                        }
+                                                                                    }
+                                                                                    z7 = z8;
                                                                                     cc4.d("updatePhoneCall: svc=" + sharedInstance + " callIShouldHavePutIntoIntent=" + VoIPService.callIShouldHavePutIntoIntent + " callStateIsIdle=" + z7);
-                                                                                    if (sharedInstance != null && VoIPService.callIShouldHavePutIntoIntent == null && z7) {
-                                                                                        if (f11.a) {
-                                                                                            ik8.q(phoneCall.id, new StringBuilder("Starting service for call "));
+                                                                                    if (sharedInstance != null) {
+                                                                                    }
+                                                                                    if (sharedInstance != null) {
+                                                                                    }
+                                                                                    if (f11.a) {
+                                                                                    }
+                                                                                    TL_phone.discardCall discardcall2 = new TL_phone.discardCall();
+                                                                                    TLRPC.TL_inputPhoneCall tL_inputPhoneCall2 = new TLRPC.TL_inputPhoneCall();
+                                                                                    discardcall2.peer = tL_inputPhoneCall2;
+                                                                                    tL_inputPhoneCall2.access_hash = phoneCall.access_hash;
+                                                                                    tL_inputPhoneCall2.id = phoneCall.id;
+                                                                                    discardcall2.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
+                                                                                    cc4.d("discardCall " + discardcall2.reason);
+                                                                                    uc7Var.getConnectionsManager().sendRequest(discardcall2, new h77(uc7Var, (byte) 6));
+                                                                                } else if (f11.a) {
+                                                                                    cc4.b("ignoring too old call");
+                                                                                }
+                                                                            } else if (sharedInstance == null || sharedInstance.getAccount() != uc7Var.currentAccount || phoneCall == null) {
+                                                                                if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
+                                                                                    VoIPPreNotificationService.dismiss(a.b, false);
+                                                                                }
+                                                                                if (VoIPService.callIShouldHavePutIntoIntent != null) {
+                                                                                    if (f11.a) {
+                                                                                        cc4.b("Updated the call while the service is starting");
+                                                                                    }
+                                                                                    if (phoneCall.id == VoIPService.callIShouldHavePutIntoIntent.id) {
+                                                                                        if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
+                                                                                            phoneCall = null;
                                                                                         }
                                                                                         VoIPService.callIShouldHavePutIntoIntent = phoneCall;
-                                                                                        cc4.d("set VoIPService.callIShouldHavePutIntoIntent = " + phoneCall);
-                                                                                        Intent intent = new Intent(a.b, (Class<?>) VoIPService.class);
-                                                                                        intent.putExtra("is_outgoing", false);
-                                                                                        intent.putExtra("user_id", phoneCall.participant_id == uc7Var.getUserConfig().e() ? phoneCall.admin_id : phoneCall.participant_id);
-                                                                                        intent.putExtra("account", uc7Var.currentAccount);
-                                                                                        intent.putExtra("notifications_disabled", z6);
-                                                                                        try {
-                                                                                            int i63 = Build.VERSION.SDK_INT;
-                                                                                            if (i63 >= 33) {
-                                                                                                intent.putExtra("accept", true);
-                                                                                                VoIPPreNotificationService.show(a.b, intent, phoneCall);
-                                                                                            } else if (z6 || i63 < 26) {
-                                                                                                a.b.startService(intent);
-                                                                                            } else {
-                                                                                                a.b.startForegroundService(intent);
-                                                                                            }
-                                                                                            if (a.x || !a.w) {
-                                                                                                uc7Var.Z3 = true;
-                                                                                            }
-                                                                                        } catch (Throwable th2) {
-                                                                                            cc4.f(th2);
-                                                                                        }
-                                                                                    } else if (sharedInstance != null || sharedInstance.getAccount() == uc7Var.currentAccount || sharedInstance.getUser() == null || sharedInstance.getUser().id != uc7Var.getUserConfig().e()) {
-                                                                                        if (f11.a) {
-                                                                                            cc4.b("Auto-declining call " + phoneCall.id + " because there's already active one");
-                                                                                        }
-                                                                                        TL_phone.discardCall discardcall = new TL_phone.discardCall();
-                                                                                        TLRPC.TL_inputPhoneCall tL_inputPhoneCall = new TLRPC.TL_inputPhoneCall();
-                                                                                        discardcall.peer = tL_inputPhoneCall;
-                                                                                        tL_inputPhoneCall.access_hash = phoneCall.access_hash;
-                                                                                        tL_inputPhoneCall.id = phoneCall.id;
-                                                                                        discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
-                                                                                        cc4.d("discardCall " + discardcall.reason);
-                                                                                        uc7Var.getConnectionsManager().sendRequest(discardcall, new h77(uc7Var, (byte) 6));
+                                                                                        cc4.d("(2) set VoIPService.callIShouldHavePutIntoIntent = " + VoIPService.callIShouldHavePutIntoIntent);
                                                                                     }
                                                                                 }
-                                                                                z7 = z8;
-                                                                                cc4.d("updatePhoneCall: svc=" + sharedInstance + " callIShouldHavePutIntoIntent=" + VoIPService.callIShouldHavePutIntoIntent + " callStateIsIdle=" + z7);
-                                                                                if (sharedInstance != null) {
-                                                                                }
-                                                                                if (sharedInstance != null) {
-                                                                                }
-                                                                                if (f11.a) {
-                                                                                }
-                                                                                TL_phone.discardCall discardcall2 = new TL_phone.discardCall();
-                                                                                TLRPC.TL_inputPhoneCall tL_inputPhoneCall2 = new TLRPC.TL_inputPhoneCall();
-                                                                                discardcall2.peer = tL_inputPhoneCall2;
-                                                                                tL_inputPhoneCall2.access_hash = phoneCall.access_hash;
-                                                                                tL_inputPhoneCall2.id = phoneCall.id;
-                                                                                discardcall2.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
-                                                                                cc4.d("discardCall " + discardcall2.reason);
-                                                                                uc7Var.getConnectionsManager().sendRequest(discardcall2, new h77(uc7Var, (byte) 6));
-                                                                            } else if (f11.a) {
-                                                                                cc4.b("ignoring too old call");
-                                                                            }
-                                                                        } else if (sharedInstance == null || sharedInstance.getAccount() != uc7Var.currentAccount || phoneCall == null) {
-                                                                            if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
-                                                                                VoIPPreNotificationService.dismiss(a.b, false);
-                                                                            }
-                                                                            if (VoIPService.callIShouldHavePutIntoIntent != null) {
-                                                                                if (f11.a) {
-                                                                                    cc4.b("Updated the call while the service is starting");
-                                                                                }
-                                                                                if (phoneCall.id == VoIPService.callIShouldHavePutIntoIntent.id) {
-                                                                                    if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
-                                                                                        phoneCall = null;
-                                                                                    }
-                                                                                    VoIPService.callIShouldHavePutIntoIntent = phoneCall;
-                                                                                    cc4.d("(2) set VoIPService.callIShouldHavePutIntoIntent = " + VoIPService.callIShouldHavePutIntoIntent);
-                                                                                }
-                                                                            }
-                                                                        } else {
-                                                                            sharedInstance.onCallUpdated(phoneCall);
-                                                                        }
-                                                                    } else if (update instanceof TL_update.TL_updateDialogUnreadMark) {
-                                                                        TL_update.TL_updateDialogUnreadMark tL_updateDialogUnreadMark = (TL_update.TL_updateDialogUnreadMark) update;
-                                                                        TLRPC.DialogPeer dialogPeer3 = tL_updateDialogUnreadMark.peer;
-                                                                        if (dialogPeer3 instanceof TLRPC.TL_dialogPeer) {
-                                                                            TLRPC.Peer peer8 = ((TLRPC.TL_dialogPeer) dialogPeer3).peer;
-                                                                            long j20 = peer8.user_id;
-                                                                            if (j20 != 0) {
-                                                                                j3 = j20;
                                                                             } else {
-                                                                                long j21 = peer8.chat_id;
-                                                                                j3 = j21 != 0 ? -j21 : -peer8.channel_id;
+                                                                                sharedInstance.onCallUpdated(phoneCall);
                                                                             }
-                                                                        } else {
-                                                                            j3 = 0;
-                                                                        }
-                                                                        uc7Var.getMessagesStorage().C1(j3, tL_updateDialogUnreadMark.unread);
-                                                                        TLRPC.Dialog dialog4 = (TLRPC.Dialog) uc7Var.R.f(j3);
-                                                                        if (dialog4 != null) {
-                                                                            boolean z15 = dialog4.unread_mark;
-                                                                            boolean z16 = tL_updateDialogUnreadMark.unread;
-                                                                            if (z15 != z16) {
-                                                                                dialog4.unread_mark = z16;
-                                                                                if (dialog4.unread_count == 0) {
-                                                                                    uc7Var.o2(j3, 0L);
-                                                                                }
-                                                                                i41 |= 64;
-                                                                                i24 |= 256;
-                                                                            }
-                                                                        }
-                                                                    } else if (update instanceof TL_update.TL_updateMessagePoll) {
-                                                                        TL_update.TL_updateMessagePoll tL_updateMessagePoll = (TL_update.TL_updateMessagePoll) update;
-                                                                        uc7Var.getNotificationCenter().k(jn7.f1, Long.valueOf(tL_updateMessagePoll.poll_id), tL_updateMessagePoll.poll, tL_updateMessagePoll.results);
-                                                                    } else if (update instanceof TL_update.TL_updatePeerSettings) {
-                                                                        TL_update.TL_updatePeerSettings tL_updatePeerSettings = (TL_update.TL_updatePeerSettings) update;
-                                                                        TLRPC.Peer peer9 = tL_updatePeerSettings.peer;
-                                                                        uc7Var.F4(peer9 instanceof TLRPC.TL_peerUser ? peer9.user_id : -(peer9 instanceof TLRPC.TL_peerChat ? peer9.chat_id : peer9.channel_id), tL_updatePeerSettings.settings);
-                                                                    } else if (update instanceof TL_update.TL_updatePeerLocated) {
-                                                                        uc7Var.getNotificationCenter().k(jn7.i1, update);
-                                                                    } else {
-                                                                        if (update instanceof TL_update.TL_updateMessageReactions) {
-                                                                            TL_update.TL_updateMessageReactions tL_updateMessageReactions = (TL_update.TL_updateMessageReactions) update;
-                                                                            long B1 = r47.B1(tL_updateMessageReactions.peer);
-                                                                            long A = jxa.t(uc7Var.currentAccount).A(tL_updateMessageReactions.msg_id, B1);
-                                                                            if (A != 0) {
-                                                                                b3 = 0;
-                                                                                r47.g(uc7Var.currentAccount, tL_updateMessageReactions.reactions, (int) A, jxa.t(uc7Var.currentAccount).y(cxa.a(tL_updateMessageReactions.msg_id, B1), tL_updateMessageReactions.reactions), true);
-                                                                            } else {
-                                                                                b3 = 0;
-                                                                            }
-                                                                            jn7 notificationCenter2 = uc7Var.getNotificationCenter();
-                                                                            int i64 = jn7.o1;
-                                                                            Long valueOf3 = Long.valueOf(B1);
-                                                                            Integer valueOf4 = Integer.valueOf(tL_updateMessageReactions.msg_id);
-                                                                            TLRPC.TL_messageReactions tL_messageReactions = tL_updateMessageReactions.reactions;
-                                                                            Object[] objArr2 = new Object[3];
-                                                                            objArr2[b3] = valueOf3;
-                                                                            objArr2[1] = valueOf4;
-                                                                            objArr2[2] = tL_messageReactions;
-                                                                            notificationCenter2.k(i64, objArr2);
-                                                                        } else {
-                                                                            b3 = 0;
-                                                                            if (update instanceof TL_update.TL_updateMessageExtendedMedia) {
-                                                                                TL_update.TL_updateMessageExtendedMedia tL_updateMessageExtendedMedia = (TL_update.TL_updateMessageExtendedMedia) update;
-                                                                                uc7Var.getNotificationCenter().k(jn7.p1, Long.valueOf(wf3.n(tL_updateMessageExtendedMedia.peer)), Integer.valueOf(tL_updateMessageExtendedMedia.msg_id), tL_updateMessageExtendedMedia.extended_media);
-                                                                            } else if (update instanceof TL_update.TL_updateTheme) {
-                                                                                aob.G1(null, null, (TLRPC.TL_theme) ((TL_update.TL_updateTheme) update).theme, uc7Var.currentAccount, true);
-                                                                            } else if (update instanceof TL_update.TL_updateDialogFilter) {
-                                                                                uc7Var.k3(true, null);
-                                                                            } else if (update instanceof TL_update.TL_updateDialogFilterOrder) {
-                                                                                uc7Var.k3(true, null);
-                                                                            } else if (update instanceof TL_update.TL_updateDialogFilters) {
-                                                                                uc7Var.k3(true, null);
-                                                                            } else if (update instanceof TL_update.TL_updateRecentEmojiStatuses) {
-                                                                                uc7Var.getNotificationCenter().k(jn7.C1, new Object[0]);
-                                                                            } else if (update instanceof TL_update.TL_updateWebViewResultSent) {
-                                                                                uc7Var.getNotificationCenter().k(jn7.z1, Long.valueOf(((TL_update.TL_updateWebViewResultSent) update).query_id));
-                                                                            } else if (update instanceof TL_update.TL_updateAttachMenuBots) {
-                                                                                uc7Var.getMediaDataController().F0();
-                                                                            } else if (update instanceof TL_update.TL_updateJoinChatWebViewDecision) {
-                                                                                TL_update.TL_updateJoinChatWebViewDecision tL_updateJoinChatWebViewDecision = (TL_update.TL_updateJoinChatWebViewDecision) update;
-                                                                                bq0.b(uc7Var.currentAccount).a(wf3.n(tL_updateJoinChatWebViewDecision.peer), tL_updateJoinChatWebViewDecision.query_id, tL_updateJoinChatWebViewDecision.result);
-                                                                            } else if (update instanceof TL_bots.TL_updateBotMenuButton) {
-                                                                                TL_bots.TL_updateBotMenuButton tL_updateBotMenuButton = (TL_bots.TL_updateBotMenuButton) update;
-                                                                                uc7Var.getNotificationCenter().k(jn7.T2, Long.valueOf(tL_updateBotMenuButton.bot_id), tL_updateBotMenuButton.button);
-                                                                            } else {
-                                                                                if (update instanceof TL_update.TL_updateBotProfileWidget) {
-                                                                                    TL_update.TL_updateBotProfileWidget tL_updateBotProfileWidget = (TL_update.TL_updateBotProfileWidget) update;
-                                                                                    TLRPC.UserFull Y1 = uc7Var.Y1(tL_updateBotProfileWidget.bot_id);
-                                                                                    if (Y1 != null) {
-                                                                                        Y1.bot_profile_widget = tL_updateBotProfileWidget.widget;
-                                                                                        uc7Var.getMessagesStorage().g2(Y1, true);
-                                                                                        i26 = i20;
-                                                                                        uc7Var.getNotificationCenter().k(i26, Long.valueOf(tL_updateBotProfileWidget.bot_id), Y1);
-                                                                                    } else {
-                                                                                        i26 = i20;
-                                                                                    }
+                                                                        } else if (update instanceof TL_update.TL_updateDialogUnreadMark) {
+                                                                            TL_update.TL_updateDialogUnreadMark tL_updateDialogUnreadMark = (TL_update.TL_updateDialogUnreadMark) update;
+                                                                            TLRPC.DialogPeer dialogPeer3 = tL_updateDialogUnreadMark.peer;
+                                                                            if (dialogPeer3 instanceof TLRPC.TL_dialogPeer) {
+                                                                                TLRPC.Peer peer8 = ((TLRPC.TL_dialogPeer) dialogPeer3).peer;
+                                                                                long j20 = peer8.user_id;
+                                                                                if (j20 != 0) {
+                                                                                    j3 = j20;
                                                                                 } else {
-                                                                                    i26 = i20;
-                                                                                    if (update instanceof TL_update.TL_updateBotProfileWidgetData) {
-                                                                                        TL_update.TL_updateBotProfileWidgetData tL_updateBotProfileWidgetData = (TL_update.TL_updateBotProfileWidgetData) update;
-                                                                                        TLRPC.UserFull Y12 = uc7Var.Y1(tL_updateBotProfileWidgetData.bot_id);
-                                                                                        if (Y12 != null && (tL_botProfileWidget = Y12.bot_profile_widget) != null) {
-                                                                                            tL_botProfileWidget.chat_data = tL_updateBotProfileWidgetData.chat_data;
-                                                                                            uc7Var.getMessagesStorage().g2(Y12, true);
+                                                                                    long j21 = peer8.chat_id;
+                                                                                    j3 = j21 != 0 ? -j21 : -peer8.channel_id;
+                                                                                }
+                                                                            } else {
+                                                                                j3 = 0;
+                                                                            }
+                                                                            uc7Var.getMessagesStorage().H1(j3, tL_updateDialogUnreadMark.unread);
+                                                                            TLRPC.Dialog dialog4 = (TLRPC.Dialog) uc7Var.R.f(j3);
+                                                                            if (dialog4 != null) {
+                                                                                boolean z16 = dialog4.unread_mark;
+                                                                                boolean z17 = tL_updateDialogUnreadMark.unread;
+                                                                                if (z16 != z17) {
+                                                                                    dialog4.unread_mark = z17;
+                                                                                    if (dialog4.unread_count == 0) {
+                                                                                        uc7Var.o2(j3, 0L);
+                                                                                    }
+                                                                                    i41 |= 64;
+                                                                                    i25 |= 256;
+                                                                                }
+                                                                            }
+                                                                        } else if (update instanceof TL_update.TL_updateMessagePoll) {
+                                                                            TL_update.TL_updateMessagePoll tL_updateMessagePoll = (TL_update.TL_updateMessagePoll) update;
+                                                                            uc7Var.getNotificationCenter().k(jn7.f1, Long.valueOf(tL_updateMessagePoll.poll_id), tL_updateMessagePoll.poll, tL_updateMessagePoll.results);
+                                                                        } else if (update instanceof TL_update.TL_updatePeerSettings) {
+                                                                            TL_update.TL_updatePeerSettings tL_updatePeerSettings = (TL_update.TL_updatePeerSettings) update;
+                                                                            TLRPC.Peer peer9 = tL_updatePeerSettings.peer;
+                                                                            uc7Var.F4(peer9 instanceof TLRPC.TL_peerUser ? peer9.user_id : -(peer9 instanceof TLRPC.TL_peerChat ? peer9.chat_id : peer9.channel_id), tL_updatePeerSettings.settings);
+                                                                        } else if (update instanceof TL_update.TL_updatePeerLocated) {
+                                                                            uc7Var.getNotificationCenter().k(jn7.i1, update);
+                                                                        } else {
+                                                                            if (update instanceof TL_update.TL_updateMessageReactions) {
+                                                                                TL_update.TL_updateMessageReactions tL_updateMessageReactions = (TL_update.TL_updateMessageReactions) update;
+                                                                                long B1 = r47.B1(tL_updateMessageReactions.peer);
+                                                                                long A = jxa.t(uc7Var.currentAccount).A(tL_updateMessageReactions.msg_id, B1);
+                                                                                if (A != 0) {
+                                                                                    b3 = 0;
+                                                                                    r47.g(uc7Var.currentAccount, tL_updateMessageReactions.reactions, (int) A, jxa.t(uc7Var.currentAccount).y(cxa.a(tL_updateMessageReactions.msg_id, B1), tL_updateMessageReactions.reactions), true);
+                                                                                } else {
+                                                                                    b3 = 0;
+                                                                                }
+                                                                                jn7 notificationCenter2 = uc7Var.getNotificationCenter();
+                                                                                int i64 = jn7.o1;
+                                                                                Long valueOf3 = Long.valueOf(B1);
+                                                                                Integer valueOf4 = Integer.valueOf(tL_updateMessageReactions.msg_id);
+                                                                                TLRPC.TL_messageReactions tL_messageReactions = tL_updateMessageReactions.reactions;
+                                                                                Object[] objArr2 = new Object[3];
+                                                                                objArr2[b3] = valueOf3;
+                                                                                objArr2[1] = valueOf4;
+                                                                                objArr2[2] = tL_messageReactions;
+                                                                                notificationCenter2.k(i64, objArr2);
+                                                                            } else {
+                                                                                b3 = 0;
+                                                                                if (update instanceof TL_update.TL_updateMessageExtendedMedia) {
+                                                                                    TL_update.TL_updateMessageExtendedMedia tL_updateMessageExtendedMedia = (TL_update.TL_updateMessageExtendedMedia) update;
+                                                                                    uc7Var.getNotificationCenter().k(jn7.p1, Long.valueOf(wf3.n(tL_updateMessageExtendedMedia.peer)), Integer.valueOf(tL_updateMessageExtendedMedia.msg_id), tL_updateMessageExtendedMedia.extended_media);
+                                                                                } else if (update instanceof TL_update.TL_updateTheme) {
+                                                                                    aob.G1(null, null, (TLRPC.TL_theme) ((TL_update.TL_updateTheme) update).theme, uc7Var.currentAccount, true);
+                                                                                } else if (update instanceof TL_update.TL_updateDialogFilter) {
+                                                                                    uc7Var.k3(true, null);
+                                                                                } else if (update instanceof TL_update.TL_updateDialogFilterOrder) {
+                                                                                    uc7Var.k3(true, null);
+                                                                                } else if (update instanceof TL_update.TL_updateDialogFilters) {
+                                                                                    uc7Var.k3(true, null);
+                                                                                } else if (update instanceof TL_update.TL_updateRecentEmojiStatuses) {
+                                                                                    uc7Var.getNotificationCenter().k(jn7.C1, new Object[0]);
+                                                                                } else if (update instanceof TL_update.TL_updateWebViewResultSent) {
+                                                                                    uc7Var.getNotificationCenter().k(jn7.z1, Long.valueOf(((TL_update.TL_updateWebViewResultSent) update).query_id));
+                                                                                } else if (update instanceof TL_update.TL_updateAttachMenuBots) {
+                                                                                    uc7Var.getMediaDataController().F0();
+                                                                                } else if (update instanceof TL_update.TL_updateJoinChatWebViewDecision) {
+                                                                                    TL_update.TL_updateJoinChatWebViewDecision tL_updateJoinChatWebViewDecision = (TL_update.TL_updateJoinChatWebViewDecision) update;
+                                                                                    bq0.b(uc7Var.currentAccount).a(wf3.n(tL_updateJoinChatWebViewDecision.peer), tL_updateJoinChatWebViewDecision.query_id, tL_updateJoinChatWebViewDecision.result);
+                                                                                } else if (update instanceof TL_bots.TL_updateBotMenuButton) {
+                                                                                    TL_bots.TL_updateBotMenuButton tL_updateBotMenuButton = (TL_bots.TL_updateBotMenuButton) update;
+                                                                                    uc7Var.getNotificationCenter().k(jn7.T2, Long.valueOf(tL_updateBotMenuButton.bot_id), tL_updateBotMenuButton.button);
+                                                                                } else {
+                                                                                    if (update instanceof TL_update.TL_updateBotProfileWidget) {
+                                                                                        TL_update.TL_updateBotProfileWidget tL_updateBotProfileWidget = (TL_update.TL_updateBotProfileWidget) update;
+                                                                                        TLRPC.UserFull Y1 = uc7Var.Y1(tL_updateBotProfileWidget.bot_id);
+                                                                                        if (Y1 != null) {
+                                                                                            Y1.bot_profile_widget = tL_updateBotProfileWidget.widget;
+                                                                                            uc7Var.getMessagesStorage().l2(Y1, true);
+                                                                                            i27 = i21;
+                                                                                            uc7Var.getNotificationCenter().k(i27, Long.valueOf(tL_updateBotProfileWidget.bot_id), Y1);
+                                                                                        } else {
+                                                                                            i27 = i21;
                                                                                         }
-                                                                                        k0d.t(uc7Var.currentAccount, tL_updateBotProfileWidgetData.chat_data, tL_updateBotProfileWidgetData.bot_id);
                                                                                     } else {
-                                                                                        if (update instanceof TL_update.TL_updateReadChannelDiscussionInbox) {
+                                                                                        i27 = i21;
+                                                                                        if (update instanceof TL_update.TL_updateBotProfileWidgetData) {
+                                                                                            TL_update.TL_updateBotProfileWidgetData tL_updateBotProfileWidgetData = (TL_update.TL_updateBotProfileWidgetData) update;
+                                                                                            TLRPC.UserFull Y12 = uc7Var.Y1(tL_updateBotProfileWidgetData.bot_id);
+                                                                                            if (Y12 != null && (tL_botProfileWidget = Y12.bot_profile_widget) != null) {
+                                                                                                tL_botProfileWidget.chat_data = tL_updateBotProfileWidgetData.chat_data;
+                                                                                                uc7Var.getMessagesStorage().l2(Y12, true);
+                                                                                            }
+                                                                                            k0d.t(uc7Var.currentAccount, tL_updateBotProfileWidgetData.chat_data, tL_updateBotProfileWidgetData.bot_id);
+                                                                                        } else if (update instanceof TL_update.TL_updateReadChannelDiscussionInbox) {
                                                                                             TL_update.TL_updateReadChannelDiscussionInbox tL_updateReadChannelDiscussionInbox = (TL_update.TL_updateReadChannelDiscussionInbox) update;
-                                                                                            i27 = i22;
-                                                                                            uc7Var.getNotificationCenter().k(i27, Long.valueOf(-tL_updateReadChannelDiscussionInbox.channel_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.top_msg_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.read_max_id), 0);
+                                                                                            i28 = i23;
+                                                                                            uc7Var.getNotificationCenter().k(i28, Long.valueOf(-tL_updateReadChannelDiscussionInbox.channel_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.top_msg_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.read_max_id), 0);
                                                                                             if ((tL_updateReadChannelDiscussionInbox.flags & 1) != 0) {
-                                                                                                uc7Var.getMessagesStorage().a2(tL_updateReadChannelDiscussionInbox.read_max_id, 0, tL_updateReadChannelDiscussionInbox.broadcast_id, tL_updateReadChannelDiscussionInbox.broadcast_post);
+                                                                                                uc7Var.getMessagesStorage().f2(tL_updateReadChannelDiscussionInbox.read_max_id, 0, tL_updateReadChannelDiscussionInbox.broadcast_id, tL_updateReadChannelDiscussionInbox.broadcast_post);
                                                                                                 uc7Var.getNotificationCenter().k(jn7.A, Long.valueOf(tL_updateReadChannelDiscussionInbox.broadcast_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.broadcast_post), Integer.valueOf(tL_updateReadChannelDiscussionInbox.read_max_id));
                                                                                             }
                                                                                         } else {
-                                                                                            i27 = i22;
+                                                                                            i28 = i23;
                                                                                             if (update instanceof TL_update.TL_updateReadChannelDiscussionOutbox) {
                                                                                                 TL_update.TL_updateReadChannelDiscussionOutbox tL_updateReadChannelDiscussionOutbox = (TL_update.TL_updateReadChannelDiscussionOutbox) update;
-                                                                                                uc7Var.getNotificationCenter().k(i27, Long.valueOf(-tL_updateReadChannelDiscussionOutbox.channel_id), Integer.valueOf(tL_updateReadChannelDiscussionOutbox.top_msg_id), 0, Integer.valueOf(tL_updateReadChannelDiscussionOutbox.read_max_id));
-                                                                                            } else {
-                                                                                                if (update instanceof TL_update.TL_updateReadMonoForumInbox) {
-                                                                                                    TL_update.TL_updateReadMonoForumInbox tL_updateReadMonoForumInbox = (TL_update.TL_updateReadMonoForumInbox) update;
-                                                                                                    i28 = i21;
-                                                                                                    uc7Var.getNotificationCenter().k(i28, Long.valueOf(-tL_updateReadMonoForumInbox.channel_id), Long.valueOf(wf3.n(tL_updateReadMonoForumInbox.saved_peer_id)), Integer.valueOf(tL_updateReadMonoForumInbox.read_max_id), 0);
-                                                                                                    uc7Var.getMessagesStorage().a2(tL_updateReadMonoForumInbox.read_max_id, 0, tL_updateReadMonoForumInbox.channel_id, wf3.n(tL_updateReadMonoForumInbox.saved_peer_id));
-                                                                                                } else {
-                                                                                                    i28 = i21;
-                                                                                                    if (update instanceof TL_update.TL_updateReadMonoForumOutbox) {
-                                                                                                        TL_update.TL_updateReadMonoForumOutbox tL_updateReadMonoForumOutbox = (TL_update.TL_updateReadMonoForumOutbox) update;
-                                                                                                        uc7Var.getNotificationCenter().k(i28, Long.valueOf(-tL_updateReadMonoForumOutbox.channel_id), Long.valueOf(wf3.n(tL_updateReadMonoForumOutbox.saved_peer_id)), 0, Integer.valueOf(tL_updateReadMonoForumOutbox.read_max_id));
-                                                                                                    } else if (update instanceof TL_update.TL_updatePeerHistoryTTL) {
-                                                                                                        TL_update.TL_updatePeerHistoryTTL tL_updatePeerHistoryTTL = (TL_update.TL_updatePeerHistoryTTL) update;
-                                                                                                        long B12 = r47.B1(tL_updatePeerHistoryTTL.peer);
-                                                                                                        if (B12 > 0) {
-                                                                                                            TLRPC.UserFull Y13 = uc7Var.Y1(B12);
-                                                                                                            if (Y13 != null) {
-                                                                                                                int i65 = tL_updatePeerHistoryTTL.ttl_period;
-                                                                                                                Y13.ttl_period = i65;
-                                                                                                                int i66 = Y13.flags;
-                                                                                                                if (i65 == 0) {
-                                                                                                                    Y13.flags = i66 & (-16385);
-                                                                                                                } else {
-                                                                                                                    Y13.flags = i66 | TLObject.FLAG_14;
-                                                                                                                }
-                                                                                                            }
-                                                                                                            i42 = i28;
-                                                                                                            userFull = Y13;
-                                                                                                            N0 = null;
+                                                                                                uc7Var.getNotificationCenter().k(i28, Long.valueOf(-tL_updateReadChannelDiscussionOutbox.channel_id), Integer.valueOf(tL_updateReadChannelDiscussionOutbox.top_msg_id), 0, Integer.valueOf(tL_updateReadChannelDiscussionOutbox.read_max_id));
+                                                                                            } else if (update instanceof TL_update.TL_updateReadMonoForumInbox) {
+                                                                                                TL_update.TL_updateReadMonoForumInbox tL_updateReadMonoForumInbox = (TL_update.TL_updateReadMonoForumInbox) update;
+                                                                                                uc7Var.getNotificationCenter().k(i22, Long.valueOf(-tL_updateReadMonoForumInbox.channel_id), Long.valueOf(wf3.n(tL_updateReadMonoForumInbox.saved_peer_id)), Integer.valueOf(tL_updateReadMonoForumInbox.read_max_id), 0);
+                                                                                                uc7Var.getMessagesStorage().f2(tL_updateReadMonoForumInbox.read_max_id, 0, tL_updateReadMonoForumInbox.channel_id, wf3.n(tL_updateReadMonoForumInbox.saved_peer_id));
+                                                                                            } else if (update instanceof TL_update.TL_updateReadMonoForumOutbox) {
+                                                                                                TL_update.TL_updateReadMonoForumOutbox tL_updateReadMonoForumOutbox = (TL_update.TL_updateReadMonoForumOutbox) update;
+                                                                                                uc7Var.getNotificationCenter().k(i22, Long.valueOf(-tL_updateReadMonoForumOutbox.channel_id), Long.valueOf(wf3.n(tL_updateReadMonoForumOutbox.saved_peer_id)), 0, Integer.valueOf(tL_updateReadMonoForumOutbox.read_max_id));
+                                                                                                i22 = i22;
+                                                                                            } else if (update instanceof TL_update.TL_updatePeerHistoryTTL) {
+                                                                                                TL_update.TL_updatePeerHistoryTTL tL_updatePeerHistoryTTL = (TL_update.TL_updatePeerHistoryTTL) update;
+                                                                                                long B12 = r47.B1(tL_updatePeerHistoryTTL.peer);
+                                                                                                if (B12 > 0) {
+                                                                                                    TLRPC.UserFull Y13 = uc7Var.Y1(B12);
+                                                                                                    if (Y13 != null) {
+                                                                                                        int i65 = tL_updatePeerHistoryTTL.ttl_period;
+                                                                                                        Y13.ttl_period = i65;
+                                                                                                        int i66 = Y13.flags;
+                                                                                                        if (i65 == 0) {
+                                                                                                            Y13.flags = i66 & (-16385);
                                                                                                         } else {
-                                                                                                            i42 = i28;
-                                                                                                            N0 = uc7Var.N0(-B12);
-                                                                                                            if (N0 != null) {
-                                                                                                                int i67 = tL_updatePeerHistoryTTL.ttl_period;
-                                                                                                                N0.ttl_period = i67;
-                                                                                                                boolean z17 = N0 instanceof TLRPC.TL_channelFull;
-                                                                                                                int i68 = N0.flags;
-                                                                                                                if (z17) {
-                                                                                                                    if (i67 == 0) {
-                                                                                                                        N0.flags = i68 & (-16777217);
-                                                                                                                    } else {
-                                                                                                                        N0.flags = i68 | 16777216;
-                                                                                                                    }
-                                                                                                                } else if (i67 == 0) {
-                                                                                                                    N0.flags = i68 & (-16385);
-                                                                                                                } else {
-                                                                                                                    N0.flags = i68 | TLObject.FLAG_14;
-                                                                                                                }
-                                                                                                            }
-                                                                                                            userFull = null;
-                                                                                                        }
-                                                                                                        if (N0 != null) {
-                                                                                                            jn7 notificationCenter3 = uc7Var.getNotificationCenter();
-                                                                                                            int i69 = jn7.T;
-                                                                                                            j2 = B12;
-                                                                                                            Boolean bool4 = Boolean.FALSE;
-                                                                                                            notificationCenter3.k(i69, N0, 0, bool4, bool4);
-                                                                                                            uc7Var.getMessagesStorage().K1(N0, false);
-                                                                                                        } else {
-                                                                                                            j2 = B12;
-                                                                                                            if (userFull != null) {
-                                                                                                                uc7Var.getNotificationCenter().k(i26, Long.valueOf(j2), userFull);
-                                                                                                                uc7Var.getMessagesStorage().g2(userFull, false);
-                                                                                                            }
-                                                                                                        }
-                                                                                                        jf7 messagesStorage3 = uc7Var.getMessagesStorage();
-                                                                                                        messagesStorage3.a.c(new gd7(messagesStorage3, tL_updatePeerHistoryTTL.ttl_period, j2, (byte) 1));
-                                                                                                        TLRPC.Dialog dialog5 = (TLRPC.Dialog) uc7Var.R.f(j2);
-                                                                                                        if (dialog5 != null) {
-                                                                                                            dialog5.ttl_period = tL_updatePeerHistoryTTL.ttl_period;
-                                                                                                            uc7Var.getNotificationCenter().k(2, 0);
-                                                                                                        }
-                                                                                                    } else {
-                                                                                                        i42 = i28;
-                                                                                                        if (update instanceof TL_update.TL_updatePendingJoinRequests) {
-                                                                                                            uc7Var.getMemberRequestsController().b((TL_update.TL_updatePendingJoinRequests) update);
-                                                                                                        } else if (update instanceof TL_update.TL_updateSavedRingtones) {
-                                                                                                            uc7Var.getMediaDataController().A0.g(true);
-                                                                                                        } else if (update instanceof TL_update.TL_updateTranscribeAudio) {
-                                                                                                            cc4.d("Received legacy TL_updateTranscribeAudio update");
-                                                                                                        } else if (update instanceof TL_update.TL_updateTranscribedAudio) {
-                                                                                                            TL_update.TL_updateTranscribedAudio tL_updateTranscribedAudio = (TL_update.TL_updateTranscribedAudio) update;
-                                                                                                            if (f11.a) {
-                                                                                                                StringBuilder sb = new StringBuilder("Transcription update received, pending=");
-                                                                                                                sb.append(tL_updateTranscribedAudio.pending);
-                                                                                                                sb.append(" id=");
-                                                                                                                sb.append(tL_updateTranscribedAudio.transcription_id);
-                                                                                                                sb.append(" text=");
-                                                                                                                uh9.s(tL_updateTranscribedAudio.text, sb);
-                                                                                                            }
-                                                                                                            if ((!tL_updateTranscribedAudio.pending || !TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !u2c.f(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
-                                                                                                                uc7Var.getMessagesStorage().Y1(tL_updateTranscribedAudio.msg_id, wf3.n(tL_updateTranscribedAudio.peer), tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text, !tL_updateTranscribedAudio.pending);
-                                                                                                                uc7Var.getNotificationCenter().k(jn7.A1, null, Long.valueOf(tL_updateTranscribedAudio.transcription_id), tL_updateTranscribedAudio.text, null, Boolean.valueOf(!tL_updateTranscribedAudio.pending));
-                                                                                                            }
-                                                                                                        } else if (update instanceof TL_update.TL_updateSentStoryReaction) {
-                                                                                                            TL_update.TL_updateSentStoryReaction tL_updateSentStoryReaction = (TL_update.TL_updateSentStoryReaction) update;
-                                                                                                            uc7Var.O1().t0(wf3.n(tL_updateSentStoryReaction.peer), tL_updateSentStoryReaction.story_id, tL_updateSentStoryReaction.reaction);
-                                                                                                        } else if (update instanceof TL_update.TL_updateChannelViewForumAsMessages) {
-                                                                                                            TL_update.TL_updateChannelViewForumAsMessages tL_updateChannelViewForumAsMessages = (TL_update.TL_updateChannelViewForumAsMessages) update;
-                                                                                                            TLRPC.ChatFull N03 = uc7Var.N0(tL_updateChannelViewForumAsMessages.channel_id);
-                                                                                                            if (N03 != null) {
-                                                                                                                boolean z18 = N03.view_forum_as_messages;
-                                                                                                                boolean z19 = tL_updateChannelViewForumAsMessages.enabled;
-                                                                                                                if (z18 != z19) {
-                                                                                                                    N03.view_forum_as_messages = z19;
-                                                                                                                    int i70 = N03.flags2;
-                                                                                                                    if (z19) {
-                                                                                                                        N03.flags2 = i70 | 64;
-                                                                                                                    } else {
-                                                                                                                        N03.flags2 = i70 & (-65);
-                                                                                                                    }
-                                                                                                                    uc7Var.getMessagesStorage().K1(N03, false);
-                                                                                                                }
-                                                                                                            } else {
-                                                                                                                uc7Var.getMessagesController().e3(0, tL_updateChannelViewForumAsMessages.channel_id, true);
-                                                                                                            }
-                                                                                                            TLRPC.Dialog S0 = uc7Var.S0(-tL_updateChannelViewForumAsMessages.channel_id);
-                                                                                                            if (S0 != null) {
-                                                                                                                boolean z20 = S0.view_forum_as_messages;
-                                                                                                                boolean z21 = tL_updateChannelViewForumAsMessages.enabled;
-                                                                                                                if (z20 != z21) {
-                                                                                                                    S0.view_forum_as_messages = z21;
-                                                                                                                    jf7 messagesStorage4 = uc7Var.getMessagesStorage();
-                                                                                                                    messagesStorage4.a.c(new ge7(messagesStorage4, -tL_updateChannelViewForumAsMessages.channel_id, tL_updateChannelViewForumAsMessages.enabled, (byte) 1));
-                                                                                                                }
-                                                                                                            } else {
-                                                                                                                jf7 messagesStorage5 = uc7Var.getMessagesStorage();
-                                                                                                                messagesStorage5.a.c(new ge7(messagesStorage5, -tL_updateChannelViewForumAsMessages.channel_id, tL_updateChannelViewForumAsMessages.enabled, (byte) 1));
-                                                                                                            }
-                                                                                                        } else if ((update instanceof TL_update.TL_updatePinnedSavedDialogs) || (update instanceof TL_update.TL_updateSavedDialogPinned)) {
-                                                                                                            uc7Var.F1().h(update);
-                                                                                                        } else if (!b19.f(uc7Var.currentAccount).j(update, null, 0)) {
-                                                                                                            if (update instanceof TL_update.TL_updatePaidReactionPrivacy) {
-                                                                                                                SharedPreferences.Editor edit = uc7Var.X3.edit();
-                                                                                                                long currentTimeMillis = System.currentTimeMillis();
-                                                                                                                uc7Var.N3 = currentTimeMillis;
-                                                                                                                SharedPreferences.Editor putLong = edit.putLong("paidReactionsAnonymousTime", currentTimeMillis);
-                                                                                                                long dialogId = ((TL_update.TL_updatePaidReactionPrivacy) update).privacy.getDialogId();
-                                                                                                                uc7Var.O3 = Long.valueOf(dialogId);
-                                                                                                                putLong.putLong("paidReactionsDialogId", dialogId).apply();
-                                                                                                                uc7Var.c5 = false;
-                                                                                                            } else if (update instanceof TL_update.TL_updateGroupCallChainBlocks) {
-                                                                                                                VoIPService sharedInstance2 = VoIPService.getSharedInstance();
-                                                                                                                if (sharedInstance2 != null && (conferenceCall = sharedInstance2.conference) != null) {
-                                                                                                                    conferenceCall.applyUpdate(null, (TL_update.TL_updateGroupCallChainBlocks) update, true, null);
-                                                                                                                }
-                                                                                                            } else if (update instanceof TL_update.TL_updateChatParticipantRank) {
-                                                                                                                TL_update.TL_updateChatParticipantRank tL_updateChatParticipantRank = (TL_update.TL_updateChatParticipantRank) update;
-                                                                                                                uc7Var.D5(tL_updateChatParticipantRank.chat_id, tL_updateChatParticipantRank.user_id, tL_updateChatParticipantRank.rank);
-                                                                                                            } else if (update instanceof TL_update.TL_updateAiComposeTones) {
-                                                                                                                jc jcVar = uc7Var.j4;
-                                                                                                                if (jcVar != null) {
-                                                                                                                    jcVar.a();
-                                                                                                                }
-                                                                                                            } else if (update instanceof TL_update.TL_updateWebBrowserSettings) {
-                                                                                                                uc7Var.s((TL_update.TL_updateWebBrowserSettings) update);
-                                                                                                            } else if (update instanceof TL_update.TL_updateWebBrowserException) {
-                                                                                                                uc7Var.r((TL_update.TL_updateWebBrowserException) update);
-                                                                                                            } else {
-                                                                                                                a aVar = a.a;
-                                                                                                            }
+                                                                                                            Y13.flags = i66 | TLObject.FLAG_14;
                                                                                                         }
                                                                                                     }
+                                                                                                    j2 = B12;
+                                                                                                    userFull = Y13;
+                                                                                                    N0 = null;
+                                                                                                } else {
+                                                                                                    N0 = uc7Var.N0(-B12);
+                                                                                                    if (N0 != null) {
+                                                                                                        int i67 = tL_updatePeerHistoryTTL.ttl_period;
+                                                                                                        N0.ttl_period = i67;
+                                                                                                        boolean z18 = N0 instanceof TLRPC.TL_channelFull;
+                                                                                                        j2 = B12;
+                                                                                                        int i68 = N0.flags;
+                                                                                                        if (z18) {
+                                                                                                            if (i67 == 0) {
+                                                                                                                N0.flags = i68 & (-16777217);
+                                                                                                            } else {
+                                                                                                                N0.flags = i68 | 16777216;
+                                                                                                            }
+                                                                                                        } else if (i67 == 0) {
+                                                                                                            N0.flags = i68 & (-16385);
+                                                                                                        } else {
+                                                                                                            N0.flags = i68 | TLObject.FLAG_14;
+                                                                                                        }
+                                                                                                    } else {
+                                                                                                        j2 = B12;
+                                                                                                    }
+                                                                                                    userFull = null;
                                                                                                 }
-                                                                                                i42 = i28;
+                                                                                                if (N0 != null) {
+                                                                                                    jn7 notificationCenter3 = uc7Var.getNotificationCenter();
+                                                                                                    int i69 = jn7.T;
+                                                                                                    Boolean bool4 = Boolean.FALSE;
+                                                                                                    i22 = i22;
+                                                                                                    notificationCenter3.k(i69, N0, 0, bool4, bool4);
+                                                                                                    uc7Var.getMessagesStorage().P1(N0, false);
+                                                                                                } else {
+                                                                                                    i22 = i22;
+                                                                                                    if (userFull != null) {
+                                                                                                        uc7Var.getNotificationCenter().k(i27, Long.valueOf(j2), userFull);
+                                                                                                        uc7Var.getMessagesStorage().l2(userFull, false);
+                                                                                                    }
+                                                                                                }
+                                                                                                kf7 messagesStorage3 = uc7Var.getMessagesStorage();
+                                                                                                messagesStorage3.a.c(new id7(messagesStorage3, tL_updatePeerHistoryTTL.ttl_period, j2, (byte) 1));
+                                                                                                TLRPC.Dialog dialog5 = (TLRPC.Dialog) uc7Var.R.f(j2);
+                                                                                                if (dialog5 != null) {
+                                                                                                    dialog5.ttl_period = tL_updatePeerHistoryTTL.ttl_period;
+                                                                                                    uc7Var.getNotificationCenter().k(2, 0);
+                                                                                                }
+                                                                                            } else {
+                                                                                                i22 = i22;
+                                                                                                if (update instanceof TL_update.TL_updatePendingJoinRequests) {
+                                                                                                    uc7Var.getMemberRequestsController().b((TL_update.TL_updatePendingJoinRequests) update);
+                                                                                                } else if (update instanceof TL_update.TL_updateSavedRingtones) {
+                                                                                                    uc7Var.getMediaDataController().A0.g(true);
+                                                                                                } else if (update instanceof TL_update.TL_updateTranscribeAudio) {
+                                                                                                    cc4.d("Received legacy TL_updateTranscribeAudio update");
+                                                                                                } else if (update instanceof TL_update.TL_updateTranscribedAudio) {
+                                                                                                    TL_update.TL_updateTranscribedAudio tL_updateTranscribedAudio = (TL_update.TL_updateTranscribedAudio) update;
+                                                                                                    if (f11.a) {
+                                                                                                        StringBuilder sb = new StringBuilder("Transcription update received, pending=");
+                                                                                                        sb.append(tL_updateTranscribedAudio.pending);
+                                                                                                        sb.append(" id=");
+                                                                                                        sb.append(tL_updateTranscribedAudio.transcription_id);
+                                                                                                        sb.append(" text=");
+                                                                                                        uh9.s(tL_updateTranscribedAudio.text, sb);
+                                                                                                    }
+                                                                                                    if ((!tL_updateTranscribedAudio.pending || !TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !u2c.f(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
+                                                                                                        uc7Var.getMessagesStorage().d2(tL_updateTranscribedAudio.msg_id, wf3.n(tL_updateTranscribedAudio.peer), tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text, !tL_updateTranscribedAudio.pending);
+                                                                                                        uc7Var.getNotificationCenter().k(jn7.A1, null, Long.valueOf(tL_updateTranscribedAudio.transcription_id), tL_updateTranscribedAudio.text, null, Boolean.valueOf(!tL_updateTranscribedAudio.pending));
+                                                                                                    }
+                                                                                                } else if (update instanceof TL_update.TL_updateSentStoryReaction) {
+                                                                                                    TL_update.TL_updateSentStoryReaction tL_updateSentStoryReaction = (TL_update.TL_updateSentStoryReaction) update;
+                                                                                                    uc7Var.O1().t0(wf3.n(tL_updateSentStoryReaction.peer), tL_updateSentStoryReaction.story_id, tL_updateSentStoryReaction.reaction);
+                                                                                                } else if (update instanceof TL_update.TL_updateChannelViewForumAsMessages) {
+                                                                                                    TL_update.TL_updateChannelViewForumAsMessages tL_updateChannelViewForumAsMessages = (TL_update.TL_updateChannelViewForumAsMessages) update;
+                                                                                                    TLRPC.ChatFull N03 = uc7Var.N0(tL_updateChannelViewForumAsMessages.channel_id);
+                                                                                                    if (N03 != null) {
+                                                                                                        boolean z19 = N03.view_forum_as_messages;
+                                                                                                        boolean z20 = tL_updateChannelViewForumAsMessages.enabled;
+                                                                                                        if (z19 != z20) {
+                                                                                                            N03.view_forum_as_messages = z20;
+                                                                                                            int i70 = N03.flags2;
+                                                                                                            if (z20) {
+                                                                                                                N03.flags2 = i70 | 64;
+                                                                                                            } else {
+                                                                                                                N03.flags2 = i70 & (-65);
+                                                                                                            }
+                                                                                                            uc7Var.getMessagesStorage().P1(N03, false);
+                                                                                                        }
+                                                                                                    } else {
+                                                                                                        uc7Var.getMessagesController().e3(0, tL_updateChannelViewForumAsMessages.channel_id, true);
+                                                                                                    }
+                                                                                                    TLRPC.Dialog S0 = uc7Var.S0(-tL_updateChannelViewForumAsMessages.channel_id);
+                                                                                                    if (S0 != null) {
+                                                                                                        boolean z21 = S0.view_forum_as_messages;
+                                                                                                        boolean z22 = tL_updateChannelViewForumAsMessages.enabled;
+                                                                                                        if (z21 != z22) {
+                                                                                                            S0.view_forum_as_messages = z22;
+                                                                                                            kf7 messagesStorage4 = uc7Var.getMessagesStorage();
+                                                                                                            messagesStorage4.a.c(new he7(messagesStorage4, -tL_updateChannelViewForumAsMessages.channel_id, tL_updateChannelViewForumAsMessages.enabled, (byte) 1));
+                                                                                                        }
+                                                                                                    } else {
+                                                                                                        kf7 messagesStorage5 = uc7Var.getMessagesStorage();
+                                                                                                        messagesStorage5.a.c(new he7(messagesStorage5, -tL_updateChannelViewForumAsMessages.channel_id, tL_updateChannelViewForumAsMessages.enabled, (byte) 1));
+                                                                                                    }
+                                                                                                } else if ((update instanceof TL_update.TL_updatePinnedSavedDialogs) || (update instanceof TL_update.TL_updateSavedDialogPinned)) {
+                                                                                                    uc7Var.F1().h(update);
+                                                                                                } else if (!b19.f(uc7Var.currentAccount).j(update, null, 0)) {
+                                                                                                    if (update instanceof TL_update.TL_updatePaidReactionPrivacy) {
+                                                                                                        SharedPreferences.Editor edit = uc7Var.Y3.edit();
+                                                                                                        long currentTimeMillis = System.currentTimeMillis();
+                                                                                                        uc7Var.O3 = currentTimeMillis;
+                                                                                                        SharedPreferences.Editor putLong = edit.putLong("paidReactionsAnonymousTime", currentTimeMillis);
+                                                                                                        long dialogId = ((TL_update.TL_updatePaidReactionPrivacy) update).privacy.getDialogId();
+                                                                                                        uc7Var.P3 = Long.valueOf(dialogId);
+                                                                                                        putLong.putLong("paidReactionsDialogId", dialogId).apply();
+                                                                                                        uc7Var.d5 = false;
+                                                                                                    } else if (update instanceof TL_update.TL_updateGroupCallChainBlocks) {
+                                                                                                        VoIPService sharedInstance2 = VoIPService.getSharedInstance();
+                                                                                                        if (sharedInstance2 != null && (conferenceCall = sharedInstance2.conference) != null) {
+                                                                                                            conferenceCall.applyUpdate(null, (TL_update.TL_updateGroupCallChainBlocks) update, true, null);
+                                                                                                        }
+                                                                                                    } else if (update instanceof TL_update.TL_updateChatParticipantRank) {
+                                                                                                        TL_update.TL_updateChatParticipantRank tL_updateChatParticipantRank = (TL_update.TL_updateChatParticipantRank) update;
+                                                                                                        uc7Var.D5(tL_updateChatParticipantRank.chat_id, tL_updateChatParticipantRank.user_id, tL_updateChatParticipantRank.rank);
+                                                                                                    } else if (update instanceof TL_update.TL_updateAiComposeTones) {
+                                                                                                        jc jcVar = uc7Var.k4;
+                                                                                                        if (jcVar != null) {
+                                                                                                            jcVar.a();
+                                                                                                        }
+                                                                                                    } else if (update instanceof TL_update.TL_updateWebBrowserSettings) {
+                                                                                                        uc7Var.s((TL_update.TL_updateWebBrowserSettings) update);
+                                                                                                    } else if (update instanceof TL_update.TL_updateWebBrowserException) {
+                                                                                                        uc7Var.r((TL_update.TL_updateWebBrowserException) update);
+                                                                                                    } else {
+                                                                                                        a aVar = a.a;
+                                                                                                    }
+                                                                                                }
                                                                                             }
                                                                                         }
-                                                                                        i42 = i21;
                                                                                     }
+                                                                                    i28 = i23;
                                                                                 }
-                                                                                i42 = i21;
-                                                                                i27 = i22;
                                                                             }
+                                                                            i28 = i23;
+                                                                            i27 = i21;
                                                                         }
-                                                                        i42 = i21;
-                                                                        i27 = i22;
-                                                                        i26 = i20;
                                                                     }
                                                                     arrayList14 = arrayList2;
                                                                     arrayList15 = arrayList11;
-                                                                    i37 = i26;
-                                                                    i38 = i25;
-                                                                    i35 = i27;
-                                                                    i34 = i42;
-                                                                    size = i18;
-                                                                    i36 = i23;
+                                                                    i37 = i27;
+                                                                    i38 = i26;
+                                                                    i35 = i28;
+                                                                    size = i19;
+                                                                    i34 = i22;
+                                                                    i36 = i24;
                                                                     arrayList16 = arrayList10;
                                                                     b4 = b3;
                                                                     arrayList13 = arrayList;
-                                                                    i40 = i19 + 1;
-                                                                    i39 = i24;
+                                                                    i40 = i20 + 1;
+                                                                    i39 = i25;
                                                                 }
                                                             }
                                                         }
                                                     }
                                                     b3 = 0;
-                                                    i42 = i21;
-                                                    i27 = i22;
-                                                    i26 = i20;
+                                                    i28 = i23;
+                                                    i27 = i21;
                                                     arrayList14 = arrayList2;
                                                     arrayList15 = arrayList11;
-                                                    i37 = i26;
-                                                    i38 = i25;
-                                                    i35 = i27;
-                                                    i34 = i42;
-                                                    size = i18;
-                                                    i36 = i23;
+                                                    i37 = i27;
+                                                    i38 = i26;
+                                                    i35 = i28;
+                                                    size = i19;
+                                                    i34 = i22;
+                                                    i36 = i24;
                                                     arrayList16 = arrayList10;
                                                     b4 = b3;
                                                     arrayList13 = arrayList;
-                                                    i40 = i19 + 1;
-                                                    i39 = i24;
+                                                    i40 = i20 + 1;
+                                                    i39 = i25;
                                                 }
                                             }
-                                            i25 = i48;
+                                            i26 = i48;
                                             b3 = b2;
-                                            i24 = i50;
-                                            i42 = i21;
-                                            i27 = i22;
-                                            i26 = i20;
+                                            i25 = i50;
+                                            i28 = i23;
+                                            i27 = i21;
                                             arrayList14 = arrayList2;
                                             arrayList15 = arrayList11;
-                                            i37 = i26;
-                                            i38 = i25;
-                                            i35 = i27;
-                                            i34 = i42;
-                                            size = i18;
-                                            i36 = i23;
+                                            i37 = i27;
+                                            i38 = i26;
+                                            i35 = i28;
+                                            size = i19;
+                                            i34 = i22;
+                                            i36 = i24;
                                             arrayList16 = arrayList10;
                                             b4 = b3;
                                             arrayList13 = arrayList;
-                                            i40 = i19 + 1;
-                                            i39 = i24;
+                                            i40 = i20 + 1;
+                                            i39 = i25;
                                         }
                                     }
                                 }
-                                i42 = i21;
-                                i27 = i22;
-                                i26 = i20;
+                                i28 = i23;
+                                i27 = i21;
                                 arrayList11 = arrayList9;
                                 b3 = 0;
                                 arrayList14 = arrayList2;
                                 arrayList15 = arrayList11;
-                                i37 = i26;
-                                i38 = i25;
-                                i35 = i27;
-                                i34 = i42;
-                                size = i18;
-                                i36 = i23;
+                                i37 = i27;
+                                i38 = i26;
+                                i35 = i28;
+                                size = i19;
+                                i34 = i22;
+                                i36 = i24;
                                 arrayList16 = arrayList10;
                                 b4 = b3;
                                 arrayList13 = arrayList;
-                                i40 = i19 + 1;
-                                i39 = i24;
+                                i40 = i20 + 1;
+                                i39 = i25;
                             }
                         }
+                        i19 = i18;
                         arrayList11 = arrayList15;
                         arrayList10 = arrayList16;
-                        i19 = i40;
-                        i24 = i39;
-                        i26 = i37;
+                        i20 = i40;
+                        i25 = i39;
+                        i27 = i37;
                         b3 = b4;
-                        i25 = i38;
-                        i27 = i16;
-                        i23 = i17;
+                        i26 = i38;
+                        i22 = i42;
+                        i28 = i16;
+                        i24 = i17;
                         arrayList14 = arrayList2;
                         arrayList15 = arrayList11;
-                        i37 = i26;
-                        i38 = i25;
-                        i35 = i27;
-                        i34 = i42;
-                        size = i18;
-                        i36 = i23;
+                        i37 = i27;
+                        i38 = i26;
+                        i35 = i28;
+                        size = i19;
+                        i34 = i22;
+                        i36 = i24;
                         arrayList16 = arrayList10;
                         b4 = b3;
                         arrayList13 = arrayList;
-                        i40 = i19 + 1;
-                        i39 = i24;
+                        i40 = i20 + 1;
+                        i39 = i25;
                     }
                 }
                 arrayList10 = arrayList16;
-                i18 = size;
-                i19 = i40;
-                i24 = i39;
-                i26 = i37;
+                i19 = size;
+                i20 = i40;
+                i25 = i39;
+                i27 = i37;
                 b3 = b4;
-                i25 = i38;
-                i27 = i16;
-                i23 = i17;
+                i26 = i38;
+                i22 = i42;
+                i28 = i16;
+                i24 = i17;
                 arrayList11 = arrayList15;
                 arrayList14 = arrayList2;
                 arrayList15 = arrayList11;
-                i37 = i26;
-                i38 = i25;
-                i35 = i27;
-                i34 = i42;
-                size = i18;
-                i36 = i23;
+                i37 = i27;
+                i38 = i26;
+                i35 = i28;
+                size = i19;
+                i34 = i22;
+                i36 = i24;
                 arrayList16 = arrayList10;
                 b4 = b3;
                 arrayList13 = arrayList;
-                i40 = i19 + 1;
-                i39 = i24;
+                i40 = i20 + 1;
+                i39 = i25;
             }
             i3 = i36;
             ArrayList arrayList22 = arrayList15;
@@ -12492,8 +12534,8 @@ public final class uc7 extends rf0 implements fn7 {
             } else {
                 z5 = false;
             }
-            uc7Var.getMessagesStorage().h2(arrayList23, true);
-            uc7Var.getMessagesStorage().h2(arrayList22, z5);
+            uc7Var.getMessagesStorage().m2(arrayList23, true);
+            uc7Var.getMessagesStorage().m2(arrayList22, z5);
             i7 = i41;
         } else {
             i3 = i36;
@@ -12533,7 +12575,7 @@ public final class uc7 extends rf0 implements fn7 {
                         objArr3[b] = Long.valueOf(B13);
                         objArr3[c] = Y14;
                         notificationCenter4.k(i4, objArr3);
-                        uc7Var.getMessagesStorage().g2(Y14, false);
+                        uc7Var.getMessagesStorage().l2(Y14, false);
                     }
                 }
             }
@@ -12613,7 +12655,7 @@ public final class uc7 extends rf0 implements fn7 {
                         i13 = i77;
                         if (!arrayList25.isEmpty()) {
                             int i81 = i12;
-                            uc7Var.getMessagesStorage().f1(uc7Var.getDownloadController().l(), i81, 0L, arrayList25, true);
+                            uc7Var.getMessagesStorage().j1(uc7Var.getDownloadController().l(), i81, 0L, arrayList25, true);
                             i14 = i81;
                             jn7 notificationCenter6 = uc7Var.getNotificationCenter();
                             Object[] objArr5 = new Object[2];
@@ -12661,13 +12703,13 @@ public final class uc7 extends rf0 implements fn7 {
         }
         if (zh6Var3 != null) {
             int m3 = zh6Var3.m();
-            boolean z22 = false;
+            boolean z23 = false;
             for (int i84 = 0; i84 < m3; i84++) {
                 if (uc7Var.z5(0, zh6Var3.j(i84), (ArrayList) zh6Var3.n(i84))) {
-                    z22 = true;
+                    z23 = true;
                 }
             }
-            if (uc7Var.p(arrayList5) || (!z22 && z2)) {
+            if (uc7Var.p(arrayList5) || (!z23 && z2)) {
                 uc7Var.h5(null);
             }
         } else {
@@ -12684,7 +12726,7 @@ public final class uc7 extends rf0 implements fn7 {
                 zh6Var11 = zh6Var5;
                 if (zh6Var11 != null) {
                     int m5 = zh6Var11.m();
-                    boolean z23 = z3;
+                    boolean z24 = z3;
                     int i86 = 0;
                     while (i86 < m5) {
                         long j23 = zh6Var11.j(i86);
@@ -12750,7 +12792,7 @@ public final class uc7 extends rf0 implements fn7 {
                                         r47Var4.C = r47Var5;
                                         r47Var4.q0(null, null);
                                     }
-                                    z23 = true;
+                                    z24 = true;
                                     break;
                                 }
                             }
@@ -12766,7 +12808,7 @@ public final class uc7 extends rf0 implements fn7 {
                         m5 = i89;
                         zh6Var11 = zh6Var5;
                     }
-                    z3 = z23;
+                    z3 = z24;
                 }
                 if (n44Var != null) {
                     int m6 = n44Var.a.c.m();
@@ -12834,12 +12876,12 @@ public final class uc7 extends rf0 implements fn7 {
                 if (arrayList7 != null) {
                     int size12 = arrayList7.size();
                     for (int i97 = i8; i97 < size12; i97++) {
-                        uc7Var.getMessagesStorage().L1((TLRPC.ChatParticipants) arrayList7.get(i97));
+                        uc7Var.getMessagesStorage().Q1((TLRPC.ChatParticipants) arrayList7.get(i97));
                     }
                 }
                 if (zh6Var7 != null && zh6Var8 == null && zh6Var9 == null) {
-                    i9 = 1;
                     i10 = 2;
+                    i9 = 1;
                 } else {
                     jn7 notificationCenter11 = uc7Var.getNotificationCenter();
                     int i98 = jn7.O0;
@@ -12919,7 +12961,7 @@ public final class uc7 extends rf0 implements fn7 {
     
         r2 = new java.lang.StringBuilder("need get diff TL_updatesCombined, seq: ");
         r3 = r0.getMessagesStorage();
-        r3.G();
+        r3.I();
         r2.append(r3.w);
         r2.append(r9);
         c00.q(r36.seq_start, r2);
@@ -12928,7 +12970,7 @@ public final class uc7 extends rf0 implements fn7 {
     
         r2 = new java.lang.StringBuilder("need get diff TL_updates, seq: ");
         r3 = r0.getMessagesStorage();
-        r3.G();
+        r3.I();
         r2.append(r3.w);
         r2.append(r9);
         c00.q(r36.seq, r2);
@@ -13022,7 +13064,7 @@ public final class uc7 extends rf0 implements fn7 {
     
         r15.put(r10, r8.pts);
         r1 = r0.getMessagesStorage();
-        r1.a.c(new gd7(r1, r8.pts, r10, 5));
+        r1.a.c(new id7(r1, r8.pts, r10, 5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:447:0x0509, code lost:
     
@@ -13222,7 +13264,7 @@ public final class uc7 extends rf0 implements fn7 {
                                 arrayList5 = arrayList6;
                                 TLRPC.Chat M02 = uc7Var.M0(Long.valueOf(chat3.id));
                                 if (M02 == null || M02.min) {
-                                    M02 = uc7Var.getMessagesStorage().O(updates.chat_id);
+                                    M02 = uc7Var.getMessagesStorage().Q(updates.chat_id);
                                     uc7Var.a4(M02, true);
                                 }
                                 if (M02 == null || M02.min) {
@@ -13249,8 +13291,8 @@ public final class uc7 extends rf0 implements fn7 {
                                         }
                                         b = 1;
                                         if (b != 0) {
-                                            uc7Var.getMessagesStorage().j1(updates.users, updates.chats, true, true);
-                                            Collections.sort(updates.updates, uc7Var.u4);
+                                            uc7Var.getMessagesStorage().n1(updates.users, updates.chats, true, true);
+                                            Collections.sort(updates.updates, uc7Var.v4);
                                             byte b4 = b;
                                             z11 = false;
                                             arrayList2 = null;
@@ -13277,7 +13319,7 @@ public final class uc7 extends rf0 implements fn7 {
                                                         long S1 = S1(update4);
                                                         int i6 = longSparseIntArray.get(S1);
                                                         if (i6 == 0) {
-                                                            i6 = uc7Var.getMessagesStorage().M(S1);
+                                                            i6 = uc7Var.getMessagesStorage().O(S1);
                                                             if (i6 == 0) {
                                                                 int i7 = 0;
                                                                 while (true) {
@@ -13382,21 +13424,21 @@ public final class uc7 extends rf0 implements fn7 {
                                                             updates.updates.remove(1);
                                                             j9 = j7;
                                                         }
-                                                        jf7 messagesStorage = uc7Var.getMessagesStorage();
-                                                        messagesStorage.G();
+                                                        kf7 messagesStorage = uc7Var.getMessagesStorage();
+                                                        messagesStorage.I();
                                                         if (messagesStorage.s != 0) {
-                                                            jf7 messagesStorage2 = uc7Var.getMessagesStorage();
-                                                            messagesStorage2.G();
+                                                            kf7 messagesStorage2 = uc7Var.getMessagesStorage();
+                                                            messagesStorage2.I();
                                                             if (tL_updates2.updates.size() + messagesStorage2.s != tL_updates2.pts) {
-                                                                jf7 messagesStorage3 = uc7Var.getMessagesStorage();
-                                                                messagesStorage3.G();
+                                                                kf7 messagesStorage3 = uc7Var.getMessagesStorage();
+                                                                messagesStorage3.I();
                                                                 if (messagesStorage3.r != tL_updates2.pts) {
                                                                     if (f11.a) {
                                                                         StringBuilder sb = new StringBuilder();
                                                                         sb.append(update4);
                                                                         sb.append(" need get diff, qts: ");
-                                                                        jf7 messagesStorage4 = uc7Var.getMessagesStorage();
-                                                                        messagesStorage4.G();
+                                                                        kf7 messagesStorage4 = uc7Var.getMessagesStorage();
+                                                                        messagesStorage4.I();
                                                                         sb.append(messagesStorage4.s);
                                                                         sb.append(str2);
                                                                         c00.q(tL_updates2.pts, sb);
@@ -13434,7 +13476,7 @@ public final class uc7 extends rf0 implements fn7 {
                                                         }
                                                         arrayList3 = arrayList8;
                                                         uc7Var.X3(tL_updates2.updates, updates.users, updates.chats, false, updates.date);
-                                                        uc7Var.getMessagesStorage().G1(tL_updates2.pts);
+                                                        uc7Var.getMessagesStorage().L1(tL_updates2.pts);
                                                         b4 = b2;
                                                         z11 = true;
                                                         arrayList7 = arrayList3;
@@ -13459,20 +13501,20 @@ public final class uc7 extends rf0 implements fn7 {
                                                         tL_updates3.pts_count += U12;
                                                         updates.updates.remove(b3);
                                                     }
-                                                    jf7 messagesStorage5 = uc7Var.getMessagesStorage();
-                                                    messagesStorage5.G();
+                                                    kf7 messagesStorage5 = uc7Var.getMessagesStorage();
+                                                    messagesStorage5.I();
                                                     if (messagesStorage5.r + tL_updates3.pts_count == tL_updates3.pts) {
                                                         zh6Var3 = zh6Var4;
                                                         str2 = str3;
                                                         b2 = b4;
                                                         if (uc7Var.X3(tL_updates3.updates, updates.users, updates.chats, false, updates.date)) {
-                                                            uc7Var.getMessagesStorage().F1(tL_updates3.pts);
+                                                            uc7Var.getMessagesStorage().K1(tL_updates3.pts);
                                                             arrayList4 = arrayList7;
                                                         } else {
                                                             if (f11.a) {
                                                                 StringBuilder sb2 = new StringBuilder("need get diff inner TL_updates, pts: ");
-                                                                jf7 messagesStorage6 = uc7Var.getMessagesStorage();
-                                                                messagesStorage6.G();
+                                                                kf7 messagesStorage6 = uc7Var.getMessagesStorage();
+                                                                messagesStorage6.I();
                                                                 sb2.append(messagesStorage6.r);
                                                                 sb2.append(str2);
                                                                 c00.q(updates.seq, sb2);
@@ -13484,15 +13526,15 @@ public final class uc7 extends rf0 implements fn7 {
                                                         str2 = str3;
                                                         zh6Var3 = zh6Var4;
                                                         b2 = b4;
-                                                        jf7 messagesStorage7 = uc7Var.getMessagesStorage();
-                                                        messagesStorage7.G();
+                                                        kf7 messagesStorage7 = uc7Var.getMessagesStorage();
+                                                        messagesStorage7.I();
                                                         if (messagesStorage7.r != tL_updates3.pts) {
                                                             if (f11.a) {
                                                                 StringBuilder sb3 = new StringBuilder();
                                                                 sb3.append(update4);
                                                                 sb3.append(" need get diff, pts: ");
-                                                                jf7 messagesStorage8 = uc7Var.getMessagesStorage();
-                                                                messagesStorage8.G();
+                                                                kf7 messagesStorage8 = uc7Var.getMessagesStorage();
+                                                                messagesStorage8.I();
                                                                 sb3.append(messagesStorage8.r);
                                                                 sb3.append(str2);
                                                                 sb3.append(tL_updates3.pts);
@@ -13524,29 +13566,29 @@ public final class uc7 extends rf0 implements fn7 {
                                             b4 = b2;
                                             boolean z19 = updates instanceof TLRPC.TL_updatesCombined;
                                             if (z19) {
-                                                jf7 messagesStorage9 = uc7Var.getMessagesStorage();
-                                                messagesStorage9.G();
+                                                kf7 messagesStorage9 = uc7Var.getMessagesStorage();
+                                                messagesStorage9.I();
                                                 if (messagesStorage9.w + 1 != updates.seq_start) {
-                                                    jf7 messagesStorage10 = uc7Var.getMessagesStorage();
-                                                    messagesStorage10.G();
+                                                    kf7 messagesStorage10 = uc7Var.getMessagesStorage();
+                                                    messagesStorage10.I();
                                                 }
                                                 zh6Var = zh6Var2;
                                                 uc7Var.X3(updates.updates, updates.users, updates.chats, false, updates.date);
                                                 if (updates.seq != 0) {
                                                     if (updates.date != 0) {
-                                                        uc7Var.getMessagesStorage().E1(updates.date);
+                                                        uc7Var.getMessagesStorage().J1(updates.date);
                                                     }
-                                                    uc7Var.getMessagesStorage().H1(updates.seq);
+                                                    uc7Var.getMessagesStorage().M1(updates.seq);
                                                 }
                                                 b3 = b4;
                                             } else {
-                                                jf7 messagesStorage11 = uc7Var.getMessagesStorage();
-                                                messagesStorage11.G();
+                                                kf7 messagesStorage11 = uc7Var.getMessagesStorage();
+                                                messagesStorage11.I();
                                                 int i9 = messagesStorage11.w + 1;
                                                 int i10 = updates.seq;
                                                 if (i9 != i10 && i10 != 0) {
-                                                    jf7 messagesStorage12 = uc7Var.getMessagesStorage();
-                                                    messagesStorage12.G();
+                                                    kf7 messagesStorage12 = uc7Var.getMessagesStorage();
+                                                    messagesStorage12.I();
                                                 }
                                                 zh6Var = zh6Var2;
                                                 uc7Var.X3(updates.updates, updates.users, updates.chats, false, updates.date);
@@ -13580,15 +13622,15 @@ public final class uc7 extends rf0 implements fn7 {
                         zh6Var = zh6Var4;
                         z8 = false;
                     } else if (updates instanceof tc7) {
-                        uc7Var.getMessagesStorage().H1(updates.seq);
+                        uc7Var.getMessagesStorage().M1(updates.seq);
                     } else if (updates instanceof sc7) {
                         long j12 = updates.chat_id;
                         if (j12 != 0) {
                             longSparseIntArray.put(j12, updates.pts);
-                            jf7 messagesStorage13 = uc7Var.getMessagesStorage();
-                            messagesStorage13.a.c(new gd7(messagesStorage13, updates.pts, updates.chat_id, (byte) 5));
+                            kf7 messagesStorage13 = uc7Var.getMessagesStorage();
+                            messagesStorage13.a.c(new id7(messagesStorage13, updates.pts, updates.chat_id, (byte) 5));
                         } else {
-                            uc7Var.getMessagesStorage().F1(updates.pts);
+                            uc7Var.getMessagesStorage().K1(updates.pts);
                         }
                     }
                     uc7Var.getSecretChatHelper().m();
@@ -13611,27 +13653,27 @@ public final class uc7 extends rf0 implements fn7 {
                     }
                     if (z10) {
                         TLRPC.TL_messages_receivedQueue tL_messages_receivedQueue = new TLRPC.TL_messages_receivedQueue();
-                        jf7 messagesStorage14 = uc7Var.getMessagesStorage();
-                        messagesStorage14.G();
+                        kf7 messagesStorage14 = uc7Var.getMessagesStorage();
+                        messagesStorage14.I();
                         tL_messages_receivedQueue.max_qts = messagesStorage14.s;
                         uc7Var.getConnectionsManager().sendRequest(tL_messages_receivedQueue, null);
                     }
                     if (z8) {
                         hl.c3(new pa7(uc7Var, (byte) 17));
                     }
-                    jf7 messagesStorage15 = uc7Var.getMessagesStorage();
-                    jf7 messagesStorage16 = uc7Var.getMessagesStorage();
-                    messagesStorage16.G();
+                    kf7 messagesStorage15 = uc7Var.getMessagesStorage();
+                    kf7 messagesStorage16 = uc7Var.getMessagesStorage();
+                    messagesStorage16.I();
                     int i13 = messagesStorage16.w;
-                    jf7 messagesStorage17 = uc7Var.getMessagesStorage();
-                    messagesStorage17.G();
+                    kf7 messagesStorage17 = uc7Var.getMessagesStorage();
+                    messagesStorage17.I();
                     int i14 = messagesStorage17.r;
-                    jf7 messagesStorage18 = uc7Var.getMessagesStorage();
-                    messagesStorage18.G();
+                    kf7 messagesStorage18 = uc7Var.getMessagesStorage();
+                    messagesStorage18.I();
                     int i15 = messagesStorage18.n;
-                    jf7 messagesStorage19 = uc7Var.getMessagesStorage();
-                    messagesStorage19.G();
-                    messagesStorage15.x1(i13, i14, i15, messagesStorage19.s);
+                    kf7 messagesStorage19 = uc7Var.getMessagesStorage();
+                    messagesStorage19.I();
+                    messagesStorage15.B1(i13, i14, i15, messagesStorage19.s);
                 }
                 j2 = updates.user_id;
                 str = " ";
@@ -13643,7 +13685,7 @@ public final class uc7 extends rf0 implements fn7 {
             TLRPC.User X1 = uc7Var.X1(Long.valueOf(j14));
             cc4.b("update message short userId = " + j14);
             if (X1 == null || X1.min) {
-                X1 = uc7Var.getMessagesStorage().h0(j14);
+                X1 = uc7Var.getMessagesStorage().j0(j14);
                 if (X1 != null && X1.min) {
                     X1 = null;
                 }
@@ -13655,7 +13697,7 @@ public final class uc7 extends rf0 implements fn7 {
                 if (peer instanceof TLRPC.TL_peerUser) {
                     user = uc7Var.X1(Long.valueOf(peer.user_id));
                     if (user == null) {
-                        user = uc7Var.getMessagesStorage().h0(updates.fwd_from.from_id.user_id);
+                        user = uc7Var.getMessagesStorage().j0(updates.fwd_from.from_id.user_id);
                         uc7Var.i4(user, true, false);
                     }
                     chat = null;
@@ -13663,13 +13705,13 @@ public final class uc7 extends rf0 implements fn7 {
                     if (peer instanceof TLRPC.TL_peerChannel) {
                         M0 = uc7Var.M0(Long.valueOf(peer.channel_id));
                         if (M0 == null) {
-                            M0 = uc7Var.getMessagesStorage().O(updates.fwd_from.from_id.channel_id);
+                            M0 = uc7Var.getMessagesStorage().Q(updates.fwd_from.from_id.channel_id);
                             uc7Var.a4(M0, true);
                         }
                     } else if (peer instanceof TLRPC.TL_peerChat) {
                         M0 = uc7Var.M0(Long.valueOf(peer.chat_id));
                         if (M0 == null) {
-                            M0 = uc7Var.getMessagesStorage().O(updates.fwd_from.from_id.chat_id);
+                            M0 = uc7Var.getMessagesStorage().Q(updates.fwd_from.from_id.chat_id);
                             uc7Var.a4(M0, true);
                         }
                     }
@@ -13683,7 +13725,7 @@ public final class uc7 extends rf0 implements fn7 {
                     if (user3 == null) {
                         user2 = user;
                         chat2 = chat;
-                        user3 = uc7Var.getMessagesStorage().h0(updates.via_bot_id);
+                        user3 = uc7Var.getMessagesStorage().j0(updates.via_bot_id);
                         uc7Var.i4(user3, true, false);
                     } else {
                         user2 = user;
@@ -13704,7 +13746,7 @@ public final class uc7 extends rf0 implements fn7 {
                     if (M03 == null) {
                         z6 = z2;
                         user4 = user3;
-                        M03 = uc7Var.getMessagesStorage().O(updates.chat_id);
+                        M03 = uc7Var.getMessagesStorage().Q(updates.chat_id);
                         uc7Var.a4(M03, true);
                     } else {
                         z6 = z2;
@@ -13726,11 +13768,11 @@ public final class uc7 extends rf0 implements fn7 {
                             long j15 = ((TLRPC.TL_messageEntityMentionName) messageEntity).user_id;
                             TLRPC.User X12 = uc7Var.X1(Long.valueOf(j15));
                             if (X12 == null || X12.min) {
-                                TLRPC.User h0 = uc7Var.getMessagesStorage().h0(j15);
-                                if (h0 != null && h0.min) {
-                                    h0 = null;
+                                TLRPC.User j0 = uc7Var.getMessagesStorage().j0(j15);
+                                if (j0 != null && j0.min) {
+                                    j0 = null;
                                 }
-                                if (h0 == null) {
+                                if (j0 == null) {
                                     z7 = true;
                                     break;
                                 }
@@ -13747,8 +13789,8 @@ public final class uc7 extends rf0 implements fn7 {
                     z8 = true;
                 }
                 if (z7) {
-                    jf7 messagesStorage20 = uc7Var.getMessagesStorage();
-                    messagesStorage20.G();
+                    kf7 messagesStorage20 = uc7Var.getMessagesStorage();
+                    messagesStorage20.I();
                     if (messagesStorage20.r + updates.pts_count == updates.pts) {
                         TLRPC.TL_message tL_message = new TLRPC.TL_message();
                         tL_message.id = updates.id;
@@ -13791,7 +13833,7 @@ public final class uc7 extends rf0 implements fn7 {
                         ConcurrentHashMap concurrentHashMap = tL_message.out ? uc7Var.Q : uc7Var.P;
                         Integer num = (Integer) concurrentHashMap.get(Long.valueOf(tL_message.dialog_id));
                         if (num == null) {
-                            num = Integer.valueOf(uc7Var.getMessagesStorage().S(tL_message.dialog_id, tL_message.out));
+                            num = Integer.valueOf(uc7Var.getMessagesStorage().U(tL_message.dialog_id, tL_message.out));
                             concurrentHashMap.put(Long.valueOf(tL_message.dialog_id), num);
                         }
                         tL_message.unread = num.intValue() < tL_message.id;
@@ -13803,7 +13845,7 @@ public final class uc7 extends rf0 implements fn7 {
                         } else {
                             z9 = true;
                         }
-                        uc7Var.getMessagesStorage().F1(updates.pts);
+                        uc7Var.getMessagesStorage().K1(updates.pts);
                         boolean contains = uc7Var.l0.contains(Long.valueOf(tL_message.dialog_id));
                         r47 r47Var = new r47(uc7Var.currentAccount, tL_message, contains, contains);
                         boolean z21 = z9;
@@ -13827,15 +13869,15 @@ public final class uc7 extends rf0 implements fn7 {
                         if (!r47Var.k.out) {
                             uc7Var.getMessagesStorage().a.c(new k77(uc7Var, t, (byte) 7));
                         }
-                        uc7Var.getMessagesStorage().g1(arrayList9, false, true, false, 0, false, 0, 0L);
+                        uc7Var.getMessagesStorage().k1(arrayList9, false, true, false, 0, false, 0, 0L);
                     } else {
-                        jf7 messagesStorage21 = uc7Var.getMessagesStorage();
-                        messagesStorage21.G();
+                        kf7 messagesStorage21 = uc7Var.getMessagesStorage();
+                        messagesStorage21.I();
                         if (messagesStorage21.r != updates.pts) {
                             if (f11.a) {
                                 StringBuilder sb4 = new StringBuilder("need get diff short message, pts: ");
-                                jf7 messagesStorage22 = uc7Var.getMessagesStorage();
-                                messagesStorage22.G();
+                                kf7 messagesStorage22 = uc7Var.getMessagesStorage();
+                                messagesStorage22.I();
                                 sb4.append(messagesStorage22.r);
                                 sb4.append(str);
                                 sb4.append(updates.pts);
@@ -13868,19 +13910,19 @@ public final class uc7 extends rf0 implements fn7 {
                 }
                 if (z8) {
                 }
-                jf7 messagesStorage152 = uc7Var.getMessagesStorage();
-                jf7 messagesStorage162 = uc7Var.getMessagesStorage();
-                messagesStorage162.G();
+                kf7 messagesStorage152 = uc7Var.getMessagesStorage();
+                kf7 messagesStorage162 = uc7Var.getMessagesStorage();
+                messagesStorage162.I();
                 int i132 = messagesStorage162.w;
-                jf7 messagesStorage172 = uc7Var.getMessagesStorage();
-                messagesStorage172.G();
+                kf7 messagesStorage172 = uc7Var.getMessagesStorage();
+                messagesStorage172.I();
                 int i142 = messagesStorage172.r;
-                jf7 messagesStorage182 = uc7Var.getMessagesStorage();
-                messagesStorage182.G();
+                kf7 messagesStorage182 = uc7Var.getMessagesStorage();
+                messagesStorage182.I();
                 int i152 = messagesStorage182.n;
-                jf7 messagesStorage192 = uc7Var.getMessagesStorage();
-                messagesStorage192.G();
-                messagesStorage152.x1(i132, i142, i152, messagesStorage192.s);
+                kf7 messagesStorage192 = uc7Var.getMessagesStorage();
+                messagesStorage192.I();
+                messagesStorage152.B1(i132, i142, i152, messagesStorage192.s);
             }
             user = null;
             chat = null;
@@ -13913,19 +13955,19 @@ public final class uc7 extends rf0 implements fn7 {
             }
             if (z8) {
             }
-            jf7 messagesStorage1522 = uc7Var.getMessagesStorage();
-            jf7 messagesStorage1622 = uc7Var.getMessagesStorage();
-            messagesStorage1622.G();
+            kf7 messagesStorage1522 = uc7Var.getMessagesStorage();
+            kf7 messagesStorage1622 = uc7Var.getMessagesStorage();
+            messagesStorage1622.I();
             int i1322 = messagesStorage1622.w;
-            jf7 messagesStorage1722 = uc7Var.getMessagesStorage();
-            messagesStorage1722.G();
+            kf7 messagesStorage1722 = uc7Var.getMessagesStorage();
+            messagesStorage1722.I();
             int i1422 = messagesStorage1722.r;
-            jf7 messagesStorage1822 = uc7Var.getMessagesStorage();
-            messagesStorage1822.G();
+            kf7 messagesStorage1822 = uc7Var.getMessagesStorage();
+            messagesStorage1822.I();
             int i1522 = messagesStorage1822.n;
-            jf7 messagesStorage1922 = uc7Var.getMessagesStorage();
-            messagesStorage1922.G();
-            messagesStorage1522.x1(i1322, i1422, i1522, messagesStorage1922.s);
+            kf7 messagesStorage1922 = uc7Var.getMessagesStorage();
+            messagesStorage1922.I();
+            messagesStorage1522.B1(i1322, i1422, i1522, messagesStorage1922.s);
         }
         ArrayList arrayList10 = new ArrayList();
         arrayList10.add(updates.update);
@@ -13942,19 +13984,19 @@ public final class uc7 extends rf0 implements fn7 {
         }
         if (z8) {
         }
-        jf7 messagesStorage15222 = uc7Var.getMessagesStorage();
-        jf7 messagesStorage16222 = uc7Var.getMessagesStorage();
-        messagesStorage16222.G();
+        kf7 messagesStorage15222 = uc7Var.getMessagesStorage();
+        kf7 messagesStorage16222 = uc7Var.getMessagesStorage();
+        messagesStorage16222.I();
         int i13222 = messagesStorage16222.w;
-        jf7 messagesStorage17222 = uc7Var.getMessagesStorage();
-        messagesStorage17222.G();
+        kf7 messagesStorage17222 = uc7Var.getMessagesStorage();
+        messagesStorage17222.I();
         int i14222 = messagesStorage17222.r;
-        jf7 messagesStorage18222 = uc7Var.getMessagesStorage();
-        messagesStorage18222.G();
+        kf7 messagesStorage18222 = uc7Var.getMessagesStorage();
+        messagesStorage18222.I();
         int i15222 = messagesStorage18222.n;
-        jf7 messagesStorage19222 = uc7Var.getMessagesStorage();
-        messagesStorage19222.G();
-        messagesStorage15222.x1(i13222, i14222, i15222, messagesStorage19222.s);
+        kf7 messagesStorage19222 = uc7Var.getMessagesStorage();
+        messagesStorage19222.I();
+        messagesStorage15222.B1(i13222, i14222, i15222, messagesStorage19222.s);
     }
 
     public final void Y4(long j, boolean z, boolean z2) {
@@ -13987,23 +14029,23 @@ public final class uc7 extends rf0 implements fn7 {
         NativeByteBuffer nativeByteBuffer;
         NativeByteBuffer nativeByteBuffer2;
         NativeByteBuffer nativeByteBuffer3;
-        long y;
+        long A;
         TLRPC.TL_messages_deleteMessages tL_messages_deleteMessages;
         boolean z4;
         NativeByteBuffer nativeByteBuffer4;
         NativeByteBuffer nativeByteBuffer5;
-        long y2;
+        long A2;
         TLRPC.TL_channels_deleteMessages tL_channels_deleteMessages;
         boolean z5;
         NativeByteBuffer nativeByteBuffer6;
         NativeByteBuffer nativeByteBuffer7;
-        long y3;
+        long A3;
         TLRPC.TL_messages_deleteQuickReplyMessages tL_messages_deleteQuickReplyMessages;
         boolean z6;
         NativeByteBuffer nativeByteBuffer8;
         NativeByteBuffer nativeByteBuffer9;
         boolean z7;
-        long y4;
+        long A4;
         TLRPC.TL_messages_deleteScheduledMessages tL_messages_deleteScheduledMessages;
         byte b2;
         long j4;
@@ -14038,7 +14080,7 @@ public final class uc7 extends rf0 implements fn7 {
                 arrayList3 = arrayList4;
             }
             if (z8) {
-                getMessagesStorage().M0(j5, arrayList, true, false, 1, 0);
+                getMessagesStorage().P0(j5, arrayList, true, false, 1, 0);
                 j5 = j;
                 i4 = i2;
                 c = 5;
@@ -14078,13 +14120,13 @@ public final class uc7 extends rf0 implements fn7 {
                 c = c3;
                 j5 = j;
                 i4 = i2;
-                getMessagesStorage().M0(j5, arrayList, true, false, 5, i4);
+                getMessagesStorage().P0(j5, arrayList, true, false, 5, i4);
             } else {
                 c = 5;
                 if (z10) {
                     j5 = j;
                     i4 = i2;
-                    getMessagesStorage().M0(j5, arrayList, true, false, 9, i4);
+                    getMessagesStorage().P0(j5, arrayList, true, false, 9, i4);
                 } else {
                     if (j4 == 0) {
                         for (int i8 = 0; i8 < arrayList.size(); i8++) {
@@ -14097,10 +14139,10 @@ public final class uc7 extends rf0 implements fn7 {
                         t3(arrayList, j);
                     }
                     i4 = i2;
-                    getMessagesStorage().M0(j, arrayList, true, z, 0, i4);
+                    getMessagesStorage().P0(j, arrayList, true, z, 0, i4);
                     j5 = j;
                     j3 = j4;
-                    getMessagesStorage().O1(j5, j3, arrayList, null);
+                    getMessagesStorage().T1(j5, j3, arrayList, null);
                     jn7 notificationCenter = getNotificationCenter();
                     Long valueOf = Long.valueOf(j3);
                     Boolean valueOf2 = Boolean.valueOf(z8);
@@ -14144,7 +14186,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (z8) {
             if (tLObject instanceof TLRPC.TL_messages_deleteScheduledMessages) {
                 tL_messages_deleteScheduledMessages = (TLRPC.TL_messages_deleteScheduledMessages) tLObject;
-                y4 = j2;
+                A4 = j2;
                 b2 = 1;
             } else {
                 TLRPC.TL_messages_deleteScheduledMessages tL_messages_deleteScheduledMessages2 = new TLRPC.TL_messages_deleteScheduledMessages();
@@ -14169,23 +14211,23 @@ public final class uc7 extends rf0 implements fn7 {
                     cc4.g(e, z6);
                     nativeByteBuffer9 = nativeByteBuffer8;
                     z7 = z6;
-                    y4 = getMessagesStorage().y(nativeByteBuffer9);
+                    A4 = getMessagesStorage().A(nativeByteBuffer9);
                     tL_messages_deleteScheduledMessages = tL_messages_deleteScheduledMessages2;
                     b2 = z7;
-                    getConnectionsManager().sendRequest(tL_messages_deleteScheduledMessages, new e77(this, y4, b2));
+                    getConnectionsManager().sendRequest(tL_messages_deleteScheduledMessages, new e77(this, A4, b2));
                     return;
                 }
-                y4 = getMessagesStorage().y(nativeByteBuffer9);
+                A4 = getMessagesStorage().A(nativeByteBuffer9);
                 tL_messages_deleteScheduledMessages = tL_messages_deleteScheduledMessages2;
                 b2 = z7;
             }
-            getConnectionsManager().sendRequest(tL_messages_deleteScheduledMessages, new e77(this, y4, b2));
+            getConnectionsManager().sendRequest(tL_messages_deleteScheduledMessages, new e77(this, A4, b2));
             return;
         }
         if (z9) {
             if (tLObject instanceof TLRPC.TL_messages_deleteQuickReplyMessages) {
                 tL_messages_deleteQuickReplyMessages = (TLRPC.TL_messages_deleteQuickReplyMessages) tLObject;
-                y3 = j2;
+                A3 = j2;
             } else {
                 TLRPC.TL_messages_deleteQuickReplyMessages tL_messages_deleteQuickReplyMessages2 = new TLRPC.TL_messages_deleteQuickReplyMessages();
                 tL_messages_deleteQuickReplyMessages2.id = arrayList3;
@@ -14208,21 +14250,21 @@ public final class uc7 extends rf0 implements fn7 {
                     z5 = true;
                     cc4.g(e, z5);
                     nativeByteBuffer7 = nativeByteBuffer6;
-                    y3 = getMessagesStorage().y(nativeByteBuffer7);
+                    A3 = getMessagesStorage().A(nativeByteBuffer7);
                     tL_messages_deleteQuickReplyMessages = tL_messages_deleteQuickReplyMessages2;
-                    getConnectionsManager().sendRequest(tL_messages_deleteQuickReplyMessages, new e77(this, y3, (byte) 2));
+                    getConnectionsManager().sendRequest(tL_messages_deleteQuickReplyMessages, new e77(this, A3, (byte) 2));
                     return;
                 }
-                y3 = getMessagesStorage().y(nativeByteBuffer7);
+                A3 = getMessagesStorage().A(nativeByteBuffer7);
                 tL_messages_deleteQuickReplyMessages = tL_messages_deleteQuickReplyMessages2;
             }
-            getConnectionsManager().sendRequest(tL_messages_deleteQuickReplyMessages, new e77(this, y3, (byte) 2));
+            getConnectionsManager().sendRequest(tL_messages_deleteQuickReplyMessages, new e77(this, A3, (byte) 2));
             return;
         }
         if (j3 != 0) {
             if (tLObject != null) {
                 tL_channels_deleteMessages = (TLRPC.TL_channels_deleteMessages) tLObject;
-                y2 = j2;
+                A2 = j2;
             } else {
                 TLRPC.TL_channels_deleteMessages tL_channels_deleteMessages2 = new TLRPC.TL_channels_deleteMessages();
                 tL_channels_deleteMessages2.id = arrayList3;
@@ -14244,15 +14286,15 @@ public final class uc7 extends rf0 implements fn7 {
                     z4 = true;
                     cc4.g(e, z4);
                     nativeByteBuffer5 = nativeByteBuffer4;
-                    y2 = getMessagesStorage().y(nativeByteBuffer5);
+                    A2 = getMessagesStorage().A(nativeByteBuffer5);
                     tL_channels_deleteMessages = tL_channels_deleteMessages2;
-                    getConnectionsManager().sendRequest(tL_channels_deleteMessages, new v77(this, j3, y2, (byte) 0));
+                    getConnectionsManager().sendRequest(tL_channels_deleteMessages, new v77(this, j3, A2, (byte) 0));
                     return;
                 }
-                y2 = getMessagesStorage().y(nativeByteBuffer5);
+                A2 = getMessagesStorage().A(nativeByteBuffer5);
                 tL_channels_deleteMessages = tL_channels_deleteMessages2;
             }
-            getConnectionsManager().sendRequest(tL_channels_deleteMessages, new v77(this, j3, y2, (byte) 0));
+            getConnectionsManager().sendRequest(tL_channels_deleteMessages, new v77(this, j3, A2, (byte) 0));
             return;
         }
         if (arrayList2 == null || encryptedChat == null || arrayList2.isEmpty()) {
@@ -14263,7 +14305,7 @@ public final class uc7 extends rf0 implements fn7 {
         }
         if (tLObject instanceof TLRPC.TL_messages_deleteMessages) {
             tL_messages_deleteMessages = (TLRPC.TL_messages_deleteMessages) tLObject;
-            y = j2;
+            A = j2;
         } else {
             TLRPC.TL_messages_deleteMessages tL_messages_deleteMessages2 = new TLRPC.TL_messages_deleteMessages();
             tL_messages_deleteMessages2.id = arrayList3;
@@ -14283,24 +14325,24 @@ public final class uc7 extends rf0 implements fn7 {
                 nativeByteBuffer2 = nativeByteBuffer3;
                 cc4.g(e, true);
                 nativeByteBuffer3 = nativeByteBuffer2;
-                y = getMessagesStorage().y(nativeByteBuffer3);
+                A = getMessagesStorage().A(nativeByteBuffer3);
                 tL_messages_deleteMessages = tL_messages_deleteMessages2;
-                getConnectionsManager().sendRequest(tL_messages_deleteMessages, new e77(this, y, b));
+                getConnectionsManager().sendRequest(tL_messages_deleteMessages, new e77(this, A, b));
             }
-            y = getMessagesStorage().y(nativeByteBuffer3);
+            A = getMessagesStorage().A(nativeByteBuffer3);
             tL_messages_deleteMessages = tL_messages_deleteMessages2;
         }
-        getConnectionsManager().sendRequest(tL_messages_deleteMessages, new e77(this, y, b));
+        getConnectionsManager().sendRequest(tL_messages_deleteMessages, new e77(this, A, b));
     }
 
     public final TLRPC.TL_availableEffect Z0(long j) {
         E0();
-        if (this.W4 == null) {
+        if (this.X4 == null) {
             return null;
         }
-        for (int i = 0; i < this.W4.effects.size(); i++) {
-            if (this.W4.effects.get(i).id == j) {
-                return this.W4.effects.get(i);
+        for (int i = 0; i < this.X4.effects.size(); i++) {
+            if (this.X4.effects.get(i).id == j) {
+                return this.X4.effects.get(i);
             }
         }
         return null;
@@ -14391,11 +14433,11 @@ public final class uc7 extends rf0 implements fn7 {
             if (i2 == 2) {
                 TLRPC.Updates updates = (TLRPC.Updates) arrayList.get(0);
                 if (i == 0) {
-                    getMessagesStorage().H1(updates instanceof TLRPC.TL_updatesCombined ? updates.seq_start : updates.seq);
+                    getMessagesStorage().M1(updates instanceof TLRPC.TL_updatesCombined ? updates.seq_start : updates.seq);
                 } else if (i == 1) {
-                    getMessagesStorage().F1(updates.pts);
+                    getMessagesStorage().K1(updates.pts);
                 } else {
-                    getMessagesStorage().G1(updates.pts);
+                    getMessagesStorage().L1(updates.pts);
                 }
             }
             boolean z2 = false;
@@ -14403,34 +14445,34 @@ public final class uc7 extends rf0 implements fn7 {
                 TLRPC.Updates updates2 = (TLRPC.Updates) arrayList.get(0);
                 if (i == 0) {
                     int i3 = updates2 instanceof TLRPC.TL_updatesCombined ? updates2.seq_start : updates2.seq;
-                    jf7 messagesStorage = getMessagesStorage();
-                    messagesStorage.G();
+                    kf7 messagesStorage = getMessagesStorage();
+                    messagesStorage.I();
                     if (messagesStorage.w + 1 != i3) {
-                        jf7 messagesStorage2 = getMessagesStorage();
-                        messagesStorage2.G();
+                        kf7 messagesStorage2 = getMessagesStorage();
+                        messagesStorage2.I();
                         if (messagesStorage2.w != i3) {
-                            jf7 messagesStorage3 = getMessagesStorage();
-                            messagesStorage3.G();
+                            kf7 messagesStorage3 = getMessagesStorage();
+                            messagesStorage3.I();
                         }
                     }
                     z = false;
                 } else if (i == 1) {
                     int i4 = updates2.pts;
-                    jf7 messagesStorage4 = getMessagesStorage();
-                    messagesStorage4.G();
+                    kf7 messagesStorage4 = getMessagesStorage();
+                    messagesStorage4.I();
                     if (i4 > messagesStorage4.r) {
-                        jf7 messagesStorage5 = getMessagesStorage();
-                        messagesStorage5.G();
+                        kf7 messagesStorage5 = getMessagesStorage();
+                        messagesStorage5.I();
                     }
                     z = 2;
                 } else {
                     if (i == 2) {
                         int i5 = updates2.pts;
-                        jf7 messagesStorage6 = getMessagesStorage();
-                        messagesStorage6.G();
+                        kf7 messagesStorage6 = getMessagesStorage();
+                        messagesStorage6.I();
                         if (i5 > messagesStorage6.s) {
-                            jf7 messagesStorage7 = getMessagesStorage();
-                            messagesStorage7.G();
+                            kf7 messagesStorage7 = getMessagesStorage();
+                            messagesStorage7.I();
                         }
                         z = 2;
                     }
@@ -14517,7 +14559,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void a3(boolean z) {
-        hl.r(this.w4);
+        hl.r(this.x4);
         sb7 sb7Var = this.M2;
         if (z) {
             sb7Var.d(this.currentAccount, 0);
@@ -14737,7 +14779,7 @@ public final class uc7 extends rf0 implements fn7 {
                 if (chat instanceof TLRPC.TL_community) {
                     long j2 = chat.id;
                     if (N0(j2) == null) {
-                        getMessagesStorage().C0(j2, false, null, false, false, 0);
+                        getMessagesStorage().F0(j2, false, null, false, false, 0);
                         e3(0, j2, false);
                     }
                 }
@@ -14788,7 +14830,7 @@ public final class uc7 extends rf0 implements fn7 {
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
         ArrayList arrayList = new ArrayList();
-        jf7 messagesStorage = getMessagesStorage();
+        kf7 messagesStorage = getMessagesStorage();
         messagesStorage.getClass();
         messagesStorage.a.c(new ba7((Object) messagesStorage, i, (Object) arrayList, (Object) countDownLatch, (byte) 26));
         try {
@@ -14828,8 +14870,8 @@ public final class uc7 extends rf0 implements fn7 {
         }
         longSparseIntArray.put(j, (int) (SystemClock.elapsedRealtime() / 1000));
         if (z) {
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new le7(messagesStorage, j, (byte) 6));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new me7(messagesStorage, j, (byte) 6));
             return;
         }
         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
@@ -14841,13 +14883,13 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final void b4(TLRPC.ChatFull chatFull) {
         this.c1.k(chatFull.id, chatFull);
-        this.i4.M(-chatFull.id);
+        this.j4.M(-chatFull.id);
     }
 
     public final void b5(boolean z) {
-        if (this.P3 != z) {
-            SharedPreferences.Editor edit = this.X3.edit();
-            this.P3 = z;
+        if (this.Q3 != z) {
+            SharedPreferences.Editor edit = this.Y3.edit();
+            this.Q3 = z;
             edit.putBoolean("savedViewAsChats", z).apply();
         }
     }
@@ -14899,7 +14941,7 @@ public final class uc7 extends rf0 implements fn7 {
                         i3 = size;
                         int i8 = i5;
                         i4 = i6;
-                        getMessagesStorage().D1(null, null, longValue, i8);
+                        getMessagesStorage().I1(null, null, longValue, i8);
                         i5 = i8;
                     } else {
                         i3 = size;
@@ -14944,14 +14986,14 @@ public final class uc7 extends rf0 implements fn7 {
                     nativeByteBuffer = nativeByteBuffer2;
                     cc4.g(e, true);
                     nativeByteBuffer2 = nativeByteBuffer;
-                    j2 = getMessagesStorage().y(nativeByteBuffer2);
+                    j2 = getMessagesStorage().A(nativeByteBuffer2);
                     zArr = zArr3;
                     if (!tL_folders_editPeerFolders.folder_peers.isEmpty()) {
                     }
                     if (zArr != null) {
                     }
                 }
-                j2 = getMessagesStorage().y(nativeByteBuffer2);
+                j2 = getMessagesStorage().A(nativeByteBuffer2);
             } else {
                 j2 = 0;
             }
@@ -14963,7 +15005,7 @@ public final class uc7 extends rf0 implements fn7 {
         }
         if (!tL_folders_editPeerFolders.folder_peers.isEmpty()) {
             getConnectionsManager().sendRequest(tL_folders_editPeerFolders, new e77(this, j2, (byte) 11));
-            getMessagesStorage().D1(null, tL_folders_editPeerFolders.folder_peers, 0L, i5);
+            getMessagesStorage().I1(null, tL_folders_editPeerFolders.folder_peers, 0L, i5);
         }
         if (zArr != null) {
             return 0;
@@ -15137,7 +15179,7 @@ public final class uc7 extends rf0 implements fn7 {
         }
         long[] jArr = null;
         if (z) {
-            final jf7 messagesStorage = getMessagesStorage();
+            final kf7 messagesStorage = getMessagesStorage();
             final int i5 = i2 == 0 ? 0 : this.S1.get(i, 0);
             if (i == 0 && i2 == 0 && (m = (zh6Var = messagesStorage.getMediaDataController().u1).m()) > 0) {
                 jArr = new long[m];
@@ -15148,10 +15190,10 @@ public final class uc7 extends rf0 implements fn7 {
                 }
             }
             final long[] jArr2 = jArr;
-            messagesStorage.a.c(new Runnable() { // from class: hd7
+            messagesStorage.a.c(new Runnable() { // from class: jd7
                 @Override // java.lang.Runnable
                 public final void run() {
-                    jf7.this.y0(i, i5, i3, jArr2);
+                    kf7.this.B0(i, i5, i3, jArr2);
                 }
             });
             return;
@@ -15551,7 +15593,7 @@ public final class uc7 extends rf0 implements fn7 {
                 if (i == jn7.i5) {
                     uc7Var.a3(false);
                     uc7Var.getContactsController().J(true);
-                    if ((!uc7Var.Q3 || uc7Var.getUserConfig().p()) && !uc7Var.getUserConfig().p()) {
+                    if ((!uc7Var.R3 || uc7Var.getUserConfig().p()) && !uc7Var.getUserConfig().p()) {
                         return;
                     }
                     uc7Var.getNotificationCenter().k(jn7.o3, new Object[0]);
@@ -15606,7 +15648,7 @@ public final class uc7 extends rf0 implements fn7 {
             }
             chatFull.slowmode_next_send_date = uc7Var.getConnectionsManager().getCurrentTime() + chatFull.slowmode_seconds;
             chatFull.flags |= 262144;
-            uc7Var.getMessagesStorage().K1(chatFull, false);
+            uc7Var.getMessagesStorage().P1(chatFull, false);
         }
     }
 
@@ -15745,8 +15787,8 @@ public final class uc7 extends rf0 implements fn7 {
                         return;
                     }
                     TLRPC.TL_messages_chatFull tL_messages_chatFull = (TLRPC.TL_messages_chatFull) tLObject;
-                    uc7Var.getMessagesStorage().j1(tL_messages_chatFull.users, tL_messages_chatFull.chats, true, true);
-                    uc7Var.getMessagesStorage().K1(tL_messages_chatFull.full_chat, false);
+                    uc7Var.getMessagesStorage().n1(tL_messages_chatFull.users, tL_messages_chatFull.chats, true, true);
+                    uc7Var.getMessagesStorage().P1(tL_messages_chatFull.full_chat, false);
                     c6b O1 = uc7Var.O1();
                     TL_stories.PeerStories peerStories = tL_messages_chatFull.full_chat.stories;
                     long j4 = j2;
@@ -15755,7 +15797,7 @@ public final class uc7 extends rf0 implements fn7 {
                     if (xc2.T(M0)) {
                         Integer num = (Integer) concurrentHashMap2.get(Long.valueOf(j4));
                         if (num == null) {
-                            num = Integer.valueOf(uc7Var.getMessagesStorage().S(j4, false));
+                            num = Integer.valueOf(uc7Var.getMessagesStorage().U(j4, false));
                         }
                         concurrentHashMap2.put(Long.valueOf(j4), Integer.valueOf(Math.max(tL_messages_chatFull.full_chat.read_inbox_max_id, num.intValue())));
                         if (tL_messages_chatFull.full_chat.read_inbox_max_id > num.intValue()) {
@@ -15770,7 +15812,7 @@ public final class uc7 extends rf0 implements fn7 {
                         }
                         Integer num2 = (Integer) concurrentHashMap.get(Long.valueOf(j4));
                         if (num2 == null) {
-                            num2 = Integer.valueOf(uc7Var.getMessagesStorage().S(j4, true));
+                            num2 = Integer.valueOf(uc7Var.getMessagesStorage().U(j4, true));
                         }
                         concurrentHashMap.put(Long.valueOf(j4), Integer.valueOf(Math.max(tL_messages_chatFull.full_chat.read_outbox_max_id, num2.intValue())));
                         if (tL_messages_chatFull.full_chat.read_outbox_max_id > num2.intValue()) {
@@ -15817,10 +15859,10 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void e5(TL_account.TL_webBrowserSettings tL_webBrowserSettings) {
-        this.n5 = tL_webBrowserSettings;
+        this.o5 = tL_webBrowserSettings;
         int i = this.currentAccount;
         long j = tL_webBrowserSettings.hash;
-        this.o5.g(i, null, tL_webBrowserSettings);
+        this.p5.g(i, null, tL_webBrowserSettings);
         getNotificationCenter().k(jn7.U5, new Object[0]);
     }
 
@@ -15833,9 +15875,9 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void f0(long j, int i, long j2) {
-        jf7 messagesStorage = getMessagesStorage();
+        kf7 messagesStorage = getMessagesStorage();
         messagesStorage.getClass();
-        messagesStorage.H(new ae7(messagesStorage, i, j, j2, (byte) 5));
+        messagesStorage.J(new ae7(messagesStorage, i, j, j2, (byte) 5));
         TLRPC.TL_messages_deleteParticipantReaction tL_messages_deleteParticipantReaction = new TLRPC.TL_messages_deleteParticipantReaction();
         tL_messages_deleteParticipantReaction.peer = j1(j);
         tL_messages_deleteParticipantReaction.participant = j1(j2);
@@ -15847,7 +15889,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (user == null && chat == null) {
             return;
         }
-        SharedPreferences.Editor edit = this.W3.edit();
+        SharedPreferences.Editor edit = this.X3.edit();
         edit.putInt("dialog_bar_vis3" + j, 3);
         edit.remove("dialog_bar_invite" + j);
         edit.commit();
@@ -15927,8 +15969,8 @@ public final class uc7 extends rf0 implements fn7 {
             ic2Var.run();
             return;
         }
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new cq6((Object) messagesStorage, j, (Object) new wt1(iArr, ic2Var, (byte) 1), (byte) 16));
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new cq6((Object) messagesStorage, j, (Object) new wt1(iArr, ic2Var, (byte) 1), (byte) 17));
     }
 
     public final vc2 g1(long j, boolean z, t16 t16Var) {
@@ -15983,10 +16025,10 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean g5() {
-        if (this.b5 != null && System.currentTimeMillis() - this.a5 < 3600000) {
-            return this.b5.sensitive_enabled;
+        if (this.c5 != null && System.currentTimeMillis() - this.b5 < 3600000) {
+            return this.c5.sensitive_enabled;
         }
-        Set set = this.K3;
+        Set set = this.L3;
         return set == null || set.contains("sensitive");
     }
 
@@ -16102,9 +16144,9 @@ public final class uc7 extends rf0 implements fn7 {
             qsbVar2 = qsbVar;
         }
         if ((j3 == 0 || z6 || i8 == 8 || i8 == 3 || i8 == 5 || i8 == 9) && i8 != 2 && (z2 || wf3.B(j))) {
-            jf7 messagesStorage = getMessagesStorage();
+            kf7 messagesStorage = getMessagesStorage();
             messagesStorage.getClass();
-            messagesStorage.a.c(new ee7(messagesStorage, qsb.d(qsbVar2, "MessagesStorage.getMessages: storageQueue.postRunnable"), qsbVar2, j, j2, i, i2, i3, i14, i5, i6, i8, j3, i9, z5, z6));
+            messagesStorage.a.c(new de7(messagesStorage, qsb.d(qsbVar2, "MessagesStorage.getMessages: storageQueue.postRunnable"), qsbVar2, j, j2, i, i2, i3, i14, i5, i6, i8, j3, i9, z5, z6));
             return;
         }
         qsb qsbVar3 = qsbVar2;
@@ -16152,7 +16194,7 @@ public final class uc7 extends rf0 implements fn7 {
                 getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getScheduledHistory, new h97(this, i2, i3, j, j2, i, i5, i10, i7, i11, i12, i6, i8, j3, i9, z3, i13, z5, z6)), i5);
                 return;
             }
-            boolean z7 = this.B4.contains(Integer.valueOf(i5)) && this.R.f(j) == null;
+            boolean z7 = this.C4.contains(Integer.valueOf(i5)) && this.R.f(j) == null;
             if (!xc2.p0(M0) && z4 && !z7 && ((i6 == 3 || i6 == 2) && i7 == 0)) {
                 final TLRPC.TL_messages_getPeerDialogs tL_messages_getPeerDialogs = new TLRPC.TL_messages_getPeerDialogs();
                 TLRPC.InputPeer j1 = j1(j);
@@ -16179,7 +16221,7 @@ public final class uc7 extends rf0 implements fn7 {
                             tL_messages_dialogs.users = tL_messages_peerDialogs.users;
                             tL_messages_dialogs.dialogs = tL_messages_peerDialogs.dialogs;
                             tL_messages_dialogs.messages = tL_messages_peerDialogs.messages;
-                            uc7Var.getMessagesStorage().a1(tL_messages_dialogs, 2);
+                            uc7Var.getMessagesStorage().e1(tL_messages_dialogs, 2);
                         }
                         uc7Var.h3(j, j2, z, i, i2, i3, false, i4, i15, i6, dialog.top_message, 0, j3, i9, i10, dialog.unread_count, i12, z3, dialog.unread_mentions_count, false, z5, z6, null, 0L);
                     }
@@ -16230,7 +16272,7 @@ public final class uc7 extends rf0 implements fn7 {
             getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getSavedHistory, new i97(this, j, i, i2, i3, j2, i5, i10, i7, i11, i12, i6, i8, j3, i9, z3, i13, z5, z6, tL_messages_getSavedHistory, (byte) 0)), i5);
             return;
         }
-        if (z4 && z6 && i6 == 2 && i7 == 0 && (f = this.g4.f(-j, j3)) != null) {
+        if (z4 && z6 && i6 == 2 && i7 == 0 && (f = this.h4.f(-j, j3)) != null) {
             h3(j, j2, z, i, i2, i3, false, i4, i5, i6, f.top_message, i8, j3, i9, i10, f.unread_count, i12, z3, f.unread_mentions_count, false, z5, z6, qsbVar3, 0L);
             return;
         }
@@ -16320,13 +16362,13 @@ public final class uc7 extends rf0 implements fn7 {
         this.L.clear();
         this.E.clear();
         zh6 zh6Var3 = this.R;
-        LongSparseIntArray longSparseIntArray3 = this.G4;
+        LongSparseIntArray longSparseIntArray3 = this.H4;
         longSparseIntArray3.clear();
-        LongSparseIntArray longSparseIntArray4 = this.H4;
+        LongSparseIntArray longSparseIntArray4 = this.I4;
         longSparseIntArray4.clear();
-        zh6 zh6Var4 = this.J4;
+        zh6 zh6Var4 = this.K4;
         zh6Var4.b();
-        LongSparseIntArray longSparseIntArray5 = this.I4;
+        LongSparseIntArray longSparseIntArray5 = this.J4;
         longSparseIntArray5.clear();
         ArrayList arrayList2 = this.y;
         int size = arrayList2.size();
@@ -16445,7 +16487,7 @@ public final class uc7 extends rf0 implements fn7 {
         boolean z6 = z;
         long j10 = j7;
         if (tL_messages_dialogs != null) {
-            getMessagesStorage().a1(tL_messages_dialogs, 2);
+            getMessagesStorage().e1(tL_messages_dialogs, 2);
         }
         for (int i5 = 0; i5 < this.w.size(); i5++) {
             ArrayList arrayList3 = (ArrayList) this.w.valueAt(i5);
@@ -16469,15 +16511,15 @@ public final class uc7 extends rf0 implements fn7 {
                     break;
                 }
                 ac7 ac7Var = ac7VarArr2[i7];
-                this.q4 = ac7Var;
+                this.r4 = ac7Var;
                 if (ac7Var != null) {
                     ArrayList arrayList5 = ac7Var.k;
                     ArrayList arrayList6 = ac7Var.l;
                     arrayList5.clear();
                     arrayList6.clear();
-                    boolean v0 = v0(this.q4);
+                    boolean v0 = v0(this.r4);
                     try {
-                        Collections.sort(this.y, this.r4);
+                        Collections.sort(this.y, this.s4);
                     } catch (Exception e2) {
                         cc4.g(e2, z6);
                     }
@@ -16491,7 +16533,7 @@ public final class uc7 extends rf0 implements fn7 {
                                 if (wf3.B(j11) && (a1 = a1(Integer.valueOf((int) (j11 & 4294967295L)))) != null) {
                                     j11 = a1.user_id;
                                 }
-                                if (this.q4.b(getAccountInstance(), j11, dialog5, v0 && A2(dialog5, j11))) {
+                                if (this.r4.b(getAccountInstance(), j11, dialog5, v0 && A2(dialog5, j11))) {
                                     if (x(dialog5)) {
                                         arrayList6.add(dialog5);
                                     }
@@ -16506,7 +16548,7 @@ public final class uc7 extends rf0 implements fn7 {
             }
         }
         try {
-            Collections.sort(this.y, this.s4);
+            Collections.sort(this.y, this.t4);
         } catch (Exception unused) {
         }
         this.r2 = true;
@@ -16700,7 +16742,7 @@ public final class uc7 extends rf0 implements fn7 {
             }
             i15++;
         }
-        this.p4.clear();
+        this.q4.clear();
         if (!l2() || (arrayList = (ArrayList) this.w.get(0)) == null) {
             return;
         }
@@ -16708,7 +16750,7 @@ public final class uc7 extends rf0 implements fn7 {
         for (int i16 = 0; i16 < size6; i16++) {
             TLRPC.Dialog dialog10 = (TLRPC.Dialog) arrayList.get(i16);
             if ((dialog10 instanceof TLRPC.TL_dialogFolder) || s2(dialog10) || A2(dialog10, dialog10.id)) {
-                this.p4.add(dialog10);
+                this.q4.add(dialog10);
             }
         }
     }
@@ -16763,8 +16805,8 @@ public final class uc7 extends rf0 implements fn7 {
     public final void i0(TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, int i) {
         long j = user != null ? user.id : chat2 != null ? chat2.id : 0L;
         if (i == 0) {
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new xd7(messagesStorage, -chat.id, j, (byte) 3));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new yd7(messagesStorage, -chat.id, j, (byte) 3));
         }
         TLRPC.TL_channels_deleteParticipantHistory tL_channels_deleteParticipantHistory = new TLRPC.TL_channels_deleteParticipantHistory();
         tL_channels_deleteParticipantHistory.channel = i1(chat);
@@ -16791,7 +16833,7 @@ public final class uc7 extends rf0 implements fn7 {
             if (f11.a) {
                 cc4.b("request spam button for " + j);
             }
-            int i = this.W3.getInt("dialog_bar_vis3" + j, 0);
+            int i = this.X3.getInt("dialog_bar_vis3" + j, 0);
             if (!z && (i == 1 || i == 3)) {
                 if (f11.a) {
                     cc4.b("dialog bar already hidden for " + j);
@@ -16983,7 +17025,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean i5() {
-        return !this.k4.W2.f;
+        return !this.l4.W2.f;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -17157,7 +17199,7 @@ public final class uc7 extends rf0 implements fn7 {
                 if (z6 && (inputUser instanceof TLRPC.TL_inputUserSelf)) {
                     hl.c3(new t77(uc7Var2, j2, (byte) 11));
                     user2 = user3;
-                    uc7Var2.getMessagesStorage().O1(-j2, j2, new ArrayList(), null);
+                    uc7Var2.getMessagesStorage().T1(-j2, j2, new ArrayList(), null);
                 } else {
                     user2 = user3;
                 }
@@ -17199,11 +17241,11 @@ public final class uc7 extends rf0 implements fn7 {
             return;
         }
         if (X1.photo != null) {
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new xd7(messagesStorage, X1.id, X1.photo.photo_id, (byte) 0));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new yd7(messagesStorage, X1.id, X1.photo.photo_id, (byte) 0));
         }
         getNotificationCenter().k(jn7.j0, new Object[0]);
-        getNotificationCenter().k(2, Integer.valueOf(r5));
+        getNotificationCenter().k(2, Integer.valueOf(s5));
         getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new e77(this, e, (byte) 6));
     }
 
@@ -17254,8 +17296,8 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void j2() {
-        this.b5 = null;
-        this.a5 = 0L;
+        this.c5 = null;
+        this.b5 = 0L;
     }
 
     public final void j3(int i) {
@@ -17313,7 +17355,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final void k3(boolean z, i61 i61Var) {
         if (i61Var != null) {
-            this.v4 = i61Var;
+            this.w4 = i61Var;
         }
         if (getUserConfig().o()) {
             if (z) {
@@ -17360,7 +17402,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean k5() {
-        String str = this.R3;
+        String str = this.S3;
         int hashCode = str.hashCode();
         if (hashCode == -1609594047) {
             return str.equals("enabled");
@@ -17408,7 +17450,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean l2() {
-        return this.G0.size() > 1 && this.n4.contains(0);
+        return this.G0.size() > 1 && this.o4.contains(0);
     }
 
     public final void l3() {
@@ -17421,7 +17463,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final void l4(long j) {
         Long valueOf = Long.valueOf(j);
-        HashMap hashMap = this.o4;
+        HashMap hashMap = this.p4;
         Integer num = (Integer) hashMap.get(valueOf);
         if (num != null) {
             if (num.intValue() > 1) {
@@ -17438,7 +17480,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean l5() {
-        String str = this.k4.U1.f;
+        String str = this.l4.U1.f;
         int hashCode = str.hashCode();
         if (hashCode == -1609594047) {
             return str.equals("enabled");
@@ -17537,7 +17579,7 @@ public final class uc7 extends rf0 implements fn7 {
                     tL_inputPeerChannel.msg_id = chat.fromMessageId;
                 } else if (j3 == 0) {
                     if (j != 0) {
-                        getMessagesStorage().n1(j);
+                        getMessagesStorage().r1(j);
                         return;
                     }
                     return;
@@ -17564,10 +17606,10 @@ public final class uc7 extends rf0 implements fn7 {
                     } catch (Exception e2) {
                         exc = e2;
                         cc4.g(exc, true);
-                        j = getMessagesStorage().y(nativeByteBuffer);
+                        j = getMessagesStorage().A(nativeByteBuffer);
                         getConnectionsManager().sendRequest(tL_messages_getPeerDialogs, new p87((Object) this, j, (Object) chat, (byte) 13));
                     }
-                    j = getMessagesStorage().y(nativeByteBuffer);
+                    j = getMessagesStorage().A(nativeByteBuffer);
                 }
                 getConnectionsManager().sendRequest(tL_messages_getPeerDialogs, new p87((Object) this, j, (Object) chat, (byte) 13));
             }
@@ -17579,7 +17621,7 @@ public final class uc7 extends rf0 implements fn7 {
             return;
         }
         TLRPC.TL_messages_getPeerDialogs tL_messages_getPeerDialogs = new TLRPC.TL_messages_getPeerDialogs();
-        zh6 zh6Var = this.y4;
+        zh6 zh6Var = this.z4;
         if (arrayList != null) {
             for (int i = 0; i < arrayList.size(); i++) {
                 TLRPC.InputPeer j1 = j1(((TLRPC.Dialog) arrayList.get(i)).id);
@@ -17615,10 +17657,10 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean m5(TLRPC.User user) {
-        if (user != null && user.id == this.k4.k3.f()) {
+        if (user != null && user.id == this.l4.k3.f()) {
             return true;
         }
-        String str = this.k4.U1.f;
+        String str = this.l4.U1.f;
         int hashCode = str.hashCode();
         if (hashCode != -1609594047) {
             if (hashCode != -318452137) {
@@ -17636,7 +17678,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void n(ArrayList arrayList) {
-        SharedPreferences.Editor edit = s1(this.currentAccount).W3.edit();
+        SharedPreferences.Editor edit = s1(this.currentAccount).X3.edit();
         for (int i = 0; i < arrayList.size(); i++) {
             TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList.get(i);
             if (dialog.peer != null && (dialog.notify_settings instanceof TLRPC.TL_peerNotifySettings)) {
@@ -17670,7 +17712,7 @@ public final class uc7 extends rf0 implements fn7 {
         TLRPC.UserFull Y1 = Y1(getUserConfig().e());
         if (Y1 != null) {
             Y1.sponsored_enabled = false;
-            getMessagesStorage().g2(Y1, false);
+            getMessagesStorage().l2(Y1, false);
             if (z) {
                 TL_account.toggleSponsoredMessages togglesponsoredmessages = new TL_account.toggleSponsoredMessages();
                 togglesponsoredmessages.enabled = false;
@@ -17718,10 +17760,10 @@ public final class uc7 extends rf0 implements fn7 {
                     nativeByteBuffer2 = nativeByteBuffer;
                     cc4.g(exc, true);
                     nativeByteBuffer = nativeByteBuffer2;
-                    j = getMessagesStorage().y(nativeByteBuffer);
+                    j = getMessagesStorage().A(nativeByteBuffer);
                     getConnectionsManager().sendRequest(tL_messages_getPeerDialogs, new v77(this, j, m, (byte) 1));
                 }
-                j = getMessagesStorage().y(nativeByteBuffer);
+                j = getMessagesStorage().A(nativeByteBuffer);
             }
             getConnectionsManager().sendRequest(tL_messages_getPeerDialogs, new v77(this, j, m, (byte) 1));
         }
@@ -17743,14 +17785,14 @@ public final class uc7 extends rf0 implements fn7 {
             } catch (Exception e2) {
                 exc = e2;
                 cc4.g(exc, true);
-                j = getMessagesStorage().y(nativeByteBuffer);
+                j = getMessagesStorage().A(nativeByteBuffer);
                 long j2 = j;
                 TLRPC.TL_messages_getUnreadMentions tL_messages_getUnreadMentions = new TLRPC.TL_messages_getUnreadMentions();
                 tL_messages_getUnreadMentions.peer = inputPeer;
                 tL_messages_getUnreadMentions.limit = 1;
                 getConnectionsManager().sendRequest(tL_messages_getUnreadMentions, new p87((Object) this, (Object) inputPeer, j2, (byte) 10));
             }
-            j = getMessagesStorage().y(nativeByteBuffer);
+            j = getMessagesStorage().A(nativeByteBuffer);
         }
         long j22 = j;
         TLRPC.TL_messages_getUnreadMentions tL_messages_getUnreadMentions2 = new TLRPC.TL_messages_getUnreadMentions();
@@ -17774,7 +17816,7 @@ public final class uc7 extends rf0 implements fn7 {
                     long j = peer.user_id;
                     if (r2(j) != dialog.spam) {
                         if (editor == null) {
-                            editor = this.W3.edit();
+                            editor = this.X3.edit();
                         }
                         d4(editor, j, dialog.spam);
                         if (dialog.spam) {
@@ -17797,11 +17839,11 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void o0(long j, int i, long j2) {
-        getMessagesStorage().n1(j);
+        getMessagesStorage().r1(j);
         ArrayList arrayList = new ArrayList();
         arrayList.add(Integer.valueOf(i));
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new se7(messagesStorage, arrayList, j2, (byte) 1));
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new te7(messagesStorage, arrayList, j2, (byte) 2));
     }
 
     public final TLRPC.InputUser o1(long j) {
@@ -17813,7 +17855,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void o3(int i, TLRPC.User user, boolean z) {
-        jf7 messagesStorage = getMessagesStorage();
+        kf7 messagesStorage = getMessagesStorage();
         if (user == null) {
             messagesStorage.getClass();
         } else {
@@ -17888,7 +17930,7 @@ public final class uc7 extends rf0 implements fn7 {
                     }
                 }
             }
-            getMessagesStorage().D1(((TL_update.TL_updateFolderPeers) arrayList.get(i)).folder_peers, null, 0L, 0);
+            getMessagesStorage().I1(((TL_update.TL_updateFolderPeers) arrayList.get(i)).folder_peers, null, 0L, 0);
             i++;
             z = true;
         }
@@ -17924,7 +17966,7 @@ public final class uc7 extends rf0 implements fn7 {
         boolean z = false;
         sb.append(ip7.p(j, j2, false));
         String sb2 = sb.toString();
-        SharedPreferences sharedPreferences = this.W3;
+        SharedPreferences sharedPreferences = this.X3;
         int i = sharedPreferences.getInt(sb2, -1);
         if (i == -1) {
             if (chat != null) {
@@ -17949,9 +17991,9 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void p3() {
-        hl.r(this.m5);
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.n5;
-        vb7 vb7Var = this.o5;
+        hl.r(this.n5);
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.o5;
+        vb7 vb7Var = this.p5;
         if (tL_webBrowserSettings == null) {
             vb7Var.e(this.currentAccount, null, new f87(this, (byte) 0));
         }
@@ -17983,15 +18025,15 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void q(ArrayList arrayList, ArrayList arrayList2, TLRPC.TL_pendingSuggestion tL_pendingSuggestion) {
-        this.u3 = arrayList != null ? new HashSet(arrayList) : new HashSet();
+        this.v3 = arrayList != null ? new HashSet(arrayList) : new HashSet();
         if (arrayList2 != null) {
-            this.v3 = new HashSet(arrayList2);
+            this.w3 = new HashSet(arrayList2);
         }
-        this.w3 = tL_pendingSuggestion;
+        this.x3 = tL_pendingSuggestion;
         getNotificationCenter().k(jn7.s1, new Object[0]);
-        SharedPreferences.Editor edit = this.X3.edit();
-        edit.putStringSet("pendingSuggestions", this.u3);
-        edit.putStringSet("dismissedSuggestions", this.v3);
+        SharedPreferences.Editor edit = this.Y3.edit();
+        edit.putStringSet("pendingSuggestions", this.v3);
+        edit.putStringSet("dismissedSuggestions", this.w3);
         edit.apply();
     }
 
@@ -18033,7 +18075,7 @@ public final class uc7 extends rf0 implements fn7 {
         tL_dialogFolder.pinnedNum = i3 + 1;
         TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
         tL_messages_dialogs.dialogs.add(tL_dialogFolder);
-        getMessagesStorage().a1(tL_messages_dialogs, 1);
+        getMessagesStorage().e1(tL_messages_dialogs, 1);
         zh6Var.k(j, tL_dialogFolder);
         arrayList.add(0, tL_dialogFolder);
     }
@@ -18059,7 +18101,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean q2(long j, long j2) {
-        return this.W3.getBoolean("sound_enabled_" + ip7.p(j, j2, false), true);
+        return this.X3.getBoolean("sound_enabled_" + ip7.p(j, j2, false), true);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x006c  */
@@ -18071,7 +18113,7 @@ public final class uc7 extends rf0 implements fn7 {
         boolean z;
         if (!getUserConfig().p()) {
             int size = this.G0.size() - 1;
-            hr hrVar = this.k4;
+            hr hrVar = this.l4;
             if (size > hrVar.h1.f()) {
                 int size2 = (this.G0.size() - 1) - hrVar.h1.f();
                 ArrayList arrayList = new ArrayList(this.G0);
@@ -18132,7 +18174,7 @@ public final class uc7 extends rf0 implements fn7 {
             }
             i++;
         }
-        this.p4.remove(dialog);
+        this.q4.remove(dialog);
         this.R.l(j);
         ArrayList arrayList = (ArrayList) this.w.get(dialog.folder_id);
         if (arrayList != null) {
@@ -18169,7 +18211,7 @@ public final class uc7 extends rf0 implements fn7 {
                                 long j5 = j4;
                                 N0.flags2 = vsd.b(i, TLObject.FLAG_23, j5 != 0);
                                 N0.guard_bot_id = j5;
-                                uc7Var2.getMessagesStorage().K1(N0, false);
+                                uc7Var2.getMessagesStorage().P1(N0, false);
                                 jn7 notificationCenter = uc7Var2.getNotificationCenter();
                                 Boolean bool = Boolean.FALSE;
                                 notificationCenter.k(jn7.T, N0, 0, bool, bool);
@@ -18198,44 +18240,44 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void r(TL_update.TL_updateWebBrowserException tL_updateWebBrowserException) {
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.n5;
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.o5;
         if (tL_webBrowserSettings == null) {
             return;
         }
         if (tL_updateWebBrowserException.delete) {
             if (vsd.a(tL_updateWebBrowserException.flags, 1)) {
                 boolean z = tL_updateWebBrowserException.open_external_browser;
-                TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = this.n5;
+                TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = this.o5;
                 if (z) {
                     k0(tL_webBrowserSettings2.external_exceptions, tL_updateWebBrowserException.exception);
                 } else {
                     k0(tL_webBrowserSettings2.inapp_exceptions, tL_updateWebBrowserException.exception);
                 }
             } else {
-                k0(this.n5.external_exceptions, tL_updateWebBrowserException.exception);
-                k0(this.n5.inapp_exceptions, tL_updateWebBrowserException.exception);
+                k0(this.o5.external_exceptions, tL_updateWebBrowserException.exception);
+                k0(this.o5.inapp_exceptions, tL_updateWebBrowserException.exception);
             }
         } else if (tL_updateWebBrowserException.open_external_browser) {
             ArrayList<TL_account.WebDomainException> arrayList = tL_webBrowserSettings.external_exceptions;
             TL_account.WebDomainException webDomainException = tL_updateWebBrowserException.exception;
             k0(arrayList, webDomainException);
             arrayList.add(webDomainException);
-            k0(this.n5.inapp_exceptions, tL_updateWebBrowserException.exception);
+            k0(this.o5.inapp_exceptions, tL_updateWebBrowserException.exception);
         } else {
             ArrayList<TL_account.WebDomainException> arrayList2 = tL_webBrowserSettings.inapp_exceptions;
             TL_account.WebDomainException webDomainException2 = tL_updateWebBrowserException.exception;
             k0(arrayList2, webDomainException2);
             arrayList2.add(webDomainException2);
-            k0(this.n5.external_exceptions, tL_updateWebBrowserException.exception);
+            k0(this.o5.external_exceptions, tL_updateWebBrowserException.exception);
         }
-        e5(this.n5);
+        e5(this.o5);
     }
 
     public final Runnable r0(long j, int i, jc7 jc7Var) {
         int i2;
         int i3;
         uc7 uc7Var;
-        SharedPreferences sharedPreferences = s1(this.currentAccount).W3;
+        SharedPreferences sharedPreferences = s1(this.currentAccount).X3;
         if (i == 0) {
             i2 = sharedPreferences.getInt("diditem" + j, 0);
         } else {
@@ -18246,7 +18288,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (j2 != 0 && getMessagesController().M0(Long.valueOf(j2)) == null) {
             boolean[] zArr = new boolean[1];
             Runnable[] runnableArr = new Runnable[1];
-            jf7 messagesStorage = getMessagesStorage();
+            kf7 messagesStorage = getMessagesStorage();
             messagesStorage.a.c(new w77(this, zArr, messagesStorage, j2, runnableArr, j, i2, jc7Var));
             return new x77(zArr, runnableArr, (byte) 0);
         }
@@ -18268,7 +18310,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final boolean r2(long j) {
-        return j > 0 && qu6.v("dialog_bar_spam", j, this.W3, false);
+        return j > 0 && qu6.v("dialog_bar_spam", j, this.X3, false);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x007a, code lost:
@@ -18298,14 +18340,14 @@ public final class uc7 extends rf0 implements fn7 {
             if (wf3.B(j)) {
                 if (i3 != 0) {
                     TLRPC.EncryptedChat a1 = a1(Integer.valueOf((int) (j & 4294967295L)));
-                    jf7 messagesStorage = getMessagesStorage();
+                    kf7 messagesStorage = getMessagesStorage();
                     byte b = 0;
-                    messagesStorage.a.c(new zc7(messagesStorage, j, i, i5, messagesStorage.H, i2, b));
+                    messagesStorage.a.c(new ad7(messagesStorage, j, i, i5, messagesStorage.H, i2, b));
                     getMessagesStorage().a.c(new i87(this, j, i3, z, i4, i2, b));
                     if (a1 != null && a1.ttl > 0) {
                         int max = Math.max(getConnectionsManager().getCurrentTime(), i3);
-                        jf7 messagesStorage2 = getMessagesStorage();
-                        messagesStorage2.a.c(new ve7(messagesStorage2, a1.id, null, 0, i3, max));
+                        kf7 messagesStorage2 = getMessagesStorage();
+                        messagesStorage2.a.c(new xe7(messagesStorage2, a1.id, null, 0, i3, max));
                     }
                     final long j3 = (j2 == 0 || !B2(j)) ? 0L : j2;
                     if (z4) {
@@ -18361,8 +18403,8 @@ public final class uc7 extends rf0 implements fn7 {
                 num = 0;
             }
             this.P.put(Long.valueOf(j), Integer.valueOf(Math.max(num.intValue(), i)));
-            jf7 messagesStorage3 = getMessagesStorage();
-            messagesStorage3.a.c(new zc7(messagesStorage3, j, i, i5, messagesStorage3.H, i2, (byte) 0));
+            kf7 messagesStorage3 = getMessagesStorage();
+            messagesStorage3.a.c(new ad7(messagesStorage3, j, i, i5, messagesStorage3.H, i2, (byte) 0));
             getMessagesStorage().a.c(new h87(this, j, i4, i, z, (byte) 0));
         }
     }
@@ -18406,7 +18448,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void s(TL_update.TL_updateWebBrowserSettings tL_updateWebBrowserSettings) {
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.n5;
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.o5;
         if (tL_webBrowserSettings == null) {
             return;
         }
@@ -18428,7 +18470,7 @@ public final class uc7 extends rf0 implements fn7 {
                     TLRPC.Chat M0 = j < 0 ? M0(Long.valueOf(-j)) : null;
                     if (M0 != null && (M0.forum || (M0.monoforum && xc2.A(this.currentAccount, M0, 24)))) {
                         long j2 = M0.id;
-                        qyb qybVar = this.g4;
+                        qyb qybVar = this.h4;
                         if (qybVar.l(j2) != null) {
                             qybVar.h(M0.id);
                             int[] iArr = qyb.w;
@@ -18463,7 +18505,7 @@ public final class uc7 extends rf0 implements fn7 {
                 j3 = j;
             }
             uc7Var.getNotificationCenter().k(2, 256);
-            uc7Var.getMessagesStorage().C1(j3, true);
+            uc7Var.getMessagesStorage().H1(j3, true);
             if (uc7Var.l0()) {
                 uc7Var.h5(null);
                 uc7Var.getNotificationCenter().k(jn7.r, new Object[0]);
@@ -18501,10 +18543,10 @@ public final class uc7 extends rf0 implements fn7 {
                 nativeByteBuffer2 = nativeByteBuffer;
                 cc4.g(exc, true);
                 nativeByteBuffer = nativeByteBuffer2;
-                j2 = uc7Var.getMessagesStorage().y(nativeByteBuffer);
+                j2 = uc7Var.getMessagesStorage().A(nativeByteBuffer);
                 uc7Var.getConnectionsManager().sendRequest(tL_messages_markDialogUnread, new e77(uc7Var, j2, (byte) 8));
             }
-            j2 = uc7Var.getMessagesStorage().y(nativeByteBuffer);
+            j2 = uc7Var.getMessagesStorage().A(nativeByteBuffer);
         }
         uc7Var.getConnectionsManager().sendRequest(tL_messages_markDialogUnread, new e77(uc7Var, j2, (byte) 8));
     }
@@ -18513,7 +18555,7 @@ public final class uc7 extends rf0 implements fn7 {
         this.G0.remove(ac7Var);
         this.J0.remove(ac7Var.a);
         Integer valueOf = Integer.valueOf(ac7Var.a);
-        HashSet hashSet = this.n4;
+        HashSet hashSet = this.o4;
         if (hashSet.remove(valueOf)) {
             K4();
         }
@@ -18542,7 +18584,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final void t(int i, int i2, long j, String str, boolean z) {
         String str2 = j + "_" + i;
-        HashMap hashMap = this.h5;
+        HashMap hashMap = this.i5;
         if (hashMap.containsKey(str2)) {
             return;
         }
@@ -18563,7 +18605,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final int t1() {
         boolean p = getUserConfig().p();
-        hr hrVar = this.k4;
+        hr hrVar = this.l4;
         return (p ? hrVar.p0 : hrVar.o0).f();
     }
 
@@ -18761,11 +18803,11 @@ public final class uc7 extends rf0 implements fn7 {
         if (ac7Var == null || (ac7Var.g & 64) != 0) {
             return false;
         }
-        return this.n4.contains(Integer.valueOf(ac7Var.a));
+        return this.o4.contains(Integer.valueOf(ac7Var.a));
     }
 
     public final void u3(long j) {
-        this.W3.edit().putBoolean("dialog_bar_replied" + j, true).apply();
+        this.X3.edit().putBoolean("dialog_bar_replied" + j, true).apply();
         hl.c3(new t77(this, j, (byte) 8));
     }
 
@@ -18863,7 +18905,7 @@ public final class uc7 extends rf0 implements fn7 {
                 arrayList3.add(zb7Var);
             }
         }
-        j97 j97Var = this.t4;
+        j97 j97Var = this.u4;
         Collections.sort(arrayList6, j97Var);
         Collections.sort(arrayList5, j97Var);
         Collections.sort(arrayList3, j97Var);
@@ -18876,7 +18918,7 @@ public final class uc7 extends rf0 implements fn7 {
             return false;
         }
         if ((ac7Var.g & 64) == 0) {
-            return this.n4.contains(Integer.valueOf(ac7Var.a));
+            return this.o4.contains(Integer.valueOf(ac7Var.a));
         }
         return true;
     }
@@ -18936,14 +18978,14 @@ public final class uc7 extends rf0 implements fn7 {
                         queryFinalized.dispose();
                         if (i2 != 0) {
                             if (z5) {
-                                jf7 messagesStorage = uc7Var.getMessagesStorage();
+                                kf7 messagesStorage = uc7Var.getMessagesStorage();
                                 messagesStorage.getClass();
-                                messagesStorage.H(new ae7(messagesStorage, j4, j3, i2, (byte) 7));
+                                messagesStorage.J(new ae7(messagesStorage, j4, j3, i2, (byte) 7));
                             }
                             if (z2) {
-                                jf7 messagesStorage2 = uc7Var.getMessagesStorage();
+                                kf7 messagesStorage2 = uc7Var.getMessagesStorage();
                                 messagesStorage2.getClass();
-                                messagesStorage2.H(new ae7(messagesStorage2, j4, j3, i2, (byte) 6));
+                                messagesStorage2.J(new ae7(messagesStorage2, j4, j3, i2, (byte) 6));
                             }
                             hl.c3(new ja7(pt2Var2, i2, (byte) 0));
                         }
@@ -18996,7 +19038,7 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final void v3(long j, int i, long j2) {
-        jf7 messagesStorage = getMessagesStorage();
+        kf7 messagesStorage = getMessagesStorage();
         messagesStorage.a.c(new ae7(messagesStorage, i, -j, j2, (byte) 0));
         if (j == 0) {
             TLRPC.TL_messages_readMessageContents tL_messages_readMessageContents = new TLRPC.TL_messages_readMessageContents();
@@ -19016,19 +19058,19 @@ public final class uc7 extends rf0 implements fn7 {
         }
         byte b = 0;
         if (j == 0) {
-            TLRPC.TL_pendingSuggestion tL_pendingSuggestion = this.w3;
+            TLRPC.TL_pendingSuggestion tL_pendingSuggestion = this.x3;
             int i = jn7.s1;
             if (tL_pendingSuggestion != null && TextUtils.equals(str, tL_pendingSuggestion.suggestion)) {
-                this.w3 = null;
+                this.x3 = null;
                 getNotificationCenter().k(i, new Object[0]);
             } else {
-                if (!this.u3.remove(str) && this.v3.contains(str)) {
+                if (!this.v3.remove(str) && this.w3.contains(str)) {
                     return;
                 }
-                this.v3.add(str);
-                SharedPreferences.Editor edit = this.X3.edit();
-                edit.putStringSet("pendingSuggestions", this.u3);
-                edit.putStringSet("dismissedSuggestions", this.v3);
+                this.w3.add(str);
+                SharedPreferences.Editor edit = this.Y3.edit();
+                edit.putStringSet("pendingSuggestions", this.v3);
+                edit.putStringSet("dismissedSuggestions", this.w3);
                 edit.commit();
                 getNotificationCenter().k(i, new Object[0]);
             }
@@ -19077,8 +19119,8 @@ public final class uc7 extends rf0 implements fn7 {
         if (wf3.B(j) || j == getUserConfig().e()) {
             return;
         }
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new ae7(messagesStorage, j2, j, 0, (byte) 3));
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new ae7(messagesStorage, j2, j, 0, (byte) 1));
         TLRPC.TL_messages_readMentions tL_messages_readMentions = new TLRPC.TL_messages_readMentions();
         tL_messages_readMentions.peer = j1(j);
         if (j2 != 0) {
@@ -19097,12 +19139,12 @@ public final class uc7 extends rf0 implements fn7 {
         int i2;
         long r;
         String str2;
-        zh6 zh6Var = this.P4;
+        zh6 zh6Var = this.Q4;
         if (zh6Var != null) {
             long j2 = 0;
             TLRPC.TL_messages_savedReactionsTags tL_messages_savedReactionsTags = (TLRPC.TL_messages_savedReactionsTags) zh6Var.f(0L);
             if (tL_messages_savedReactionsTags == null) {
-                zh6 zh6Var2 = this.P4;
+                zh6 zh6Var2 = this.Q4;
                 TLRPC.TL_messages_savedReactionsTags tL_messages_savedReactionsTags2 = new TLRPC.TL_messages_savedReactionsTags();
                 zh6Var2.k(0L, tL_messages_savedReactionsTags2);
                 tL_messages_savedReactionsTags = tL_messages_savedReactionsTags2;
@@ -19235,7 +19277,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final void w5() {
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-        ConcurrentHashMap concurrentHashMap = this.f4;
+        ConcurrentHashMap concurrentHashMap = this.g4;
         Iterator it = concurrentHashMap.keySet().iterator();
         Long l = null;
         while (it.hasNext()) {
@@ -19246,10 +19288,10 @@ public final class uc7 extends rf0 implements fn7 {
             }
         }
         if (l == null) {
-            l87 l87Var = this.e4;
+            l87 l87Var = this.f4;
             if (l87Var != null) {
+                this.e4 = -1L;
                 this.d4 = -1L;
-                this.c4 = -1L;
                 hl.r(l87Var);
                 return;
             }
@@ -19257,12 +19299,12 @@ public final class uc7 extends rf0 implements fn7 {
         }
         long longValue = l.longValue() + 2;
         long j = currentTimeMillis;
-        if (j + longValue != this.d4 + this.c4) {
-            hl.r(this.e4);
-            this.d4 = j;
-            this.c4 = longValue;
+        if (j + longValue != this.e4 + this.d4) {
+            hl.r(this.f4);
+            this.e4 = j;
+            this.d4 = longValue;
             l87 l87Var2 = new l87(this, (byte) 9);
-            this.e4 = l87Var2;
+            this.f4 = l87Var2;
             hl.d3(l87Var2, longValue * 1000);
         }
     }
@@ -19332,15 +19374,15 @@ public final class uc7 extends rf0 implements fn7 {
     }
 
     public final Long x1() {
-        if (this.O3 == null && !this.c5) {
-            this.c5 = true;
+        if (this.P3 == null && !this.d5) {
+            this.d5 = true;
             getConnectionsManager().sendRequest(new TLRPC.TL_messages_getPaidReactionPrivacy(), null);
         }
-        return this.O3;
+        return this.P3;
     }
 
     public final boolean x2() {
-        hr hrVar = this.k4;
+        hr hrVar = this.l4;
         return (hrVar.f3.f() == 0 || hrVar.g3.f() == 0) ? false : true;
     }
 
@@ -19355,8 +19397,8 @@ public final class uc7 extends rf0 implements fn7 {
             getSecretChatHelper().u(a1, arrayList, null);
             if (i > 0) {
                 int currentTime = getConnectionsManager().getCurrentTime();
-                jf7 messagesStorage = getMessagesStorage();
-                messagesStorage.a.c(new ve7(messagesStorage, a1.id, arrayList, 0, currentTime, currentTime));
+                kf7 messagesStorage = getMessagesStorage();
+                messagesStorage.a.c(new xe7(messagesStorage, a1.id, arrayList, 0, currentTime, currentTime));
             }
         }
     }
@@ -19408,8 +19450,8 @@ public final class uc7 extends rf0 implements fn7 {
                     }
                 }
             }
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new ud7(messagesStorage, arrayList2, arrayList3, b));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new ee7(messagesStorage, arrayList2, arrayList3, b));
             NativeByteBuffer nativeByteBuffer2 = null;
             try {
                 nativeByteBuffer = new NativeByteBuffer(i2 + 12);
@@ -19429,10 +19471,10 @@ public final class uc7 extends rf0 implements fn7 {
                 nativeByteBuffer2 = nativeByteBuffer;
                 cc4.g(e, true);
                 nativeByteBuffer = nativeByteBuffer2;
-                j = getMessagesStorage().y(nativeByteBuffer);
+                j = getMessagesStorage().A(nativeByteBuffer);
                 getConnectionsManager().sendRequest(tL_messages_reorderPinnedDialogs, new e77(this, j, (byte) 7));
             }
-            j = getMessagesStorage().y(nativeByteBuffer);
+            j = getMessagesStorage().A(nativeByteBuffer);
         } else {
             tL_messages_reorderPinnedDialogs.order = arrayList;
         }
@@ -19441,7 +19483,7 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final void x5(long j, TLRPC.EmojiStatus emojiStatus) {
         int g = wf3.g(emojiStatus);
-        ConcurrentHashMap concurrentHashMap = this.f4;
+        ConcurrentHashMap concurrentHashMap = this.g4;
         if (g != 0) {
             concurrentHashMap.put(Long.valueOf(j), Integer.valueOf(g));
         } else if (!concurrentHashMap.containsKey(Long.valueOf(j))) {
@@ -19522,21 +19564,21 @@ public final class uc7 extends rf0 implements fn7 {
                 nativeByteBuffer2 = nativeByteBuffer;
                 cc4.g(e, true);
                 nativeByteBuffer = nativeByteBuffer2;
-                j3 = getMessagesStorage().y(nativeByteBuffer);
+                j3 = getMessagesStorage().A(nativeByteBuffer);
                 int currentTime = getConnectionsManager().getCurrentTime();
                 if (z) {
                 }
                 if (h1 != null) {
                 }
             }
-            j3 = getMessagesStorage().y(nativeByteBuffer);
+            j3 = getMessagesStorage().A(nativeByteBuffer);
         } else {
             j3 = j2;
         }
         int currentTime2 = getConnectionsManager().getCurrentTime();
         if (z) {
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new zc7(messagesStorage, currentTime2, currentTime2, i2, i, j));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new ad7(messagesStorage, currentTime2, currentTime2, i2, i, j));
         }
         if (h1 != null) {
             TLRPC.TL_messages_readMessageContents tL_messages_readMessageContents = new TLRPC.TL_messages_readMessageContents();
@@ -19552,13 +19594,13 @@ public final class uc7 extends rf0 implements fn7 {
 
     public final void y4(int i, long j, boolean z) {
         cxa cxaVar = new cxa(j, i);
-        HashSet hashSet = this.d5;
+        HashSet hashSet = this.e5;
         if (hashSet.contains(cxaVar)) {
             return;
         }
         hashSet.add(cxaVar);
-        this.e5.add(new Pair(cxaVar, new AtomicBoolean(z)));
-        l87 l87Var = this.f5;
+        this.f5.add(new Pair(cxaVar, new AtomicBoolean(z)));
+        l87 l87Var = this.g5;
         hl.r(l87Var);
         hl.c3(l87Var);
     }
@@ -19573,9 +19615,9 @@ public final class uc7 extends rf0 implements fn7 {
             ArrayList arrayList3 = ac7Var.l;
             arrayList2.clear();
             arrayList3.clear();
-            this.q4 = ac7Var;
+            this.r4 = ac7Var;
             try {
-                Collections.sort(arrayList, this.r4);
+                Collections.sort(arrayList, this.s4);
             } catch (Exception e) {
                 cc4.g(e, true);
             }
@@ -19607,7 +19649,7 @@ public final class uc7 extends rf0 implements fn7 {
                 ac7Var = ac7Var2;
             }
             try {
-                Collections.sort(arrayList, this.s4);
+                Collections.sort(arrayList, this.t4);
             } catch (Exception unused) {
             }
         }
@@ -19683,13 +19725,13 @@ public final class uc7 extends rf0 implements fn7 {
         }
         ArrayList arrayList = new ArrayList();
         if (r47Var.k.mentioned) {
-            jf7 messagesStorage = getMessagesStorage();
+            kf7 messagesStorage = getMessagesStorage();
             messagesStorage.a.c(new ae7(messagesStorage, r47Var.e1(), -r47Var.k.peer_id.channel_id, r47.B0(r47Var.k), (byte) 0));
         }
         arrayList.add(Integer.valueOf(r47Var.e1()));
         long B0 = r47.B0(r47Var.k);
         byte b = 0;
-        getMessagesStorage().P0(0, 0, B0, arrayList);
+        getMessagesStorage().S0(0, 0, B0, arrayList);
         byte b2 = 1;
         getNotificationCenter().k(jn7.C0, Long.valueOf(B0), arrayList);
         int e1 = r47Var.e1();
@@ -19714,7 +19756,7 @@ public final class uc7 extends rf0 implements fn7 {
         if (user == null && chat == null && encryptedChat == null) {
             return;
         }
-        SharedPreferences.Editor edit = this.W3.edit();
+        SharedPreferences.Editor edit = this.X3.edit();
         edit.putInt("dialog_bar_vis3" + j, 3);
         edit.commit();
         byte b = 0;
@@ -19797,7 +19839,7 @@ public final class uc7 extends rf0 implements fn7 {
             r47Var = null;
             z = false;
         } else {
-            if (!qu6.v("dialog_bar_replied", j, this.W3, false)) {
+            if (!qu6.v("dialog_bar_replied", j, this.X3, false)) {
                 int i3 = 0;
                 while (true) {
                     if (i3 >= arrayList.size()) {
@@ -19840,7 +19882,7 @@ public final class uc7 extends rf0 implements fn7 {
                 }
                 if (r47Var5.N3() && !r47Var5.n4() && !r47.l3(r47Var5.k)) {
                     if (r47Var5.L3()) {
-                        if (r47.V2(r47Var5.k.media.document) ? getMessagesController().k4.S0.f : true) {
+                        if (r47.V2(r47Var5.k.media.document) ? getMessagesController().l4.S0.f : true) {
                             ls6 mediaDataController = getMediaDataController();
                             TLRPC.Message message3 = r47Var5.k;
                             mediaDataController.c(message3.media.document, message3.date, r47Var5.X1);
@@ -19969,14 +20011,14 @@ public final class uc7 extends rf0 implements fn7 {
                                     }
                                 }
                                 this.S.k(j5, arrayList4);
-                                this.i4.c(j5);
+                                this.j4.c(j5);
                                 if (z3) {
                                     h5(null);
                                     getNotificationCenter().k(jn7.r, new Object[0]);
                                 }
-                                jf7 messagesStorage = getMessagesStorage();
-                                df7 df7Var = new df7() { // from class: ob7
-                                    @Override // df7
+                                kf7 messagesStorage = getMessagesStorage();
+                                ef7 ef7Var = new ef7() { // from class: ob7
+                                    @Override // ef7
                                     public final void a(int i10) {
                                         uc7 uc7Var2 = uc7.this;
                                         if (i10 != -1) {
@@ -19999,7 +20041,7 @@ public final class uc7 extends rf0 implements fn7 {
                                 };
                                 uc7Var = this;
                                 j5 = j;
-                                messagesStorage.a.c(new ke7(messagesStorage, j, df7Var, (byte) 1));
+                                messagesStorage.a.c(new le7(messagesStorage, j, ef7Var, (byte) 1));
                                 z2 = true;
                             }
                         }
@@ -20010,12 +20052,12 @@ public final class uc7 extends rf0 implements fn7 {
                         while (i2 < arrayList.size()) {
                         }
                         this.S.k(j5, arrayList42);
-                        this.i4.c(j5);
+                        this.j4.c(j5);
                         if (z3) {
                         }
-                        jf7 messagesStorage2 = getMessagesStorage();
-                        df7 df7Var2 = new df7() { // from class: ob7
-                            @Override // df7
+                        kf7 messagesStorage2 = getMessagesStorage();
+                        ef7 ef7Var2 = new ef7() { // from class: ob7
+                            @Override // ef7
                             public final void a(int i10) {
                                 uc7 uc7Var2 = uc7.this;
                                 if (i10 != -1) {
@@ -20038,7 +20080,7 @@ public final class uc7 extends rf0 implements fn7 {
                         };
                         uc7Var = this;
                         j5 = j;
-                        messagesStorage2.a.c(new ke7(messagesStorage2, j, df7Var2, (byte) 1));
+                        messagesStorage2.a.c(new le7(messagesStorage2, j, ef7Var2, (byte) 1));
                         z2 = true;
                     }
                 } else {
@@ -20066,7 +20108,7 @@ public final class uc7 extends rf0 implements fn7 {
                             }
                         }
                         uc7Var.S.k(j5, arrayList5);
-                        uc7Var.i4.c(j5);
+                        uc7Var.j4.c(j5);
                         if (r47Var.k.peer_id.channel_id == 0) {
                             uc7Var.V.put(r47Var.e1(), r47Var);
                             long j8 = r47Var.k.random_id;
@@ -20106,7 +20148,7 @@ public final class uc7 extends rf0 implements fn7 {
                     }
                     i11++;
                 }
-                this.p4.remove(tL_dialog);
+                this.q4.remove(tL_dialog);
                 this.K.remove(tL_dialog);
                 this.L.remove(tL_dialog);
                 this.E.remove(tL_dialog);

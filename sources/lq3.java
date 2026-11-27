@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class lq3 extends rf0 implements fn7 {
     public static volatile lq3[] U = new lq3[4];
@@ -79,7 +79,7 @@ public final class lq3 extends rf0 implements fn7 {
         this.I = new ArrayList();
         this.J = new SparseArray();
         this.T = new p1(this, (byte) 25);
-        SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).X3;
+        SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).Y3;
         kq3 kq3Var = new kq3(sharedPreferences.getString("preset0", "1_1_1_1_1048576_512000_512000_524288_0_0_1_1_50_0"), "1_1_1_1_1048576_512000_512000_524288_0_0_1_1_50_0");
         this.K = kq3Var;
         kq3Var.e = false;
@@ -778,20 +778,20 @@ public final class lq3 extends rf0 implements fn7 {
                 i = 0;
             }
             if (i == 0) {
-                getMessagesStorage().q(0);
+                getMessagesStorage().s(0);
                 return;
             }
             if ((i & 1) == 0) {
-                getMessagesStorage().q(1);
+                getMessagesStorage().s(1);
             }
             if ((i & 2) == 0) {
-                getMessagesStorage().q(2);
+                getMessagesStorage().s(2);
             }
             if ((i & 4) == 0) {
-                getMessagesStorage().q(4);
+                getMessagesStorage().s(4);
             }
             if ((i & 8) == 0) {
-                getMessagesStorage().q(8);
+                getMessagesStorage().s(8);
             }
         }
     }
@@ -803,9 +803,9 @@ public final class lq3 extends rf0 implements fn7 {
             hashMap.remove(str);
             this.h.remove(new Pair(Long.valueOf(mq3Var.c), Integer.valueOf(mq3Var.b)));
             if (i == 0 || i == 2) {
-                jf7 messagesStorage = getMessagesStorage();
+                kf7 messagesStorage = getMessagesStorage();
                 long j = mq3Var.c;
-                messagesStorage.a.c(new gd7(messagesStorage, mq3Var.b, j, (byte) 6));
+                messagesStorage.a.c(new id7(messagesStorage, mq3Var.b, j, (byte) 6));
             }
             int i2 = mq3Var.b;
             if (i2 == 1) {
@@ -1008,23 +1008,23 @@ public final class lq3 extends rf0 implements fn7 {
         int m = m();
         byte b = 1;
         if ((m & 1) != 0 && (i & 1) != 0 && this.b.isEmpty()) {
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new te7(messagesStorage, b, b));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new ue7(messagesStorage, b, b));
         }
         if ((m & 2) != 0 && (i & 2) != 0 && this.c.isEmpty()) {
-            jf7 messagesStorage2 = getMessagesStorage();
-            messagesStorage2.a.c(new te7(messagesStorage2, 2, b));
+            kf7 messagesStorage2 = getMessagesStorage();
+            messagesStorage2.a.c(new ue7(messagesStorage2, 2, b));
         }
         if ((m & 4) != 0 && (i & 4) != 0 && this.e.isEmpty()) {
-            jf7 messagesStorage3 = getMessagesStorage();
-            messagesStorage3.a.c(new te7(messagesStorage3, 4, b));
+            kf7 messagesStorage3 = getMessagesStorage();
+            messagesStorage3.a.c(new ue7(messagesStorage3, 4, b));
         }
         int i2 = 8;
         if ((m & 8) == 0 || (i & 8) == 0 || !this.d.isEmpty()) {
             return;
         }
-        jf7 messagesStorage4 = getMessagesStorage();
-        messagesStorage4.a.c(new te7(messagesStorage4, i2, b));
+        kf7 messagesStorage4 = getMessagesStorage();
+        messagesStorage4.a.c(new ue7(messagesStorage4, i2, b));
     }
 
     public final void u() {

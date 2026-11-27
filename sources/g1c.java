@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class g1c extends FrameLayout implements snb {
     public boolean E;
@@ -27,7 +27,7 @@ public final class g1c extends FrameLayout implements snb {
     public int M;
     public final int a;
     public final vnb b;
-    public sca c;
+    public tca c;
     public final p66 d;
     public final hn e;
     public final vl4 f;
@@ -188,7 +188,7 @@ public final class g1c extends FrameLayout implements snb {
         float d = this.r.d(this.n);
         if (d > 0.0f) {
             if (this.c == null) {
-                this.c = new sca(this);
+                this.c = new tca(this);
             }
             canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
             this.c.a(canvas, d);

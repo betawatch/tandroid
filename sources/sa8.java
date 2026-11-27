@@ -36,7 +36,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class sa8 implements Runnable {
     public final /* synthetic */ byte a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class sa8 implements Runnable {
         String optString;
         TLRPC.Message message;
         boolean z;
-        f09 f09Var;
+        g09 g09Var;
         String str;
         int i2;
         String str2;
@@ -363,15 +363,15 @@ public final /* synthetic */ class sa8 implements Runnable {
                 ArrayList<TLRPC.TL_shareThemeBackdropOption> arrayList2 = (ArrayList) this.d;
                 TLRPC.TL_shareThemeBackdrops tL_shareThemeBackdrops = qy8Var.b;
                 ArrayList<TLRPC.TL_shareThemeBackdropOption> arrayList3 = tL_shareThemeBackdrops != null ? tL_shareThemeBackdrops.backdrops : null;
-                if (arrayList3 == null || arrayList3 == arrayList2 || (f09Var = rz8Var.d) == null || rz8Var.isFinished) {
+                if (arrayList3 == null || arrayList3 == arrayList2 || (g09Var = rz8Var.d) == null || rz8Var.isFinished) {
                     return;
                 }
-                d09 d09Var = f09Var.n;
-                if (d09Var != null && d09Var.a == 0 && (i4 = d09Var.f) >= 0) {
+                e09 e09Var = g09Var.n;
+                if (e09Var != null && e09Var.a == 0 && (i4 = e09Var.f) >= 0) {
                     String[] strArr = nd0.a;
                     if (i4 < strArr.length) {
                         str = strArr[i4];
-                        i2 = f09Var.M7;
+                        i2 = g09Var.M7;
                         if (i2 >= 0) {
                             String[] strArr2 = nd0.a;
                             if (i2 < strArr2.length) {
@@ -387,34 +387,34 @@ public final /* synthetic */ class sa8 implements Runnable {
                                                 }
                                             }
                                         }
-                                        f09Var.M7 = i3;
+                                        g09Var.M7 = i3;
                                         if (str != null) {
-                                            if (f09Var.r != null) {
-                                                f09Var.r = null;
-                                                f09Var.s = 1.0f;
+                                            if (g09Var.r != null) {
+                                                g09Var.r = null;
+                                                g09Var.s = 1.0f;
                                             }
                                             int i6 = 0;
                                             while (true) {
                                                 String[] strArr4 = nd0.a;
                                                 if (i6 >= strArr4.length) {
-                                                    i6 = f09.F9;
+                                                    i6 = g09.F9;
                                                 } else if (!str.equals(strArr4[i6])) {
                                                     i6++;
                                                 }
                                             }
-                                            f09Var.n = f09.t(i6);
-                                            v34 v34Var = f09Var.c;
+                                            g09Var.n = g09.t(i6);
+                                            v34 v34Var = g09Var.c;
                                             if (v34Var != null) {
                                                 ((rz8) v34Var.b).Y();
                                             }
                                         }
-                                        f09Var.invalidate();
+                                        g09Var.invalidate();
                                     }
-                                    i3 = f09.F9;
-                                    f09Var.M7 = i3;
+                                    i3 = g09.F9;
+                                    g09Var.M7 = i3;
                                     if (str != null) {
                                     }
-                                    f09Var.invalidate();
+                                    g09Var.invalidate();
                                 }
                                 vz8Var = rz8Var.e;
                                 if (vz8Var == null || vz8Var.F) {
@@ -447,7 +447,7 @@ public final /* synthetic */ class sa8 implements Runnable {
                     }
                 }
                 str = null;
-                i2 = f09Var.M7;
+                i2 = g09Var.M7;
                 if (i2 >= 0) {
                 }
                 str2 = null;
@@ -458,14 +458,14 @@ public final /* synthetic */ class sa8 implements Runnable {
                 }
                 break;
             case 15:
-                f09 f09Var2 = (f09) this.b;
-                c09 c09Var = (c09) this.c;
+                g09 g09Var2 = (g09) this.b;
+                d09 d09Var = (d09) this.c;
                 Bitmap bitmap = (Bitmap) this.d;
-                if (c09Var.G || bitmap == null) {
+                if (d09Var.G || bitmap == null) {
                     return;
                 }
-                c09Var.D = bitmap;
-                f09Var2.invalidate();
+                d09Var.D = bitmap;
+                g09Var2.invalidate();
                 return;
             case 16:
                 a36 a36Var = (a36) this.b;
@@ -652,7 +652,7 @@ public final /* synthetic */ class sa8 implements Runnable {
                     xm9Var.a();
                     ls6.d0(i11).j1(str11, null, true);
                     if (tL_error3 != null) {
-                        jn7.f(i11).d(new z09(xm9Var, tL_error3, (byte) 28));
+                        jn7.f(i11).d(new yz8(xm9Var, tL_error3, (byte) 29));
                     }
                 }
                 xm9Var.a();

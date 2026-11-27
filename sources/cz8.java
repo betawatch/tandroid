@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cz8 extends HorizontalScrollView {
     public m88 a;
@@ -111,13 +111,13 @@ public final class cz8 extends HorizontalScrollView {
                 float f3 = 1.0f / max;
                 canvas.scale(f3, f3);
                 rectF.set((rectF2.left - scrollX) * max, (rectF2.top - 0.0f) * max, (rectF2.right - scrollX) * max, (rectF2.bottom - 0.0f) * max);
-                f09 f09Var = rz8Var.d;
+                g09 g09Var = rz8Var.d;
                 int i = iArr2[0];
                 int i2 = iArr[0];
                 int i3 = iArr2[1];
                 int i4 = iArr[1];
-                Paint paint = f09Var.A1;
-                paint.setColor(f09Var.t0());
+                Paint paint = g09Var.A1;
+                paint.setColor(g09Var.t0());
                 canvas.drawRect(rectF, paint);
                 canvas.restore();
                 Paint paint2 = rz8Var.o0;
@@ -125,8 +125,8 @@ public final class cz8 extends HorizontalScrollView {
                     paint2 = new Paint(1);
                     rz8Var.o0 = paint2;
                 }
-                d09 d09Var = rz8Var.d.n;
-                paint2.setColor(d09Var != null ? d09Var.h : 872415231);
+                e09 e09Var = rz8Var.d.n;
+                paint2.setColor(e09Var != null ? e09Var.h : 872415231);
                 canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, rz8Var.o0);
                 super.draw(canvas);
                 kz8Var = this.b;

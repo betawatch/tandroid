@@ -37,7 +37,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class qe2 implements icc {
     public final /* synthetic */ byte a;
@@ -52,13 +52,13 @@ public final /* synthetic */ class qe2 implements icc {
 
     private final void b(Object obj, Object obj2) {
         boolean z;
-        b58 b58Var = (b58) this.b;
+        c58 c58Var = (c58) this.b;
         TL_phone.getGroupCallStars getgroupcallstars = (TL_phone.getGroupCallStars) this.c;
         TL_phone.groupCallStars groupcallstars = (TL_phone.groupCallStars) obj;
-        a96 a96Var = b58Var.W;
-        int i = b58Var.O;
-        b58Var.V = false;
-        TLRPC.InputGroupCall inputGroupCall = b58Var.P;
+        a96 a96Var = c58Var.W;
+        int i = c58Var.O;
+        c58Var.V = false;
+        TLRPC.InputGroupCall inputGroupCall = c58Var.P;
         if (inputGroupCall == null || inputGroupCall.id != getgroupcallstars.call.id) {
             return;
         }
@@ -78,16 +78,16 @@ public final /* synthetic */ class qe2 implements icc {
             }
             z = false;
             long j = groupcallstars.total_stars;
-            boolean z2 = (j == b58Var.R && b58Var.T == z) ? false : true;
-            b58Var.R = j;
-            b58Var.U = groupcallstars.top_donors;
-            b58Var.T = z;
+            boolean z2 = (j == c58Var.R && c58Var.T == z) ? false : true;
+            c58Var.R = j;
+            c58Var.U = groupcallstars.top_donors;
+            c58Var.T = z;
             if (z2) {
-                b58Var.i();
+                c58Var.i();
             }
-            b58Var.s();
+            c58Var.s();
         }
-        if (b58Var.isAttachedToWindow()) {
+        if (c58Var.isAttachedToWindow()) {
             hl.r(a96Var);
             hl.d3(a96Var, 5000L);
         }
@@ -181,11 +181,11 @@ public final /* synthetic */ class qe2 implements icc {
                     return;
                 }
                 TL_account.Tl_chatThemes tl_chatThemes = (TL_account.Tl_chatThemes) chatThemes;
-                jf7 messagesStorage = af2Var.getMessagesStorage();
+                kf7 messagesStorage = af2Var.getMessagesStorage();
                 ArrayList<TLRPC.ChatTheme> arrayList2 = tl_chatThemes.themes;
                 messagesStorage.getClass();
-                messagesStorage.H(new t87(messagesStorage, arrayList2, (byte) 21));
-                af2Var.getMessagesStorage().j1(tl_chatThemes.users, tl_chatThemes.chats, true, true);
+                messagesStorage.J(new t87(messagesStorage, arrayList2, (byte) 21));
+                af2Var.getMessagesStorage().n1(tl_chatThemes.users, tl_chatThemes.chats, true, true);
                 af2Var.getMessagesController().j4(tl_chatThemes.users, false);
                 af2Var.getMessagesController().c4(tl_chatThemes.chats, false);
                 ArrayList<TLRPC.ChatTheme> arrayList3 = tl_chatThemes.themes;
@@ -457,7 +457,7 @@ public final /* synthetic */ class qe2 implements icc {
                 }
                 nk3Var.d0 = false;
                 if (tL_contacts_found2 != null) {
-                    jf7.Y(i7).j1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
+                    kf7.a0(i7).n1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
                     uc7.s1(i7).j4(tL_contacts_found2.users, false);
                     uc7.s1(i7).c4(tL_contacts_found2.chats, false);
                     tL_contacts_found = tL_contacts_found2;
@@ -512,7 +512,7 @@ public final /* synthetic */ class qe2 implements icc {
                 }
                 pk3Var.a0 = false;
                 if (tL_contacts_found3 != null) {
-                    jf7.Y(i10).j1(tL_contacts_found3.users, tL_contacts_found3.chats, true, true);
+                    kf7.a0(i10).n1(tL_contacts_found3.users, tL_contacts_found3.chats, true, true);
                     uc7.s1(i10).j4(tL_contacts_found3.users, false);
                     uc7.s1(i10).c4(tL_contacts_found3.chats, false);
                 } else {
@@ -543,7 +543,7 @@ public final /* synthetic */ class qe2 implements icc {
                 arrayList10.clear();
                 String lowerCase = pk3Var.e0.toLowerCase();
                 String I3 = hl.I3(lowerCase);
-                HashMap hashMap = uc7.s1(i10).N4;
+                HashMap hashMap = uc7.s1(i10).O4;
                 wb7 wb7Var = hashMap != null ? (wb7) hashMap.get(Long.valueOf(j6)) : null;
                 if (wb7Var != null) {
                     ArrayList arrayList13 = wb7Var.b;

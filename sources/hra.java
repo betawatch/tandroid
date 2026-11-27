@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class hra implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -215,7 +215,7 @@ public final /* synthetic */ class hra implements View.OnClickListener {
                     HashMap hashMap = vs7.a;
                     if (B15 != null) {
                         j = 0;
-                        if (!TextUtils.isEmpty(B15.gift_address) && !TextUtils.isEmpty(B15.owner_address) && !TextUtils.isEmpty(B15.slug) && objArr5 == false && B15.offer_min_amount > 0 && (((arrayList = B15.resell_amount) == null || arrayList.isEmpty()) && uc7.s1(i4).k4.v0.f)) {
+                        if (!TextUtils.isEmpty(B15.gift_address) && !TextUtils.isEmpty(B15.owner_address) && !TextUtils.isEmpty(B15.slug) && objArr5 == false && B15.offer_min_amount > 0 && (((arrayList = B15.resell_amount) == null || arrayList.isEmpty()) && uc7.s1(i4).l4.v0.f)) {
                             long n2 = wf3.n(B15.owner_id);
                             if ((n2 == 0 || n2 != yac.h(i4).e()) && (TextUtils.isEmpty(B15.owner_address) || (x = c.C(i4).x()) == null || !c.b(B15.owner_address, x))) {
                                 z = true;

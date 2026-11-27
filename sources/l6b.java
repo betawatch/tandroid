@@ -9,7 +9,7 @@ import java.util.Collections;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class l6b implements hcb {
     public final d79 a;
@@ -258,7 +258,7 @@ public final class l6b implements hcb {
     }
 
     @Override // hcb
-    public final void x(long j, int i, x58 x58Var) {
+    public final void x(long j, int i, y58 y58Var) {
         ArrayList arrayList;
         int i2 = 0;
         d79 d79Var = this.a;
@@ -266,10 +266,10 @@ public final class l6b implements hcb {
             if (d79Var.getParent() instanceof pg3) {
                 pg3 pg3Var = (pg3) d79Var.getParent();
                 if (pg3Var.k(j)) {
-                    pg3Var.c0.add(x58Var);
+                    pg3Var.c0.add(y58Var);
                     return;
                 } else {
-                    x58Var.run();
+                    y58Var.run();
                     return;
                 }
             }
@@ -302,12 +302,12 @@ public final class l6b implements hcb {
                         int M0 = td4Var.M0();
                         if (i2 < K0 || i2 > M0) {
                             td4Var.g1(i2, hl.L(60.0f));
-                            d79Var.post(x58Var);
+                            d79Var.post(y58Var);
                             return;
                         }
                     }
                 }
-                x58Var.run();
+                y58Var.run();
                 return;
             }
         }
@@ -318,7 +318,7 @@ public final class l6b implements hcb {
             Collections.sort(arrayList2, O1.J);
             jn7.f(O1.a).k(jn7.y5, new Object[0]);
         }
-        x58Var.run();
+        y58Var.run();
     }
 
     public l6b(mr8 mr8Var) {

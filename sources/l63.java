@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.DataAutoDownloadActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class l63 implements View.OnClickListener {
     public final /* synthetic */ byte a = 1;
@@ -106,14 +106,14 @@ public final /* synthetic */ class l63 implements View.OnClickListener {
                 break;
             default:
                 boolean[] zArr3 = (boolean[]) obj6;
-                jl7[] jl7VarArr = (jl7[]) obj5;
+                kl7[] kl7VarArr = (kl7[]) obj5;
                 vnb vnbVar2 = (vnb) obj4;
                 tpa tpaVar = (tpa) obj3;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
                 String str = (String) obj;
                 if (!zArr3[0]) {
                     zArr3[0] = true;
-                    nu0 nu0Var = new nu0(zArr3, jl7VarArr, vnbVar2, tpaVar, (byte) 16);
+                    nu0 nu0Var = new nu0(zArr3, kl7VarArr, vnbVar2, tpaVar, (byte) 16);
                     if (!wallettransaction.comment_encrypted_preparing) {
                         c C = c.C(i);
                         String str2 = wallettransaction.comment;
@@ -149,9 +149,9 @@ public final /* synthetic */ class l63 implements View.OnClickListener {
         this.n = animatorSetArr;
     }
 
-    public /* synthetic */ l63(boolean[] zArr, jl7[] jl7VarArr, vnb vnbVar, tpa tpaVar, TL_wallet.walletTransaction wallettransaction, int i, String str) {
+    public /* synthetic */ l63(boolean[] zArr, kl7[] kl7VarArr, vnb vnbVar, tpa tpaVar, TL_wallet.walletTransaction wallettransaction, int i, String str) {
         this.c = zArr;
-        this.d = jl7VarArr;
+        this.d = kl7VarArr;
         this.e = vnbVar;
         this.f = tpaVar;
         this.h = wallettransaction;

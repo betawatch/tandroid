@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements snb {
     public static final /* synthetic */ int p0 = 0;
@@ -53,7 +53,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements s
     public boolean d;
     public View d0;
     public boolean e;
-    public final ki7 e0;
+    public final li7 e0;
     public boolean f;
     public jl0 f0;
     public final Path g0;
@@ -86,7 +86,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements s
         this.R = new SparseIntArray(5);
         this.S = new SparseIntArray(5);
         this.c0 = (short) 200;
-        this.e0 = new ki7(this, (byte) 24);
+        this.e0 = new li7(this, (byte) 24);
         this.g0 = new Path();
         this.h0 = new RectF();
         this.i0 = new RectF();
@@ -310,9 +310,9 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements s
             this.n = i2;
             this.r = i;
             boolean z2 = this.I;
-            ki7 ki7Var = this.e0;
+            li7 li7Var = this.e0;
             if (z2) {
-                hl.r(ki7Var);
+                hl.r(li7Var);
                 this.I = false;
             }
             this.T = 0.0f;
@@ -326,7 +326,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements s
                 this.G = ik8.g(textView.getMeasuredWidth(), this.H, 2, textView.getLeft());
             }
             setEnabled(false);
-            hl.d3(ki7Var, 16L);
+            hl.d3(li7Var, 16L);
             bv9 bv9Var2 = this.b;
             if (bv9Var2 != null) {
                 bv9Var2.c(i, z);

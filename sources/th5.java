@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.io.EOFException;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class th5 implements x1c {
     public static final ko4 f;
@@ -17,10 +17,10 @@ public final class th5 implements x1c {
 
     static {
         jo4 jo4Var = new jo4();
-        jo4Var.s = dg7.n("application/id3");
+        jo4Var.s = eg7.n("application/id3");
         f = new ko4(jo4Var);
         jo4 jo4Var2 = new jo4();
-        jo4Var2.s = dg7.n("application/x-emsg");
+        jo4Var2.s = eg7.n("application/x-emsg");
         g = new ko4(jo4Var2);
     }
 

@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class e83 extends yfb implements is4 {
     public final /* synthetic */ byte a;
@@ -29,12 +29,12 @@ public final class e83 extends yfb implements is4 {
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         ux2 ux2Var = (ux2) obj;
         zw2 zw2Var = (zw2) obj2;
         switch (b) {
         }
-        return ((e83) create(ux2Var, zw2Var)).invokeSuspend(f9cVar);
+        return ((e83) create(ux2Var, zw2Var)).invokeSuspend(g9cVar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0043, code lost:
@@ -72,21 +72,21 @@ public final class e83 extends yfb implements is4 {
         switch (b) {
             case 0:
                 byte b2 = this.b;
-                f9c f9cVar = f9c.a;
+                g9c g9cVar = g9c.a;
                 if (b2 == 0) {
                     ixe.b(obj);
                     u8a u8aVar = o83Var.i;
                     this.b = (byte) 1;
                     Object h = ((vp2) u8aVar.b).h(this);
                     if (h != vx2Var) {
-                        h = f9cVar;
+                        h = g9cVar;
                         break;
                     }
                 } else {
                     if (b2 != 1) {
                         if (b2 == 2) {
                             ixe.b(obj);
-                            return f9cVar;
+                            return g9cVar;
                         }
                         grb.i("call to 'resume' before 'invoke' with coroutine");
                         return null;

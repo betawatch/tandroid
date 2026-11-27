@@ -15,8 +15,8 @@ import java.util.Map;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes2.dex */
 public final class nw3 extends j79 {
     public final TLRPC.TL_inputStickerSetShortName F;
     public TLRPC.TL_messages_stickerSet G;
@@ -401,17 +401,17 @@ public final class nw3 extends j79 {
                 if (i3 < arrayList.size()) {
                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList.get(i3);
                     String str = (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? "" : stickerSet.title;
-                    t3b t3bVar = (t3b) view;
+                    u3b u3bVar = (u3b) view;
                     if (this.J == null) {
-                        t3bVar.a(0, str);
+                        u3bVar.a(0, str);
                         return;
                     }
                     int indexOf = str.toLowerCase().indexOf(this.J.toLowerCase());
                     if (indexOf < 0) {
-                        t3bVar.a(0, str);
+                        u3bVar.a(0, str);
                         return;
                     } else {
-                        t3bVar.b(str, 0, null, indexOf, this.J.length());
+                        u3bVar.b(str, 0, null, indexOf, this.J.length());
                         return;
                     }
                 }
@@ -509,7 +509,7 @@ public final class nw3 extends j79 {
         } else if (i == 1) {
             Context context = ow3Var.getContext();
             int i2 = zw3.C1;
-            view = new t3b(context, true, false, zw3Var.J0, false);
+            view = new u3b(context, true, false, zw3Var.J0, false);
         } else if (i == 3) {
             Context context2 = ow3Var.getContext();
             boolean z = ow3Var.a == 0;

@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class q03 implements Runnable {
     public final /* synthetic */ boolean[] E;
@@ -133,7 +133,7 @@ public final /* synthetic */ class q03 implements Runnable {
                         uc7.s1(i3).i4(user2, false, false);
                         ArrayList arrayList = new ArrayList();
                         arrayList.add(user2);
-                        jf7.Y(i3).j1(arrayList, null, false, false);
+                        kf7.a0(i3).n1(arrayList, null, false, false);
                         pccVar.a(user2);
                         nx0Var2.dismiss();
                         return;
@@ -156,7 +156,7 @@ public final /* synthetic */ class q03 implements Runnable {
                             iArr3[0] = i4;
                             hl.A3(i4, ilbVar2, null);
                         } else if ("BOT_CREATE_LIMIT_EXCEEDED".equalsIgnoreCase(tL_error.text)) {
-                            hr hrVar = uc7.s1(i3).k4;
+                            hr hrVar = uc7.s1(i3).l4;
                             boolean p = yac.h(i3).p();
                             d31 d31Var = new d31(nx0Var2.F, vnbVar2);
                             String M0 = ob6.M0(2131751700, null);

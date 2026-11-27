@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class hm1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -237,20 +237,20 @@ public final /* synthetic */ class hm1 implements Runnable {
                                         r47 r47Var2 = (r47) arrayList6.get(i12);
                                         if (r47Var2 != null) {
                                             int e13 = r47Var2.e1();
-                                            zu1Var.getMessagesController().i4.g(r47Var2, e13 >= i7 + (-7) && e13 <= i8 + 7, false);
+                                            zu1Var.getMessagesController().j4.g(r47Var2, e13 >= i7 + (-7) && e13 <= i8 + 7, false);
                                         }
                                     }
                                     arrayList5.add(Long.valueOf(m47Var.a));
                                 }
                             } else {
                                 int e14 = r47Var.e1();
-                                zu1Var.getMessagesController().i4.g(r47Var, e14 >= i7 + (-7) && e14 <= i8 + 7, false);
+                                zu1Var.getMessagesController().j4.g(r47Var, e14 >= i7 + (-7) && e14 <= i8 + 7, false);
                             }
                         }
                     }
                 }
                 if (zu1Var.Z4 > 0 && zu1Var.X4 != null) {
-                    zu1Var.getMessagesController().i4.g((r47) zu1Var.X4.get(Integer.valueOf(zu1Var.Z4)), true, false);
+                    zu1Var.getMessagesController().j4.g((r47) zu1Var.X4.get(Integer.valueOf(zu1Var.Z4)), true, false);
                 }
                 zu1Var.Ed();
                 break;

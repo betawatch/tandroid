@@ -19,7 +19,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.VideoSource;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class esa implements Runnable {
     public final /* synthetic */ byte a;
@@ -250,41 +250,41 @@ public final /* synthetic */ class esa implements Runnable {
                 iArr[0] = 2;
                 break;
             case 8:
-                u5b u5bVar = (u5b) obj6;
+                v5b v5bVar = (v5b) obj6;
                 ArrayList arrayList3 = (ArrayList) obj5;
                 HashSet hashSet = (HashSet) obj;
                 StringBuilder sb = new StringBuilder("StoriesList ");
-                sb.append((int) u5bVar.e);
+                sb.append((int) v5bVar.e);
                 sb.append("{");
-                sb.append(u5bVar.d);
+                sb.append(v5bVar.d);
                 sb.append("} preloadCache {");
                 sb.append(c6b.k0(arrayList3));
                 uh9.s("}", sb);
-                ArrayList arrayList4 = u5bVar.g;
+                ArrayList arrayList4 = v5bVar.g;
                 arrayList4.clear();
                 arrayList4.addAll((ArrayList) obj4);
-                u5bVar.t = false;
-                int i4 = u5bVar.c;
+                v5bVar.t = false;
+                int i4 = v5bVar.c;
                 uc7.s1(i4).j4((ArrayList) obj3, true);
                 uc7.s1(i4).c4((ArrayList) obj2, true);
-                if (u5bVar.v) {
-                    u5bVar.v = false;
-                    u5bVar.y = null;
-                    u5bVar.j();
+                if (v5bVar.v) {
+                    v5bVar.v = false;
+                    v5bVar.y = null;
+                    v5bVar.j();
                     break;
                 } else {
-                    u5bVar.m.addAll(hashSet);
-                    u5bVar.k.clear();
+                    v5bVar.m.addAll(hashSet);
+                    v5bVar.k.clear();
                     for (int i5 = 0; i5 < arrayList3.size(); i5++) {
-                        u5bVar.t((r47) arrayList3.get(i5), true);
+                        v5bVar.t((r47) arrayList3.get(i5), true);
                     }
-                    u5bVar.d(false);
-                    t5b t5bVar = u5bVar.y;
-                    if (t5bVar != null) {
-                        t5bVar.a(0);
-                        u5bVar.y = null;
+                    v5bVar.d(false);
+                    u5b u5bVar = v5bVar.y;
+                    if (u5bVar != null) {
+                        u5bVar.a(0);
+                        v5bVar.y = null;
                     }
-                    jn7.f(i4).k(jn7.A5, u5bVar);
+                    jn7.f(i4).k(jn7.A5, v5bVar);
                     break;
                 }
             case 9:

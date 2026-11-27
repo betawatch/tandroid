@@ -40,7 +40,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class tt extends FrameLayout {
     public final /* synthetic */ byte a;
@@ -84,7 +84,7 @@ public final class tt extends FrameLayout {
         Drawable drawable = fz7Var.a;
         if (drawable == null) {
             super.onDraw(canvas);
-        } else if ((drawable instanceof hh7) || (drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable)) {
+        } else if ((drawable instanceof ih7) || (drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable)) {
             drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             fz7Var.a.draw(canvas);
         } else {
@@ -1450,7 +1450,7 @@ public final class tt extends FrameLayout {
         this.a = (byte) 18;
         this.c = am2Var;
         xq2 xq2Var = new xq2();
-        xq2Var.c = new i09((Object) xq2Var, (byte) 24);
+        xq2Var.c = new j09((Object) xq2Var, (byte) 24);
         xq2Var.h = new ArrayList();
         xq2Var.d = this;
         xq2Var.e = context;

@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o6a implements Runnable {
     public final /* synthetic */ r7a a;
@@ -114,7 +114,7 @@ public final /* synthetic */ class o6a implements Runnable {
                     long j4 = j;
                     Integer num = (Integer) concurrentHashMap.get(Long.valueOf(j4));
                     if (num == null) {
-                        num = Integer.valueOf(r7aVar2.getMessagesStorage().S(j4, true));
+                        num = Integer.valueOf(r7aVar2.getMessagesStorage().U(j4, true));
                         r7aVar2.getMessagesController().Q.put(Long.valueOf(j4), num);
                     }
                     Integer num2 = num;
@@ -212,19 +212,19 @@ public final /* synthetic */ class o6a implements Runnable {
                                                     }
                                                     int i19 = i18;
                                                     r7a r7aVar5 = r7a.this;
-                                                    jf7 messagesStorage = r7aVar5.getMessagesStorage();
+                                                    kf7 messagesStorage = r7aVar5.getMessagesStorage();
                                                     final TLRPC.Message message7 = message3;
                                                     long j6 = message7.random_id;
                                                     long B1 = r47.B1(peer2);
                                                     final int i20 = i13;
-                                                    messagesStorage.X1(j6, B1, Integer.valueOf(i20), message7.id, 0, i17 != 0 ? 1 : 0, message6.quick_reply_shortcut_id);
-                                                    r7aVar5.getMessagesStorage().g1(arrayList11, true, false, false, 0, false, i19, message6.quick_reply_shortcut_id);
+                                                    messagesStorage.c2(j6, B1, Integer.valueOf(i20), message7.id, 0, i17 != 0 ? 1 : 0, message6.quick_reply_shortcut_id);
+                                                    r7aVar5.getMessagesStorage().k1(arrayList11, true, false, false, 0, false, i19, message6.quick_reply_shortcut_id);
                                                     if (r47.e3(message7)) {
                                                         long B12 = r47.B1(message7.peer_id);
                                                         ArrayList arrayList12 = new ArrayList(1);
                                                         arrayList12.add(Integer.valueOf(message7.id));
-                                                        r7aVar5.getMessagesStorage().M0(B12, arrayList12, false, false, i19, (int) r47.Z1(r7aVar5.currentAccount, message7, 0));
-                                                        r7aVar5.getMessagesStorage().O1(B12, -B12, arrayList12, null);
+                                                        r7aVar5.getMessagesStorage().P0(B12, arrayList12, false, false, i19, (int) r47.Z1(r7aVar5.currentAccount, message7, 0));
+                                                        r7aVar5.getMessagesStorage().T1(B12, -B12, arrayList12, null);
                                                         r7aVar4 = r7aVar5;
                                                         hl.c3(new p5a(r7aVar5, B12, arrayList12, (byte) 1));
                                                     } else {
@@ -344,7 +344,7 @@ public final /* synthetic */ class o6a implements Runnable {
                     TLRPC.Updates updates4 = updates3;
                     i2 = i7;
                     if (!arrayList12.isEmpty()) {
-                        r7aVar2.getMessagesStorage().c1(arrayList12, true);
+                        r7aVar2.getMessagesStorage().g1(arrayList12, true);
                     }
                     if (updates4.updates.isEmpty()) {
                         z3 = false;
@@ -367,12 +367,12 @@ public final /* synthetic */ class o6a implements Runnable {
                 while (i18 < arrayList3.size()) {
                     ArrayList arrayList13 = arrayList3;
                     TLRPC.Message message6 = (TLRPC.Message) arrayList13.get(i18);
-                    r7aVar2.getMessagesStorage().K0(i2 != 0 ? i3 : r5, message6);
+                    r7aVar2.getMessagesStorage().N0(i2 != 0 ? i3 : r5, message6);
                     if (tL_error != null && (str2 = tL_error.text) != null && str2.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
                         jxa.v(r7aVar2.currentAccount, r5);
                         message6.errorAllowedPriceStars = jxa.l(tL_messages_forwardMessages2);
                         message6.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23)) / tL_messages_forwardMessages2.id.size();
-                        r7aVar2.getMessagesStorage().U1(r47.B0(message6), message6);
+                        r7aVar2.getMessagesStorage().Z1(r47.B0(message6), message6);
                     }
                     hl.c3(new w5a(r7aVar2, message6, i2, r5));
                     i18++;

@@ -28,7 +28,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class iqd implements Runnable {
     public final /* synthetic */ byte a;
@@ -474,21 +474,21 @@ public final class iqd implements Runnable {
                 try {
                     taskCompletionSource.setResult(callable.call());
                     return;
-                } catch (kg7 e10) {
+                } catch (lg7 e10) {
                     taskCompletionSource.setException(e10);
                     return;
                 } catch (Exception e11) {
-                    taskCompletionSource.setException(new kg7("Internal error has occurred when executing ML Kit tasks", e11));
+                    taskCompletionSource.setException(new lg7("Internal error has occurred when executing ML Kit tasks", e11));
                     return;
                 }
             case 19:
-                sg7 sg7Var = (sg7) this.b;
+                tg7 tg7Var = (tg7) this.b;
                 TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) this.c;
-                int decrementAndGet = sg7Var.b.decrementAndGet();
+                int decrementAndGet = tg7Var.b.decrementAndGet();
                 xve.k(decrementAndGet >= 0);
                 if (decrementAndGet == 0) {
-                    sg7Var.c();
-                    sg7Var.c.set(false);
+                    tg7Var.c();
+                    tg7Var.c.set(false);
                 }
                 vgf.a.clear();
                 rif.a.clear();

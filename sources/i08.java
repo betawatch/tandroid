@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class i08 implements RequestDelegate {
     public final /* synthetic */ um4 a;
@@ -211,7 +211,7 @@ public final class i08 implements RequestDelegate {
             }
             i08Var = this;
             if (tL_error.text.equals("PHONE_VERIFICATION_NEEDED")) {
-                hl.c3(new fd7(i08Var.a, tL_error, str, (byte) 18));
+                hl.c3(new gd7(i08Var.a, tL_error, str, (byte) 18));
                 return;
             }
         } else {
@@ -222,7 +222,7 @@ public final class i08 implements RequestDelegate {
                 savesecurevalue.value = tL_inputSecureValue;
                 savesecurevalue.secure_secret_id = b18Var.c1;
                 i = ((e) b18Var).currentAccount;
-                ConnectionsManager.getInstance(i).sendRequest(savesecurevalue, new ol7(i08Var, (TLRPC.TL_secureValue) tLObject, (byte) 2));
+                ConnectionsManager.getInstance(i).sendRequest(savesecurevalue, new pl7(i08Var, (TLRPC.TL_secureValue) tLObject, (byte) 2));
                 return;
             }
         }

@@ -12,7 +12,7 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessaging;
 import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class rte {
     public static boolean a() {
@@ -80,7 +80,7 @@ public abstract class rte {
         String string3;
         String string4;
         long parseLong;
-        nf7 nf7Var;
+        of7 of7Var;
         String str;
         String str2;
         if (d(intent)) {
@@ -94,7 +94,7 @@ public abstract class rte {
                 return;
             }
             if (intent == null) {
-                nf7Var = null;
+                of7Var = null;
             } else {
                 Bundle extras = intent.getExtras();
                 if (extras == null) {
@@ -127,7 +127,7 @@ public abstract class rte {
                     ji4 c3 = ji4.c();
                     c3.a();
                     String packageName = c3.a.getPackageName();
-                    lf7 lf7Var = !ot6.f(extras) ? lf7.c : lf7.b;
+                    mf7 mf7Var = !ot6.f(extras) ? mf7.c : mf7.b;
                     string2 = extras.getString("google.delivered_priority");
                     if (string2 == null) {
                         if (!"1".equals(extras.getString("google.priority_reduced"))) {
@@ -160,7 +160,7 @@ public abstract class rte {
                                 } catch (NumberFormatException e2) {
                                     Log.w("FirebaseMessaging", "error parsing project number", e2);
                                 }
-                                nf7Var = new nf7(parseLong <= 0 ? parseLong : 0L, str4, str3, lf7Var, packageName, str6, i2, i, str5, str7, str8);
+                                of7Var = new of7(parseLong <= 0 ? parseLong : 0L, str4, str3, mf7Var, packageName, str6, i2, i, str5, str7, str8);
                             }
                             ji4 c4 = ji4.c();
                             yi4 yi4Var = c4.c;
@@ -172,7 +172,7 @@ public abstract class rte {
                                 } catch (NumberFormatException e3) {
                                     Log.w("FirebaseMessaging", "error parsing sender ID", e3);
                                 }
-                                nf7Var = new nf7(parseLong <= 0 ? parseLong : 0L, str4, str3, lf7Var, packageName, str6, i2, i, str5, str7, str8);
+                                of7Var = new of7(parseLong <= 0 ? parseLong : 0L, str4, str3, mf7Var, packageName, str6, i2, i, str5, str7, str8);
                             }
                             c4.a();
                             str2 = yi4Var.b;
@@ -196,7 +196,7 @@ public abstract class rte {
                                 }
                                 parseLong = 0;
                             }
-                            nf7Var = new nf7(parseLong <= 0 ? parseLong : 0L, str4, str3, lf7Var, packageName, str6, i2, i, str5, str7, str8);
+                            of7Var = new of7(parseLong <= 0 ? parseLong : 0L, str4, str3, mf7Var, packageName, str6, i2, i, str5, str7, str8);
                         }
                         i2 = i3;
                         string3 = extras.getString("google.message_id");
@@ -231,7 +231,7 @@ public abstract class rte {
                         str2 = yi4Var2.b;
                         if (str2.startsWith("1:")) {
                         }
-                        nf7Var = new nf7(parseLong <= 0 ? parseLong : 0L, str4, str3, lf7Var, packageName, str6, i2, i, str5, str7, str8);
+                        of7Var = new of7(parseLong <= 0 ? parseLong : 0L, str4, str3, mf7Var, packageName, str6, i2, i, str5, str7, str8);
                     }
                     if ("high".equals(string2)) {
                         if (!"normal".equals(string2)) {
@@ -276,7 +276,7 @@ public abstract class rte {
                     str2 = yi4Var22.b;
                     if (str2.startsWith("1:")) {
                     }
-                    nf7Var = new nf7(parseLong <= 0 ? parseLong : 0L, str4, str3, lf7Var, packageName, str6, i2, i, str5, str7, str8);
+                    of7Var = new of7(parseLong <= 0 ? parseLong : 0L, str4, str3, mf7Var, packageName, str6, i2, i, str5, str7, str8);
                 }
                 i = parseInt;
                 string = extras.getString("google.to");
@@ -286,7 +286,7 @@ public abstract class rte {
                 ji4 c32 = ji4.c();
                 c32.a();
                 String packageName2 = c32.a.getPackageName();
-                lf7 lf7Var2 = !ot6.f(extras) ? lf7.c : lf7.b;
+                mf7 mf7Var2 = !ot6.f(extras) ? mf7.c : mf7.b;
                 string2 = extras.getString("google.delivered_priority");
                 if (string2 == null) {
                 }
@@ -327,11 +327,11 @@ public abstract class rte {
                 str2 = yi4Var222.b;
                 if (str2.startsWith("1:")) {
                 }
-                nf7Var = new nf7(parseLong <= 0 ? parseLong : 0L, str4, str32, lf7Var2, packageName2, str6, i2, i, str5, str7, str8);
+                of7Var = new of7(parseLong <= 0 ? parseLong : 0L, str4, str32, mf7Var2, packageName2, str6, i2, i, str5, str7, str8);
             }
-            if (nf7Var != null) {
+            if (of7Var != null) {
                 try {
-                    ((f5c) e5cVar).a("FCM_CLIENT_EVENT_LOGGING", new n34("proto"), new hz6((byte) 15)).a(new p90(null, new of7(nf7Var), pm8.a, new ja0(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new grb((byte) 10));
+                    ((f5c) e5cVar).a("FCM_CLIENT_EVENT_LOGGING", new n34("proto"), new hz6((byte) 15)).a(new p90(null, new pf7(of7Var), pm8.a, new ja0(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new grb((byte) 10));
                 } catch (RuntimeException e6) {
                     Log.w("FirebaseMessaging", "Failed to send big query analytics payload.", e6);
                 }

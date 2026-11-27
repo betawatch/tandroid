@@ -1,129 +1,147 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
+import android.os.Looper;
 import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class rj7 {
-    public final LinkedHashMap a;
-    public final ri6 b;
+public class rj7 {
+    public static final Object k = new Object();
+    public final Object a = new Object();
+    public final os9 b = new os9();
+    public int c = 0;
+    public boolean d;
+    public volatile Object e;
+    public volatile Object f;
+    public int g;
+    public boolean h;
+    public boolean i;
+    public final zz3 j;
 
-    public rj7(LinkedHashMap linkedHashMap, boolean z) {
-        this.a = linkedHashMap;
-        this.b = new ri6(z);
+    public rj7() {
+        Object obj = k;
+        this.f = obj;
+        this.j = new zz3(this, (byte) 21);
+        this.e = obj;
+        this.g = -1;
     }
 
-    public final Map a() {
-        rx7 rx7Var;
-        Set<Map.Entry> entrySet = this.a.entrySet();
-        int b = uk6.b(ul2.c(entrySet, 10));
-        if (b < 16) {
-            b = 16;
+    public static void a(String str) {
+        yr.a().getClass();
+        if (Looper.getMainLooper().getThread() == Thread.currentThread()) {
+            return;
         }
-        LinkedHashMap linkedHashMap = new LinkedHashMap(b);
-        for (Map.Entry entry : entrySet) {
-            Object value = entry.getValue();
-            if (value instanceof byte[]) {
-                byte[] bArr = (byte[]) value;
-                rx7Var = new rx7(entry.getKey(), Arrays.copyOf(bArr, bArr.length));
-            } else {
-                rx7Var = new rx7(entry.getKey(), entry.getValue());
+        grb.i(qd4.y("Cannot invoke ", str, " on a background thread"));
+    }
+
+    public final void b(r96 r96Var) {
+        if (r96Var.b) {
+            if (!r96Var.e()) {
+                r96Var.a(false);
+                return;
             }
-            linkedHashMap.put(rx7Var.a, rx7Var.b);
-        }
-        Map unmodifiableMap = DesugarCollections.unmodifiableMap(linkedHashMap);
-        unmodifiableMap.getClass();
-        return unmodifiableMap;
-    }
-
-    public final void b() {
-        if (((AtomicBoolean) this.b.b).get()) {
-            grb.i("Do mutate preferences once returned to DataStore.");
+            int i = r96Var.c;
+            int i2 = this.g;
+            if (i >= i2) {
+                return;
+            }
+            r96Var.c = i2;
+            r96Var.a.S0(this.e);
         }
     }
 
-    public final void c(zj8 zj8Var, Object obj) {
-        zj8Var.getClass();
-        d(zj8Var, obj);
-    }
-
-    public final void d(zj8 zj8Var, Object obj) {
-        zj8Var.getClass();
-        b();
-        LinkedHashMap linkedHashMap = this.a;
-        if (obj == null) {
-            b();
-            linkedHashMap.remove(zj8Var);
-        } else if (obj instanceof Set) {
-            Set unmodifiableSet = DesugarCollections.unmodifiableSet(sl2.m((Set) obj));
-            unmodifiableSet.getClass();
-            linkedHashMap.put(zj8Var, unmodifiableSet);
-        } else if (!(obj instanceof byte[])) {
-            linkedHashMap.put(zj8Var, obj);
-        } else {
-            byte[] bArr = (byte[]) obj;
-            linkedHashMap.put(zj8Var, Arrays.copyOf(bArr, bArr.length));
+    public final void c(r96 r96Var) {
+        if (this.h) {
+            this.i = true;
+            return;
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:23:0x005c A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:24:? A[LOOP:0: B:10:0x0026->B:24:?, LOOP_END, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean equals(Object obj) {
-        boolean z;
-        if (obj instanceof rj7) {
-            LinkedHashMap linkedHashMap = ((rj7) obj).a;
-            LinkedHashMap linkedHashMap2 = this.a;
-            if (linkedHashMap != linkedHashMap2) {
-                if (linkedHashMap.size() == linkedHashMap2.size()) {
-                    if (!linkedHashMap.isEmpty()) {
-                        for (Map.Entry entry : linkedHashMap.entrySet()) {
-                            Object obj2 = linkedHashMap2.get(entry.getKey());
-                            if (obj2 != null) {
-                                Object value = entry.getValue();
-                                if (!(value instanceof byte[])) {
-                                    z = ur5.a(value, obj2);
-                                } else if ((obj2 instanceof byte[]) && Arrays.equals((byte[]) value, (byte[]) obj2)) {
-                                    z = true;
-                                }
-                                if (z) {
-                                }
-                            }
-                            z = false;
-                            if (z) {
-                            }
-                        }
+        this.h = true;
+        do {
+            this.i = false;
+            if (r96Var != null) {
+                b(r96Var);
+                r96Var = null;
+            } else {
+                os9 os9Var = this.b;
+                ms9 ms9Var = new ms9(os9Var);
+                os9Var.c.put(ms9Var, Boolean.FALSE);
+                while (ms9Var.hasNext()) {
+                    b((r96) ((Map.Entry) ms9Var.next()).getValue());
+                    if (this.i) {
+                        break;
                     }
                 }
             }
-            return true;
+        } while (this.i);
+        this.h = false;
+    }
+
+    public final void d(i36 i36Var, cr7 cr7Var) {
+        Object obj;
+        a("observe");
+        if (i36Var.m().b != z26.a) {
+            q96 q96Var = new q96(this, i36Var, cr7Var);
+            os9 os9Var = this.b;
+            ls9 h = os9Var.h(cr7Var);
+            if (h != null) {
+                obj = h.b;
+            } else {
+                ls9 ls9Var = new ls9(cr7Var, q96Var);
+                os9Var.d++;
+                ls9 ls9Var2 = os9Var.b;
+                if (ls9Var2 == null) {
+                    os9Var.a = ls9Var;
+                    os9Var.b = ls9Var;
+                } else {
+                    ls9Var2.c = ls9Var;
+                    ls9Var.d = ls9Var2;
+                    os9Var.b = ls9Var;
+                }
+                obj = null;
+            }
+            r96 r96Var = (r96) obj;
+            if (r96Var == null) {
+                i36Var.m().a(q96Var);
+            } else {
+                if (r96Var.d(i36Var)) {
+                    return;
+                }
+                lq5.j("Cannot add the same observer with different lifecycles");
+            }
         }
-        return false;
     }
 
-    public final int hashCode() {
-        Iterator it = this.a.entrySet().iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            Object value = ((Map.Entry) it.next()).getValue();
-            i += value instanceof byte[] ? Arrays.hashCode((byte[]) value) : value.hashCode();
+    public final void g(Object obj) {
+        boolean z;
+        synchronized (this.a) {
+            z = this.f == k;
+            this.f = obj;
         }
-        return i;
+        if (z) {
+            yr.a().b(this.j);
+        }
     }
 
-    public final String toString() {
-        return sl2.f(this.a.entrySet(), ",\n", "{\n", "\n}", zc4.d, 24);
+    public void h(cr7 cr7Var) {
+        a("removeObserver");
+        r96 r96Var = (r96) this.b.i(cr7Var);
+        if (r96Var == null) {
+            return;
+        }
+        r96Var.c();
+        r96Var.a(false);
     }
 
-    public /* synthetic */ rj7(boolean z) {
-        this(new LinkedHashMap(), z);
+    public final void i(Object obj) {
+        a("setValue");
+        this.g++;
+        this.e = obj;
+        c(null);
+    }
+
+    public void e() {
+    }
+
+    public void f() {
     }
 }

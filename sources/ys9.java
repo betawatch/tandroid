@@ -5,7 +5,7 @@ import j$.util.Objects;
 import java.io.EOFException;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class ys9 implements x1c {
     public boolean C;
@@ -549,7 +549,7 @@ public class ys9 implements x1c {
                         this.E = q;
                         boolean z2 = this.G;
                         String str = q.t;
-                        this.G = z2 & (dg7.h(str) != 1 && dg7.a(str, q.l));
+                        this.G = z2 & (eg7.h(str) != 1 && eg7.a(str, q.l));
                         this.H = false;
                         z = true;
                     }
@@ -557,7 +557,7 @@ public class ys9 implements x1c {
                 this.E = q;
                 boolean z22 = this.G;
                 String str2 = q.t;
-                this.G = z22 & (dg7.h(str2) != 1 && dg7.a(str2, q.l));
+                this.G = z22 & (eg7.h(str2) != 1 && eg7.a(str2, q.l));
                 this.H = false;
                 z = true;
             }

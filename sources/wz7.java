@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class wz7 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -22,18 +22,18 @@ public final /* synthetic */ class wz7 implements RequestDelegate {
         switch (b) {
             case 0:
                 b18Var.getClass();
-                hl.c3(new fd7((Object) b18Var, (Object) tL_error, (Object) tLObject, (byte) 17));
+                hl.c3(new gd7((Object) b18Var, (Object) tL_error, (Object) tLObject, (byte) 17));
                 break;
             case 1:
                 b18Var.getClass();
-                hl.c3(new pl7(b18Var, tL_error, (byte) 21));
+                hl.c3(new ql7(b18Var, tL_error, (byte) 22));
                 break;
             case 2:
                 b18Var.getClass();
                 hl.c3(new sz7(b18Var, (byte) 5));
                 break;
             default:
-                hl.c3(new pl7(b18Var, tLObject, (byte) 20));
+                hl.c3(new ql7(b18Var, tLObject, (byte) 21));
                 break;
         }
     }

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class oc2 {
     public final b8 a;
@@ -445,7 +445,7 @@ public final class oc2 {
             i2 = 0;
             i3 = 0;
         } else {
-            SharedPreferences sharedPreferences = uc7.s1(i4).W3;
+            SharedPreferences sharedPreferences = uc7.s1(i4).X3;
             i3 = sharedPreferences.getInt("last_selected_mute_until_time", 0);
             i2 = sharedPreferences.getInt("last_selected_mute_until_time2", 0);
         }

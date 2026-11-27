@@ -1,34 +1,19 @@
 // default package
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class ul7 extends wp5 {
-    public static final Pattern e = Pattern.compile(" *$");
+public abstract class ul7 {
+    public static final tl7 a;
+    public static final tl7 b;
 
-    @Override // wp5
-    public final yi6 b() {
-        this.d++;
-        yi6 yi6Var = (yi6) this.b.d;
-        if (yi6Var instanceof qkb) {
-            qkb qkbVar = (qkb) yi6Var;
-            if (qkbVar.g.endsWith(" ")) {
-                String str = qkbVar.g;
-                Matcher matcher = e.matcher(str);
-                int end = matcher.find() ? matcher.end() - matcher.start() : 0;
-                if (end > 0) {
-                    qkbVar.g = bs2.n(end, 0, str);
-                }
-                return end >= 2 ? new p24((byte) 1) : new p24((byte) 2);
-            }
+    static {
+        ow8 ow8Var = ow8.c;
+        tl7 tl7Var = null;
+        try {
+            tl7Var = (tl7) Class.forName("androidx.datastore.preferences.protobuf.NewInstanceSchemaFull").getDeclaredConstructor(null).newInstance(null);
+        } catch (Exception unused) {
         }
-        return new p24((byte) 2);
-    }
-
-    @Override // wp5
-    public final char c() {
-        return '\n';
+        a = tl7Var;
+        b = new tl7();
     }
 }

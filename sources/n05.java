@@ -27,7 +27,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class n05 implements Handler.Callback {
     public static final Status F = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -502,10 +502,10 @@ public final class n05 implements Handler.Callback {
             case 18:
                 s6d s6dVar = (s6d) message.obj;
                 long j = s6dVar.c;
-                bg7 bg7Var = s6dVar.a;
+                cg7 cg7Var = s6dVar.a;
                 int i7 = s6dVar.b;
                 if (j == 0) {
-                    ikb ikbVar2 = new ikb(i7, Arrays.asList(bg7Var));
+                    ikb ikbVar2 = new ikb(i7, Arrays.asList(cg7Var));
                     qa4 qa4Var2 = this.d;
                     if (qa4Var2 == null) {
                         qa4Var2 = new qa4(context, znVar, jkbVar, g05.c);
@@ -536,12 +536,12 @@ public final class n05 implements Handler.Callback {
                         if (ikbVar5.b == null) {
                             ikbVar5.b = new ArrayList();
                         }
-                        ikbVar5.b.add(bg7Var);
+                        ikbVar5.b.add(cg7Var);
                     }
                 }
                 if (this.c == null) {
                     ArrayList arrayList2 = new ArrayList();
-                    arrayList2.add(bg7Var);
+                    arrayList2.add(cg7Var);
                     this.c = new ikb(i7, arrayList2);
                     b99Var.sendMessageDelayed(b99Var.obtainMessage(17), j);
                     return true;

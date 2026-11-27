@@ -10,7 +10,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class se2 implements icc {
     public final /* synthetic */ byte a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class se2 implements icc {
                 boolean z3 = this.b;
                 TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken = (TLRPC.TL_exportedNoPaidMessagesToken) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                f09 f09Var = vz8Var.b;
+                g09 g09Var = vz8Var.b;
                 if (vz8Var.n == iArr[0] && !vz8Var.F) {
                     vz8Var.n = 0;
                     if (tL_exportedNoPaidMessagesToken == null) {
@@ -112,19 +112,19 @@ public final /* synthetic */ class se2 implements icc {
                         if (tL_exportedNoPaidMessagesToken2 != null) {
                             if ((tL_exportedNoPaidMessagesToken2.expires != 0) == z3) {
                                 if (str != null) {
-                                    f09Var.getClass();
-                                    f09Var.d1(R.drawable.msg_warning, ob6.M0(2131751070, null), null);
+                                    g09Var.getClass();
+                                    g09Var.d1(R.drawable.msg_warning, ob6.M0(2131751070, null), null);
                                     break;
                                 }
                             }
                         }
                         vz8Var.d = (byte) 0;
                         vz8Var.f().edit().putBoolean("qrNoPaidPermanent", false).apply();
-                        if (f09Var.w0) {
-                            f09Var.U0(str != null ? ob6.M0(2131751070, null) : null);
+                        if (g09Var.w0) {
+                            g09Var.U0(str != null ? ob6.M0(2131751070, null) : null);
                             break;
                         } else if (str != null) {
-                            f09Var.d1(R.drawable.msg_warning, ob6.M0(2131751070, null), null);
+                            g09Var.d1(R.drawable.msg_warning, ob6.M0(2131751070, null), null);
                             break;
                         }
                     } else {
@@ -136,7 +136,7 @@ public final /* synthetic */ class se2 implements icc {
                                 }
                                 vz8Var.f = tL_exportedNoPaidMessagesToken;
                                 vz8Var.h = SystemClock.elapsedRealtime();
-                                f09Var.setFreeLink(vz8Var.d(tL_exportedNoPaidMessagesToken));
+                                g09Var.setFreeLink(vz8Var.d(tL_exportedNoPaidMessagesToken));
                                 break;
                             }
                         }

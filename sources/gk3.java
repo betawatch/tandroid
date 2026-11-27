@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class gk3 extends c79 implements kf3 {
     public boolean E;
@@ -1288,13 +1288,13 @@ public class gk3 extends c79 implements kf3 {
                 }
                 break;
             case 8:
-                View rcaVar = new rca(context, (uh9) null);
+                View scaVar = new sca(context, (uh9) null);
                 Drawable W0 = aob.W0(context, R.drawable.greydivider, aob.b7);
                 zm2 zm2Var = new zm2(new ColorDrawable(aob.w0(null, aob.a7, false)), W0);
                 zm2Var.x = true;
-                rcaVar.setBackgroundDrawable(zm2Var);
-                E(rcaVar, W0);
-                view2 = rcaVar;
+                scaVar.setBackgroundDrawable(zm2Var);
+                E(scaVar, W0);
+                view2 = scaVar;
                 break;
             case 9:
             case 12:

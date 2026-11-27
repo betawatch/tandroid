@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c87 implements Runnable {
     public final /* synthetic */ byte a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class c87 implements Runnable {
         switch (b) {
             case 0:
                 uc7Var.l2 = false;
-                SharedPreferences.Editor edit = uc7Var.W3.edit();
+                SharedPreferences.Editor edit = uc7Var.X3.edit();
                 edit.putBoolean("EnableContactJoined", tLObject instanceof TLRPC.TL_boolFalse);
                 edit.commit();
                 uc7Var.getUserConfig().U = true;
@@ -38,33 +38,33 @@ public final /* synthetic */ class c87 implements Runnable {
                 break;
             case 1:
                 if (tLObject instanceof TL_account.contentSettings) {
-                    uc7Var.b5 = (TL_account.contentSettings) tLObject;
-                    uc7Var.a5 = System.currentTimeMillis();
+                    uc7Var.c5 = (TL_account.contentSettings) tLObject;
+                    uc7Var.b5 = System.currentTimeMillis();
                 }
-                uc7Var.Y4 = false;
-                TL_account.contentSettings contentsettings = uc7Var.b5;
-                if (contentsettings != null && (set = uc7Var.K3) != null) {
+                uc7Var.Z4 = false;
+                TL_account.contentSettings contentsettings = uc7Var.c5;
+                if (contentsettings != null && (set = uc7Var.L3) != null) {
                     if (contentsettings.sensitive_enabled) {
                         set.add("sensitive");
                     } else {
                         set.remove("sensitive");
                     }
-                    SharedPreferences sharedPreferences = uc7Var.X3;
+                    SharedPreferences sharedPreferences = uc7Var.Y3;
                     if (sharedPreferences != null) {
-                        sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", uc7Var.K3).apply();
+                        sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", uc7Var.L3).apply();
                     }
                 }
-                ArrayList arrayList = uc7Var.Z4;
+                ArrayList arrayList = uc7Var.a5;
                 if (arrayList != null) {
                     int size = arrayList.size();
                     int i = 0;
                     while (i < size) {
                         Object obj = arrayList.get(i);
                         i++;
-                        ((pcc) obj).a(uc7Var.b5);
+                        ((pcc) obj).a(uc7Var.c5);
                     }
-                    uc7Var.Z4.clear();
-                    uc7Var.Z4 = null;
+                    uc7Var.a5.clear();
+                    uc7Var.a5 = null;
                 }
                 uc7Var.getNotificationCenter().k(jn7.V3, new Object[0]);
                 break;
@@ -81,7 +81,7 @@ public final /* synthetic */ class c87 implements Runnable {
                 uc7Var.k2--;
                 if (tLObject instanceof TL_account.TL_reactionsNotifySettings) {
                     TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings = (TL_account.TL_reactionsNotifySettings) tLObject;
-                    SharedPreferences.Editor edit2 = uc7Var.W3.edit();
+                    SharedPreferences.Editor edit2 = uc7Var.X3.edit();
                     edit2.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings.messages_notify_from != null);
                     TL_account.ReactionNotificationsFrom reactionNotificationsFrom = tL_reactionsNotifySettings.messages_notify_from;
                     if (reactionNotificationsFrom != null) {
@@ -125,7 +125,7 @@ public final /* synthetic */ class c87 implements Runnable {
                                     j = j2 != 0 ? -j2 : -peer.channel_id;
                                 }
                                 long j3 = j;
-                                uc7Var2.getMessagesStorage().C1(j3, true);
+                                uc7Var2.getMessagesStorage().H1(j3, true);
                                 TLRPC.Dialog dialog = (TLRPC.Dialog) uc7Var2.R.f(j3);
                                 if (dialog != null && !dialog.unread_mark) {
                                     dialog.unread_mark = true;
@@ -142,7 +142,7 @@ public final /* synthetic */ class c87 implements Runnable {
             case 5:
                 if (tLObject instanceof TL_account.TL_reactionsNotifySettings) {
                     TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings2 = (TL_account.TL_reactionsNotifySettings) tLObject;
-                    SharedPreferences.Editor edit3 = uc7Var.W3.edit();
+                    SharedPreferences.Editor edit3 = uc7Var.X3.edit();
                     edit3.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings2.messages_notify_from != null);
                     TL_account.ReactionNotificationsFrom reactionNotificationsFrom3 = tL_reactionsNotifySettings2.messages_notify_from;
                     if (reactionNotificationsFrom3 != null) {

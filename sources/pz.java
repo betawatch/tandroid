@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class pz implements Runnable {
     public final /* synthetic */ byte a;
@@ -170,8 +170,8 @@ public final /* synthetic */ class pz implements Runnable {
             case 23:
                 gr0 gr0Var = (gr0) obj;
                 bga bgaVar = gr0Var.a0;
-                o5b o5bVar = gr0Var.a;
-                bgaVar.a(o5bVar == null ? "" : o5bVar.E);
+                p5b p5bVar = gr0Var.a;
+                bgaVar.a(p5bVar == null ? "" : p5bVar.E);
                 break;
             case 24:
                 ((sr0) obj).e();

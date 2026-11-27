@@ -36,7 +36,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class jja extends FrameLayout {
     public static long F0;
@@ -73,7 +73,7 @@ public class jja extends FrameLayout {
     public GradientDrawable c0;
     public final ImageReceiver d;
     public boolean d0;
-    public sca e;
+    public tca e;
     public boolean e0;
     public final int f;
     public boolean f0;
@@ -435,12 +435,12 @@ public class jja extends FrameLayout {
             canvas2.save();
             if (this.y0 || this.D0) {
                 canvas2.translate(imageReceiver2.r(), imageReceiver2.s());
-                sca scaVar = this.e;
-                if (scaVar == null) {
-                    scaVar = new sca(this);
-                    this.e = scaVar;
+                tca tcaVar = this.e;
+                if (tcaVar == null) {
+                    tcaVar = new tca(this);
+                    this.e = tcaVar;
                 }
-                scaVar.a(canvas2, Math.max(this.C0, d));
+                tcaVar.a(canvas2, Math.max(this.C0, d));
                 float f28 = f4 - (d * 0.075f);
                 canvas2.scale(f28, f28);
                 canvas2.translate(-imageReceiver2.r(), -imageReceiver2.s());
@@ -631,13 +631,13 @@ public class jja extends FrameLayout {
             canvas2.save();
             if (jjaVar.x0 && (jjaVar.y0 || jjaVar.D0)) {
                 canvas2.translate(imageReceiver.r(), imageReceiver.s());
-                sca scaVar2 = jjaVar.e;
-                if (scaVar2 == null) {
-                    scaVar2 = new sca(jjaVar);
-                    jjaVar.e = scaVar2;
+                tca tcaVar2 = jjaVar.e;
+                if (tcaVar2 == null) {
+                    tcaVar2 = new tca(jjaVar);
+                    jjaVar.e = tcaVar2;
                 }
                 float f38 = f7;
-                scaVar2.a(canvas2, Math.max(jjaVar.C0, f38) * 0.5f);
+                tcaVar2.a(canvas2, Math.max(jjaVar.C0, f38) * 0.5f);
                 float f39 = 1.0f - (f38 * f9);
                 canvas2.scale(f39, f39);
                 canvas2.translate(-imageReceiver.r(), -imageReceiver.s());

@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yz5 implements oj3 {
     public final /* synthetic */ byte a = 0;
@@ -38,7 +38,7 @@ public final /* synthetic */ class yz5 implements oj3 {
         switch (b) {
             case 0:
                 String str2 = LaunchActivity.C1;
-                long j = ((if7) arrayList.get(0)).a;
+                long j = ((jf7) arrayList.get(0)).a;
                 TLRPC.TL_inputMediaGame tL_inputMediaGame = new TLRPC.TL_inputMediaGame();
                 TLRPC.TL_inputGameShortName tL_inputGameShortName = new TLRPC.TL_inputGameShortName();
                 tL_inputMediaGame.id = tL_inputGameShortName;
@@ -61,7 +61,7 @@ public final /* synthetic */ class yz5 implements oj3 {
                 break;
             default:
                 String str3 = LaunchActivity.C1;
-                long j2 = ((if7) arrayList.get(0)).a;
+                long j2 = ((jf7) arrayList.get(0)).a;
                 Bundle l2 = bs2.l("scrollToTopOnResume", true);
                 if (wf3.B(j2)) {
                     l2.putInt("enc_id", (int) (j2 & 4294967295L));

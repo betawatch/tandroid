@@ -10,7 +10,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class i1a extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -29,7 +29,7 @@ public final class i1a extends AnimatorListenerAdapter {
         Object obj = this.c;
         switch (b) {
             case 1:
-                ((tba) obj).n = null;
+                ((uba) obj).n = null;
                 break;
             case 2:
                 ((eja) obj).R1 = null;
@@ -99,12 +99,12 @@ public final class i1a extends AnimatorListenerAdapter {
                 j1aVar.O = null;
                 break;
             case 1:
-                tba tbaVar = (tba) obj;
-                if (tbaVar.n != null && (vb5Var = tbaVar.r) != null) {
+                uba ubaVar = (uba) obj;
+                if (ubaVar.n != null && (vb5Var = ubaVar.r) != null) {
                     if (!z) {
                         vb5Var.setVisibility(4);
                     }
-                    tbaVar.n = null;
+                    ubaVar.n = null;
                     break;
                 }
                 break;
@@ -135,11 +135,11 @@ public final class i1a extends AnimatorListenerAdapter {
                 p9bVar.c = null;
                 break;
             case 5:
-                rbb rbbVar = (rbb) obj;
+                sbb sbbVar = (sbb) obj;
                 if (!z) {
-                    rbbVar.W0.setVisibility(8);
+                    sbbVar.W0.setVisibility(8);
                 }
-                rbbVar.g2 = null;
+                sbbVar.g2 = null;
                 break;
             case 6:
                 lcb lcbVar = (lcb) obj;
@@ -178,7 +178,7 @@ public final class i1a extends AnimatorListenerAdapter {
                     }
                     imageView2.setImageResource(i2);
                     l1cVar.e0 = null;
-                    uc7.s1(l1cVar.e).X3.edit().putBoolean(qu6.n(j, "topicssidetabs"), l1cVar.U).putBoolean(qu6.n(j, "topicssidetabsb"), l1cVar.T).apply();
+                    uc7.s1(l1cVar.e).Y3.edit().putBoolean(qu6.n(j, "topicssidetabs"), l1cVar.U).putBoolean(qu6.n(j, "topicssidetabsb"), l1cVar.T).apply();
                     Boolean bool = l1cVar.d0;
                     if (bool != null && z != bool.booleanValue()) {
                         boolean booleanValue = l1cVar.d0.booleanValue();

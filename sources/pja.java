@@ -7,26 +7,26 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class pja extends yfb implements ks4 {
     public /* synthetic */ sja a;
-    public /* synthetic */ rj7 b;
+    public /* synthetic */ sj7 b;
 
     @Override // ks4
     public final Object a(Object obj, Object obj2, Object obj3) {
         pja pjaVar = new pja(3, (zw2) obj3);
         pjaVar.a = (sja) obj;
-        pjaVar.b = (rj7) obj2;
-        return pjaVar.invokeSuspend(f9c.a);
+        pjaVar.b = (sj7) obj2;
+        return pjaVar.invokeSuspend(g9c.a);
     }
 
     @Override // qf0
     public final Object invokeSuspend(Object obj) {
         ixe.b(obj);
         sja sjaVar = this.a;
-        rj7 rj7Var = this.b;
-        Set keySet = rj7Var.a().keySet();
+        sj7 sj7Var = this.b;
+        Set keySet = sj7Var.a().keySet();
         ArrayList arrayList = new ArrayList(ul2.c(keySet, 10));
         Iterator it = keySet.iterator();
         while (it.hasNext()) {
@@ -62,30 +62,30 @@ public final class pja extends yfb implements ks4 {
                 linkedHashMap3.put(entry2.getKey(), entry2.getValue());
             }
         }
-        rj7 rj7Var2 = new rj7(new LinkedHashMap(rj7Var.a()), false);
+        sj7 sj7Var2 = new sj7(new LinkedHashMap(sj7Var.a()), false);
         for (Map.Entry entry3 : linkedHashMap3.entrySet()) {
             String str = (String) entry3.getKey();
             Object value2 = entry3.getValue();
             if (value2 instanceof Boolean) {
                 str.getClass();
-                rj7Var2.d(new zj8(str), value2);
+                sj7Var2.d(new zj8(str), value2);
             } else if (value2 instanceof Float) {
                 str.getClass();
-                rj7Var2.d(new zj8(str), value2);
+                sj7Var2.d(new zj8(str), value2);
             } else if (value2 instanceof Integer) {
                 str.getClass();
-                rj7Var2.d(new zj8(str), value2);
+                sj7Var2.d(new zj8(str), value2);
             } else if (value2 instanceof Long) {
                 str.getClass();
-                rj7Var2.d(new zj8(str), value2);
+                sj7Var2.d(new zj8(str), value2);
             } else if (value2 instanceof String) {
                 str.getClass();
-                rj7Var2.d(new zj8(str), value2);
+                sj7Var2.d(new zj8(str), value2);
             } else if (value2 instanceof Set) {
                 str.getClass();
-                rj7Var2.d(new zj8(str), (Set) value2);
+                sj7Var2.d(new zj8(str), (Set) value2);
             }
         }
-        return new rj7(new LinkedHashMap(rj7Var2.a()), true);
+        return new sj7(new LinkedHashMap(sj7Var2.a()), true);
     }
 }

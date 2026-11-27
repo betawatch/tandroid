@@ -3,7 +3,7 @@
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ce5 implements av3 {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -11,7 +11,7 @@ public final class ce5 implements av3 {
     public final ey7 b;
     public final boolean[] c = new boolean[4];
     public final ae5 d;
-    public final xj7 e;
+    public final yj7 e;
     public be5 f;
     public long g;
     public String h;
@@ -26,7 +26,7 @@ public final class ce5 implements av3 {
         ae5Var.e = new byte[128];
         this.d = ae5Var;
         this.k = -9223372036854775807L;
-        this.e = new xj7(jn7.H2);
+        this.e = new yj7(jn7.H2);
         this.b = new ey7();
     }
 
@@ -56,14 +56,14 @@ public final class ce5 implements av3 {
         while (true) {
             int b = rfd.b(bArr, i5, i6, this.c);
             ae5 ae5Var = this.d;
-            xj7 xj7Var = this.e;
+            yj7 yj7Var = this.e;
             if (b == i6) {
                 if (!this.j) {
                     ae5Var.b(i5, i6, bArr);
                 }
                 this.f.a(i5, i6, bArr);
-                if (xj7Var != null) {
-                    xj7Var.a(i5, i6, bArr);
+                if (yj7Var != null) {
+                    yj7Var.a(i5, i6, bArr);
                     return;
                 }
                 return;
@@ -167,8 +167,8 @@ public final class ce5 implements av3 {
                                         zd1Var.m();
                                         jo4 jo4Var = new jo4();
                                         jo4Var.a = str;
-                                        jo4Var.r = dg7.n("video/mp2t");
-                                        jo4Var.s = dg7.n("video/mp4v-es");
+                                        jo4Var.r = eg7.n("video/mp2t");
+                                        jo4Var.s = eg7.n("video/mp4v-es");
                                         jo4Var.z = f6;
                                         jo4Var.A = f7;
                                         jo4Var.H = f;
@@ -194,8 +194,8 @@ public final class ce5 implements av3 {
                                         zd1Var.m();
                                         jo4 jo4Var2 = new jo4();
                                         jo4Var2.a = str;
-                                        jo4Var2.r = dg7.n("video/mp2t");
-                                        jo4Var2.s = dg7.n("video/mp4v-es");
+                                        jo4Var2.r = eg7.n("video/mp2t");
+                                        jo4Var2.s = eg7.n("video/mp4v-es");
                                         jo4Var2.z = f62;
                                         jo4Var2.A = f72;
                                         jo4Var2.H = f;
@@ -222,8 +222,8 @@ public final class ce5 implements av3 {
                                     zd1Var.m();
                                     jo4 jo4Var22 = new jo4();
                                     jo4Var22.a = str;
-                                    jo4Var22.r = dg7.n("video/mp2t");
-                                    jo4Var22.s = dg7.n("video/mp4v-es");
+                                    jo4Var22.r = eg7.n("video/mp2t");
+                                    jo4Var22.s = eg7.n("video/mp4v-es");
                                     jo4Var22.z = f622;
                                     jo4Var22.A = f722;
                                     jo4Var22.H = f;
@@ -250,8 +250,8 @@ public final class ce5 implements av3 {
                                     zd1Var.m();
                                     jo4 jo4Var222 = new jo4();
                                     jo4Var222.a = str;
-                                    jo4Var222.r = dg7.n("video/mp2t");
-                                    jo4Var222.s = dg7.n("video/mp4v-es");
+                                    jo4Var222.r = eg7.n("video/mp2t");
+                                    jo4Var222.s = eg7.n("video/mp4v-es");
                                     jo4Var222.z = f6222;
                                     jo4Var222.A = f7222;
                                     jo4Var222.H = f;
@@ -297,17 +297,17 @@ public final class ce5 implements av3 {
                 ae5Var.b(i4, 3, ae5.f);
             }
             this.f.a(i5, b, bArr);
-            if (xj7Var != null) {
+            if (yj7Var != null) {
                 if (i9 > 0) {
-                    xj7Var.a(i5, b, bArr);
+                    yj7Var.a(i5, b, bArr);
                     i3 = 0;
                 } else {
                     i3 = -i9;
                 }
-                if (xj7Var.b(i3)) {
-                    int m = rfd.m(xj7Var.e, xj7Var.d);
+                if (yj7Var.b(i3)) {
+                    int m = rfd.m(yj7Var.e, yj7Var.d);
                     String str2 = gcc.a;
-                    byte[] bArr2 = xj7Var.d;
+                    byte[] bArr2 = yj7Var.d;
                     ey7 ey7Var2 = this.b;
                     ey7Var2.L(m, bArr2);
                     this.a.a(this.k, ey7Var2);
@@ -315,7 +315,7 @@ public final class ce5 implements av3 {
                 if (i8 == 178) {
                     z = true;
                     if (ey7Var.a[b + 2] == 1) {
-                        xj7Var.d(i8);
+                        yj7Var.d(i8);
                     }
                     int i14 = i - b;
                     this.f.b(i14, this.g - i14, this.j);
@@ -361,9 +361,9 @@ public final class ce5 implements av3 {
             be5Var.d = false;
             be5Var.e = -1;
         }
-        xj7 xj7Var = this.e;
-        if (xj7Var != null) {
-            xj7Var.c();
+        yj7 yj7Var = this.e;
+        if (yj7Var != null) {
+            yj7Var.c();
         }
         this.g = 0L;
         this.k = -9223372036854775807L;

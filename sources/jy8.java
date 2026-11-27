@@ -28,7 +28,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class jy8 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -104,7 +104,7 @@ public final /* synthetic */ class jy8 implements View.OnClickListener {
                             arrayList2.add(Integer.valueOf(tL_myBoost.slot));
                             hashSet.add(Long.valueOf(wf3.n(tL_myBoost.peer)));
                         }
-                        on0.a(chat.id, arrayList2, new ku0((Object) j59Var, (Object) chat, (Object) arrayList2, (Object) hashSet, (byte) 17), new ii7(j59Var, (byte) 27));
+                        on0.a(chat.id, arrayList2, new ku0((Object) j59Var, (Object) chat, (Object) arrayList2, (Object) hashSet, (byte) 17), new ji7(j59Var, (byte) 27));
                         break;
                     }
                 }
@@ -491,7 +491,7 @@ public final /* synthetic */ class jy8 implements View.OnClickListener {
                 break;
             case 25:
                 r8b r8bVar = (r8b) this.c;
-                z3b z3bVar = (z3b) this.b;
+                n3b n3bVar = (n3b) this.b;
                 zt3 zt3Var = r8bVar.T1;
                 try {
                     charSequence = ((ClipboardManager) r8bVar.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(r8bVar.getContext());
@@ -503,11 +503,11 @@ public final /* synthetic */ class jy8 implements View.OnClickListener {
                     yt3 yt3Var = zt3Var.d;
                     yt3Var.setSelection(0, yt3Var.getText().length());
                 }
-                z3bVar.run();
+                n3bVar.run();
                 break;
             case 26:
-                rbb rbbVar = (rbb) this.c;
-                new e9b((Activity) this.b, rbbVar.c, true, rbbVar.y0, new dab(rbbVar, (byte) 19), rbbVar.a).show();
+                sbb sbbVar = (sbb) this.c;
+                new e9b((Activity) this.b, sbbVar.c, true, sbbVar.y0, new dab(sbbVar, (byte) 19), sbbVar.a).show();
                 break;
             case 27:
                 ((zj3) this.c).a((TLRPC.TL_payments_checkedGiftCode) this.b);
@@ -517,9 +517,9 @@ public final /* synthetic */ class jy8 implements View.OnClickListener {
                 break;
             default:
                 CharSequence charSequence2 = (CharSequence) this.c;
-                ida idaVar = (ida) this.b;
+                kba kbaVar = (kba) this.b;
                 hl.g(charSequence2);
-                idaVar.run();
+                kbaVar.run();
                 break;
         }
     }

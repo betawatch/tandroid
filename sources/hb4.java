@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class hb4 {
     public static go5 l1;
@@ -2809,7 +2809,7 @@ public final class hb4 {
     }
 
     public final void r() {
-        boolean z = !uc7.s1(this.R).k4.C0.f && this.b0 > 0 && this.h0 == null && !this.n0 && !this.y && this.J == 0;
+        boolean z = !uc7.s1(this.R).l4.C0.f && this.b0 > 0 && this.h0 == null && !this.n0 && !this.y && this.J == 0;
         this.f = z;
         if (z) {
             boolean p = yac.h(this.R).p();
@@ -2821,7 +2821,7 @@ public final class hb4 {
     public final void s() {
         int i;
         int i2 = 131072;
-        if ((this.J > 0 || uc7.s1(this.R).k4.Z2.f) && !this.e) {
+        if ((this.J > 0 || uc7.s1(this.R).l4.Z2.f) && !this.e) {
             i = TLObject.FLAG_19;
             this.n = TLObject.FLAG_19;
             this.o = (byte) 8;
@@ -2881,7 +2881,7 @@ public final class hb4 {
         this.X = jxcVar;
         this.W = jxcVar.b;
         this.b0 = jxcVar.d;
-        int i2 = uc7.s1(i).r3;
+        int i2 = uc7.s1(i).s3;
         this.T = i2;
         this.U = i2;
         String H = xb4.H(jxcVar.e);

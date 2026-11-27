@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class y04 extends c79 {
     public int E;
@@ -362,26 +362,26 @@ public final class y04 extends c79 {
         if (i5 != 0) {
             SparseIntArray sparseIntArray = this.r;
             if (i5 == 1) {
-                t3b t3bVar = (t3b) view;
-                t3bVar.getClass();
+                u3b u3bVar = (u3b) view;
+                u3bVar.getClass();
                 int i6 = sparseIntArray.get(i3);
                 if (i3 == this.c) {
-                    t3bVar.b(ob6.M0(2131750800, null), R.drawable.msg_close, ob6.M0(2131754895, null), 0, 0);
+                    u3bVar.b(ob6.M0(2131750800, null), R.drawable.msg_close, ob6.M0(2131754895, null), 0, 0);
                     return;
                 }
                 if (i3 == this.f) {
-                    t3bVar.a(0, ob6.M0(2131746088, null));
+                    u3bVar.a(0, ob6.M0(2131746088, null));
                     return;
                 } else {
                     if (i6 < strArr.length) {
-                        t3bVar.a(0, strArr[i6]);
+                        u3bVar.a(0, strArr[i6]);
                         return;
                     }
                     try {
-                        t3bVar.a(0, ((c14) arrayList.get(i6 - strArr.length)).b.title);
+                        u3bVar.a(0, ((c14) arrayList.get(i6 - strArr.length)).b.title);
                         return;
                     } catch (Exception unused) {
-                        t3bVar.a(0, "");
+                        u3bVar.a(0, "");
                         return;
                     }
                 }
@@ -538,9 +538,9 @@ public final class y04 extends c79 {
         if (i == 0) {
             view = new x14(o24Var.getContext());
         } else if (i == 1) {
-            t3b t3bVar = new t3b(o24Var.getContext(), true, false, o24Var.a2, o24Var.j2);
-            t3bVar.setOnIconClickListener(new mh3(this, (byte) 7));
-            view = t3bVar;
+            u3b u3bVar = new u3b(o24Var.getContext(), true, false, o24Var.a2, o24Var.j2);
+            u3bVar.setOnIconClickListener(new mh3(this, (byte) 7));
+            view = u3bVar;
         } else if (i == 3) {
             view = new d14(o24Var, o24Var.getContext());
         } else if (i == 4) {

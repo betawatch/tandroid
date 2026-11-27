@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class ehd {
     public static final float[][] a = {new float[]{1.1f, 27.0f, 1.05f, 23.0f, 1.15f, 33.0f, 3.8f, 1.0f, -1.0f, 1.0f, 1.0f, 2.0f, 3.0f}, new float[]{0.83f, 27.0f, 0.79f, 23.0f, 0.86f, 33.0f, 3.8f, 1.0f, -1.0f, 0.6f, 1.0f, 2.0f, 3.0f}, new float[]{1.1f, 27.0f, 1.05f, 23.0f, 1.15f, 18.0f, 3.8f, 1.0f, -1.0f, 1.2f, 1.0f, 2.0f, 3.0f}, new float[]{0.83f, 13.0f, 0.79f, 11.0f, 0.86f, 16.0f, 3.8f, 1.0f, -1.0f, 0.6f, 1.0f, 1.0f, 1.5f}};

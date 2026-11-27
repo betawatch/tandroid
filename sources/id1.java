@@ -24,7 +24,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import org.telegram.messenger.chromecast.ChromecastOptionsProvider;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class id1 {
     public static final he6 l = new he6("CastContext", null);
@@ -198,7 +198,7 @@ public final class id1 {
                     qa4 qa4Var = new qa4(applicationContext, qa4.u, wn.g, g05.c);
                     try {
                         n = new id1(applicationContext, castOptions, d.getAdditionalSessionProviders(applicationContext), new hhd(applicationContext, lw6.d(applicationContext), castOptions, qa4Var), qa4Var);
-                    } catch (zg7 e) {
+                    } catch (ah7 e) {
                         throw new RuntimeException(e);
                     }
                 }

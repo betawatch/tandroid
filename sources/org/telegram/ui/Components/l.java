@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class l extends FrameLayout implements snb {
     public final int[] A0;
@@ -61,7 +61,7 @@ public final class l extends FrameLayout implements snb {
     public final float[] N;
     public final jl0[] N0;
     public final float[] O;
-    public final rg7 O0;
+    public final sg7 O0;
     public final mm P;
     public int P0;
     public final RectF Q;
@@ -177,7 +177,7 @@ public final class l extends FrameLayout implements snb {
         this.L0 = new Matrix();
         this.M0 = new RectF();
         this.N0 = new jl0[3];
-        this.O0 = new rg7((byte) 15);
+        this.O0 = new sg7((byte) 15);
         k kVar = new k(this, this);
         this.H = kVar;
         ihc.l(this, kVar);

@@ -69,7 +69,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class CameraView extends FrameLayout implements TextureView.SurfaceTextureListener, CameraController.ICameraView, CameraController.ErrorCallback {
     private static final int MSG_AUDIOFRAME_AVAILABLE = 3;
@@ -166,7 +166,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
     private int videoHeight;
     private int videoWidth;
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class AudioBufferInfo {
         static final int MAX_SAMPLES = 10;
         boolean last;
@@ -184,7 +184,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public class CameraGLThread extends uo3 {
         private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
         private static final int EGL_OPENGL_ES2_BIT = 4;
@@ -1353,12 +1353,12 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public interface CameraViewDelegate {
         void onCameraInit();
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class EncoderHandler extends Handler {
         private WeakReference<VideoRecorder> mWeakEncoder;
 
@@ -1509,7 +1509,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
 
     /* JADX INFO: Access modifiers changed from: private */
     public void createCamera(SurfaceTexture surfaceTexture, int i) {
-        hl.c3(new ze7((Object) this, i, (Object) surfaceTexture, (byte) 10));
+        hl.c3(new bf7((Object) this, i, (Object) surfaceTexture, (byte) 10));
     }
 
     private void enableDualInternal() {
@@ -1581,7 +1581,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.cameraSession[i] = CameraSessionWrapper.of(cameraSession);
             cameraGLThread.setCurrentSession(this.cameraSession[i], i);
             requestLayout();
-            CameraController.getInstance().open(cameraSession, surfaceTexture, new gp6((Object) this, i, (Object) cameraSession, (Object) cameraGLThread, (byte) 10), new ze7((Object) this, (Object) cameraGLThread, i, (byte) 11));
+            CameraController.getInstance().open(cameraSession, surfaceTexture, new gp6((Object) this, i, (Object) cameraSession, (Object) cameraGLThread, (byte) 10), new bf7((Object) this, (Object) cameraGLThread, i, (byte) 11));
         }
     }
 
@@ -2636,7 +2636,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     class VideoRecorder implements Runnable {
         private static final String AUDIO_MIME_TYPE = "audio/mp4a-latm";
         private static final int FRAME_RATE = 30;
@@ -2707,7 +2707,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         private boolean writingToDifferentFile;
         private int zeroTimeStamps;
 
-        /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+        /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
         class 1 implements Runnable {
             public 1() {
             }

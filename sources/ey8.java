@@ -15,7 +15,7 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.a;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class ey8 {
     public ValueAnimator A;
@@ -48,7 +48,7 @@ public abstract class ey8 {
     public final dy8 a0;
     public final dy8 b0;
     public int c0;
-    public final ki7 d0;
+    public final li7 d0;
     public boolean e0;
     public final TextPaint k;
     public final ee1 l;
@@ -93,7 +93,7 @@ public abstract class ey8 {
         this.U = 1.0f;
         this.a0 = new dy8(this, (byte) 1);
         this.b0 = new dy8(this, (byte) 2);
-        this.d0 = new ki7(this, (byte) 10);
+        this.d0 = new li7(this, (byte) 10);
         this.e0 = false;
         textPaint.setTypeface(hl.o());
         textPaint.setTextSize(hl.L(16.0f));
@@ -460,9 +460,9 @@ public abstract class ey8 {
             if (Math.abs(this.a) >= this.Z * 0.5f) {
                 this.e0 = true;
                 of3 of3Var2 = this.H;
-                ki7 ki7Var = this.d0;
-                of3Var2.removeCallbacks(ki7Var);
-                this.H.postDelayed(ki7Var, 200L);
+                li7 li7Var = this.d0;
+                of3Var2.removeCallbacks(li7Var);
+                this.H.postDelayed(li7Var, 200L);
             } else if (!this.e0) {
                 this.x = 1.0f;
                 this.y = true;

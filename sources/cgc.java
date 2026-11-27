@@ -24,7 +24,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class cgc extends View implements fn7 {
     public String E;
@@ -427,7 +427,7 @@ public abstract class cgc extends View implements fn7 {
                                         q = null;
                                     }
                                 }
-                                hl.c3(new g9c(cgcVar, q, (byte) 22));
+                                hl.c3(new c9c(cgcVar, q, (byte) 23));
                             }
                         };
                         this.f = r3;

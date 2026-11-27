@@ -25,7 +25,7 @@ import org.telegram.messenger.MusicBrowserService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class dkb {
     public static volatile dkb p;
@@ -49,7 +49,7 @@ public final class dkb {
         this.a = context;
         int i = yac.t0;
         this.c = i;
-        this.d = hl.a1(uc7.s1(i).W3, "auto_lastSelectedDialog", 0L);
+        this.d = hl.a1(uc7.s1(i).X3, "auto_lastSelectedDialog", 0L);
         rx6 rx6Var = new rx6(context, "TelegramMediaSession", (ComponentName) null, (PendingIntent) null);
         this.b = rx6Var;
         ex6 ex6Var = (ex6) rx6Var.b;
@@ -109,8 +109,8 @@ public final class dkb {
             }
             this.f = true;
             int i = this.c;
-            jf7 Y = jf7.Y(i);
-            Y.a.c(new a39(this, Y, i, (byte) 23));
+            kf7 a0 = kf7.a0(i);
+            a0.a.c(new a39(this, a0, i, (byte) 23));
             return;
         }
         if (str != null && str.startsWith("__CHAT_")) {
@@ -262,8 +262,8 @@ public final class dkb {
         arrayList2.add(runnable);
         zh6Var.k(j, arrayList2);
         int i = this.c;
-        jf7 Y = jf7.Y(i);
-        Y.a.c(new r77((Object) this, (Object) Y, j, i, (byte) 19));
+        kf7 a0 = kf7.a0(i);
+        a0.a.c(new r77((Object) this, (Object) a0, j, i, (byte) 19));
     }
 
     public final void f() {

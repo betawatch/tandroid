@@ -31,7 +31,7 @@ import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public class WalletEngine2 implements AutoCloseable {
     private static final long NFT_ATTACHED_NANOGRAMS = 100000000;
@@ -52,14 +52,14 @@ public class WalletEngine2 implements AutoCloseable {
     private final ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor(new y20(10));
     private long nextAuxiliaryRequestId = -1;
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class HttpTransport {
         private boolean closed;
         public final int currentAccount;
         private final HashMap<Long, e> pending = new HashMap<>();
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+        /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
         static class HostException extends RuntimeException {
             final int kind;
 
@@ -138,7 +138,7 @@ public class WalletEngine2 implements AutoCloseable {
                                         try {
                                             this.pending.put(Long.valueOf(j), eVar);
                                             try {
-                                                eVar.b = getConnectionsManager().sendRequestTyped(performapirequest, new ic(b), new l8b(eVar, (byte) 12), uc7.s1(this.currentAccount).r3, 0);
+                                                eVar.b = getConnectionsManager().sendRequestTyped(performapirequest, new ic(b), new l8b(eVar, (byte) 12), uc7.s1(this.currentAccount).s3, 0);
                                             } catch (Throwable th) {
                                                 th = th;
                                                 hashMap = hashMap2;
@@ -207,7 +207,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     /* loaded from: classes2.dex */
     public static final class ImportedWalletProof {
         public final byte[] publicKey;
@@ -222,7 +222,7 @@ public class WalletEngine2 implements AutoCloseable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     static class PreparedRotation {
         final byte[] newPublicKey;
         final c35 newSecretPhrase;
@@ -249,7 +249,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class PreparedSend {
         final String encryptedCommentBody;
         final TL_wallet.sendTransfer transfer;
@@ -280,7 +280,7 @@ public class WalletEngine2 implements AutoCloseable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     static class RotationCallbacks extends SendCallbacks {
         private final icc onReplacement;
 
@@ -358,7 +358,7 @@ public class WalletEngine2 implements AutoCloseable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     static class SendCallbacks {
         final kcc callback;
         String error;
@@ -398,7 +398,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public enum SendPhase {
         IDLE(1),
         VALIDATING(2),
@@ -436,7 +436,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class SendResolution {
         final String error;
         final String operationId;
@@ -1050,7 +1050,7 @@ public class WalletEngine2 implements AutoCloseable {
             cc4.g(e, true);
             wallettransaction = null;
         }
-        hl.c3(new vlc(pccVar, wallettransaction, (byte) 18));
+        hl.c3(new slc(pccVar, wallettransaction, (byte) 19));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

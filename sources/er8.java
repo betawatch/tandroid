@@ -17,10 +17,10 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class er8 extends wma implements bl7 {
-    public final l09 g0;
+public final class er8 extends wma implements cl7 {
+    public final m09 g0;
     public final /* synthetic */ ProfileActivity h0;
     public boolean i0;
     public final Paint j0;
@@ -34,7 +34,7 @@ public final class er8 extends wma implements bl7 {
         super(context, null);
         this.n0 = profileActivity;
         this.h0 = profileActivity;
-        this.g0 = new l09((byte) 3);
+        this.g0 = new m09((byte) 3);
         this.j0 = new Paint();
         this.l0 = new ArrayList();
         this.m0 = new qq7((byte) 8);
@@ -193,12 +193,12 @@ public final class er8 extends wma implements bl7 {
         return false;
     }
 
-    @Override // al7
+    @Override // bl7
     public final void k(int i, View view) {
         this.g0.b = 0;
     }
 
-    @Override // bl7
+    @Override // cl7
     public final void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
         ProfileActivity profileActivity = this.h0;
         byte b = 1;
@@ -216,7 +216,7 @@ public final class er8 extends wma implements bl7 {
         }
     }
 
-    @Override // al7
+    @Override // bl7
     public final boolean n(View view, View view2, int i, int i2) {
         return this.h0.N4 != -1 && i == 2;
     }
@@ -568,12 +568,12 @@ public final class er8 extends wma implements bl7 {
         profileActivity.R6.d();
     }
 
-    @Override // al7
+    @Override // bl7
     public final void q(View view, View view2, int i, int i2) {
         this.g0.b = i;
     }
 
-    @Override // al7
+    @Override // bl7
     public final void r(View view, int i, int i2, int[] iArr, int i3) {
         a aVar;
         int i4;
@@ -635,7 +635,7 @@ public final class er8 extends wma implements bl7 {
     public final void onStopNestedScroll(View view) {
     }
 
-    @Override // al7
+    @Override // bl7
     public final void m(View view, int i, int i2, int i3, int i4, int i5) {
     }
 }

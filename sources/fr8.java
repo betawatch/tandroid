@@ -4,17 +4,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class fr8 implements ibb {
+public final class fr8 implements jbb {
     public final /* synthetic */ ProfileActivity a;
 
     public fr8(ProfileActivity profileActivity) {
         this.a = profileActivity;
     }
 
-    @Override // ibb
-    public final mbb b(long j) {
+    @Override // jbb
+    public final nbb b(long j) {
         ProfileActivity profileActivity = this.a;
         if (j != profileActivity.a()) {
             return null;
@@ -28,19 +28,19 @@ public final class fr8 implements ibb {
         float scaleX = ((View) iq8Var.getParent()).getScaleX();
         float f = iq8Var.getImageReceiver().N0 * scaleX;
         float f2 = c0 ? 0.32f * f : f;
-        kbb kbbVar = new kbb(iq8Var, (byte) 0);
+        lbb lbbVar = new lbb(iq8Var, (byte) 0);
         float[] fArr = new float[2];
         iq8Var.getRootView().getLocationOnScreen(new int[2]);
         hl.p1(iq8Var, (ViewGroup) iq8Var.getRootView(), fArr);
         float f3 = (iq8Var.getImageReceiver().L0 * scaleX) + r4[0] + fArr[0];
         float f4 = (iq8Var.getImageReceiver().M0 * scaleX) + r4[1] + fArr[1];
-        kbbVar.c.set(f3, f4, f3 + f, f + f4);
-        kbbVar.e = iq8Var.getImageReceiver();
-        kbbVar.b = f2;
-        return kbbVar;
+        lbbVar.c.set(f3, f4, f3 + f, f + f4);
+        lbbVar.e = iq8Var.getImageReceiver();
+        lbbVar.b = f2;
+        return lbbVar;
     }
 
-    @Override // ibb
+    @Override // jbb
     public final void c(long j, pqa pqaVar) {
         ProfileActivity profileActivity = this.a;
         profileActivity.f0.setHasStories(profileActivity.N2());

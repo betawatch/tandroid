@@ -13,9 +13,9 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class n31 implements v76, cr7, um6, ifc, n09 {
+public final class n31 implements v76, cr7, um6, ifc, o09 {
     public final /* synthetic */ byte a;
     public boolean b;
     public Object c;
@@ -39,7 +39,7 @@ public final class n31 implements v76, cr7, um6, ifc, n09 {
     @Override // cr7
     public final void S0(Object obj) {
         this.b = true;
-        SignInHubActivity signInHubActivity = (SignInHubActivity) ((k09) this.c).b;
+        SignInHubActivity signInHubActivity = (SignInHubActivity) ((l09) this.c).b;
         signInHubActivity.setResult(signInHubActivity.S, signInHubActivity.T);
         signInHubActivity.finish();
     }
@@ -60,8 +60,8 @@ public final class n31 implements v76, cr7, um6, ifc, n09 {
         ((j79) this.c).q(i, i2);
     }
 
-    @Override // n09
-    public final void a(m09 m09Var, int i) {
+    @Override // o09
+    public final void a(n09 n09Var, int i) {
         StringBuilder sb = (StringBuilder) this.c;
         if (this.b) {
             this.b = false;
@@ -387,7 +387,7 @@ public final class n31 implements v76, cr7, um6, ifc, n09 {
     public final String toString() {
         switch (this.a) {
             case 6:
-                return ((k09) this.c).toString();
+                return ((l09) this.c).toString();
             default:
                 return super.toString();
         }
@@ -433,10 +433,10 @@ public final class n31 implements v76, cr7, um6, ifc, n09 {
         this.b = z;
     }
 
-    public n31(m8d m8dVar, k09 k09Var) {
+    public n31(m8d m8dVar, l09 l09Var) {
         this.a = (byte) 6;
         this.b = false;
-        this.c = k09Var;
+        this.c = l09Var;
     }
 
     @Override // ifc

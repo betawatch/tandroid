@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class pa3 {
     public final ra6 a;
@@ -50,7 +50,7 @@ public final class pa3 {
             xg0 xg0Var = G == null ? (xg0) ub9Var2.b.get(i3) : G;
             ko4 ko4Var2 = ub9Var2.a;
             String str = ko4Var2.s;
-            if (!dg7.l(str)) {
+            if (!eg7.l(str)) {
                 if (str != null && (str.startsWith("video/webm") || str.startsWith("audio/webm") || str.startsWith("application/webm") || str.startsWith("video/x-matroska") || str.startsWith("audio/x-matroska") || str.startsWith("application/x-matroska"))) {
                     ub9Var = ub9Var2;
                     ko4Var = ko4Var2;

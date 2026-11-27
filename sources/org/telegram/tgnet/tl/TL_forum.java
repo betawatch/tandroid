@@ -8,11 +8,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class TL_forum {
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_messages_reorderPinnedForumTopics extends TLObject {
         public static final int constructor = 242762224;
         public boolean force;
@@ -33,7 +33,7 @@ public class TL_forum {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_messages_updatePinnedForumTopic extends TLObject {
         public static final int constructor = 392032849;
         public TLRPC.InputPeer peer;
@@ -57,7 +57,7 @@ public class TL_forum {
     private TL_forum() {
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     /* loaded from: classes2.dex */
     public static class TL_messages_createForumTopic extends TLMethod<TLRPC.Updates> {
         public static final int constructor = 798540757;
@@ -98,7 +98,7 @@ public class TL_forum {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class TL_messages_deleteTopicHistory extends TLMethod<TLRPC.TL_messages_affectedHistory> {
         public static final int constructor = -763269360;
         public TLRPC.InputPeer peer;
@@ -117,7 +117,7 @@ public class TL_forum {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     /* loaded from: classes2.dex */
     public static class TL_messages_editForumTopic extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -825487052;
@@ -157,7 +157,7 @@ public class TL_forum {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     /* loaded from: classes2.dex */
     public static class TL_messages_getForumTopics extends TLMethod<TLRPC.TL_messages_forumTopics> {
         public static final int constructor = -963894886;
@@ -197,7 +197,7 @@ public class TL_forum {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     /* loaded from: classes2.dex */
     public static class TL_messages_getForumTopicsByID extends TLMethod<TLRPC.TL_messages_forumTopics> {
         public static final int constructor = -1358280184;

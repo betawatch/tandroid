@@ -36,7 +36,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class k3b extends FrameLayout implements fn7 {
     public volatile boolean E;
@@ -2210,7 +2210,7 @@ public final class k3b extends FrameLayout implements fn7 {
             if (eq3Var != null) {
                 eq3Var.setProgress(1.0f);
             }
-            hl.d3(new me7(this, i, b3), 450L);
+            hl.d3(new oe7(this, i, b3), 450L);
             rx1 rx1Var2 = i3bVar.n;
             if (rx1Var2 != null) {
                 rx1Var2.a(Boolean.TRUE);
@@ -2630,7 +2630,7 @@ public final class k3b extends FrameLayout implements fn7 {
     }
 
     public final void l(Bitmap bitmap, int i, int i2, int i3, ea8 ea8Var) {
-        ri7 ri7Var;
+        si7 si7Var;
         int i4 = i2 <= 0 ? hl.q.x : i2;
         int i5 = i3 <= 0 ? hl.q.y : i3;
         this.U = i4;
@@ -2667,10 +2667,10 @@ public final class k3b extends FrameLayout implements fn7 {
         if (this.d0 == null) {
             lm5 lm5Var = lm5.b;
             xve.i(lm5Var, "options cannot be null");
-            synchronized (ri7.class) {
-                ri7Var = (ri7) jg7.c().a(ri7.class);
+            synchronized (si7.class) {
+                si7Var = (si7) kg7.c().a(si7.class);
             }
-            vw8 vw8Var = (vw8) ri7Var.a.get(lm5.class);
+            vw8 vw8Var = (vw8) si7Var.a.get(lm5.class);
             xve.h(vw8Var);
             asd asdVar = (asd) vw8Var.get();
             asdVar.getClass();

@@ -19,7 +19,7 @@ import org.telegram.messenger.a;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ng2 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -472,15 +472,15 @@ public final class ng2 implements RemoteViewsService.RemoteViewsFactory {
                 ArrayList arrayList2 = new ArrayList();
                 ArrayList arrayList3 = new ArrayList();
                 zh6 zh6Var2 = new zh6();
-                jf7 Y = jf7.Y(i);
+                kf7 a0 = kf7.a0(i);
                 int i2 = this.c;
                 zh6 zh6Var3 = this.g;
                 CountDownLatch countDownLatch = new CountDownLatch(1);
-                Y.a.c(new re7(Y, i2, arrayList, 0, zh6Var3, zh6Var2, arrayList3, arrayList2, countDownLatch));
+                a0.a.c(new se7(a0, i2, arrayList, 0, zh6Var3, zh6Var2, arrayList3, arrayList2, countDownLatch));
                 try {
                     countDownLatch.await();
                 } catch (Exception e) {
-                    Y.n(e, true);
+                    a0.p(e, true);
                 }
                 uc7.s1(i).j4(arrayList2, true);
                 uc7.s1(i).c4(arrayList3, true);

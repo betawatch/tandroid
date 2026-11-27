@@ -5,7 +5,7 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ry0 {
     public long a;
@@ -128,9 +128,9 @@ public final class ry0 {
                     if (j5 <= j4 && zg2Var != 0) {
                         j99Var = (j99) zg2Var.c;
                         for (i = 0; i < j99Var.d; i++) {
-                            mh7 mh7Var = (mh7) j99Var.get(i);
-                            if ("MotionPhoto".equalsIgnoreCase(mh7Var.b)) {
-                                long j10 = mh7Var.c;
+                            nh7 nh7Var = (nh7) j99Var.get(i);
+                            if ("MotionPhoto".equalsIgnoreCase(nh7Var.b)) {
+                                long j10 = nh7Var.c;
                                 if (j10 > j4 && j10 < length) {
                                     j5 = length - j10;
                                 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p23 implements sr4 {
     public final /* synthetic */ byte a;
@@ -21,16 +21,16 @@ public final /* synthetic */ class p23 implements sr4 {
     public final Object invoke() {
         String[] names;
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         Object obj = this.c;
         Object obj2 = this.b;
         switch (b) {
             case 0:
                 ((ur4) obj2).invoke(((p89) obj).a);
-                return f9cVar;
+                return g9cVar;
             case 1:
                 ((ur4) obj2).invoke(((p89) obj).a);
-                return f9cVar;
+                return g9cVar;
             default:
                 o8a o8aVar = (o8a) obj2;
                 LinkedHashMap linkedHashMap = new LinkedHashMap();

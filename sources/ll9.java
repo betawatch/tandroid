@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ll9 {
     public final ArrayList a;
@@ -405,7 +405,7 @@ public final class ll9 {
         int i4;
         if (c(r47Var)) {
             hl9 hl9Var = r47Var.y2;
-            int f = uc7.s1(r47Var.K1).k4.V1.f();
+            int f = uc7.s1(r47Var.K1).l4.V1.f();
             ArrayList e = e(hl9Var.c);
             IdentityHashMap identityHashMap = new IdentityHashMap();
             for (int i5 = 0; i5 < e.size(); i5++) {

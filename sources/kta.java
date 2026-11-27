@@ -43,7 +43,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class kta implements Runnable {
     public final /* synthetic */ byte a;
@@ -107,7 +107,7 @@ public final /* synthetic */ class kta implements Runnable {
         String str = (String) this.d;
         TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
         if (tLObject instanceof TLRPC.TL_boolTrue) {
-            o7cVar.k0(new bcb((Object) o7cVar, (Object) str, (byte) 27));
+            o7cVar.k0(new hab((Object) o7cVar, (Object) str, (byte) 28));
             return;
         }
         if (tL_error == null || tL_error.text.startsWith("CODE_INVALID")) {
@@ -159,27 +159,27 @@ public final /* synthetic */ class kta implements Runnable {
         String str = (String) this.c;
         Map map = (Map) this.d;
         List list = (List) this.e;
-        qf7 qf7Var = (qf7) gd4Var.b;
+        rf7 rf7Var = (rf7) gd4Var.b;
         AtomicMarkableReference atomicMarkableReference = (AtomicMarkableReference) gd4Var.g;
         if (((String) atomicMarkableReference.getReference()) != null) {
-            qf7Var.i(str, (String) atomicMarkableReference.getReference());
+            rf7Var.i(str, (String) atomicMarkableReference.getReference());
         }
         if (!map.isEmpty()) {
-            qf7Var.h(str, map, false);
+            rf7Var.h(str, map, false);
         }
         if (list.isEmpty()) {
             return;
         }
-        File b = qf7Var.a.b(str, "rollouts-state");
+        File b = rf7Var.a.b(str, "rollouts-state");
         if (list.isEmpty()) {
-            qf7.g(b, "Rollout state is empty for session: " + str);
+            rf7.g(b, "Rollout state is empty for session: " + str);
             return;
         }
         BufferedWriter bufferedWriter2 = null;
         try {
             try {
-                e = qf7.e(list);
-                bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b), qf7.b));
+                e = rf7.e(list);
+                bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b), rf7.b));
             } catch (Throwable th) {
                 th = th;
             }
@@ -194,7 +194,7 @@ public final /* synthetic */ class kta implements Runnable {
             e = e3;
             bufferedWriter2 = bufferedWriter;
             Log.w("FirebaseCrashlytics", "Error serializing rollouts state.", e);
-            qf7.f(b);
+            rf7.f(b);
             jn2.b(bufferedWriter2, "Failed to close rollouts state file.");
         } catch (Throwable th2) {
             th = th2;
@@ -218,7 +218,7 @@ public final /* synthetic */ class kta implements Runnable {
                 TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
                 uc7.s1(i).j4(tL_contacts_resolvedPeer.users, false);
                 uc7.s1(i).c4(tL_contacts_resolvedPeer.chats, false);
-                jf7.Y(i).j1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
+                kf7.a0(i).n1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
                 long B1 = r47.B1(tL_contacts_resolvedPeer.peer);
                 kbcVar.b.put(str, new jbc(B1));
                 while (i2 < arrayList.size()) {
@@ -496,15 +496,15 @@ public final /* synthetic */ class kta implements Runnable {
                 s4bVar.n1.f();
                 return;
             case 7:
-                q5b q5bVar = (q5b) this.b;
+                r5b r5bVar = (r5b) this.b;
                 TLObject tLObject4 = (TLObject) this.c;
                 pcc pccVar = (pcc) this.d;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.e;
-                q5bVar.i = false;
+                r5bVar.i = false;
                 if (tLObject4 instanceof TL_stories.TL_storyAlbum) {
-                    v5b a = v5b.a((TL_stories.TL_storyAlbum) tLObject4);
-                    q5bVar.h.add(a);
-                    q5bVar.f(true);
+                    w5b a = w5b.a((TL_stories.TL_storyAlbum) tLObject4);
+                    r5bVar.h.add(a);
+                    r5bVar.f(true);
                     pccVar.a(a);
                     return;
                 }
@@ -514,32 +514,32 @@ public final /* synthetic */ class kta implements Runnable {
                     c = 0;
                     d31.b0(S).g0(tL_error4, false);
                 }
-                jn7 f2 = jn7.f(q5bVar.a);
+                jn7 f2 = jn7.f(r5bVar.a);
                 Object[] objArr = new Object[2];
-                objArr[c] = Long.valueOf(q5bVar.b);
-                objArr[1] = q5bVar;
+                objArr[c] = Long.valueOf(r5bVar.b);
+                objArr[1] = r5bVar;
                 f2.k(jn7.l3, objArr);
                 return;
             case 8:
                 int i7 = 2;
                 int i8 = 5;
                 int i9 = 4;
-                u5b u5bVar = (u5b) this.b;
+                v5b v5bVar = (v5b) this.b;
                 ArrayList arrayList6 = (ArrayList) this.d;
-                jf7 jf7Var = (jf7) this.c;
+                kf7 kf7Var = (kf7) this.c;
                 ArrayList arrayList7 = (ArrayList) this.e;
-                int i10 = u5bVar.f;
+                int i10 = v5bVar.f;
                 StringBuilder sb = new StringBuilder("StoriesList ");
-                byte b3 = u5bVar.e;
+                byte b3 = v5bVar.e;
                 sb.append((int) b3);
                 sb.append("{");
-                long j6 = u5bVar.d;
+                long j6 = v5bVar.d;
                 sb.append(j6);
                 sb.append("} saveCache {");
                 sb.append(c6b.k0(arrayList6));
                 uh9.s("}", sb);
                 try {
-                    SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase = kf7Var.b;
                     SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("REPLACE INTO profile_stories VALUES(?, ?, ?, ?, ?, ?)");
                     try {
                         Locale locale = Locale.US;
@@ -559,7 +559,7 @@ public final /* synthetic */ class kta implements Runnable {
                                 executeFast.bindInteger(i7, storyItem.id);
                                 executeFast.bindByteBuffer(3, nativeByteBuffer);
                                 executeFast.bindInteger(i9, b3);
-                                executeFast.bindInteger(i8, u5bVar.m.contains(Integer.valueOf(storyItem.id)) ? 1 : 0);
+                                executeFast.bindInteger(i8, v5bVar.m.contains(Integer.valueOf(storyItem.id)) ? 1 : 0);
                                 arrayList = arrayList6;
                                 executeFast.bindInteger(6, arrayList7.indexOf(Integer.valueOf(storyItem.id)) + 1);
                                 executeFast.step();
@@ -591,8 +591,8 @@ public final /* synthetic */ class kta implements Runnable {
                         b = 1;
                         sQLitePreparedStatement2 = executeFast;
                         try {
-                            jf7Var.n(th, b);
-                            hl.c3(new r5b(u5bVar, b));
+                            kf7Var.p(th, b);
+                            hl.c3(new s5b(v5bVar, b));
                             return;
                         } finally {
                             if (sQLitePreparedStatement2 != null) {
@@ -608,7 +608,7 @@ public final /* synthetic */ class kta implements Runnable {
                     sQLitePreparedStatement = null;
                     b = 1;
                 }
-                hl.c3(new r5b(u5bVar, b));
+                hl.c3(new s5b(v5bVar, b));
                 return;
             case 9:
                 c8b c8bVar = (c8b) this.b;
@@ -1028,7 +1028,7 @@ public final /* synthetic */ class kta implements Runnable {
                                 zu1Var.E7(true);
                                 zu1Var.H4(true, true);
                                 zu1Var.Za();
-                                wxbVar.getMessagesController().g4.q(wxbVar.a, tL_forumTopic, true);
+                                wxbVar.getMessagesController().h4.q(wxbVar.a, tL_forumTopic, true);
                                 wxbVar.finishFragment();
                             } else {
                                 Bundle bundle = new Bundle();
@@ -1039,7 +1039,7 @@ public final /* synthetic */ class kta implements Runnable {
                                 zu1 zu1Var2 = new zu1(bundle);
                                 zu1Var2.Ob(arrayList10, M03, tL_messageService.id, 1, 1, tL_forumTopic);
                                 zu1Var2.c = true;
-                                wxbVar.getMessagesController().g4.q(wxbVar.a, tL_forumTopic, true);
+                                wxbVar.getMessagesController().h4.q(wxbVar.a, tL_forumTopic, true);
                                 wxbVar.presentFragment(zu1Var2);
                             }
                         }
@@ -1053,7 +1053,7 @@ public final /* synthetic */ class kta implements Runnable {
                 uc7 uc7Var = (uc7) this.d;
                 TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) this.e;
                 fu5Var.u();
-                uc7Var.g4.t(-l1cVar.f, tL_forumTopic2.id, !tL_forumTopic2.pinned, l1cVar.s);
+                uc7Var.h4.t(-l1cVar.f, tL_forumTopic2.id, !tL_forumTopic2.pinned, l1cVar.s);
                 return;
             case 15:
                 a();
@@ -1064,7 +1064,7 @@ public final /* synthetic */ class kta implements Runnable {
                 v11 v11Var = (v11) this.d;
                 zo2 zo2Var = (zo2) this.e;
                 r47Var.k.originalLanguage = "und";
-                a5cVar.getMessagesStorage().U1(v11Var.a, r47Var.k);
+                a5cVar.getMessagesStorage().Z1(v11Var.a, r47Var.k);
                 a5cVar.L.remove(v11Var);
                 zo2Var.a("und");
                 return;

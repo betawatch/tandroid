@@ -11,7 +11,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ws5 extends c79 {
     public final /* synthetic */ bt5 c;
@@ -190,7 +190,7 @@ public final class ws5 extends c79 {
                                 double d = tL_starsSubscriptionPricing2.amount / 1000.0d;
                                 bt5 bt5Var3 = ys5Var.f;
                                 int i9 = bt5.h2;
-                                a0 = ob6.a0(null, null, 2131748645, h.e((long) (d * uc7.s1(bt5Var3.a).k4.A3.i * i7), "USD"));
+                                a0 = ob6.a0(null, null, 2131748645, h.e((long) (d * uc7.s1(bt5Var3.a).l4.A3.i * i7), "USD"));
                             }
                             textView.setText(a0);
                             return;
@@ -207,7 +207,7 @@ public final class ws5 extends c79 {
                             double d2 = tL_starsSubscriptionPricing2.amount / 1000.0d;
                             bt5 bt5Var4 = ys5Var.f;
                             int i10 = bt5.h2;
-                            format = String.format(locale, "you get approximately %1$s %2$s", h2.e((long) (d2 * uc7.s1(bt5Var4.a).k4.A3.i * i7), "USD"), "for ".concat(str4));
+                            format = String.format(locale, "you get approximately %1$s %2$s", h2.e((long) (d2 * uc7.s1(bt5Var4.a).l4.A3.i * i7), "USD"), "for ".concat(str4));
                         }
                         textView3.setText(format);
                         return;
@@ -423,9 +423,9 @@ public final class ws5 extends c79 {
                 break;
             case 2:
                 int i2 = aob.a7;
-                View rcaVar = new rca(context, aob.w0(null, i2, false), 0);
-                yob.h(i2, null, rcaVar);
-                view2 = rcaVar;
+                View scaVar = new sca(context, aob.w0(null, i2, false), 0);
+                yob.h(i2, null, scaVar);
+                view2 = scaVar;
                 break;
             case 3:
                 ss5 ss5Var = new ss5(this, context, bt5Var.O1, bt5Var, bt5Var.b2);
@@ -450,7 +450,7 @@ public final class ws5 extends c79 {
                 view2 = view;
                 break;
             case 7:
-                view2 = new rca(context, (uh9) null);
+                view2 = new sca(context, (uh9) null);
                 break;
             case 8:
                 xs5 xs5Var = new xs5(context);

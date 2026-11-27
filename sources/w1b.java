@@ -31,13 +31,13 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class w1b extends e implements fn7 {
     public boolean A0;
     public boolean B0;
     public j1b C0;
-    public u5b D0;
+    public v5b D0;
     public i1b E;
     public int E0;
     public i1b F;
@@ -572,7 +572,7 @@ public final class w1b extends e implements fn7 {
         ArrayList arrayList;
         int i3 = 0;
         if (i == jn7.A5) {
-            if (((u5b) objArr[0]) == this.D0) {
+            if (((v5b) objArr[0]) == this.D0) {
                 l0();
                 q0();
                 if (this.X != null) {
@@ -729,7 +729,7 @@ public final class w1b extends e implements fn7 {
             for (int i = 0; i < arrayList2.size(); i++) {
                 arrayList.add(new r47(this.currentAccount, arrayList2.get(i), false, true));
             }
-            getMessagesStorage().g1(arrayList2, false, true, true, 0, false, 0, 0L);
+            getMessagesStorage().k1(arrayList2, false, true, true, 0, false, 0, 0L);
         }
         hl.c3(new q0b(this, arrayList, b));
     }
@@ -893,11 +893,11 @@ public final class w1b extends e implements fn7 {
             if (arrayList3.size() > 0) {
                 int b = ((t1b) arrayList3.get(0)).b();
                 int size2 = arrayList3.size();
-                jf7 messagesStorage = w1bVar.getMessagesStorage();
+                kf7 messagesStorage = w1bVar.getMessagesStorage();
                 long j = -w1bVar.b;
                 int i14 = w1bVar.classGuid;
                 messagesStorage.getClass();
-                messagesStorage.a.c(new ee7(messagesStorage, qsb.d(null, "MessagesStorage.getMessages: storageQueue.postRunnable"), null, j, 0L, size2, b, 0, 0, i14, 0, 0, 0L, 0, true, false));
+                messagesStorage.a.c(new de7(messagesStorage, qsb.d(null, "MessagesStorage.getMessages: storageQueue.postRunnable"), null, j, 0L, size2, b, 0, 0, i14, 0, 0, 0L, 0, true, false));
             }
             r10 = 0;
             final Object[] objArr = 0 == true ? 1 : 0;
@@ -1265,7 +1265,7 @@ public final class w1b extends e implements fn7 {
         if (view instanceof h1b) {
             return;
         }
-        if (!(view instanceof rca) || this.T.d1()) {
+        if (!(view instanceof sca) || this.T.d1()) {
             if (view instanceof qk1) {
                 ((qk1) view).a();
                 return;
@@ -1321,7 +1321,7 @@ public final class w1b extends e implements fn7 {
         this.G0 = u8aVar2;
         c6b O1 = getMessagesController().O1();
         long j = this.b;
-        u5b z = O1.z(2, -1, -j, true);
+        v5b z = O1.z(2, -1, -j, true);
         this.D0 = z;
         if (z != null) {
             this.E0 = z.o();
@@ -1347,9 +1347,9 @@ public final class w1b extends e implements fn7 {
             idVar.dismiss();
             idVarArr[0] = null;
         }
-        u5b u5bVar = this.D0;
-        if (u5bVar != null) {
-            u5bVar.z(this.E0);
+        v5b v5bVar = this.D0;
+        if (v5bVar != null) {
+            v5bVar.z(this.E0);
         }
         super.onFragmentDestroy();
     }

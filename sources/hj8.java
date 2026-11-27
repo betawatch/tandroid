@@ -35,7 +35,7 @@ import org.telegram.ui.PrivacySettingsActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class hj8 implements icc {
     public final /* synthetic */ byte a;
@@ -311,12 +311,12 @@ public final /* synthetic */ class hj8 implements icc {
         k2a k2aVar = (k2a) this.b;
         ArrayList arrayList = (ArrayList) obj;
         int i = k2aVar.W1;
-        u5b u5bVar = k2aVar.U1;
-        if (u5bVar == null) {
+        v5b v5bVar = k2aVar.U1;
+        if (v5bVar == null) {
             return;
         }
         arrayList.add(b8c.D(hl.L(16.0f)));
-        ArrayList arrayList2 = u5bVar.i;
+        ArrayList arrayList2 = v5bVar.i;
         int size = arrayList2.size();
         int i2 = 0;
         int i3 = i;
@@ -341,7 +341,7 @@ public final /* synthetic */ class hj8 implements icc {
                 i3 = i;
             }
         }
-        if (u5bVar.k() || !u5bVar.r) {
+        if (v5bVar.k() || !v5bVar.r) {
             while (true) {
                 if (i2 >= (i3 <= 0 ? i : i3)) {
                     break;
@@ -773,13 +773,13 @@ public final /* synthetic */ class hj8 implements icc {
                 arrayList.add(b8c.B(2, null));
                 if (ij8Var.n) {
                     bp1.o(2131746604, null, arrayList);
-                    int[] a = bna.a(new int[]{0, 10, 50, 100, jn7.d3, jn7.Y3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, (int) ij8Var.getMessagesController().k4.P1.f());
+                    int[] a = bna.a(new int[]{0, 10, 50, 100, jn7.d3, jn7.Y3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, (int) ij8Var.getMessagesController().l4.P1.f());
                     ku7 ku7Var = new ku7((byte) 23);
                     ana anaVar = new ana();
                     anaVar.c = a;
                     anaVar.d = (byte) 20;
                     anaVar.e = ku7Var;
-                    ij8Var.b.d((int) Utilities.k(ij8Var.r, 10000L, 0L), anaVar, new ii7(ij8Var, (byte) 17));
+                    ij8Var.b.d((int) Utilities.k(ij8Var.r, 10000L, 0L), anaVar, new ji7(ij8Var, (byte) 17));
                     arrayList.add(b8c.j(3, ij8Var.b));
                     arrayList.add(b8c.B(4, ij8Var.r > 0 ? ij8Var.Z() : null));
                     TLRPC.Chat M02 = ij8Var.getMessagesController().M0(Long.valueOf(ij8Var.a));
@@ -972,7 +972,7 @@ public final /* synthetic */ class hj8 implements icc {
                     try {
                         SerializedData serializedData = new SerializedData(tL_shareThemeBackdrops.getObjectSize());
                         qy8Var.b.serializeToStream(serializedData);
-                        uc7.s1(qy8Var.a).X3.edit().putString("qrBackdrops", Utilities.f(serializedData.toByteArray())).apply();
+                        uc7.s1(qy8Var.a).Y3.edit().putString("qrBackdrops", Utilities.f(serializedData.toByteArray())).apply();
                         serializedData.cleanup();
                     } catch (Exception e) {
                         cc4.g(e, true);
@@ -1474,7 +1474,7 @@ public final /* synthetic */ class hj8 implements icc {
                 }
                 break;
             case 21:
-                ((tba) obj3).a0((ArrayList) obj);
+                ((uba) obj3).a0((ArrayList) obj);
                 break;
             case 22:
                 sqa sqaVar = (sqa) obj3;

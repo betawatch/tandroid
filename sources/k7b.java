@@ -25,7 +25,7 @@ import java.util.Locale;
 import java.util.Map;
 import org.xml.sax.Attributes;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class k7b implements p7b, ly9, bo3, OnCompleteListener, s99, zcd, ydd {
     public final /* synthetic */ byte a;
@@ -311,14 +311,14 @@ public final class k7b implements p7b, ly9, bo3, OnCompleteListener, s99, zcd, y
         return null;
     }
 
-    public final void k(f89 f89Var, l09 l09Var) {
+    public final void k(f89 f89Var, m09 m09Var) {
         qs qsVar = (qs) this.b;
         mhc mhcVar = (mhc) qsVar.get(f89Var);
         if (mhcVar == null) {
             mhcVar = mhc.a();
             qsVar.put(f89Var, mhcVar);
         }
-        mhcVar.c = l09Var;
+        mhcVar.c = m09Var;
         mhcVar.a |= 8;
     }
 
@@ -475,9 +475,9 @@ public final class k7b implements p7b, ly9, bo3, OnCompleteListener, s99, zcd, y
         }
     }
 
-    public final l09 p(f89 f89Var, int i) {
+    public final m09 p(f89 f89Var, int i) {
         mhc mhcVar;
-        l09 l09Var;
+        m09 m09Var;
         qs qsVar = (qs) this.b;
         int d = qsVar.d(f89Var);
         if (d >= 0 && (mhcVar = (mhc) qsVar.i(d)) != null) {
@@ -486,9 +486,9 @@ public final class k7b implements p7b, ly9, bo3, OnCompleteListener, s99, zcd, y
                 int i3 = i2 & (~i);
                 mhcVar.a = i3;
                 if (i == 4) {
-                    l09Var = mhcVar.b;
+                    m09Var = mhcVar.b;
                 } else if (i == 8) {
-                    l09Var = mhcVar.c;
+                    m09Var = mhcVar.c;
                 } else {
                     lq5.j("Must provide flag PRE or POST");
                 }
@@ -499,7 +499,7 @@ public final class k7b implements p7b, ly9, bo3, OnCompleteListener, s99, zcd, y
                     mhcVar.c = null;
                     mhc.d.r0(mhcVar);
                 }
-                return l09Var;
+                return m09Var;
             }
         }
         return null;
@@ -546,14 +546,14 @@ public final class k7b implements p7b, ly9, bo3, OnCompleteListener, s99, zcd, y
     public final void s(Object obj) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new z5b((Object) this, obj, SystemClock.elapsedRealtime(), (byte) 13));
+            handler.post(new j5b((Object) this, obj, SystemClock.elapsedRealtime(), (byte) 14));
         }
     }
 
     public final void t(ggc ggcVar) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new g9c(this, ggcVar, (byte) 17));
+            handler.post(new c9c(this, ggcVar, (byte) 18));
         }
     }
 

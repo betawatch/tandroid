@@ -12,11 +12,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class bia extends c79 {
     public final Context c;
-    public ida e;
+    public kba e;
     public int n;
     public final byte r;
     public int s;
@@ -109,9 +109,9 @@ public final class bia extends c79 {
     }
 
     public final void G(String str, boolean z) {
-        ida idaVar = this.e;
-        if (idaVar != null) {
-            hl.r(idaVar);
+        kba kbaVar = this.e;
+        if (kbaVar != null) {
+            hl.r(kbaVar);
             this.e = null;
         }
         if (!this.d.isEmpty() || !this.f.isEmpty()) {
@@ -139,9 +139,9 @@ public final class bia extends c79 {
         while (true) {
             zha[] zhaVarArr = ejaVar.n0;
             if (i >= zhaVarArr.length) {
-                ida idaVar2 = new ida(this, str, (byte) 5);
-                this.e = idaVar2;
-                hl.d3(idaVar2, 300L);
+                kba kbaVar2 = new kba(this, str, (byte) 6);
+                this.e = kbaVar2;
+                hl.d3(kbaVar2, 300L);
                 return;
             } else {
                 zha zhaVar = zhaVarArr[i];

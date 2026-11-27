@@ -8,7 +8,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class o45 implements pcc {
     public final /* synthetic */ byte a;
@@ -19,11 +19,11 @@ public final /* synthetic */ class o45 implements pcc {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public /* synthetic */ o45(c51 c51Var, c51 c51Var2, sk7 sk7Var, vnb vnbVar, re4 re4Var, w45 w45Var) {
+    public /* synthetic */ o45(c51 c51Var, c51 c51Var2, tk7 tk7Var, vnb vnbVar, re4 re4Var, w45 w45Var) {
         this.a = (byte) 1;
         this.b = c51Var;
         this.c = c51Var2;
-        this.e = sk7Var;
+        this.e = tk7Var;
         this.d = vnbVar;
         this.f = re4Var;
         this.g = w45Var;
@@ -42,7 +42,7 @@ public final /* synthetic */ class o45 implements pcc {
         Object obj7 = this.b;
         switch (b) {
             case 0:
-                jl7 jl7Var = (jl7) obj4;
+                kl7 kl7Var = (kl7) obj4;
                 vnb vnbVar = (vnb) obj3;
                 oq6 oq6Var = (oq6) obj2;
                 String str = (String) obj;
@@ -50,16 +50,16 @@ public final /* synthetic */ class o45 implements pcc {
                 ((c51) obj6).setEnabled(true);
                 ((ImageView) obj5).setEnabled(true);
                 if (str != null) {
-                    d31.d0(str, jl7Var.F, vnbVar);
+                    d31.d0(str, kl7Var.F, vnbVar);
                     oq6Var.run();
                     break;
                 } else {
-                    jl7Var.dismiss();
+                    kl7Var.dismiss();
                     break;
                 }
             case 1:
                 c51 c51Var = (c51) obj6;
-                sk7 sk7Var = (sk7) obj5;
+                tk7 tk7Var = (tk7) obj5;
                 vnb vnbVar2 = (vnb) obj3;
                 re4 re4Var = (re4) obj4;
                 w45 w45Var = (w45) obj2;
@@ -67,12 +67,12 @@ public final /* synthetic */ class o45 implements pcc {
                 ((c51) obj7).setLoading(false);
                 c51Var.setLoading(false);
                 if (str2 != null) {
-                    d31.d0(str2, sk7Var.F, vnbVar2);
+                    d31.d0(str2, tk7Var.F, vnbVar2);
                     re4Var.run();
                     c51Var.setEnabled((w45Var.n || w45Var.o) ? false : true);
                     break;
                 } else {
-                    sk7Var.dismiss();
+                    tk7Var.dismiss();
                     break;
                 }
             case 2:

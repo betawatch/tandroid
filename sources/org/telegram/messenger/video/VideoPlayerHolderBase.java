@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class VideoPlayerHolderBase {
     private boolean allowMultipleInstances;
@@ -534,7 +534,7 @@ public class VideoPlayerHolderBase {
     }
 
     public void seekTo(long j, boolean z, Runnable runnable) {
-        this.dispatchQueue.postRunnable(new j61((Object) this, j, z, (Object) runnable, (byte) 12));
+        this.dispatchQueue.postRunnable(new j61((Object) this, j, z, (Object) runnable, (byte) 10));
     }
 
     public void setAudioEnabled(boolean z, boolean z2) {
@@ -640,7 +640,7 @@ public class VideoPlayerHolderBase {
         this.dispatchQueue.postRunnable(new nfc(this, f, (byte) 1));
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     class 2 implements ifc {
         public 2() {
         }

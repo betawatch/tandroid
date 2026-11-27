@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class f48 extends FrameLayout implements snb {
     public kc7 E;
@@ -134,7 +134,7 @@ public class f48 extends FrameLayout implements snb {
         int v02;
         vnb vnbVar = this.a;
         if (i >= 14) {
-            lc7 lc7Var = uc7.s1(yac.t0).E3;
+            lc7 lc7Var = uc7.s1(yac.t0).F3;
             kc7 d = lc7Var != null ? lc7Var.d(i) : null;
             if (d != null) {
                 int f = d.f();
@@ -165,7 +165,7 @@ public class f48 extends FrameLayout implements snb {
     }
 
     public void b(int i, boolean z) {
-        lc7 lc7Var = uc7.s1(this.b).F3;
+        lc7 lc7Var = uc7.s1(this.b).G3;
         c(lc7Var == null ? null : lc7Var.d(i), z);
     }
 

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class hn4 implements e84 {
     public final ey7 a = new ey7(4);
@@ -197,8 +197,8 @@ public final class hn4 implements e84 {
                                     mc0 a = mc0.a(ey7Var5);
                                     hgcVar.d = a.b;
                                     jo4 jo4Var = new jo4();
-                                    jo4Var.r = dg7.n("video/x-flv");
-                                    jo4Var.s = dg7.n("video/avc");
+                                    jo4Var.r = eg7.n("video/x-flv");
+                                    jo4Var.s = eg7.n("video/avc");
                                     jo4Var.k = a.l;
                                     jo4Var.z = a.c;
                                     jo4Var.A = a.d;
@@ -260,8 +260,8 @@ public final class hn4 implements e84 {
                             if (i13 == 2) {
                                 int i14 = a40.e[(A4 >> 2) & 3];
                                 jo4 jo4Var2 = new jo4();
-                                jo4Var2.r = dg7.n("video/x-flv");
-                                jo4Var2.s = dg7.n("audio/mpeg");
+                                jo4Var2.r = eg7.n("video/x-flv");
+                                jo4Var2.s = eg7.n("audio/mpeg");
                                 jo4Var2.M = 1;
                                 jo4Var2.O = i14;
                                 xnb.v(jo4Var2, x1cVar2);
@@ -275,8 +275,8 @@ public final class hn4 implements e84 {
                                     throw new tjb("Audio format not supported: " + a40Var.d);
                                 }
                                 jo4 jo4Var3 = new jo4();
-                                jo4Var3.r = dg7.n("video/x-flv");
-                                jo4Var3.s = dg7.n(str);
+                                jo4Var3.r = eg7.n("video/x-flv");
+                                jo4Var3.s = eg7.n(str);
                                 jo4Var3.M = 1;
                                 jo4Var3.O = 8000;
                                 xnb.v(jo4Var3, x1cVar2);
@@ -297,8 +297,8 @@ public final class hn4 implements e84 {
                                 g3.k(0, a3, bArr4);
                                 h1 j6 = jn2.j(new zd1(a3, bArr4), false);
                                 jo4 jo4Var4 = new jo4();
-                                jo4Var4.r = dg7.n("video/x-flv");
-                                jo4Var4.s = dg7.n("audio/mp4a-latm");
+                                jo4Var4.r = eg7.n("video/x-flv");
+                                jo4Var4.s = eg7.n("audio/mp4a-latm");
                                 jo4Var4.k = j6.c;
                                 jo4Var4.M = j6.b;
                                 jo4Var4.O = j6.a;

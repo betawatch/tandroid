@@ -14,7 +14,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.m;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class k1 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 ((t1) obj).h();
                 break;
             case 1:
-                ((ze7) obj).run();
+                ((bf7) obj).run();
                 break;
             case 2:
                 ((p5) obj).dismiss();
@@ -224,7 +224,7 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 } else {
                     x31Var.x = i4 & (-2);
                 }
-                uc7.s1(i3).W3.edit().putInt("dialog_botflags" + x31Var.s, x31Var.x).apply();
+                uc7.s1(i3).X3.edit().putInt("dialog_botflags" + x31Var.s, x31Var.x).apply();
                 TL_account.toggleConnectedBotPaused toggleconnectedbotpaused = new TL_account.toggleConnectedBotPaused();
                 toggleconnectedbotpaused.peer = uc7.s1(i3).j1(x31Var.s);
                 toggleconnectedbotpaused.paused = x31Var.r;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j9b implements pcc {
     public final /* synthetic */ byte a;
@@ -42,12 +42,12 @@ public final /* synthetic */ class j9b implements pcc {
             case 1:
                 w9b w9bVar2 = r9bVar.a0;
                 int i = w9b.X1;
-                w9bVar2.H0(new u9b(5, w9bVar2.a, (ArrayList) obj), new b68(w9bVar2, b2), false);
+                w9bVar2.H0(new u9b(5, w9bVar2.a, (ArrayList) obj), new c68(w9bVar2, b2), false);
                 break;
             case 2:
                 w9b w9bVar3 = r9bVar.a0;
                 HashSet hashSet2 = w9bVar3.u1;
-                hashSet2.add(Integer.valueOf(((v5b) obj).a));
+                hashSet2.add(Integer.valueOf(((w5b) obj).a));
                 r9bVar.h(true);
                 dab dabVar2 = w9bVar3.R1;
                 if (dabVar2 != null) {

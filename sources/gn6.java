@@ -7,7 +7,7 @@ import org.telegram.messenger.a;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gn6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -64,18 +64,18 @@ public final /* synthetic */ class gn6 implements Runnable {
                 }
                 return;
             default:
-                jf7 jf7Var = (jf7) this.e;
+                kf7 kf7Var = (kf7) this.e;
                 int i3 = this.b;
                 long j2 = this.c;
                 int i4 = this.d;
                 try {
-                    SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase = kf7Var.b;
                     Locale locale = Locale.US;
                     sQLiteDatabase.executeFast("UPDATE OR REPLACE widget_state SET mid = " + i3 + " WHERE uid = " + j2 + " AND mid = " + i4).stepThis().dispose();
-                    jf7Var.b.executeFast("UPDATE OR REPLACE widget_heights SET mid = " + i3 + " WHERE uid = " + j2 + " AND mid = " + i4).stepThis().dispose();
+                    kf7Var.b.executeFast("UPDATE OR REPLACE widget_heights SET mid = " + i3 + " WHERE uid = " + j2 + " AND mid = " + i4).stepThis().dispose();
                     return;
                 } catch (Exception e2) {
-                    jf7Var.n(e2, true);
+                    kf7Var.p(e2, true);
                     return;
                 }
         }

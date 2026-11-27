@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class bn0 extends nic {
     public final /* synthetic */ byte a;
@@ -52,9 +52,9 @@ public final class bn0 extends nic {
             case 1:
                 gr0 gr0Var = (gr0) view;
                 bga bgaVar = (bga) obj;
-                o5b o5bVar = i == 0 ? bgaVar.e : (o5b) bgaVar.f.get(i - 1);
-                o5bVar.H(null);
-                gr0Var.setList(o5bVar);
+                p5b p5bVar = i == 0 ? bgaVar.e : (p5b) bgaVar.f.get(i - 1);
+                p5bVar.H(null);
+                gr0Var.setList(p5bVar);
                 gr0Var.setVisibleHeight(bgaVar.w);
                 break;
             case 2:
@@ -69,7 +69,7 @@ public final class bn0 extends nic {
                 jm7[] jm7VarArr = lm7Var.b;
                 jm7VarArr[i].f.g3.O(false);
                 if (!jm7VarArr[i].l) {
-                    lm7Var.y0(i, false);
+                    lm7Var.w0(i, false);
                     break;
                 }
                 break;
@@ -197,11 +197,11 @@ public final class bn0 extends nic {
                 lm7 lm7Var = (lm7) obj;
                 jm7 jm7Var = lm7Var.b[i];
                 Context context2 = (Context) obj2;
-                jm7Var.f = lm7Var.m0(context2, i);
+                jm7Var.f = lm7Var.l0(context2, i);
                 jm7Var.g = null;
                 im7 im7Var = jm7Var.f;
                 vnbVar = ((e) lm7Var).resourceProvider;
-                w94 w94Var = new w94(context2, im7Var, vnbVar, new me7(this, i, b2));
+                w94 w94Var = new w94(context2, im7Var, vnbVar, new oe7(this, i, b2));
                 jm7Var.h = w94Var;
                 ll0 ll0Var = lm7Var.getBaseSimpleGlass().c;
                 vnbVar2 = ((e) lm7Var).resourceProvider;
@@ -391,7 +391,7 @@ public final class bn0 extends nic {
                 if (i == 0) {
                     return 0;
                 }
-                return ((o5b) ((bga) this.c).f.get(i - 1)).E.hashCode();
+                return ((p5b) ((bga) this.c).f.get(i - 1)).E.hashCode();
             default:
                 return i;
         }
@@ -403,7 +403,7 @@ public final class bn0 extends nic {
         Object obj = this.b;
         switch (b) {
             case 1:
-                return i == 0 ? ob6.M0(2131746437, null) : r3c.L0(((o5b) ((bga) this.c).f.get(i - 1)).E);
+                return i == 0 ? ob6.M0(2131746437, null) : r3c.L0(((p5b) ((bga) this.c).f.get(i - 1)).E);
             case 2:
                 return i != 1 ? i != 2 ? ob6.M0(2131745437, null) : ob6.M0(2131745440, null) : ob6.M0(2131745466, null);
             case 6:

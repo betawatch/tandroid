@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e87 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -45,33 +45,33 @@ public final /* synthetic */ class e87 implements RequestDelegate {
                         TLRPC.TL_channelParticipantSelf tL_channelParticipantSelf = (TLRPC.TL_channelParticipantSelf) channelParticipant;
                         byte b2 = 1;
                         if (chat.megagroup) {
-                            jf7 messagesStorage = uc7Var.getMessagesStorage();
+                            kf7 messagesStorage = uc7Var.getMessagesStorage();
                             long j = chat.id;
                             messagesStorage.getClass();
                             CountDownLatch countDownLatch = new CountDownLatch(1);
                             boolean[] zArr = new boolean[1];
-                            messagesStorage.a.c(new jd7(messagesStorage, j, zArr, countDownLatch, (byte) 0));
+                            messagesStorage.a.c(new ld7(messagesStorage, j, zArr, countDownLatch, (byte) 0));
                             try {
                                 countDownLatch.await();
                             } catch (Exception e) {
-                                messagesStorage.n(e, true);
+                                messagesStorage.p(e, true);
                             }
                             if (zArr[0]) {
                             }
                         }
                         hl.c3(new mn6((Object) uc7Var, (Object) tL_channels_channelParticipant, (byte) 26));
-                        uc7Var.getMessagesStorage().j1(tL_channels_channelParticipant.users, tL_channels_channelParticipant.chats, true, true);
+                        uc7Var.getMessagesStorage().n1(tL_channels_channelParticipant.users, tL_channels_channelParticipant.chats, true, true);
                         long j2 = this.c;
                         if (z && Math.abs(uc7Var.getConnectionsManager().getCurrentTime() - tL_channels_channelParticipant.participant.date) < 86400) {
-                            jf7 messagesStorage2 = uc7Var.getMessagesStorage();
+                            kf7 messagesStorage2 = uc7Var.getMessagesStorage();
                             messagesStorage2.getClass();
                             CountDownLatch countDownLatch2 = new CountDownLatch(1);
                             boolean[] zArr2 = new boolean[1];
-                            messagesStorage2.a.c(new jd7(messagesStorage2, j2, zArr2, countDownLatch2, (byte) 1));
+                            messagesStorage2.a.c(new ld7(messagesStorage2, j2, zArr2, countDownLatch2, (byte) 1));
                             try {
                                 countDownLatch2.await();
                             } catch (Exception e2) {
-                                messagesStorage2.n(e2, true);
+                                messagesStorage2.p(e2, true);
                             }
                             if (!zArr2[0]) {
                                 TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
@@ -111,18 +111,18 @@ public final /* synthetic */ class e87 implements RequestDelegate {
                                 if (tL_messageService.from_id.user_id != uc7Var.getUserConfig().e()) {
                                     uc7Var.getMessagesStorage().a.c(new k77(uc7Var, arrayList, b2));
                                 }
-                                uc7Var.getMessagesStorage().g1(arrayList2, true, true, false, 0, false, 0, 0L);
+                                uc7Var.getMessagesStorage().k1(arrayList2, true, true, false, 0, false, 0, 0L);
                                 ArrayList arrayList3 = arrayList;
-                                jf7 messagesStorage3 = uc7Var.getMessagesStorage();
-                                messagesStorage3.a.c(new xd7(messagesStorage3, tL_channels_channelParticipant.participant.inviter_id, j2, (byte) 1));
+                                kf7 messagesStorage3 = uc7Var.getMessagesStorage();
+                                messagesStorage3.a.c(new yd7(messagesStorage3, tL_channels_channelParticipant.participant.inviter_id, j2, (byte) 1));
                                 hl.c3(new ba7((Object) uc7Var, j2, (Object) arrayList3, (Object) tL_channels_channelParticipant, (byte) 16));
                                 break;
                             }
                         }
                         arrayList = null;
                         ArrayList arrayList32 = arrayList;
-                        jf7 messagesStorage32 = uc7Var.getMessagesStorage();
-                        messagesStorage32.a.c(new xd7(messagesStorage32, tL_channels_channelParticipant.participant.inviter_id, j2, (byte) 1));
+                        kf7 messagesStorage32 = uc7Var.getMessagesStorage();
+                        messagesStorage32.a.c(new yd7(messagesStorage32, tL_channels_channelParticipant.participant.inviter_id, j2, (byte) 1));
                         hl.c3(new ba7((Object) uc7Var, j2, (Object) arrayList32, (Object) tL_channels_channelParticipant, (byte) 16));
                     }
                 }

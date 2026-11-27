@@ -30,7 +30,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class xq2 implements qq2, reb, uw8 {
     public static final vq2 n = new vq2((byte) 0);
@@ -561,11 +561,11 @@ public final class xq2 implements qq2, reb, uw8 {
             this.b = linkedList;
         }
         linkedList.add(u6dVar);
-        i09 i09Var = (i09) this.c;
-        this.f = i09Var;
+        j09 j09Var = (j09) this.c;
+        this.f = j09Var;
         ArrayList arrayList = (ArrayList) this.h;
         Context context = (Context) this.e;
-        if (i09Var == null || ((ko9) this.a) != null) {
+        if (j09Var == null || ((ko9) this.a) != null) {
             return;
         }
         try {
@@ -574,7 +574,7 @@ public final class xq2 implements qq2, reb, uw8 {
             }
             b1f a0 = m5f.a(context).a0(new br7(context));
             if (a0 != null) {
-                ((i09) this.f).I(new ko9((tt) this.d, a0));
+                ((j09) this.f).I(new ko9((tt) this.d, a0));
                 int size = arrayList.size();
                 int i = 0;
                 while (i < size) {
@@ -592,14 +592,14 @@ public final class xq2 implements qq2, reb, uw8 {
 
     @Override // qq2
     public final Object a(Class cls) {
-        return h(h09.a(cls));
+        return h(i09.a(cls));
     }
 
     @Override // qq2
-    public final Set c(h09 h09Var) {
+    public final Set c(i09 i09Var) {
         vw8 vw8Var;
         synchronized (this) {
-            vw8Var = (k26) ((HashMap) this.c).get(h09Var);
+            vw8Var = (k26) ((HashMap) this.c).get(i09Var);
             if (vw8Var == null) {
                 vw8Var = n;
             }
@@ -609,7 +609,7 @@ public final class xq2 implements qq2, reb, uw8 {
 
     @Override // qq2
     public final vw8 d(Class cls) {
-        return g(h09.a(cls));
+        return g(i09.a(cls));
     }
 
     public final void e(HashMap hashMap, boolean z) {
@@ -640,21 +640,21 @@ public final class xq2 implements qq2, reb, uw8 {
     }
 
     @Override // qq2
-    public final au7 f(h09 h09Var) {
-        vw8 g = g(h09Var);
+    public final au7 f(i09 i09Var) {
+        vw8 g = g(i09Var);
         return g == null ? new au7(au7.c, au7.d) : g instanceof au7 ? (au7) g : new au7(null, g);
     }
 
     @Override // qq2
-    public final synchronized vw8 g(h09 h09Var) {
-        bwe.a(h09Var, "Null interface requested.");
-        return (vw8) ((HashMap) this.b).get(h09Var);
+    public final synchronized vw8 g(i09 i09Var) {
+        bwe.a(i09Var, "Null interface requested.");
+        return (vw8) ((HashMap) this.b).get(i09Var);
     }
 
     @Override // uw8
     public final Object get() {
         Context context = (Context) ((pq5) this.a).a;
-        vf7 vf7Var = (vf7) ((uw8) this.b).get();
+        wf7 wf7Var = (wf7) ((uw8) this.b).get();
         ds9 ds9Var = (ds9) ((uw8) this.c).get();
         pm3 pm3Var = (pm3) ((ko9) this.d).get();
         Executor executor = (Executor) ((uw8) this.e).get();
@@ -664,7 +664,7 @@ public final class xq2 implements qq2, reb, uw8 {
         ds9 ds9Var3 = (ds9) ((uw8) this.h).get();
         ba0 ba0Var = new ba0();
         ba0Var.a = context;
-        ba0Var.b = vf7Var;
+        ba0Var.b = wf7Var;
         ba0Var.c = ds9Var;
         ba0Var.d = pm3Var;
         ba0Var.e = executor;
@@ -676,8 +676,8 @@ public final class xq2 implements qq2, reb, uw8 {
     }
 
     @Override // qq2
-    public final Object h(h09 h09Var) {
-        vw8 g = g(h09Var);
+    public final Object h(i09 i09Var) {
+        vw8 g = g(i09Var);
         if (g == null) {
             return null;
         }
@@ -1136,23 +1136,23 @@ public final class xq2 implements qq2, reb, uw8 {
         for (fq2 fq2Var : ((HashMap) this.a).keySet()) {
             for (qe3 qe3Var : fq2Var.c) {
                 boolean z = qe3Var.b == 2;
-                h09 h09Var = qe3Var.a;
-                if (z && !hashMap2.containsKey(h09Var)) {
+                i09 i09Var = qe3Var.a;
+                if (z && !hashMap2.containsKey(i09Var)) {
                     Set set = Collections.EMPTY_SET;
                     k26 k26Var = new k26();
                     k26Var.b = null;
                     k26Var.a = Collections.newSetFromMap(new ConcurrentHashMap());
                     k26Var.a.addAll(set);
-                    hashMap2.put(h09Var, k26Var);
-                } else if (hashMap.containsKey(h09Var)) {
+                    hashMap2.put(i09Var, k26Var);
+                } else if (hashMap.containsKey(i09Var)) {
                     continue;
                 } else {
                     byte b = qe3Var.b;
                     if (b == 1) {
-                        throw new re3("Unsatisfied dependency for component " + fq2Var + ": " + h09Var);
+                        throw new re3("Unsatisfied dependency for component " + fq2Var + ": " + i09Var);
                     }
                     if (b != 2) {
-                        hashMap.put(h09Var, new au7(au7.c, au7.d));
+                        hashMap.put(i09Var, new au7(au7.c, au7.d));
                     }
                 }
             }
@@ -1170,11 +1170,11 @@ public final class xq2 implements qq2, reb, uw8 {
             fq2 fq2Var = (fq2) obj;
             if (!fq2Var.e) {
                 vw8 vw8Var = (vw8) ((HashMap) this.a).get(fq2Var);
-                for (h09 h09Var : fq2Var.b) {
-                    if (hashMap.containsKey(h09Var)) {
-                        arrayList2.add(new ea2((au7) ((vw8) hashMap.get(h09Var)), vw8Var, (byte) 23));
+                for (i09 i09Var : fq2Var.b) {
+                    if (hashMap.containsKey(i09Var)) {
+                        arrayList2.add(new ea2((au7) ((vw8) hashMap.get(i09Var)), vw8Var, (byte) 23));
                     } else {
-                        hashMap.put(h09Var, vw8Var);
+                        hashMap.put(i09Var, vw8Var);
                     }
                 }
             }
@@ -1190,11 +1190,11 @@ public final class xq2 implements qq2, reb, uw8 {
             fq2 fq2Var = (fq2) entry.getKey();
             if (fq2Var.e) {
                 vw8 vw8Var = (vw8) entry.getValue();
-                for (h09 h09Var : fq2Var.b) {
-                    if (!hashMap2.containsKey(h09Var)) {
-                        hashMap2.put(h09Var, new HashSet());
+                for (i09 i09Var : fq2Var.b) {
+                    if (!hashMap2.containsKey(i09Var)) {
+                        hashMap2.put(i09Var, new HashSet());
                     }
-                    ((Set) hashMap2.get(h09Var)).add(vw8Var);
+                    ((Set) hashMap2.get(i09Var)).add(vw8Var);
                 }
             }
         }
@@ -1206,13 +1206,13 @@ public final class xq2 implements qq2, reb, uw8 {
                     arrayList.add(new ea2(k26Var, (vw8) it.next(), (byte) 24));
                 }
             } else {
-                h09 h09Var2 = (h09) entry2.getKey();
+                i09 i09Var2 = (i09) entry2.getKey();
                 Set set = (Set) ((Collection) entry2.getValue());
                 k26 k26Var2 = new k26();
                 k26Var2.b = null;
                 k26Var2.a = Collections.newSetFromMap(new ConcurrentHashMap());
                 k26Var2.a.addAll(set);
-                hashMap.put(h09Var2, k26Var2);
+                hashMap.put(i09Var2, k26Var2);
             }
         }
         return arrayList;

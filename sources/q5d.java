@@ -4,7 +4,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class q5d extends u3d implements IInterface {
     public final /* synthetic */ byte b;
@@ -22,13 +22,13 @@ public abstract class q5d extends u3d implements IInterface {
         }
     }
 
-    public void T(Status status, vg7 vg7Var) {
+    public void T(Status status, wg7 wg7Var) {
         throw new UnsupportedOperationException();
     }
 
     public abstract void U(t7d t7dVar);
 
-    public void V(Status status, xg7 xg7Var) {
+    public void V(Status status, yg7 yg7Var) {
         throw new UnsupportedOperationException();
     }
 
@@ -38,15 +38,15 @@ public abstract class q5d extends u3d implements IInterface {
             case 0:
                 if (i == 1) {
                     Status status = (Status) v6d.a(parcel, Status.CREATOR);
-                    vg7 vg7Var = (vg7) v6d.a(parcel, vg7.CREATOR);
+                    wg7 wg7Var = (wg7) v6d.a(parcel, wg7.CREATOR);
                     v6d.d(parcel);
-                    T(status, vg7Var);
+                    T(status, wg7Var);
                     break;
                 } else if (i == 2) {
                     Status status2 = (Status) v6d.a(parcel, Status.CREATOR);
-                    xg7 xg7Var = (xg7) v6d.a(parcel, xg7.CREATOR);
+                    yg7 yg7Var = (yg7) v6d.a(parcel, yg7.CREATOR);
                     v6d.d(parcel);
-                    V(status2, xg7Var);
+                    V(status2, yg7Var);
                     break;
                 } else {
                     if (i == 3) {

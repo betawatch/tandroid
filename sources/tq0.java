@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class tq0 {
     public static final HashMap g = new HashMap();
@@ -342,7 +342,7 @@ public final class tq0 {
         edit.apply();
     }
 
-    public final void k(boolean z, final hp8 hp8Var) {
+    public final void k(boolean z, final ep8 ep8Var) {
         final byte b = 1;
         this.d = true;
         if (!z || a()) {
@@ -351,8 +351,8 @@ public final class tq0 {
             while (it.hasNext()) {
                 ((Runnable) it.next()).run();
             }
-            if (hp8Var != null) {
-                hp8Var.run();
+            if (ep8Var != null) {
+                ep8Var.run();
             }
         } else {
             Activity e = e();
@@ -385,12 +385,12 @@ public final class tq0 {
                     @Override // fd
                     public final void w(id idVar2, int i3) {
                         byte b3 = b2;
-                        hp8 hp8Var2 = hp8Var;
+                        ep8 ep8Var2 = ep8Var;
                         tq0 tq0Var = this.b;
                         switch (b3) {
                             case 0:
                                 if (!tq0Var.a()) {
-                                    jve.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new y0(tq0Var, hp8Var2, (byte) 5));
+                                    jve.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new y0(tq0Var, ep8Var2, (byte) 5));
                                     break;
                                 } else {
                                     tq0Var.d = true;
@@ -410,8 +410,8 @@ public final class tq0 {
                                 while (it3.hasNext()) {
                                     ((Runnable) it3.next()).run();
                                 }
-                                if (hp8Var2 != null) {
-                                    hp8Var2.run();
+                                if (ep8Var2 != null) {
+                                    ep8Var2.run();
                                     break;
                                 }
                                 break;
@@ -431,12 +431,12 @@ public final class tq0 {
                 @Override // fd
                 public final void w(id idVar2, int i3) {
                     byte b3 = b;
-                    hp8 hp8Var2 = hp8Var;
+                    ep8 ep8Var2 = ep8Var;
                     tq0 tq0Var = this.b;
                     switch (b3) {
                         case 0:
                             if (!tq0Var.a()) {
-                                jve.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new y0(tq0Var, hp8Var2, (byte) 5));
+                                jve.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new y0(tq0Var, ep8Var2, (byte) 5));
                                 break;
                             } else {
                                 tq0Var.d = true;
@@ -456,8 +456,8 @@ public final class tq0 {
                             while (it3.hasNext()) {
                                 ((Runnable) it3.next()).run();
                             }
-                            if (hp8Var2 != null) {
-                                hp8Var2.run();
+                            if (ep8Var2 != null) {
+                                ep8Var2.run();
                                 break;
                             }
                             break;

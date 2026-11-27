@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class nn8 extends FrameLayout {
     public xd0 a;
@@ -119,7 +119,7 @@ public final class nn8 extends FrameLayout {
             this.c = s0;
         }
         Drawable drawable = this.c;
-        if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof hh7)) {
+        if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof ih7)) {
             drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             Drawable drawable2 = this.c;
             if (drawable2 instanceof yd0) {

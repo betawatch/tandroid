@@ -1,51 +1,41 @@
 // default package
 
-import android.text.TextUtils;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.method.LinkMovementMethod;
+import android.text.style.CharacterStyle;
+import android.view.MotionEvent;
+import android.widget.TextView;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes.dex */
-public final class d9c {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final int d;
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes2.dex */
+public final class d9c extends LinkMovementMethod {
+    public final /* synthetic */ UndoView a;
 
-    public d9c(String str) {
-        this.a = str;
-        JSONObject jSONObject = new JSONObject(str);
-        this.b = jSONObject.optString("productId");
-        String optString = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
-        this.c = optString;
-        this.d = jSONObject.has("statusCode") ? jSONObject.optInt("statusCode") : 0;
-        if (TextUtils.isEmpty(optString)) {
-            lq5.j("Product type cannot be empty.");
-            throw null;
-        }
-        jSONObject.optString("serializedDocid");
+    public d9c(UndoView undoView) {
+        this.a = undoView;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
+    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
+    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
+        CharacterStyle[] characterStyleArr;
+        try {
+            if (motionEvent.getAction() == 0 && ((characterStyleArr = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class)) == null || characterStyleArr.length == 0)) {
+                return false;
+            }
+            if (motionEvent.getAction() != 1) {
+                return super.onTouchEvent(textView, spannable, motionEvent);
+            }
+            CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class);
+            if (characterStyleArr2 != null && characterStyleArr2.length > 0) {
+                this.a.b(characterStyleArr2[0]);
+            }
+            Selection.removeSelection(spannable);
             return true;
+        } catch (Exception e) {
+            cc4.g(e, true);
+            return false;
         }
-        if (obj instanceof d9c) {
-            return TextUtils.equals(this.a, ((d9c) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("UnfetchedProduct{productId='");
-        sb.append(this.b);
-        sb.append("', productType='");
-        sb.append(this.c);
-        sb.append("', statusCode=");
-        return uh9.l(sb, this.d, "}");
     }
 }

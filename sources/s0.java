@@ -13,7 +13,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class s0 extends ny0 {
     public final FrameLayout S1;
@@ -114,13 +114,13 @@ public final class s0 extends ny0 {
                 }
             }
         });
-        zt3 zt3Var = new zt3(context, ob6.M0(2131754962, null), false, false, uc7.s1(this.a).k4.b0.f(), vnbVar);
+        zt3 zt3Var = new zt3(context, ob6.M0(2131754962, null), false, false, uc7.s1(this.a).l4.b0.f(), vnbVar);
         this.V1 = zt3Var;
         zt3Var.d.addTextChangedListener(new o0(this, (byte) 0));
-        zt3 zt3Var2 = new zt3(context, ob6.M0(2131754969, null), true, false, uc7.s1(this.a).k4.c0.f(), vnbVar);
+        zt3 zt3Var2 = new zt3(context, ob6.M0(2131754969, null), true, false, uc7.s1(this.a).l4.c0.f(), vnbVar);
         this.W1 = zt3Var2;
         final byte b3 = 2;
-        zt3Var2.setShowLimitWhenNear(Math.max(100, uc7.s1(this.a).k4.c0.f() / 2));
+        zt3Var2.setShowLimitWhenNear(Math.max(100, uc7.s1(this.a).l4.c0.f() / 2));
         zt3Var2.d.addTextChangedListener(new o0(this, (byte) 1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setPadding(hl.L(12.0f), hl.L(8.0f), hl.L(12.0f), hl.L(8.0f));

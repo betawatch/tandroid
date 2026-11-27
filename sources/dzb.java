@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class dzb extends d6 {
     public final /* synthetic */ Context a;
@@ -45,7 +45,7 @@ public final class dzb extends d6 {
         int i4 = 0;
         switch (i) {
             case 1:
-                qyb qybVar3 = tzbVar.getMessagesController().g4;
+                qyb qybVar3 = tzbVar.getMessagesController().h4;
                 qybVar3.getClass();
                 TLRPC.TL_channels_toggleViewForumAsMessages tL_channels_toggleViewForumAsMessages = new TLRPC.TL_channels_toggleViewForumAsMessages();
                 tL_channels_toggleViewForumAsMessages.channel_id = qybVar3.getMessagesController().h1(j);
@@ -125,7 +125,7 @@ public final class dzb extends d6 {
                         int i6 = f.top_message;
                         TLRPC.Message message = f.topMessage;
                         messagesController.r3(j4, i6, 0, message != null ? message.date : 0, false, f.id, 0, true, 0);
-                        tzbVar.getMessagesStorage().a2(f.top_message, 0, tzbVar.a, f.id);
+                        tzbVar.getMessagesStorage().f2(f.top_message, 0, tzbVar.a, f.id);
                     }
                 }
                 tzbVar.D0();
@@ -174,7 +174,7 @@ public final class dzb extends d6 {
                         tzbVar.F = true;
                         tzbVar.E = (byte) 2;
                     }
-                    tzbVar.getMessagesController().g4.A(1, j, tL_forumTopic2.hidden);
+                    tzbVar.getMessagesController().h4.A(1, j, tL_forumTopic2.hidden);
                     if (qzbVar != null) {
                         tzbVar.d1 = qzbVar;
                     }

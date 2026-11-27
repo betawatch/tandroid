@@ -15,7 +15,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglBase10;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public class EglBase10Impl implements EglBase10 {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
@@ -25,7 +25,7 @@ public class EglBase10Impl implements EglBase10 {
     private EGLSurface eglSurface = EGL10.EGL_NO_SURFACE;
     private boolean detachSurfaceOnRelease = false;
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class Context implements EglBase10.Context {
         private final EGL10 egl;
         private final EGLContext eglContext;
@@ -69,7 +69,7 @@ public class EglBase10Impl implements EglBase10 {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     interface Natives {
         long getCurrentNativeEGLContext();
     }
@@ -347,7 +347,7 @@ public class EglBase10Impl implements EglBase10 {
         swapBuffers();
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class EglConnection implements EglBase10.EglConnection {
         private EGLSurface currentSurface;
         private final EGL10 egl;

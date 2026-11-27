@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class dc5 extends wh1 {
     public ph1 A0;
@@ -34,7 +34,7 @@ public final class dc5 extends wh1 {
 
     @Override // wh1
     public final int D0() {
-        return getMessagesController().k4.g2.f();
+        return getMessagesController().l4.g2.f();
     }
 
     @Override // wh1
@@ -54,7 +54,7 @@ public final class dc5 extends wh1 {
 
     @Override // wh1
     public final int J0() {
-        return getMessagesController().k4.k2.f();
+        return getMessagesController().l4.k2.f();
     }
 
     @Override // wh1
@@ -64,7 +64,7 @@ public final class dc5 extends wh1 {
 
     @Override // wh1
     public final int L0() {
-        return getMessagesController().k4.l2.f();
+        return getMessagesController().l4.l2.f();
     }
 
     @Override // wh1
@@ -74,7 +74,7 @@ public final class dc5 extends wh1 {
 
     @Override // wh1
     public final int N0() {
-        return getMessagesController().k4.m2.f();
+        return getMessagesController().l4.m2.f();
     }
 
     @Override // wh1
@@ -99,7 +99,7 @@ public final class dc5 extends wh1 {
 
     @Override // wh1
     public final int S0() {
-        return getMessagesController().k4.j2.f();
+        return getMessagesController().l4.j2.f();
     }
 
     @Override // wh1

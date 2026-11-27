@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class nb9 extends nx0 {
     public static final /* synthetic */ int v1 = 0;
@@ -111,7 +111,7 @@ public final class nb9 extends nx0 {
                         View view = viewPages[0];
                         if (view instanceof mb9) {
                             ((mb9) view).a(0);
-                            nb9Var.b.post(new z09(viewPages, tL_reportResultAddComment, (byte) 10));
+                            nb9Var.b.post(new yz8(viewPages, tL_reportResultAddComment, (byte) 11));
                         }
                         View view2 = viewPages[1];
                         if (view2 instanceof mb9) {
@@ -177,7 +177,7 @@ public final class nb9 extends nx0 {
         View view = viewPages[0];
         if (view instanceof mb9) {
             ((mb9) view).a(0);
-            this.b.post(new z09(viewPages, tL_channels_sponsoredMessageReportResultChooseOption, (byte) 9));
+            this.b.post(new yz8(viewPages, tL_channels_sponsoredMessageReportResultChooseOption, (byte) 10));
         }
         View view2 = viewPages[1];
         if (view2 instanceof mb9) {
@@ -190,7 +190,7 @@ public final class nb9 extends nx0 {
         View view = viewPages[0];
         if (view instanceof mb9) {
             ((mb9) view).a(0);
-            this.b.post(new z09(viewPages, tL_reportResultChooseOption, (byte) 8));
+            this.b.post(new yz8(viewPages, tL_reportResultChooseOption, (byte) 9));
         }
         View view2 = viewPages[1];
         if (view2 instanceof mb9) {

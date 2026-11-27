@@ -18,7 +18,7 @@ import org.webrtc.EglBase14;
 import org.webrtc.EglBase14Impl;
 import org.webrtc.RenderSynchronizer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public class EglThread implements RenderSynchronizer.Listener {
     private final EglBase.EglConnection eglConnection;
@@ -29,7 +29,7 @@ public class EglThread implements RenderSynchronizer.Listener {
     private final List<RenderUpdate> pendingRenderUpdatesQueued = new ArrayList();
     private boolean renderWindowOpen = true;
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class HandlerWithExceptionCallbacks extends Handler {
         private final Object callbackLock;
         private final List<Runnable> exceptionCallbacks;
@@ -69,12 +69,12 @@ public class EglThread implements RenderSynchronizer.Listener {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public interface ReleaseMonitor {
         boolean onRelease(EglThread eglThread);
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public interface RenderUpdate {
         void update(boolean z);
     }

@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class tda implements fn7 {
     public final /* synthetic */ TLRPC.Dialog a;
@@ -32,8 +32,8 @@ public final class tda implements fn7 {
         if (longValue == (-dialog.id)) {
             ArrayList arrayList = ieaVar.f;
             AtomicReference atomicReference = this.b;
-            boolean z = (arrayList == null && uc7.s1(keaVar.a).g4.l(-dialog.id) != null) || atomicReference.get() == null;
-            ieaVar.f = uc7.s1(keaVar.a).g4.l(-dialog.id);
+            boolean z = (arrayList == null && uc7.s1(keaVar.a).h4.l(-dialog.id) != null) || atomicReference.get() == null;
+            ieaVar.f = uc7.s1(keaVar.a).h4.l(-dialog.id);
             ieaVar.d = lbc.w(uc7.s1(keaVar.a).X1(Long.valueOf(dialog.id)));
             ieaVar.e = lbc.x(uc7.s1(keaVar.a).X1(Long.valueOf(dialog.id)));
             if (z) {
@@ -71,7 +71,7 @@ public final class tda implements fn7 {
                 wpaVar.a(1.0f);
                 vpaVar2.m = wpaVar;
                 keaVar.w2 = vpaVar2;
-                vpaVar2.b(new dda(this, this.c, iArr, (byte) 1));
+                vpaVar2.b(new eda(this, this.c, iArr, (byte) 1));
                 keaVar.w2.a(new iw0(this, (byte) 11));
                 keaVar.w2.h();
                 if (atomicReference.get() != null) {

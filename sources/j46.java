@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class j46 extends LinearLayout {
     public TextView a;
@@ -107,7 +107,7 @@ public final class j46 extends LinearLayout {
         l46Var.H2 = g1;
         int i15 = g1.a;
         uc7 s1 = uc7.s1(l46Var.a);
-        hr hrVar = s1.k4;
+        hr hrVar = s1.l4;
         boolean M3 = s1.M3();
         boolean j1 = l46Var.j1();
         if (i14 == 31) {

@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class u57 extends FrameLayout {
     public final int E;
@@ -61,7 +61,7 @@ public final class u57 extends FrameLayout {
         this.x = (message2 == null || (messageFwdHeader = message2.fwd_from) == null) ? 0 : messageFwdHeader.date;
         ImageView imageView = new ImageView(context);
         addView(imageView, tre.d(24, 24.0f, 19, 11.0f, 0.0f, 0.0f, 0.0f));
-        Drawable mutate = context.getDrawable(i == 1 ? uc7.s1(i2).k4.f0.f ? R.drawable.outline_message_time_24 : R.drawable.menu_edited_stamp : i == 2 ? R.drawable.menu_forward_stamp : r47.Q4(r47Var.k) ? R.drawable.msg_played : R.drawable.msg_seen).mutate();
+        Drawable mutate = context.getDrawable(i == 1 ? uc7.s1(i2).l4.f0.f ? R.drawable.outline_message_time_24 : R.drawable.menu_edited_stamp : i == 2 ? R.drawable.menu_forward_stamp : r47.Q4(r47Var.k) ? R.drawable.msg_played : R.drawable.msg_seen).mutate();
         yob.x(this, mutate, aob.F8, vnbVar, PorterDuff.Mode.MULTIPLY);
         imageView.setImageDrawable(mutate);
         TextView textView = new TextView(context);
@@ -173,7 +173,7 @@ public final class u57 extends FrameLayout {
             this.h.setAlpha(0.0f);
             this.f.setVisibility(8);
             TextView textView = this.e;
-            if (uc7.s1(this.a).k4.f0.f) {
+            if (uc7.s1(this.a).l4.f0.f) {
                 long j = this.s * 1000;
                 try {
                     Calendar calendar = Calendar.getInstance();

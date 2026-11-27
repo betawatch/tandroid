@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e77 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class e77 implements RequestDelegate {
                     uc7Var.Y3((TLRPC.Updates) tLObject, false);
                 }
                 if (j != 0) {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                     break;
                 }
                 break;
@@ -43,7 +43,7 @@ public final /* synthetic */ class e77 implements RequestDelegate {
                     uc7Var.Y3((TLRPC.Updates) tLObject, false);
                 }
                 if (j != 0) {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                     break;
                 }
                 break;
@@ -53,13 +53,13 @@ public final /* synthetic */ class e77 implements RequestDelegate {
                     uc7Var.W3(tL_messages_affectedMessages.pts, -1, tL_messages_affectedMessages.pts_count);
                 }
                 if (j != 0) {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                     break;
                 }
                 break;
             case 4:
                 if (j != 0) {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                     break;
                 }
                 break;
@@ -69,7 +69,7 @@ public final /* synthetic */ class e77 implements RequestDelegate {
                     uc7Var.W3(tL_messages_affectedMessages2.pts, -1, tL_messages_affectedMessages2.pts_count);
                 }
                 if (j != 0) {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                     break;
                 }
                 break;
@@ -84,7 +84,7 @@ public final /* synthetic */ class e77 implements RequestDelegate {
                     uc7Var.getClass();
                     break;
                 } else {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                     break;
                 }
             case 8:
@@ -92,24 +92,24 @@ public final /* synthetic */ class e77 implements RequestDelegate {
                     uc7Var.getClass();
                     break;
                 } else {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                     break;
                 }
             case 9:
                 if (j != 0) {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                     break;
                 }
                 break;
             case 10:
-                uc7Var.getMessagesStorage().n1(j);
+                uc7Var.getMessagesStorage().r1(j);
                 break;
             case 11:
                 if (tL_error == null) {
                     uc7Var.Y3((TLRPC.Updates) tLObject, false);
                 }
                 if (j != 0) {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                     break;
                 }
                 break;
@@ -117,11 +117,11 @@ public final /* synthetic */ class e77 implements RequestDelegate {
                 if (tLObject != null) {
                     TLRPC.TL_chatOnlines tL_chatOnlines = (TLRPC.TL_chatOnlines) tLObject;
                     uc7 uc7Var2 = this.b;
-                    jf7 messagesStorage = uc7Var2.getMessagesStorage();
+                    kf7 messagesStorage = uc7Var2.getMessagesStorage();
                     int i = tL_chatOnlines.onlines;
                     to3 to3Var = messagesStorage.a;
                     long j2 = this.c;
-                    to3Var.c(new gd7(messagesStorage, i, j2, (byte) 7));
+                    to3Var.c(new id7(messagesStorage, i, j2, (byte) 7));
                     hl.c3(new cq6((Object) uc7Var2, j2, (Object) tL_chatOnlines, (byte) 2));
                     break;
                 }
@@ -144,7 +144,7 @@ public final /* synthetic */ class e77 implements RequestDelegate {
                 }
             case 15:
                 if (j != 0) {
-                    uc7Var.getMessagesStorage().n1(j);
+                    uc7Var.getMessagesStorage().r1(j);
                 }
                 if (tLObject != null) {
                     uc7Var.Y3((TLRPC.Updates) tLObject, false);

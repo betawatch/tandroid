@@ -63,7 +63,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class ConnectionsManager extends rf0 {
     private static final int CORE_POOL_SIZE;
@@ -123,7 +123,7 @@ public class ConnectionsManager extends rf0 {
     private final ConcurrentHashMap<Integer, RequestCallbacks> requestCallbacks;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     static class GoogleDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -169,7 +169,7 @@ public class ConnectionsManager extends rf0 {
             boolean z = false;
             z = false;
             try {
-                String str = ConnectionsManager.native_isTestBackend(this.currentAccount) != 0 ? "tapv3.stel.com" : uc7.s1(k5.a(this.currentAccount).a).q3;
+                String str = ConnectionsManager.native_isTestBackend(this.currentAccount) != 0 ? "tapv3.stel.com" : uc7.s1(k5.a(this.currentAccount).a).r3;
                 int nextInt = Utilities.b.nextInt(jn7.A1) + 13;
                 StringBuilder sb = new StringBuilder(nextInt);
                 for (int i = 0; i < nextInt; i++) {
@@ -259,13 +259,13 @@ public class ConnectionsManager extends rf0 {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public interface INativeTlTest {
         boolean test(long j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     static class MozillaDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -304,7 +304,7 @@ public class ConnectionsManager extends rf0 {
             boolean z = true;
             char c = 1;
             try {
-                String str = ConnectionsManager.native_isTestBackend(this.currentAccount) != 0 ? "tapv3.stel.com" : uc7.s1(k5.a(this.currentAccount).a).q3;
+                String str = ConnectionsManager.native_isTestBackend(this.currentAccount) != 0 ? "tapv3.stel.com" : uc7.s1(k5.a(this.currentAccount).a).r3;
                 int nextInt = Utilities.b.nextInt(jn7.A1) + 13;
                 StringBuilder sb = new StringBuilder(nextInt);
                 for (int i = 0; i < nextInt; i++) {
@@ -392,7 +392,7 @@ public class ConnectionsManager extends rf0 {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class RequestCallbacks {
         public Runnable onCancelled;
         public RequestDelegateInternal onComplete;
@@ -406,7 +406,7 @@ public class ConnectionsManager extends rf0 {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static class RequestException extends RuntimeException {
         public final int code;
         public final String text;
@@ -429,7 +429,7 @@ public class ConnectionsManager extends rf0 {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class ResolveHostByNameTask extends AsyncTask<Void, Void, ResolvedDomain> {
         private ArrayList<Long> addresses = new ArrayList<>();
         private String currentHostName;
@@ -558,7 +558,7 @@ public class ConnectionsManager extends rf0 {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class ResolvedDomain {
         public ArrayList<String> addresses;
         long ttl;
@@ -1096,7 +1096,7 @@ public class ConnectionsManager extends rf0 {
         long j5 = 1000;
         long j6 = 0;
         if (s1.getUserConfig().o()) {
-            if (s1.Z3 || s1.getConnectionsManager().getPauseTime() != 0 || !org.telegram.messenger.a.w || org.telegram.messenger.a.F) {
+            if (s1.a4 || s1.getConnectionsManager().getPauseTime() != 0 || !org.telegram.messenger.a.w || org.telegram.messenger.a.F) {
                 if (s1.E2 != 2 && !s1.F2 && Math.abs(System.currentTimeMillis() - s1.getConnectionsManager().getPauseTime()) >= 2000) {
                     s1.E2 = (byte) 2;
                     if (s1.D2 != 0) {
@@ -1307,13 +1307,13 @@ public class ConnectionsManager extends rf0 {
                 hl.c3(new l87(s1, (byte) 28));
             }
         }
-        if (aob.o == i3 && Math.abs(j2 - uc7.p5) >= 60) {
+        if (aob.o == i3 && Math.abs(j2 - uc7.q5) >= 60) {
             hl.c3(s1.A2);
-            uc7.p5 = j2;
-        }
-        if (s1.getUserConfig().k0 != null && Math.abs(j2 - uc7.q5) >= 60) {
-            hl.c3(s1.B2);
             uc7.q5 = j2;
+        }
+        if (s1.getUserConfig().k0 != null && Math.abs(j2 - uc7.r5) >= 60) {
+            hl.c3(s1.B2);
+            uc7.r5 = j2;
         }
         if (s1.d2 != j11 && Math.abs(SystemClock.elapsedRealtime() - s1.d2) >= 10800000) {
             PushListenerController.sendRegistrationToServer(xea.e, xea.f);
@@ -2021,7 +2021,7 @@ public class ConnectionsManager extends rf0 {
 
     public boolean isPushConnectionEnabled() {
         SharedPreferences f1 = uc7.f1();
-        return f1.contains("pushConnection") ? f1.getBoolean("pushConnection", true) : uc7.s1(yac.t0).X3.getBoolean("backgroundConnection", false);
+        return f1.contains("pushConnection") ? f1.getBoolean("pushConnection", true) : uc7.s1(yac.t0).Y3.getBoolean("backgroundConnection", false);
     }
 
     public boolean isTestBackend() {

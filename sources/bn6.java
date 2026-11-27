@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class bn6 extends qm6 {
     public static final int[] V1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1626,7 +1626,7 @@ public class bn6 extends qm6 {
     public final int F0(ko4 ko4Var) {
         boolean z;
         byte b = 0;
-        if (!dg7.m(ko4Var.t)) {
+        if (!eg7.m(ko4Var.t)) {
             return qu6.a(0, 0, 0, 0);
         }
         boolean z2 = ko4Var.x != null;
@@ -2510,7 +2510,7 @@ public class bn6 extends qm6 {
         k7b k7bVar = this.c1;
         Handler handler = (Handler) k7bVar.b;
         if (handler != null) {
-            handler.post(new g9c(k7bVar, exc, (byte) 18));
+            handler.post(new c9c(k7bVar, exc, (byte) 19));
         }
     }
 
@@ -2580,7 +2580,7 @@ public class bn6 extends qm6 {
         k7b k7bVar = this.c1;
         Handler handler = (Handler) k7bVar.b;
         if (handler != null) {
-            handler.post(new g9c(k7bVar, pk2Var, (byte) 16));
+            handler.post(new c9c(k7bVar, pk2Var, (byte) 17));
         }
     }
 
@@ -2589,7 +2589,7 @@ public class bn6 extends qm6 {
         k7b k7bVar = this.c1;
         Handler handler = (Handler) k7bVar.b;
         if (handler != null) {
-            handler.post(new g9c(k7bVar, str, (byte) 19));
+            handler.post(new c9c(k7bVar, str, (byte) 20));
         }
     }
 

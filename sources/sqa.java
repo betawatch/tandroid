@@ -18,7 +18,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class sqa extends ny0 {
     public static final /* synthetic */ int Y1 = 0;
@@ -43,7 +43,7 @@ public final class sqa extends ny0 {
         this.c.addView(ie0Var, 0, tre.d(-2, -2.0f, 49, 0.0f, 48.0f, 0.0f, 0.0f));
         iye.a(ie0Var);
         ie0Var.setOnClickListener(new ly(context, vnbVar, (byte) 2));
-        TLRPC.EmojiGameInfo emojiGameInfo = uc7.s1(i).l5;
+        TLRPC.EmojiGameInfo emojiGameInfo = uc7.s1(i).m5;
         if (!(emojiGameInfo instanceof TLRPC.TL_emojiGameDiceInfo)) {
             return;
         }
@@ -148,13 +148,13 @@ public final class sqa extends ny0 {
         textView.setAlpha(1.0f);
         StringBuilder sb = new StringBuilder("≈");
         di0.h();
-        sb.append(di0.f("USD", 2, (long) ((j / 1.0E9d) * uc7.s1(i).k4.k.i * 100.0d), false));
+        sb.append(di0.f("USD", 2, (long) ((j / 1.0E9d) * uc7.s1(i).l4.k.i * 100.0d), false));
         textView.setText(sb.toString());
         final int[] iArr = {2};
         lu7Var.c(false, !TextUtils.isEmpty(editTextBoldCursor.getText()));
         editTextBoldCursor.addTextChangedListener(new rqa(i, editTextBoldCursor, lu7Var, iArr, textView));
         r rVar = new r(context, vnbVar, editTextBoldCursor);
-        long[] jArr = uc7.s1(i).U3;
+        long[] jArr = uc7.s1(i).V3;
         int i3 = 0;
         while (true) {
             int length2 = jArr.length;
@@ -176,18 +176,18 @@ public final class sqa extends ny0 {
                         try {
                             double parseDouble = TextUtils.isEmpty(text) ? 0.0d : Double.parseDouble(text.toString());
                             int i5 = i;
-                            double f2 = uc7.s1(i5).k4.V2.f() / 1.0E9d;
+                            double f2 = uc7.s1(i5).l4.V2.f() / 1.0E9d;
                             lu7 lu7Var2 = lu7Var;
                             int[] iArr2 = iArr;
                             if (parseDouble > f2) {
-                                editTextBoldCursor2.setText(Double.toString(uc7.s1(i5).k4.V2.f() / 1.0E9d));
+                                editTextBoldCursor2.setText(Double.toString(uc7.s1(i5).l4.V2.f() / 1.0E9d));
                                 editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
                                 int i6 = -iArr2[0];
                                 iArr2[0] = i6;
                                 hl.A3(i6, lu7Var2, null);
                                 return;
                             }
-                            if (TextUtils.isEmpty(text) || parseDouble >= uc7.s1(i5).k4.U2.f() / 1.0E9d) {
+                            if (TextUtils.isEmpty(text) || parseDouble >= uc7.s1(i5).l4.U2.f() / 1.0E9d) {
                                 if (jxa.v(i5, true).f.toDouble() < parseDouble) {
                                     new shb(context, vnbVar, oj.j((long) (parseDouble * 1.0E9d), pj.b), new kc((byte) 10));
                                     return;
@@ -197,7 +197,7 @@ public final class sqa extends ny0 {
                                     return;
                                 }
                             }
-                            editTextBoldCursor2.setText(Double.toString(uc7.s1(i5).k4.U2.f() / 1.0E9d));
+                            editTextBoldCursor2.setText(Double.toString(uc7.s1(i5).l4.U2.f() / 1.0E9d));
                             editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
                             int i7 = -iArr2[0];
                             iArr2[0] = i7;

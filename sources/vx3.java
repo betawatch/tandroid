@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class vx3 implements Runnable {
     public final /* synthetic */ byte a;
@@ -255,7 +255,7 @@ public final /* synthetic */ class vx3 implements Runnable {
                 int i5 = t14Var.M.d1;
                 uc7.s1(i5).j4(tL_contacts_resolvedPeer.users, false);
                 uc7.s1(i5).c4(tL_contacts_resolvedPeer.chats, false);
-                jf7.Y(i5).j1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
+                kf7.a0(i5).n1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
                 String str2 = t14Var.x;
                 t14Var.x = null;
                 t14Var.F(str2, "", false, false, false);
@@ -341,11 +341,11 @@ public final /* synthetic */ class vx3 implements Runnable {
                 uc7.s1(((q84) this.c).a).Y3((TLRPC.Updates) ((TLObject) this.b), false);
                 return;
             case 13:
-                jf7 jf7Var = (jf7) this.c;
+                kf7 kf7Var = (kf7) this.c;
                 TLRPC.TL_factCheck tL_factCheck = (TLRPC.TL_factCheck) this.b;
                 try {
                     try {
-                        sQLitePreparedStatement = jf7Var.b.executeFast("REPLACE INTO fact_checks VALUES(?, ?, ?)");
+                        sQLitePreparedStatement = kf7Var.b.executeFast("REPLACE INTO fact_checks VALUES(?, ?, ?)");
                         sQLitePreparedStatement.requery();
                         sQLitePreparedStatement.bindLong(1, tL_factCheck.hash);
                         NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_factCheck.getObjectSize());
@@ -568,7 +568,7 @@ public final /* synthetic */ class vx3 implements Runnable {
                     }
                 }
                 nf4Var3.getMessagesController().s4(ac7Var);
-                jf7 messagesStorage = nf4Var3.getMessagesStorage();
+                kf7 messagesStorage = nf4Var3.getMessagesStorage();
                 messagesStorage.a.c(new t87(messagesStorage, ac7Var, (byte) 20));
                 nf4Var3.finishFragment();
                 return;

@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class eo0 extends la {
     public final /* synthetic */ lo0 d;
@@ -131,7 +131,7 @@ public final class eo0 extends la {
                 this.d.W.f();
                 lo0 lo0Var5 = this.d;
                 lo0Var5.W.a(0, ob6.G(lo0Var5.p0, "BoostingBoostsCount", new Object[0]), null);
-                if (uc7.s1(this.d.T).k4.W1.f && (i2 = (lo0Var = this.d).o0) > 0 && i2 != lo0Var.p0) {
+                if (uc7.s1(this.d.T).l4.W1.f && (i2 = (lo0Var = this.d).o0) > 0 && i2 != lo0Var.p0) {
                     lo0Var.W.a(1, ob6.G(i2, "BoostingGiftsCount", new Object[0]), null);
                 }
                 lo0 lo0Var6 = this.d;
@@ -161,7 +161,7 @@ public final class eo0 extends la {
                 view = qk1Var;
                 return qu6.h(view, view, -1, -2);
             case 2:
-                view = new rca(viewGroup.getContext(), 0, 0);
+                view = new sca(viewGroup.getContext(), 0, 0);
                 return qu6.h(view, view, -1, -2);
             case 3:
                 i56 i56Var = new i56(lo0Var.getParentActivity(), lo0Var, null, false, false);

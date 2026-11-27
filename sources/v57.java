@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class v57 implements fu9 {
     public static final int[] n = new int[0];
@@ -24,7 +24,7 @@ public final class v57 implements fu9 {
     public final int[] g;
     public final int h;
     public final int i;
-    public final sl7 j;
+    public final tl7 j;
     public final h76 k;
     public final t9c l;
     public final hk6 m;
@@ -39,7 +39,7 @@ public final class v57 implements fu9 {
         o = unsafe;
     }
 
-    public v57(int[] iArr, Object[] objArr, int i, int i2, ju4 ju4Var, int[] iArr2, int i3, int i4, sl7 sl7Var, h76 h76Var, t9c t9cVar, w74 w74Var, hk6 hk6Var) {
+    public v57(int[] iArr, Object[] objArr, int i, int i2, ju4 ju4Var, int[] iArr2, int i3, int i4, tl7 tl7Var, h76 h76Var, t9c t9cVar, w74 w74Var, hk6 hk6Var) {
         this.a = iArr;
         this.b = objArr;
         this.c = i;
@@ -48,7 +48,7 @@ public final class v57 implements fu9 {
         this.g = iArr2;
         this.h = i3;
         this.i = i4;
-        this.j = sl7Var;
+        this.j = tl7Var;
         this.k = h76Var;
         this.l = t9cVar;
         this.e = ju4Var;
@@ -96,7 +96,7 @@ public final class v57 implements fu9 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static v57 w(v29 v29Var, sl7 sl7Var, h76 h76Var, t9c t9cVar, w74 w74Var, hk6 hk6Var) {
+    public static v57 w(v29 v29Var, tl7 tl7Var, h76 h76Var, t9c t9cVar, w74 w74Var, hk6 hk6Var) {
         int i;
         int charAt;
         int i2;
@@ -610,7 +610,7 @@ public final class v57 implements fu9 {
             i65 = i19;
             c = 55296;
         }
-        return new v57(iArr4, objArr2, i2, i5, v29Var.a, iArr, i7, i65, sl7Var, h76Var, t9cVar, w74Var, hk6Var);
+        return new v57(iArr4, objArr2, i2, i5, v29Var.a, iArr, i7, i65, tl7Var, h76Var, t9cVar, w74Var, hk6Var);
     }
 
     public static long x(int i) {

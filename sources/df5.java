@@ -10,7 +10,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class df5 {
     public static volatile df5[] g = new df5[4];
@@ -282,7 +282,7 @@ public final class df5 {
                                         cf5Var2.h = message2.realId;
                                         cf5Var2.i = message2.peer_id;
                                     }
-                                    jf7.Y(i9).j1(messages_messages2.users, messages_messages2.chats, true, true);
+                                    kf7.a0(i9).n1(messages_messages2.users, messages_messages2.chats, true, true);
                                     uc7.s1(i9).j4(messages_messages2.users, false);
                                     uc7.s1(i9).c4(messages_messages2.chats, false);
                                     cf5Var2.n = messages_messages2.messages.size() < 21;

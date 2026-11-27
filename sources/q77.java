@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q77 implements Runnable {
     public final /* synthetic */ byte a = 2;
@@ -24,28 +24,28 @@ public final /* synthetic */ class q77 implements Runnable {
         uc7 uc7Var = this.b;
         switch (b) {
             case 0:
-                jf7 messagesStorage = uc7Var.getMessagesStorage();
+                kf7 messagesStorage = uc7Var.getMessagesStorage();
                 int i = (int) this.e;
                 long j = this.d;
                 ArrayList arrayList = this.c;
-                uc7Var.getMessagesStorage().O1(j, -j, arrayList, messagesStorage.M0(j, arrayList, false, true, 5, i));
+                uc7Var.getMessagesStorage().T1(j, -j, arrayList, messagesStorage.P0(j, arrayList, false, true, 5, i));
                 break;
             case 1:
                 uc7 uc7Var2 = this.b;
                 ArrayList arrayList2 = this.c;
                 long j2 = this.d;
                 hl.c3(new p77(uc7Var2, arrayList2, j2, (byte) 1));
-                jf7 messagesStorage2 = uc7Var2.getMessagesStorage();
+                kf7 messagesStorage2 = uc7Var2.getMessagesStorage();
                 long j3 = this.e;
-                messagesStorage2.D(arrayList2, j3);
-                uc7Var2.getMessagesStorage().O1(j3, j2, arrayList2, uc7Var2.getMessagesStorage().M0(j3, arrayList2, false, true, 0, 0));
+                messagesStorage2.F(arrayList2, j3);
+                uc7Var2.getMessagesStorage().T1(j3, j2, arrayList2, uc7Var2.getMessagesStorage().P0(j3, arrayList2, false, true, 0, 0));
                 break;
             default:
-                qyb qybVar = uc7Var.getMessagesController().g4;
+                qyb qybVar = uc7Var.getMessagesController().h4;
                 long j4 = this.d;
                 long j5 = this.e;
                 qybVar.B(0, j4, j5, false);
-                uc7Var.getMessagesStorage().e2(0, j4, j5, false);
+                uc7Var.getMessagesStorage().j2(0, j4, j5, false);
                 uc7Var.getNotificationCenter().k(jn7.c5, Long.valueOf(j4), Long.valueOf(j5), 0, this.c);
                 break;
         }

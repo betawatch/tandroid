@@ -12,7 +12,7 @@ import java.lang.annotation.RetentionPolicy;
 import ru.noties.jlatexmath.android.R;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public class JLatexMathView extends View {
     public static final int ALIGN_CENTER = 1;
@@ -28,7 +28,7 @@ public class JLatexMathView extends View {
     private int textSize;
     private float top;
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     @Retention(RetentionPolicy.CLASS)
     public @interface Align {
     }

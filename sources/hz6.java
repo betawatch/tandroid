@@ -19,7 +19,7 @@ import org.webrtc.MediaStream;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.NativeLifecycleLock;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hz6 implements ot2, pz6, NativeLifecycleLock.NativePointerCallable, Vector.TLDeserializer, y2c, yj0, tl5, CallAudioDevice.SamplesCallback, fd, qd3, zla, ama {
     public final /* synthetic */ byte a;
@@ -55,13 +55,13 @@ public final /* synthetic */ class hz6 implements ot2, pz6, NativeLifecycleLock.
 
     @Override // y2c
     public final Object apply(Object obj) {
-        of7 of7Var = (of7) obj;
-        of7Var.getClass();
+        pf7 pf7Var = (pf7) obj;
+        pf7Var.getClass();
         rw8 rw8Var = jw8.a;
         rw8Var.getClass();
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         try {
-            rw8Var.b(of7Var, byteArrayOutputStream);
+            rw8Var.b(pf7Var, byteArrayOutputStream);
         } catch (IOException unused) {
         }
         return byteArrayOutputStream.toByteArray();

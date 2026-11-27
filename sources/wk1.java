@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class wk1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class wk1 implements Runnable {
                                         }
                                         wallettransaction2 = wallettransaction;
                                         wk1Var = new wk1(dl1Var, (byte) 0);
-                                        if (!dl1Var.Q0.O3() || !uc7.s1(dl1Var.I).u3.contains("WALLET_FIRST_INCOMING_TRANSFER")) {
+                                        if (!dl1Var.Q0.O3() || !uc7.s1(dl1Var.I).v3.contains("WALLET_FIRST_INCOMING_TRANSFER")) {
                                             uqc.I0(dl1Var.getContext(), dl1Var.I, wallettransaction2, null, null, null, wk1Var, dl1Var.h1);
                                             break;
                                         } else {
@@ -125,7 +125,7 @@ public final /* synthetic */ class wk1 implements Runnable {
                                             textView.setTypeface(hl.n1("fonts/rmedium.ttf"));
                                             textView.setGravity(17);
                                             TextView m = ik8.m(linearLayout, textView, tre.t(-1, -2, 1, 0, 0, 0, 6), context);
-                                            double d = uc7.s1(i2).k4.k.i;
+                                            double d = uc7.s1(i2).l4.k.i;
                                             m.setText((d <= 0.0d || Double.isNaN(d) || Double.isInfinite(d)) ? ob6.M0(2131742765, null) : ob6.a0(null, null, 2131742764, c.w(1000000000L, false), String.format(ob6.D0().y, "%.2f", Double.valueOf(d))));
                                             yob.X(m, aob.r5, vnbVar);
                                             m.setTextSize(1, 14.0f);

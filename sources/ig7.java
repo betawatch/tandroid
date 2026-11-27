@@ -1,32 +1,54 @@
 // default package
 
-import java.util.ArrayList;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.security.SecureRandom;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class ig7 extends r8a {
-    public final ArrayList a;
+public abstract class ig7 {
+    public static final SecureRandom a = new SecureRandom();
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public ig7(String str, ArrayList arrayList) {
-        super(r3, null);
-        String str2;
-        str.getClass();
-        if (arrayList.size() == 1) {
-            str2 = "Field '" + ((String) arrayList.get(0)) + "' is required for type with serial name '" + str + "', but it was missing";
-        } else {
-            str2 = "Fields " + arrayList + " are required for type with serial name '" + str + "', but they were missing";
+    public static byte[] a(String str) {
+        if (str == null) {
+            return null;
         }
-        this.a = arrayList;
+        try {
+            return str.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException unused) {
+            return null;
+        }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ig7(ArrayList arrayList, String str, ig7 ig7Var) {
-        super(str, ig7Var);
-        arrayList.getClass();
-        this.a = arrayList;
+    public static String b(InputStream inputStream) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        while (true) {
+            int read = inputStream.read();
+            if (read == -1) {
+                if (byteArrayOutputStream.size() == 0) {
+                    return null;
+                }
+            } else {
+                if (read == 10) {
+                    break;
+                }
+                if (read != 13) {
+                    byteArrayOutputStream.write(read);
+                } else {
+                    int read2 = inputStream.read();
+                    if (read2 == -1) {
+                        byteArrayOutputStream.write(read);
+                        break;
+                    }
+                    if (read2 == 10) {
+                        break;
+                    }
+                    byteArrayOutputStream.write(read);
+                    byteArrayOutputStream.write(read2);
+                }
+            }
+        }
+        return byteArrayOutputStream.toString("UTF-8");
     }
 }

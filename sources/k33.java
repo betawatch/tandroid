@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class k33 extends View {
     public final Paint a;
@@ -136,7 +136,7 @@ public final class k33 extends View {
         l33 l33Var = this.s;
         int[] iArr = l33Var.s;
         int[] iArr2 = l33Var.w;
-        gbb gbbVar = l33Var.a;
+        hbb hbbVar = l33Var.a;
         if (!z) {
             f = 255.0f;
             f2 = 2.0f;
@@ -148,7 +148,7 @@ public final class k33 extends View {
             f = 255.0f;
             f2 = 2.0f;
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, gbbVar.getWidth(), gbbVar.getHeight(), (int) (Math.min(1.0f, (1.0f - l33Var.r) * 2.0f) * 255.0f), 31);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, hbbVar.getWidth(), hbbVar.getHeight(), (int) (Math.min(1.0f, (1.0f - l33Var.r) * 2.0f) * 255.0f), 31);
             canvas2.translate(iArr[0] - iArr2[0], iArr[1] - iArr2[1]);
         }
         canvas2.save();
@@ -159,8 +159,8 @@ public final class k33 extends View {
         if (l33Var.r < 1.0f && !z) {
             Path path = this.b;
             path.rewind();
-            float width = gbbVar.getWidth();
-            float height = gbbVar.getHeight();
+            float width = hbbVar.getWidth();
+            float height = hbbVar.getHeight();
             RectF rectF = this.c;
             rectF.set(0.0f, 0.0f, width, height);
             rectF.offset(iArr2[0], iArr2[1]);
@@ -178,9 +178,9 @@ public final class k33 extends View {
         matrix2.reset();
         matrix.preTranslate(-iArr[0], -iArr[1]);
         matrix.preTranslate(iArr2[0], iArr2[1]);
-        matrix.preScale(gbbVar.getWidth() / l33Var.y.i0, gbbVar.getHeight() / l33Var.y.j0);
+        matrix.preScale(hbbVar.getWidth() / l33Var.y.i0, hbbVar.getHeight() / l33Var.y.j0);
         matrix.preConcat(l33Var.y.n0);
-        matrix.preTranslate(gbbVar.getContentWidth() / f2, gbbVar.getContentHeight() / f2);
+        matrix.preTranslate(hbbVar.getContentWidth() / f2, hbbVar.getContentHeight() / f2);
         matrix2.preTranslate((getContainerWidth() / f2) + hl.L(16.0f), qd4.e(getContainerHeight(), hl.L(32.0f), f2, !(getContext() instanceof BubbleActivity) ? hl.m : 0.0f));
         if (z) {
             float f7 = l33Var.r;
@@ -202,8 +202,8 @@ public final class k33 extends View {
                 int i = c8bVar.Q;
                 fo6 fo6Var = c8bVar.m0;
                 boolean z4 = ((i + (fo6Var != null ? fo6Var.k : 0)) / 90) % 2 == 1;
-                float contentWidth = gbbVar.getContentWidth();
-                float contentHeight = gbbVar.getContentHeight();
+                float contentWidth = hbbVar.getContentWidth();
+                float contentHeight = hbbVar.getContentHeight();
                 fo6 fo6Var2 = l33Var.y.m0;
                 if (fo6Var2 != null) {
                     f4 = fo6Var2.e;
@@ -245,8 +245,8 @@ public final class k33 extends View {
                 float z5 = qd4.z(1.0f, d, 4.0f * d, 0.25f);
                 matrix2.preSkew(0.0f, z5);
                 matrix.preSkew(0.0f, z5);
-                matrix2.preTranslate((-gbbVar.getContentWidth()) / f3, (-gbbVar.getContentHeight()) / f3);
-                matrix.preTranslate((-gbbVar.getContentWidth()) / f3, (-gbbVar.getContentHeight()) / f3);
+                matrix2.preTranslate((-hbbVar.getContentWidth()) / f3, (-hbbVar.getContentHeight()) / f3);
+                matrix.preTranslate((-hbbVar.getContentWidth()) / f3, (-hbbVar.getContentHeight()) / f3);
                 float f11 = l33Var.r;
                 float[] fArr3 = hl.h0;
                 matrix.getValues(fArr3);
@@ -256,19 +256,19 @@ public final class k33 extends View {
                 Matrix matrix6 = this.e;
                 matrix6.setValues(fArr4);
                 canvas2.concat(matrix6);
-                Paint paint2 = gbbVar.R;
-                Matrix matrix7 = gbbVar.a0;
-                if (gbbVar.n == null) {
+                Paint paint2 = hbbVar.R;
+                Matrix matrix7 = hbbVar.a0;
+                if (hbbVar.n == null) {
                     canvas2.save();
-                    canvas2.scale(gbbVar.getContentWidth() / gbbVar.getWidth(), gbbVar.getContentHeight() / gbbVar.getHeight());
-                    canvas2.concat(gbbVar.k0);
-                    gbbVar.n.draw(canvas2);
+                    canvas2.scale(hbbVar.getContentWidth() / hbbVar.getWidth(), hbbVar.getContentHeight() / hbbVar.getHeight());
+                    canvas2.concat(hbbVar.k0);
+                    hbbVar.n.draw(canvas2);
                     canvas2.restore();
-                } else if (gbbVar.a != null && gbbVar.d != null) {
+                } else if (hbbVar.a != null && hbbVar.d != null) {
                     matrix7.reset();
-                    matrix7.preScale(gbbVar.d.k0 / gbbVar.a.getWidth(), gbbVar.d.l0 / gbbVar.a.getHeight());
+                    matrix7.preScale(hbbVar.d.k0 / hbbVar.a.getWidth(), hbbVar.d.l0 / hbbVar.a.getHeight());
                     paint2.setAlpha(jn7.d4);
-                    canvas2.drawBitmap(gbbVar.a, matrix7, paint2);
+                    canvas2.drawBitmap(hbbVar.a, matrix7, paint2);
                 }
                 canvas2.restore();
                 if (z) {
@@ -293,8 +293,8 @@ public final class k33 extends View {
         float z52 = qd4.z(1.0f, d2, 4.0f * d2, 0.25f);
         matrix2.preSkew(0.0f, z52);
         matrix.preSkew(0.0f, z52);
-        matrix2.preTranslate((-gbbVar.getContentWidth()) / f3, (-gbbVar.getContentHeight()) / f3);
-        matrix.preTranslate((-gbbVar.getContentWidth()) / f3, (-gbbVar.getContentHeight()) / f3);
+        matrix2.preTranslate((-hbbVar.getContentWidth()) / f3, (-hbbVar.getContentHeight()) / f3);
+        matrix.preTranslate((-hbbVar.getContentWidth()) / f3, (-hbbVar.getContentHeight()) / f3);
         float f112 = l33Var.r;
         float[] fArr32 = hl.h0;
         matrix.getValues(fArr32);
@@ -304,9 +304,9 @@ public final class k33 extends View {
         Matrix matrix62 = this.e;
         matrix62.setValues(fArr42);
         canvas2.concat(matrix62);
-        Paint paint22 = gbbVar.R;
-        Matrix matrix72 = gbbVar.a0;
-        if (gbbVar.n == null) {
+        Paint paint22 = hbbVar.R;
+        Matrix matrix72 = hbbVar.a0;
+        if (hbbVar.n == null) {
         }
         canvas2.restore();
         if (z) {

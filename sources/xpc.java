@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class xpc extends jl7 {
+public final class xpc extends kl7 {
     public final /* synthetic */ ViewGroup W1;
     public final /* synthetic */ View[] X1;
     public final /* synthetic */ Context Y1;
@@ -19,7 +19,7 @@ public final class xpc extends jl7 {
         this.Y1 = context2;
     }
 
-    @Override // jl7, ny0
+    @Override // kl7, ny0
     public final void P0(float f) {
         super.P0(f);
         if (this.W1 instanceof vic) {
@@ -32,12 +32,12 @@ public final class xpc extends jl7 {
         return !(this.W1 instanceof vic);
     }
 
-    @Override // jl7
+    @Override // kl7
     public final int Z0() {
         return aob.v0(aob.d6, this.J0);
     }
 
-    @Override // jl7, nx0, android.app.Dialog
+    @Override // kl7, nx0, android.app.Dialog
     public final void show() {
         super.show();
         if (this.W1 instanceof vic) {

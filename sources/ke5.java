@@ -2,7 +2,7 @@
 
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ke5 implements ep3 {
     public final /* synthetic */ byte a;
@@ -24,15 +24,15 @@ public final /* synthetic */ class ke5 implements ep3 {
                 return;
             default:
                 String str = (String) this.b;
-                cj7 cj7Var = (cj7) this.c;
-                synchronized (dj7.b) {
-                    LinkedHashMap linkedHashMap = dj7.c;
-                    dj7 dj7Var = (dj7) linkedHashMap.get(str);
-                    if (dj7Var != null) {
-                        dj7Var.a.remove(cj7Var);
-                        if (dj7Var.a.isEmpty()) {
+                dj7 dj7Var = (dj7) this.c;
+                synchronized (ej7.b) {
+                    LinkedHashMap linkedHashMap = ej7.c;
+                    ej7 ej7Var = (ej7) linkedHashMap.get(str);
+                    if (ej7Var != null) {
+                        ej7Var.a.remove(dj7Var);
+                        if (ej7Var.a.isEmpty()) {
                             linkedHashMap.remove(str);
-                            dj7Var.stopWatching();
+                            ej7Var.stopWatching();
                         }
                     }
                 }

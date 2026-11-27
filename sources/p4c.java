@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class p4c implements pcc {
     public final /* synthetic */ byte a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class p4c implements pcc {
                 if (tL_textWithEntities == null) {
                     message.summarizedOpen = false;
                 }
-                a5cVar.getMessagesStorage().U1(j, r47Var.k);
+                a5cVar.getMessagesStorage().Z1(j, r47Var.k);
                 jn7.f(a5cVar.currentAccount).k(jn7.M1, r47Var, Boolean.TRUE);
                 break;
             case 1:
@@ -86,7 +86,7 @@ public final /* synthetic */ class p4c implements pcc {
                 break;
             case 5:
                 TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer = (TLRPC.TL_messageActionStarGiftOnchainOffer) obj2;
-                ((fd7) obj3).run();
+                ((gd7) obj3).run();
                 if (!((Boolean) obj).booleanValue()) {
                     vs7.g(j);
                     vs7.s(2131749512, tL_messageActionStarGiftOnchainOffer.gift);
@@ -105,7 +105,7 @@ public final /* synthetic */ class p4c implements pcc {
                 wua wuaVar = (wua) obj3;
                 uc7 uc7Var = (uc7) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < uc7Var.k4.f2.f()) {
+                if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < uc7Var.l4.f2.f()) {
                     xg1 G0 = uc7Var.G0();
                     long j2 = this.b;
                     G0.b(j2, tL_premium_boostsStatus, new r4c((Object) wuaVar, (Object) tL_premium_boostsStatus, j2, (Object) uc7Var, (byte) 8));

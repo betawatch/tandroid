@@ -40,7 +40,7 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class mm8 extends FrameLayout {
     public static final /* synthetic */ int C0 = 0;
@@ -263,12 +263,12 @@ public abstract class mm8 extends FrameLayout {
         int i7 = g.get(i6, aob.w0(null, i6, false));
         int i8 = aob.He;
         int i9 = g.get(i8, aob.w0(null, i8, false));
-        final hh7 hh7Var = new hh7();
-        hh7Var.g = false;
-        hh7Var.r(ez3Var.j(z ? 1 : 0).settings.intensity, hh7Var.u);
-        hh7Var.n(true, i3, i5, i7, i9);
-        hh7Var.t(0);
-        final int f = hh7Var.f();
+        final ih7 ih7Var = new ih7();
+        ih7Var.g = false;
+        ih7Var.r(ez3Var.j(z ? 1 : 0).settings.intensity, ih7Var.u);
+        ih7Var.n(true, i3, i5, i7, i9);
+        ih7Var.t(0);
+        final int f = ih7Var.f();
         ez3Var.n(z ? 1 : 0, new ResultCallback() { // from class: km8
             @Override // org.telegram.tgnet.ResultCallback
             public final void onComplete(Object obj) {
@@ -281,10 +281,10 @@ public abstract class mm8 extends FrameLayout {
                         return;
                     }
                     int i10 = ez3Var2.j(z ? 1 : 0).settings.intensity;
-                    hh7 hh7Var2 = hh7Var;
-                    hh7Var2.r(i10, bitmap);
-                    hh7Var2.s(f);
-                    hh7Var2.q(1.0f);
+                    ih7 ih7Var2 = ih7Var;
+                    ih7Var2.r(i10, bitmap);
+                    ih7Var2.s(f);
+                    ih7Var2.q(1.0f);
                 }
             }
 
@@ -296,7 +296,7 @@ public abstract class mm8 extends FrameLayout {
             public final void onError(Throwable th) {
             }
         });
-        return hh7Var;
+        return ih7Var;
     }
 
     private void setupCollage(c8b c8bVar) {
@@ -307,7 +307,7 @@ public abstract class mm8 extends FrameLayout {
     }
 
     private void setupImage(c8b c8bVar) {
-        Utilities.g.c(new h68(this, c8bVar, (byte) 19));
+        Utilities.g.c(new a58(this, c8bVar, (byte) 20));
     }
 
     public abstract void a();
@@ -392,7 +392,7 @@ public abstract class mm8 extends FrameLayout {
                 canvas.clipPath(path);
             }
             Drawable drawable = this.T;
-            float e = ((drawable instanceof hh7) && ((hh7) drawable).u == null) ? 0.0f : this.Q.e(false, 1.0f);
+            float e = ((drawable instanceof ih7) && ((ih7) drawable).u == null) ? 0.0f : this.Q.e(false, 1.0f);
             Drawable drawable2 = this.S;
             if (drawable2 != null && e < 1.0f) {
                 drawable2.setAlpha((int) ((1.0f - e) * 255.0f));
@@ -475,11 +475,11 @@ public abstract class mm8 extends FrameLayout {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         Runnable runnable;
         boolean v = v(motionEvent);
-        rbb rbbVar = ((gbb) this).D0;
-        hbb hbbVar = rbbVar.d1;
+        sbb sbbVar = ((hbb) this).D0;
+        ibb ibbVar = sbbVar.d1;
         boolean z = false;
-        if (hbbVar == null || !hbbVar.O1) {
-            b98 b98Var = rbbVar.D1;
+        if (ibbVar == null || !ibbVar.O1) {
+            b98 b98Var = sbbVar.D1;
             x38 x38Var = b98Var.J;
             if (b98Var.w && motionEvent.getPointerCount() == 1) {
                 int action = motionEvent.getAction();
@@ -790,7 +790,7 @@ public abstract class mm8 extends FrameLayout {
         if (c8bVar.K) {
             setupImage(c8bVar);
             if (c8bVar.A0 == 0 && c8bVar.B0 == 0) {
-                c8bVar.y(new uk8((gbb) this, (byte) 3));
+                c8bVar.y(new uk8((hbb) this, (byte) 3));
             } else {
                 r();
             }
@@ -825,11 +825,11 @@ public abstract class mm8 extends FrameLayout {
         y(true);
     }
 
-    public final void n(c8b c8bVar, z3b z3bVar, long j) {
+    public final void n(c8b c8bVar, n3b n3bVar, long j) {
         this.d = c8bVar;
         byte b = 0;
         if (c8bVar == null) {
-            t(null, z3bVar, j);
+            t(null, n3bVar, j);
             setupImage(null);
             setupCollage(null);
             u(null);
@@ -840,12 +840,12 @@ public abstract class mm8 extends FrameLayout {
         }
         if (c8bVar.v()) {
             setupImage(null);
-            t(null, z3bVar, j);
+            t(null, n3bVar, j);
             setupCollage(c8bVar);
         } else if (c8bVar.K) {
             setupImage(c8bVar);
             setupCollage(null);
-            t(c8bVar, z3bVar, j);
+            t(c8bVar, n3bVar, j);
             if (c8bVar.A0 == 0 && c8bVar.B0 == 0) {
                 c8bVar.y(new lm8(this, b));
             } else {
@@ -853,7 +853,7 @@ public abstract class mm8 extends FrameLayout {
             }
         } else {
             setupCollage(null);
-            t(null, z3bVar, 0L);
+            t(null, n3bVar, 0L);
             setupImage(c8bVar);
             r();
         }
@@ -1094,14 +1094,14 @@ public abstract class mm8 extends FrameLayout {
                 z2 = true;
                 w(true);
             }
-            rbb rbbVar = ((gbb) this).D0;
-            vab vabVar = rbbVar.w1;
-            if (vabVar != null) {
-                c8b c8bVar2 = rbbVar.L1;
+            sbb sbbVar = ((hbb) this).D0;
+            wab wabVar = sbbVar.w1;
+            if (wabVar != null) {
+                c8b c8bVar2 = sbbVar.L1;
                 if (c8bVar2 != null && c8bVar2.y != null) {
                     z3 = z2;
                 }
-                vabVar.setHasAudio(z3);
+                wabVar.setHasAudio(z3);
             }
         }
     }
@@ -1236,7 +1236,7 @@ public abstract class mm8 extends FrameLayout {
         }
     }
 
-    public final void t(c8b c8bVar, z3b z3bVar, long j) {
+    public final void t(c8b c8bVar, n3b n3bVar, long j) {
         ArrayList arrayList;
         yl0 yl0Var;
         byte b = 5;
@@ -1262,8 +1262,8 @@ public abstract class mm8 extends FrameLayout {
                 ksbVar.o(false, null, 1L, 0.0f);
             }
             hl.r(this.L);
-            if (z3bVar != null) {
-                hl.c3(z3bVar);
+            if (n3bVar != null) {
+                hl.c3(n3bVar);
                 return;
             }
             return;
@@ -1278,7 +1278,7 @@ public abstract class mm8 extends FrameLayout {
         kfc kfcVar3 = new kfc();
         this.e = kfcVar3;
         kfcVar3.E = true;
-        kfcVar3.K = new pm3((ViewGroup) this, (Object) c8bVar, (Object) new Runnable[]{z3bVar}, (byte) 24);
+        kfcVar3.K = new pm3((ViewGroup) this, (Object) c8bVar, (Object) new Runnable[]{n3bVar}, (byte) 24);
         kec kecVar2 = this.n;
         if (kecVar2 != null) {
             kecVar2.clearAnimation();
@@ -1312,21 +1312,21 @@ public abstract class mm8 extends FrameLayout {
         a();
         o00 o00Var2 = this.I;
         if (o00Var2 == null || !o00Var2.g) {
-            this.n.setAlpha(z3bVar != null ? 1.0f : 0.0f);
+            this.n.setAlpha(n3bVar != null ? 1.0f : 0.0f);
             addView(this.n, tre.e(-2, -2, 51));
         } else {
             o00Var2.a(this.n);
         }
-        ii7 ii7Var = new ii7(this, (byte) 18);
+        ji7 ji7Var = new ji7(this, (byte) 18);
         b8b b8bVar = c8bVar.d1;
         if (b8bVar != null) {
-            ii7Var.a(b8bVar);
+            ji7Var.a(b8bVar);
         } else if (!c8bVar.K || Build.VERSION.SDK_INT < 24) {
             b8b b8bVar2 = new b8b();
             c8bVar.d1 = b8bVar2;
-            ii7Var.a(b8bVar2);
+            ji7Var.a(b8bVar2);
         } else {
-            Utilities.e.c(new y7b(c8bVar, ii7Var, b2));
+            Utilities.e.c(new y7b(c8bVar, ji7Var, b2));
         }
         File file = c8bVar.Z0;
         if (file == null) {
@@ -1513,9 +1513,9 @@ public abstract class mm8 extends FrameLayout {
                 if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
                     if (motionEvent.getPointerCount() <= 1) {
                         this.r0 = false;
-                        rbb rbbVar = ((gbb) this).D0;
-                        rbbVar.p1.a(true, false, rbbVar.j0);
-                        rbbVar.p1.b(rbbVar.d1.getText());
+                        sbb sbbVar = ((hbb) this).D0;
+                        sbbVar.p1.a(true, false, sbbVar.j0);
+                        sbbVar.p1.b(sbbVar.d1.getText());
                     }
                     this.x0 = false;
                     this.s0 = false;

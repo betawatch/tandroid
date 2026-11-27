@@ -63,7 +63,7 @@ import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProxyListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class qh6 extends e implements fn7 {
     public static final short A0;
@@ -336,11 +336,11 @@ public final class qh6 extends e implements fn7 {
         yac.h(this.currentAccount).V = this.E;
         yac.h(this.currentAccount).v(tL_auth_authorization.user);
         yac.h(this.currentAccount).u(true);
-        jf7 Y = jf7.Y(this.currentAccount);
-        Y.a.c(new je7(Y, true, 1 == true ? 1 : 0));
+        kf7 a0 = kf7.a0(this.currentAccount);
+        a0.a.c(new ke7(a0, true, 1 == true ? 1 : 0));
         ArrayList arrayList = new ArrayList();
         arrayList.add(tL_auth_authorization.user);
-        jf7.Y(this.currentAccount).j1(arrayList, null, true, true);
+        kf7.a0(this.currentAccount).n1(arrayList, null, true, true);
         uc7.s1(this.currentAccount).i4(tL_auth_authorization.user, false, false);
         lv2 r = lv2.r(this.currentAccount);
         r.a = null;
@@ -1741,7 +1741,7 @@ public final class qh6 extends e implements fn7 {
         }
         if (i == jn7.s1 && this.i0) {
             uc7 messagesController = getMessagesController();
-            if (messagesController.u3.contains("SETUP_LOGIN_EMAIL") || messagesController.u3.contains("SETUP_LOGIN_EMAIL_NOSKIP")) {
+            if (messagesController.v3.contains("SETUP_LOGIN_EMAIL") || messagesController.v3.contains("SETUP_LOGIN_EMAIL_NOSKIP")) {
                 return;
             }
             finishFragment();
@@ -2092,7 +2092,7 @@ public final class qh6 extends e implements fn7 {
             o6d o6dVar = qa4Var.i;
             g5e g5eVar = new g5e(o6dVar, bArr, str2);
             o6dVar.b.d(0, g5eVar);
-            pgd.a(g5eVar, new i09((Object) new ts9(), (byte) 26)).addOnSuccessListener(new le6(this, string, auth_sentcode, bundle, z)).addOnFailureListener(new OnFailureListener(this) { // from class: me6
+            pgd.a(g5eVar, new j09((Object) new ts9(), (byte) 26)).addOnSuccessListener(new le6(this, string, auth_sentcode, bundle, z)).addOnFailureListener(new OnFailureListener(this) { // from class: me6
                 public final /* synthetic */ qh6 b;
 
                 {

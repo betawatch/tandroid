@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class db3 implements h84 {
     public static final int[] e = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
@@ -46,14 +46,14 @@ public final class db3 implements h84 {
                 arrayList.add(new vl6(this.b, 0));
                 break;
             case 7:
-                arrayList.add(new qh7(1));
+                arrayList.add(new rh7(1));
                 break;
             case 8:
                 uif uifVar = this.b;
                 int g = 512 | hr4.g(3);
                 no5 no5Var = po5.b;
                 arrayList.add(new hr4(uifVar, g, null, j99.e, null));
-                arrayList.add(new yh7(this.b, jn7.p2));
+                arrayList.add(new zh7(this.b, jn7.p2));
                 break;
             case 9:
                 arrayList.add(new hr7());

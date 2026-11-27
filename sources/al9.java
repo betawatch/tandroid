@@ -16,7 +16,7 @@ import android.text.style.CharacterStyle;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class al9 extends dk9 {
     public final gl9 X;
@@ -120,7 +120,7 @@ public final class al9 extends dk9 {
         int color = textPaint.getColor();
         textPaint.setColor(-1);
         textPaint.linkColor = aob.v0(hl9Var.D() ? aob.Yc : aob.Xc, hl9Var.D);
-        ui7.b(canvas, gl9Var.b, i, f, new m88((Object) this, (Object) this.W, (byte) 24));
+        vi7.b(canvas, gl9Var.b, i, f, new m88((Object) this, (Object) this.W, (byte) 24));
         canvas.restore();
         textPaint.setColor(color);
         i0();
@@ -159,7 +159,7 @@ public final class al9 extends dk9 {
         }
     }
 
-    @Override // dk9, si7
+    @Override // dk9, ti7
     public final Layout a() {
         return this.X.b;
     }

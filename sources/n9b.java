@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class n9b extends la {
     public final Context d;
@@ -17,7 +17,7 @@ public final class n9b extends la {
     public d79 h;
     public final /* synthetic */ r9b n;
 
-    public n9b(r9b r9bVar, Context context, vnb vnbVar, l9b l9bVar, b68 b68Var) {
+    public n9b(r9b r9bVar, Context context, vnb vnbVar, l9b l9bVar, c68 c68Var) {
         this.n = r9bVar;
         this.d = context;
         this.e = vnbVar;
@@ -191,7 +191,7 @@ public final class n9b extends la {
             }
             if (i4 == 10) {
                 int i7 = w9b.X1;
-                int f2 = (int) uc7.s1(w9bVar.a).k4.P1.f();
+                int f2 = (int) uc7.s1(w9bVar.a).l4.P1.f();
                 int[] a = bna.a(new int[]{0, 1, 10, 50, 100, jn7.d3, jn7.Y3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, f2);
                 int j = Utilities.j(w9bVar.B1, f2, 0);
                 bya byaVar = new bya((byte) 3);

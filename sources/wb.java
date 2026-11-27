@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wb extends l9c {
     public final /* synthetic */ byte Q;
@@ -27,12 +27,12 @@ public final class wb extends l9c {
         switch (this.Q) {
             case 2:
                 super.t(f89Var, i);
-                b58 b58Var = (b58) this.R;
-                if (b58Var.E) {
+                c58 c58Var = (c58) this.R;
+                if (c58Var.E) {
                     View view = f89Var.a;
-                    if ((view instanceof h96) && (m96Var = (h96Var = (h96) view).L) != null && m96Var.a == b58Var.y) {
+                    if ((view instanceof h96) && (m96Var = (h96Var = (h96) view).L) != null && m96Var.a == c58Var.y) {
                         h96Var.a();
-                        b58Var.E = false;
+                        c58Var.E = false;
                         break;
                     }
                 }
@@ -122,12 +122,12 @@ public final class wb extends l9c {
         switch (this.Q) {
             case 2:
                 super.y(f89Var);
-                b58 b58Var = (b58) this.R;
-                if (b58Var.E) {
+                c58 c58Var = (c58) this.R;
+                if (c58Var.E) {
                     View view = f89Var.a;
-                    if ((view instanceof h96) && (m96Var = (h96Var = (h96) view).L) != null && m96Var.a == b58Var.y) {
+                    if ((view instanceof h96) && (m96Var = (h96Var = (h96) view).L) != null && m96Var.a == c58Var.y) {
                         h96Var.a();
-                        b58Var.E = false;
+                        c58Var.E = false;
                         break;
                     }
                 }

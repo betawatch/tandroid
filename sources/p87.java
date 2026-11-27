@@ -14,7 +14,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p87 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -162,7 +162,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                     if (!messages_messages.messages.isEmpty()) {
                         in5.S(messages_messages.messages);
                         ls6Var.m(messages_messages.messages, messages_messages.users, messages_messages.chats, false, false);
-                        ls6Var.getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+                        ls6Var.getMessagesStorage().n1(messages_messages.users, messages_messages.chats, true, true);
                         ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
                         if (!arrayList3.isEmpty()) {
                             ls6Var.getMessagesStorage().a.c(new cq6((Object) ls6Var, (Object) arrayList3, j5, (byte) 1));
@@ -170,7 +170,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                         }
                     }
                 }
-                ls6Var.getMessagesStorage().Z1(j5, tL_messages_getMessages.id, false, -1, 0, false, null);
+                ls6Var.getMessagesStorage().e2(j5, tL_messages_getMessages.id, false, -1, 0, false, null);
                 break;
             case 5:
                 uc7 uc7Var4 = (uc7) this.b;
@@ -187,7 +187,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                             N0.flags |= TLObject.FLAG_30;
                         }
                         N0.available_reactions = tL_messages_setChatAvailableReactions.available_reactions;
-                        uc7Var4.getMessagesStorage().K1(N0, false);
+                        uc7Var4.getMessagesStorage().P1(N0, false);
                     }
                     hl.c3(new t77(uc7Var4, j6, (byte) 16));
                     break;
@@ -229,8 +229,8 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                             sparseArray.put(tL_messages_getMessagesViews.id.get(i7).intValue(), tL_messageViews.replies);
                         }
                     }
-                    uc7Var5.getMessagesStorage().j1(tL_messages_messageViews.users, tL_messages_messageViews.chats, true, true);
-                    uc7Var5.getMessagesStorage().X0(zh6Var5, zh6Var6, zh6Var7, false);
+                    uc7Var5.getMessagesStorage().n1(tL_messages_messageViews.users, tL_messages_messageViews.chats, true, true);
+                    uc7Var5.getMessagesStorage().b1(zh6Var5, zh6Var6, zh6Var7, false);
                     hl.c3(new tw4((Object) uc7Var5, (Object) tL_messages_messageViews, (Object) zh6Var5, (Object) zh6Var6, (Object) zh6Var7, (byte) 25));
                     break;
                 }
@@ -251,14 +251,14 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                 break;
             case 8:
                 uc7 uc7Var7 = (uc7) this.b;
-                ii7 ii7Var = (ii7) this.d;
+                ji7 ji7Var = (ji7) this.d;
                 long j9 = this.c;
                 if (tLObject instanceof TLRPC.TL_exportedContactToken) {
-                    uc7Var7.M4 = (TLRPC.TL_exportedContactToken) tLObject;
-                    hl.d3(new t87(uc7Var7, ii7Var, (byte) 7), Math.max(0L, 0 - (System.currentTimeMillis() - j9)));
+                    uc7Var7.N4 = (TLRPC.TL_exportedContactToken) tLObject;
+                    hl.d3(new t87(uc7Var7, ji7Var, (byte) 7), Math.max(0L, 0 - (System.currentTimeMillis() - j9)));
                     break;
                 } else {
-                    uc7Var7.L4 = false;
+                    uc7Var7.M4 = false;
                     break;
                 }
             case 9:
@@ -275,11 +275,11 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                         i8 = messages_messages2.messages.size();
                     }
                     int i9 = i8;
-                    jf7 messagesStorage = uc7Var8.getMessagesStorage();
-                    messagesStorage.a.c(new ae7(messagesStorage, 0L, -inputPeer.channel_id, i9, (byte) 3));
+                    kf7 messagesStorage = uc7Var8.getMessagesStorage();
+                    messagesStorage.a.c(new ae7(messagesStorage, 0L, -inputPeer.channel_id, i9, (byte) 1));
                 }
                 if (j10 != 0) {
-                    uc7Var8.getMessagesStorage().n1(j10);
+                    uc7Var8.getMessagesStorage().r1(j10);
                     break;
                 }
                 break;
@@ -327,11 +327,11 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                         tL_messages_dialogs.messages.addAll(messages_messages3.messages);
                         tL_messages_dialogs.count = 1;
                         Utilities.d.c(new ds6(uc7Var9, false ? 1 : 0, tL_messages_dialogs, b));
-                        uc7Var9.getMessagesStorage().g1(messages_messages3.messages, true, true, false, uc7Var9.getDownloadController().l(), true, 0, 0L);
+                        uc7Var9.getMessagesStorage().k1(messages_messages3.messages, true, true, false, uc7Var9.getDownloadController().l(), true, 0, 0L);
                     }
                 }
                 if (j11 != 0) {
-                    uc7Var9.getMessagesStorage().n1(j11);
+                    uc7Var9.getMessagesStorage().r1(j11);
                 }
                 hl.c3(new ya7(uc7Var9, dialog, b));
                 break;
@@ -349,9 +349,9 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                         tL_messages_dialogs2.messages.addAll(tL_messages_peerDialogs.messages);
                         tL_messages_dialogs2.users.addAll(tL_messages_peerDialogs.users);
                         tL_messages_dialogs2.chats.addAll(tL_messages_peerDialogs.chats);
-                        uc7Var10.T3(tL_messages_dialogs2, null, null, tL_dialog2.folder_id, 0, 1, uc7Var10.D4, false, false, false);
+                        uc7Var10.T3(tL_messages_dialogs2, null, null, tL_dialog2.folder_id, 0, 1, uc7Var10.E4, false, false, false);
                         if (j != 0) {
-                            uc7Var10.getMessagesStorage().n1(j);
+                            uc7Var10.getMessagesStorage().r1(j);
                         }
                         uc7Var10.S0.e(chat3.id);
                         break;
@@ -395,10 +395,10 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                     arrayList4.add(Long.valueOf(j14));
                     arrayList5.add(0);
                     final ArrayList arrayList7 = new ArrayList();
-                    final z09 z09Var = new z09(c39Var, arrayList7, (byte) 5);
+                    final yz8 yz8Var = new yz8(c39Var, arrayList7, (byte) 6);
                     if (xc2.T(chat4)) {
                         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-                        tL_channels_getParticipants.limit = uc7.s1(i10).k4.V0.f();
+                        tL_channels_getParticipants.limit = uc7.s1(i10).l4.V0.f();
                         tL_channels_getParticipants.offset = 0;
                         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
                         tL_channels_getParticipants.channel = uc7.s1(i10).h1(chat4.id);
@@ -413,12 +413,12 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                         final ArrayList arrayList8 = arrayList4;
                                         final ArrayList arrayList9 = arrayList7;
                                         final ArrayList arrayList10 = arrayList5;
-                                        final z09 z09Var2 = z09Var;
+                                        final yz8 yz8Var2 = yz8Var;
                                         hl.c3(new Runnable() { // from class: z29
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 byte b5 = b4;
-                                                z09 z09Var3 = z09Var2;
+                                                yz8 yz8Var3 = yz8Var2;
                                                 ArrayList arrayList11 = arrayList10;
                                                 ArrayList arrayList12 = arrayList9;
                                                 ArrayList arrayList13 = arrayList8;
@@ -437,7 +437,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        z09Var3.run();
+                                                        yz8Var3.run();
                                                         break;
                                                     default:
                                                         if (tLObject3 != null) {
@@ -451,7 +451,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        z09Var3.run();
+                                                        yz8Var3.run();
                                                         break;
                                                 }
                                             }
@@ -463,12 +463,12 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                         final ArrayList arrayList11 = arrayList4;
                                         final ArrayList arrayList12 = arrayList7;
                                         final ArrayList arrayList13 = arrayList5;
-                                        final z09 z09Var3 = z09Var;
+                                        final yz8 yz8Var3 = yz8Var;
                                         hl.c3(new Runnable() { // from class: z29
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 byte b52 = b5;
-                                                z09 z09Var32 = z09Var3;
+                                                yz8 yz8Var32 = yz8Var3;
                                                 ArrayList arrayList112 = arrayList13;
                                                 ArrayList arrayList122 = arrayList12;
                                                 ArrayList arrayList132 = arrayList11;
@@ -487,7 +487,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        z09Var32.run();
+                                                        yz8Var32.run();
                                                         break;
                                                     default:
                                                         if (tLObject3 != null) {
@@ -501,7 +501,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        z09Var32.run();
+                                                        yz8Var32.run();
                                                         break;
                                                 }
                                             }
@@ -525,12 +525,12 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                         final ArrayList arrayList8 = arrayList4;
                                         final ArrayList arrayList9 = arrayList7;
                                         final ArrayList arrayList10 = arrayList5;
-                                        final z09 z09Var2 = z09Var;
+                                        final yz8 yz8Var2 = yz8Var;
                                         hl.c3(new Runnable() { // from class: z29
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 byte b52 = b42;
-                                                z09 z09Var32 = z09Var2;
+                                                yz8 yz8Var32 = yz8Var2;
                                                 ArrayList arrayList112 = arrayList10;
                                                 ArrayList arrayList122 = arrayList9;
                                                 ArrayList arrayList132 = arrayList8;
@@ -549,7 +549,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        z09Var32.run();
+                                                        yz8Var32.run();
                                                         break;
                                                     default:
                                                         if (tLObject3 != null) {
@@ -563,7 +563,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        z09Var32.run();
+                                                        yz8Var32.run();
                                                         break;
                                                 }
                                             }
@@ -575,12 +575,12 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                         final ArrayList arrayList11 = arrayList4;
                                         final ArrayList arrayList12 = arrayList7;
                                         final ArrayList arrayList13 = arrayList5;
-                                        final z09 z09Var3 = z09Var;
+                                        final yz8 yz8Var3 = yz8Var;
                                         hl.c3(new Runnable() { // from class: z29
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 byte b52 = b5;
-                                                z09 z09Var32 = z09Var3;
+                                                yz8 yz8Var32 = yz8Var3;
                                                 ArrayList arrayList112 = arrayList13;
                                                 ArrayList arrayList122 = arrayList12;
                                                 ArrayList arrayList132 = arrayList11;
@@ -599,7 +599,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        z09Var32.run();
+                                                        yz8Var32.run();
                                                         break;
                                                     default:
                                                         if (tLObject3 != null) {
@@ -613,7 +613,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        z09Var32.run();
+                                                        yz8Var32.run();
                                                         break;
                                                 }
                                             }
@@ -662,7 +662,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                 hl.c3(new da7(this.b, this.d, (Object) tLObject, this.c, (Object) tL_error, (byte) 16));
                 break;
             case 17:
-                hl.c3(new y09(this.b, (Object) tLObject, this.c, this.d, (byte) 9));
+                hl.c3(new z09(this.b, (Object) tLObject, this.c, this.d, (byte) 9));
                 break;
             case 18:
                 hxa hxaVar = (hxa) this.d;
@@ -676,7 +676,7 @@ public final /* synthetic */ class p87 implements RequestDelegate {
                 long j18 = this.c;
                 d0c d0cVar = (d0c) this.d;
                 qybVar.getClass();
-                hl.c3(new y09((Object) qybVar, (Object) tLObject, j18, (Object) d0cVar, (byte) 15));
+                hl.c3(new z09((Object) qybVar, (Object) tLObject, j18, (Object) d0cVar, (byte) 15));
                 break;
             case 20:
                 hl.c3(new da7(this.b, this.d, (Object) tLObject, (Object) tL_error, this.c, (byte) 23));

@@ -41,7 +41,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class ThemeActivity extends org.telegram.ui.ActionBar.e implements fn7 {
     public int A0;
@@ -144,7 +144,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e implements fn7 {
     public int z0;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     static class InnerAccentView extends View {
         public final Paint a;
         public ObjectAnimator b;
@@ -250,10 +250,10 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e implements fn7 {
 
     public static void H0(final int i, final vnb vnbVar, final pcc pccVar, final Context context) {
         final uc7 s1 = uc7.s1(i);
-        final String str = s1.k4.X2.f;
-        String str2 = s1.k4.Y2.f;
-        final int f = s1.k4.N0.f();
-        if (TextUtils.isEmpty(str) || !s1.k4.l.f) {
+        final String str = s1.l4.X2.f;
+        String str2 = s1.l4.Y2.f;
+        final int f = s1.l4.N0.f();
+        if (TextUtils.isEmpty(str) || !s1.l4.l.f) {
             pccVar.a(Boolean.TRUE);
             return;
         }
@@ -707,7 +707,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e implements fn7 {
             this.H0 = i18 + 4;
             this.L0 = i18 + 6;
             this.E = i18 + 5;
-            TL_account.contentSettings contentsettings = getMessagesController().b5;
+            TL_account.contentSettings contentsettings = getMessagesController().c5;
             if (contentsettings != null && contentsettings.sensitive_can_change) {
                 int i20 = this.L0;
                 this.L0 = i20 + 1;
@@ -1107,7 +1107,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e implements fn7 {
             this.s.e(3, R.drawable.msg_edit, ob6.M0(2131751184, "EditThemeColors"));
             this.s.e(1, R.drawable.msg_palette, ob6.M0(2131751674, "CreateNewThemeMenu"));
             this.s.e(4, R.drawable.msg_reset, ob6.M0(2131743801, "ThemeResetToDefaults"));
-            if (getMessagesController().b5 == null) {
+            if (getMessagesController().c5 == null) {
                 getMessagesController().R0(new sh9(this, (byte) 20));
             }
         } else {
@@ -1393,9 +1393,9 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e implements fn7 {
         presentFragment(new pqb(B0, false, 1, B0.i(false).a >= 100, this.f == 1));
     }
 
-    public final void y0(bcb bcbVar) {
+    public final void y0(hab habVar) {
         Activity parentActivity = getParentActivity();
-        H0(this.currentAccount, getResourceProvider(), new ku9(this, bcbVar, (byte) 17), parentActivity);
+        H0(this.currentAccount, getResourceProvider(), new ku9(this, habVar, (byte) 17), parentActivity);
     }
 
     public final void z0(Context context, View view, final int i, float f) {
@@ -1805,11 +1805,11 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e implements fn7 {
                 }
                 return;
             }
-            bcb bcbVar = new bcb((Object) this, (Object) view, (byte) 5);
+            hab habVar = new hab((Object) this, (Object) view, (byte) 6);
             AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, this.resourceProvider, context);
             alertDialog$Builder4.a.S = ob6.M0(2131751778, null);
             alertDialog$Builder4.a.U = ob6.M0(2131751779, null);
-            alertDialog$Builder4.j(ob6.M0(2131751782, null), new yw9(this, bcbVar, (byte) 9));
+            alertDialog$Builder4.j(ob6.M0(2131751782, null), new yw9(this, habVar, (byte) 9));
             alertDialog$Builder4.g(ob6.M0(2131752570, null), null);
             showDialog(alertDialog$Builder4.a);
             return;
@@ -1867,7 +1867,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e implements fn7 {
                 }
                 uo7 uo7Var2 = (uo7) view;
                 uc7 messagesController = getMessagesController();
-                TL_account.TL_webBrowserSettings tL_webBrowserSettings = messagesController.n5;
+                TL_account.TL_webBrowserSettings tL_webBrowserSettings = messagesController.o5;
                 if (tL_webBrowserSettings != null) {
                     messagesController.I5(!tL_webBrowserSettings.open_external_browser, tL_webBrowserSettings.display_close_button);
                 }

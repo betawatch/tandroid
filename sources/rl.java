@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class rl implements Runnable {
     public final /* synthetic */ byte a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class rl implements Runnable {
                 HashSet hashSet = new HashSet(arrayList);
                 if (tLObject instanceof Vector) {
                     ArrayList arrayList2 = ((Vector) tLObject).objects;
-                    jf7.Y(i).a.c(new ol(slVar, arrayList2, b2));
+                    kf7.a0(i).a.c(new ol(slVar, arrayList2, b2));
                     slVar.d(arrayList2);
                     byte b3 = 0;
                     for (int i2 = 0; i2 < arrayList2.size(); i2++) {

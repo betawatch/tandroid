@@ -27,7 +27,7 @@ import org.telegram.ui.Components.b0;
 import org.telegram.ui.Components.c0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class a39 implements Runnable {
     public final /* synthetic */ byte a;
@@ -243,10 +243,10 @@ public final /* synthetic */ class a39 implements Runnable {
             case 1:
                 e eVar = (e) this.c;
                 int i13 = this.b;
-                en9 en9Var = (en9) this.d;
+                dn9 dn9Var = (dn9) this.d;
                 d31.b0(eVar).c(ob6.M0(2131754481, null)).j();
                 uc7.s1(i13).n0(false);
-                hl.c3(en9Var);
+                hl.c3(dn9Var);
                 return;
             case 2:
                 vn1 vn1Var = (vn1) this.c;
@@ -379,7 +379,7 @@ public final /* synthetic */ class a39 implements Runnable {
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
                     uc7.s1(i23).j4(messages_messages.users, false);
                     uc7.s1(i23).c4(messages_messages.chats, false);
-                    jf7.Y(i23).j1(messages_messages.users, messages_messages.chats, true, true);
+                    kf7.a0(i23).n1(messages_messages.users, messages_messages.chats, true, true);
                     for (int i24 = 0; i24 < messages_messages.messages.size(); i24++) {
                         r47 r47Var2 = new r47(i23, messages_messages.messages.get(i24), false, true);
                         if (r47Var2.z2()) {
@@ -495,7 +495,7 @@ public final /* synthetic */ class a39 implements Runnable {
                 f fVar = (f) this.d;
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase = jf7.Y(r1).b;
+                        SQLiteDatabase sQLiteDatabase = kf7.a0(r1).b;
                         if (sQLiteDatabase != null) {
                             sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT data FROM emoji_groups WHERE type = ?", num);
                             try {
@@ -550,7 +550,7 @@ public final /* synthetic */ class a39 implements Runnable {
                 TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) this.c;
                 Integer num2 = (Integer) this.d;
                 try {
-                    SQLiteDatabase sQLiteDatabase2 = jf7.Y(i29).b;
+                    SQLiteDatabase sQLiteDatabase2 = kf7.a0(i29).b;
                     if (sQLiteDatabase2 != null) {
                         if (tL_messages_emojiGroups == null) {
                             sQLiteDatabase2.executeFast("DELETE FROM emoji_groups WHERE type = " + num2).stepThis().dispose();
@@ -613,21 +613,21 @@ public final /* synthetic */ class a39 implements Runnable {
                 zo2Var.a(null);
                 return;
             case 20:
-                hl.c3(new mb4(this.b, ((jf7) this.c).i0(new ArrayList((HashSet) this.d))));
+                hl.c3(new mb4(this.b, ((kf7) this.c).k0(new ArrayList((HashSet) this.d))));
                 return;
             case 21:
                 ccb ccbVar = (ccb) this.c;
                 ArrayList arrayList9 = (ArrayList) this.d;
                 int i32 = this.b;
                 lcb lcbVar = ccbVar.d;
-                acb acbVar = lcbVar.o0;
+                bcb bcbVar = lcbVar.o0;
                 int i33 = lcbVar.h;
-                acbVar.B0 = arrayList9;
-                acbVar.z0 = i33;
-                acbVar.setAdapter(null);
-                acbVar.setAdapter(acbVar.A0);
-                acbVar.setCurrentItem(i32);
-                acbVar.D0 = true;
+                bcbVar.B0 = arrayList9;
+                bcbVar.z0 = i33;
+                bcbVar.setAdapter(null);
+                bcbVar.setAdapter(bcbVar.A0);
+                bcbVar.setCurrentItem(i32);
+                bcbVar.D0 = true;
                 return;
             case 22:
                 zeb zebVar = (zeb) this.c;
@@ -642,7 +642,7 @@ public final /* synthetic */ class a39 implements Runnable {
                 return;
             case 23:
                 dkb dkbVar = (dkb) this.c;
-                jf7 jf7Var = (jf7) this.d;
+                kf7 kf7Var = (kf7) this.d;
                 int i35 = this.b;
                 ArrayList arrayList11 = new ArrayList();
                 zh6 zh6Var3 = new zh6();
@@ -650,7 +650,7 @@ public final /* synthetic */ class a39 implements Runnable {
                 try {
                     ArrayList arrayList12 = new ArrayList();
                     ArrayList arrayList13 = new ArrayList();
-                    SQLiteDatabase sQLiteDatabase3 = jf7Var.b;
+                    SQLiteDatabase sQLiteDatabase3 = kf7Var.b;
                     Locale locale = Locale.US;
                     SQLiteCursor queryFinalized = sQLiteDatabase3.queryFinalized("SELECT DISTINCT uid FROM media_v4 WHERE uid != 0 AND mid > 0 AND type = 4", new Object[0]);
                     while (queryFinalized.next()) {
@@ -667,7 +667,7 @@ public final /* synthetic */ class a39 implements Runnable {
                     queryFinalized.dispose();
                     if (!arrayList12.isEmpty()) {
                         ArrayList arrayList14 = new ArrayList();
-                        jf7Var.k0(arrayList12, arrayList14, false);
+                        kf7Var.m0(arrayList12, arrayList14, false);
                         int size6 = arrayList14.size();
                         int i36 = 0;
                         while (i36 < size6) {
@@ -679,7 +679,7 @@ public final /* synthetic */ class a39 implements Runnable {
                     }
                     if (!arrayList13.isEmpty()) {
                         ArrayList arrayList15 = new ArrayList();
-                        jf7Var.P(TextUtils.join(",", arrayList13), arrayList15);
+                        kf7Var.R(TextUtils.join(",", arrayList13), arrayList15);
                         int size7 = arrayList15.size();
                         while (i7 < size7) {
                             Object obj3 = arrayList15.get(i7);

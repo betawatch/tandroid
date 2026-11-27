@@ -41,7 +41,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class g92 extends e implements yn5, fn7 {
     public TLRPC.TL_chatBannedRights A0;
@@ -54,7 +54,7 @@ public class g92 extends e implements yn5, fn7 {
     public boolean F0;
     public LinearLayout G;
     public boolean G0;
-    public rca H;
+    public sca H;
     public boolean H0;
     public skb I;
     public boolean I0;
@@ -951,9 +951,9 @@ public class g92 extends e implements yn5, fn7 {
         }
         this.F.setOnEditorActionListener(new j(this, (byte) 7));
         this.F.addTextChangedListener(new fi1((byte) 1));
-        rca rcaVar = new rca(context);
-        this.H = rcaVar;
-        u1Var.addView(rcaVar, tre.o(-1, -2));
+        sca scaVar = new sca(context);
+        this.H = scaVar;
+        u1Var.addView(scaVar, tre.o(-1, -2));
         LinearLayout linearLayout5 = new LinearLayout(context);
         this.G = linearLayout5;
         linearLayout5.setOrientation(1);
@@ -2216,7 +2216,7 @@ public class g92 extends e implements yn5, fn7 {
                             switch (b10) {
                                 case 0:
                                     if (tL_premium_boostsStatus != null) {
-                                        g92Var4.N.getCheckBox().setIcon(tL_premium_boostsStatus.level < g92Var4.getMessagesController().k4.c2.f() ? R.drawable.permission_locked : 0);
+                                        g92Var4.N.getCheckBox().setIcon(tL_premium_boostsStatus.level < g92Var4.getMessagesController().l4.c2.f() ? R.drawable.permission_locked : 0);
                                         break;
                                     }
                                     break;
@@ -2258,7 +2258,7 @@ public class g92 extends e implements yn5, fn7 {
                             switch (b102) {
                                 case 0:
                                     if (tL_premium_boostsStatus != null) {
-                                        g92Var4.N.getCheckBox().setIcon(tL_premium_boostsStatus.level < g92Var4.getMessagesController().k4.c2.f() ? R.drawable.permission_locked : 0);
+                                        g92Var4.N.getCheckBox().setIcon(tL_premium_boostsStatus.level < g92Var4.getMessagesController().l4.c2.f() ? R.drawable.permission_locked : 0);
                                         break;
                                     }
                                     break;
@@ -5046,7 +5046,7 @@ public class g92 extends e implements yn5, fn7 {
                     if (skbVar5 != null) {
                         g92Var.S.addView(skbVar5, tre.o(i8, i7));
                     }
-                    if (g92Var.a0 != null && g92Var.getMessagesController().k4.K2.f() && xc2.V(g92Var.x0)) {
+                    if (g92Var.a0 != null && g92Var.getMessagesController().l4.K2.f() && xc2.V(g92Var.x0)) {
                         g92Var.a0.setVisibility(0);
                     }
                     skbVar6 = g92Var.Z;
@@ -7286,7 +7286,7 @@ public class g92 extends e implements yn5, fn7 {
                 }
                 skbVar28.w(format, z2);
             }
-            if (!g92Var.getMessagesController().k4.J2.f()) {
+            if (!g92Var.getMessagesController().l4.J2.f()) {
                 g92Var.o0.setVisibility(8);
             }
             skb skbVar29 = new skb(context2);
@@ -8022,7 +8022,7 @@ public class g92 extends e implements yn5, fn7 {
                 g92Var.S.setVisibility(8);
                 g92Var.H.setVisibility(8);
             }
-            u1Var.addView(new rca(context2), tre.o(-1, -2));
+            u1Var.addView(new sca(context2), tre.o(-1, -2));
         } else if (g92Var.D0 != null) {
             g92Var.s0 = new ilb(12, g92Var.resourceProvider, context2);
             String L03 = ob6.L0(2131753036);
@@ -8809,7 +8809,7 @@ public class g92 extends e implements yn5, fn7 {
                     }
                 }
             });
-            u1Var.addView(new rca(context2), tre.o(-1, i5));
+            u1Var.addView(new sca(context2), tre.o(-1, i5));
         }
         UndoView undoView = new UndoView(context2);
         g92Var2.c = undoView;
@@ -8835,7 +8835,7 @@ public class g92 extends e implements yn5, fn7 {
 
     /* JADX WARN: Code restructure failed: missing block: B:33:0x0056, code lost:
     
-        if (java.lang.Math.max(r13 == null ? 0 : r13.participants_count, r12.x0.participants_count) >= getMessagesController().k4.w1.f()) goto L26;
+        if (java.lang.Math.max(r13 == null ? 0 : r13.participants_count, r12.x0.participants_count) >= getMessagesController().l4.w1.f()) goto L26;
      */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006b  */
     @Override // fn7
@@ -8916,7 +8916,7 @@ public class g92 extends e implements yn5, fn7 {
         }
         if (i == 2) {
             int intValue = ((Integer) objArr[0]).intValue();
-            int i5 = uc7.r5;
+            int i5 = uc7.s5;
             if ((intValue & 2) != 0) {
                 o0();
             }
@@ -9046,7 +9046,7 @@ public class g92 extends e implements yn5, fn7 {
         wh1 wh1Var = new wh1(-this.x0.id);
         wh1Var.m0 = this;
         presentFragment(wh1Var);
-        uc7.s1(this.currentAccount).X3.edit().putInt("boostingappearance", uc7.s1(this.currentAccount).X3.getInt("boostingappearance", 0) + 1).apply();
+        uc7.s1(this.currentAccount).Y3.edit().putInt("boostingappearance", uc7.s1(this.currentAccount).Y3.getInt("boostingappearance", 0) + 1).apply();
     }
 
     @Override // yn5
@@ -9073,7 +9073,7 @@ public class g92 extends e implements yn5, fn7 {
     public final void g0(FrameLayout frameLayout, View view) {
         if (!this.G0) {
             TLRPC.ChatFull chatFull = this.y0;
-            d31.b0(this).Q(R.raw.topics, 36, (chatFull == null || chatFull.linked_chat_id == 0) ? hl.S2(ob6.G(getMessagesController().k4.w1.f(), "ChannelTopicsForbidden", new Object[0])) : hl.S2(ob6.M0(2131752246, "ChannelTopicsDiscussionForbidden"))).j();
+            d31.b0(this).Q(R.raw.topics, 36, (chatFull == null || chatFull.linked_chat_id == 0) ? hl.S2(ob6.G(getMessagesController().l4.w1.f(), "ChannelTopicsForbidden", new Object[0])) : hl.S2(ob6.M0(2131752246, "ChannelTopicsDiscussionForbidden"))).j();
             try {
                 frameLayout.performHapticFeedback(3);
                 return;
@@ -9182,7 +9182,7 @@ public class g92 extends e implements yn5, fn7 {
     public final /* synthetic */ void j0() {
         this.P0 = true;
         jn7 f = jn7.f(this.currentAccount);
-        int i = uc7.r5;
+        int i = uc7.s5;
         f.k(2, 2);
     }
 
@@ -9398,7 +9398,7 @@ public class g92 extends e implements yn5, fn7 {
         if (PhotoViewer.C0() && PhotoViewer.q0().V0()) {
             PhotoViewer.q0().r();
         }
-        if (this.a0 != null && getMessagesController().k4.K2.f && xc2.V(this.x0)) {
+        if (this.a0 != null && getMessagesController().l4.K2.f && xc2.V(this.x0)) {
             this.a0.setVisibility(0);
         }
     }
@@ -9435,7 +9435,7 @@ public class g92 extends e implements yn5, fn7 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0127, code lost:
     
-        if (java.lang.Math.max(r5 == null ? 0 : r5.participants_count, r1.participants_count) >= getMessagesController().k4.w1.f()) goto L44;
+        if (java.lang.Math.max(r5 == null ? 0 : r5.participants_count, r1.participants_count) >= getMessagesController().l4.w1.f()) goto L44;
      */
     /* JADX WARN: Code restructure failed: missing block: B:32:0x0131, code lost:
     
@@ -9457,16 +9457,16 @@ public class g92 extends e implements yn5, fn7 {
             TLRPC.User X1 = j2 == 0 ? null : getMessagesController().X1(Long.valueOf(j2));
             this.D0 = X1;
             if (X1 == null) {
-                TLRPC.User h0 = jf7.Y(this.currentAccount).h0(j2);
-                this.D0 = h0;
-                if (h0 != null) {
+                TLRPC.User j0 = kf7.a0(this.currentAccount).j0(j2);
+                this.D0 = j0;
+                if (j0 != null) {
                     getMessagesController().i4(this.D0, true, false);
                     if (this.E0 == null) {
                         HashSet hashSet = new HashSet();
                         hashSet.add(Long.valueOf(j2));
-                        ArrayList I0 = jf7.Y(this.currentAccount).I0(hashSet);
-                        if (!I0.isEmpty()) {
-                            this.E0 = (TLRPC.UserFull) I0.get(0);
+                        ArrayList L0 = kf7.a0(this.currentAccount).L0(hashSet);
+                        if (!L0.isEmpty()) {
+                            this.E0 = (TLRPC.UserFull) L0.get(0);
                         }
                     }
                 }
@@ -9489,13 +9489,13 @@ public class g92 extends e implements yn5, fn7 {
         TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(this.w0));
         this.x0 = M0;
         if (M0 == null) {
-            TLRPC.Chat O = jf7.Y(this.currentAccount).O(this.w0);
-            this.x0 = O;
-            if (O != null) {
+            TLRPC.Chat Q = kf7.a0(this.currentAccount).Q(this.w0);
+            this.x0 = Q;
+            if (Q != null) {
                 getMessagesController().a4(this.x0, true);
                 if (this.y0 == null) {
-                    TLRPC.ChatFull C0 = jf7.Y(this.currentAccount).C0(this.w0, xc2.T(this.x0), new CountDownLatch(1), false, false, 0);
-                    this.y0 = C0;
+                    TLRPC.ChatFull F0 = kf7.a0(this.currentAccount).F0(this.w0, xc2.T(this.x0), new CountDownLatch(1), false, false, 0);
+                    this.y0 = F0;
                 }
             }
             return false;
@@ -9705,7 +9705,7 @@ public class g92 extends e implements yn5, fn7 {
                 }
             }
             arrayList.addAll(arrayList2);
-            if (this.a0 != null && getMessagesController().k4.K2.f && xc2.V(this.x0)) {
+            if (this.a0 != null && getMessagesController().l4.K2.f && xc2.V(this.x0)) {
                 this.a0.setVisibility(0);
             }
         }
@@ -9861,7 +9861,7 @@ public class g92 extends e implements yn5, fn7 {
                     j38Var.s = i5;
                     v0 = aob.v0(i5, vnbVar);
                 } else {
-                    lc7 lc7Var = uc7.s1(yac.t0).E3;
+                    lc7 lc7Var = uc7.s1(yac.t0).F3;
                     kc7 d = lc7Var != null ? lc7Var.d(F) : null;
                     if (d != null) {
                         j38Var.s = -1;

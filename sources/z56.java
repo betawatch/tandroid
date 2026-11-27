@@ -40,7 +40,7 @@ import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class z56 implements Runnable {
     public final /* synthetic */ byte a;
@@ -295,28 +295,28 @@ public final /* synthetic */ class z56 implements Runnable {
                 ((lcb) this.b).L(ProfileActivity.Q2(((m96) this.c).c));
                 return;
             case 6:
-                b58 b58Var = (b58) this.b;
+                c58 c58Var = (c58) this.b;
                 hl.g(((h96) this.c).w);
                 if (hl.C3()) {
-                    Toast.makeText(b58Var.getContext(), ob6.M0(2131743847, null), 0).show();
+                    Toast.makeText(c58Var.getContext(), ob6.M0(2131743847, null), 0).show();
                     return;
                 }
                 return;
             case 7:
-                b58 b58Var2 = (b58) this.b;
+                c58 c58Var2 = (c58) this.b;
                 m96 m96Var = (m96) this.c;
                 long j7 = m96Var.c;
-                o68 o68Var = b58Var2.j0;
-                if (j7 != yac.h(o68Var.m2).e() && ((w96Var = b58Var2.i0.B0) == null || j7 != wf3.n(w96Var.l()))) {
+                o68 o68Var = c58Var2.j0;
+                if (j7 != yac.h(o68Var.m2).e() && ((w96Var = c58Var2.i0.B0) == null || j7 != wf3.n(w96Var.l()))) {
                     if (o68Var.x3 != null) {
                         for (int i18 = 0; i18 < o68Var.x3.peers.size(); i18++) {
                             if (j7 != wf3.n(o68Var.x3.peers.get(i18).peer)) {
                             }
                         }
                     }
-                    Context context = b58Var2.getContext();
+                    Context context = c58Var2.getContext();
                     long j8 = m96Var.c;
-                    qo0 qo0Var = new qo0(b58Var2, m96Var, b);
+                    qo0 qo0Var = new qo0(c58Var2, m96Var, b);
                     w53 w53Var = new w53(b3);
                     nx0 nx0Var = new nx0(1, (vnb) w53Var, context, false);
                     nx0Var.J();
@@ -377,10 +377,10 @@ public final /* synthetic */ class z56 implements Runnable {
                     return;
                 }
                 TL_phone.deleteGroupCallMessages deletegroupcallmessages = new TL_phone.deleteGroupCallMessages();
-                deletegroupcallmessages.call = b58Var2.P;
+                deletegroupcallmessages.call = c58Var2.P;
                 deletegroupcallmessages.messages.add(Integer.valueOf(m96Var.a));
-                ConnectionsManager.getInstance(b58Var2.O).sendRequest(deletegroupcallmessages, null);
-                b58Var2.b(m96Var.a);
+                ConnectionsManager.getInstance(c58Var2.O).sendRequest(deletegroupcallmessages, null);
+                c58Var2.b(m96Var.a);
                 return;
             case 8:
                 w96 w96Var2 = (w96) this.b;
@@ -609,7 +609,7 @@ public final /* synthetic */ class z56 implements Runnable {
                 TLRPC.ChatFull chatFull = ck6Var2.d;
                 if (chatFull != null) {
                     chatFull.invitesCount++;
-                    ck6Var2.getMessagesStorage().t1(ck6Var2.d.invitesCount, ck6Var2.n);
+                    ck6Var2.getMessagesStorage().x1(ck6Var2.d.invitesCount, ck6Var2.n);
                 }
                 ck6Var2.m0(k02);
                 return;

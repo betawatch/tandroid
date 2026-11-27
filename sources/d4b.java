@@ -16,7 +16,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class d4b implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -148,7 +148,7 @@ public final /* synthetic */ class d4b implements View.OnClickListener {
                         for (int i3 = 0; i3 < nd5Var.d.getChildCount(); i3++) {
                             View childAt = nd5Var.d.getChildAt(i3);
                             if (nd5Var.d.U(childAt).b() == nd5Var.F + i2) {
-                                ((p3b) childAt).b(false, true);
+                                ((q3b) childAt).b(false, true);
                             }
                         }
                     }
@@ -159,7 +159,7 @@ public final /* synthetic */ class d4b implements View.OnClickListener {
                         for (int i4 = 0; i4 < nd5Var.d.getChildCount(); i4++) {
                             View childAt2 = nd5Var.d.getChildAt(i4);
                             if (nd5Var.d.U(childAt2).b() == nd5Var.F + nd5Var.n) {
-                                ((p3b) childAt2).b(true, true);
+                                ((q3b) childAt2).b(true, true);
                             }
                         }
                     }

@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class bcc extends l69 {
     public final Context c;
@@ -365,41 +365,41 @@ public final class bcc extends l69 {
                 } else if (usersSelectActivity.K) {
                     if (i == 1) {
                         M0 = ob6.M0(2131750756, null);
-                        int i7 = uc7.r5;
+                        int i7 = uc7.s5;
                         str2 = "contacts";
                         i3 = 1;
                     } else if (i == 2) {
                         M0 = ob6.M0(2131750683, null);
-                        int i8 = uc7.r5;
+                        int i8 = uc7.s5;
                     } else if (i == 3) {
                         M0 = ob6.M0(2131750739, null);
-                        int i9 = uc7.r5;
+                        int i9 = uc7.s5;
                         str2 = "groups";
                         i3 = 4;
                     } else if (i == 4) {
                         M0 = ob6.M0(2131750765, null);
-                        int i10 = uc7.r5;
+                        int i10 = uc7.s5;
                         str2 = "channels";
                         i3 = 8;
                     } else {
                         M0 = ob6.M0(2131750766, null);
-                        int i11 = uc7.r5;
+                        int i11 = uc7.s5;
                         str2 = "bots";
                         i3 = 16;
                     }
                 } else if (i == 1) {
                     M0 = ob6.M0(2131750701, null);
-                    int i12 = uc7.r5;
+                    int i12 = uc7.s5;
                     str2 = "muted";
                     i3 = 32;
                 } else if (i == 2) {
                     M0 = ob6.M0(2131750682, null);
-                    int i13 = uc7.r5;
+                    int i13 = uc7.s5;
                     str2 = "read";
                     i3 = 64;
                 } else {
                     M0 = ob6.M0(2131750769, null);
-                    int i14 = uc7.r5;
+                    int i14 = uc7.s5;
                     str2 = "archived";
                     i3 = 128;
                 }

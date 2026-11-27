@@ -11,10 +11,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class ch9 {
-    public final k09 a;
+    public final l09 a;
     public boolean e;
     public boolean f;
     public final ArrayDeque b = new ArrayDeque();
@@ -22,8 +22,8 @@ public final class ch9 {
     public final v59 g = new v59(this, 8);
     public bh9 d = b();
 
-    public ch9(k09 k09Var) {
-        this.a = k09Var;
+    public ch9(l09 l09Var) {
+        this.a = l09Var;
     }
 
     public static void e(TL_iv.PageBlock pageBlock) {
@@ -207,8 +207,8 @@ public final class ch9 {
             }
         }
         zg9 zg9Var = bh9Var.b;
-        k09 k09Var = this.a;
-        pi9 pi9Var = (pi9) k09Var.b;
+        l09 l09Var = this.a;
+        pi9 pi9Var = (pi9) l09Var.b;
         pi9Var.v3.e(false);
         ArrayList arrayList3 = pi9Var.t3;
         arrayList3.clear();
@@ -216,11 +216,11 @@ public final class ch9 {
         pi9Var.u4();
         pi9Var.g3.O(false);
         if (zg9Var.a >= 0) {
-            pi9Var.post(new z09(pi9Var, zg9Var, (byte) 20));
+            pi9Var.post(new yz8(pi9Var, zg9Var, (byte) 21));
         }
         pi9Var.p3.onContentChanged();
         this.f = false;
-        ((pi9) k09Var.b).p3.R();
+        ((pi9) l09Var.b).p3.R();
         return;
         pageBlock = new TL_iv.pageBlockParagraph();
         pageBlock.text = new TL_iv.textEmpty();
@@ -247,8 +247,8 @@ public final class ch9 {
         zg9 zg9Var;
         jf9 jf9Var;
         ArrayList arrayList;
-        k09 k09Var = this.a;
-        ArrayList arrayList2 = ((pi9) k09Var.b).t3;
+        l09 l09Var = this.a;
+        ArrayList arrayList2 = ((pi9) l09Var.b).t3;
         HashMap hashMap = new HashMap();
         bh9 bh9Var = this.d;
         if (bh9Var != null) {
@@ -292,7 +292,7 @@ public final class ch9 {
             i++;
             arrayList2 = arrayList;
         }
-        View findFocus = ((pi9) k09Var.b).findFocus();
+        View findFocus = ((pi9) l09Var.b).findFocus();
         if (findFocus instanceof dg9) {
             ?? r1 = (dg9) findFocus;
             int selectionStart = r1.getSelectionStart();

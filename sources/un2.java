@@ -3,16 +3,16 @@
 import android.view.View;
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class un2 implements ncc, occ, nr7, bf7 {
+public final /* synthetic */ class un2 implements ncc, occ, nr7, cf7 {
     public final /* synthetic */ xn2 a;
 
     public /* synthetic */ un2(xn2 xn2Var) {
         this.a = xn2Var;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         xn2 xn2Var = this.a;
         xn2Var.finishFragment();

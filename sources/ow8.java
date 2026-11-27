@@ -2,7 +2,7 @@
 
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ow8 {
     public static final ow8 c = new ow8();
@@ -38,9 +38,9 @@ public final class ow8 {
                 w = new r67(t9cVar, w74Var2, a.a);
             }
         } else if (ju4.class.isAssignableFrom(cls)) {
-            w = v57.w(a, tl7.b, i76.b, iu9.c, ik8.F(a.a()) != 1 ? x74.a : null, ik6.b);
+            w = v57.w(a, ul7.b, i76.b, iu9.c, ik8.F(a.a()) != 1 ? x74.a : null, ik6.b);
         } else {
-            sl7 sl7Var = tl7.a;
+            tl7 tl7Var = ul7.a;
             h76 h76Var = i76.a;
             t9c t9cVar2 = iu9.b;
             if (ik8.F(a.a()) != 1) {
@@ -53,7 +53,7 @@ public final class ow8 {
             } else {
                 w74Var = null;
             }
-            w = v57.w(a, sl7Var, h76Var, t9cVar2, w74Var, ik6.a);
+            w = v57.w(a, tl7Var, h76Var, t9cVar2, w74Var, ik6.a);
         }
         fu9 fu9Var2 = (fu9) concurrentHashMap.putIfAbsent(cls, w);
         return fu9Var2 != null ? fu9Var2 : w;

@@ -22,7 +22,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class qn8 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -39,13 +39,13 @@ public final /* synthetic */ class qn8 implements RequestDelegate {
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = 26;
         r47 r47Var = null;
-        r2 = null;
-        r2 = null;
+        r1 = null;
+        r1 = null;
         ok1 ok1Var = null;
         r47Var = null;
         char c = 1;
+        byte b = 26;
         switch (this.a) {
             case 0:
                 PrivacySettingsActivity privacySettingsActivity = (PrivacySettingsActivity) this.b;
@@ -160,7 +160,7 @@ public final /* synthetic */ class qn8 implements RequestDelegate {
                             hl.c3(new jr9((Object) wuaVar2, (Object) l01Var, (Object) tL_error, (byte) 23));
                             break;
                         } else {
-                            hl.c3(new cq6((Object) wuaVar2, (Object) l01Var, Long.parseLong(tL_error.text.substring(26)), (byte) 26));
+                            hl.c3(new cq6((Object) wuaVar2, (Object) l01Var, Long.parseLong(tL_error.text.substring(26)), (byte) 27));
                             break;
                         }
                     }
@@ -219,7 +219,7 @@ public final /* synthetic */ class qn8 implements RequestDelegate {
                 byte[] bArr = (byte[]) this.c;
                 byte[] bArr2 = (byte[]) this.d;
                 if (tL_error != null) {
-                    hl.c3(new bcb((Object) twoStepVerificationActivity, (Object) tL_error, (byte) 25));
+                    hl.c3(new hab(twoStepVerificationActivity, tL_error, b));
                     break;
                 } else {
                     Utilities.e.c(new kta((Object) twoStepVerificationActivity, (Object) bArr, (Object) tLObject, (Object) bArr2, (byte) 18));

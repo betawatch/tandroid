@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class o96 extends FrameLayout implements fn7 {
     public boolean E;
@@ -70,7 +70,7 @@ public abstract class o96 extends FrameLayout implements fn7 {
     public long x;
     public int y;
 
-    public o96(Context context, lcb lcbVar, zbb zbbVar, View view, FrameLayout frameLayout) {
+    public o96(Context context, lcb lcbVar, acb acbVar, View view, FrameLayout frameLayout) {
         super(context);
         this.r = new ArrayList();
         this.s = new ArrayList();
@@ -82,35 +82,35 @@ public abstract class o96 extends FrameLayout implements fn7 {
         int i = yac.t0;
         this.O = i;
         this.U = new ArrayList();
-        final b58 b58Var = (b58) this;
-        this.W = new a96(b58Var, b);
+        final c58 c58Var = (c58) this;
+        this.W = new a96(c58Var, b);
         byte b2 = 2;
-        this.e0 = new a96(b58Var, b2);
+        this.e0 = new a96(c58Var, b2);
         final byte b3 = 0;
         this.g0 = false;
-        this.h0 = new a96(b58Var, (byte) 3);
+        this.h0 = new a96(c58Var, (byte) 3);
         this.a = view;
         this.b = frameLayout;
         view.setAlpha(0.5f);
-        gu guVar = new gu((byte) 24, context, (Object) b58Var);
+        gu guVar = new gu((byte) 24, context, (Object) c58Var);
         this.c = guVar;
         guVar.setWillNotDraw(false);
         x46 x46Var = new x46(1, true);
         this.d = x46Var;
         guVar.setLayoutManager(x46Var);
-        wb wbVar = new wb(b58Var, guVar, context, i, new icc() { // from class: y86
+        wb wbVar = new wb(c58Var, guVar, context, i, new icc() { // from class: y86
             @Override // icc
             public final void a(Object obj, Object obj2) {
                 byte b4 = b3;
                 int i2 = 0;
-                b58 b58Var2 = b58Var;
+                c58 c58Var2 = c58Var;
                 ArrayList arrayList = (ArrayList) obj;
                 switch (b4) {
                     case 0:
-                        ArrayList arrayList2 = b58Var2.r;
-                        w96 w96Var = b58Var2.Q;
+                        ArrayList arrayList2 = c58Var2.r;
+                        w96 w96Var = c58Var2.Q;
                         long m = w96Var == null ? 0L : w96Var.m();
-                        b58Var2.I = m;
+                        c58Var2.I = m;
                         while (i2 < arrayList2.size()) {
                             m96 m96Var = (m96) arrayList2.get(i2);
                             if (m96Var.b || !m96Var.e || m96Var.g >= m) {
@@ -123,7 +123,7 @@ public abstract class o96 extends FrameLayout implements fn7 {
                         }
                         break;
                     default:
-                        ArrayList arrayList3 = b58Var2.s;
+                        ArrayList arrayList3 = c58Var2.s;
                         while (i2 < arrayList3.size()) {
                             n96 n96Var = (n96) arrayList3.get(i2);
                             int i4 = k96.b;
@@ -142,8 +142,8 @@ public abstract class o96 extends FrameLayout implements fn7 {
         guVar.setPadding(hl.L(8.0f), hl.L(7.5f), hl.L(8.0f), hl.L(7.5f));
         guVar.setClipToPadding(false);
         addView(guVar, tre.d(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 34.0f));
-        guVar.setOnItemClickListener(new jr(b58Var, zbbVar, lcbVar, b2));
-        c96 c96Var = new c96(b58Var);
+        guVar.setOnItemClickListener(new jr(c58Var, acbVar, lcbVar, b2));
+        c96 c96Var = new c96(c58Var);
         c96Var.m = false;
         c96Var.C = false;
         k43 k43Var = k43.h;
@@ -156,7 +156,7 @@ public abstract class o96 extends FrameLayout implements fn7 {
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         imageView.setRotation(90.0f);
         imageView.setBackground(aob.f0(1090519039, 1, -1));
-        imageView.setOnClickListener(new sa5(b58Var, (byte) 19));
+        imageView.setOnClickListener(new sa5(c58Var, (byte) 19));
         qob qobVar = new qob(context, null, (byte) 8);
         this.f = qobVar;
         qobVar.setWillNotDraw(false);
@@ -168,14 +168,14 @@ public abstract class o96 extends FrameLayout implements fn7 {
             public final void a(Object obj, Object obj2) {
                 byte b4 = b;
                 int i2 = 0;
-                b58 b58Var2 = b58Var;
+                c58 c58Var2 = c58Var;
                 ArrayList arrayList = (ArrayList) obj;
                 switch (b4) {
                     case 0:
-                        ArrayList arrayList2 = b58Var2.r;
-                        w96 w96Var = b58Var2.Q;
+                        ArrayList arrayList2 = c58Var2.r;
+                        w96 w96Var = c58Var2.Q;
                         long m = w96Var == null ? 0L : w96Var.m();
-                        b58Var2.I = m;
+                        c58Var2.I = m;
                         while (i2 < arrayList2.size()) {
                             m96 m96Var = (m96) arrayList2.get(i2);
                             if (m96Var.b || !m96Var.e || m96Var.g >= m) {
@@ -188,7 +188,7 @@ public abstract class o96 extends FrameLayout implements fn7 {
                         }
                         break;
                     default:
-                        ArrayList arrayList3 = b58Var2.s;
+                        ArrayList arrayList3 = c58Var2.s;
                         while (i2 < arrayList3.size()) {
                             n96 n96Var = (n96) arrayList3.get(i2);
                             int i4 = k96.b;
@@ -207,7 +207,7 @@ public abstract class o96 extends FrameLayout implements fn7 {
         qobVar.setPadding(hl.L(8.0f), 0, hl.L(8.0f), 0);
         qobVar.setClipToPadding(false);
         addView(qobVar, tre.d(-1, 26.0f, 87, 0.0f, 0.0f, 0.0f, 9.66f));
-        qobVar.setOnItemClickListener(new z86(b58Var));
+        qobVar.setOnItemClickListener(new z86(c58Var));
         d96 d96Var = new d96();
         d96Var.m = false;
         d96Var.C = false;
@@ -258,7 +258,7 @@ public abstract class o96 extends FrameLayout implements fn7 {
     public final void a() {
         this.S = 0L;
         g(getDefaultPeerId());
-        cv7 cv7Var = ((b58) this).j0.J1;
+        cv7 cv7Var = ((c58) this).j0.J1;
         bv7 bv7Var = cv7Var.a;
         bv7Var.c(cv7Var);
         bv7Var.b();
@@ -527,9 +527,9 @@ public abstract class o96 extends FrameLayout implements fn7 {
         }
         w53 w53Var = new w53((byte) 1);
         e0b e0bVar = new e0b(getContext(), this.O, this.N, null, null, arrayList, !z, true, e, w53Var);
-        b58 b58Var = (b58) this;
-        e0bVar.J1 = b58Var;
-        e0bVar.L1 = new z86(b58Var);
+        c58 c58Var = (c58) this;
+        e0bVar.J1 = c58Var;
+        e0bVar.L1 = new z86(c58Var);
         e0bVar.show();
     }
 
@@ -632,10 +632,10 @@ public abstract class o96 extends FrameLayout implements fn7 {
                     }
                 }
                 invalidate();
-                b58 b58Var = (b58) this;
-                dn2 dn2Var = b58Var.j0.H1;
+                c58 c58Var = (c58) this;
+                dn2 dn2Var = c58Var.j0.H1;
                 if (dn2Var != null) {
-                    dn2Var.setCount(b58Var.getUnreadMessagesCount());
+                    dn2Var.setCount(c58Var.getUnreadMessagesCount());
                 }
                 if (!z2 && i2 > 0 && m96Var.g > j3) {
                     int i8 = 0;
@@ -849,7 +849,7 @@ public abstract class o96 extends FrameLayout implements fn7 {
             t21 t21Var = new t21(x53Var, getContext(), true, false);
             this.c0 = t21Var;
             t21Var.e(ob6.M0(2131744680, null));
-            this.c0.b = new a96((b58) this, b);
+            this.c0.b = new a96((c58) this, b);
             o21 o21Var = new o21(getContext(), x53Var);
             this.d0 = o21Var;
             o21Var.b = 5000L;
@@ -872,7 +872,7 @@ public abstract class o96 extends FrameLayout implements fn7 {
         hl.r(a96Var);
         hl.d3(a96Var, 5000L);
         long j = this.S;
-        cv7 cv7Var = ((b58) this).j0.J1;
+        cv7 cv7Var = ((c58) this).j0.J1;
         bv7 bv7Var = cv7Var.a;
         bv7Var.c(cv7Var);
         if (bv7Var.s) {

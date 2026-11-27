@@ -5,19 +5,19 @@ import android.graphics.Canvas;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class w6b extends FrameLayout {
     public o68 a;
     public long b;
     public ArrayList c;
     public boolean d;
-    public final /* synthetic */ acb e;
+    public final /* synthetic */ bcb e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w6b(acb acbVar, Context context) {
+    public w6b(bcb bcbVar, Context context) {
         super(context);
-        this.e = acbVar;
+        this.e = bcbVar;
     }
 
     public final void a(boolean z) {

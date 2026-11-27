@@ -5,7 +5,7 @@ import j$.util.Objects;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class yja {
     public final bba a;
@@ -153,7 +153,7 @@ public final class yja {
                 if (i != 0) {
                     ixe.b(obj);
                     if (ur5.a(this.k, str)) {
-                        return f9c.a;
+                        return g9c.a;
                     }
                     this.k = str;
                     nj4 nj4Var = nj4.a;
@@ -198,7 +198,7 @@ public final class yja {
                     }
                     Log.d("FirebaseSessions", str2);
                 }
-                return f9c.a;
+                return g9c.a;
             }
         }
         xjaVar = new xja(this, zw2Var);
@@ -209,6 +209,6 @@ public final class yja {
         }
         while (r5.hasNext()) {
         }
-        return f9c.a;
+        return g9c.a;
     }
 }

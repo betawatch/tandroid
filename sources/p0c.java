@@ -8,7 +8,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p0c implements Callable {
     public final /* synthetic */ byte a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class p0c implements Callable {
             case 0:
                 Context context = (Context) this.b;
                 ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = (ScheduledThreadPoolExecutor) this.c;
-                tf7 tf7Var = (tf7) this.d;
+                uf7 uf7Var = (uf7) this.d;
                 ji4 ji4Var = (ji4) this.e;
                 FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.f;
                 ri4 ri4Var = (ri4) this.g;
@@ -51,7 +51,7 @@ public final /* synthetic */ class p0c implements Callable {
                         o0cVar = o0cVar2;
                     }
                 }
-                return new q0c(tf7Var, o0cVar, new ko9(ji4Var, firebaseMessaging, ri4Var), context, scheduledThreadPoolExecutor);
+                return new q0c(uf7Var, o0cVar, new ko9(ji4Var, firebaseMessaging, ri4Var), context, scheduledThreadPoolExecutor);
             default:
                 lambda$emulateSendNFT$23 = ((WalletEngine2) this.b).lambda$emulateSendNFT$23((AtomicBoolean) this.c, (String) this.d, (String) this.e, (String) this.f, (icc) this.g);
                 return lambda$emulateSendNFT$23;

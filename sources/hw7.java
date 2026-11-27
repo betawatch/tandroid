@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hw7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -60,9 +60,9 @@ public final /* synthetic */ class hw7 implements Runnable {
                             switch (b4) {
                                 case 0:
                                     if (h44Var3 instanceof pp9) {
-                                        hbb hbbVar = ((vab) dx7Var2).o2.d1;
-                                        if (hbbVar != null) {
-                                            hbbVar.B();
+                                        ibb ibbVar = ((wab) dx7Var2).o2.d1;
+                                        if (ibbVar != null) {
+                                            ibbVar.B();
                                         }
                                     } else {
                                         dx7Var2.B0(h44Var3);
@@ -113,8 +113,8 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     }
                                     break;
                                 case 5:
-                                    if (h44Var3 instanceof v3b) {
-                                        ((v3b) h44Var3).r(true);
+                                    if (h44Var3 instanceof w3b) {
+                                        ((w3b) h44Var3).r(true);
                                     } else if (h44Var3 instanceof s39) {
                                         ((s39) h44Var3).r(true);
                                     } else if (h44Var3 instanceof pp9) {
@@ -142,12 +142,12 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     zw7 zw7Var2 = dx7Var2.B0;
                                     if (h44Var3 != null) {
                                         PointF P0 = dx7Var2.P0(h44Var3);
-                                        if (h44Var3 instanceof v3b) {
-                                            h44 v3bVar = new v3b(dx7Var2.getContext(), (v3b) h44Var3, P0);
-                                            v3bVar.setDelegate(dx7Var2);
-                                            zw7Var2.addView(v3bVar);
+                                        if (h44Var3 instanceof w3b) {
+                                            h44 w3bVar = new w3b(dx7Var2.getContext(), (w3b) h44Var3, P0);
+                                            w3bVar.setDelegate(dx7Var2);
+                                            zw7Var2.addView(w3bVar);
                                             dx7Var2.c0();
-                                            h44Var2 = v3bVar;
+                                            h44Var2 = w3bVar;
                                         } else if (h44Var3 instanceof rlb) {
                                             rlb rlbVar = new rlb(dx7Var2.getContext(), (rlb) h44Var3, P0);
                                             rlbVar.setDelegate(dx7Var2);
@@ -196,9 +196,9 @@ public final /* synthetic */ class hw7 implements Runnable {
                                 switch (b42) {
                                     case 0:
                                         if (h44Var3 instanceof pp9) {
-                                            hbb hbbVar = ((vab) dx7Var2).o2.d1;
-                                            if (hbbVar != null) {
-                                                hbbVar.B();
+                                            ibb ibbVar = ((wab) dx7Var2).o2.d1;
+                                            if (ibbVar != null) {
+                                                ibbVar.B();
                                             }
                                         } else {
                                             dx7Var2.B0(h44Var3);
@@ -249,8 +249,8 @@ public final /* synthetic */ class hw7 implements Runnable {
                                         }
                                         break;
                                     case 5:
-                                        if (h44Var3 instanceof v3b) {
-                                            ((v3b) h44Var3).r(true);
+                                        if (h44Var3 instanceof w3b) {
+                                            ((w3b) h44Var3).r(true);
                                         } else if (h44Var3 instanceof s39) {
                                             ((s39) h44Var3).r(true);
                                         } else if (h44Var3 instanceof pp9) {
@@ -278,12 +278,12 @@ public final /* synthetic */ class hw7 implements Runnable {
                                         zw7 zw7Var2 = dx7Var2.B0;
                                         if (h44Var3 != null) {
                                             PointF P0 = dx7Var2.P0(h44Var3);
-                                            if (h44Var3 instanceof v3b) {
-                                                h44 v3bVar = new v3b(dx7Var2.getContext(), (v3b) h44Var3, P0);
-                                                v3bVar.setDelegate(dx7Var2);
-                                                zw7Var2.addView(v3bVar);
+                                            if (h44Var3 instanceof w3b) {
+                                                h44 w3bVar = new w3b(dx7Var2.getContext(), (w3b) h44Var3, P0);
+                                                w3bVar.setDelegate(dx7Var2);
+                                                zw7Var2.addView(w3bVar);
                                                 dx7Var2.c0();
-                                                h44Var2 = v3bVar;
+                                                h44Var2 = w3bVar;
                                             } else if (h44Var3 instanceof rlb) {
                                                 rlb rlbVar = new rlb(dx7Var2.getContext(), (rlb) h44Var3, P0);
                                                 rlbVar.setDelegate(dx7Var2);
@@ -318,9 +318,9 @@ public final /* synthetic */ class hw7 implements Runnable {
                                 switch (b42) {
                                     case 0:
                                         if (h44Var3 instanceof pp9) {
-                                            hbb hbbVar = ((vab) dx7Var2).o2.d1;
-                                            if (hbbVar != null) {
-                                                hbbVar.B();
+                                            ibb ibbVar = ((wab) dx7Var2).o2.d1;
+                                            if (ibbVar != null) {
+                                                ibbVar.B();
                                             }
                                         } else {
                                             dx7Var2.B0(h44Var3);
@@ -371,8 +371,8 @@ public final /* synthetic */ class hw7 implements Runnable {
                                         }
                                         break;
                                     case 5:
-                                        if (h44Var3 instanceof v3b) {
-                                            ((v3b) h44Var3).r(true);
+                                        if (h44Var3 instanceof w3b) {
+                                            ((w3b) h44Var3).r(true);
                                         } else if (h44Var3 instanceof s39) {
                                             ((s39) h44Var3).r(true);
                                         } else if (h44Var3 instanceof pp9) {
@@ -400,12 +400,12 @@ public final /* synthetic */ class hw7 implements Runnable {
                                         zw7 zw7Var2 = dx7Var2.B0;
                                         if (h44Var3 != null) {
                                             PointF P0 = dx7Var2.P0(h44Var3);
-                                            if (h44Var3 instanceof v3b) {
-                                                h44 v3bVar = new v3b(dx7Var2.getContext(), (v3b) h44Var3, P0);
-                                                v3bVar.setDelegate(dx7Var2);
-                                                zw7Var2.addView(v3bVar);
+                                            if (h44Var3 instanceof w3b) {
+                                                h44 w3bVar = new w3b(dx7Var2.getContext(), (w3b) h44Var3, P0);
+                                                w3bVar.setDelegate(dx7Var2);
+                                                zw7Var2.addView(w3bVar);
                                                 dx7Var2.c0();
-                                                h44Var2 = v3bVar;
+                                                h44Var2 = w3bVar;
                                             } else if (h44Var3 instanceof rlb) {
                                                 rlb rlbVar = new rlb(dx7Var2.getContext(), (rlb) h44Var3, P0);
                                                 rlbVar.setDelegate(dx7Var2);
@@ -441,9 +441,9 @@ public final /* synthetic */ class hw7 implements Runnable {
                             switch (b42) {
                                 case 0:
                                     if (h44Var3 instanceof pp9) {
-                                        hbb hbbVar = ((vab) dx7Var2).o2.d1;
-                                        if (hbbVar != null) {
-                                            hbbVar.B();
+                                        ibb ibbVar = ((wab) dx7Var2).o2.d1;
+                                        if (ibbVar != null) {
+                                            ibbVar.B();
                                         }
                                     } else {
                                         dx7Var2.B0(h44Var3);
@@ -494,8 +494,8 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     }
                                     break;
                                 case 5:
-                                    if (h44Var3 instanceof v3b) {
-                                        ((v3b) h44Var3).r(true);
+                                    if (h44Var3 instanceof w3b) {
+                                        ((w3b) h44Var3).r(true);
                                     } else if (h44Var3 instanceof s39) {
                                         ((s39) h44Var3).r(true);
                                     } else if (h44Var3 instanceof pp9) {
@@ -523,12 +523,12 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     zw7 zw7Var2 = dx7Var2.B0;
                                     if (h44Var3 != null) {
                                         PointF P0 = dx7Var2.P0(h44Var3);
-                                        if (h44Var3 instanceof v3b) {
-                                            h44 v3bVar = new v3b(dx7Var2.getContext(), (v3b) h44Var3, P0);
-                                            v3bVar.setDelegate(dx7Var2);
-                                            zw7Var2.addView(v3bVar);
+                                        if (h44Var3 instanceof w3b) {
+                                            h44 w3bVar = new w3b(dx7Var2.getContext(), (w3b) h44Var3, P0);
+                                            w3bVar.setDelegate(dx7Var2);
+                                            zw7Var2.addView(w3bVar);
                                             dx7Var2.c0();
-                                            h44Var2 = v3bVar;
+                                            h44Var2 = w3bVar;
                                         } else if (h44Var3 instanceof rlb) {
                                             rlb rlbVar = new rlb(dx7Var2.getContext(), (rlb) h44Var3, P0);
                                             rlbVar.setDelegate(dx7Var2);
@@ -564,9 +564,9 @@ public final /* synthetic */ class hw7 implements Runnable {
                             switch (b42) {
                                 case 0:
                                     if (h44Var3 instanceof pp9) {
-                                        hbb hbbVar = ((vab) dx7Var2).o2.d1;
-                                        if (hbbVar != null) {
-                                            hbbVar.B();
+                                        ibb ibbVar = ((wab) dx7Var2).o2.d1;
+                                        if (ibbVar != null) {
+                                            ibbVar.B();
                                         }
                                     } else {
                                         dx7Var2.B0(h44Var3);
@@ -617,8 +617,8 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     }
                                     break;
                                 case 5:
-                                    if (h44Var3 instanceof v3b) {
-                                        ((v3b) h44Var3).r(true);
+                                    if (h44Var3 instanceof w3b) {
+                                        ((w3b) h44Var3).r(true);
                                     } else if (h44Var3 instanceof s39) {
                                         ((s39) h44Var3).r(true);
                                     } else if (h44Var3 instanceof pp9) {
@@ -646,12 +646,12 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     zw7 zw7Var2 = dx7Var2.B0;
                                     if (h44Var3 != null) {
                                         PointF P0 = dx7Var2.P0(h44Var3);
-                                        if (h44Var3 instanceof v3b) {
-                                            h44 v3bVar = new v3b(dx7Var2.getContext(), (v3b) h44Var3, P0);
-                                            v3bVar.setDelegate(dx7Var2);
-                                            zw7Var2.addView(v3bVar);
+                                        if (h44Var3 instanceof w3b) {
+                                            h44 w3bVar = new w3b(dx7Var2.getContext(), (w3b) h44Var3, P0);
+                                            w3bVar.setDelegate(dx7Var2);
+                                            zw7Var2.addView(w3bVar);
                                             dx7Var2.c0();
-                                            h44Var2 = v3bVar;
+                                            h44Var2 = w3bVar;
                                         } else if (h44Var3 instanceof rlb) {
                                             rlb rlbVar = new rlb(dx7Var2.getContext(), (rlb) h44Var3, P0);
                                             rlbVar.setDelegate(dx7Var2);
@@ -675,7 +675,7 @@ public final /* synthetic */ class hw7 implements Runnable {
                     });
                     linearLayout.addView(d02, tre.o(-2, 44));
                 }
-                if ((h44Var instanceof v3b) || (h44Var instanceof pp9) || (h44Var instanceof v98) || (h44Var instanceof s39)) {
+                if ((h44Var instanceof w3b) || (h44Var instanceof pp9) || (h44Var instanceof v98) || (h44Var instanceof s39)) {
                     TextView d03 = dx7Var.d0(4, ob6.M0(2131750650, null));
                     final byte b7 = 5;
                     d03.setOnClickListener(new View.OnClickListener() { // from class: lw7
@@ -688,9 +688,9 @@ public final /* synthetic */ class hw7 implements Runnable {
                             switch (b42) {
                                 case 0:
                                     if (h44Var3 instanceof pp9) {
-                                        hbb hbbVar = ((vab) dx7Var2).o2.d1;
-                                        if (hbbVar != null) {
-                                            hbbVar.B();
+                                        ibb ibbVar = ((wab) dx7Var2).o2.d1;
+                                        if (ibbVar != null) {
+                                            ibbVar.B();
                                         }
                                     } else {
                                         dx7Var2.B0(h44Var3);
@@ -741,8 +741,8 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     }
                                     break;
                                 case 5:
-                                    if (h44Var3 instanceof v3b) {
-                                        ((v3b) h44Var3).r(true);
+                                    if (h44Var3 instanceof w3b) {
+                                        ((w3b) h44Var3).r(true);
                                     } else if (h44Var3 instanceof s39) {
                                         ((s39) h44Var3).r(true);
                                     } else if (h44Var3 instanceof pp9) {
@@ -770,12 +770,12 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     zw7 zw7Var2 = dx7Var2.B0;
                                     if (h44Var3 != null) {
                                         PointF P0 = dx7Var2.P0(h44Var3);
-                                        if (h44Var3 instanceof v3b) {
-                                            h44 v3bVar = new v3b(dx7Var2.getContext(), (v3b) h44Var3, P0);
-                                            v3bVar.setDelegate(dx7Var2);
-                                            zw7Var2.addView(v3bVar);
+                                        if (h44Var3 instanceof w3b) {
+                                            h44 w3bVar = new w3b(dx7Var2.getContext(), (w3b) h44Var3, P0);
+                                            w3bVar.setDelegate(dx7Var2);
+                                            zw7Var2.addView(w3bVar);
                                             dx7Var2.c0();
-                                            h44Var2 = v3bVar;
+                                            h44Var2 = w3bVar;
                                         } else if (h44Var3 instanceof rlb) {
                                             rlb rlbVar = new rlb(dx7Var2.getContext(), (rlb) h44Var3, P0);
                                             rlbVar.setDelegate(dx7Var2);
@@ -823,9 +823,9 @@ public final /* synthetic */ class hw7 implements Runnable {
                             switch (b42) {
                                 case 0:
                                     if (h44Var3 instanceof pp9) {
-                                        hbb hbbVar = ((vab) dx7Var2).o2.d1;
-                                        if (hbbVar != null) {
-                                            hbbVar.B();
+                                        ibb ibbVar = ((wab) dx7Var2).o2.d1;
+                                        if (ibbVar != null) {
+                                            ibbVar.B();
                                         }
                                     } else {
                                         dx7Var2.B0(h44Var3);
@@ -876,8 +876,8 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     }
                                     break;
                                 case 5:
-                                    if (h44Var3 instanceof v3b) {
-                                        ((v3b) h44Var3).r(true);
+                                    if (h44Var3 instanceof w3b) {
+                                        ((w3b) h44Var3).r(true);
                                     } else if (h44Var3 instanceof s39) {
                                         ((s39) h44Var3).r(true);
                                     } else if (h44Var3 instanceof pp9) {
@@ -905,12 +905,12 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     zw7 zw7Var2 = dx7Var2.B0;
                                     if (h44Var3 != null) {
                                         PointF P0 = dx7Var2.P0(h44Var3);
-                                        if (h44Var3 instanceof v3b) {
-                                            h44 v3bVar = new v3b(dx7Var2.getContext(), (v3b) h44Var3, P0);
-                                            v3bVar.setDelegate(dx7Var2);
-                                            zw7Var2.addView(v3bVar);
+                                        if (h44Var3 instanceof w3b) {
+                                            h44 w3bVar = new w3b(dx7Var2.getContext(), (w3b) h44Var3, P0);
+                                            w3bVar.setDelegate(dx7Var2);
+                                            zw7Var2.addView(w3bVar);
                                             dx7Var2.c0();
-                                            h44Var2 = v3bVar;
+                                            h44Var2 = w3bVar;
                                         } else if (h44Var3 instanceof rlb) {
                                             rlb rlbVar = new rlb(dx7Var2.getContext(), (rlb) h44Var3, P0);
                                             rlbVar.setDelegate(dx7Var2);
@@ -956,9 +956,9 @@ public final /* synthetic */ class hw7 implements Runnable {
                             switch (b42) {
                                 case 0:
                                     if (h44Var3 instanceof pp9) {
-                                        hbb hbbVar = ((vab) dx7Var2).o2.d1;
-                                        if (hbbVar != null) {
-                                            hbbVar.B();
+                                        ibb ibbVar = ((wab) dx7Var2).o2.d1;
+                                        if (ibbVar != null) {
+                                            ibbVar.B();
                                         }
                                     } else {
                                         dx7Var2.B0(h44Var3);
@@ -1009,8 +1009,8 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     }
                                     break;
                                 case 5:
-                                    if (h44Var3 instanceof v3b) {
-                                        ((v3b) h44Var3).r(true);
+                                    if (h44Var3 instanceof w3b) {
+                                        ((w3b) h44Var3).r(true);
                                     } else if (h44Var3 instanceof s39) {
                                         ((s39) h44Var3).r(true);
                                     } else if (h44Var3 instanceof pp9) {
@@ -1038,12 +1038,12 @@ public final /* synthetic */ class hw7 implements Runnable {
                                     zw7 zw7Var2 = dx7Var2.B0;
                                     if (h44Var3 != null) {
                                         PointF P0 = dx7Var2.P0(h44Var3);
-                                        if (h44Var3 instanceof v3b) {
-                                            h44 v3bVar = new v3b(dx7Var2.getContext(), (v3b) h44Var3, P0);
-                                            v3bVar.setDelegate(dx7Var2);
-                                            zw7Var2.addView(v3bVar);
+                                        if (h44Var3 instanceof w3b) {
+                                            h44 w3bVar = new w3b(dx7Var2.getContext(), (w3b) h44Var3, P0);
+                                            w3bVar.setDelegate(dx7Var2);
+                                            zw7Var2.addView(w3bVar);
                                             dx7Var2.c0();
-                                            h44Var2 = v3bVar;
+                                            h44Var2 = w3bVar;
                                         } else if (h44Var3 instanceof rlb) {
                                             rlb rlbVar = new rlb(dx7Var2.getContext(), (rlb) h44Var3, P0);
                                             rlbVar.setDelegate(dx7Var2);

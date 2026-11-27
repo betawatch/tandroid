@@ -43,7 +43,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.function.Supplier;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class yy2 {
     public static final sy2 r = new sy2((byte) 1);
@@ -129,28 +129,28 @@ public final class yy2 {
                     lh2 lh2Var = new lh2(gd4Var);
                     lh2Var.c = lh2.f;
                     if (str3 != null) {
-                        lh2Var.c = new p09(gd4Var.b(str3, "userlog"));
+                        lh2Var.c = new q09(gd4Var.b(str3, "userlog"));
                     }
                     gd4 gd4Var2 = this.g;
                     rx6 rx6Var = this.e;
-                    qf7 qf7Var = new qf7(gd4Var2);
+                    rf7 rf7Var = new rf7(gd4Var2);
                     i = 8;
                     gd4 gd4Var3 = new gd4(str3, gd4Var2, rx6Var);
                     b = 4;
-                    ((vx5) ((AtomicMarkableReference) ((vh4) gd4Var3.d).b).getReference()).d(qf7Var.c(str3, false));
-                    ((vx5) ((AtomicMarkableReference) ((vh4) gd4Var3.e).b).getReference()).d(qf7Var.c(str3, true));
-                    ((AtomicMarkableReference) gd4Var3.g).set(qf7Var.d(str3), false);
+                    ((vx5) ((AtomicMarkableReference) ((vh4) gd4Var3.d).b).getReference()).d(rf7Var.c(str3, false));
+                    ((vx5) ((AtomicMarkableReference) ((vh4) gd4Var3.e).b).getReference()).d(rf7Var.c(str3, true));
+                    ((AtomicMarkableReference) gd4Var3.g).set(rf7Var.d(str3), false);
                     qh2 qh2Var = (qh2) gd4Var3.f;
                     File b2 = gd4Var2.b(str3, "rollouts-state");
                     if (!b2.exists() || b2.length() == 0) {
-                        qf7.g(b2, "The file has a length of zero for session: " + str3);
+                        rf7.g(b2, "The file has a length of zero for session: " + str3);
                         list2 = Collections.EMPTY_LIST;
                     } else {
                         try {
                             fileInputStream2 = new FileInputStream(b2);
                             try {
                                 try {
-                                    list2 = qf7.b(jn2.l(fileInputStream2));
+                                    list2 = rf7.b(jn2.l(fileInputStream2));
                                     String str4 = "Loaded rollouts state:\n" + list2 + "\nfor session " + str3;
                                     if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                                         Log.d("FirebaseCrashlytics", str4, null);
@@ -159,7 +159,7 @@ public final class yy2 {
                                 } catch (Exception e) {
                                     e = e;
                                     Log.w("FirebaseCrashlytics", "Error deserializing rollouts state.", e);
-                                    qf7.f(b2);
+                                    rf7.f(b2);
                                     jn2.b(fileInputStream2, "Failed to close rollouts state file.");
                                     list2 = Collections.EMPTY_LIST;
                                     synchronized (qh2Var) {
@@ -478,7 +478,7 @@ public final class yy2 {
                 if (arrayList6.isEmpty()) {
                     Log.w("FirebaseCrashlytics", "Could not parse event files for session " + str12, null);
                 } else {
-                    String d3 = new qf7(gd4Var5).d(str12);
+                    String d3 = new rf7(gd4Var5).d(str12);
                     String a6 = g03Var.d.a(str12);
                     File b5 = gd4Var5.b(str12, "report");
                     try {
@@ -606,7 +606,7 @@ public final class yy2 {
         ((dc4) lh2Var.c).a();
         lh2Var.c = lh2.f;
         if (str != null) {
-            lh2Var.c = new p09(((gd4) lh2Var.b).b(str, "userlog"));
+            lh2Var.c = new q09(((gd4) lh2Var.b).b(str, "userlog"));
         }
         this.l.b(str);
         faa faaVar = this.m;
@@ -955,7 +955,7 @@ public final class yy2 {
             synchronized (p63Var.c) {
                 task2 = p63Var.d.getTask();
             }
-            Task onSuccessTask = task2.onSuccessTask(new rg7(b));
+            Task onSuccessTask = task2.onSuccessTask(new sg7(b));
             saeVar.f("Waiting for send/deleteUnsentReports to be called.");
             c = ur5.c(onSuccessTask, this.p.getTask());
         }

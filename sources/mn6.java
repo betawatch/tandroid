@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mn6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -179,7 +179,7 @@ public final /* synthetic */ class mn6 implements Runnable {
                 try {
                     ls6Var2.getMessagesStorage().b.executeFast("DELETE FROM chat_hints WHERE 1").stepThis().dispose();
                     ls6Var2.getMessagesStorage().b.beginTransaction();
-                    ls6Var2.getMessagesStorage().j1(tL_contacts_topPeers.users, tL_contacts_topPeers.chats, false, false);
+                    ls6Var2.getMessagesStorage().n1(tL_contacts_topPeers.users, tL_contacts_topPeers.chats, false, false);
                     SQLitePreparedStatement executeFast = ls6Var2.getMessagesStorage().b.executeFast("REPLACE INTO chat_hints VALUES(?, ?, ?, ?)");
                     for (int i = 0; i < tL_contacts_topPeers.categories.size(); i++) {
                         TLRPC.TL_topPeerCategoryPeers tL_topPeerCategoryPeers = tL_contacts_topPeers.categories.get(i);
@@ -339,9 +339,9 @@ public final /* synthetic */ class mn6 implements Runnable {
             case 19:
                 uc7 uc7Var = (uc7) this.b;
                 TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) this.c;
-                long[] X12 = uc7Var.getMessagesStorage().X1(tL_updateMessageID.random_id, 0L, null, tL_updateMessageID.id, 0, -1, 0);
-                if (X12 != null) {
-                    hl.c3(new yg6(uc7Var, X12, tL_updateMessageID, b));
+                long[] c2 = uc7Var.getMessagesStorage().c2(tL_updateMessageID.random_id, 0L, null, tL_updateMessageID.id, 0, -1, 0);
+                if (c2 != null) {
+                    hl.c3(new yg6(uc7Var, c2, tL_updateMessageID, b));
                     break;
                 }
                 break;

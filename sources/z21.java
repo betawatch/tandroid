@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class z21 implements Runnable {
     public final /* synthetic */ byte a;
@@ -206,12 +206,12 @@ public final /* synthetic */ class z21 implements Runnable {
                 break;
             case 11:
                 la1 la1Var3 = (la1) obj2;
-                ei7 ei7Var = (ei7) obj;
-                la1Var3.h.setText(ei7Var.p);
+                fi7 fi7Var = (fi7) obj;
+                la1Var3.h.setText(fi7Var.p);
                 la1Var3.h.animate().setDuration(200L).alpha(1.0f).setInterpolator(k43.f).start();
                 ka1 ka1Var2 = la1Var3.N;
                 if (ka1Var2 != null) {
-                    ka1Var2.p0(ei7Var);
+                    ka1Var2.p0(fi7Var);
                 }
                 hl.d3(new da1(la1Var3, (byte) 4), 1200L);
                 break;

@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class ji6 {
     public final byte a;
     public final xh4 b;
-    public final rg7 c;
+    public final sg7 c;
     public int d;
     public int e;
     public int f;
@@ -24,7 +24,7 @@ public class ji6 {
             throw null;
         }
         this.b = new xh4((byte) 11);
-        this.c = new rg7((byte) 21);
+        this.c = new sg7((byte) 21);
     }
 
     public final Object a(Object obj) {

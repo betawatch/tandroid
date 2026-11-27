@@ -19,16 +19,16 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 import org.webrtc.VideoSource;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class q38 implements Runnable {
     public final /* synthetic */ byte a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ q38(k09 k09Var, IOException iOException, boolean z) {
+    public /* synthetic */ q38(l09 l09Var, IOException iOException, boolean z) {
         this.a = (byte) 20;
-        this.c = k09Var;
+        this.c = l09Var;
         this.b = z;
     }
 
@@ -193,7 +193,7 @@ public final /* synthetic */ class q38 implements Runnable {
                 }
                 break;
             case 20:
-                v34 v34Var = (v34) ((ny8) ((k09) obj).b).f;
+                v34 v34Var = (v34) ((ny8) ((l09) obj).b).f;
                 v34Var.getClass();
                 ug5 ug5Var = (ug5) v34Var.b;
                 yve.p(ug5Var.k);
@@ -203,9 +203,9 @@ public final /* synthetic */ class q38 implements Runnable {
                 }
                 break;
             case 21:
-                vab vabVar = (vab) obj;
+                wab wabVar = (wab) obj;
                 if (!z) {
-                    vabVar.o2.k1.setVisibility(8);
+                    wabVar.o2.k1.setVisibility(8);
                     break;
                 }
                 break;

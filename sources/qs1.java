@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class qs1 implements jt1 {
     public final /* synthetic */ zu1 a;
@@ -34,7 +34,7 @@ public final class qs1 implements jt1 {
         v21 v21Var = null;
         if (z2) {
             i = ((e) zu1Var).currentAccount;
-            SharedPreferences sharedPreferences = uc7.s1(i).W3;
+            SharedPreferences sharedPreferences = uc7.s1(i).X3;
             if (zu1Var.V4.isEmpty()) {
                 sharedPreferences.edit().remove("pin_" + zu1Var.l6).commit();
             } else {

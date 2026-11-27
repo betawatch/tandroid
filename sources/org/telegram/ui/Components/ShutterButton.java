@@ -13,7 +13,7 @@ import android.view.animation.DecelerateInterpolator;
 import java.io.File;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class ShutterButton extends View {
     public Drawable a;
@@ -27,7 +27,7 @@ public class ShutterButton extends View {
     public long r;
     public long s;
     public boolean w;
-    public ki7 x;
+    public li7 x;
 
     private void setHighlighted(boolean z) {
         AnimatorSet animatorSet = new AnimatorSet();
@@ -141,12 +141,12 @@ public class ShutterButton extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         float f;
         float f2;
-        ki7 ki7Var = this.x;
+        li7 li7Var = this.x;
         float x = motionEvent.getX();
         float y = motionEvent.getY();
         int action = motionEvent.getAction();
         if (action == 0) {
-            hl.d3(ki7Var, 800L);
+            hl.d3(li7Var, 800L);
             this.h = true;
             this.w = true;
             setHighlighted(true);
@@ -154,7 +154,7 @@ public class ShutterButton extends View {
         }
         if (action == 1) {
             setHighlighted(false);
-            hl.r(ki7Var);
+            hl.r(li7Var);
             if (this.w) {
                 ((g52) this.e).a();
             }
@@ -193,7 +193,7 @@ public class ShutterButton extends View {
                 if (!g52Var.b) {
                     if (x == 0.0f) {
                     }
-                    hl.r(ki7Var);
+                    hl.r(li7Var);
                     if (this.f == rka.b) {
                         this.w = false;
                         setHighlighted(false);

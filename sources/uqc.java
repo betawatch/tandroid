@@ -49,7 +49,7 @@ import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.Wallet.b;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class uqc extends n9c implements fn7 {
     public static Typeface Y0;
@@ -139,7 +139,7 @@ public final class uqc extends n9c implements fn7 {
     /* JADX WARN: Type inference failed for: r4v4, types: [vic, vpc] */
     public static void I0(Context context, int i, TL_wallet.walletTransaction wallettransaction, kcc kccVar, icc iccVar, byte[] bArr, wk1 wk1Var, vnb vnbVar) {
         TL_wallet.nftItem nftitem;
-        jl7[] jl7VarArr;
+        kl7[] kl7VarArr;
         View[] viewArr;
         icc iccVar2;
         LinearLayout j0;
@@ -160,7 +160,7 @@ public final class uqc extends n9c implements fn7 {
                 return;
             }
         }
-        jl7[] jl7VarArr2 = new jl7[1];
+        kl7[] kl7VarArr2 = new kl7[1];
         View[] viewArr2 = new View[1];
         b G = c.C(i).G();
         ArrayList arrayList = new ArrayList(G.c);
@@ -181,26 +181,26 @@ public final class uqc extends n9c implements fn7 {
             viewArr = viewArr2;
             ?? vpcVar = new vpc(context, vnbVar, arrayList, G, i, rect, viewArr);
             vpcVar.setPosition(i2);
-            jl7VarArr = jl7VarArr2;
-            vpcVar.setAdapter(new wpc(arrayList, context, vnbVar, rect, i, jl7VarArr2));
+            kl7VarArr = kl7VarArr2;
+            vpcVar.setAdapter(new wpc(arrayList, context, vnbVar, rect, i, kl7VarArr2));
             iccVar2 = iccVar;
             j0 = vpcVar;
         } else {
-            jl7VarArr = jl7VarArr2;
+            kl7VarArr = kl7VarArr2;
             viewArr = viewArr2;
             iccVar2 = iccVar;
-            j0 = j0(context, i, wallettransaction, kccVar, iccVar, bArr, wk1Var, vnbVar, jl7VarArr, false);
+            j0 = j0(context, i, wallettransaction, kccVar, iccVar, bArr, wk1Var, vnbVar, kl7VarArr, false);
         }
-        jl7[] jl7VarArr3 = jl7VarArr;
+        kl7[] kl7VarArr3 = kl7VarArr;
         xpc xpcVar = new xpc(context, j0, vnbVar, j0, viewArr, context);
-        jl7VarArr3[0] = xpcVar;
+        kl7VarArr3[0] = xpcVar;
         if ((j0 instanceof vic) && iccVar2 != null) {
-            xpcVar.n(new vlc(iccVar2, wallettransaction, (byte) 9));
+            xpcVar.n(new slc(iccVar2, wallettransaction, (byte) 10));
         }
-        jl7VarArr3[0].w0(kccVar != null);
-        jl7 jl7Var = jl7VarArr3[0];
-        jl7Var.T0 = false;
-        jl7Var.show();
+        kl7VarArr3[0].w0(kccVar != null);
+        kl7 kl7Var = kl7VarArr3[0];
+        kl7Var.T0 = false;
+        kl7Var.show();
     }
 
     public static void K0(Context context, vnb vnbVar) {
@@ -420,14 +420,14 @@ public final class uqc extends n9c implements fn7 {
     /* JADX WARN: Removed duplicated region for block: B:32:0x03d2 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:38:0x03e3  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x05ac  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0633  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x067f  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x061a  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0631  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x067d  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0618  */
     /* JADX WARN: Removed duplicated region for block: B:97:0x0549  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static LinearLayout j0(final Context context, int i, TL_wallet.walletTransaction wallettransaction, kcc kccVar, icc iccVar, byte[] bArr, wk1 wk1Var, vnb vnbVar, jl7[] jl7VarArr, boolean z) {
+    public static LinearLayout j0(final Context context, int i, TL_wallet.walletTransaction wallettransaction, kcc kccVar, icc iccVar, byte[] bArr, wk1 wk1Var, vnb vnbVar, kl7[] kl7VarArr, boolean z) {
         String x;
         String str;
         ypc ypcVar;
@@ -447,7 +447,7 @@ public final class uqc extends n9c implements fn7 {
         zpc zpcVar;
         int i3;
         bqc bqcVar;
-        final jl7[] jl7VarArr2;
+        final kl7[] kl7VarArr2;
         char c;
         Object w;
         int i4;
@@ -583,7 +583,7 @@ public final class uqc extends n9c implements fn7 {
                             ypcVar = ypcVar2;
                             imageView = imageView4;
                             imageView2 = imageView5;
-                            tpaVar.setOnClickListener(new l63(new boolean[]{false}, jl7VarArr, vnbVar2, tpaVar, wallettransaction, i, str));
+                            tpaVar.setOnClickListener(new l63(new boolean[]{false}, kl7VarArr, vnbVar2, tpaVar, wallettransaction, i, str));
                             SpannableString[] spannableStringArr2 = new SpannableString[i2];
                             TextView[] textViewArr2 = new TextView[i2];
                             hjb hjbVar2 = new hjb(context, vnbVar2);
@@ -599,7 +599,7 @@ public final class uqc extends n9c implements fn7 {
                                 uob M3 = yob.M(i9);
                                 frameLayout4.setBackground(c0);
                                 yob.j(frameLayout4, c0, M3, null, vnbVar2);
-                                final vlc vlcVar = new vlc(textViewArr2, spannableStringArr2, (byte) 10);
+                                final slc slcVar = new slc(textViewArr2, spannableStringArr2, (byte) 11);
                                 final Runnable[] runnableArr = new Runnable[1];
                                 ImageView imageView7 = imageView;
                                 final a84 a84Var = new a84(runnableArr, textViewArr2, i, vnbVar2, wallettransaction, strArr2, zArr2, bArr);
@@ -617,7 +617,7 @@ public final class uqc extends n9c implements fn7 {
                                 yob.n(zpcVar2, 1, K.a, -1, 2, K.d, vnbVar);
                                 zpcVar2.setMaxLines(4);
                                 frameLayout4.addView(zpcVar2, tre.d(-1, -2.0f, jn7.D1, 0.0f, 0.0f, (wallettransaction2.nft != null || bArr == null) ? 0.0f : 44.0f, 0.0f));
-                                zpcVar2.addTextChangedListener(new aqc(strArr2, vlcVar, runnableArr, a84Var));
+                                zpcVar2.addTextChangedListener(new aqc(strArr2, slcVar, runnableArr, a84Var));
                                 if (wallettransaction2.nft != null || bArr == null) {
                                     frameLayout = frameLayout4;
                                     vnbVar2 = vnbVar;
@@ -682,7 +682,7 @@ public final class uqc extends n9c implements fn7 {
                                             if (TextUtils.isEmpty(strArr[0])) {
                                                 return;
                                             }
-                                            vlcVar.run();
+                                            slcVar.run();
                                             Runnable[] runnableArr2 = runnableArr;
                                             Runnable runnable = runnableArr2[0];
                                             if (runnable != null) {
@@ -712,9 +712,10 @@ public final class uqc extends n9c implements fn7 {
                             i12.setText(ob6.M0(2131747558, null));
                             linearLayout.addView(i12, tre.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
                             TL_wallet.walletTransaction[] wallettransactionArr = {wallettransaction2};
-                            cg5 cg5Var = new cg5(linearLayout, ypcVar, vnbVar2, i, textView, jl7VarArr, hjbVar, kccVar, context, textViewArr, spannableStringArr);
+                            cg5 cg5Var = new cg5(linearLayout, ypcVar, vnbVar2, i, textView, kl7VarArr, hjbVar, kccVar, context, textViewArr, spannableStringArr);
                             LinearLayout linearLayout3 = linearLayout;
-                            linearLayout3.setTag(new vlc(cg5Var, wallettransactionArr, (byte) 11));
+                            byte b = 12;
+                            linearLayout3.setTag(new slc(cg5Var, wallettransactionArr, b));
                             cg5Var.a(wallettransaction2);
                             if (z2) {
                                 i3 = i;
@@ -725,7 +726,7 @@ public final class uqc extends n9c implements fn7 {
                                 if (wallettransaction2.preview) {
                                     c C = c.C(i3);
                                     String str2 = wallettransaction2.id;
-                                    v58 v58Var = new v58((Object) wallettransaction2, (Object) cg5Var, (Object) wallettransactionArr, (byte) 12);
+                                    w58 w58Var = new w58(wallettransaction2, cg5Var, wallettransactionArr, b);
                                     HashMap hashMap = C.N;
                                     b bVar = C.n;
                                     if (bVar != null) {
@@ -737,24 +738,24 @@ public final class uqc extends n9c implements fn7 {
                                             i13++;
                                             TL_wallet.walletTransaction wallettransaction3 = (TL_wallet.walletTransaction) obj;
                                             if (TextUtils.equals(wallettransaction3.id, str2)) {
-                                                v58Var.a(wallettransaction3);
+                                                w58Var.a(wallettransaction3);
                                                 break;
                                             }
                                         }
                                     }
                                     if (hashMap.get(str2) != null) {
-                                        v58Var.a((TL_wallet.walletTransaction) hashMap.get(str2));
+                                        w58Var.a((TL_wallet.walletTransaction) hashMap.get(str2));
                                     } else {
                                         TL_wallet.getTransactionsByIDs gettransactionsbyids = new TL_wallet.getTransactionsByIDs();
                                         gettransactionsbyids.id.add(str2);
-                                        ConnectionsManager.getInstance(C.a).sendRequestTyped(gettransactionsbyids, new ic((byte) 0), new p((Object) C, (Object) v58Var, (Object) str2, (byte) 15));
+                                        ConnectionsManager.getInstance(C.a).sendRequestTyped(gettransactionsbyids, new ic((byte) 0), new p((Object) C, (Object) w58Var, (Object) str2, (byte) 15));
                                     }
                                 }
                                 bqcVar = bqcVar2;
                             }
                             boolean[] zArr3 = zArr;
                             String[] strArr3 = strArr;
-                            linearLayout3.addOnAttachStateChangeListener(new cqc(cg5Var, wallettransactionArr, bqcVar, i3, iccVar, jl7VarArr, strArr3, zArr3));
+                            linearLayout3.addOnAttachStateChangeListener(new cqc(cg5Var, wallettransactionArr, bqcVar, i3, iccVar, kl7VarArr, strArr3, zArr3));
                             if (kccVar != null) {
                                 TL_wallet.nftItem nftitem2 = wallettransaction2.nft;
                                 if (nftitem2 != null) {
@@ -770,50 +771,50 @@ public final class uqc extends n9c implements fn7 {
                                 Object[] objArr = new Object[i4];
                                 objArr[c] = w;
                                 i12.setText(ob6.V(null, null, 2131742652, objArr));
-                                jl7VarArr2 = jl7VarArr;
-                                i12.setOnClickListener(new b65(i12, zpcVar, kccVar, strArr3, zArr3, jl7VarArr2, vnbVar, (byte) 2));
+                                kl7VarArr2 = kl7VarArr;
+                                i12.setOnClickListener(new b65(i12, zpcVar, kccVar, strArr3, zArr3, kl7VarArr2, vnbVar, (byte) 2));
                             } else {
-                                jl7VarArr2 = jl7VarArr;
+                                kl7VarArr2 = kl7VarArr;
                                 if (wk1Var != null) {
                                     i12.setText(ob6.M0(2131742691, null));
-                                    i12.setOnClickListener(new jjb((Object) wk1Var, (Object) jl7VarArr2, (byte) 17));
+                                    i12.setOnClickListener(new jjb((Object) wk1Var, (Object) kl7VarArr2, (byte) 17));
                                 } else {
-                                    final byte b = 0;
+                                    final byte b2 = 0;
                                     i12.setOnClickListener(new View.OnClickListener() { // from class: kpc
                                         @Override // android.view.View.OnClickListener
                                         public final void onClick(View view) {
-                                            byte b2 = b;
-                                            jl7[] jl7VarArr3 = jl7VarArr2;
-                                            switch (b2) {
+                                            byte b3 = b2;
+                                            kl7[] kl7VarArr3 = kl7VarArr2;
+                                            switch (b3) {
                                                 case 0:
-                                                    jl7VarArr3[0].dismiss();
+                                                    kl7VarArr3[0].dismiss();
                                                     break;
                                                 default:
-                                                    jl7VarArr3[0].dismiss();
+                                                    kl7VarArr3[0].dismiss();
                                                     break;
                                             }
                                         }
                                     });
                                 }
                             }
-                            final byte b2 = 1;
+                            final byte b3 = 1;
                             imageView3.setOnClickListener(new View.OnClickListener() { // from class: kpc
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
-                                    byte b22 = b2;
-                                    jl7[] jl7VarArr3 = jl7VarArr2;
-                                    switch (b22) {
+                                    byte b32 = b3;
+                                    kl7[] kl7VarArr3 = kl7VarArr2;
+                                    switch (b32) {
                                         case 0:
-                                            jl7VarArr3[0].dismiss();
+                                            kl7VarArr3[0].dismiss();
                                             break;
                                         default:
-                                            jl7VarArr3[0].dismiss();
+                                            kl7VarArr3[0].dismiss();
                                             break;
                                     }
                                 }
                             });
                             ImageView imageView9 = imageView2;
-                            imageView9.setOnClickListener(new be(jl7VarArr2, vnbVar, imageView9, i, wallettransactionArr, context, (byte) 5));
+                            imageView9.setOnClickListener(new be(kl7VarArr2, vnbVar, imageView9, i, wallettransactionArr, context, (byte) 5));
                             return linearLayout3;
                         }
                     } else if (TextUtils.isEmpty(wallettransaction.comment)) {
@@ -856,35 +857,36 @@ public final class uqc extends n9c implements fn7 {
                 i122.setText(ob6.M0(2131747558, null));
                 linearLayout.addView(i122, tre.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
                 TL_wallet.walletTransaction[] wallettransactionArr2 = {wallettransaction2};
-                cg5 cg5Var2 = new cg5(linearLayout, ypcVar, vnbVar2, i, textView, jl7VarArr, hjbVar, kccVar, context, textViewArr, spannableStringArr);
+                cg5 cg5Var2 = new cg5(linearLayout, ypcVar, vnbVar2, i, textView, kl7VarArr, hjbVar, kccVar, context, textViewArr, spannableStringArr);
                 LinearLayout linearLayout32 = linearLayout;
-                linearLayout32.setTag(new vlc(cg5Var2, wallettransactionArr2, (byte) 11));
+                byte b4 = 12;
+                linearLayout32.setTag(new slc(cg5Var2, wallettransactionArr2, b4));
                 cg5Var2.a(wallettransaction2);
                 if (z2) {
                 }
                 boolean[] zArr32 = zArr;
                 String[] strArr32 = strArr;
-                linearLayout32.addOnAttachStateChangeListener(new cqc(cg5Var2, wallettransactionArr2, bqcVar, i3, iccVar, jl7VarArr, strArr32, zArr32));
+                linearLayout32.addOnAttachStateChangeListener(new cqc(cg5Var2, wallettransactionArr2, bqcVar, i3, iccVar, kl7VarArr, strArr32, zArr32));
                 if (kccVar != null) {
                 }
-                final byte b22 = 1;
+                final byte b32 = 1;
                 imageView3.setOnClickListener(new View.OnClickListener() { // from class: kpc
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        byte b222 = b22;
-                        jl7[] jl7VarArr3 = jl7VarArr2;
-                        switch (b222) {
+                        byte b322 = b32;
+                        kl7[] kl7VarArr3 = kl7VarArr2;
+                        switch (b322) {
                             case 0:
-                                jl7VarArr3[0].dismiss();
+                                kl7VarArr3[0].dismiss();
                                 break;
                             default:
-                                jl7VarArr3[0].dismiss();
+                                kl7VarArr3[0].dismiss();
                                 break;
                         }
                     }
                 });
                 ImageView imageView92 = imageView2;
-                imageView92.setOnClickListener(new be(jl7VarArr2, vnbVar, imageView92, i, wallettransactionArr2, context, (byte) 5));
+                imageView92.setOnClickListener(new be(kl7VarArr2, vnbVar, imageView92, i, wallettransactionArr2, context, (byte) 5));
                 return linearLayout32;
             }
             x = walletTransactionPeer.address;
@@ -907,35 +909,36 @@ public final class uqc extends n9c implements fn7 {
         i1222.setText(ob6.M0(2131747558, null));
         linearLayout.addView(i1222, tre.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
         TL_wallet.walletTransaction[] wallettransactionArr22 = {wallettransaction2};
-        cg5 cg5Var22 = new cg5(linearLayout, ypcVar, vnbVar2, i, textView, jl7VarArr, hjbVar, kccVar, context, textViewArr, spannableStringArr);
+        cg5 cg5Var22 = new cg5(linearLayout, ypcVar, vnbVar2, i, textView, kl7VarArr, hjbVar, kccVar, context, textViewArr, spannableStringArr);
         LinearLayout linearLayout322 = linearLayout;
-        linearLayout322.setTag(new vlc(cg5Var22, wallettransactionArr22, (byte) 11));
+        byte b42 = 12;
+        linearLayout322.setTag(new slc(cg5Var22, wallettransactionArr22, b42));
         cg5Var22.a(wallettransaction2);
         if (z2) {
         }
         boolean[] zArr322 = zArr;
         String[] strArr322 = strArr;
-        linearLayout322.addOnAttachStateChangeListener(new cqc(cg5Var22, wallettransactionArr22, bqcVar, i3, iccVar, jl7VarArr, strArr322, zArr322));
+        linearLayout322.addOnAttachStateChangeListener(new cqc(cg5Var22, wallettransactionArr22, bqcVar, i3, iccVar, kl7VarArr, strArr322, zArr322));
         if (kccVar != null) {
         }
-        final byte b222 = 1;
+        final byte b322 = 1;
         imageView3.setOnClickListener(new View.OnClickListener() { // from class: kpc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                byte b2222 = b222;
-                jl7[] jl7VarArr3 = jl7VarArr2;
-                switch (b2222) {
+                byte b3222 = b322;
+                kl7[] kl7VarArr3 = kl7VarArr2;
+                switch (b3222) {
                     case 0:
-                        jl7VarArr3[0].dismiss();
+                        kl7VarArr3[0].dismiss();
                         break;
                     default:
-                        jl7VarArr3[0].dismiss();
+                        kl7VarArr3[0].dismiss();
                         break;
                 }
             }
         });
         ImageView imageView922 = imageView2;
-        imageView922.setOnClickListener(new be(jl7VarArr2, vnbVar, imageView922, i, wallettransactionArr22, context, (byte) 5));
+        imageView922.setOnClickListener(new be(kl7VarArr2, vnbVar, imageView922, i, wallettransactionArr22, context, (byte) 5));
         return linearLayout322;
     }
 
@@ -1128,7 +1131,7 @@ public final class uqc extends n9c implements fn7 {
             } catch (Exception e) {
                 cc4.g(e, true);
             }
-            s43.a(linkedHashSet, uc7.s1(s43Var.a).k4.Z.f);
+            s43.a(linkedHashSet, uc7.s1(s43Var.a).l4.Z.f);
             s43.c(linkedHashSet, ob6.D0().y);
             s43.c(linkedHashSet, ob6.D0().z);
             Iterator it3 = linkedHashSet.iterator();

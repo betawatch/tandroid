@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class h4a extends nx0 {
     public final lu7 l1;
@@ -32,7 +32,7 @@ public final class h4a extends nx0 {
         this.a = i;
         this.Q0 = true;
         this.E = true;
-        hr hrVar = uc7.s1(i).k4;
+        hr hrVar = uc7.s1(i).l4;
         long max = Math.max(hrVar.q.f(), 10000000L);
         pj pjVar = pj.b;
         this.w1 = oj.j(max, pjVar);
@@ -216,7 +216,7 @@ public final class h4a extends nx0 {
             }
         }
         if (z4 || z5) {
-            hr hrVar = uc7.s1(this.a).k4;
+            hr hrVar = uc7.s1(this.a).l4;
             oj ojVar7 = this.y1;
             pj pjVar4 = ojVar7.a;
             if (pjVar4 == pjVar2) {
@@ -228,7 +228,7 @@ public final class h4a extends nx0 {
             sb.append('~');
             pj pjVar5 = this.y1.a;
             int i5 = this.a;
-            double d = pjVar5 == pjVar ? uc7.s1(i5).k4.k.i : uc7.s1(i5).k4.A3.i * 1.0E-5d;
+            double d = pjVar5 == pjVar ? uc7.s1(i5).l4.k.i : uc7.s1(i5).l4.A3.i * 1.0E-5d;
             di0.h();
             sb.append(di0.f("USD", 2, (long) (this.y1.c() * d * 100.0d), false));
             this.q1.c(sb, z3, true);

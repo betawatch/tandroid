@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.RandomAccess;
 import java.util.Set;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class e3 extends AbstractMap {
     public final /* synthetic */ byte a;
@@ -29,9 +29,9 @@ public class e3 extends AbstractMap {
 
     public final ko5 b(Map.Entry entry) {
         Object key = entry.getKey();
-        fj7 fj7Var = (fj7) this.e;
+        gj7 gj7Var = (gj7) this.e;
         List list = (List) ((Collection) entry.getValue());
-        return new ko5(key, list instanceof RandomAccess ? new i3(fj7Var, key, list, null) : new m3(fj7Var, key, list, (m3) null));
+        return new ko5(key, list instanceof RandomAccess ? new i3(gj7Var, key, list, null) : new m3(gj7Var, key, list, (m3) null));
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -41,8 +41,8 @@ public class e3 extends AbstractMap {
         Map map = this.d;
         switch (b) {
             case 0:
-                fj7 fj7Var = (fj7) serializable;
-                if (map != fj7Var.e) {
+                gj7 gj7Var = (gj7) serializable;
+                if (map != gj7Var.e) {
                     d3 d3Var = new d3(this);
                     while (d3Var.hasNext()) {
                         d3Var.next();
@@ -50,7 +50,7 @@ public class e3 extends AbstractMap {
                     }
                     break;
                 } else {
-                    fj7Var.b();
+                    gj7Var.b();
                     break;
                 }
             case 1:
@@ -192,7 +192,7 @@ public class e3 extends AbstractMap {
                 }
                 Collection collection = (Collection) obj2;
                 if (collection != null) {
-                    fj7 fj7Var = (fj7) serializable;
+                    gj7 gj7Var = (gj7) serializable;
                     List list = (List) collection;
                     break;
                 }
@@ -244,7 +244,7 @@ public class e3 extends AbstractMap {
         Serializable serializable = this.e;
         switch (b) {
             case 0:
-                return ((fj7) serializable).j();
+                return ((gj7) serializable).j();
             case 1:
                 lmf lmfVar = (lmf) serializable;
                 o4f o4fVar = lmfVar.a;
@@ -273,14 +273,14 @@ public class e3 extends AbstractMap {
         Map map = this.d;
         switch (b) {
             case 0:
-                fj7 fj7Var = (fj7) serializable;
+                gj7 gj7Var = (gj7) serializable;
                 Collection collection = (Collection) map.remove(obj);
                 if (collection == null) {
                     return null;
                 }
-                Collection m = fj7Var.m();
+                Collection m = gj7Var.m();
                 m.addAll(collection);
-                fj7Var.f -= collection.size();
+                gj7Var.f -= collection.size();
                 collection.clear();
                 return m;
             case 1:

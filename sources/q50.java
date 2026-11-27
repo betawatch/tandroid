@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class q50 implements zq7 {
     public static final q50 a = new q50();
@@ -9,9 +9,9 @@ public final class q50 implements zq7 {
 
     @Override // l34
     public final void a(Object obj, Object obj2) {
-        gl7 gl7Var = (gl7) obj;
+        hl7 hl7Var = (hl7) obj;
         ar7 ar7Var = (ar7) obj2;
-        ar7Var.a(b, ((fa0) gl7Var).a);
-        ar7Var.a(c, ((fa0) gl7Var).b);
+        ar7Var.a(b, ((fa0) hl7Var).a);
+        ar7Var.a(c, ((fa0) hl7Var).b);
     }
 }

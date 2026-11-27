@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class rp7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class rp7 implements Runnable {
                 sv9 sv9Var = sp7Var2.h;
                 int i = sp7Var2.n.s;
                 sv9Var.g(str2, true, (i == 1 || i == 3) ? (byte) 0 : (byte) 1, true, false, 0L, false, 0, 0);
-                Utilities.g.c(new fd7((Object) sp7Var2, (Object) str2, new ArrayList(sp7Var2.n.x), (byte) 12));
+                Utilities.g.c(new gd7((Object) sp7Var2, (Object) str2, new ArrayList(sp7Var2.n.x), (byte) 12));
                 break;
         }
     }

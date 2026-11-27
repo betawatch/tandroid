@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class on0 {
     public static HashMap a;
@@ -30,7 +30,7 @@ public abstract class on0 {
     }
 
     public static int b() {
-        return (int) uc7.s1(yac.t0).k4.E0.f();
+        return (int) uc7.s1(yac.t0).l4.E0.f();
     }
 
     public static ArrayList c(int i, List list) {
@@ -99,15 +99,15 @@ public abstract class on0 {
     }
 
     public static long g() {
-        return uc7.s1(yac.t0).k4.H0.f();
+        return uc7.s1(yac.t0).l4.H0.f();
     }
 
     public static int h() {
-        return (int) uc7.s1(yac.t0).k4.F0.f();
+        return (int) uc7.s1(yac.t0).l4.F0.f();
     }
 
     public static long i() {
-        return uc7.s1(yac.t0).k4.I0.f();
+        return uc7.s1(yac.t0).l4.I0.f();
     }
 
     public static boolean j() {
@@ -118,7 +118,7 @@ public abstract class on0 {
     }
 
     public static boolean k() {
-        return uc7.s1(yac.t0).k4.E0.f() > 0;
+        return uc7.s1(yac.t0).l4.E0.f() > 0;
     }
 
     public static int l(int i, TLRPC.Chat chat, pcc pccVar) {

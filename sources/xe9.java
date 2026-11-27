@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class xe9 extends ze9 implements snb, zlb, jf9, fn7, jq3 {
     public final int E;
@@ -69,7 +69,7 @@ public final class xe9 extends ze9 implements snb, zlb, jf9, fn7, jq3 {
         this.y = ry9Var;
         ry9Var.h = new ve9(this, (byte) 0);
         setMinimumHeight(hl.L(66.0f));
-        if9 if9Var = new if9(context, vnbVar, new i09(this, (byte) 4));
+        if9 if9Var = new if9(context, vnbVar, new j09(this, (byte) 4));
         this.V = if9Var;
         addView(if9Var.a, tre.e(-2, -2, 51));
         updateColors();

@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ol implements Runnable {
     public final /* synthetic */ byte a;
@@ -43,8 +43,8 @@ public final /* synthetic */ class ol implements Runnable {
         switch (b) {
             case 0:
                 int i = slVar.e;
-                jf7 Y = jf7.Y(i);
-                SQLiteDatabase sQLiteDatabase = Y.b;
+                kf7 a0 = kf7.a0(i);
+                SQLiteDatabase sQLiteDatabase = a0.b;
                 if (sQLiteDatabase != null) {
                     try {
                         String join = TextUtils.join(",", arrayList);
@@ -81,14 +81,14 @@ public final /* synthetic */ class ol implements Runnable {
                         queryFinalized.dispose();
                         break;
                     } catch (SQLiteException e2) {
-                        Y.n(e2, true);
+                        a0.p(e2, true);
                         return;
                     }
                 }
                 break;
             default:
                 try {
-                    SQLitePreparedStatement executeFast = jf7.Y(slVar.e).b.executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
+                    SQLitePreparedStatement executeFast = kf7.a0(slVar.e).b.executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
                     for (int i2 = 0; i2 < arrayList.size(); i2++) {
                         if (arrayList.get(i2) instanceof TLRPC.Document) {
                             TLRPC.Document document = (TLRPC.Document) arrayList.get(i2);

@@ -7,7 +7,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.b;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m25 implements kcc {
     public final /* synthetic */ c a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class m25 implements kcc {
                 r47Var.M1 = true;
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(r47Var.k);
-                r7aVar.getMessagesStorage().g1(arrayList, false, true, false, 0, false, 0, 0L);
+                r7aVar.getMessagesStorage().k1(arrayList, false, true, false, 0, false, 0, 0L);
                 z = false;
                 r7aVar.getNotificationCenter().k(jn7.m0, Long.valueOf(r47.B0(r47Var.k)), qd4.t(r47Var));
                 wallettransaction.gasless = sendtransfer.data_gasless == null ? true : z;

@@ -39,7 +39,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ra7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -125,11 +125,11 @@ public final /* synthetic */ class ra7 implements Runnable {
                 if (s < 100) {
                     if (i5 >= wx9Var.getConnectionsManager().getCurrentTime() - 604800) {
                         secureRandom = secureRandom2;
-                        jf7 messagesStorage = wx9Var.getMessagesStorage();
+                        kf7 messagesStorage = wx9Var.getMessagesStorage();
                         messagesStorage.a.c(new yn6(messagesStorage, encryptedChat, z2, b));
                         message.seq_in = tL_decryptedMessageLayer.in_seq_no;
                         message.seq_out = tL_decryptedMessageLayer.out_seq_no;
-                        jf7 messagesStorage2 = wx9Var.getMessagesStorage();
+                        kf7 messagesStorage2 = wx9Var.getMessagesStorage();
                         messagesStorage2.a.c(new hl2(messagesStorage2, message.id, message.seq_in, message.seq_out, (byte) 1));
                     }
                 }
@@ -137,11 +137,11 @@ public final /* synthetic */ class ra7 implements Runnable {
                 if (encryptedChat.exchange_id == 0 && encryptedChat.future_key_fingerprint == 0) {
                     wx9Var.o(encryptedChat);
                 }
-                jf7 messagesStorage3 = wx9Var.getMessagesStorage();
+                kf7 messagesStorage3 = wx9Var.getMessagesStorage();
                 messagesStorage3.a.c(new yn6(messagesStorage3, encryptedChat, z2, b));
                 message.seq_in = tL_decryptedMessageLayer.in_seq_no;
                 message.seq_out = tL_decryptedMessageLayer.out_seq_no;
-                jf7 messagesStorage22 = wx9Var.getMessagesStorage();
+                kf7 messagesStorage22 = wx9Var.getMessagesStorage();
                 messagesStorage22.a.c(new hl2(messagesStorage22, message.id, message.seq_in, message.seq_out, (byte) 1));
             } else {
                 secureRandom = secureRandom2;
@@ -255,7 +255,7 @@ public final /* synthetic */ class ra7 implements Runnable {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
                 e eVar = (e) obj2;
                 TLRPC.TL_messages_migrateChat tL_messages_migrateChat = (TLRPC.TL_messages_migrateChat) obj;
-                ((ef7) obj6).run(0L);
+                ((ff7) obj6).run(0L);
                 if (context != null && !((Activity) context).isFinishing()) {
                     try {
                         idVar.dismiss();
@@ -274,7 +274,7 @@ public final /* synthetic */ class ra7 implements Runnable {
                 e eVar2 = (e) obj2;
                 TLRPC.TL_channels_convertToGigagroup tL_channels_convertToGigagroup = (TLRPC.TL_channels_convertToGigagroup) obj;
                 uc7Var2.getClass();
-                ((bf7) obj6).A(false);
+                ((cf7) obj6).A(false);
                 if (activity != null && !activity.isFinishing()) {
                     try {
                         idVar2.dismiss();
@@ -427,7 +427,7 @@ public final /* synthetic */ class ra7 implements Runnable {
                         }
                         m.T0.add(mecVar);
                     }
-                    rbb.C(rv0Var.a0, yac.t0).T(null, m);
+                    sbb.C(rv0Var.a0, yac.t0).T(null, m);
                     idVar3.b(500L);
                     break;
                 } else {
@@ -584,7 +584,7 @@ public final /* synthetic */ class ra7 implements Runnable {
                 JSONObject jSONObject = (JSONObject) obj7;
                 String str8 = (String) obj6;
                 n55 n55Var = (n55) obj5;
-                sk7 sk7Var = n55Var.a;
+                tk7 tk7Var = n55Var.a;
                 l55 l55Var = n55Var.b;
                 c cVar = (c) obj4;
                 String str9 = (String) obj3;
@@ -598,7 +598,7 @@ public final /* synthetic */ class ra7 implements Runnable {
                         l55Var.a();
                     }
                     if (!n55Var.e) {
-                        sk7Var.dismiss();
+                        tk7Var.dismiss();
                         break;
                     }
                 } else {
@@ -620,7 +620,7 @@ public final /* synthetic */ class ra7 implements Runnable {
                         l55Var.d(tL_widgetQueryTypeSignData);
                     }
                     if (!n55Var.e) {
-                        sk7Var.dismiss();
+                        tk7Var.dismiss();
                         break;
                     }
                 }

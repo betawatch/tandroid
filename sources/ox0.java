@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ox0 extends c79 {
     public final /* synthetic */ byte c;
@@ -667,7 +667,7 @@ public final class ox0 extends c79 {
                     yob.h(aob.d6, vnbVar2, mf5Var);
                     view3 = mf5Var;
                 } else {
-                    view3 = new rca(context2, (uh9) null);
+                    view3 = new sca(context2, (uh9) null);
                 }
                 return qu6.h(view3, view3, -1, -2);
             case 6:
@@ -750,9 +750,9 @@ public final class ox0 extends c79 {
                     }
                 } else if (i == 2) {
                     int i7 = aob.a7;
-                    rca rcaVar = new rca(context3, aob.v0(i7, kl8Var.J0), 0);
-                    yob.h(i7, kl8Var.J0, rcaVar);
-                    view4 = rcaVar;
+                    sca scaVar = new sca(context3, aob.v0(i7, kl8Var.J0), 0);
+                    yob.h(i7, kl8Var.J0, scaVar);
+                    view4 = scaVar;
                 } else if (i == 3) {
                     view4 = new t62(context3, r6);
                 } else if (i == 4) {

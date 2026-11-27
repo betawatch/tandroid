@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class m3d extends xyc {
     public final LinkedList b;
@@ -226,15 +226,15 @@ public final class m3d extends xyc {
             this.e = vycVar;
         }
         if (i4 == 8) {
-            l09 l09Var = this.a.b;
-            synchronized (l09Var) {
-                int i5 = l09Var.b;
+            m09 m09Var = this.a.b;
+            synchronized (m09Var) {
+                int i5 = m09Var.b;
                 if (i5 == 4 || i5 == 5) {
                     z = false;
                 } else {
-                    l09Var.b = 4;
-                    if (l09Var.c == 1) {
-                        l09Var.c = 3;
+                    m09Var.b = 4;
+                    if (m09Var.c == 1) {
+                        m09Var.c = 3;
                     }
                 }
             }

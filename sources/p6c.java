@@ -15,7 +15,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class p6c implements reb {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -143,7 +143,7 @@ public final class p6c implements reb {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void f(XmlPullParser xmlPullParser, HashMap hashMap, int i, l09 l09Var, HashMap hashMap2, HashMap hashMap3) {
+    public static void f(XmlPullParser xmlPullParser, HashMap hashMap, int i, m09 m09Var, HashMap hashMap2, HashMap hashMap3) {
         String a;
         float f2;
         float f3;
@@ -215,7 +215,7 @@ public final class p6c implements reb {
                             }
                         } else if (!matcher2.matches()) {
                             efd.f("TtmlParser", "Ignoring region with unsupported origin: ".concat(a8));
-                        } else if (l09Var == null) {
+                        } else if (m09Var == null) {
                             efd.f("TtmlParser", "Ignoring region with missing tts:extent: ".concat(a8));
                         } else {
                             try {
@@ -225,8 +225,8 @@ public final class p6c implements reb {
                                 String group4 = matcher2.group(2);
                                 group4.getClass();
                                 f2 = 100.0f;
-                                float f9 = parseInt / l09Var.b;
-                                float parseInt2 = Integer.parseInt(group4) / l09Var.c;
+                                float f9 = parseInt / m09Var.b;
+                                float parseInt2 = Integer.parseInt(group4) / m09Var.c;
                                 f4 = f9;
                                 f3 = parseInt2;
                             } catch (NumberFormatException unused2) {
@@ -259,7 +259,7 @@ public final class p6c implements reb {
                             }
                         } else if (!matcher4.matches()) {
                             bp1.s("Ignoring region with unsupported extent: ", a8, "TtmlParser");
-                        } else if (l09Var == null) {
+                        } else if (m09Var == null) {
                             bp1.s("Ignoring region with missing tts:extent: ", a8, "TtmlParser");
                         } else {
                             String group7 = matcher4.group(1);
@@ -267,8 +267,8 @@ public final class p6c implements reb {
                             int parseInt3 = Integer.parseInt(group7);
                             String group8 = matcher4.group(2);
                             group8.getClass();
-                            float f10 = parseInt3 / l09Var.b;
-                            parseFloat2 = Integer.parseInt(group8) / l09Var.c;
+                            float f10 = parseInt3 / m09Var.b;
+                            parseFloat2 = Integer.parseInt(group8) / m09Var.c;
                             parseFloat = f10;
                         }
                         f6 = parseFloat;
@@ -1201,7 +1201,7 @@ public final class p6c implements reb {
         return (long) (parseDouble * 1000000.0d);
     }
 
-    public static l09 k(XmlPullParser xmlPullParser) {
+    public static m09 k(XmlPullParser xmlPullParser) {
         String a = h3f.a(xmlPullParser, "extent");
         if (a == null) {
             return null;
@@ -1217,7 +1217,7 @@ public final class p6c implements reb {
             int parseInt = Integer.parseInt(group);
             String group2 = matcher.group(2);
             group2.getClass();
-            return new l09(parseInt, Integer.parseInt(group2), (byte) 7);
+            return new m09(parseInt, Integer.parseInt(group2), (byte) 7);
         } catch (NumberFormatException unused) {
             efd.f("TtmlParser", "Ignoring malformed tts extent: ".concat(a));
             return null;
@@ -1241,7 +1241,7 @@ public final class p6c implements reb {
             int i3 = 15;
             int i4 = 0;
             am2 am2Var = null;
-            l09 l09Var = null;
+            m09 m09Var = null;
             while (eventType != 1) {
                 n6c n6cVar = (n6c) arrayDeque.peek();
                 if (i4 == 0) {
@@ -1252,14 +1252,14 @@ public final class p6c implements reb {
                             if ("tt".equals(name)) {
                                 o6cVar = e(newPullParser);
                                 i3 = c(newPullParser);
-                                l09Var = k(newPullParser);
+                                m09Var = k(newPullParser);
                             }
                             o6c o6cVar2 = o6cVar;
                             int i5 = i3;
-                            l09 l09Var2 = l09Var;
+                            m09 m09Var2 = m09Var;
                             if (b(name)) {
                                 if ("head".equals(name)) {
-                                    f(newPullParser, hashMap, i5, l09Var2, hashMap2, hashMap3);
+                                    f(newPullParser, hashMap, i5, m09Var2, hashMap2, hashMap3);
                                 } else {
                                     try {
                                         n6c g = g(newPullParser, n6cVar, hashMap2, o6cVar2);
@@ -1276,14 +1276,14 @@ public final class p6c implements reb {
                                         efd.g("TtmlParser", "Suppressing parser error", e2);
                                     }
                                 }
-                                l09Var = l09Var2;
+                                m09Var = m09Var2;
                                 i3 = i5;
                                 o6cVar = o6cVar2;
                             } else {
                                 efd.e("TtmlParser", "Ignoring unsupported tag: " + newPullParser.getName());
                             }
                             i4++;
-                            l09Var = l09Var2;
+                            m09Var = m09Var2;
                             i3 = i5;
                             o6cVar = o6cVar2;
                         } catch (IOException e3) {

@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class tu0 implements Runnable {
     public final /* synthetic */ byte a;
@@ -463,7 +463,7 @@ public final /* synthetic */ class tu0 implements Runnable {
                 }
                 return;
             case 27:
-                hl.c3(new jj1((hu0) obj, ((zu1) obj3).getMessagesStorage().g0(((TLRPC.TL_contact) obj2).user_id), b2));
+                hl.c3(new jj1((hu0) obj, ((zu1) obj3).getMessagesStorage().i0(((TLRPC.TL_contact) obj2).user_id), b2));
                 return;
             case 28:
                 zu1 zu1Var = (zu1) obj3;

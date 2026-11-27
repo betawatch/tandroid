@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class bb2 extends zb3 {
     public static final k43 V = new k43(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
@@ -577,10 +577,10 @@ public abstract class bb2 extends zb3 {
     }
 
     @Override // cma, o79
-    public final boolean a(f89 f89Var, l09 l09Var, l09 l09Var2) {
+    public final boolean a(f89 f89Var, m09 m09Var, m09 m09Var2) {
         ArrayList arrayList;
         int i;
-        boolean a = super.a(f89Var, l09Var, l09Var2);
+        boolean a = super.a(f89Var, m09Var, m09Var2);
         if (a && this.N) {
             int i2 = 0;
             boolean z = false;
@@ -727,8 +727,8 @@ public abstract class bb2 extends zb3 {
     }
 
     @Override // o79
-    public final l09 l(c89 c89Var, f89 f89Var, int i, List list) {
-        l09 l = super.l(c89Var, f89Var, i, list);
+    public final m09 l(c89 c89Var, f89 f89Var, int i, List list) {
+        m09 l = super.l(c89Var, f89Var, i, list);
         View view = f89Var.a;
         if (!(view instanceof wb2)) {
             return l;
@@ -1318,9 +1318,9 @@ public abstract class bb2 extends zb3 {
     }
 
     @Override // zb3, cma
-    public final boolean q(f89 f89Var, f89 f89Var2, l09 l09Var, int i, int i2, int i3, int i4) {
+    public final boolean q(f89 f89Var, f89 f89Var2, m09 m09Var, int i, int i2, int i3, int i4) {
         if (f89Var == f89Var2) {
-            return r(f89Var, l09Var, i, i2, i3, i4);
+            return r(f89Var, m09Var, i, i2, i3, i4);
         }
         View view = f89Var.a;
         float animationOffsetX = view instanceof wb2 ? ((wb2) view).getAnimationOffsetX() : view.getTranslationX();
@@ -1364,7 +1364,7 @@ public abstract class bb2 extends zb3 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean r(f89 f89Var, l09 l09Var, int i, int i2, int i3, int i4) {
+    public final boolean r(f89 f89Var, m09 m09Var, int i, int i2, int i3, int i4) {
         int translationX;
         int i5;
         wb2 wb2Var;
@@ -1442,12 +1442,12 @@ public abstract class bb2 extends zb3 {
             if (i11 != 0) {
                 wb2Var.setAnimationOffsetX(-i11);
             }
-            boolean z2 = l09Var instanceof za2;
+            boolean z2 = m09Var instanceof za2;
             d79 d79Var = this.G;
             if (z2) {
                 ImageReceiver photoImage = wb2Var.getPhotoImage();
                 view = view2;
-                za2 za2Var = (za2) l09Var;
+                za2 za2Var = (za2) m09Var;
                 i6 = i11;
                 boolean z3 = (!transitionParams.w0 || za2Var.h == f || za2Var.g == f) ? false : true;
                 ab2Var.n = z3;
@@ -1703,16 +1703,16 @@ public abstract class bb2 extends zb3 {
     }
 
     @Override // zb3, cma
-    public final void s(f89 f89Var, l09 l09Var) {
+    public final void s(f89 f89Var, m09 m09Var) {
         if (f11.a) {
             cc4.b("animate remove");
         }
-        super.s(f89Var, l09Var);
+        super.s(f89Var, m09Var);
         View view = f89Var.a;
-        if (l09Var != null) {
-            int i = l09Var.c;
+        if (m09Var != null) {
+            int i = m09Var.c;
             int top = view.getTop();
-            int left = view.getLeft() - l09Var.b;
+            int left = view.getLeft() - m09Var.b;
             if (top - i != 0) {
                 view.setTranslationY(-r0);
             }
@@ -1727,8 +1727,8 @@ public abstract class bb2 extends zb3 {
             if (left != 0) {
                 wb2Var.setAnimationOffsetX(-left);
             }
-            if (l09Var instanceof za2) {
-                za2 za2Var = (za2) l09Var;
+            if (m09Var instanceof za2) {
+                za2 za2Var = (za2) m09Var;
                 wb2Var.x3(za2Var.e, za2Var.f, za2Var.g, za2Var.h);
             }
         }

@@ -55,7 +55,7 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.RendererCommon;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class mkc implements VoIPService.StateListener, fn7 {
     public static mkc m1;
@@ -1189,7 +1189,7 @@ public final class mkc implements VoIPService.StateListener, fn7 {
         }
         int i2 = wmcVar.W;
         if ((i2 == 2 || i2 == 3) && this.j1) {
-            hl.d3(new me7((Object) this, i, (byte) 26), 400L);
+            hl.d3(new oe7((Object) this, i, (byte) 26), 400L);
         }
     }
 
@@ -1714,110 +1714,101 @@ public final class mkc implements VoIPService.StateListener, fn7 {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Failed to find 'out' block for switch in B:14:0x0038. Please report as an issue. */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0839  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0913  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0967  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0a06  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x063e  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x0a50  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x0a71  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0b34  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x0b85  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x0bd5  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x0bf3  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x0cba  */
-    /* JADX WARN: Removed duplicated region for block: B:281:0x0d31  */
-    /* JADX WARN: Removed duplicated region for block: B:286:0x0d4c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x0d57  */
-    /* JADX WARN: Removed duplicated region for block: B:294:0x0d5e  */
-    /* JADX WARN: Removed duplicated region for block: B:299:0x0d8b  */
-    /* JADX WARN: Removed duplicated region for block: B:302:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x0d70  */
-    /* JADX WARN: Removed duplicated region for block: B:309:0x0c6a  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x0be8  */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x0b7d  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x0aab  */
-    /* JADX WARN: Removed duplicated region for block: B:331:0x0acf  */
-    /* JADX WARN: Removed duplicated region for block: B:332:0x0aee  */
-    /* JADX WARN: Removed duplicated region for block: B:333:0x0ac3  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x0a7d  */
-    /* JADX WARN: Removed duplicated region for block: B:340:0x0b9d  */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x09da  */
-    /* JADX WARN: Removed duplicated region for block: B:359:0x08c8  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x07bd  */
-    /* JADX WARN: Removed duplicated region for block: B:384:0x0744  */
-    /* JADX WARN: Removed duplicated region for block: B:396:0x0729  */
-    /* JADX WARN: Removed duplicated region for block: B:405:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0727  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0736  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x07b6  */
-    /* JADX WARN: Type inference failed for: r3v61 */
-    /* JADX WARN: Type inference failed for: r3v65 */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x083b  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0915  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0969  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0644  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0a0e  */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x0a53  */
+    /* JADX WARN: Removed duplicated region for block: B:215:0x0a74  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x0b37  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x0b88  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x0b80  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x0aae  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0ad2  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x0af1  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x0ac6  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0a80  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x0bd5  */
+    /* JADX WARN: Removed duplicated region for block: B:281:0x0bf3  */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x0cba  */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x0d31  */
+    /* JADX WARN: Removed duplicated region for block: B:309:0x0d4c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x0d57  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x0d5e  */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x0d8b  */
+    /* JADX WARN: Removed duplicated region for block: B:325:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x0d70  */
+    /* JADX WARN: Removed duplicated region for block: B:332:0x0c6a  */
+    /* JADX WARN: Removed duplicated region for block: B:336:0x0be8  */
+    /* JADX WARN: Removed duplicated region for block: B:344:0x09df  */
+    /* JADX WARN: Removed duplicated region for block: B:357:0x08c8  */
+    /* JADX WARN: Removed duplicated region for block: B:380:0x07be  */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x0748  */
+    /* JADX WARN: Removed duplicated region for block: B:393:0x072f  */
+    /* JADX WARN: Removed duplicated region for block: B:402:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x072d  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x073c  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x07b7  */
+    /* JADX WARN: Type inference failed for: r2v56 */
+    /* JADX WARN: Type inference failed for: r2v60 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void y() {
-        TLRPC.User user;
         boolean z;
-        int i;
         boolean z2;
+        int i;
         boolean z3;
-        int L;
-        int i2;
         boolean z4;
-        float f;
-        int i3;
-        VoIPService voIPService;
+        int L;
+        boolean z5;
+        int i2;
+        boolean z6;
         int childsHight;
         ujc ujcVar;
         ujc ujcVar2;
-        boolean z5;
-        boolean z6;
         boolean z7;
+        boolean z8;
+        boolean z9;
         hmc hmcVar;
         VideoSink videoSink;
         boolean isMicMute;
-        int i4;
+        int i3;
         int remoteAudioState;
-        int i5;
+        int i4;
         int remoteVideoState;
-        boolean z8;
+        boolean z10;
         TL_phone.PhoneCall phoneCall;
         VoIPService.SharedUIParams sharedUIParams;
-        long j;
         k43 k43Var;
         Layout layout;
         int lineCount;
+        float f;
         float f2;
-        float f3;
         TL_phone.PhoneCall phoneCall2;
-        float f4;
-        boolean z9;
-        boolean z10;
+        float f3;
+        boolean z11;
+        boolean z12;
         TextView textView;
-        int i6;
+        byte b;
         if (this.G0 || this.E0) {
             return;
         }
-        boolean z11 = true;
-        byte b = 0;
-        boolean z12 = this.q0 != -1;
+        boolean z13 = true;
+        boolean z14 = this.q0 != -1;
         VoIPServiceState sharedState = VoIPService.getSharedState();
         VoIPService sharedInstance = VoIPService.getSharedInstance();
-        int i7 = this.p0;
-        byte b2 = 27;
-        TLRPC.User user2 = this.d;
-        int i8 = 2;
-        if (i7 == 1 || i7 == 2) {
-            user = user2;
-            this.G.b(ob6.M0(2131743071, null), true, z12);
+        int i5 = this.p0;
+        TLRPC.User user = this.d;
+        int i6 = 2;
+        if (i5 == 1 || i5 == 2) {
+            this.G.b(ob6.M0(2131743071, null), true, z14);
         } else {
-            if (i7 != 3) {
-                if (i7 == 4) {
-                    user = user2;
-                    this.G.b(ob6.M0(2131743060, null), false, z12);
+            if (i5 != 3) {
+                if (i5 == 4) {
+                    this.G.b(ob6.M0(2131743060, null), false, z14);
                     VoIPService sharedInstance2 = VoIPService.getSharedInstance();
                     String lastError = sharedInstance2 != null ? sharedInstance2.getLastError() : Instance.ERROR_UNKNOWN;
                     if (TextUtils.equals(lastError, Instance.ERROR_UNKNOWN)) {
@@ -1841,8 +1832,8 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                             v53Var.m0 = M02;
                             v53Var.n0 = yw9Var;
                             v53Var.show();
-                            for (int i9 = 0; i9 < 3; i9++) {
-                                if (zArr2[i9] && (textView = (TextView) v53Var.c(-(i9 + 1))) != null) {
+                            for (int i7 = 0; i7 < 3; i7++) {
+                                if (zArr2[i7] && (textView = (TextView) v53Var.c(-(i7 + 1))) != null) {
                                     yob.X(textView, aob.q7, v53Var.j1);
                                 }
                             }
@@ -1863,34 +1854,30 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                     } else {
                         hl.d3(new xjc(this, (byte) 1), 1000L);
                     }
-                } else if (i7 != 5) {
-                    switch (i7) {
+                } else if (i5 != 5) {
+                    switch (i5) {
                         case 11:
-                            boolean z13 = sharedInstance != null && sharedInstance.hasRate();
+                            boolean z15 = sharedInstance != null && sharedInstance.hasRate();
                             this.e0.c();
-                            if (!z13 || this.G0) {
-                                user = user2;
+                            if (!z15 || this.G0) {
                                 hl.d3(new xjc(this, (byte) 0), 200L);
                                 break;
                             } else {
                                 if (this.x0) {
                                     int[] iArr = new int[2];
-                                    int i10 = hl.q.x;
+                                    int i8 = hl.q.x;
                                     this.n.getLocationOnScreen(iArr);
-                                    int measuredWidth = ((i10 - iArr[0]) - ((this.n.getMeasuredWidth() - hl.L(52.0f)) / 2)) - hl.L(52.0f);
+                                    int measuredWidth = ((i8 - iArr[0]) - ((this.n.getMeasuredWidth() - hl.L(52.0f)) / 2)) - hl.L(52.0f);
                                     ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.V.getLayoutParams();
                                     marginLayoutParams.rightMargin = measuredWidth;
                                     marginLayoutParams.leftMargin = measuredWidth;
                                     this.V.setTranslationY(iArr[1]);
                                     this.V.setAlpha(1.0f);
                                     this.V.setLayoutParams(marginLayoutParams);
-                                    i6 = 3;
-                                    user = user2;
                                     this.j0.animate().alpha(0.0f).setDuration(80L).start();
-                                    hl.d3(new g9c(this, sharedInstance, b2), 2L);
+                                    hl.d3(new c9c(this, sharedInstance, (byte) 28), 2L);
+                                    b = 0;
                                 } else {
-                                    i6 = 3;
-                                    user = user2;
                                     this.j0.setVisibility(8);
                                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.V.getLayoutParams();
                                     layoutParams.rightMargin = hl.L(18.0f);
@@ -1904,76 +1891,72 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                                     layoutParams.gravity = 80;
                                     this.V.setLayoutParams(layoutParams);
                                     this.V.animate().alpha(1.0f).setDuration(250L).start();
+                                    b = 0;
                                     this.V.a(new vjc(this, sharedInstance, b), false);
                                 }
-                                this.R.setVisibility(0);
+                                this.R.setVisibility(b);
                                 jo0 jo0Var = this.R;
                                 wjc wjcVar2 = new wjc(this, b);
                                 q29[] q29VarArr = (q29[]) jo0Var.d;
                                 jo0Var.e = wjcVar2;
                                 tt ttVar = (tt) jo0Var.c;
-                                ttVar.setVisibility(0);
-                                ((FrameLayout) jo0Var.b).setVisibility(0);
+                                ttVar.setVisibility(b);
+                                ((FrameLayout) jo0Var.b).setVisibility(b);
                                 AnimatorSet animatorSet = new AnimatorSet();
-                                int i11 = i6;
                                 Property property = View.ALPHA;
                                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ttVar, (Property<tt, Float>) property, 0.0f, 1.0f);
                                 Property property2 = View.SCALE_X;
                                 ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(ttVar, (Property<tt, Float>) property2, 0.7f, 1.0f);
                                 Property property3 = View.SCALE_Y;
                                 ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(ttVar, (Property<tt, Float>) property3, 0.7f, 1.0f);
-                                float f5 = 0.0f;
+                                float f4 = 0.0f;
                                 Property property4 = View.TRANSLATION_Y;
-                                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(ttVar, (Property<tt, Float>) property4, hl.L(24.0f), 0.0f);
-                                Animator[] animatorArr = new Animator[4];
-                                animatorArr[0] = ofFloat;
-                                animatorArr[1] = ofFloat2;
-                                animatorArr[2] = ofFloat3;
-                                animatorArr[i11] = ofFloat4;
-                                animatorSet.playTogether(animatorArr);
+                                animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ObjectAnimator.ofFloat(ttVar, (Property<tt, Float>) property4, hl.L(24.0f), 0.0f));
                                 animatorSet.setInterpolator(k43.f);
                                 animatorSet.setDuration(250L);
-                                int i12 = 0;
-                                while (i12 < q29VarArr.length) {
+                                int i9 = 0;
+                                while (i9 < q29VarArr.length) {
                                     AnimatorSet animatorSet2 = new AnimatorSet();
-                                    q29VarArr[i12].setAlpha(f5);
-                                    float[] fArr = new float[i8];
+                                    q29VarArr[i9].setAlpha(f4);
+                                    float[] fArr = new float[i6];
                                     // fill-array-data instruction
                                     fArr[0] = 0.0f;
                                     fArr[1] = 1.0f;
-                                    ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(q29VarArr[i12], (Property<q29, Float>) property, fArr);
-                                    float[] fArr2 = new float[i8];
+                                    ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(q29VarArr[i9], (Property<q29, Float>) property, fArr);
+                                    float[] fArr2 = new float[i6];
                                     // fill-array-data instruction
                                     fArr2[0] = 0.3f;
                                     fArr2[1] = 1.0f;
-                                    ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(q29VarArr[i12], (Property<q29, Float>) property2, fArr2);
+                                    ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(q29VarArr[i9], (Property<q29, Float>) property2, fArr2);
                                     AnimatorSet animatorSet3 = animatorSet;
-                                    float[] fArr3 = new float[i8];
+                                    float[] fArr3 = new float[i6];
                                     // fill-array-data instruction
                                     fArr3[0] = 0.3f;
                                     fArr3[1] = 1.0f;
-                                    ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(q29VarArr[i12], (Property<q29, Float>) property3, fArr3);
-                                    q29 q29Var = q29VarArr[i12];
-                                    float[] fArr4 = new float[i8];
+                                    ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(q29VarArr[i9], (Property<q29, Float>) property3, fArr3);
+                                    q29 q29Var = q29VarArr[i9];
+                                    Property property5 = property3;
+                                    float[] fArr4 = new float[i6];
                                     fArr4[0] = hl.L(30.0f);
                                     fArr4[1] = 0.0f;
-                                    ObjectAnimator ofFloat8 = ObjectAnimator.ofFloat(q29Var, (Property<q29, Float>) property4, fArr4);
-                                    int i13 = i8;
-                                    Animator[] animatorArr2 = new Animator[4];
-                                    animatorArr2[0] = ofFloat5;
-                                    animatorArr2[1] = ofFloat6;
-                                    animatorArr2[i13] = ofFloat7;
-                                    animatorArr2[i11] = ofFloat8;
-                                    animatorSet2.playTogether(animatorArr2);
+                                    ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(q29Var, (Property<q29, Float>) property4, fArr4);
+                                    int i10 = i6;
+                                    Animator[] animatorArr = new Animator[4];
+                                    animatorArr[0] = ofFloat4;
+                                    animatorArr[1] = ofFloat5;
+                                    animatorArr[i10] = ofFloat6;
+                                    animatorArr[3] = ofFloat7;
+                                    animatorSet2.playTogether(animatorArr);
                                     animatorSet2.setDuration(250L);
-                                    animatorSet2.setStartDelay(i12 << 4);
+                                    animatorSet2.setStartDelay(i9 << 4);
                                     animatorSet2.start();
-                                    i12++;
+                                    i9++;
                                     animatorSet = animatorSet3;
-                                    i8 = i13;
-                                    f5 = 0.0f;
+                                    i6 = i10;
+                                    property3 = property5;
+                                    f4 = 0.0f;
                                 }
-                                int i14 = i8;
+                                int i11 = i6;
                                 animatorSet.start();
                                 if (this.C0) {
                                     this.C0 = false;
@@ -2004,34 +1987,34 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                                 }
                                 AnimatorSet animatorSet5 = new AnimatorSet();
                                 bo5Var.c = animatorSet5;
-                                Property property5 = View.ALPHA;
-                                float[] fArr5 = new float[i14];
+                                Property property6 = View.ALPHA;
+                                float[] fArr5 = new float[i11];
                                 fArr5[0] = bo5Var.getAlpha();
                                 fArr5[1] = 1.0f;
-                                ObjectAnimator ofFloat9 = ObjectAnimator.ofFloat(bo5Var, (Property<bo5, Float>) property5, fArr5);
-                                Property property6 = View.TRANSLATION_Y;
-                                float[] fArr6 = new float[i14];
+                                ObjectAnimator ofFloat8 = ObjectAnimator.ofFloat(bo5Var, (Property<bo5, Float>) property6, fArr5);
+                                Property property7 = View.TRANSLATION_Y;
+                                float[] fArr6 = new float[i11];
                                 fArr6[0] = bo5Var.getTranslationY();
                                 fArr6[1] = -hl.L(24.0f);
-                                ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(bo5Var, (Property<bo5, Float>) property6, fArr6);
-                                Property property7 = View.SCALE_X;
-                                float[] fArr7 = new float[i11];
+                                ObjectAnimator ofFloat9 = ObjectAnimator.ofFloat(bo5Var, (Property<bo5, Float>) property7, fArr6);
+                                Property property8 = View.SCALE_X;
+                                float[] fArr7 = new float[3];
                                 fArr7[0] = bo5Var.getScaleX();
                                 fArr7[1] = 0.9f;
-                                fArr7[i14] = 1.0f;
-                                ObjectAnimator ofFloat11 = ObjectAnimator.ofFloat(bo5Var, (Property<bo5, Float>) property7, fArr7);
-                                Property property8 = View.SCALE_Y;
-                                float[] fArr8 = new float[i11];
+                                fArr7[i11] = 1.0f;
+                                ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(bo5Var, (Property<bo5, Float>) property8, fArr7);
+                                Property property9 = View.SCALE_Y;
+                                float[] fArr8 = new float[3];
                                 fArr8[0] = bo5Var.getScaleY();
                                 fArr8[1] = 0.9f;
-                                fArr8[i14] = 1.0f;
-                                ObjectAnimator ofFloat12 = ObjectAnimator.ofFloat(bo5Var, (Property<bo5, Float>) property8, fArr8);
-                                Animator[] animatorArr3 = new Animator[4];
-                                animatorArr3[0] = ofFloat9;
-                                animatorArr3[1] = ofFloat10;
-                                animatorArr3[i14] = ofFloat11;
-                                animatorArr3[i11] = ofFloat12;
-                                animatorSet5.playTogether(animatorArr3);
+                                fArr8[i11] = 1.0f;
+                                ObjectAnimator ofFloat11 = ObjectAnimator.ofFloat(bo5Var, (Property<bo5, Float>) property9, fArr8);
+                                Animator[] animatorArr2 = new Animator[4];
+                                animatorArr2[0] = ofFloat8;
+                                animatorArr2[1] = ofFloat9;
+                                animatorArr2[i11] = ofFloat10;
+                                animatorArr2[3] = ofFloat11;
+                                animatorSet5.playTogether(animatorArr2);
                                 bo5Var.c.setInterpolator(k43Var3);
                                 bo5Var.c.setDuration(300L);
                                 bo5Var.c.setStartDelay(250L);
@@ -2052,95 +2035,90 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                             break;
                         case 12:
                             if (this.q0 != 12) {
-                                this.G.b(ob6.M0(2131743061, null), true, z12);
+                                this.G.b(ob6.M0(2131743061, null), true, z14);
+                                break;
                             }
-                            user = user2;
                             break;
                         case 13:
-                            this.G.b(ob6.M0(2131742870, null), true, z12);
-                            user = user2;
+                            this.G.b(ob6.M0(2131742870, null), true, z14);
                             break;
                         case 14:
-                            this.G.b(ob6.M0(2131742898, null), true, z12);
-                            user = user2;
+                            this.G.b(ob6.M0(2131742898, null), true, z14);
                             break;
                         case 15:
                             this.f0.setRetryMod(false);
                             if (sharedState != null) {
                                 if (sharedState.isConference()) {
-                                    this.G.b(ob6.M0(2131742950, null), false, z12);
+                                    this.G.b(ob6.M0(2131742950, null), false, z14);
                                     this.f0.setTranslationY(0.0f);
                                 } else if (sharedState.isCallingVideo()) {
-                                    this.G.b(ob6.M0(2131742949, null), false, z12);
+                                    this.G.b(ob6.M0(2131742949, null), false, z14);
                                     this.f0.setTranslationY(-hl.L(60.0f));
                                 }
                                 z = false;
-                                user = user2;
+                                z2 = false;
                                 break;
                             }
-                            this.G.b(ob6.M0(2131742952, null), false, z12);
+                            this.G.b(ob6.M0(2131742952, null), false, z14);
                             this.f0.setTranslationY(0.0f);
                             z = false;
-                            user = user2;
+                            z2 = false;
                         case 16:
                             if (this.q0 != 16) {
-                                this.G.b(ob6.M0(2131742897, null), true, z12);
+                                this.G.b(ob6.M0(2131742897, null), true, z14);
+                                break;
                             }
-                            user = user2;
                             break;
                         case 17:
-                            this.G.b(ob6.M0(2131743144, null), false, z12);
+                            this.G.b(ob6.M0(2131743144, null), false, z14);
                             this.f0.setRetryMod(true);
                             this.n0 = false;
                             this.m0 = false;
                             z = false;
-                            user = user2;
-                            break;
-                        default:
-                            user = user2;
+                            z2 = false;
                             break;
                     }
                     if (this.o0 == null) {
                         return;
                     }
-                    boolean z14 = this.m0 || this.n0;
+                    boolean z16 = this.m0 || this.n0;
                     if (sharedInstance != null) {
                         this.m0 = sharedInstance.getRemoteVideoState() == 2;
                         if (sharedInstance.getVideoState(false) != 2) {
-                            z9 = true;
+                            z11 = true;
                             if (sharedInstance.getVideoState(false) != 1) {
-                                z10 = false;
-                                this.n0 = z10;
-                                if (z10 && !this.U0) {
-                                    this.U0 = z9;
+                                z12 = false;
+                                this.n0 = z12;
+                                if (z12 && !this.U0) {
+                                    this.U0 = z11;
                                 }
                             }
                         } else {
-                            z9 = true;
+                            z11 = true;
                         }
-                        z10 = z9;
-                        this.n0 = z10;
-                        if (z10) {
-                            this.U0 = z9;
+                        z12 = z11;
+                        this.n0 = z12;
+                        if (z12) {
+                            this.U0 = z11;
                         }
                     }
-                    if (z12) {
+                    if (z14) {
                         this.Z.b();
                         this.a0.b();
                     }
                     if (this.m0) {
                         if (this.E0) {
-                            f4 = 1.0f;
+                            f3 = 1.0f;
                         } else {
-                            f4 = 1.0f;
+                            f3 = 1.0f;
                             this.w.setAlpha(1.0f);
                         }
                         hmc hmcVar2 = this.d0;
-                        if (z12) {
-                            hmcVar2.animate().alpha(f4).setDuration(250L).start();
+                        if (z14) {
+                            hmcVar2.animate().alpha(f3).setDuration(250L).start();
                         } else {
                             hmcVar2.animate().cancel();
-                            this.d0.setAlpha(f4);
+                            this.d0.setAlpha(f3);
                         }
                         if (!this.d0.d.c.P && !this.I0) {
                             i = 0;
@@ -2150,104 +2128,94 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                             } else {
                                 this.w.setVisibility(i);
                                 hmc hmcVar3 = this.d0;
-                                if (z12) {
+                                if (z14) {
                                     hmcVar3.animate().alpha(0.0f).setDuration(250L).start();
                                 } else {
                                     hmcVar3.animate().cancel();
                                     this.d0.setAlpha(0.0f);
                                 }
                             }
-                            z2 = this.n0;
-                            if (z2 || !this.m0) {
+                            z3 = this.n0;
+                            if (z3 || !this.m0) {
                                 this.H0 = false;
                             }
-                            z3 = (z2 || !this.H0 || hl.F1(this.b)) ? false : true;
-                            o(z12, z14);
+                            z4 = (z3 || !this.H0 || hl.F1(this.b)) ? false : true;
+                            o(z14, z16);
                             L = this.E.getTag() != null ? 0 : hl.L(135.0f) + hl.L(12.0f);
-                            if (z12) {
-                                this.f0.setVisibility(z11 ? 0 : 8);
-                                i2 = 8;
+                            if (z14) {
+                                this.f0.setVisibility(z13 ? 0 : 8);
                             } else {
-                                if (z11 && this.f0.getTag() == null) {
+                                if (z13 && this.f0.getTag() == null) {
                                     this.f0.animate().setListener(null).cancel();
-                                    i2 = 8;
                                     if (this.f0.getVisibility() == 8) {
                                         this.f0.setVisibility(0);
                                         this.f0.setAlpha(0.0f);
                                     }
                                     this.f0.animate().alpha(1.0f);
-                                } else {
-                                    i2 = 8;
                                 }
-                                if (!z11 && this.f0.getTag() != null) {
+                                if (!z13 && this.f0.getTag() != null) {
                                     this.f0.animate().setListener(null).cancel();
                                     this.f0.animate().setListener(new ckc(this, (byte) 9)).alpha(0.0f);
                                 }
                             }
-                            this.f0.setEnabled(z11);
-                            this.f0.setTag(!z11 ? 1 : null);
+                            this.f0.setEnabled(z13);
+                            this.f0.setTag(!z13 ? 1 : null);
                             this.u0.setLockOnScreen(this.J0);
-                            z4 = this.p0 != 3 && (this.n0 || this.m0);
-                            this.z0 = z4;
-                            if (!z4 && !this.x0) {
+                            z5 = this.p0 != 3 && (this.n0 || this.m0);
+                            this.z0 = z5;
+                            if (!z5 && !this.x0) {
                                 r(true);
                             }
                             if (this.x0 && this.z0 && !this.R0 && sharedInstance != null) {
                                 hl.d3(this.S0, 3000L);
                                 this.R0 = true;
                             }
-                            int i15 = this.p0;
-                            boolean z15 = i15 == 11 && this.x0;
-                            boolean z16 = (!z11 || i15 == 16 || i15 == 11 || i15 == 12 || i15 == 14 || i15 == 6 || !this.x0 || sharedInstance == null || (phoneCall2 = sharedInstance.privateCall) == null || !phoneCall2.conference_supported) ? false : true;
+                            int i12 = this.p0;
+                            boolean z17 = i12 == 11 && this.x0;
+                            boolean z18 = (!z13 || i12 == 16 || i12 == 11 || i12 == 12 || i12 == 14 || i12 == 6 || !this.x0 || sharedInstance == null || (phoneCall2 = sharedInstance.privateCall) == null || !phoneCall2.conference_supported) ? false : true;
                             ImageView imageView = this.I;
-                            if (z12) {
-                                f = 12.0f;
-                                imageView.setVisibility(z15 ? 0 : i2);
-                                this.I.setAlpha(z15 ? 1.0f : 0.0f);
-                                ImageView imageView2 = this.J;
-                                if (z16) {
-                                    i2 = 0;
-                                }
-                                imageView2.setVisibility(i2);
-                                this.J.setAlpha(z16 ? 1.0f : 0.0f);
+                            if (z14) {
+                                imageView.setVisibility(z17 ? 0 : 8);
+                                this.I.setAlpha(z17 ? 1.0f : 0.0f);
+                                this.J.setVisibility(z18 ? 0 : 8);
+                                this.J.setAlpha(z18 ? 1.0f : 0.0f);
                                 this.M0.setTranslationY((-hl.L(16.0f)) - (this.x0 ? hl.L(80.0f) : 0));
                             } else {
-                                if (z15) {
+                                if (z17) {
                                     imageView.animate().alpha(1.0f).start();
                                 } else {
                                     if (imageView.getVisibility() != 0) {
                                         this.I.setVisibility(0);
-                                        f2 = 0.0f;
+                                        f = 0.0f;
                                         this.I.setAlpha(0.0f);
                                     } else {
-                                        f2 = 0.0f;
+                                        f = 0.0f;
                                     }
-                                    this.I.animate().alpha(f2).start();
+                                    this.I.animate().alpha(f).start();
                                 }
-                                ImageView imageView3 = this.J;
-                                if (z16) {
-                                    imageView3.animate().alpha(1.0f).start();
+                                ImageView imageView2 = this.J;
+                                if (z18) {
+                                    imageView2.animate().alpha(1.0f).start();
                                 } else {
-                                    if (imageView3.getVisibility() != 0) {
+                                    if (imageView2.getVisibility() != 0) {
                                         this.J.setVisibility(0);
-                                        f3 = 0.0f;
+                                        f2 = 0.0f;
                                         this.J.setAlpha(0.0f);
                                     } else {
-                                        f3 = 0.0f;
+                                        f2 = 0.0f;
                                     }
-                                    this.J.animate().alpha(f3).start();
+                                    this.J.animate().alpha(f2).start();
                                 }
                                 this.M0.animate().translationY((-hl.L(16.0f)) - (this.x0 ? hl.L(80.0f) : 0)).setDuration(150L).setInterpolator(k43.f).start();
-                                f = 12.0f;
                             }
-                            i3 = this.p0;
-                            if (i3 != 10 && i3 != 11) {
-                                u(z12);
+                            i2 = this.p0;
+                            if (i2 != 10 && i2 != 11) {
+                                u(z14);
                             }
-                            if (b != 0) {
-                                this.G.e(z12);
+                            if (z2) {
+                                this.G.e(z14);
                             }
-                            this.G.d(z, z12);
+                            this.G.d(z, z14);
                             if (this.E.getVisibility() == 0 && this.C0) {
                                 L += hl.L(24.0f);
                                 layout = this.U.getLayout();
@@ -2261,7 +2229,8 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                             if (!this.n0 || this.m0) {
                                 L -= hl.L(60.0f);
                             }
-                            if (z12) {
+                            if (z14) {
+                                z6 = z16;
                                 this.Y.setTranslationY(L);
                             } else {
                                 if (this.C0 && (this.n0 || this.m0)) {
@@ -2269,70 +2238,67 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                                     k43 k43Var4 = k43.f;
                                     duration2.setInterpolator(k43Var4).start();
                                     k43Var = k43Var4;
-                                    j = 250;
+                                    z6 = z16;
                                 } else {
-                                    j = 250;
+                                    z6 = z16;
                                     ViewPropertyAnimator duration3 = this.Y.animate().setStartDelay(250L).alpha(1.0f).setDuration(150L);
                                     k43Var = k43.f;
                                     duration3.setInterpolator(k43Var).start();
                                 }
                                 if (L != this.v0) {
-                                    this.Y.animate().setStartDelay(this.p0 == 11 ? j : 0L).translationY(L).setDuration(200L).setInterpolator(k43Var).start();
+                                    this.Y.animate().setStartDelay(this.p0 == 11 ? 250L : 0L).translationY(L).setDuration(200L).setInterpolator(k43Var).start();
                                 }
                             }
                             this.v0 = L;
-                            boolean z17 = sharedInstance == null && sharedInstance.isScreencast();
-                            int i16 = this.p0;
-                            this.D0 = i16 == 11 && i16 != 17 && ((this.n0 && !z17) || this.m0);
-                            if (sharedInstance == null) {
+                            boolean z19 = sharedInstance == null && sharedInstance.isScreencast();
+                            int i13 = this.p0;
+                            this.D0 = i13 == 11 && i13 != 17 && ((this.n0 && !z19) || this.m0);
+                            if (sharedInstance != null) {
                                 if (this.n0) {
-                                    voIPService = sharedInstance;
-                                    voIPService.sharedUIParams.tapToVideoTooltipWasShowed = true;
-                                } else {
-                                    voIPService = sharedInstance;
+                                    sharedInstance.sharedUIParams.tapToVideoTooltipWasShowed = true;
                                 }
-                                this.e0.setIsScreencast(voIPService.isScreencast());
-                                this.e0.d.setMirror(voIPService.isFrontFaceCamera());
-                                gmc gmcVar = (!this.n0 || voIPService.isScreencast()) ? null : this.e0.d;
+                                this.e0.setIsScreencast(sharedInstance.isScreencast());
+                                this.e0.d.setMirror(sharedInstance.isFrontFaceCamera());
+                                gmc gmcVar = (!this.n0 || sharedInstance.isScreencast()) ? null : this.e0.d;
                                 if (!this.l1 || (hmcVar = this.k1) == null) {
-                                    if (z3) {
+                                    if (z4) {
                                         videoSink = this.c0;
-                                        voIPService.setSinks(gmcVar, videoSink);
-                                        if (z12) {
+                                        sharedInstance.setSinks(gmcVar, videoSink);
+                                        if (z14) {
                                             zkc zkcVar = this.M0;
                                             zkcVar.f = false;
                                             if (!zkcVar.e && zkcVar.getParent() != null) {
                                                 TransitionManager.beginDelayedTransition(zkcVar, zkcVar.d);
                                             }
                                         }
-                                        isMicMute = voIPService.isMicMute();
+                                        isMicMute = sharedInstance.isMicMute();
                                         zkc zkcVar2 = this.M0;
                                         if (isMicMute) {
                                             zkcVar2.c("self-muted");
                                         } else {
                                             zkcVar2.a(R.drawable.calls_mute_mini, ob6.M0(2131742938, null), "self-muted");
                                         }
-                                        if ((!this.n0 || this.m0) && (((i4 = this.p0) == 3 || i4 == 5) && voIPService.getCallDuration() > 500)) {
-                                            remoteAudioState = voIPService.getRemoteAudioState();
+                                        if ((!this.n0 || this.m0) && (((i3 = this.p0) == 3 || i3 == 5) && sharedInstance.getCallDuration() > 500)) {
+                                            remoteAudioState = sharedInstance.getRemoteAudioState();
                                             zkc zkcVar3 = this.M0;
                                             if (remoteAudioState != 0) {
-                                                i5 = 1;
+                                                i4 = 1;
                                                 zkcVar3.a(R.drawable.calls_mute_mini, ob6.a0("VoipUserMicrophoneIsOff", null, 2131742879, zkcVar3.b(lbc.k(user, true))), "muted");
                                             } else {
-                                                i5 = 1;
+                                                i4 = 1;
                                                 zkcVar3.c("muted");
                                             }
-                                            remoteVideoState = voIPService.getRemoteVideoState();
+                                            remoteVideoState = sharedInstance.getRemoteVideoState();
                                             zkc zkcVar4 = this.M0;
                                             if (remoteVideoState != 0) {
-                                                Object[] objArr = new Object[i5];
-                                                objArr[0] = zkcVar4.b(lbc.k(user, i5));
+                                                Object[] objArr = new Object[i4];
+                                                objArr[0] = zkcVar4.b(lbc.k(user, i4));
                                                 zkcVar4.a(R.drawable.calls_camera_mini, ob6.a0("VoipUserCameraIsOff", null, 2131742880, objArr), MediaStreamTrack.VIDEO_TRACK_KIND);
                                             } else {
                                                 zkcVar4.c(MediaStreamTrack.VIDEO_TRACK_KIND);
                                             }
                                         } else {
-                                            int remoteAudioState2 = voIPService.getRemoteAudioState();
+                                            int remoteAudioState2 = sharedInstance.getRemoteAudioState();
                                             zkc zkcVar5 = this.M0;
                                             if (remoteAudioState2 == 0) {
                                                 zkcVar5.a(R.drawable.calls_mute_mini, ob6.a0("VoipUserMicrophoneIsOff", null, 2131742879, zkcVar5.b(lbc.k(user, true))), "muted");
@@ -2341,18 +2307,18 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                                             }
                                             this.M0.c(MediaStreamTrack.VIDEO_TRACK_KIND);
                                         }
-                                        if (this.M0.getChildCount() == 0 && this.m0 && (phoneCall = voIPService.privateCall) != null && !phoneCall.video) {
-                                            sharedUIParams = voIPService.sharedUIParams;
+                                        if (this.M0.getChildCount() == 0 && this.m0 && (phoneCall = sharedInstance.privateCall) != null && !phoneCall.video) {
+                                            sharedUIParams = sharedInstance.sharedUIParams;
                                             if (!sharedUIParams.tapToVideoTooltipWasShowed) {
                                                 sharedUIParams.tapToVideoTooltipWasShowed = true;
                                                 this.N0.setTranslationY(-((this.s.getMeasuredHeight() - this.j0.getY()) + hl.L(6.0f)));
                                                 this.N0.o(0.0f, this.f.getX() + this.j0.getX() + hl.L(14.0f));
                                                 this.N0.v();
-                                                z8 = true;
-                                                if (z12) {
+                                                z10 = true;
+                                                if (z14) {
                                                     zkc zkcVar6 = this.M0;
                                                     if (zkcVar6.f) {
-                                                        zkcVar6.e = z8;
+                                                        zkcVar6.e = z10;
                                                         hl.d3(new azb(zkcVar6, (byte) 27), 700L);
                                                     }
                                                     zkcVar6.f = false;
@@ -2360,58 +2326,56 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                                             }
                                         }
                                         if (this.M0.getChildCount() != 0) {
-                                            z8 = true;
+                                            z10 = true;
                                             this.N0.f(true);
-                                            if (z12) {
+                                            if (z14) {
                                             }
                                         }
-                                        z8 = true;
-                                        if (z12) {
+                                        z10 = true;
+                                        if (z14) {
                                         }
                                     } else {
                                         hmcVar = this.d0;
                                     }
                                 }
                                 videoSink = hmcVar.d;
-                                voIPService.setSinks(gmcVar, videoSink);
-                                if (z12) {
+                                sharedInstance.setSinks(gmcVar, videoSink);
+                                if (z14) {
                                 }
-                                isMicMute = voIPService.isMicMute();
+                                isMicMute = sharedInstance.isMicMute();
                                 zkc zkcVar22 = this.M0;
                                 if (isMicMute) {
                                 }
                                 if (this.n0) {
                                 }
-                                remoteAudioState = voIPService.getRemoteAudioState();
+                                remoteAudioState = sharedInstance.getRemoteAudioState();
                                 zkc zkcVar32 = this.M0;
                                 if (remoteAudioState != 0) {
                                 }
-                                remoteVideoState = voIPService.getRemoteVideoState();
+                                remoteVideoState = sharedInstance.getRemoteVideoState();
                                 zkc zkcVar42 = this.M0;
                                 if (remoteVideoState != 0) {
                                 }
                                 if (this.M0.getChildCount() == 0) {
-                                    sharedUIParams = voIPService.sharedUIParams;
+                                    sharedUIParams = sharedInstance.sharedUIParams;
                                     if (!sharedUIParams.tapToVideoTooltipWasShowed) {
                                     }
                                 }
                                 if (this.M0.getChildCount() != 0) {
                                 }
-                                z8 = true;
-                                if (z12) {
+                                z10 = true;
+                                if (z14) {
                                 }
-                            } else {
-                                voIPService = sharedInstance;
                             }
                             childsHight = this.M0.getChildsHight();
                             ujcVar = this.a0;
-                            if (ujcVar.getParent() == null && z12) {
+                            if (ujcVar.getParent() == null && z14) {
                                 ujcVar.U = childsHight;
                             } else {
                                 ujcVar.U = childsHight;
                             }
                             ujcVar2 = this.Z;
-                            if (ujcVar2.getParent() == null && z12) {
+                            if (ujcVar2.getParent() == null && z14) {
                                 ujcVar2.U = childsHight;
                             } else {
                                 ujcVar2.U = childsHight;
@@ -2419,24 +2383,24 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                             this.Z.setUiVisible(this.x0);
                             this.a0.setUiVisible(this.x0);
                             if (this.n0) {
-                                z5 = true;
-                                q(0, z12);
+                                z7 = true;
+                                q(0, z14);
                             } else if (!this.m0 || this.H0) {
-                                z5 = true;
-                                q(1, z12);
+                                z7 = true;
+                                q(1, z14);
                             } else {
-                                q(2, z12);
-                                z5 = true;
+                                q(2, z14);
+                                z7 = true;
                             }
                             ujc ujcVar3 = this.a0;
-                            if (z3) {
+                            if (z4) {
                                 if (ujcVar3.getTag() != null) {
                                     this.a0.setIsActive(false);
                                     this.a0.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setListener(new ckc(this, (byte) 6)).setDuration(150L).setInterpolator(k43.f).start();
                                     this.a0.setTag(null);
                                 }
                             } else if (ujcVar3.getTag() == null) {
-                                this.a0.setIsActive(z5);
+                                this.a0.setIsActive(z7);
                                 if (this.a0.getVisibility() != 0) {
                                     this.a0.setVisibility(0);
                                     this.a0.setAlpha(0.0f);
@@ -2456,7 +2420,7 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                                 tmc tmcVar = this.x;
                                 if (tmcVar.L && !tmcVar.E) {
                                     tmcVar.E = true;
-                                    int L3 = hl.L(f);
+                                    int L3 = hl.L(12.0f);
                                     tmcVar.G = L3;
                                     ValueAnimator ofInt = ValueAnimator.ofInt(0, L3);
                                     tmcVar.c = ofInt;
@@ -2466,24 +2430,24 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                                     tmcVar.c.start();
                                 }
                                 this.E.a();
-                                int i17 = this.w.W;
-                                if (i17 != 2 && i17 != 3) {
+                                int i14 = this.w.W;
+                                if (i14 != 2 && i14 != 3) {
                                     int[] iArr2 = new int[2];
                                     this.E.getLocationOnScreen(iArr2);
-                                    z6 = true;
+                                    z8 = true;
                                     this.w.b(hl.L(106.0f) + iArr2[0], hl.L(106.0f) + iArr2[1], this.q0 != -1);
-                                    z7 = (!this.n0 || this.m0) ? z6 : false;
-                                    this.y.setState(z7);
-                                    this.x.setState(z7);
-                                    this.r.e(z7);
-                                    if (this.m0 && !z14 && this.g0) {
+                                    z9 = (!this.n0 || this.m0) ? z8 : false;
+                                    this.y.setState(z9);
+                                    this.x.setState(z9);
+                                    this.r.e(z9);
+                                    if (this.m0 && !z6 && this.g0) {
                                         this.g0 = false;
-                                        if (voIPService != null) {
-                                            voIPService.playStartRecordSound();
+                                        if (sharedInstance != null) {
+                                            sharedInstance.playStartRecordSound();
                                         }
                                     }
                                     View view = this.i0;
-                                    if (z7) {
+                                    if (z9) {
                                         if (view.getVisibility() != 0) {
                                             this.i0.setVisibility(0);
                                             this.h0.setVisibility(0);
@@ -2501,19 +2465,19 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                                     return;
                                 }
                             }
-                            z6 = true;
+                            z8 = true;
                             if (this.n0) {
                             }
-                            this.y.setState(z7);
-                            this.x.setState(z7);
-                            this.r.e(z7);
+                            this.y.setState(z9);
+                            this.x.setState(z9);
+                            this.r.e(z9);
                             if (this.m0) {
                                 this.g0 = false;
-                                if (voIPService != null) {
+                                if (sharedInstance != null) {
                                 }
                             }
                             View view2 = this.i0;
-                            if (z7) {
+                            if (z9) {
                             }
                             xjc xjcVar2 = this.T0;
                             hl.r(xjcVar2);
@@ -2525,45 +2489,45 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                     if (this.n0) {
                     }
                     this.w.setVisibility(4);
-                    z2 = this.n0;
-                    if (z2) {
+                    z3 = this.n0;
+                    if (z3) {
                     }
                     this.H0 = false;
-                    if (z2) {
+                    if (z3) {
                     }
-                    o(z12, z14);
+                    o(z14, z16);
                     if (this.E.getTag() != null) {
                     }
-                    if (z12) {
+                    if (z14) {
                     }
-                    this.f0.setEnabled(z11);
-                    this.f0.setTag(!z11 ? 1 : null);
+                    this.f0.setEnabled(z13);
+                    this.f0.setTag(!z13 ? 1 : null);
                     this.u0.setLockOnScreen(this.J0);
                     if (this.p0 != 3) {
                     }
-                    this.z0 = z4;
-                    if (!z4) {
+                    this.z0 = z5;
+                    if (!z5) {
                         r(true);
                     }
                     if (this.x0) {
                         hl.d3(this.S0, 3000L);
                         this.R0 = true;
                     }
-                    int i152 = this.p0;
-                    if (i152 == 11) {
+                    int i122 = this.p0;
+                    if (i122 == 11) {
                     }
-                    if (!z11) {
+                    if (!z13) {
                     }
-                    ImageView imageView4 = this.I;
-                    if (z12) {
+                    ImageView imageView3 = this.I;
+                    if (z14) {
                     }
-                    i3 = this.p0;
-                    if (i3 != 10) {
-                        u(z12);
+                    i2 = this.p0;
+                    if (i2 != 10) {
+                        u(z14);
                     }
-                    if (b != 0) {
+                    if (z2) {
                     }
-                    this.G.d(z, z12);
+                    this.G.d(z, z14);
                     if (this.E.getVisibility() == 0) {
                         L += hl.L(24.0f);
                         layout = this.U.getLayout();
@@ -2577,14 +2541,14 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                     if (!this.n0) {
                     }
                     L -= hl.L(60.0f);
-                    if (z12) {
+                    if (z14) {
                     }
                     this.v0 = L;
                     if (sharedInstance == null) {
                     }
-                    int i162 = this.p0;
-                    this.D0 = i162 == 11 && i162 != 17 && ((this.n0 && !z17) || this.m0);
-                    if (sharedInstance == null) {
+                    int i132 = this.p0;
+                    this.D0 = i132 == 11 && i132 != 17 && ((this.n0 && !z19) || this.m0);
+                    if (sharedInstance != null) {
                     }
                     childsHight = this.M0.getChildsHight();
                     ujcVar = this.a0;
@@ -2600,23 +2564,23 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                     if (this.n0) {
                     }
                     ujc ujcVar32 = this.a0;
-                    if (z3) {
+                    if (z4) {
                     }
                     this.Z.a();
                     this.a0.a();
                     w();
                     if (this.p0 == 3) {
                     }
-                    z6 = true;
+                    z8 = true;
                     if (this.n0) {
                     }
-                    this.y.setState(z7);
-                    this.x.setState(z7);
-                    this.r.e(z7);
+                    this.y.setState(z9);
+                    this.x.setState(z9);
+                    this.r.e(z9);
                     if (this.m0) {
                     }
                     View view22 = this.i0;
-                    if (z7) {
+                    if (z9) {
                     }
                     xjc xjcVar22 = this.T0;
                     hl.r(xjcVar22);
@@ -2624,29 +2588,28 @@ public final class mkc implements VoIPService.StateListener, fn7 {
                     }
                 }
             }
-            user = user2;
-            v(z12);
+            v(z14);
             if (this.p0 == 5) {
                 z = this.s0;
                 if (!z && this.q0 != 5) {
-                    this.G.b(ob6.M0(2131743071, null), true, z12);
+                    this.G.b(ob6.M0(2131743071, null), true, z14);
                 }
-                z11 = false;
-                b = 0;
+                z13 = false;
+                z2 = false;
                 if (this.o0 == null) {
                 }
             } else {
+                z2 = true;
                 this.s0 = true;
-                b = 1;
                 z = false;
-                z11 = false;
+                z13 = false;
                 if (this.o0 == null) {
                 }
             }
         }
         z = false;
-        z11 = false;
-        b = 0;
+        z13 = false;
+        z2 = false;
         if (this.o0 == null) {
         }
     }

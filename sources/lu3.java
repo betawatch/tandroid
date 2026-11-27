@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.FiltersSetupActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class lu3 implements h69, n7, ncc, fd, b86, dz7, on5, t93, WriteToSocketDelegate, l8, o69, OnTokenCanceledListener, mi0, ta9, t69, OnSuccessListener, nr7, sy4 {
     public final /* synthetic */ byte a;
@@ -185,7 +185,7 @@ public final /* synthetic */ class lu3 implements h69, n7, ncc, fd, b86, dz7, on
                 ((bg8) obj).B(((n64) obj2).a.Q);
                 break;
             case 12:
-                ((bg8) obj).L((uf7) obj2);
+                ((bg8) obj).L((vf7) obj2);
                 break;
             default:
                 ((bg8) obj).G((j99) obj2);
@@ -411,7 +411,7 @@ public final /* synthetic */ class lu3 implements h69, n7, ncc, fd, b86, dz7, on
                 d0.getConnectionsManager().sendRequest(new TLRPC.TL_messages_clearRecentStickers(), new fp6(d0, (byte) 2));
                 break;
             case 23:
-                ((ze7) obj).run();
+                ((bf7) obj).run();
                 break;
             default:
                 ((by4) obj).F0();

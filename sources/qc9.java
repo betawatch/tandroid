@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class qc9 extends FrameLayout implements fn7, hla {
     public final int a;
@@ -61,10 +61,10 @@ public final class qc9 extends FrameLayout implements fn7, hla {
     public final void b(fu5 fu5Var, pcc pccVar, Runnable runnable) {
         long j = this.s + this.w;
         jn0 jn0Var = new jn0(pccVar, (byte) 12);
-        z09 z09Var = new z09(this, pccVar, (byte) 14);
+        yz8 yz8Var = new yz8(this, pccVar);
         if (this.r <= 0 || j <= 0) {
             if (j > 0) {
-                z09Var.run();
+                yz8Var.run();
                 return;
             } else {
                 jn0Var.run();
@@ -76,7 +76,7 @@ public final class qc9 extends FrameLayout implements fn7, hla {
         int i = aob.F8;
         int i2 = aob.E8;
         fu5Var.a(R.drawable.settings_stars, null, M0, E, i, i2, jn0Var);
-        fu5Var.a(R.drawable.menu_gram_24, null, ob6.M0(2131750249, null), oj.j(j, pj.b).o(2).d(), i, i2, z09Var);
+        fu5Var.a(R.drawable.menu_gram_24, null, ob6.M0(2131750249, null), oj.j(j, pj.b).o(2).d(), i, i2, yz8Var);
         runnable.run();
     }
 

@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class my6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -333,7 +333,7 @@ public final /* synthetic */ class my6 implements Runnable {
                                     }
                             }
                         }
-                    }, new ku0((Object) n1aVar, (Object) strArr, (Object) str, (Object) linkedHashSet, (byte) 19), new cp8(n1aVar, d, linkedHashSet, str, hashMap, arrayList), new ku0((Object) n1aVar, str, (Object) arrayList3, (Object) hashMap2, (byte) 20), new v58((Object) n1aVar, (Object) str, (Object) arrayList4, (byte) 5), pccVar2);
+                    }, new ku0((Object) n1aVar, (Object) strArr, (Object) str, (Object) linkedHashSet, (byte) 19), new cp8(n1aVar, d, linkedHashSet, str, hashMap, arrayList), new ku0((Object) n1aVar, str, (Object) arrayList3, (Object) hashMap2, (byte) 20), new w58((Object) n1aVar, (Object) str, (Object) arrayList4, (byte) 5), pccVar2);
                     break;
                 }
             case 5:
@@ -350,7 +350,7 @@ public final /* synthetic */ class my6 implements Runnable {
                 cc4.b("StoriesController loaded stories from server state=" + tL_stories_getAllStories.state + " more=" + tL_stories_getAllStories.next + "  " + tLObject);
                 if (tLObject instanceof TL_stories.TL_stories_allStories) {
                     TL_stories.TL_stories_allStories tL_stories_allStories = (TL_stories.TL_stories_allStories) tLObject;
-                    jf7.Y(i2).j1(tL_stories_allStories.users, null, true, true);
+                    kf7.a0(i2).n1(tL_stories_allStories.users, null, true, true);
                     int i3 = tL_stories_allStories.count;
                     if (z3) {
                         c6bVar.v = i3;
@@ -388,8 +388,8 @@ public final /* synthetic */ class my6 implements Runnable {
                 ArrayList arrayList5 = (ArrayList) obj2;
                 kc kcVar = (kc) obj;
                 int i4 = o6bVar.a;
-                jf7 jf7Var = o6bVar.b;
-                SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                kf7 kf7Var = o6bVar.b;
+                SQLiteDatabase sQLiteDatabase = kf7Var.b;
                 for (int i5 = 0; i5 < arrayList5.size(); i5++) {
                     TL_stories.PeerStories peerStories = (TL_stories.PeerStories) arrayList5.get(i5);
                     long n = wf3.n(peerStories.peer);
@@ -416,7 +416,7 @@ public final /* synthetic */ class my6 implements Runnable {
                             if (longValue > 0) {
                                 TLRPC.User X1 = uc7.s1(i4).X1(Long.valueOf(longValue));
                                 if (X1 == null) {
-                                    X1 = jf7.Y(i4).g0(longValue);
+                                    X1 = kf7.a0(i4).i0(longValue);
                                 }
                                 if (X1 == null || (X1.stories_hidden == z2 && !arrayList7.contains(Long.valueOf(longValue)))) {
                                     arrayList7.add(Long.valueOf(longValue));
@@ -425,7 +425,7 @@ public final /* synthetic */ class my6 implements Runnable {
                                 long j = -longValue;
                                 TLRPC.Chat M0 = uc7.s1(i4).M0(Long.valueOf(j));
                                 if (M0 == null) {
-                                    M0 = jf7.Y(i4).N(j);
+                                    M0 = kf7.a0(i4).P(j);
                                 }
                                 if (M0 == null || (M0.stories_hidden == z2 && !arrayList7.contains(Long.valueOf(longValue)))) {
                                     arrayList7.add(Long.valueOf(longValue));
@@ -438,7 +438,7 @@ public final /* synthetic */ class my6 implements Runnable {
                         Locale locale = Locale.US;
                         sQLiteDatabase.executeFast("DELETE FROM stories WHERE dialog_id IN(" + TextUtils.join(",", arrayList7) + ")").stepThis().dispose();
                     } catch (Throwable th) {
-                        jf7Var.n(th, true);
+                        kf7Var.p(th, true);
                     }
                 }
                 for (int i7 = 0; i7 < arrayList5.size(); i7++) {

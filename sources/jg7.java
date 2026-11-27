@@ -1,59 +1,32 @@
 // default package
 
-import android.content.Context;
-import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.ArrayList;
-import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class jg7 {
-    public static final Object b = new Object();
-    public static jg7 c;
-    public xq2 a;
+public final class jg7 extends r8a {
+    public final ArrayList a;
 
-    public static jg7 c() {
-        jg7 jg7Var;
-        synchronized (b) {
-            xve.j("MlKitContext has not been initialized", c != null);
-            jg7Var = c;
-            xve.h(jg7Var);
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public jg7(String str, ArrayList arrayList) {
+        super(r3, null);
+        String str2;
+        str.getClass();
+        if (arrayList.size() == 1) {
+            str2 = "Field '" + ((String) arrayList.get(0)) + "' is required for type with serial name '" + str + "', but it was missing";
+        } else {
+            str2 = "Fields " + arrayList + " are required for type with serial name '" + str + "', but they were missing";
         }
-        return jg7Var;
+        this.a = arrayList;
     }
 
-    public static jg7 d(Context context, Executor executor) {
-        jg7 jg7Var;
-        synchronized (b) {
-            xve.j("MlKitContext is already initialized", c == null);
-            jg7 jg7Var2 = new jg7();
-            c = jg7Var2;
-            Context applicationContext = context.getApplicationContext();
-            if (applicationContext != null) {
-                context = applicationContext;
-            }
-            ArrayList q = new lh2(context, new ri6(MlKitComponentDiscoveryService.class, (byte) 20), (byte) 17).q();
-            ArrayList arrayList = new ArrayList();
-            ArrayList arrayList2 = new ArrayList();
-            c22 c22Var = uq2.q;
-            arrayList.addAll(q);
-            arrayList2.add(fq2.c(context, Context.class, new Class[0]));
-            arrayList2.add(fq2.c(jg7Var2, jg7.class, new Class[0]));
-            xq2 xq2Var = new xq2(executor, arrayList, arrayList2, c22Var);
-            jg7Var2.a = xq2Var;
-            xq2Var.o(true);
-            jg7Var = c;
-        }
-        return jg7Var;
-    }
-
-    public final Object a(Class cls) {
-        xve.j("MlKitContext has been deleted", c == this);
-        xve.h(this.a);
-        return this.a.a(cls);
-    }
-
-    public final Context b() {
-        return (Context) a(Context.class);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jg7(ArrayList arrayList, String str, jg7 jg7Var) {
+        super(str, jg7Var);
+        arrayList.getClass();
+        this.a = arrayList;
     }
 }

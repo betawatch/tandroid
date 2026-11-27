@@ -7,7 +7,7 @@ import com.android.billingclient.api.Purchase;
 import java.util.ArrayList;
 import org.json.JSONException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class old {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -63,10 +63,10 @@ public abstract class old {
         ArrayList arrayList4 = new ArrayList();
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
-            j09 j09Var = (j09) arrayList.get(i);
+            k09 k09Var = (k09) arrayList.get(i);
             arrayList2.add(null);
             arrayList4.add(null);
-            if (j09Var.b.equals("first_party")) {
+            if (k09Var.b.equals("first_party")) {
                 p3d.h("Serialized DocId is required for constructing ExtraParams to query ProductDetails for all first party products.");
                 return null;
             }

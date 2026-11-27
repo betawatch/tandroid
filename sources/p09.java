@@ -1,82 +1,121 @@
 // default package
 
-import android.util.Log;
+import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
+import java.io.RandomAccessFile;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class p09 implements dc4 {
-    public static final Charset c = Charset.forName("UTF-8");
-    public final File a;
-    public o09 b;
+public final class p09 implements Closeable {
+    public static final Logger h = Logger.getLogger(p09.class.getName());
+    public final RandomAccessFile a;
+    public final int b;
+    public final int c;
+    public final m09 d;
+    public final m09 e;
+    public final byte[] f = new byte[16];
 
     public p09(File file) {
-        this.a = file;
-    }
-
-    @Override // dc4
-    public final void a() {
-        jn2.b(this.b, "There was a problem closing the Crashlytics log file.");
-        this.b = null;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0070  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0085 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0072  */
-    @Override // dc4
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final String b() {
-        df0 df0Var;
-        byte[] bArr;
-        File file = this.a;
-        if (file.exists()) {
-            if (this.b == null) {
-                try {
-                    this.b = new o09(file);
-                } catch (IOException e) {
-                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e);
+        if (!file.exists()) {
+            File file2 = new File(file.getPath() + ".tmp");
+            RandomAccessFile randomAccessFile = new RandomAccessFile(file2, "rwd");
+            try {
+                randomAccessFile.setLength(4096L);
+                randomAccessFile.seek(0L);
+                byte[] bArr = new byte[16];
+                int[] iArr = {TLObject.FLAG_12, 0, 0, 0};
+                int i = 0;
+                for (int i2 = 0; i2 < 4; i2++) {
+                    int i3 = iArr[i2];
+                    bArr[i] = (byte) (i3 >> 24);
+                    bArr[i + 1] = (byte) (i3 >> 16);
+                    bArr[i + 2] = (byte) (i3 >> 8);
+                    bArr[i + 3] = (byte) i3;
+                    i += 4;
                 }
-            }
-            o09 o09Var = this.b;
-            if (o09Var != null) {
-                int[] iArr = {0};
-                int i = 16;
-                if (o09Var.c != 0) {
-                    l09 l09Var = o09Var.e;
-                    int i2 = l09Var.b;
-                    int i3 = o09Var.d.b;
-                    int i4 = l09Var.c;
-                    i = i2 >= i3 ? 16 + (i2 - i3) + 4 + i4 : (((i2 + 4) + i4) + o09Var.b) - i3;
+                randomAccessFile.write(bArr);
+                randomAccessFile.close();
+                if (!file2.renameTo(file)) {
+                    su3.e("Rename failed!");
+                    throw null;
                 }
-                byte[] bArr2 = new byte[i];
-                try {
-                    o09Var.a(new ym4(bArr2, iArr, (byte) 18));
-                } catch (IOException e2) {
-                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e2);
-                }
-                df0Var = new df0(iArr[0], bArr2);
-                if (df0Var != null) {
-                    bArr = null;
-                } else {
-                    int i5 = df0Var.b;
-                    bArr = new byte[i5];
-                    System.arraycopy(df0Var.a, 0, bArr, 0, i5);
-                }
-                if (bArr == null) {
-                    return new String(bArr, c);
-                }
-                return null;
+            } catch (Throwable th) {
+                randomAccessFile.close();
+                throw th;
             }
         }
-        df0Var = null;
-        if (df0Var != null) {
+        RandomAccessFile randomAccessFile2 = new RandomAccessFile(file, "rwd");
+        this.a = randomAccessFile2;
+        randomAccessFile2.seek(0L);
+        byte[] bArr2 = this.f;
+        randomAccessFile2.readFully(bArr2);
+        int c = c(0, bArr2);
+        this.b = c;
+        if (c <= randomAccessFile2.length()) {
+            this.c = c(4, bArr2);
+            int c2 = c(8, bArr2);
+            int c3 = c(12, bArr2);
+            this.d = b(c2);
+            this.e = b(c3);
+            return;
         }
-        if (bArr == null) {
+        throw new IOException("File is truncated. Expected length: " + this.b + ", Actual length: " + randomAccessFile2.length());
+    }
+
+    public static int c(int i, byte[] bArr) {
+        return ((bArr[i] & 255) << 24) + ((bArr[i + 1] & 255) << 16) + ((bArr[i + 2] & 255) << 8) + (bArr[i + 3] & 255);
+    }
+
+    public final synchronized void a(o09 o09Var) {
+        int i = this.d.b;
+        for (int i2 = 0; i2 < this.c; i2++) {
+            m09 b = b(i);
+            o09Var.a(new n09(this, b), b.c);
+            i = d(b.b + 4 + b.c);
         }
+    }
+
+    public final m09 b(int i) {
+        if (i == 0) {
+            return m09.d;
+        }
+        RandomAccessFile randomAccessFile = this.a;
+        randomAccessFile.seek(i);
+        return new m09(i, randomAccessFile.readInt(), (byte) 0);
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final synchronized void close() {
+        this.a.close();
+    }
+
+    public final int d(int i) {
+        int i2 = this.b;
+        return i < i2 ? i : (i + 16) - i2;
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(p09.class.getSimpleName());
+        sb.append("[fileLength=");
+        sb.append(this.b);
+        sb.append(", size=");
+        sb.append(this.c);
+        sb.append(", first=");
+        sb.append(this.d);
+        sb.append(", last=");
+        sb.append(this.e);
+        sb.append(", element lengths=[");
+        try {
+            a(new n31((Object) sb, (byte) 10));
+        } catch (IOException e) {
+            h.log(Level.WARNING, "read error", (Throwable) e);
+        }
+        sb.append("]]");
+        return sb.toString();
     }
 }

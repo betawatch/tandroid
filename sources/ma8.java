@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ma8 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -29,16 +29,16 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
         this.b = photoViewer;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x0210, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x020b, code lost:
     
-        if (r4.startsWith("https://" + uc7.s1(r0.U).N2) == false) goto L76;
+        if (r6.startsWith("https://" + uc7.s1(r0.U).N2) == false) goto L75;
      */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x0317  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0376  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x03cd  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0412  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x043d  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x047d  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0475  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0310  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x036f  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x03c7  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x040c  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0436  */
     @Override // android.view.View.OnClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -50,12 +50,11 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
         int i;
         TLRPC.Message message;
         byte b = this.a;
-        String str = null;
         float f3 = 0.0f;
         byte b2 = 2;
         final byte b3 = 0;
         final PhotoViewer photoViewer = this.b;
-        final byte b4 = 1;
+        int i2 = 1;
         switch (b) {
             case 0:
                 Drawable[] drawableArr = PhotoViewer.d9;
@@ -95,34 +94,34 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                 } else {
                     r47 r47Var2 = photoViewer.S4;
                     if (r47Var2 != null && r47Var2.q4() && photoViewer.p0.getAlpha() > 0.5f) {
-                        final int i2 = photoViewer.S4.K1;
+                        final int i3 = photoViewer.S4.K1;
                         final x53 x53Var = new x53();
                         fu5 H = fu5.H(photoViewer.f0, x53Var, photoViewer.p0, true);
                         H.b0(0.0f, -hl.L(46.0f));
                         H.W(5);
                         r47 r47Var3 = photoViewer.S4;
                         if (r47Var3.W0 == null && r47Var3.X0 == null) {
-                            String str2 = r47Var3.T0;
-                            if (str2 != null) {
+                            String str = r47Var3.T0;
+                            if (str != null) {
                                 break;
                             }
-                            if (!yac.h(i2).p() && !uc7.s1(photoViewer.U).M3() && !photoViewer.S4.b1) {
+                            if (!yac.h(i3).p() && !uc7.s1(photoViewer.U).M3() && !photoViewer.S4.b1) {
                                 H.b(R.drawable.msg_block2, ob6.M0(2131749077, null), new Runnable() { // from class: da8
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        byte b5 = b3;
+                                        byte b4 = b3;
                                         x53 x53Var2 = x53Var;
-                                        int i3 = i2;
+                                        int i4 = i3;
                                         PhotoViewer photoViewer2 = photoViewer;
-                                        switch (b5) {
+                                        switch (b4) {
                                             case 0:
                                                 Drawable[] drawableArr6 = PhotoViewer.d9;
-                                                if (!yac.h(i3).p()) {
+                                                if (!yac.h(i4).p()) {
                                                     new xk8(photoViewer2.l4, 3, true).show();
                                                     break;
                                                 } else {
                                                     new d31(photoViewer2.f0, x53Var2).c(ob6.M0(2131754481, null)).j();
-                                                    uc7.s1(i3).n0(true);
+                                                    uc7.s1(i4).n0(true);
                                                     e eVar = photoViewer2.l4;
                                                     if (eVar instanceof zu1) {
                                                         zu1 zu1Var = (zu1) eVar;
@@ -134,12 +133,12 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                                                 break;
                                             default:
                                                 Drawable[] drawableArr7 = PhotoViewer.d9;
-                                                if (!yac.h(i3).p()) {
+                                                if (!yac.h(i4).p()) {
                                                     new xk8(photoViewer2.l4, 3, true).show();
                                                     break;
                                                 } else {
                                                     new d31(photoViewer2.f0, x53Var2).c(ob6.M0(2131754481, null)).j();
-                                                    uc7.s1(i3).n0(true);
+                                                    uc7.s1(i4).n0(true);
                                                     e eVar2 = photoViewer2.l4;
                                                     if (eVar2 instanceof zu1) {
                                                         zu1 zu1Var2 = (zu1) eVar2;
@@ -154,25 +153,26 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                                 }, false);
                             }
                             if (photoViewer.S4.b1) {
-                                H.b(R.drawable.msg_info, ob6.M0(2131754939, null), new h68(photoViewer, x53Var, (byte) 2), false);
-                                if ((photoViewer.l4 instanceof zu1) && !uc7.s1(i2).M3()) {
+                                H.b(R.drawable.msg_info, ob6.M0(2131754939, null), new a58(photoViewer, x53Var, (byte) 3), false);
+                                if ((photoViewer.l4 instanceof zu1) && !uc7.s1(i3).M3()) {
                                     H.j();
+                                    final byte b4 = 1;
                                     H.b(R.drawable.msg_cancel, ob6.M0(2131746047, null), new Runnable() { // from class: da8
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            byte b5 = b4;
+                                            byte b42 = b4;
                                             x53 x53Var2 = x53Var;
-                                            int i3 = i2;
+                                            int i4 = i3;
                                             PhotoViewer photoViewer2 = photoViewer;
-                                            switch (b5) {
+                                            switch (b42) {
                                                 case 0:
                                                     Drawable[] drawableArr6 = PhotoViewer.d9;
-                                                    if (!yac.h(i3).p()) {
+                                                    if (!yac.h(i4).p()) {
                                                         new xk8(photoViewer2.l4, 3, true).show();
                                                         break;
                                                     } else {
                                                         new d31(photoViewer2.f0, x53Var2).c(ob6.M0(2131754481, null)).j();
-                                                        uc7.s1(i3).n0(true);
+                                                        uc7.s1(i4).n0(true);
                                                         e eVar = photoViewer2.l4;
                                                         if (eVar instanceof zu1) {
                                                             zu1 zu1Var = (zu1) eVar;
@@ -184,12 +184,12 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                                                     break;
                                                 default:
                                                     Drawable[] drawableArr7 = PhotoViewer.d9;
-                                                    if (!yac.h(i3).p()) {
+                                                    if (!yac.h(i4).p()) {
                                                         new xk8(photoViewer2.l4, 3, true).show();
                                                         break;
                                                     } else {
                                                         new d31(photoViewer2.f0, x53Var2).c(ob6.M0(2131754481, null)).j();
-                                                        uc7.s1(i3).n0(true);
+                                                        uc7.s1(i4).n0(true);
                                                         e eVar2 = photoViewer2.l4;
                                                         if (eVar2 instanceof zu1) {
                                                             zu1 zu1Var2 = (zu1) eVar2;
@@ -218,11 +218,11 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                         K.q(b8Var, tre.o(-1, -2));
                         K.q(new k8(photoViewer.F, x53Var), tre.o(-1, 8));
                         ArrayList arrayList = new ArrayList();
-                        String str3 = photoViewer.S4.T0;
+                        String str2 = photoViewer.S4.T0;
                         byte b5 = 6;
-                        if (str3 != null) {
+                        if (str2 != null) {
                             f = 300.0f;
-                            if (!TextUtils.equals(hl.J0(str3, false), uc7.s1(photoViewer.U).N2)) {
+                            if (!TextUtils.equals(hl.J0(str2, false), uc7.s1(photoViewer.U).N2)) {
                                 TextView textView = new TextView(photoViewer.F);
                                 yob.X(textView, aob.Xc, x53Var);
                                 textView.setTextSize(1, 14.0f);
@@ -231,9 +231,9 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                                 textView.setMaxWidth(hl.L(300.0f));
                                 Uri parse = Uri.parse(photoViewer.S4.T0);
                                 textView.setText(m01.x(parse, null, null, m01.a(parse.getHost()), null));
-                                int i3 = aob.I5;
-                                hf0 Y = aob.Y(photoViewer.y0(i3), 0, photoViewer.S4.X0 == null ? 6 : 0);
-                                uob M = yob.M(i3);
+                                int i4 = aob.I5;
+                                hf0 Y = aob.Y(photoViewer.y0(i4), 0, photoViewer.S4.X0 == null ? 6 : 0);
+                                uob M = yob.M(i4);
                                 textView.setBackground(Y);
                                 yob.j(textView, Y, null, M, x53Var);
                                 textView.setOnClickListener(new uv5(photoViewer, H, (byte) 20));
@@ -246,9 +246,9 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                                     textView2.setPadding(hl.L(18.0f), hl.L(f2), hl.L(18.0f), hl.L(f2));
                                     textView2.setMaxWidth(hl.L(f));
                                     textView2.setText(photoViewer.S4.W0);
-                                    int i4 = aob.I5;
-                                    hf0 Y2 = aob.Y(photoViewer.y0(i4), 0, photoViewer.S4.X0 == null ? 6 : 0);
-                                    uob M2 = yob.M(i4);
+                                    int i5 = aob.I5;
+                                    hf0 Y2 = aob.Y(photoViewer.y0(i5), 0, photoViewer.S4.X0 == null ? 6 : 0);
+                                    uob M2 = yob.M(i5);
                                     textView2.setBackground(Y2);
                                     yob.j(textView2, Y2, null, M2, x53Var);
                                     textView2.setOnClickListener(new View.OnClickListener() { // from class: ca8
@@ -284,18 +284,19 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                                     textView3.setPadding(hl.L(18.0f), hl.L(f2), hl.L(18.0f), hl.L(f2));
                                     textView3.setMaxWidth(hl.L(f));
                                     textView3.setText(photoViewer.S4.X0);
-                                    int i5 = aob.I5;
-                                    hf0 Y3 = aob.Y(photoViewer.y0(i5), 0, 6);
-                                    uob M3 = yob.M(i5);
+                                    int i6 = aob.I5;
+                                    hf0 Y3 = aob.Y(photoViewer.y0(i6), 0, 6);
+                                    uob M3 = yob.M(i6);
                                     textView3.setBackground(Y3);
                                     yob.j(textView3, Y3, null, M3, x53Var);
+                                    final byte b6 = 1;
                                     textView3.setOnClickListener(new View.OnClickListener() { // from class: ca8
                                         @Override // android.view.View.OnClickListener
                                         public final void onClick(View view2) {
-                                            byte b6 = b4;
+                                            byte b62 = b6;
                                             x53 x53Var2 = x53Var;
                                             PhotoViewer photoViewer2 = photoViewer;
-                                            switch (b6) {
+                                            switch (b62) {
                                                 case 0:
                                                     Drawable[] drawableArr6 = PhotoViewer.d9;
                                                     if (hl.g(photoViewer2.S4.W0)) {
@@ -327,23 +328,23 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                                     K.q(view2, tre.o(-1, -2));
                                 }
                                 H.b(R.drawable.msg_channel, ob6.M0(2131744905, null), new c10(H, K, b5), false);
-                                if (!yac.h(i2).p()) {
+                                if (!yac.h(i3).p()) {
                                     H.b(R.drawable.msg_block2, ob6.M0(2131749077, null), new Runnable() { // from class: da8
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            byte b52 = b3;
+                                            byte b42 = b3;
                                             x53 x53Var2 = x53Var;
-                                            int i32 = i2;
+                                            int i42 = i3;
                                             PhotoViewer photoViewer2 = photoViewer;
-                                            switch (b52) {
+                                            switch (b42) {
                                                 case 0:
                                                     Drawable[] drawableArr6 = PhotoViewer.d9;
-                                                    if (!yac.h(i32).p()) {
+                                                    if (!yac.h(i42).p()) {
                                                         new xk8(photoViewer2.l4, 3, true).show();
                                                         break;
                                                     } else {
                                                         new d31(photoViewer2.f0, x53Var2).c(ob6.M0(2131754481, null)).j();
-                                                        uc7.s1(i32).n0(true);
+                                                        uc7.s1(i42).n0(true);
                                                         e eVar = photoViewer2.l4;
                                                         if (eVar instanceof zu1) {
                                                             zu1 zu1Var = (zu1) eVar;
@@ -355,12 +356,12 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                                                     break;
                                                 default:
                                                     Drawable[] drawableArr7 = PhotoViewer.d9;
-                                                    if (!yac.h(i32).p()) {
+                                                    if (!yac.h(i42).p()) {
                                                         new xk8(photoViewer2.l4, 3, true).show();
                                                         break;
                                                     } else {
                                                         new d31(photoViewer2.f0, x53Var2).c(ob6.M0(2131754481, null)).j();
-                                                        uc7.s1(i32).n0(true);
+                                                        uc7.s1(i42).n0(true);
                                                         e eVar2 = photoViewer2.l4;
                                                         if (eVar2 instanceof zu1) {
                                                             zu1 zu1Var2 = (zu1) eVar2;
@@ -390,7 +391,7 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                         while (i < arrayList.size()) {
                         }
                         H.b(R.drawable.msg_channel, ob6.M0(2131744905, null), new c10(H, K, b5), false);
-                        if (!yac.h(i2).p()) {
+                        if (!yac.h(i3).p()) {
                         }
                         if (photoViewer.S4.b1) {
                         }
@@ -407,19 +408,21 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                     r47 r47Var5 = photoViewer.S4;
                     LinearLayout linearLayout = dh2Var.b;
                     if (r47Var5 != null && (message = r47Var5.k) != null && message.media != null && r47Var5.D2(true)) {
-                        int i6 = r47Var5.K1;
+                        int i7 = r47Var5.K1;
                         TLRPC.MessageMedia messageMedia = r47Var5.k.media;
-                        ArrayList X = kfc.X(i6, messageMedia.document, messageMedia.alt_documents, 0, true);
+                        ArrayList X = kfc.X(i7, messageMedia.document, messageMedia.alt_documents, 0, true);
                         linearLayout.removeAllViews();
-                        int i7 = 0;
-                        while (i7 < X.size()) {
-                            hfc hfcVar = (hfc) X.get(i7);
+                        int i8 = 0;
+                        while (i8 < X.size()) {
+                            hfc hfcVar = (hfc) X.get(i8);
                             jfc a = hfcVar.a();
-                            String concat = ob6.a0(str, str, 2131746178, Integer.valueOf(hfcVar.b())).concat(hfcVar.a ? " (" + ob6.M0(2131746177, str) + ")" : "");
+                            Object[] objArr = new Object[i2];
+                            objArr[0] = Integer.valueOf(hfcVar.b());
+                            String concat = ob6.a0(null, null, 2131746178, objArr).concat(hfcVar.a ? " (" + ob6.M0(2131746177, null) + ")" : "");
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                             if (a.b()) {
                                 spannableStringBuilder.append(hl.i0(a.g.size, false, false));
-                                spannableStringBuilder.append(ob6.M0(2131746181, str));
+                                spannableStringBuilder.append(ob6.M0(2131746181, null));
                             } else {
                                 SpannableString spannableString = new SpannableString("s ");
                                 wm2 wm2Var = new wm2(R.drawable.msg_mini_arrow_mediabold, 0);
@@ -438,9 +441,9 @@ public final /* synthetic */ class ma8 implements View.OnClickListener {
                             c.b.setPadding(0, 0, 0, 0);
                             c.setOnClickListener(new c0(dh2Var, r47Var5, hfcVar, (byte) 24));
                             c.setSelectorColor(268435455);
-                            i7++;
-                            str = null;
+                            i8++;
                             f3 = 0.0f;
+                            i2 = 1;
                         }
                         photoViewer.u0.b();
                         break;

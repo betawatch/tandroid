@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ba0 {
     public Object a;
@@ -52,7 +52,7 @@ public final class ba0 {
         final ta0 ta0Var2 = ta0Var;
         byte[] bArr2 = ta0Var2.b;
         ds9 ds9Var = (ds9) ba0Var2.f;
-        d5c a = ((vf7) ba0Var2.b).a(ta0Var2.a);
+        d5c a = ((wf7) ba0Var2.b).a(ta0Var2.a);
         long j2 = 0;
         while (true) {
             final byte b = 0;
@@ -244,7 +244,7 @@ public final class ba0 {
                         ba0Var.b = Long.valueOf(r90Var3.e);
                         String str6 = (String) r90Var3.f.get("tz-offset");
                         ba0Var.c = Long.valueOf(str6 == null ? 0L : Long.valueOf(str6).longValue());
-                        ba0Var.h = new fa0((fl7) fl7.a.get(r90Var3.b("net-type")), (el7) el7.a.get(r90Var3.b("mobile-subtype")));
+                        ba0Var.h = new fa0((gl7) gl7.a.get(r90Var3.b("net-type")), (fl7) fl7.a.get(r90Var3.b("mobile-subtype")));
                         Integer num2 = r90Var3.b;
                         if (num2 != null) {
                             ba0Var.d = num2;

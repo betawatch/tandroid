@@ -3,7 +3,7 @@
 import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class vyc {
     public boolean a;
@@ -23,7 +23,7 @@ public final class vyc {
             vycVar.c(bArr);
             return vycVar;
         }
-        byte[] a = hg7.a(str);
+        byte[] a = ig7.a(str);
         byte[] bArr2 = new byte[a.length + 2];
         System.arraycopy(bArr, 0, bArr2, 0, 2);
         System.arraycopy(a, 0, bArr2, 2, a.length);
@@ -58,7 +58,7 @@ public final class vyc {
         r.append(this.d ? "1" : "0");
         r.append(",Opcode=");
         int i = this.e;
-        SecureRandom secureRandom = hg7.a;
+        SecureRandom secureRandom = ig7.a;
         if (i == 0) {
             str = "CONTINUATION";
         } else if (i == 1) {

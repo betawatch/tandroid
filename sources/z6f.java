@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class z6f implements tq2, OnFailureListener, y2c, y27, y11, jx9, j30, g84, gm6, rb2, l3d, uw8, iy7, pj2 {
     public static z6f b;
@@ -577,7 +577,7 @@ public final class z6f implements tq2, OnFailureListener, y2c, y27, y11, jx9, j3
     public final Object b0(am2 am2Var) {
         switch (this.a) {
             case 1:
-                Object h2 = am2Var.h(new h09(m36.class, Executor.class));
+                Object h2 = am2Var.h(new i09(m36.class, Executor.class));
                 h2.getClass();
                 return new p54((Executor) h2);
             default:
@@ -1011,7 +1011,7 @@ public final class z6f implements tq2, OnFailureListener, y2c, y27, y11, jx9, j3
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public final void onFailure(Exception exc) {
-        j5 j5Var = og7.e;
+        j5 j5Var = pg7.e;
         if (Log.isLoggable(j5Var.b, 6)) {
             String str = j5Var.c;
             Log.e("MobileVisionBase", str != null ? str.concat("Error preloading model resource") : "Error preloading model resource", exc);

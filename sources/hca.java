@@ -1,33 +1,68 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes.dex */
-public final /* synthetic */ class hca implements pcc {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ yt0 b;
-    public final /* synthetic */ TLRPC.Document c;
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes2.dex */
+public abstract class hca extends LinearLayout {
+    public TextView a;
+    public p66 b;
+    public TextView c;
+    public TextView d;
+    public int e;
+    public int f;
 
-    public /* synthetic */ hca(yt0 yt0Var, TLRPC.Document document, byte b) {
-        this.a = b;
-        this.b = yt0Var;
-        this.c = document;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
     }
 
-    @Override // pcc
-    public final void a(Object obj) {
-        byte b = this.a;
-        TLRPC.Document document = this.c;
-        yt0 yt0Var = this.b;
-        String str = (String) obj;
-        switch (b) {
-            case 0:
-                yt0Var.a(str, document);
-                break;
-            default:
-                yt0Var.a(str, document);
-                break;
+    public void setType(int i) {
+        int i2 = this.f;
+        TextView textView = this.c;
+        p66 p66Var = this.b;
+        TextView textView2 = this.a;
+        TextView textView3 = this.d;
+        this.e = i;
+        if (i != 0) {
+            if (i == 1) {
+                textView2.setText(ob6.M0(2131742434, null));
+                p66Var.setText(ob6.M0(2131742433, null));
+                textView.setText(ob6.M0(2131742431, null));
+                textView3.setVisibility(0);
+                textView3.setText(ob6.M0(2131742432, null));
+                return;
+            }
+            if (i == 2) {
+                textView2.setText(ob6.M0(2131749297, null));
+                p66Var.setText(ob6.M0(2131749298, null));
+                textView.setText(ob6.M0(2131749299, null));
+                textView3.setVisibility(8);
+                return;
+            }
+            return;
         }
+        textView2.setText(ob6.a0(null, null, 2131752121, xnb.k(new StringBuilder("+"), uc7.s1(i2).X1(Long.valueOf(yac.h(i2).n)).phone, f78.f())));
+        String M0 = ob6.M0(2131752120, null);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
+        int indexOf = M0.indexOf("**");
+        int lastIndexOf = M0.lastIndexOf("**");
+        if (indexOf >= 0 && lastIndexOf >= 0 && indexOf != lastIndexOf) {
+            spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
+            spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
+            try {
+                spannableStringBuilder.setSpan(new f8c(ob6.M0(2131752119, null), (rmb) null), indexOf, lastIndexOf - 2, 33);
+            } catch (Exception e) {
+                cc4.g(e, true);
+            }
+        }
+        p66Var.setText(spannableStringBuilder);
+        textView.setText(ob6.M0(2131752117, null));
+        textView3.setVisibility(0);
+        textView3.setText(ob6.M0(2131752118, null));
     }
 }

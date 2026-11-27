@@ -9,7 +9,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLiteException;
 import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ic4 {
     public to3 a;
@@ -129,9 +129,9 @@ public final class ic4 {
         if (this.h) {
             return;
         }
-        if (!ok7.a) {
+        if (!pk7.a) {
             int i = 0;
-            while (!ok7.a) {
+            while (!pk7.a) {
                 try {
                     Thread.sleep(1000L);
                 } catch (InterruptedException e) {

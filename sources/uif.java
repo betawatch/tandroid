@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class uif implements tq2, s8a, y2c, m51, iy7, peb, pr3, efc, l3d, bl0, mqa, rb2, s68 {
     public static uif b;
@@ -463,13 +463,13 @@ public final class uif implements tq2, s8a, y2c, m51, iy7, peb, pr3, efc, l3d, b
     public final Object b0(am2 am2Var) {
         switch (this.a) {
             case 1:
-                Object h2 = am2Var.h(new h09(m8c.class, Executor.class));
+                Object h2 = am2Var.h(new i09(m8c.class, Executor.class));
                 h2.getClass();
                 return new p54((Executor) h2);
             case 4:
-                return new ri7(am2Var.N(qi7.class));
+                return new si7(am2Var.N(ri7.class));
             default:
-                return new qi7(am2Var.d(asd.class));
+                return new ri7(am2Var.d(asd.class));
         }
     }
 
@@ -509,7 +509,7 @@ public final class uif implements tq2, s8a, y2c, m51, iy7, peb, pr3, efc, l3d, b
 
     @Override // s8a
     public final Object e() {
-        return new rj7(true);
+        return new sj7(true);
     }
 
     @Override // rb2
@@ -671,7 +671,7 @@ public final class uif implements tq2, s8a, y2c, m51, iy7, peb, pr3, efc, l3d, b
     @Override // s8a
     public final void n(Object obj, o8c o8cVar) {
         ju4 a;
-        Map a2 = ((rj7) obj).a();
+        Map a2 = ((sj7) obj).a();
         ck8 n2 = ek8.n();
         for (Map.Entry entry : a2.entrySet()) {
             zj8 zj8Var = (zj8) entry.getKey();
@@ -1236,9 +1236,9 @@ public final class uif implements tq2, s8a, y2c, m51, iy7, peb, pr3, efc, l3d, b
         byte[] bArr;
         try {
             ek8 o = ek8.o(fileInputStream);
-            rj7 rj7Var = new rj7(false);
+            sj7 sj7Var = new sj7(false);
             ak8[] ak8VarArr = (ak8[]) Arrays.copyOf(new ak8[0], 0);
-            rj7Var.b();
+            sj7Var.b();
             if (ak8VarArr.length > 0) {
                 ak8 ak8Var = ak8VarArr[0];
                 throw null;
@@ -1258,31 +1258,31 @@ public final class uif implements tq2, s8a, y2c, m51, iy7, peb, pr3, efc, l3d, b
                     default:
                         throw new zp2();
                     case 1:
-                        rj7Var.d(new zj8(str), Boolean.valueOf(jk8Var.l()));
+                        sj7Var.d(new zj8(str), Boolean.valueOf(jk8Var.l()));
                         break;
                     case 2:
-                        rj7Var.d(new zj8(str), Float.valueOf(jk8Var.p()));
+                        sj7Var.d(new zj8(str), Float.valueOf(jk8Var.p()));
                         break;
                     case 3:
-                        rj7Var.d(new zj8(str), Double.valueOf(jk8Var.o()));
+                        sj7Var.d(new zj8(str), Double.valueOf(jk8Var.o()));
                         break;
                     case 4:
-                        rj7Var.d(new zj8(str), Integer.valueOf(jk8Var.q()));
+                        sj7Var.d(new zj8(str), Integer.valueOf(jk8Var.q()));
                         break;
                     case 5:
-                        rj7Var.d(new zj8(str), Long.valueOf(jk8Var.r()));
+                        sj7Var.d(new zj8(str), Long.valueOf(jk8Var.r()));
                         break;
                     case 6:
                         zj8 zj8Var = new zj8(str);
                         String s2 = jk8Var.s();
                         s2.getClass();
-                        rj7Var.d(zj8Var, s2);
+                        sj7Var.d(zj8Var, s2);
                         break;
                     case 7:
                         zj8 zj8Var2 = new zj8(str);
                         or5 n2 = jk8Var.t().n();
                         n2.getClass();
-                        rj7Var.d(zj8Var2, sl2.m(n2));
+                        sj7Var.d(zj8Var2, sl2.m(n2));
                         break;
                     case 8:
                         zj8 zj8Var3 = new zj8(str);
@@ -1296,13 +1296,13 @@ public final class uif implements tq2, s8a, y2c, m51, iy7, peb, pr3, efc, l3d, b
                             bArr = bArr2;
                         }
                         bArr.getClass();
-                        rj7Var.d(zj8Var3, bArr);
+                        sj7Var.d(zj8Var3, bArr);
                         break;
                     case 9:
                         throw new zx2("Value not set.", null);
                 }
             }
-            return new rj7(new LinkedHashMap(rj7Var.a()), true);
+            return new sj7(new LinkedHashMap(sj7Var.a()), true);
         } catch (bs5 e2) {
             throw new zx2("Unable to parse preferences proto.", e2);
         }

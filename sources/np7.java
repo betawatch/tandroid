@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class np7 implements nc2 {
     public final /* synthetic */ long a;
@@ -108,7 +108,7 @@ public final class np7 implements nc2 {
         notificationsCustomSettingsActivity.getClass();
         String p = ip7.p(this.a, 0L, false);
         i = ((e) notificationsCustomSettingsActivity).currentAccount;
-        SharedPreferences sharedPreferences = uc7.s1(i).W3;
+        SharedPreferences sharedPreferences = uc7.s1(i).X3;
         boolean z = sharedPreferences.getBoolean("sound_enabled_" + p, true);
         boolean z2 = !z;
         sharedPreferences.edit().putBoolean("sound_enabled_" + p, z2).apply();

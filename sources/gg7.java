@@ -1,61 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class gg7 {
-    public final pg7 a;
+    public final qg7 a;
     public final int b;
     public final int c;
-    public final int d;
-    public final /* synthetic */ pm3 e;
+    public final byte d;
+    public final gg7 e;
+    public final int f;
 
-    public gg7(pm3 pm3Var, pg7 pg7Var, int i, int i2, int i3) {
-        this.e = pm3Var;
-        this.a = pg7Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public gg7(vh4 vh4Var, qg7 qg7Var, int i, int i2, int i3, gg7 gg7Var, xdc xdcVar) {
+        this.a = qg7Var;
         this.b = i;
-        this.c = i2;
+        qg7 qg7Var2 = qg7.h;
+        int i4 = (qg7Var == qg7Var2 || gg7Var == null) ? i2 : gg7Var.c;
+        this.c = i4;
         this.d = i3;
-    }
-
-    public final int a() {
-        pg7 pg7Var = this.a;
-        pg7 pg7Var2 = pg7.h;
-        int i = this.d;
-        if (pg7Var != pg7Var2) {
-            return i;
+        this.e = gg7Var;
+        boolean z = false;
+        int i5 = gg7Var != null ? gg7Var.f : 0;
+        if ((qg7Var == qg7Var2 && gg7Var == null && i4 != 0) || (gg7Var != null && i4 != gg7Var.c)) {
+            z = true;
         }
-        vh4 vh4Var = (vh4) this.e.c;
-        xs3 xs3Var = (xs3) vh4Var.c;
-        String str = (String) vh4Var.b;
-        int i2 = this.b;
-        return str.substring(i2, i + i2).getBytes(xs3Var.a[this.c].charset()).length;
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder();
-        pg7 pg7Var = this.a;
-        sb.append(pg7Var);
-        sb.append('(');
-        vh4 vh4Var = (vh4) this.e.c;
-        if (pg7Var == pg7.n) {
-            xs3 xs3Var = (xs3) vh4Var.c;
-            sb.append(xs3Var.a[this.c].charset().displayName());
-        } else {
-            String str = (String) vh4Var.b;
-            int i = this.d;
-            int i2 = this.b;
-            String substring = str.substring(i2, i + i2);
-            StringBuilder sb2 = new StringBuilder();
-            for (int i3 = 0; i3 < substring.length(); i3++) {
-                if (substring.charAt(i3) < ' ' || substring.charAt(i3) > '~') {
-                    sb2.append('.');
-                } else {
-                    sb2.append(substring.charAt(i3));
+        i5 = (gg7Var == null || qg7Var != gg7Var.a || z) ? i5 + qg7Var.a(xdcVar) + 4 : i5;
+        int ordinal = qg7Var.ordinal();
+        if (ordinal != 1) {
+            if (ordinal == 2) {
+                i5 += i3 != 1 ? 11 : 6;
+            } else if (ordinal == 4) {
+                i5 += ((String) vh4Var.b).substring(i, i3 + i).getBytes(((xs3) vh4Var.c).a[i2].charset()).length << 3;
+                if (z) {
+                    i5 += 12;
                 }
+            } else if (ordinal == 6) {
+                i5 += 13;
             }
-            sb.append(sb2.toString());
+        } else {
+            i5 += i3 != 1 ? i3 == 2 ? 7 : 10 : 4;
         }
-        sb.append(')');
-        return sb.toString();
+        this.f = i5;
     }
 }

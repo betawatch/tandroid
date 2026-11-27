@@ -34,7 +34,7 @@ import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class pwa implements Runnable {
     public final /* synthetic */ byte a;
@@ -49,34 +49,33 @@ public final /* synthetic */ class pwa implements Runnable {
         this.d = obj3;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(10:(3:434|435|(11:437|310|311|312|(6:366|367|(2:389|(2:401|(3:405|406|407))(3:395|396|397))(3:383|384|385)|(4:318|(1:320)(1:357)|321|(5:323|(1:325)(1:354)|326|327|(4:(2:330|(1:335))(1:353)|(1:348)(1:341)|342|(1:344)))(2:355|356))|359|360)|314|315|316|(0)|359|360))|311|312|(0)|314|315|316|(0)|359|360) */
-    /* JADX WARN: Can't wrap try/catch for region: R(15:303|(3:304|305|306)|307|(3:434|435|(11:437|310|311|312|(6:366|367|(2:389|(2:401|(3:405|406|407))(3:395|396|397))(3:383|384|385)|(4:318|(1:320)(1:357)|321|(5:323|(1:325)(1:354)|326|327|(4:(2:330|(1:335))(1:353)|(1:348)(1:341)|342|(1:344)))(2:355|356))|359|360)|314|315|316|(0)|359|360))|309|310|311|312|(0)|314|315|316|(0)|359|360) */
-    /* JADX WARN: Code restructure failed: missing block: B:358:0x0830, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(16:303|(3:304|305|306)|307|308|(3:435|436|(11:438|311|312|313|(6:315|316|(2:384|(2:396|(2:400|401))(3:390|391|392))(3:332|333|334)|(4:336|(1:338)(1:375)|339|(5:341|(1:343)(1:372)|344|345|(4:(2:348|(1:353))(1:371)|(1:366)(1:359)|360|(1:362)))(2:373|374))|377|378)|416|417|410|(0)|377|378))|310|311|312|313|(0)|416|417|410|(0)|377|378) */
+    /* JADX WARN: Code restructure failed: missing block: B:376:0x082e, code lost:
     
-        if (r17.booleanValue() == r0) goto L336;
+        if (r18.booleanValue() == r0) goto L337;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:363:0x0808, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:419:0x0806, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:364:0x0809, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:420:0x0807, code lost:
     
-        r3 = 1;
+        r8 = 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:421:0x080e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:433:0x080c, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:422:0x080f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:434:0x080d, code lost:
     
-        r3 = r21 ? 1 : 0;
+        r8 = r21;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x081f  */
-    /* JADX WARN: Removed duplicated region for block: B:366:0x078b A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:416:0x0816 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:426:0x08ab A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:433:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:315:0x078d A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:336:0x081d  */
+    /* JADX WARN: Removed duplicated region for block: B:411:0x0814 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:425:0x08a8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:432:? A[SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -84,16 +83,15 @@ public final /* synthetic */ class pwa implements Runnable {
     public final void run() {
         byte b;
         byte b2;
-        byte b3;
         Throwable th;
         InputStream inputStream;
         InputStream inputStream2;
         boolean z;
         InputStream inputStream3;
         File file;
-        String str;
         int i;
         byte[] bArr;
+        boolean z2;
         r47 r47Var;
         int e1;
         TL_stories.StoryItem storyItem;
@@ -102,11 +100,11 @@ public final /* synthetic */ class pwa implements Runnable {
         boolean contains;
         TLRPC.Message message;
         int i2;
-        char c = 7;
+        byte b3 = 10;
         byte b4 = 2;
         ou1 ou1Var = null;
-        r11 = false;
-        boolean z2 = false;
+        r12 = false;
+        boolean z3 = false;
         byte b5 = 1;
         switch (this.a) {
             case 0:
@@ -131,7 +129,6 @@ public final /* synthetic */ class pwa implements Runnable {
                 nx0VarArr[0].dismiss();
                 return;
             case 2:
-                InputStream inputStream4 = null;
                 s4b s4bVar = (s4b) this.b;
                 ArrayList arrayList = (ArrayList) this.c;
                 ArrayList arrayList2 = (ArrayList) this.d;
@@ -144,18 +141,18 @@ public final /* synthetic */ class pwa implements Runnable {
                 while (true) {
                     if (i3 < size) {
                         Object obj = arrayList.get(i3);
-                        char c2 = c;
+                        byte b6 = b4;
                         if (obj instanceof Uri) {
                             Uri uri = (Uri) obj;
                             String[] strArr = MediaController.W1;
-                            b2 = b4;
+                            String str = "webp";
                             try {
                                 inputStream2 = a.b.getContentResolver().openInputStream(uri);
                             } catch (Exception unused) {
-                                inputStream2 = inputStream4;
+                                inputStream2 = null;
                             } catch (Throwable th2) {
                                 th = th2;
-                                inputStream = inputStream4;
+                                inputStream = null;
                                 if (inputStream == null) {
                                 }
                             }
@@ -174,12 +171,10 @@ public final /* synthetic */ class pwa implements Runnable {
                                         str = null;
                                         if (str != null) {
                                         }
-                                        b3 = 1;
+                                        b2 = 1;
                                         i3++;
-                                        b5 = b3;
-                                        c = c2;
-                                        b4 = b2;
-                                        inputStream4 = null;
+                                        b5 = b2;
+                                        b4 = b6;
                                     } catch (Throwable th3) {
                                         th = th3;
                                         inputStream = inputStream2;
@@ -188,19 +183,27 @@ public final /* synthetic */ class pwa implements Runnable {
                                     }
                                     if (file.exists()) {
                                         inputStream3 = new FileInputStream(file);
-                                        boolean z3 = b5;
+                                        byte b7 = b5;
                                         bArr = new byte[12];
                                         if (inputStream3.read(bArr, 0, 12) == 12) {
                                             try {
-                                                byte b6 = bArr[0];
-                                                if (b6 == -119 && bArr[z3 ? 1 : 0] == 80 && bArr[b2] == 78 && bArr[3] == 71 && bArr[4] == 13 && bArr[5] == 10 && bArr[6] == 26 && bArr[c2] == 10) {
+                                                byte b8 = bArr[0];
+                                                if (b8 == -119 && bArr[b7] == 80 && bArr[b6] == 78 && bArr[3] == 71 && bArr[4] == 13 && bArr[5] == 10 && bArr[6] == 26 && bArr[7] == 10) {
                                                     str = "png";
                                                     try {
                                                         inputStream3.close();
                                                     } catch (Exception e2) {
-                                                        cc4.g(e2, z3);
+                                                        e = e2;
+                                                        z2 = b7;
+                                                        cc4.g(e, z2);
+                                                        if (str != null) {
+                                                        }
+                                                        b2 = 1;
+                                                        i3++;
+                                                        b5 = b2;
+                                                        b4 = b6;
                                                     }
-                                                } else if (b6 == 31 && bArr[1] == -117) {
+                                                } else if (b8 == 31 && bArr[1] == -117) {
                                                     try {
                                                         inputStream3.close();
                                                     } catch (Exception e3) {
@@ -213,9 +216,16 @@ public final /* synthetic */ class pwa implements Runnable {
                                                         try {
                                                             inputStream3.close();
                                                         } catch (Exception e4) {
-                                                            cc4.g(e4, true);
+                                                            e = e4;
+                                                            z2 = 1;
+                                                            cc4.g(e, z2);
+                                                            if (str != null) {
+                                                            }
+                                                            b2 = 1;
+                                                            i3++;
+                                                            b5 = b2;
+                                                            b4 = b6;
                                                         }
-                                                        str = "webp";
                                                     }
                                                 }
                                             } catch (Exception e5) {
@@ -226,28 +236,24 @@ public final /* synthetic */ class pwa implements Runnable {
                                                     try {
                                                         inputStream3.close();
                                                     } catch (Exception e6) {
-                                                        e = e6;
-                                                        cc4.g(e, z);
+                                                        Exception e7 = e6;
+                                                        cc4.g(e7, z);
                                                         str = null;
                                                         if (str != null) {
                                                         }
-                                                        b3 = 1;
+                                                        b2 = 1;
                                                         i3++;
-                                                        b5 = b3;
-                                                        c = c2;
-                                                        b4 = b2;
-                                                        inputStream4 = null;
+                                                        b5 = b2;
+                                                        b4 = b6;
                                                     }
                                                 }
                                                 str = null;
                                                 if (str != null) {
                                                 }
-                                                b3 = 1;
+                                                b2 = 1;
                                                 i3++;
-                                                b5 = b3;
-                                                c = c2;
-                                                b4 = b2;
-                                                inputStream4 = null;
+                                                b5 = b2;
+                                                b4 = b6;
                                             }
                                             if (str != null) {
                                                 boolean equals = "tgs".equals(str);
@@ -284,13 +290,13 @@ public final /* synthetic */ class pwa implements Runnable {
                                                     }
                                                 }
                                             }
-                                            b3 = 1;
+                                            b2 = 1;
                                         }
                                         inputStream3.close();
                                         str = null;
                                         if (str != null) {
                                         }
-                                        b3 = 1;
+                                        b2 = 1;
                                     }
                                 }
                                 bArr = new byte[12];
@@ -300,7 +306,7 @@ public final /* synthetic */ class pwa implements Runnable {
                                 str = null;
                                 if (str != null) {
                                 }
-                                b3 = 1;
+                                b2 = 1;
                             } catch (Throwable th4) {
                                 th = th4;
                                 inputStream = inputStream3;
@@ -310,22 +316,19 @@ public final /* synthetic */ class pwa implements Runnable {
                                 try {
                                     inputStream.close();
                                     throw th;
-                                } catch (Exception e7) {
-                                    cc4.g(e7, true);
+                                } catch (Exception e8) {
+                                    cc4.g(e8, true);
                                     throw th;
                                 }
                             }
                             inputStream3 = inputStream2;
-                            boolean z32 = b5;
+                            byte b72 = b5;
                         } else {
-                            b2 = b4;
-                            b3 = b5;
+                            b2 = b5;
                         }
                         i3++;
-                        b5 = b3;
-                        c = c2;
-                        b4 = b2;
-                        inputStream4 = null;
+                        b5 = b2;
+                        b4 = b6;
                     } else {
                         b = 3;
                     }
@@ -398,8 +401,8 @@ public final /* synthetic */ class pwa implements Runnable {
                     } else {
                         Toast.makeText(s4bVar4.getContext(), ob6.M0(2131751070, null), 0).show();
                     }
-                } catch (Exception e8) {
-                    cc4.g(e8, true);
+                } catch (Exception e9) {
+                    cc4.g(e9, true);
                 }
                 ls6.d0(s4bVar4.a).b1(i6, false, true);
                 return;
@@ -448,17 +451,17 @@ public final /* synthetic */ class pwa implements Runnable {
                     return;
                 }
             case 9:
-                o5b o5bVar = (o5b) this.b;
+                p5b p5bVar = (p5b) this.b;
                 TLObject tLObject3 = (TLObject) this.c;
                 Runnable runnable2 = (Runnable) this.d;
-                r5b r5bVar = o5bVar.q;
-                ArrayList arrayList5 = o5bVar.G;
-                ArrayList arrayList6 = o5bVar.i;
-                ArrayList arrayList7 = o5bVar.H;
-                o5bVar.F = 0;
-                o5bVar.C = false;
-                o5bVar.D = true;
-                o5bVar.r = true;
+                s5b s5bVar = p5bVar.q;
+                ArrayList arrayList5 = p5bVar.G;
+                ArrayList arrayList6 = p5bVar.i;
+                ArrayList arrayList7 = p5bVar.H;
+                p5bVar.F = 0;
+                p5bVar.C = false;
+                p5bVar.D = true;
+                p5bVar.r = true;
                 ArrayList arrayList8 = new ArrayList();
                 if (tLObject3 instanceof Vector) {
                     ArrayList<T> arrayList9 = ((Vector) tLObject3).objects;
@@ -487,7 +490,7 @@ public final /* synthetic */ class pwa implements Runnable {
                     Object obj3 = arrayList8.get(i9);
                     i9++;
                     TL_bots.botPreviewMedia botpreviewmedia = (TL_bots.botPreviewMedia) obj3;
-                    r47 r47Var2 = new r47(o5bVar.c, new n5b(o5bVar, o5bVar.d, botpreviewmedia));
+                    r47 r47Var2 = new r47(p5bVar.c, new o5b(p5bVar, p5bVar.d, botpreviewmedia));
                     int i10 = 0;
                     while (true) {
                         if (i10 >= arrayList10.size()) {
@@ -501,14 +504,14 @@ public final /* synthetic */ class pwa implements Runnable {
                     TL_stories.StoryItem storyItem2 = r47Var2.l;
                     TLRPC.Message message2 = r47Var2.k;
                     if (r47Var == null) {
-                        e1 = o5bVar.I;
-                        o5bVar.I = e1 + 1;
+                        e1 = p5bVar.I;
+                        p5bVar.I = e1 + 1;
                     } else {
                         e1 = r47Var.e1();
                     }
                     message2.id = e1;
                     storyItem2.id = e1;
-                    r47Var2.j = o5bVar;
+                    r47Var2.j = p5bVar;
                     r47Var2.r0(false);
                     if (arrayList7.isEmpty()) {
                         arrayList7.add(new ArrayList());
@@ -516,35 +519,35 @@ public final /* synthetic */ class pwa implements Runnable {
                     ((ArrayList) arrayList7.get(0)).add(Integer.valueOf(r47Var2.e1()));
                     arrayList6.add(r47Var2);
                 }
-                hl.r(r5bVar);
-                hl.c3(r5bVar);
+                hl.r(s5bVar);
+                hl.c3(s5bVar);
                 if (runnable2 != null) {
                     hl.c3(runnable2);
                     return;
                 }
                 return;
             case 10:
-                o5b o5bVar2 = (o5b) this.b;
-                n5b n5bVar = (n5b) this.c;
+                p5b p5bVar2 = (p5b) this.b;
+                o5b o5bVar = (o5b) this.c;
                 gt gtVar = (gt) this.d;
-                ArrayList arrayList11 = o5bVar2.i;
+                ArrayList arrayList11 = p5bVar2.i;
                 for (int i11 = 0; i11 < arrayList11.size(); i11++) {
                     r47 r47Var3 = (r47) arrayList11.get(i11);
                     if (r47Var3 != null && (storyItem = r47Var3.l) != null && (messageMedia = storyItem.media) != null) {
-                        TLRPC.MessageMedia messageMedia2 = n5bVar.media;
+                        TLRPC.MessageMedia messageMedia2 = o5bVar.media;
                         TLRPC.Document document = messageMedia2.document;
                         if (document != null) {
                             TLRPC.Document document2 = messageMedia.document;
                             if (document2 == null) {
                                 continue;
                             } else if (document2.id == document.id) {
-                                gtVar.a((n5b) storyItem);
+                                gtVar.a((o5b) storyItem);
                                 return;
                             }
                         }
                         TLRPC.Photo photo2 = messageMedia2.photo;
                         if (photo2 != null && (photo = messageMedia.photo) != null && photo.id == photo2.id) {
-                            gtVar.a((n5b) storyItem);
+                            gtVar.a((o5b) storyItem);
                             return;
                         }
                     }
@@ -610,7 +613,7 @@ public final /* synthetic */ class pwa implements Runnable {
                 }
                 w9bVar.G0();
                 if (w9bVar.T1) {
-                    w9bVar.H0(new u9b(1, w9bVar.a, (ArrayList) null), new b68(w9bVar, b5), false);
+                    w9bVar.H0(new u9b(1, w9bVar.a, (ArrayList) null), new c68(w9bVar, b5), false);
                     return;
                 } else {
                     w9bVar.G0();
@@ -618,21 +621,21 @@ public final /* synthetic */ class pwa implements Runnable {
                     return;
                 }
             case 15:
-                rbb rbbVar = (rbb) this.b;
+                sbb sbbVar = (sbb) this.b;
                 ((c8b) this.c).O0 = (File) this.d;
-                nab nabVar = rbbVar.e1;
-                if (nabVar != null) {
-                    nabVar.b.g3.O(false);
+                oab oabVar = sbbVar.e1;
+                if (oabVar != null) {
+                    oabVar.b.g3.O(false);
                     return;
                 }
                 return;
             case 16:
-                rbb rbbVar2 = (rbb) this.b;
+                sbb sbbVar2 = (sbb) this.b;
                 Bitmap bitmap = (Bitmap) this.c;
                 Runnable runnable3 = (Runnable) this.d;
                 if (bitmap != null) {
                     try {
-                        Bitmap createBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), rbbVar2.C0.getMatrix(), true);
+                        Bitmap createBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), sbbVar2.C0.getMatrix(), true);
                         bitmap.recycle();
                         Bitmap createScaledBitmap = Bitmap.createScaledBitmap(createBitmap, 80, (int) (createBitmap.getHeight() / (createBitmap.getWidth() / 80.0f)), true);
                         if (createScaledBitmap != null) {
@@ -652,10 +655,10 @@ public final /* synthetic */ class pwa implements Runnable {
                 return;
             case 17:
                 ccb ccbVar = (ccb) this.b;
-                u5b u5bVar = (u5b) this.c;
+                v5b v5bVar = (v5b) this.c;
                 ArrayList arrayList12 = (ArrayList) this.d;
                 lcb lcbVar = ccbVar.d;
-                lcbVar.o0.D(lcbVar.h, u5bVar.d, arrayList12);
+                lcbVar.o0.D(lcbVar.h, v5bVar.d, arrayList12);
                 return;
             case 18:
                 ((MediaBrowserService.Result) ((bm6) this.c).b).sendResult(((dkb) this.b).d((String) this.d));
@@ -700,7 +703,7 @@ public final /* synthetic */ class pwa implements Runnable {
                 f fVar = (f) this.b;
                 znb znbVar3 = (znb) this.c;
                 znbVar3.f = !znbVar3.b((File) this.d, znbVar3.c);
-                hl.c3(new bcb((Object) fVar, (Object) znbVar3, (byte) 9));
+                hl.c3(new hab(fVar, znbVar3, b3));
                 return;
             case 24:
                 wsb wsbVar = (wsb) this.b;
@@ -790,9 +793,9 @@ public final /* synthetic */ class pwa implements Runnable {
                         }
                         ozbVar.O();
                         if (arrayList18.size() < messages_messages.count && !messages_messages.messages.isEmpty()) {
-                            z2 = true;
+                            z3 = true;
                         }
-                        ozbVar.p0 = z2;
+                        ozbVar.p0 = z3;
                     } else {
                         ozbVar.p0 = false;
                     }

@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class dl3 implements Runnable {
     public final /* synthetic */ byte a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class dl3 implements Runnable {
                     if (lowerCase.length() != 0) {
                         i = i3;
                         str = str3;
-                        jf7.Y(gx9Var.t0).a.c(new dl3(gx9Var, lowerCase, i, str, (byte) 2));
+                        kf7.a0(gx9Var.t0).a.c(new dl3(gx9Var, lowerCase, i, str, (byte) 2));
                         if (gx9Var.i0 == 15) {
                             dl3 dl3Var = new dl3(gx9Var, i, str, str2);
                             gx9Var.h = dl3Var;
@@ -100,11 +100,11 @@ public final /* synthetic */ class dl3 implements Runnable {
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
                 ArrayList arrayList3 = new ArrayList();
-                jf7 Y = jf7.Y(gx9Var3.t0);
+                kf7 a0 = kf7.a0(gx9Var3.t0);
                 int i7 = gx9Var3.i0;
                 ArrayList arrayList4 = gx9Var3.r0;
                 String str4 = this.d;
-                Y.J0(i7, str4, arrayList, arrayList2, arrayList3, arrayList4, -1);
+                a0.M0(i7, str4, arrayList, arrayList2, arrayList3, arrayList4, -1);
                 hl.c3(new l77((Object) gx9Var3, this.c, (Object) arrayList, (Object) arrayList2, (Object) arrayList3, (byte) 12));
                 rh4.C1(str4, gx9Var3.z0);
                 gx9Var3.A0 = false;

@@ -2,27 +2,27 @@
 
 import android.view.View;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class yt1 implements mcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ rbb b;
+    public final /* synthetic */ sbb b;
     public final /* synthetic */ View c;
     public final /* synthetic */ nx0 d;
 
-    public /* synthetic */ yt1(nx0 nx0Var, rbb rbbVar, View view, byte b) {
+    public /* synthetic */ yt1(nx0 nx0Var, sbb sbbVar, View view, byte b) {
         this.a = b;
         this.d = nx0Var;
-        this.b = rbbVar;
+        this.b = sbbVar;
         this.c = view;
     }
 
     @Override // mcc
     public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
         byte b = this.a;
-        kbb kbbVar = null;
+        lbb lbbVar = null;
         View view = this.c;
-        rbb rbbVar = this.b;
+        sbb sbbVar = this.b;
         nx0 nx0Var = this.d;
         switch (b) {
             case 0:
@@ -32,12 +32,12 @@ public final /* synthetic */ class yt1 implements mcc {
                 if (((Boolean) obj3).booleanValue()) {
                     hl.c3(new jj1(du1Var, l, (byte) 23));
                     du1Var.dismiss();
-                    rbbVar.X(null);
+                    sbbVar.X(null);
                 } else {
                     if ((view instanceof nea) && view.isAttachedToWindow()) {
-                        kbbVar = mbb.b((nea) view);
+                        lbbVar = nbb.b((nea) view);
                     }
-                    rbbVar.X(kbbVar);
+                    sbbVar.X(lbbVar);
                 }
                 hl.c3(runnable);
                 break;
@@ -46,8 +46,8 @@ public final /* synthetic */ class yt1 implements mcc {
                 Runnable runnable2 = (Runnable) obj2;
                 Long l2 = (Long) obj4;
                 if (((Boolean) obj3).booleanValue()) {
-                    hl.c3(new ida(wuaVar, l2, (byte) 11));
-                    rbbVar.X(null);
+                    hl.c3(new kba(wuaVar, l2, (byte) 12));
+                    sbbVar.X(null);
                     zsa zsaVar = wuaVar.U2;
                     if (zsaVar != null) {
                         zsaVar.dismiss();
@@ -55,9 +55,9 @@ public final /* synthetic */ class yt1 implements mcc {
                     }
                 } else {
                     if ((view instanceof nea) && view.isAttachedToWindow()) {
-                        kbbVar = mbb.b((nea) view);
+                        lbbVar = nbb.b((nea) view);
                     }
-                    rbbVar.X(kbbVar);
+                    sbbVar.X(lbbVar);
                 }
                 hl.c3(runnable2);
                 break;

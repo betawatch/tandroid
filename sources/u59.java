@@ -25,7 +25,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class u59 extends View implements qk4 {
     public boolean A0;
@@ -585,7 +585,7 @@ public final class u59 extends View implements qk4 {
             invalidate();
             long j2 = currentTimeMillis / 1000;
             if (j2 != this.S / 1000) {
-                ((rab) this.a).a.K0.a(j2, z);
+                ((sab) this.a).a.K0.a(j2, z);
             }
             if (j > 0 && currentTimeMillis >= j) {
                 post(new s59(this, (byte) 0));
@@ -889,13 +889,13 @@ public final class u59 extends View implements qk4 {
                     invalidate();
                     if (this.s0 && !this.Y0 && c) {
                         d(180.0f);
-                        ((rab) this.a).b();
+                        ((sab) this.a).b();
                     }
                     if (this.s0 && this.A0) {
                         float i2 = Utilities.i(((this.k0 - hl.L(48.0f)) - y) / (hl.q.y / 2.0f), 1.0f, 0.0f);
-                        rbb rbbVar = ((rab) this.a).a;
-                        rbbVar.W0.b(true, i2);
-                        rbbVar.i0(false);
+                        sbb sbbVar = ((sab) this.a).a;
+                        sbbVar.W0.b(true, i2);
+                        sbbVar.i0(false);
                     }
                 }
                 return false;
@@ -911,14 +911,14 @@ public final class u59 extends View implements qk4 {
                             if (v41Var.i) {
                                 this.A0 = false;
                                 this.H0.e(true, 1.0f);
-                                hg5 hg5Var = ((rab) this.a).a.U0;
+                                hg5 hg5Var = ((sab) this.a).a.U0;
                                 hg5Var.a.t(ob6.M0(2131744315, null), true, true);
                                 hg5Var.invalidate();
                             } else {
                                 this.s0 = false;
                                 this.w0 = SystemClock.elapsedRealtime();
                                 this.v0 = true;
-                                ((rab) this.a).e(false);
+                                ((sab) this.a).e(false);
                             }
                             this.A0 = false;
                             if (v41Var3.i) {
@@ -939,11 +939,11 @@ public final class u59 extends View implements qk4 {
                         invalidate();
                     } else {
                         if (v41Var.i) {
-                            ((rab) this.a).c();
+                            ((sab) this.a).c();
                             this.A0 = false;
                             if (v41Var3.i) {
                                 d(180.0f);
-                                ((rab) this.a).b();
+                                ((sab) this.a).b();
                             }
                             v41Var2.c(false);
                             v41Var3.c(false);
@@ -952,19 +952,19 @@ public final class u59 extends View implements qk4 {
                         }
                         if (v41Var2.i) {
                             if (b()) {
-                                ((rab) this.a).a();
+                                ((sab) this.a).a();
                             } else if (!this.p0 && !this.s0 && !this.A0) {
-                                ((rab) this.a).d();
+                                ((sab) this.a).d();
                             } else if (this.s0) {
                                 this.s0 = false;
                                 this.w0 = SystemClock.elapsedRealtime();
                                 this.v0 = true;
-                                ((rab) this.a).e(false);
-                            } else if (((rab) this.a).a.Y()) {
+                                ((sab) this.a).e(false);
+                            } else if (((sab) this.a).a.Y()) {
                                 this.S = 0L;
                                 this.R = System.currentTimeMillis();
                                 this.B0 = false;
-                                ((rab) this.a).f(new s59(this, z2 ? (byte) 1 : (byte) 0), false);
+                                ((sab) this.a).f(new s59(this, z2 ? (byte) 1 : (byte) 0), false);
                             }
                         }
                         this.A0 = false;

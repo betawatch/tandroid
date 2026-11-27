@@ -10,7 +10,7 @@ import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class lw6 {
     public static a05 c;
@@ -119,7 +119,7 @@ public final class lw6 {
                 c2.a(ku6Var2, true);
                 c2.k();
                 ye3 ye3Var = c2.c;
-                ((Handler) ye3Var.d).post((ki7) ye3Var.h);
+                ((Handler) ye3Var.d).post((li7) ye3Var.h);
             }
             if ((nw6Var2 != null && nw6Var2.d) != nw6Var.d) {
                 ku6 ku6Var3 = c2.r;
@@ -141,7 +141,7 @@ public final class lw6 {
             }
             c2.r = null;
             ye3 ye3Var2 = c2.c;
-            ((Handler) ye3Var2.d).post((ki7) ye3Var2.h);
+            ((Handler) ye3Var2.d).post((li7) ye3Var2.h);
         }
         xz4Var.b(769, nw6Var);
     }

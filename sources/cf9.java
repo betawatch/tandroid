@@ -9,14 +9,14 @@ import android.view.ViewConfiguration;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cf9 extends View {
     public final ek9 a;
     public final int b;
     public boolean c;
     public boolean d;
-    public final me7 e;
+    public final oe7 e;
     public final /* synthetic */ ff9 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -33,7 +33,7 @@ public final class cf9 extends View {
         TL_keyboard.InlineButtonType inlineButtonType = pageButton.type;
         ek9 ek9Var = new ek9(hl9Var, d, l, pageButton, inlineButtonType, pageButton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, false, false, false, false, Boolean.FALSE, v59Var);
         this.a = ek9Var;
-        this.e = new me7(this, i, (byte) 14);
+        this.e = new oe7(this, i, (byte) 14);
         ek9Var.e = ek9Var.h();
         setContentDescription(mm9.l(pageButton.text));
         setClickable(true);
@@ -87,20 +87,20 @@ public final class cf9 extends View {
         mk0 mk0Var;
         char c;
         int actionMasked = motionEvent.getActionMasked();
-        me7 me7Var = this.e;
+        oe7 oe7Var = this.e;
         ek9 ek9Var = this.a;
         if (actionMasked == 0) {
             this.c = true;
             this.d = false;
             ek9Var.m(true);
-            hl.d3(me7Var, ViewConfiguration.getLongPressTimeout());
+            hl.d3(oe7Var, ViewConfiguration.getLongPressTimeout());
             return true;
         }
         if (actionMasked == 1) {
             boolean z = this.c && !this.d;
             this.c = false;
             ek9Var.m(false);
-            hl.r(me7Var);
+            hl.r(oe7Var);
             if (z && (df9Var = (ff9Var = this.f).F) != null && (mk0Var = ff9Var.a) != null) {
                 pi9 pi9Var = ((hi9) df9Var).a;
                 TL_iv.PageBlock pageBlock = mk0Var.b;
@@ -159,13 +159,13 @@ public final class cf9 extends View {
                 }
                 this.c = false;
                 ek9Var.m(false);
-                hl.r(me7Var);
+                hl.r(oe7Var);
                 return true;
             }
             if (motionEvent.getX() < 0.0f || motionEvent.getY() < 0.0f || motionEvent.getX() > getWidth() || motionEvent.getY() > getHeight()) {
                 this.c = false;
                 ek9Var.m(false);
-                hl.r(me7Var);
+                hl.r(oe7Var);
                 return true;
             }
         }

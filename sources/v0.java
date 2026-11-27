@@ -12,7 +12,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class v0 implements View.OnLongClickListener {
     public final /* synthetic */ byte a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class v0 implements View.OnLongClickListener {
                     i49Var2.setPadding(0, 0, 0, hl.L(22.0f));
                     o68Var.addView(o68Var.b3, o68Var.getChildCount() - 1, tre.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
                     o68Var.b3.setVisibility(8);
-                    o68Var.b3.setDelegate(new s58(o68Var));
+                    o68Var.b3.setDelegate(new t58(o68Var));
                     o68Var.b3.m(null, null, true);
                 } else {
                     o68Var.bringChildToFront(i49Var);

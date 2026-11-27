@@ -20,11 +20,11 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xqb extends e implements fn7 {
     public String E;
-    public bcb F;
+    public hab F;
     public boolean G;
     public SpannableStringBuilder H;
     public final boolean I;
@@ -56,9 +56,9 @@ public final class xqb extends e implements fn7 {
 
     public final boolean Y(String str, boolean z) {
         String str2;
-        bcb bcbVar = this.F;
-        if (bcbVar != null) {
-            hl.r(bcbVar);
+        hab habVar = this.F;
+        if (habVar != null) {
+            hl.r(habVar);
             this.F = null;
             this.E = null;
             if (this.y != 0) {
@@ -117,9 +117,9 @@ public final class xqb extends e implements fn7 {
             }
             e0(aob.F6, ob6.M0(2131745235, null));
             this.E = str;
-            bcb bcbVar2 = new bcb((Object) this, (Object) str, (byte) 8);
-            this.F = bcbVar2;
-            hl.d3(bcbVar2, 300L);
+            hab habVar2 = new hab((Object) this, (Object) str, (byte) 9);
+            this.F = habVar2;
+            hl.d3(habVar2, 300L);
         }
         return true;
     }

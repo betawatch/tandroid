@@ -33,7 +33,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.UsersSelectActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class l0 implements r69 {
     public final /* synthetic */ byte a;
@@ -180,7 +180,7 @@ public final /* synthetic */ class l0 implements r69 {
                     tL_messages_getPollVotes.option = ti8Var.d;
                     tL_messages_getPollVotes.flags = i3 | 3;
                     tL_messages_getPollVotes.offset = ti8Var.c;
-                    ConnectionsManager.getInstance(ui8Var.a).sendRequest(tL_messages_getPollVotes, new ol7(ui8Var, ti8Var, (byte) 8));
+                    ConnectionsManager.getInstance(ui8Var.a).sendRequest(tL_messages_getPollVotes, new pl7(ui8Var, ti8Var, (byte) 8));
                     return;
                 }
                 if (view instanceof PollVotesAlert$UserCell) {
@@ -292,15 +292,15 @@ public final /* synthetic */ class l0 implements r69 {
             eVar.createOverlayStoryViewer().J(z3aVar.getContext(), ((TL_stories.TL_storyReactionPublicRepost) storyReaction).story, l6b.a(i3aVar));
             return;
         }
-        z3aVar.H = new w5b(z3aVar.w, arrayList);
+        z3aVar.H = new x5b(z3aVar.w, arrayList);
         z3aVar.I = i2;
         y3a y3aVar2 = z3aVar.F;
         lcb createOverlayStoryViewer = eVar.createOverlayStoryViewer();
         Context context = z3aVar.getContext();
-        w5b w5bVar = z3aVar.H;
+        x5b x5bVar = z3aVar.H;
         l6b a = l6b.a(i3aVar);
         a.e = new ye9(y3aVar2, (byte) 26);
-        createOverlayStoryViewer.G(context, i3, w5bVar, a);
+        createOverlayStoryViewer.G(context, i3, x5bVar, a);
     }
 
     private final void d(int i, View view) {
@@ -346,7 +346,7 @@ public final /* synthetic */ class l0 implements r69 {
             }
             if (i2 == 2) {
                 if (yac.h(b4cVar.a).p()) {
-                    uc7.s1(b4cVar.a).i4.K(0L, !r4.A(0L));
+                    uc7.s1(b4cVar.a).j4.K(0L, !r4.A(0L));
                     b4cVar.dismiss();
                 } else if (LaunchActivity.S() != null) {
                     new xk8(13, vnbVar, b4cVar.getContext()).show();
@@ -551,7 +551,7 @@ public final /* synthetic */ class l0 implements r69 {
                     calendar.setTimeInMillis(currentTimeMillis);
                     int i13 = calendar.get(1);
                     xb xbVar = new xb(context, (byte) 12);
-                    long f = uc7.s1(yac.t0).k4.G0.f() * 1000;
+                    long f = uc7.s1(yac.t0).l4.G0.f() * 1000;
                     Calendar calendar2 = Calendar.getInstance();
                     calendar2.setTimeInMillis(f);
                     int i14 = calendar2.get(6);
@@ -660,7 +660,7 @@ public final /* synthetic */ class l0 implements r69 {
                 wh1 wh1Var = jh1Var.c;
                 int i17 = nh1Var.d;
                 qob qobVar = nh1Var.b;
-                lc7 lc7Var = uc7.s1(i17).E3;
+                lc7 lc7Var = uc7.s1(i17).F3;
                 if (lc7Var != null) {
                     ArrayList arrayList2 = lc7Var.c;
                     if (i >= 0 && i < arrayList2.size()) {

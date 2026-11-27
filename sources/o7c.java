@@ -42,7 +42,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class o7c extends e {
     public a81 E;
@@ -2105,7 +2105,7 @@ public class o7c extends e {
             bf6 bf6Var = this.x;
             ok2[] ok2VarArr = bf6Var.f;
             if (i >= ok2VarArr.length) {
-                bf6Var.postDelayed(new bcb((Object) this, (Object) runnable, (byte) 28), (ok2VarArr.length * 75) + 350);
+                bf6Var.postDelayed(new hab((Object) this, (Object) runnable, (byte) 29), (ok2VarArr.length * 75) + 350);
                 return;
             } else {
                 ok2 ok2Var = ok2VarArr[i];

@@ -16,7 +16,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.HttpGetFileTask;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ea5 implements Runnable {
     public final /* synthetic */ byte a;
@@ -202,9 +202,9 @@ public final /* synthetic */ class ea5 implements Runnable {
                 break;
             case 26:
                 c66 c66Var = (c66) obj;
-                f09 f09Var = c66Var.d;
-                if (f09Var != null) {
-                    c66Var.h0(f09Var.getCurrentLink());
+                g09 g09Var = c66Var.d;
+                if (g09Var != null) {
+                    c66Var.h0(g09Var.getCurrentLink());
                     break;
                 }
                 break;

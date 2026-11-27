@@ -1,33 +1,63 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
-public final class r58 extends v8b {
-    public final /* synthetic */ lcb I;
-    public final /* synthetic */ o68 J;
+public final class r58 implements h49 {
+    public final /* synthetic */ o68 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r58(o68 o68Var, Context context, t58 t58Var, x53 x53Var, lcb lcbVar) {
-        super(context, t58Var, x53Var);
-        this.J = o68Var;
-        this.I = lcbVar;
+    public r58(o68 o68Var) {
+        this.a = o68Var;
     }
 
-    @Override // v8b
-    public final void b(boolean z) {
-        k68 k68Var = this.J.A1;
-        if (k68Var != null) {
-            lcb lcbVar = ((ccb) k68Var).d;
-            lcbVar.i1 = z;
-            lcbVar.U();
+    @Override // h49
+    public final void e(View view, w49 w49Var, boolean z, boolean z2) {
+        o68 o68Var = this.a;
+        if (z) {
+            jj.X(o68Var.m2, o68Var.l1, 1, new wv1(this, z, w49Var, view));
+        } else {
+            o68Var.d0(new lb7(this, view, w49Var, z, z2));
         }
     }
 
-    @Override // v8b
-    public final Bitmap getPlayingBitmap() {
-        return this.J.getPlayingBitmap();
+    @Override // h49
+    public final boolean j() {
+        return true;
+    }
+
+    @Override // h49
+    public final boolean k() {
+        return this.a.G0();
+    }
+
+    @Override // h49
+    public final void m(Canvas canvas, RectF rectF, float f, float f2, float f3, int i, boolean z) {
+        o68 o68Var = this.a;
+        Paint paint = o68Var.X1;
+        fp fpVar = o68Var.z1;
+        float f4 = -f2;
+        float f5 = -f3;
+        fpVar.i(f4, f5, o68Var.getMeasuredWidth() + f4, o68Var.getMeasuredHeight() + f5);
+        if (f > 0.0f) {
+            canvas.drawRoundRect(rectF, f, f, (Paint) fpVar.a);
+            canvas.drawRoundRect(rectF, f, f, paint);
+        } else {
+            canvas.drawRect(rectF, (Paint) fpVar.a);
+            canvas.drawRect(rectF, paint);
+        }
+    }
+
+    @Override // h49
+    public final void n() {
+        ((ccb) this.a.A1).b(false);
+    }
+
+    @Override // h49
+    public final boolean p() {
+        return false;
     }
 }

@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wi3 extends yc8 {
     public final /* synthetic */ boolean[] a;
@@ -80,7 +80,7 @@ public final class wi3 extends yc8 {
         uj3Var.O2 = z2;
         ArrayList arrayList3 = new ArrayList();
         for (int i5 = 0; i5 < arrayList2.size(); i5++) {
-            arrayList3.add(if7.a(((Long) arrayList2.get(i5)).longValue(), 0L));
+            arrayList3.add(jf7.a(((Long) arrayList2.get(i5)).longValue(), 0L));
         }
         PhotoViewer.q0().A(true, false);
         uj3Var.E2.q(uj3Var, arrayList3, uj3Var.D1.getFieldText(), false, z, i2, i3, null);

@@ -27,10 +27,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class di0 implements wh0 {
-    public static final j09 k;
+    public static final k09 k;
     public static wo8 l;
     public static di0 m;
     public static boolean n;
@@ -651,7 +651,7 @@ public final class di0 implements wh0 {
             grb.i("Billing: Controller should be ready for this call!");
             return;
         }
-        i09 i09Var = new i09((byte) 0);
+        j09 j09Var = new j09((byte) 0);
         if (list == null || list.isEmpty()) {
             lq5.j("Product list cannot be empty.");
             return;
@@ -659,9 +659,9 @@ public final class di0 implements wh0 {
         HashSet hashSet = new HashSet();
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            j09 j09Var = (j09) it.next();
-            if (!"play_pass_subs".equals(j09Var.b)) {
-                hashSet.add(j09Var.b);
+            k09 k09Var = (k09) it.next();
+            if (!"play_pass_subs".equals(k09Var.b)) {
+                hashSet.add(k09Var.b);
             }
         }
         byte b = 1;
@@ -670,12 +670,12 @@ public final class di0 implements wh0 {
             return;
         }
         vjd p = vjd.p(list);
-        i09Var.b = p;
+        j09Var.b = p;
         if (p == null) {
             lq5.j("Product list must be set to a non empty list.");
             return;
         }
-        this.d.c(new k09(i09Var), new tg0(ci0Var, b));
+        this.d.c(new l09(j09Var), new tg0(ci0Var, b));
     }
 
     public final void p(String str, fy8 fy8Var) {

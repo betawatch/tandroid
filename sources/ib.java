@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ib implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -417,7 +417,7 @@ public final /* synthetic */ class ib implements View.OnClickListener {
                         }
                     } else if (sparseArrayArr[0] != null) {
                         if (ejaVar.l0() && bgaVar != null && bgaVar.getCurrentList() != null) {
-                            o5b currentList = bgaVar.getCurrentList();
+                            p5b currentList = bgaVar.getCurrentList();
                             ArrayList arrayList8 = new ArrayList();
                             for (int i5 = 0; i5 < sparseArrayArr[0].size(); i5++) {
                                 TL_stories.StoryItem storyItem = ((r47) sparseArrayArr[0].valueAt(i5)).l;
@@ -547,7 +547,7 @@ public final /* synthetic */ class ib implements View.OnClickListener {
                         zu1Var.d8 = r47Var.e1();
                         long j3 = ejaVar.G;
                         if (j3 != 0) {
-                            ro4.a(zu1Var, if7.a(B0, j3));
+                            ro4.a(zu1Var, jf7.a(B0, j3));
                             bundle2.putInt("message_id", r47Var.e1());
                         }
                         eVar.presentFragment(zu1Var, false);

@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class mre extends qi6 {
     public static final a94[] k = {zt7.c};
@@ -28,22 +28,22 @@ public final class mre extends qi6 {
     public boolean i;
     public bkf j;
 
-    public mre(jg7 jg7Var, deb debVar, ijf ijfVar, zhc zhcVar) {
-        xve.i(jg7Var, "MlKitContext can not be null");
+    public mre(kg7 kg7Var, deb debVar, ijf ijfVar, zhc zhcVar) {
+        xve.i(kg7Var, "MlKitContext can not be null");
         xve.i(debVar, "SubjectSegmenterOptions can not be null");
-        this.d = jg7Var.b();
+        this.d = kg7Var.b();
         this.e = debVar;
         this.f = ijfVar;
         this.g = zhcVar;
     }
 
-    @Override // sg7
+    @Override // tg7
     public final synchronized void b() {
         fkf dkfVar;
         long elapsedRealtime = SystemClock.elapsedRealtime();
         boolean z = false;
         try {
-            z = ((vg7) Tasks.await(new qa4(this.d, qa4.p, wn.g, g05.c).f(new u9f(k, (byte) 1)).addOnFailureListener(new xad()))).a;
+            z = ((wg7) Tasks.await(new qa4(this.d, qa4.p, wn.g, g05.c).f(new u9f(k, (byte) 1)).addOnFailureListener(new xad()))).a;
         } catch (InterruptedException | ExecutionException e) {
             Log.e("OptionalModuleUtils", "Failed to complete the task of features availability check", e);
         }
@@ -53,7 +53,7 @@ public final class mre extends qi6 {
                 this.i = true;
             }
             f(daf.c, elapsedRealtime);
-            throw new kg7("Waiting for the subject segmentation optional module to be downloaded. Please wait.", 14);
+            throw new lg7("Waiting for the subject segmentation optional module to be downloaded. Please wait.", 14);
         }
         try {
             bkf bkfVar = this.j;
@@ -80,15 +80,15 @@ public final class mre extends qi6 {
                 f(daf.b, elapsedRealtime);
             } catch (RemoteException e2) {
                 f(daf.d, elapsedRealtime);
-                throw new kg7("Failed to init module subject segmenter", e2);
+                throw new lg7("Failed to init module subject segmenter", e2);
             }
         } catch (Exception e3) {
             f(daf.f, elapsedRealtime);
-            throw new kg7("Failed to load subject segmentation module", e3);
+            throw new lg7("Failed to load subject segmentation module", e3);
         }
     }
 
-    @Override // sg7
+    @Override // tg7
     public final synchronized void c() {
         try {
             try {
@@ -159,7 +159,7 @@ public final class mre extends qi6 {
                 bebVar = new beb(arrayList);
             } catch (RemoteException e) {
                 g(daf.e, elapsedRealtime, this.h, jq5Var, null);
-                throw new kg7("Failed to run thin subject segmenter.", e);
+                throw new lg7("Failed to run thin subject segmenter.", e);
             }
         }
         return bebVar;
@@ -187,7 +187,7 @@ public final class mre extends qi6 {
             AtomicLong atomicLong = (AtomicLong) zhcVar.c;
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
             if (atomicLong.get() == -1 || elapsedRealtime2 - ((AtomicLong) zhcVar.c).get() > 1800000) {
-                ((qa4) zhcVar.b).i(new ikb(0, Arrays.asList(new bg7(24336, s, 0, j2, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new zg2((Object) zhcVar, elapsedRealtime2, (byte) 12));
+                ((qa4) zhcVar.b).i(new ikb(0, Arrays.asList(new cg7(24336, s, 0, j2, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new zg2((Object) zhcVar, elapsedRealtime2, (byte) 12));
             }
         }
     }

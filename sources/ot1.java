@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ot1 extends bmb {
     public zu1 w0;
@@ -19,7 +19,7 @@ public final class ot1 extends bmb {
         m47 T6;
         zu1 zu1Var = this.w0;
         if (zu1Var != null) {
-            int min = Math.min(i2, zu1Var.getMessagesController().k4.V1.f() + i);
+            int min = Math.min(i2, zu1Var.getMessagesController().l4.V1.f() + i);
             if (r47Var.c1() != 0 && (T6 = this.w0.T6(r47Var.c1())) != null && !T6.i) {
                 r47Var = T6.h;
             }
@@ -115,7 +115,7 @@ public final class ot1 extends bmb {
                         zu1Var = this.w0;
                     }
                 }
-                if (!zu1Var.getMessagesController().i4.A(this.w0.l6) && !lbc.C(this.w0.l6) && (!z || (chat = this.w0.e) == null || xc2.B(chat))) {
+                if (!zu1Var.getMessagesController().j4.A(this.w0.l6) && !lbc.C(this.w0.l6) && (!z || (chat = this.w0.e) == null || xc2.B(chat))) {
                     return true;
                 }
             }

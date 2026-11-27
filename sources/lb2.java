@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lb2 implements Runnable {
     public final /* synthetic */ byte a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class lb2 implements Runnable {
         TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
         tL_messages_messages.messages.add(r47Var.k);
         if (!d7aVar.I && !d7aVar.J) {
-            jf7.Y(k5Var.a).e1(-2, 0, this.b != 0 ? 1 : 0, d7aVar.a, 0L, tL_messages_messages, false);
+            kf7.a0(k5Var.a).i1(-2, 0, this.b != 0 ? 1 : 0, d7aVar.a, 0L, tL_messages_messages, false);
         }
         B.s0(d7aVar, true);
     }
@@ -125,7 +125,7 @@ public final /* synthetic */ class lb2 implements Runnable {
             case 3:
                 uc7 uc7Var2 = (uc7) obj;
                 long j3 = this.c;
-                jf7 messagesStorage = uc7Var2.getMessagesStorage();
+                kf7 messagesStorage = uc7Var2.getMessagesStorage();
                 messagesStorage.getClass();
                 try {
                     try {
@@ -168,11 +168,11 @@ public final /* synthetic */ class lb2 implements Runnable {
                                                                     arrayList4 = arrayList7;
                                                                     z3 = i7;
                                                                     try {
-                                                                        messagesStorage.n(e, z3);
+                                                                        messagesStorage.p(e, z3);
                                                                         z2 = z3;
                                                                         sQLiteCursor3.dispose();
-                                                                        messagesStorage.C(arrayList3, z2);
-                                                                        hl.c3(new q41(messagesStorage, arrayList4, (byte) 8));
+                                                                        messagesStorage.E(arrayList3, z2);
+                                                                        hl.c3(new q41(messagesStorage, arrayList4, (byte) 9));
                                                                         messagesStorage.getFileLoader().getClass();
                                                                         xb4.p(0, arrayList6);
                                                                         i = 0;
@@ -200,23 +200,23 @@ public final /* synthetic */ class lb2 implements Runnable {
                                                                         sb.append(j);
                                                                         sQLiteDatabase3.executeFast(sb.toString()).stepThis().dispose();
                                                                         messagesStorage.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j).stepThis().dispose();
-                                                                        messagesStorage.i2(arrayList9);
+                                                                        messagesStorage.n2(arrayList9);
                                                                         arrayList = arrayList9;
                                                                     } catch (Exception e4) {
                                                                         e = e4;
                                                                         sQLiteCursor2 = sQLiteCursor3;
                                                                         z = true;
                                                                         sQLitePreparedStatement2 = null;
-                                                                        messagesStorage.n(e, z);
+                                                                        messagesStorage.p(e, z);
                                                                         if (sQLiteCursor2 != null) {
                                                                         }
                                                                         if (sQLitePreparedStatement2 != null) {
                                                                         }
                                                                         arrayList = null;
-                                                                        uc7Var.getMessagesStorage().O1(j3, -j3, new ArrayList(), arrayList);
+                                                                        uc7Var.getMessagesStorage().T1(j3, -j3, new ArrayList(), arrayList);
                                                                         return;
                                                                     }
-                                                                    uc7Var.getMessagesStorage().O1(j3, -j3, new ArrayList(), arrayList);
+                                                                    uc7Var.getMessagesStorage().T1(j3, -j3, new ArrayList(), arrayList);
                                                                     return;
                                                                 }
                                                             } else {
@@ -243,11 +243,11 @@ public final /* synthetic */ class lb2 implements Runnable {
                                                                         arrayList3 = arrayList8;
                                                                         arrayList4 = arrayList7;
                                                                         z3 = 1;
-                                                                        messagesStorage.n(e, z3);
+                                                                        messagesStorage.p(e, z3);
                                                                         z2 = z3;
                                                                         sQLiteCursor3.dispose();
-                                                                        messagesStorage.C(arrayList3, z2);
-                                                                        hl.c3(new q41(messagesStorage, arrayList4, (byte) 8));
+                                                                        messagesStorage.E(arrayList3, z2);
+                                                                        hl.c3(new q41(messagesStorage, arrayList4, (byte) 9));
                                                                         messagesStorage.getFileLoader().getClass();
                                                                         xb4.p(0, arrayList6);
                                                                         i = 0;
@@ -275,9 +275,9 @@ public final /* synthetic */ class lb2 implements Runnable {
                                                                         sb2.append(j);
                                                                         sQLiteDatabase32.executeFast(sb2.toString()).stepThis().dispose();
                                                                         messagesStorage.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j).stepThis().dispose();
-                                                                        messagesStorage.i2(arrayList92);
+                                                                        messagesStorage.n2(arrayList92);
                                                                         arrayList = arrayList92;
-                                                                        uc7Var.getMessagesStorage().O1(j3, -j3, new ArrayList(), arrayList);
+                                                                        uc7Var.getMessagesStorage().T1(j3, -j3, new ArrayList(), arrayList);
                                                                         return;
                                                                     }
                                                                 } catch (Throwable th) {
@@ -340,11 +340,11 @@ public final /* synthetic */ class lb2 implements Runnable {
                                         arrayList3 = arrayList8;
                                         arrayList4 = arrayList7;
                                         z3 = 1;
-                                        messagesStorage.n(e, z3);
+                                        messagesStorage.p(e, z3);
                                         z2 = z3;
                                         sQLiteCursor3.dispose();
-                                        messagesStorage.C(arrayList3, z2);
-                                        hl.c3(new q41(messagesStorage, arrayList4, (byte) 8));
+                                        messagesStorage.E(arrayList3, z2);
+                                        hl.c3(new q41(messagesStorage, arrayList4, (byte) 9));
                                         messagesStorage.getFileLoader().getClass();
                                         xb4.p(0, arrayList6);
                                         i = 0;
@@ -372,9 +372,9 @@ public final /* synthetic */ class lb2 implements Runnable {
                                         sb22.append(j);
                                         sQLiteDatabase322.executeFast(sb22.toString()).stepThis().dispose();
                                         messagesStorage.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j).stepThis().dispose();
-                                        messagesStorage.i2(arrayList922);
+                                        messagesStorage.n2(arrayList922);
                                         arrayList = arrayList922;
-                                        uc7Var.getMessagesStorage().O1(j3, -j3, new ArrayList(), arrayList);
+                                        uc7Var.getMessagesStorage().T1(j3, -j3, new ArrayList(), arrayList);
                                         return;
                                     }
                                 } catch (Throwable th3) {
@@ -404,8 +404,8 @@ public final /* synthetic */ class lb2 implements Runnable {
                         z2 = true;
                         sQLiteCursor3.dispose();
                         try {
-                            messagesStorage.C(arrayList3, z2);
-                            hl.c3(new q41(messagesStorage, arrayList4, (byte) 8));
+                            messagesStorage.E(arrayList3, z2);
+                            hl.c3(new q41(messagesStorage, arrayList4, (byte) 9));
                             messagesStorage.getFileLoader().getClass();
                             xb4.p(0, arrayList6);
                             i = 0;
@@ -438,13 +438,13 @@ public final /* synthetic */ class lb2 implements Runnable {
                                     e = e10;
                                     sQLiteCursor2 = null;
                                     z = true;
-                                    messagesStorage.n(e, z);
+                                    messagesStorage.p(e, z);
                                     if (sQLiteCursor2 != null) {
                                     }
                                     if (sQLitePreparedStatement2 != null) {
                                     }
                                     arrayList = null;
-                                    uc7Var.getMessagesStorage().O1(j3, -j3, new ArrayList(), arrayList);
+                                    uc7Var.getMessagesStorage().T1(j3, -j3, new ArrayList(), arrayList);
                                     return;
                                 } catch (Throwable th4) {
                                     th = th4;
@@ -468,7 +468,7 @@ public final /* synthetic */ class lb2 implements Runnable {
                             sQLiteCursor2 = null;
                             z = true;
                             sQLitePreparedStatement2 = null;
-                            messagesStorage.n(e, z);
+                            messagesStorage.p(e, z);
                             if (sQLiteCursor2 != null) {
                                 sQLiteCursor2.dispose();
                             }
@@ -476,7 +476,7 @@ public final /* synthetic */ class lb2 implements Runnable {
                                 sQLitePreparedStatement2.dispose();
                             }
                             arrayList = null;
-                            uc7Var.getMessagesStorage().O1(j3, -j3, new ArrayList(), arrayList);
+                            uc7Var.getMessagesStorage().T1(j3, -j3, new ArrayList(), arrayList);
                             return;
                         }
                     } catch (Exception e12) {
@@ -501,13 +501,13 @@ public final /* synthetic */ class lb2 implements Runnable {
                                     } catch (Exception e13) {
                                         e = e13;
                                         z = true;
-                                        messagesStorage.n(e, z);
+                                        messagesStorage.p(e, z);
                                         if (sQLiteCursor2 != null) {
                                         }
                                         if (sQLitePreparedStatement2 != null) {
                                         }
                                         arrayList = null;
-                                        uc7Var.getMessagesStorage().O1(j3, -j3, new ArrayList(), arrayList);
+                                        uc7Var.getMessagesStorage().T1(j3, -j3, new ArrayList(), arrayList);
                                         return;
                                     }
                                 } catch (Throwable th5) {
@@ -534,22 +534,22 @@ public final /* synthetic */ class lb2 implements Runnable {
                         sb222.append(j);
                         sQLiteDatabase3222.executeFast(sb222.toString()).stepThis().dispose();
                         messagesStorage.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j).stepThis().dispose();
-                        messagesStorage.i2(arrayList9222);
+                        messagesStorage.n2(arrayList9222);
                         arrayList = arrayList9222;
                     } catch (Exception e14) {
                         e = e14;
                         z = true;
                         sQLitePreparedStatement2 = null;
-                        messagesStorage.n(e, z);
+                        messagesStorage.p(e, z);
                         if (sQLiteCursor2 != null) {
                         }
                         if (sQLitePreparedStatement2 != null) {
                         }
                         arrayList = null;
-                        uc7Var.getMessagesStorage().O1(j3, -j3, new ArrayList(), arrayList);
+                        uc7Var.getMessagesStorage().T1(j3, -j3, new ArrayList(), arrayList);
                         return;
                     }
-                    uc7Var.getMessagesStorage().O1(j3, -j3, new ArrayList(), arrayList);
+                    uc7Var.getMessagesStorage().T1(j3, -j3, new ArrayList(), arrayList);
                     return;
                 } catch (Throwable th6) {
                     th = th6;

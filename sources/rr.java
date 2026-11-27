@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class rr extends yye {
     public final /* synthetic */ byte a;
@@ -24,7 +24,7 @@ public final class rr extends yye {
     }
 
     @Override // yye
-    public final uf7 b(wf7 wf7Var, ByteBuffer byteBuffer) {
+    public final vf7 b(xf7 xf7Var, ByteBuffer byteBuffer) {
         switch (this.a) {
             case 0:
                 if (byteBuffer.get() != 116) {
@@ -81,9 +81,9 @@ public final class rr extends yye {
                 if (arrayList.isEmpty()) {
                     return null;
                 }
-                return new uf7(arrayList);
+                return new vf7(arrayList);
             default:
-                return new uf7(c(new ey7(byteBuffer.limit(), byteBuffer.array())));
+                return new vf7(c(new ey7(byteBuffer.limit(), byteBuffer.array())));
         }
     }
 }

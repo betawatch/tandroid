@@ -2,11 +2,11 @@ package com.google.android.recaptcha.internal;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class zzdj {
     private Object zza;
-    private final uj7 zzb = new wj7();
+    private final vj7 zzb = new xj7();
 
     public zzdj(Object obj) {
         this.zza = obj;
@@ -15,14 +15,14 @@ public final class zzdj {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0034  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0020  */
-    /* JADX WARN: Type inference failed for: r5v3, types: [uj7] */
+    /* JADX WARN: Type inference failed for: r5v3, types: [vj7] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object zza(Object obj, zw2 zw2Var) {
         zzdg zzdgVar;
         int i;
-        wj7 wj7Var;
+        xj7 xj7Var;
         try {
             if (zw2Var instanceof zzdg) {
                 zzdgVar = (zzdg) zw2Var;
@@ -33,12 +33,12 @@ public final class zzdj {
                     i = zzdgVar.zzd;
                     if (i != 0) {
                         ixe.b(obj2);
-                        uj7 uj7Var = this.zzb;
+                        vj7 vj7Var = this.zzb;
                         zzdgVar.zze = (zzmc) obj;
-                        zzdgVar.zza = uj7Var;
+                        zzdgVar.zza = vj7Var;
                         zzdgVar.zzd = 1;
-                        wj7Var = (wj7) uj7Var;
-                        Object d = wj7Var.d(zzdgVar);
+                        xj7Var = (xj7) vj7Var;
+                        Object d = xj7Var.d(zzdgVar);
                         vx2 vx2Var = vx2.a;
                         if (d == vx2Var) {
                             return vx2Var;
@@ -48,10 +48,10 @@ public final class zzdj {
                             grb.i("call to 'resume' before 'invoke' with coroutine");
                             return null;
                         }
-                        ?? r5 = (uj7) zzdgVar.zza;
+                        ?? r5 = (vj7) zzdgVar.zza;
                         zzmc zzmcVar = zzdgVar.zze;
                         ixe.b(obj2);
-                        wj7Var = r5;
+                        xj7Var = r5;
                         obj = zzmcVar;
                     }
                     return Boolean.valueOf(ur5.a(this.zza, obj));
@@ -59,7 +59,7 @@ public final class zzdj {
             }
             return Boolean.valueOf(ur5.a(this.zza, obj));
         } finally {
-            wj7Var.f(null);
+            xj7Var.f(null);
         }
         zzdgVar = new zzdg(this, zw2Var);
         Object obj22 = zzdgVar.zzb;
@@ -71,14 +71,14 @@ public final class zzdj {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0034  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0020  */
-    /* JADX WARN: Type inference failed for: r5v3, types: [uj7] */
+    /* JADX WARN: Type inference failed for: r5v3, types: [vj7] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object zzb(Object[] objArr, zw2 zw2Var) {
         zzdh zzdhVar;
         int i;
-        wj7 wj7Var;
+        xj7 xj7Var;
         try {
             if (zw2Var instanceof zzdh) {
                 zzdhVar = (zzdh) zw2Var;
@@ -89,12 +89,12 @@ public final class zzdj {
                     i = zzdhVar.zzd;
                     if (i != 0) {
                         ixe.b(obj);
-                        uj7 uj7Var = this.zzb;
+                        vj7 vj7Var = this.zzb;
                         zzdhVar.zze = (zzmc[]) objArr;
-                        zzdhVar.zza = uj7Var;
+                        zzdhVar.zza = vj7Var;
                         zzdhVar.zzd = 1;
-                        wj7Var = (wj7) uj7Var;
-                        Object d = wj7Var.d(zzdhVar);
+                        xj7Var = (xj7) vj7Var;
+                        Object d = xj7Var.d(zzdhVar);
                         vx2 vx2Var = vx2.a;
                         if (d == vx2Var) {
                             return vx2Var;
@@ -104,10 +104,10 @@ public final class zzdj {
                             grb.i("call to 'resume' before 'invoke' with coroutine");
                             return null;
                         }
-                        ?? r5 = (uj7) zzdhVar.zza;
+                        ?? r5 = (vj7) zzdhVar.zza;
                         zzmc[] zzmcVarArr = zzdhVar.zze;
                         ixe.b(obj);
-                        wj7Var = r5;
+                        xj7Var = r5;
                         objArr = zzmcVarArr;
                     }
                     return Boolean.valueOf(ts.a(objArr, this.zza));
@@ -115,7 +115,7 @@ public final class zzdj {
             }
             return Boolean.valueOf(ts.a(objArr, this.zza));
         } finally {
-            wj7Var.f(null);
+            xj7Var.f(null);
         }
         zzdhVar = new zzdh(this, zw2Var);
         Object obj2 = zzdhVar.zzb;
@@ -127,14 +127,14 @@ public final class zzdj {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0034  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0020  */
-    /* JADX WARN: Type inference failed for: r5v3, types: [uj7] */
+    /* JADX WARN: Type inference failed for: r5v3, types: [vj7] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object zzc(Object obj, zw2 zw2Var) {
         zzdi zzdiVar;
         int i;
-        wj7 wj7Var;
+        xj7 xj7Var;
         try {
             if (zw2Var instanceof zzdi) {
                 zzdiVar = (zzdi) zw2Var;
@@ -145,12 +145,12 @@ public final class zzdj {
                     i = zzdiVar.zzd;
                     if (i != 0) {
                         ixe.b(obj2);
-                        uj7 uj7Var = this.zzb;
+                        vj7 vj7Var = this.zzb;
                         zzdiVar.zze = (zzmc) obj;
-                        zzdiVar.zza = uj7Var;
+                        zzdiVar.zza = vj7Var;
                         zzdiVar.zzd = 1;
-                        wj7Var = (wj7) uj7Var;
-                        Object d = wj7Var.d(zzdiVar);
+                        xj7Var = (xj7) vj7Var;
+                        Object d = xj7Var.d(zzdiVar);
                         vx2 vx2Var = vx2.a;
                         if (d == vx2Var) {
                             return vx2Var;
@@ -160,22 +160,22 @@ public final class zzdj {
                             grb.i("call to 'resume' before 'invoke' with coroutine");
                             return null;
                         }
-                        ?? r5 = (uj7) zzdiVar.zza;
+                        ?? r5 = (vj7) zzdiVar.zza;
                         zzmc zzmcVar = zzdiVar.zze;
                         ixe.b(obj2);
-                        wj7Var = r5;
+                        xj7Var = r5;
                         obj = zzmcVar;
                     }
                     this.zza = obj;
-                    wj7Var.f(null);
-                    return f9c.a;
+                    xj7Var.f(null);
+                    return g9c.a;
                 }
             }
             this.zza = obj;
-            wj7Var.f(null);
-            return f9c.a;
+            xj7Var.f(null);
+            return g9c.a;
         } catch (Throwable th) {
-            wj7Var.f(null);
+            xj7Var.f(null);
             throw th;
         }
         zzdiVar = new zzdi(this, zw2Var);

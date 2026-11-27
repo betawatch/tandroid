@@ -3,7 +3,7 @@
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class o3f extends e23 {
     public final /* synthetic */ byte b;
@@ -19,17 +19,17 @@ public final class o3f extends e23 {
         switch (this.b) {
             case 0:
                 y0f y0fVar = (y0f) obj;
-                jg7 c = jg7.c();
-                return new j2f(c.b(), (lja) c.a(lja.class), new q1f(jg7.c().b(), y0fVar), y0fVar.a);
+                kg7 c = kg7.c();
+                return new j2f(c.b(), (lja) c.a(lja.class), new q1f(kg7.c().b(), y0fVar), y0fVar.a);
             case 1:
-                jg7 c2 = jg7.c();
-                return new w5f(c2.b(), (lja) c2.a(lja.class), new n5f(jg7.c().b(), (b5f) obj));
+                kg7 c2 = kg7.c();
+                return new w5f(c2.b(), (lja) c2.a(lja.class), new n5f(kg7.c().b(), (b5f) obj));
             case 2:
-                jg7 c3 = jg7.c();
-                return new q8f(c3.b(), (lja) c3.a(lja.class), new e8f(jg7.c().b(), (y7f) obj));
+                kg7 c3 = kg7.c();
+                return new q8f(c3.b(), (lja) c3.a(lja.class), new e8f(kg7.c().b(), (y7f) obj));
             case 3:
-                jg7 c4 = jg7.c();
-                Context b = jg7.c().b();
+                kg7 c4 = kg7.c();
+                Context b = kg7.c().b();
                 ArrayList arrayList = new ArrayList();
                 ((ahf) obj).getClass();
                 kdd kddVar = new kdd();
@@ -40,8 +40,8 @@ public final class o3f extends e23 {
                 arrayList.add(kddVar);
                 return new xhf(c4.b(), (lja) c4.a(lja.class));
             default:
-                jg7 c5 = jg7.c();
-                return new ijf(c5.b(), (lja) c5.a(lja.class), new djf(jg7.c().b(), (wif) obj));
+                kg7 c5 = kg7.c();
+                return new ijf(c5.b(), (lja) c5.a(lja.class), new djf(kg7.c().b(), (wif) obj));
         }
     }
 }

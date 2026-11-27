@@ -64,7 +64,7 @@ import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class jj {
     public static final Pattern a = Pattern.compile("^([a-zA-Z][a-zA-Z0-9+\\-.]*://)?([a-zA-Z0-9\\-]+\\.)+[a-zA-Z]{2,}(:\\d+)?(/[^\\s]*)?$");
@@ -82,7 +82,7 @@ public abstract class jj {
         return idVar;
     }
 
-    public static id B(Activity activity, boolean z, TLRPC.User user, df7 df7Var, vnb vnbVar) {
+    public static id B(Activity activity, boolean z, TLRPC.User user, ef7 ef7Var, vnb vnbVar) {
         int[] iArr = new int[1];
         String[] strArr = {ob6.M0(2131745345, null), ob6.M0(2131745344, null), ob6.M0(2131745343, null), ob6.M0(2131745342, null)};
         LinearLayout m = bs2.m(activity, 1);
@@ -126,7 +126,7 @@ public abstract class jj {
             }
         }
         alertDialog$Builder.n(m);
-        alertDialog$Builder.j(ob6.M0(2131745187, null), new o(iArr, df7Var, (byte) 7));
+        alertDialog$Builder.j(ob6.M0(2131745187, null), new o(iArr, ef7Var, (byte) 7));
         alertDialog$Builder.h(ob6.M0(2131752570, null), null);
         return idVar;
     }
@@ -270,7 +270,7 @@ public abstract class jj {
         CharSequence[] charSequenceArr;
         final long j3 = j;
         final int i4 = i;
-        final SharedPreferences sharedPreferences = uc7.s1(yac.t0).W3;
+        final SharedPreferences sharedPreferences = uc7.s1(yac.t0).X3;
         final int[] iArr = new int[1];
         if (j3 != 0) {
             i3 = 0;
@@ -348,7 +348,7 @@ public abstract class jj {
                     int[] iArr2 = iArr;
                     int i9 = 0;
                     iArr2[0] = intValue;
-                    SharedPreferences.Editor edit = uc7.s1(yac.t0).W3.edit();
+                    SharedPreferences.Editor edit = uc7.s1(yac.t0).X3.edit();
                     long j4 = j3;
                     if (j4 != 0) {
                         int i10 = iArr2[0];
@@ -868,7 +868,7 @@ public abstract class jj {
         return n8Var;
     }
 
-    public static void O(Context context, e eVar, String str, String str2, String str3, String str4, int i, String str5, vnb vnbVar, hf7 hf7Var) {
+    public static void O(Context context, e eVar, String str, String str2, String str3, String str4, int i, String str5, vnb vnbVar, if7 if7Var) {
         Activity W = hl.W(context);
         View currentFocus = W != null ? W.getCurrentFocus() : null;
         id[] idVarArr = new id[1];
@@ -892,7 +892,7 @@ public abstract class jj {
         if (str4 != null) {
             ijVar.setText(str4);
         }
-        ijVar.setOnEditorActionListener(new af(ijVar, i, hf7Var, idVarArr, currentFocus, (byte) 0));
+        ijVar.setOnEditorActionListener(new af(ijVar, i, if7Var, idVarArr, currentFocus, (byte) 0));
         ijVar.addTextChangedListener(new gi(i, ijVar));
         ShapeDrawable b0 = aob.b0(hl.L(22.0f), aob.p1(0.06f, aob.v0(i2, vnbVar)));
         uob K = yob.K(0.06f, i2);
@@ -904,7 +904,7 @@ public abstract class jj {
         alertDialog$Builder.n(j);
         idVar.a = Math.min(hl.L(320.0f), (hl.q.x * 85) / 100);
         byte b = 0;
-        alertDialog$Builder.j(str5, new bf(ijVar, i, hf7Var, b));
+        alertDialog$Builder.j(str5, new bf(ijVar, i, if7Var, b));
         alertDialog$Builder.g(ob6.M0(2131752570, null), new e((byte) 19));
         idVarArr[0] = idVar;
         if (eVar != null) {
@@ -918,8 +918,8 @@ public abstract class jj {
         ijVar.setSelection(ijVar.getText().length());
     }
 
-    public static void P(Context context, e eVar, vnb vnbVar, hf7 hf7Var) {
-        O(context, eVar, ob6.M0(2131744456, null), ob6.M0(2131744463, null), ob6.M0(2131744437, null), null, 12, ob6.M0(2131751718, null), vnbVar, hf7Var);
+    public static void P(Context context, e eVar, vnb vnbVar, if7 if7Var) {
+        O(context, eVar, ob6.M0(2131744456, null), ob6.M0(2131744463, null), ob6.M0(2131744437, null), null, 12, ob6.M0(2131751718, null), vnbVar, if7Var);
     }
 
     public static z8d Q(Context context, long j, final hj hjVar, vnb vnbVar, int i) {
@@ -980,10 +980,10 @@ public abstract class jj {
         final Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(currentTimeMillis);
         int i5 = calendar.get(1);
-        os2 os2Var = uc7.s1(yac.t0).k4.i;
+        os2 os2Var = uc7.s1(yac.t0).l4.i;
         TimeUnit timeUnit = TimeUnit.SECONDS;
         final long g = os2Var.g(timeUnit) << 1;
-        final long g2 = uc7.s1(yac.t0).k4.j.g(timeUnit) - 86400;
+        final long g2 = uc7.s1(yac.t0).l4.j.g(timeUnit) - 86400;
         final xb xbVar = new xb(context, (byte) 8);
         linearLayout.addView(hq7Var, tre.l(0.5f, 0, jn7.s4));
         hq7Var.setMinValue(0);
@@ -1386,7 +1386,7 @@ public abstract class jj {
     public static id V(Activity activity, final long j, final long j2, String str, final Runnable runnable, vnb vnbVar) {
         String[] strArr;
         final String str2 = str;
-        SharedPreferences sharedPreferences = uc7.s1(yac.t0).W3;
+        SharedPreferences sharedPreferences = uc7.s1(yac.t0).X3;
         boolean z = true;
         final int[] iArr = new int[1];
         if (j != 0) {
@@ -1427,7 +1427,7 @@ public abstract class jj {
                     int intValue = ((Integer) view.getTag()).intValue();
                     int[] iArr2 = iArr;
                     iArr2[0] = intValue;
-                    SharedPreferences.Editor edit = uc7.s1(yac.t0).W3.edit();
+                    SharedPreferences.Editor edit = uc7.s1(yac.t0).X3.edit();
                     long j3 = j;
                     String str3 = str2;
                     if (j3 != 0) {
@@ -1548,7 +1548,7 @@ public abstract class jj {
         }
         final long j4 = M1;
         final ce ceVar = new ce(i, j3, j, pccVar, j4, (byte) 1);
-        if (j4 <= uc7.s1(i).X3.getLong(ik8.n(j, "ask_paid_message_", "_price"), 0L)) {
+        if (j4 <= uc7.s1(i).Y3.getLong(ik8.n(j, "ask_paid_message_", "_price"), 0L)) {
             ceVar.run();
             return true;
         }
@@ -1575,7 +1575,7 @@ public abstract class jj {
                     public final void a(Object obj) {
                         if (((Boolean) obj).booleanValue()) {
                             int i4 = i;
-                            SharedPreferences.Editor edit = uc7.s1(i4).X3.edit();
+                            SharedPreferences.Editor edit = uc7.s1(i4).Y3.edit();
                             long j5 = j;
                             edit.putLong(ik8.n(j5, "ask_paid_message_", "_price"), j4).apply();
                             jxa.v(i4, false).O.put(Long.valueOf(j5), Long.valueOf(System.currentTimeMillis()));
@@ -1615,7 +1615,7 @@ public abstract class jj {
                             public final void a(Object obj) {
                                 if (((Boolean) obj).booleanValue()) {
                                     int i4 = i;
-                                    SharedPreferences.Editor edit = uc7.s1(i4).X3.edit();
+                                    SharedPreferences.Editor edit = uc7.s1(i4).Y3.edit();
                                     long j5 = j;
                                     edit.putLong(ik8.n(j5, "ask_paid_message_", "_price"), j4).apply();
                                     jxa.v(i4, false).O.put(Long.valueOf(j5), Long.valueOf(System.currentTimeMillis()));
@@ -1641,7 +1641,7 @@ public abstract class jj {
                     public final void a(Object obj) {
                         if (((Boolean) obj).booleanValue()) {
                             int i4 = i;
-                            SharedPreferences.Editor edit = uc7.s1(i4).X3.edit();
+                            SharedPreferences.Editor edit = uc7.s1(i4).Y3.edit();
                             long j5 = j;
                             edit.putLong(ik8.n(j5, "ask_paid_message_", "_price"), j4).apply();
                             jxa.v(i4, false).O.put(Long.valueOf(j5), Long.valueOf(System.currentTimeMillis()));
@@ -1672,7 +1672,7 @@ public abstract class jj {
             public final void a(Object obj) {
                 if (((Boolean) obj).booleanValue()) {
                     int i4 = i;
-                    SharedPreferences.Editor edit = uc7.s1(i4).X3.edit();
+                    SharedPreferences.Editor edit = uc7.s1(i4).Y3.edit();
                     long j5 = j;
                     edit.putLong(ik8.n(j5, "ask_paid_message_", "_price"), j4).apply();
                     jxa.v(i4, false).O.put(Long.valueOf(j5), Long.valueOf(System.currentTimeMillis()));
@@ -1714,7 +1714,7 @@ public abstract class jj {
             if (M1 > j3) {
                 i5++;
             }
-            if (M1 > j3 && z && uc7.s1(i).X3.getLong(ik8.n(longValue, "ask_paid_message_", "_price"), j3) < M1) {
+            if (M1 > j3 && z && uc7.s1(i).Y3.getLong(ik8.n(longValue, "ask_paid_message_", "_price"), j3) < M1) {
                 z = false;
             }
             i3 = i5;
@@ -1775,7 +1775,7 @@ public abstract class jj {
         if (M1 <= 0 && j > 0) {
             M1 = wf3.j(uc7.s1(i).P2(j));
         }
-        return M1 > 0 && M1 > uc7.s1(i).X3.getLong(ik8.n(j, "ask_paid_message_", "_price"), 0L);
+        return M1 > 0 && M1 > uc7.s1(i).Y3.getLong(ik8.n(j, "ask_paid_message_", "_price"), 0L);
     }
 
     public static void b(hq7 hq7Var, hq7 hq7Var2, hq7 hq7Var3) {
@@ -2746,7 +2746,7 @@ public abstract class jj {
                             /*
                                 Code decompiled incorrectly, please refer to instructions dump.
                             */
-                            public static void g0(e eVar, long j, final TLRPC.User user, final TLRPC.Chat chat, final TLRPC.EncryptedChat encryptedChat, final boolean z, TLRPC.ChatFull chatFull, final df7 df7Var, vnb vnbVar) {
+                            public static void g0(e eVar, long j, final TLRPC.User user, final TLRPC.Chat chat, final TLRPC.EncryptedChat encryptedChat, final boolean z, TLRPC.ChatFull chatFull, final ef7 ef7Var, vnb vnbVar) {
                                 long j2;
                                 boolean z2;
                                 String str;
@@ -2760,7 +2760,7 @@ public abstract class jj {
                                 }
                                 final k5 accountInstance = eVar.getAccountInstance();
                                 ?? alertDialog$Builder = new AlertDialog$Builder(0, vnbVar, eVar.getParentActivity());
-                                SharedPreferences sharedPreferences = uc7.s1(eVar.getCurrentAccount()).W3;
+                                SharedPreferences sharedPreferences = uc7.s1(eVar.getCurrentAccount()).X3;
                                 int i = 1;
                                 if (encryptedChat == null) {
                                     j2 = j;
@@ -2849,9 +2849,9 @@ public abstract class jj {
                                                 if (sg2VarArr2 == null || ((sg2Var2 = sg2VarArr2[0]) != null && sg2Var2.b())) {
                                                     uc7.s1(k5Var.a).z4(j4, user2, chat2, encryptedChat, chat2 != null && z);
                                                 }
-                                                df7 df7Var2 = df7Var;
+                                                ef7 ef7Var2 = ef7Var;
                                                 if (sg2VarArr2 != null && !sg2VarArr2[1].b()) {
-                                                    df7Var2.a(0);
+                                                    ef7Var2.a(0);
                                                     return;
                                                 }
                                                 if (chat2 == null) {
@@ -2862,7 +2862,7 @@ public abstract class jj {
                                                     int i6 = k5Var.a;
                                                     uc7.s1(i6).d0(-j4, uc7.s1(i6).X1(Long.valueOf(yac.h(i6).e())));
                                                 }
-                                                df7Var2.a(1);
+                                                ef7Var2.a(1);
                                             }
                                         });
                                         alertDialog$Builder.g(ob6.M0(2131752570, r14), r14);
@@ -2898,9 +2898,9 @@ public abstract class jj {
                                         if (sg2VarArr22 == null || ((sg2Var2 = sg2VarArr22[0]) != null && sg2Var2.b())) {
                                             uc7.s1(k5Var.a).z4(j4, user2, chat2, encryptedChat, chat2 != null && z);
                                         }
-                                        df7 df7Var2 = df7Var;
+                                        ef7 ef7Var2 = ef7Var;
                                         if (sg2VarArr22 != null && !sg2VarArr22[1].b()) {
-                                            df7Var2.a(0);
+                                            ef7Var2.a(0);
                                             return;
                                         }
                                         if (chat2 == null) {
@@ -2911,7 +2911,7 @@ public abstract class jj {
                                             int i6 = k5Var.a;
                                             uc7.s1(i6).d0(-j4, uc7.s1(i6).X1(Long.valueOf(yac.h(i6).e())));
                                         }
-                                        df7Var2.a(1);
+                                        ef7Var2.a(1);
                                     }
                                 });
                                 alertDialog$Builder.g(ob6.M0(2131752570, r14), r14);
@@ -2929,7 +2929,7 @@ public abstract class jj {
                                 if (!z) {
                                     TLRPC.ChatFull N0 = uc7.s1(i).N0(M0.id);
                                     if (N0 == null) {
-                                        N0 = jf7.Y(i).C0(M0.id, xc2.T(M0), new CountDownLatch(1), false, false, 0);
+                                        N0 = kf7.a0(i).F0(M0.id, xc2.T(M0), new CountDownLatch(1), false, false, 0);
                                     }
                                     if (N0 != null && N0.slowmode_next_send_date >= ConnectionsManager.getInstance(i).getCurrentTime()) {
                                         z = true;
@@ -3699,7 +3699,7 @@ public abstract class jj {
                                 o0(eVar, str, z, true, z2, false, null, null, null);
                             }
 
-                            public static z8d o(Activity activity, df7 df7Var, vnb vnbVar) {
+                            public static z8d o(Activity activity, ef7 ef7Var, vnb vnbVar) {
                                 if (activity == null) {
                                     return null;
                                 }
@@ -3774,7 +3774,7 @@ public abstract class jj {
                                 xbVar.setBackground(i0);
                                 yob.j(xbVar, i0, M, M2, vnbVar);
                                 aiVar.addView(xbVar, tre.t(-1, 48, 83, 16, 15, 16, 16));
-                                xbVar.setOnClickListener(new xf(hq7Var, hq7Var2, hq7Var3, calendar, df7Var, z8dVar, (byte) 2));
+                                xbVar.setOnClickListener(new xf(hq7Var, hq7Var2, hq7Var3, calendar, ef7Var, z8dVar, (byte) 2));
                                 ((nx0) z8dVar.b).O = aiVar;
                                 return z8dVar;
                             }
@@ -3944,7 +3944,7 @@ public abstract class jj {
                             /*
                                 Code decompiled incorrectly, please refer to instructions dump.
                             */
-                            public static void q(e eVar, int i, TLRPC.User user, TLRPC.Chat chat, boolean z, bf7 bf7Var, vnb vnbVar) {
+                            public static void q(e eVar, int i, TLRPC.User user, TLRPC.Chat chat, boolean z, cf7 cf7Var, vnb vnbVar) {
                                 boolean z2;
                                 if (eVar == null || eVar.getParentActivity() == null) {
                                     return;
@@ -4019,7 +4019,7 @@ public abstract class jj {
                                 if (chat != null && z && xc2.t0(chat) && !xc2.V(chat)) {
                                     M0 = ob6.M0(2131752056, null);
                                 }
-                                alertDialog$Builder.j(M0, new o(bf7Var, zArr, (byte) 10));
+                                alertDialog$Builder.j(M0, new o(cf7Var, zArr, (byte) 10));
                                 alertDialog$Builder.g(ob6.M0(2131752570, null), null);
                                 id idVar = alertDialog$Builder.a;
                                 eVar.showDialog(idVar);
@@ -4086,8 +4086,8 @@ public abstract class jj {
                                 eVar.showDialog(idVar, true, null);
                             }
 
-                            public static void r(e eVar, boolean z, TLRPC.Chat chat, TLRPC.User user, boolean z2, boolean z3, boolean z4, boolean z5, bf7 bf7Var) {
-                                s(eVar, z, false, chat, user, z2, z3, z4, z5, bf7Var, eVar != null ? eVar.getResourceProvider() : null);
+                            public static void r(e eVar, boolean z, TLRPC.Chat chat, TLRPC.User user, boolean z2, boolean z3, boolean z4, boolean z5, cf7 cf7Var) {
+                                s(eVar, z, false, chat, user, z2, z3, z4, z5, cf7Var, eVar != null ? eVar.getResourceProvider() : null);
                             }
 
                             public static id r0(e eVar, String str, String str2, vnb vnbVar) {
@@ -4121,7 +4121,7 @@ public abstract class jj {
                             /*
                                 Code decompiled incorrectly, please refer to instructions dump.
                             */
-                            public static void s(final e eVar, final boolean z, final boolean z2, final TLRPC.Chat chat, final TLRPC.User user, final boolean z3, final boolean z4, boolean z5, final boolean z6, final bf7 bf7Var, final vnb vnbVar) {
+                            public static void s(final e eVar, final boolean z, final boolean z2, final TLRPC.Chat chat, final TLRPC.User user, final boolean z3, final boolean z4, boolean z5, final boolean z6, final cf7 cf7Var, final vnb vnbVar) {
                                 long j;
                                 boolean z7;
                                 rb0 rb0Var;
@@ -4341,7 +4341,7 @@ public abstract class jj {
                                                     boolean z15 = z11;
                                                     final boolean z16 = z2;
                                                     final boolean[] zArr2 = zArr;
-                                                    final bf7 bf7Var2 = bf7Var;
+                                                    final cf7 cf7Var2 = cf7Var;
                                                     boolean z17 = true;
                                                     if (!z15 && !z16 && !z3) {
                                                         final TLRPC.User user2 = user;
@@ -4353,20 +4353,20 @@ public abstract class jj {
                                                         final boolean z20 = z6;
                                                         final vnb vnbVar2 = vnbVar;
                                                         if (D) {
-                                                            jj.s(eVar2, z18, true, chat3, user2, false, z19, zArr2[0], z20, bf7Var2, vnbVar2);
+                                                            jj.s(eVar2, z18, true, chat3, user2, false, z19, zArr2[0], z20, cf7Var2, vnbVar2);
                                                             return;
                                                         }
                                                         if (user2 != null && zArr2[0]) {
-                                                            jf7 Y = jf7.Y(eVar2.getCurrentAccount());
-                                                            Y.a.c(new ke7(Y, user2.id, new df7() { // from class: fe
-                                                                @Override // df7
+                                                            kf7 a03 = kf7.a0(eVar2.getCurrentAccount());
+                                                            a03.a.c(new le7(a03, user2.id, new ef7() { // from class: fe
+                                                                @Override // ef7
                                                                 public final void a(int i2) {
                                                                     boolean[] zArr3 = zArr2;
-                                                                    bf7 bf7Var3 = bf7Var2;
+                                                                    cf7 cf7Var3 = cf7Var2;
                                                                     if (i2 < 50) {
-                                                                        bf7Var3.A(zArr3[0]);
+                                                                        cf7Var3.A(zArr3[0]);
                                                                     } else {
-                                                                        jj.s(e.this, z18, true, chat3, user2, false, z19, zArr3[0], z20, bf7Var3, vnbVar2);
+                                                                        jj.s(e.this, z18, true, chat3, user2, false, z19, zArr3[0], z20, cf7Var3, vnbVar2);
                                                                     }
                                                                 }
                                                             }, (byte) 0));
@@ -4387,15 +4387,15 @@ public abstract class jj {
                                                                     TLRPC.User user3 = (TLRPC.User) obj;
                                                                     l01.this.c(false);
                                                                     TLRPC.User user4 = user3 instanceof TLRPC.TL_userEmpty ? null : user3;
-                                                                    bf7 bf7Var3 = bf7Var2;
+                                                                    cf7 cf7Var3 = cf7Var2;
                                                                     if (user4 == null) {
-                                                                        bf7Var3.A(z16 || zArr2[0]);
+                                                                        cf7Var3.A(z16 || zArr2[0]);
                                                                         return;
                                                                     }
                                                                     Activity activity2 = activity;
                                                                     TLRPC.Chat chat4 = chat3;
-                                                                    te teVar = new te(activity2, chat4, user4, i2, bf7Var3, vnbVar2, (byte) 0);
-                                                                    ue ueVar = new ue(bf7Var3, (byte) 0);
+                                                                    te teVar = new te(activity2, chat4, user4, i2, cf7Var3, vnbVar2, (byte) 0);
+                                                                    ue ueVar = new ue(cf7Var3, (byte) 0);
                                                                     e eVar3 = eVar2;
                                                                     if (eVar3 == null || eVar3.getParentActivity() == null || chat4 == null) {
                                                                         return;
@@ -4446,12 +4446,12 @@ public abstract class jj {
                                                             });
                                                             return;
                                                         }
-                                                        bf7Var2 = bf7Var2;
+                                                        cf7Var2 = cf7Var2;
                                                     }
                                                     if (!z16 && !zArr2[0]) {
                                                         z17 = false;
                                                     }
-                                                    bf7Var2.A(z17);
+                                                    cf7Var2.A(z17);
                                                 }
                                             });
                                             alertDialog$Builder.g(ob6.M0(2131752570, null), null);
@@ -4482,7 +4482,7 @@ public abstract class jj {
                                                         boolean z15 = z11;
                                                         final boolean z16 = z2;
                                                         final boolean[] zArr2 = zArr;
-                                                        final bf7 bf7Var2 = bf7Var;
+                                                        final cf7 cf7Var2 = cf7Var;
                                                         boolean z17 = true;
                                                         if (!z15 && !z16 && !z3) {
                                                             final TLRPC.User user2 = user;
@@ -4494,20 +4494,20 @@ public abstract class jj {
                                                             final boolean z20 = z6;
                                                             final vnb vnbVar2 = vnbVar;
                                                             if (D) {
-                                                                jj.s(eVar2, z18, true, chat3, user2, false, z19, zArr2[0], z20, bf7Var2, vnbVar2);
+                                                                jj.s(eVar2, z18, true, chat3, user2, false, z19, zArr2[0], z20, cf7Var2, vnbVar2);
                                                                 return;
                                                             }
                                                             if (user2 != null && zArr2[0]) {
-                                                                jf7 Y = jf7.Y(eVar2.getCurrentAccount());
-                                                                Y.a.c(new ke7(Y, user2.id, new df7() { // from class: fe
-                                                                    @Override // df7
+                                                                kf7 a03 = kf7.a0(eVar2.getCurrentAccount());
+                                                                a03.a.c(new le7(a03, user2.id, new ef7() { // from class: fe
+                                                                    @Override // ef7
                                                                     public final void a(int i2) {
                                                                         boolean[] zArr3 = zArr2;
-                                                                        bf7 bf7Var3 = bf7Var2;
+                                                                        cf7 cf7Var3 = cf7Var2;
                                                                         if (i2 < 50) {
-                                                                            bf7Var3.A(zArr3[0]);
+                                                                            cf7Var3.A(zArr3[0]);
                                                                         } else {
-                                                                            jj.s(e.this, z18, true, chat3, user2, false, z19, zArr3[0], z20, bf7Var3, vnbVar2);
+                                                                            jj.s(e.this, z18, true, chat3, user2, false, z19, zArr3[0], z20, cf7Var3, vnbVar2);
                                                                         }
                                                                     }
                                                                 }, (byte) 0));
@@ -4528,15 +4528,15 @@ public abstract class jj {
                                                                         TLRPC.User user3 = (TLRPC.User) obj;
                                                                         l01.this.c(false);
                                                                         TLRPC.User user4 = user3 instanceof TLRPC.TL_userEmpty ? null : user3;
-                                                                        bf7 bf7Var3 = bf7Var2;
+                                                                        cf7 cf7Var3 = cf7Var2;
                                                                         if (user4 == null) {
-                                                                            bf7Var3.A(z16 || zArr2[0]);
+                                                                            cf7Var3.A(z16 || zArr2[0]);
                                                                             return;
                                                                         }
                                                                         Activity activity2 = activity;
                                                                         TLRPC.Chat chat4 = chat3;
-                                                                        te teVar = new te(activity2, chat4, user4, i2, bf7Var3, vnbVar2, (byte) 0);
-                                                                        ue ueVar = new ue(bf7Var3, (byte) 0);
+                                                                        te teVar = new te(activity2, chat4, user4, i2, cf7Var3, vnbVar2, (byte) 0);
+                                                                        ue ueVar = new ue(cf7Var3, (byte) 0);
                                                                         e eVar3 = eVar2;
                                                                         if (eVar3 == null || eVar3.getParentActivity() == null || chat4 == null) {
                                                                             return;
@@ -4587,12 +4587,12 @@ public abstract class jj {
                                                                 });
                                                                 return;
                                                             }
-                                                            bf7Var2 = bf7Var2;
+                                                            cf7Var2 = cf7Var2;
                                                         }
                                                         if (!z16 && !zArr2[0]) {
                                                             z17 = false;
                                                         }
-                                                        bf7Var2.A(z17);
+                                                        cf7Var2.A(z17);
                                                     }
                                                 });
                                                 alertDialog$Builder.g(ob6.M0(2131752570, null), null);
@@ -4647,7 +4647,7 @@ public abstract class jj {
                                                 boolean z15 = z11;
                                                 final boolean z16 = z2;
                                                 final boolean[] zArr2 = zArr;
-                                                final bf7 bf7Var2 = bf7Var;
+                                                final cf7 cf7Var2 = cf7Var;
                                                 boolean z17 = true;
                                                 if (!z15 && !z16 && !z3) {
                                                     final TLRPC.User user2 = user;
@@ -4659,20 +4659,20 @@ public abstract class jj {
                                                     final boolean z20 = z6;
                                                     final vnb vnbVar2 = vnbVar;
                                                     if (D) {
-                                                        jj.s(eVar2, z18, true, chat3, user2, false, z19, zArr2[0], z20, bf7Var2, vnbVar2);
+                                                        jj.s(eVar2, z18, true, chat3, user2, false, z19, zArr2[0], z20, cf7Var2, vnbVar2);
                                                         return;
                                                     }
                                                     if (user2 != null && zArr2[0]) {
-                                                        jf7 Y = jf7.Y(eVar2.getCurrentAccount());
-                                                        Y.a.c(new ke7(Y, user2.id, new df7() { // from class: fe
-                                                            @Override // df7
+                                                        kf7 a03 = kf7.a0(eVar2.getCurrentAccount());
+                                                        a03.a.c(new le7(a03, user2.id, new ef7() { // from class: fe
+                                                            @Override // ef7
                                                             public final void a(int i2) {
                                                                 boolean[] zArr3 = zArr2;
-                                                                bf7 bf7Var3 = bf7Var2;
+                                                                cf7 cf7Var3 = cf7Var2;
                                                                 if (i2 < 50) {
-                                                                    bf7Var3.A(zArr3[0]);
+                                                                    cf7Var3.A(zArr3[0]);
                                                                 } else {
-                                                                    jj.s(e.this, z18, true, chat3, user2, false, z19, zArr3[0], z20, bf7Var3, vnbVar2);
+                                                                    jj.s(e.this, z18, true, chat3, user2, false, z19, zArr3[0], z20, cf7Var3, vnbVar2);
                                                                 }
                                                             }
                                                         }, (byte) 0));
@@ -4693,15 +4693,15 @@ public abstract class jj {
                                                                 TLRPC.User user3 = (TLRPC.User) obj;
                                                                 l01.this.c(false);
                                                                 TLRPC.User user4 = user3 instanceof TLRPC.TL_userEmpty ? null : user3;
-                                                                bf7 bf7Var3 = bf7Var2;
+                                                                cf7 cf7Var3 = cf7Var2;
                                                                 if (user4 == null) {
-                                                                    bf7Var3.A(z16 || zArr2[0]);
+                                                                    cf7Var3.A(z16 || zArr2[0]);
                                                                     return;
                                                                 }
                                                                 Activity activity2 = activity;
                                                                 TLRPC.Chat chat4 = chat3;
-                                                                te teVar = new te(activity2, chat4, user4, i2, bf7Var3, vnbVar2, (byte) 0);
-                                                                ue ueVar = new ue(bf7Var3, (byte) 0);
+                                                                te teVar = new te(activity2, chat4, user4, i2, cf7Var3, vnbVar2, (byte) 0);
+                                                                ue ueVar = new ue(cf7Var3, (byte) 0);
                                                                 e eVar3 = eVar2;
                                                                 if (eVar3 == null || eVar3.getParentActivity() == null || chat4 == null) {
                                                                     return;
@@ -4752,12 +4752,12 @@ public abstract class jj {
                                                         });
                                                         return;
                                                     }
-                                                    bf7Var2 = bf7Var2;
+                                                    cf7Var2 = cf7Var2;
                                                 }
                                                 if (!z16 && !zArr2[0]) {
                                                     z17 = false;
                                                 }
-                                                bf7Var2.A(z17);
+                                                cf7Var2.A(z17);
                                             }
                                         });
                                         alertDialog$Builder.g(ob6.M0(2131752570, null), null);
@@ -4808,7 +4808,7 @@ public abstract class jj {
                                         boolean z15 = z11;
                                         final boolean z16 = z2;
                                         final boolean[] zArr2 = zArr;
-                                        final bf7 bf7Var2 = bf7Var;
+                                        final cf7 cf7Var2 = cf7Var;
                                         boolean z17 = true;
                                         if (!z15 && !z16 && !z3) {
                                             final TLRPC.User user2 = user;
@@ -4820,20 +4820,20 @@ public abstract class jj {
                                             final boolean z20 = z6;
                                             final vnb vnbVar2 = vnbVar;
                                             if (D) {
-                                                jj.s(eVar2, z18, true, chat3, user2, false, z19, zArr2[0], z20, bf7Var2, vnbVar2);
+                                                jj.s(eVar2, z18, true, chat3, user2, false, z19, zArr2[0], z20, cf7Var2, vnbVar2);
                                                 return;
                                             }
                                             if (user2 != null && zArr2[0]) {
-                                                jf7 Y = jf7.Y(eVar2.getCurrentAccount());
-                                                Y.a.c(new ke7(Y, user2.id, new df7() { // from class: fe
-                                                    @Override // df7
+                                                kf7 a03 = kf7.a0(eVar2.getCurrentAccount());
+                                                a03.a.c(new le7(a03, user2.id, new ef7() { // from class: fe
+                                                    @Override // ef7
                                                     public final void a(int i2) {
                                                         boolean[] zArr3 = zArr2;
-                                                        bf7 bf7Var3 = bf7Var2;
+                                                        cf7 cf7Var3 = cf7Var2;
                                                         if (i2 < 50) {
-                                                            bf7Var3.A(zArr3[0]);
+                                                            cf7Var3.A(zArr3[0]);
                                                         } else {
-                                                            jj.s(e.this, z18, true, chat3, user2, false, z19, zArr3[0], z20, bf7Var3, vnbVar2);
+                                                            jj.s(e.this, z18, true, chat3, user2, false, z19, zArr3[0], z20, cf7Var3, vnbVar2);
                                                         }
                                                     }
                                                 }, (byte) 0));
@@ -4854,15 +4854,15 @@ public abstract class jj {
                                                         TLRPC.User user3 = (TLRPC.User) obj;
                                                         l01.this.c(false);
                                                         TLRPC.User user4 = user3 instanceof TLRPC.TL_userEmpty ? null : user3;
-                                                        bf7 bf7Var3 = bf7Var2;
+                                                        cf7 cf7Var3 = cf7Var2;
                                                         if (user4 == null) {
-                                                            bf7Var3.A(z16 || zArr2[0]);
+                                                            cf7Var3.A(z16 || zArr2[0]);
                                                             return;
                                                         }
                                                         Activity activity2 = activity;
                                                         TLRPC.Chat chat4 = chat3;
-                                                        te teVar = new te(activity2, chat4, user4, i2, bf7Var3, vnbVar2, (byte) 0);
-                                                        ue ueVar = new ue(bf7Var3, (byte) 0);
+                                                        te teVar = new te(activity2, chat4, user4, i2, cf7Var3, vnbVar2, (byte) 0);
+                                                        ue ueVar = new ue(cf7Var3, (byte) 0);
                                                         e eVar3 = eVar2;
                                                         if (eVar3 == null || eVar3.getParentActivity() == null || chat4 == null) {
                                                             return;
@@ -4913,12 +4913,12 @@ public abstract class jj {
                                                 });
                                                 return;
                                             }
-                                            bf7Var2 = bf7Var2;
+                                            cf7Var2 = cf7Var2;
                                         }
                                         if (!z16 && !zArr2[0]) {
                                             z17 = false;
                                         }
-                                        bf7Var2.A(z17);
+                                        cf7Var2.A(z17);
                                     }
                                 });
                                 alertDialog$Builder.g(ob6.M0(2131752570, null), null);
@@ -4940,7 +4940,7 @@ public abstract class jj {
 
                             public static id t(Activity activity, final long j, final long j2, final int i, final Runnable runnable, vnb vnbVar) {
                                 int i2;
-                                SharedPreferences sharedPreferences = uc7.s1(yac.t0).W3;
+                                SharedPreferences sharedPreferences = uc7.s1(yac.t0).X3;
                                 final String p = ip7.p(j, j2, false);
                                 if (j != 0) {
                                     StringBuilder sb = new StringBuilder("color_");
@@ -4970,7 +4970,7 @@ public abstract class jj {
                                 alertDialog$Builder.j(ob6.M0(2131745278, null), new fd() { // from class: of
                                     @Override // fd
                                     public final void w(id idVar2, int i5) {
-                                        SharedPreferences.Editor edit = uc7.s1(yac.t0).W3.edit();
+                                        SharedPreferences.Editor edit = uc7.s1(yac.t0).X3.edit();
                                         long j3 = j;
                                         int[] iArr2 = iArr;
                                         if (j3 != 0) {
@@ -5036,7 +5036,7 @@ public abstract class jj {
                                 return alertDialog$Builder.o();
                             }
 
-                            public static AlertDialog$Builder v(Activity activity, final df7 df7Var) {
+                            public static AlertDialog$Builder v(Activity activity, final ef7 ef7Var) {
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
                                 int i = aob.L5;
                                 final byte b = 0;
@@ -5047,13 +5047,13 @@ public abstract class jj {
                                     @Override // fd
                                     public final void w(id idVar, int i2) {
                                         byte b2 = b;
-                                        df7 df7Var2 = df7Var;
+                                        ef7 ef7Var2 = ef7Var;
                                         switch (b2) {
                                             case 0:
-                                                df7Var2.a(1);
+                                                ef7Var2.a(1);
                                                 break;
                                             default:
-                                                df7Var2.a(0);
+                                                ef7Var2.a(0);
                                                 break;
                                         }
                                     }
@@ -5063,13 +5063,13 @@ public abstract class jj {
                                     @Override // fd
                                     public final void w(id idVar, int i2) {
                                         byte b22 = b2;
-                                        df7 df7Var2 = df7Var;
+                                        ef7 ef7Var2 = ef7Var;
                                         switch (b22) {
                                             case 0:
-                                                df7Var2.a(1);
+                                                ef7Var2.a(1);
                                                 break;
                                             default:
-                                                df7Var2.a(0);
+                                                ef7Var2.a(0);
                                                 break;
                                         }
                                     }
@@ -5602,7 +5602,7 @@ public abstract class jj {
                                 final hm1 hm1Var2 = hm1Var;
                                 final int i17 = currentAccount;
                                 int currentTime = ConnectionsManager.getInstance(i17).getCurrentTime();
-                                uc7.s1(i17).k4.h.g(TimeUnit.SECONDS);
+                                uc7.s1(i17).l4.h.g(TimeUnit.SECONDS);
                                 if (r47Var2 != null) {
                                     z3 = !r47Var2.T2() || Math.abs(currentTime - r47Var2.k.date) > 86400;
                                     if (r47Var2.P3()) {
@@ -6051,16 +6051,16 @@ public abstract class jj {
                                                                         j7 = xc2.T(M02) ? M02.id : 0L;
                                                                     }
                                                                     s1.t3(arrayList15, j6);
-                                                                    jf7 messagesStorage = s1.getMessagesStorage();
+                                                                    kf7 messagesStorage = s1.getMessagesStorage();
                                                                     int P0 = r47Var9.P0();
                                                                     messagesStorage.getClass();
                                                                     zh6 zh6Var = new zh6(i39);
                                                                     ArrayList arrayList16 = new ArrayList(i39);
                                                                     arrayList16.add(Integer.valueOf(P0));
                                                                     zh6Var.k(j6, arrayList16);
-                                                                    messagesStorage.H(new ds6((Object) messagesStorage, (Object) zh6Var, (boolean) r3, (byte) 3));
-                                                                    s1.getMessagesStorage().M0(j6, arrayList15, true, true, r47.c5(r47Var9.k) ? 9 : r3, i42);
-                                                                    s1.getMessagesStorage().O1(j6, j7, arrayList15, null);
+                                                                    messagesStorage.J(new ds6((Object) messagesStorage, (Object) zh6Var, (boolean) r3, (byte) 3));
+                                                                    s1.getMessagesStorage().P0(j6, arrayList15, true, true, r47.c5(r47Var9.k) ? 9 : r3, i42);
+                                                                    s1.getMessagesStorage().T1(j6, j7, arrayList15, null);
                                                                     jn7 notificationCenter = s1.getNotificationCenter();
                                                                     Long valueOf = Long.valueOf(j7);
                                                                     Integer valueOf2 = Integer.valueOf((int) r3);
@@ -6224,7 +6224,7 @@ public abstract class jj {
                                             r8 = 0;
                                             r8 = 0;
                                             if (z22) {
-                                                int g = (int) uc7.s1(i36).k4.h.g(timeUnit);
+                                                int g = (int) uc7.s1(i36).l4.h.g(timeUnit);
                                                 idVar2.S = ob6.M0(2131743987, null);
                                                 idVar2.U = hl.S2(ob6.a0(null, null, 2131743986, Integer.valueOf(g)));
                                                 alertDialog$Builder4.j(ob6.M0(2131743989, null), fdVar);
@@ -6239,7 +6239,7 @@ public abstract class jj {
                                                 alertDialog$Builder = alertDialog$Builder4;
                                             }
                                         } else {
-                                            int g2 = (int) uc7.s1(i36).k4.h.g(timeUnit);
+                                            int g2 = (int) uc7.s1(i36).l4.h.g(timeUnit);
                                             r8 = 0;
                                             idVar2.S = ob6.M0(2131743990, null);
                                             idVar2.U = hl.S2(ob6.a0(null, null, 2131743988, Integer.valueOf(g2)));
@@ -6422,16 +6422,16 @@ public abstract class jj {
                                                                 j7 = xc2.T(M02) ? M02.id : 0L;
                                                             }
                                                             s1.t3(arrayList15, j62);
-                                                            jf7 messagesStorage = s1.getMessagesStorage();
+                                                            kf7 messagesStorage = s1.getMessagesStorage();
                                                             int P0 = r47Var9.P0();
                                                             messagesStorage.getClass();
                                                             zh6 zh6Var = new zh6(i39);
                                                             ArrayList arrayList16 = new ArrayList(i39);
                                                             arrayList16.add(Integer.valueOf(P0));
                                                             zh6Var.k(j62, arrayList16);
-                                                            messagesStorage.H(new ds6((Object) messagesStorage, (Object) zh6Var, (boolean) r3, (byte) 3));
-                                                            s1.getMessagesStorage().M0(j62, arrayList15, true, true, r47.c5(r47Var9.k) ? 9 : r3, i42);
-                                                            s1.getMessagesStorage().O1(j62, j7, arrayList15, null);
+                                                            messagesStorage.J(new ds6((Object) messagesStorage, (Object) zh6Var, (boolean) r3, (byte) 3));
+                                                            s1.getMessagesStorage().P0(j62, arrayList15, true, true, r47.c5(r47Var9.k) ? 9 : r3, i42);
+                                                            s1.getMessagesStorage().T1(j62, j7, arrayList15, null);
                                                             jn7 notificationCenter = s1.getNotificationCenter();
                                                             Long valueOf = Long.valueOf(j7);
                                                             Integer valueOf2 = Integer.valueOf((int) r3);

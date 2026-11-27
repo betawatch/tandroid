@@ -1,52 +1,56 @@
 // default package
 
 import android.content.Context;
-import android.widget.LinearLayout;
-import java.util.HashSet;
+import android.text.TextUtils;
+import android.view.View;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class sba extends LinearLayout implements snb {
-    public final vnb a;
-    public final p66 b;
-    public final p66 c;
-    public final c51 d;
-    public final c51 e;
-
-    public sba(Context context, vnb vnbVar) {
-        super(context);
-        this.a = vnbVar;
-        setOrientation(1);
-        int i = aob.G6;
-        p66 a = zze.a(context, 15.0f, i, true, vnbVar);
-        this.b = a;
-        a.setGravity(17);
-        addView(a, tre.t(-1, -2, 55, 32, 20, 32, 0));
-        p66 a2 = zze.a(context, 13.0f, i, false, vnbVar);
-        this.c = a2;
-        a2.setGravity(17);
-        addView(a2, tre.s(-1, -2, 55, 32.0f, 9.33f, 32.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        c51 i2 = xnb.i(24, vnbVar, context, true);
-        this.d = i2;
-        c51 i3 = xnb.i(24, vnbVar, context, true);
-        this.e = i3;
-        linearLayout.addView(i2, tre.q(0, 42, 1.0f, jn7.w1, 0, 0, 12, 0));
-        linearLayout.addView(i3, tre.q(0, 42, 1.0f, jn7.w1, 0, 0, 0, 0));
-        addView(linearLayout, tre.t(-1, -2, 55, 24, 18, 24, 16));
+public final class sba extends a8c {
+    static {
+        a8c.h(new sba());
     }
 
-    @Override // snb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(aob.G6));
+    public static b8c i(String str, CharSequence charSequence, String str2, View.OnClickListener onClickListener, CharSequence charSequence2, View.OnClickListener onClickListener2) {
+        b8c K = b8c.K(sba.class);
+        K.m = str;
+        K.n = charSequence;
+        K.o = str2;
+        K.E = onClickListener;
+        K.p = charSequence2;
+        K.F = onClickListener2;
+        return K;
     }
 
-    @Override // snb
-    public final void updateColors() {
-        int i = aob.G6;
-        vnb vnbVar = this.a;
-        this.b.setTextColor(aob.v0(i, vnbVar));
-        this.c.setTextColor(aob.v0(i, vnbVar));
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        tba tbaVar = (tba) view;
+        CharSequence charSequence = b8cVar.m;
+        CharSequence charSequence2 = b8cVar.n;
+        CharSequence charSequence3 = b8cVar.o;
+        View.OnClickListener onClickListener = b8cVar.E;
+        CharSequence charSequence4 = b8cVar.p;
+        View.OnClickListener onClickListener2 = b8cVar.F;
+        c51 c51Var = tbaVar.e;
+        p66 p66Var = tbaVar.b;
+        p66Var.setText(pv3.m(charSequence, p66Var.getPaint().getFontMetricsInt(), false, null, 0));
+        p66 p66Var2 = tbaVar.c;
+        p66Var2.setText(pv3.m(charSequence2, p66Var2.getPaint().getFontMetricsInt(), false, null, 0));
+        c51 c51Var2 = tbaVar.d;
+        c51Var2.setVisibility(TextUtils.isEmpty(charSequence3) ? 8 : 0);
+        c51Var2.setText(charSequence3);
+        c51Var2.setOnClickListener(onClickListener);
+        c51Var.setText(charSequence4);
+        c51Var.setOnClickListener(onClickListener2);
+    }
+
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new tba(context, vnbVar);
+    }
+
+    @Override // a8c
+    public final boolean f() {
+        return false;
     }
 }

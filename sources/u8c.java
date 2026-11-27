@@ -5,7 +5,7 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class u8c {
     public final int a;
@@ -22,7 +22,7 @@ public final class u8c {
             return;
         }
         this.d = true;
-        jf7.Y(i).a.c(new q8c(this, (byte) 2));
+        kf7.a0(i).a.c(new q8c(this, (byte) 2));
     }
 
     public final void a() {
@@ -84,7 +84,7 @@ public final class u8c {
             this.e = true;
         } else {
             this.g = true;
-            jf7.Y(this.a).a.c(new q8c(this, b));
+            kf7.a0(this.a).a.c(new q8c(this, b));
         }
     }
 

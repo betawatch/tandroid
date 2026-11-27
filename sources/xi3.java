@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xi3 implements hj, qq4 {
     public final /* synthetic */ uj3 a;
@@ -43,7 +43,7 @@ public final class xi3 implements hj, qq4 {
         }
         ArrayList arrayList2 = new ArrayList();
         for (int i3 = 0; i3 < arrayList.size(); i3++) {
-            arrayList2.add(if7.a(((Long) uj3Var.K2.get(i3)).longValue(), 0L));
+            arrayList2.add(jf7.a(((Long) uj3Var.K2.get(i3)).longValue(), 0L));
         }
         uj3Var.E2.q(uj3Var, arrayList2, uj3Var.D1.getFieldText(), false, z, i, i2, null);
     }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class bm7 extends yc8 {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final class bm7 extends yc8 {
                                         fd8Var.e = imageReceiver.p();
                                         fd8Var.h = fd8Var.a.z();
                                         fd8Var.f = r47.B0(r47Var.k);
-                                        fd8Var.j = lm7Var.p0();
+                                        fd8Var.j = lm7Var.o0();
                                         return fd8Var;
                                     }
                                 } else {
@@ -74,6 +74,6 @@ public final class bm7 extends yc8 {
 
     @Override // yc8, ed8
     public final void Y(zu1 zu1Var) {
-        this.c.D0(zu1Var, this.a, this.b);
+        this.c.B0(zu1Var, this.a, this.b);
     }
 }

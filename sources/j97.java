@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j97 implements Comparator {
     public final /* synthetic */ byte a;
@@ -47,9 +47,9 @@ public final /* synthetic */ class j97 implements Comparator {
             case 0:
                 TLRPC.Dialog dialog2 = (TLRPC.Dialog) obj;
                 TLRPC.Dialog dialog3 = (TLRPC.Dialog) obj2;
-                ac7 ac7Var = uc7Var.q4;
+                ac7 ac7Var = uc7Var.r4;
                 int i3 = ac7Var == null ? Integer.MIN_VALUE : ac7Var.j.get(dialog2.id, TLObject.FLAG_31);
-                ac7 ac7Var2 = uc7Var.q4;
+                ac7 ac7Var2 = uc7Var.r4;
                 int i4 = ac7Var2 == null ? Integer.MIN_VALUE : ac7Var2.j.get(dialog3.id, TLObject.FLAG_31);
                 if (!(dialog2 instanceof TLRPC.TL_dialogFolder)) {
                     break;
@@ -116,7 +116,7 @@ public final /* synthetic */ class j97 implements Comparator {
                 zb7 zb7Var = (zb7) obj2;
                 TLRPC.Dialog dialog6 = ((zb7) obj).d;
                 if (dialog6 != null && (dialog = zb7Var.d) != null) {
-                    return uc7Var.s4.compare(dialog6, dialog);
+                    return uc7Var.t4.compare(dialog6, dialog);
                 }
                 if (zb7Var.d != null) {
                     return 1;

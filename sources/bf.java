@@ -26,9 +26,9 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bf implements fd, ot2, ncc, ti7, lcc, is6, sgb, NativeInstance.PayloadCallback {
+public final /* synthetic */ class bf implements fd, ot2, ncc, ui7, lcc, is6, sgb, NativeInstance.PayloadCallback {
     public final /* synthetic */ byte a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -41,7 +41,7 @@ public final /* synthetic */ class bf implements fd, ot2, ncc, ti7, lcc, is6, sg
         this.d = tL_messages_stickerSet;
     }
 
-    @Override // ti7
+    @Override // ui7
     public final void a(Canvas canvas) {
         gl9 gl9Var = (gl9) this.c;
         View view = (View) this.d;
@@ -149,11 +149,11 @@ public final /* synthetic */ class bf implements fd, ot2, ncc, ti7, lcc, is6, sg
         if (!z) {
             int i3 = b8cVar.d;
             if (i3 == -1) {
-                lm7Var.y0(i, jm7Var.q);
+                lm7Var.w0(i, jm7Var.q);
                 return;
             } else {
                 if (i3 == -2) {
-                    lm7Var.x0();
+                    lm7Var.u0();
                     return;
                 }
                 return;
@@ -189,32 +189,32 @@ public final /* synthetic */ class bf implements fd, ot2, ncc, ti7, lcc, is6, sg
             }
             String f3 = ea4.f((r47) arrayList.get(i5));
             r47 message = v94Var.getMessage();
-            ha4 n0 = f3 != null ? lm7Var.n0(i, message, "open_media", f3) : null;
+            ha4 m0 = f3 != null ? lm7Var.m0(i, message, "open_media", f3) : null;
             r47 r47Var2 = (r47) arrayList.get(0);
             PhotoViewer.q0().T1(null, lm7Var, null);
-            if (!PhotoViewer.q0().n1(arrayList, i5, r47.B0(r47Var2.k), 0L, 0L, new bm7(i, message, lm7Var)) || n0 == null) {
+            if (!PhotoViewer.q0().n1(arrayList, i5, r47.B0(r47Var2.k), 0L, 0L, new bm7(i, message, lm7Var)) || m0 == null) {
                 return;
             }
-            lm7Var.h0(n0, true, null);
+            lm7Var.g0(m0, true, null);
             return;
         }
         if (v94Var != null && v94Var.R > 0.5f && v94Var.L && v94Var.a0 > v94Var.b0 && v94Var.S < 1.0f) {
-            String B0 = lm7.B0(i, r47Var);
+            String z0 = lm7.z0(i, r47Var);
             HashMap hashMap = lm7Var.W;
-            km7 km7Var = (km7) hashMap.get(B0);
+            km7 km7Var = (km7) hashMap.get(z0);
             if (km7Var == null || km7Var.b < 1.0f) {
-                lm7Var.F0(lm7Var.n0(i, r47Var, "expand", null));
+                lm7Var.D0(lm7Var.m0(i, r47Var, "expand", null));
             }
             if (km7Var == null) {
                 km7Var = new km7(lm7Var, 0.0f, 0.0f);
-                hashMap.put(B0, km7Var);
+                hashMap.put(z0, km7Var);
             }
             km7Var.a(1.0f);
             return;
         }
         Bundle bundle = new Bundle();
-        long B02 = r47.B0(r47Var.k);
-        bundle.putLong(B02 < 0 ? "chat_id" : "user_id", Math.abs(B02));
+        long B0 = r47.B0(r47Var.k);
+        bundle.putLong(B0 < 0 ? "chat_id" : "user_id", Math.abs(B0));
         bundle.putInt("message_id", r47Var.e1());
         bundle.putBoolean("from_news", true);
         bundle.putBoolean("for_news", true);
@@ -222,7 +222,7 @@ public final /* synthetic */ class bf implements fd, ot2, ncc, ti7, lcc, is6, sg
             zu1 zu1Var = new zu1(bundle);
             zu1Var.tb = r47Var;
             lm7Var.a0.b();
-            lm7Var.D0(zu1Var, i, r47Var);
+            lm7Var.B0(zu1Var, i, r47Var);
             lm7Var.presentFragment(zu1Var);
         }
     }
@@ -241,10 +241,10 @@ public final /* synthetic */ class bf implements fd, ot2, ncc, ti7, lcc, is6, sg
         switch (b) {
             case 0:
                 ij ijVar = (ij) obj2;
-                hf7 hf7Var = (hf7) obj;
+                if7 if7Var = (if7) obj;
                 String trim = ijVar.getText().toString().trim();
                 if (trim.length() <= i2 && !trim.isEmpty()) {
-                    hf7Var.a(trim);
+                    if7Var.a(trim);
                     idVar.dismiss();
                     break;
                 } else {

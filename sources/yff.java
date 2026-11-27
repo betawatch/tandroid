@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class yff extends ljf {
     private static final pjf zzb = new rad();
@@ -26,7 +26,7 @@ public final class yff extends ljf {
             return (byte) 1;
         }
         if (i2 == 2) {
-            return new ilf(zzd, "\u0001\u0006\u0000\u0001\u0001\u0007\u0006\u0000\u0002\u0000\u0001᠌\u0000\u0002᠌\u0001\u0003ࠞ\u0005᠌\u0002\u0006\u001b\u0007ဂ\u0003", new Object[]{"zze", "zzf", sae.x, "zzg", rj2.r, "zzh", rg7.y, "zzi", rg7.n, "zzj", nff.class, "zzk"});
+            return new ilf(zzd, "\u0001\u0006\u0000\u0001\u0001\u0007\u0006\u0000\u0002\u0000\u0001᠌\u0000\u0002᠌\u0001\u0003ࠞ\u0005᠌\u0002\u0006\u001b\u0007ဂ\u0003", new Object[]{"zze", "zzf", sae.x, "zzg", rj2.r, "zzh", sg7.y, "zzi", sg7.n, "zzj", nff.class, "zzk"});
         }
         if (i2 == 3) {
             return new yff();

@@ -39,7 +39,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class yn6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -310,10 +310,10 @@ public final /* synthetic */ class yn6 implements Runnable {
 
     private final void f() {
         xd5 xd5Var = (xd5) this.c;
-        en9 en9Var = (en9) this.d;
+        dn9 dn9Var = (dn9) this.d;
         if (this.b) {
             uc7.s1(xd5Var.a).n0(true);
-            en9Var.run();
+            dn9Var.run();
         } else {
             e S = LaunchActivity.S();
             if (S == null) {
@@ -439,16 +439,16 @@ public final /* synthetic */ class yn6 implements Runnable {
                 return;
             case 1:
                 ls6 ls6Var = (ls6) obj2;
-                if7 if7Var = (if7) obj;
+                jf7 jf7Var = (jf7) obj;
                 try {
-                    if (if7Var.b != 0) {
+                    if (jf7Var.b != 0) {
                         SQLiteDatabase sQLiteDatabase = ls6Var.getMessagesStorage().b;
                         Locale locale = Locale.US;
-                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT info FROM bot_keyboard_topics WHERE uid = " + if7Var.a + " AND tid = " + if7Var.b, new Object[0]);
+                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT info FROM bot_keyboard_topics WHERE uid = " + jf7Var.a + " AND tid = " + jf7Var.b, new Object[0]);
                     } else {
                         SQLiteDatabase sQLiteDatabase2 = ls6Var.getMessagesStorage().b;
                         Locale locale2 = Locale.US;
-                        queryFinalized = sQLiteDatabase2.queryFinalized("SELECT info FROM bot_keyboard WHERE uid = " + if7Var.a, new Object[0]);
+                        queryFinalized = sQLiteDatabase2.queryFinalized("SELECT info FROM bot_keyboard WHERE uid = " + jf7Var.a, new Object[0]);
                     }
                     if (!queryFinalized.next() || queryFinalized.isNull(0) || (byteBufferValue = queryFinalized.byteBufferValue(0)) == null) {
                         message = null;
@@ -458,7 +458,7 @@ public final /* synthetic */ class yn6 implements Runnable {
                     }
                     queryFinalized.dispose();
                     if (message != null || z) {
-                        hl.c3(new xp6(ls6Var, message, if7Var));
+                        hl.c3(new xp6(ls6Var, message, jf7Var));
                         return;
                     }
                     return;
@@ -467,19 +467,19 @@ public final /* synthetic */ class yn6 implements Runnable {
                     return;
                 }
             case 2:
-                jf7 jf7Var = (jf7) obj2;
+                kf7 kf7Var = (kf7) obj2;
                 TLRPC.UserFull userFull = (TLRPC.UserFull) obj;
                 TLRPC.User user = userFull.user;
                 long j = user != null ? user.id : userFull.id;
                 if (z) {
                     try {
-                        queryFinalized2 = jf7Var.b.queryFinalized("SELECT uid FROM user_settings WHERE uid = " + j, new Object[0]);
+                        queryFinalized2 = kf7Var.b.queryFinalized("SELECT uid FROM user_settings WHERE uid = " + j, new Object[0]);
                     } catch (Exception e2) {
                         e = e2;
                         sQLitePreparedStatement = null;
                         sQLiteCursor = null;
                         try {
-                            jf7Var.n(e, true);
+                            kf7Var.p(e, true);
                             if (sQLitePreparedStatement != null) {
                                 sQLitePreparedStatement.dispose();
                             }
@@ -518,7 +518,7 @@ public final /* synthetic */ class yn6 implements Runnable {
                         e = e3;
                         sQLiteCursor = queryFinalized2;
                         sQLitePreparedStatement = null;
-                        jf7Var.n(e, true);
+                        kf7Var.p(e, true);
                         if (sQLitePreparedStatement != null) {
                         }
                         if (sQLiteCursor != null) {
@@ -534,7 +534,7 @@ public final /* synthetic */ class yn6 implements Runnable {
                         throw th;
                     }
                 }
-                SQLitePreparedStatement executeFast3 = jf7Var.b.executeFast("REPLACE INTO user_settings VALUES(?, ?, ?)");
+                SQLitePreparedStatement executeFast3 = kf7Var.b.executeFast("REPLACE INTO user_settings VALUES(?, ?, ?)");
                 try {
                     NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(userFull.getObjectSize());
                     userFull.serializeToStream(nativeByteBuffer);
@@ -545,18 +545,18 @@ public final /* synthetic */ class yn6 implements Runnable {
                     executeFast3.dispose();
                     nativeByteBuffer.reuse();
                     if ((userFull.flags & 2048) != 0) {
-                        executeFast = jf7Var.b.executeFast("UPDATE dialogs SET folder_id = ? WHERE did = ?");
+                        executeFast = kf7Var.b.executeFast("UPDATE dialogs SET folder_id = ? WHERE did = ?");
                         try {
                             executeFast.bindInteger(1, userFull.folder_id);
                             executeFast.bindLong(2, j);
                             executeFast.step();
                             executeFast.dispose();
-                            jf7Var.K.l(j);
+                            kf7Var.K.l(j);
                         } catch (Exception e4) {
                             e = e4;
                             sQLitePreparedStatement = executeFast;
                             sQLiteCursor = null;
-                            jf7Var.n(e, true);
+                            kf7Var.p(e, true);
                             if (sQLitePreparedStatement != null) {
                             }
                             if (sQLiteCursor != null) {
@@ -573,7 +573,7 @@ public final /* synthetic */ class yn6 implements Runnable {
                         }
                     }
                     if ((userFull.flags & TLObject.FLAG_14) != 0) {
-                        executeFast = jf7Var.b.executeFast("UPDATE dialogs SET ttl_period = ? WHERE did = ?");
+                        executeFast = kf7Var.b.executeFast("UPDATE dialogs SET ttl_period = ? WHERE did = ?");
                         executeFast.bindInteger(1, userFull.ttl_period);
                         executeFast.bindLong(2, j);
                         executeFast.step();
@@ -589,10 +589,10 @@ public final /* synthetic */ class yn6 implements Runnable {
                     sQLitePreparedStatement = executeFast3;
                 }
             case 3:
-                jf7 jf7Var2 = (jf7) obj2;
+                kf7 kf7Var2 = (kf7) obj2;
                 TLRPC.ChatFull chatFull = (TLRPC.ChatFull) obj;
                 try {
-                    SQLiteCursor queryFinalized3 = jf7Var2.b.queryFinalized("SELECT online, inviter, links FROM chat_settings_v2 WHERE uid = " + chatFull.id, new Object[0]);
+                    SQLiteCursor queryFinalized3 = kf7Var2.b.queryFinalized("SELECT online, inviter, links FROM chat_settings_v2 WHERE uid = " + chatFull.id, new Object[0]);
                     try {
                         if (queryFinalized3.next()) {
                             i2 = queryFinalized3.intValue(0);
@@ -614,7 +614,7 @@ public final /* synthetic */ class yn6 implements Runnable {
                         if (i3 >= 0) {
                             chatFull.invitesCount = i3;
                         }
-                        SQLitePreparedStatement executeFast4 = jf7Var2.b.executeFast("REPLACE INTO chat_settings_v2 VALUES(?, ?, ?, ?, ?, ?, ?)");
+                        SQLitePreparedStatement executeFast4 = kf7Var2.b.executeFast("REPLACE INTO chat_settings_v2 VALUES(?, ?, ?, ?, ?, ?, ?)");
                         try {
                             NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(chatFull.getObjectSize());
                             chatFull.serializeToStream(nativeByteBuffer2);
@@ -629,13 +629,13 @@ public final /* synthetic */ class yn6 implements Runnable {
                             executeFast4.dispose();
                             nativeByteBuffer2.reuse();
                             if (chatFull instanceof TLRPC.TL_channelFull) {
-                                SQLiteCursor queryFinalized4 = jf7Var2.b.queryFinalized("SELECT inbox_max, outbox_max FROM dialogs WHERE did = " + (-chatFull.id), new Object[0]);
+                                SQLiteCursor queryFinalized4 = kf7Var2.b.queryFinalized("SELECT inbox_max, outbox_max FROM dialogs WHERE did = " + (-chatFull.id), new Object[0]);
                                 try {
                                     if (!queryFinalized4.next() || queryFinalized4.intValue(0) >= chatFull.read_inbox_max_id) {
                                         sQLitePreparedStatement3 = null;
                                     } else {
                                         int intValue = queryFinalized4.intValue(1);
-                                        sQLitePreparedStatement3 = jf7Var2.b.executeFast("UPDATE dialogs SET unread_count = ?, inbox_max = ?, outbox_max = ? WHERE did = ?");
+                                        sQLitePreparedStatement3 = kf7Var2.b.executeFast("UPDATE dialogs SET unread_count = ?, inbox_max = ?, outbox_max = ? WHERE did = ?");
                                         try {
                                             sQLitePreparedStatement3.bindInteger(1, chatFull.unread_count);
                                             sQLitePreparedStatement3.bindInteger(2, chatFull.read_inbox_max_id);
@@ -648,7 +648,7 @@ public final /* synthetic */ class yn6 implements Runnable {
                                             sQLiteCursor2 = queryFinalized4;
                                             sQLitePreparedStatement2 = sQLitePreparedStatement3;
                                             try {
-                                                jf7Var2.n(e, true);
+                                                kf7Var2.p(e, true);
                                                 if (sQLiteCursor2 != null) {
                                                 }
                                                 if (sQLitePreparedStatement2 != null) {
@@ -679,7 +679,7 @@ public final /* synthetic */ class yn6 implements Runnable {
                                     e = e7;
                                     sQLiteCursor2 = queryFinalized4;
                                     sQLitePreparedStatement2 = null;
-                                    jf7Var2.n(e, true);
+                                    kf7Var2.p(e, true);
                                     if (sQLiteCursor2 != null) {
                                         sQLiteCursor2.dispose();
                                     }
@@ -703,19 +703,19 @@ public final /* synthetic */ class yn6 implements Runnable {
                             }
                             try {
                                 if ((chatFull.flags & 2048) != 0) {
-                                    executeFast2 = jf7Var2.b.executeFast("UPDATE dialogs SET folder_id = ? WHERE did = ?");
+                                    executeFast2 = kf7Var2.b.executeFast("UPDATE dialogs SET folder_id = ? WHERE did = ?");
                                     try {
                                         executeFast2.bindInteger(1, chatFull.folder_id);
                                         executeFast2.bindLong(2, -chatFull.id);
                                         executeFast2.step();
                                         executeFast2.dispose();
-                                        jf7Var2.K.l(-chatFull.id);
+                                        kf7Var2.K.l(-chatFull.id);
                                         sQLitePreparedStatement3 = null;
                                     } catch (Exception e8) {
                                         e = e8;
                                         sQLitePreparedStatement2 = executeFast2;
                                         sQLiteCursor2 = null;
-                                        jf7Var2.n(e, true);
+                                        kf7Var2.p(e, true);
                                         if (sQLiteCursor2 != null) {
                                         }
                                         if (sQLitePreparedStatement2 != null) {
@@ -731,7 +731,7 @@ public final /* synthetic */ class yn6 implements Runnable {
                                         throw th;
                                     }
                                 }
-                                executeFast2 = jf7Var2.b.executeFast(str);
+                                executeFast2 = kf7Var2.b.executeFast(str);
                                 executeFast2.bindInteger(1, chatFull.ttl_period);
                                 executeFast2.bindLong(2, -chatFull.id);
                                 executeFast2.step();
@@ -767,11 +767,11 @@ public final /* synthetic */ class yn6 implements Runnable {
                 }
                 break;
             case 4:
-                jf7 jf7Var3 = (jf7) obj2;
+                kf7 kf7Var3 = (kf7) obj2;
                 TLRPC.EncryptedChat encryptedChat = (TLRPC.EncryptedChat) obj;
                 try {
                     try {
-                        sQLitePreparedStatement4 = jf7Var3.b.executeFast("UPDATE enc_chats SET seq_in = ?, seq_out = ?, use_count = ?, in_seq_no = ?, mtproto_seq = ? WHERE uid = ?");
+                        sQLitePreparedStatement4 = kf7Var3.b.executeFast("UPDATE enc_chats SET seq_in = ?, seq_out = ?, use_count = ?, in_seq_no = ?, mtproto_seq = ? WHERE uid = ?");
                         sQLitePreparedStatement4.bindInteger(1, encryptedChat.seq_in);
                         sQLitePreparedStatement4.bindInteger(2, encryptedChat.seq_out);
                         sQLitePreparedStatement4.bindInteger(3, (encryptedChat.key_use_count_in << 16) | encryptedChat.key_use_count_out);
@@ -781,7 +781,7 @@ public final /* synthetic */ class yn6 implements Runnable {
                         sQLitePreparedStatement4.step();
                         if (z && (i4 = encryptedChat.in_seq_no) != 0) {
                             long j2 = (int) (encryptedChat.id & 4294967295L);
-                            SQLiteDatabase sQLiteDatabase3 = jf7Var3.b;
+                            SQLiteDatabase sQLiteDatabase3 = kf7Var3.b;
                             Locale locale3 = Locale.US;
                             sQLiteDatabase3.executeFast("DELETE FROM messages_v2 WHERE mid IN (SELECT m.mid FROM messages_v2 as m LEFT JOIN messages_seq as s ON m.mid = s.mid WHERE m.uid = " + j2 + " AND m.date = 0 AND m.mid < 0 AND s.seq_out <= " + i4 + ") AND uid = " + j2).stepThis().dispose();
                         }
@@ -792,7 +792,7 @@ public final /* synthetic */ class yn6 implements Runnable {
                         throw th14;
                     }
                 } catch (Exception e13) {
-                    jf7Var3.n(e13, true);
+                    kf7Var3.p(e13, true);
                     if (sQLitePreparedStatement4 == null) {
                         return;
                     }
@@ -800,30 +800,30 @@ public final /* synthetic */ class yn6 implements Runnable {
                 sQLitePreparedStatement4.dispose();
                 return;
             case 5:
-                jf7 jf7Var4 = (jf7) obj2;
-                jf7Var4.u1((ac7) obj, z);
-                jf7Var4.i(false);
-                hl.c3(new be7(jf7Var4, (byte) 17));
+                kf7 kf7Var4 = (kf7) obj2;
+                kf7Var4.y1((ac7) obj, z);
+                kf7Var4.i(false);
+                hl.c3(new hd7(kf7Var4, (byte) 19));
                 return;
             case 6:
                 fz7 fz7Var = (fz7) obj2;
-                hh7 hh7Var = (hh7) obj;
+                ih7 ih7Var = (ih7) obj;
                 if (z) {
-                    hh7Var.v(true);
+                    ih7Var.v(true);
                 } else {
-                    hh7Var.w();
+                    ih7Var.w();
                 }
-                fz7Var.a(hh7Var);
+                fz7Var.a(ih7Var);
                 return;
             case 7:
                 nh6 nh6Var = (nh6) obj2;
-                hh7 hh7Var2 = (hh7) obj;
+                ih7 ih7Var2 = (ih7) obj;
                 if (z) {
-                    hh7Var2.v(true);
+                    ih7Var2.v(true);
                 } else {
-                    hh7Var2.w();
+                    ih7Var2.w();
                 }
-                ((fz7) nh6Var.b).a(hh7Var2);
+                ((fz7) nh6Var.b).a(ih7Var2);
                 return;
             case 8:
                 ((b18) obj2).w1((String) obj, z);

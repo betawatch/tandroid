@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class vl5 extends yye {
     public static final xi4 b = new xi4((byte) 22);
@@ -456,7 +456,7 @@ public final class vl5 extends yye {
         byte[] bArr = new byte[i2];
         ey7Var.k(0, i2, bArr);
         int v = v(0, bArr);
-        String n = dg7.n(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
+        String n = eg7.n(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
         int i3 = v + 1;
         int u = u(i3, A, bArr);
         String l = l(bArr, i3, u, s);
@@ -467,7 +467,7 @@ public final class vl5 extends yye {
         return new ou4(n, i2 <= r2 ? gcc.b : Arrays.copyOfRange(bArr, r2, i2), l, l2);
     }
 
-    public static mg7 j(int i, ey7 ey7Var) {
+    public static ng7 j(int i, ey7 ey7Var) {
         int H = ey7Var.H();
         int D = ey7Var.D();
         int D2 = ey7Var.D();
@@ -484,7 +484,7 @@ public final class vl5 extends yye {
             iArr[i3] = f;
             iArr2[i3] = f2;
         }
-        return new mg7(H, D, D2, iArr, iArr2);
+        return new ng7(H, D, D2, iArr, iArr2);
     }
 
     public static ym8 k(int i, ey7 ey7Var) {
@@ -695,7 +695,7 @@ public final class vl5 extends yye {
     }
 
     @Override // yye
-    public final uf7 b(wf7 wf7Var, ByteBuffer byteBuffer) {
+    public final vf7 b(xf7 xf7Var, ByteBuffer byteBuffer) {
         return c(byteBuffer.limit(), byteBuffer.array());
     }
 
@@ -704,7 +704,7 @@ public final class vl5 extends yye {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final uf7 c(int i, byte[] bArr) {
+    public final vf7 c(int i, byte[] bArr) {
         ul5 ul5Var;
         ArrayList arrayList = new ArrayList();
         ey7 ey7Var = new ey7(i, bArr);
@@ -766,7 +766,7 @@ public final class vl5 extends yye {
                             arrayList.add(h);
                         }
                     }
-                    return new uf7(arrayList);
+                    return new vf7(arrayList);
                 }
                 c00.p(A, "Skipped ID3 tag with unsupported majorVersion=", "Id3Decoder");
             }

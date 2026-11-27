@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class sx4 extends FrameLayout implements snb {
     public static final int[] w0 = {-2781403, -3635939};
@@ -49,7 +49,7 @@ public class sx4 extends FrameLayout implements snb {
     public final mm a0;
     public final vnb b;
     public pw4 b0;
-    public final sca c;
+    public final tca c;
     public TL_stars.StarGift c0;
     public final FrameLayout d;
     public boolean d0;
@@ -91,7 +91,7 @@ public class sx4 extends FrameLayout implements snb {
         this.a = i;
         this.b = vnbVar;
         iye.b(this, 0.04f, 1.5f);
-        this.c = new sca(this);
+        this.c = new tca(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
         px4 px4Var = new px4(frameLayout, vnbVar, true);
@@ -580,7 +580,7 @@ public class sx4 extends FrameLayout implements snb {
                         long j2 = starGift.availability_resale;
                         if (j2 > 0) {
                             j = starGift.resell_min_stars;
-                            if (j2 > 1 && j < uc7.s1(i5).k4.p.f()) {
+                            if (j2 > 1 && j < uc7.s1(i5).l4.p.f()) {
                                 z6 = true;
                                 if (starGift.auction) {
                                     textView = textView3;
@@ -796,7 +796,7 @@ public class sx4 extends FrameLayout implements snb {
                 f = 10.0f;
                 TL_stars.StarGift starGift = savedStarGift.gift;
                 f2 = 8.0f;
-                if (starGift.resell_amount != null && (!it7.n(starGift) || uc7.s1(this.a).k4.v0.f)) {
+                if (starGift.resell_amount != null && (!it7.n(starGift) || uc7.s1(this.a).l4.v0.f)) {
                     textView.setVisibility(0);
                     FrameLayout.LayoutParams layoutParams2 = this.F;
                     layoutParams2.topMargin = 0;
@@ -1021,7 +1021,7 @@ public class sx4 extends FrameLayout implements snb {
             }
             tx4Var.setVisibility(0);
             TL_stars.StarGift starGift2 = this.f0.gift;
-            if (starGift2.resell_amount == null || (it7.n(starGift2) && !uc7.s1(this.a).k4.v0.f)) {
+            if (starGift2.resell_amount == null || (it7.n(starGift2) && !uc7.s1(this.a).l4.v0.f)) {
                 setRibbonColorKey(aob.Cj);
                 tx4Var.setStrokeColor(0);
                 this.p0 = false;

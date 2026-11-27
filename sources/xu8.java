@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xu8 extends c79 {
     public final Context c;
@@ -108,7 +108,7 @@ public final class xu8 extends c79 {
                 qmb qmbVar = (qmb) view;
                 String p = ip7.p(j2, j, false);
                 i2 = ((e) zu8Var).currentAccount;
-                SharedPreferences sharedPreferences = uc7.s1(i2).W3;
+                SharedPreferences sharedPreferences = uc7.s1(i2).X3;
                 if (i != zu8Var.Y) {
                     yob.X(qmbVar.getTextView(), aob.G6, vnbVar);
                     if (i != zu8Var.H) {
@@ -276,7 +276,7 @@ public final class xu8 extends c79 {
                 ykb ykbVar = (ykb) view;
                 String p2 = ip7.p(j2, j, false);
                 i3 = ((e) zu8Var).currentAccount;
-                SharedPreferences sharedPreferences2 = uc7.s1(i3).W3;
+                SharedPreferences sharedPreferences2 = uc7.s1(i3).X3;
                 StringBuilder sb = new StringBuilder("color_");
                 sb.append(p2);
                 int g6 = sharedPreferences2.contains(sb.toString()) ? qu6.g("color_", p2, sharedPreferences2, -16776961) : wf3.y(j2) ? sharedPreferences2.getInt("GroupLed", -16776961) : sharedPreferences2.getInt("MessagesLed", -16776961);
@@ -295,7 +295,7 @@ public final class xu8 extends c79 {
             case 4:
                 i29 i29Var = (i29) view;
                 i4 = ((e) zu8Var).currentAccount;
-                SharedPreferences sharedPreferences3 = uc7.s1(i4).W3;
+                SharedPreferences sharedPreferences3 = uc7.s1(i4).X3;
                 int g7 = qu6.g("popup_", ip7.p(j2, j, false), sharedPreferences3, 0);
                 if (g7 == 0) {
                     g7 = sharedPreferences3.getInt(wf3.y(j2) ? "popupGroup" : "popupAll", 0) != 0 ? 1 : 2;
@@ -324,18 +324,18 @@ public final class xu8 extends c79 {
                 uacVar.a(null, M0);
                 break;
             case 6:
-                rca rcaVar = (rca) view;
+                sca scaVar = (sca) view;
                 boolean z = i > 0;
                 r11 = i < zu8Var.a0 - 1;
-                if (rcaVar.c != z || rcaVar.d != r11) {
-                    rcaVar.c = z;
-                    rcaVar.d = r11;
-                    int i10 = rcaVar.b;
+                if (scaVar.c != z || scaVar.d != r11) {
+                    scaVar.c = z;
+                    scaVar.d = r11;
+                    int i10 = scaVar.b;
                     if (i10 != 0) {
-                        rcaVar.setBackgroundColor(i10);
+                        scaVar.setBackgroundColor(i10);
                         break;
                     } else {
-                        rcaVar.setBackground(null);
+                        scaVar.setBackground(null);
                         break;
                     }
                 }
@@ -343,7 +343,7 @@ public final class xu8 extends c79 {
             case 7:
                 wkb wkbVar = (wkb) view;
                 i7 = ((e) zu8Var).currentAccount;
-                SharedPreferences sharedPreferences4 = uc7.s1(i7).W3;
+                SharedPreferences sharedPreferences4 = uc7.s1(i7).X3;
                 if (i != zu8Var.F) {
                     if (i != zu8Var.G) {
                         if (i == zu8Var.Q) {
@@ -397,7 +397,7 @@ public final class xu8 extends c79 {
                 yob.h(aob.d6, vnbVar, mf5Var);
                 break;
             case 6:
-                mf5Var = new rca(context, (uh9) null);
+                mf5Var = new sca(context, (uh9) null);
                 break;
             default:
                 mf5Var = new wkb(context, vnbVar);

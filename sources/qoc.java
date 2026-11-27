@@ -12,7 +12,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class qoc implements ggd {
     public boolean a;
@@ -39,7 +39,7 @@ public final class qoc implements ggd {
                 kafVar.V(kafVar.R(), 1);
                 this.a = true;
             } catch (RemoteException e) {
-                throw new kg7("Failed to init thin image labeler.", e);
+                throw new lg7("Failed to init thin image labeler.", e);
             }
         }
         int i = jq5Var.b;
@@ -80,7 +80,7 @@ public final class qoc implements ggd {
             }
             return arrayList;
         } catch (RemoteException e2) {
-            throw new kg7("Failed to run thin image labeler.", e2);
+            throw new lg7("Failed to run thin image labeler.", e2);
         }
     }
 
@@ -92,7 +92,7 @@ public final class qoc implements ggd {
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(true);
         xgb xgbVar2 = (xgb) this.e;
-        xgbVar2.a.postDelayed(new vlc(this, atomicBoolean, (byte) 7), 1000L);
+        xgbVar2.a.postDelayed(new slc(this, atomicBoolean, (byte) 8), 1000L);
         xgbVar.e(new ba1((Object) this, (Object) atomicBoolean, z, z2, (byte) 5));
     }
 
@@ -123,13 +123,13 @@ public final class qoc implements ggd {
             }
             this.e = ((maf) mafVar).Z(new br7(context), new zaf(((lm5) this.d).a, -1));
         } catch (RemoteException e) {
-            throw new kg7("Failed to create thin image labeler.", e);
+            throw new lg7("Failed to create thin image labeler.", e);
         } catch (ss3 unused) {
             if (!this.b) {
                 zt7.a(context);
                 this.b = true;
             }
-            throw new kg7("Waiting for the label optional module to be downloaded. Please wait.", 14);
+            throw new lg7("Waiting for the label optional module to be downloaded. Please wait.", 14);
         }
     }
 

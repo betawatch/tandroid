@@ -1,48 +1,40 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class uh7 extends iu5 {
-    public final long e;
-    public final ArrayList f;
-    public final ArrayList g;
+public final class uh7 implements tf7 {
+    public final int a;
 
-    public uh7(int i, long j) {
-        super(i, (byte) 1);
-        this.e = j;
-        this.f = new ArrayList();
-        this.g = new ArrayList();
+    public uh7(int i) {
+        this.a = i;
     }
 
-    @Override // iu5
+    @Override // tf7
+    public final ko4 a() {
+        return null;
+    }
+
+    @Override // tf7
+    public final byte[] c() {
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof uh7) && this.a == ((uh7) obj).a;
+    }
+
+    public final int hashCode() {
+        return this.a;
+    }
+
     public final String toString() {
-        return iu5.e(this.b) + " leaves: " + Arrays.toString(this.f.toArray()) + " containers: " + Arrays.toString(this.g.toArray());
+        return "Mp4AlternateGroup: " + this.a;
     }
 
-    public final uh7 u(int i) {
-        ArrayList arrayList = this.g;
-        int size = arrayList.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            uh7 uh7Var = (uh7) arrayList.get(i2);
-            if (uh7Var.b == i) {
-                return uh7Var;
-            }
-        }
-        return null;
-    }
-
-    public final vh7 v(int i) {
-        ArrayList arrayList = this.f;
-        int size = arrayList.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            vh7 vh7Var = (vh7) arrayList.get(i2);
-            if (vh7Var.b == i) {
-                return vh7Var;
-            }
-        }
-        return null;
+    @Override // tf7
+    public final void b(lt6 lt6Var) {
     }
 }

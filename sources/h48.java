@@ -33,7 +33,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class h48 extends e implements fn7 {
     public final oz4 E;
@@ -292,7 +292,7 @@ public final class h48 extends e implements fn7 {
         }
         this.X = true;
         jn7 notificationCenter = getNotificationCenter();
-        int i8 = uc7.r5;
+        int i8 = uc7.s5;
         notificationCenter.k(2, Integer.valueOf(TLObject.FLAG_19));
     }
 
@@ -597,7 +597,7 @@ public final class h48 extends e implements fn7 {
                         h48Var2.a0.setInterpolator(dt3.e);
                         h48Var2.a0.start();
                         frameLayout2.addView(h48Var2.Y, new ViewGroup.LayoutParams(-1, -1));
-                        hl.c3(new fe7(h48Var2, (byte) 29));
+                        hl.c3(new ge7(h48Var2, (byte) 29));
                         break;
                 }
             }
@@ -720,7 +720,7 @@ public final class h48 extends e implements fn7 {
                         h48Var2.a0.setInterpolator(dt3.e);
                         h48Var2.a0.start();
                         frameLayout22.addView(h48Var2.Y, new ViewGroup.LayoutParams(-1, -1));
-                        hl.c3(new fe7(h48Var2, (byte) 29));
+                        hl.c3(new ge7(h48Var2, (byte) 29));
                         break;
                 }
             }
@@ -803,7 +803,7 @@ public final class h48 extends e implements fn7 {
                         h48Var2.a0.setInterpolator(dt3.e);
                         h48Var2.a0.start();
                         frameLayout22.addView(h48Var2.Y, new ViewGroup.LayoutParams(-1, -1));
-                        hl.c3(new fe7(h48Var2, (byte) 29));
+                        hl.c3(new ge7(h48Var2, (byte) 29));
                         break;
                 }
             }
@@ -935,7 +935,7 @@ public final class h48 extends e implements fn7 {
                     if (tL_emojiList2 != null) {
                     }
                     mediaDataController.getConnectionsManager().sendRequest(getdefaultbackgroundemojis, new hp6(mediaDataController, k, (byte) 2));
-                    if (uc7.s1(this.currentAccount).E3 == null) {
+                    if (uc7.s1(this.currentAccount).F3 == null) {
                     }
                     return super.onFragmentCreate();
                 }
@@ -954,7 +954,7 @@ public final class h48 extends e implements fn7 {
         } else {
             boolean z = f11.a;
         }
-        if (uc7.s1(this.currentAccount).E3 == null) {
+        if (uc7.s1(this.currentAccount).F3 == null) {
             boolean z2 = f11.a;
         }
         return super.onFragmentCreate();

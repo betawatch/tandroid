@@ -7,7 +7,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class am0 implements Runnable {
     public final /* synthetic */ byte a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class am0 implements Runnable {
                 break;
             case 2:
                 try {
-                    SQLitePreparedStatement executeFast = jf7.Y(i).b.executeFast("REPLACE INTO search_recent VALUES(?, ?)");
+                    SQLitePreparedStatement executeFast = kf7.a0(i).b.executeFast("REPLACE INTO search_recent VALUES(?, ?)");
                     executeFast.requery();
                     executeFast.bindLong(1, j);
                     executeFast.bindInteger(2, (int) (System.currentTimeMillis() / 1000));

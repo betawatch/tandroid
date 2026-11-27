@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class n82 implements icc {
     public final /* synthetic */ byte a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class n82 implements icc {
                     arrayList.add(w);
                 }
             }
-            HashMap hashMap = uc7.s1(i).N4;
+            HashMap hashMap = uc7.s1(i).O4;
             wb7 wb7Var = hashMap == null ? null : (wb7) hashMap.get(0L);
             if (wb7Var == null) {
                 arrayList.add(b8c.p(30));

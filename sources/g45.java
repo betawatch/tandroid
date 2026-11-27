@@ -29,7 +29,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g45 implements icc {
     public final /* synthetic */ byte a = 0;
@@ -98,8 +98,8 @@ public final /* synthetic */ class g45 implements icc {
                         a55 a55Var2 = C.g;
                         z45 z45Var = w45Var2.f;
                         boolean equals = "signMessage".equals(str3);
-                        final sk7 sk7Var = new sk7(context, vnbVar, new View[0]);
-                        sk7Var.F0(aob.v0(aob.a7, vnbVar));
+                        final tk7 tk7Var = new tk7(context, vnbVar, new View[0]);
+                        tk7Var.F0(aob.v0(aob.a7, vnbVar));
                         LinearLayout linearLayout2 = new LinearLayout(context);
                         linearLayout2.setOrientation(1);
                         de0 de0Var = new de0(context);
@@ -137,11 +137,11 @@ public final /* synthetic */ class g45 implements icc {
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 byte b5 = b4;
-                                sk7 sk7Var2 = sk7Var;
+                                tk7 tk7Var2 = tk7Var;
                                 switch (b5) {
                                     case 0:
-                                        ir1 ir1Var = sk7Var2.l1;
-                                        if (1 < sk7Var2.m1.size() && 1 != ir1Var.getCurrentPosition()) {
+                                        ir1 ir1Var = tk7Var2.l1;
+                                        if (1 < tk7Var2.m1.size() && 1 != ir1Var.getCurrentPosition()) {
                                             for (View view2 : ir1Var.getViewPages()) {
                                                 if (view2 != null) {
                                                     hl.t1(view2);
@@ -152,8 +152,8 @@ public final /* synthetic */ class g45 implements icc {
                                         }
                                         break;
                                     default:
-                                        ir1 ir1Var2 = sk7Var2.l1;
-                                        if (sk7Var2.m1.size() > 0 && ir1Var2.getCurrentPosition() != 0) {
+                                        ir1 ir1Var2 = tk7Var2.l1;
+                                        if (tk7Var2.m1.size() > 0 && ir1Var2.getCurrentPosition() != 0) {
                                             for (View view3 : ir1Var2.getViewPages()) {
                                                 if (view3 != null) {
                                                     hl.t1(view3);
@@ -166,9 +166,9 @@ public final /* synthetic */ class g45 implements icc {
                                 }
                             }
                         });
-                        rk7 rk7Var = new rk7(context);
-                        rk7Var.getContent().addView(linearLayout2, tre.c(-2.0f, -1));
-                        sk7Var.E0(rk7Var);
+                        sk7 sk7Var = new sk7(context);
+                        sk7Var.getContent().addView(linearLayout2, tre.c(-2.0f, -1));
+                        tk7Var.E0(sk7Var);
                         LinearLayout j2 = uh9.j(context, 1);
                         LinearLayout j3 = uh9.j(context, 0);
                         j2.addView(j3, tre.o(-1, 56));
@@ -217,11 +217,11 @@ public final /* synthetic */ class g45 implements icc {
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 byte b5 = i2;
-                                sk7 sk7Var2 = sk7Var;
+                                tk7 tk7Var2 = tk7Var;
                                 switch (b5) {
                                     case 0:
-                                        ir1 ir1Var = sk7Var2.l1;
-                                        if (1 < sk7Var2.m1.size() && 1 != ir1Var.getCurrentPosition()) {
+                                        ir1 ir1Var = tk7Var2.l1;
+                                        if (1 < tk7Var2.m1.size() && 1 != ir1Var.getCurrentPosition()) {
                                             for (View view2 : ir1Var.getViewPages()) {
                                                 if (view2 != null) {
                                                     hl.t1(view2);
@@ -232,8 +232,8 @@ public final /* synthetic */ class g45 implements icc {
                                         }
                                         break;
                                     default:
-                                        ir1 ir1Var2 = sk7Var2.l1;
-                                        if (sk7Var2.m1.size() > 0 && ir1Var2.getCurrentPosition() != 0) {
+                                        ir1 ir1Var2 = tk7Var2.l1;
+                                        if (tk7Var2.m1.size() > 0 && ir1Var2.getCurrentPosition() != 0) {
                                             for (View view3 : ir1Var2.getViewPages()) {
                                                 if (view3 != null) {
                                                     hl.t1(view3);
@@ -281,9 +281,9 @@ public final /* synthetic */ class g45 implements icc {
                         ti3Var.addView(linearLayout4);
                         LinearLayout linearLayout5 = linearLayout;
                         linearLayout5.addView(ti3Var, tre.o(-1, -2));
-                        rk7 rk7Var2 = new rk7(context);
-                        rk7Var2.getContent().addView(linearLayout5, tre.c(-2.0f, -1));
-                        sk7Var.E0(rk7Var2);
+                        sk7 sk7Var2 = new sk7(context);
+                        sk7Var2.getContent().addView(linearLayout5, tre.c(-2.0f, -1));
+                        tk7Var.E0(sk7Var2);
                         LinearLayout j4 = uh9.j(context, 1);
                         TextView v2 = a55.v(context, null, 14, vnbVar);
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(" ");
@@ -304,14 +304,14 @@ public final /* synthetic */ class g45 implements icc {
                         i12.setEnabled(false);
                         linearLayout6.addView(i12, tre.m(1.0f, 0, 44, 6, 0, 0));
                         j4.addView(linearLayout6);
-                        sk7Var.G0(j4);
+                        tk7Var.G0(j4);
                         final byte b5 = 1;
                         final byte b6 = 0;
                         final boolean[] zArr = {false};
                         boolean[] zArr2 = {false};
                         final w45 w45Var3 = w45Var;
                         final a55 a55Var3 = a55Var;
-                        final i45 i45Var = new i45(w45Var3, zArr2, i12, c51Var, a55Var3, sk7Var, zArr, vnbVar);
+                        final i45 i45Var = new i45(w45Var3, zArr2, i12, c51Var, a55Var3, tk7Var, zArr, vnbVar);
                         i12.setOnClickListener(new View.OnClickListener() { // from class: j45
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
@@ -342,16 +342,16 @@ public final /* synthetic */ class g45 implements icc {
                                 }
                             }
                         });
-                        final u45 u45Var = new u45(zArr, w45Var3, sk7Var, b5);
+                        final u45 u45Var = new u45(zArr, w45Var3, tk7Var, b5);
                         long j5 = i9;
                         long j6 = z45Var.a;
                         if (j6 == 0) {
                             j6 = Long.MAX_VALUE;
                         }
                         long max = Math.max(0L, Math.min(j5, j6) - ConnectionsManager.getInstance(i).getCurrentTime()) * 1000;
-                        w45Var3.r = new rj4(sk7Var, (byte) 24);
+                        w45Var3.r = new rj4(tk7Var, (byte) 24);
                         final byte b7 = 0;
-                        sk7Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: k45
+                        tk7Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: k45
                             @Override // android.content.DialogInterface.OnDismissListener
                             public final void onDismiss(DialogInterface dialogInterface) {
                                 byte b8 = b7;
@@ -383,9 +383,9 @@ public final /* synthetic */ class g45 implements icc {
                                 }
                             }
                         });
-                        sk7Var.show();
+                        tk7Var.show();
                         hl.d3(u45Var, max);
-                        j72 j72Var = new j72(zArr, w45Var3, zArr2, i12, equals, C, v2, sk7Var, vnbVar);
+                        j72 j72Var = new j72(zArr, w45Var3, zArr2, i12, equals, C, v2, tk7Var, vnbVar);
                         WalletEngine2 walletEngine2 = a55Var3.b.b;
                         if (!w45Var3.n && !a55Var3.i(w45Var3) && a55Var3.A(w45Var3) && walletEngine2 != null) {
                             byte b8 = 21;
@@ -405,8 +405,8 @@ public final /* synthetic */ class g45 implements icc {
                         try {
                             JSONObject jSONObject = new JSONObject(w45Var2.k);
                             boolean equals2 = "text".equals(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
-                            sk7 sk7Var2 = new sk7(context, vnbVar, new View[0]);
-                            sk7Var2.F0(aob.v0(aob.a7, vnbVar));
+                            tk7 tk7Var2 = new tk7(context, vnbVar, new View[0]);
+                            tk7Var2.F0(aob.v0(aob.a7, vnbVar));
                             LinearLayout linearLayout7 = new LinearLayout(context);
                             linearLayout7.setOrientation(1);
                             LinearLayout linearLayout8 = new LinearLayout(context);
@@ -420,7 +420,7 @@ public final /* synthetic */ class g45 implements icc {
                             k.setBackground(f02);
                             yob.j(k, f02, null, M2, vnbVar);
                             k.setContentDescription(ob6.M0(2131752006, null));
-                            k.setOnClickListener(new je3(w45Var2, sk7Var2, (byte) 22));
+                            k.setOnClickListener(new je3(w45Var2, tk7Var2, (byte) 22));
                             linearLayout8.addView(k, tre.q(48, 48, 0.0f, 16, 4, 0, 12, 0));
                             de0 de0Var3 = new de0(context);
                             de0Var3.setRoundRadius(hl.L(22.0f));
@@ -495,14 +495,14 @@ public final /* synthetic */ class g45 implements icc {
                             }
                             linearLayout10.addView(v5, tre.o(i5, i6));
                             if (equals2) {
-                                v5.setOnClickListener(new lw4(jSONObject, sk7Var2, vnbVar, (byte) 3));
+                                v5.setOnClickListener(new lw4(jSONObject, tk7Var2, vnbVar, (byte) 3));
                             }
                             ti3 ti3Var2 = new ti3(context, (byte) 1);
                             ti3Var2.addView(linearLayout10);
                             linearLayout7.addView(ti3Var2, tre.k(12.0f, 4.0f, 12.0f, 0.0f, -1, -2));
-                            rk7 rk7Var3 = new rk7(context);
-                            rk7Var3.getContent().addView(linearLayout7, tre.c(-2.0f, -1));
-                            sk7Var2.E0(rk7Var3);
+                            sk7 sk7Var3 = new sk7(context);
+                            sk7Var3.getContent().addView(linearLayout7, tre.c(-2.0f, -1));
+                            tk7Var2.E0(sk7Var3);
                             LinearLayout j7 = uh9.j(context, 1);
                             if (equals2) {
                                 TextView v9 = a55.v(context, ob6.M0(2131742660, null), 14, vnbVar);
@@ -522,14 +522,14 @@ public final /* synthetic */ class g45 implements icc {
                             linearLayout12.addView(c51Var2, tre.m(1.0f, 0, 44, 0, 6, 0));
                             linearLayout12.addView(i17, tre.m(1.0f, 0, 44, 6, 0, 0));
                             j7.addView(linearLayout12);
-                            sk7Var2.G0(j7);
+                            tk7Var2.G0(j7);
                             byte b9 = 1;
-                            sk7Var2.z0 = new ut(w45Var2, b9);
+                            tk7Var2.z0 = new ut(w45Var2, b9);
                             re4 re4Var = new re4((Object) ti3Var2, (Object) w45Var2, (Object) i17, (byte) 17);
                             ti3Var2.getViewTreeObserver().addOnScrollChangedListener(new cd(re4Var, b9));
                             final byte b10 = 0;
                             ti3Var2.getViewTreeObserver().addOnGlobalLayoutListener(new l45(re4Var, b10));
-                            final m45 m45Var = new m45(i17, c51Var2, a55Var4, w45Var2, sk7Var2, vnbVar, re4Var);
+                            final m45 m45Var = new m45(i17, c51Var2, a55Var4, w45Var2, tk7Var2, vnbVar, re4Var);
                             i17.setOnClickListener(new View.OnClickListener() { // from class: n45
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
@@ -562,10 +562,10 @@ public final /* synthetic */ class g45 implements icc {
                                 }
                             });
                             final boolean[] zArr3 = {false};
-                            final u45 u45Var2 = new u45(zArr3, w45Var2, sk7Var2, b10);
-                            w45Var2.r = new rj4(sk7Var2, (byte) 24);
+                            final u45 u45Var2 = new u45(zArr3, w45Var2, tk7Var2, b10);
+                            w45Var2.r = new rj4(tk7Var2, (byte) 24);
                             final byte b12 = 1;
-                            sk7Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: k45
+                            tk7Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: k45
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public final void onDismiss(DialogInterface dialogInterface) {
                                     byte b82 = b12;
@@ -597,7 +597,7 @@ public final /* synthetic */ class g45 implements icc {
                                     }
                                 }
                             });
-                            sk7Var2.show();
+                            tk7Var2.show();
                             hl.d3(u45Var2, Math.max(0L, i9 - a55Var4.f.getCurrentTime()) * 1000);
                             break;
                         } catch (JSONException e) {

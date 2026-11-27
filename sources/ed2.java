@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ed2 extends e implements fn7 {
     public i29 E;
@@ -435,16 +435,16 @@ public final class ed2 extends e implements fn7 {
         TLRPC.Chat M0 = messagesController.M0(Long.valueOf(j));
         this.a = M0;
         if (M0 == null) {
-            TLRPC.Chat O = jf7.Y(this.currentAccount).O(j);
-            this.a = O;
-            if (O == null) {
+            TLRPC.Chat Q = kf7.a0(this.currentAccount).Q(j);
+            this.a = Q;
+            if (Q == null) {
                 return false;
             }
             getMessagesController().a4(this.a, true);
             if (this.b == null) {
-                TLRPC.ChatFull C0 = jf7.Y(this.currentAccount).C0(this.c, xc2.T(this.a), new CountDownLatch(1), false, false, 0);
-                this.b = C0;
-                if (C0 == null) {
+                TLRPC.ChatFull F0 = kf7.a0(this.currentAccount).F0(this.c, xc2.T(this.a), new CountDownLatch(1), false, false, 0);
+                this.b = F0;
+                if (F0 == null) {
                     return false;
                 }
             }

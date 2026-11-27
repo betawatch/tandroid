@@ -23,7 +23,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class s64 implements dg8 {
     public final jp5 A;
@@ -2060,12 +2060,12 @@ public final class s64 implements dg8 {
             lt6 a = this.o0.a();
             List list = nf8Var.j;
             for (int i9 = i4; i9 < list.size(); i9++) {
-                uf7 uf7Var = (uf7) list.get(i9);
+                vf7 vf7Var = (vf7) list.get(i9);
                 int i10 = i4;
                 while (true) {
-                    sf7[] sf7VarArr = uf7Var.a;
-                    if (i10 < sf7VarArr.length) {
-                        sf7VarArr[i10].b(a);
+                    tf7[] tf7VarArr = vf7Var.a;
+                    if (i10 < tf7VarArr.length) {
+                        tf7VarArr[i10].b(a);
                         i10++;
                     }
                 }

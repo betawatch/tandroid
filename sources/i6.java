@@ -9,7 +9,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class i6 implements nr7, fd, sy4 {
     public final /* synthetic */ byte a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class i6 implements nr7, fd, sy4 {
             case 3:
                 e eVar2 = this.b;
                 int currentAccount = eVar2.getCurrentAccount();
-                SharedPreferences sharedPreferences = uc7.s1(currentAccount).X3;
+                SharedPreferences sharedPreferences = uc7.s1(currentAccount).Y3;
                 long a1 = hl.a1(sharedPreferences, "support_id2", 0L);
                 if (a1 != 0) {
                     user = uc7.s1(currentAccount).X1(Long.valueOf(a1));

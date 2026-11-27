@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class fn0 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -183,7 +183,7 @@ public final /* synthetic */ class fn0 implements RequestDelegate {
                 long[] jArr = (long[]) obj;
                 hl.r((ao1) obj2);
                 zu1Var2.v5.k.voiceTranscriptionRated = true;
-                jf7 messagesStorage = zu1Var2.getMessagesStorage();
+                kf7 messagesStorage = zu1Var2.getMessagesStorage();
                 messagesStorage.a.c(new r77(messagesStorage, zu1Var2.v5.e1(), r47.B0(zu1Var2.v5.k), (TLObject) zu1Var2.v5.k, (byte) 11));
                 hl.d3(new gn1(zu1Var2, b2), jArr[0] > 0 ? Math.max(0L, 300 - (SystemClock.elapsedRealtime() - jArr[0])) : 0L);
                 break;

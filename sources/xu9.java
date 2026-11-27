@@ -26,7 +26,7 @@ import java.util.Map;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class xu9 extends HorizontalScrollView {
     public static final /* synthetic */ int u0 = 0;
@@ -156,27 +156,27 @@ public abstract class xu9 extends HorizontalScrollView {
         return frameLayout;
     }
 
-    public final u3b c(int i, Drawable drawable) {
+    public final v3b c(int i, Drawable drawable) {
         String k = uh9.k(i, "tab");
         int i2 = this.y;
         this.y = i2 + 1;
-        u3b u3bVar = (u3b) this.n.get(k);
-        if (u3bVar != null) {
-            g(k, u3bVar, i2);
+        v3b v3bVar = (v3b) this.n.get(k);
+        if (v3bVar != null) {
+            g(k, v3bVar, i2);
         } else {
-            u3bVar = new u3b(getContext(), 1);
-            u3bVar.f.setImageDrawable(drawable);
-            u3bVar.setFocusable(true);
-            u3bVar.setOnClickListener(new su9(this, (byte) 1));
-            u3bVar.setExpanded(this.g0);
-            u3bVar.a(this.j0);
-            this.e.addView(u3bVar, i2);
+            v3bVar = new v3b(getContext(), 1);
+            v3bVar.f.setImageDrawable(drawable);
+            v3bVar.setFocusable(true);
+            v3bVar.setOnClickListener(new su9(this, (byte) 1));
+            v3bVar.setExpanded(this.g0);
+            v3bVar.a(this.j0);
+            this.e.addView(v3bVar, i2);
         }
-        u3bVar.d = false;
-        u3bVar.setTag(R.id.index_tag, Integer.valueOf(i2));
-        u3bVar.setSelected(i2 == this.E);
-        this.h.put(k, u3bVar);
-        return u3bVar;
+        v3bVar.d = false;
+        v3bVar.setTag(R.id.index_tag, Integer.valueOf(i2));
+        v3bVar.setSelected(i2 == this.E);
+        this.h.put(k, v3bVar);
+        return v3bVar;
     }
 
     @Override // android.view.View
@@ -225,28 +225,28 @@ public abstract class xu9 extends HorizontalScrollView {
             if (i >= oobVar.getChildCount()) {
                 break;
             }
-            if (oobVar.getChildAt(i) instanceof u3b) {
-                u3b u3bVar = (u3b) oobVar.getChildAt(i);
-                float left = u3bVar.getLeft();
-                float f5 = u3bVar.E;
-                if (left != f5 && u3bVar.F) {
-                    u3bVar.b = f5 - u3bVar.getLeft();
-                    ValueAnimator valueAnimator = u3bVar.y;
+            if (oobVar.getChildAt(i) instanceof v3b) {
+                v3b v3bVar = (v3b) oobVar.getChildAt(i);
+                float left = v3bVar.getLeft();
+                float f5 = v3bVar.E;
+                if (left != f5 && v3bVar.F) {
+                    v3bVar.b = f5 - v3bVar.getLeft();
+                    ValueAnimator valueAnimator = v3bVar.y;
                     if (valueAnimator != null) {
                         valueAnimator.removeAllListeners();
-                        u3bVar.y.cancel();
+                        v3bVar.y.cancel();
                     }
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(u3bVar.b, 0.0f);
-                    u3bVar.y = ofFloat;
-                    ofFloat.addUpdateListener(new ai2(u3bVar, this, (byte) 1));
-                    u3bVar.y.addListener(new wd8((Object) u3bVar, (Object) this, (byte) 17));
-                    u3bVar.y.start();
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(v3bVar.b, 0.0f);
+                    v3bVar.y = ofFloat;
+                    ofFloat.addUpdateListener(new ai2(v3bVar, this, (byte) 1));
+                    v3bVar.y.addListener(new wd8((Object) v3bVar, (Object) this, (byte) 17));
+                    v3bVar.y.start();
                 }
-                u3bVar.F = false;
+                v3bVar.F = false;
                 if (this.h0) {
-                    u3bVar.setTranslationX(qd4.A(1.0f, this.j0, i * f3, f4) + u3bVar.b);
+                    v3bVar.setTranslationX(qd4.A(1.0f, this.j0, i * f3, f4) + v3bVar.b);
                 } else {
-                    u3bVar.setTranslationX(u3bVar.b);
+                    v3bVar.setTranslationX(v3bVar.b);
                 }
             }
             i++;
@@ -278,12 +278,12 @@ public abstract class xu9 extends HorizontalScrollView {
                     f = 2.0f;
                     float f9 = e2 - floor;
                     f2 = hl.R1((hl.U1(this.j0, hl.L(33.0f), hl.L(64.0f)) / 2.0f) + childAt.getTranslationX() + childAt.getLeft(), (hl.U1(this.j0, hl.L(33.0f), hl.L(64.0f)) / 2.0f) + view.getTranslationX() + view.getLeft(), f9);
-                    textWidth = hl.R1(childAt instanceof u3b ? ((u3b) childAt).getTextWidth() : 0.0f, view instanceof u3b ? ((u3b) view).getTextWidth() : 0.0f, f9);
+                    textWidth = hl.R1(childAt instanceof v3b ? ((v3b) childAt).getTextWidth() : 0.0f, view instanceof v3b ? ((v3b) view).getTextWidth() : 0.0f, f9);
                 } else {
                     f = 2.0f;
                     f2 = (hl.U1(this.j0, hl.L(33.0f), hl.L(64.0f)) / 2.0f) + childAt.getTranslationX() + childAt.getLeft();
-                    if (childAt instanceof u3b) {
-                        textWidth = ((u3b) childAt).getTextWidth();
+                    if (childAt instanceof v3b) {
+                        textWidth = ((v3b) childAt).getTextWidth();
                     }
                     textWidth = 0.0f;
                 }
@@ -312,8 +312,8 @@ public abstract class xu9 extends HorizontalScrollView {
                 f = 2.0f;
                 if (view != null) {
                     f2 = (hl.U1(this.j0, hl.L(33.0f), hl.L(64.0f)) / 2.0f) + view.getTranslationX() + view.getLeft();
-                    if (view instanceof u3b) {
-                        textWidth = ((u3b) view).getTextWidth();
+                    if (view instanceof v3b) {
+                        textWidth = ((v3b) view).getTextWidth();
                         float L2 = hl.L(30.0f);
                         float abs3 = (1.25f - ((Math.abs(0.5f - (interpolator != null ? interpolator.getInterpolation(mmVar.b()) : mmVar.b())) * 0.25f) * f)) * L2;
                         float abs22 = ((Math.abs(0.5f - (interpolator != null ? interpolator.getInterpolation(mmVar.b()) : mmVar.b())) * 0.1f * f) + 0.9f) * L2;
@@ -374,11 +374,11 @@ public abstract class xu9 extends HorizontalScrollView {
             return false;
         }
         View childAt = oobVar.getChildAt(i);
-        if (!(childAt instanceof u3b)) {
+        if (!(childAt instanceof v3b)) {
             return false;
         }
-        u3b u3bVar = (u3b) childAt;
-        return u3bVar.a == 0 && !u3bVar.d;
+        v3b v3bVar = (v3b) childAt;
+        return v3bVar.a == 0 && !v3bVar.d;
     }
 
     public final boolean f(MotionEvent motionEvent) {
@@ -443,10 +443,10 @@ public abstract class xu9 extends HorizontalScrollView {
         if (this.V != ceil && e(ceil)) {
             for (int i5 = 0; i5 < oobVar.getChildCount(); i5++) {
                 if (i5 != this.V) {
-                    u3b u3bVar = (u3b) oobVar.getChildAt(i5);
-                    u3bVar.E = u3bVar.getLeft();
-                    u3bVar.F = true;
-                    u3bVar.invalidate();
+                    v3b v3bVar = (v3b) oobVar.getChildAt(i5);
+                    v3bVar.E = v3bVar.getLeft();
+                    v3bVar.F = true;
+                    v3bVar.invalidate();
                 }
             }
             this.W += (ceil - this.V) * getTabSize();
@@ -573,8 +573,8 @@ public abstract class xu9 extends HorizontalScrollView {
                 this.h0 = true;
                 for (int i = 0; i < oobVar.getChildCount(); i++) {
                     View childAt = oobVar.getChildAt(i);
-                    if (childAt instanceof u3b) {
-                        ((u3b) childAt).setExpanded(true);
+                    if (childAt instanceof v3b) {
+                        ((v3b) childAt).setExpanded(true);
                     }
                     childAt.getLayoutParams().width = hl.L(64.0f);
                 }
@@ -744,19 +744,19 @@ public abstract class xu9 extends HorizontalScrollView {
             if (i4 >= sparseArray.size()) {
                 break;
             }
-            sparseArray2.put(((u3b) sparseArray.valueAt(i4)).s, (u3b) sparseArray.valueAt(i4));
+            sparseArray2.put(((v3b) sparseArray.valueAt(i4)).s, (v3b) sparseArray.valueAt(i4));
             i4++;
         }
         sparseArray.clear();
         while (paddingLeft < min) {
             View childAt = oobVar2.getChildAt(paddingLeft);
-            if (childAt instanceof u3b) {
-                u3b u3bVar = (u3b) childAt;
-                int i5 = u3bVar.s;
-                de0 de0Var = u3bVar.e;
-                if (u3bVar.a == 2) {
-                    Object tag = u3bVar.getTag(R.id.parent_tag);
-                    Object tag2 = u3bVar.getTag(R.id.object_tag);
+            if (childAt instanceof v3b) {
+                v3b v3bVar = (v3b) childAt;
+                int i5 = v3bVar.s;
+                de0 de0Var = v3bVar.e;
+                if (v3bVar.a == 2) {
+                    Object tag = v3bVar.getTag(R.id.parent_tag);
+                    Object tag2 = v3bVar.getTag(R.id.object_tag);
                     Drawable drawable = tag instanceof Drawable ? (Drawable) tag : null;
                     if (tag2 instanceof TLRPC.Document) {
                         de0Var.m(jn5.b((TLRPC.Document) tag2), !i86.e(b2) ? "36_36_firstframe" : "36_36_nolimit", null, null);
@@ -772,8 +772,8 @@ public abstract class xu9 extends HorizontalScrollView {
                     Object tag4 = childAt.getTag(R.id.parent_tag);
                     TLRPC.Document document = (TLRPC.Document) childAt.getTag(R.id.object_tag);
                     if (tag3 instanceof TLRPC.Document) {
-                        if (!u3bVar.c) {
-                            u3bVar.w = lp3.f((TLRPC.Document) tag3, aob.c7, 0.2f, null);
+                        if (!v3bVar.c) {
+                            v3bVar.w = lp3.f((TLRPC.Document) tag3, aob.c7, 0.2f, null);
                         }
                         k = jn5.b(document);
                         i = paddingLeft;
@@ -784,7 +784,7 @@ public abstract class xu9 extends HorizontalScrollView {
                         if (tag4 instanceof TLRPC.TL_messages_stickerSet) {
                             TLRPC.StickerSet stickerSet = ((TLRPC.TL_messages_stickerSet) tag4).set;
                             i3 = stickerSet.thumb_version;
-                            if (u3bVar.c) {
+                            if (v3bVar.c) {
                                 i = paddingLeft;
                                 i2 = min;
                             } else {
@@ -808,7 +808,7 @@ public abstract class xu9 extends HorizontalScrollView {
                                         size = i8;
                                     }
                                 }
-                                u3bVar.w = lp3.d(arrayList, i6, 0.2f, z);
+                                v3bVar.w = lp3.d(arrayList, i6, 0.2f, z);
                             }
                         } else {
                             i = paddingLeft;
@@ -823,12 +823,12 @@ public abstract class xu9 extends HorizontalScrollView {
                         oobVar = oobVar2;
                         b = 1;
                     }
-                    if (!u3bVar.c && u3bVar.w == null && document != null) {
-                        u3bVar.w = lp3.f(document, aob.c7, 0.2f, null);
+                    if (!v3bVar.c && v3bVar.w == null && document != null) {
+                        v3bVar.w = lp3.f(document, aob.c7, 0.2f, null);
                     }
                     if (k != null) {
-                        u3bVar.c = true;
-                        ggb ggbVar = u3bVar.w;
+                        v3bVar.c = true;
+                        ggb ggbVar = v3bVar.w;
                         boolean e = i86.e(1);
                         String str2 = !e ? "40_40_firstframe" : "40_40";
                         if (str == null && r47.M4(document)) {
@@ -844,11 +844,11 @@ public abstract class xu9 extends HorizontalScrollView {
                                     de0Var.h(jn5.b(document), str2, k, null, 0, obj3);
                                     obj2 = obj3;
                                     b = 1;
-                                    u3bVar.h.setText(obj2 instanceof TLRPC.TL_messages_stickerSet ? ((TLRPC.TL_messages_stickerSet) obj2).set.title : null);
+                                    v3bVar.h.setText(obj2 instanceof TLRPC.TL_messages_stickerSet ? ((TLRPC.TL_messages_stickerSet) obj2).set.title : null);
                                 }
                                 obj2 = tag4;
                                 b = 1;
-                                u3bVar.h.setText(obj2 instanceof TLRPC.TL_messages_stickerSet ? ((TLRPC.TL_messages_stickerSet) obj2).set.title : null);
+                                v3bVar.h.setText(obj2 instanceof TLRPC.TL_messages_stickerSet ? ((TLRPC.TL_messages_stickerSet) obj2).set.title : null);
                             }
                         } else {
                             oobVar = oobVar2;
@@ -870,12 +870,12 @@ public abstract class xu9 extends HorizontalScrollView {
                             obj2 = obj3;
                             b = 1;
                         }
-                        u3bVar.h.setText(obj2 instanceof TLRPC.TL_messages_stickerSet ? ((TLRPC.TL_messages_stickerSet) obj2).set.title : null);
+                        v3bVar.h.setText(obj2 instanceof TLRPC.TL_messages_stickerSet ? ((TLRPC.TL_messages_stickerSet) obj2).set.title : null);
                     }
                     oobVar = oobVar2;
                     b = 1;
                 }
-                sparseArray.put(i5, u3bVar);
+                sparseArray.put(i5, v3bVar);
                 sparseArray2.remove(i5);
             } else {
                 i = paddingLeft;
@@ -889,8 +889,8 @@ public abstract class xu9 extends HorizontalScrollView {
             oobVar2 = oobVar;
         }
         for (int i9 = 0; i9 < sparseArray2.size(); i9++) {
-            if (((u3b) sparseArray2.valueAt(i9)) != this.s) {
-                ((u3b) sparseArray2.valueAt(i9)).e.setImageDrawable(null);
+            if (((v3b) sparseArray2.valueAt(i9)) != this.s) {
+                ((v3b) sparseArray2.valueAt(i9)).e.setImageDrawable(null);
             }
         }
     }

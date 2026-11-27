@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 final class zzga extends yfb implements is4 {
     final /* synthetic */ zzgb zza;
@@ -23,7 +23,7 @@ final class zzga extends yfb implements is4 {
 
     @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzga) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
+        return ((zzga) create((zzhk) obj, (zw2) obj2)).invokeSuspend(g9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x003e, code lost:
@@ -46,7 +46,7 @@ final class zzga extends yfb implements is4 {
         zzdv zze = zzgbVar.zze();
         zzdsVar = zzdv.zzb;
         boolean a = ur5.a(zze, zzdsVar);
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         if (!a) {
             zzdv zze2 = zzgbVar.zze();
             zzdtVar = zzdv.zzc;
@@ -63,6 +63,6 @@ final class zzga extends yfb implements is4 {
                 fud.b(zzgb.zzd(zzgbVar).zza(), new zzfz(zzgbVar, a2, zzhkVar, this.zzb, null));
             }
         }
-        return f9cVar;
+        return g9cVar;
     }
 }

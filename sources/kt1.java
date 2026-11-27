@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class kt1 implements xy1 {
     public int a;
@@ -829,7 +829,7 @@ public final class kt1 implements xy1 {
             }
             h04Var.f = -1L;
         }
-        if (zu1Var.getMessagesController().M3() || zu1Var.getMessagesController().G3 > 0 || zu1Var.getMessagesController().a4 >= 2 || zu1Var.getUserConfig().p() || TextUtils.isEmpty(charSequence) || arrayList == null) {
+        if (zu1Var.getMessagesController().M3() || zu1Var.getMessagesController().H3 > 0 || zu1Var.getMessagesController().b4 >= 2 || zu1Var.getUserConfig().p() || TextUtils.isEmpty(charSequence) || arrayList == null) {
             return;
         }
         for (int i6 = 1; i6 < Math.min(5, arrayList.size()); i6++) {

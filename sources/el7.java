@@ -1,101 +1,157 @@
 // default package
 
-import android.util.SparseArray;
+import android.content.Context;
+import android.view.View;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v0 el7, still in use, count: 1, list:
-  (r0v0 el7) from 0x0128: INVOKE (r2v11 android.util.SparseArray), (0 int), (r0v0 el7) VIRTUAL call: android.util.SparseArray.put(int, java.lang.Object):void A[MD:(int, E):void (c)] (LINE:297)
-	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
-	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
-	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:98)
-	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:252)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:180)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
-/* loaded from: classes.dex */
-public final class el7 {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF5(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF9(5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF11(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF13(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF15(8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF14(9),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF12(10),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF10(11),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF8(12),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(13),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF4(14),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(15),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(16),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF4(17),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(18),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(19),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF236(100);
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
+/* loaded from: classes2.dex */
+public abstract class el7 extends wma implements cl7, View.OnLayoutChangeListener {
+    public final m09 g0;
+    public View h0;
+    public dl7 i0;
+    public lx0 j0;
+    public int k0;
+    public boolean l0;
 
-    public static final SparseArray a;
-
-    static {
-        SparseArray sparseArray = new SparseArray();
-        a = sparseArray;
-        sparseArray.put(0, r0);
-        sparseArray.put(1, r1);
-        sparseArray.put(2, r3);
-        sparseArray.put(3, r5);
-        sparseArray.put(4, r7);
-        sparseArray.put(5, r9);
-        sparseArray.put(6, r11);
-        sparseArray.put(7, r13);
-        sparseArray.put(8, r15);
-        sparseArray.put(9, r14);
-        sparseArray.put(10, r12);
-        sparseArray.put(11, r10);
-        sparseArray.put(12, r8);
-        sparseArray.put(13, r6);
-        sparseArray.put(14, r4);
-        sparseArray.put(15, r2);
-        sparseArray.put(16, r6);
-        sparseArray.put(17, r4);
-        sparseArray.put(18, r2);
-        sparseArray.put(19, r6);
+    public el7(Context context) {
+        super(context, null);
+        this.g0 = new m09((byte) 3);
     }
 
-    public el7(int i) {
+    public final void X() {
+        View view = this.h0;
+        if (view == null || this.i0 == null) {
+            return;
+        }
+        this.k0 = (view.getMeasuredHeight() - this.h0.getPaddingBottom()) - this.i0.getMeasuredHeight();
     }
 
-    public static el7 valueOf(String str) {
-        return (el7) Enum.valueOf(el7.class, str);
+    @Override // bl7
+    public final void k(int i, View view) {
+        this.g0.b = 0;
+        lx0 lx0Var = this.j0;
+        if (lx0Var != null) {
+            lx0Var.onStopNestedScroll(view);
+        }
     }
 
-    public static el7[] values() {
-        return (el7[]) b.clone();
+    @Override // cl7
+    public final void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
+        dl7 dl7Var;
+        if (view != this.h0 || (dl7Var = this.i0) == null || ((w71) dl7Var).getListView() == null) {
+            return;
+        }
+        d79 listView = ((w71) this.i0).getListView();
+        if (this.i0.getTop() == this.k0) {
+            iArr[1] = i4;
+            listView.scrollBy(0, i4);
+        }
+    }
+
+    @Override // bl7
+    public final boolean n(View view, View view2, int i, int i2) {
+        return view.isAttachedToWindow() && i == 2;
+    }
+
+    @Override // wma, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.l0 = true;
+        dl7 dl7Var = this.i0;
+        if (dl7Var != null) {
+            dl7Var.addOnLayoutChangeListener(this);
+        }
+    }
+
+    @Override // wma, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.l0 = false;
+        dl7 dl7Var = this.i0;
+        if (dl7Var != null) {
+            dl7Var.removeOnLayoutChangeListener(this);
+        }
+    }
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+        X();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        X();
+    }
+
+    @Override // bl7
+    public final void q(View view, View view2, int i, int i2) {
+        this.g0.b = i;
+    }
+
+    @Override // bl7
+    public final void r(View view, int i, int i2, int[] iArr, int i3) {
+        dl7 dl7Var;
+        if (view != this.h0 || (dl7Var = this.i0) == null || ((w71) dl7Var).getListView() == null) {
+            return;
+        }
+        int top = this.i0.getTop();
+        if (i2 >= 0) {
+            lx0 lx0Var = this.j0;
+            if (lx0Var != null) {
+                lx0Var.onNestedPreScroll(view, i, i2, iArr);
+                return;
+            }
+            return;
+        }
+        if (top > this.k0) {
+            if (this.j0 == null || this.h0.canScrollVertically(i2)) {
+                return;
+            }
+            this.j0.onNestedScroll(view, 0, 0, i, i2);
+            return;
+        }
+        d79 listView = ((w71) this.i0).getListView();
+        int K0 = ((x46) listView.getLayoutManager()).K0();
+        if (K0 != -1) {
+            f89 L = listView.L(K0);
+            int top2 = L != null ? L.a.getTop() : -1;
+            int paddingTop = listView.getPaddingTop();
+            if (top2 == paddingTop && K0 == 0) {
+                return;
+            }
+            iArr[1] = K0 != 0 ? i2 : Math.max(i2, top2 - paddingTop);
+            listView.scrollBy(0, i2);
+        }
+    }
+
+    public void setBottomSheetContainerView(lx0 lx0Var) {
+        this.j0 = lx0Var;
+    }
+
+    public void setChildLayout(dl7 dl7Var) {
+        if (this.i0 != dl7Var) {
+            this.i0 = dl7Var;
+            if (this.l0 && dl7Var != null) {
+                w71 w71Var = (w71) dl7Var;
+                if (w71Var.getListView() != null) {
+                    w71Var.getListView().addOnLayoutChangeListener(this);
+                }
+            }
+        }
+        X();
+    }
+
+    public void setTargetListView(View view) {
+        this.h0 = view;
+        X();
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onStopNestedScroll(View view) {
+    }
+
+    @Override // bl7
+    public final void m(View view, int i, int i2, int i3, int i4, int i5) {
     }
 }

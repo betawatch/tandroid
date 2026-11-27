@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class i91 extends e implements fn7, ej6 {
     public boolean E;
@@ -172,15 +172,15 @@ public final class i91 extends e implements fn7, ej6 {
             z81Var.setTextSize(14.0f);
             j.addView(z81Var, tre.t(jn7.T2, -2, 1, 28, 12, 28, 8));
             i2 = i;
-            ze7 ze7Var = new ze7((Object) str, i2, (Object) nx0VarArr, (byte) 9);
+            bf7 bf7Var = new bf7((Object) str, i2, (Object) nx0VarArr, (byte) 9);
             p66 a4 = zze.a(context, 14.0f, i7, false, vnbVar);
-            a4.setText(hl.D2(hl.N2(ob6.M0(2131749232, null), -1, 0, ze7Var, null), true));
+            a4.setText(hl.D2(hl.N2(ob6.M0(2131749232, null), -1, 0, bf7Var, null), true));
             a4.setGravity(17);
             a4.setMaxWidth(kg5.a(a4.getText(), a4.getPaint()));
             j.addView(a4, tre.t(-1, -2, 17, 32, 8, 32, 12));
             iye.b(a4, 0.05f, 1.2f);
             b = 0;
-            a4.setOnClickListener(new r81(ze7Var, b));
+            a4.setOnClickListener(new r81(bf7Var, b));
         } else {
             i2 = i;
             b = 0;
@@ -1024,7 +1024,7 @@ public final class i91 extends e implements fn7, ej6 {
         id idVar = new id(3, null, getParentActivity());
         TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
         getgroupcall.call = tL_inputGroupCallInviteMessage;
-        getgroupcall.limit = getMessagesController().k4.E3.f();
+        getgroupcall.limit = getMessagesController().l4.E3.f();
         idVar.setOnCancelListener(new n81(this, getConnectionsManager().sendRequest(getgroupcall, new m81(this, idVar, hashSet, tL_inputGroupCallInviteMessage, z2, (byte) 0)), b));
         idVar.q(600L);
     }

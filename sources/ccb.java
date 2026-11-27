@@ -11,17 +11,17 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class ccb implements k68 {
-    public final /* synthetic */ u5b a;
+    public final /* synthetic */ v5b a;
     public final /* synthetic */ ArrayList b;
     public final /* synthetic */ Context c;
     public final /* synthetic */ lcb d;
 
-    public ccb(lcb lcbVar, u5b u5bVar, ArrayList arrayList, Context context) {
+    public ccb(lcb lcbVar, v5b v5bVar, ArrayList arrayList, Context context) {
         this.d = lcbVar;
-        this.a = u5bVar;
+        this.a = v5bVar;
         this.b = arrayList;
         this.c = context;
     }
@@ -245,8 +245,8 @@ public final class ccb implements k68 {
 
     public final void j() {
         lcb lcbVar = this.d;
-        u5b u5bVar = this.a;
-        if (u5bVar == null) {
+        v5b v5bVar = this.a;
+        if (v5bVar == null) {
             ArrayList arrayList = new ArrayList(this.b);
             int indexOf = arrayList.indexOf(Long.valueOf(lcbVar.o0.getCurrentPeerView().getCurrentPeer()));
             if (indexOf < 0) {
@@ -273,7 +273,7 @@ public final class ccb implements k68 {
         }
         arrayList2.remove(indexOf2);
         if (lcbVar.o0.E(true)) {
-            lcbVar.o0.H0 = new pwa(this, u5bVar, arrayList2, (byte) 17);
+            lcbVar.o0.H0 = new pwa(this, v5bVar, arrayList2, (byte) 17);
         } else {
             lcbVar.o(false);
         }

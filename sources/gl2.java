@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gl2 implements Runnable {
     public final /* synthetic */ byte a;
@@ -246,22 +246,22 @@ public final /* synthetic */ class gl2 implements Runnable {
                     if (runnable3 != null) {
                         runnable3.run();
                     }
-                    rbb rbbVar = ((fbb) kl2Var).y0;
-                    rbbVar.J0.a(false, true);
+                    sbb sbbVar = ((gbb) kl2Var).y0;
+                    sbbVar.J0.a(false, true);
                     int size = al2Var.e.size();
-                    fl2 fl2Var = rbbVar.H0;
+                    fl2 fl2Var = sbbVar.H0;
                     if (size > 1) {
-                        rbbVar.A0 = al2Var;
+                        sbbVar.A0 = al2Var;
                         fl2Var.a(new bl2(al2Var, false), true);
-                        rbbVar.H0.b(true, true);
+                        sbbVar.H0.b(true, true);
                     } else {
                         fl2Var.b(false, true);
                     }
-                    rbbVar.l0(true);
-                    zt4 zt4Var = rbbVar.N0;
+                    sbbVar.l0(true);
+                    zt4 zt4Var = sbbVar.N0;
                     if (zt4Var != null) {
-                        zt4Var.setMultipleOnClick(rbbVar.B0.i());
-                        rbbVar.N0.setMaxCount(Math.min(10, al2.b() - rbbVar.B0.getFilledCount()));
+                        zt4Var.setMultipleOnClick(sbbVar.B0.i());
+                        sbbVar.N0.setMaxCount(Math.min(10, al2.b() - sbbVar.B0.getFilledCount()));
                         break;
                     }
                 }

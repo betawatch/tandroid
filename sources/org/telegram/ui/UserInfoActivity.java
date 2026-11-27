@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class UserInfoActivity extends n9c implements fn7 {
     public String F;
@@ -101,20 +101,20 @@ public class UserInfoActivity extends n9c implements fn7 {
         bp1.o(2131751298, null, arrayList);
         if (f != null) {
             this.numberRow = arrayList.size();
-            arrayList.add(pba.i(7, -11154873, -14175180, R.drawable.settings_calls, xnb.k(new StringBuilder("+"), f.phone, f78.f()), ob6.M0(2131743913, null), null));
+            arrayList.add(qba.i(7, -11154873, -14175180, R.drawable.settings_calls, xnb.k(new StringBuilder("+"), f.phone, f78.f()), ob6.M0(2131743913, null), null));
         }
         this.usernameRow = arrayList.size();
         if (lbc.p(f) != null) {
-            arrayList.add(pba.i(8, -1007845, -1996271, R.drawable.filled_chatlist_mention, "@" + lbc.p(f), ob6.M0(2131743329, null), null));
+            arrayList.add(qba.i(8, -1007845, -1996271, R.drawable.filled_chatlist_mention, "@" + lbc.p(f), ob6.M0(2131743329, null), null));
         } else {
-            arrayList.add(pba.i(8, -1007845, -1996271, R.drawable.filled_chatlist_mention, ob6.M0(2131754356, null), null, null));
+            arrayList.add(qba.i(8, -1007845, -1996271, R.drawable.filled_chatlist_mention, ob6.M0(2131754356, null), null, null));
         }
         this.birthdayRow = arrayList.size();
         TL_account.TL_birthday tL_birthday = this.K;
         if (tL_birthday != null) {
-            arrayList.add(pba.i(9, -14899731, -15431455, R.drawable.filled_birthday, c0(tL_birthday), ob6.M0(2131751768, null), null));
+            arrayList.add(qba.i(9, -14899731, -15431455, R.drawable.filled_birthday, c0(tL_birthday), ob6.M0(2131751768, null), null));
         } else {
-            arrayList.add(pba.i(9, -14899731, -15431455, R.drawable.filled_birthday, ob6.M0(2131754457, null), null, null));
+            arrayList.add(qba.i(9, -14899731, -15431455, R.drawable.filled_birthday, ob6.M0(2131754457, null), null, null));
         }
         byte b = 2;
         if (!getContactsController().t(11) && (v = getContactsController().v(11)) != null && this.s == null) {
@@ -140,20 +140,20 @@ public class UserInfoActivity extends n9c implements fn7 {
         arrayList.add(b8c.C(this.s));
         this.channelRow = arrayList.size();
         if (this.L == null) {
-            arrayList.add(pba.i(3, -1007845, -1996271, R.drawable.msg_filled_menu_channels, ob6.M0(2131751196, null), null, ob6.M0(2131751201, null)));
+            arrayList.add(qba.i(3, -1007845, -1996271, R.drawable.msg_filled_menu_channels, ob6.M0(2131751196, null), null, ob6.M0(2131751201, null)));
         } else {
-            arrayList.add(pba.i(3, -1007845, -1996271, R.drawable.msg_filled_menu_channels, ob6.M0(2131751196, null), this.L.title, null));
+            arrayList.add(qba.i(3, -1007845, -1996271, R.drawable.msg_filled_menu_channels, ob6.M0(2131751196, null), this.L.title, null));
         }
         if (this.M) {
-            arrayList.add(pba.i(4, -881871, -1940716, R.drawable.filled_premium_hours, ob6.M0(2131751192, null), null, null));
+            arrayList.add(qba.i(4, -881871, -1940716, R.drawable.filled_premium_hours, ob6.M0(2131751192, null), null, null));
         }
         if (this.N) {
-            arrayList.add(pba.i(5, -765355, -2148011, R.drawable.filled_location, ob6.M0(2131751190, null), null, null));
+            arrayList.add(qba.i(5, -765355, -2148011, R.drawable.filled_location, ob6.M0(2131751190, null), null, null));
         }
         ArrayList arrayList4 = this.w;
         if (arrayList4 == null || arrayList4.isEmpty()) {
             arrayList2 = arrayList3;
-            arrayList.add(pba.i(6, -3903756, -6335009, R.drawable.premium_ai_editor, skb.b(ob6.M0(2131751195, null)), null, null));
+            arrayList.add(qba.i(6, -3903756, -6335009, R.drawable.premium_ai_editor, skb.b(ob6.M0(2131751195, null)), null, null));
         } else {
             StringBuilder sb = new StringBuilder();
             ArrayList arrayList5 = this.w;
@@ -173,7 +173,7 @@ public class UserInfoActivity extends n9c implements fn7 {
                 arrayList3 = arrayList6;
             }
             arrayList2 = arrayList3;
-            arrayList.add(pba.i(6, -3903756, -6335009, R.drawable.premium_ai_editor, ob6.M0(2131751195, null), sb, null));
+            arrayList.add(qba.i(6, -3903756, -6335009, R.drawable.premium_ai_editor, ob6.M0(2131751195, null), sb, null));
         }
         arrayList.add(b8c.B(-3, ob6.M0(2131751194, null)));
         boolean z = yac.c() < 4;
@@ -196,8 +196,8 @@ public class UserInfoActivity extends n9c implements fn7 {
             }
             for (int i5 = 0; i5 < arrayList2.size(); i5++) {
                 int intValue = ((Integer) arrayList2.get(i5)).intValue();
-                int i6 = nba.b;
-                b8c K2 = b8c.K(nba.class);
+                int i6 = oba.b;
+                b8c K2 = b8c.K(oba.class);
                 K2.d = i5;
                 K2.A = intValue;
                 arrayList.add(K2);
@@ -258,7 +258,7 @@ public class UserInfoActivity extends n9c implements fn7 {
                 return;
             }
         }
-        if (b8cVar.H(nba.class)) {
+        if (b8cVar.H(oba.class)) {
             int i3 = b8cVar.A;
             LaunchActivity launchActivity = LaunchActivity.H1;
             if (launchActivity != null) {
@@ -338,7 +338,7 @@ public class UserInfoActivity extends n9c implements fn7 {
         String M0 = ob6.M0(2131751219, null);
         uc7 messagesController = getMessagesController();
         boolean p = messagesController.getUserConfig().p();
-        hr hrVar = messagesController.k4;
+        hr hrVar = messagesController.l4;
         bbc bbcVar4 = new bbc(this, context, M0, (p ? hrVar.t1 : hrVar.s1).f(), this.resourceProvider);
         this.h = bbcVar4;
         bbcVar4.setShowLimitWhenEmpty(true);
@@ -466,7 +466,7 @@ public class UserInfoActivity extends n9c implements fn7 {
                 userFull.flags = i2 & (-33);
             }
             userFull.birthday = tL_birthday;
-            getMessagesStorage().g2(userFull, false);
+            getMessagesStorage().l2(userFull, false);
         }
     }
 
@@ -562,11 +562,11 @@ public class UserInfoActivity extends n9c implements fn7 {
             this = userInfoActivity;
         }
         UserInfoActivity userInfoActivity2 = this;
-        userInfoActivity2.getMessagesStorage().g2(Y1, false);
+        userInfoActivity2.getMessagesStorage().l2(Y1, false);
         userInfoActivity2.getUserConfig().u(true);
         jn7.f(userInfoActivity2.currentAccount).k(jn7.j0, new Object[0]);
         jn7 f2 = jn7.f(userInfoActivity2.currentAccount);
-        int i6 = uc7.r5;
+        int i6 = uc7.s5;
         f2.k(2, 1);
     }
 

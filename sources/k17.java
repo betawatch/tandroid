@@ -4,21 +4,21 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class k17 implements Runnable {
     public final /* synthetic */ String a;
     public final /* synthetic */ String b;
     public final /* synthetic */ uc7 c;
-    public final /* synthetic */ jf7 d;
+    public final /* synthetic */ kf7 d;
     public final /* synthetic */ r17 e;
 
-    public k17(r17 r17Var, String str, String str2, uc7 uc7Var, jf7 jf7Var) {
+    public k17(r17 r17Var, String str, String str2, uc7 uc7Var, kf7 kf7Var) {
         this.e = r17Var;
         this.a = str;
         this.b = str2;
         this.c = uc7Var;
-        this.d = jf7Var;
+        this.d = kf7Var;
     }
 
     @Override // java.lang.Runnable

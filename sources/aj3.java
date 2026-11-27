@@ -39,7 +39,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc1, pj5, oa9, nr7, j98, bv9, ifc, a70 {
     public final /* synthetic */ byte a;
@@ -308,10 +308,10 @@ public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc
             case 19:
                 return true;
             default:
-                vab vabVar = (vab) this.b;
-                boolean z = vabVar.t0 == null;
+                wab wabVar = (wab) this.b;
+                boolean z = wabVar.t0 == null;
                 if (!z) {
-                    vabVar.C0(null, true);
+                    wabVar.C0(null, true);
                 }
                 return z;
         }
@@ -397,9 +397,9 @@ public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc
                 photoViewer.g2(true, true);
                 break;
             default:
-                vab vabVar = (vab) this.b;
-                vabVar.n0.a.f();
-                vabVar.N0.setViewHidden(false);
+                wab wabVar = (wab) this.b;
+                wabVar.n0.a.f();
+                wabVar.N0.setViewHidden(false);
                 break;
         }
     }
@@ -416,11 +416,11 @@ public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc
                 ((gc8) this.b).x.setViewHidden(true);
                 break;
             default:
-                vab vabVar = (vab) this.b;
-                if (vabVar.t0 != null) {
-                    vabVar.C0(null, true);
+                wab wabVar = (wab) this.b;
+                if (wabVar.t0 != null) {
+                    wabVar.C0(null, true);
                 }
-                vabVar.N0.setViewHidden(true);
+                wabVar.N0.setViewHidden(true);
                 break;
         }
     }
@@ -1210,12 +1210,12 @@ public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final uf7 c0(cb3 cb3Var, tl5 tl5Var, int i) {
+    public final vf7 c0(cb3 cb3Var, tl5 tl5Var, int i) {
         int i2;
         long j = cb3Var.c;
         ey7 ey7Var = (ey7) this.b;
         int i3 = 0;
-        uf7 uf7Var = null;
+        vf7 vf7Var = null;
         loop0: while (true) {
             int i4 = 0;
             while (true) {
@@ -1261,7 +1261,7 @@ public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc
         }
         cb3Var.f = 0;
         cb3Var.a(i3, false);
-        return uf7Var;
+        return vf7Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -1295,10 +1295,10 @@ public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc
     }
 
     public final void f0() {
-        i09 i09Var = (i09) this.b;
-        i09Var.getClass();
+        j09 j09Var = (j09) this.b;
+        j09Var.getClass();
         try {
-            ykd ykdVar = (ykd) i09Var.b;
+            ykd ykdVar = (ykd) j09Var.b;
             Parcel R = ykdVar.R();
             int i = jld.a;
             R.writeInt(0);
@@ -1334,10 +1334,10 @@ public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc
     }
 
     public final void g0() {
-        i09 i09Var = (i09) this.b;
-        i09Var.getClass();
+        j09 j09Var = (j09) this.b;
+        j09Var.getClass();
         try {
-            ykd ykdVar = (ykd) i09Var.b;
+            ykd ykdVar = (ykd) j09Var.b;
             Parcel R = ykdVar.R();
             int i = jld.a;
             R.writeInt(0);
@@ -1380,10 +1380,10 @@ public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc
     }
 
     public final void h0() {
-        i09 i09Var = (i09) this.b;
-        i09Var.getClass();
+        j09 j09Var = (j09) this.b;
+        j09Var.getClass();
         try {
-            ykd ykdVar = (ykd) i09Var.b;
+            ykd ykdVar = (ykd) j09Var.b;
             Parcel R = ykdVar.R();
             int i = jld.a;
             R.writeInt(0);
@@ -1544,7 +1544,7 @@ public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc
             case 19:
                 break;
             default:
-                tb tbVar = ((vab) this.b).z0;
+                tb tbVar = ((wab) this.b).z0;
                 if (tbVar != null) {
                     tbVar.invalidate();
                     break;
@@ -1559,13 +1559,13 @@ public final class aj3 implements jx9, cj2, cr7, ty9, rn4, s9, tic, rj5, tw8, fc
             case 19:
                 break;
             default:
-                vab vabVar = (vab) this.b;
-                if (!vabVar.M0) {
-                    vabVar.U0.b(1);
-                    vabVar.s((v01) v01.a.get(0));
+                wab wabVar = (wab) this.b;
+                if (!wabVar.M0) {
+                    wabVar.U0.b(1);
+                    wabVar.s((v01) v01.a.get(0));
                     break;
                 } else {
-                    vabVar.M0 = false;
+                    wabVar.M0 = false;
                     break;
                 }
         }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class l3b extends r21 {
     /* JADX WARN: Removed duplicated region for block: B:110:? A[RETURN, SYNTHETIC] */
@@ -156,23 +156,23 @@ public final class l3b extends r21 {
                         return;
                     case 6:
                         if (yac.h(yac.t0).p() || uc7.s1(yac.t0).M3()) {
-                            this.b.setText(ob6.a0("LimitReachedFavoriteStickers", null, 2131748720, Integer.valueOf(uc7.s1(yac.t0).k4.e1.f())));
+                            this.b.setText(ob6.a0("LimitReachedFavoriteStickers", null, 2131748720, Integer.valueOf(uc7.s1(yac.t0).l4.e1.f())));
                             this.c.setText(ob6.a0("LimitReachedFavoriteStickersSubtitlePremium", null, 2131748718, new Object[0]));
                             return;
                         } else {
-                            this.b.setText(ob6.a0("LimitReachedFavoriteStickers", null, 2131748720, Integer.valueOf(uc7.s1(yac.t0).k4.d1.f())));
-                            this.c.setText(hl.N2(ob6.a0("LimitReachedFavoriteStickersSubtitle", null, 2131748719, Integer.valueOf(uc7.s1(yac.t0).k4.e1.f())), -1, 2, new xf1(context, (byte) 22), null));
+                            this.b.setText(ob6.a0("LimitReachedFavoriteStickers", null, 2131748720, Integer.valueOf(uc7.s1(yac.t0).l4.d1.f())));
+                            this.c.setText(hl.N2(ob6.a0("LimitReachedFavoriteStickersSubtitle", null, 2131748719, Integer.valueOf(uc7.s1(yac.t0).l4.e1.f())), -1, 2, new xf1(context, (byte) 22), null));
                             return;
                         }
                     case 7:
                         boolean p = yac.h(yac.t0).p();
                         if (!uc7.s1(yac.t0).M3() && !p) {
-                            this.b.setText(ob6.a0(null, null, 2131748723, Integer.valueOf(uc7.s1(yac.t0).k4.b1.f())));
-                            this.c.setText(hl.N2(ob6.a0(null, null, 2131748722, Integer.valueOf(uc7.s1(yac.t0).k4.c1.f())), -1, 2, new xf1(context, (byte) 23), null));
+                            this.b.setText(ob6.a0(null, null, 2131748723, Integer.valueOf(uc7.s1(yac.t0).l4.b1.f())));
+                            this.c.setText(hl.N2(ob6.a0(null, null, 2131748722, Integer.valueOf(uc7.s1(yac.t0).l4.c1.f())), -1, 2, new xf1(context, (byte) 23), null));
                             return;
                         } else {
                             TextView textView6 = this.b;
-                            hr hrVar = uc7.s1(yac.t0).k4;
+                            hr hrVar = uc7.s1(yac.t0).l4;
                             textView6.setText(ob6.a0(null, null, 2131748723, Integer.valueOf((p ? hrVar.c1 : hrVar.b1).f())));
                             this.c.setText(ob6.M0(2131748721, null));
                             return;

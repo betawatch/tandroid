@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d77 implements Runnable {
     public final /* synthetic */ byte a;
@@ -66,8 +66,8 @@ public final /* synthetic */ class d77 implements Runnable {
                             arrayList = arrayList3;
                         }
                         if (!arrayList.isEmpty()) {
-                            jf7 messagesStorage = uc7Var.getMessagesStorage();
-                            messagesStorage.a.c(new se7(messagesStorage, arrayList, j, (byte) 1));
+                            kf7 messagesStorage = uc7Var.getMessagesStorage();
+                            messagesStorage.a.c(new te7(messagesStorage, arrayList, j, (byte) 2));
                         }
                         i2++;
                         z2 = z;
@@ -87,8 +87,8 @@ public final /* synthetic */ class d77 implements Runnable {
                 zh6 zh6Var5 = this.c;
                 zh6 zh6Var6 = this.d;
                 uc7Var4.M1 = true;
-                jf7 messagesStorage2 = uc7Var4.getMessagesStorage();
-                messagesStorage2.a.c(new fd7(messagesStorage2, zh6Var5, zh6Var6, b));
+                kf7 messagesStorage2 = uc7Var4.getMessagesStorage();
+                messagesStorage2.a.c(new gd7(messagesStorage2, zh6Var5, zh6Var6, b));
                 break;
             default:
                 uc7 uc7Var5 = this.b;

@@ -39,7 +39,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class la1 extends e {
     public vpa E;
@@ -419,17 +419,17 @@ public class la1 extends e {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void g0(Bitmap bitmap) {
-        ei7 ei7Var;
+        fi7 fi7Var;
         p1 p1Var = this.e0;
         if (this.d != null) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             try {
                 Size previewSize = this.d.getPreviewSize();
-                ei7 ei7Var2 = null;
+                fi7 fi7Var2 = null;
                 byte b = this.X;
                 if (b == 0) {
                     try {
-                        ei7Var = MrzRecognizer.j(bitmap);
+                        fi7Var = MrzRecognizer.j(bitmap);
                     } catch (Exception unused) {
                     }
                 } else {
@@ -493,7 +493,7 @@ public class la1 extends e {
             return;
         }
         return;
-        ei7Var = MrzRecognizer.i(bitmap);
+        fi7Var = MrzRecognizer.i(bitmap);
     }
 
     @Override // org.telegram.ui.ActionBar.e

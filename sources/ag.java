@@ -19,9 +19,9 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ag implements fd, ef7, id3, bm3, gc7, i5c {
+public final /* synthetic */ class ag implements fd, ff7, id3, bm3, gc7, i5c {
     public final /* synthetic */ byte a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -82,7 +82,7 @@ public final /* synthetic */ class ag implements fd, ef7, id3, bm3, gc7, i5c {
         if (this.b) {
             boolean z = true;
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            new Thread(new z09(rb9Var, countDownLatch, (byte) 13)).start();
+            new Thread(new yz8(rb9Var, countDownLatch, (byte) 14)).start();
             ExecutorService executorService = ucc.a;
             boolean z2 = false;
             try {
@@ -131,7 +131,7 @@ public final /* synthetic */ class ag implements fd, ef7, id3, bm3, gc7, i5c {
         return p.f();
     }
 
-    @Override // ef7
+    @Override // ff7
     public final void run(long j) {
         qn2 qn2Var = (qn2) this.c;
         id idVar = (id) this.d;
@@ -216,7 +216,7 @@ public final /* synthetic */ class ag implements fd, ef7, id3, bm3, gc7, i5c {
                     hl.t1(v4bVar);
                     id idVar2 = new id(3, z4 ? null : new x53(), context2);
                     idVar2.q(250L);
-                    iccVar.a(trim2, new v58((Object) idVar2, (Object) idVar, (Object) v4bVar, (byte) 10));
+                    iccVar.a(trim2, new w58((Object) idVar2, (Object) idVar, (Object) v4bVar, (byte) 10));
                     break;
                 } else {
                     v4bVar.setErrorText(".");

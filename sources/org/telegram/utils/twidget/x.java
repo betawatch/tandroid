@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.utils.twidget.WidgetEngineService;
 import org.telegram.utils.twidget.x;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class x extends b {
     public static final x v = new x();
@@ -310,8 +310,8 @@ public final class x extends b {
                     this.b.removeCallbacks(this.t);
                     this.b.postDelayed(this.t, 250L);
                     w wVar = new w(this, n0dVar2, widgetSandboxBackend);
-                    cxc cxcVar = new cxc((Object) this, (Object) n0dVar2, (byte) 14);
-                    this.b.postDelayed(cxcVar, 15000L);
+                    zwc zwcVar = new zwc(this, n0dVar2, (byte) 15);
+                    this.b.postDelayed(zwcVar, 15000L);
                     try {
                         try {
                             boolean z5 = f11.a;
@@ -325,7 +325,7 @@ public final class x extends b {
                             n0dVar = n0dVar2;
                             try {
                                 long G = jl5Var.G(bytes, bytes2, f, f2, i, bytes3, bytes4, bytes5, bytes6, z, wVar);
-                                this.b.removeCallbacks(cxcVar);
+                                this.b.removeCallbacks(zwcVar);
                                 wVar.c = G;
                                 if (f11.a) {
                                     StringBuilder sb = new StringBuilder("create ");
@@ -369,7 +369,7 @@ public final class x extends b {
                                 throw e;
                             }
                         } catch (Throwable th2) {
-                            this.b.removeCallbacks(cxcVar);
+                            this.b.removeCallbacks(zwcVar);
                             throw th2;
                         }
                     } catch (Exception e2) {
@@ -857,7 +857,7 @@ public final class x extends b {
             }
             if (bool == null || !bool.booleanValue()) {
                 try {
-                    i = uc7.s1(yac.t0).k4.B0.f();
+                    i = uc7.s1(yac.t0).l4.B0.f();
                 } catch (Exception unused) {
                     i = 6;
                 }

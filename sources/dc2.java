@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class dc2 {
     public boolean A;
@@ -376,8 +376,8 @@ public final class dc2 {
         }
         this.L0 = false;
         if (hl9Var2 != this.N0) {
-            ui7 ui7Var = wb2Var.Mc;
-            boolean z7 = ui7Var != null && ui7Var.h;
+            vi7 vi7Var = wb2Var.Mc;
+            boolean z7 = vi7Var != null && vi7Var.h;
             hl9 hl9Var3 = this.M0;
             if (hl9Var3 != null) {
                 hl9Var3.f(wb2Var);

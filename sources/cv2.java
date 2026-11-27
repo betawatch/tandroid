@@ -28,7 +28,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.ExternalActionActivity;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class cv2 implements Runnable {
     public final /* synthetic */ byte a;
@@ -164,10 +164,10 @@ public final /* synthetic */ class cv2 implements Runnable {
                         }
                     }
                     i2 = 1;
-                    lv2Var2.getMessagesStorage().h2(arrayList3, true);
+                    lv2Var2.getMessagesStorage().m2(arrayList3, true);
                 }
                 jn7 notificationCenter = lv2Var2.getNotificationCenter();
-                int i10 = uc7.r5;
+                int i10 = uc7.s5;
                 Object[] objArr = new Object[i2];
                 objArr[0] = 4;
                 notificationCenter.k(2, objArr);
@@ -230,12 +230,12 @@ public final /* synthetic */ class cv2 implements Runnable {
                 }
             case 7:
                 mk3 mk3Var = (mk3) this.b;
-                jf7 jf7Var = (jf7) this.c;
+                kf7 kf7Var = (kf7) this.c;
                 lk3 lk3Var = (lk3) this.d;
                 ArrayList arrayList5 = new ArrayList();
                 ArrayList arrayList6 = new ArrayList();
                 try {
-                    SQLiteCursor queryFinalized = jf7Var.b.queryFinalized("SELECT uid, time, offset FROM popular_bots ORDER BY pos", new Object[0]);
+                    SQLiteCursor queryFinalized = kf7Var.b.queryFinalized("SELECT uid, time, offset FROM popular_bots ORDER BY pos", new Object[0]);
                     str = null;
                     while (queryFinalized.next()) {
                         try {
@@ -277,18 +277,18 @@ public final /* synthetic */ class cv2 implements Runnable {
                         }
                     }
                     queryFinalized.dispose();
-                    ArrayList i0 = jf7Var.i0(arrayList6);
+                    ArrayList k0 = kf7Var.k0(arrayList6);
                     int size3 = arrayList6.size();
                     int i11 = 0;
                     while (i11 < size3) {
                         Object obj3 = arrayList6.get(i11);
                         i11++;
                         long longValue = ((Long) obj3).longValue();
-                        int size4 = i0.size();
+                        int size4 = k0.size();
                         int i12 = i6;
                         while (true) {
                             if (i6 < size4) {
-                                Object obj4 = i0.get(i6);
+                                Object obj4 = k0.get(i6);
                                 int i13 = i6 + 1;
                                 user = (TLRPC.User) obj4;
                                 if (user != null) {
@@ -333,9 +333,9 @@ public final /* synthetic */ class cv2 implements Runnable {
                     Long l = (Long) pair.second;
                     long longValue2 = l.longValue();
                     ConcurrentHashMap concurrentHashMap = booleanValue ? s1.Q : s1.P;
-                    jf7 Y = jf7.Y(i14);
+                    kf7 a0 = kf7.a0(i14);
                     try {
-                        sQLiteDatabase = Y.b;
+                        sQLiteDatabase = a0.b;
                     } catch (Exception e5) {
                         e = e5;
                         sQLiteCursor2 = null;
@@ -348,7 +348,7 @@ public final /* synthetic */ class cv2 implements Runnable {
                             try {
                             } catch (Exception e6) {
                                 e = e6;
-                                Y.n(e, true);
+                                a0.p(e, true);
                                 if (sQLiteCursor2 != null) {
                                     sQLiteCursor2.dispose();
                                 }
@@ -552,13 +552,13 @@ public final /* synthetic */ class cv2 implements Runnable {
                     return;
                 }
             case 24:
-                jf7 jf7Var2 = (jf7) this.b;
+                kf7 kf7Var2 = (kf7) this.b;
                 ArrayList arrayList14 = (ArrayList) this.c;
                 r4c r4cVar = (r4c) this.d;
                 ArrayList arrayList15 = new ArrayList();
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase2 = jf7Var2.b;
+                        SQLiteDatabase sQLiteDatabase2 = kf7Var2.b;
                         ArrayList arrayList16 = new ArrayList();
                         int size5 = arrayList14.size();
                         int i16 = 0;

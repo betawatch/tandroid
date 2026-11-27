@@ -19,7 +19,7 @@ import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class jr9 implements Runnable {
     public final /* synthetic */ byte a;
@@ -35,14 +35,14 @@ public final /* synthetic */ class jr9 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:440:0x0984  */
-    /* JADX WARN: Type inference failed for: r10v32 */
-    /* JADX WARN: Type inference failed for: r10v33 */
-    /* JADX WARN: Type inference failed for: r10v35 */
-    /* JADX WARN: Type inference failed for: r13v9, types: [ob6] */
+    /* JADX WARN: Removed duplicated region for block: B:441:0x0989  */
+    /* JADX WARN: Type inference failed for: r13v10, types: [ob6] */
     /* JADX WARN: Type inference failed for: r14v0 */
     /* JADX WARN: Type inference failed for: r14v2, types: [boolean] */
     /* JADX WARN: Type inference failed for: r14v3 */
+    /* JADX WARN: Type inference failed for: r9v34 */
+    /* JADX WARN: Type inference failed for: r9v35 */
+    /* JADX WARN: Type inference failed for: r9v37 */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -62,13 +62,13 @@ public final /* synthetic */ class jr9 implements Runnable {
         boolean z2;
         boolean z3;
         boolean z4;
+        boolean z5;
         long j;
         int i2 = 8;
         byte b2 = 17;
         byte b3 = 7;
-        byte b4 = 6;
         ?? r14 = 0;
-        boolean z5 = true;
+        boolean z6 = true;
         switch (this.a) {
             case 0:
                 rr9 rr9Var = (rr9) this.b;
@@ -96,22 +96,21 @@ public final /* synthetic */ class jr9 implements Runnable {
                 }
                 return;
             case 1:
-                SQLitePreparedStatement sQLitePreparedStatement2 = null;
                 int i4 = 2;
                 nt9 nt9Var = (nt9) this.b;
-                jf7 jf7Var = (jf7) this.c;
+                kf7 kf7Var = (kf7) this.c;
                 ArrayList arrayList2 = (ArrayList) this.d;
-                SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                SQLiteDatabase sQLiteDatabase = kf7Var.b;
                 try {
-                    try {
-                        SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("DELETE FROM saved_dialogs WHERE forumChatId = ?");
-                        executeFast.requery();
-                        executeFast.bindLong(1, 0L);
-                        executeFast.step();
-                        executeFast.dispose();
-                        sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO saved_dialogs VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                        int i5 = 0;
-                        while (i5 < arrayList2.size()) {
+                    SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("DELETE FROM saved_dialogs WHERE forumChatId = ?");
+                    executeFast.requery();
+                    executeFast.bindLong(1, 0L);
+                    executeFast.step();
+                    executeFast.dispose();
+                    sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO saved_dialogs VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    int i5 = 0;
+                    while (i5 < arrayList2.size()) {
+                        try {
                             try {
                                 mt9 mt9Var = (mt9) arrayList2.get(i5);
                                 sQLitePreparedStatement.requery();
@@ -142,23 +141,24 @@ public final /* synthetic */ class jr9 implements Runnable {
                                 hl.c3(new lt9(nt9Var, b));
                                 return;
                             }
+                        } catch (Throwable th) {
+                            th = th;
+                            if (sQLitePreparedStatement != null) {
+                                sQLitePreparedStatement.dispose();
+                            }
+                            throw th;
                         }
-                        sQLitePreparedStatement.dispose();
-                        sQLitePreparedStatement.dispose();
-                        b = 1;
-                    } catch (Throwable th) {
-                        th = th;
-                        if (0 != 0) {
-                            sQLitePreparedStatement2.dispose();
-                        }
-                        throw th;
                     }
+                    sQLitePreparedStatement.dispose();
+                    sQLitePreparedStatement.dispose();
+                    b = 1;
                 } catch (Exception e2) {
                     e = e2;
                     sQLitePreparedStatement = null;
                 } catch (Throwable th2) {
                     th = th2;
-                    if (0 != 0) {
+                    sQLitePreparedStatement = null;
+                    if (sQLitePreparedStatement != null) {
                     }
                     throw th;
                 }
@@ -214,7 +214,7 @@ public final /* synthetic */ class jr9 implements Runnable {
                 } else {
                     c = 0;
                 }
-                wx9Var.getMessagesStorage().S1(encryptedChat2);
+                wx9Var.getMessagesStorage().X1(encryptedChat2);
                 jn7 notificationCenter = wx9Var.getNotificationCenter();
                 Object[] objArr = new Object[1];
                 objArr[c] = encryptedChat2;
@@ -283,9 +283,9 @@ public final /* synthetic */ class jr9 implements Runnable {
                 j7a j7aVar = (j7a) this.b;
                 TLObject tLObject = (TLObject) this.c;
                 Runnable runnable3 = (Runnable) this.d;
-                boolean z6 = tLObject instanceof TLRPC.TL_messageMediaDocument;
+                boolean z7 = tLObject instanceof TLRPC.TL_messageMediaDocument;
                 k7a k7aVar = j7aVar.b;
-                if (z6) {
+                if (z7) {
                     TLRPC.TL_inputStickerSetItem tL_inputStickerSetItem = new TLRPC.TL_inputStickerSetItem();
                     k7aVar.f = tL_inputStickerSetItem;
                     tL_inputStickerSetItem.document = new TLRPC.TL_inputDocument();
@@ -348,7 +348,7 @@ public final /* synthetic */ class jr9 implements Runnable {
                     byte[] decode = Base64.decode(str4.substring(17).replaceAll("\\/", "_").replaceAll("\\+", "-"), 8);
                     TLRPC.TL_auth_acceptLoginToken tL_auth_acceptLoginToken = new TLRPC.TL_auth_acceptLoginToken();
                     tL_auth_acceptLoginToken.token = decode;
-                    waaVar.c.getConnectionsManager().sendRequest(tL_auth_acceptLoginToken, new ol7(waaVar, da1Var, (byte) 24));
+                    waaVar.c.getConnectionsManager().sendRequest(tL_auth_acceptLoginToken, new pl7(waaVar, da1Var, (byte) 24));
                     return;
                 } catch (Exception e3) {
                     cc4.e("Failed to pass qr code auth", e3);
@@ -375,7 +375,7 @@ public final /* synthetic */ class jr9 implements Runnable {
                 TLObject tLObject2 = (TLObject) this.d;
                 eja ejaVar3 = shaVar.r;
                 shaVar.n = 0;
-                int b5 = shaVar.b();
+                int b4 = shaVar.b();
                 if (tL_error4 == null) {
                     TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject2;
                     ejaVar3.y1.getMessagesController().c4(messages_chats.chats, false);
@@ -394,7 +394,7 @@ public final /* synthetic */ class jr9 implements Runnable {
                         return;
                     } else {
                         zha zhaVar = zhaVarArr[i10];
-                        if (zhaVar.F == 6 && (jgaVar = zhaVar.h) != null && (shaVar.f || b5 == 0)) {
+                        if (zhaVar.F == 6 && (jgaVar = zhaVar.h) != null && (shaVar.f || b4 == 0)) {
                             ejaVar3.i(jgaVar, 0, null);
                         }
                         i10++;
@@ -447,21 +447,21 @@ public final /* synthetic */ class jr9 implements Runnable {
                         if (lowerCase2.equals(S02)) {
                             S02 = null;
                         }
-                        boolean z7 = r14;
+                        boolean z8 = r14;
                         for (int i13 = r14; i13 < i11; i13++) {
                             String str7 = strArr[i13];
                             arrayList = arrayList6;
                             if (lowerCase2.startsWith(str7) || uh9.t(" ", str7, lowerCase2) || (S02 != null && (S02.startsWith(str7) || uh9.t(" ", str7, S02)))) {
-                                z7 = true;
+                                z8 = true;
                             } else {
                                 String p = lbc.p(X1);
                                 if (p != null && p.startsWith(str7)) {
-                                    z7 = 2;
+                                    z8 = 2;
                                 }
                             }
-                            if (z7) {
+                            if (z8) {
                                 eVar = eVar3;
-                                if (z7) {
+                                if (z8) {
                                     arrayList7.add(hl.r0(X1.first_name, X1.last_name, str7));
                                 } else {
                                     arrayList7.add(hl.r0("@" + lbc.p(X1), null, "@" + str7));
@@ -520,14 +520,14 @@ public final /* synthetic */ class jr9 implements Runnable {
                 }
                 return;
             case 18:
-                byte b6 = 4;
+                byte b5 = 4;
                 bia biaVar = (bia) this.b;
                 String str8 = (String) this.c;
                 ArrayList arrayList12 = (ArrayList) this.d;
                 biaVar.getClass();
                 String lowerCase3 = str8.trim().toLowerCase();
                 if (lowerCase3.length() == 0) {
-                    hl.c3(new ida(biaVar, new ArrayList(), b4));
+                    hl.c3(new kba(biaVar, new ArrayList(), b3));
                     return;
                 }
                 String S03 = ob6.D0().S0(lowerCase3, true, false);
@@ -550,7 +550,7 @@ public final /* synthetic */ class jr9 implements Runnable {
                             if (I0 != null && I0.length() != 0) {
                                 if (I0.toLowerCase().contains(str10)) {
                                     arrayList13.add(r47Var3);
-                                } else if (biaVar.r == b6) {
+                                } else if (biaVar.r == b5) {
                                     int i18 = r47Var3.D;
                                     TLRPC.Message message3 = r47Var3.k;
                                     TLRPC.Document document2 = i18 == 0 ? r47.n1(message3).webpage.document : r47.n1(message3).document;
@@ -579,13 +579,13 @@ public final /* synthetic */ class jr9 implements Runnable {
                                 }
                             }
                             i17++;
-                            b6 = 4;
+                            b5 = 4;
                         }
                     }
                     i16++;
-                    b6 = 4;
+                    b5 = 4;
                 }
-                hl.c3(new ida(biaVar, arrayList13, b4));
+                hl.c3(new kba(biaVar, arrayList13, b3));
                 return;
             case 19:
                 tpa tpaVar = (tpa) this.b;
@@ -602,7 +602,7 @@ public final /* synthetic */ class jr9 implements Runnable {
             case 20:
                 wua wuaVar = (wua) this.b;
                 Long l = (Long) this.c;
-                wuaVar.d2(l.longValue(), new v58(wuaVar, l, (bx4[]) this.d, b3));
+                wuaVar.d2(l.longValue(), new w58(wuaVar, l, (bx4[]) this.d, b3));
                 return;
             case 21:
                 wua wuaVar2 = (wua) this.b;
@@ -709,7 +709,7 @@ public final /* synthetic */ class jr9 implements Runnable {
                 boolean[] zArr2 = jxaVar.t;
                 ArrayList[] arrayListArr = jxaVar.q;
                 int i20 = jxaVar.a;
-                boolean z8 = !jxaVar.e;
+                boolean z9 = !jxaVar.e;
                 jxaVar.c = System.currentTimeMillis();
                 if (tLObject6 instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject6;
@@ -718,7 +718,7 @@ public final /* synthetic */ class jr9 implements Runnable {
                     if (!arrayListArr[0].isEmpty() || zArr2[0]) {
                         z2 = true;
                         j = 0;
-                        z4 = false;
+                        z5 = false;
                     } else {
                         ArrayList<TL_stars.StarsTransaction> arrayList15 = starsStatus.history;
                         int size2 = arrayList15.size();
@@ -726,56 +726,55 @@ public final /* synthetic */ class jr9 implements Runnable {
                         while (i21 < size2) {
                             TL_stars.StarsTransaction starsTransaction = arrayList15.get(i21);
                             i21++;
-                            boolean z9 = z5;
+                            boolean z10 = z6;
                             TL_stars.StarsTransaction starsTransaction2 = starsTransaction;
                             arrayListArr[0].add(starsTransaction2);
-                            arrayListArr[starsTransaction2.amount.amount > 0 ? z9 : 2].add(starsTransaction2);
-                            z5 = z9;
+                            arrayListArr[starsTransaction2.amount.amount > 0 ? z10 : 2].add(starsTransaction2);
+                            z6 = z10;
                         }
-                        z2 = z5;
+                        z2 = z6;
                         j = 0;
                         for (int i22 = 0; i22 < 3; i22++) {
                             zArr[i22] = (!arrayListArr[i22].isEmpty() || zArr[i22]) ? z2 : false;
                             boolean[] zArr3 = jxaVar.u;
-                            boolean z10 = (starsStatus.flags & 1) == 0 ? z2 : false;
-                            zArr3[i22] = z10;
-                            if (z10) {
+                            boolean z11 = (starsStatus.flags & 1) == 0 ? z2 : false;
+                            zArr3[i22] = z11;
+                            if (z11) {
                                 zArr2[i22] = false;
                             }
                             jxaVar.s[i22] = zArr3[i22] ? null : starsStatus.next_offset;
                         }
-                        z4 = z2;
+                        z5 = z2;
                     }
                     if (arrayList14.isEmpty()) {
                         arrayList14.addAll(starsStatus.subscriptions);
                         jxaVar.x = false;
                         jxaVar.w = starsStatus.subscriptions_next_offset;
                         jxaVar.y = (starsStatus.flags & 4) == 0 ? z2 : false;
-                        z3 = z2;
+                        z4 = z2;
                     } else {
-                        z3 = false;
+                        z4 = false;
                     }
                     long j5 = jxaVar.f.amount;
                     TL_stars.StarsAmount starsAmount = starsStatus.balance;
-                    if (j5 != starsAmount.amount) {
-                        z8 = z2;
-                    }
+                    z3 = j5 != starsAmount.amount ? z2 : z9;
                     jxaVar.f = starsAmount;
                     jxaVar.g = j;
                 } else {
                     z2 = true;
-                    z3 = false;
+                    z3 = z9;
                     z4 = false;
+                    z5 = false;
                 }
                 jxaVar.d = false;
                 jxaVar.e = z2;
-                if (z8) {
+                if (z3) {
                     jn7.f(i20).k(jn7.A3, new Object[0]);
                 }
-                if (z4) {
+                if (z5) {
                     jn7.f(i20).k(jn7.B3, new Object[0]);
                 }
-                if (z3) {
+                if (z4) {
                     jn7.f(i20).k(jn7.C3, new Object[0]);
                 }
                 if (runnable6 != null) {

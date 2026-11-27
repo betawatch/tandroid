@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class se implements Runnable {
     public final /* synthetic */ byte a;
@@ -90,14 +90,14 @@ public final /* synthetic */ class se implements Runnable {
                 vo3.l.add(arrayList);
                 return;
             case 6:
-                jn7.e().k(jn7.h4, arrayList);
-                return;
-            case 7:
                 AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(a.b);
                 while (i < arrayList.size()) {
                     appWidgetManager.notifyAppWidgetViewDataChanged(((Integer) arrayList.get(i)).intValue(), R.id.list_view);
                     i++;
                 }
+                return;
+            case 7:
+                jn7.e().k(jn7.h4, arrayList);
                 return;
             case 8:
                 xv7.h = arrayList;

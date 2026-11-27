@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class i10 implements qs3 {
     public final /* synthetic */ byte a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class i10 implements qs3 {
             case 8:
                 km7 km7Var = (km7) obj;
                 km7Var.a = f;
-                km7Var.d.A0();
+                km7Var.d.y0();
                 break;
             case 9:
                 dx7 dx7Var = (dx7) obj;
@@ -102,7 +102,7 @@ public final /* synthetic */ class i10 implements qs3 {
                 dx7Var.V0.getTypefaceCell().setAlpha(1.0f - dx7Var.d1);
                 break;
             case 10:
-                ((hh7) obj).x();
+                ((ih7) obj).x();
                 break;
             case 11:
                 w28 w28Var = (w28) obj;

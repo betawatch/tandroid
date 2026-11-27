@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.util.SparseArray;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ea3 implements bg8, zz6, nr3 {
     public final vgb a;
@@ -115,9 +115,9 @@ public final class ea3 implements bg8, zz6, nr3 {
     }
 
     @Override // bg8
-    public final void L(uf7 uf7Var) {
+    public final void L(vf7 vf7Var) {
         uj Q = Q();
-        V(Q, 28, new uy2(Q, uf7Var, (byte) 19));
+        V(Q, 28, new uy2(Q, vf7Var, (byte) 19));
     }
 
     @Override // bg8

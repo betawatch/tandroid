@@ -23,7 +23,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class cr8 extends d6 {
     public final /* synthetic */ Context a;
@@ -203,7 +203,7 @@ public final class cr8 extends d6 {
                 id idVar2 = alertDialog$Builder2.a;
                 idVar2.S = J0;
                 i10 = ((e) profileActivity).currentAccount;
-                TLRPC.TL_forumTopic f = uc7.s1(i10).g4.f(profileActivity.f1, profileActivity.g1);
+                TLRPC.TL_forumTopic f = uc7.s1(i10).h4.f(profileActivity.f1, profileActivity.g1);
                 final byte b2 = 0;
                 idVar2.U = ob6.a0("DeleteSelectedTopic", null, 2131751463, f == null ? "topic" : f.title);
                 alertDialog$Builder2.j(ob6.M0(2131751563, null), new fd(this) { // from class: ar8
@@ -235,7 +235,7 @@ public final class cr8 extends d6 {
                                 ArrayList arrayList = new ArrayList();
                                 ProfileActivity profileActivity2 = cr8Var.b;
                                 arrayList.add(Integer.valueOf((int) profileActivity2.g1));
-                                profileActivity2.getMessagesController().g4.d(arrayList, profileActivity2.f1);
+                                profileActivity2.getMessagesController().h4.d(arrayList, profileActivity2.f1);
                                 profileActivity2.J1 = (byte) 0;
                                 wk5Var = ((e) profileActivity2).parentLayout;
                                 if (wk5Var != null) {
@@ -278,7 +278,7 @@ public final class cr8 extends d6 {
                                     if (profileActivity4.v5 && F != null && userFull != null && (photo = userFull.fallback_photo) != null && photo.id == F.id) {
                                         userFull.fallback_photo = null;
                                         userFull.flags &= -4194305;
-                                        profileActivity4.getMessagesStorage().g2(userFull, true);
+                                        profileActivity4.getMessagesStorage().l2(userFull, true);
                                         profileActivity4.e4(false);
                                     }
                                     if (profileActivity4.o0.getRealCount() == 1) {
@@ -308,8 +308,8 @@ public final class cr8 extends d6 {
                                             tL_inputPhoto.file_reference = new byte[0];
                                         }
                                         profileActivity4.getMessagesController().j0(tL_inputPhoto);
-                                        jf7 messagesStorage = profileActivity4.getMessagesStorage();
-                                        messagesStorage.a.c(new xd7(messagesStorage, profileActivity4.e1, F.id, (byte) 0));
+                                        kf7 messagesStorage = profileActivity4.getMessagesStorage();
+                                        messagesStorage.a.c(new yd7(messagesStorage, profileActivity4.e1, F.id, (byte) 0));
                                     }
                                     jq8 jq8Var = profileActivity4.o0;
                                     ArrayList arrayList2 = jq8Var.Y0;
@@ -369,8 +369,8 @@ public final class cr8 extends d6 {
                                     profileActivity4.e4(true);
                                     profileActivity4.C3(false, true);
                                     jn7 notificationCenter = profileActivity4.getNotificationCenter();
-                                    int i17 = uc7.r5;
-                                    notificationCenter.k(2, Integer.valueOf(uc7.r5));
+                                    int i17 = uc7.s5;
+                                    notificationCenter.k(2, Integer.valueOf(uc7.s5));
                                     profileActivity4.getNotificationCenter().k(47, new Object[0]);
                                     profileActivity4.getUserConfig().u(true);
                                     break;
@@ -538,7 +538,7 @@ public final class cr8 extends d6 {
                                         ArrayList arrayList = new ArrayList();
                                         ProfileActivity profileActivity2 = cr8Var.b;
                                         arrayList.add(Integer.valueOf((int) profileActivity2.g1));
-                                        profileActivity2.getMessagesController().g4.d(arrayList, profileActivity2.f1);
+                                        profileActivity2.getMessagesController().h4.d(arrayList, profileActivity2.f1);
                                         profileActivity2.J1 = (byte) 0;
                                         wk5Var = ((e) profileActivity2).parentLayout;
                                         if (wk5Var != null) {
@@ -581,7 +581,7 @@ public final class cr8 extends d6 {
                                             if (profileActivity4.v5 && F != null && userFull != null && (photo = userFull.fallback_photo) != null && photo.id == F.id) {
                                                 userFull.fallback_photo = null;
                                                 userFull.flags &= -4194305;
-                                                profileActivity4.getMessagesStorage().g2(userFull, true);
+                                                profileActivity4.getMessagesStorage().l2(userFull, true);
                                                 profileActivity4.e4(false);
                                             }
                                             if (profileActivity4.o0.getRealCount() == 1) {
@@ -611,8 +611,8 @@ public final class cr8 extends d6 {
                                                     tL_inputPhoto.file_reference = new byte[0];
                                                 }
                                                 profileActivity4.getMessagesController().j0(tL_inputPhoto);
-                                                jf7 messagesStorage = profileActivity4.getMessagesStorage();
-                                                messagesStorage.a.c(new xd7(messagesStorage, profileActivity4.e1, F.id, (byte) 0));
+                                                kf7 messagesStorage = profileActivity4.getMessagesStorage();
+                                                messagesStorage.a.c(new yd7(messagesStorage, profileActivity4.e1, F.id, (byte) 0));
                                             }
                                             jq8 jq8Var = profileActivity4.o0;
                                             ArrayList arrayList2 = jq8Var.Y0;
@@ -672,8 +672,8 @@ public final class cr8 extends d6 {
                                             profileActivity4.e4(true);
                                             profileActivity4.C3(false, true);
                                             jn7 notificationCenter = profileActivity4.getNotificationCenter();
-                                            int i17 = uc7.r5;
-                                            notificationCenter.k(2, Integer.valueOf(uc7.r5));
+                                            int i17 = uc7.s5;
+                                            notificationCenter.k(2, Integer.valueOf(uc7.s5));
                                             profileActivity4.getNotificationCenter().k(47, new Object[0]);
                                             profileActivity4.getUserConfig().u(true);
                                             break;
@@ -823,7 +823,7 @@ public final class cr8 extends d6 {
                                             ArrayList arrayList = new ArrayList();
                                             ProfileActivity profileActivity2 = cr8Var.b;
                                             arrayList.add(Integer.valueOf((int) profileActivity2.g1));
-                                            profileActivity2.getMessagesController().g4.d(arrayList, profileActivity2.f1);
+                                            profileActivity2.getMessagesController().h4.d(arrayList, profileActivity2.f1);
                                             profileActivity2.J1 = (byte) 0;
                                             wk5Var = ((e) profileActivity2).parentLayout;
                                             if (wk5Var != null) {
@@ -866,7 +866,7 @@ public final class cr8 extends d6 {
                                                 if (profileActivity4.v5 && F != null && userFull != null && (photo = userFull.fallback_photo) != null && photo.id == F.id) {
                                                     userFull.fallback_photo = null;
                                                     userFull.flags &= -4194305;
-                                                    profileActivity4.getMessagesStorage().g2(userFull, true);
+                                                    profileActivity4.getMessagesStorage().l2(userFull, true);
                                                     profileActivity4.e4(false);
                                                 }
                                                 if (profileActivity4.o0.getRealCount() == 1) {
@@ -896,8 +896,8 @@ public final class cr8 extends d6 {
                                                         tL_inputPhoto.file_reference = new byte[0];
                                                     }
                                                     profileActivity4.getMessagesController().j0(tL_inputPhoto);
-                                                    jf7 messagesStorage = profileActivity4.getMessagesStorage();
-                                                    messagesStorage.a.c(new xd7(messagesStorage, profileActivity4.e1, F.id, (byte) 0));
+                                                    kf7 messagesStorage = profileActivity4.getMessagesStorage();
+                                                    messagesStorage.a.c(new yd7(messagesStorage, profileActivity4.e1, F.id, (byte) 0));
                                                 }
                                                 jq8 jq8Var3 = profileActivity4.o0;
                                                 ArrayList arrayList2 = jq8Var3.Y0;
@@ -957,8 +957,8 @@ public final class cr8 extends d6 {
                                                 profileActivity4.e4(true);
                                                 profileActivity4.C3(false, true);
                                                 jn7 notificationCenter = profileActivity4.getNotificationCenter();
-                                                int i17 = uc7.r5;
-                                                notificationCenter.k(2, Integer.valueOf(uc7.r5));
+                                                int i17 = uc7.s5;
+                                                notificationCenter.k(2, Integer.valueOf(uc7.s5));
                                                 profileActivity4.getNotificationCenter().k(47, new Object[0]);
                                                 profileActivity4.getUserConfig().u(true);
                                                 break;

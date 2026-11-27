@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class iz5 implements gz5 {
     public final j2f a;
@@ -25,7 +25,7 @@ public final class iz5 implements gz5 {
         this.d = new AtomicReference(taeVar);
         taeVar.getClass();
         this.f = mle.b;
-        this.b = new q2f(jg7.c().b(), (byte) 0);
+        this.b = new q2f(kg7.c().b(), (byte) 0);
     }
 
     public static final dle e() {
@@ -122,7 +122,7 @@ public final class iz5 implements gz5 {
         synchronized (q2fVar) {
             long elapsedRealtime3 = SystemClock.elapsedRealtime();
             if (q2fVar.b.get() == -1 || elapsedRealtime3 - q2fVar.b.get() > 1800000) {
-                q2fVar.a.i(new ikb(0, Arrays.asList(new bg7(i, s, 0, j2, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new zg2(q2fVar, elapsedRealtime3, (byte) 10));
+                q2fVar.a.i(new ikb(0, Arrays.asList(new cg7(i, s, 0, j2, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new zg2(q2fVar, elapsedRealtime3, (byte) 10));
             }
         }
     }

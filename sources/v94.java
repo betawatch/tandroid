@@ -30,7 +30,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class v94 extends FrameLayout implements eu5 {
     public final zc E;
@@ -642,7 +642,7 @@ public final class v94 extends FrameLayout implements eu5 {
         if (i < 7) {
             e = aob.v0(aob.r8[i], vnbVar);
         } else {
-            lc7 lc7Var = uc7.s1(i15).E3;
+            lc7 lc7Var = uc7.s1(i15).F3;
             kc7 d = lc7Var != null ? lc7Var.d(i) : null;
             e = d != null ? d.e(0, vnbVar) : aob.v0(aob.r8[0], vnbVar);
         }
@@ -922,13 +922,13 @@ public final class v94 extends FrameLayout implements eu5 {
                         if (t94Var != null) {
                             im7 im7Var = (im7) t94Var;
                             lm7 lm7Var = im7Var.z3;
-                            km7 km7Var = (km7) lm7Var.V.get(lm7.B0(im7Var.n3, r47Var));
+                            km7 km7Var = (km7) lm7Var.V.get(lm7.z0(im7Var.n3, r47Var));
                             if (km7Var == null) {
                                 km7Var = lm7Var.U;
                             }
                             this.R = Math.max(0.0f, Math.min(1.0f, km7Var.a));
                             im7 im7Var2 = (im7) this.I;
-                            km7 km7Var2 = (km7) im7Var2.z3.W.get(lm7.B0(im7Var2.n3, r47Var));
+                            km7 km7Var2 = (km7) im7Var2.z3.W.get(lm7.z0(im7Var2.n3, r47Var));
                             this.S = Math.max(0.0f, Math.min(1.0f, km7Var2 != null ? km7Var2.a : 0.0f));
                         }
                         requestLayout();
@@ -1466,13 +1466,13 @@ public final class v94 extends FrameLayout implements eu5 {
         }
         im7 im7Var = (im7) t94Var;
         lm7 lm7Var = im7Var.z3;
-        km7 km7Var = (km7) lm7Var.V.get(lm7.B0(im7Var.n3, r47Var));
+        km7 km7Var = (km7) lm7Var.V.get(lm7.z0(im7Var.n3, r47Var));
         if (km7Var == null) {
             km7Var = lm7Var.U;
         }
         float f = km7Var.a;
         im7 im7Var2 = (im7) this.I;
-        km7 km7Var2 = (km7) im7Var2.z3.W.get(lm7.B0(im7Var2.n3, this.J));
+        km7 km7Var2 = (km7) im7Var2.z3.W.get(lm7.z0(im7Var2.n3, this.J));
         float f2 = km7Var2 != null ? km7Var2.a : 0.0f;
         float max = Math.max(0.0f, Math.min(1.0f, f));
         float max2 = Math.max(0.0f, Math.min(1.0f, f2));

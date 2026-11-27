@@ -24,7 +24,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class av0 extends WebViewClient {
     public boolean a = true;
@@ -424,7 +424,7 @@ public final class av0 extends WebViewClient {
                 return false;
             }
             if (z || !"1".equals(parse.getQueryParameter("embed")) || !"t.me".equals(parse.getAuthority())) {
-                if (uc7.s1(nv0Var.R.N).J3 != null && uc7.s1(nv0Var.R.N).J3.contains(parse.getScheme())) {
+                if (uc7.s1(nv0Var.R.N).K3 != null && uc7.s1(nv0Var.R.N).K3.contains(parse.getScheme())) {
                     rv0 rv0Var = nv0Var.R;
                     if (nv0Var.f != null) {
                         uu0 uu0Var4 = rv0Var.c;

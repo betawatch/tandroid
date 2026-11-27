@@ -18,7 +18,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.c;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class snc implements bo3 {
     public static boolean p0;
@@ -420,7 +420,7 @@ public final class snc implements bo3 {
         if (kncVar == null) {
             return;
         }
-        hl.d3(new vlc(this, kncVar, (byte) 2), z ? 470L : 60L);
+        hl.d3(new slc(this, kncVar, (byte) 3), z ? 470L : 60L);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

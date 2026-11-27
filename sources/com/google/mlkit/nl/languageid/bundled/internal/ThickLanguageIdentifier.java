@@ -10,7 +10,7 @@ import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class ThickLanguageIdentifier {
     public static boolean c;
@@ -45,7 +45,7 @@ public class ThickLanguageIdentifier {
                     System.loadLibrary("language_id_l2c_jni");
                     c = true;
                 } catch (UnsatisfiedLinkError e) {
-                    throw new kg7("Couldn't load language identification library.", e);
+                    throw new lg7("Couldn't load language identification library.", e);
                 }
             }
         }
@@ -57,7 +57,7 @@ public class ThickLanguageIdentifier {
                     long nativeInitFromBuffer = nativeInitFromBuffer(channel.map(FileChannel.MapMode.READ_ONLY, openFd.getStartOffset(), openFd.getDeclaredLength()), openFd.getDeclaredLength());
                     this.b = nativeInitFromBuffer;
                     if (nativeInitFromBuffer == 0) {
-                        throw new kg7("Couldn't load language identification model", 13);
+                        throw new lg7("Couldn't load language identification model", 13);
                     }
                     channel.close();
                     openFd.close();
@@ -66,7 +66,7 @@ public class ThickLanguageIdentifier {
             } finally {
             }
         } catch (IOException e2) {
-            throw new kg7("Couldn't open language identification model file", e2);
+            throw new lg7("Couldn't open language identification model file", e2);
         }
     }
 

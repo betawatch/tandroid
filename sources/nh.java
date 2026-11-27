@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class nh implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -327,7 +327,7 @@ public final /* synthetic */ class nh implements View.OnClickListener {
                     i2++;
                     int intValue2 = ((Integer) obj).intValue();
                     if (yac.h(intValue2).f() != null) {
-                        G.d(intValue2, iArr[0] == intValue2, new me7(rq7Var, intValue2, b));
+                        G.d(intValue2, iArr[0] == intValue2, new oe7(rq7Var, intValue2, b));
                     }
                 }
                 G.t = false;
@@ -357,8 +357,8 @@ public final /* synthetic */ class nh implements View.OnClickListener {
                     if (!ar3Var.c && !ar3Var.d) {
                         ar3Var.d = true;
                         wq3 wq3Var = new wq3(ar3Var, b2);
-                        jf7 Y = jf7.Y(ar3Var.a);
-                        Y.a.c(new ds6((Object) Y, z3, (Object) wq3Var, (byte) 18));
+                        kf7 a0 = kf7.a0(ar3Var.a);
+                        a0.a.c(new ds6((Object) a0, z3, (Object) wq3Var, (byte) 18));
                     }
                 }
                 if (!o68Var.m1) {

@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class p33 extends View {
     public final Paint a;
@@ -49,7 +49,7 @@ public final class p33 extends View {
         q33 q33Var = this.d;
         i33 i33Var = q33Var.h;
         int[] iArr = q33Var.y;
-        gbb gbbVar = q33Var.a;
+        hbb hbbVar = q33Var.a;
         if (q33Var.b == null) {
             return;
         }
@@ -61,8 +61,8 @@ public final class p33 extends View {
         if (q33Var.s < 1.0f) {
             Path path = this.b;
             path.rewind();
-            float width = gbbVar.getWidth();
-            float height = gbbVar.getHeight();
+            float width = hbbVar.getWidth();
+            float height = hbbVar.getHeight();
             RectF rectF = this.c;
             rectF.set(0.0f, 0.0f, width, height);
             int[] iArr2 = q33Var.x;
@@ -91,7 +91,7 @@ public final class p33 extends View {
                 f3 = 1.0f;
                 f4 = 1.0f;
             }
-            float R1 = hl.R1(1.0f, (q33Var.b.getScaleX() * (r9.getWidth() / f4)) / gbbVar.getWidth(), f6);
+            float R1 = hl.R1(1.0f, (q33Var.b.getScaleX() * (r9.getWidth() / f4)) / hbbVar.getWidth(), f6);
             canvas.scale(R1, R1);
             canvas.rotate(q33Var.b.getRotation() * f6);
             canvas.translate(((q33Var.b.getContentWidth() * f4) / 2.0f) * f6, ((q33Var.b.getContentHeight() * f3) / 2.0f) * f6);

@@ -61,7 +61,7 @@ import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class r7a extends rf0 implements fn7 {
     public static final to3 J = new to3("mediaSendQueue");
@@ -453,7 +453,7 @@ public final class r7a extends rf0 implements fn7 {
         final TLRPC.TL_photo tL_photo2;
         int i18;
         String str43;
-        Object[] e0;
+        Object[] g0;
         Object obj15;
         String str44;
         ArrayList arrayList5;
@@ -490,10 +490,10 @@ public final class r7a extends rf0 implements fn7 {
         TLRPC.TL_photo tL_photo4;
         String str51;
         int i24;
-        Object[] e02;
+        Object[] g02;
         String str52;
         ?? r3;
-        Object[] e03;
+        Object[] g03;
         Object obj16;
         Uri uri4;
         Uri uri5;
@@ -608,18 +608,18 @@ public final class r7a extends rf0 implements fn7 {
                                             i27 = 2;
                                         }
                                     }
-                                    e02 = jf7.Y(k5Var3.a).e0(i27, str50);
-                                    if (e02 != null) {
-                                        Object obj17 = e02[0];
+                                    g02 = kf7.a0(k5Var3.a).g0(i27, str50);
+                                    if (g02 != null) {
+                                        Object obj17 = g02[0];
                                         if (obj17 instanceof TLRPC.TL_photo) {
                                             TLRPC.TL_photo tL_photo5 = (TLRPC.TL_photo) obj17;
-                                            str52 = (String) e02[1];
+                                            str52 = (String) g02[1];
                                             r3 = tL_photo5;
-                                            if (r3 == 0 && q7aVar5.a != null && (e03 = jf7.Y(k5Var3.a).e0(i27, hl.S0(q7aVar5.a))) != null) {
-                                                obj16 = e03[0];
+                                            if (r3 == 0 && q7aVar5.a != null && (g03 = kf7.a0(k5Var3.a).g0(i27, hl.S0(q7aVar5.a))) != null) {
+                                                obj16 = g03[0];
                                                 if (obj16 instanceof TLRPC.TL_photo) {
                                                     r3 = (TLRPC.TL_photo) obj16;
-                                                    str52 = (String) e03[1];
+                                                    str52 = (String) g03[1];
                                                 }
                                             }
                                             tL_photo4 = r3;
@@ -636,7 +636,7 @@ public final class r7a extends rf0 implements fn7 {
                                     str52 = str57;
                                     r3 = str57;
                                     if (r3 == 0) {
-                                        obj16 = e03[0];
+                                        obj16 = g03[0];
                                         if (obj16 instanceof TLRPC.TL_photo) {
                                         }
                                     }
@@ -650,8 +650,8 @@ public final class r7a extends rf0 implements fn7 {
                                     v(k5Var3, z16, tL_photo4, q7aVar5.c, q7aVar5.a, 0L, q7aVar5.x);
                                 }
                                 i27 = i24;
-                                e02 = jf7.Y(k5Var3.a).e0(i27, str50);
-                                if (e02 != null) {
+                                g02 = kf7.a0(k5Var3.a).g0(i27, str50);
+                                if (g02 != null) {
                                 }
                                 String str572 = str49;
                                 str52 = str572;
@@ -1248,20 +1248,20 @@ public final class r7a extends rf0 implements fn7 {
                                                     tL_photo = null;
                                                 } else {
                                                     int i32 = q7aVar6.x ? !z9 ? 6 : 7 : !z9 ? 0 : 3;
-                                                    Object[] e04 = jf7.Y(k5Var3.a).e0(i32, str36);
+                                                    Object[] g04 = kf7.a0(k5Var3.a).g0(i32, str36);
                                                     String str68 = str36;
-                                                    if (e04 != null) {
-                                                        Object obj18 = e04[0];
+                                                    if (g04 != null) {
+                                                        Object obj18 = g04[0];
                                                         hashMap3 = hashMap3;
                                                         if (obj18 instanceof TLRPC.TL_photo) {
                                                             tL_photo = (TLRPC.TL_photo) obj18;
                                                             i18 = 1;
-                                                            str43 = (String) e04[1];
-                                                            if (tL_photo == null && q7aVar6.a != null && (e0 = jf7.Y(k5Var3.a).e0(i32, hl.S0(q7aVar6.a))) != null) {
-                                                                obj15 = e0[0];
+                                                            str43 = (String) g04[1];
+                                                            if (tL_photo == null && q7aVar6.a != null && (g0 = kf7.a0(k5Var3.a).g0(i32, hl.S0(q7aVar6.a))) != null) {
+                                                                obj15 = g0[0];
                                                                 if (obj15 instanceof TLRPC.TL_photo) {
                                                                     tL_photo = (TLRPC.TL_photo) obj15;
-                                                                    str41 = (String) e0[i18];
+                                                                    str41 = (String) g0[i18];
                                                                     String str69 = q7aVar6.c;
                                                                     Uri uri6 = q7aVar6.a;
                                                                     str3 = str32;
@@ -1301,7 +1301,7 @@ public final class r7a extends rf0 implements fn7 {
                                                     str43 = null;
                                                     tL_photo = null;
                                                     if (tL_photo == null) {
-                                                        obj15 = e0[0];
+                                                        obj15 = g0[0];
                                                         if (obj15 instanceof TLRPC.TL_photo) {
                                                         }
                                                     }
@@ -1643,11 +1643,11 @@ public final class r7a extends rf0 implements fn7 {
                                 k5Var2 = k5Var;
                             } else {
                                 k5Var2 = k5Var;
-                                Object[] e05 = jf7.Y(k5Var2.a).e0(!z9 ? 2 : 5, str73);
-                                if (e05 != null) {
-                                    Object obj19 = e05[0];
+                                Object[] g05 = kf7.a0(k5Var2.a).g0(!z9 ? 2 : 5, str73);
+                                if (g05 != null) {
+                                    Object obj19 = g05[0];
                                     if (obj19 instanceof TLRPC.TL_document) {
-                                        String str74 = (String) e05[1];
+                                        String str74 = (String) g05[1];
                                         String str75 = q7aVar6.c;
                                         str12 = str73;
                                         str15 = ".";
@@ -2711,7 +2711,7 @@ public final class r7a extends rf0 implements fn7 {
                 String str83 = str59;
                 int T = T(k5Var3, str81, str82, uri9, str83, j, r47Var2, r47Var3, storyItem, ou1Var, arrayList31, r47Var, jArr, z27, (CharSequence) arrayList32.get(i41), z4, i, null, z, c5aVar, j3, z5, j4, j5, b77Var, null, -1);
                 if (T != 0) {
-                    hl.c3(new me7(T, (Object) k5Var3, (byte) 16));
+                    hl.c3(new oe7(T, (Object) k5Var3, (byte) 16));
                 }
                 i41++;
                 str59 = str83;
@@ -4646,25 +4646,25 @@ public final class r7a extends rf0 implements fn7 {
                                                             str15 = null;
                                                             tL_document = null;
                                                         } else {
-                                                            Object[] e0 = jf7.Y(k5Var3.a).e0(!B ? 1 : 4, str27);
-                                                            if (e0 != null) {
-                                                                Object obj6 = e0[0];
+                                                            Object[] g0 = kf7.a0(k5Var3.a).g0(!B ? 1 : 4, str27);
+                                                            if (g0 != null) {
+                                                                Object obj6 = g0[0];
                                                                 if (obj6 instanceof TLRPC.TL_document) {
                                                                     tL_document2 = (TLRPC.TL_document) obj6;
-                                                                    str21 = (String) e0[1];
+                                                                    str21 = (String) g0[1];
                                                                     if (tL_document2 == null || str4.equals(str27) || B) {
                                                                         str22 = str21;
                                                                     } else {
-                                                                        jf7 Y = jf7.Y(k5Var3.a);
+                                                                        kf7 a0 = kf7.a0(k5Var3.a);
                                                                         StringBuilder sb2 = new StringBuilder(str4);
                                                                         str22 = str21;
                                                                         sb2.append(file2.length());
-                                                                        Object[] e02 = Y.e0(!B ? 1 : 4, sb2.toString());
-                                                                        if (e02 != null) {
-                                                                            Object obj7 = e02[0];
+                                                                        Object[] g02 = a0.g0(!B ? 1 : 4, sb2.toString());
+                                                                        if (g02 != null) {
+                                                                            Object obj7 = g02[0];
                                                                             if (obj7 instanceof TLRPC.TL_document) {
                                                                                 tL_document2 = (TLRPC.TL_document) obj7;
-                                                                                str23 = (String) e02[1];
+                                                                                str23 = (String) g02[1];
                                                                                 TLRPC.TL_document tL_document4 = tL_document2;
                                                                                 str12 = str27;
                                                                                 num = 0;
@@ -5708,7 +5708,7 @@ public final class r7a extends rf0 implements fn7 {
                         ((iq5) kj4Var5.b).n();
                     }
                     if (i23 != 0) {
-                        hl.c3(new me7(i23, k5Var6, (byte) 16));
+                        hl.c3(new oe7(i23, k5Var6, (byte) 16));
                     }
                 }
             });
@@ -5786,7 +5786,7 @@ public final class r7a extends rf0 implements fn7 {
     }
 
     public static void Z(k5 k5Var, CharSequence charSequence, long j, long j2, boolean z, int i, int i2) {
-        jf7.Y(k5Var.a).a.c(new m5a(charSequence, k5Var, j2, j, z, i, i2, (byte) 1));
+        kf7.a0(k5Var.a).a.c(new m5a(charSequence, k5Var, j2, j, z, i, i2, (byte) 1));
     }
 
     public static void a0(int i, int i2, long j, long j2, long j3, long j4, k5 k5Var, ou1 ou1Var, r47 r47Var, r47 r47Var2, r47 r47Var3, b77 b77Var, c5a c5aVar, oec oecVar, CharSequence charSequence, String str, String str2, ArrayList arrayList, TLRPC.Photo photo, TL_stories.StoryItem storyItem, boolean z, boolean z2, boolean z3) {
@@ -7270,8 +7270,8 @@ public final class r7a extends rf0 implements fn7 {
         if (size == 0 || sparseArray.size() != 0) {
             return;
         }
-        jf7 messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new be7(messagesStorage, (byte) 22));
+        kf7 messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new hd7(messagesStorage, (byte) 25));
     }
 
     public final void d(TLRPC.TL_messages_sendMessage tL_messages_sendMessage, long j) {
@@ -7504,7 +7504,7 @@ public final class r7a extends rf0 implements fn7 {
                                         i6 = 0;
                                     }
                                     if ((!d7aVar3.I && !d7aVar3.J) || i15 == 0) {
-                                        r7aVar.getMessagesStorage().g1(arrayList5, false, true, false, 0, false, i6, i5);
+                                        r7aVar.getMessagesStorage().k1(arrayList5, false, true, false, 0, false, i6, i5);
                                     }
                                 } else {
                                     i15++;
@@ -7535,7 +7535,7 @@ public final class r7a extends rf0 implements fn7 {
                                         i4 = r47Var7.r1 ? 1 : 0;
                                     }
                                 }
-                                r7aVar.getMessagesStorage().g1(arrayList6, false, true, false, 0, false, i4, i3);
+                                r7aVar.getMessagesStorage().k1(arrayList6, false, true, false, 0, false, i4, i3);
                                 return;
                             }
                         }
@@ -7681,7 +7681,7 @@ public final class r7a extends rf0 implements fn7 {
                     m7aVar.a(str13, ((Long) objArr[c2]).longValue(), 1.0f);
                     k7a k7aVar2 = (k7a) m7aVar.a.get(str13);
                     if (k7aVar2 != null) {
-                        k7aVar2.a(m7aVar.o.currentAccount, inputFile2, new en9(m7aVar, str13, (byte) 25));
+                        k7aVar2.a(m7aVar.o.currentAccount, inputFile2, new dn9(m7aVar, str13, (byte) 26));
                     }
                 }
                 arrayList2 = (ArrayList) r7aVar.a.get(str13);
@@ -8243,7 +8243,7 @@ public final class r7a extends rf0 implements fn7 {
                                         r47Var4.k.params.put("final", "1");
                                         TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
                                         tL_messages_messages.messages.add(r47Var4.k);
-                                        getMessagesStorage().e1(-2, 0, i8, d7aVar.a, 0L, tL_messages_messages, false);
+                                        getMessagesStorage().i1(-2, 0, i8, d7aVar.a, 0L, tL_messages_messages, false);
                                     }
                                     if (!arrayList3.contains(d7aVar)) {
                                         arrayList3.add(d7aVar);
@@ -8389,7 +8389,7 @@ public final class r7a extends rf0 implements fn7 {
                 if (z2) {
                     TLRPC.EncryptedChat a1 = getMessagesController().a1(Integer.valueOf((int) (r47.B0(message) & 4294967295L)));
                     if (a1 == null) {
-                        getMessagesStorage().K0(r47Var.r1 ? 1 : 0, r47Var.k);
+                        getMessagesStorage().N0(r47Var.r1 ? 1 : 0, r47Var.k);
                         r47Var.k.send_state = 2;
                         getNotificationCenter().k(jn7.L, Integer.valueOf(r47Var.e1()));
                         c0(r47Var.e1());
@@ -8518,7 +8518,7 @@ public final class r7a extends rf0 implements fn7 {
                         getNotificationCenter().k(i, new Object[0]);
                         ArrayList arrayList = new ArrayList();
                         arrayList.add(message5);
-                        getMessagesStorage().g1(arrayList, false, true, false, 0, false, 0, 0L);
+                        getMessagesStorage().k1(arrayList, false, true, false, 0, false, 0, 0L);
                         M(tL_messages_sendScreenshotNotification, r47Var3, null, null, null, null, false);
                     }
                 }
@@ -8625,7 +8625,7 @@ public final class r7a extends rf0 implements fn7 {
             message.send_state = 0;
             Integer num = (Integer) getMessagesController().Q.get(Long.valueOf(B0));
             if (num == null) {
-                num = Integer.valueOf(getMessagesStorage().S(B0, true));
+                num = Integer.valueOf(getMessagesStorage().U(B0, true));
                 getMessagesController().Q.put(Long.valueOf(B0), num);
             }
             message.unread = num.intValue() < message.id;
@@ -8640,8 +8640,8 @@ public final class r7a extends rf0 implements fn7 {
             return;
         }
         if (z || i != 0) {
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new kd7(messagesStorage, j, B0, Integer.valueOf(i5), i5, r47Var.k.date));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new pd7(messagesStorage, j, B0, Integer.valueOf(i5), i5, r47Var.k.date));
             r47Var.k.send_state = 0;
             r47Var.M1 = true;
             getNotificationCenter().k(jn7.I, Integer.valueOf(i5));
@@ -8649,7 +8649,7 @@ public final class r7a extends rf0 implements fn7 {
             TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
             tL_messageService.id = i5;
             tL_messageService.dialog_id = B0;
-            getMessagesStorage().K0(0, tL_messageService);
+            getMessagesStorage().N0(0, tL_messageService);
             r47Var.k.send_state = 2;
             r47Var.M1 = true;
             getNotificationCenter().k(jn7.L, Integer.valueOf(i5));
@@ -8688,7 +8688,7 @@ public final class r7a extends rf0 implements fn7 {
         }
         ArrayList arrayList2 = new ArrayList();
         arrayList2.add(r47Var.k);
-        getMessagesStorage().g1(arrayList2, false, true, false, 0, false, r47Var.r1 ? 1 : 0, 0L);
+        getMessagesStorage().k1(arrayList2, false, true, false, 0, false, r47Var.r1 ? 1 : 0, 0L);
         getNotificationCenter().k(jn7.m0, Long.valueOf(r47.B0(r47Var.k)), qd4.t(r47Var));
     }
 
@@ -8723,7 +8723,7 @@ public final class r7a extends rf0 implements fn7 {
         TLObject[] tLObjectArr = new TLObject[1];
         l6a l6aVar = new l6a(this, str, list, z2, r47Var, keyboardButtonProto, zu1Var, twoStepVerificationActivity, tLObjectArr, tL_inputCheckPasswordSRP, z);
         if (z2) {
-            getMessagesStorage().L(str, l6aVar);
+            getMessagesStorage().N(str, l6aVar);
             return;
         }
         TL_keyboard.TL_inlineButtonTypeUrlAuth tL_inlineButtonTypeUrlAuth = (TL_keyboard.TL_inlineButtonTypeUrlAuth) ehb.a(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeUrlAuth.class);
@@ -8854,11 +8854,11 @@ public final class r7a extends rf0 implements fn7 {
         boolean z = inputPeer instanceof TLRPC.TL_inputPeerChannel;
         int i = this.currentAccount;
         if (z) {
-            tL_messages_sendMedia.silent = uc7.s1(i).W3.getBoolean("silent_" + (-inputPeer.channel_id), false);
+            tL_messages_sendMedia.silent = uc7.s1(i).X3.getBoolean("silent_" + (-inputPeer.channel_id), false);
         } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
-            tL_messages_sendMedia.silent = uc7.s1(i).W3.getBoolean("silent_" + (-inputPeer.chat_id), false);
+            tL_messages_sendMedia.silent = uc7.s1(i).X3.getBoolean("silent_" + (-inputPeer.chat_id), false);
         } else {
-            tL_messages_sendMedia.silent = uc7.s1(i).W3.getBoolean("silent_" + inputPeer.user_id, false);
+            tL_messages_sendMedia.silent = uc7.s1(i).X3.getBoolean("silent_" + inputPeer.user_id, false);
         }
         tL_messages_sendMedia.random_id = j != 0 ? j : D();
         tL_messages_sendMedia.message = "";
@@ -8892,10 +8892,10 @@ public final class r7a extends rf0 implements fn7 {
                 nativeByteBuffer2 = nativeByteBuffer;
                 cc4.g(e, true);
                 nativeByteBuffer = nativeByteBuffer2;
-                j2 = getMessagesStorage().y(nativeByteBuffer);
+                j2 = getMessagesStorage().A(nativeByteBuffer);
                 getConnectionsManager().sendRequest(tL_messages_sendMedia, new yu2(this, j2, (byte) 5));
             }
-            j2 = getMessagesStorage().y(nativeByteBuffer);
+            j2 = getMessagesStorage().A(nativeByteBuffer);
         }
         getConnectionsManager().sendRequest(tL_messages_sendMedia, new yu2(this, j2, (byte) 5));
     }
@@ -10013,13 +10013,13 @@ public final class r7a extends rf0 implements fn7 {
                                             } else {
                                                 i8 = i5;
                                             }
-                                            getMessagesStorage().f1(0, i == 0 ? 1 : 0, 0L, new ArrayList(arrayList9), false);
+                                            getMessagesStorage().j1(0, i == 0 ? 1 : 0, 0L, new ArrayList(arrayList9), false);
                                             getMessagesController().z5(i == 0 ? 1 : 0, j, arrayList24);
                                             getNotificationCenter().k(jn7.r, new Object[0]);
                                             getUserConfig().u(false);
                                             tL_messages_forwardMessages = new TLRPC.TL_messages_forwardMessages();
                                             tL_messages_forwardMessages.to_peer = inputPeer3;
-                                            tL_messages_forwardMessages.silent = z3 || qu6.v("silent_", j, uc7.s1(this.currentAccount).W3, false);
+                                            tL_messages_forwardMessages.silent = z3 || qu6.v("silent_", j, uc7.s1(this.currentAccount).X3, false);
                                             if (r47Var != null) {
                                                 tL_messages_forwardMessages.top_msg_id = r47Var.e1();
                                                 tL_messages_forwardMessages.flags |= 512;
@@ -10197,13 +10197,13 @@ public final class r7a extends rf0 implements fn7 {
                                     }
                                     if (arrayList9.size() == 100) {
                                     }
-                                    getMessagesStorage().f1(0, i == 0 ? 1 : 0, 0L, new ArrayList(arrayList9), false);
+                                    getMessagesStorage().j1(0, i == 0 ? 1 : 0, 0L, new ArrayList(arrayList9), false);
                                     getMessagesController().z5(i == 0 ? 1 : 0, j, arrayList242);
                                     getNotificationCenter().k(jn7.r, new Object[0]);
                                     getUserConfig().u(false);
                                     tL_messages_forwardMessages = new TLRPC.TL_messages_forwardMessages();
                                     tL_messages_forwardMessages.to_peer = inputPeer32;
-                                    tL_messages_forwardMessages.silent = z3 || qu6.v("silent_", j, uc7.s1(this.currentAccount).W3, false);
+                                    tL_messages_forwardMessages.silent = z3 || qu6.v("silent_", j, uc7.s1(this.currentAccount).X3, false);
                                     if (r47Var != null) {
                                     }
                                     if (i != 0) {
@@ -10510,7 +10510,7 @@ public final class r7a extends rf0 implements fn7 {
             tL_messages_sendReaction.flags |= 2;
             tL_messages_sendReaction.big = true;
         }
-        getConnectionsManager().sendRequest(tL_messages_sendReaction, new ol7(this, yp1Var, (byte) 21));
+        getConnectionsManager().sendRequest(tL_messages_sendReaction, new pl7(this, yp1Var, (byte) 21));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:236:0x0595, code lost:
@@ -10802,8 +10802,8 @@ public final class r7a extends rf0 implements fn7 {
                         r47Var.k0();
                         ArrayList arrayList4 = new ArrayList();
                         arrayList4.add(message);
-                        getMessagesStorage().f1(0, r47Var.r1 ? 1 : 0, 0L, arrayList4, false);
-                        qyb qybVar = getMessagesController().g4;
+                        getMessagesStorage().j1(0, r47Var.r1 ? 1 : 0, 0L, arrayList4, false);
+                        qyb qybVar = getMessagesController().h4;
                         z3 = z10;
                         str2 = str6;
                         tL_forumTopic = (TLRPC.TL_forumTopic) qybVar.e.f(qyb.p(message.id, -message.dialog_id));
@@ -10834,8 +10834,8 @@ public final class r7a extends rf0 implements fn7 {
                 z10 = z3;
                 ArrayList arrayList42 = new ArrayList();
                 arrayList42.add(message);
-                getMessagesStorage().f1(0, r47Var.r1 ? 1 : 0, 0L, arrayList42, false);
-                qyb qybVar2 = getMessagesController().g4;
+                getMessagesStorage().j1(0, r47Var.r1 ? 1 : 0, 0L, arrayList42, false);
+                qyb qybVar2 = getMessagesController().h4;
                 z3 = z10;
                 str2 = str6;
                 tL_forumTopic = (TLRPC.TL_forumTopic) qybVar2.e.f(qyb.p(message.id, -message.dialog_id));
@@ -11337,10 +11337,10 @@ public final class r7a extends rf0 implements fn7 {
                         arrayList3.add((r47) d7aVar.x.get(0));
                         ArrayList arrayList4 = new ArrayList();
                         arrayList4.add((TLRPC.Message) d7aVar.z.get(0));
-                        getMessagesStorage().g1(arrayList4, false, true, false, 0, false, i, 0L);
+                        getMessagesStorage().k1(arrayList4, false, true, false, 0, false, i, 0L);
                         getMessagesController().z5(i, j, arrayList3);
                     } else {
-                        getMessagesStorage().g1(d7aVar.z, false, true, false, 0, false, i, 0L);
+                        getMessagesStorage().k1(d7aVar.z, false, true, false, 0, false, i, 0L);
                         getMessagesController().z5(i, j, d7aVar.x);
                     }
                     if (!d7aVar.H) {
@@ -11359,7 +11359,7 @@ public final class r7a extends rf0 implements fn7 {
             arrayList32.add((r47) d7aVar.x.get(0));
             ArrayList arrayList42 = new ArrayList();
             arrayList42.add((TLRPC.Message) d7aVar.z.get(0));
-            getMessagesStorage().g1(arrayList42, false, true, false, 0, false, i, 0L);
+            getMessagesStorage().k1(arrayList42, false, true, false, 0, false, i, 0L);
             getMessagesController().z5(i, j, arrayList32);
             if (!d7aVar.H) {
             }
@@ -12089,7 +12089,7 @@ public final class r7a extends rf0 implements fn7 {
                     boolean z8 = r47Var2.v1;
                     int i9 = messageMedia.document != null ? z8 ? 8 : 2 : z8 ? 6 : 0;
                     str11 = "";
-                    jf7 messagesStorage = r7aVar.getMessagesStorage();
+                    kf7 messagesStorage = r7aVar.getMessagesStorage();
                     tL_messageExtendedMedia5 = tL_messageExtendedMedia;
                     TLRPC.Photo photo11 = messageMedia.photo;
                     StringBuilder sb4 = new StringBuilder("sent_");
@@ -12101,7 +12101,7 @@ public final class r7a extends rf0 implements fn7 {
                     sb4.append(wf3.n(message5.peer_id));
                     sb4.append("_1_");
                     sb4.append(r47.p1(messageMedia9));
-                    messagesStorage.i1(str, photo11, i9, sb4.toString());
+                    messagesStorage.m1(str, photo11, i9, sb4.toString());
                 }
                 if (messageMedia9.photo.sizes.size() == 1 && (messageMedia9.photo.sizes.get(0).location instanceof TLRPC.TL_fileLocationUnavailable)) {
                     messageMedia9.photo.sizes = messageMedia.photo.sizes;
@@ -12301,7 +12301,7 @@ public final class r7a extends rf0 implements fn7 {
                         tL_messageExtendedMedia3 = tL_messageExtendedMedia16;
                     } else {
                         r47 r47Var4 = new r47(r7aVar.currentAccount, message5, false, false);
-                        jf7 messagesStorage2 = r7aVar.getMessagesStorage();
+                        kf7 messagesStorage2 = r7aVar.getMessagesStorage();
                         TLRPC.Document document8 = messageMedia.document;
                         tL_messageExtendedMedia3 = tL_messageExtendedMedia16;
                         StringBuilder sb5 = new StringBuilder("sent_");
@@ -12316,7 +12316,7 @@ public final class r7a extends rf0 implements fn7 {
                         sb5.append(r47Var4.D);
                         sb5.append("_");
                         sb5.append(r47Var4.S1());
-                        messagesStorage2.i1(str, document8, 2, sb5.toString());
+                        messagesStorage2.m1(str, document8, 2, sb5.toString());
                     }
                     if (K4) {
                         message5.attachPath = message11.attachPath;
@@ -12332,7 +12332,7 @@ public final class r7a extends rf0 implements fn7 {
             if (!r47.Q4(message5) && !r47.i4(message5) && !r47Var2.r1 && !r47.c3(message5)) {
                 r47 r47Var5 = new r47(r7aVar.currentAccount, message5, false, false);
                 messageMedia = messageMedia2;
-                r7aVar.getMessagesStorage().i1(str, messageMedia.document, 1, "sent_" + message5.peer_id.channel_id + "_" + message5.id + "_" + wf3.n(message5.peer_id) + "_" + r47Var5.D + "_" + r47Var5.S1());
+                r7aVar.getMessagesStorage().m1(str, messageMedia.document, 1, "sent_" + message5.peer_id.channel_id + "_" + message5.id + "_" + wf3.n(message5.peer_id) + "_" + r47Var5.D + "_" + r47Var5.S1());
             }
             messageMedia = messageMedia2;
         } else {
@@ -12517,7 +12517,7 @@ public final class r7a extends rf0 implements fn7 {
             boolean M3 = r47.M3(messageMedia.document);
             TLRPC.Document document13 = messageMedia.document;
             if (M3) {
-                if (r47.V2(document13) ? getMessagesController().k4.S0.f : true) {
+                if (r47.V2(document13) ? getMessagesController().l4.S0.f : true) {
                     getMediaDataController().c(messageMedia.document, message5.date, true);
                 }
             } else if (r47.t4(document13) || r47.K2(messageMedia.document, true)) {
@@ -12576,7 +12576,7 @@ public final class r7a extends rf0 implements fn7 {
                 if (str4 != null) {
                     String str25 = str4;
                     if (str25.startsWith("http")) {
-                        jf7 messagesStorage3 = getMessagesStorage();
+                        kf7 messagesStorage3 = getMessagesStorage();
                         String file8 = J3.toString();
                         TLRPC.Document document15 = messageMedia9.document;
                         messagesStorage3.getClass();

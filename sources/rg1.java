@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class rg1 extends la {
     public int d = -1;
@@ -130,7 +130,7 @@ public final class rg1 extends la {
                 tg1Var4.f.f();
                 tg1 tg1Var5 = this.f;
                 tg1Var5.f.a(0, ob6.G(tg1Var5.P, "BoostingBoostsCount", new Object[0]), null);
-                if (uc7.s1(this.f.b).k4.W1.f && (i2 = (tg1Var = this.f).O) > 0 && i2 != tg1Var.P) {
+                if (uc7.s1(this.f.b).l4.W1.f && (i2 = (tg1Var = this.f).O) > 0 && i2 != tg1Var.P) {
                     tg1Var.f.a(1, ob6.G(i2, "BoostingGiftsCount", new Object[0]), null);
                 }
                 tg1 tg1Var6 = this.f;
@@ -159,9 +159,9 @@ public final class rg1 extends la {
             case 2:
                 Context context = viewGroup.getContext();
                 int i2 = aob.a7;
-                View rcaVar = new rca(context, aob.w0(null, i2, false), 0);
-                yob.h(i2, null, rcaVar);
-                view = rcaVar;
+                View scaVar = new sca(context, aob.w0(null, i2, false), 0);
+                yob.h(i2, null, scaVar);
+                view = scaVar;
                 break;
             case 3:
                 i56 i56Var = new i56(tg1Var.getContext(), tg1Var.c, null, false, false);

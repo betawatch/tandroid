@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class yh3 extends gk3 {
     public final /* synthetic */ tj3 c0;
@@ -86,7 +86,7 @@ public final class yh3 extends gk3 {
         int i;
         if (of3Var.getMessage() != null) {
             uj3 uj3Var = this.d0;
-            qyb qybVar = uj3Var.getMessagesController().g4;
+            qyb qybVar = uj3Var.getMessagesController().h4;
             long j = -of3Var.getDialogId();
             i = ((e) uj3Var).currentAccount;
             TLRPC.TL_forumTopic f = qybVar.f(j, r47.b2(i, of3Var.getMessage().k, true, false));

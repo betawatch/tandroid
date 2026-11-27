@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class zzit implements InvocationHandler {
     private final Object zza;
@@ -31,14 +31,14 @@ public abstract class zzit implements InvocationHandler {
             return Boolean.valueOf(z);
         }
         boolean zza = zza(obj, method, objArr);
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         if (!zza) {
-            return f9cVar;
+            return g9cVar;
         }
         Object obj3 = this.zza;
         if (obj3 == null) {
             if (ur5.a(method.getReturnType(), Void.TYPE)) {
-                return f9cVar;
+                return g9cVar;
             }
         } else if (ur5.a(zzpu.zza(obj3.getClass()), zzpu.zza(method.getReturnType()))) {
             return obj3;

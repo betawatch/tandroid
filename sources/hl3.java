@@ -27,7 +27,7 @@ import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class hl3 implements Runnable {
     public final /* synthetic */ byte a;
@@ -301,7 +301,7 @@ public final /* synthetic */ class hl3 implements Runnable {
             case 25:
                 TLRPC.TL_help_appConfig tL_help_appConfig = (TLRPC.TL_help_appConfig) obj;
                 try {
-                    SQLiteDatabase sQLiteDatabase = jf7.Y(i2).b;
+                    SQLiteDatabase sQLiteDatabase = kf7.a0(i2).b;
                     if (sQLiteDatabase != null) {
                         sQLiteDatabase.executeFast("DELETE FROM app_config").stepThis().dispose();
                         if (tL_help_appConfig != null) {
@@ -325,7 +325,7 @@ public final /* synthetic */ class hl3 implements Runnable {
             case 26:
                 TLRPC.messages_AvailableEffects messages_availableeffects = (TLRPC.messages_AvailableEffects) obj;
                 try {
-                    SQLiteDatabase sQLiteDatabase2 = jf7.Y(i2).b;
+                    SQLiteDatabase sQLiteDatabase2 = kf7.a0(i2).b;
                     if (sQLiteDatabase2 != null) {
                         sQLiteDatabase2.executeFast("DELETE FROM effects").stepThis().dispose();
                         if (messages_availableeffects != null) {
@@ -350,7 +350,7 @@ public final /* synthetic */ class hl3 implements Runnable {
                 icc iccVar = (icc) obj;
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase3 = jf7.Y(i2).b;
+                        SQLiteDatabase sQLiteDatabase3 = kf7.a0(i2).b;
                         if (sQLiteDatabase3 != null) {
                             sQLiteCursor = sQLiteDatabase3.queryFinalized("SELECT data FROM web_browser_settings", new Object[0]);
                             try {
@@ -398,7 +398,7 @@ public final /* synthetic */ class hl3 implements Runnable {
             case 28:
                 TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = (TL_account.TL_webBrowserSettings) obj;
                 try {
-                    SQLiteDatabase sQLiteDatabase4 = jf7.Y(i2).b;
+                    SQLiteDatabase sQLiteDatabase4 = kf7.a0(i2).b;
                     if (sQLiteDatabase4 != null) {
                         sQLiteDatabase4.executeFast("DELETE FROM web_browser_settings").stepThis().dispose();
                         if (tL_webBrowserSettings2 != null) {

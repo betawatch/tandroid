@@ -3,15 +3,15 @@
 import android.content.Context;
 import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class yw7 extends pa9 {
-    public final /* synthetic */ vab F;
+    public final /* synthetic */ wab F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yw7(vab vabVar, Context context, nx7 nx7Var, Bitmap bitmap, Bitmap bitmap2, tl0 tl0Var) {
+    public yw7(wab wabVar, Context context, nx7 nx7Var, Bitmap bitmap, Bitmap bitmap2, tl0 tl0Var) {
         super(context, nx7Var, bitmap, bitmap2, tl0Var);
-        this.F = vabVar;
+        this.F = wabVar;
     }
 
     @Override // pa9
@@ -21,8 +21,8 @@ public final class yw7 extends pa9 {
         if (i <= 1) {
             indexOf = i;
         }
-        vab vabVar = this.F;
-        vabVar.U0.b(indexOf);
-        vabVar.s(v01Var);
+        wab wabVar = this.F;
+        wabVar.U0.b(indexOf);
+        wabVar.s(v01Var);
     }
 }

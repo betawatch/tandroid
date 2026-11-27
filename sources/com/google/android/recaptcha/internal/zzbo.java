@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class zzbo {
     public up2 zza;
@@ -11,7 +11,7 @@ public final class zzbo {
     private zzbp zzc;
     private final h26 zzd;
     private long zze;
-    private final uj7 zzf;
+    private final vj7 zzf;
     private boolean zzg;
 
     public zzbo(long j) {
@@ -19,7 +19,7 @@ public final class zzbo {
         this.zzb = ure.b(zzbk.zza);
         this.zzc = zzbp.zza;
         this.zzd = ure.b(zzbl.zza);
-        this.zzf = new wj7();
+        this.zzf = new xj7();
     }
 
     public static final /* synthetic */ zzcr zzb(zzbo zzboVar) {

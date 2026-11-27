@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class rc5 extends e implements fn7, s84, View.OnClickListener, i1d {
     public zp4 E;
@@ -130,7 +130,7 @@ public class rc5 extends e implements fn7, s84, View.OnClickListener, i1d {
         if (z || z2 || z4) {
             this.L = 0;
         } else if (z3) {
-            this.L = getMessagesController().k4.E3.f() - 1;
+            this.L = getMessagesController().l4.E3.f() - 1;
         } else {
             this.L = i2 == 0 ? getMessagesController().Q2 : getMessagesController().P2;
         }
@@ -392,7 +392,7 @@ public class rc5 extends e implements fn7, s84, View.OnClickListener, i1d {
         if (this.n != null) {
             int intValue = ((Integer) objArr[0]).intValue();
             int childCount = this.n.getChildCount();
-            int i3 = uc7.r5;
+            int i3 = uc7.s5;
             if ((intValue & 2) == 0 && (intValue & 1) == 0 && (intValue & 4) == 0) {
                 return;
             }

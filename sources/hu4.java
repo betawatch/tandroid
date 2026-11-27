@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class hu4 implements Cloneable {
     public final ju4 a;
@@ -21,7 +21,7 @@ public abstract class hu4 implements Cloneable {
         if (ju4.f(b, true)) {
             return b;
         }
-        throw new e9c();
+        throw new f9c();
     }
 
     public final ju4 b() {

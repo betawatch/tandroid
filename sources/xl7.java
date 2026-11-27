@@ -1,34 +1,33 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_feed;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xl7 implements Runnable {
+public final /* synthetic */ class xl7 implements RequestDelegate {
     public final /* synthetic */ byte a;
     public final /* synthetic */ lm7 b;
-    public final /* synthetic */ jm7 c;
 
-    public /* synthetic */ xl7(lm7 lm7Var, jm7 jm7Var, byte b) {
+    public /* synthetic */ xl7(lm7 lm7Var, byte b) {
         this.a = b;
         this.b = lm7Var;
-        this.c = jm7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        jm7 jm7Var = this.c;
         lm7 lm7Var = this.b;
         switch (b) {
             case 0:
-                lm7Var.z0(jm7Var);
+                hl.c3(new ql7(lm7Var, tLObject, (byte) 2));
                 break;
             default:
-                jm7Var.t = null;
-                TL_feed.TL_feed_readFeed tL_feed_readFeed = new TL_feed.TL_feed_readFeed();
-                tL_feed_readFeed.max_position = jm7Var.s;
-                lm7Var.getConnectionsManager().sendRequest(tL_feed_readFeed, new wl7(lm7Var, (byte) 1));
+                if (tLObject instanceof TLRPC.Updates) {
+                    lm7Var.getMessagesController().Y3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
                 break;
         }
     }

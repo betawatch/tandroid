@@ -7,7 +7,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class zt7 {
     public static final a94[] a = new a94[0];
@@ -103,7 +103,7 @@ public abstract class zt7 {
         qa4 qa4Var = new qa4(context, qa4.p, wn.g, g05.c);
         fo b2 = fo.b(arrayList, true);
         if (b2.a.isEmpty()) {
-            e = Tasks.forResult(new xg7(0, false));
+            e = Tasks.forResult(new yg7(0, false));
         } else {
             wjb b3 = xjb.b();
             b3.c = new a94[]{nid.a};

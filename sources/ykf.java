@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ykf implements wa9, OnSuccessListener {
     public static ykf e;
@@ -285,7 +285,7 @@ public final class ykf implements wa9, OnSuccessListener {
             int[] iArr = (int[]) lpVar.d;
             int i2 = lpVar.b;
             if (iArr[i2] == -2) {
-                ((Object[]) lpVar.c)[i2] = rg7.c;
+                ((Object[]) lpVar.c)[i2] = sg7.c;
             }
         }
         Object l = l(hx5Var);
@@ -315,13 +315,13 @@ public final class ykf implements wa9, OnSuccessListener {
         hx5Var.getClass();
         try {
             return hx5Var.c(this);
-        } catch (ig7 e2) {
+        } catch (jg7 e2) {
             String message = e2.getMessage();
             message.getClass();
             if (ddb.f(0, 2, message, "at path") >= 0) {
                 throw e2;
             }
-            throw new ig7(e2.a, e2.getMessage() + " at path: " + ((lp) ((d2c) this.d).c).m(), e2);
+            throw new jg7(e2.a, e2.getMessage() + " at path: " + ((lp) ((d2c) this.d).c).m(), e2);
         }
     }
 

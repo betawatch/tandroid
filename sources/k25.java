@@ -7,7 +7,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class k25 implements mcc {
     public final /* synthetic */ byte a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class k25 implements mcc {
                 }
             case 1:
                 o68 o68Var = (o68) obj6;
-                rbb rbbVar = (rbb) obj5;
+                sbb sbbVar = (sbb) obj5;
                 Long l = (Long) obj;
                 Runnable runnable = (Runnable) obj2;
                 Boolean bool = (Boolean) obj3;
@@ -124,11 +124,11 @@ public final /* synthetic */ class k25 implements mcc {
                                 lcbVar.y();
                                 o68Var.D3 = false;
                                 if (ii3Var != null || !ii3Var.k(l2.longValue())) {
-                                    rbbVar.X(mbb.c(og3Var));
+                                    sbbVar.X(nbb.c(og3Var));
                                     hl.d3(runnable, 400L);
                                     break;
                                 } else {
-                                    ii3Var.c0.add(new cp7((Object) og3Var, (Object) ii3Var, (Object) l2, (Object) rbbVar, (Object) runnable, (byte) 5));
+                                    ii3Var.c0.add(new cp7((Object) og3Var, (Object) ii3Var, (Object) l2, (Object) sbbVar, (Object) runnable, (byte) 5));
                                     break;
                                 }
                             } else {
@@ -145,7 +145,7 @@ public final /* synthetic */ class k25 implements mcc {
                     o68Var.D3 = false;
                     if (ii3Var != null) {
                     }
-                    rbbVar.X(mbb.c(og3Var));
+                    sbbVar.X(nbb.c(og3Var));
                     hl.d3(runnable, 400L);
                 }
                 break;

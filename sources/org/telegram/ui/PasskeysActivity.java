@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class PasskeysActivity extends org.telegram.ui.ActionBar.e {
     public q9c a;
@@ -73,7 +73,7 @@ public class PasskeysActivity extends org.telegram.ui.ActionBar.e {
     }
 
     public final void Z() {
-        e0(this.currentAccount, this.resourceProvider, getParentActivity(), this.b.size() + 1 <= getMessagesController().k4.F.f());
+        e0(this.currentAccount, this.resourceProvider, getParentActivity(), this.b.size() + 1 <= getMessagesController().l4.F.f());
     }
 
     public final void a0(TL_account.Passkey passkey, String str) {

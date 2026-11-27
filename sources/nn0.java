@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.UserInfoActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class nn0 implements Runnable {
     public final /* synthetic */ byte a;
@@ -202,7 +202,7 @@ public final /* synthetic */ class nn0 implements Runnable {
                 a55Var4.f.sendRequestTyped(tonconnectcreatesession, new ic(objArr4 == true ? 1 : 0), new a45((Object) a55Var4, (Object) x56Var, obj4, (Object) str7, obj3, obj2, (byte) 0));
                 break;
             case 7:
-                ip7 notificationsController = ((jf7) obj7).getNotificationsController();
+                ip7 notificationsController = ((kf7) obj7).getNotificationsController();
                 Collection values = ((HashMap) obj).values();
                 notificationsController.getMessagesController().j4((ArrayList) obj4, true);
                 notificationsController.getMessagesController().c4((ArrayList) obj3, true);

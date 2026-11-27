@@ -8,7 +8,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class kwa implements Runnable {
     public final /* synthetic */ byte a = 0;
@@ -56,24 +56,24 @@ public final /* synthetic */ class kwa implements Runnable {
                 ((jxa) obj3).g((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (p4a) obj);
                 break;
             default:
-                rbb rbbVar = (rbb) obj3;
+                sbb sbbVar = (sbb) obj3;
                 TLObject tLObject3 = (TLObject) obj2;
                 TL_stories.TL_startLive tL_startLive = (TL_stories.TL_startLive) tLObject2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) tLObject;
                 s8b s8bVar = (s8b) obj;
-                x53 x53Var = rbbVar.a;
-                int i4 = rbbVar.c;
+                x53 x53Var = sbbVar.a;
+                int i4 = sbbVar.c;
                 if (!(tLObject3 instanceof TLRPC.Updates)) {
                     if (tL_error != null) {
                         if (!tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
-                            w9b w9bVar = rbbVar.r0;
+                            w9b w9bVar = sbbVar.r0;
                             if (w9bVar != null) {
                                 new d31(w9bVar.c, x53Var).g0(tL_error, true);
                                 s8bVar.run();
                                 break;
                             }
                         } else {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, x53Var, rbbVar.b);
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, x53Var, sbbVar.b);
                             String M0 = ob6.M0(2131748580, null);
                             id idVar = alertDialog$Builder.a;
                             idVar.S = M0;
@@ -85,9 +85,9 @@ public final /* synthetic */ class kwa implements Runnable {
                 } else {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject3;
                     uc7.s1(i4).Y3(updates, false);
-                    wab wabVar = rbbVar.C0;
-                    if (wabVar != null) {
-                        wabVar.destroy(true, null);
+                    xab xabVar = sbbVar.C0;
+                    if (xabVar != null) {
+                        xabVar.destroy(true, null);
                     }
                     ArrayList y0 = uc7.y0(updates, TL_update.TL_updateStoryID.class);
                     int size = y0.size();
@@ -133,7 +133,7 @@ public final /* synthetic */ class kwa implements Runnable {
                                                 f.k(jn7.G2, objArr);
                                             }
                                         }
-                                        hl.d3(new nh3(rbbVar, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
+                                        hl.d3(new nh3(sbbVar, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
                                         break;
                                     }
                                 }
@@ -154,8 +154,8 @@ public final /* synthetic */ class kwa implements Runnable {
         }
     }
 
-    public /* synthetic */ kwa(rbb rbbVar, TLObject tLObject, TL_stories.TL_startLive tL_startLive, boolean z, long j, boolean z2, TLRPC.TL_error tL_error, s8b s8bVar) {
-        this.e = rbbVar;
+    public /* synthetic */ kwa(sbb sbbVar, TLObject tLObject, TL_stories.TL_startLive tL_startLive, boolean z, long j, boolean z2, TLRPC.TL_error tL_error, s8b s8bVar) {
+        this.e = sbbVar;
         this.f = tLObject;
         this.h = tL_startLive;
         this.b = z;

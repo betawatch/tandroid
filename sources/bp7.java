@@ -3,7 +3,7 @@
 import android.util.SparseArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bp7 implements Runnable {
     public final /* synthetic */ byte a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class bp7 implements Runnable {
                         }
                         ArrayList arrayList2 = new ArrayList();
                         arrayList2.add(Integer.valueOf(r47Var.e1()));
-                        ip7Var.getMessagesStorage().D(arrayList2, r47.B0(r47Var.k));
+                        ip7Var.getMessagesStorage().F(arrayList2, r47.B0(r47Var.k));
                         i2--;
                         z = true;
                     }

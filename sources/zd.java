@@ -16,7 +16,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class zd implements Runnable {
     public final /* synthetic */ byte a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class zd implements Runnable {
                 break;
             case 1:
                 jn7.f(i10).k(4, new Object[0]);
-                hl.d3(new ue((bf7) obj, (byte) 1), 250L);
+                hl.d3(new ue((cf7) obj, (byte) 1), 250L);
                 break;
             case 2:
                 uc7.s1(i10).e3(0, ((TLRPC.Chat) obj).id, true);
@@ -112,7 +112,7 @@ public final /* synthetic */ class zd implements Runnable {
                 boolean z3 = false;
                 while (i12 < 4) {
                     if (yac.h(i12).o()) {
-                        w51 w51Var = yac.h(i12).getMessagesController().h4;
+                        w51 w51Var = yac.h(i12).getMessagesController().i4;
                         arrayList.add(w51Var);
                         if (w51Var.e().size() > 0) {
                             z3 = true;

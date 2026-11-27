@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xc7 extends FrameLayout {
     public final vnb a;
@@ -64,23 +64,23 @@ public final class xc7 extends FrameLayout {
         addView(k, tre.d(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
     }
 
-    public final boolean a(p5b p5bVar) {
+    public final boolean a(q5b q5bVar) {
         String str;
         ic0 ic0Var;
         int i = 0;
         int i2 = 0;
         while (true) {
-            ArrayList arrayList = p5bVar.i;
-            str = p5bVar.D;
+            ArrayList arrayList = q5bVar.i;
+            str = q5bVar.D;
             int size = arrayList.size();
             ic0Var = this.b;
             if (i >= size || i2 >= 3) {
                 break;
             }
-            r47 r47Var = (r47) p5bVar.i.get(i);
+            r47 r47Var = (r47) q5bVar.i.get(i);
             long j = r47Var.l.dialogId;
             TextUtils.isEmpty(str);
-            ic0Var.j(i2, p5bVar.c, r47Var.l);
+            ic0Var.j(i2, q5bVar.c, r47Var.l);
             i2++;
             i++;
         }
@@ -89,11 +89,11 @@ public final class xc7 extends FrameLayout {
         boolean isEmpty = TextUtils.isEmpty(str);
         TextView[] textViewArr = this.c;
         if (isEmpty) {
-            textViewArr[0].setText(ob6.H(' ', "HashtagStoriesFound", p5bVar.J));
+            textViewArr[0].setText(ob6.H(' ', "HashtagStoriesFound", q5bVar.J));
         } else {
-            textViewArr[0].setText(c(ob6.K("HashtagStoriesFoundChannel", p5bVar.J, ' ', c00.i("@", str))));
+            textViewArr[0].setText(c(ob6.K("HashtagStoriesFoundChannel", q5bVar.J, ' ', c00.i("@", str))));
         }
-        this.d[0].setText(ob6.a0(null, null, 2131749102, p5bVar.C));
+        this.d[0].setText(ob6.a0(null, null, 2131749102, q5bVar.C));
         return i2 > 0;
     }
 

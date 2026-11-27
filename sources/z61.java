@@ -29,7 +29,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class z61 extends e implements fn7 {
     public static volatile boolean i0 = false;
@@ -581,7 +581,7 @@ public final class z61 extends e implements fn7 {
             }
             this.c = null;
             if (this.a != null) {
-                this.e = jf7.Y(this.currentAccount).Q();
+                this.e = kf7.a0(this.currentAccount).S();
                 if (this.d0 != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) ob6.M0(2131752041, null));
@@ -1174,7 +1174,7 @@ public final class z61 extends e implements fn7 {
         super.onFragmentCreate();
         i0 = false;
         getNotificationCenter().b(this, jn7.O4);
-        this.e = jf7.Y(this.currentAccount).Q();
+        this.e = kf7.a0(this.currentAccount).S();
         Utilities.e.c(new e61(this, (byte) 2));
         this.b0 = System.currentTimeMillis();
         A0(false);
@@ -1296,11 +1296,11 @@ public final class z61 extends e implements fn7 {
         s1.E1.b();
         s1.F1.b();
         if (z) {
-            jf7 messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new be7(messagesStorage, (byte) 15));
+            kf7 messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new hd7(messagesStorage, (byte) 17));
         } else {
-            jf7 messagesStorage2 = getMessagesStorage();
-            messagesStorage2.a.c(new be7(messagesStorage2, (byte) 18));
+            kf7 messagesStorage2 = getMessagesStorage();
+            messagesStorage2.a.c(new hd7(messagesStorage2, (byte) 21));
         }
     }
 

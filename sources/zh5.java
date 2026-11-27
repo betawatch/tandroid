@@ -11,7 +11,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class zh5 extends HorizontalScrollView {
     public static final RectF w = new RectF();
@@ -127,14 +127,14 @@ public final class zh5 extends HorizontalScrollView {
         this.c.e(z2, linearLayout.getChildAt(i).getRight());
     }
 
-    public final void b(ArrayList arrayList, df7 df7Var) {
+    public final void b(ArrayList arrayList, ef7 ef7Var) {
         LinearLayout linearLayout = this.d;
         linearLayout.removeAllViews();
         for (int i = 0; i < arrayList.size(); i++) {
             CharSequence charSequence = (CharSequence) arrayList.get(i);
             tb tbVar = new tb(getContext(), (byte) 16);
             tbVar.setDrawingCacheEnabled(false);
-            tbVar.setOnClickListener(new ae((Object) this, i, (Object) df7Var, (byte) 8));
+            tbVar.setOnClickListener(new ae((Object) this, i, (Object) ef7Var, (byte) 8));
             tbVar.setPadding(hl.L(12.0f), hl.L(5.0f), hl.L(12.0f), hl.L(5.0f));
             LinearLayout.LayoutParams o = tre.o(-2, -2);
             if (i < arrayList.size() - 1) {

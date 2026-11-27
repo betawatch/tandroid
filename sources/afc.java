@@ -3,7 +3,7 @@
 import android.os.SystemClock;
 import android.os.Trace;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class afc {
     public final qx6 a;
@@ -81,7 +81,7 @@ public final class afc {
                     jo4 jo4Var = new jo4();
                     jo4Var.z = ggcVar.a;
                     jo4Var.A = ggcVar.b;
-                    jo4Var.s = dg7.n("video/raw");
+                    jo4Var.s = eg7.n("video/raw");
                     qx6Var.b = new ko4(jo4Var);
                     pd3Var.j.execute(new bv2(qx6Var, ggcVar, (byte) 29));
                 }

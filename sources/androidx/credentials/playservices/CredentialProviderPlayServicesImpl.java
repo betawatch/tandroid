@@ -15,7 +15,7 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import org.json.JSONException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements k23 {
     public static final d33 Companion = new d33();
@@ -37,18 +37,18 @@ public final class CredentialProviderPlayServicesImpl implements k23 {
         return this.googleApiAvailability.c(context, i);
     }
 
-    private static final f9c onClearCredential$lambda$10(CancellationSignal cancellationSignal, Executor executor, h23 h23Var, Boolean bool) {
+    private static final g9c onClearCredential$lambda$10(CancellationSignal cancellationSignal, Executor executor, h23 h23Var, Boolean bool) {
         Companion.getClass();
         if (!d33.a(cancellationSignal)) {
             onClearCredential$lambda$10$lambda$9(executor, h23Var);
         }
-        return f9c.a;
+        return g9c.a;
     }
 
-    private static final f9c onClearCredential$lambda$10$lambda$9(Executor executor, h23 h23Var) {
+    private static final g9c onClearCredential$lambda$10$lambda$9(Executor executor, h23 h23Var) {
         Log.i(TAG, "Cleared restore credential successfully!");
         executor.execute(new k13(h23Var, (byte) 2));
-        return f9c.a;
+        return g9c.a;
     }
 
     private static final void onClearCredential$lambda$14(CancellationSignal cancellationSignal, Executor executor, h23 h23Var, Exception exc) {
@@ -66,9 +66,9 @@ public final class CredentialProviderPlayServicesImpl implements k23 {
         onClearCredential$lambda$14$lambda$13(executor, h23Var, p89Var);
     }
 
-    private static final f9c onClearCredential$lambda$14$lambda$13(Executor executor, h23 h23Var, p89 p89Var) {
+    private static final g9c onClearCredential$lambda$14$lambda$13(Executor executor, h23 h23Var, p89 p89Var) {
         executor.execute(new bv2((Object) h23Var, (Object) p89Var, (byte) 21));
-        return f9c.a;
+        return g9c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -76,18 +76,18 @@ public final class CredentialProviderPlayServicesImpl implements k23 {
         h23Var.B(p89Var.a);
     }
 
-    private static final f9c onClearCredential$lambda$17(CancellationSignal cancellationSignal, Executor executor, h23 h23Var, ti2 ti2Var) {
+    private static final g9c onClearCredential$lambda$17(CancellationSignal cancellationSignal, Executor executor, h23 h23Var, ti2 ti2Var) {
         Companion.getClass();
         if (!d33.a(cancellationSignal)) {
             onClearCredential$lambda$17$lambda$16(executor, h23Var);
         }
-        return f9c.a;
+        return g9c.a;
     }
 
-    private static final f9c onClearCredential$lambda$17$lambda$16(Executor executor, h23 h23Var) {
+    private static final g9c onClearCredential$lambda$17$lambda$16(Executor executor, h23 h23Var) {
         Log.i(TAG, "During clear credential, signed out successfully!");
         executor.execute(new k13(h23Var, (byte) 6));
-        return f9c.a;
+        return g9c.a;
     }
 
     private static final void onClearCredential$lambda$19(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, si2 si2Var, CancellationSignal cancellationSignal, Executor executor, h23 h23Var, Exception exc) {
@@ -96,9 +96,9 @@ public final class CredentialProviderPlayServicesImpl implements k23 {
         credentialProviderPlayServicesImpl.runFallbackClearCredFlow(si2Var, cancellationSignal, executor, h23Var);
     }
 
-    private static final f9c onClearCredential$lambda$7(Executor executor, h23 h23Var) {
+    private static final g9c onClearCredential$lambda$7(Executor executor, h23 h23Var) {
         executor.execute(new k13(h23Var, (byte) 7));
-        return f9c.a;
+        return g9c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -106,9 +106,9 @@ public final class CredentialProviderPlayServicesImpl implements k23 {
         h23Var.B(new ri2("androidx.credentials.TYPE_CLEAR_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION", "clearCredentialStateAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
     }
 
-    private static final f9c onCreateCredential$lambda$5(Executor executor, h23 h23Var) {
+    private static final g9c onCreateCredential$lambda$5(Executor executor, h23 h23Var) {
         executor.execute(new k13(h23Var, (byte) 3));
-        return f9c.a;
+        return g9c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -116,9 +116,9 @@ public final class CredentialProviderPlayServicesImpl implements k23 {
         h23Var.B(new v03("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", (byte) 1));
     }
 
-    private static final f9c onGetCredential$lambda$1(Executor executor, h23 h23Var) {
+    private static final g9c onGetCredential$lambda$1(Executor executor, h23 h23Var) {
         executor.execute(new k13(h23Var, (byte) 5));
-        return f9c.a;
+        return g9c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -126,9 +126,9 @@ public final class CredentialProviderPlayServicesImpl implements k23 {
         h23Var.B(new xu4("this device requires a Google Play Services update for the given feature to be supported", (byte) 1));
     }
 
-    private static final f9c onGetCredential$lambda$3(Executor executor, h23 h23Var) {
+    private static final g9c onGetCredential$lambda$3(Executor executor, h23 h23Var) {
         executor.execute(new k13(h23Var, (byte) 4));
-        return f9c.a;
+        return g9c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -155,7 +155,7 @@ public final class CredentialProviderPlayServicesImpl implements k23 {
         a.e(1, b.a()).addOnSuccessListener(new ht2(new ur4() { // from class: c33
             @Override // ur4
             public final Object invoke(Object obj) {
-                f9c runFallbackClearCredFlow$lambda$22;
+                g9c runFallbackClearCredFlow$lambda$22;
                 runFallbackClearCredFlow$lambda$22 = CredentialProviderPlayServicesImpl.runFallbackClearCredFlow$lambda$22(cancellationSignal, executor, h23Var, (Void) obj);
                 return runFallbackClearCredFlow$lambda$22;
             }
@@ -163,18 +163,18 @@ public final class CredentialProviderPlayServicesImpl implements k23 {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final f9c runFallbackClearCredFlow$lambda$22(CancellationSignal cancellationSignal, Executor executor, h23 h23Var, Void r3) {
+    public static final g9c runFallbackClearCredFlow$lambda$22(CancellationSignal cancellationSignal, Executor executor, h23 h23Var, Void r3) {
         Companion.getClass();
         if (!d33.a(cancellationSignal)) {
             runFallbackClearCredFlow$lambda$22$lambda$21(executor, h23Var);
         }
-        return f9c.a;
+        return g9c.a;
     }
 
-    private static final f9c runFallbackClearCredFlow$lambda$22$lambda$21(Executor executor, h23 h23Var) {
+    private static final g9c runFallbackClearCredFlow$lambda$22$lambda$21(Executor executor, h23 h23Var) {
         Log.i(TAG, "During clear credential, signed out successfully!");
         executor.execute(new k13(h23Var, (byte) 8));
-        return f9c.a;
+        return g9c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -187,10 +187,10 @@ public final class CredentialProviderPlayServicesImpl implements k23 {
         runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(exc, executor, h23Var);
     }
 
-    private static final f9c runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(Exception exc, Executor executor, h23 h23Var) {
+    private static final g9c runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(Exception exc, Executor executor, h23 h23Var) {
         Log.w(TAG, "During clear credential sign out failed with " + exc);
         executor.execute(new bv2((Object) h23Var, (Object) exc, (byte) 20));
-        return f9c.a;
+        return g9c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

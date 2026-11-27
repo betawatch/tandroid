@@ -30,7 +30,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class iv3 extends nx0 {
     public static iv3 R1;
@@ -490,7 +490,7 @@ public final class iv3 extends nx0 {
             if (hycVar.getTextureImageView() != null) {
                 hycVar.getTextureImageView().setVisibility(4);
             }
-            if (e != null && "disabled".equals(uc7.s1(this.a).k4.Q0.f)) {
+            if (e != null && "disabled".equals(uc7.s1(this.a).l4.Q0.f)) {
                 imageView.setVisibility(8);
             }
         }

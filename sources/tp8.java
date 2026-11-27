@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class tp8 implements Consumer {
     public final /* synthetic */ byte a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class tp8 implements Consumer {
                 ArrayList arrayList = new ArrayList((HashSet) obj);
                 int i = 0;
                 while (i < arrayList.size()) {
-                    if (profileActivity.getMessagesController().g4.f(profileActivity.f1, ((Integer) arrayList.get(i)).intValue()) == null) {
+                    if (profileActivity.getMessagesController().h4.f(profileActivity.f1, ((Integer) arrayList.get(i)).intValue()) == null) {
                         arrayList.remove(i);
                         i--;
                     }
@@ -43,7 +43,7 @@ public final /* synthetic */ class tp8 implements Consumer {
                 profileActivity.b4(true);
                 break;
             default:
-                hl.c3(new z3b((q5b) obj2, (List) obj, (byte) 4));
+                hl.c3(new n3b((r5b) obj2, (List) obj, (byte) 5));
                 break;
         }
     }

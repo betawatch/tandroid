@@ -14,7 +14,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class tw implements ag0, dy0 {
     public ValueAnimator E;
@@ -35,7 +35,7 @@ public final class tw implements ag0, dy0 {
     public boolean n;
     public boolean r;
     public boolean s;
-    public x58 w;
+    public y58 w;
     public float x;
     public float y;
 
@@ -215,7 +215,7 @@ public final class tw implements ag0, dy0 {
 
     @Override // ag0
     public final void n(Runnable runnable) {
-        this.w = (x58) runnable;
+        this.w = (y58) runnable;
     }
 
     public final void o() {
@@ -365,9 +365,9 @@ public final class tw implements ag0, dy0 {
         if (this.e == null) {
             hl.B2(this.c);
         }
-        x58 x58Var = this.w;
-        if (x58Var != null) {
-            x58Var.run();
+        y58 y58Var = this.w;
+        if (y58Var != null) {
+            y58Var.run();
             this.w = null;
         }
         o.d1.remove(oVar);

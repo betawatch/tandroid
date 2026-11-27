@@ -5,17 +5,17 @@ import android.util.Log;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class aa9 implements aca {
+public final class aa9 implements bca {
     public static final int g;
     public static final u89 h;
     public final srb a;
     public final ri4 b;
     public final tr c;
     public final ca9 d;
-    public final xba e;
-    public final wj7 f;
+    public final yba e;
+    public final xj7 f;
 
     static {
         int i = bs3.d;
@@ -23,18 +23,18 @@ public final class aa9 implements aca {
         h = new u89("com/google/firebase/sessions//");
     }
 
-    public aa9(srb srbVar, ri4 ri4Var, tr trVar, ca9 ca9Var, xba xbaVar) {
+    public aa9(srb srbVar, ri4 ri4Var, tr trVar, ca9 ca9Var, yba ybaVar) {
         srbVar.getClass();
         ri4Var.getClass();
         trVar.getClass();
         ca9Var.getClass();
-        xbaVar.getClass();
+        ybaVar.getClass();
         this.a = srbVar;
         this.b = ri4Var;
         this.c = trVar;
         this.d = ca9Var;
-        this.e = xbaVar;
-        this.f = new wj7();
+        this.e = ybaVar;
+        this.f = new xj7();
     }
 
     public static String e(String str) {
@@ -64,17 +64,17 @@ public final class aa9 implements aca {
     /* JADX WARN: Removed duplicated region for block: B:46:0x007e A[Catch: all -> 0x0144, TRY_ENTER, TRY_LEAVE, TryCatch #1 {all -> 0x0144, blocks: (B:41:0x006f, B:43:0x0075, B:46:0x007e), top: B:40:0x006f }] */
     /* JADX WARN: Removed duplicated region for block: B:51:0x0053  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0030  */
-    @Override // aca
+    @Override // bca
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object a(zw2 zw2Var) {
         z99 z99Var;
         int i;
-        xba xbaVar;
-        wj7 wj7Var;
-        wj7 wj7Var2;
-        wj7 wj7Var3;
+        yba ybaVar;
+        xj7 xj7Var;
+        xj7 xj7Var2;
+        xj7 xj7Var3;
         String str;
         if (zw2Var instanceof z99) {
             z99Var = (z99) zw2Var;
@@ -83,29 +83,29 @@ public final class aa9 implements aca {
                 z99Var.d = i2 - TLObject.FLAG_31;
                 Object obj = z99Var.b;
                 i = z99Var.d;
-                xbaVar = this.e;
-                f9c f9cVar = f9c.a;
+                ybaVar = this.e;
+                g9c g9cVar = g9c.a;
                 zw2 zw2Var2 = null;
                 vx2 vx2Var = vx2.a;
                 if (i != 0) {
                     ixe.b(obj);
-                    wj7Var = this.f;
-                    if (!wj7Var.c() && !xbaVar.b()) {
-                        return f9cVar;
+                    xj7Var = this.f;
+                    if (!xj7Var.c() && !ybaVar.b()) {
+                        return g9cVar;
                     }
-                    z99Var.a = wj7Var;
+                    z99Var.a = xj7Var;
                     z99Var.d = 1;
                 } else {
                     if (i != 1) {
                         if (i == 2) {
-                            wj7Var3 = z99Var.a;
+                            xj7Var3 = z99Var.a;
                             try {
                                 ixe.b(obj);
                                 str = ((oq5) obj).a;
                                 if (!str.equals("")) {
                                     Log.w("FirebaseSessions", "Error getting Firebase Installation ID. Skipping this Session Event.");
-                                    wj7Var3.f(null);
-                                    return f9cVar;
+                                    xj7Var3.f(null);
+                                    return g9cVar;
                                 }
                                 rx7 rx7Var = new rx7("X-Crashlytics-Installation-ID", str);
                                 rx7 rx7Var2 = new rx7("X-Crashlytics-Device-Model", e(Build.MANUFACTURER + Build.MODEL));
@@ -121,55 +121,55 @@ public final class aa9 implements aca {
                                 ca9 ca9Var = this.d;
                                 ii1 ii1Var = new ii1(this, zw2Var2, (byte) 7);
                                 v73 v73Var = new v73(2, null, (byte) 1);
-                                z99Var.a = wj7Var3;
+                                z99Var.a = xj7Var3;
                                 z99Var.d = 3;
                                 Object c2 = fud.c(ca9Var.b, new ba9(ca9Var, c, ii1Var, v73Var, null), z99Var);
                                 if (c2 != vx2Var) {
-                                    c2 = f9cVar;
+                                    c2 = g9cVar;
                                 }
                                 if (c2 != vx2Var) {
-                                    wj7Var2 = wj7Var3;
-                                    wj7Var2.f(null);
-                                    return f9cVar;
+                                    xj7Var2 = xj7Var3;
+                                    xj7Var2.f(null);
+                                    return g9cVar;
                                 }
                                 return vx2Var;
                             } catch (Throwable th) {
                                 th = th;
-                                wj7Var2 = wj7Var3;
+                                xj7Var2 = xj7Var3;
                             }
                         } else {
                             if (i != 3) {
                                 grb.i("call to 'resume' before 'invoke' with coroutine");
                                 return null;
                             }
-                            wj7Var2 = z99Var.a;
+                            xj7Var2 = z99Var.a;
                             try {
                                 ixe.b(obj);
-                                wj7Var2.f(null);
-                                return f9cVar;
+                                xj7Var2.f(null);
+                                return g9cVar;
                             } catch (Throwable th2) {
                                 th = th2;
                             }
                         }
-                        wj7Var2.f(null);
+                        xj7Var2.f(null);
                         throw th;
                     }
-                    wj7 wj7Var4 = z99Var.a;
+                    xj7 xj7Var4 = z99Var.a;
                     ixe.b(obj);
-                    wj7Var = wj7Var4;
+                    xj7Var = xj7Var4;
                 }
-                if (xbaVar.b()) {
+                if (ybaVar.b()) {
                     Log.d("FirebaseSessions", "Remote settings cache not expired. Using cached values.");
-                    wj7Var.f(null);
-                    return f9cVar;
+                    xj7Var.f(null);
+                    return g9cVar;
                 }
                 sjf sjfVar = oq5.c;
                 ri4 ri4Var = this.b;
-                z99Var.a = wj7Var;
+                z99Var.a = xj7Var;
                 z99Var.d = 2;
                 Object B = sjfVar.B(ri4Var, z99Var);
                 if (B != vx2Var) {
-                    wj7Var3 = wj7Var;
+                    xj7Var3 = xj7Var;
                     obj = B;
                     str = ((oq5) obj).a;
                     if (!str.equals("")) {
@@ -181,22 +181,22 @@ public final class aa9 implements aca {
         z99Var = new z99(this, (ax2) zw2Var);
         Object obj2 = z99Var.b;
         i = z99Var.d;
-        xbaVar = this.e;
-        f9c f9cVar2 = f9c.a;
+        ybaVar = this.e;
+        g9c g9cVar2 = g9c.a;
         zw2 zw2Var22 = null;
         vx2 vx2Var2 = vx2.a;
         if (i != 0) {
         }
-        if (xbaVar.b()) {
+        if (ybaVar.b()) {
         }
     }
 
-    @Override // aca
+    @Override // bca
     public final Boolean b() {
         return this.e.a().a;
     }
 
-    @Override // aca
+    @Override // bca
     public final bs3 c() {
         Integer num = this.e.a().c;
         if (num == null) {
@@ -206,7 +206,7 @@ public final class aa9 implements aca {
         return new bs3(mje.c(num.intValue(), fs3.d));
     }
 
-    @Override // aca
+    @Override // bca
     public final Double d() {
         return this.e.a().b;
     }

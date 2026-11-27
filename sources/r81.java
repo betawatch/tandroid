@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.ContactsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class r81 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class r81 implements View.OnClickListener {
         Object obj = this.b;
         switch (b) {
             case 0:
-                ((ze7) obj).run();
+                ((bf7) obj).run();
                 break;
             case 1:
                 e29 e29Var = (e29) ((jo0) obj).e;
@@ -97,7 +97,7 @@ public final /* synthetic */ class r81 implements View.OnClickListener {
                 b1Var.show();
                 break;
             case 5:
-                ((hbb) obj).B();
+                ((ibb) obj).B();
                 break;
             case 6:
                 ((o97) obj).run();

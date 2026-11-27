@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hv4 implements Runnable {
     public final /* synthetic */ byte a;
@@ -64,10 +64,10 @@ public final /* synthetic */ class hv4 implements Runnable {
                 if (tLObject != null) {
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                     tL_forumTopic.totalMessagesCount = messages_messages.count;
-                    qybVar.getMessagesStorage().c2(j3, tL_forumTopic, 16);
+                    qybVar.getMessagesStorage().h2(j3, tL_forumTopic, 16);
                     if (messages_messages.count == 0 && qybVar.getMessagesController().B2(j3)) {
-                        jf7 messagesStorage = qybVar.getMessagesStorage();
-                        messagesStorage.a.c(new xd7(messagesStorage, j3, j4, (byte) 2));
+                        kf7 messagesStorage = qybVar.getMessagesStorage();
+                        messagesStorage.a.c(new yd7(messagesStorage, j3, j4, (byte) 2));
                         qybVar.s(-j3, j4);
                     }
                     jn7.f(qybVar.currentAccount).k(jn7.t5, Long.valueOf(-j3), Boolean.TRUE);
@@ -223,16 +223,16 @@ public final /* synthetic */ class hv4 implements Runnable {
                 ((ls6) this.d).getNotificationCenter().k(74, Long.valueOf(this.b), (ArrayList) this.e, (ArrayList) this.f, Long.valueOf(this.c));
                 return;
             case 7:
-                jf7 jf7Var = (jf7) this.d;
+                kf7 kf7Var = (kf7) this.d;
                 long j13 = this.b;
                 long j14 = this.c;
                 AtomicReference atomicReference = (AtomicReference) this.e;
                 CountDownLatch countDownLatch2 = (CountDownLatch) this.f;
-                jf7Var.getClass();
+                kf7Var.getClass();
                 SQLiteCursor sQLiteCursor = null;
                 try {
                     try {
-                        sQLiteCursor = jf7Var.b.queryFinalized("SELECT data FROM messages_v2 WHERE uid = " + j13 + " AND mid = " + j14 + " LIMIT 1", new Object[0]);
+                        sQLiteCursor = kf7Var.b.queryFinalized("SELECT data FROM messages_v2 WHERE uid = " + j13 + " AND mid = " + j14 + " LIMIT 1", new Object[0]);
                         while (sQLiteCursor.next()) {
                             NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(0);
                             if (byteBufferValue != null) {
@@ -243,7 +243,7 @@ public final /* synthetic */ class hv4 implements Runnable {
                         }
                         sQLiteCursor.dispose();
                     } catch (Exception e) {
-                        jf7Var.n(e, true);
+                        kf7Var.p(e, true);
                         if (sQLiteCursor != null) {
                             sQLiteCursor.dispose();
                         }
@@ -258,7 +258,7 @@ public final /* synthetic */ class hv4 implements Runnable {
                     throw th2;
                 }
             case 8:
-                ((jf7) this.d).P1(this.b, this.c, (ArrayList) this.e, (ArrayList) this.f);
+                ((kf7) this.d).U1(this.b, this.c, (ArrayList) this.e, (ArrayList) this.f);
                 return;
             default:
                 qyb qybVar2 = (qyb) this.d;

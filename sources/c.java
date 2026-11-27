@@ -28,7 +28,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class c implements icc {
     public final /* synthetic */ byte a;
@@ -198,7 +198,7 @@ public final /* synthetic */ class c implements icc {
                 arrayList.add(b8c.b(ob6.M0(2131748160, null)));
                 arrayList.add(b8c.k(ij1Var.w0));
                 arrayList.add(b8c.B(-5, ij1Var.t0));
-                int f = uc7.s1(ij1Var.o0).k4.b2.f();
+                int f = uc7.s1(ij1Var.o0).l4.b2.f();
                 String M02 = ob6.M0(2131748119, null);
                 boolean z = false;
                 int i2 = ij1Var.r0 < f ? f : 0;
@@ -225,7 +225,7 @@ public final /* synthetic */ class c implements icc {
                 arrayList.add(b8c.B(-6, ij1Var.v0));
             }
         }
-        if (xc2.V(uc7.s1(ij1Var.o0).M0(Long.valueOf(-ij1Var.p0))) && uc7.s1(ij1Var.o0).k4.K2.f) {
+        if (xc2.V(uc7.s1(ij1Var.o0).M0(Long.valueOf(-ij1Var.p0))) && uc7.s1(ij1Var.o0).l4.K2.f) {
             arrayList.add(yb.i(4, aob.v0(aob.lk, ij1Var.n0), g92.a0(ob6.M0(2131752449, null)), ob6.M0(2131752450, null)));
             arrayList.add(b8c.B(-7, null));
         }

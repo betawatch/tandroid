@@ -2,7 +2,7 @@
 
 import android.view.View;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class mm2 extends nic {
     public final /* synthetic */ byte a;
@@ -48,7 +48,7 @@ public final class mm2 extends nic {
                 a93Var.e.add(x83Var);
                 return x83Var;
             case 3:
-                return (View) ((sk7) obj).m1.get(i);
+                return (View) ((tk7) obj).m1.get(i);
             default:
                 h48 h48Var = (h48) obj;
                 if (i == 1) {
@@ -73,7 +73,7 @@ public final class mm2 extends nic {
             case 2:
                 return 4;
             case 3:
-                return ((sk7) obj).m1.size();
+                return ((tk7) obj).m1.size();
             default:
                 return 2;
         }

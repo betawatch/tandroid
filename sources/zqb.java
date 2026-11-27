@@ -26,7 +26,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class zqb extends FrameLayout implements fn7, snb {
     public ValueAnimator E;
@@ -246,7 +246,7 @@ public class zqb extends FrameLayout implements fn7, snb {
         int i2;
         int i3;
         int i4;
-        hh7 hh7Var;
+        ih7 ih7Var;
         ez3 ez3Var2;
         g82 g82Var;
         g82 g82Var2;
@@ -305,9 +305,9 @@ public class zqb extends FrameLayout implements fn7, snb {
                         g82 g82Var3 = new g82(wallPaper, false, true);
                         this.O = g82Var3;
                         g82Var3.b = this;
-                        hh7 hh7Var2 = g82Var3.f;
-                        if (hh7Var2 != null) {
-                            hh7Var2.p(this);
+                        ih7 ih7Var2 = g82Var3.f;
+                        if (ih7Var2 != null) {
+                            ih7Var2.p(this);
                         }
                         if (this.P) {
                             this.O.f(this);
@@ -383,15 +383,15 @@ public class zqb extends FrameLayout implements fn7, snb {
                                         i4 = 0;
                                     }
                                     if (i2 != 0) {
-                                        hh7Var = new hh7(i, i2, i3, i4, true, false);
-                                        this.M = hh7Var.f();
+                                        ih7Var = new ih7(i, i2, i3, i4, true, false);
+                                        this.M = ih7Var.f();
                                     } else {
-                                        hh7 hh7Var3 = new hh7(i, i, i, i, true, false);
+                                        ih7 ih7Var3 = new ih7(i, i, i, i, true, false);
                                         this.M = -16777216;
-                                        hh7Var = hh7Var3;
+                                        ih7Var = ih7Var3;
                                     }
                                     ne2Var4 = this.H;
-                                    ne2Var4.b = hh7Var;
+                                    ne2Var4.b = ih7Var;
                                 }
                                 yqbVar.d = ne2Var4.b;
                                 invalidate();
@@ -409,22 +409,22 @@ public class zqb extends FrameLayout implements fn7, snb {
                             int i16 = dz3Var3.n;
                             if (dz3Var3.a.i(false) != null) {
                                 if (i14 != 0) {
-                                    hh7 hh7Var4 = new hh7(i13, i14, i15, i16, true, false);
-                                    this.M = hh7Var4.f();
-                                    drawable = hh7Var4;
+                                    ih7 ih7Var4 = new ih7(i13, i14, i15, i16, true, false);
+                                    this.M = ih7Var4.f();
+                                    drawable = ih7Var4;
                                 } else {
-                                    Drawable hh7Var5 = new hh7(i13, i13, i13, i13, true, false);
+                                    Drawable ih7Var5 = new ih7(i13, i13, i13, i13, true, false);
                                     this.M = -16777216;
-                                    drawable = hh7Var5;
+                                    drawable = ih7Var5;
                                 }
                             } else if (i13 != 0) {
-                                drawable = i14 != 0 ? new hh7(i13, i14, i15, i16, true, false) : new ColorDrawable(i13);
+                                drawable = i14 != 0 ? new ih7(i13, i14, i15, i16, true, false) : new ColorDrawable(i13);
                             } else {
                                 znb znbVar = dz3Var3.a;
                                 if (znbVar == null || (znbVar.Q <= 0 && znbVar.c == null)) {
                                     ez3 ez3Var4 = this.H.a;
                                     if (ez3Var4 == null || !ez3Var4.l()) {
-                                        drawable = new hh7(-2368069, -9722489, -2762611, -7817084, true, false);
+                                        drawable = new ih7(-2368069, -9722489, -2762611, -7817084, true, false);
                                     }
                                     drawable = null;
                                 } else {
@@ -470,9 +470,9 @@ public class zqb extends FrameLayout implements fn7, snb {
                         } else if (ynbVar != null && ynbVar.r == null) {
                             int i18 = (int) (ynbVar.p * 100.0f);
                             Drawable drawable2 = ne2Var.b;
-                            if (drawable2 instanceof hh7) {
-                                hh7 hh7Var6 = (hh7) drawable2;
-                                hh7Var6.r(i18, hh7Var6.u);
+                            if (drawable2 instanceof ih7) {
+                                ih7 ih7Var6 = (ih7) drawable2;
+                                ih7Var6.r(i18, ih7Var6.u);
                             }
                             af2.s.c(new a39((Object) this, (Object) ne2Var, i18, (byte) 25));
                         }

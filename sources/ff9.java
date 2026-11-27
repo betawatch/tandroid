@@ -15,14 +15,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class ff9 extends ze9 implements snb {
     public final ArrayList E;
     public df9 F;
     public int G;
     public int H;
-    public final ki7 I;
+    public final li7 I;
     public final int n;
     public final vnb r;
     public final HorizontalScrollView s;
@@ -33,7 +33,7 @@ public final class ff9 extends ze9 implements snb {
     public ff9(int i, vnb vnbVar, Context context) {
         super(context);
         this.E = new ArrayList();
-        this.I = new ki7(this, (byte) 17);
+        this.I = new li7(this, (byte) 17);
         this.n = i;
         this.r = vnbVar;
         f(hl.L(16.0f), hl.L(4.0f), hl.L(16.0f), hl.L(4.0f));
@@ -362,9 +362,9 @@ public final class ff9 extends ze9 implements snb {
         aob.F1(background, aob.v(v02, aob.p1(0.1f, v0)), false);
         aob.F1(background, aob.p1(0.16f, v0), true);
         textView.invalidate();
-        ki7 ki7Var = this.I;
-        removeCallbacks(ki7Var);
-        postDelayed(ki7Var, 100L);
+        li7 li7Var = this.I;
+        removeCallbacks(li7Var);
+        postDelayed(li7Var, 100L);
         try {
             if (getBackground() instanceof vg9) {
                 ((vg9) getBackground()).a(aob.v0(i2, vnbVar));

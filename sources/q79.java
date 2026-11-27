@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class q79 {
     public rx6 a;
@@ -35,9 +35,9 @@ public abstract class q79 {
 
     public q79() {
         xh4 xh4Var = new xh4((Object) this, (byte) 28);
-        i09 i09Var = new i09((Object) this, (byte) 2);
+        j09 j09Var = new j09((Object) this, (byte) 2);
         this.c = new ym4(xh4Var);
-        this.d = new ym4(i09Var);
+        this.d = new ym4(j09Var);
         this.f = false;
         this.g = true;
         this.h = true;
@@ -302,7 +302,7 @@ public abstract class q79 {
             rx6 rx6Var = this.a;
             if (parent == recyclerView) {
                 zg2 zg2Var = (zg2) rx6Var.c;
-                int indexOfChild = ((RecyclerView) ((i09) rx6Var.b).b).indexOfChild(view);
+                int indexOfChild = ((RecyclerView) ((j09) rx6Var.b).b).indexOfChild(view);
                 int s = (indexOfChild == -1 || zg2Var.w(indexOfChild)) ? -1 : indexOfChild - zg2Var.s(indexOfChild);
                 if (i == -1) {
                     i = this.a.K();
@@ -446,13 +446,13 @@ public abstract class q79 {
         if (q(i) != null) {
             rx6 rx6Var = this.a;
             int P = rx6Var.P(i);
-            i09 i09Var = (i09) rx6Var.b;
-            View childAt = ((RecyclerView) i09Var.b).getChildAt(P);
+            j09 j09Var = (j09) rx6Var.b;
+            View childAt = ((RecyclerView) j09Var.b).getChildAt(P);
             if (childAt != null) {
                 if (((zg2) rx6Var.c).y(P)) {
                     rx6Var.A0(childAt);
                 }
-                i09Var.N(P);
+                j09Var.N(P);
             }
         }
     }

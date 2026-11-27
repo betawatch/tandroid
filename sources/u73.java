@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class u73 extends yfb implements is4 {
     public final /* synthetic */ byte a;
@@ -29,12 +29,12 @@ public final class u73 extends yfb implements is4 {
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
         byte b = this.a;
-        f9c f9cVar = f9c.a;
+        g9c g9cVar = g9c.a;
         switch (b) {
             case 0:
-                return ((u73) create((nm4) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((u73) create((nm4) obj, (zw2) obj2)).invokeSuspend(g9cVar);
             default:
-                return ((u73) create((ux2) obj, (zw2) obj2)).invokeSuspend(f9cVar);
+                return ((u73) create((ux2) obj, (zw2) obj2)).invokeSuspend(g9cVar);
         }
     }
 
@@ -59,7 +59,7 @@ public final class u73 extends yfb implements is4 {
                     }
                     ixe.b(obj);
                 }
-                return f9c.a;
+                return g9c.a;
             default:
                 boolean z2 = this.b;
                 if (!z2) {
@@ -77,8 +77,8 @@ public final class u73 extends yfb implements is4 {
                     }
                     ixe.b(obj);
                 }
-                rj7 rj7Var = (rj7) obj;
-                return rj7Var != null ? rj7Var.a() : y24.a;
+                sj7 sj7Var = (sj7) obj;
+                return sj7Var != null ? sj7Var.a() : y24.a;
         }
     }
 }

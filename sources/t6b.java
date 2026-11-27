@@ -25,7 +25,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class t6b {
     public static o15 b;
@@ -1050,10 +1050,10 @@ public abstract class t6b {
                 pv0Var.b = false;
                 pv0Var.a = n2;
                 pv0Var.c = c6bVar;
-                pv0Var.d = new z3b(pv0Var, runnable, (byte) 16);
+                pv0Var.d = new n3b(pv0Var, runnable, (byte) 17);
                 Runnable[] runnableArr = {r2};
-                z3b z3bVar = new z3b(runnableArr, pv0Var, (byte) 17);
-                hl.d3(z3bVar, 3000L);
+                n3b n3bVar = new n3b(runnableArr, pv0Var, (byte) 18);
+                hl.d3(n3bVar, 3000L);
                 p6b p6bVar = new p6b(runnableArr, pv0Var);
                 pv0Var.e = p6bVar;
                 p6bVar.A1 = true;
@@ -1071,7 +1071,7 @@ public abstract class t6b {
                     photo2 = null;
                 }
                 if (photo2 != null || (arrayList2 = photo2.sizes) == null) {
-                    ((z3b) pv0Var.d).run();
+                    ((n3b) pv0Var.d).run();
                     return null;
                 }
                 ((p6b) pv0Var.e).Y(null, null, jn5.i(xb4.w(arrayList2, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false), photo2), s2, null, null, null, 0L, null, storyItem2, 0);
@@ -1095,10 +1095,10 @@ public abstract class t6b {
         pv0Var.b = false;
         pv0Var.a = n22;
         pv0Var.c = c6bVar;
-        pv0Var.d = new z3b(pv0Var, runnable, (byte) 16);
-        Runnable[] runnableArr2 = {z3bVar};
-        z3b z3bVar2 = new z3b(runnableArr2, pv0Var, (byte) 17);
-        hl.d3(z3bVar2, 3000L);
+        pv0Var.d = new n3b(pv0Var, runnable, (byte) 17);
+        Runnable[] runnableArr2 = {n3bVar};
+        n3b n3bVar2 = new n3b(runnableArr2, pv0Var, (byte) 18);
+        hl.d3(n3bVar2, 3000L);
         p6b p6bVar2 = new p6b(runnableArr2, pv0Var);
         pv0Var.e = p6bVar2;
         p6bVar2.A1 = true;
@@ -1109,7 +1109,7 @@ public abstract class t6b {
         }
         if (photo2 != null) {
         }
-        ((z3b) pv0Var.d).run();
+        ((n3b) pv0Var.d).run();
         return null;
     }
 

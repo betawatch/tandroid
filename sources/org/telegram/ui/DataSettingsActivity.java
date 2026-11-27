@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.DataSettingsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class DataSettingsActivity extends org.telegram.ui.ActionBar.e {
     public int E;
@@ -191,7 +191,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.e {
         kq3 kq3Var;
         kq3 kq3Var2;
         String str;
-        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
+        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).Y3.edit();
         for (int i = 0; i < 3; i++) {
             int i2 = this.currentAccount;
             if (i == 0) {
@@ -306,7 +306,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.e {
             } else {
                 kq3Var.c(kq3Var2);
             }
-            SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
+            SharedPreferences.Editor edit = uc7.s1(this.currentAccount).Y3.edit();
             edit.putString(str, kq3Var.toString());
             edit.putInt(str2, 3);
             edit.commit();

@@ -17,7 +17,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ia7 implements icc {
     public final /* synthetic */ byte a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class ia7 implements icc {
                 if (messages_chats != null) {
                     uc7Var.c4(messages_chats.chats, false);
                     arrayList = messages_chats.chats;
-                    uc7Var.F4 = arrayList;
+                    uc7Var.G4 = arrayList;
                 } else {
                     arrayList = null;
                 }
@@ -179,7 +179,7 @@ public final /* synthetic */ class ia7 implements icc {
             case 9:
                 ks5 ks5Var = (ks5) obj3;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                hl.r((ida) obj4);
+                hl.r((kba) obj4);
                 if (wallettransaction != null) {
                     long j2 = wallettransaction.fee;
                     if (j2 > 0) {
@@ -473,7 +473,7 @@ public final /* synthetic */ class ia7 implements icc {
                             }
                         }
                     }
-                    jf7.Y(i12).j1(arrayList10, arrayList11, true, true);
+                    kf7.a0(i12).n1(arrayList10, arrayList11, true, true);
                     jn7.f(i12).k(2, 0);
                     break;
                 }
@@ -483,13 +483,13 @@ public final /* synthetic */ class ia7 implements icc {
                 break;
             case 19:
                 muc mucVar = (muc) obj4;
-                v58 v58Var = (v58) obj3;
+                w58 w58Var = (w58) obj3;
                 TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
                 if (((String) obj2) != null) {
                     mucVar.a0.setLoading(false);
                     break;
                 } else {
-                    v58Var.a(walletuseraddress != null ? walletuseraddress.address : null);
+                    w58Var.a(walletuseraddress != null ? walletuseraddress.address : null);
                     break;
                 }
             default:

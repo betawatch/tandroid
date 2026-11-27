@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class yr0 implements View.OnClickListener {
     public final /* synthetic */ byte a = 0;
@@ -110,12 +110,12 @@ public final /* synthetic */ class yr0 implements View.OnClickListener {
                                 }
                                 Object obj4 = arrayList2.get(i6);
                                 i6++;
-                                if7 if7Var = (if7) obj4;
-                                long j2 = if7Var.a;
-                                long j3 = if7Var.b;
+                                jf7 jf7Var = (jf7) obj4;
+                                long j2 = jf7Var.a;
+                                long j3 = jf7Var.b;
                                 if (!wf3.B(j2)) {
                                     int i7 = i3;
-                                    if (j3 != 0 && (f = uc7.s1(i7).g4.f(-j2, j3)) != null && (message = f.topicStartMessage) != null) {
+                                    if (j3 != 0 && (f = uc7.s1(i7).h4.f(-j2, j3)) != null && (message = f.topicStartMessage) != null) {
                                         r47Var = new r47(i7, message, false, false);
                                         r47Var.p = true;
                                     }

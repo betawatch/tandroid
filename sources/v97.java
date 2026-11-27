@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v97 implements RequestDelegate {
     public final /* synthetic */ byte a = 3;
@@ -362,7 +362,7 @@ public final /* synthetic */ class v97 implements RequestDelegate {
                                     TLRPC.Message message = r47Var2.k;
                                     message.translatedToLanguage = str6;
                                     message.translatedText = null;
-                                    a5cVar2.getMessagesStorage().U1(v11Var2.a, r47Var2.k);
+                                    a5cVar2.getMessagesStorage().Z1(v11Var2.a, r47Var2.k);
                                     a5cVar2.M.remove(v11Var2);
                                     hl.d3(na8Var2, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                     break;
@@ -370,7 +370,7 @@ public final /* synthetic */ class v97 implements RequestDelegate {
                                     TLRPC.Message message2 = r47Var2.k;
                                     message2.translatedToLanguage = str6;
                                     message2.translatedText = null;
-                                    a5cVar2.getMessagesStorage().U1(v11Var2.a, r47Var2.k);
+                                    a5cVar2.getMessagesStorage().Z1(v11Var2.a, r47Var2.k);
                                     a5cVar2.M.remove(v11Var2);
                                     hl.d3(na8Var2, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                     break;
@@ -401,7 +401,7 @@ public final /* synthetic */ class v97 implements RequestDelegate {
                                         TLRPC.Message message = r47Var2.k;
                                         message.translatedToLanguage = str6;
                                         message.translatedText = null;
-                                        a5cVar2.getMessagesStorage().U1(v11Var2.a, r47Var2.k);
+                                        a5cVar2.getMessagesStorage().Z1(v11Var2.a, r47Var2.k);
                                         a5cVar2.M.remove(v11Var2);
                                         hl.d3(na8Var2, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                         break;
@@ -409,7 +409,7 @@ public final /* synthetic */ class v97 implements RequestDelegate {
                                         TLRPC.Message message2 = r47Var2.k;
                                         message2.translatedToLanguage = str6;
                                         message2.translatedText = null;
-                                        a5cVar2.getMessagesStorage().U1(v11Var2.a, r47Var2.k);
+                                        a5cVar2.getMessagesStorage().Z1(v11Var2.a, r47Var2.k);
                                         a5cVar2.M.remove(v11Var2);
                                         hl.d3(na8Var2, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                         break;

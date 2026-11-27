@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class fe5 implements av3 {
     public final oz9 a;
@@ -17,9 +17,9 @@ public final class fe5 implements av3 {
     public boolean l;
     public boolean n;
     public final boolean[] h = new boolean[3];
-    public final xj7 d = new xj7(7);
-    public final xj7 e = new xj7(8);
-    public final xj7 f = new xj7(6);
+    public final yj7 d = new yj7(7);
+    public final yj7 e = new yj7(8);
+    public final yj7 f = new yj7(6);
     public long m = -9223372036854775807L;
     public final ey7 o = new ey7();
 
@@ -68,7 +68,7 @@ public final class fe5 implements av3 {
     public final void a(int i, int i2, long j, long j2) {
         int i3;
         boolean z;
-        xj7 xj7Var;
+        yj7 yj7Var;
         ee5 ee5Var;
         boolean z2;
         long j3;
@@ -80,40 +80,40 @@ public final class fe5 implements av3 {
         int i5;
         lo loVar = this.a.d;
         if (!this.l || this.k.c) {
-            xj7 xj7Var2 = this.d;
-            xj7Var2.b(i2);
-            xj7 xj7Var3 = this.e;
-            xj7Var3.b(i2);
+            yj7 yj7Var2 = this.d;
+            yj7Var2.b(i2);
+            yj7 yj7Var3 = this.e;
+            yj7Var3.b(i2);
             boolean z7 = this.l;
-            boolean z8 = xj7Var2.c;
+            boolean z8 = yj7Var2.c;
             if (z7) {
                 i3 = 2;
                 z = false;
                 if (z8) {
-                    fk7 k = rfd.k(3, xj7Var2.e, xj7Var2.d);
+                    gk7 k = rfd.k(3, yj7Var2.e, yj7Var2.d);
                     loVar.l(k.s);
                     this.k.d.append(k.d, k);
-                    xj7Var2.c();
-                } else if (xj7Var3.c) {
-                    vh6 vh6Var = new vh6(xj7Var3.d, 4, xj7Var3.e);
+                    yj7Var2.c();
+                } else if (yj7Var3.c) {
+                    vh6 vh6Var = new vh6(yj7Var3.d, 4, yj7Var3.e);
                     int f = vh6Var.f();
                     int f2 = vh6Var.f();
                     vh6Var.j();
-                    this.k.e.append(f, new ek7(f, f2, vh6Var.d()));
-                    xj7Var3.c();
+                    this.k.e.append(f, new fk7(f, f2, vh6Var.d()));
+                    yj7Var3.c();
                 }
-            } else if (z8 && xj7Var3.c) {
+            } else if (z8 && yj7Var3.c) {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(Arrays.copyOf(xj7Var2.d, xj7Var2.e));
-                arrayList.add(Arrays.copyOf(xj7Var3.d, xj7Var3.e));
-                fk7 k2 = rfd.k(3, xj7Var2.e, xj7Var2.d);
+                arrayList.add(Arrays.copyOf(yj7Var2.d, yj7Var2.e));
+                arrayList.add(Arrays.copyOf(yj7Var3.d, yj7Var3.e));
+                gk7 k2 = rfd.k(3, yj7Var2.e, yj7Var2.d);
                 int i6 = k2.s;
-                vh6 vh6Var2 = new vh6(xj7Var3.d, 4, xj7Var3.e);
+                vh6 vh6Var2 = new vh6(yj7Var3.d, 4, yj7Var3.e);
                 int f3 = vh6Var2.f();
                 int f4 = vh6Var2.f();
                 vh6Var2.j();
                 i3 = 2;
-                ek7 ek7Var = new ek7(f3, f4, vh6Var2.d());
+                fk7 fk7Var = new fk7(f3, f4, vh6Var2.d());
                 int i7 = k2.a;
                 int i8 = k2.b;
                 z = false;
@@ -123,8 +123,8 @@ public final class fe5 implements av3 {
                 x1c x1cVar = this.j;
                 jo4 jo4Var = new jo4();
                 jo4Var.a = this.i;
-                jo4Var.r = dg7.n("video/mp2t");
-                jo4Var.s = dg7.n("video/avc");
+                jo4Var.r = eg7.n("video/mp2t");
+                jo4Var.s = eg7.n("video/avc");
                 jo4Var.k = format;
                 jo4Var.z = k2.e;
                 jo4Var.A = k2.f;
@@ -136,14 +136,14 @@ public final class fe5 implements av3 {
                 this.l = true;
                 loVar.l(i6);
                 this.k.d.append(k2.d, k2);
-                this.k.e.append(f3, ek7Var);
-                xj7Var2.c();
-                xj7Var3.c();
+                this.k.e.append(f3, fk7Var);
+                yj7Var2.c();
+                yj7Var3.c();
             }
-            xj7Var = this.f;
-            if (xj7Var.b(i2)) {
-                int m = rfd.m(xj7Var.e, xj7Var.d);
-                byte[] bArr2 = xj7Var.d;
+            yj7Var = this.f;
+            if (yj7Var.b(i2)) {
+                int m = rfd.m(yj7Var.e, yj7Var.d);
+                byte[] bArr2 = yj7Var.d;
                 ey7 ey7Var = this.o;
                 ey7Var.L(m, bArr2);
                 ey7Var.N(4);
@@ -157,11 +157,11 @@ public final class fe5 implements av3 {
                     de5 de5Var2 = ee5Var.m;
                     if (de5Var.a) {
                         if (de5Var2.a) {
-                            fk7 fk7Var = de5Var.c;
-                            fk7Var.getClass();
-                            fk7 fk7Var2 = de5Var2.c;
-                            fk7Var2.getClass();
-                            int i10 = fk7Var2.m;
+                            gk7 gk7Var = de5Var.c;
+                            gk7Var.getClass();
+                            gk7 gk7Var2 = de5Var2.c;
+                            gk7Var2.getClass();
+                            int i10 = gk7Var2.m;
                             if (de5Var.f == de5Var2.f) {
                                 if (de5Var.g == de5Var2.g) {
                                     if (de5Var.h == de5Var2.h) {
@@ -175,7 +175,7 @@ public final class fe5 implements av3 {
                                             if (i11 != 0) {
                                             }
                                         }
-                                        int i13 = fk7Var.m;
+                                        int i13 = gk7Var.m;
                                         if (i13 == 0) {
                                             if (i10 == 0) {
                                                 if (de5Var.m == de5Var2.m) {
@@ -256,8 +256,8 @@ public final class fe5 implements av3 {
         }
         i3 = 2;
         z = false;
-        xj7Var = this.f;
-        if (xj7Var.b(i2)) {
+        yj7Var = this.f;
+        if (yj7Var.b(i2)) {
         }
         ee5Var = this.k;
         z2 = this.l;
@@ -393,14 +393,14 @@ public final class fe5 implements av3 {
                                 ee5Var.k = false;
                                 return;
                             }
-                            ek7 ek7Var = (ek7) sparseArray.get(f2);
+                            fk7 fk7Var = (fk7) sparseArray.get(f2);
                             SparseArray sparseArray2 = ee5Var.d;
-                            int i11 = ek7Var.a;
-                            boolean z5 = ek7Var.b;
-                            fk7 fk7Var = (fk7) sparseArray2.get(i11);
-                            boolean z6 = fk7Var.j;
-                            int i12 = fk7Var.n;
-                            int i13 = fk7Var.l;
+                            int i11 = fk7Var.a;
+                            boolean z5 = fk7Var.b;
+                            gk7 gk7Var = (gk7) sparseArray2.get(i11);
+                            boolean z6 = gk7Var.j;
+                            int i12 = gk7Var.n;
+                            int i13 = gk7Var.l;
                             if (z6) {
                                 if (!vh6Var.b(2)) {
                                     return;
@@ -410,7 +410,7 @@ public final class fe5 implements av3 {
                             }
                             if (vh6Var.b(i13)) {
                                 int e2 = vh6Var.e(i13);
-                                if (fk7Var.k) {
+                                if (gk7Var.k) {
                                     z = false;
                                     z2 = false;
                                 } else {
@@ -430,7 +430,7 @@ public final class fe5 implements av3 {
                                             } else {
                                                 i3 = vh6Var.f();
                                             }
-                                            i4 = fk7Var.m;
+                                            i4 = gk7Var.m;
                                             if (i4 != 0) {
                                                 if (!vh6Var.b(i12)) {
                                                     return;
@@ -442,7 +442,7 @@ public final class fe5 implements av3 {
                                                         i6 = 0;
                                                         g = 0;
                                                         de5 de5Var2 = ee5Var.n;
-                                                        de5Var2.c = fk7Var;
+                                                        de5Var2.c = gk7Var;
                                                         de5Var2.d = e;
                                                         de5Var2.e = f;
                                                         de5Var2.f = e2;
@@ -463,7 +463,7 @@ public final class fe5 implements av3 {
                                                     return;
                                                 }
                                             } else {
-                                                if (i4 == 1 && !fk7Var.o) {
+                                                if (i4 == 1 && !gk7Var.o) {
                                                     if (vh6Var.c()) {
                                                         int g2 = vh6Var.g();
                                                         if (!z5 || z) {
@@ -472,7 +472,7 @@ public final class fe5 implements av3 {
                                                             i7 = 0;
                                                             g = 0;
                                                             de5 de5Var22 = ee5Var.n;
-                                                            de5Var22.c = fk7Var;
+                                                            de5Var22.c = gk7Var;
                                                             de5Var22.d = e;
                                                             de5Var22.e = f;
                                                             de5Var22.f = e2;
@@ -496,7 +496,7 @@ public final class fe5 implements av3 {
                                                             i6 = g2;
                                                             i5 = 0;
                                                             de5 de5Var222 = ee5Var.n;
-                                                            de5Var222.c = fk7Var;
+                                                            de5Var222.c = gk7Var;
                                                             de5Var222.d = e;
                                                             de5Var222.e = f;
                                                             de5Var222.f = e2;
@@ -524,7 +524,7 @@ public final class fe5 implements av3 {
                                             i7 = 0;
                                             g = 0;
                                             de5 de5Var2222 = ee5Var.n;
-                                            de5Var2222.c = fk7Var;
+                                            de5Var2222.c = gk7Var;
                                             de5Var2222.d = e;
                                             de5Var2222.e = f;
                                             de5Var2222.f = e2;
@@ -551,14 +551,14 @@ public final class fe5 implements av3 {
                                 }
                                 if (z4) {
                                 }
-                                i4 = fk7Var.m;
+                                i4 = gk7Var.m;
                                 if (i4 != 0) {
                                 }
                                 i6 = 0;
                                 i7 = 0;
                                 g = 0;
                                 de5 de5Var22222 = ee5Var.n;
-                                de5Var22222.c = fk7Var;
+                                de5Var22222.c = gk7Var;
                                 de5Var22222.d = e;
                                 de5Var22222.e = f;
                                 de5Var22222.f = e2;

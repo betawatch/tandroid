@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l8b implements icc {
     public final /* synthetic */ byte a;
@@ -59,25 +59,25 @@ public final /* synthetic */ class l8b implements icc {
                 arrayList.add(b8c.k(r8bVar.V1));
                 break;
             case 1:
-                rbb rbbVar = (rbb) obj3;
+                sbb sbbVar = (sbb) obj3;
                 Float f = (Float) obj2;
-                long duration = rbbVar.Y0.getDuration() < 100 ? rbbVar.L1.h0 : rbbVar.Y0.getDuration();
+                long duration = sbbVar.Y0.getDuration() < 100 ? sbbVar.L1.h0 : sbbVar.Y0.getDuration();
                 float floatValue = ((f.floatValue() / 0.96f) * 0.04f) + f.floatValue();
-                c8b c8bVar = rbbVar.L1;
+                c8b c8bVar = sbbVar.L1;
                 float f2 = c8bVar.a0;
                 float f3 = c8bVar.Z;
                 float f4 = (f2 - f3) * floatValue;
                 float f5 = duration;
                 long j = (long) (f4 * f5);
-                gbb gbbVar = rbbVar.Y0;
+                hbb hbbVar = sbbVar.Y0;
                 long j2 = (long) ((f3 * f5) + j);
-                rbbVar.N1 = j2;
-                gbbVar.m(j2);
-                vab vabVar = rbbVar.w1;
-                if (vabVar != null) {
-                    vabVar.setCoverTime(rbbVar.N1);
+                sbbVar.N1 = j2;
+                hbbVar.m(j2);
+                wab wabVar = sbbVar.w1;
+                if (wabVar != null) {
+                    wabVar.setCoverTime(sbbVar.N1);
                 }
-                c8b c8bVar2 = rbbVar.L1;
+                c8b c8bVar2 = sbbVar.L1;
                 if (c8bVar2 != null && c8bVar2.g) {
                     c8bVar2.j = true;
                     break;

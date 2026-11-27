@@ -35,7 +35,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class gp6 implements Runnable {
     public final /* synthetic */ byte a;
@@ -338,7 +338,7 @@ public final /* synthetic */ class gp6 implements Runnable {
                 if (tL_error == null) {
                     TLRPC.TL_messages_archivedStickers tL_messages_archivedStickers = (TLRPC.TL_messages_archivedStickers) tLObject;
                     ls6Var.c0[i5] = tL_messages_archivedStickers.count;
-                    uc7.s1(ls6Var.currentAccount).W3.edit().putInt(uh9.k(i5, "archivedStickersCount"), tL_messages_archivedStickers.count).commit();
+                    uc7.s1(ls6Var.currentAccount).X3.edit().putInt(uh9.k(i5, "archivedStickersCount"), tL_messages_archivedStickers.count).commit();
                     ls6Var.getNotificationCenter().k(89, Integer.valueOf(i5));
                     return;
                 }
@@ -374,7 +374,7 @@ public final /* synthetic */ class gp6 implements Runnable {
                 }
                 uc7Var.b1.k(user.id, userFull2);
                 long j2 = user.id;
-                zh6 zh6Var = uc7Var.S4;
+                zh6 zh6Var = uc7Var.T4;
                 TL_account.RequirementToContact requirementToContact = (TL_account.RequirementToContact) zh6Var.f(j2);
                 if (requirementToContact != null) {
                     TL_account.RequirementToContact q = lbc.q(userFull2);
@@ -385,7 +385,7 @@ public final /* synthetic */ class gp6 implements Runnable {
                             zh6Var.k(j2, q);
                         }
                         z = true;
-                        uc7Var.i4.M(user.id);
+                        uc7Var.j4.M(user.id);
                         jxa.v(uc7Var.currentAccount, false).N(userFull2);
                         uc7Var.h1.remove(Long.valueOf(user.id));
                         uc7Var.i1.put(user.id, System.currentTimeMillis());
@@ -393,7 +393,7 @@ public final /* synthetic */ class gp6 implements Runnable {
                         ArrayList arrayList = new ArrayList();
                         arrayList.add(userFull2.user);
                         uc7Var.j4(arrayList, false);
-                        uc7Var.getMessagesStorage().j1(arrayList, null, false, true);
+                        uc7Var.getMessagesStorage().n1(arrayList, null, false, true);
                         if (str.equals(userFull2.user.first_name + userFull2.user.last_name + lbc.p(userFull2.user))) {
                             i = 2;
                             uc7Var.getNotificationCenter().k(2, 1);
@@ -449,7 +449,7 @@ public final /* synthetic */ class gp6 implements Runnable {
                     }
                 }
                 z = false;
-                uc7Var.i4.M(user.id);
+                uc7Var.j4.M(user.id);
                 jxa.v(uc7Var.currentAccount, false).N(userFull2);
                 uc7Var.h1.remove(Long.valueOf(user.id));
                 uc7Var.i1.put(user.id, System.currentTimeMillis());
@@ -457,7 +457,7 @@ public final /* synthetic */ class gp6 implements Runnable {
                 ArrayList arrayList2 = new ArrayList();
                 arrayList2.add(userFull2.user);
                 uc7Var.j4(arrayList2, false);
-                uc7Var.getMessagesStorage().j1(arrayList2, null, false, true);
+                uc7Var.getMessagesStorage().n1(arrayList2, null, false, true);
                 if (str.equals(userFull2.user.first_name + userFull2.user.last_name + lbc.p(userFull2.user))) {
                 }
                 userProfilePhoto = userFull2.user.photo;
@@ -685,10 +685,10 @@ public final /* synthetic */ class gp6 implements Runnable {
                 }
                 return;
             case 6:
-                hl.c3(new es6(this.c, this.e, (Object) jf7.Y(this.b).i0((ArrayList) this.d), (byte) 19));
+                hl.c3(new es6(this.c, this.e, (Object) kf7.a0(this.b).k0((ArrayList) this.d), (byte) 19));
                 return;
             case 7:
-                hl.c3(new es6((Object) jf7.Y(this.b).i0((ArrayList) this.c), this.d, this.e, (byte) 24));
+                hl.c3(new es6((Object) kf7.a0(this.b).k0((ArrayList) this.c), this.d, this.e, (byte) 24));
                 return;
             case 8:
                 rv0 rv0Var = (rv0) this.c;
@@ -746,18 +746,18 @@ public final /* synthetic */ class gp6 implements Runnable {
                 return;
             case 13:
                 zu1 zu1Var4 = (zu1) this.c;
-                jf7 jf7Var = (jf7) this.d;
+                kf7 kf7Var = (kf7) this.d;
                 int i26 = this.b;
                 CountDownLatch countDownLatch = (CountDownLatch) this.e;
                 long j3 = i26;
                 try {
                     ArrayList arrayList6 = new ArrayList();
-                    jf7Var.T(String.valueOf(j3), arrayList6, null);
+                    kf7Var.V(String.valueOf(j3), arrayList6, null);
                     if (!arrayList6.isEmpty()) {
                         encryptedChat = (TLRPC.EncryptedChat) arrayList6.get(0);
                     }
                 } catch (Exception e3) {
-                    jf7Var.n(e3, true);
+                    kf7Var.p(e3, true);
                 }
                 zu1Var4.h = encryptedChat;
                 countDownLatch.countDown();

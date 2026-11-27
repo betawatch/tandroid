@@ -3,7 +3,7 @@
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m77 implements Runnable {
     public final /* synthetic */ byte a;
@@ -39,13 +39,13 @@ public final /* synthetic */ class m77 implements Runnable {
                 break;
             default:
                 uc7 uc7Var2 = this.b;
-                jf7 messagesStorage = uc7Var2.getMessagesStorage();
+                kf7 messagesStorage = uc7Var2.getMessagesStorage();
                 m44 m44Var2 = this.c;
                 ArrayList arrayList = m44Var2.a;
                 m77 m77Var = new m77(uc7Var2, m44Var2, this.d, this.e, (byte) 1);
                 messagesStorage.getClass();
                 if (!arrayList.isEmpty()) {
-                    messagesStorage.H(new es6(messagesStorage, arrayList, m77Var, (byte) 3));
+                    messagesStorage.J(new es6(messagesStorage, arrayList, m77Var, (byte) 3));
                     break;
                 }
                 break;

@@ -22,16 +22,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public abstract class dk9 implements si7 {
+public abstract class dk9 implements ti7 {
     public boolean E;
     public int F;
     public int G;
     public TLObject H;
     public boolean J;
     public v41 K;
-    public ui7 L;
+    public vi7 L;
     public jk9 M;
     public float N;
     public int O;
@@ -242,7 +242,7 @@ public abstract class dk9 implements si7 {
         }
     }
 
-    @Override // si7
+    @Override // ti7
     public Layout a() {
         return null;
     }
@@ -336,7 +336,7 @@ public abstract class dk9 implements si7 {
         }
     }
 
-    @Override // si7
+    @Override // ti7
     public final View e() {
         return null;
     }
@@ -559,16 +559,16 @@ public abstract class dk9 implements si7 {
     }
 
     public void s(Canvas canvas) {
-        ui7 ui7Var = this.L;
-        if (ui7Var != null && ui7Var.h && ui7Var.d(this) >= 0) {
-            if (!ui7Var.i(this)) {
+        vi7 vi7Var = this.L;
+        if (vi7Var != null && vi7Var.h && vi7Var.d(this) >= 0) {
+            if (!vi7Var.i(this)) {
                 return;
             }
-            if (ui7Var.g(this)) {
-                q(canvas, ui7Var.g(this) ? ui7Var.e : -1, ui7Var.g(this) ? ui7Var.f : 0.0f);
+            if (vi7Var.g(this)) {
+                q(canvas, vi7Var.g(this) ? vi7Var.e : -1, vi7Var.g(this) ? vi7Var.f : 0.0f);
                 return;
             }
-            float c = ui7Var.c(this);
+            float c = vi7Var.c(this);
             if (c <= 0.0f) {
                 return;
             }

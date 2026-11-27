@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class ai4 extends tf3 {
     public final Handler B0 = new Handler(Looper.getMainLooper());
@@ -44,12 +44,12 @@ public class ai4 extends tf3 {
         mj0Var.d(1);
         mj0 mj0Var2 = this.D0;
         String q = q(R.string.fingerprint_dialog_touch_sensor);
-        qj7 qj7Var = mj0Var2.y;
-        if (qj7Var == null) {
-            qj7Var = new qj7();
-            mj0Var2.y = qj7Var;
+        rj7 rj7Var = mj0Var2.y;
+        if (rj7Var == null) {
+            rj7Var = new rj7();
+            mj0Var2.y = rj7Var;
         }
-        mj0.f(qj7Var, q);
+        mj0.f(rj7Var, q);
     }
 
     @Override // tf3
@@ -120,12 +120,12 @@ public class ai4 extends tf3 {
     @Override // tf3, android.content.DialogInterface.OnCancelListener
     public final void onCancel(DialogInterface dialogInterface) {
         mj0 mj0Var = this.D0;
-        qj7 qj7Var = mj0Var.v;
-        if (qj7Var == null) {
-            qj7Var = new qj7();
-            mj0Var.v = qj7Var;
+        rj7 rj7Var = mj0Var.v;
+        if (rj7Var == null) {
+            rj7Var = new rj7();
+            mj0Var.v = rj7Var;
         }
-        mj0.f(qj7Var, Boolean.TRUE);
+        mj0.f(rj7Var, Boolean.TRUE);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -137,19 +137,19 @@ public class ai4 extends tf3 {
         if (k != null) {
             mj0 mj0Var = (mj0) new pq8(k).n(mj0.class);
             this.D0 = mj0Var;
-            qj7 qj7Var = mj0Var.x;
-            if (qj7Var == null) {
-                qj7Var = new qj7();
-                mj0Var.x = qj7Var;
+            rj7 rj7Var = mj0Var.x;
+            if (rj7Var == null) {
+                rj7Var = new rj7();
+                mj0Var.x = rj7Var;
             }
-            qj7Var.d(this, new xh4((Object) this, (byte) (objArr == true ? 1 : 0)));
+            rj7Var.d(this, new xh4((Object) this, (byte) (objArr == true ? 1 : 0)));
             mj0 mj0Var2 = this.D0;
-            qj7 qj7Var2 = mj0Var2.y;
-            if (qj7Var2 == null) {
-                qj7Var2 = new qj7();
-                mj0Var2.y = qj7Var2;
+            rj7 rj7Var2 = mj0Var2.y;
+            if (rj7Var2 == null) {
+                rj7Var2 = new rj7();
+                mj0Var2.y = rj7Var2;
             }
-            qj7Var2.d(this, new aj3((Object) this, (byte) 4));
+            rj7Var2.d(this, new aj3((Object) this, (byte) 4));
         }
         if (Build.VERSION.SDK_INT >= 26) {
             this.E0 = Q(zh4.a());

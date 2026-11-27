@@ -3,32 +3,32 @@
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class o83 implements o73 {
     public final bd4 a;
-    public final i09 b;
+    public final j09 b;
     public final ux2 c;
-    public final k09 d;
+    public final l09 d;
     public int f;
     public uqa g;
     public final u8a i;
     public final tgb j;
     public final tgb k;
     public final lyc l;
-    public final wj7 e = new wj7();
+    public final xj7 e = new xj7();
     public final ri6 h = new ri6((byte) 24);
 
-    public o83(bd4 bd4Var, List list, i09 i09Var, ux2 ux2Var) {
+    public o83(bd4 bd4Var, List list, j09 j09Var, ux2 ux2Var) {
         this.a = bd4Var;
-        this.b = i09Var;
+        this.b = j09Var;
         this.c = ux2Var;
         zw2 zw2Var = null;
         byte b = 0;
-        this.d = new k09(new a83(this, zw2Var, b), (byte) 6);
+        this.d = new l09(new a83(this, zw2Var, b), (byte) 6);
         u8a u8aVar = new u8a();
         u8aVar.d = this;
-        u8aVar.a = new wj7();
+        u8aVar.a = new xj7();
         u8aVar.b = xwd.a();
         u8aVar.c = sl2.k(list);
         this.i = u8aVar;
@@ -39,7 +39,7 @@ public final class o83 implements o73 {
 
     @Override // o73
     public final Object a(is4 is4Var, ax2 ax2Var) {
-        nac nacVar = (nac) ax2Var.getContext().get(rg7.d);
+        nac nacVar = (nac) ax2Var.getContext().get(sg7.d);
         if (nacVar != null) {
             nacVar.a(this);
         }
@@ -55,7 +55,7 @@ public final class o83 implements o73 {
     public final Object b(ax2 ax2Var) {
         b83 b83Var;
         int i;
-        wj7 wj7Var;
+        xj7 xj7Var;
         int i2;
         try {
             if (ax2Var instanceof b83) {
@@ -68,10 +68,10 @@ public final class o83 implements o73 {
                     if (i != 0) {
                         ixe.b(obj);
                         b83Var.a = this;
-                        wj7Var = this.e;
-                        b83Var.b = wj7Var;
+                        xj7Var = this.e;
+                        b83Var.b = xj7Var;
                         b83Var.e = 1;
-                        Object d = wj7Var.d(b83Var);
+                        Object d = xj7Var.d(b83Var);
                         vx2 vx2Var = vx2.a;
                         if (d == vx2Var) {
                             return vx2Var;
@@ -81,10 +81,10 @@ public final class o83 implements o73 {
                             grb.i("call to 'resume' before 'invoke' with coroutine");
                             return null;
                         }
-                        wj7 wj7Var2 = b83Var.b;
+                        xj7 xj7Var2 = b83Var.b;
                         o83 o83Var = b83Var.a;
                         ixe.b(obj);
-                        wj7Var = wj7Var2;
+                        xj7Var = xj7Var2;
                         this = o83Var;
                     }
                     i2 = this.f - 1;
@@ -96,18 +96,18 @@ public final class o83 implements o73 {
                         }
                         this.g = null;
                     }
-                    wj7Var.f(null);
-                    return f9c.a;
+                    xj7Var.f(null);
+                    return g9c.a;
                 }
             }
             i2 = this.f - 1;
             this.f = i2;
             if (i2 == 0) {
             }
-            wj7Var.f(null);
-            return f9c.a;
+            xj7Var.f(null);
+            return g9c.a;
         } catch (Throwable th) {
-            wj7Var.f(null);
+            xj7Var.f(null);
             throw th;
         }
         b83Var = new b83(this, ax2Var);
@@ -215,7 +215,7 @@ public final class o83 implements o73 {
                         ?? r92 = (vp2) this;
                         if (a == null) {
                         }
-                        return f9c.a;
+                        return g9c.a;
                     }
                     a = he9.a(r11);
                     ?? r922 = (vp2) this;
@@ -224,7 +224,7 @@ public final class o83 implements o73 {
                     } else {
                         r922.P(a);
                     }
-                    return f9c.a;
+                    return g9c.a;
                 }
                 ixe.b(r11);
                 r11 = k37Var.b;
@@ -265,7 +265,7 @@ public final class o83 implements o73 {
                     ?? r9222 = (vp2) this;
                     if (a == null) {
                     }
-                    return f9c.a;
+                    return g9c.a;
                 }
                 is4 is4Var2 = k37Var.a;
                 mx2 mx2Var2 = k37Var.d;
@@ -302,7 +302,7 @@ public final class o83 implements o73 {
     public final Object e(ax2 ax2Var) {
         d83 d83Var;
         int i;
-        wj7 wj7Var;
+        xj7 xj7Var;
         int i2;
         try {
             if (ax2Var instanceof d83) {
@@ -316,10 +316,10 @@ public final class o83 implements o73 {
                     if (i != 0) {
                         ixe.b(obj);
                         d83Var.a = this;
-                        wj7Var = this.e;
-                        d83Var.b = wj7Var;
+                        xj7Var = this.e;
+                        d83Var.b = xj7Var;
                         d83Var.e = 1;
-                        Object d = wj7Var.d(d83Var);
+                        Object d = xj7Var.d(d83Var);
                         vx2 vx2Var = vx2.a;
                         if (d == vx2Var) {
                             return vx2Var;
@@ -329,10 +329,10 @@ public final class o83 implements o73 {
                             grb.i("call to 'resume' before 'invoke' with coroutine");
                             return null;
                         }
-                        wj7 wj7Var2 = d83Var.b;
+                        xj7 xj7Var2 = d83Var.b;
                         o83 o83Var = d83Var.a;
                         ixe.b(obj);
-                        wj7Var = wj7Var2;
+                        xj7Var = xj7Var2;
                         this = o83Var;
                     }
                     i2 = this.f + 1;
@@ -340,18 +340,18 @@ public final class o83 implements o73 {
                     if (i2 == 1) {
                         this.g = fud.b(this.c, new e83(this, zw2Var, (byte) 0));
                     }
-                    wj7Var.f(null);
-                    return f9c.a;
+                    xj7Var.f(null);
+                    return g9c.a;
                 }
             }
             i2 = this.f + 1;
             this.f = i2;
             if (i2 == 1) {
             }
-            wj7Var.f(null);
-            return f9c.a;
+            xj7Var.f(null);
+            return g9c.a;
         } catch (Throwable th) {
-            wj7Var.f(null);
+            xj7Var.f(null);
             throw th;
         }
         d83Var = new d83(this, ax2Var);
@@ -411,7 +411,7 @@ public final class o83 implements o73 {
                             o83Var = f83Var.a;
                             try {
                                 ixe.b(obj);
-                                return f9c.a;
+                                return g9c.a;
                             } catch (Throwable th2) {
                                 th = th2;
                                 o83Var.h.H(new a59(i2, th));
@@ -694,14 +694,14 @@ public final class o83 implements o73 {
                             e = e;
                             this = o83Var2;
                             p89Var = new p89();
-                            i09 i09Var = this.b;
+                            j09 j09Var = this.b;
                             j83Var.a = this;
                             j83Var.b = e;
                             j83Var.c = p89Var;
                             j83Var.d = p89Var;
                             j83Var.e = z;
                             j83Var.r = 5;
-                            Object invoke = ((ur4) i09Var.b).invoke(e);
+                            Object invoke = ((ur4) j09Var.b).invoke(e);
                             if (invoke != vx2Var) {
                                 zx2Var = e;
                                 obj2 = invoke;

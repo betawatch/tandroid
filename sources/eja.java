@@ -70,7 +70,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
     public static final int[] t2 = {0, 1, 2, 4};
@@ -143,7 +143,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
     public final Paint W0;
     public final iha W1;
     public boolean X0;
-    public u5b X1;
+    public v5b X1;
     public boolean Y0;
     public float Y1;
     public w49 Z0;
@@ -1008,12 +1008,12 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
     }
 
     public static void m1(zha zhaVar, tia[] tiaVarArr, boolean z) {
-        ida idaVar;
+        kba kbaVar;
         if (!z) {
-            if (zhaVar.G == null || (idaVar = zhaVar.H) == null) {
+            if (zhaVar.G == null || (kbaVar = zhaVar.H) == null) {
                 return;
             }
-            hl.r(idaVar);
+            hl.r(kbaVar);
             zhaVar.H.run();
             zhaVar.H = null;
             zhaVar.G = null;
@@ -1071,9 +1071,9 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
         zhaVar.G.setScaleY(0.8f);
         zhaVar.G.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
         zhaVar.invalidate();
-        ida idaVar2 = new ida((Object) zhaVar, (Object) ir8Var, (byte) 1);
-        zhaVar.H = idaVar2;
-        hl.d3(idaVar2, 4000L);
+        kba kbaVar2 = new kba((Object) zhaVar, (Object) ir8Var, (byte) 2);
+        zhaVar.H = kbaVar2;
+        hl.d3(kbaVar2, 4000L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1650,16 +1650,16 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
     }
 
     public final void E0(int i, long j) {
-        q5b A = getStoriesController().A(j, true);
+        r5b A = getStoriesController().A(j, true);
         int i2 = A.a;
         int c = A.c(i);
         if (c == -1) {
             return;
         }
-        v5b v5bVar = (v5b) A.h.remove(c);
+        w5b w5bVar = (w5b) A.h.remove(c);
         TL_stories.TL_deleteAlbum tL_deleteAlbum = new TL_stories.TL_deleteAlbum();
         tL_deleteAlbum.peer = uc7.s1(i2).j1(A.b);
-        tL_deleteAlbum.album_id = v5bVar.a;
+        tL_deleteAlbum.album_id = w5bVar.a;
         ConnectionsManager.getInstance(i2).sendRequest(tL_deleteAlbum, null);
         A.f(true);
     }
@@ -1716,13 +1716,13 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
     }
 
     public final void F0(int i, String str, long j) {
-        q5b A = getStoriesController().A(j, true);
+        r5b A = getStoriesController().A(j, true);
         int i2 = A.a;
         int c = A.c(i);
         if (c == -1) {
             return;
         }
-        ((v5b) A.h.get(c)).b = str;
+        ((w5b) A.h.get(c)).b = str;
         TL_stories.TL_updateAlbum tL_updateAlbum = new TL_stories.TL_updateAlbum();
         tL_updateAlbum.peer = uc7.s1(i2).j1(A.b);
         tL_updateAlbum.album_id = i;
@@ -1969,22 +1969,22 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v0 */
-    /* JADX WARN: Type inference failed for: r11v1, types: [boolean[], java.lang.String] */
-    /* JADX WARN: Type inference failed for: r11v3 */
-    /* JADX WARN: Type inference failed for: r15v2 */
-    /* JADX WARN: Type inference failed for: r15v3, types: [boolean, byte] */
-    /* JADX WARN: Type inference failed for: r15v4 */
+    /* JADX WARN: Type inference failed for: r13v2 */
+    /* JADX WARN: Type inference failed for: r13v3, types: [boolean[], java.lang.String] */
+    /* JADX WARN: Type inference failed for: r13v5 */
+    /* JADX WARN: Type inference failed for: r14v2 */
+    /* JADX WARN: Type inference failed for: r14v3, types: [boolean, byte] */
+    /* JADX WARN: Type inference failed for: r14v4 */
     public final boolean K(int i, dia diaVar) {
-        final ?? r15;
+        final ?? r14;
         dia diaVar2;
         dia diaVar3;
-        u5b u5bVar;
+        v5b v5bVar;
         TLRPC.Chat M0;
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
         bga bgaVar;
         bga bgaVar2;
-        ?? r11;
+        ?? r13;
         byte b;
         String str;
         b8 b8Var;
@@ -2032,7 +2032,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                         z = false;
                     } else {
                         str = 0;
-                        b8Var = diaVar.Z(R.drawable.menu_sort_value, new ida(axaVar, runnableArr, b3), ob6.M0(2131750156, null), false, false);
+                        b8Var = diaVar.Z(R.drawable.menu_sort_value, new kba(axaVar, runnableArr, b2), ob6.M0(2131750156, null), false, false);
                         z = true;
                     }
                     if (cgaVar.b()) {
@@ -2094,35 +2094,35 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                 return true;
             }
             if ((i == 8 || t0(i)) && h) {
-                r15 = 1;
+                r14 = 1;
                 diaVar2 = diaVar;
                 diaVar2.Z(R.drawable.menu_album_add, new gfa(this, b5), ob6.M0(2131744464, null), false, true);
                 diaVar2.H();
             } else {
                 diaVar2 = diaVar;
-                r15 = 1;
+                r14 = 1;
             }
             h(diaVar2);
             if (wf3.B(j)) {
-                return r15;
+                return r14;
             }
             if (X1 != null && X1.bot) {
-                return r15;
+                return r14;
             }
-            diaVar2.Z(R.drawable.msg_calendar2, new kfa(this, i, r15), ob6.M0(2131752623, null), false, true);
+            diaVar2.Z(R.drawable.msg_calendar2, new kfa(this, i, r14), ob6.M0(2131752623, null), false, true);
             if (this.g1 == null || s0() || (M0 = uc7.s1(currentAccount).M0(Long.valueOf(this.g1.id))) == null || (tL_chatAdminRights = M0.admin_rights) == null || !tL_chatAdminRights.edit_stories) {
                 diaVar3 = diaVar;
             } else {
                 diaVar3 = diaVar;
-                diaVar3.Z(R.drawable.msg_archive, new gfa(this, b3), ob6.M0(2131747537, null), false, true);
+                diaVar3.Z(R.drawable.msg_archive, new gfa(this, (byte) 2), ob6.M0(2131747537, null), false, true);
             }
             tia[] tiaVarArr = this.w1;
             if (!j0) {
                 tia tiaVar = tiaVarArr[0];
                 if (!tiaVar.w || !tiaVar.v) {
                     boolean[] zArr = tiaVar.i;
-                    if (zArr[0] && zArr[r15] && tiaVar.l) {
-                        return r15;
+                    if (zArr[0] && zArr[r14] && tiaVar.l) {
+                        return r14;
                     }
                 }
             }
@@ -2131,9 +2131,9 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
             final b8 K7 = diaVar3.K(ob6.M0(2131748406, null));
             if (!j0) {
                 byte b8 = tiaVarArr[0].q;
-                K6.setChecked((b8 == 0 || b8 == r15) ? r15 : false);
+                K6.setChecked((b8 == 0 || b8 == r14) ? r14 : false);
                 byte b9 = tiaVarArr[0].q;
-                K7.setChecked((b9 == 0 || b9 == 2) ? r15 : false);
+                K7.setChecked((b9 == 0 || b9 == 2) ? r14 : false);
                 K6.setOnClickListener(new View.OnClickListener(this) { // from class: mfa
                     public final /* synthetic */ eja b;
 
@@ -2204,7 +2204,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
 
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        byte b10 = r15;
+                        byte b10 = r14;
                         final b8 b8Var6 = K6;
                         final b8 b8Var7 = K7;
                         final eja ejaVar = this.b;
@@ -2256,11 +2256,11 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                         }
                     }
                 });
-                return r15;
+                return r14;
             }
             final bja v1 = v1(i);
-            if (v1 != null && (u5bVar = v1.s) != null) {
-                K6.setChecked(u5bVar.n);
+            if (v1 != null && (v5bVar = v1.s) != null) {
+                K6.setChecked(v5bVar.n);
                 K7.setChecked(v1.s.o);
             }
             final byte b10 = 0;
@@ -2284,30 +2284,30 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                             ejaVar.A1(b8Var7, b8Var6, new Runnable() { // from class: nfa
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    u5b u5bVar2;
-                                    u5b u5bVar3;
+                                    v5b v5bVar2;
+                                    v5b v5bVar3;
                                     byte b13 = b12;
                                     b8 b8Var8 = b8Var6;
                                     b8 b8Var9 = b8Var7;
                                     bja bjaVar2 = bjaVar;
                                     switch (b13) {
                                         case 0:
-                                            if (bjaVar2 != null && (u5bVar2 = bjaVar2.s) != null) {
+                                            if (bjaVar2 != null && (v5bVar2 = bjaVar2.s) != null) {
                                                 boolean z2 = b8Var9.getCheckView().a.q;
                                                 boolean z3 = b8Var8.getCheckView().a.q;
-                                                u5bVar2.n = z2;
-                                                u5bVar2.o = z3;
-                                                u5bVar2.d(true);
+                                                v5bVar2.n = z2;
+                                                v5bVar2.o = z3;
+                                                v5bVar2.d(true);
                                                 break;
                                             }
                                             break;
                                         default:
-                                            if (bjaVar2 != null && (u5bVar3 = bjaVar2.s) != null) {
+                                            if (bjaVar2 != null && (v5bVar3 = bjaVar2.s) != null) {
                                                 boolean z4 = b8Var9.getCheckView().a.q;
                                                 boolean z5 = b8Var8.getCheckView().a.q;
-                                                u5bVar3.n = z4;
-                                                u5bVar3.o = z5;
-                                                u5bVar3.d(true);
+                                                v5bVar3.n = z4;
+                                                v5bVar3.o = z5;
+                                                v5bVar3.d(true);
                                                 break;
                                             }
                                             break;
@@ -2320,30 +2320,30 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                             ejaVar.A1(b8Var7, b8Var6, new Runnable() { // from class: nfa
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    u5b u5bVar2;
-                                    u5b u5bVar3;
+                                    v5b v5bVar2;
+                                    v5b v5bVar3;
                                     byte b132 = b13;
                                     b8 b8Var8 = b8Var7;
                                     b8 b8Var9 = b8Var6;
                                     bja bjaVar2 = bjaVar;
                                     switch (b132) {
                                         case 0:
-                                            if (bjaVar2 != null && (u5bVar2 = bjaVar2.s) != null) {
+                                            if (bjaVar2 != null && (v5bVar2 = bjaVar2.s) != null) {
                                                 boolean z2 = b8Var9.getCheckView().a.q;
                                                 boolean z3 = b8Var8.getCheckView().a.q;
-                                                u5bVar2.n = z2;
-                                                u5bVar2.o = z3;
-                                                u5bVar2.d(true);
+                                                v5bVar2.n = z2;
+                                                v5bVar2.o = z3;
+                                                v5bVar2.d(true);
                                                 break;
                                             }
                                             break;
                                         default:
-                                            if (bjaVar2 != null && (u5bVar3 = bjaVar2.s) != null) {
+                                            if (bjaVar2 != null && (v5bVar3 = bjaVar2.s) != null) {
                                                 boolean z4 = b8Var9.getCheckView().a.q;
                                                 boolean z5 = b8Var8.getCheckView().a.q;
-                                                u5bVar3.n = z4;
-                                                u5bVar3.o = z5;
-                                                u5bVar3.d(true);
+                                                v5bVar3.n = z4;
+                                                v5bVar3.o = z5;
+                                                v5bVar3.d(true);
                                                 break;
                                             }
                                             break;
@@ -2375,30 +2375,30 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                             ejaVar.A1(b8Var7, b8Var6, new Runnable() { // from class: nfa
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    u5b u5bVar2;
-                                    u5b u5bVar3;
+                                    v5b v5bVar2;
+                                    v5b v5bVar3;
                                     byte b132 = b12;
                                     b8 b8Var8 = b8Var6;
                                     b8 b8Var9 = b8Var7;
                                     bja bjaVar2 = bjaVar;
                                     switch (b132) {
                                         case 0:
-                                            if (bjaVar2 != null && (u5bVar2 = bjaVar2.s) != null) {
+                                            if (bjaVar2 != null && (v5bVar2 = bjaVar2.s) != null) {
                                                 boolean z2 = b8Var9.getCheckView().a.q;
                                                 boolean z3 = b8Var8.getCheckView().a.q;
-                                                u5bVar2.n = z2;
-                                                u5bVar2.o = z3;
-                                                u5bVar2.d(true);
+                                                v5bVar2.n = z2;
+                                                v5bVar2.o = z3;
+                                                v5bVar2.d(true);
                                                 break;
                                             }
                                             break;
                                         default:
-                                            if (bjaVar2 != null && (u5bVar3 = bjaVar2.s) != null) {
+                                            if (bjaVar2 != null && (v5bVar3 = bjaVar2.s) != null) {
                                                 boolean z4 = b8Var9.getCheckView().a.q;
                                                 boolean z5 = b8Var8.getCheckView().a.q;
-                                                u5bVar3.n = z4;
-                                                u5bVar3.o = z5;
-                                                u5bVar3.d(true);
+                                                v5bVar3.n = z4;
+                                                v5bVar3.o = z5;
+                                                v5bVar3.d(true);
                                                 break;
                                             }
                                             break;
@@ -2411,30 +2411,30 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                             ejaVar.A1(b8Var7, b8Var6, new Runnable() { // from class: nfa
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    u5b u5bVar2;
-                                    u5b u5bVar3;
+                                    v5b v5bVar2;
+                                    v5b v5bVar3;
                                     byte b132 = b13;
                                     b8 b8Var8 = b8Var7;
                                     b8 b8Var9 = b8Var6;
                                     bja bjaVar2 = bjaVar;
                                     switch (b132) {
                                         case 0:
-                                            if (bjaVar2 != null && (u5bVar2 = bjaVar2.s) != null) {
+                                            if (bjaVar2 != null && (v5bVar2 = bjaVar2.s) != null) {
                                                 boolean z2 = b8Var9.getCheckView().a.q;
                                                 boolean z3 = b8Var8.getCheckView().a.q;
-                                                u5bVar2.n = z2;
-                                                u5bVar2.o = z3;
-                                                u5bVar2.d(true);
+                                                v5bVar2.n = z2;
+                                                v5bVar2.o = z3;
+                                                v5bVar2.d(true);
                                                 break;
                                             }
                                             break;
                                         default:
-                                            if (bjaVar2 != null && (u5bVar3 = bjaVar2.s) != null) {
+                                            if (bjaVar2 != null && (v5bVar3 = bjaVar2.s) != null) {
                                                 boolean z4 = b8Var9.getCheckView().a.q;
                                                 boolean z5 = b8Var8.getCheckView().a.q;
-                                                u5bVar3.n = z4;
-                                                u5bVar3.o = z5;
-                                                u5bVar3.d(true);
+                                                v5bVar3.n = z4;
+                                                v5bVar3.o = z5;
+                                                v5bVar3.d(true);
                                                 break;
                                             }
                                             break;
@@ -2445,27 +2445,29 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                     }
                 }
             });
-            return r15;
+            return r14;
         }
         int itemsCount = bgaVar.getItemsCount();
-        if (itemsCount < eVar.getMessagesController().k4.A2.f()) {
-            r11 = 0;
+        if (itemsCount < eVar.getMessagesController().l4.A2.f()) {
+            String M02 = ob6.M0(2131746444, null);
+            gfa gfaVar = new gfa(this, b2);
+            r13 = 0;
             bgaVar2 = bgaVar;
             b = 5;
-            diaVar.Z(R.drawable.msg_addbot, new gfa(this, (byte) 3), ob6.M0(2131746444, null), false, true);
+            diaVar.Z(R.drawable.msg_addbot, gfaVar, M02, false, true);
         } else {
             bgaVar2 = bgaVar;
-            r11 = 0;
+            r13 = 0;
             b = 5;
         }
         if (itemsCount > 1 && !bgaVar2.d()) {
-            diaVar.Z(R.drawable.tabs_reorder, new gfa(this, (byte) 4), ob6.M0(2131746417, r11), false, true);
+            diaVar.Z(R.drawable.tabs_reorder, new gfa(this, (byte) 4), ob6.M0(2131746417, r13), false, true);
         }
         if (itemsCount > 0) {
-            diaVar.Z(R.drawable.msg_select, new gfa(this, b), ob6.M0(bgaVar2.d() ? 2131746415 : 2131746416, r11), false, true);
+            diaVar.Z(R.drawable.msg_select, new gfa(this, b), ob6.M0(bgaVar2.d() ? 2131746415 : 2131746416, r13), false, true);
         }
         if (!TextUtils.isEmpty(bgaVar2.getCurrentLang())) {
-            diaVar.Z(R.drawable.msg_delete, new gfa(this, (byte) 6), ob6.a0(r11, r11, 2131746418, r3c.K0(bgaVar2.getCurrentLang(), r11, r11)), true, true);
+            diaVar.Z(R.drawable.msg_delete, new gfa(this, (byte) 6), ob6.a0(r13, r13, 2131746418, r3c.K0(bgaVar2.getCurrentLang(), r13, r13)), true, true);
             return true;
         }
         return true;
@@ -2521,23 +2523,23 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
     }
 
     public final void L0() {
-        u5b u5bVar;
-        u5b u5bVar2;
+        v5b v5bVar;
+        v5b v5bVar2;
         this.K1.a();
         oha ohaVar = this.f0;
-        if (ohaVar != null && (u5bVar2 = ohaVar.s) != null && u5bVar2 != null) {
-            u5bVar2.z(ohaVar.w);
+        if (ohaVar != null && (v5bVar2 = ohaVar.s) != null && v5bVar2 != null) {
+            v5bVar2.z(ohaVar.w);
         }
         aga agaVar = this.h0;
-        if (agaVar != null && (u5bVar = agaVar.s) != null && u5bVar != null) {
-            u5bVar.z(agaVar.w);
+        if (agaVar != null && (v5bVar = agaVar.s) != null && v5bVar != null) {
+            v5bVar.z(agaVar.w);
         }
         Iterator it = this.m2.values().iterator();
         while (it.hasNext()) {
             cja cjaVar = ((dja) it.next()).c;
-            u5b u5bVar3 = cjaVar.s;
-            if (u5bVar3 != null && u5bVar3 != null) {
-                u5bVar3.z(cjaVar.w);
+            v5b v5bVar3 = cjaVar.s;
+            if (v5bVar3 != null && v5bVar3 != null) {
+                v5bVar3.z(cjaVar.w);
             }
         }
     }
@@ -2792,20 +2794,20 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                     }
                 } else if (j0(i2)) {
                     bja v1 = v1(i2);
-                    u5b u5bVar = v1 != null ? v1.s : null;
-                    if (u5bVar == null) {
+                    v5b v5bVar = v1 != null ? v1.s : null;
+                    if (v5bVar == null) {
                         return;
                     }
                     lcb orCreateStoryViewer = eVar.getOrCreateStoryViewer();
                     Context context = getContext();
                     int e1 = r47Var.e1();
                     l6b a = l6b.a(this.n0[0].h);
-                    a.e = new ye9(u5bVar, (byte) 28);
+                    a.e = new ye9(v5bVar, (byte) 28);
                     if ((eVar instanceof ProfileActivity) && ((ProfileActivity) eVar).s1) {
                         i3 = hl.L(68.0f);
                     }
                     a.s += i3;
-                    orCreateStoryViewer.G(context, e1, u5bVar, a);
+                    orCreateStoryViewer.G(context, e1, v5bVar, a);
                 }
             }
             E1();
@@ -2814,7 +2816,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
 
     public final void M1() {
         boolean z;
-        u5b u5bVar;
+        v5b v5bVar;
         boolean l0 = l0();
         s7 s7Var = this.z0;
         s7 s7Var2 = this.y0;
@@ -2860,7 +2862,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
             }
             r47 r47Var = (r47) sparseArrayArr[0].valueAt(i);
             oha ohaVar = this.f0;
-            if (ohaVar != null && (u5bVar = ohaVar.s) != null && !u5bVar.m(r47Var.e1())) {
+            if (ohaVar != null && (v5bVar = ohaVar.s) != null && !v5bVar.m(r47Var.e1())) {
                 z = true;
                 break;
             }
@@ -2892,7 +2894,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
         fga fgaVar;
         final TL_stories.StoryItem storyItem;
         oha ohaVar;
-        u5b u5bVar;
+        v5b v5bVar;
         final byte b = 0;
         if (!this.F1) {
             e eVar = this.y1;
@@ -2984,8 +2986,8 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                         J.b(R.drawable.msg_removefolder, ob6.M0(2131744448, null), new efa((Object) this, s1, (Object) storyItem, (Object) v, (byte) 2), false);
                     } else {
                         storyItem = storyItem2;
-                        if (getClosestTab() == 8 && (ohaVar = this.f0) != null && (u5bVar = ohaVar.s) != null) {
-                            if (u5bVar.m(storyItem.id)) {
+                        if (getClosestTab() == 8 && (ohaVar = this.f0) != null && (v5bVar = ohaVar.s) != null) {
+                            if (v5bVar.m(storyItem.id)) {
                                 J.b(R.drawable.chats_unpin, ob6.M0(2131744444, null), new Runnable(this) { // from class: sfa
                                     public final /* synthetic */ eja b;
 
@@ -3955,11 +3957,11 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
 
     public final int W(int i) {
         bja v1;
-        u5b u5bVar;
-        if (!j0(i) || (v1 = v1(i)) == null || (u5bVar = v1.s) == null) {
+        v5b v5bVar;
+        if (!j0(i) || (v1 = v1(i)) == null || (v5bVar = v1.s) == null) {
             return 0;
         }
-        return u5bVar.g();
+        return v5bVar.g();
     }
 
     public final void W0(int i, long j, e eVar) {
@@ -4037,13 +4039,13 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
             return;
         }
         e eVar = this.y1;
-        if (z && arrayList.size() > eVar.getMessagesController().k4.x2.f()) {
-            c00.v(ob6.G(eVar.getMessagesController().k4.x2.f(), "StoriesPinLimit", new Object[0]), d31.b0(eVar), R.raw.chats_infotip, 36);
+        if (z && arrayList.size() > eVar.getMessagesController().l4.x2.f()) {
+            c00.v(ob6.G(eVar.getMessagesController().l4.x2.f(), "StoriesPinLimit", new Object[0]), d31.b0(eVar), R.raw.chats_infotip, 36);
             return;
         }
-        u5b u5bVar = ohaVar.s;
-        int i = u5bVar.c;
-        ArrayList arrayList2 = u5bVar.g;
+        v5b v5bVar = ohaVar.s;
+        int i = v5bVar.c;
+        ArrayList arrayList2 = v5bVar.g;
         ArrayList arrayList3 = new ArrayList(arrayList2);
         boolean z2 = true;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
@@ -4057,7 +4059,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                 arrayList3.remove(num);
             }
         }
-        boolean z3 = arrayList3.size() > uc7.s1(i).k4.x2.f();
+        boolean z3 = arrayList3.size() > uc7.s1(i).l4.x2.f();
         if (!z3) {
             boolean z4 = arrayList2.size() != arrayList3.size();
             if (!z4) {
@@ -4076,16 +4078,16 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
             if (z4) {
                 arrayList2.clear();
                 arrayList2.addAll(arrayList3);
-                u5bVar.d(true);
+                v5bVar.d(true);
                 TL_stories.TL_togglePinnedToTop tL_togglePinnedToTop = new TL_stories.TL_togglePinnedToTop();
                 tL_togglePinnedToTop.id.addAll(arrayList2);
-                tL_togglePinnedToTop.peer = uc7.s1(i).j1(u5bVar.d);
+                tL_togglePinnedToTop.peer = uc7.s1(i).j1(v5bVar.d);
                 ConnectionsManager.getInstance(i).sendRequest(tL_togglePinnedToTop, new xe2((byte) 11));
             }
             z2 = z3;
         }
         if (z2) {
-            c00.v(ob6.G(eVar.getMessagesController().k4.x2.f(), "StoriesPinLimit", new Object[0]), d31.b0(eVar), R.raw.chats_infotip, 36);
+            c00.v(ob6.G(eVar.getMessagesController().l4.x2.f(), "StoriesPinLimit", new Object[0]), d31.b0(eVar), R.raw.chats_infotip, 36);
         } else if (z) {
             d31.b0(eVar).I(R.raw.ic_pin, hl.S2(ob6.G(arrayList.size(), "StoriesPinned", new Object[0])), ob6.G(arrayList.size(), "StoriesPinnedText", new Object[0])).j();
         } else {
@@ -4686,11 +4688,11 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
             return;
         }
         if (i == jn7.A5) {
-            u5b u5bVar = (u5b) objArr[0];
+            v5b v5bVar = (v5b) objArr[0];
             oha ohaVar = this.f0;
-            if (ohaVar == null || u5bVar != ohaVar.s) {
+            if (ohaVar == null || v5bVar != ohaVar.s) {
                 aga agaVar = this.h0;
-                if (agaVar == null || u5bVar != agaVar.s) {
+                if (agaVar == null || v5bVar != agaVar.s) {
                     Iterator it = this.m2.values().iterator();
                     while (true) {
                         if (!it.hasNext()) {
@@ -4698,7 +4700,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                             break;
                         }
                         dja djaVar = (dja) it.next();
-                        if (djaVar.c.s == u5bVar) {
+                        if (djaVar.c.s == v5bVar) {
                             i3 = djaVar.a;
                             break;
                         }
@@ -4711,8 +4713,8 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
             }
             zha P = P(i3);
             if (P != null) {
-                if (P.b != (u5bVar.g() > 0)) {
-                    P.b = u5bVar.g() > 0;
+                if (P.b != (v5bVar.g() > 0)) {
+                    P.b = v5bVar.g() > 0;
                     D1(P, true);
                 }
             }
@@ -5104,8 +5106,8 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
     public float getBottomButtonStoriesVisibility() {
         zha zhaVar;
         zha zhaVar2;
-        u5b u5bVar;
-        u5b u5bVar2;
+        v5b v5bVar;
+        v5b v5bVar2;
         float f = 1.0f;
         zha[] zhaVarArr = this.n0;
         if (zhaVarArr != null && (zhaVar = zhaVarArr[0]) != null && (zhaVar2 = zhaVarArr[1]) != null && zhaVar.w != null && zhaVar2.w != null) {
@@ -5117,11 +5119,11 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                 float visibilityFactor = 1.0f - zhaVarArr[0].w.getVisibilityFactor();
                 float visibilityFactor2 = 1.0f - zhaVarArr[1].w.getVisibilityFactor();
                 bja v1 = v1(zhaVarArr[0].F);
-                if (i == 8 || (v1 != null && (u5bVar2 = v1.s) != null && u5bVar2.g() > 0)) {
+                if (i == 8 || (v1 != null && (v5bVar2 = v1.s) != null && v5bVar2.g() > 0)) {
                     visibilityFactor = 1.0f;
                 }
                 bja v12 = v1(i2);
-                if (i2 != 8 && (v12 == null || (u5bVar = v12.s) == null || u5bVar.g() <= 0)) {
+                if (i2 != 8 && (v12 == null || (v5bVar = v12.s) == null || v5bVar.g() <= 0)) {
                     f = visibilityFactor2;
                 }
                 if (!z) {
@@ -5734,7 +5736,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                         bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                     }
                     j81 j81Var = new j81(tiaVarArr[0].q, i2, bundle);
-                    j81Var.N = new k09(this, b);
+                    j81Var.N = new l09(this, b);
                     this.y1.presentFragment(j81Var);
                 }
             }
@@ -5744,7 +5746,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
         if (i != 9) {
         }
         j81 j81Var2 = new j81(tiaVarArr[0].q, i2, bundle);
-        j81Var2.N = new k09(this, b2);
+        j81Var2.N = new l09(this, b2);
         this.y1.presentFragment(j81Var2);
     }
 
@@ -6609,9 +6611,9 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
         }
     }
 
-    public final void x0(TL_stories.StoryItem storyItem, v5b v5bVar) {
-        getStoriesController().b(v5bVar.a, this.m1, storyItem);
-        hl.d3(new ida((Object) this, (Object) v5bVar, (byte) 3), 100L);
+    public final void x0(TL_stories.StoryItem storyItem, w5b w5bVar) {
+        getStoriesController().b(w5bVar.a, this.m1, storyItem);
+        hl.d3(new kba((Object) this, (Object) w5bVar, (byte) 4), 100L);
     }
 
     public final int x1(j79 j79Var) {
@@ -6672,7 +6674,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
         boolean z2;
         r47 r47Var;
         ?? r4;
-        u5b u5bVar;
+        v5b v5bVar;
         if (this.r1 || this.N1 != null) {
             return;
         }
@@ -6718,7 +6720,7 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                 int i5 = zhaVar.F;
                 if (j0) {
                     bja v1 = v1(i5);
-                    if (v1 == null || (u5bVar = v1.s) == null || K0 + abs <= u5bVar.i() - iArr[1]) {
+                    if (v1 == null || (v5bVar = v1.s) == null || K0 + abs <= v5bVar.i() - iArr[1]) {
                         return;
                     }
                     v1.P();
@@ -6855,21 +6857,21 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
         }
     }
 
-    public final void z0(HashSet hashSet, TL_stories.StoryItem storyItem, fu5 fu5Var, v5b v5bVar) {
+    public final void z0(HashSet hashSet, TL_stories.StoryItem storyItem, fu5 fu5Var, w5b w5bVar) {
         String a0;
-        boolean contains = hashSet.contains(Integer.valueOf(v5bVar.a));
+        boolean contains = hashSet.contains(Integer.valueOf(w5bVar.a));
         long j = this.m1;
         if (contains) {
-            getStoriesController().b(v5bVar.a, j, storyItem);
-            a0 = ob6.a0(null, null, 2131744388, v5bVar.b);
+            getStoriesController().b(w5bVar.a, j, storyItem);
+            a0 = ob6.a0(null, null, 2131744388, w5bVar.b);
         } else {
             c6b storiesController = getStoriesController();
-            int i = v5bVar.a;
+            int i = w5bVar.a;
             storiesController.getClass();
             ArrayList arrayList = new ArrayList(1);
             arrayList.add(storyItem);
             storiesController.e0(i, j, arrayList);
-            a0 = ob6.a0(null, null, 2131744148, v5bVar.b);
+            a0 = ob6.a0(null, null, 2131744148, w5bVar.b);
         }
         d31.b0(this.y1).Q(R.raw.contact_check, 36, hl.S2(a0)).j();
         fu5Var.u();
@@ -7342,10 +7344,10 @@ public abstract class eja extends FrameLayout implements snb, fn7, kf3, x69 {
                 if (j0(i17)) {
                     bja v12 = v1(zhaVarArr2[z ? 1 : 0].F);
                     if (v12 != null) {
-                        u5b u5bVar = v12.s;
+                        v5b v5bVar = v12.s;
                         v12.P();
-                        zhaVarArr2[z ? 1 : 0].w.e(u5bVar != null && (u5bVar.k() || (d0() && u5bVar.g() > 0)), z);
-                        z4 = (u5bVar == null || u5bVar.g() <= 0 || q0()) ? false : true;
+                        zhaVarArr2[z ? 1 : 0].w.e(v5bVar != null && (v5bVar.k() || (d0() && v5bVar.g() > 0)), z);
+                        z4 = (v5bVar == null || v5bVar.g() <= 0 || q0()) ? false : true;
                     }
                 } else {
                     int i18 = zhaVarArr2[z ? 1 : 0].F;

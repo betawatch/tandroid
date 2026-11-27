@@ -2,7 +2,7 @@
 
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class seb implements x1c {
     public final x1c a;
@@ -119,7 +119,7 @@ public final class seb implements x1c {
     public final void g(ko4 ko4Var) {
         ko4Var.t.getClass();
         String str = ko4Var.t;
-        yve.f(dg7.h(str) == 3);
+        yve.f(eg7.h(str) == 3);
         boolean equals = ko4Var.equals(this.h);
         peb pebVar = this.b;
         if (!equals) {
@@ -133,7 +133,7 @@ public final class seb implements x1c {
             return;
         }
         jo4 a = ko4Var.a();
-        a.s = dg7.n("application/x-media3-cues");
+        a.s = eg7.n("application/x-media3-cues");
         a.k = str;
         a.x = Long.MAX_VALUE;
         a.T = pebVar.y(ko4Var);

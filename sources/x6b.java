@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class x6b extends fic {
     public final v6b A0;
@@ -36,17 +36,17 @@ public abstract class x6b extends fic {
         this.B0 = new ArrayList();
         byte b = 1;
         this.E0 = true;
-        acb acbVar = (acb) this;
-        this.N0 = new bva((Object) acbVar, (byte) 4);
+        bcb bcbVar = (bcb) this;
+        this.N0 = new bva((Object) bcbVar, (byte) 4);
         this.P0 = -1;
         this.Q0 = new ArrayList();
         this.z0 = i;
         this.I0 = new m68(context);
         this.O0 = lcbVar;
-        v6b v6bVar = new v6b(acbVar, context, lcbVar, x53Var);
+        v6b v6bVar = new v6b(bcbVar, context, lcbVar, x53Var);
         this.A0 = v6bVar;
         setAdapter(v6bVar);
-        hja hjaVar = new hja(acbVar, (byte) 18);
+        hja hjaVar = new hja(bcbVar, (byte) 18);
         boolean z = this.n0 == null;
         this.n0 = hjaVar;
         setChildrenDrawingOrderEnabled(true);
@@ -56,7 +56,7 @@ public abstract class x6b extends fic {
             s();
         }
         setOffscreenPageLimit(0);
-        b(new vk8(b, acbVar, lcbVar));
+        b(new vk8(b, bcbVar, lcbVar));
         setOverScrollMode(2);
     }
 

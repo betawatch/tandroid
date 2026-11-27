@@ -22,7 +22,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class mh5 implements iy7 {
     public final jh5 a;
@@ -1777,9 +1777,9 @@ public final class mh5 implements iy7 {
                         arrayList28.getClass();
                         hashMap = hashMap5;
                         hashSet = hashSet2;
-                        uf7 uf7Var = new uf7(new xh5(null, null, arrayList28));
+                        vf7 vf7Var = new vf7(new xh5(null, null, arrayList28));
                         jo4 a = ko4Var.a();
-                        a.l = uf7Var;
+                        a.l = vf7Var;
                         arrayList27.add(new ih5(ih5Var4.a, new ko4(a), ih5Var4.c, ih5Var4.d, ih5Var4.e, ih5Var4.f, ih5Var4.g, ih5Var4.h));
                     } else {
                         hashMap = hashMap5;
@@ -1803,7 +1803,7 @@ public final class mh5 implements iy7 {
                     jo4 jo4Var = new jo4();
                     jo4Var.a = qd4.y(k, ":", k2);
                     jo4Var.b = k2;
-                    jo4Var.r = dg7.n("application/x-mpegURL");
+                    jo4Var.r = eg7.n("application/x-mpegURL");
                     boolean f2 = f(str7, A0, rr4Var);
                     ?? r29 = f2;
                     if (f(str7, B0, rr4Var)) {
@@ -1835,7 +1835,7 @@ public final class mh5 implements iy7 {
                     String j4 = j(str7, pattern, null, hashMap4, rr4Var);
                     Uri d3 = j4 == null ? null : d2f.d(uri2, j4);
                     String str9 = uri2;
-                    uf7 uf7Var2 = new uf7(new xh5(k, k2, Collections.EMPTY_LIST));
+                    vf7 vf7Var2 = new vf7(new xh5(k, k2, Collections.EMPTY_LIST));
                     String k3 = k(str7, r0, hashMap4, rr4Var);
                     switch (k3.hashCode()) {
                         case -959297733:
@@ -1888,15 +1888,15 @@ public final class mh5 implements iy7 {
                             if (ih5Var != null) {
                                 String w3 = gcc.w(3, ih5Var.b.l);
                                 jo4Var.k = w3;
-                                str = dg7.d(w3);
+                                str = eg7.d(w3);
                             } else {
                                 str = null;
                             }
                             if (str == null) {
                                 str = "text/vtt";
                             }
-                            jo4Var.s = dg7.n(str);
-                            jo4Var.l = uf7Var2;
+                            jo4Var.s = eg7.n(str);
+                            jo4Var.l = vf7Var2;
                             if (d3 != null) {
                                 arrayList = arrayList25;
                                 arrayList.add(new hh5(d3, new ko4(jo4Var), k, k2, j2));
@@ -1919,7 +1919,7 @@ public final class mh5 implements iy7 {
                                 str2 = "application/cea-708";
                             }
                             ArrayList arrayList33 = arrayList31 == null ? new ArrayList() : arrayList31;
-                            jo4Var.s = dg7.n(str2);
+                            jo4Var.s = eg7.n(str2);
                             jo4Var.S = parseInt;
                             arrayList33.add(new ko4(jo4Var));
                             arrayList29 = arrayList33;
@@ -1944,7 +1944,7 @@ public final class mh5 implements iy7 {
                             if (ih5Var2 != null) {
                                 String w4 = gcc.w(1, ih5Var2.b.l);
                                 jo4Var.k = w4;
-                                str3 = dg7.d(w4);
+                                str3 = eg7.d(w4);
                             } else {
                                 str3 = null;
                             }
@@ -1961,7 +1961,7 @@ public final class mh5 implements iy7 {
                             if (h2 != -1) {
                                 jo4Var.O = h2;
                             }
-                            jo4Var.s = dg7.n(str3);
+                            jo4Var.s = eg7.n(str3);
                             if (d3 == null) {
                                 arrayList2 = arrayList24;
                                 if (ih5Var2 != null) {
@@ -1972,7 +1972,7 @@ public final class mh5 implements iy7 {
                                     break;
                                 }
                             } else {
-                                jo4Var.l = uf7Var2;
+                                jo4Var.l = vf7Var2;
                                 arrayList2 = arrayList24;
                                 arrayList2.add(new hh5(d3, new ko4(jo4Var), k, k2, j2));
                             }
@@ -1996,13 +1996,13 @@ public final class mh5 implements iy7 {
                                 ko4 ko4Var5 = ih5Var3.b;
                                 String w5 = gcc.w(2, ko4Var5.l);
                                 jo4Var.k = w5;
-                                jo4Var.s = dg7.n(dg7.d(w5));
+                                jo4Var.s = eg7.n(eg7.d(w5));
                                 jo4Var.z = ko4Var5.A;
                                 jo4Var.A = ko4Var5.B;
                                 jo4Var.a(ko4Var5.F);
                             }
                             if (d3 != null) {
-                                jo4Var.l = uf7Var2;
+                                jo4Var.l = vf7Var2;
                                 arrayList3 = arrayList23;
                                 arrayList3.add(new hh5(d3, new ko4(jo4Var), k, k2, j2));
                                 arrayList = arrayList25;
@@ -2133,7 +2133,7 @@ public final class mh5 implements iy7 {
                             arrayList8 = arrayList11;
                             i4 = 2;
                             w2 = gcc.w(i4, j8);
-                            if (dg7.j(w2, str4) || (str4 != null && (j7 == null || str5 == null || ((j7.equals("PQ") && !str5.equals("db1p")) || ((j7.equals("SDR") && !str5.equals("db2g")) || (j7.equals("HLG") && !str5.startsWith("db4"))))))) {
+                            if (eg7.j(w2, str4) || (str4 != null && (j7 == null || str5 == null || ((j7.equals("PQ") && !str5.equals("db1p")) || ((j7.equals("SDR") && !str5.equals("db2g")) || (j7.equals("HLG") && !str5.startsWith("db4"))))))) {
                                 bm2Var = null;
                             } else {
                                 bm2 x2 = gcc.x(j8, str4, str5);
@@ -2155,7 +2155,7 @@ public final class mh5 implements iy7 {
                                         String str12 = e02[i12];
                                         String[] strArr = e02;
                                         int i13 = length;
-                                        if (2 != dg7.h(dg7.d(str12))) {
+                                        if (2 != eg7.h(eg7.d(str12))) {
                                             if (sb2.length() > 0) {
                                                 sb2.append(",");
                                             }
@@ -2216,7 +2216,7 @@ public final class mh5 implements iy7 {
                             Uri uri4 = d2;
                             jo4 jo4Var2 = new jo4();
                             jo4Var2.a = Integer.toString(arrayList8.size());
-                            jo4Var2.r = dg7.n("application/x-mpegURL");
+                            jo4Var2.r = eg7.n("application/x-mpegURL");
                             jo4Var2.k = j8;
                             jo4Var2.i = h3;
                             jo4Var2.j = parseInt2;
@@ -2227,7 +2227,7 @@ public final class mh5 implements iy7 {
                             jo4Var2.f = i3;
                             jo4Var2.K = bm2Var;
                             jo4Var2.n = equals;
-                            jo4Var2.s = dg7.n(j10);
+                            jo4Var2.s = eg7.n(j10);
                             jo4Var2.o = Long.parseLong(str6);
                             jo4Var2.p = j12;
                             jo4Var2.q = Integer.parseInt(j13);
@@ -2263,7 +2263,7 @@ public final class mh5 implements iy7 {
                     }
                     str5 = null;
                     w2 = gcc.w(i4, j8);
-                    if (dg7.j(w2, str4)) {
+                    if (eg7.j(w2, str4)) {
                     }
                     bm2Var = null;
                     boolean equals2 = TextUtils.equals(j(B, F, null, hashMap4, rr4Var), "true");
@@ -2292,7 +2292,7 @@ public final class mh5 implements iy7 {
                     Uri uri42 = d2;
                     jo4 jo4Var22 = new jo4();
                     jo4Var22.a = Integer.toString(arrayList8.size());
-                    jo4Var22.r = dg7.n("application/x-mpegURL");
+                    jo4Var22.r = eg7.n("application/x-mpegURL");
                     jo4Var22.k = j8;
                     jo4Var22.i = h3;
                     jo4Var22.j = parseInt2;
@@ -2303,7 +2303,7 @@ public final class mh5 implements iy7 {
                     jo4Var22.f = i3;
                     jo4Var22.K = bm2Var;
                     jo4Var22.n = equals2;
-                    jo4Var22.s = dg7.n(j102);
+                    jo4Var22.s = eg7.n(j102);
                     jo4Var22.o = Long.parseLong(str6);
                     jo4Var22.p = j122;
                     jo4Var22.q = Integer.parseInt(j132);

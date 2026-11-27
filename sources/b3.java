@@ -5,20 +5,20 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class b3 implements Iterator {
     public final Iterator a;
     public Object b = null;
     public Collection c = null;
     public Iterator d = pu5.a;
-    public final /* synthetic */ fj7 e;
+    public final /* synthetic */ gj7 e;
     public final /* synthetic */ byte f;
 
-    public b3(fj7 fj7Var, byte b) {
+    public b3(gj7 gj7Var, byte b) {
         this.f = b;
-        this.e = fj7Var;
-        this.a = fj7Var.e.entrySet().iterator();
+        this.e = gj7Var;
+        this.a = gj7Var.e.entrySet().iterator();
     }
 
     @Override // java.util.Iterator
@@ -53,7 +53,7 @@ public final class b3 implements Iterator {
         if (collection.isEmpty()) {
             this.a.remove();
         }
-        fj7 fj7Var = this.e;
-        fj7Var.f--;
+        gj7 gj7Var = this.e;
+        gj7Var.f--;
     }
 }

@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class n83 extends yfb implements is4 {
     public n89 a;
@@ -29,7 +29,7 @@ public final class n83 extends yfb implements is4 {
 
     @Override // is4
     public final Object invoke(Object obj, Object obj2) {
-        return ((n83) create((pd4) obj, (zw2) obj2)).invokeSuspend(f9c.a);
+        return ((n83) create((pd4) obj, (zw2) obj2)).invokeSuspend(g9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0053, code lost:
@@ -72,7 +72,7 @@ public final class n83 extends yfb implements is4 {
             if (this.h) {
                 o83Var.h.H(new k63(obj2 != null ? obj2.hashCode() : 0, n89Var2.a, obj2));
             }
-            return f9c.a;
+            return g9c.a;
         }
         n89Var = this.a;
         pd4Var = (pd4) this.c;

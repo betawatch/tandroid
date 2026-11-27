@@ -17,7 +17,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class r7c {
     public static final p1f a;
@@ -59,7 +59,7 @@ public abstract class r7c {
         Typeface typeface;
         List unmodifiableList;
         Typeface typeface2;
-        byte b2 = 15;
+        byte b2 = 16;
         if (bo4Var instanceof eo4) {
             eo4 eo4Var = (eo4) bo4Var;
             String str2 = eo4Var.e;
@@ -74,7 +74,7 @@ public abstract class r7c {
             }
             typeface = null;
             if (typeface != null) {
-                new Handler(Looper.getMainLooper()).post(new z09(jqVar, typeface, b2));
+                new Handler(Looper.getMainLooper()).post(new yz8(jqVar, typeface, b2));
                 return typeface;
             }
             byte b3 = 1;
@@ -183,7 +183,7 @@ public abstract class r7c {
         } else {
             a2 = a.a(context, (co4) bo4Var, resources, i3);
             if (a2 != null) {
-                new Handler(Looper.getMainLooper()).post(new z09(jqVar, a2, b2));
+                new Handler(Looper.getMainLooper()).post(new yz8(jqVar, a2, b2));
             } else {
                 jqVar.b();
             }

@@ -15,10 +15,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class b5a extends FrameLayout implements snb {
-    public final ki7 E;
+    public final li7 E;
     public final mm F;
     public final mm G;
     public final mm H;
@@ -55,8 +55,8 @@ public final class b5a extends FrameLayout implements snb {
         int i3;
         this.b = -1;
         this.d = yac.t0;
-        ki7 ki7Var = new ki7(this, (byte) 26);
-        this.E = ki7Var;
+        li7 li7Var = new li7(this, (byte) 26);
+        this.E = li7Var;
         k43 k43Var = k43.h;
         this.F = new mm(350L, this, k43Var);
         this.G = new mm(350L, this, k43Var);
@@ -126,8 +126,8 @@ public final class b5a extends FrameLayout implements snb {
                     zm2Var2.n = L6;
                     imageView.setBackgroundDrawable(zm2Var2);
                     if (!z2) {
-                        hl.r(ki7Var);
-                        hl.d3(ki7Var, 1000L);
+                        hl.r(li7Var);
+                        hl.d3(li7Var, 1000L);
                     }
                 }
                 setWillNotDraw(false);
@@ -182,9 +182,9 @@ public final class b5a extends FrameLayout implements snb {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.r != null) {
-            ki7 ki7Var = this.E;
-            hl.r(ki7Var);
-            hl.d3(ki7Var, 1000L);
+            li7 li7Var = this.E;
+            hl.r(li7Var);
+            hl.d3(li7Var, 1000L);
         }
     }
 

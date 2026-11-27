@@ -8,7 +8,7 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class d3 implements Iterator {
     public final /* synthetic */ byte a;
@@ -126,7 +126,7 @@ public class d3 implements Iterator {
             case 0:
                 yve.o("no calls to next() since the last call to remove()", ((Collection) this.c) != null);
                 it.remove();
-                ((fj7) ((e3) obj).e).f -= ((Collection) this.c).size();
+                ((gj7) ((e3) obj).e).f -= ((Collection) this.c).size();
                 ((Collection) this.c).clear();
                 this.c = null;
                 break;
@@ -141,7 +141,7 @@ public class d3 implements Iterator {
             case 2:
                 it.remove();
                 m3 m3Var = (m3) obj;
-                ((fj7) m3Var.f).f--;
+                ((gj7) m3Var.f).f--;
                 m3Var.j();
                 break;
             case 3:

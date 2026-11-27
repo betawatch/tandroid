@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class tl3 extends c79 {
     public boolean A0;
@@ -59,7 +59,7 @@ public abstract class tl3 extends c79 {
     public long o0;
     public View p0;
     public wd3 q0;
-    public ze7 r;
+    public bf7 r;
     public ArrayList r0;
     public final uj3 s0;
     public final int t0;
@@ -113,7 +113,7 @@ public abstract class tl3 extends c79 {
         this.i0 = i2;
         this.m0 = yac.h(i3).e();
         if (i2 != 15) {
-            jf7.Y(i3).a.c(new bt(i3, i2, (Object) new ll3(this), (byte) 6));
+            kf7.a0(i3).a.c(new bt(i3, i2, (Object) new ll3(this), (byte) 6));
         }
         ls6.d0(i3).O0(true);
     }
@@ -175,9 +175,9 @@ public abstract class tl3 extends c79 {
         boolean z2 = this.O;
         int i = this.t0;
         if (z2) {
-            jf7.Y(i).a.c(new wd3((gx9) this, sb, (byte) 11));
+            kf7.a0(i).a.c(new wd3((gx9) this, sb, (byte) 11));
         } else {
-            jf7.Y(i).a.c(new gw0(i, (byte) 4));
+            kf7.a0(i).a.c(new gw0(i, (byte) 4));
         }
     }
 
@@ -508,7 +508,7 @@ public abstract class tl3 extends c79 {
         G(str != null ? str.trim() : null);
         f();
         int i = this.t0;
-        jf7.Y(i).a.c(new am0(i, j, (byte) 2));
+        kf7.a0(i).a.c(new am0(i, j, (byte) 2));
     }
 
     public final boolean R() {
@@ -556,9 +556,9 @@ public abstract class tl3 extends c79 {
             hl.r(dl3Var);
             this.h = null;
         }
-        ze7 ze7Var = this.r;
-        if (ze7Var != null) {
-            hl.r(ze7Var);
+        bf7 bf7Var = this.r;
+        if (bf7Var != null) {
+            hl.r(bf7Var);
             this.r = null;
         }
         if (this.n >= 0) {
@@ -653,7 +653,7 @@ public abstract class tl3 extends c79 {
                     dj3Var3.d(false, false);
                 }
             } else {
-                jf7.Y(ml3Var2.m).a.c(new pv9(ml3Var2, b));
+                kf7.a0(ml3Var2.m).a.c(new pv9(ml3Var2, b));
             }
         } else {
             this.K.clear();
@@ -684,9 +684,9 @@ public abstract class tl3 extends c79 {
                 to3Var.d(dl3Var2, 300L);
                 if (str2 == null) {
                     this.E0++;
-                    ze7 ze7Var2 = new ze7((Object) gx9Var, i4, (Object) str2, (byte) 20);
-                    this.r = ze7Var2;
-                    hl.d3(ze7Var2, 300L);
+                    bf7 bf7Var2 = new bf7((Object) gx9Var, i4, (Object) str2, (byte) 20);
+                    this.r = bf7Var2;
+                    hl.d3(bf7Var2, 300L);
                     return;
                 }
                 return;
@@ -822,7 +822,7 @@ public abstract class tl3 extends c79 {
             return;
         }
         if (!TextUtils.isEmpty(str)) {
-            ArrayList l = uc7.s1(this.t0).g4.l(-this.V.a());
+            ArrayList l = uc7.s1(this.t0).h4.l(-this.V.a());
             String trim = str.trim();
             for (int i = 0; i < l.size(); i++) {
                 if (l.get(i) != null && ((TLRPC.TL_forumTopic) l.get(i)).title.toLowerCase().contains(trim)) {

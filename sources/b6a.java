@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b6a implements Runnable {
     public final /* synthetic */ byte a;
@@ -126,22 +126,22 @@ public final /* synthetic */ class b6a implements Runnable {
                 r7aVar.h0(i3, i2 != 0);
                 return;
             case 1:
-                rbb rbbVar = (rbb) fn7Var;
-                vab vabVar = (vab) obj3;
+                sbb sbbVar = (sbb) fn7Var;
+                wab wabVar = (wab) obj3;
                 c8b c8bVar2 = (c8b) obj2;
-                final mab mabVar = (mab) obj;
-                int i4 = rbbVar.c;
+                final nab nabVar = (nab) obj;
+                int i4 = sbbVar.c;
                 ArrayList arrayList3 = new ArrayList();
-                vabVar.q0(arrayList3, false, false, false, false, c8bVar2);
+                wabVar.q0(arrayList3, false, false, false, false, c8bVar2);
                 if (!c8bVar2.K) {
-                    c8bVar2.S0 = Utilities.k(vabVar.getLcm(), 7500L, 5000L);
+                    c8bVar2.S0 = Utilities.k(wabVar.getLcm(), 7500L, 5000L);
                 }
-                List<TLRPC.InputDocument> masks = vabVar.getMasks();
+                List<TLRPC.InputDocument> masks = wabVar.getMasks();
                 final ArrayList arrayList4 = masks != null ? new ArrayList(masks) : null;
                 boolean z6 = c8bVar2.K;
                 boolean D = c8bVar2.D();
                 arrayList3.clear();
-                Bitmap q0 = vabVar.q0(arrayList3, true, false, false, !z6, c8bVar2);
+                Bitmap q0 = wabVar.q0(arrayList3, true, false, false, !z6, c8bVar2);
                 ArrayList arrayList5 = arrayList3.isEmpty() ? null : arrayList3;
                 xb4.G(i4);
                 final File J = xb4.J(in5.V(q0, Bitmap.CompressFormat.PNG, c8bVar2.i0, c8bVar2.j0, 87), null, true, true);
@@ -153,7 +153,7 @@ public final /* synthetic */ class b6a implements Runnable {
                     if (j2 != Long.MIN_VALUE) {
                         Drawable drawable = c8bVar2.x0;
                         if (drawable == null) {
-                            drawable = mm8.d(null, i4, j2, rbbVar.d2);
+                            drawable = mm8.d(null, i4, j2, sbbVar.d2);
                         }
                         if (drawable != null) {
                             File w = c8b.w(i4, "webp");
@@ -180,7 +180,7 @@ public final /* synthetic */ class b6a implements Runnable {
                         if (c8bVar2.u && c8bVar2.K) {
                             int i5 = c8bVar2.k0;
                             int i6 = c8bVar2.l0;
-                            p0 = vabVar.p0();
+                            p0 = wabVar.p0();
                             if (p0 != null) {
                                 v37 v37Var = p0.t0;
                                 if (v37Var.getChildCount() == 1 && i5 > 0 && i6 > 0 && (v37Var.getChildAt(0) instanceof wb2)) {
@@ -230,7 +230,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                             file4 = null;
                                                         } else {
                                                             c8bVar = c8bVar2;
-                                                            Bitmap q02 = vabVar.q0(new ArrayList(), false, true, false, false, c8bVar);
+                                                            Bitmap q02 = wabVar.q0(new ArrayList(), false, true, false, false, c8bVar);
                                                             xb4.G(i4);
                                                             File J2 = xb4.J(in5.V(q02, Bitmap.CompressFormat.PNG, i3, i2, 87), null, true, true);
                                                             if (q02 != null && !q02.isRecycled()) {
@@ -239,7 +239,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                             file4 = J2;
                                                         }
                                                         if (z4) {
-                                                            Bitmap blurBitmap = vabVar.getBlurBitmap();
+                                                            Bitmap blurBitmap = wabVar.getBlurBitmap();
                                                             xb4.G(i4);
                                                             File J3 = xb4.J(in5.V(blurBitmap, Bitmap.CompressFormat.PNG, i3, i2, 87), null, true, true);
                                                             if (blurBitmap != null && !blurBitmap.isRecycled()) {
@@ -258,7 +258,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
                                                                 byte b4 = b3;
-                                                                Runnable runnable = mabVar;
+                                                                Runnable runnable = nabVar;
                                                                 ArrayList arrayList7 = arrayList4;
                                                                 File file17 = file5;
                                                                 File file18 = file3;
@@ -270,7 +270,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                 c8b c8bVar4 = c8bVar3;
                                                                 switch (b4) {
                                                                     case 0:
-                                                                        mab mabVar2 = (mab) runnable;
+                                                                        nab nabVar2 = (nab) runnable;
                                                                         try {
                                                                             File file22 = c8bVar4.P0;
                                                                             if (file22 != null) {
@@ -321,10 +321,10 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                         c8bVar4.X0 = file18;
                                                                         c8bVar4.Q0 = file17;
                                                                         c8bVar4.U0 = arrayList7;
-                                                                        mabVar2.run();
+                                                                        nabVar2.run();
                                                                         break;
                                                                     default:
-                                                                        me7 me7Var = (me7) runnable;
+                                                                        oe7 oe7Var = (oe7) runnable;
                                                                         try {
                                                                             File file27 = c8bVar4.P0;
                                                                             if (file27 != null) {
@@ -375,7 +375,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                         c8bVar4.X0 = file18;
                                                                         c8bVar4.Q0 = file17;
                                                                         c8bVar4.U0 = arrayList7;
-                                                                        me7Var.run();
+                                                                        oe7Var.run();
                                                                         break;
                                                                 }
                                                             }
@@ -414,7 +414,7 @@ public final /* synthetic */ class b6a implements Runnable {
                             @Override // java.lang.Runnable
                             public final void run() {
                                 byte b4 = b32;
-                                Runnable runnable = mabVar;
+                                Runnable runnable = nabVar;
                                 ArrayList arrayList7 = arrayList4;
                                 File file17 = file5;
                                 File file18 = file3;
@@ -426,7 +426,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                 c8b c8bVar4 = c8bVar32;
                                 switch (b4) {
                                     case 0:
-                                        mab mabVar2 = (mab) runnable;
+                                        nab nabVar2 = (nab) runnable;
                                         try {
                                             File file22 = c8bVar4.P0;
                                             if (file22 != null) {
@@ -477,10 +477,10 @@ public final /* synthetic */ class b6a implements Runnable {
                                         c8bVar4.X0 = file18;
                                         c8bVar4.Q0 = file17;
                                         c8bVar4.U0 = arrayList7;
-                                        mabVar2.run();
+                                        nabVar2.run();
                                         break;
                                     default:
-                                        me7 me7Var = (me7) runnable;
+                                        oe7 oe7Var = (oe7) runnable;
                                         try {
                                             File file27 = c8bVar4.P0;
                                             if (file27 != null) {
@@ -531,7 +531,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                         c8bVar4.X0 = file18;
                                         c8bVar4.Q0 = file17;
                                         c8bVar4.U0 = arrayList7;
-                                        me7Var.run();
+                                        oe7Var.run();
                                         break;
                                 }
                             }
@@ -543,7 +543,7 @@ public final /* synthetic */ class b6a implements Runnable {
                 if (c8bVar2.u) {
                     int i52 = c8bVar2.k0;
                     int i62 = c8bVar2.l0;
-                    p0 = vabVar.p0();
+                    p0 = wabVar.p0();
                     if (p0 != null) {
                     }
                     imageReceiver = null;
@@ -566,7 +566,7 @@ public final /* synthetic */ class b6a implements Runnable {
                     @Override // java.lang.Runnable
                     public final void run() {
                         byte b4 = b322;
-                        Runnable runnable = mabVar;
+                        Runnable runnable = nabVar;
                         ArrayList arrayList7 = arrayList4;
                         File file17 = file5;
                         File file18 = file3;
@@ -578,7 +578,7 @@ public final /* synthetic */ class b6a implements Runnable {
                         c8b c8bVar4 = c8bVar322;
                         switch (b4) {
                             case 0:
-                                mab mabVar2 = (mab) runnable;
+                                nab nabVar2 = (nab) runnable;
                                 try {
                                     File file22 = c8bVar4.P0;
                                     if (file22 != null) {
@@ -629,10 +629,10 @@ public final /* synthetic */ class b6a implements Runnable {
                                 c8bVar4.X0 = file18;
                                 c8bVar4.Q0 = file17;
                                 c8bVar4.U0 = arrayList7;
-                                mabVar2.run();
+                                nabVar2.run();
                                 break;
                             default:
-                                me7 me7Var = (me7) runnable;
+                                oe7 oe7Var = (oe7) runnable;
                                 try {
                                     File file27 = c8bVar4.P0;
                                     if (file27 != null) {
@@ -683,33 +683,33 @@ public final /* synthetic */ class b6a implements Runnable {
                                 c8bVar4.X0 = file18;
                                 c8bVar4.Q0 = file17;
                                 c8bVar4.U0 = arrayList7;
-                                me7Var.run();
+                                oe7Var.run();
                                 break;
                         }
                     }
                 });
                 return;
             default:
-                rbb rbbVar2 = (rbb) fn7Var;
-                vab vabVar2 = (vab) obj3;
+                sbb sbbVar2 = (sbb) fn7Var;
+                wab wabVar2 = (wab) obj3;
                 final c8b c8bVar4 = (c8b) obj2;
-                final me7 me7Var = (me7) obj;
-                int i11 = rbbVar2.c;
+                final oe7 oe7Var = (oe7) obj;
+                int i11 = sbbVar2.c;
                 ArrayList arrayList7 = new ArrayList();
                 ArrayList arrayList8 = new ArrayList();
-                vabVar2.q0(arrayList8, false, false, false, false, c8bVar4);
+                wabVar2.q0(arrayList8, false, false, false, false, c8bVar4);
                 if (c8bVar4.K) {
                     z2 = z4;
                 } else {
                     z2 = z4;
-                    c8bVar4.S0 = Utilities.k(vabVar2.getLcm(), 7500L, 5000L);
+                    c8bVar4.S0 = Utilities.k(wabVar2.getLcm(), 7500L, 5000L);
                 }
-                List<TLRPC.InputDocument> masks2 = vabVar2.getMasks();
+                List<TLRPC.InputDocument> masks2 = wabVar2.getMasks();
                 final ArrayList arrayList9 = masks2 != null ? new ArrayList(masks2) : null;
                 boolean z8 = c8bVar4.K;
                 boolean D2 = c8bVar4.D();
                 arrayList8.clear();
-                final Bitmap q03 = vabVar2.q0(arrayList8, true, false, false, !z8, c8bVar4);
+                final Bitmap q03 = wabVar2.q0(arrayList8, true, false, false, !z8, c8bVar4);
                 ArrayList arrayList10 = arrayList8.isEmpty() ? null : arrayList8;
                 final File w2 = c8b.w(i11, "png");
                 arrayList7.add(new Runnable() { // from class: gab
@@ -783,7 +783,7 @@ public final /* synthetic */ class b6a implements Runnable {
                     if (j3 != Long.MIN_VALUE) {
                         Drawable drawable2 = c8bVar4.x0;
                         if (drawable2 == null) {
-                            drawable2 = mm8.d(null, i11, j3, rbbVar2.d2);
+                            drawable2 = mm8.d(null, i11, j3, sbbVar2.d2);
                         }
                         if (drawable2 != null) {
                             final File w3 = c8b.w(i11, "webp");
@@ -860,7 +860,7 @@ public final /* synthetic */ class b6a implements Runnable {
                             if (c8bVar4.u && c8bVar4.K) {
                                 int i12 = c8bVar4.k0;
                                 int i13 = c8bVar4.l0;
-                                p02 = vabVar2.p0();
+                                p02 = wabVar2.p0();
                                 if (p02 != null) {
                                     v37 v37Var2 = p02.t0;
                                     if (v37Var2.getChildCount() == 1 && i12 > 0 && i13 > 0 && (v37Var2.getChildAt(0) instanceof wb2)) {
@@ -966,11 +966,11 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                 }
                                                             });
                                                             file11 = w4;
-                                                            if (vabVar2.r0()) {
+                                                            if (wabVar2.r0()) {
                                                                 if (z3) {
                                                                     file12 = null;
                                                                 } else {
-                                                                    final Bitmap q04 = vabVar2.q0(new ArrayList(), false, true, false, false, c8bVar4);
+                                                                    final Bitmap q04 = wabVar2.q0(new ArrayList(), false, true, false, false, c8bVar4);
                                                                     file12 = c8b.w(i11, "png");
                                                                     final byte b6 = 3;
                                                                     arrayList7.add(new Runnable() { // from class: gab
@@ -1052,7 +1052,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                         @Override // java.lang.Runnable
                                                                         public final void run() {
                                                                             byte b42 = b7;
-                                                                            Runnable runnable = me7Var;
+                                                                            Runnable runnable = oe7Var;
                                                                             ArrayList arrayList72 = arrayList9;
                                                                             File file172 = file14;
                                                                             File file182 = file11;
@@ -1064,7 +1064,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                             c8b c8bVar42 = c8bVar4;
                                                                             switch (b42) {
                                                                                 case 0:
-                                                                                    mab mabVar2 = (mab) runnable;
+                                                                                    nab nabVar2 = (nab) runnable;
                                                                                     try {
                                                                                         File file22 = c8bVar42.P0;
                                                                                         if (file22 != null) {
@@ -1115,10 +1115,10 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                                     c8bVar42.X0 = file182;
                                                                                     c8bVar42.Q0 = file172;
                                                                                     c8bVar42.U0 = arrayList72;
-                                                                                    mabVar2.run();
+                                                                                    nabVar2.run();
                                                                                     break;
                                                                                 default:
-                                                                                    me7 me7Var2 = (me7) runnable;
+                                                                                    oe7 oe7Var2 = (oe7) runnable;
                                                                                     try {
                                                                                         File file27 = c8bVar42.P0;
                                                                                         if (file27 != null) {
@@ -1169,7 +1169,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                                     c8bVar42.X0 = file182;
                                                                                     c8bVar42.Q0 = file172;
                                                                                     c8bVar42.U0 = arrayList72;
-                                                                                    me7Var2.run();
+                                                                                    oe7Var2.run();
                                                                                     break;
                                                                             }
                                                                         }
@@ -1183,7 +1183,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                     }
                                                                     return;
                                                                 }
-                                                                final Bitmap blurBitmap2 = vabVar2.getBlurBitmap();
+                                                                final Bitmap blurBitmap2 = wabVar2.getBlurBitmap();
                                                                 file13 = c8b.w(i11, "png");
                                                                 final byte b8 = 4;
                                                                 arrayList7.add(new Runnable() { // from class: gab
@@ -1267,7 +1267,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
                                                                     byte b42 = b72;
-                                                                    Runnable runnable = me7Var;
+                                                                    Runnable runnable = oe7Var;
                                                                     ArrayList arrayList72 = arrayList9;
                                                                     File file1722 = file14;
                                                                     File file1822 = file11;
@@ -1279,7 +1279,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                     c8b c8bVar42 = c8bVar4;
                                                                     switch (b42) {
                                                                         case 0:
-                                                                            mab mabVar2 = (mab) runnable;
+                                                                            nab nabVar2 = (nab) runnable;
                                                                             try {
                                                                                 File file22 = c8bVar42.P0;
                                                                                 if (file22 != null) {
@@ -1330,10 +1330,10 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                             c8bVar42.X0 = file1822;
                                                                             c8bVar42.Q0 = file1722;
                                                                             c8bVar42.U0 = arrayList72;
-                                                                            mabVar2.run();
+                                                                            nabVar2.run();
                                                                             break;
                                                                         default:
-                                                                            me7 me7Var2 = (me7) runnable;
+                                                                            oe7 oe7Var2 = (oe7) runnable;
                                                                             try {
                                                                                 File file27 = c8bVar42.P0;
                                                                                 if (file27 != null) {
@@ -1384,7 +1384,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                                                             c8bVar42.X0 = file1822;
                                                                             c8bVar42.Q0 = file1722;
                                                                             c8bVar42.U0 = arrayList72;
-                                                                            me7Var2.run();
+                                                                            oe7Var2.run();
                                                                             break;
                                                                     }
                                                                 }
@@ -1415,7 +1415,7 @@ public final /* synthetic */ class b6a implements Runnable {
                             file10 = file8;
                             z3 = D2;
                             file11 = null;
-                            if (vabVar2.r0()) {
+                            if (wabVar2.r0()) {
                             }
                             file15 = file12;
                             file14 = file13;
@@ -1428,7 +1428,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     byte b42 = b722;
-                                    Runnable runnable = me7Var;
+                                    Runnable runnable = oe7Var;
                                     ArrayList arrayList72 = arrayList9;
                                     File file17222 = file14;
                                     File file18222 = file11;
@@ -1440,7 +1440,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                     c8b c8bVar42 = c8bVar4;
                                     switch (b42) {
                                         case 0:
-                                            mab mabVar2 = (mab) runnable;
+                                            nab nabVar2 = (nab) runnable;
                                             try {
                                                 File file22 = c8bVar42.P0;
                                                 if (file22 != null) {
@@ -1491,10 +1491,10 @@ public final /* synthetic */ class b6a implements Runnable {
                                             c8bVar42.X0 = file18222;
                                             c8bVar42.Q0 = file17222;
                                             c8bVar42.U0 = arrayList72;
-                                            mabVar2.run();
+                                            nabVar2.run();
                                             break;
                                         default:
-                                            me7 me7Var2 = (me7) runnable;
+                                            oe7 oe7Var2 = (oe7) runnable;
                                             try {
                                                 File file27 = c8bVar42.P0;
                                                 if (file27 != null) {
@@ -1545,7 +1545,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                             c8bVar42.X0 = file18222;
                                             c8bVar42.Q0 = file17222;
                                             c8bVar42.U0 = arrayList72;
-                                            me7Var2.run();
+                                            oe7Var2.run();
                                             break;
                                     }
                                 }
@@ -1562,7 +1562,7 @@ public final /* synthetic */ class b6a implements Runnable {
                 if (c8bVar4.u) {
                     int i122 = c8bVar4.k0;
                     int i132 = c8bVar4.l0;
-                    p02 = vabVar2.p0();
+                    p02 = wabVar2.p0();
                     if (p02 != null) {
                     }
                     imageReceiver2 = null;
@@ -1573,7 +1573,7 @@ public final /* synthetic */ class b6a implements Runnable {
                 file10 = file8;
                 z3 = D2;
                 file11 = null;
-                if (vabVar2.r0()) {
+                if (wabVar2.r0()) {
                 }
                 file15 = file12;
                 file14 = file13;
@@ -1586,7 +1586,7 @@ public final /* synthetic */ class b6a implements Runnable {
                     @Override // java.lang.Runnable
                     public final void run() {
                         byte b42 = b7222;
-                        Runnable runnable = me7Var;
+                        Runnable runnable = oe7Var;
                         ArrayList arrayList72 = arrayList9;
                         File file172222 = file14;
                         File file182222 = file11;
@@ -1598,7 +1598,7 @@ public final /* synthetic */ class b6a implements Runnable {
                         c8b c8bVar42 = c8bVar4;
                         switch (b42) {
                             case 0:
-                                mab mabVar2 = (mab) runnable;
+                                nab nabVar2 = (nab) runnable;
                                 try {
                                     File file22 = c8bVar42.P0;
                                     if (file22 != null) {
@@ -1649,10 +1649,10 @@ public final /* synthetic */ class b6a implements Runnable {
                                 c8bVar42.X0 = file182222;
                                 c8bVar42.Q0 = file172222;
                                 c8bVar42.U0 = arrayList72;
-                                mabVar2.run();
+                                nabVar2.run();
                                 break;
                             default:
-                                me7 me7Var2 = (me7) runnable;
+                                oe7 oe7Var2 = (oe7) runnable;
                                 try {
                                     File file27 = c8bVar42.P0;
                                     if (file27 != null) {
@@ -1703,7 +1703,7 @@ public final /* synthetic */ class b6a implements Runnable {
                                 c8bVar42.X0 = file182222;
                                 c8bVar42.Q0 = file172222;
                                 c8bVar42.U0 = arrayList72;
-                                me7Var2.run();
+                                oe7Var2.run();
                                 break;
                         }
                     }
@@ -1716,10 +1716,10 @@ public final /* synthetic */ class b6a implements Runnable {
         }
     }
 
-    public /* synthetic */ b6a(rbb rbbVar, vab vabVar, int i, int i2, c8b c8bVar, boolean z, boolean z2, Runnable runnable, byte b) {
+    public /* synthetic */ b6a(sbb sbbVar, wab wabVar, int i, int i2, c8b c8bVar, boolean z, boolean z2, Runnable runnable, byte b) {
         this.a = b;
-        this.f = rbbVar;
-        this.h = vabVar;
+        this.f = sbbVar;
+        this.h = wabVar;
         this.b = i;
         this.c = i2;
         this.n = c8bVar;

@@ -20,7 +20,7 @@ import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.DataAutoDownloadActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.e {
     public final kq3 E;
@@ -282,7 +282,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.e {
                 kq3Var.d = r9.h;
             }
         }
-        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
+        SharedPreferences.Editor edit = uc7.s1(this.currentAccount).Y3.edit();
         edit.putString(str, kq3Var.toString());
         this.e = 3;
         edit.putInt(str2, 3);
@@ -387,7 +387,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.e {
                 t20Var.q(i6, 9);
             }
             this.a.g(this.n ? 1 : 0);
-            SharedPreferences.Editor edit = uc7.s1(this.currentAccount).X3.edit();
+            SharedPreferences.Editor edit = uc7.s1(this.currentAccount).Y3.edit();
             edit.putString(this.K, kq3Var4.toString());
             this.e = 3;
             edit.putInt(this.L, 3);
@@ -469,7 +469,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.e {
                 } else {
                     kq3Var4.e = !z6;
                 }
-                SharedPreferences.Editor edit2 = uc7.s1(this.currentAccount).X3.edit();
+                SharedPreferences.Editor edit2 = uc7.s1(this.currentAccount).Y3.edit();
                 edit2.putString(str3, kq3Var4.toString());
                 this.e = 3;
                 edit2.putInt(str4, 3);

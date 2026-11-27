@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v6a implements Runnable {
     public final /* synthetic */ byte a = 0;
@@ -41,9 +41,9 @@ public final /* synthetic */ class v6a implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x06a6  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x04e2  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x05bd  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x06b6  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x04f6  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x05ca  */
     /* JADX WARN: Type inference failed for: r5v17 */
     /* JADX WARN: Type inference failed for: r5v7 */
     /* JADX WARN: Type inference failed for: r5v8, types: [boolean] */
@@ -58,40 +58,41 @@ public final /* synthetic */ class v6a implements Runnable {
         TLRPC.Message message;
         TLRPC.Message message2;
         r47 r47Var;
-        TLRPC.Message message3;
         int i;
+        TLRPC.Message message3;
         ?? r6;
         boolean z;
         r7a r7aVar;
         String str;
-        int i2;
         r47 r47Var2;
-        int i3;
+        int i2;
         boolean z2;
-        int i4;
+        int i3;
         ?? r5;
-        int i5;
+        int i4;
         r7a r7aVar2;
-        int i6;
+        int i5;
         boolean z3;
         boolean z4;
         String str2;
         ArrayList<TLRPC.Update> arrayList;
         ArrayList arrayList2;
+        zh6 zh6Var;
         TLRPC.Updates updates;
         r7a r7aVar3;
         TLRPC.MessageReplyHeader messageReplyHeader;
+        zh6 zh6Var2;
         long j;
-        zh6 zh6Var;
+        SparseArray sparseArray;
+        int i6;
         TLRPC.Message message4;
         r7a r7aVar4;
         int i7;
         boolean z5;
         r7a r7aVar5;
-        r7a r7aVar6;
         switch (this.a) {
             case 0:
-                r7a r7aVar7 = this.b;
+                r7a r7aVar6 = this.b;
                 TLRPC.TL_error tL_error = this.d;
                 TLRPC.Message message5 = this.e;
                 TLObject tLObject = this.f;
@@ -101,9 +102,9 @@ public final /* synthetic */ class v6a implements Runnable {
                 boolean z6 = this.c;
                 TLObject tLObject2 = this.s;
                 if (tL_error != null) {
-                    jj.c0(r7aVar7.currentAccount, tL_error, null, tLObject2, new Object[0]);
-                    r7aVar7.h0(message5.id, z6);
-                    r7aVar7.k0(r47Var3);
+                    jj.c0(r7aVar6.currentAccount, tL_error, null, tLObject2, new Object[0]);
+                    r7aVar6.h0(message5.id, z6);
+                    r7aVar6.k0(r47Var3);
                     break;
                 } else {
                     String str4 = message5.attachPath;
@@ -118,24 +119,24 @@ public final /* synthetic */ class v6a implements Runnable {
                         } else if (update instanceof TL_update.TL_updateNewScheduledMessage) {
                             message2 = ((TL_update.TL_updateNewScheduledMessage) update).message;
                         } else if (update instanceof TL_update.TL_updateQuickReplyMessage) {
-                            b19.f(r7aVar7.currentAccount).j(update, r47.J1(message5), r47.I1(message5));
+                            b19.f(r7aVar6.currentAccount).j(update, r47.J1(message5), r47.I1(message5));
                             message2 = ((TL_update.TL_updateQuickReplyMessage) update).message;
                         }
                         message = message2;
                         if (message != null) {
                             in5.R(message);
-                            r7aVar7.y0(r47Var3, message, message.id, Collections.singletonList(str3), false, -1, hashMap);
+                            r7aVar6.y0(r47Var3, message, message.id, Collections.singletonList(str3), false, -1, hashMap);
                         }
-                        Utilities.d.c(new e5a(r7aVar7, updates2, message5, z6, (byte) 1));
+                        Utilities.d.c(new e5a(r7aVar6, updates2, message5, z6, (byte) 1));
                         break;
                     }
                     message = null;
                     if (message != null) {
                     }
-                    Utilities.d.c(new e5a(r7aVar7, updates2, message5, z6, (byte) 1));
+                    Utilities.d.c(new e5a(r7aVar6, updates2, message5, z6, (byte) 1));
                 }
             default:
-                r7a r7aVar8 = this.b;
+                r7a r7aVar7 = this.b;
                 boolean z7 = this.c;
                 TLRPC.TL_error tL_error2 = this.d;
                 TLRPC.Message message6 = this.e;
@@ -150,9 +151,8 @@ public final /* synthetic */ class v6a implements Runnable {
                     boolean z8 = message6.date == 2147483646;
                     if (tLObject3 instanceof TLRPC.TL_updateShortSentMessage) {
                         TLRPC.TL_updateShortSentMessage tL_updateShortSentMessage = (TLRPC.TL_updateShortSentMessage) tLObject3;
-                        i2 = i9;
-                        r7aVar8.y0(r47Var4, null, tL_updateShortSentMessage.id, Collections.singletonList(null), false, -1, hashMap2);
-                        r7a r7aVar9 = r7aVar8;
+                        r7aVar7.y0(r47Var4, null, tL_updateShortSentMessage.id, Collections.singletonList(null), false, -1, hashMap2);
+                        r7a r7aVar8 = r7aVar7;
                         int o1 = r47Var4.o1();
                         int i10 = tL_updateShortSentMessage.id;
                         message6.id = i10;
@@ -177,22 +177,21 @@ public final /* synthetic */ class v6a implements Runnable {
                         if (!message6.entities.isEmpty()) {
                             message6.flags |= 128;
                         }
-                        Integer num = (Integer) r7aVar9.getMessagesController().Q.get(Long.valueOf(message6.dialog_id));
+                        Integer num = (Integer) r7aVar8.getMessagesController().Q.get(Long.valueOf(message6.dialog_id));
                         if (num == null) {
-                            num = Integer.valueOf(r7aVar9.getMessagesStorage().S(message6.dialog_id, message6.out));
-                            r7aVar9.getMessagesController().Q.put(Long.valueOf(message6.dialog_id), num);
+                            num = Integer.valueOf(r7aVar8.getMessagesStorage().U(message6.dialog_id, message6.out));
+                            r7aVar8.getMessagesController().Q.put(Long.valueOf(message6.dialog_id), num);
                         }
                         message6.unread = num.intValue() < message6.id;
-                        Utilities.d.c(new en9(r7aVar9, tL_updateShortSentMessage, (byte) 22));
+                        Utilities.d.c(new dn9(r7aVar8, tL_updateShortSentMessage, (byte) 23));
                         arrayList4.add(message6);
-                        i4 = o1;
+                        i3 = o1;
                         r47Var2 = r47Var4;
-                        i3 = 2;
+                        i2 = 2;
                         z2 = false;
-                        r7aVar6 = r7aVar9;
+                        r7aVar5 = r7aVar8;
                     } else {
-                        i2 = i9;
-                        r7a r7aVar10 = r7aVar8;
+                        r7a r7aVar9 = r7aVar7;
                         if (tLObject3 instanceof TLRPC.Updates) {
                             TLRPC.Updates updates3 = (TLRPC.Updates) tLObject3;
                             ArrayList<TLRPC.Update> arrayList5 = updates3.updates;
@@ -200,9 +199,9 @@ public final /* synthetic */ class v6a implements Runnable {
                             boolean z9 = z7;
                             TLRPC.Updates updates4 = updates3;
                             TLRPC.Message message7 = null;
-                            zh6 zh6Var2 = null;
+                            zh6 zh6Var3 = null;
                             int i11 = 0;
-                            r7a r7aVar11 = r7aVar10;
+                            r7a r7aVar10 = r7aVar9;
                             while (i11 < arrayList5.size()) {
                                 TLRPC.Update update2 = arrayList5.get(i11);
                                 boolean z10 = z9;
@@ -210,12 +209,19 @@ public final /* synthetic */ class v6a implements Runnable {
                                     TL_update.TL_updateNewMessage tL_updateNewMessage = (TL_update.TL_updateNewMessage) update2;
                                     TLRPC.Message message8 = tL_updateNewMessage.message;
                                     str2 = str5;
-                                    if (message8.action == null) {
+                                    if (message8.action != null) {
+                                        r7aVar3 = r7aVar10;
+                                        arrayList = arrayList5;
+                                        arrayList2 = arrayList6;
+                                        zh6Var = zh6Var3;
+                                        updates = updates4;
+                                        zh6Var3 = zh6Var;
+                                    } else {
                                         arrayList4.add(message8);
-                                        Utilities.d.c(new h5a(r7aVar11, tL_updateNewMessage, (byte) 0));
+                                        Utilities.d.c(new h5a(r7aVar10, tL_updateNewMessage, (byte) 0));
                                         arrayList5.remove(i11);
                                         i11--;
-                                        r7aVar3 = r7aVar11;
+                                        r7aVar3 = r7aVar10;
                                         arrayList = arrayList5;
                                         updates = updates4;
                                         z9 = z10;
@@ -225,13 +231,9 @@ public final /* synthetic */ class v6a implements Runnable {
                                         arrayList5 = arrayList;
                                         str5 = str2;
                                         arrayList6 = arrayList2;
-                                        r7aVar11 = r7aVar3;
+                                        r7aVar10 = r7aVar3;
                                         updates4 = updates;
                                     }
-                                    r7aVar3 = r7aVar11;
-                                    arrayList = arrayList5;
-                                    arrayList2 = arrayList6;
-                                    updates = updates4;
                                 } else {
                                     str2 = str5;
                                     if (update2 instanceof TL_update.TL_updateNewEphemeralMessage) {
@@ -241,7 +243,7 @@ public final /* synthetic */ class v6a implements Runnable {
                                         arrayList6.add(tL_updateNewEphemeralMessage.message);
                                         arrayList5.remove(i11);
                                         i11--;
-                                        r7aVar3 = r7aVar11;
+                                        r7aVar3 = r7aVar10;
                                         arrayList = arrayList5;
                                         arrayList2 = arrayList6;
                                         updates = updates4;
@@ -249,20 +251,22 @@ public final /* synthetic */ class v6a implements Runnable {
                                         if (update2 instanceof TL_update.TL_updateNewChannelMessage) {
                                             TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage = (TL_update.TL_updateNewChannelMessage) update2;
                                             ArrayList arrayList7 = arrayList6;
+                                            zh6 zh6Var4 = zh6Var3;
                                             long S1 = uc7.S1(tL_updateNewChannelMessage);
-                                            TLRPC.Chat M0 = r7aVar11.getMessagesController().M0(Long.valueOf(S1));
+                                            TLRPC.Chat M0 = r7aVar10.getMessagesController().M0(Long.valueOf(S1));
                                             if (!(M0 == null || M0.megagroup) || (messageReplyHeader = tL_updateNewChannelMessage.message.reply_to) == null || (messageReplyHeader.reply_to_top_id == 0 && messageReplyHeader.reply_to_msg_id == 0)) {
                                                 j = S1;
+                                                zh6Var2 = zh6Var4;
                                             } else {
-                                                if (zh6Var2 == null) {
-                                                    zh6Var2 = new zh6();
-                                                }
-                                                j = S1;
+                                                zh6Var2 = zh6Var4 == null ? new zh6() : zh6Var4;
                                                 long B0 = r47.B0(tL_updateNewChannelMessage.message);
-                                                SparseArray sparseArray = (SparseArray) zh6Var2.f(B0);
-                                                if (sparseArray == null) {
+                                                SparseArray sparseArray2 = (SparseArray) zh6Var2.f(B0);
+                                                j = S1;
+                                                if (sparseArray2 == null) {
                                                     sparseArray = new SparseArray();
                                                     zh6Var2.k(B0, sparseArray);
+                                                } else {
+                                                    sparseArray = sparseArray2;
                                                 }
                                                 TLRPC.MessageReplyHeader messageReplyHeader2 = tL_updateNewChannelMessage.message.reply_to;
                                                 int i12 = messageReplyHeader2.reply_to_top_id;
@@ -280,43 +284,43 @@ public final /* synthetic */ class v6a implements Runnable {
                                                 }
                                                 messageReplies.replies++;
                                             }
-                                            zh6 zh6Var3 = zh6Var2;
                                             TLRPC.Message message9 = tL_updateNewChannelMessage.message;
                                             arrayList4.add(message9);
-                                            Utilities.d.c(new i5a(r7aVar11, tL_updateNewChannelMessage, (byte) 0));
+                                            Utilities.d.c(new i5a(r7aVar10, tL_updateNewChannelMessage, (byte) 0));
                                             arrayList5.remove(i11);
-                                            i11--;
+                                            int i13 = i11 - 1;
                                             if (tL_updateNewChannelMessage.message.pinned) {
                                                 updates = updates4;
+                                                arrayList2 = arrayList7;
+                                                i6 = i13;
                                                 message4 = message9;
                                                 arrayList = arrayList5;
-                                                zh6Var = zh6Var3;
-                                                long j2 = j;
-                                                arrayList2 = arrayList7;
-                                                Utilities.d.c(new j5a(r7aVar11, tL_updateNewChannelMessage, j2, (byte) 0));
+                                                Utilities.d.c(new j5a(r7aVar10, tL_updateNewChannelMessage, j, (byte) 0));
                                             } else {
                                                 updates = updates4;
                                                 arrayList2 = arrayList7;
-                                                zh6Var = zh6Var3;
+                                                i6 = i13;
                                                 message4 = message9;
                                                 arrayList = arrayList5;
                                             }
-                                            r7aVar3 = r7aVar11;
+                                            zh6Var3 = zh6Var2;
+                                            r7aVar3 = r7aVar10;
                                             message7 = message4;
-                                            zh6Var2 = zh6Var;
+                                            i11 = i6;
                                         } else {
                                             arrayList = arrayList5;
                                             arrayList2 = arrayList6;
+                                            zh6Var = zh6Var3;
                                             updates = updates4;
                                             if (update2 instanceof TL_update.TL_updateNewScheduledMessage) {
                                                 TL_update.TL_updateNewScheduledMessage tL_updateNewScheduledMessage = (TL_update.TL_updateNewScheduledMessage) update2;
-                                                int i13 = 0;
+                                                int i14 = 0;
                                                 while (true) {
-                                                    if (i13 < arrayList4.size()) {
-                                                        if (((TLRPC.Message) arrayList4.get(i13)).id == tL_updateNewScheduledMessage.message.id) {
-                                                            arrayList4.remove(i13);
+                                                    if (i14 < arrayList4.size()) {
+                                                        if (((TLRPC.Message) arrayList4.get(i14)).id == tL_updateNewScheduledMessage.message.id) {
+                                                            arrayList4.remove(i14);
                                                         } else {
-                                                            i13++;
+                                                            i14++;
                                                         }
                                                     }
                                                 }
@@ -324,17 +328,18 @@ public final /* synthetic */ class v6a implements Runnable {
                                                 arrayList4.add(message7);
                                                 arrayList.remove(i11);
                                                 i11--;
-                                                r7aVar3 = r7aVar11;
+                                                r7aVar3 = r7aVar10;
+                                                zh6Var3 = zh6Var;
                                                 z9 = true;
                                                 i11++;
                                                 arrayList5 = arrayList;
                                                 str5 = str2;
                                                 arrayList6 = arrayList2;
-                                                r7aVar11 = r7aVar3;
+                                                r7aVar10 = r7aVar3;
                                                 updates4 = updates;
                                             } else {
                                                 if (update2 instanceof TL_update.TL_updateQuickReplyMessage) {
-                                                    b19.f(r7aVar11.currentAccount).j(update2, r47.J1(r47Var4.k), r47.I1(r47Var4.k));
+                                                    b19.f(r7aVar10.currentAccount).j(update2, r47.J1(r47Var4.k), r47.I1(r47Var4.k));
                                                     message7 = ((TL_update.TL_updateQuickReplyMessage) update2).message;
                                                     arrayList4.add(message7);
                                                     arrayList.remove(i11);
@@ -344,33 +349,35 @@ public final /* synthetic */ class v6a implements Runnable {
                                                     if (r47.B0(r47Var4.k) == wf3.n(tL_updateDeleteScheduledMessages.peer)) {
                                                         ArrayList<Integer> arrayList8 = tL_updateDeleteScheduledMessages.messages;
                                                         int size = arrayList8.size();
-                                                        int i14 = 0;
-                                                        r7a r7aVar12 = r7aVar11;
-                                                        while (i14 < size) {
-                                                            Integer num2 = arrayList8.get(i14);
-                                                            i14++;
+                                                        int i15 = 0;
+                                                        r7a r7aVar11 = r7aVar10;
+                                                        while (i15 < size) {
+                                                            Integer num2 = arrayList8.get(i15);
+                                                            i15++;
                                                             int intValue = num2.intValue();
                                                             ArrayList<Integer> arrayList9 = arrayList8;
-                                                            r7a r7aVar13 = r7aVar12;
-                                                            int i15 = 0;
+                                                            r7a r7aVar12 = r7aVar11;
+                                                            int i16 = 0;
                                                             while (true) {
-                                                                if (i15 >= arrayList4.size()) {
+                                                                if (i16 >= arrayList4.size()) {
                                                                     break;
-                                                                } else if (((TLRPC.Message) arrayList4.get(i15)).id == intValue) {
-                                                                    arrayList4.remove(i15);
+                                                                } else if (((TLRPC.Message) arrayList4.get(i16)).id == intValue) {
+                                                                    arrayList4.remove(i16);
                                                                 } else {
-                                                                    i15++;
+                                                                    i16++;
                                                                 }
                                                             }
                                                             arrayList8 = arrayList9;
-                                                            r7aVar12 = r7aVar13;
+                                                            r7aVar11 = r7aVar12;
                                                         }
-                                                        r7aVar3 = r7aVar12;
+                                                        r7aVar3 = r7aVar11;
                                                         arrayList.remove(i11);
                                                         i11--;
+                                                        zh6Var3 = zh6Var;
                                                     }
                                                 }
-                                                r7aVar3 = r7aVar11;
+                                                r7aVar3 = r7aVar10;
+                                                zh6Var3 = zh6Var;
                                             }
                                         }
                                         z9 = false;
@@ -378,7 +385,7 @@ public final /* synthetic */ class v6a implements Runnable {
                                         arrayList5 = arrayList;
                                         str5 = str2;
                                         arrayList6 = arrayList2;
-                                        r7aVar11 = r7aVar3;
+                                        r7aVar10 = r7aVar3;
                                         updates4 = updates;
                                     }
                                 }
@@ -387,33 +394,34 @@ public final /* synthetic */ class v6a implements Runnable {
                                 arrayList5 = arrayList;
                                 str5 = str2;
                                 arrayList6 = arrayList2;
-                                r7aVar11 = r7aVar3;
+                                r7aVar10 = r7aVar3;
                                 updates4 = updates;
                             }
-                            r7a r7aVar14 = r7aVar11;
+                            r7a r7aVar13 = r7aVar10;
                             ArrayList arrayList10 = arrayList6;
                             boolean z11 = z9;
                             String str6 = str5;
                             TLRPC.Updates updates5 = updates4;
                             ArrayList<TLRPC.Update> arrayList11 = arrayList5;
+                            zh6 zh6Var5 = zh6Var3;
                             if (arrayList10.isEmpty()) {
                                 r5 = 1;
                             } else {
                                 r5 = 1;
-                                r7aVar14.getMessagesStorage().c1(arrayList10, true);
+                                r7aVar13.getMessagesStorage().g1(arrayList10, true);
                             }
-                            if (zh6Var2 != null) {
-                                r7aVar14.getMessagesStorage().X0(null, null, zh6Var2, r5);
-                                jn7 notificationCenter = r7aVar14.getNotificationCenter();
+                            if (zh6Var5 != null) {
+                                r7aVar13.getMessagesStorage().b1(null, null, zh6Var5, r5);
+                                jn7 notificationCenter = r7aVar13.getNotificationCenter();
                                 Object[] objArr = new Object[4];
                                 objArr[0] = null;
                                 objArr[r5] = null;
-                                i5 = 2;
-                                objArr[2] = zh6Var2;
+                                i4 = 2;
+                                objArr[2] = zh6Var5;
                                 objArr[3] = Boolean.TRUE;
                                 notificationCenter.k(78, objArr);
                             } else {
-                                i5 = 2;
+                                i4 = 2;
                             }
                             if (message7 != null) {
                                 r47.B0(message7);
@@ -422,10 +430,10 @@ public final /* synthetic */ class v6a implements Runnable {
                                 }
                                 in5.R(message7);
                                 if (!z11) {
-                                    Integer num3 = (Integer) r7aVar14.getMessagesController().Q.get(Long.valueOf(message7.dialog_id));
+                                    Integer num3 = (Integer) r7aVar13.getMessagesController().Q.get(Long.valueOf(message7.dialog_id));
                                     if (num3 == null) {
-                                        num3 = Integer.valueOf(r7aVar14.getMessagesStorage().S(message7.dialog_id, message7.out));
-                                        r7aVar14.getMessagesController().Q.put(Long.valueOf(message7.dialog_id), num3);
+                                        num3 = Integer.valueOf(r7aVar13.getMessagesStorage().U(message7.dialog_id, message7.out));
+                                        r7aVar13.getMessagesController().Q.put(Long.valueOf(message7.dialog_id), num3);
                                     }
                                     message7.unread = num3.intValue() < message7.id;
                                 }
@@ -436,64 +444,64 @@ public final /* synthetic */ class v6a implements Runnable {
                                     message10.flags |= 33554432;
                                 }
                                 message10.entities = message7.entities;
-                                int i16 = message7.quick_reply_shortcut_id;
-                                message10.quick_reply_shortcut_id = i16;
-                                if (i16 != 0) {
+                                int i17 = message7.quick_reply_shortcut_id;
+                                message10.quick_reply_shortcut_id = i17;
+                                if (i17 != 0) {
                                     message10.flags |= TLObject.FLAG_30;
                                 }
                                 TLRPC.Message message11 = message7;
-                                i3 = i5;
-                                r7aVar14.y0(r47Var4, message11, message7.id, Collections.singletonList(str6), false, -1, hashMap2);
+                                i2 = i4;
+                                r7aVar13.y0(r47Var4, message11, message7.id, Collections.singletonList(str6), false, -1, hashMap2);
                                 r47Var2 = r47Var4;
-                                r7aVar2 = r7aVar14;
-                                i6 = r47Var2.o1();
+                                r7aVar2 = r7aVar13;
+                                i5 = r47Var2.o1();
                                 message6.id = message11.id;
                                 z3 = false;
                             } else {
                                 r47Var2 = r47Var4;
-                                i3 = i5;
-                                r7aVar2 = r7aVar14;
+                                i2 = i4;
+                                r7aVar2 = r7aVar13;
                                 if (f11.a) {
                                     StringBuilder sb = new StringBuilder();
-                                    for (int i17 = 0; i17 < arrayList11.size(); i17++) {
-                                        sb.append(arrayList11.get(i17).getClass().getSimpleName());
+                                    for (int i18 = 0; i18 < arrayList11.size(); i18++) {
+                                        sb.append(arrayList11.get(i18).getClass().getSimpleName());
                                         sb.append(", ");
                                     }
                                     cc4.b("can't find message in updates " + ((Object) sb));
                                 }
-                                i6 = 0;
+                                i5 = 0;
                                 z3 = true;
                             }
                             Utilities.d.c(new k5a(r7aVar2, updates5, (byte) 0));
-                            i4 = i6;
+                            i3 = i5;
                             z4 = z3;
                             z2 = z11;
                             r7aVar4 = r7aVar2;
                             if (!(r47.n1(message6) instanceof TLRPC.TL_messageMediaGeoLive) && message6.via_bot_id == 0 && TextUtils.isEmpty(message6.via_bot_name)) {
                                 id6 locationController = r7aVar4.getLocationController();
                                 ArrayList arrayList12 = locationController.b;
-                                zh6 zh6Var4 = locationController.a;
+                                zh6 zh6Var6 = locationController.a;
                                 hd6 hd6Var = new hd6();
-                                i = i3;
+                                i = i2;
                                 r47Var = r47Var2;
                                 hd6Var.a = message6.dialog_id;
                                 hd6Var.b = message6.id;
                                 TLRPC.MessageMedia messageMedia3 = message6.media;
                                 hd6Var.d = messageMedia3.period;
-                                int i18 = messageMedia3.proximity_notification_radius;
-                                hd6Var.f = i18;
-                                hd6Var.g = i18;
-                                int i19 = locationController.currentAccount;
-                                hd6Var.e = i19;
-                                hd6Var.h = new r47(i19, message6, false, false);
+                                int i19 = messageMedia3.proximity_notification_radius;
+                                hd6Var.f = i19;
+                                hd6Var.g = i19;
+                                int i20 = locationController.currentAccount;
+                                hd6Var.e = i20;
+                                hd6Var.h = new r47(i20, message6, false, false);
                                 if (hd6Var.d == Integer.MAX_VALUE) {
                                     hd6Var.c = ConnectionsManager.DEFAULT_DATACENTER_ID;
                                 } else {
                                     hd6Var.c = locationController.getConnectionsManager().getCurrentTime() + hd6Var.d;
                                 }
-                                hd6 hd6Var2 = (hd6) zh6Var4.f(hd6Var.a);
-                                i7 = i4;
-                                zh6Var4.k(hd6Var.a, hd6Var);
+                                hd6 hd6Var2 = (hd6) zh6Var6.f(hd6Var.a);
+                                i7 = i3;
+                                zh6Var6.k(hd6Var.a, hd6Var);
                                 if (hd6Var2 != null) {
                                     arrayList12.remove(hd6Var2);
                                 }
@@ -502,9 +510,9 @@ public final /* synthetic */ class v6a implements Runnable {
                                 locationController.w = SystemClock.elapsedRealtime() - 25000;
                                 hl.c3(new ls5(locationController, hd6Var2, hd6Var, (byte) 20));
                             } else {
-                                i = i3;
+                                i = i2;
                                 r47Var = r47Var2;
-                                i7 = i4;
+                                i7 = i3;
                             }
                             if (z4) {
                                 r7aVar4.getStatsController().i(a.f(), 1, 1);
@@ -513,20 +521,18 @@ public final /* synthetic */ class v6a implements Runnable {
                                 message6.errorAllowedPriceStars = 0L;
                                 if (z7 != z2) {
                                     ArrayList arrayList13 = new ArrayList();
-                                    arrayList13.add(Integer.valueOf(i2));
+                                    arrayList13.add(Integer.valueOf(i9));
                                     ArrayList arrayList14 = new ArrayList();
                                     r47 r47Var5 = r47Var;
                                     arrayList14.add(new r47(r47Var5.K1, r47Var5.k, true, true));
                                     z5 = z7;
                                     message3 = message6;
-                                    r7aVar4.getMessagesStorage().a.c(new le1(r7aVar4, arrayList4, z7, z2, message6, arrayList13, arrayList14, i2));
-                                    r7aVar5 = r7aVar4;
+                                    r7aVar4.getMessagesStorage().a.c(new le1(r7aVar4, arrayList4, z7, z2, message6, arrayList13, arrayList14, i9));
                                 } else {
                                     boolean z12 = z7;
                                     message3 = message6;
-                                    int i20 = i2;
                                     jn7 notificationCenter2 = r7aVar4.getNotificationCenter();
-                                    Integer valueOf = Integer.valueOf(i20);
+                                    Integer valueOf = Integer.valueOf(i9);
                                     Integer valueOf2 = Integer.valueOf(message3.id);
                                     Long valueOf3 = Long.valueOf(message3.dialog_id);
                                     Integer valueOf4 = Integer.valueOf(i7);
@@ -541,11 +547,11 @@ public final /* synthetic */ class v6a implements Runnable {
                                     objArr2[6] = valueOf5;
                                     notificationCenter2.k(21, objArr2);
                                     jn7 notificationCenter3 = r7aVar4.getNotificationCenter();
-                                    Integer valueOf6 = Integer.valueOf(i20);
+                                    Integer valueOf6 = Integer.valueOf(i9);
                                     Integer valueOf7 = Integer.valueOf(message3.id);
-                                    r7a r7aVar15 = r7aVar4;
+                                    int i21 = i7;
                                     Long valueOf8 = Long.valueOf(message3.dialog_id);
-                                    Integer valueOf9 = Integer.valueOf(i7);
+                                    Integer valueOf9 = Integer.valueOf(i21);
                                     Boolean valueOf10 = Boolean.valueOf(z12);
                                     Object[] objArr3 = new Object[7];
                                     objArr3[0] = valueOf6;
@@ -556,58 +562,55 @@ public final /* synthetic */ class v6a implements Runnable {
                                     objArr3[5] = valueOf9;
                                     objArr3[6] = valueOf10;
                                     notificationCenter3.k(22, objArr3);
-                                    r7a r7aVar16 = r7aVar15;
-                                    r7aVar15.getMessagesStorage().a.c(new l5a(r7aVar16, z12, message3, i20, arrayList4, i7));
-                                    r7aVar5 = r7aVar16;
+                                    r7aVar4.getMessagesStorage().a.c(new l5a(r7aVar4, z12, message3, i9, arrayList4, i21));
                                     z5 = z12;
                                 }
                             } else {
                                 z5 = z7;
                                 message3 = message6;
-                                r7aVar5 = r7aVar4;
                             }
                             z = z4;
-                            r7aVar = r7aVar5;
+                            r7aVar = r7aVar4;
                             r6 = z5;
                         } else {
                             r47Var2 = r47Var4;
-                            i3 = 2;
+                            i2 = 2;
                             z2 = z7;
-                            i4 = 0;
-                            r7aVar6 = r7aVar10;
+                            i3 = 0;
+                            r7aVar5 = r7aVar9;
                         }
                     }
                     z4 = false;
-                    r7aVar4 = r7aVar6;
+                    r7aVar4 = r7aVar5;
                     if (!(r47.n1(message6) instanceof TLRPC.TL_messageMediaGeoLive)) {
                     }
-                    i = i3;
+                    i = i2;
                     r47Var = r47Var2;
-                    i7 = i4;
+                    i7 = i3;
                     if (z4) {
                     }
                     z = z4;
-                    r7aVar = r7aVar5;
+                    r7aVar = r7aVar4;
                     r6 = z5;
                 } else {
                     r47Var = r47Var4;
-                    r7a r7aVar17 = r7aVar8;
-                    message3 = message6;
+                    r7a r7aVar14 = r7aVar7;
                     i = 2;
+                    message3 = message6;
                     r6 = z7;
-                    jj.c0(r7aVar17.currentAccount, tL_error2, null, tLObject4, new Object[0]);
+                    jj.c0(r7aVar14.currentAccount, tL_error2, null, tLObject4, new Object[0]);
                     z = true;
-                    r7aVar = r7aVar17;
+                    r7aVar = r7aVar14;
                 }
                 if (z) {
-                    r7aVar.getMessagesStorage().K0(r6, message3);
+                    r7aVar.getMessagesStorage().N0(r6, message3);
                     message3.send_state = i;
                     if (tL_error2 != null && (str = tL_error2.text) != null && str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
                         jxa.v(r7aVar.currentAccount, false);
                         message3.errorAllowedPriceStars = jxa.l(tLObject4);
                         message3.errorNewPriceStars = Long.parseLong(tL_error2.text.substring(23));
                         jxa.v(r7aVar.currentAccount, false).e0(Arrays.asList(r47Var));
-                        r7aVar.getMessagesStorage().U1(r47.B0(message3), message3);
+                        r7aVar.getMessagesStorage().Z1(r47.B0(message3), message3);
                     }
                     r7aVar.getNotificationCenter().k(23, Integer.valueOf(message3.id));
                     r7aVar.c0(message3.id);

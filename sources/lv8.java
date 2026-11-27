@@ -6,22 +6,22 @@ import android.os.Build;
 import java.io.File;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class lv8 {
     public static final sd9 a = new sd9();
     public static final Object b = new Object();
-    public static rg7 c = null;
+    public static sg7 c = null;
 
     public static long a(Context context) {
         PackageManager packageManager = context.getApplicationContext().getPackageManager();
         return Build.VERSION.SDK_INT >= 33 ? jv8.a(packageManager, context).lastUpdateTime : packageManager.getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
     }
 
-    public static rg7 b() {
-        rg7 rg7Var = new rg7((byte) 24);
-        c = rg7Var;
-        a.k(rg7Var);
+    public static sg7 b() {
+        sg7 sg7Var = new sg7((byte) 24);
+        c = sg7Var;
+        a.k(sg7Var);
         return c;
     }
 

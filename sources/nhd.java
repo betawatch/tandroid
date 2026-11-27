@@ -5,7 +5,7 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.IInterface;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class nhd implements ServiceConnection {
     public final wh0 a;
@@ -171,7 +171,7 @@ public final class nhd implements ServiceConnection {
                 mcdVar = queryLocalInterface instanceof xcd ? (xcd) queryLocalInterface : new mcd(iBinder, "com.android.vending.billing.IInAppBillingService", (byte) 10);
             }
             vh0Var.i = mcdVar;
-            if (vh0.f(new tg7(this, (byte) 3), 30000L, new bva(this, (byte) 27), vh0Var.r(), vh0Var.e()) == null) {
+            if (vh0.f(new ug7(this, (byte) 3), 30000L, new bva(this, (byte) 27), vh0Var.r(), vh0Var.e()) == null) {
                 gi0 u = vh0Var.u();
                 vh0Var.j(25, u);
                 c(u);

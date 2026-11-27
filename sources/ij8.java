@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ij8 extends e {
     public final long a;
@@ -40,7 +40,7 @@ public final class ij8 extends e {
         long j2 = chat != null ? chat.send_paid_messages_stars : 0L;
         boolean z = M0 != null && M0.broadcast_messages_allowed;
         this.f = z;
-        long k = Utilities.k(z ? j2 : getMessagesController().k4.c.f(), getMessagesController().k4.P1.f(), 0L);
+        long k = Utilities.k(z ? j2 : getMessagesController().l4.c.f(), getMessagesController().l4.P1.f(), 0L);
         this.h = k;
         this.n = z;
         this.r = k;
@@ -56,7 +56,7 @@ public final class ij8 extends e {
     }
 
     public final String Z() {
-        return ob6.a0(null, null, 2131746802, cc.J0(getMessagesController().k4.Q1.f()), String.valueOf(((int) (((this.r * (r0 / 1000.0f)) / 1000.0d) * getMessagesController().k4.A3.i)) / 100.0d));
+        return ob6.a0(null, null, 2131746802, cc.J0(getMessagesController().l4.Q1.f()), String.valueOf(((int) (((this.r * (r0 / 1000.0f)) / 1000.0d) * getMessagesController().l4.A3.i)) / 100.0d));
     }
 
     public final boolean a0() {
@@ -98,7 +98,7 @@ public final class ij8 extends e {
         boolean z = this.n;
         updatepaidmessagesprice.send_paid_messages_stars = z ? this.r : 0L;
         updatepaidmessagesprice.suggestions_allowed = z;
-        getConnectionsManager().sendRequest(updatepaidmessagesprice, new ol7(this, updatepaidmessagesprice, (byte) 9));
+        getConnectionsManager().sendRequest(updatepaidmessagesprice, new pl7(this, updatepaidmessagesprice, (byte) 9));
         TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(j));
         if (M0 != null) {
             boolean z2 = this.n;

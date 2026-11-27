@@ -35,7 +35,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ku9 implements pcc {
     public final /* synthetic */ byte a;
@@ -131,7 +131,7 @@ public final /* synthetic */ class ku9 implements pcc {
                 a5aVar.dismiss();
                 jn7.f(yac.t0).k(jn7.U2, new Object[0]);
                 hl.d3(new xp8(user, (byte) 1), 250L);
-                uc7.s1(a5aVar.T1).X3.edit().putBoolean("show_gift_for_" + j5, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j5, true).apply();
+                uc7.s1(a5aVar.T1).Y3.edit().putBoolean("show_gift_for_" + j5, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j5, true).apply();
                 break;
             case 3:
                 p7a p7aVar = (p7a) obj2;
@@ -139,7 +139,7 @@ public final /* synthetic */ class ku9 implements pcc {
                 ((r7a) obj3).q0(p7aVar);
                 break;
             case 4:
-                ((tba) obj3).g0((TLRPC.TL_attachMenuBot) obj2);
+                ((uba) obj3).g0((TLRPC.TL_attachMenuBot) obj2);
                 break;
             case 5:
                 uc7 uc7Var = (uc7) obj3;
@@ -158,7 +158,7 @@ public final /* synthetic */ class ku9 implements pcc {
                 }
                 break;
             case 6:
-                ((eja) obj3).x0((TL_stories.StoryItem) obj2, (v5b) obj);
+                ((eja) obj3).x0((TL_stories.StoryItem) obj2, (w5b) obj);
                 break;
             case 7:
                 ((wua) obj3).M1((id) obj2, (TL_stars.SavedStarGift) obj);
@@ -331,28 +331,28 @@ public final /* synthetic */ class ku9 implements pcc {
                 r9bVar2.h(true);
                 break;
             case 15:
-                rab rabVar = (rab) obj3;
+                sab sabVar = (sab) obj3;
                 pcc pccVar = (pcc) obj2;
                 Integer num = (Integer) obj;
-                rbb rbbVar = rabVar.a;
-                boolean p0 = rbbVar.p0();
-                int i5 = rbbVar.c;
+                sbb sbbVar = sabVar.a;
+                boolean p0 = sbbVar.p0();
+                int i5 = sbbVar.c;
                 if (p0) {
                     try {
-                        rbbVar.n.performHapticFeedback(3, 1);
+                        sbbVar.n.performHapticFeedback(3, 1);
                     } catch (Exception unused) {
                     }
                 }
-                rbbVar.Q1 = false;
-                oy8 oy8Var = rbbVar.D0;
+                sbbVar.Q1 = false;
+                oy8 oy8Var = sbbVar.D0;
                 if (oy8Var != null) {
                     oy8Var.f(false);
                 }
-                if (rbbVar.H1 != null) {
+                if (sbbVar.H1 != null) {
                     try {
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inJustDecodeBounds = true;
-                        BitmapFactory.decodeFile(rbbVar.H1.getAbsolutePath(), options);
+                        BitmapFactory.decodeFile(sbbVar.H1.getAbsolutePath(), options);
                         i = options.outWidth;
                         try {
                             i2 = options.outHeight;
@@ -362,10 +362,10 @@ public final /* synthetic */ class ku9 implements pcc {
                             }
                             if (num.intValue() != -1) {
                             }
-                            c8b m = c8b.m(rbbVar.H1, r8);
-                            m.J0 = rbbVar.w0;
-                            m.K0 = rbbVar.x0;
-                            if (rbbVar.B0.i()) {
+                            c8b m = c8b.m(sbbVar.H1, r8);
+                            m.J0 = sbbVar.w0;
+                            m.K0 = sbbVar.x0;
+                            if (sbbVar.B0.i()) {
                             }
                         }
                     } catch (Exception unused3) {
@@ -379,34 +379,34 @@ public final /* synthetic */ class ku9 implements pcc {
                     } else if (i2 > i && i6 != 0) {
                         i6 = 0;
                     }
-                    c8b m2 = c8b.m(rbbVar.H1, i6);
-                    m2.J0 = rbbVar.w0;
-                    m2.K0 = rbbVar.x0;
-                    if (rbbVar.B0.i()) {
-                        rbbVar.L1 = m2;
+                    c8b m2 = c8b.m(sbbVar.H1, i6);
+                    m2.J0 = sbbVar.w0;
+                    m2.K0 = sbbVar.x0;
+                    if (sbbVar.B0.i()) {
+                        sbbVar.L1 = m2;
                         y9b.a(i5, m2);
-                        rbbVar.M1 = false;
+                        sbbVar.M1 = false;
                         if (pccVar != null) {
-                            pccVar.a(new pab(rabVar, b2));
+                            pccVar.a(new qab(sabVar, b2));
                             break;
                         } else {
-                            rbbVar.I(1, true);
+                            sbbVar.I(1, true);
                             break;
                         }
                     } else {
-                        rbbVar.H1 = null;
-                        if (rbbVar.B0.l(m2)) {
-                            c8b a = c8b.a(rbbVar.B0.getLayout(), rbbVar.B0.getContent());
-                            rbbVar.L1 = a;
+                        sbbVar.H1 = null;
+                        if (sbbVar.B0.l(m2)) {
+                            c8b a = c8b.a(sbbVar.B0.getLayout(), sbbVar.B0.getContent());
+                            sbbVar.L1 = a;
                             y9b.a(i5, a);
-                            rbbVar.M1 = false;
+                            sbbVar.M1 = false;
                             if (pccVar != null) {
                                 pccVar.a(null);
                             }
                         } else if (pccVar != null) {
                             pccVar.a(null);
                         }
-                        rbbVar.l0(true);
+                        sbbVar.l0(true);
                         break;
                     }
                 }
@@ -429,10 +429,10 @@ public final /* synthetic */ class ku9 implements pcc {
                 break;
             case 17:
                 ThemeActivity themeActivity2 = (ThemeActivity) obj3;
-                bcb bcbVar = (bcb) obj2;
+                hab habVar = (hab) obj2;
                 themeActivity2.getClass();
                 if (((Boolean) obj).booleanValue()) {
-                    bcbVar.run();
+                    habVar.run();
                     break;
                 } else {
                     d31.b0(themeActivity2).I(R.raw.error, ob6.M0(2131754304, null), ob6.M0(2131754305, null)).j();

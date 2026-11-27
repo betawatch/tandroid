@@ -9,7 +9,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class eea implements Runnable {
     public final /* synthetic */ byte a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class eea implements Runnable {
         switch (b) {
             case 0:
                 heaVar3.f = null;
-                jf7.Y(heaVar3.L.a).a.c(new eea(heaVar3, str3, i5, (byte) 2));
+                kf7.a0(heaVar3.L.a).a.c(new eea(heaVar3, str3, i5, (byte) 2));
                 eea eeaVar = new eea(heaVar3, i5, str3);
                 heaVar3.h = eeaVar;
                 hl.c3(eeaVar);
@@ -103,7 +103,7 @@ public final /* synthetic */ class eea implements Runnable {
                             ArrayList arrayList = new ArrayList();
                             ArrayList arrayList2 = new ArrayList();
                             zh6 zh6Var = new zh6();
-                            SQLiteCursor queryFinalized = jf7.Y(keaVar.a).b.queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 400", new Object[0]);
+                            SQLiteCursor queryFinalized = kf7.a0(keaVar.a).b.queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 400", new Object[0]);
                             while (queryFinalized.next()) {
                                 long longValue = queryFinalized.longValue(0);
                                 zda zdaVar = new zda();
@@ -129,7 +129,7 @@ public final /* synthetic */ class eea implements Runnable {
                                 strArr = strArr2;
                                 i2 = 0;
                             } else {
-                                SQLiteDatabase sQLiteDatabase = jf7.Y(keaVar.a).b;
+                                SQLiteDatabase sQLiteDatabase = kf7.a0(keaVar.a).b;
                                 Locale locale = Locale.US;
                                 SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT data, status, name FROM users WHERE uid IN(" + TextUtils.join(",", arrayList) + ")", new Object[0]);
                                 int i9 = 0;
@@ -221,7 +221,7 @@ public final /* synthetic */ class eea implements Runnable {
                                 queryFinalized2.dispose();
                             }
                             if (!arrayList2.isEmpty()) {
-                                SQLiteDatabase sQLiteDatabase2 = jf7.Y(keaVar.a).b;
+                                SQLiteDatabase sQLiteDatabase2 = kf7.a0(keaVar.a).b;
                                 Locale locale2 = Locale.US;
                                 SQLiteCursor queryFinalized3 = sQLiteDatabase2.queryFinalized("SELECT data, name FROM chats WHERE uid IN(" + TextUtils.join(",", arrayList2) + ")", new Object[0]);
                                 while (queryFinalized3.next()) {
@@ -265,7 +265,7 @@ public final /* synthetic */ class eea implements Runnable {
                                     arrayList3.add(zdaVar4);
                                 }
                             }
-                            SQLiteCursor queryFinalized4 = jf7.Y(keaVar.a).b.queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM users as u INNER JOIN contacts as c ON u.uid = c.uid", new Object[0]);
+                            SQLiteCursor queryFinalized4 = kf7.a0(keaVar.a).b.queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM contacts as c CROSS JOIN users as u ON u.uid = c.uid", new Object[0]);
                             while (queryFinalized4.next()) {
                                 if (zh6Var.h(queryFinalized4.longValue(3)) < 0) {
                                     String stringValue3 = queryFinalized4.stringValue(2);

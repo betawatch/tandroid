@@ -12,7 +12,7 @@ import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class rg3 implements Runnable {
     public final /* synthetic */ byte a;
@@ -106,7 +106,7 @@ public final /* synthetic */ class rg3 implements Runnable {
                 this.b.presentFragment(new uqc());
                 break;
             case 10:
-                this.b.presentFragment(new tba(null));
+                this.b.presentFragment(new uba(null));
                 break;
             case 11:
                 uj3 uj3Var7 = this.b;
@@ -216,7 +216,7 @@ public final /* synthetic */ class rg3 implements Runnable {
                 if (uj3Var10.E2 != null && !arrayList.isEmpty()) {
                     ArrayList arrayList2 = new ArrayList();
                     while (i2 < arrayList.size()) {
-                        arrayList2.add(if7.a(((Long) arrayList.get(i2)).longValue(), 0L));
+                        arrayList2.add(jf7.a(((Long) arrayList.get(i2)).longValue(), 0L));
                         i2++;
                     }
                     uj3Var10.E2.q(uj3Var10, arrayList2, uj3Var10.D1.getFieldText(), false, uj3Var10.L2, uj3Var10.M2, uj3Var10.N2, null);
@@ -231,7 +231,7 @@ public final /* synthetic */ class rg3 implements Runnable {
                 if (uj3Var11.E2 != null && !arrayList3.isEmpty()) {
                     ArrayList arrayList4 = new ArrayList();
                     while (i2 < arrayList3.size()) {
-                        arrayList4.add(if7.a(((Long) arrayList3.get(i2)).longValue(), 0L));
+                        arrayList4.add(jf7.a(((Long) arrayList3.get(i2)).longValue(), 0L));
                         i2++;
                     }
                     uj3Var11.E2.q(uj3Var11, arrayList4, uj3Var11.D1.getFieldText(), false, uj3Var11.L2, uj3Var11.M2, uj3Var11.N2, null);
@@ -254,8 +254,8 @@ public final /* synthetic */ class rg3 implements Runnable {
                 break;
             case 28:
                 uj3 uj3Var13 = this.b;
-                jf7 messagesStorage = uj3Var13.getMessagesStorage();
-                messagesStorage.a.c(new be7(messagesStorage, (byte) 18));
+                kf7 messagesStorage = uj3Var13.getMessagesStorage();
+                messagesStorage.a.c(new hd7(messagesStorage, (byte) 21));
                 Toast.makeText(uj3Var13.getParentActivity(), ob6.M0(2131751616, null), 0).show();
                 break;
             default:

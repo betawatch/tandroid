@@ -33,7 +33,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.VoIPPermissionActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
@@ -43,7 +43,7 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
@@ -247,7 +247,7 @@ public class VoIPPreNotificationService {
             return;
         }
         for (int i = 0; i < 4; i++) {
-            uc7.s1(i).Z3 = false;
+            uc7.s1(i).a4 = false;
         }
         hl.c3(new osa((byte) 12));
     }
@@ -547,7 +547,7 @@ public class VoIPPreNotificationService {
         String string;
         Uri parse;
         boolean z;
-        SharedPreferences sharedPreferences = uc7.s1(i).W3;
+        SharedPreferences sharedPreferences = uc7.s1(i).X3;
         AudioManager audioManager = (AudioManager) context.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
         boolean z2 = audioManager.getRingerMode() != 0;
         boolean isWiredHeadsetOn = audioManager.isWiredHeadsetOn();

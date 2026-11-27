@@ -41,9 +41,9 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.p;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rd1 implements t93, fd, ncc, on5, dz5, l39, bf7, cq0, gq5, t69, CameraController.VideoTakeCallback, b88, hcb, kk4, ResultCallback, nu3, n7 {
+public final /* synthetic */ class rd1 implements t93, fd, ncc, on5, dz5, l39, cf7, cq0, gq5, t69, CameraController.VideoTakeCallback, b88, hcb, kk4, ResultCallback, nu3, n7 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
 
@@ -52,7 +52,7 @@ public final /* synthetic */ class rd1 implements t93, fd, ncc, on5, dz5, l39, b
         this.b = nq1Var;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         wk5 wk5Var;
         wk5 wk5Var2;
@@ -525,8 +525,8 @@ public final /* synthetic */ class rd1 implements t93, fd, ncc, on5, dz5, l39, b
     }
 
     @Override // hcb
-    public final void x(long j, int i, x58 x58Var) {
-        x58Var.run();
+    public final void x(long j, int i, y58 y58Var) {
+        y58Var.run();
     }
 
     @Override // org.telegram.tgnet.ResultCallback

@@ -4,7 +4,7 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y87 implements Runnable {
     public final /* synthetic */ byte a;
@@ -136,7 +136,7 @@ public final /* synthetic */ class y87 implements Runnable {
                                             }
                                         }
                                         arrayList = arrayList8;
-                                        uc7Var.i4.c(dialog2.id);
+                                        uc7Var.j4.c(dialog2.id);
                                         z = true;
                                     }
                                     i8 = i2 + 1;
@@ -144,8 +144,8 @@ public final /* synthetic */ class y87 implements Runnable {
                                     arrayList8 = arrayList;
                                     z2 = true;
                                 }
-                                jf7 messagesStorage = uc7Var.getMessagesStorage();
-                                messagesStorage.a.c(new ud7(messagesStorage, arrayList6, arrayList7, (byte) 1));
+                                kf7 messagesStorage = uc7Var.getMessagesStorage();
+                                messagesStorage.a.c(new ee7(messagesStorage, arrayList6, arrayList7, (byte) 1));
                             } else {
                                 z = false;
                             }
@@ -163,9 +163,9 @@ public final /* synthetic */ class y87 implements Runnable {
                                 uc7Var.h5(null);
                                 uc7Var.getNotificationCenter().k(3, new Object[0]);
                             }
-                            jf7 messagesStorage2 = uc7Var.getMessagesStorage();
-                            messagesStorage2.a.c(new de7(messagesStorage2, arrayList5, i4));
-                            uc7Var.getMessagesStorage().a1(this.n, 1);
+                            kf7 messagesStorage2 = uc7Var.getMessagesStorage();
+                            messagesStorage2.a.c(new ce7(messagesStorage2, arrayList5, i4));
+                            uc7Var.getMessagesStorage().e1(this.n, 1);
                             uc7Var.getUserConfig().x(i4, true);
                             uc7Var.getUserConfig().u(false);
                             break;
@@ -179,9 +179,9 @@ public final /* synthetic */ class y87 implements Runnable {
                 }
                 if (z2) {
                 }
-                jf7 messagesStorage22 = uc7Var.getMessagesStorage();
-                messagesStorage22.a.c(new de7(messagesStorage22, arrayList52, i4));
-                uc7Var.getMessagesStorage().a1(this.n, 1);
+                kf7 messagesStorage22 = uc7Var.getMessagesStorage();
+                messagesStorage22.a.c(new ce7(messagesStorage22, arrayList52, i4));
+                uc7Var.getMessagesStorage().e1(this.n, 1);
                 uc7Var.getUserConfig().x(i4, true);
                 uc7Var.getUserConfig().u(false);
         }

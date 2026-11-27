@@ -16,7 +16,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class pn1 implements icc {
     public final /* synthetic */ byte a;
@@ -35,10 +35,9 @@ public final /* synthetic */ class pn1 implements icc {
     public final void a(Object obj, Object obj2) {
         e S;
         byte b = this.a;
-        byte b2 = 18;
         TLRPC.Updates updates = null;
         int i = this.b;
-        byte b3 = 1;
+        byte b2 = 1;
         Object obj3 = this.d;
         Object obj4 = this.c;
         switch (b) {
@@ -57,7 +56,7 @@ public final /* synthetic */ class pn1 implements icc {
                     updates = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
                     uc7.s1(launchActivity.P).Y3(updates, false);
                 } else if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                    hl.c3(new tg5(launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult, b2));
+                    hl.c3(new tg5(launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult, (byte) 18));
                 }
                 hl.c3(new l77((Object) launchActivity, (Object) tg5Var, (Object) tL_error, (Object) updates, this.b, (byte) 17));
                 break;
@@ -84,14 +83,14 @@ public final /* synthetic */ class pn1 implements icc {
                 d13 d13Var = (d13) obj;
                 Throwable th = (Throwable) obj2;
                 if ((th instanceof u03) || (th instanceof y03)) {
-                    hl.c3(new g25(iccVar, b3));
+                    hl.c3(new g25(iccVar, b2));
                     break;
                 } else if (th instanceof z03) {
                     hl.c3(new g25(iccVar, (byte) 2));
                     break;
                 } else if (th != null) {
                     cc4.g(th, true);
-                    hl.c3(new pl7(iccVar, th, b2));
+                    hl.c3(new ql7(iccVar, th, (byte) 19));
                     break;
                 } else {
                     TL_account.registerPasskey registerpasskey = new TL_account.registerPasskey();
@@ -111,8 +110,8 @@ public final /* synthetic */ class pn1 implements icc {
                         sb.append("AAGUID: ");
                         byte[] copyOfRange = Arrays.copyOfRange(inputpasskeyresponseregister.attestation_object, 67, 83);
                         StringBuilder sb2 = new StringBuilder(copyOfRange.length << 1);
-                        for (byte b4 : copyOfRange) {
-                            sb2.append(String.format("%02x", Byte.valueOf(b4)));
+                        for (byte b3 : copyOfRange) {
+                            sb2.append(String.format("%02x", Byte.valueOf(b3)));
                         }
                         sb.append(sb2.toString());
                         cc4.b(sb.toString());

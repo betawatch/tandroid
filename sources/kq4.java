@@ -26,11 +26,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class kq4 {
     public final eq4 A;
-    public final rg7 B;
+    public final sg7 B;
     public v9 C;
     public v9 D;
     public v9 E;
@@ -109,9 +109,9 @@ public abstract class kq4 {
                         }
                         break;
                     case 2:
-                        bj7 bj7Var = (bj7) obj;
+                        cj7 cj7Var = (cj7) obj;
                         if (kq4Var.M()) {
-                            boolean z = bj7Var.a;
+                            boolean z = cj7Var.a;
                             kq4Var.n(false);
                             break;
                         }
@@ -155,9 +155,9 @@ public abstract class kq4 {
                         }
                         break;
                     case 2:
-                        bj7 bj7Var = (bj7) obj;
+                        cj7 cj7Var = (cj7) obj;
                         if (kq4Var.M()) {
-                            boolean z = bj7Var.a;
+                            boolean z = cj7Var.a;
                             kq4Var.n(false);
                             break;
                         }
@@ -201,9 +201,9 @@ public abstract class kq4 {
                         }
                         break;
                     case 2:
-                        bj7 bj7Var = (bj7) obj;
+                        cj7 cj7Var = (cj7) obj;
                         if (kq4Var.M()) {
-                            boolean z = bj7Var.a;
+                            boolean z = cj7Var.a;
                             kq4Var.n(false);
                             break;
                         }
@@ -247,9 +247,9 @@ public abstract class kq4 {
                         }
                         break;
                     case 2:
-                        bj7 bj7Var = (bj7) obj;
+                        cj7 cj7Var = (cj7) obj;
                         if (kq4Var.M()) {
-                            boolean z = bj7Var.a;
+                            boolean z = cj7Var.a;
                             kq4Var.n(false);
                             break;
                         }
@@ -268,7 +268,7 @@ public abstract class kq4 {
         this.u = new dq4(this);
         this.v = -1;
         this.A = new eq4(this);
-        this.B = new rg7((byte) 20);
+        this.B = new sg7((byte) 20);
         this.F = new ArrayDeque();
         this.P = new zz3(this, (byte) 8);
     }
@@ -905,7 +905,7 @@ public abstract class kq4 {
         return gp4Var != null ? gp4Var.K.H() : this.A;
     }
 
-    public final rg7 I() {
+    public final sg7 I() {
         gp4 gp4Var = this.y;
         return gp4Var != null ? gp4Var.K.I() : this.B;
     }

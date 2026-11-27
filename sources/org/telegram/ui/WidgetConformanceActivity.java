@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class WidgetConformanceActivity extends Activity {
     @Override // android.app.Activity
@@ -27,8 +27,8 @@ public final class WidgetConformanceActivity extends Activity {
         if (intent.getBooleanExtra("clearHeights", false)) {
             for (int i = 0; i < 4; i++) {
                 if (yac.h(i).o()) {
-                    jf7 Y = jf7.Y(i);
-                    Y.a.c(new be7(Y, (byte) 1));
+                    kf7 a0 = kf7.a0(i);
+                    a0.a.c(new hd7(a0, (byte) 4));
                 }
             }
             Log.i("WidgetConformance", "widget heights cleared");

@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.UUID;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class vl6 implements e84 {
     public static final byte[] r0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -518,7 +518,7 @@ public final class vl6 implements e84 {
         long j5;
         ?? r29;
         boolean z2;
-        uf7 a;
+        vf7 a;
         boolean z3;
         long j6 = 0;
         int i = 1;
@@ -548,8 +548,8 @@ public final class vl6 implements e84 {
                     ko4 ko4Var = ul6Var.e0;
                     ko4Var.getClass();
                     jo4 a2 = ko4Var.a();
-                    uf7 uf7Var = ul6Var.e0.m;
-                    a2.l = uf7Var != null ? uf7Var.a((sf7[]) arrayList.toArray(new rj1[0])) : new uf7(arrayList);
+                    vf7 vf7Var = ul6Var.e0.m;
+                    a2.l = vf7Var != null ? vf7Var.a((tf7[]) arrayList.toArray(new rj1[0])) : new vf7(arrayList);
                     ul6Var.e0 = new ko4(a2);
                     ul6Var.Y = true;
                 }
@@ -624,18 +624,18 @@ public final class vl6 implements e84 {
                 if (j2 == j) {
                     ko4 ko4Var2 = ul6Var.e0;
                     ko4Var2.getClass();
-                    uf7 uf7Var2 = ko4Var2.m;
+                    vf7 vf7Var2 = ko4Var2.m;
                     lrb lrbVar = new lrb(j2);
-                    if (uf7Var2 == null) {
+                    if (vf7Var2 == null) {
                         z2 = true;
-                        sf7[] sf7VarArr = new sf7[1];
-                        sf7VarArr[r29] = lrbVar;
-                        a = new uf7(sf7VarArr);
+                        tf7[] tf7VarArr = new tf7[1];
+                        tf7VarArr[r29] = lrbVar;
+                        a = new vf7(tf7VarArr);
                     } else {
                         z2 = true;
-                        sf7[] sf7VarArr2 = new sf7[1];
-                        sf7VarArr2[r29] = lrbVar;
-                        a = uf7Var2.a(sf7VarArr2);
+                        tf7[] tf7VarArr2 = new tf7[1];
+                        tf7VarArr2[r29] = lrbVar;
+                        a = vf7Var2.a(tf7VarArr2);
                     }
                     jo4 a3 = ul6Var.e0.a();
                     a3.l = a;

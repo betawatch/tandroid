@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fq6 implements RequestDelegate {
     public final /* synthetic */ byte a = 0;
@@ -65,7 +65,7 @@ public final /* synthetic */ class fq6 implements RequestDelegate {
                         } else {
                             in5.S(arrayList);
                             ls6Var.n(messages_messages.messages, zh6Var, messages_messages.users, messages_messages.chats, j, false);
-                            ls6Var.getMessagesStorage().j1(messages_messages.users, messages_messages.chats, true, true);
+                            ls6Var.getMessagesStorage().n1(messages_messages.users, messages_messages.chats, true, true);
                             ls6Var.W1(zh6Var, messages_messages.messages, z);
                         }
                     }
@@ -102,7 +102,7 @@ public final /* synthetic */ class fq6 implements RequestDelegate {
                             }
                         }
                         if (z) {
-                            o6bVar.b.a.c(new z3b(o6bVar, arrayList2, (byte) 11));
+                            o6bVar.b.a.c(new n3b(o6bVar, arrayList2, (byte) 12));
                         }
                     }
                     c = 0;

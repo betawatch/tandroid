@@ -4,17 +4,17 @@ import j$.util.Objects;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class pw5 implements e84 {
     public g84 b;
     public byte c;
     public int d;
     public int e;
-    public nh7 g;
+    public oh7 g;
     public cb3 h;
     public zg2 i;
-    public yh7 j;
+    public zh7 j;
     public final ey7 a = new ey7(2);
     public long f = -1;
 
@@ -28,7 +28,7 @@ public final class pw5 implements e84 {
         zg2 zg2Var;
         j99 j99Var;
         int i;
-        nh7 nh7Var;
+        oh7 oh7Var;
         long j;
         byte b = this.c;
         long j2 = -1;
@@ -73,9 +73,9 @@ public final class pw5 implements e84 {
                     this.h = cb3Var;
                     this.i = new zg2(cb3Var, this.f);
                 }
-                yh7 yh7Var = this.j;
-                yh7Var.getClass();
-                int b2 = yh7Var.b(this.i, v11Var);
+                zh7 zh7Var = this.j;
+                zh7Var.getClass();
+                int b2 = zh7Var.b(this.i, v11Var);
                 if (b2 == 1) {
                     v11Var.a += this.f;
                 }
@@ -94,7 +94,7 @@ public final class pw5 implements e84 {
             }
             cb3Var2.f = 0;
             if (this.j == null) {
-                this.j = new yh7(peb.B, 8);
+                this.j = new zh7(peb.B, 8);
             }
             zg2 zg2Var2 = new zg2(cb3Var2, this.f);
             this.i = zg2Var2;
@@ -102,19 +102,19 @@ public final class pw5 implements e84 {
                 g();
                 return 0;
             }
-            yh7 yh7Var2 = this.j;
+            zh7 zh7Var2 = this.j;
             long j5 = this.f;
             g84 g84Var = this.b;
             g84Var.getClass();
-            yh7Var2.f(new zg2(j5, g84Var, (byte) 8));
-            nh7 nh7Var2 = this.g;
-            nh7Var2.getClass();
+            zh7Var2.f(new zg2(j5, g84Var, (byte) 8));
+            oh7 oh7Var2 = this.g;
+            oh7Var2.getClass();
             g84 g84Var2 = this.b;
             g84Var2.getClass();
             x1c e0 = g84Var2.e0(1024, 4);
             jo4 jo4Var = new jo4();
-            jo4Var.r = dg7.n("image/jpeg");
-            jo4Var.l = new uf7(nh7Var2);
+            jo4Var.r = eg7.n("image/jpeg");
+            jo4Var.l = new vf7(oh7Var2);
             xnb.v(jo4Var, e0);
             this.c = (byte) 5;
             return 0;
@@ -138,15 +138,15 @@ public final class pw5 implements e84 {
                         long j9 = -1;
                         long j10 = -1;
                         while (i2 >= 0) {
-                            mh7 mh7Var = (mh7) j99Var.get(i2);
-                            String str = mh7Var.a;
+                            nh7 nh7Var = (nh7) j99Var.get(i2);
+                            String str = nh7Var.a;
                             boolean z = str.equals("video/mp4") || str.equals("video/quicktime");
                             long j11 = j2;
                             if (i2 == 0) {
-                                j6 -= mh7Var.d;
+                                j6 -= nh7Var.d;
                                 j = 0;
                             } else {
-                                j = j6 - mh7Var.c;
+                                j = j6 - nh7Var.c;
                             }
                             long j12 = j6;
                             j6 = j;
@@ -163,17 +163,17 @@ public final class pw5 implements e84 {
                         }
                         long j13 = j2;
                         if (j9 != j13 && j10 != j13 && j7 != j13 && j8 != j13) {
-                            nh7Var = new nh7(j7, j8, zg2Var.b, j9, j10);
-                            this.g = nh7Var;
-                            if (nh7Var != null) {
-                                this.f = nh7Var.d;
+                            oh7Var = new oh7(j7, j8, zg2Var.b, j9, j10);
+                            this.g = oh7Var;
+                            if (oh7Var != null) {
+                                this.f = oh7Var.d;
                             }
                         }
                     }
                 }
-                nh7Var = null;
-                this.g = nh7Var;
-                if (nh7Var != null) {
+                oh7Var = null;
+                this.g = oh7Var;
+                if (oh7Var != null) {
                 }
             }
         } else {
@@ -229,9 +229,9 @@ public final class pw5 implements e84 {
             this.c = (byte) 0;
             this.j = null;
         } else if (this.c == 5) {
-            yh7 yh7Var = this.j;
-            yh7Var.getClass();
-            yh7Var.d(j, j2);
+            zh7 zh7Var = this.j;
+            zh7Var.getClass();
+            zh7Var.d(j, j2);
         }
     }
 
@@ -256,9 +256,9 @@ public final class pw5 implements e84 {
 
     @Override // e84
     public final void release() {
-        yh7 yh7Var = this.j;
-        if (yh7Var != null) {
-            yh7Var.getClass();
+        zh7 zh7Var = this.j;
+        if (zh7Var != null) {
+            zh7Var.getClass();
         }
     }
 

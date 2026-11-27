@@ -14,7 +14,7 @@ import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class DefaultTeXFontParser {
     public static final String GEN_SET_EL = "GeneralSettings";
@@ -33,12 +33,12 @@ public class DefaultTeXFontParser {
     private static Map<String, Integer> rangeTypeMappings = new HashMap();
     private static Map<String, CharChildParser> charChildParsers = new HashMap();
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private interface CharChildParser {
         void parse(Element element, char c, FontInfo fontInfo);
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class ExtensionParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c, FontInfo fontInfo) {
@@ -46,7 +46,7 @@ public class DefaultTeXFontParser {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class KernParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c, FontInfo fontInfo) {
@@ -54,7 +54,7 @@ public class DefaultTeXFontParser {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class LigParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c, FontInfo fontInfo) {
@@ -62,7 +62,7 @@ public class DefaultTeXFontParser {
         }
     }
 
-    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+    /* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
     private static class NextLargerParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c, FontInfo fontInfo) {

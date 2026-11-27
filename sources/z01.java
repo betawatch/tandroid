@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class z01 implements xe1 {
     public static final /* synthetic */ long E;
@@ -82,7 +82,7 @@ public class z01 implements xe1 {
         }
         ta1 ta1Var = (ta1) obj;
         qj1 qj1Var = b11.a;
-        ow5 b2 = ta1Var.b(f9c.a, null);
+        ow5 b2 = ta1Var.b(g9c.a, null);
         if (b2 == null) {
             return false;
         }
@@ -376,7 +376,7 @@ public class z01 implements xe1 {
             int i3 = (int) (j2 % j3);
             long j5 = qj1Var.d;
             Object obj5 = vx2.a;
-            obj2 = f9c.a;
+            obj2 = g9c.a;
             if (j5 != j4) {
                 qj1 i4 = z01Var.i(j4, qj1Var);
                 if (i4 != null) {
@@ -657,13 +657,13 @@ public class z01 implements xe1 {
                 }
             }
             int D = z01Var.D(qj1Var, i2, obj, j2, obj2, r2);
-            f9c f9cVar = f9c.a;
+            g9c g9cVar = g9c.a;
             if (D == 0) {
                 qj1Var.b();
-                return f9cVar;
+                return g9cVar;
             }
             if (D == 1) {
-                return f9cVar;
+                return g9cVar;
             }
             if (D == 2) {
                 if (r2) {
@@ -1495,7 +1495,7 @@ public class z01 implements xe1 {
         va1Var.s();
         va1Var.resumeWith(new ge9(n()));
         Object q = va1Var.q();
-        return q == vx2.a ? q : f9c.a;
+        return q == vx2.a ? q : g9c.a;
     }
 
     public final void y(Object obj, va1 va1Var) {

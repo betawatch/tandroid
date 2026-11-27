@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class o23 extends q23 {
     public final Context e;
@@ -278,7 +278,7 @@ public final class o23 extends q23 {
         ih0 ih0Var = new ih0(hh0Var, eh0Var, a.l, false, 0, gh0Var2, fh0Var2, z2);
         wjb b2 = xjb.b();
         b2.c = new a94[]{new a94("auth_api_credentials_begin_sign_in", 8L)};
-        b2.a = new i09(a, ih0Var);
+        b2.a = new j09(a, ih0Var);
         b2.b = false;
         b2.d = (char) 1553;
         a.e(0, b2.a()).addOnSuccessListener(new ht2(new m23(cancellationSignal, this, b), (byte) 8)).addOnFailureListener(new q72((Object) this, (Object) cancellationSignal, (byte) 13));

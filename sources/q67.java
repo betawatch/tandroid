@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class q67 extends Dialog implements fn7 {
     public boolean A0;
@@ -225,7 +225,7 @@ public class q67 extends Dialog implements fn7 {
         this.e0.setScaleY(0.4f);
         this.e0.setScaleX(0.4f);
         this.e0.setAlpha(0.0f);
-        TLRPC.messages_AvailableEffects messages_availableeffects = uc7.s1(i).W4;
+        TLRPC.messages_AvailableEffects messages_availableeffects = uc7.s1(i).X4;
         if (messages_availableeffects == null || messages_availableeffects.effects.isEmpty()) {
             jn7.f(i).b(this, jn7.w3);
         } else {
@@ -329,7 +329,7 @@ public class q67 extends Dialog implements fn7 {
     @Override // fn7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
         TLRPC.messages_AvailableEffects messages_availableeffects;
-        if (i != jn7.w3 || (messages_availableeffects = uc7.s1(this.c).W4) == null || messages_availableeffects.effects.isEmpty()) {
+        if (i != jn7.w3 || (messages_availableeffects = uc7.s1(this.c).X4) == null || messages_availableeffects.effects.isEmpty()) {
             return;
         }
         u();

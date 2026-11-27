@@ -12,7 +12,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class et implements Runnable {
     public final /* synthetic */ byte a = 1;
@@ -78,7 +78,7 @@ public final /* synthetic */ class et implements Runnable {
                                         if (r47Var != null) {
                                             TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
                                             tL_messages_messages.messages.add(r47Var.k);
-                                            jf7.Y(i2).e1(-2, 0, r47Var.r1 ? 1 : 0, r47.B0(r47Var.k), 0L, tL_messages_messages, false);
+                                            kf7.a0(i2).i1(-2, 0, r47Var.r1 ? 1 : 0, r47.B0(r47Var.k), 0L, tL_messages_messages, false);
                                             break;
                                         }
                                     } else {
@@ -100,7 +100,7 @@ public final /* synthetic */ class et implements Runnable {
                                 r47Var.k.media.webpage = tL_webPage;
                                 TLRPC.TL_messages_messages tL_messages_messages2 = new TLRPC.TL_messages_messages();
                                 tL_messages_messages2.messages.add(r47Var.k);
-                                jf7.Y(i2).e1(-2, 0, r47Var.r1 ? 1 : 0, r47.B0(r47Var.k), 0L, tL_messages_messages2, false);
+                                kf7.a0(i2).i1(-2, 0, r47Var.r1 ? 1 : 0, r47.B0(r47Var.k), 0L, tL_messages_messages2, false);
                             }
                             ArrayList arrayList = oVar.e0;
                             if (z3) {
@@ -118,9 +118,9 @@ public final /* synthetic */ class et implements Runnable {
                         }
                         zh6 zh6Var = new zh6(1);
                         zh6Var.k(tL_webPage.id, tL_webPage);
-                        jf7 Y = jf7.Y(i2);
-                        if (!jf7.p0(zh6Var)) {
-                            Y.a.c(new bd7(Y, zh6Var, z2 ? 1 : 0));
+                        kf7 a0 = kf7.a0(i2);
+                        if (!kf7.s0(zh6Var)) {
+                            a0.a.c(new cd7(a0, zh6Var, z2 ? 1 : 0));
                             break;
                         }
                     }

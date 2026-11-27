@@ -33,7 +33,7 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class f82 extends FrameLayout implements s84, fn7, snb {
     public a A0;
@@ -1237,7 +1237,7 @@ public class f82 extends FrameLayout implements s84, fn7, snb {
                         charSequence = ob6.G(Math.max(1, i5), "SavedMessagesCount", new Object[0]);
                     } else {
                         if (zu1Var.x4 && chat != null) {
-                            TLRPC.TL_forumTopic f = uc7.s1(i7).g4.f(chat.id, zu1Var.c());
+                            TLRPC.TL_forumTopic f = uc7.s1(i7).h4.f(chat.id, zu1Var.c());
                             if (f != null) {
                                 i3 = 1;
                                 i4 = f.totalMessagesCount - 1;
@@ -1327,12 +1327,12 @@ public class f82 extends FrameLayout implements s84, fn7, snb {
                     z3 = false;
                 } else {
                     if (zu1Var.c() == 0) {
-                        qyb qybVar = zu1Var.getMessagesController().g4;
+                        qyb qybVar = zu1Var.getMessagesController().h4;
                         long j3 = -zu1Var.a();
                         int size = (!qybVar.e(j3) || (l = qybVar.l(j3)) == null) ? 0 : l.size();
                         G = size > 0 ? ob6.H(',', "Chats", size) : ob6.M0(2131752184, null);
                     } else {
-                        TLRPC.TL_forumTopic f2 = uc7.s1(i7).g4.f(chat.id, zu1Var.c());
+                        TLRPC.TL_forumTopic f2 = uc7.s1(i7).h4.f(chat.id, zu1Var.c());
                         int i14 = f2 != null ? f2.totalMessagesCount : 0;
                         G = i14 > 0 ? ob6.G(i14, "messages", Integer.valueOf(i14)) : ob6.a0(null, null, 2131743667, ro4.j(i7, chat, false));
                     }

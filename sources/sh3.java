@@ -9,7 +9,7 @@ import android.view.animation.DecelerateInterpolator;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class sh3 extends cma {
     public static final DecelerateInterpolator F = new DecelerateInterpolator();
@@ -635,7 +635,7 @@ public final class sh3 extends cma {
     }
 
     @Override // cma
-    public final boolean q(f89 f89Var, f89 f89Var2, l09 l09Var, int i, int i2, int i3, int i4) {
+    public final boolean q(f89 f89Var, f89 f89Var2, m09 m09Var, int i, int i2, int i3, int i4) {
         View view = f89Var.a;
         if (!(view instanceof of3)) {
             return false;
@@ -658,7 +658,7 @@ public final class sh3 extends cma {
     }
 
     @Override // cma
-    public final boolean r(f89 f89Var, l09 l09Var, int i, int i2, int i3, int i4) {
+    public final boolean r(f89 f89Var, m09 m09Var, int i, int i2, int i3, int i4) {
         View view = f89Var.a;
         int translationX = i + ((int) view.getTranslationX());
         View view2 = f89Var.a;
@@ -690,7 +690,7 @@ public final class sh3 extends cma {
     }
 
     @Override // cma
-    public final void s(f89 f89Var, l09 l09Var) {
+    public final void s(f89 f89Var, m09 m09Var) {
         E(f89Var);
         this.o.add(f89Var);
         if (this.A) {

@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final class ci3 implements xy1, ibb {
+public final class ci3 implements xy1, jbb {
     public final /* synthetic */ uj3 a;
 
     public /* synthetic */ ci3(uj3 uj3Var) {
@@ -66,13 +66,13 @@ public final class ci3 implements xy1, ibb {
         return false;
     }
 
-    @Override // ibb
-    public final mbb b(long j) {
+    @Override // jbb
+    public final nbb b(long j) {
         ii3 ii3Var = this.a.F0;
-        return mbb.c(ii3Var != null ? ii3Var.e(j) : null);
+        return nbb.c(ii3Var != null ? ii3Var.e(j) : null);
     }
 
-    @Override // ibb
+    @Override // jbb
     public final void c(long j, pqa pqaVar) {
         uj3 uj3Var = this.a;
         if (uj3Var.F0 == null) {
@@ -124,7 +124,7 @@ public final class ci3 implements xy1, ibb {
         }
         ArrayList arrayList2 = new ArrayList();
         for (int i3 = 0; i3 < arrayList.size(); i3++) {
-            arrayList2.add(if7.a(((Long) uj3Var.K2.get(i3)).longValue(), 0L));
+            arrayList2.add(jf7.a(((Long) uj3Var.K2.get(i3)).longValue(), 0L));
         }
         uj3Var.E2.q(uj3Var, arrayList2, charSequence, false, z, i, i2, null);
     }

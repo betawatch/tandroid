@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class eh3 implements Runnable {
     public final /* synthetic */ byte a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class eh3 implements Runnable {
                             wuaVar.j().g0(tL_error, false);
                             break;
                         } else {
-                            new dza(wuaVar.getContext(), wuaVar.J0, this.b, 16, null, new ida((Object) wuaVar, (Object) charSequence, (byte) 18), 0L).show();
+                            new dza(wuaVar.getContext(), wuaVar.J0, this.b, 16, null, new kba((Object) wuaVar, (Object) charSequence, (byte) 19), 0L).show();
                             break;
                         }
                     }
@@ -82,7 +82,7 @@ public final /* synthetic */ class eh3 implements Runnable {
                     }
                     TL_stars.SavedStarGift savedStarGift = wuaVar.A2;
                     wuaVar.p2(tL_starGiftUnique, savedStarGift != null ? savedStarGift.refunded : false, null, null);
-                    hl.c3(new ida((Object) wuaVar, (Object) tL_starGiftUnique, (byte) 17));
+                    hl.c3(new kba((Object) wuaVar, (Object) tL_starGiftUnique, (byte) 18));
                     break;
                 }
                 break;
@@ -94,7 +94,7 @@ public final /* synthetic */ class eh3 implements Runnable {
                 TLRPC.Message message = r47Var.k;
                 message.translatedToLanguage = (String) obj5;
                 message.translatedText = r3c.M0((TLRPC.TL_textWithEntities) obj4, (TLRPC.TL_textWithEntities) obj3);
-                a5cVar.getMessagesStorage().U1(v11Var.a, r47Var.k);
+                a5cVar.getMessagesStorage().Z1(v11Var.a, r47Var.k);
                 a5cVar.M.remove(v11Var);
                 hl.d3((na8) obj, Math.max(0L, 400 - (System.currentTimeMillis() - this.b)));
                 break;

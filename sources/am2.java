@@ -60,7 +60,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.SaveToGallerySettingsActivity;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
     public static final nu6 h = new nu6(4);
@@ -575,7 +575,7 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
         final byte b = 0;
         Object[] objArr = 0;
         final byte b2 = 1;
-        if (A && ((tf7) this.f).c() >= 261200000) {
+        if (A && ((uf7) this.f).c() >= 261200000) {
             final ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new kq7("Firebase-Messaging-Network-Io"));
             return ((qi4) ((ri4) this.d)).f().continueWithTask(newSingleThreadExecutor, new Continuation(this) { // from class: f05
                 public final /* synthetic */ am2 b;
@@ -601,7 +601,7 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
                             yi4 yi4Var = ji4Var.c;
                             String str3 = yi4Var.a;
                             ji4Var.a();
-                            x89 x89Var = new x89(tf7.b(ji4Var), yi4Var.b, str3, str, str2);
+                            x89 x89Var = new x89(uf7.b(ji4Var), yi4Var.b, str3, str, str2);
                             qa4 qa4Var = (qa4) am2Var.b;
                             wjb b4 = xjb.b();
                             b4.c = new a94[]{fmd.a};
@@ -636,7 +636,7 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
                             yi4 yi4Var = ji4Var.c;
                             String str3 = yi4Var.a;
                             ji4Var.a();
-                            x89 x89Var = new x89(tf7.b(ji4Var), yi4Var.b, str3, str, str2);
+                            x89 x89Var = new x89(uf7.b(ji4Var), yi4Var.b, str3, str, str2);
                             qa4 qa4Var = (qa4) am2Var.b;
                             wjb b4 = xjb.b();
                             b4.c = new a94[]{fmd.a};
@@ -650,7 +650,7 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
             });
         }
         fp fpVar = (fp) this.e;
-        String b3 = tf7.b((ji4) fpVar.a);
+        String b3 = uf7.b((ji4) fpVar.a);
         Bundle bundle = new Bundle();
         try {
             fpVar.j(b3, bundle, A);
@@ -683,7 +683,7 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
     }
 
     public final Set N(Class cls) {
-        return c(h09.a(cls));
+        return c(i09.a(cls));
     }
 
     public final boolean O(float[] fArr) {
@@ -1082,7 +1082,7 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
 
     @Override // qq2
     public final Object a(Class cls) {
-        if (!((Set) this.b).contains(h09.a(cls))) {
+        if (!((Set) this.b).contains(i09.a(cls))) {
             iy8.g(cls, ".", "Attempting to request an undeclared dependency ");
             return null;
         }
@@ -1104,17 +1104,17 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
     }
 
     @Override // qq2
-    public final Set c(h09 h09Var) {
-        if (((Set) this.e).contains(h09Var)) {
-            return ((qq2) this.f).c(h09Var);
+    public final Set c(i09 i09Var) {
+        if (((Set) this.e).contains(i09Var)) {
+            return ((qq2) this.f).c(i09Var);
         }
-        iy8.g(h09Var, ">.", "Attempting to request an undeclared dependency Set<");
+        iy8.g(i09Var, ">.", "Attempting to request an undeclared dependency Set<");
         return null;
     }
 
     @Override // qq2
     public final vw8 d(Class cls) {
-        return g(h09.a(cls));
+        return g(i09.a(cls));
     }
 
     @Override // h49
@@ -1129,20 +1129,20 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
     }
 
     @Override // qq2
-    public final au7 f(h09 h09Var) {
-        if (((Set) this.d).contains(h09Var)) {
-            return ((qq2) this.f).f(h09Var);
+    public final au7 f(i09 i09Var) {
+        if (((Set) this.d).contains(i09Var)) {
+            return ((qq2) this.f).f(i09Var);
         }
-        iy8.g(h09Var, ">.", "Attempting to request an undeclared dependency Deferred<");
+        iy8.g(i09Var, ">.", "Attempting to request an undeclared dependency Deferred<");
         return null;
     }
 
     @Override // qq2
-    public final vw8 g(h09 h09Var) {
-        if (((Set) this.c).contains(h09Var)) {
-            return ((qq2) this.f).g(h09Var);
+    public final vw8 g(i09 i09Var) {
+        if (((Set) this.c).contains(i09Var)) {
+            return ((qq2) this.f).g(i09Var);
         }
-        iy8.g(h09Var, ">.", "Attempting to request an undeclared dependency Provider<");
+        iy8.g(i09Var, ">.", "Attempting to request an undeclared dependency Provider<");
         return null;
     }
 
@@ -1150,9 +1150,9 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
     public final Object get() {
         switch (this.a) {
             case 5:
-                return new rc3((Executor) ((uw8) this.b).get(), (vf7) ((uw8) this.c).get(), (pm3) ((ko9) this.d).get(), (ds9) ((uw8) this.e).get(), (ds9) ((uw8) this.f).get());
+                return new rc3((Executor) ((uw8) this.b).get(), (wf7) ((uw8) this.c).get(), (pm3) ((ko9) this.d).get(), (ds9) ((uw8) this.e).get(), (ds9) ((uw8) this.f).get());
             case 11:
-                return new aa9((srb) ((tw8) this.b).get(), (ri4) ((aj3) this.c).b, (tr) ((tw8) this.d).get(), (ca9) ((tw8) this.e).get(), (xba) ((tw8) this.f).get());
+                return new aa9((srb) ((tw8) this.b).get(), (ri4) ((aj3) this.c).b, (tr) ((tw8) this.d).get(), (ca9) ((tw8) this.e).get(), (yba) ((tw8) this.f).get());
             default:
                 return new y9a((ji4) ((aj3) this.b).b, (ri4) ((aj3) this.c).b, (bba) ((tw8) this.d).get(), (x44) ((tw8) this.e).get(), (mx2) ((aj3) this.f).b);
         }
@@ -1164,11 +1164,11 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
     }
 
     @Override // qq2
-    public final Object h(h09 h09Var) {
-        if (((Set) this.b).contains(h09Var)) {
-            return ((qq2) this.f).h(h09Var);
+    public final Object h(i09 i09Var) {
+        if (((Set) this.b).contains(i09Var)) {
+            return ((qq2) this.f).h(i09Var);
         }
-        iy8.g(h09Var, ".", "Attempting to request an undeclared dependency ");
+        iy8.g(i09Var, ".", "Attempting to request an undeclared dependency ");
         return null;
     }
 
@@ -1480,7 +1480,7 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
     }
 
     public final au7 w(Class cls) {
-        return f(h09.a(cls));
+        return f(i09.a(cls));
     }
 
     public final void y(pt2 pt2Var) {
@@ -1547,13 +1547,13 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
         this.a = (byte) 21;
     }
 
-    public am2(Context context, ji4 ji4Var, ri4 ri4Var, fp fpVar, tf7 tf7Var) {
+    public am2(Context context, ji4 ji4Var, ri4 ri4Var, fp fpVar, uf7 uf7Var) {
         this.a = (byte) 6;
         this.b = new qa4(context, qa4.t, wn.g, g05.c);
         this.c = ji4Var;
         this.d = ri4Var;
         this.e = fpVar;
-        this.f = tf7Var;
+        this.f = uf7Var;
     }
 
     public am2(Context context, hm5 hm5Var) {
@@ -1576,23 +1576,23 @@ public final class am2 implements s84, uw8, xj5, h49, tw8, qq2, ty9, heb {
             byte b = qe3Var.c;
             byte b2 = qe3Var.b;
             boolean z = b == 0;
-            h09 h09Var = qe3Var.a;
+            i09 i09Var = qe3Var.a;
             if (z) {
                 if (b2 == 2) {
-                    hashSet4.add(h09Var);
+                    hashSet4.add(i09Var);
                 } else {
-                    hashSet.add(h09Var);
+                    hashSet.add(i09Var);
                 }
             } else if (b == 2) {
-                hashSet3.add(h09Var);
+                hashSet3.add(i09Var);
             } else if (b2 == 2) {
-                hashSet5.add(h09Var);
+                hashSet5.add(i09Var);
             } else {
-                hashSet2.add(h09Var);
+                hashSet2.add(i09Var);
             }
         }
         if (!set2.isEmpty()) {
-            hashSet.add(h09.a(cy8.class));
+            hashSet.add(i09.a(cy8.class));
         }
         this.b = DesugarCollections.unmodifiableSet(hashSet);
         this.c = DesugarCollections.unmodifiableSet(hashSet2);

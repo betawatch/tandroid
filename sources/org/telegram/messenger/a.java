@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class a extends Application {
     public static volatile boolean E = true;
@@ -287,7 +287,7 @@ public abstract class a extends Application {
         }
         byte b3 = 1;
         f = true;
-        ok7.c(b);
+        pk7.c(b);
         try {
             ob6.D0();
         } catch (Exception e2) {
@@ -338,8 +338,8 @@ public abstract class a extends Application {
             TLRPC.User f2 = yac.h(i).f();
             if (f2 != null) {
                 uc7.s1(i).i4(f2, true, false);
-                jf7 messagesStorage = r7a.B(i).getMessagesStorage();
-                messagesStorage.a.c(new be7(messagesStorage, (byte) 22));
+                kf7 messagesStorage = r7a.B(i).getMessagesStorage();
+                messagesStorage.a.c(new hd7(messagesStorage, (byte) 25));
                 String i2 = ea4.i(i);
                 if (i2 != null) {
                     ea4.e.postRunnable(new qu2(i2, b3));
@@ -365,7 +365,7 @@ public abstract class a extends Application {
 
     public static void w() {
         SharedPreferences f1 = uc7.f1();
-        if (!(f1.contains("pushService") ? f1.getBoolean("pushService", true) : uc7.s1(yac.t0).X3.getBoolean("keepAliveService", false))) {
+        if (!(f1.contains("pushService") ? f1.getBoolean("pushService", true) : uc7.s1(yac.t0).Y3.getBoolean("keepAliveService", false))) {
             b.stopService(new Intent(b, (Class<?>) NotificationsService.class));
         } else {
             try {
@@ -462,7 +462,7 @@ public abstract class a extends Application {
         if (b == null) {
             b = getApplicationContext();
         }
-        ok7.c(b);
+        pk7.c(b);
         try {
             ConnectionsManager.native_setJava(false);
             new vr(this);
@@ -492,7 +492,7 @@ public abstract class a extends Application {
             jn7.e().a(ix8Var, jn7.E4);
             jn7.e().a(ix8Var, jn7.D4);
         } catch (UnsatisfiedLinkError unused2) {
-            throw new RuntimeException("can't load native libraries " + Build.CPU_ABI + " lookup folder " + ok7.a());
+            throw new RuntimeException("can't load native libraries " + Build.CPU_ABI + " lookup folder " + pk7.a());
         }
     }
 

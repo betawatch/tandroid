@@ -12,7 +12,7 @@ import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class gf4 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
@@ -174,10 +174,10 @@ public final class gf4 extends AnimatorListenerAdapter {
                 }
                 break;
             case 11:
-                b58 b58Var = (b58) obj;
-                b58Var.c.setAlpha(z ? 0.0f : 1.0f);
-                b58Var.a.setAlpha(z ? 0.0f : 0.5f);
-                b58Var.invalidate();
+                c58 c58Var = (c58) obj;
+                c58Var.c.setAlpha(z ? 0.0f : 1.0f);
+                c58Var.a.setAlpha(z ? 0.0f : 0.5f);
+                c58Var.invalidate();
                 break;
             case 12:
                 qh6 qh6Var = (qh6) obj;
@@ -227,7 +227,7 @@ public final class gf4 extends AnimatorListenerAdapter {
                 break;
             case 16:
                 if (!z) {
-                    ((mj7) obj).b.setVisibility(8);
+                    ((nj7) obj).b.setVisibility(8);
                     break;
                 }
                 break;

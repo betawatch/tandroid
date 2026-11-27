@@ -36,7 +36,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class wz4 implements d27, y27, ty9, x66, tka, l71, heb, hqb, li1, qec, xg4, SuccessContinuation, mm4, dn3, gja {
     public static volatile wz4 b;
@@ -154,7 +154,7 @@ public final class wz4 implements d27, y27, ty9, x66, tka, l71, heb, hqb, li1, q
         if (f9Var == null) {
             return false;
         }
-        Iterator it = ((CopyOnWriteArrayList) ((Toolbar) ((i09) f9Var).b).a0.c).iterator();
+        Iterator it = ((CopyOnWriteArrayList) ((Toolbar) ((j09) f9Var).b).a0.c).iterator();
         while (it.hasNext()) {
             if (((dq4) it.next()).a.p()) {
                 return true;
@@ -381,9 +381,9 @@ public final class wz4 implements d27, y27, ty9, x66, tka, l71, heb, hqb, li1, q
 
     @Override // d27
     public final void Q1(f27 f27Var) {
-        k09 k09Var = ((ActionMenuView) this.a).L;
-        if (k09Var != null) {
-            k09Var.Q1(f27Var);
+        l09 l09Var = ((ActionMenuView) this.a).L;
+        if (l09Var != null) {
+            l09Var.Q1(f27Var);
         }
     }
 
@@ -623,7 +623,7 @@ public final class wz4 implements d27, y27, ty9, x66, tka, l71, heb, hqb, li1, q
     @Override // mm4
     public final Object k(nm4 nm4Var, zw2 zw2Var) {
         Object k = ((ym4) this.a).k(new z73(nm4Var, (byte) 0), zw2Var);
-        return k == vx2.a ? k : f9c.a;
+        return k == vx2.a ? k : g9c.a;
     }
 
     @Override // heb

@@ -2,7 +2,7 @@
 
 import java.util.TimerTask;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class w08 extends TimerTask {
     public final /* synthetic */ x08 a;
@@ -20,6 +20,6 @@ public final class w08 extends TimerTask {
         double currentTimeMillis = System.currentTimeMillis();
         x08Var.E = (int) (x08Var.E - (currentTimeMillis - x08Var.G));
         x08Var.G = currentTimeMillis;
-        hl.c3(new fe7(this, (byte) 25));
+        hl.c3(new ge7(this, (byte) 25));
     }
 }

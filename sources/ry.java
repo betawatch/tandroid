@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.PasscodeActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class ry implements TextWatcher {
     public final /* synthetic */ byte a;
@@ -249,7 +249,7 @@ public final class ry implements TextWatcher {
                 ((d34) obj).g3.O(true);
                 break;
             default:
-                ((z3b) this.b).run();
+                ((n3b) this.b).run();
                 r8b r8bVar = (r8b) obj;
                 zt3 zt3Var = r8bVar.T1;
                 if (!r8bVar.X1) {

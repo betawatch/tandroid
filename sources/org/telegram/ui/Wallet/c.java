@@ -43,7 +43,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class c {
     public static volatile c[] T = new c[4];
@@ -1567,7 +1567,7 @@ public final class c {
                                         if ((z3 != 0 || i14 != 0) && (i14 == 0 || ((optJSONObject2 = jSONObject3.optJSONObject("action")) != null && optJSONObject2.optBoolean("success") && !optJSONObject2.optBoolean("no_funds") && optJSONObject2.optInt("result_code") == 0))) {
                                             JSONObject jSONObject4 = z3 != 0 ? optJSONObject6 : (JSONObject) arrayList12.get(0);
                                             long parseLong2 = Long.parseLong(jSONObject4.getString("value"));
-                                            if (z3 == 0 || parseLong2 >= uc7.s1(cVar.a).k4.x0.f()) {
+                                            if (z3 == 0 || parseLong2 >= uc7.s1(cVar.a).l4.x0.f()) {
                                                 wallettransaction3 = new TL_wallet.walletTransaction();
                                                 String j2 = b.j(optJSONObject4);
                                                 wallettransaction3.id = j2;
@@ -2340,7 +2340,7 @@ public final class c {
         }
         performapirequest.payload = jSONObject.toString();
         int i = this.a;
-        ConnectionsManager.getInstance(i).sendRequestTyped(performapirequest, new ic((byte) 0), new qe2(this, str, pccVar), uc7.s1(i).r3, 0);
+        ConnectionsManager.getInstance(i).sendRequestTyped(performapirequest, new ic((byte) 0), new qe2(this, str, pccVar), uc7.s1(i).s3, 0);
     }
 
     public final void n0(TLRPC.User user, String str, long j, String str2, byte[] bArr, TL_wallet.nftItem nftitem, String str3, pcc pccVar, pcc pccVar2) {
@@ -2391,7 +2391,7 @@ public final class c {
             int i2 = j2.exp;
             double d = j2.rate;
             if (d > 0.0d && !Double.isNaN(d) && !Double.isInfinite(d)) {
-                double d2 = d * uc7.s1(this.a).k4.k.i;
+                double d2 = d * uc7.s1(this.a).l4.k.i;
                 int max = Math.max(0, Math.min(i2, 20));
                 BigDecimal movePointLeft = BigDecimal.valueOf(j).multiply(BigDecimal.valueOf(d2)).movePointLeft(9);
                 if (!z || movePointLeft.signum() == 0) {
@@ -2531,7 +2531,7 @@ public final class c {
                         performapirequest.query = sb.toString();
                         c cVar = this.b;
                         int i2 = cVar.a;
-                        ConnectionsManager.getInstance(i2).sendRequestTyped(performapirequest, new ic((byte) 0), new nu0((Object) cVar, (Object) v25Var2, (Object) str2, (Object) runnable, (byte) 2), uc7.s1(i2).r3, 0);
+                        ConnectionsManager.getInstance(i2).sendRequestTyped(performapirequest, new ic((byte) 0), new nu0((Object) cVar, (Object) v25Var2, (Object) str2, (Object) runnable, (byte) 2), uc7.s1(i2).s3, 0);
                         break;
                     default:
                         c cVar2 = this.b;
@@ -2562,7 +2562,7 @@ public final class c {
                         performapirequest.query = sb.toString();
                         c cVar = this.b;
                         int i2 = cVar.a;
-                        ConnectionsManager.getInstance(i2).sendRequestTyped(performapirequest, new ic((byte) 0), new nu0((Object) cVar, (Object) v25Var2, (Object) str2, (Object) runnable, (byte) 2), uc7.s1(i2).r3, 0);
+                        ConnectionsManager.getInstance(i2).sendRequestTyped(performapirequest, new ic((byte) 0), new nu0((Object) cVar, (Object) v25Var2, (Object) str2, (Object) runnable, (byte) 2), uc7.s1(i2).s3, 0);
                         break;
                     default:
                         c cVar2 = this.b;

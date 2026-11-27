@@ -6,7 +6,7 @@ import com.google.android.gms.common.api.Scope;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class d05 extends hg0 {
     public final Set E;
@@ -16,7 +16,7 @@ public abstract class d05 extends hg0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public d05(int i, k05 k05Var, l05 l05Var, oxb oxbVar, Context context, Looper looper) {
-        super(context, looper, r5, i, new i09((Object) k05Var, (byte) 25), new k09(l05Var, (byte) 22), (String) oxbVar.e);
+        super(context, looper, r5, i, new j09((Object) k05Var, (byte) 25), new l09(l05Var, (byte) 22), (String) oxbVar.e);
         aef aefVar;
         synchronized (aef.g) {
             aef aefVar2 = aef.h;

@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class lr extends p79 {
     public final /* synthetic */ byte a;
@@ -75,7 +75,7 @@ public final class lr extends p79 {
             case 5:
                 o24 o24Var = (o24) obj;
                 b14 b14Var = o24Var.Q;
-                if (!(view instanceof t3b)) {
+                if (!(view instanceof u3b)) {
                     if (!(view instanceof d79) && !(view instanceof g14)) {
                         if (view instanceof de0) {
                             rect.bottom = hl.L(12.0f);
@@ -106,9 +106,9 @@ public final class lr extends p79 {
                 break;
             case 7:
                 super.d(rect, view, recyclerView, c89Var);
-                pi7 pi7Var = (pi7) obj;
-                if (RecyclerView.S(view) == pi7Var.X1.size()) {
-                    rect.bottom = pi7Var.g2;
+                qi7 qi7Var = (qi7) obj;
+                if (RecyclerView.S(view) == qi7Var.X1.size()) {
+                    rect.bottom = qi7Var.g2;
                     break;
                 }
                 break;

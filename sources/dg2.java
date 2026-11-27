@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class dg2 extends ny0 {
     public static final int f2 = -2;
@@ -29,7 +29,7 @@ public final class dg2 extends ny0 {
     public int d2;
     public int e2;
 
-    public dg2(Activity activity, TL_account.TL_connectedBot tL_connectedBot, me7 me7Var, vnb vnbVar) {
+    public dg2(Activity activity, TL_account.TL_connectedBot tL_connectedBot, oe7 oe7Var, vnb vnbVar) {
         super(2, vnbVar, (Context) activity, false);
         this.S1 = tL_connectedBot;
         TLRPC.User X1 = uc7.s1(this.a).X1(Long.valueOf(tL_connectedBot.bot_id));
@@ -92,7 +92,7 @@ public final class dg2 extends ny0 {
         this.e2 = v0;
         c51Var.setColor(v0);
         c51Var.setText(ob6.M0(2131743858, null));
-        c51Var.setOnClickListener(new c0(this, tL_connectedBot, me7Var, (byte) 23));
+        c51Var.setOnClickListener(new c0(this, tL_connectedBot, oe7Var, (byte) 23));
         frameLayout.addView(c51Var, tre.d(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         c51 c51Var2 = new c51(vnbVar, activity, true);
         c51Var2.setRoundRadius(24);

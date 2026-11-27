@@ -26,7 +26,7 @@ import org.telegram.ui.SaveToGallerySettingsActivity;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class jn8 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -94,7 +94,7 @@ public final /* synthetic */ class jn8 implements View.OnClickListener {
                 ProxyListActivity proxyListActivity = hx8Var.s;
                 wea weaVar = hx8Var.d;
                 ox8 ox8Var = new ox8(null);
-                ox8Var.e = new rca[3];
+                ox8Var.e = new sca[3];
                 ox8Var.f = new ilb[2];
                 ox8Var.s = new i29[3];
                 ox8Var.E = 1.0f;

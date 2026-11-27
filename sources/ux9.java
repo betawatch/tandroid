@@ -10,7 +10,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ux9 implements Runnable {
     public final /* synthetic */ byte a;
@@ -201,7 +201,7 @@ public final /* synthetic */ class ux9 implements Runnable {
                     nt9 F1 = piaVar.y.y1.getMessagesController().F1();
                     ArrayList d = nt9.d(F1.j);
                     int i3 = F1.a;
-                    if (arrayList3.size() > (yac.h(i3).p() ? uc7.s1(i3).k4.q2.f() : uc7.s1(i3).k4.p2.f()) || nt9.j(d, arrayList3)) {
+                    if (arrayList3.size() > (yac.h(i3).p() ? uc7.s1(i3).l4.q2.f() : uc7.s1(i3).l4.p2.f()) || nt9.j(d, arrayList3)) {
                         return;
                     }
                     F1.o(arrayList3);

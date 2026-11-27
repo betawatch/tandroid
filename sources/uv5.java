@@ -39,7 +39,7 @@ import org.telegram.ui.PrivacySettingsActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class uv5 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -717,7 +717,7 @@ public final /* synthetic */ class uv5 implements View.OnClickListener {
                             break;
                         }
                     }
-                    jj.X(r78Var.a, z6 ? ((zu1) eVar4).a() : j, i5, new ii7(r78Var, b));
+                    jj.X(r78Var.a, z6 ? ((zu1) eVar4).a() : j, i5, new ji7(r78Var, b));
                     break;
                 }
             case 20:
@@ -730,7 +730,7 @@ public final /* synthetic */ class uv5 implements View.OnClickListener {
                     if (eVar5 instanceof zu1) {
                         ((zu1) eVar5).Z9(photoViewer.S4, false, true);
                     }
-                    m01.t(photoViewer.F, Uri.parse(photoViewer.S4.T0), true, false, false, null, null, false, uc7.s1(photoViewer.U).k4.I2.f, false, false);
+                    m01.t(photoViewer.F, Uri.parse(photoViewer.S4.T0), true, false, false, null, null, false, uc7.s1(photoViewer.U).l4.I2.f, false, false);
                     break;
                 }
                 break;
@@ -738,7 +738,7 @@ public final /* synthetic */ class uv5 implements View.OnClickListener {
                 a(view);
                 break;
             case 22:
-                a72.f0((zu1) this.c, 41026, new ii7((xg8) this.b, (byte) 15), null);
+                a72.f0((zu1) this.c, 41026, new ji7((xg8) this.b, (byte) 15), null);
                 break;
             case 23:
                 ((fu5) this.b).L((fu5) this.c);

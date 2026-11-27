@@ -2,9 +2,9 @@
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class a92 implements fd, ef7, qc6, bf7 {
+public final /* synthetic */ class a92 implements fd, ff7, qc6, cf7 {
     public final /* synthetic */ byte a;
     public final /* synthetic */ g92 b;
 
@@ -13,7 +13,7 @@ public final /* synthetic */ class a92 implements fd, ef7, qc6, bf7 {
         this.b = g92Var;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         boolean O1 = hl.O1();
         int i = jn7.s;
@@ -40,7 +40,7 @@ public final /* synthetic */ class a92 implements fd, ef7, qc6, bf7 {
         g92Var.getMessagesController().e3(0, g92Var.w0, true);
     }
 
-    @Override // ef7
+    @Override // ff7
     public final void run(long j) {
         byte b = this.a;
         g92 g92Var = this.b;

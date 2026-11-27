@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class mbc implements Runnable {
     public final /* synthetic */ byte a;
@@ -29,12 +29,12 @@ public final /* synthetic */ class mbc implements Runnable {
                 sbcVar.h1(true, false);
                 break;
             case 3:
-                mi7 mi7Var = sbcVar.U1;
-                mi7Var.b.r(ob6.M0(2131745564, null), true);
+                ni7 ni7Var = sbcVar.U1;
+                ni7Var.b.r(ob6.M0(2131745564, null), true);
                 break;
             case 4:
-                mi7 mi7Var2 = sbcVar.U1;
-                mi7Var2.b.r(ob6.M0(2131749439, null), true);
+                ni7 ni7Var2 = sbcVar.U1;
+                ni7Var2.b.r(ob6.M0(2131749439, null), true);
                 break;
             case 5:
                 sbcVar.Z0();

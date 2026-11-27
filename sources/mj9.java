@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class mj9 extends ze9 implements snb, zlb, jf9 {
     public static Paint n0;
@@ -97,7 +97,7 @@ public final class mj9 extends ze9 implements snb, zlb, jf9 {
         this.n = vnbVar;
         setWillNotDraw(false);
         f(0, hl.L(6.0f), 0, hl.L(4.0f));
-        if9 if9Var = new if9(context, vnbVar, new i09(this, (byte) 6));
+        if9 if9Var = new if9(context, vnbVar, new j09(this, (byte) 6));
         this.w = if9Var;
         addView(if9Var.a, tre.e(-2, -2, 51));
         setClipChildren(false);

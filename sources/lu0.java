@@ -7,9 +7,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class lu0 implements oi7, oj3 {
+public final /* synthetic */ class lu0 implements pi7, oj3 {
     public final /* synthetic */ rv0 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
@@ -29,7 +29,7 @@ public final /* synthetic */ class lu0 implements oi7, oj3 {
         return false;
     }
 
-    @Override // oi7
+    @Override // pi7
     public final void a(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
             return;
@@ -70,7 +70,7 @@ public final /* synthetic */ class lu0 implements oi7, oj3 {
             while (i3 < size) {
                 Object obj = arrayList.get(i3);
                 i3++;
-                hashSet.add(Long.valueOf(((if7) obj).a));
+                hashSet.add(Long.valueOf(((jf7) obj).a));
             }
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {

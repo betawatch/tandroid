@@ -8,7 +8,7 @@ import androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class oc3 {
     public final Context a;
@@ -330,7 +330,7 @@ public class oc3 {
         arrayList.add(new vlb(n64Var3, handler.getLooper()));
         Looper looper = handler.getLooper();
         for (int i = 0; i < 4; i++) {
-            arrayList.add(new zf7(n64Var4, looper));
+            arrayList.add(new ag7(n64Var4, looper));
         }
         arrayList.add(new ca1());
         arrayList.add(new tn5(new vj0(context, (byte) 0)));

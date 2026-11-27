@@ -20,7 +20,7 @@ import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class lo0 extends m15 implements fn7 {
     public final long S;
@@ -242,7 +242,7 @@ public final class lo0 extends m15 implements fn7 {
             }
             this.d0.add(new ko0(1, ob6.M0(2131748668, null)));
             this.d0.add(new ko0(3, this.U.boost_url));
-            if (uc7.s1(this.T).k4.W1.f && xc2.N(this.j0)) {
+            if (uc7.s1(this.T).l4.W1.f && xc2.N(this.j0)) {
                 this.d0.add(new ko0(6, ob6.M0(xc2.V(this.j0) ? 2131753262 : 2131753261, null)));
                 this.d0.add(new ko0(10, true));
                 this.d0.add(new ko0(6, ob6.M0(xc2.V(this.j0) ? 2131753496 : 2131753495, null)));

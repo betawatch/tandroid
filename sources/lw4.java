@@ -25,7 +25,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.SaveToGallerySettingsActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class lw4 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -84,18 +84,18 @@ public final /* synthetic */ class lw4 implements View.OnClickListener {
                 break;
             case 3:
                 JSONObject jSONObject = (JSONObject) this.b;
-                sk7 sk7Var = (sk7) this.c;
+                tk7 tk7Var = (tk7) this.c;
                 vnb vnbVar2 = (vnb) this.d;
                 if (hl.g(jSONObject.optString("text"))) {
-                    new d31(sk7Var.F, vnbVar2).i(ob6.M0(2131742640, null)).j();
+                    new d31(tk7Var.F, vnbVar2).i(ob6.M0(2131742640, null)).j();
                     break;
                 }
                 break;
             case 4:
-                a58 a58Var = (a58) this.b;
+                b58 b58Var = (b58) this.b;
                 long[] jArr = (long[]) this.c;
                 nx0 nx0Var2 = (nx0) this.d;
-                a58Var.a(Long.valueOf(jArr[0]));
+                b58Var.a(Long.valueOf(jArr[0]));
                 nx0Var2.dismiss();
                 break;
             case 5:
@@ -207,21 +207,21 @@ public final /* synthetic */ class lw4 implements View.OnClickListener {
                 }
                 break;
             case 12:
-                vab vabVar = (vab) this.b;
+                wab wabVar = (wab) this.b;
                 Context context3 = (Context) this.c;
                 a78 a78Var = (a78) this.d;
-                if (!vabVar.l1) {
-                    Runnable runnable3 = vabVar.u1;
+                if (!wabVar.l1) {
+                    Runnable runnable3 = wabVar.u1;
                     if (runnable3 != null) {
                         runnable3.run();
                         break;
                     }
                 } else {
-                    sm2 sm2Var2 = new sm2(context3, vabVar.q1);
-                    vabVar.D1 = sm2Var2;
-                    sm2Var2.E0(vabVar.k1.a, 2);
-                    sm2Var2.r1 = new rx((xma) vabVar, (Object) a78Var, (byte) 7);
-                    sm2Var2.q1 = new cc0(vabVar, a78Var, b);
+                    sm2 sm2Var2 = new sm2(context3, wabVar.q1);
+                    wabVar.D1 = sm2Var2;
+                    sm2Var2.E0(wabVar.k1.a, 2);
+                    sm2Var2.r1 = new rx((xma) wabVar, (Object) a78Var, (byte) 7);
+                    sm2Var2.q1 = new cc0(wabVar, a78Var, b);
                     sm2Var2.show();
                     break;
                 }
@@ -245,7 +245,7 @@ public final /* synthetic */ class lw4 implements View.OnClickListener {
                 b8Var.performHapticFeedback(3);
                 d31 Y = d31.Y();
                 if (Y != null) {
-                    Y.Q(R.raw.ic_save_to_gallery, 36, hl.N2(ob6.M0(2131745661, null), -1, 0, new h68(j68Var3, lcbVar, b4), null)).j();
+                    Y.Q(R.raw.ic_save_to_gallery, 36, hl.N2(ob6.M0(2131745661, null), -1, 0, new a58(j68Var3, lcbVar, b3), null)).j();
                     break;
                 }
                 break;
@@ -478,7 +478,7 @@ public final /* synthetic */ class lw4 implements View.OnClickListener {
                 long j = as1Var.b;
                 a5cVar.J(j, true, false);
                 TLRPC.Chat M0 = uc7.s1(as1Var.a).M0(Long.valueOf(-j));
-                d31.b0(as1Var.c).K(R.raw.msg_translate, hl.S2(M0 != null ? xc2.V(M0) ? ob6.M0(2131743605, null) : ob6.M0(2131743603, null) : ob6.M0(2131743604, null)), ob6.M0(2131743540, null), new bcb((Object) as1Var, (Object) a5cVar, (byte) 23)).j();
+                d31.b0(as1Var.c).K(R.raw.msg_translate, hl.S2(M0 != null ? xc2.V(M0) ? ob6.M0(2131743605, null) : ob6.M0(2131743603, null) : ob6.M0(2131743604, null)), ob6.M0(2131743540, null), new hab((Object) as1Var, (Object) a5cVar, (byte) 24)).j();
                 n8Var2.d(true);
                 break;
             case 26:

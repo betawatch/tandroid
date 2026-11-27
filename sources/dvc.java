@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class dvc extends FrameLayout implements snb {
     public final mb0 a;
@@ -91,17 +91,17 @@ public final class dvc extends FrameLayout implements snb {
             TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
             if (wallPaperSettings.third_background_color != 0) {
                 TLRPC.WallPaperSettings wallPaperSettings2 = tL_wallPaper.settings;
-                hh7 hh7Var = new hh7(wallPaperSettings2.background_color, wallPaperSettings2.second_background_color, wallPaperSettings2.third_background_color, wallPaperSettings2.fourth_background_color, true, false);
+                ih7 ih7Var = new ih7(wallPaperSettings2.background_color, wallPaperSettings2.second_background_color, wallPaperSettings2.third_background_color, wallPaperSettings2.fourth_background_color, true, false);
                 if (tL_wallPaper.settings.intensity >= 0 || !aob.I.o()) {
-                    mb0Var2.setBackground(hh7Var);
+                    mb0Var2.setBackground(ih7Var);
                     if (Build.VERSION.SDK_INT >= 29) {
                         mb0Var2.getImageReceiver().P(BlendMode.SOFT_LIGHT);
                     }
                 } else {
-                    mb0Var2.getImageReceiver().W(hh7Var.k);
+                    mb0Var2.getImageReceiver().W(ih7Var.k);
                 }
                 TLRPC.WallPaperSettings wallPaperSettings3 = tL_wallPaper.settings;
-                U02 = hh7.g(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
+                U02 = ih7.g(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
             } else {
                 mb0Var2.setBackgroundColor(aob.Y0(wallPaperSettings.background_color));
                 U02 = hl.U0(tL_wallPaper.settings.background_color, false);
@@ -167,7 +167,7 @@ public final class dvc extends FrameLayout implements snb {
         if (yvcVar.g == null && !"d".equals(yvcVar.a)) {
             mb0Var2.setImageBitmap(null);
             if (yvcVar.j) {
-                mb0Var2.setBackground(new hh7(yvcVar.b, yvcVar.c, yvcVar.d, yvcVar.e, true, false));
+                mb0Var2.setBackground(new ih7(yvcVar.b, yvcVar.c, yvcVar.d, yvcVar.e, true, false));
                 return;
             } else if (i2 != 0) {
                 mb0Var2.setBackground(new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{i3 | (-16777216), i2 | (-16777216)}));
@@ -178,18 +178,18 @@ public final class dvc extends FrameLayout implements snb {
             }
         }
         if (i != 0) {
-            hh7 hh7Var2 = new hh7(yvcVar.b, yvcVar.c, yvcVar.d, yvcVar.e, true, false);
+            ih7 ih7Var2 = new ih7(yvcVar.b, yvcVar.c, yvcVar.d, yvcVar.e, true, false);
             if (yvcVar.h >= 0.0f) {
-                mb0Var2.setBackground(new hh7(yvcVar.b, yvcVar.c, yvcVar.d, yvcVar.e, true, false));
+                mb0Var2.setBackground(new ih7(yvcVar.b, yvcVar.c, yvcVar.d, yvcVar.e, true, false));
                 if (Build.VERSION.SDK_INT >= 29) {
                     mb0Var2.getImageReceiver().P(BlendMode.SOFT_LIGHT);
                 }
             } else {
-                mb0Var2.getImageReceiver().W(hh7Var2.k);
+                mb0Var2.getImageReceiver().W(ih7Var2.k);
             }
-            U0 = hh7.g(i3, i2, i, yvcVar.e);
+            U0 = ih7.g(i3, i2, i, yvcVar.e);
         } else {
-            mb0Var2.setBackground(new hh7(yvcVar.b, yvcVar.c, 0, 0, true, false));
+            mb0Var2.setBackground(new ih7(yvcVar.b, yvcVar.c, 0, 0, true, false));
             U0 = hl.U0(i3, false);
         }
         int i4 = U0;

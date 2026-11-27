@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class oq1 extends d6 {
     public final /* synthetic */ Context a;
@@ -118,7 +118,7 @@ public final class oq1 extends d6 {
                 zu1Var.p1.e(false, true);
                 return;
             }
-            qyb qybVar = zu1Var.getMessagesController().g4;
+            qyb qybVar = zu1Var.getMessagesController().h4;
             long j3 = -zu1Var.l6;
             qybVar.getClass();
             TLRPC.TL_channels_toggleViewForumAsMessages tL_channels_toggleViewForumAsMessages = new TLRPC.TL_channels_toggleViewForumAsMessages();
@@ -373,7 +373,7 @@ public final class oq1 extends d6 {
             a19 c = b19.f(i4).c(zu1Var.e7());
             Activity parentActivity2 = zu1Var.getParentActivity();
             i5 = ((e) zu1Var).currentAccount;
-            w09.g0(parentActivity2, i5, zu1Var.f4, c, zu1Var.getResourceProvider(), new y0(this, c, b3));
+            x09.g0(parentActivity2, i5, zu1Var.f4, c, zu1Var.getResourceProvider(), new y0(this, c, b3));
             return;
         }
         byte b4 = 8;
@@ -400,8 +400,8 @@ public final class oq1 extends d6 {
             return;
         }
         if (i == 62) {
-            zu1Var.getMessagesController().i4.J(zu1Var.a(), false, true);
-            if (zu1Var.getMessagesController().i4.K(zu1Var.a(), true)) {
+            zu1Var.getMessagesController().j4.J(zu1Var.a(), false, true);
+            if (zu1Var.getMessagesController().j4.K(zu1Var.a(), true)) {
                 return;
             }
             zu1Var.zd(true);
@@ -423,7 +423,7 @@ public final class oq1 extends d6 {
         }
         if (i == 60) {
             if (zu1Var.r4 != null) {
-                qyb qybVar2 = zu1Var.getMessagesController().g4;
+                qyb qybVar2 = zu1Var.getMessagesController().h4;
                 long j10 = zu1Var.e.id;
                 TLRPC.TL_forumTopic tL_forumTopic = zu1Var.r4;
                 int i20 = tL_forumTopic.id;

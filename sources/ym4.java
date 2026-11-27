@@ -47,9 +47,9 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class ym4 implements mm4, l12, up5, mqa, mz4, oi0, n09, uw8, tw8, xj0, p7b, rb2 {
+public final class ym4 implements mm4, l12, up5, mqa, mz4, oi0, o09, uw8, tw8, xj0, p7b, rb2 {
     public final /* synthetic */ byte a;
     public Object b;
     public Object c;
@@ -379,14 +379,14 @@ public final class ym4 implements mm4, l12, up5, mqa, mz4, oi0, n09, uw8, tw8, x
         return false;
     }
 
-    @Override // n09
-    public final void a(m09 m09Var, int i) {
+    @Override // o09
+    public final void a(n09 n09Var, int i) {
         int[] iArr = (int[]) this.c;
         try {
-            m09Var.read((byte[]) this.b, iArr[0], i);
+            n09Var.read((byte[]) this.b, iArr[0], i);
             iArr[0] = iArr[0] + i;
         } finally {
-            m09Var.close();
+            n09Var.close();
         }
     }
 
@@ -521,7 +521,7 @@ public final class ym4 implements mm4, l12, up5, mqa, mz4, oi0, n09, uw8, tw8, x
                 uw8 uw8Var = (uw8) this.c;
                 return new ds9(saeVar, z6fVar, s90.f, (hu9) obj, uw8Var);
             default:
-                return new bba((aca) ((tw8) this.b).get(), (aca) ((tw8) this.c).get());
+                return new bba((bca) ((tw8) this.b).get(), (bca) ((tw8) this.c).get());
         }
     }
 
@@ -560,7 +560,7 @@ public final class ym4 implements mm4, l12, up5, mqa, mz4, oi0, n09, uw8, tw8, x
     @Override // mm4
     public final Object k(nm4 nm4Var, zw2 zw2Var) {
         Object k = ((um4) this.b).k(new an4(new m89(), nm4Var, (w73) this.c), zw2Var);
-        return k == vx2.a ? k : f9c.a;
+        return k == vx2.a ? k : g9c.a;
     }
 
     @Override // rb2
@@ -636,7 +636,7 @@ public final class ym4 implements mm4, l12, up5, mqa, mz4, oi0, n09, uw8, tw8, x
             }
             stackTraceElementArr2 = mqaVar.p(stackTraceElementArr);
         }
-        return stackTraceElementArr2.length > 1024 ? ((rg7) this.c).p(stackTraceElementArr2) : stackTraceElementArr2;
+        return stackTraceElementArr2.length > 1024 ? ((sg7) this.c).p(stackTraceElementArr2) : stackTraceElementArr2;
     }
 
     public final boolean p0(View view) {
@@ -839,7 +839,7 @@ public final class ym4 implements mm4, l12, up5, mqa, mz4, oi0, n09, uw8, tw8, x
             printWriter.print("mData=");
             m8d m8dVar2 = sa6Var.l;
             Object obj = sa6Var.e;
-            Object obj2 = obj != qj7.k ? obj : null;
+            Object obj2 = obj != rj7.k ? obj : null;
             m8dVar2.getClass();
             StringBuilder sb = new StringBuilder(64);
             if (obj2 == null) {
@@ -1247,7 +1247,7 @@ public final class ym4 implements mm4, l12, up5, mqa, mz4, oi0, n09, uw8, tw8, x
     public ym4(mqa[] mqaVarArr) {
         this.a = (byte) 10;
         this.b = mqaVarArr;
-        this.c = new rg7((byte) 22);
+        this.c = new sg7((byte) 22);
     }
 
     public ym4(ExecutorService executorService) {

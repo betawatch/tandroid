@@ -25,7 +25,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class cg implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -91,7 +91,7 @@ public final /* synthetic */ class cg implements View.OnClickListener {
                 r47 r47Var = (r47) this.e;
                 String str = (String) this.b;
                 zu1Var.Z9(r47Var, false, false);
-                m01.t(no0Var.getContext(), Uri.parse(str), true, false, false, null, null, false, uc7.s1(yac.t0).k4.I2.f, false, false);
+                m01.t(no0Var.getContext(), Uri.parse(str), true, false, false, null, null, false, uc7.s1(yac.t0).l4.I2.f, false, false);
                 break;
             case 5:
                 String[] strArr = (String[]) this.c;
@@ -324,13 +324,13 @@ public final /* synthetic */ class cg implements View.OnClickListener {
             case 18:
                 Activity activity = (Activity) this.c;
                 vnb vnbVar4 = (vnb) this.d;
-                vlc vlcVar = (vlc) this.e;
+                slc slcVar = (slc) this.e;
                 nx0 nx0Var4 = (nx0) this.b;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, vnbVar4, activity);
                 alertDialog$Builder.a.S = ob6.M0(2131742789, null);
                 alertDialog$Builder.a.U = ob6.M0(2131742790, null);
                 alertDialog$Builder.g(ob6.M0(2131752570, null), null);
-                alertDialog$Builder.j(ob6.M0(2131751563, null), new yw9(vlcVar, nx0Var4, b));
+                alertDialog$Builder.j(ob6.M0(2131751563, null), new yw9(slcVar, nx0Var4, b));
                 alertDialog$Builder.c(-1);
                 alertDialog$Builder.o();
                 break;
@@ -380,7 +380,7 @@ public final /* synthetic */ class cg implements View.OnClickListener {
                         yob.G(p66Var, aob.Xc, vnbVar6);
                         p66Var.setTextSize(1, 16.0f);
                         p66Var.setPadding(hl.L(4.0f), 0, hl.L(4.0f), 0);
-                        p66Var.setText(hl.N2(ob6.a0(null, null, 2131742850, lbc.r(ktcVar.r)), -1, 0, new vlc(idVarArr, runnable, (byte) 23), null));
+                        p66Var.setText(hl.N2(ob6.a0(null, null, 2131742850, lbc.r(ktcVar.r)), -1, 0, new slc(idVarArr, runnable, (byte) 24), null));
                         linearLayout.addView(p66Var, tre.t(-1, -2, 55, 0, 14, 0, 0));
                     } else {
                         f2 = 4.0f;
@@ -417,11 +417,11 @@ public final /* synthetic */ class cg implements View.OnClickListener {
             default:
                 c51 c51Var3 = (c51) this.c;
                 ku9 ku9Var = (ku9) this.d;
-                jl7 jl7Var = (jl7) this.e;
+                kl7 kl7Var = (kl7) this.e;
                 vnb vnbVar8 = (vnb) this.b;
                 if (!c51Var3.R) {
                     c51Var3.setLoading(true);
-                    ku9Var.a(new v58(c51Var3, jl7Var, vnbVar8, b2));
+                    ku9Var.a(new w58(c51Var3, kl7Var, vnbVar8, b2));
                     break;
                 }
                 break;

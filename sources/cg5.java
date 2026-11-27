@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class cg5 implements pcc {
     public final /* synthetic */ byte a = 1;
@@ -34,13 +34,13 @@ public final /* synthetic */ class cg5 implements pcc {
     public final /* synthetic */ Object k;
     public final /* synthetic */ Object l;
 
-    public /* synthetic */ cg5(LinearLayout linearLayout, ypc ypcVar, vnb vnbVar, int i, TextView textView, jl7[] jl7VarArr, hjb hjbVar, kcc kccVar, Context context, TextView[] textViewArr, SpannableString[] spannableStringArr) {
+    public /* synthetic */ cg5(LinearLayout linearLayout, ypc ypcVar, vnb vnbVar, int i, TextView textView, kl7[] kl7VarArr, hjb hjbVar, kcc kccVar, Context context, TextView[] textViewArr, SpannableString[] spannableStringArr) {
         this.c = linearLayout;
         this.d = ypcVar;
         this.e = vnbVar;
         this.b = i;
         this.f = textView;
-        this.g = jl7VarArr;
+        this.g = kl7VarArr;
         this.h = hjbVar;
         this.i = kccVar;
         this.j = context;
@@ -86,7 +86,7 @@ public final /* synthetic */ class cg5 implements pcc {
         SpannableString[] spannableStringArr;
         long j;
         boolean z;
-        jl7 jl7Var;
+        kl7 kl7Var;
         jy0 jy0Var;
         int i;
         opc opcVar;
@@ -98,11 +98,11 @@ public final /* synthetic */ class cg5 implements pcc {
         ?? r7;
         jt7 c;
         ?? r15;
-        jl7 jl7Var2;
+        kl7 kl7Var2;
         jy0 jy0Var2;
         int i2;
         char c2;
-        jl7 jl7Var3;
+        kl7 kl7Var3;
         jy0 jy0Var3;
         byte b = this.a;
         Object obj2 = this.l;
@@ -146,7 +146,7 @@ public final /* synthetic */ class cg5 implements pcc {
                 ypc ypcVar = (ypc) view;
                 final vnb vnbVar = (vnb) obj8;
                 TextView textView = (TextView) obj7;
-                final jl7[] jl7VarArr = (jl7[]) obj6;
+                final kl7[] kl7VarArr = (kl7[]) obj6;
                 hjb hjbVar = (hjb) viewGroup;
                 kcc kccVar = (kcc) obj5;
                 Context context3 = (Context) obj4;
@@ -167,7 +167,7 @@ public final /* synthetic */ class cg5 implements pcc {
                     spannableStringArr = spannableStringArr2;
                     j = abs2;
                     z = z2;
-                    if (z6 && (jl7Var = jl7VarArr[0]) != null && (jy0Var = jl7Var.o1) != null) {
+                    if (z6 && (kl7Var = kl7VarArr[0]) != null && (jy0Var = kl7Var.o1) != null) {
                         jy0Var.setTitle(c.p("Grams", c.u(c.s(abs, false), 0.75f), 2131749261));
                     }
                 } else {
@@ -211,7 +211,7 @@ public final /* synthetic */ class cg5 implements pcc {
                             c2 = 0;
                             textView.setText(q);
                         }
-                        if (z6 && (jl7Var3 = jl7VarArr[c2]) != null && (jy0Var3 = jl7Var3.o1) != null) {
+                        if (z6 && (kl7Var3 = kl7VarArr[c2]) != null && (jy0Var3 = kl7Var3.o1) != null) {
                             jy0Var3.setTitle(c.p("Grams", u, 2131749261));
                         }
                     } else {
@@ -219,7 +219,7 @@ public final /* synthetic */ class cg5 implements pcc {
                         spannableStringArr = spannableStringArr2;
                         j = abs2;
                         z = z2;
-                        if (z6 && (jl7Var2 = jl7VarArr[0]) != null && (jy0Var2 = jl7Var2.o1) != null) {
+                        if (z6 && (kl7Var2 = kl7VarArr[0]) != null && (jy0Var2 = kl7Var2.o1) != null) {
                             jy0Var2.setTitle(TextUtils.isEmpty(nftitem.name) ? ob6.M0(2131742827, null) : wallettransaction.nft.name);
                         }
                     }
@@ -230,11 +230,11 @@ public final /* synthetic */ class cg5 implements pcc {
                     TL_wallet.walletTransactionPeerUser wallettransactionpeeruser = (TL_wallet.walletTransactionPeerUser) walletTransactionPeer;
                     TLRPC.User X1 = uc7.s1(i4).X1(Long.valueOf(wallettransactionpeeruser.user_id));
                     if (X1 != null && !lbc.C(X1.id)) {
-                        hjbVar.m(z ? ob6.M0(2131742646, null) : ob6.M0(2131742671, null), i4, wallettransactionpeeruser.user_id, new b6c(kccVar, jl7VarArr, wallettransactionpeeruser, (byte) 18), ob6.M0(2131742653, null), kccVar != null ? null : new vlc(jl7VarArr, X1, (byte) 12));
+                        hjbVar.m(z ? ob6.M0(2131742646, null) : ob6.M0(2131742671, null), i4, wallettransactionpeeruser.user_id, new b6c(kccVar, kl7VarArr, wallettransactionpeeruser, (byte) 18), ob6.M0(2131742653, null), kccVar != null ? null : new slc(kl7VarArr, X1, (byte) 13));
                     }
                     hjb hjbVar2 = hjbVar;
                     if (!TextUtils.isEmpty(wallettransactionpeeruser.domain) && !TextUtils.isEmpty(wallettransactionpeeruser.address)) {
-                        hjbVar2.i(ob6.M0(2131742780, null), wallettransactionpeeruser.domain, new b6c(jl7VarArr, X1, wallettransactionpeeruser, (byte) 19));
+                        hjbVar2.i(ob6.M0(2131742780, null), wallettransactionpeeruser.domain, new b6c(kl7VarArr, X1, wallettransactionpeeruser, (byte) 19));
                     }
                     i = i4;
                     r9 = hjbVar2;
@@ -242,7 +242,7 @@ public final /* synthetic */ class cg5 implements pcc {
                     hjb hjbVar3 = hjbVar;
                     if (walletTransactionPeer instanceof TL_wallet.walletTransactionPeerChannel) {
                         if (uc7.s1(i4).M0(Long.valueOf(walletTransactionPeer.channel_id)) != null) {
-                            hjbVar3.n(z ? ob6.M0(2131742646, null) : ob6.M0(2131742671, null), i4, -walletTransactionPeer.channel_id, new b6c(kccVar, jl7VarArr, walletTransactionPeer, (byte) 20));
+                            hjbVar3.n(z ? ob6.M0(2131742646, null) : ob6.M0(2131742671, null), i4, -walletTransactionPeer.channel_id, new b6c(kccVar, kl7VarArr, walletTransactionPeer, (byte) 20));
                         }
                         i = i4;
                         r9 = hjbVar3;
@@ -254,12 +254,12 @@ public final /* synthetic */ class cg5 implements pcc {
                                     public final void run() {
                                         byte b6 = b5;
                                         final TL_wallet.WalletTransactionPeer walletTransactionPeer2 = walletTransactionPeer;
-                                        jl7[] jl7VarArr2 = jl7VarArr;
+                                        kl7[] kl7VarArr2 = kl7VarArr;
                                         final byte b7 = 0;
                                         switch (b6) {
                                             case 0:
                                                 final byte b8 = 1;
-                                                jl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: rpc
+                                                kl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: rpc
                                                     @Override // android.content.DialogInterface.OnDismissListener
                                                     public final void onDismiss(DialogInterface dialogInterface) {
                                                         byte b9 = b8;
@@ -284,10 +284,10 @@ public final /* synthetic */ class cg5 implements pcc {
                                                         }
                                                     }
                                                 });
-                                                jl7VarArr2[0].dismiss();
+                                                kl7VarArr2[0].dismiss();
                                                 break;
                                             default:
-                                                jl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: rpc
+                                                kl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: rpc
                                                     @Override // android.content.DialogInterface.OnDismissListener
                                                     public final void onDismiss(DialogInterface dialogInterface) {
                                                         byte b9 = b7;
@@ -312,7 +312,7 @@ public final /* synthetic */ class cg5 implements pcc {
                                                         }
                                                     }
                                                 });
-                                                jl7VarArr2[0].dismiss();
+                                                kl7VarArr2[0].dismiss();
                                                 break;
                                         }
                                     }
@@ -339,11 +339,11 @@ public final /* synthetic */ class cg5 implements pcc {
                                         public final void run() {
                                             byte b7 = b6;
                                             final TL_wallet.walletTransactionPeerAddress wallettransactionpeeraddress2 = wallettransactionpeeraddress;
-                                            jl7[] jl7VarArr2 = jl7VarArr;
+                                            kl7[] kl7VarArr2 = kl7VarArr;
                                             final byte b8 = 0;
                                             switch (b7) {
                                                 case 0:
-                                                    jl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: qpc
+                                                    kl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: qpc
                                                         @Override // android.content.DialogInterface.OnDismissListener
                                                         public final void onDismiss(DialogInterface dialogInterface) {
                                                             byte b9 = b8;
@@ -370,11 +370,11 @@ public final /* synthetic */ class cg5 implements pcc {
                                                             }
                                                         }
                                                     });
-                                                    jl7VarArr2[0].dismiss();
+                                                    kl7VarArr2[0].dismiss();
                                                     break;
                                                 default:
                                                     final byte b9 = 1;
-                                                    jl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: qpc
+                                                    kl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: qpc
                                                         @Override // android.content.DialogInterface.OnDismissListener
                                                         public final void onDismiss(DialogInterface dialogInterface) {
                                                             byte b92 = b9;
@@ -401,7 +401,7 @@ public final /* synthetic */ class cg5 implements pcc {
                                                             }
                                                         }
                                                     });
-                                                    jl7VarArr2[0].dismiss();
+                                                    kl7VarArr2[0].dismiss();
                                                     break;
                                             }
                                         }
@@ -416,11 +416,11 @@ public final /* synthetic */ class cg5 implements pcc {
                                             public final void run() {
                                                 byte b72 = b7;
                                                 final TL_wallet.walletTransactionPeerAddress wallettransactionpeeraddress2 = wallettransactionpeeraddress;
-                                                jl7[] jl7VarArr2 = jl7VarArr;
+                                                kl7[] kl7VarArr2 = kl7VarArr;
                                                 final byte b8 = 0;
                                                 switch (b72) {
                                                     case 0:
-                                                        jl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: qpc
+                                                        kl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: qpc
                                                             @Override // android.content.DialogInterface.OnDismissListener
                                                             public final void onDismiss(DialogInterface dialogInterface) {
                                                                 byte b92 = b8;
@@ -447,11 +447,11 @@ public final /* synthetic */ class cg5 implements pcc {
                                                                 }
                                                             }
                                                         });
-                                                        jl7VarArr2[0].dismiss();
+                                                        kl7VarArr2[0].dismiss();
                                                         break;
                                                     default:
                                                         final byte b9 = 1;
-                                                        jl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: qpc
+                                                        kl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: qpc
                                                             @Override // android.content.DialogInterface.OnDismissListener
                                                             public final void onDismiss(DialogInterface dialogInterface) {
                                                                 byte b92 = b9;
@@ -478,7 +478,7 @@ public final /* synthetic */ class cg5 implements pcc {
                                                                 }
                                                             }
                                                         });
-                                                        jl7VarArr2[0].dismiss();
+                                                        kl7VarArr2[0].dismiss();
                                                         break;
                                                 }
                                             }
@@ -524,13 +524,13 @@ public final /* synthetic */ class cg5 implements pcc {
                             public final void run() {
                                 byte b9 = b8;
                                 vnb vnbVar2 = vnbVar;
-                                jl7[] jl7VarArr2 = jl7VarArr;
+                                kl7[] kl7VarArr2 = kl7VarArr;
                                 switch (b9) {
                                     case 0:
-                                        new d31(jl7VarArr2[0].F, vnbVar2).Q(R.raw.copy, 36, ob6.M0(2131742852, null)).k(false);
+                                        new d31(kl7VarArr2[0].F, vnbVar2).Q(R.raw.copy, 36, ob6.M0(2131742852, null)).k(false);
                                         break;
                                     default:
-                                        new d31(jl7VarArr2[0].F, vnbVar2).Q(R.raw.copy, 36, ob6.M0(2131742852, null)).k(false);
+                                        new d31(kl7VarArr2[0].F, vnbVar2).Q(R.raw.copy, 36, ob6.M0(2131742852, null)).k(false);
                                         break;
                                 }
                             }
@@ -550,13 +550,13 @@ public final /* synthetic */ class cg5 implements pcc {
                         public final void run() {
                             byte b92 = b9;
                             vnb vnbVar2 = vnbVar;
-                            jl7[] jl7VarArr2 = jl7VarArr;
+                            kl7[] kl7VarArr2 = kl7VarArr;
                             switch (b92) {
                                 case 0:
-                                    new d31(jl7VarArr2[0].F, vnbVar2).Q(R.raw.copy, 36, ob6.M0(2131742852, null)).k(false);
+                                    new d31(kl7VarArr2[0].F, vnbVar2).Q(R.raw.copy, 36, ob6.M0(2131742852, null)).k(false);
                                     break;
                                 default:
-                                    new d31(jl7VarArr2[0].F, vnbVar2).Q(R.raw.copy, 36, ob6.M0(2131742852, null)).k(false);
+                                    new d31(kl7VarArr2[0].F, vnbVar2).Q(R.raw.copy, 36, ob6.M0(2131742852, null)).k(false);
                                     break;
                             }
                         }
@@ -565,12 +565,12 @@ public final /* synthetic */ class cg5 implements pcc {
                         public final void run() {
                             byte b62 = b10;
                             final TL_wallet.WalletTransactionPeer walletTransactionPeer22 = walletTransactionPeer2;
-                            jl7[] jl7VarArr2 = jl7VarArr;
+                            kl7[] kl7VarArr2 = kl7VarArr;
                             final byte b72 = 0;
                             switch (b62) {
                                 case 0:
                                     final byte b82 = 1;
-                                    jl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: rpc
+                                    kl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: rpc
                                         @Override // android.content.DialogInterface.OnDismissListener
                                         public final void onDismiss(DialogInterface dialogInterface) {
                                             byte b92 = b82;
@@ -595,10 +595,10 @@ public final /* synthetic */ class cg5 implements pcc {
                                             }
                                         }
                                     });
-                                    jl7VarArr2[0].dismiss();
+                                    kl7VarArr2[0].dismiss();
                                     break;
                                 default:
-                                    jl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: rpc
+                                    kl7VarArr2[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: rpc
                                         @Override // android.content.DialogInterface.OnDismissListener
                                         public final void onDismiss(DialogInterface dialogInterface) {
                                             byte b92 = b72;
@@ -623,7 +623,7 @@ public final /* synthetic */ class cg5 implements pcc {
                                             }
                                         }
                                     });
-                                    jl7VarArr2[0].dismiss();
+                                    kl7VarArr2[0].dismiss();
                                     break;
                             }
                         }

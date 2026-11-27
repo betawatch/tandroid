@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public abstract class n1a extends FrameLayout implements fn7, snb {
     public static String[] c2;
@@ -182,14 +182,14 @@ public abstract class n1a extends FrameLayout implements fn7, snb {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:120:0x0392  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x042c A[EDGE_INSN: B:169:0x042c->B:170:0x042c BREAK  A[LOOP:0: B:118:0x038d->B:153:0x041c], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x050d  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x052b  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x0711  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x074f  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x075a  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0537  */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x051f  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x042a A[EDGE_INSN: B:169:0x042a->B:170:0x042a BREAK  A[LOOP:0: B:118:0x038d->B:153:0x041a], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x050b  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0529  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x070f  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x074d  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x0758  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x0535  */
+    /* JADX WARN: Removed duplicated region for block: B:260:0x051d  */
     /* JADX WARN: Removed duplicated region for block: B:267:0x036e  */
     /* JADX WARN: Removed duplicated region for block: B:268:0x02ea  */
     /* JADX WARN: Removed duplicated region for block: B:87:0x02e3  */
@@ -364,7 +364,7 @@ public abstract class n1a extends FrameLayout implements fn7, snb {
                     vnb vnbVar3 = vnbVar2;
                     int i14 = i11;
                     int i15 = i6;
-                    j0a j0aVar = new j0a(this, context, vnbVar3, z4, z5, i14, z8 ? new en9(this, eVar, (byte) 18) : null, i12, i);
+                    j0a j0aVar = new j0a(this, context, vnbVar3, z4, z5, i14, z8 ? new dn9(this, eVar, (byte) 19) : null, i12, i);
                     uy3 uy3Var = j0aVar.y;
                     if (uy3Var != null) {
                         uy3Var.setOnLongClickListener(new zs(this, (byte) 15));
@@ -527,9 +527,9 @@ public abstract class n1a extends FrameLayout implements fn7, snb {
                 } else if (i == 1 || i == 11 || i == 2 || i == 6 || i == 13) {
                     ls6.d0(i17).C();
                 } else if (i == 9 || i == 10) {
-                    if (uc7.s1(i17).X3.getBoolean("resetemojipacks", true)) {
+                    if (uc7.s1(i17).Y3.getBoolean("resetemojipacks", true)) {
                         ls6.d0(i17).b1(5, false, false);
-                        uc7.s1(i17).X3.edit().putBoolean("resetemojipacks", false).commit();
+                        uc7.s1(i17).Y3.edit().putBoolean("resetemojipacks", false).commit();
                     }
                     ls6.d0(i17).N(2, false);
                     ls6.d0(i17).Z0();

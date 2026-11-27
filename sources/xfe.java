@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public abstract class xfe {
     public static void a(ArrayList arrayList) {
@@ -20,15 +20,15 @@ public abstract class xfe {
             i2++;
             fq2 fq2Var = (fq2) obj;
             r53 r53Var = new r53(fq2Var);
-            for (h09 h09Var : fq2Var.b) {
+            for (i09 i09Var : fq2Var.b) {
                 boolean z = fq2Var.e;
-                s53 s53Var = new s53(h09Var, z);
+                s53 s53Var = new s53(i09Var, z);
                 if (!hashMap.containsKey(s53Var)) {
                     hashMap.put(s53Var, new HashSet());
                 }
                 Set set = (Set) hashMap.get(s53Var);
                 if (!set.isEmpty() && !z) {
-                    throw new IllegalArgumentException("Multiple components provide " + h09Var + ".");
+                    throw new IllegalArgumentException("Multiple components provide " + i09Var + ".");
                 }
                 set.add(r53Var);
             }

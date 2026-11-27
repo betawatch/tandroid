@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class gr0 extends FrameLayout {
     public final z2b E;
@@ -33,7 +33,7 @@ public final class gr0 extends FrameLayout {
     public int U;
     public int V;
     public final Rect W;
-    public o5b a;
+    public p5b a;
     public final /* synthetic */ bga a0;
     public boolean b;
     public float c;
@@ -109,7 +109,7 @@ public final class gr0 extends FrameLayout {
         z2bVar.e(true, false);
         z2bVar.b.setVisibility(8);
         z2bVar.d.setText(ob6.M0(2131746425, null));
-        z2bVar.e.setText(ob6.G(uc7.s1(bgaVar.b).k4.A2.f(), "ProfileBotPreviewEmptyText", new Object[0]));
+        z2bVar.e.setText(ob6.G(uc7.s1(bgaVar.b).l4.A2.f(), "ProfileBotPreviewEmptyText", new Object[0]));
         String M0 = ob6.M0(2131746429, null);
         c51 c51Var = z2bVar.f;
         c51Var.i(M0, false, true);
@@ -237,11 +237,11 @@ public final class gr0 extends FrameLayout {
         int i;
         String M0;
         int i2 = this.a0.b;
-        o5b o5bVar = this.a;
-        int size = o5bVar == null ? 0 : o5bVar.i.size();
-        o5b o5bVar2 = this.a;
+        p5b p5bVar = this.a;
+        int size = p5bVar == null ? 0 : p5bVar.i.size();
+        p5b p5bVar2 = this.a;
         byte b = 1;
-        boolean z = o5bVar2 == null || TextUtils.isEmpty(o5bVar2.E);
+        boolean z = p5bVar2 == null || TextUtils.isEmpty(p5bVar2.E);
         int i3 = size > 0 ? 0 : 8;
         dr0 dr0Var = this.K;
         dr0Var.setVisibility(i3);
@@ -283,12 +283,12 @@ public final class gr0 extends FrameLayout {
                 } else {
                     z2bVar.d.setVisibility(0);
                     z2bVar.d.setText(ob6.M0(2131746425, null));
-                    z2bVar.e.setText(ob6.G(uc7.s1(i2).k4.A2.f(), "ProfileBotPreviewEmptyText", new Object[0]));
+                    z2bVar.e.setText(ob6.G(uc7.s1(i2).l4.A2.f(), "ProfileBotPreviewEmptyText", new Object[0]));
                     z2bVar.f.i(ob6.M0(2131746429, null), false, true);
                     u8Var2.setVisibility(8);
                     c51Var2.setVisibility(8);
                 }
-                z2bVar.f.setVisibility(this.w.b() >= uc7.s1(i2).k4.A2.f() ? 8 : 0);
+                z2bVar.f.setVisibility(this.w.b() >= uc7.s1(i2).l4.A2.f() ? 8 : 0);
             }
             i = 2131746423;
         }
@@ -308,7 +308,7 @@ public final class gr0 extends FrameLayout {
         z2b z2bVar2 = this.E;
         if (z) {
         }
-        z2bVar2.f.setVisibility(this.w.b() >= uc7.s1(i2).k4.A2.f() ? 8 : 0);
+        z2bVar2.f.setVisibility(this.w.b() >= uc7.s1(i2).l4.A2.f() ? 8 : 0);
     }
 
     @Override // android.view.ViewGroup
@@ -326,21 +326,21 @@ public final class gr0 extends FrameLayout {
         yq0Var.setPadding(yq0Var.getPaddingLeft(), yq0Var.f3, yq0Var.getPaddingRight(), this.K.getMeasuredHeight() + hl.L(42.0f));
     }
 
-    public void setList(o5b o5bVar) {
-        if (this.a != o5bVar) {
+    public void setList(p5b p5bVar) {
+        if (this.a != p5bVar) {
             this.I = false;
             this.J = false;
             this.d = this.a0.E;
         }
-        this.a = o5bVar;
+        this.a = p5bVar;
         br0 br0Var = this.w;
-        br0Var.e = o5bVar;
+        br0Var.e = p5bVar;
         if (br0Var != br0Var.s.x) {
             br0Var.M();
         }
         br0Var.f();
         fr0 fr0Var = this.x;
-        fr0Var.e = o5bVar;
+        fr0Var.e = p5bVar;
         if (fr0Var != fr0Var.s.x) {
             fr0Var.M();
         }

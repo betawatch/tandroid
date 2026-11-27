@@ -14,7 +14,7 @@ import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class r10 extends o7 {
     public final /* synthetic */ byte a;
@@ -311,10 +311,10 @@ public final class r10 extends o7 {
                 }
                 break;
             case 22:
-                tba tbaVar = (tba) obj;
-                tbaVar.a.a(false, true);
-                tbaVar.n0(false, true);
-                tbaVar.c.g3.O(false);
+                uba ubaVar = (uba) obj;
+                ubaVar.a.a(false, true);
+                ubaVar.n0(false, true);
+                ubaVar.c.g3.O(false);
                 break;
             case 23:
                 vsb vsbVar = (vsb) obj;
@@ -507,11 +507,11 @@ public final class r10 extends o7 {
                 ((nd9) obj).o0(false);
                 break;
             case 22:
-                tba tbaVar = (tba) obj;
-                tbaVar.a.a(true, true);
-                tbaVar.f.I("");
-                tbaVar.n0(false, true);
-                tbaVar.c.g3.O(false);
+                uba ubaVar = (uba) obj;
+                ubaVar.a.a(true, true);
+                ubaVar.f.I("");
+                ubaVar.n0(false, true);
+                ubaVar.c.g3.O(false);
                 break;
             case 23:
                 vsb vsbVar = (vsb) obj;
@@ -929,7 +929,7 @@ public final class r10 extends o7 {
                 }
                 break;
             case 22:
-                ((tba) obj).f.I(editTextBoldCursor.getText().toString());
+                ((uba) obj).f.I(editTextBoldCursor.getText().toString());
                 break;
             case 23:
                 vsb vsbVar = (vsb) obj;

@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class bd5 extends FrameLayout implements snb {
     public int E;
@@ -391,7 +391,7 @@ public final class bd5 extends FrameLayout implements snb {
                 TLRPC.ChatPhoto chatPhoto = chat2.photo;
                 TLRPC.FileLocation fileLocation = chatPhoto != null ? chatPhoto.photo_small : null;
                 if (i != 0) {
-                    int i2 = uc7.r5;
+                    int i2 = uc7.s5;
                     boolean z3 = ((i & 2) == 0 || fileLocation == null) ? false : true;
                     if (z3 || this.h != null || (str2 = this.y) == null || (i & 1) == 0) {
                         str = null;
@@ -475,7 +475,7 @@ public final class bd5 extends FrameLayout implements snb {
             TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
             TLRPC.FileLocation fileLocation2 = userProfilePhoto != null ? userProfilePhoto.photo_small : null;
             if (i != 0) {
-                int i5 = uc7.r5;
+                int i5 = uc7.s5;
                 boolean z4 = ((i & 2) == 0 || fileLocation2 == null) ? false : true;
                 if (this.n == null && !z4 && (i & 4) != 0) {
                     TLRPC.UserStatus userStatus2 = user.status;

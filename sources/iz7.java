@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.PasskeysActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class iz7 implements icc {
     public final /* synthetic */ byte a;
@@ -39,13 +39,13 @@ public final /* synthetic */ class iz7 implements icc {
                     K.E = am7Var;
                     arrayList.add(K);
                 }
-                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().k4.F.f()) {
+                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().l4.F.f()) {
                     passkeysActivity.addPasskeyRow = arrayList.size();
                     b8c c = b8c.c(-1, R.drawable.menu_passkey_add, ob6.M0(2131747377, null));
                     c.r = true;
                     arrayList.add(c);
                 }
-                arrayList.add(b8c.C(hl.D2(hl.N2(ob6.M0(2131747362, null), -1, 0, new fe7(passkeysActivity, (byte) 21), null), true)));
+                arrayList.add(b8c.C(hl.D2(hl.N2(ob6.M0(2131747362, null), -1, 0, new ge7(passkeysActivity, (byte) 21), null), true)));
                 break;
             default:
                 passkeysActivity.a0((TL_account.Passkey) obj, (String) obj2);

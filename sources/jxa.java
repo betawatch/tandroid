@@ -43,7 +43,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class jxa {
     public static volatile jxa[][] S = (jxa[][]) Array.newInstance((Class<?>) jxa.class, 2, 4);
@@ -477,8 +477,8 @@ public final class jxa {
                 int i2 = this.F;
                 long currentTimeMillis = System.currentTimeMillis();
                 this.G = currentTimeMillis;
-                jf7 Y = jf7.Y(i);
-                Y.a.c(new od7(Y, arrayList, i2, currentTimeMillis));
+                kf7 a0 = kf7.a0(i);
+                a0.a.c(new td7(a0, arrayList, i2, currentTimeMillis));
                 return;
             }
             return;
@@ -486,7 +486,7 @@ public final class jxa {
         TL_stars.TL_starGifts tL_starGifts = (TL_stars.TL_starGifts) starGifts;
         uc7.s1(i).j4(tL_starGifts.users, false);
         uc7.s1(i).c4(tL_starGifts.chats, false);
-        jf7.Y(i).j1(tL_starGifts.users, tL_starGifts.chats, true, true);
+        kf7.a0(i).n1(tL_starGifts.users, tL_starGifts.chats, true, true);
         arrayList.clear();
         arrayList.addAll(tL_starGifts.gifts);
         ArrayList arrayList2 = this.J;
@@ -503,8 +503,8 @@ public final class jxa {
         ArrayList<TL_stars.StarGift> arrayList4 = tL_starGifts.gifts;
         int i3 = this.F;
         long j = this.G;
-        jf7 Y2 = jf7.Y(i);
-        Y2.a.c(new od7(Y2, arrayList4, i3, j));
+        kf7 a02 = kf7.a0(i);
+        a02.a.c(new td7(a02, arrayList4, i3, j));
     }
 
     public final void U() {
@@ -527,8 +527,8 @@ public final class jxa {
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
             ArrayList arrayList3 = new ArrayList();
-            jf7 Y = jf7.Y(i);
-            Y.a.c(new cp7((Object) Y, (Object) arrayList3, (Object) arrayList2, (Object) arrayList, (Object) hjaVar, (byte) 28));
+            kf7 a0 = kf7.a0(i);
+            a0.a.c(new cp7((Object) a0, (Object) arrayList3, (Object) arrayList2, (Object) arrayList, (Object) hjaVar, (byte) 28));
         }
     }
 
@@ -1260,13 +1260,13 @@ public final class jxa {
 
     public final void a0(long j, long j2, boolean z) {
         int i = this.a;
-        qyb qybVar = uc7.s1(i).g4;
+        qyb qybVar = uc7.s1(i).h4;
         TLRPC.TL_forumTopic f = qybVar.f(j, j2);
         if (f != null) {
             f.nopaid_messages_exception = z;
             zh6 zh6Var = qybVar.a;
             if (((ArrayList) zh6Var.f(j)) != null) {
-                qybVar.getMessagesStorage().z1(qybVar.getConnectionsManager().getCurrentTime(), -j, (List) zh6Var.f(j), true);
+                qybVar.getMessagesStorage().D1(qybVar.getConnectionsManager().getCurrentTime(), -j, (List) zh6Var.f(j), true);
             }
             jn7.f(i).k(jn7.Q3, Long.valueOf(j2));
         }
@@ -1491,7 +1491,7 @@ public final class jxa {
             this.B = hxaVar3;
             hxaVar3.n = l;
         }
-        if (this.B.h + j > uc7.s1(i).k4.G2.f()) {
+        if (this.B.h + j > uc7.s1(i).l4.G2.f()) {
             this.B.b();
             ConnectionsManager.getInstance(i).getCurrentTime();
             this.B = new hxa(this, b, r47Var, zu1Var, z);
@@ -1641,7 +1641,7 @@ public final class jxa {
                 return;
             }
         }
-        boolean z = uc7.s1(this.a).k4.t0.f && inputPeer != null;
+        boolean z = uc7.s1(this.a).l4.t0.f && inputPeer != null;
         if ((!f11.b() && di0.h().j()) || z) {
             if (!di0.h().j()) {
                 iccVar.a(Boolean.FALSE, "INVOICE DISABLED");
@@ -1654,7 +1654,7 @@ public final class jxa {
             we3 we3Var = new we3();
             we3Var.b = "inapp";
             we3Var.a = tL_starsTopupOption.store_product;
-            j09 a = we3Var.a();
+            k09 a = we3Var.a();
             cc4.b("StarsController.buy starts queryProductDetails");
             di0.h().o(Arrays.asList(a), new pt((Object) iccVar, (Object) tL_inputStorePaymentStarsTopup, (Object) tL_starsTopupOption, (Object) activity, (byte) 25));
             return;
@@ -1825,9 +1825,9 @@ public final class jxa {
                                             iccVar5.a(Boolean.TRUE, null);
                                             nj0 b = pj0.a(jxaVar4.a).b();
                                             if (b != null && b.a(j8)) {
-                                                uc7.s1(jxaVar4.a).X3.edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j8, false).apply();
+                                                uc7.s1(jxaVar4.a).Y3.edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j8, false).apply();
                                             }
-                                            uc7.s1(jxaVar4.a).X3.edit().putBoolean("show_gift_for_" + j8, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j8, true).apply();
+                                            uc7.s1(jxaVar4.a).Y3.edit().putBoolean("show_gift_for_" + j8, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j8, true).apply();
                                             LaunchActivity launchActivity = LaunchActivity.H1;
                                             if (launchActivity == null || (y16Var = launchActivity.w0) == null) {
                                                 return;
@@ -1973,9 +1973,9 @@ public final class jxa {
                         iccVar3.a(Boolean.TRUE, null);
                         nj0 b = pj0.a(jxaVar2.a).b();
                         if (b != null && b.a(j7)) {
-                            uc7.s1(jxaVar2.a).X3.edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j7, false).apply();
+                            uc7.s1(jxaVar2.a).Y3.edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j7, false).apply();
                         }
-                        uc7.s1(jxaVar2.a).X3.edit().putBoolean("show_gift_for_" + j7, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j7, true).apply();
+                        uc7.s1(jxaVar2.a).Y3.edit().putBoolean("show_gift_for_" + j7, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j7, true).apply();
                         LaunchActivity launchActivity = LaunchActivity.H1;
                         if (launchActivity == null || (y16Var = launchActivity.w0) == null) {
                             return;
@@ -1991,7 +1991,7 @@ public final class jxa {
         if (this.e) {
             g0(launchActivity, j, str);
         } else {
-            o(new y09((Object) this, (Object) launchActivity, j, (Object) str, (byte) 8));
+            o(new z09((Object) this, (Object) launchActivity, j, (Object) str, (byte) 8));
         }
     }
 
@@ -2167,7 +2167,7 @@ public final class jxa {
                                         p4aVar5.a(Boolean.TRUE, null);
                                         nj0 b = pj0.a(jxaVar4.a).b();
                                         if (b != null && b.a(j8)) {
-                                            uc7.s1(jxaVar4.a).X3.edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j8, false).apply();
+                                            uc7.s1(jxaVar4.a).Y3.edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j8, false).apply();
                                         }
                                         if (starGift5 == null || !starGift5.limited_per_user) {
                                             str4 = str5;
@@ -2231,10 +2231,10 @@ public final class jxa {
                                             f.k(i3, valueOf, bool);
                                             jn7.f(jxaVar4.a).k(jn7.t, Long.valueOf(j8), bool);
                                             zu1 ha = zu1.ha(j8);
-                                            ha.whenFullyVisible(new y09((Object) ha, (Object) starGift5, (Object) spannableStringBuilder, j7, (byte) 7));
+                                            ha.whenFullyVisible(new z09((Object) ha, (Object) starGift5, (Object) spannableStringBuilder, j7, (byte) 7));
                                             Q.presentFragment(ha);
                                         }
-                                        uc7.s1(jxaVar4.a).X3.edit().putBoolean("show_gift_for_" + j8, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j8, true).apply();
+                                        uc7.s1(jxaVar4.a).Y3.edit().putBoolean("show_gift_for_" + j8, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j8, true).apply();
                                         LaunchActivity launchActivity = LaunchActivity.H1;
                                         if (launchActivity == null || (y16Var = launchActivity.w0) == null) {
                                             return;
@@ -2276,7 +2276,7 @@ public final class jxa {
         ConnectionsManager.getInstance(i).sendRequest(togglenopaidmessagesexception, new RequestDelegate() { // from class: nwa
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                hl.c3(new qd7(jxa.this, tLObject, j2, j, z2));
+                hl.c3(new vd7(jxa.this, tLObject, j2, j, z2));
             }
         });
     }
@@ -2297,7 +2297,7 @@ public final class jxa {
             byte b = 0;
             boolean[] zArr = {false};
             wwa wwaVar = new wwa(this, j, i, zArr, iccVar, context2, F, chatInvite, str);
-            ida idaVar = new ida(this, zArr, iccVar);
+            kba kbaVar = new kba(this, zArr, iccVar);
             nx0 h = uh9.h(1, F, context2, false);
             LinearLayout j2 = uh9.j(context2, 1);
             j2.setPadding(hl.L(16.0f), 0, hl.L(16.0f), hl.L(8.0f));
@@ -2379,7 +2379,7 @@ public final class jxa {
             j2.addView(p66Var, tre.t(-1, -2, 49, 14, 14, 14, 6));
             h.O = j2;
             c51Var.setOnClickListener(new lw4(wwaVar, h, c51Var, (byte) 22));
-            h.setOnDismissListener(new dl8(idaVar, (byte) 8));
+            h.setOnDismissListener(new dl8(kbaVar, (byte) 8));
             h.L(i2);
             e S2 = LaunchActivity.S();
             if (!hl.O1() && S2 != null && !hl.s1(S2)) {
@@ -2479,7 +2479,7 @@ public final class jxa {
         ConnectionsManager.getInstance(i).sendRequest(tL_messages_editMessage, new RequestDelegate() { // from class: qwa
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                hl.c3(new af7(jxa.this, tLObject, runnable, tL_error, z, B0, e1, r47Var, j));
+                hl.c3(new zc7(jxa.this, tLObject, runnable, tL_error, z, B0, e1, r47Var, j));
             }
         });
     }

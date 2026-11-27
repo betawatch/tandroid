@@ -18,7 +18,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ye3 {
     public boolean a;
@@ -184,7 +184,7 @@ public final class ye3 {
     public ye3(Context context, a05 a05Var) {
         this.f = new ArrayList();
         this.g = new ak(this, (byte) 11);
-        this.h = new ki7(this, (byte) 15);
+        this.h = new li7(this, (byte) 15);
         this.b = context;
         this.c = a05Var;
         this.d = new Handler();

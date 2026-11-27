@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class jc5 implements View.OnKeyListener {
     public final /* synthetic */ byte a;
@@ -58,35 +58,35 @@ public final class jc5 implements View.OnKeyListener {
                                 }
                             } else if (zc5Var.getUid() == Long.MIN_VALUE) {
                                 int i2 = usersSelectActivity.L;
-                                int i3 = uc7.r5;
+                                int i3 = uc7.s5;
                                 usersSelectActivity.L = i2 & (-2);
                             } else if (zc5Var.getUid() == -9223372036854775807L) {
                                 int i4 = usersSelectActivity.L;
-                                int i5 = uc7.r5;
+                                int i5 = uc7.s5;
                                 usersSelectActivity.L = i4 & (-3);
                             } else if (zc5Var.getUid() == -9223372036854775806L) {
                                 int i6 = usersSelectActivity.L;
-                                int i7 = uc7.r5;
+                                int i7 = uc7.s5;
                                 usersSelectActivity.L = i6 & (-5);
                             } else if (zc5Var.getUid() == -9223372036854775805L) {
                                 int i8 = usersSelectActivity.L;
-                                int i9 = uc7.r5;
+                                int i9 = uc7.s5;
                                 usersSelectActivity.L = i8 & (-9);
                             } else if (zc5Var.getUid() == -9223372036854775804L) {
                                 int i10 = usersSelectActivity.L;
-                                int i11 = uc7.r5;
+                                int i11 = uc7.s5;
                                 usersSelectActivity.L = i10 & (-17);
                             } else if (zc5Var.getUid() == -9223372036854775803L) {
                                 int i12 = usersSelectActivity.L;
-                                int i13 = uc7.r5;
+                                int i13 = uc7.s5;
                                 usersSelectActivity.L = i12 & (-33);
                             } else if (zc5Var.getUid() == -9223372036854775802L) {
                                 int i14 = usersSelectActivity.L;
-                                int i15 = uc7.r5;
+                                int i15 = uc7.s5;
                                 usersSelectActivity.L = i14 & (-65);
                             } else if (zc5Var.getUid() == -9223372036854775801L) {
                                 int i16 = usersSelectActivity.L;
-                                int i17 = uc7.r5;
+                                int i17 = uc7.s5;
                                 usersSelectActivity.L = i16 & (-129);
                             }
                             usersSelectActivity.c0();

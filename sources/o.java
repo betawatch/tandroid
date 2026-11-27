@@ -25,9 +25,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.m;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class o implements fd, RequestTimeDelegate, es, s69, wic, z28, bf7, b7c, lz0, pz0, RequestDelegateTimestamp {
+public final /* synthetic */ class o implements fd, RequestTimeDelegate, es, s69, wic, z28, cf7, b7c, lz0, pz0, RequestDelegateTimestamp {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -38,7 +38,7 @@ public final /* synthetic */ class o implements fd, RequestTimeDelegate, es, s69
         this.c = obj2;
     }
 
-    @Override // bf7
+    @Override // cf7
     public final void A(boolean z) {
         rr0 rr0Var = (rr0) this.b;
         TLRPC.User user = (TLRPC.User) this.c;
@@ -318,7 +318,7 @@ public final /* synthetic */ class o implements fd, RequestTimeDelegate, es, s69
                 ((y0) obj2).a(((EditText) obj).getText().toString());
                 break;
             case 5:
-                SharedPreferences.Editor edit = uc7.s1(yac.t0).W3.edit();
+                SharedPreferences.Editor edit = uc7.s1(yac.t0).X3.edit();
                 edit.remove("color_" + ((String) obj2));
                 edit.commit();
                 ((Runnable) obj).run();
@@ -328,14 +328,14 @@ public final /* synthetic */ class o implements fd, RequestTimeDelegate, es, s69
                 ((pt2) obj).accept(Boolean.FALSE);
                 break;
             case 7:
-                df7 df7Var = (df7) obj;
+                ef7 ef7Var = (ef7) obj;
                 int i4 = ((int[]) obj2)[0];
                 if (i4 == 0) {
                     i2 = 900;
                 } else if (i4 != 1) {
                     i2 = i4 == 2 ? 28800 : ConnectionsManager.DEFAULT_DATACENTER_ID;
                 }
-                df7Var.a(i2);
+                ef7Var.a(i2);
                 break;
             case 8:
                 ni niVar = (ni) obj2;
@@ -368,13 +368,13 @@ public final /* synthetic */ class o implements fd, RequestTimeDelegate, es, s69
                 }
                 if (i5 != encryptedChat.ttl) {
                     wx9.i(yac.t0).z(encryptedChat, null);
-                    jf7 Y = jf7.Y(yac.t0);
-                    Y.a.c(new id7(Y, encryptedChat, objArr3 == true ? 1 : 0));
+                    kf7 a0 = kf7.a0(yac.t0);
+                    a0.a.c(new kd7(a0, encryptedChat, objArr3 == true ? 1 : 0));
                     break;
                 }
                 break;
             case 10:
-                ((bf7) obj2).A(((boolean[]) obj)[0]);
+                ((cf7) obj2).A(((boolean[]) obj)[0]);
                 break;
             case 11:
                 ((SharedPreferences) obj2).edit().putBoolean("proxycheckstatusip", true).apply();

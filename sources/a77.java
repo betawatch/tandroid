@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class a77 extends nx0 {
     public boolean A1;
@@ -48,7 +48,7 @@ public final class a77 extends nx0 {
         this.Q0 = true;
         boolean z = xc2.z(i, 24, j);
         this.m1 = z;
-        long f = uc7.s1(i).k4.e.f();
+        long f = uc7.s1(i).l4.e.f();
         pj pjVar2 = pj.a;
         this.t1 = oj.h(f, pjVar2);
         oj h = oj.h(r8.f.f(), pjVar2);
@@ -156,7 +156,7 @@ public final class a77 extends nx0 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) hl.S2(ob6.M0(2131746821, null)));
         spannableStringBuilder.append(' ');
-        qu6.s(null, null, 2131746820, new Object[]{Long.valueOf(uc7.s1(i).k4.h.g(TimeUnit.HOURS))}, spannableStringBuilder);
+        qu6.s(null, null, 2131746820, new Object[]{Long.valueOf(uc7.s1(i).l4.h.g(TimeUnit.HOURS))}, spannableStringBuilder);
         textView3.setText(spannableStringBuilder);
         j4.addView(textView3, tre.t(-1, -2, 55, 33, 4, 33, 24));
         LinearLayout linearLayout2 = new LinearLayout(context);
@@ -282,7 +282,7 @@ public final class a77 extends nx0 {
             F0(z3);
         }
         if (z4) {
-            double d = uc7.s1(this.a).k4.A3.i * 1.0E-5d;
+            double d = uc7.s1(this.a).l4.A3.i * 1.0E-5d;
             StringBuilder sb = new StringBuilder(10);
             sb.append('~');
             di0.h();

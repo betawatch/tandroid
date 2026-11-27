@@ -60,7 +60,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
     public static final List h1 = Arrays.asList("http", "https");
@@ -83,7 +83,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
     public TLRPC.TL_payments_validateRequestedInfo J0;
     public final ArrayList K;
     public TLRPC.TL_inputPaymentCredentialsGooglePay K0;
-    public final rca[] L;
+    public final sca[] L;
     public String L0;
     public wkb M;
     public String M0;
@@ -170,7 +170,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
         this.H = true;
         this.J = new mf5[3];
         this.K = new ArrayList();
-        this.L = new rca[3];
+        this.L = new sca[3];
         this.N = new ilb[3];
         this.O = new qmb[2];
         this.Z = new dlb[7];
@@ -254,7 +254,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
             return false;
         }
         String str = this.m0.username;
-        if (((str != null && str.equalsIgnoreCase(getMessagesController().k4.M0.f) && this.P0 == null) || (this.P0 != null && getMessagesController().k4.O0.f != null && Objects.equals(this.P0, getMessagesController().k4.O0.f))) && wk5Var != null) {
+        if (((str != null && str.equalsIgnoreCase(getMessagesController().l4.M0.f) && this.P0 == null) || (this.P0 != null && getMessagesController().l4.O0.f != null && Objects.equals(this.P0, getMessagesController().l4.O0.f))) && wk5Var != null) {
             ArrayList arrayList2 = new ArrayList(wk5Var.getFragmentStack());
             int size2 = arrayList2.size();
             int i2 = 0;
@@ -515,7 +515,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
             tL_payments_sendPaymentForm.tip_amount = l != null ? l.longValue() : 0L;
             tL_payments_sendPaymentForm.flags |= 4;
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_sendPaymentForm, new ol7(this, tL_payments_sendPaymentForm, (byte) 5), (this.X0 ? 8 : 0) | 2);
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_sendPaymentForm, new pl7(this, tL_payments_sendPaymentForm, (byte) 5), (this.X0 ? 8 : 0) | 2);
     }
 
     public final void F0() {
@@ -575,7 +575,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
             tL_postAddress.post_code = this.f[5].getText().toString();
             this.J0.info.flags |= 8;
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(this.J0, new ol7(this, this.J0, b), (this.X0 ? 8 : 0) | 2);
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(this.J0, new pl7(this, this.J0, b), (this.X0 ? 8 : 0) | 2);
     }
 
     public final void G0(boolean z) {
@@ -958,14 +958,14 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
     public final void Q0() {
         ilb[] ilbVarArr = this.N;
         if (ilbVarArr[0] != null) {
-            rca[] rcaVarArr = this.L;
-            if (rcaVarArr[2] != null) {
+            sca[] scaVarArr = this.L;
+            if (scaVarArr[2] != null) {
                 TLRPC.PaymentForm paymentForm = this.D0;
                 if ((!paymentForm.password_missing && !paymentForm.can_save_credentials) || (this.x != null && this.A0)) {
                     this.M.setVisibility(8);
                     ilbVarArr[0].setVisibility(8);
-                    rca rcaVar = rcaVarArr[2];
-                    yob.Z(rcaVar, rcaVar.getContext(), R.drawable.greydivider_bottom, aob.b7);
+                    sca scaVar = scaVarArr[2];
+                    yob.Z(scaVar, scaVar.getContext(), R.drawable.greydivider_bottom, aob.b7);
                     return;
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ob6.M0(2131747148, null));
@@ -990,8 +990,8 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                 ilbVarArr[0].setText(spannableStringBuilder);
                 this.M.setVisibility(0);
                 ilbVarArr[0].setVisibility(0);
-                rca rcaVar2 = rcaVarArr[2];
-                yob.Z(rcaVar2, rcaVar2.getContext(), R.drawable.greydivider, aob.b7);
+                sca scaVar2 = scaVarArr[2];
+                yob.Z(scaVar2, scaVar2.getContext(), R.drawable.greydivider, aob.b7);
             }
         }
     }
@@ -1226,7 +1226,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
         int i3;
         int i4;
         TLRPC.TL_invoice tL_invoice;
-        rca rcaVar;
+        sca scaVar;
         TLRPC.TL_paymentRequestedInfo tL_paymentRequestedInfo3;
         TLRPC.TL_paymentRequestedInfo tL_paymentRequestedInfo4;
         String str4;
@@ -1365,7 +1365,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                             this.J[i2].setText(ob6.L0(2131747108));
                             this.R.addView(this.J[i2], tre.o(-1, -2));
                         } else if (i3 == i6) {
-                            this.L[i2] = new rca(context, drawable);
+                            this.L[i2] = new sca(context, drawable);
                             this.R.addView(this.L[i2], tre.o(-1, -2));
                             this.J[i9] = new mf5(context, this.Z0);
                             yob.h(aob.d6, getResourceProvider(), this.J[i9]);
@@ -1692,7 +1692,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                                                 }
                                             }
                                         } else {
-                                            this.L[1] = new rca(context, drawable);
+                                            this.L[1] = new sca(context, drawable);
                                             this.R.addView(this.L[1], tre.o(-1, -2));
                                             b5 = b11;
                                             b6 = b9;
@@ -2106,10 +2106,10 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                             editTextBoldCursorArr5[5].setImeOptions(268435462);
                         }
                     }
-                    rcaVar = this.L[1];
-                    if (rcaVar == null) {
+                    scaVar = this.L[1];
+                    if (scaVar == null) {
                         TLRPC.TL_invoice tL_invoice5 = this.D0.invoice;
-                        rcaVar.setVisibility((tL_invoice5.name_requested || tL_invoice5.phone_requested || tL_invoice5.email_requested) ? 0 : 8);
+                        scaVar.setVisibility((tL_invoice5.name_requested || tL_invoice5.phone_requested || tL_invoice5.email_requested) ? 0 : 8);
                     } else {
                         ilb ilbVar = this.N[1];
                         if (ilbVar != null) {
@@ -2177,8 +2177,8 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                 tL_invoice = this.D0.invoice;
                 if (!tL_invoice.phone_requested) {
                 }
-                rcaVar = this.L[1];
-                if (rcaVar == null) {
+                scaVar = this.L[1];
+                if (scaVar == null) {
                 }
                 mf5 mf5Var2 = this.J[1];
                 TLRPC.TL_invoice tL_invoice72 = this.D0.invoice;
@@ -2235,7 +2235,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                     this.x.addJavascriptInterface(new PaymentFormActivity$TelegramWebviewProxy(this), "TelegramWebviewProxy");
                     this.x.setWebViewClient(new m28(this, context, (byte) 1));
                     this.R.addView(this.x, tre.c(-2.0f, -1));
-                    this.L[2] = new rca(context, (Object) null);
+                    this.L[2] = new sca(context, (Object) null);
                     this.R.addView(this.L[2], tre.o(-1, -2));
                     wkb wkbVar2 = new wkb(context, this.Z0);
                     this.M = wkbVar2;
@@ -2482,10 +2482,10 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                             }
                         });
                         if (i18 == 3) {
-                            this.L[0] = new rca(context, (Object) null);
+                            this.L[0] = new sca(context, (Object) null);
                             this.R.addView(this.L[0], tre.o(-1, -2));
                         } else if (i18 == 5) {
-                            this.L[2] = new rca(context, (Object) null);
+                            this.L[2] = new sca(context, (Object) null);
                             this.R.addView(this.L[2], tre.o(-1, -2));
                             wkb wkbVar3 = new wkb(context, this.Z0);
                             this.M = wkbVar3;
@@ -2734,7 +2734,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                             }
                         }
                         this.R.addView(this.Y, tre.o(-1, -2));
-                        this.L[0] = new rca(context, (Object) null);
+                        this.L[0] = new sca(context, (Object) null);
                         this.R.addView(this.L[0], tre.o(-1, -2));
                         ArrayList arrayList2 = new ArrayList(this.D0.invoice.prices);
                         this.u0 = arrayList2;
@@ -2846,7 +2846,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                             i = i8;
                         }
                         this.R.addView(this.S);
-                        this.L[2] = new rca(context, (Object) null);
+                        this.L[2] = new sca(context, (Object) null);
                         yob.Z(this.L[2], context, R.drawable.greydivider_bottom, aob.b7);
                         this.R.addView(this.L[2], tre.o(-1, i));
                         this.Z[0] = new g28(context);
@@ -2999,7 +2999,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                                     this.x.setVisibility(8);
                                 }
                             }
-                            this.L[1] = new rca(context, (Object) null);
+                            this.L[1] = new sca(context, (Object) null);
                             yob.Z(this.L[1], context, R.drawable.greydivider_bottom, aob.b7);
                             if (i33 == 0 && this.v0 == 4 && this.J0 == null && ((paymentForm = this.D0) == null || paymentForm.saved_info == null)) {
                                 c = 1;
@@ -3087,7 +3087,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
                         H0(tL_paymentRequestedInfo);
                         if (this.v0 == 4) {
                         }
-                        this.L[1] = new rca(context, (Object) null);
+                        this.L[1] = new sca(context, (Object) null);
                         yob.Z(this.L[1], context, R.drawable.greydivider_bottom, aob.b7);
                         if (i33 == 0) {
                         }
@@ -3880,7 +3880,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
             jn7.f(this.currentAccount).n(this, i3);
         }
         jn7.f(this.currentAccount).k(i3, new Object[0]);
-        if (getMessagesController().b4 != null) {
+        if (getMessagesController().c4 != null) {
             hl.d3(new x18(this, b2), 500L);
         } else {
             if (B0(getParentLayout(), getParentActivity()) || isFinishing()) {
@@ -4003,23 +4003,23 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
         byte[] c = passwordKdfAlgo instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow ? es9.c(bArr, (TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) passwordKdfAlgo) : null;
         TL_account.getTmpPassword gettmppassword = new TL_account.getTmpPassword();
         gettmppassword.period = 1800;
-        ol7 ol7Var = new ol7(this, gettmppassword, (byte) 6);
+        pl7 pl7Var = new pl7(this, gettmppassword, (byte) 6);
         TLRPC.PasswordKdfAlgo passwordKdfAlgo2 = password.current_algo;
         if (!(passwordKdfAlgo2 instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow)) {
             TLRPC.TL_error tL_error = new TLRPC.TL_error();
             tL_error.text = "PASSWORD_HASH_INVALID";
-            ol7Var.run(null, tL_error);
+            pl7Var.run(null, tL_error);
             return;
         }
         TLRPC.TL_inputCheckPasswordSRP d = es9.d(c, password.srp_id, password.srp_B, (TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) passwordKdfAlgo2);
         gettmppassword.password = d;
         if (d != null) {
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(gettmppassword, ol7Var, 10);
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(gettmppassword, pl7Var, 10);
             return;
         }
         TLRPC.TL_error tL_error2 = new TLRPC.TL_error();
         tL_error2.text = "ALGO_INVALID";
-        ol7Var.run(null, tL_error2);
+        pl7Var.run(null, tL_error2);
     }
 
     public final void m0(TLRPC.TL_error tL_error, TLObject tLObject, String str, TL_account.getPassword getpassword) {
@@ -4033,7 +4033,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
         if (!TwoStepVerificationActivity.a0(password, false)) {
             jj.u0(getParentActivity(), ob6.M0(2131743475, null), true);
         } else if (password.has_password) {
-            Utilities.e.c(new fd7((Object) this, (Object) password, (Object) hl.g1(str), (byte) 22));
+            Utilities.e.c(new gd7((Object) this, (Object) password, (Object) hl.g1(str), (byte) 22));
         } else {
             this.w0 = false;
             h0();
@@ -4074,7 +4074,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
         byte b = 1;
         if (z && this.D0.saved_info != null && this.J0 == null) {
             J0(true);
-            pl7 pl7Var = new pl7(this, view, (byte) 23);
+            ql7 ql7Var = new ql7(this, view, (byte) 24);
             if (this.R0) {
                 return;
             }
@@ -4101,7 +4101,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
             }
             tL_payments_validateRequestedInfo2.save = true;
             tL_payments_validateRequestedInfo2.info = this.D0.saved_info;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_validateRequestedInfo2, new m65(this, pl7Var, tL_payments_validateRequestedInfo2, (byte) 25), (this.X0 ? 8 : 0) | 2);
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_validateRequestedInfo2, new m65(this, ql7Var, tL_payments_validateRequestedInfo2, (byte) 25), (this.X0 ? 8 : 0) | 2);
             return;
         }
         if (z) {
@@ -4173,7 +4173,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
             return;
         }
         String str2 = "payment_warning_" + this.m0.id;
-        SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).W3;
+        SharedPreferences sharedPreferences = uc7.s1(this.currentAccount).X3;
         if (sharedPreferences.getBoolean(str2, false)) {
             O0(this.S0[0]);
             return;
@@ -4632,7 +4632,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
         this.H = true;
         this.J = new mf5[3];
         this.K = new ArrayList();
-        this.L = new rca[3];
+        this.L = new sca[3];
         this.N = new ilb[3];
         this.O = new qmb[2];
         this.Z = new dlb[7];
@@ -4651,7 +4651,7 @@ public final class p extends org.telegram.ui.ActionBar.e implements fn7 {
         this.H = true;
         this.J = new mf5[3];
         this.K = new ArrayList();
-        this.L = new rca[3];
+        this.L = new sca[3];
         this.N = new ilb[3];
         this.O = new qmb[2];
         this.Z = new dlb[7];

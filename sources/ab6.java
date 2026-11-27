@@ -3,9 +3,9 @@
 import android.content.Context;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
-public final class ab6 implements aca {
+public final class ab6 implements bca {
     public final Bundle a;
 
     public ab6(Context context) {
@@ -14,12 +14,12 @@ public final class ab6 implements aca {
         this.a = bundle == null ? Bundle.EMPTY : bundle;
     }
 
-    @Override // aca
+    @Override // bca
     public final Object a(zw2 zw2Var) {
-        return f9c.a;
+        return g9c.a;
     }
 
-    @Override // aca
+    @Override // bca
     public final Boolean b() {
         Bundle bundle = this.a;
         if (bundle.containsKey("firebase_sessions_enabled")) {
@@ -28,7 +28,7 @@ public final class ab6 implements aca {
         return null;
     }
 
-    @Override // aca
+    @Override // bca
     public final bs3 c() {
         Bundle bundle = this.a;
         if (bundle.containsKey("firebase_sessions_sessions_restart_timeout")) {
@@ -37,7 +37,7 @@ public final class ab6 implements aca {
         return null;
     }
 
-    @Override // aca
+    @Override // bca
     public final Double d() {
         Bundle bundle = this.a;
         if (bundle.containsKey("firebase_sessions_sampling_rate")) {

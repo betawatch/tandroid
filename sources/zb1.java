@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public abstract class zb1 extends qb1 {
     public static final int[] Q1 = {21600, 43200, 86400, 172800};
@@ -79,8 +79,8 @@ public abstract class zb1 extends qb1 {
         this.W0 = true;
         byte b = 0;
         this.X0 = 0;
-        hbb hbbVar = (hbb) this;
-        this.a1 = new yb1(hbbVar, hbbVar);
+        ibb ibbVar = (ibb) this;
+        this.a1 = new yb1(ibbVar, ibbVar);
         hn hnVar = new hn(false, true, true);
         this.b1 = hnVar;
         k43 k43Var = k43.f;
@@ -106,7 +106,7 @@ public abstract class zb1 extends qb1 {
         gk0Var2.b = hl.L(55.0f);
         gk0Var2.b();
         this.j1 = getContext().getResources().getDrawable(R.drawable.input_video_pressed).mutate();
-        this.l1 = new mm(new vb1(hbbVar, b), 200L, k43Var, 0);
+        this.l1 = new mm(new vb1(ibbVar, b), 200L, k43Var, 0);
         this.m1 = new Path();
         this.n1 = new Path();
         this.o1 = new Paint(1);
@@ -115,7 +115,7 @@ public abstract class zb1 extends qb1 {
         Paint paint3 = new Paint(1);
         this.r1 = paint3;
         paint3.setStyle(Paint.Style.STROKE);
-        vb1 vb1Var = new vb1(hbbVar, b);
+        vb1 vb1Var = new vb1(ibbVar, b);
         k43 k43Var2 = k43.h;
         this.s1 = new mm(vb1Var, 350L, k43Var2);
         this.t1 = new RectF();
@@ -123,10 +123,10 @@ public abstract class zb1 extends qb1 {
         this.v1 = new RectF();
         this.w1 = new Path();
         this.G1 = new mm(this, 0L, 350L, k43Var2);
-        this.H1 = new mm(new vb1(hbbVar, b), 420L, k43Var2, 0);
+        this.H1 = new mm(new vb1(ibbVar, b), 420L, k43Var2, 0);
         this.I1 = new mm(this, 0L, 350L, k43Var2);
-        this.J1 = new mm(new vb1(hbbVar, b), 350L, k43Var2, 0);
-        this.P1 = new vb1(hbbVar, (byte) 1);
+        this.J1 = new mm(new vb1(ibbVar, b), 350L, k43Var2, 0);
+        this.P1 = new vb1(ibbVar, (byte) 1);
         ImageView imageView = new ImageView(activity);
         this.S0 = imageView;
         imageView.setImageResource(R.drawable.input_video_story);
@@ -135,7 +135,7 @@ public abstract class zb1 extends qb1 {
         imageView.setScaleType(scaleType);
         imageView.setContentDescription(ob6.M0(2131754731, null));
         addView(imageView, tre.d(44, 44.0f, 85, 0.0f, 0.0f, 11.0f, 6.0f));
-        imageView.setOnClickListener(new r81(hbbVar, (byte) 5));
+        imageView.setOnClickListener(new r81(ibbVar, (byte) 5));
         ImageView imageView2 = new ImageView(activity);
         this.T0 = imageView2;
         pb1 pb1Var = new pb1(5);
@@ -146,7 +146,7 @@ public abstract class zb1 extends qb1 {
         imageView2.setContentDescription(ob6.M0(2131744244, null));
         A(86400, false);
         addView(imageView2, tre.d(44, 44.0f, 85, 0.0f, 0.0f, 51.0f, 6.0f));
-        imageView2.setOnClickListener(new c0(hbbVar, frameLayout, x53Var, (byte) 13));
+        imageView2.setOnClickListener(new c0(ibbVar, frameLayout, x53Var, (byte) 13));
     }
 
     public final void A(int i, boolean z) {
@@ -317,10 +317,10 @@ public abstract class zb1 extends qb1 {
         if (getParent() != null) {
             getParent().requestDisallowInterceptTouchEvent(true);
         }
-        hbb hbbVar = (hbb) this;
+        ibb ibbVar = (ibb) this;
         boolean isCameraAllowed = CameraView.isCameraAllowed();
-        rbb rbbVar = hbbVar.S1;
-        if (!isCameraAllowed ? false : rbbVar.Y()) {
+        sbb sbbVar = ibbVar.S1;
+        if (!isCameraAllowed ? false : sbbVar.Y()) {
             hl.r(vb1Var);
             this.E1 = motionEvent.getX();
             this.F1 = motionEvent.getY();
@@ -343,26 +343,26 @@ public abstract class zb1 extends qb1 {
             n();
             xb1 xb1Var3 = new xb1(this, getContext());
             this.D1 = xb1Var3;
-            xb1 xb1Var4 = rbbVar.r1;
+            xb1 xb1Var4 = sbbVar.r1;
             if (xb1Var4 != null) {
                 xb1Var4.a(true);
             }
-            gbb gbbVar = rbbVar.Y0;
-            if (gbbVar != null) {
-                gbbVar.P = true;
-                gbbVar.b();
-                gbb gbbVar2 = rbbVar.Y0;
-                gbbVar2.m(0L);
-                ksb ksbVar = gbbVar2.G;
+            hbb hbbVar = sbbVar.Y0;
+            if (hbbVar != null) {
+                hbbVar.P = true;
+                hbbVar.b();
+                hbb hbbVar2 = sbbVar.Y0;
+                hbbVar2.m(0L);
+                ksb ksbVar = hbbVar2.G;
                 if (ksbVar != null) {
                     ksbVar.setProgress(0L);
                 }
             }
-            xb1Var3.n = new qo0(hbbVar, xb1Var3, (byte) 6);
-            xb1Var3.r = new vb1(hbbVar, b);
-            ebb ebbVar = rbbVar.i0;
-            rbbVar.r1 = xb1Var3;
-            ebbVar.addView(xb1Var3, tre.c(-1.0f, -1));
+            xb1Var3.n = new qo0(ibbVar, xb1Var3, (byte) 6);
+            xb1Var3.r = new vb1(ibbVar, b);
+            fbb fbbVar = sbbVar.i0;
+            sbbVar.r1 = xb1Var3;
+            fbbVar.addView(xb1Var3, tre.c(-1.0f, -1));
             return true;
         }
         return true;
@@ -370,12 +370,12 @@ public abstract class zb1 extends qb1 {
 
     @Override // qb1
     public int getCaptionDefaultLimit() {
-        return uc7.s1(this.V).k4.q1.f();
+        return uc7.s1(this.V).l4.q1.f();
     }
 
     @Override // qb1
     public int getCaptionPremiumLimit() {
-        return uc7.s1(this.V).k4.r1.f();
+        return uc7.s1(this.V).l4.r1.f();
     }
 
     public int getTimelineHeight() {

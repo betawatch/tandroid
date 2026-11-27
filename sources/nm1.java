@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class nm1 implements Runnable {
     public final /* synthetic */ byte a;
@@ -160,16 +160,16 @@ public final /* synthetic */ class nm1 implements Runnable {
                     TL_stories.PeerStories peerStories = tL_stories_peerStories.stories;
                     if (!peerStories.stories.isEmpty()) {
                         uc7.s1(s6bVar.a).O1().c0(j6, peerStories);
-                        t6b.n(peerStories, new y09((Object) s6bVar, (Object) view, j6, (Object) q6bVar, (byte) 13));
+                        t6b.n(peerStories, new z09((Object) s6bVar, (Object) view, j6, (Object) q6bVar, (byte) 13));
                         z = false;
                         if (j6 > 0 && (X1 = uc7Var.X1(Long.valueOf(j6))) != null) {
                             X1.stories_unavailable = true;
-                            jf7.Y(s6bVar.a).j1(Collections.singletonList(X1), null, false, true);
+                            kf7.a0(s6bVar.a).n1(Collections.singletonList(X1), null, false, true);
                             uc7Var.i4(X1, false, false);
                         }
                         if (j6 < 0 && (M0 = uc7Var.M0(Long.valueOf(-j6))) != null) {
                             M0.stories_unavailable = true;
-                            jf7.Y(s6bVar.a).j1(null, Collections.singletonList(M0), false, true);
+                            kf7.a0(s6bVar.a).n1(null, Collections.singletonList(M0), false, true);
                             uc7Var.a4(M0, false);
                         }
                         if (!z) {
@@ -182,12 +182,12 @@ public final /* synthetic */ class nm1 implements Runnable {
                 z = true;
                 if (j6 > 0) {
                     X1.stories_unavailable = true;
-                    jf7.Y(s6bVar.a).j1(Collections.singletonList(X1), null, false, true);
+                    kf7.a0(s6bVar.a).n1(Collections.singletonList(X1), null, false, true);
                     uc7Var.i4(X1, false, false);
                 }
                 if (j6 < 0) {
                     M0.stories_unavailable = true;
-                    jf7.Y(s6bVar.a).j1(null, Collections.singletonList(M0), false, true);
+                    kf7.a0(s6bVar.a).n1(null, Collections.singletonList(M0), false, true);
                     uc7Var.a4(M0, false);
                 }
                 if (!z) {
@@ -204,8 +204,8 @@ public final /* synthetic */ class nm1 implements Runnable {
                 qybVar.getMessagesController().j4(tL_messages_forumTopics2.users, false);
                 qybVar.getMessagesController().c4(tL_messages_forumTopics2.chats, false);
                 qybVar.u(j7, tL_messages_forumTopics.topics, zh6Var, false, 2, -1);
-                qybVar.getMessagesStorage().z1(qybVar.getConnectionsManager().getCurrentTime(), -j7, (List) qybVar.a.f(j7), true);
-                qybVar.getMessagesStorage().g1(tL_messages_forumTopics.messages, false, true, false, 0, false, 0, 0L);
+                qybVar.getMessagesStorage().D1(qybVar.getConnectionsManager().getCurrentTime(), -j7, (List) qybVar.a.f(j7), true);
+                qybVar.getMessagesStorage().k1(tL_messages_forumTopics.messages, false, true, false, 0, false, 0, 0L);
                 if (o30Var != null) {
                     o30Var.run();
                     break;

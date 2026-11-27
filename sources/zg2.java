@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class zg2 implements j63, nc2, op9, f84, g84, OnFailureListener {
     public final /* synthetic */ byte a;
@@ -233,7 +233,7 @@ public final class zg2 implements j63, nc2, op9, f84, g84, OnFailureListener {
         int i;
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         i = ((e) profileActivity).currentAccount;
-        SharedPreferences sharedPreferences = uc7.s1(i).W3;
+        SharedPreferences sharedPreferences = uc7.s1(i).X3;
         StringBuilder sb = new StringBuilder("sound_enabled_");
         long j = this.b;
         sb.append(ip7.p(j, profileActivity.g1, false));
@@ -312,12 +312,12 @@ public final class zg2 implements j63, nc2, op9, f84, g84, OnFailureListener {
         }
     }
 
-    public final void u(gk7 gk7Var) {
+    public final void u(hk7 hk7Var) {
         this.b++;
-        Thread thread = new Thread(gk7Var);
+        Thread thread = new Thread(hk7Var);
         thread.setDaemon(true);
         thread.setName("NanoHttpd Request Processor (#" + this.b + ")");
-        ((List) this.c).add(gk7Var);
+        ((List) this.c).add(hk7Var);
         thread.start();
     }
 

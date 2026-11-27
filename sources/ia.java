@@ -7,7 +7,7 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Date;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ia {
     public static boolean i = true;
@@ -20,7 +20,7 @@ public final class ia {
     public Object g;
     public Object h;
 
-    public ia(k09 k09Var) {
+    public ia(l09 l09Var) {
         this.a = (byte) 0;
         this.c = new ed(30, (byte) 12);
         this.d = new ArrayList();
@@ -28,7 +28,7 @@ public final class ia {
         this.b = 0;
         boolean z = f11.a;
         this.f = new ArrayList();
-        this.g = k09Var;
+        this.g = l09Var;
         this.h = new kj4((Object) this, (byte) 21);
     }
 
@@ -64,14 +64,14 @@ public final class ia {
         ArrayList arrayList = (ArrayList) this.e;
         int size = arrayList.size();
         for (int i2 = 0; i2 < size; i2++) {
-            ((k09) this.g).o2((ha) arrayList.get(i2));
+            ((l09) this.g).o2((ha) arrayList.get(i2));
         }
         l(arrayList);
         this.b = 0;
     }
 
     public final void c() {
-        k09 k09Var = (k09) this.g;
+        l09 l09Var = (l09) this.g;
         b();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
@@ -79,22 +79,22 @@ public final class ia {
             ha haVar = (ha) arrayList.get(i2);
             byte b = haVar.a;
             if (b == 1) {
-                k09Var.o2(haVar);
-                k09Var.q2(haVar.b, haVar.d);
+                l09Var.o2(haVar);
+                l09Var.q2(haVar.b, haVar.d);
             } else if (b == 2) {
-                k09Var.o2(haVar);
+                l09Var.o2(haVar);
                 int i3 = haVar.b;
                 int i4 = haVar.d;
-                RecyclerView recyclerView = (RecyclerView) k09Var.b;
+                RecyclerView recyclerView = (RecyclerView) l09Var.b;
                 recyclerView.h0(i3, i4, true);
                 recyclerView.y0 = true;
                 recyclerView.v0.c += i4;
             } else if (b == 4) {
-                k09Var.o2(haVar);
-                k09Var.p2(haVar.b, haVar.d, haVar.c);
+                l09Var.o2(haVar);
+                l09Var.p2(haVar.b, haVar.d, haVar.c);
             } else if (b == 8) {
-                k09Var.o2(haVar);
-                k09Var.r2(haVar.b, haVar.d);
+                l09Var.o2(haVar);
+                l09Var.r2(haVar.b, haVar.d);
             }
         }
         l(arrayList);
@@ -151,12 +151,12 @@ public final class ia {
     }
 
     public final void e(ha haVar, int i2) {
-        k09 k09Var = (k09) this.g;
-        k09Var.o2(haVar);
+        l09 l09Var = (l09) this.g;
+        l09Var.o2(haVar);
         byte b = haVar.a;
         if (b != 2) {
             if (b == 4) {
-                k09Var.p2(i2, haVar.d, haVar.c);
+                l09Var.p2(i2, haVar.d, haVar.c);
                 return;
             } else {
                 lq5.j("only remove and update ops can be dispatched in first pass");
@@ -164,7 +164,7 @@ public final class ia {
             }
         }
         int i3 = haVar.d;
-        RecyclerView recyclerView = (RecyclerView) k09Var.b;
+        RecyclerView recyclerView = (RecyclerView) l09Var.b;
         recyclerView.h0(i2, i3, true);
         recyclerView.y0 = true;
         recyclerView.v0.c += i3;
@@ -256,25 +256,25 @@ public final class ia {
     }
 
     public final void j(ha haVar) {
-        k09 k09Var = (k09) this.g;
+        l09 l09Var = (l09) this.g;
         ((ArrayList) this.e).add(haVar);
         byte b = haVar.a;
         if (b == 1) {
-            k09Var.q2(haVar.b, haVar.d);
+            l09Var.q2(haVar.b, haVar.d);
             return;
         }
         if (b == 2) {
             int i2 = haVar.b;
             int i3 = haVar.d;
-            RecyclerView recyclerView = (RecyclerView) k09Var.b;
+            RecyclerView recyclerView = (RecyclerView) l09Var.b;
             recyclerView.h0(i2, i3, false);
             recyclerView.y0 = true;
             return;
         }
         if (b == 4) {
-            k09Var.p2(haVar.b, haVar.d, haVar.c);
+            l09Var.p2(haVar.b, haVar.d, haVar.c);
         } else if (b == 8) {
-            k09Var.r2(haVar.b, haVar.d);
+            l09Var.r2(haVar.b, haVar.d);
         } else {
             lq5.q(haVar, "Unknown update op type for ");
         }
@@ -313,7 +313,7 @@ public final class ia {
         Object obj;
         ha haVar;
         ed edVar = (ed) this.c;
-        RecyclerView recyclerView = (RecyclerView) ((k09) this.g).b;
+        RecyclerView recyclerView = (RecyclerView) ((l09) this.g).b;
         kj4 kj4Var = (kj4) this.h;
         ArrayList arrayList = (ArrayList) this.d;
         while (true) {
@@ -648,17 +648,17 @@ public final class ia {
         String str;
         ycb ycbVar = ycb.e;
         if (i) {
-            k09 k09Var = (k09) this.f;
-            if (k09Var == null) {
+            l09 l09Var = (l09) this.f;
+            if (l09Var == null) {
                 try {
-                    k09 k09Var2 = new k09((byte) 10);
-                    k09Var2.b = new SoftReference(new String[3]);
-                    this.f = k09Var2;
+                    l09 l09Var2 = new l09((byte) 10);
+                    l09Var2.b = new SoftReference(new String[3]);
+                    this.f = l09Var2;
                 } catch (Throwable unused) {
                     i = false;
                 }
             } else {
-                String[] strArr = (String[]) ((SoftReference) k09Var.b).get();
+                String[] strArr = (String[]) ((SoftReference) l09Var.b).get();
                 if (strArr != null) {
                     str = strArr[0];
                     if (str == null) {
@@ -714,11 +714,11 @@ public final class ia {
                         str = stringBuffer.toString();
                     }
                     if (i) {
-                        k09 k09Var3 = (k09) this.f;
-                        String[] strArr2 = (String[]) ((SoftReference) k09Var3.b).get();
+                        l09 l09Var3 = (l09) this.f;
+                        String[] strArr2 = (String[]) ((SoftReference) l09Var3.b).get();
                         if (strArr2 == null) {
                             strArr2 = new String[3];
-                            k09Var3.b = new SoftReference(strArr2);
+                            l09Var3.b = new SoftReference(strArr2);
                         }
                         strArr2[0] = str;
                     }

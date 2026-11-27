@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ng implements icc {
     public final /* synthetic */ byte a = 0;
@@ -155,9 +155,9 @@ public final /* synthetic */ class ng implements icc {
                 if (tL_error2 != null) {
                     cc4.d("QrShare: setShareTheme " + tL_error2.text);
                     if (!vz8Var.F) {
-                        f09 f09Var = vz8Var.b;
-                        f09Var.getClass();
-                        f09Var.d1(R.drawable.msg_warning, ob6.M0(2131751070, null), null);
+                        g09 g09Var = vz8Var.b;
+                        g09Var.getClass();
+                        g09Var.d1(R.drawable.msg_warning, ob6.M0(2131751070, null), null);
                         break;
                     }
                 }

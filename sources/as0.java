@@ -19,7 +19,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.c;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class as0 implements Runnable {
     public final /* synthetic */ byte a = 2;
@@ -100,7 +100,7 @@ public final /* synthetic */ class as0 implements Runnable {
                             TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                             getwebpagepreview.message = str2;
                             iArr[0] = ConnectionsManager.getInstance(i5).sendRequestTyped(getwebpagepreview, new ic((byte) 0), new f(iArr, bs0Var, fn7VarArr, i5, (byte) 3));
-                            idVar.setOnCancelListener(new cs0(new ze7(iArr, i5, fn7VarArr, (byte) 7), (byte) 0));
+                            idVar.setOnCancelListener(new cs0(new bf7(iArr, i5, fn7VarArr, (byte) 7), (byte) 0));
                             break;
                         }
                     }

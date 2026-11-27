@@ -15,7 +15,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class uf5 {
     public static final zj8 b = new zj8("fire-global");
@@ -31,8 +31,8 @@ public final class uf5 {
         return Build.VERSION.SDK_INT >= 26 ? DateRetargetClass.toInstant(new Date(j)).atOffset(ZoneOffset.UTC).toLocalDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE) : new SimpleDateFormat("yyyy-MM-dd", Locale.UK).format(new Date(j));
     }
 
-    public static zj8 d(rj7 rj7Var, String str) {
-        for (Map.Entry entry : rj7Var.a().entrySet()) {
+    public static zj8 d(sj7 sj7Var, String str) {
+        for (Map.Entry entry : sj7Var.a().entrySet()) {
             if (entry.getValue() instanceof Set) {
                 Iterator it = ((Set) entry.getValue()).iterator();
                 while (it.hasNext()) {
@@ -47,18 +47,18 @@ public final class uf5 {
         return null;
     }
 
-    public static void f(rj7 rj7Var, String str) {
-        zj8 d2 = d(rj7Var, str);
+    public static void f(sj7 sj7Var, String str) {
+        zj8 d2 = d(sj7Var, str);
         if (d2 == null) {
             return;
         }
-        HashSet hashSet = new HashSet((Collection) eqe.a(rj7Var, d2, new HashSet()));
+        HashSet hashSet = new HashSet((Collection) eqe.a(sj7Var, d2, new HashSet()));
         hashSet.remove(str);
         if (!hashSet.isEmpty()) {
-            rj7Var.d(d2, hashSet);
+            sj7Var.d(d2, hashSet);
         } else {
-            rj7Var.b();
-            rj7Var.a.remove(d2);
+            sj7Var.b();
+            sj7Var.a.remove(d2);
         }
     }
 
@@ -119,7 +119,7 @@ public final class uf5 {
         this.a.a(new ur4() { // from class: tf5
             @Override // ur4
             public final Object invoke(Object obj) {
-                ((rj7) obj).c(uf5.b, Long.valueOf(j));
+                ((sj7) obj).c(uf5.b, Long.valueOf(j));
                 return null;
             }
         });

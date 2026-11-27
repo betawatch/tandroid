@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class ed implements pw2, ifc, ka1, xj0, una {
     public final /* synthetic */ byte a;
@@ -345,7 +345,7 @@ public final class ed implements pw2, ifc, ka1, xj0, una {
         String str = (String) sx8Var.c;
         if (i != 2) {
             if (i == 3 || i == 4) {
-                return new d78(new bi7(str, sx8Var.a(), "video/mp2t"));
+                return new d78(new ci7(str, sx8Var.a(), "video/mp2t"));
             }
             if (i == 21) {
                 return new d78(new ns3());
@@ -360,7 +360,7 @@ public final class ed implements pw2, ifc, ka1, xj0, una {
                 return new d78(new he5(new oz9(j0(sx8Var), (byte) 0)));
             }
             if (i == 45) {
-                return new d78(new di7());
+                return new d78(new ei7());
             }
             if (i == 89) {
                 return new d78(new ns3((List) sx8Var.d));
@@ -534,7 +534,7 @@ public final class ed implements pw2, ifc, ka1, xj0, una {
                         list = null;
                     }
                     jo4 jo4Var = new jo4();
-                    jo4Var.s = dg7.n(str);
+                    jo4Var.s = eg7.n(str);
                     jo4Var.d = y;
                     jo4Var.S = i;
                     jo4Var.v = list;
@@ -784,7 +784,7 @@ public final class ed implements pw2, ifc, ka1, xj0, una {
     }
 
     @Override // ka1
-    public final void p0(ei7 ei7Var) {
+    public final void p0(fi7 fi7Var) {
     }
 
     @Override // pw2

@@ -13,7 +13,7 @@ import com.google.android.gms.common.api.Status;
 import java.lang.reflect.Modifier;
 import java.util.Set;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class SignInHubActivity extends jp4 {
     public static boolean U = false;
@@ -160,7 +160,7 @@ public class SignInHubActivity extends jp4 {
 
     public final void w() {
         ta6 ta6Var = (ta6) new pq8(f(), ta6.d).n(ta6.class);
-        k09 k09Var = new k09(this, (byte) 24);
+        l09 l09Var = new l09(this, (byte) 24);
         boolean z = ta6Var.c;
         koa koaVar = ta6Var.b;
         if (z) {
@@ -186,7 +186,7 @@ public class SignInHubActivity extends jp4 {
                 sa6 sa6Var2 = new sa6(m8dVar);
                 koaVar.c(0, sa6Var2);
                 ta6Var.c = false;
-                n31 n31Var = new n31(sa6Var2.l, k09Var);
+                n31 n31Var = new n31(sa6Var2.l, l09Var);
                 sa6Var2.d(this, n31Var);
                 n31 n31Var2 = sa6Var2.n;
                 if (n31Var2 != null) {
@@ -199,7 +199,7 @@ public class SignInHubActivity extends jp4 {
                 throw th;
             }
         } else {
-            n31 n31Var3 = new n31(sa6Var.l, k09Var);
+            n31 n31Var3 = new n31(sa6Var.l, l09Var);
             sa6Var.d(this, n31Var3);
             n31 n31Var4 = sa6Var.n;
             if (n31Var4 != null) {

@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ln6 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class ln6 implements RequestDelegate {
                                     if (uc7.V1(update) == 2) {
                                         long S1 = uc7.S1(update);
                                         int i4 = longSparseIntArray.get(S1);
-                                        if (i4 == 0 && (i4 = uc7Var.getMessagesStorage().M(S1)) != 0) {
+                                        if (i4 == 0 && (i4 = uc7Var.getMessagesStorage().O(S1)) != 0) {
                                             longSparseIntArray.put(S1, i4);
                                         }
                                         if (i4 != 0 && uc7.T1(update) <= i4) {

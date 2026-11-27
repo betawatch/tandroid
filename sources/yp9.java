@@ -14,7 +14,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class yp9 implements RequestDelegate {
     public final /* synthetic */ byte a;
@@ -30,14 +30,15 @@ public final /* synthetic */ class yp9 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo;
         byte b = this.a;
-        byte b2 = 22;
-        byte b3 = 21;
-        byte b4 = 3;
-        byte b5 = 5;
-        byte b6 = 2;
-        byte b7 = 1;
+        byte b2 = 6;
+        byte b3 = 23;
+        byte b4 = 4;
+        byte b5 = 22;
+        byte b6 = 3;
+        byte b7 = 2;
         int i = 0;
         Object[] objArr = 0;
+        Object[] objArr2 = 0;
         Object obj = this.b;
         switch (b) {
             case 0:
@@ -64,57 +65,57 @@ public final /* synthetic */ class yp9 implements RequestDelegate {
                             NativeInstance.SsrcGroup[] J = dq9.J(tL_groupCallParticipantVideo);
                             dq9Var.K(J);
                             nativeInstance.addIncomingVideoOutput(2, str, J, dq9Var.Q, wf3.n(dq9Var.y.peer));
-                            hl.c3(new en9(dq9Var, dq9Var.y.video.endpoint, b5));
+                            hl.c3(new dn9(dq9Var, dq9Var.y.video.endpoint, b2));
                             break;
                         } else {
-                            hl.c3(new xp9(dq9Var, b6));
+                            hl.c3(new xp9(dq9Var, b7));
                             break;
                         }
                     }
                 }
                 break;
             case 1:
-                hl.c3(new en9((r1a) obj, tLObject, (byte) 19));
+                hl.c3(new dn9((r1a) obj, tLObject, (byte) 20));
                 break;
             case 2:
                 hl.c3(new jr9(obj, (Object) tL_error, (Object) tLObject, (byte) 15));
                 break;
             case 3:
-                hl.c3(new ida(tLObject, (sh9) obj));
+                hl.c3(new kba(tLObject, (sh9) obj, b3));
                 break;
             case 4:
-                hl.c3(new ida(obj, (Object) tLObject, (byte) 24));
+                hl.c3(new kba(obj, (Object) tLObject, (byte) 25));
                 break;
             case 5:
                 e0b e0bVar = (e0b) obj;
                 if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    jf7.Y(e0bVar.m1).g1(new ArrayList(Arrays.asList(e0bVar.F1.k)), true, true, true, 0, false, 0, 0L);
+                    kf7.a0(e0bVar.m1).k1(new ArrayList(Arrays.asList(e0bVar.F1.k)), true, true, true, 0, false, 0, 0L);
                     break;
                 }
                 break;
             case 6:
-                hl.c3(new x3b((StickersActivity) obj, (byte) 1));
+                hl.c3(new y3b((StickersActivity) obj, (byte) 1));
                 break;
             case 7:
-                hl.c3(new pwa((s4b) obj, tL_error, tLObject, b5));
+                hl.c3(new pwa((s4b) obj, tL_error, tLObject, (byte) 5));
                 break;
             case 8:
-                hl.c3(new z3b((wv1) obj, tL_error, b6));
+                hl.c3(new n3b((wv1) obj, tL_error, b6));
                 break;
             case 9:
-                hl.c3(new uoa((i9b) obj, b2));
+                hl.c3(new uoa((i9b) obj, b5));
                 break;
             case 10:
-                hl.c3(new z3b((p5b) obj, tLObject, b4));
+                hl.c3(new n3b((q5b) obj, tLObject, b4));
                 break;
             case 11:
-                hl.c3(new z3b((q5b) obj, tLObject, b5));
+                hl.c3(new n3b((r5b) obj, tLObject, b2));
                 break;
             case 12:
-                hl.c3(new z3b((c8b) obj, tLObject, b3));
+                hl.c3(new n3b((c8b) obj, tLObject, b5));
                 break;
             case 13:
-                hl.c3(new z3b((r8b) obj, tLObject, b2));
+                hl.c3(new n3b((r8b) obj, tLObject, b3));
                 break;
             case 14:
                 axb axbVar = (axb) obj;
@@ -152,13 +153,13 @@ public final /* synthetic */ class yp9 implements RequestDelegate {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
                     uc7.s1(l1cVar.e).Y3(updates, false);
                     if (!updates.chats.isEmpty()) {
-                        hl.d3(new bcb((Object) l1cVar, (Object) updates, (byte) 18), 1000L);
+                        hl.d3(new hab((Object) l1cVar, (Object) updates, (byte) 19), 1000L);
                         break;
                     }
                 }
                 break;
             case 17:
-                hl.c3(new bcb((r3c) obj, tLObject, b3));
+                hl.c3(new hab((r3c) obj, tLObject, b5));
                 break;
             case 18:
                 c6c c6cVar = (c6c) obj;
@@ -167,20 +168,20 @@ public final /* synthetic */ class yp9 implements RequestDelegate {
                 break;
             case 19:
                 int i4 = UndoView.j0;
-                hl.c3(new bcb(obj, (Object) tLObject, (byte) 29));
+                hl.c3(new c9c((UndoView) obj, tLObject, objArr2 == true ? 1 : 0));
                 break;
             case 20:
                 yac yacVar = (yac) obj;
                 yacVar.getClass();
-                hl.c3(new g9c(yacVar, tLObject, b7));
+                hl.c3(new c9c(yacVar, tLObject, b7));
                 break;
             case 21:
                 cbc cbcVar = (cbc) obj;
                 cbcVar.getClass();
-                hl.c3(new g9c(cbcVar, tLObject, b6));
+                hl.c3(new c9c(cbcVar, tLObject, b6));
                 break;
             case 22:
-                hl.c3(new g9c((sbc) obj, tLObject, b4));
+                hl.c3(new c9c((sbc) obj, tLObject, b4));
                 break;
             case 23:
                 ((VideoAds) obj).lambda$load$1(tLObject, tL_error);
@@ -196,15 +197,15 @@ public final /* synthetic */ class yp9 implements RequestDelegate {
             case 26:
                 cwc cwcVar = (cwc) obj;
                 if (tLObject != null) {
-                    hl.c3(new vlc(cwcVar, tLObject, (byte) 27));
+                    hl.c3(new slc(cwcVar, tLObject, (byte) 28));
                     break;
                 }
                 break;
             case 27:
-                hl.c3(new cxc((pxc) obj, (Object) tLObject, b6));
+                hl.c3(new zwc((pxc) obj, tLObject, b6));
                 break;
             default:
-                hl.c3(new cxc((Object) tLObject, obj, (byte) 13));
+                hl.c3(new zwc(tLObject, (j0d) obj, (byte) 14));
                 break;
         }
     }

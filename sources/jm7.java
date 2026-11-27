@@ -8,7 +8,7 @@ import java.util.IdentityHashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_feed;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class jm7 {
     public im7 f;
@@ -24,7 +24,7 @@ public final class jm7 {
     public boolean q;
     public TL_feed.FeedPosition r;
     public TL_feed.FeedPosition s;
-    public xl7 t;
+    public yl7 t;
     public final ArrayList a = new ArrayList();
     public final HashSet b = new HashSet();
     public final IdentityHashMap c = new IdentityHashMap();

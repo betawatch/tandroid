@@ -2,7 +2,7 @@
 
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class k44 {
     public final String a;
@@ -19,7 +19,7 @@ public final class k44 {
         if (!this.c) {
             synchronized (this) {
                 if (!this.c) {
-                    SharedPreferences sharedPreferences = zba.a;
+                    SharedPreferences sharedPreferences = aca.a;
                     String str = this.a;
                     Enum r2 = this.b;
                     String string = sharedPreferences.getString(str, r2.name());
@@ -40,6 +40,6 @@ public final class k44 {
     public final synchronized void b(Enum r3) {
         this.d = r3;
         this.c = true;
-        zba.a.edit().putString(this.a, r3.name()).apply();
+        aca.a.edit().putString(this.a, r3.name()).apply();
     }
 }

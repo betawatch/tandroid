@@ -12,7 +12,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class bm0 implements pcc {
     public final /* synthetic */ byte a;
@@ -57,8 +57,8 @@ public final /* synthetic */ class bm0 implements pcc {
                 break;
             case 6:
                 View view4 = (View) obj;
-                if (view4 instanceof v09) {
-                    ((v09) view4).c.invalidate();
+                if (view4 instanceof w09) {
+                    ((w09) view4).c.invalidate();
                     break;
                 }
                 break;
@@ -113,8 +113,8 @@ public final /* synthetic */ class bm0 implements pcc {
                     f17Var.b.invalidate();
                     f17Var.c.invalidate();
                     break;
-                } else if (view8 instanceof v09) {
-                    ((v09) view8).c.invalidate();
+                } else if (view8 instanceof w09) {
+                    ((w09) view8).c.invalidate();
                     break;
                 } else {
                     view8.invalidate();
@@ -149,8 +149,8 @@ public final /* synthetic */ class bm0 implements pcc {
                 break;
             case 23:
                 View view9 = (View) obj;
-                if (view9 instanceof v09) {
-                    ((v09) view9).d.a(false, true);
+                if (view9 instanceof w09) {
+                    ((w09) view9).d.a(false, true);
                     break;
                 }
                 break;
@@ -168,7 +168,7 @@ public final /* synthetic */ class bm0 implements pcc {
                 ee9.s = false;
                 for (int i = 0; i < 4; i++) {
                     try {
-                        uc7.s1(i).i4.f();
+                        uc7.s1(i).j4.f();
                     } catch (Exception unused) {
                     }
                 }

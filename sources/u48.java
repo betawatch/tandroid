@@ -3,7 +3,7 @@
 import android.app.Activity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u48 implements Runnable {
     public final /* synthetic */ byte a;
@@ -14,10 +14,12 @@ public final /* synthetic */ class u48 implements Runnable {
         this.b = o68Var;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
         boolean z = false;
+        Object[] objArr = 0;
         o68 o68Var = this.b;
         switch (b) {
             case 0:
@@ -60,9 +62,9 @@ public final /* synthetic */ class u48 implements Runnable {
                 break;
             case 7:
                 o68Var.u3 = 0L;
-                g58 g58Var = o68Var.L1;
-                if (g58Var != null) {
-                    g58Var.P(true);
+                h58 h58Var = o68Var.L1;
+                if (h58Var != null) {
+                    h58Var.P(true);
                     o68Var.L1.K2();
                     o68Var.h0(true);
                     break;
@@ -71,15 +73,15 @@ public final /* synthetic */ class u48 implements Runnable {
             case 8:
                 Activity W = hl.W(o68Var.getContext());
                 if (W != null) {
-                    pl7 pl7Var = new pl7(o68Var, W, (byte) 29);
+                    a58 a58Var = new a58(o68Var, W, objArr == true ? 1 : 0);
                     lcb lcbVar = ((ccb) o68Var.A1).d;
                     kcb kcbVar = lcbVar.A0;
                     if (kcbVar != null) {
-                        z = kcbVar.release(pl7Var);
+                        z = kcbVar.release(a58Var);
                         lcbVar.A0 = null;
                     }
                     if (!z) {
-                        hl.d3(pl7Var, 80L);
+                        hl.d3(a58Var, 80L);
                         break;
                     }
                 }

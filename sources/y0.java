@@ -35,7 +35,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.m;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class y0 implements pcc {
     public final /* synthetic */ byte a;
@@ -378,7 +378,7 @@ public final /* synthetic */ class y0 implements pcc {
                 break;
             case 5:
                 tq0 tq0Var2 = (tq0) obj3;
-                hp8 hp8Var = (hp8) obj2;
+                ep8 ep8Var = (ep8) obj2;
                 int[] iArr2 = (int[]) obj;
                 boolean z8 = false;
                 while (i3 < iArr2.length) {
@@ -394,8 +394,8 @@ public final /* synthetic */ class y0 implements pcc {
                 while (it2.hasNext()) {
                     ((Runnable) it2.next()).run();
                 }
-                if (hp8Var != null) {
-                    hp8Var.run();
+                if (ep8Var != null) {
+                    ep8Var.run();
                     break;
                 }
                 break;

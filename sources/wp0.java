@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class wp0 extends rf0 {
     public static volatile wp0[] f = new wp0[4];
@@ -176,8 +176,8 @@ public final class wp0 extends rf0 {
                         str = str.substring(0, 16).concat("...");
                     }
                     final String str2 = str;
-                    df7 df7Var = new df7() { // from class: np0
-                        @Override // df7
+                    ef7 ef7Var = new ef7() { // from class: np0
+                        @Override // ef7
                         public final void a(int i5) {
                             wp0 wp0Var = wp0.this;
                             TLObject tLObject2 = tLObject;
@@ -228,11 +228,11 @@ public final class wp0 extends rf0 {
                     LongSparseArray longSparseArray = this.d;
                     List list2 = (List) longSparseArray.get(m2);
                     if (list2 != null) {
-                        list2.add(df7Var);
+                        list2.add(ef7Var);
                         return false;
                     }
                     ArrayList arrayList4 = new ArrayList(1);
-                    arrayList4.add(df7Var);
+                    arrayList4.add(ef7Var);
                     longSparseArray.put(m2, arrayList4);
                     TL_forum.TL_messages_createForumTopic tL_messages_createForumTopic = new TL_forum.TL_messages_createForumTopic();
                     tL_messages_createForumTopic.title = TextUtils.isEmpty(str2) ? "#New Chat" : str2;
@@ -306,7 +306,7 @@ public final class wp0 extends rf0 {
                             tL_forumTopic.notify_settings = new TLRPC.TL_peerNotifySettings();
                             tL_forumTopic.icon_color = 0;
                             tL_forumTopic.title_missing = true;
-                            wp0Var.getMessagesController().g4.q(j5, tL_forumTopic, true);
+                            wp0Var.getMessagesController().h4.q(j5, tL_forumTopic, true);
                             wp0Var.f(i5, j5);
                             wp0Var.getNotificationCenter().k(jn7.M5, new up0(j5, i5));
                         }
@@ -358,7 +358,7 @@ public final class wp0 extends rf0 {
             longSparseArray.remove(j);
             Iterator it = list.iterator();
             while (it.hasNext()) {
-                ((df7) it.next()).a(i);
+                ((ef7) it.next()).a(i);
             }
         }
     }

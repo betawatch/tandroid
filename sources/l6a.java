@@ -24,7 +24,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l6a implements RequestDelegate {
     public final /* synthetic */ byte a = 2;
@@ -436,7 +436,7 @@ public final /* synthetic */ class l6a implements RequestDelegate {
                         TLRPC.TL_messages_botCallbackAnswer tL_messages_botCallbackAnswer = (TLRPC.TL_messages_botCallbackAnswer) tLObject3;
                         TL_keyboard.TL_inlineButtonTypeCallback tL_inlineButtonTypeCallback = (TL_keyboard.TL_inlineButtonTypeCallback) ehb.a(keyboardButtonProto2, TL_keyboard.TL_inlineButtonTypeCallback.class);
                         if (!z8 && tL_messages_botCallbackAnswer.cache_time != 0 && (tL_inlineButtonTypeCallback == null || !tL_inlineButtonTypeCallback.requires_password)) {
-                            r7aVar3.getMessagesStorage().s1(str5, tL_messages_botCallbackAnswer);
+                            r7aVar3.getMessagesStorage().w1(str5, tL_messages_botCallbackAnswer);
                         }
                         String str6 = tL_messages_botCallbackAnswer.message;
                         if (str6 == null) {
@@ -452,7 +452,7 @@ public final /* synthetic */ class l6a implements RequestDelegate {
                             TLRPC.MessageMedia messageMedia = r47Var3.k.media;
                             TLRPC.TL_game tL_game = messageMedia instanceof TLRPC.TL_messageMediaGame ? messageMedia.game : null;
                             if (tL_game != null) {
-                                zu1Var2.oc(tL_game, r47Var3, tL_messages_botCallbackAnswer.url, !z10 && qu6.v("askgame_", Z0, uc7.s1(r7aVar3.currentAccount).W3, true), Z0);
+                                zu1Var2.oc(tL_game, r47Var3, tL_messages_botCallbackAnswer.url, !z10 && qu6.v("askgame_", Z0, uc7.s1(r7aVar3.currentAccount).X3, true), Z0);
                                 return;
                             }
                             return;

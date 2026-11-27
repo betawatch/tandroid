@@ -13,10 +13,10 @@ import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class wmc extends FrameLayout {
-    public final hh7 E;
+    public final ih7 E;
     public int F;
     public int G;
     public short H;
@@ -37,17 +37,17 @@ public final class wmc extends FrameLayout {
     public int W;
     public final Drawable a;
     public final Drawable b;
-    public final hh7 c;
-    public final hh7 d;
+    public final ih7 c;
+    public final ih7 d;
     public final Drawable e;
     public final Drawable f;
-    public final hh7 h;
-    public final hh7 n;
+    public final ih7 h;
+    public final ih7 n;
     public final Drawable r;
     public final Drawable s;
-    public final hh7 w;
-    public final hh7 x;
-    public final hh7 y;
+    public final ih7 w;
+    public final ih7 x;
+    public final ih7 y;
 
     public wmc(Activity activity, boolean z, kjc kjcVar) {
         super(activity);
@@ -65,36 +65,36 @@ public final class wmc extends FrameLayout {
         this.U = kjcVar;
         boolean e = i86.e(512);
         this.V = e;
-        this.a = z ? new vmc() : new hh7(-4958504, -8304404, -14637865, -12612630, false, true);
-        this.b = z ? new vmc() : new hh7(-12224791, -12879119, -16207709, -15226140, false, true);
-        this.c = new hh7(-16275028, -16270749, -5649306, -10833593, false, true);
-        this.d = new hh7(-1545896, -1613425, -2387892, -2198984, false, true);
-        Drawable vmcVar = z ? new vmc() : new hh7(-5818672, -9819171, -15755831, -14124319, false, true);
+        this.a = z ? new vmc() : new ih7(-4958504, -8304404, -14637865, -12612630, false, true);
+        this.b = z ? new vmc() : new ih7(-12224791, -12879119, -16207709, -15226140, false, true);
+        this.c = new ih7(-16275028, -16270749, -5649306, -10833593, false, true);
+        this.d = new ih7(-1545896, -1613425, -2387892, -2198984, false, true);
+        Drawable vmcVar = z ? new vmc() : new ih7(-5818672, -9819171, -15755831, -14124319, false, true);
         this.e = vmcVar;
-        Drawable vmcVar2 = z ? new vmc() : new hh7(-13803306, -13866273, -16738923, -16608823, false, true);
+        Drawable vmcVar2 = z ? new vmc() : new ih7(-13803306, -13866273, -16738923, -16608823, false, true);
         this.f = vmcVar2;
-        hh7 hh7Var = new hh7(-16741490, -16673972, -7357129, -13525721, false, true);
-        this.h = hh7Var;
-        hh7 hh7Var2 = new hh7(-1949911, -1691537, -3705322, -2663914, false, true);
-        this.n = hh7Var2;
-        Drawable vmcVar3 = z ? new vmc() : new hh7(-2726657, -7186179, -13778695, -11034113, false, true);
+        ih7 ih7Var = new ih7(-16741490, -16673972, -7357129, -13525721, false, true);
+        this.h = ih7Var;
+        ih7 ih7Var2 = new ih7(-1949911, -1691537, -3705322, -2663914, false, true);
+        this.n = ih7Var2;
+        Drawable vmcVar3 = z ? new vmc() : new ih7(-2726657, -7186179, -13778695, -11034113, false, true);
         this.r = vmcVar3;
-        Drawable vmcVar4 = z ? new vmc() : new hh7(-11170817, -10507265, -16458548, -14105857, false, true);
+        Drawable vmcVar4 = z ? new vmc() : new ih7(-11170817, -10507265, -16458548, -14105857, false, true);
         this.s = vmcVar4;
-        hh7 hh7Var3 = new hh7(-16723243, -16129415, -3674272, -9578153, false, true);
-        this.w = hh7Var3;
-        hh7 hh7Var4 = new hh7(-34714, -32091, -85931, -29103, false, true);
-        this.x = hh7Var4;
-        this.y = new hh7(-16723243, -16129415, -3674272, -9578153, false, true);
-        this.E = new hh7(-16741490, -16673972, -7357129, -13525721, false, true);
+        ih7 ih7Var3 = new ih7(-16723243, -16129415, -3674272, -9578153, false, true);
+        this.w = ih7Var3;
+        ih7 ih7Var4 = new ih7(-34714, -32091, -85931, -29103, false, true);
+        this.x = ih7Var4;
+        this.y = new ih7(-16723243, -16129415, -3674272, -9578153, false, true);
+        this.E = new ih7(-16741490, -16673972, -7357129, -13525721, false, true);
         vmcVar.setBounds(0, 0, 80, 80);
         vmcVar2.setBounds(0, 0, 80, 80);
-        hh7Var.setBounds(0, 0, 80, 80);
-        hh7Var2.setBounds(0, 0, 80, 80);
+        ih7Var.setBounds(0, 0, 80, 80);
+        ih7Var2.setBounds(0, 0, 80, 80);
         vmcVar3.setBounds(0, 0, 80, 80);
         vmcVar4.setBounds(0, 0, 80, 80);
-        hh7Var3.setBounds(0, 0, 80, 80);
-        hh7Var4.setBounds(0, 0, 80, 80);
+        ih7Var3.setBounds(0, 0, 80, 80);
+        ih7Var4.setBounds(0, 0, 80, 80);
         setWillNotDraw(false);
         setLayerType(2, null);
         AnimatorSet animatorSet = new AnimatorSet();

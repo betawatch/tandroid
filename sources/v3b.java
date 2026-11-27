@@ -1,156 +1,144 @@
 // default package
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.PointF;
-import android.graphics.RectF;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
-public class v3b extends h44 {
-    public final TLRPC.Document s0;
-    public final Object t0;
-    public final int u0;
-    public boolean v0;
-    public final mm w0;
-    public final qma x0;
-    public final d26 y0;
-    public final ImageReceiver z0;
+public final class v3b extends FrameLayout {
+    public static int H;
+    public float E;
+    public boolean F;
+    public float G;
+    public final byte a;
+    public float b;
+    public boolean c;
+    public boolean d;
+    public final de0 e;
+    public final ImageView f;
+    public final c19 h;
+    public final View n;
+    public boolean r;
+    public final int s;
+    public ggb w;
+    public boolean x;
+    public ValueAnimator y;
 
-    public v3b(Context context, PointF pointF, float f, float f2, qma qmaVar, TLRPC.Document document, Object obj) {
-        super(context, pointF);
-        this.u0 = -1;
-        this.v0 = false;
-        this.z0 = new ImageReceiver(null);
-        setRotation(f);
-        setScale(f2);
-        this.s0 = document;
-        this.x0 = qmaVar;
-        this.t0 = obj;
-        int i = 0;
-        while (true) {
-            if (i >= document.attributes.size()) {
-                break;
-            }
-            TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i);
-            if (documentAttribute instanceof TLRPC.TL_documentAttributeSticker) {
-                TLRPC.TL_maskCoords tL_maskCoords = documentAttribute.mask_coords;
-                if (tL_maskCoords != null) {
-                    this.u0 = tL_maskCoords.n;
-                }
-            } else {
-                i++;
-            }
+    /* JADX WARN: Multi-variable type inference failed */
+    public v3b(Context context, int i) {
+        super(context);
+        this.a = i;
+        int i2 = H;
+        H = i2 + 1;
+        this.s = i2;
+        if (i == 2) {
+            de0 de0Var = new de0(getContext());
+            this.e = de0Var;
+            de0Var.setLayerNum(1);
+            de0Var.setAspectFit(false);
+            de0Var.setRoundRadius(hl.L(6.0f));
+            addView(de0Var, tre.e(26, 26, 17));
+            this.n = de0Var;
+        } else if (i == 1) {
+            ImageView imageView = new ImageView(context);
+            this.f = imageView;
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            addView(imageView, tre.e(24, 24, 17));
+            this.n = imageView;
+        } else {
+            de0 de0Var2 = new de0(getContext());
+            this.e = de0Var2;
+            de0Var2.setLayerNum(1);
+            de0Var2.setAspectFit(true);
+            de0Var2.setRoundRadius(hl.L(6.0f));
+            addView(de0Var2, tre.e(26, 26, 17));
+            this.n = de0Var2;
         }
-        d26 d26Var = new d26(this, context);
-        this.y0 = d26Var;
-        addView(d26Var, tre.c(-1.0f, -1));
-        this.w0 = new mm(d26Var, 0L, 500L, k43.h);
-        ImageReceiver imageReceiver = this.z0;
-        imageReceiver.S0 = true;
-        imageReceiver.K0 = true;
-        imageReceiver.p0(d26Var);
-        this.z0.b0(jn5.b(document), null, jn5.c(xb4.w(document.thumbs, 90, false, null, false), document), null, "webp", obj, 1);
-        this.z0.h1 = new hja(this, (byte) 14);
-        k();
+        c19 c19Var = new c19(context, (byte) 5);
+        this.h = c19Var;
+        c19Var.addOnLayoutChangeListener(new pk1(this, (byte) 7));
+        c19Var.setLines(1);
+        c19Var.setEllipsize(TextUtils.TruncateAt.END);
+        c19Var.setTextSize(1, 11.0f);
+        c19Var.setGravity(1);
+        yob.X(c19Var, aob.G6, null);
+        addView(c19Var, tre.d(-1, -2.0f, 81, 8.0f, 0.0f, 8.0f, 10.0f));
+        c19Var.setVisibility(8);
     }
 
-    @Override // h44
-    public final g44 a() {
-        r39 r39Var = new r39(this, getContext(), (byte) 2);
-        r39Var.r = new RectF();
-        return r39Var;
-    }
-
-    public int getAnchor() {
-        return this.u0;
-    }
-
-    public qma getBaseSize() {
-        return this.x0;
-    }
-
-    public long getDuration() {
-        ImageReceiver imageReceiver = this.z0;
-        b29 y = imageReceiver.y();
-        if (y != null) {
-            return y.m();
+    public final void a(float f) {
+        float f2;
+        float f3;
+        byte b = this.a;
+        if (b == 2) {
+            return;
         }
-        if (imageReceiver.m() != null) {
-            return r2.d[4];
-        }
-        return 0L;
-    }
-
-    public Object getParentObject() {
-        return this.t0;
-    }
-
-    @Override // h44
-    public a69 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new a69();
-        }
-        float scaleX = viewGroup.getScaleX();
-        float scale = (getScale() + 0.5f) * getMeasuredWidth();
-        float f = scale / 2.0f;
-        float f2 = scale * scaleX;
-        return new a69((getPositionX() - f) * scaleX, (getPositionY() - f) * scaleX, f2, f2);
-    }
-
-    public TLRPC.Document getSticker() {
-        return this.s0;
-    }
-
-    @Override // h44
-    public final void k() {
-        qma qmaVar = this.x0;
-        float f = qmaVar.a / 2.0f;
-        float f2 = qmaVar.b / 2.0f;
-        setX(getPositionX() - f);
-        setY(getPositionY() - f2);
-        m();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.z0.I();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.z0.K();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        qma qmaVar = this.x0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) qmaVar.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) qmaVar.b, TLObject.FLAG_30));
-    }
-
-    public final void r(boolean z) {
-        boolean z2 = !this.v0;
-        this.v0 = z2;
+        boolean z = this.r;
+        View view = this.n;
         if (!z) {
-            this.w0.f(z2, true);
+            view.setTranslationX(0.0f);
+            view.setTranslationY(0.0f);
+            view.setScaleX(1.0f);
+            view.setScaleY(1.0f);
+            return;
         }
-        this.y0.invalidate();
+        if (b == 1) {
+            f2 = 24.0f;
+            f3 = 38.0f;
+        } else {
+            f2 = 26.0f;
+            f3 = 44.0f;
+        }
+        int i = xu9.u0;
+        float f4 = 1.0f - f;
+        view.setTranslationY((((hl.L(36.0f - f2) / 2.0f) - (hl.L(86.0f - f3) / 2.0f)) * f4) - (hl.L(8.0f) * f));
+        view.setTranslationX(((hl.L(33.0f - f2) / 2.0f) - (hl.L(64.0f - f3) / 2.0f)) * f4);
+        float max = Math.max(0.0f, (f - 0.5f) / 0.5f);
+        c19 c19Var = this.h;
+        c19Var.setAlpha(max);
+        c19Var.setTranslationY((-hl.L(40.0f)) * f4);
+        c19Var.setTranslationX((-hl.L(12.0f)) * f4);
+        view.setPivotX(0.0f);
+        view.setPivotY(0.0f);
+        float f5 = ((f2 / f3) * f4) + f;
+        view.setScaleX(f5);
+        view.setScaleY(f5);
     }
 
-    public void q(b29 b29Var) {
+    public float getTextWidth() {
+        return this.G;
     }
 
-    public v3b(Context context, v3b v3bVar, PointF pointF) {
-        this(context, pointF, v3bVar.getRotation(), v3bVar.getScale(), v3bVar.x0, v3bVar.s0, v3bVar.t0);
-        if (v3bVar.v0) {
-            r(false);
+    public void setExpanded(boolean z) {
+        float f;
+        float f2;
+        byte b = this.a;
+        if (b != 2) {
+            this.r = z;
+            if (b == 1) {
+                f = 24.0f;
+                f2 = 38.0f;
+            } else {
+                f = 26.0f;
+                f2 = 44.0f;
+            }
+            View view = this.n;
+            view.getLayoutParams().width = hl.L(z ? f2 : f);
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+            if (z) {
+                f = f2;
+            }
+            layoutParams.height = hl.L(f);
+            this.h.setVisibility(z ? 0 : 8);
+            if (b == 1 || !this.x) {
+                return;
+            }
+            this.e.setRoundRadius(hl.L(view.getLayoutParams().width / 2.0f));
         }
     }
 }

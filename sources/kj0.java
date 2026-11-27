@@ -2,7 +2,7 @@
 
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final class kj0 extends v40 {
     public final WeakReference a;
@@ -19,12 +19,12 @@ public final class kj0 extends v40 {
         }
         mj0 mj0Var = (mj0) weakReference.get();
         qi0 qi0Var = new qi0(i, charSequence);
-        qj7 qj7Var = mj0Var.q;
-        if (qj7Var == null) {
-            qj7Var = new qj7();
-            mj0Var.q = qj7Var;
+        rj7 rj7Var = mj0Var.q;
+        if (rj7Var == null) {
+            rj7Var = new rj7();
+            mj0Var.q = rj7Var;
         }
-        mj0.f(qj7Var, qi0Var);
+        mj0.f(rj7Var, qi0Var);
     }
 
     @Override // v40
@@ -43,11 +43,11 @@ public final class kj0 extends v40 {
             gj0Var = new gj0(hj0Var, i);
         }
         mj0 mj0Var = (mj0) weakReference.get();
-        qj7 qj7Var = mj0Var.p;
-        if (qj7Var == null) {
-            qj7Var = new qj7();
-            mj0Var.p = qj7Var;
+        rj7 rj7Var = mj0Var.p;
+        if (rj7Var == null) {
+            rj7Var = new rj7();
+            mj0Var.p = rj7Var;
         }
-        mj0.f(qj7Var, gj0Var);
+        mj0.f(rj7Var, gj0Var);
     }
 }

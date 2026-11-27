@@ -18,7 +18,7 @@ import org.telegram.messenger.a;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class tv3 implements fn7 {
     public static final HashSet M = new HashSet();
@@ -726,7 +726,7 @@ public class tv3 implements fn7 {
             if (wb2Var.getMessageObject().V3() || wb2Var.getEffect() != null || (!z && wb2Var.getMessageObject().o != null)) {
                 wb2Var.getMessageObject().R = false;
                 wb2Var.getMessageObject().k.premiumEffectWasPlayed = true;
-                zu1Var.getMessagesStorage().U1(this.J, wb2Var.getMessageObject().k);
+                zu1Var.getMessagesStorage().Z1(this.J, wb2Var.getMessageObject().k);
                 return;
             }
             Integer D1 = uc7.s1(this.b).D1(this.J, this.K);

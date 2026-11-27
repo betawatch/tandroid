@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class nd5 extends e implements fn7 {
     public int E;
@@ -161,7 +161,7 @@ public final class nd5 extends e implements fn7 {
         if (getParentActivity() != null) {
             if (!this.N) {
                 if (i >= this.F && i < this.G) {
-                    g0((TLRPC.TL_messages_stickerSet) ls6.d0(this.currentAccount).t0(d0()).get(i - this.F), ((p3b) view).a(), false);
+                    g0((TLRPC.TL_messages_stickerSet) ls6.d0(this.currentAccount).t0(d0()).get(i - this.F), ((q3b) view).a(), false);
                 }
                 if (i == this.K) {
                     g0(this.r, true, false);
@@ -170,11 +170,11 @@ public final class nd5 extends e implements fn7 {
                 return;
             }
             if (i > this.f.d.size()) {
-                boolean a = ((p3b) view).a();
+                boolean a = ((q3b) view).a();
                 md5 md5Var = this.f;
                 g0((TLRPC.TL_messages_stickerSet) md5Var.e.get((i - md5Var.d.size()) - 1), a, false);
             } else if (i != this.f.d.size()) {
-                g0((TLRPC.TL_messages_stickerSet) this.f.d.get(i), ((p3b) view).a(), true);
+                g0((TLRPC.TL_messages_stickerSet) this.f.d.get(i), ((q3b) view).a(), true);
             }
         }
     }
@@ -227,7 +227,7 @@ public final class nd5 extends e implements fn7 {
                 chatFull3.flags = i2 & (-257);
             }
         }
-        jf7.Y(this.currentAccount).K1(this.w, false);
+        kf7.a0(this.currentAccount).P1(this.w, false);
         jn7.f(this.currentAccount).k(jn7.T, this.w, 0, Boolean.TRUE, Boolean.FALSE);
         jn7.f(this.currentAccount).k(jn7.s3, Long.valueOf(this.w.id), Boolean.valueOf(z));
         finishFragment();
@@ -279,7 +279,7 @@ public final class nd5 extends e implements fn7 {
                 for (int i2 = 0; i2 < this.d.getChildCount(); i2++) {
                     View childAt = this.d.getChildAt(i2);
                     if (this.d.U(childAt).b() == this.F + i) {
-                        ((p3b) childAt).b(false, true);
+                        ((q3b) childAt).b(false, true);
                         break;
                     }
                 }
@@ -291,7 +291,7 @@ public final class nd5 extends e implements fn7 {
                 for (int i3 = 0; i3 < this.d.getChildCount(); i3++) {
                     View childAt2 = this.d.getChildAt(i3);
                     if (this.d.U(childAt2).b() == this.F + this.n) {
-                        ((p3b) childAt2).b(true, true);
+                        ((q3b) childAt2).b(true, true);
                         return;
                     }
                 }
@@ -474,7 +474,7 @@ public final class nd5 extends e implements fn7 {
                         tL_channels_setStickers2.stickerset = new TLRPC.TL_inputStickerSetEmpty();
                         tL_channels_setStickers = tL_channels_setStickers2;
                     } else {
-                        uc7.s1(this.currentAccount).Y3.edit().remove("group_hide_stickers_" + this.w.id).apply();
+                        uc7.s1(this.currentAccount).Z3.edit().remove("group_hide_stickers_" + this.w.id).apply();
                         TLRPC.TL_inputStickerSetID tL_inputStickerSetID2 = new TLRPC.TL_inputStickerSetID();
                         tL_channels_setStickers2.stickerset = tL_inputStickerSetID2;
                         TLRPC.StickerSet stickerSet2 = this.r.set;

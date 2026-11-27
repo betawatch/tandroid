@@ -29,7 +29,7 @@ import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public class kfc implements bg8, cfc, vj, fn7 {
     public static int k0;
@@ -204,7 +204,7 @@ public class kfc implements bg8, cfc, vj, fn7 {
         if (document != null) {
             arrayList2.add(document);
         }
-        if (!uc7.s1(i).k4.a3.f && arrayList != null) {
+        if (!uc7.s1(i).l4.a3.f && arrayList != null) {
             arrayList2.addAll(arrayList);
         }
         LongSparseArray longSparseArray = new LongSparseArray();
@@ -458,7 +458,7 @@ public class kfc implements bg8, cfc, vj, fn7 {
 
     @Override // bg8
     public final void F(e64 e64Var) {
-        hl.c3(new g9c(this, e64Var, (byte) 12));
+        hl.c3(new c9c(this, e64Var, (byte) 13));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0032, code lost:
@@ -948,7 +948,7 @@ public class kfc implements bg8, cfc, vj, fn7 {
                     public final z6f j;
                     public final rx6 i = new rx6();
                     public final da3 g = mb3.N;
-                    public final rg7 h = new rg7((byte) 17);
+                    public final sg7 h = new sg7((byte) 17);
                     public final boolean l = true;
                     public final long m = -9223372036854775807L;
                     public final boolean k = true;
@@ -1033,7 +1033,7 @@ public class kfc implements bg8, cfc, vj, fn7 {
                 public final qx6 a;
                 public final f73 b;
                 public final rx6 c;
-                public final rg7 d;
+                public final sg7 d;
                 public final z6f e;
                 public final short f;
                 public final int g;
@@ -1046,7 +1046,7 @@ public class kfc implements bg8, cfc, vj, fn7 {
                     this.e = new z6f((byte) 17);
                     this.f = (short) 30000;
                     this.g = 5000000;
-                    this.d = new rg7((byte) 17);
+                    this.d = new sg7((byte) 17);
                     ((n31) qx6Var.c).b = true;
                 }
 
@@ -1669,7 +1669,7 @@ public class kfc implements bg8, cfc, vj, fn7 {
     }
 
     @Override // bg8
-    public final void L(uf7 uf7Var) {
+    public final void L(vf7 vf7Var) {
     }
 
     @Override // bg8

@@ -37,7 +37,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class euc extends n9c implements fn7 {
     public LinearLayout E;
@@ -206,7 +206,7 @@ public final class euc extends n9c implements fn7 {
         c C = c.C(this.currentAccount);
         long z = C.z();
         long k0 = k0();
-        long f = uc7.s1(this.currentAccount).k4.x0.f();
+        long f = uc7.s1(this.currentAccount).l4.x0.f();
         if (k0 > 0 && k0 < f) {
             String g0 = this.l0 ? g0(f, i0()) : l0(f);
             this.F.setAmountText(g0);
@@ -810,7 +810,7 @@ public final class euc extends n9c implements fn7 {
         c C = c.C(this.currentAccount);
         C.h.f();
         double h = C.h.h();
-        double d = uc7.s1(this.currentAccount).k4.k.i;
+        double d = uc7.s1(this.currentAccount).l4.k.i;
         return (h <= 0.0d || d <= 0.0d || Double.isNaN(h) || Double.isInfinite(h) || Double.isNaN(d) || Double.isInfinite(d)) ? BigDecimal.ZERO : BigDecimal.valueOf(h).multiply(BigDecimal.valueOf(d));
     }
 
@@ -1246,7 +1246,7 @@ public final class euc extends n9c implements fn7 {
         if (this.r || !WalletEngine2.isValidRecipientAddress(this.h) || k0 <= 0) {
             return;
         }
-        long f = uc7.s1(this.currentAccount).k4.x0.f();
+        long f = uc7.s1(this.currentAccount).l4.x0.f();
         if (k0 < f) {
             String g0 = this.l0 ? g0(f, i0()) : l0(f);
             this.F.setAmountText(g0);

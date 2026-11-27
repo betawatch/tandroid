@@ -12,7 +12,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes3.dex */
 public final class g4a extends FrameLayout {
     public long E;
@@ -200,40 +200,40 @@ public final class g4a extends FrameLayout {
             if (f2 == 1.0f && this.f != 1.0f) {
                 if (lcbVar.O0 != null) {
                     r47 r47Var = (r47) lcbVar.O0.i.get(Utilities.j(a4aVar.getClosestPosition(), lcbVar.O0.i.size() - 1, 0));
-                    long b = u5b.b(r47Var);
+                    long b = v5b.b(r47Var);
                     ImageReceiver imageReceiver = icbVar.c;
                     if (imageReceiver != null) {
                         imageReceiver.v0(true, true);
                         icbVar.c = null;
                     }
-                    acb acbVar = lcbVar.o0;
+                    bcb bcbVar = lcbVar.o0;
                     int i = r47Var.l.id;
-                    lcb lcbVar2 = acbVar.O0;
+                    lcb lcbVar2 = bcbVar.O0;
                     int i2 = 0;
                     while (true) {
-                        if (i2 >= acbVar.y0.size()) {
+                        if (i2 >= bcbVar.y0.size()) {
                             break;
                         }
-                        if (b == u5b.b(lcbVar2.O0.f(((Integer) ((ArrayList) acbVar.y0.get(i2)).get(0)).intValue()))) {
-                            int size = lcbVar2.R0 ? (acbVar.y0.size() - 1) - i2 : i2;
+                        if (b == v5b.b(lcbVar2.O0.f(((Integer) ((ArrayList) bcbVar.y0.get(i2)).get(0)).intValue()))) {
+                            int size = lcbVar2.R0 ? (bcbVar.y0.size() - 1) - i2 : i2;
                             int i3 = 0;
                             while (true) {
-                                if (i3 >= ((ArrayList) acbVar.y0.get(i2)).size()) {
+                                if (i3 >= ((ArrayList) bcbVar.y0.get(i2)).size()) {
                                     i3 = 0;
                                     break;
-                                } else if (((Integer) ((ArrayList) acbVar.y0.get(i2)).get(i3)).intValue() == i) {
+                                } else if (((Integer) ((ArrayList) bcbVar.y0.get(i2)).get(i3)).intValue() == i) {
                                     break;
                                 } else {
                                     i3++;
                                 }
                             }
-                            if (acbVar.getCurrentPeerView() == null || acbVar.getCurrentItem() != size) {
-                                acbVar.x(size, false);
-                                o68 currentPeerView = acbVar.getCurrentPeerView();
+                            if (bcbVar.getCurrentPeerView() == null || bcbVar.getCurrentItem() != size) {
+                                bcbVar.x(size, false);
+                                o68 currentPeerView = bcbVar.getCurrentPeerView();
                                 if (currentPeerView != null) {
                                     w6b w6bVar = (w6b) currentPeerView.getParent();
                                     w6bVar.a(true);
-                                    ArrayList arrayList = acbVar.y0;
+                                    ArrayList arrayList = bcbVar.y0;
                                     o68 o68Var = w6bVar.a;
                                     long j = w6bVar.b;
                                     if (arrayList != null) {
@@ -246,7 +246,7 @@ public final class g4a extends FrameLayout {
                                     }
                                 }
                             } else {
-                                o68 currentPeerView2 = acbVar.getCurrentPeerView();
+                                o68 currentPeerView2 = bcbVar.getCurrentPeerView();
                                 if (currentPeerView2.t1 != i3) {
                                     currentPeerView2.t1 = i3;
                                     currentPeerView2.c1(false);
@@ -269,10 +269,10 @@ public final class g4a extends FrameLayout {
                 a4aVar.c(a4aVar.L, false, true);
             }
             if (w != null) {
-                t58 t58Var = w.M0;
-                a4aVar.a = t58Var.getTop();
-                a4aVar.b = t58Var.getMeasuredWidth();
-                a4aVar.c = t58Var.getMeasuredHeight();
+                u58 u58Var = w.M0;
+                a4aVar.a = u58Var.getTop();
+                a4aVar.b = u58Var.getMeasuredWidth();
+                a4aVar.c = u58Var.getMeasuredHeight();
             }
             a4aVar.setProgressToOpen(this.f);
             b4a b4aVar = this.F;

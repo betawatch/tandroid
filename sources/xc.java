@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class xc implements View.OnAttachStateChangeListener {
     public final /* synthetic */ byte a;
@@ -106,9 +106,9 @@ public final class xc implements View.OnAttachStateChangeListener {
             case 17:
                 break;
             case 18:
-                oba obaVar = (oba) this.b;
-                obaVar.h.a();
-                obaVar.n.a();
+                pba pbaVar = (pba) this.b;
+                pbaVar.h.a();
+                pbaVar.n.a();
                 break;
             case 19:
                 break;
@@ -243,9 +243,9 @@ public final class xc implements View.OnAttachStateChangeListener {
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 18:
-                oba obaVar = (oba) this.b;
-                obaVar.h.b();
-                obaVar.n.b();
+                pba pbaVar = (pba) this.b;
+                pbaVar.h.b();
+                pbaVar.n.b();
                 break;
             case 19:
                 vqa vqaVar = (vqa) this.b;

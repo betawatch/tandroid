@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public final class f59 extends c79 {
     public final /* synthetic */ j59 c;
@@ -69,7 +69,7 @@ public final class f59 extends c79 {
                 int indexOf = TextUtils.indexOf(S2, "%3$s");
                 S2.replace(indexOf, indexOf + 4, (CharSequence) N2);
                 p66Var.setText(S2, TextView.BufferType.EDITABLE);
-                p66Var.post(new me7(i59Var, indexOf, (byte) 13));
+                p66Var.post(new oe7(i59Var, indexOf, (byte) 13));
             } catch (Exception e) {
                 cc4.g(e, true);
             }
@@ -89,7 +89,7 @@ public final class f59 extends c79 {
             view = i != 2 ? i != 3 ? new View(context) : new e3a(context, true, false, j59Var.J0, true) : new mf5(context, 22);
         } else {
             int i2 = aob.a7;
-            view = new rca(context, aob.w0(null, i2, false), 0);
+            view = new sca(context, aob.w0(null, i2, false), 0);
             yob.h(i2, null, view);
         }
         return qu6.h(view, view, -1, -2);

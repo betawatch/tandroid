@@ -8,7 +8,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gyb implements Runnable {
     public final /* synthetic */ byte a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class gyb implements Runnable {
                             arrayList = arrayList4;
                             e.printStackTrace();
                             arrayList2 = arrayList;
-                            qybVar2.getMessagesStorage().G0(arrayList2, j);
+                            qybVar2.getMessagesStorage().J0(arrayList2, j);
                             if (arrayList2 == null) {
                                 return;
                             }
@@ -109,9 +109,9 @@ public final /* synthetic */ class gyb implements Runnable {
                     e = e2;
                     arrayList = null;
                 }
-                qybVar2.getMessagesStorage().G0(arrayList2, j);
+                qybVar2.getMessagesStorage().J0(arrayList2, j);
                 if (arrayList2 == null) {
-                    hl.c3(new z5b(qybVar2, arrayList2, j2, (byte) 7));
+                    hl.c3(new j5b(qybVar2, arrayList2, j2, (byte) 8));
                     break;
                 }
                 break;

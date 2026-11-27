@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
+/* compiled from: r8-map-id-82e92c8d6e9f76ce11a67e998f2cb2e6668f272649ee2c368e632fe79babc943 */
 /* loaded from: classes2.dex */
 public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionBar.e implements fn7 {
     public final int[] E;
@@ -121,7 +121,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
     }
 
     public static boolean c0(int i, long j) {
-        SharedPreferences sharedPreferences = uc7.s1(i).W3;
+        SharedPreferences sharedPreferences = uc7.s1(i).X3;
         StringBuilder sb = new StringBuilder("stories_");
         sb.append(j);
         return sharedPreferences.contains(sb.toString()) ? qu6.v("stories_", j, sharedPreferences, true) : sharedPreferences.contains("EnableAllStories") ? sharedPreferences.getBoolean("EnableAllStories", true) : i0(i, j);
@@ -726,7 +726,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                                 Activity parentActivity = getParentActivity();
                                 lp7 lp7Var = new lp7(this, view, i, (byte) 1);
                                 Pattern pattern2 = jj.a;
-                                SharedPreferences sharedPreferences = uc7.s1(yac.t0).W3;
+                                SharedPreferences sharedPreferences = uc7.s1(yac.t0).X3;
                                 int[] iArr2 = new int[1];
                                 if (i2 == 1) {
                                     iArr2[0] = sharedPreferences.getInt("popupAll", 0);
@@ -1211,7 +1211,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                     try {
                         arrayList4 = arrayList29;
                         try {
-                            getMessagesStorage().T(TextUtils.join(",", arrayList18), arrayList4, arrayList16);
+                            getMessagesStorage().V(TextUtils.join(",", arrayList18), arrayList4, arrayList16);
                         } catch (Exception e) {
                             e = e;
                             arrayList2 = arrayList28;
@@ -1274,7 +1274,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                         hl.c3(new x35(this, arrayList3, arrayList2, arrayList4, arrayList11, arrayList12, arrayList30, arrayList31, arrayList15, (byte) 2));
                     }
                     try {
-                        getMessagesStorage().k0(arrayList16, arrayList3, false);
+                        getMessagesStorage().m0(arrayList16, arrayList3, false);
                     } catch (Exception e5) {
                         e = e5;
                         arrayList2 = arrayList28;
@@ -1298,11 +1298,11 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                 if (arrayList17.isEmpty()) {
                     arrayList2 = arrayList28;
                 } else {
-                    jf7 messagesStorage = getMessagesStorage();
+                    kf7 messagesStorage = getMessagesStorage();
                     String join = TextUtils.join(",", arrayList17);
                     arrayList2 = arrayList28;
                     try {
-                        messagesStorage.P(join, arrayList2);
+                        messagesStorage.R(join, arrayList2);
                     } catch (Exception e6) {
                         e = e6;
                         z2 = true;
@@ -1395,7 +1395,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
         } else {
             arrayList = null;
         }
-        getMessagesStorage().a.c(new pl7(this, arrayList, (byte) 8));
+        getMessagesStorage().a.c(new ql7(this, arrayList, (byte) 9));
     }
 
     public final void o0(vp7 vp7Var, View view, boolean z) {
