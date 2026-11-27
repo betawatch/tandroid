@@ -9,7 +9,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes.dex */
 public final class la3 implements v2c {
     public static final j99 p = po5.t(4300000L, 3200000L, 2400000L, 1700000L, 860000L);

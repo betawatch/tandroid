@@ -3,7 +3,7 @@ package org.jni_zero;
 import java.util.Collections;
 import org.jni_zero.JniPtrImplBase;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 @JNINamespace("jni_zero")
 /* loaded from: classes.dex */
 public class JniZero {
@@ -11,17 +11,17 @@ public class JniZero {
     private static boolean sInitialized;
     private static ClassLoader sPendingJniClassLoader;
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     interface Natives {
         void setJniClassLoader(ClassLoader classLoader);
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public interface SafePointersTracker {
         void destroy();
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public interface SafePointersTrackerFactory {
         SafePointersTracker create(Object obj, String str);
     }

@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes3.dex */
 public final class CryptoOptions {
     private final SFrame sframe;
@@ -23,7 +23,7 @@ public final class CryptoOptions {
         return this.srtp;
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public final class SFrame {
         private final boolean requireFrameEncryption;
 
@@ -40,7 +40,7 @@ public final class CryptoOptions {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class Builder {
         private boolean enableAes128Sha1_32CryptoCipher;
         private boolean enableAes128Sha1_80CryptoCipher;
@@ -94,7 +94,7 @@ public final class CryptoOptions {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public final class Srtp {
         private final boolean enableAes128Sha1_32CryptoCipher;
         private final boolean enableAes128Sha1_80CryptoCipher;

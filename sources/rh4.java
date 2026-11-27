@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes2.dex */
 public final class rh4 extends d79 implements snb {
     public static final ph4[] k3 = {new ph4(R.drawable.search_media_filled, 2131745135, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new ph4(R.drawable.search_links_filled, 2131745138, new TLRPC.TL_inputMessagesFilterUrl(), 2), new ph4(R.drawable.search_files_filled, 2131745142, new TLRPC.TL_inputMessagesFilterDocument(), 1), new ph4(R.drawable.search_music_filled, 2131745133, new TLRPC.TL_inputMessagesFilterMusic(), 3), new ph4(R.drawable.search_voice_filled, 2131745130, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};

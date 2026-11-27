@@ -14,11 +14,11 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes2.dex */
 public class TL_update {
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateAiComposeTones extends TLRPC.Update {
         public static final int constructor = -1945136645;
 
@@ -28,7 +28,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateAttachMenuBots extends TLRPC.Update {
         public static final int constructor = 397910539;
 
@@ -38,7 +38,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateBotCommands extends TLRPC.Update {
         public static final int constructor = 1299263278;
@@ -62,7 +62,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateBotProfileWidget extends TLRPC.Update {
         public static final int constructor = -1899234323;
@@ -92,7 +92,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateBotProfileWidgetData extends TLRPC.Update {
         public static final int constructor = -389670232;
@@ -113,7 +113,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateBotProfileWidgetQuery extends TLRPC.Update {
         public static final int constructor = -1444874970;
         public byte[] data;
@@ -151,7 +151,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateBotPurchasedPaidMedia extends TLRPC.Update {
         public static final int constructor = 675009298;
         public String payload;
@@ -174,7 +174,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateBotSubscriptionExpire extends TLRPC.Update {
         public static final int constructor = -1464975695;
         public String payload;
@@ -200,7 +200,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateBotWidgetCopyQuery extends TLRPC.Update {
         public static final int constructor = -91635977;
         public byte[] data;
@@ -239,7 +239,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateBotWidgetCopyQuery_layer233 extends TL_updateBotWidgetCopyQuery {
         public static final int constructor = -1288552616;
 
@@ -263,7 +263,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateBotWidgetQuery extends TLRPC.Update {
         public static final int constructor = -1284243864;
         public long chat_instance;
@@ -318,7 +318,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateBotWidgetQuery_layer233 extends TL_updateBotWidgetQuery {
         public static final int constructor = 646015238;
 
@@ -354,7 +354,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateChannel extends TLRPC.Update {
         public static final int constructor = 1666927625;
         public long channel_id;
@@ -371,7 +371,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChannelAvailableMessages extends TLRPC.Update {
         public static final int constructor = -1304443240;
@@ -392,7 +392,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChannelMessageForwards extends TLRPC.Update {
         public static final int constructor = -761649164;
@@ -416,7 +416,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChannelMessageViews extends TLRPC.Update {
         public static final int constructor = -232346616;
@@ -440,7 +440,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateChannelParticipant extends TLRPC.Update {
         public static final int constructor = -1738720581;
         public long actor_id;
@@ -497,7 +497,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChannelReadMessagesContents extends TLRPC.Update {
         public static final int constructor = 636691703;
@@ -535,7 +535,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChannelTooLong extends TLRPC.Update {
         public static final int constructor = 256790106;
@@ -573,7 +573,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChannelUserTyping extends TLRPC.Update {
         public static final int constructor = -1937192669;
@@ -607,7 +607,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChannelViewForumAsMessages extends TLRPC.Update {
         public static final int constructor = 129403168;
@@ -628,7 +628,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChannelWebPage extends TLRPC.Update {
         public static final int constructor = 791390623;
@@ -655,7 +655,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateChat extends TLRPC.Update {
         public static final int constructor = -124097970;
         public long chat_id;
@@ -672,7 +672,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChatDefaultBannedRights extends TLRPC.Update {
         public static final int constructor = 1421875280;
@@ -696,7 +696,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChatParticipantAdd extends TLRPC.Update {
         public static final int constructor = 1037718609;
@@ -726,7 +726,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChatParticipantAdmin extends TLRPC.Update {
         public static final int constructor = -674602590;
@@ -753,7 +753,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChatParticipantDelete extends TLRPC.Update {
         public static final int constructor = -483443337;
@@ -777,7 +777,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChatParticipantRank extends TLRPC.Update {
         public static final int constructor = -1115461703;
@@ -804,7 +804,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChatParticipants extends TLRPC.Update {
         public static final int constructor = 125178264;
@@ -822,7 +822,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateChatUserTyping extends TLRPC.Update {
         public static final int constructor = -2092401936;
@@ -846,7 +846,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateConfig extends TLRPC.Update {
         public static final int constructor = -1574314746;
 
@@ -856,7 +856,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateContactsReset extends TLRPC.Update {
         public static final int constructor = 1887741886;
 
@@ -866,7 +866,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateDcOptions extends TLRPC.Update {
         public static final int constructor = -1906403213;
@@ -884,7 +884,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateDeleteChannelMessages extends TLRPC.Update {
         public static final int constructor = -1020437742;
@@ -911,7 +911,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateDeleteEphemeralMessages extends TLRPC.Update {
         public static final int constructor = 1457257720;
@@ -932,7 +932,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateDeleteGroupCallMessages extends TLRPC.Update {
         public static final int constructor = 1048963372;
         public TLRPC.InputGroupCall call;
@@ -952,7 +952,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateDeleteMessages extends TLRPC.Update {
         public static final int constructor = -1576161051;
         public ArrayList<Integer> messages = new ArrayList<>();
@@ -975,7 +975,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateDeleteQuickReply extends TLRPC.Update {
         public static final int constructor = 1407644140;
         public int shortcut_id;
@@ -992,7 +992,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateDeleteQuickReplyMessages extends TLRPC.Update {
         public static final int constructor = 1450174413;
         public ArrayList<Integer> messages = new ArrayList<>();
@@ -1012,7 +1012,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateDeleteScheduledMessages extends TLRPC.Update {
         public static final int constructor = -223929981;
@@ -1043,7 +1043,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateDialogFilter extends TLRPC.Update {
         public static final int constructor = 654302845;
         public TLRPC.DialogFilter filter;
@@ -1070,7 +1070,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateDialogFilterOrder extends TLRPC.Update {
         public static final int constructor = -1512627963;
         public ArrayList<Integer> order = new ArrayList<>();
@@ -1087,7 +1087,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateDialogFilters extends TLRPC.Update {
         public static final int constructor = 889491791;
 
@@ -1097,7 +1097,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateDialogPinned extends TLRPC.Update {
         public static final int constructor = 1852826908;
@@ -1130,7 +1130,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateDialogUnreadMark extends TLRPC.Update {
         public static final int constructor = -1235684802;
@@ -1163,7 +1163,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateDraftMessage extends TLRPC.Update {
         public static final int constructor = -302247650;
@@ -1201,7 +1201,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateEditChannelMessage extends TLRPC.Update {
         public static final int constructor = 457133559;
@@ -1225,7 +1225,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateEditEphemeralMessage extends TLRPC.Update {
         public static final int constructor = 1270583041;
         public TL_ephemeral.EphemeralMessage message;
@@ -1242,7 +1242,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateEditForumTopic extends TLRPC.Update {
         public static final int constructor = 593913436;
@@ -1294,7 +1294,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateEditMessage extends TLRPC.Update {
         public static final int constructor = -469536605;
@@ -1318,7 +1318,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateEmojiGameInfo extends TLRPC.Update {
         public static final int constructor = -73640838;
@@ -1336,7 +1336,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateEncryptedChatTyping extends TLRPC.Update {
         public static final int constructor = 386986326;
         public int chat_id;
@@ -1353,7 +1353,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateEncryptedMessagesRead extends TLRPC.Update {
         public static final int constructor = 956179895;
@@ -1377,7 +1377,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateEncryption extends TLRPC.Update {
         public static final int constructor = -1264392051;
@@ -1398,7 +1398,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateEphemeralBotCallbackQuery extends TLRPC.Update {
         public static final int constructor = 2081454550;
         public long chat_instance;
@@ -1448,7 +1448,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateFavedStickers extends TLRPC.Update {
         public static final int constructor = -451831443;
 
@@ -1458,7 +1458,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateFolderPeers extends TLRPC.Update {
         public static final int constructor = 422972864;
         public ArrayList<TLRPC.TL_folderPeer> folder_peers = new ArrayList<>();
@@ -1481,7 +1481,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateGeoLiveViewed extends TLRPC.Update {
         public static final int constructor = -2027964103;
         public int msg_id;
@@ -1501,7 +1501,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateGroupCall extends TLRPC.Update {
         public static final int constructor = -1658710304;
         public TLRPC.GroupCall call;
@@ -1533,7 +1533,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateGroupCallChainBlocks extends TLRPC.Update {
         public static final int constructor = -1535694705;
@@ -1560,7 +1560,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateGroupCallConnection extends TLRPC.Update {
         public static final int constructor = 192428418;
@@ -1586,7 +1586,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateGroupCallEncryptedMessage extends TLRPC.Update {
         public static final int constructor = -917002394;
@@ -1610,7 +1610,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateGroupCallMessage extends TLRPC.Update {
         public static final int constructor = -667783411;
@@ -1631,7 +1631,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateGroupCallParticipants extends TLRPC.Update {
         public static final int constructor = -219423922;
         public TLRPC.InputGroupCall call;
@@ -1654,7 +1654,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateGroupCall_layer216 extends TL_updateGroupCall {
         public static final int constructor = -1747565759;
 
@@ -1685,7 +1685,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateInlineBotWidgetQuery extends TLRPC.Update {
         public static final int constructor = -1510965752;
         public long chat_instance;
@@ -1737,7 +1737,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateInlineBotWidgetQuery_layer233 extends TL_updateInlineBotWidgetQuery {
         public static final int constructor = -1418742197;
 
@@ -1771,7 +1771,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateJoinChatWebViewDecision extends TLRPC.Update {
         public static final int constructor = -1112768912;
@@ -1795,7 +1795,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateLangPack extends TLRPC.Update {
         public static final int constructor = 1442983757;
@@ -1813,7 +1813,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateLangPackTooLong extends TLRPC.Update {
         public static final int constructor = 1180041828;
         public String lang_code;
@@ -1830,7 +1830,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateLoginToken extends TLRPC.Update {
         public static final int constructor = 1448076945;
 
@@ -1840,7 +1840,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateManagedBot extends TLRPC.Update {
         public static final int constructor = 1216408986;
         public long bot_id;
@@ -1863,7 +1863,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateMessageExtendedMedia extends TLRPC.Update {
         public static final int constructor = -710666460;
@@ -1887,7 +1887,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateMessageID extends TLRPC.Update {
         public static final int constructor = 1318109142;
         public int id;
@@ -1907,7 +1907,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateMessagePoll extends TLRPC.Update {
         public static final int constructor = -699641301;
@@ -1960,7 +1960,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateMessagePollVote extends TLRPC.Update {
         public static final int constructor = 1989799956;
         public TLRPC.Peer peer;
@@ -1989,7 +1989,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateMessageReactions extends TLRPC.Update {
         public static final int constructor = 506035194;
@@ -2031,7 +2031,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateMessageWidgetData extends TLRPC.Update {
         public static final int constructor = -1146062627;
@@ -2082,7 +2082,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateMonoForumNoPaidException extends TLRPC.Update {
         public static final int constructor = -1618924792;
@@ -2111,7 +2111,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateMoveStickerSetToTop extends TLRPC.Update {
         public static final int constructor = -2030252155;
@@ -2141,7 +2141,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateNewAuthorization extends TLRPC.Update {
         public static final int constructor = -1991136273;
@@ -2178,7 +2178,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateNewBotConnection extends TLRPC.Update {
         public static final int constructor = -1306491994;
@@ -2217,7 +2217,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateNewChannelMessage extends TLRPC.Update {
         public static final int constructor = 1656358105;
@@ -2241,7 +2241,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateNewEncryptedMessage extends TLRPC.Update {
         public static final int constructor = 314359194;
@@ -2262,7 +2262,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateNewEphemeralMessage extends TLRPC.Update {
         public static final int constructor = 549239713;
         public TL_ephemeral.EphemeralMessage message;
@@ -2279,7 +2279,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateNewMessage extends TLRPC.Update {
         public static final int constructor = 522914557;
@@ -2303,7 +2303,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateNewQuickReply extends TLRPC.Update {
         public static final int constructor = -180508905;
         public TLRPC.TL_quickReply quick_reply;
@@ -2320,7 +2320,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateNewScheduledMessage extends TLRPC.Update {
         public static final int constructor = 967122427;
         public TLRPC.Message message;
@@ -2337,7 +2337,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateNewStickerSet extends TLRPC.Update {
         public static final int constructor = 1753886890;
         public TLRPC.TL_messages_stickerSet stickerset;
@@ -2354,7 +2354,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateNewStoryReaction extends TLRPC.Update {
         public static final int constructor = 405070859;
@@ -2378,7 +2378,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateNotifySettings extends TLRPC.Update {
         public static final int constructor = -1094555409;
@@ -2399,7 +2399,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updatePaidReactionPrivacy extends TLRPC.Update {
         public static final int constructor = -1955438642;
         public TL_stars.PaidReactionPrivacy privacy;
@@ -2416,7 +2416,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePeerBlocked extends TLRPC.Update {
         public static final int constructor = -337610926;
@@ -2446,7 +2446,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePeerHistoryTTL extends TLRPC.Update {
         public static final int constructor = -1147422299;
@@ -2474,7 +2474,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updatePeerLocated extends TLRPC.Update {
         public static final int constructor = -1263546448;
         public ArrayList<TLRPC.PeerLocated> peers = new ArrayList<>();
@@ -2491,7 +2491,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePeerSettings extends TLRPC.Update {
         public static final int constructor = 1786671974;
@@ -2512,7 +2512,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updatePeerWallpaper extends TLRPC.Update {
         public static final int constructor = -1371598819;
         public int flags;
@@ -2544,7 +2544,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updatePendingJoinRequests extends TLRPC.Update {
         public static final int constructor = 1885586395;
         public TLRPC.Peer peer;
@@ -2567,7 +2567,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePhoneCall extends TLRPC.Update {
         public static final int constructor = -1425052898;
@@ -2585,7 +2585,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePhoneCallSignalingData extends TLRPC.Update {
         public static final int constructor = 643940105;
@@ -2606,7 +2606,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePinnedChannelMessages extends TLRPC.Update {
         public static final int constructor = 1538885128;
@@ -2641,7 +2641,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePinnedDialogs extends TLRPC.Update {
         public static final int constructor = -99664734;
@@ -2674,7 +2674,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePinnedForumTopic extends TLRPC.Update {
         public static final int constructor = 1748708434;
@@ -2698,7 +2698,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePinnedForumTopics extends TLRPC.Update {
         public static final int constructor = -554613808;
@@ -2726,7 +2726,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePinnedMessages extends TLRPC.Update {
         public static final int constructor = -309990731;
@@ -2761,7 +2761,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePinnedSavedDialogs extends TLRPC.Update {
         public static final int constructor = 1751942566;
@@ -2787,7 +2787,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updatePrivacy extends TLRPC.Update {
         public static final int constructor = -298113238;
@@ -2808,7 +2808,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateQuickReplies extends TLRPC.Update {
         public static final int constructor = -112784718;
         public ArrayList<TLRPC.TL_quickReply> quick_replies = new ArrayList<>();
@@ -2825,7 +2825,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateQuickReplyMessage extends TLRPC.Update {
         public static final int constructor = 1040518415;
         public TLRPC.Message message;
@@ -2842,7 +2842,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateReadChannelDiscussionInbox extends TLRPC.Update {
         public static final int constructor = -693004986;
@@ -2883,7 +2883,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateReadChannelDiscussionOutbox extends TLRPC.Update {
         public static final int constructor = 1767677564;
@@ -2907,7 +2907,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateReadChannelInbox extends TLRPC.Update {
         public static final int constructor = -1842450928;
@@ -2945,7 +2945,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateReadChannelOutbox extends TLRPC.Update {
         public static final int constructor = -1218471511;
@@ -2966,7 +2966,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateReadFeaturedEmojiStickers extends TLRPC.Update {
         public static final int constructor = -78886548;
 
@@ -2976,7 +2976,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateReadFeaturedStickers extends TLRPC.Update {
         public static final int constructor = 1461528386;
 
@@ -2986,7 +2986,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateReadFeed extends TLRPC.Update {
         public static final int constructor = 1951948721;
         public int filter_id;
@@ -3019,7 +3019,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateReadHistoryInbox extends TLRPC.Update {
         public static final int constructor = -1635468135;
@@ -3067,7 +3067,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateReadHistoryOutbox extends TLRPC.Update {
         public static final int constructor = 791617983;
@@ -3094,7 +3094,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateReadMessagesContents extends TLRPC.Update {
         public static final int constructor = -131960447;
@@ -3128,7 +3128,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateReadMonoForumInbox extends TLRPC.Update {
         public static final int constructor = 2008081266;
@@ -3152,7 +3152,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateReadMonoForumOutbox extends TLRPC.Update {
         public static final int constructor = -1532521610;
@@ -3176,7 +3176,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateRecentEmojiStatuses extends TLRPC.Update {
         public static final int constructor = 821314523;
 
@@ -3186,7 +3186,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateRecentReactions extends TLRPC.Update {
         public static final int constructor = 1870160884;
 
@@ -3196,7 +3196,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateRecentStickers extends TLRPC.Update {
         public static final int constructor = -1706939360;
 
@@ -3206,7 +3206,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateSavedDialogPinned extends TLRPC.Update {
         public static final int constructor = -1364222348;
@@ -3232,7 +3232,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateSavedGifs extends TLRPC.Update {
         public static final int constructor = -1821035490;
 
@@ -3242,7 +3242,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateSavedReactionTags extends TLRPC.Update {
         public static final int constructor = 969307186;
 
@@ -3252,7 +3252,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateSavedRingtones extends TLRPC.Update {
         public static final int constructor = 1960361625;
 
@@ -3262,7 +3262,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateSentPhoneCode extends TLRPC.Update {
         public static final int constructor = 1347068303;
         public TLRPC.auth_SentCode sent_code;
@@ -3279,7 +3279,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateSentStoryReaction extends TLRPC.Update {
         public static final int constructor = 2103604867;
@@ -3303,7 +3303,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateSentWalletTransaction extends TLRPC.Update {
         public static final int constructor = -1320989366;
         public boolean gasless;
@@ -3332,7 +3332,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateServiceNotification extends TLRPC.Update {
         public static final int constructor = -337352679;
@@ -3378,7 +3378,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateStarGiftAuctionState extends TLRPC.Update {
         public static final int constructor = 1222788802;
         public long gift_id;
@@ -3398,7 +3398,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateStarGiftAuctionUserState extends TLRPC.Update {
         public static final int constructor = -598150370;
         public long gift_id;
@@ -3418,7 +3418,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateStarGiftCraftFail extends TLRPC.Update {
         public static final int constructor = -1408818108;
 
@@ -3433,7 +3433,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateStarsBalance extends TLRPC.Update {
         public static final int constructor = 1317053305;
         public TL_stars.StarsAmount balance;
@@ -3450,7 +3450,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateStarsRevenueStatus extends TLRPC.Update {
         public static final int constructor = -1518030823;
         public TLRPC.Peer peer;
@@ -3470,7 +3470,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateStickerSets extends TLRPC.Update {
         public static final int constructor = 834816008;
         public boolean emojis;
@@ -3496,7 +3496,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateStickerSetsOrder extends TLRPC.Update {
         public static final int constructor = 196268545;
@@ -3526,7 +3526,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateStoryID extends TLRPC.Update {
         public static final int constructor = 468923833;
         public int id;
@@ -3546,7 +3546,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateTheme extends TLRPC.Update {
         public static final int constructor = -2112423005;
         public TLRPC.Theme theme;
@@ -3563,7 +3563,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateTranscribeAudio extends TLRPC.Update {
         public static final int constructor = -2006880112;
         public int flags;
@@ -3591,7 +3591,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateTranscribedAudio extends TLRPC.Update {
         public static final int constructor = 8703322;
@@ -3626,7 +3626,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateTranscribedAudioFile extends TLRPC.Update {
         public static final int constructor = 1934372475;
         public int flags;
@@ -3654,7 +3654,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateUser extends TLRPC.Update {
         public static final int constructor = 542282808;
         public long user_id;
@@ -3671,7 +3671,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateUserEmojiStatus extends TLRPC.Update {
         public static final int constructor = 674706841;
@@ -3692,7 +3692,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateUserName extends TLRPC.Update {
         public static final int constructor = -1484486364;
@@ -3719,7 +3719,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateUserPhone extends TLRPC.Update {
         public static final int constructor = 88680979;
@@ -3740,7 +3740,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateUserPhoto extends TLRPC.Update {
         public static final int constructor = -232290676;
@@ -3767,7 +3767,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateUserStatus extends TLRPC.Update {
         public static final int constructor = -440534818;
@@ -3788,7 +3788,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateUserTyping extends TLRPC.Update {
         public static final int constructor = 706199388;
@@ -3819,7 +3819,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateWalletGaslessInfo extends TLRPC.Update {
         public static final int constructor = -1464984404;
         public boolean available;
@@ -3848,7 +3848,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateWalletState extends TLRPC.Update {
         public static final int constructor = 1791226538;
         public TL_wallet.WalletState state;
@@ -3865,7 +3865,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateWalletTonConnectPendingDisconnect extends TLRPC.Update {
         public static final int constructor = -772898407;
         public ArrayList<Long> session_ids = new ArrayList<>();
@@ -3882,7 +3882,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateWalletTonConnectSession extends TLRPC.Update {
         public static final int constructor = 1352896014;
         public TL_wallet.tonConnectSession session;
@@ -3899,7 +3899,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateWebBrowserException extends TLRPC.Update {
         public static final int constructor = 335872721;
         public boolean delete;
@@ -3931,7 +3931,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateWebBrowserSettings extends TLRPC.Update {
         public static final int constructor = -1013306658;
@@ -3958,7 +3958,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     /* loaded from: classes.dex */
     public static class TL_updateWebPage extends TLRPC.Update {
         public static final int constructor = 2139689491;
@@ -3982,7 +3982,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class TL_updateWebViewResultSent extends TLRPC.Update {
         public static final int constructor = 361936797;
         public long query_id;

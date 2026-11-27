@@ -30,7 +30,7 @@ import org.telegram.ui.StickersActivity;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.d0;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hja implements on5, ovc, jcc, yv4, ay2, s84, ncc, z28, nf0, OnSuccessListener, fd, fcb, rpa, CameraController.VideoTakeCallback, nr7, ot2, Vector.TLDeserializer, uka {
     public final /* synthetic */ byte a;

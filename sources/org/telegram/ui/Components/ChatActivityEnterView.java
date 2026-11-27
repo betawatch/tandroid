@@ -91,7 +91,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes2.dex */
 public class ChatActivityEnterView extends FrameLayout implements fn7, vma, p4b, xeb, s84, snb {
     public static long W7;
@@ -541,7 +541,7 @@ public class ChatActivityEnterView extends FrameLayout implements fn7, vma, p4b,
     public sn3 z6;
     public int z7;
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public class RecordCircle extends View {
         public int E;
         public final float F;
@@ -1968,7 +1968,7 @@ public class ChatActivityEnterView extends FrameLayout implements fn7, vma, p4b,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public class SlideTextView extends View {
         public StaticLayout E;
         public StaticLayout F;

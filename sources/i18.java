@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes3.dex */
 public abstract class i18 {
     public static void a(final int i, final qcc qccVar, final nu0 nu0Var, final TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP, final h18 h18Var, final kcc kccVar, final boolean z, final boolean z2, final c34 c34Var) {

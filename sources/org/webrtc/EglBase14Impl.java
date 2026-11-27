@@ -12,7 +12,7 @@ import android.view.Surface;
 import org.webrtc.EglBase14;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes3.dex */
 public class EglBase14Impl implements EglBase14 {
     private static final EglConnection EGL_NO_CONNECTION = new EglConnection(0);
@@ -21,7 +21,7 @@ public class EglBase14Impl implements EglBase14 {
     private EGLSurface eglSurface = EGL14.EGL_NO_SURFACE;
     private boolean detachSurfaceOnRelease = false;
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class Context implements EglBase14.Context {
         private final EGLContext egl14Context;
 
@@ -249,7 +249,7 @@ public class EglBase14Impl implements EglBase14 {
         xi4.l("No EGLSurface - can't swap buffers");
     }
 
-    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
     public static class EglConnection implements EglBase14.EglConnection {
         private EGLSurface currentSurface;
         private final EGLConfig eglConfig;

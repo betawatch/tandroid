@@ -34,7 +34,7 @@ import org.telegram.ui.Components.Switch;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes2.dex */
 public final class xh4 implements cr7, rn4, s9, yj5, a70, s84, fx7, v30, ag4, l12, i89, bl0, hcb, ugc {
     public final /* synthetic */ byte a;

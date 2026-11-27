@@ -35,7 +35,7 @@ import org.telegram.ui.Components.Switch;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class tg0 implements fd, s84, t36, ncc, jcc, t69, nr7, yyc, dz7, zk0, s69, vka, uka, yma, gcb, WebRtcAudioRecord.WebRtcAudioRecordSamplesReadyCallback, h69, CameraView.CameraViewDelegate, hc1 {
     public final /* synthetic */ byte a;

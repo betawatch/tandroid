@@ -6,7 +6,7 @@ import java.io.File;
 import org.telegram.messenger.a;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* compiled from: r8-map-id-ccfa8252b9f089ebf7f3997b8d474d49dee05081d92c50e51a64afeb13131fbb */
 /* loaded from: classes.dex */
 public final class ph0 {
     public static ph0 m;
@@ -94,7 +94,7 @@ public final class ph0 {
         }
         this.h = true;
         this.g = false;
-        new oi5(new y0(this, runnable, (byte) 3)).execute("https://telegram.org/dl/android/apk-public-beta.json");
+        new oi5(new y0(this, runnable, (byte) 3)).execute("null");
     }
 
     public final void b(boolean z) {
